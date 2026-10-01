@@ -1,15 +1,5 @@
 # dashboard/src/topology/model.ts
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `dashboard/src/topology/model.ts`           |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-01T10:30+02:00                      |
-| lastVerifiedCommitHash |                                             `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |                                             2026-08-10T12:28:42+02:00|
-| governingOverview      | `../overview.md`                            |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -129,90 +119,34 @@ no task ring); providers use `rf: 0` and orbit their parent via `poff`.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation was found after checking the repository source registry; this file
 implements project-local projection modeling logic.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The model is the adapter between the served projection contract and the imperative canvas renderer. It
 is also where the state vocabulary crosses from the wire mirror into a colour-bearing one, so both
 ends of that crossing are cited below: `LIFECYCLE_STATES`/`State` upstream, `constelColors` downstream.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48. | `LIFECYCLE_STATES` | dashboard/src/types/projection.ts:13-13 |
-| `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. | `activeTopologyInputs` | dashboard/src/topology/model.ts:105-115 |
-| `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. | `lifecycleStatus` | dashboard/src/topology/model.ts:85-93 |
-| `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. | `activeTopologyInputs`, `buildTopology`, `groupKey` | dashboard/src/topology/model.ts:99-99; dashboard/src/topology/model.ts:105-115; dashboard/src/topology/model.ts:117-221 |
-| The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. | `project_workspace` | mcp/src/agents_remember/observer/reducer.py:126-179 |
-| The projection store passes that structural set through to the served projection. | `active_worktree_groups` | mcp/src/agents_remember/serving/projections/projection_store.py:247-247 |
-| `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. | `constelColors` | dashboard/src/topology/constel.ts:31-39 |
-| `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. | "classifies every state the vocabulary declares" | dashboard/src/topology/model.test.ts:94-102 |
-| `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. | `Topology` | dashboard/src/panels/Topology.tsx:82-155 |
+- `LIFECYCLE_STATES` is the `as const` tuple with `State` derived from it — the six states `CONSTEL_STATUS_BY_STATE` must be total over, and the list `model.test.ts` iterates instead of hand-copying. It is now COMPOSED from the two declared halves (`LIVE_STATES` + `TERMINAL_STATES`), so the six names are read off L42/L48. [1]
+- `WorkspaceProjection.activeWorktreeGroups` (worktree-group basenames with a live enclosure lifecycle) is the bounded set `activeTopologyInputs` filters on; `ProviderNode.worktreeGroup` is a basename while `EnclosureNode.worktreeGroup` is a full path. [2]
+- `CONSTEL_STATUSES` + the derived `ConstelStatus`, the total `CONSTEL_STATUS_BY_STATE`, the declared `UNCLASSIFIED_STATUS`, the `STATUS_BY_DECLARED_STATE` partial read view, and `lifecycleStatus` with its inferred-degrades-healthy-only rule. [3]
+- `activeTopologyInputs` keeps only enclosures whose `groupKey(worktreeGroup)` ∈ `activeWorktreeGroups` and the lifecycles bound to them; `buildTopology` folds each enclosure's 1:1 lifecycle into the `wt` node via `lifecycleStatus` and parents providers by `groupKey` worktree group, then repo id, then workspace core. [4]
+- The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. [5]
+- The projection store passes that structural set through to the served projection. [6]
+- `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. [7]
+- `model.test.ts` pins the grammar: totality over `LIFECYCLE_STATES`, the unclassified answer pinned to `UNCLASSIFIED_STATUS` by value, the inferred degrade, and `buildTopology` driven over the whole vocabulary. [8]
+- `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The behavior is within the `agents-remember` dashboard
 projection/model/render boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-02T21:00:19+02:00 — 260731-EFA-L6 curator W2-B10: repaired 16 citation findings (8 reference rows); scoped recheck clean.
-
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition — `LIVE_STATES` and `TERMINAL_STATES` are declared halves and
-  `LIFECYCLE_STATES` is now `[...LIVE_STATES, ...TERMINAL_STATES] as const` — which moved every anchor
-  below it. Re-anchored the two rows citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L61 (the halves
-  at L42/L48, the composed tuple at L59, `State` at L61) and noted that the six names are now read off
-  the halves; `EnclosureNode`/`ProviderNode` L121-L154 → L156-L189 and
-  `WorkspaceProjection.activeWorktreeGroups` L683-L684 → L711-L721. No body claim changed —
-  `LIFECYCLE_STATES` is still an `as const` tuple with `State` derived from it.
-- 2026-08-01T09:20+02:00 — 260731-EFA-L4 curator: documented the leaf's headline defect and its fix.
-  `lifecycleStatus` was an if-chain covering five of six `LIFECYCLE_STATES` and returning `"ok"` for
-  the rest, so an `awaiting-developer` lifecycle — the turn handed back to the developer — drew as a
-  healthy constellation node. It is now four declarations: the `CONSTEL_STATUSES` tuple with
-  `ConstelStatus` derived from it, the total `CONSTEL_STATUS_BY_STATE: Record<State, ConstelStatus>`
-  (a seventh state stops the literal compiling), `UNCLASSIFIED_STATUS = "warn"`, and the
-  `STATUS_BY_DECLARED_STATE: Partial<Record<string, ConstelStatus>>` read view that makes
-  `?? UNCLASSIFIED_STATUS` load-bearing to `tsc`. `lifecycleStatus` is now exported, takes
-  `Pick<LifecycleProjection, "state" | "inferred">`, and degrades only a healthy reading when
-  `inferred`. Added the invariants (no unrecognised state may read `ok`; one classification path;
-  inferred never upgrades) and rebuilt the Repo-Internal citations — the previous rows carried symbol
-  names in the `Citations` column instead of line ranges, and are now exact ranges containing
-  `LIFECYCLE_STATES`, `EnclosureNode`/`ProviderNode`, `CONSTEL_STATUS_BY_STATE`, `constelColors`, and
-  `activeTopologyInputs`/`buildTopology` respectively. Verification metadata left pinned; closeout
-  stamps the code commit.
-- 2026-06-28T07:30+02:00 — Task 33: reshaped the model to an active-enclosure view. Removed the lifecycle/task
-  rim (`task` kind + `RF.task` gone; `RF` is now `{repo:0.3, wt:0.62}`) and folded each enclosure's 1:1
-  lifecycle (id/click-through, `lifecycleStatus`, `phase·state`) into the `wt` node. Added the exported
-  pure `activeTopologyInputs` seam that filters to `activeWorktreeGroups` and drops orphan lifecycles, and
-  a `groupKey` basename helper that normalises every worktree-group join — fixing a latent task-12-S1 bug
-  where worktree providers fell back to the core (enclosure full-path key vs provider basename lookup
-  never matched on real data). `repoKeys` no longer include lifecycle `repoId`; WORKSPACE sub-label is now
-  `N checkouts · M active worktrees`; the `RANK` constant was removed with the rim. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-23T22:31+02:00 — Clarified that provider satellites are binding projections: a single
-  aggregate GrepAI instance can appear as repo-scoped target dots, while isolated worktree providers
-  still orbit their worktree by `worktreeGroup`. Verification metadata pinned until closeout stamps the
-  S2 code commit.
-- 2026-06-23T21:46+02:00 — Task 12 S2: `buildTopology` now includes repo-covered workspace providers in
-  the repo ring and parents providers by `worktreeGroup` first, then `repoId`, then workspace core. This
-  lets CGC repo coverage orbit repo nodes while preserving S1 worktree-provider behavior. Verification
-  metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-23T15:08+02:00 — Created for task 12 S1: documents the pure Topology model and the new
-  provider-parenting rule where worktree-scoped providers orbit their owning worktree node via
-  `worktreeGroup`; workspace providers intentionally remain on the workspace core until the backend
-  per-repo projection slice lands. Verification metadata will be stamped at closeout.
+No meaningful cross-repo references found.

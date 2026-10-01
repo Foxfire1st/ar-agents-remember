@@ -1,15 +1,5 @@
 # dashboard/src/data/announcer.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/announcer.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-26T15:40+0200                           |
-| lastVerifiedCommitHash | `4e5fbcf872bbc1ec2566a6ccb17276a6bad80c7f` |
-| lastVerifiedCommitDate | 2026-07-26T18:40:37+02:00|
-| governingOverview | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -46,29 +36,25 @@ edge.
 
 Add a staggered turn-state/interaction-payload regression if sev-4 observation 9 is taken up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; no external citation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Announcement implementation under test. | `stateEntryAnnouncements` | dashboard/src/data/announcer.ts:52-78 |
-| One source for every asserted string. | `setResultAnnouncement`, `promotionAnnouncement`, `sessionFailedAnnouncement`, `sessionAwaitingInputAnnouncement` | dashboard/src/data/setControlsCopy.ts:83-101; dashboard/src/data/setControlsCopy.ts:103-105; dashboard/src/data/setControlsCopy.ts:121-123; dashboard/src/data/setControlsCopy.ts:125-127 |
-| The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`). | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
+- Announcement implementation under test. [1]
+- One source for every asserted string. [2]
+- The catalog-row fixture builder the seat helper spreads (plural pending flows through `...overrides`). [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
+No cross-repo evidence applies.
 
 ## Reviewed Candidate Delta
 
@@ -76,18 +62,3 @@ Adds same-hydration multi-seat coverage: urgent transitions are emitted together
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Update History
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 7 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=1, citation_source_malformed=3); amended max-reviewer subject binding for both N1 branches; final scoped citation check clean.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: recorded the N1 agent-only-blocked pin — a seat
-  whose plural `controlPendingInteractions` carries a sub-agent permission (singular slot absent)
-  announces seat-level "awaiting input" when unfocused and stays silent when focused (the
-  InteractionBar announces the agent bar itself). Verification stays pinned; the L7 change is
-  uncommitted and closeout re-stamps.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T08:33+02:00 — Created for 260715-FEUI-L4 R8/R9 after final reviewer PASS;
-  verification metadata is pinned to the uncommitted leaf's contract base pending closeout.

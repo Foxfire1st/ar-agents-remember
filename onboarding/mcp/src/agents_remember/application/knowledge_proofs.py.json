@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of its two consumers and the no-pass boundary.\n\nAnchor: \"nothing here states whether the test passes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:28db7d0e365ee584bc36fa4a1390dc86bada0e4d7be5126a6ede97778055e286",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The index lookups it reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:851e491f99f981c033839274a2e88756ba2d7c4987f775789fa66aa9cd97a0a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "proofs_of"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f75dd89e10a0d8d0958015d6bfc2be378ae98f",
+            "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Migrated evidence is listed, then a curator pass writes the proof and the list empties.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:2ea418d939b9272380e2fde90df33c48fd5e5cd4099b15a2025e9b4d00725bdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The cache is reused, and an unreadable cache is reported, not raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:60ee6df7b32247359d10474dd664e0a131554f14e888a43526363c188abc64e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The index is opened only for the two proof views.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:a93149acd13b28d7cc7269bf7f544c108ebe08ce280d1bf40c5793d63595321a",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_view_proofs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:754cb420df70bc169929cebd1b4c7be7f0c1d551931bb1eb6660e28a62fb1325",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PROOF_VIEWS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A view's proofs: one invariant, or every family member; `None` for an unknown subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:c2bb7d72afc1778b0685f171db33d64ac3e35824e2ed281d22ce2d3246afba21",
+            "locator": {
+              "kind": "symbol",
+              "name": "view_proofs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:720618bc22962e4ce433667ed91ff6a74c53086af99081bd1cc014276137c035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proof_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The row and coverage shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:9ae611b344dad787b9b8c2350a11bbc96994f0d1dfefd0b4a8b53bfb76e785bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnprovenInvariant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:01c59ee6936491e8f5cb046aa83fb8cdd77dbaea243ed178120e84bcd12591dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProofCoverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The list: `None` unconverted, a problem rather than an exception, partial index named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:8333fbf13d5462c4ac2852b0cd31fd32c954fec10fd08db8e7cc7d97e6202200",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The cached or throwaway index.\n\nAnchor: `KnowledgeIndexCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:aa7b0644d3d4a9afe73fce5c1ae3ae2976c22325ff20fd4d11eb970f7a770f38",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tests the migrated evidence names.\n\nAnchor: `tests_named_in`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:128201b45b04fe9970c200e7145c6a851275e495b54fc64a8d8b0110edd0e983",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_tests"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The view consumer, since MIK-R02 the per-page extras of a converted tree's read.\n\nAnchor: `tree_view_proofs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "content": "sha256:7fffdcb7bb12a477931fce751c44f0d545603e6735db5c1c9686e85f414e6491",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_extras"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The checklist consumer.\n\nAnchor: `invariants_without_proof`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "content": "sha256:e8b26e89b7081e4a34d185bda2198f8cb1b1d124a25104055eca841e18724bb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_without_proof"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,14 +1,5 @@
 # repo-entity-catalog-workflow.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
-
 ## Purpose
 
 This workflow defines how `c-05-create-or-update-onboarding-files` skill creates and maintains the repo-level `entities.md` catalog for recurring real concepts in a repository, including deterministic entity fingerprints used by `c-02-memory-quality-control` skill drift detection, the required one-to-one coverage between inventory entries and fingerprint rows, and the provider-neutral documentation discovery rules used while reviewing entity source-of-truth claims.
@@ -35,37 +26,22 @@ After this working-tree update lands, refresh verification metadata to the commi
 
 No external domain documentation is required for this repository-local workflow. The resolved `agents-remember` source registry has no configured `Domain Documentation` entries, so the relevant evidence for this workflow is repository source.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found after checking live sources. | n/a | n/a |
+No relevant external documentation found after checking live sources.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The workflow defines the current entity-catalog schema and lifecycle.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. | `## Source Discovery Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md:17-25 |
-| Placement and metadata rules define `entities.md` directly under the resolved onboarding root and keep it complementary to `overview.md`. | `## Placement Rules`; `## Metadata Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md:26-41 |
-| Entity fingerprint rules define `git-blob-set-v1`, small curated evidence paths, required inventory coverage, acceptable false-positive review prompts, and removed/renamed/moved review before deleting stale rows or evidence paths. | `## Entity Fingerprint Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md:42-51 |
-| Entity criteria define what belongs in a repo entity catalog. | `## Recommended Entry Criteria` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md:60-74 |
-| Creation, maintenance, and review steps require source evidence, fingerprint curation, missing/orphaned fingerprint row handling, drift inspection, and update-history preservation. | `## Create Workflow`; `## Maintain Workflow`; `## Review Heuristics` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md:75-107 |
+- Source discovery rules require the resolved `Domain Documentation` category, authoritative live documentation retrieval when the registry names it, local mirrors as orientation only, and actual evidence citations instead of source registries. [1]
+- Placement and metadata rules define `entities.md` directly under the resolved onboarding root and keep it complementary to `overview.md`. [2]
+- Entity fingerprint rules define `git-blob-set-v1`, small curated evidence paths, required inventory coverage, acceptable false-positive review prompts, and removed/renamed/moved review before deleting stale rows or evidence paths. [3]
+- Entity criteria define what belongs in a repo entity catalog. [4]
+- Creation, maintenance, and review steps require source evidence, fingerprint curation, missing/orphaned fingerprint row handling, drift inspection, and update-history preservation. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for the workflow itself.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 5 citation items; scoped citation check now passes.
-
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-22T13:32+02:00: Updated after entity-catalog source discovery became provider-neutral while requiring live registry-named documentation checks before recording no domain docs. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-15T12:57+02:00: Clarified required coverage between inventory entries and fingerprint rows, including missing-row creation and orphaned-row review for removed, renamed, or moved entities. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-15T11:46+02:00: Refreshed after the workflow added deterministic `git-blob-set-v1` entity fingerprint creation and maintenance rules. Verification metadata remains pinned until closeout commits the source change.
-- 2026-05-14T21:16+02:00: Refreshed for resolved onboarding-root placement of `entities.md` and current source-discovery wording. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for the `c-05-create-or-update-onboarding-files` skill repo-entity workflow.
+No meaningful cross-repo references found.

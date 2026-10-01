@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/cli/knowledge_write_route.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/cli/knowledge_write_route.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [mcp/overview.md](../../../overview.md)
@@ -19,8 +9,9 @@
 **The file-writer route of `knowledge-ingest` and `knowledge-bootstrap` (MIK-R12 rule 7).** Both
 commands keep one spelling; the memory tree they write decides the writer. A **converted** tree (it holds
 `knowledge/layout.json`) is written by `write_knowledge`; an **unconverted** tree keeps the database ingest
-exactly as before. Until the cutover (MIK-R37) no production memory tree is converted, so no production run
-changes (architect ruling 1).
+exactly as before in a repository that holds no converted memory; once it does, the cutover lock refuses the
+write and names the crossing sync (L37; MIK-R09 rule 6, MIK-R24 rule 9; architect ruling 1 covered the time
+before the cutover).
 
 ## Code Commentary
 
@@ -66,6 +57,17 @@ changes (architect ruling 1).
   converted before MIK-R37, so no run changes today.
 - Exit status: 0 written or planned, 1 refused (every problem in the report, nothing written), 2 invocation
   refused. `--json` prints `WriteReport.to_document()`.
+- **`run_crossing_write(args, contract)` (L37, MIK-R24 rule 8 step 4)** is `knowledge-ingest --crossing`. It
+  refuses a blank authorization or a database-only flag (`_file_route_refusal`), then asks
+  `_crossing_memory_root`, which refuses by name: a contract that cannot be loaded or is not a series contract;
+  an id that is not `<this master's task id>-crossing-<n>`; a history file that is absent, is not that
+  crossing's, or is closed. The memory root is the sync's memory worktree (`side_locations(contract,
+  "memory")`). The code snapshot C is the series' code work branch (`CodeSnapshot.at_commit`), the sync's paired
+  code, and the same ref is passed as `code_base`. The owner is `Owner(kind="crossing", id=<crossing>)`, so the
+  writer resolves existing records and writes rows only.
+- **`run_leaf_write` passes `code_base=contract.code_base_commit`** (L37, review R1 F10b): the commit a
+  trailerless unconverted `HEAD` is converted at, which is the gate's and the worklist's fallback, so the three
+  share one converted-base cache key.
 
 ### Conventions
 
@@ -80,7 +82,9 @@ changes (architect ruling 1).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -89,47 +93,33 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The dispatch test and the two routes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The database-only flags refused by name. | `_DATABASE_ONLY` | mcp/src/agents_remember/cli/knowledge_write_route.py:53-60 |
-| The layout-marker test. | `is_converted` | mcp/src/agents_remember/cli/knowledge_write_route.py:65-68 |
-| The rule 9 write refusal for an unconverted leaf tree whose official line is converted. | `unconverted_write_refusal`; `unconverted_line_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:71-81; mcp/src/agents_remember/worktrees/knowledge_crossing.py:163-195 |
-| The owner from the contract and `task.json`. | `leaf_owner` | mcp/src/agents_remember/cli/knowledge_write_route.py:105-117 |
-| The task owner's decision resolver for the leaf (MIK-R11). | `leaf_decisions`; `leaf_decision_refusal` | mcp/src/agents_remember/cli/knowledge_write_route.py:146-150 |
-| The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist. | "def run_leaf_write("; "decisions=leaf_decisions(contract)"; "questions=LeafQuestions(args, contract)"; "worklist=read_leaf_worklist(contract.contract_path)" | mcp/src/agents_remember/cli/knowledge_write_route.py:195-195; mcp/src/agents_remember/cli/knowledge_write_route.py:223-226 |
-| The lazy port: settings read only when a `raise` needs them, from `--config` or discovery; unavailable settings refuse the `raise`. | `LeafQuestions`; "pass --config" | mcp/src/agents_remember/cli/knowledge_write_route.py:154-192 |
-| The wave route. | `run_wave_write` | mcp/src/agents_remember/cli/knowledge_write_route.py:233-273 |
-| The ingest dispatch on the loaded contract. | `run` | mcp/src/agents_remember/cli/knowledge_ingest.py:680-716 |
-| The bootstrap dispatch on the admitted memory root. | `_run` | mcp/src/agents_remember/cli/knowledge_bootstrap.py:515-538 |
-| Planning writes nothing; unconverted memory is not this route. | `test_a_planning_run_writes_nothing_and_unconverted_memory_is_not_this_route` | mcp/tests/test_knowledge_writer.py:444-461 |
-| Blank authorization refused and recorded. | `test_the_leaf_file_route_refuses_a_blank_authorization_and_reports_it` | mcp/tests/test_knowledge_writer.py:609-619 |
-| The leaf route and the wave route pass the coordination root requirement endpoints resolve against (MIK-R13). | `coordination_root` | mcp/src/agents_remember/cli/knowledge_write_route.py:224-224; mcp/src/agents_remember/cli/knowledge_write_route.py:239-239; mcp/src/agents_remember/cli/knowledge_write_route.py:269-269 |
+- The database-only flags refused by name. [1]
+- The layout-marker test. [2]
+- The write refusal for an unconverted leaf tree: rule 9 when its official line is converted, else the cutover lock. [3]
+- The owner from the contract and `task.json`. [4]
+- The task owner's decision resolver for the leaf (MIK-R11). [5]
+- The leaf route, which binds that resolver and, since MIK-R14, the lazy task-document port and the persisted worklist. [6]
+- The lazy port: settings read only when a `raise` needs them, from `--config` or discovery; unavailable settings refuse the `raise`. [7]
+- The wave route. [8]
+- The ingest dispatch on the loaded contract. [9]
+- The bootstrap dispatch on the admitted memory root. [10]
+- Planning writes nothing; unconverted memory is not this route. [11]
+- Blank authorization refused and recorded. [12]
+- The leaf route and the wave route pass the coordination root requirement endpoints resolve against (MIK-R13). [13]
 
-## Cross-Repo References
+- The crossing owner's route: the sync's memory worktree, the series' code work branch as C. [14]
+- Which worktree holds the open crossing history file, or why the run is refused. [15]
+- The file route refuses a blank authorization and database-only flags. [16]
+
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **body updated for MIK-R14.** The `run_leaf_write` bullet records the persisted worklist and the task-document port it now passes; a new `LeafQuestions` bullet (settings read lazily from `--config` or discovery, unavailable settings refuse a `raise`, the evidence's test-mode note and the L37 carry of review F10). **Reopened claim re-read and reworded:** the `run_leaf_write` row (the function changed structurally) now names what the route binds and is re-anchored on line-exact quotes; I removed this pass's generated bullet for it. One row added (`LeafQuestions`). The other rows were projected by the installed fixer or re-pointed by the exact line shift (`leaf_decisions`, the `coordination_root` row), and the kept generated bullets cover claims I did not reword. No verification stamp was advanced.
-- 2026-09-30T10:06:17+00:00: Generated citation repair: `_DATABASE_ONLY` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:53-60. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:06:17+00:00: Generated citation repair: `is_converted` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:65-68. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T10:06:17+00:00: Generated citation repair: `run_wave_write` repointed to mcp/src/agents_remember/cli/knowledge_write_route.py:233-273. No content impact: mechanical anchor-range projection bound to citation source snapshot fa7748792a962532da9358f73baa3b69634d367f6d9f44b01836b65362dd93a4; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Logic records that `run_leaf_write` passes the contract's `coordination_root` and that `run_wave_write` takes an optional `coordination_root` keyword and passes it on, so the writer reports each requirement endpoint (never refused). One row was added. The wave-route row's range was re-pointed by the installed fixer; no claim was reworded. No verification stamp was advanced.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **body updated for MIK-R11.** The `run_leaf_write` Logic bullet now names `leaf_decisions`, the task owner's decision resolver bound per leaf (architect ruling 2026-09-29T22:35:34 F1: the strict lookup); a wave binds none. One row added and the leaf-route row reworded; ranges re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): Added the MIK-R24 rule 9 `unconverted_write_refusal` to Logic, with its ruling (inert until the official line is converted), and added its row. Re-measured the six existing rows, which were one to fourteen lines off after MIK-R12 and this leaf.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

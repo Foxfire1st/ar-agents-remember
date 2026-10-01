@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/recorded_reads.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/recorded_reads.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `mcp/overview.md` |
-
 ## Governing Overview
 
 [mcp package overview](../../../overview.md)
@@ -54,35 +44,26 @@ settings resolution) can record too.
 
 - None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: why plain-file reads are recorded, and the three identities. | "A path recorded twice with different identities in one computation" | mcp/src/agents_remember/kernel/recorded_reads.py:1-16 |
-| The identities. | `ABSENT`; `CONFLICTING`; `bytes_identity`; `file_identity` | mcp/src/agents_remember/kernel/recorded_reads.py:36-53 |
-| The recording block and one read. | `recorded_reads`; `record_read` | mcp/src/agents_remember/kernel/recorded_reads.py:56-77 |
-| The manifest read records exactly the bytes it read. | "record_read(path, bytes_identity(data))" | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:172-172 |
-| The gate records every evaluation's reads. | "with recorded_reads() as reads:" | mcp/src/agents_remember/application/knowledge_gate/gate.py:257-258 |
-| The read set and the conflicting read. | `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept` | mcp/tests/test_knowledge_gate_routes.py:859-884 |
+- The module docstring: why plain-file reads are recorded, and the three identities. [1]
+- The identities. [2]
+- The recording block and one read. [3]
+- The manifest read records exactly the bytes it read. [4]
+- The gate records every evaluation's reads. [5]
+- The read set and the conflicting read. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the recorded files are plain paths the caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording ruling 15:09:25 (the memo records the requirement files it read) and the review R1 notes of 16:07:55 (the settings fallback joins the read set; a file read twice with different identities makes the verdict unmemoisable). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

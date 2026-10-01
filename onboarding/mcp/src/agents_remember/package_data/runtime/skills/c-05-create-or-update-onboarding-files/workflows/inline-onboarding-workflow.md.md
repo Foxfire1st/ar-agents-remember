@@ -1,14 +1,5 @@
 # inline-onboarding-workflow.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
-
 ## Purpose
 
 This workflow defines the storage adapter for inline onboarding blocks. It keeps the semantic file-level onboarding model from the sidecar Markdown template, then adds source-comment placement, marker, digest, and fallback rules for files that can safely carry onboarding inline.
@@ -35,31 +26,20 @@ No current todo is recorded for this workflow.
 
 No external domain documentation applies to this repository-local workflow file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This workflow is the inline-storage counterpart to the sidecar file-level onboarding workflow.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The workflow states that inline onboarding stores file-level onboarding inside the source file and keeps the semantic content from the file-level template. | `# Inline Onboarding Workflow` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md:1-25 |
-| Inline workflow steps cover comment delimiter selection, safe placement, stable markers, digest recomputation, and sidecar fallback. | `## Workflow` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md:11-19 |
-| Verification rules require timestamp and digest fields and classify missing markers or digest as missing verification. | `## Verification Rules` | mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md:20-25 |
+- The workflow states that inline onboarding stores file-level onboarding inside the source file and keeps the semantic content from the file-level template. [1]
+- Inline workflow steps cover comment delimiter selection, safe placement, stable markers, digest recomputation, and sidecar fallback. [2]
+- Verification rules require timestamp and digest fields and classify missing markers or digest as missing verification. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this workflow.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-02T21:12:32+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
-
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-14T20:11+02:00: Created file-level onboarding for the inline onboarding workflow while preparing direct closeout for the external-memory terminology alignment.
+No meaningful cross-repo references found.

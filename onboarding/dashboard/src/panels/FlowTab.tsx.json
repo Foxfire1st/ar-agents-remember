@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/panels/FlowTab.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The flow-model registry FlowTab renders and switches between — all content + the segment/model types live here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa587e123e73e13dc582f33ab0e93cb3c487bef2",
+            "content": "sha256:494ce15eef6cc2c449f5b9aac251f61ab45f530ba112e883bda82d5cc22e4690",
+            "locator": {
+              "kind": "symbol",
+              "name": "FLOW_MODELS"
+            },
+            "path": "dashboard/src/panels/flowModels.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The renderer + nav under test (default model, nav switching, initialModel fallback, per-model render census, invariant text).\n\nAnchor: \"FlowTab canvas (unified l-01-agent-lifecycles)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37cde1aabf104480bcfae7b98064d508be79426f",
+            "content": "sha256:48a4d0a48bd3390d986a587b923dcbef3725772d7be8d8286a27bb1e389abdc6",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/FlowTab.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dev harness route that mounts FlowTab at `/dev/flows` with `initialModel` from `?model=`.\n\nAnchor: `initialModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7f4bd3885bdab232af0f680b217afa7430295b",
+            "content": "sha256:151922b3992b22f5107cb4e28bc6369bb985d2d1e42c2a295f2b96106cb4a659",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/dev/DevApp.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The next-step engine the build-job model is the human-readable spec for (regime model).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:a201fb436ead2894241e335bf4ccd0c7fb196f314ddea960606233ce56ee1561",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Generated Panda `css`/`cva` this panel styles with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2448f87bab9a04dd5ea11428abbbfdc77d2c8524",
+            "content": "sha256:72d79e3fff3278fcf32a5f6ec3a5be835f3c2246715b5684b30913a912a9a3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlowTab"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

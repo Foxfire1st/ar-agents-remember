@@ -1,0 +1,212 @@
+{
+  "path": "mcp/tests/test_memory_citation_resolution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Grammar and path boundaries retain their dedicated assertion classes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:30cae039181d3ead26c0a55f9ec6d79948b855570d01629d94d1a3fbb881747c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_1_a_word_boundary_is_not_satisfied_by_a_longer_identifier"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:bd377a2bbe03628229e68cf9fcc09e3c81ad422373917edcd4f12484fc9d8de2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProseGrammarTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:872139451039b19a9a634219ede9bfdc324b46383824222bf46c3b5dce15a415",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeletedClassTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:f83bbdc6d1ec88d1b98f8c23d8b01d2c34ca544b4a6a0b1bb3efb88051ed9b9e",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:7dce5196304e712aca8db91a5b84c874faf28363b12d0d09bf94318186e7ea72",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Selected/full validation and missing-code-root reporting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:b0f49444d8122491d548af63af2e10162109e246ea68d1c849cfb3d675b4652c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_without_a_code_root_the_result_says_so_instead_of_passing_quietly"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:2df25bb98de12297df75f48f8b1f0e1fe930da6970ead47cabfaa82abc22a85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_full_and_selected_walks_share_canonical_document_validation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retained prepared history and cache-independent memory provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:ce0cdbaaefeae59c5a3c91e9a60fd137f821c41909be2f6b339dcd8bca93576e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retained_prepared_commit_accepts_current_tree_and_rejects_other_history"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:c613965cbecdaaf705bc91a73a1eb942bc8a8863177860a6c38d8e7e03f6c574",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedPreparedProvenanceTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mechanical projection prompts the support question rather than asserting currency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:e17f9d630f051af06f5cb9ed6642cf6ea15a9269054fc27a10e9ecea4af2ebc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_projected_range_is_enforced_with_the_support_question_not_currency"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:0f65680ef9c96597d35e7ecd1f1bb843c30a676685b8bb35c5332284f7e3f65d",
+            "locator": {
+              "end": 983,
+              "kind": "line_range",
+              "start": 954
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Inherited provenance debt, pure-move reporting, deferred-declaration citation, and history insertion order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:b89216212e7f00f4bc160692faa4a1a6bf8ab56b2f215136318791572dcaf101",
+            "locator": {
+              "kind": "symbol",
+              "name": "InheritedProvenanceDebtTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:e2b2ae67f25bd2031adea72cb07451c6794fa89f626e68b1096bf2010a7cf6a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "InsertedRegistrationRangeDriftTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:941d7ad2d5b7fa218fa0fe0beb42dcc9a6976fd7a26446d4fec8a30ef245b66a",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecoratedDeclarationCitationTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:bed9b1d50aaa59d5d8474ecb462fe81bf87cb2286424acef8c48f9ebcad0bf88",
+            "locator": {
+              "kind": "symbol",
+              "name": "GeneratedHistoryInsertionOrderTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "49e7ec1d02e65caea9701376542cfc2cbe8348fc",
+            "content": "sha256:5e83db8d865f1992f1c342d78ddda70b16a2c86939386284f6576c1213f66d5c",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 781
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

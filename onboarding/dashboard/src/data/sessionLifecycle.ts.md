@@ -1,15 +1,5 @@
 # dashboard/src/data/sessionLifecycle.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/sessionLifecycle.ts`         |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T07:22+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -76,30 +66,35 @@ Successful terminate and landed cleanup now explicitly disconnect the active con
 Focus changes keep healthy projections warm, but a terminated seat must not retain its SSE runtime until
 later LRU pressure.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The notice store and residual sweep. | `lifecycleNoticeStore`; `sweepRetireResiduals`; `startRetireResidualSweep`; "for (const session of sessions)"; "if (!changed)" | dashboard/src/data/sessionLifecycle.ts:61-61; dashboard/src/data/sessionLifecycle.ts:68-121; dashboard/src/data/sessionLifecycle.ts:136-154 |
-| The detailed terminate and bulk-end flows preserve server outcomes. | `terminateSessionDetailed`; `endSessionDetailed`; `endLandedDetailed` | dashboard/src/data/sessionLifecycle.ts:169-197; dashboard/src/data/sessionLifecycle.ts:203-224; dashboard/src/data/sessionLifecycle.ts:230-251 |
-| The centralized terminate confirmation copy. | `terminateConfirmCopy` | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:13-22 |
-| The stage renderer of residual notices (dismissable `role="status"` lines). | `StopResidualNotes` | dashboard/src/panels/session-cockpit/StopResidualNotes.tsx:41-72 |
-| The rail consumers keep immediate single End and confirmed bulk End. | `endSession`; `endLanded`; `SessionRail` | dashboard/src/panels/session-cockpit/SessionRail.tsx:33-35; dashboard/src/panels/session-cockpit/SessionRail.tsx:39-43; dashboard/src/panels/session-cockpit/SessionRail.tsx:155-235 |
-| The cleanup outcome notice is rendered by the dedicated landed-cleanup component. | `LandedCleanupNotice` | dashboard/src/panels/session-cockpit/LandedCleanupNotice.tsx:48-113 |
-| The view mounts the focus-independent sweep. | "useEffect(() => startRetireResidualSweep()" | dashboard/src/panels/session-cockpit/sessions-view/sessionsViewController.ts:812-812 |
-| `terminateTerminalSession` is the boolean-only predecessor. | `terminateTerminalSession` | dashboard/src/data/terminal.ts:442-451 |
-| `subscribeSessionCatalogChanges` registers catalog-change listeners. | `subscribeSessionCatalogChanges` | dashboard/src/data/sessions.ts:128-138 |
-| The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path. | "endLandedDetailed (bulk cleanup honesty)" | dashboard/src/data/sessionLifecycle.test.ts:146-213 |
+- The notice store and residual sweep. [1]
+- The detailed terminate and bulk-end flows preserve server outcomes. [2]
+- The centralized terminate confirmation copy. [3]
+- The stage renderer of residual notices (dismissable `role="status"` lines). [4]
+- The rail consumers keep immediate single End and confirmed bulk End. [5]
+- The cleanup outcome notice is rendered by the dedicated landed-cleanup component. [6]
+- The view mounts the focus-independent sweep. [7]
+- `terminateTerminalSession` is the boolean-only predecessor. [8]
+- `subscribeSessionCatalogChanges` registers catalog-change listeners. [9]
+- The focused `endLandedDetailed (bulk cleanup honesty)` test covers the landed cleanup path. [10]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -107,35 +102,3 @@ Adds `cleanupFailure` alongside authoritative cleanup outcomes. When no result i
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: split the duplicated lifecycle source row by
-  owner, completed the residual-sweep body audit, narrowed negative/over-pooled reference claims,
-  and updated rail cleanup references from the retired residual-note path to `LandedCleanupNotice`.
-
-- 2026-08-02T16:56+02:00 — 260731-EFA-L6 curator W1-B06: anchored 12 citation claims
-  (4 Logic citations and 8 Repo-Internal reference rows); scoped result 0 findings.
-
-- 2026-07-24T13:17:50Z — Added termination-time conversation disconnect ownership. Verification
-  hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R5 (incl. fix round 1 findings 1 and 4):
-  the lifecycle notice store (stop residuals that outlive tombstoned rows, dismissal that sticks
-  via the swept-set), the refcounted focus-independent retire-residual sweep, and the detailed
-  terminate/landed-cleanup flows keeping `controlStopDetail`, verbatim POST failures, and the
-  route's own closed+skipped outcome. Retire is render-only from the cockpit (no actor seat) —
-  the operator action is terminate. Verification metadata pinned to the leaf base until closeout
-  stamps the L6 code commit.

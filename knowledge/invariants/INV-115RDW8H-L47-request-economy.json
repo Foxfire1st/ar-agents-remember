@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Dashboard reads made when a leaf task is selected and when its reviewer is opened from the task entry.",
+  "conditions": [
+    "The reviewer is opened with no subject from the task entry.",
+    "The subject catalogue answers within SUBJECT_HOLD_MS (750 ms); a slower or stalled catalogue releases into one task-context review read at the bound (ruling on L47-R1-F1)."
+  ],
+  "exclusions": [
+    "Reads made by the reviewer's own refresh or by the developer choosing another subject.",
+    "A catalogue answering after the bound, whose late subject jump belongs to L48."
+  ],
+  "id": "INV-115RDW8H",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "ccbc70d7-4fc4-4af4-aba9-669b694d0c8c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Selecting a leaf makes one summary read, no catalogue read and one committed change-set read; opening the reviewer reads the catalogue once, keyed on the comparison rather than the global analytics document, and asks the review only for the subject the catalogue chose.",
+  "status": "proposed",
+  "supersedes": []
+}

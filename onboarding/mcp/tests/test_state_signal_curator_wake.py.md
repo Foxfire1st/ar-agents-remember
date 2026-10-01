@@ -1,15 +1,5 @@
 # mcp/tests/test_state_signal_curator_wake.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_state_signal_curator_wake.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T21:19+02:00 |
-| lastVerifiedCommitHash | `b2aeba28e3e6c909048c99fc389a00aa65e5e2c1` |
-| lastVerifiedCommitDate | 2026-09-15T21:59:41+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -127,67 +117,41 @@ the real `run_agent_notifier_sweep`. Cases assert through `_single_signal`, `row
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own fixtures
 and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A completed curator turn wakes the current manager of its own master with exactly one durable signal, no curator-authored row, and no second signal on re-observation. | `test_a_completed_curator_turn_wakes_the_current_manager_with_one_durable_signal` | mcp/tests/test_state_signal_curator_wake.py:385-432 |
-| An interrupted curator turn wakes the manager with interruption truth and is re-emission-guarded on that path. | `test_an_interrupted_curator_turn_wakes_the_manager_with_interruption_truth` | mcp/tests/test_state_signal_curator_wake.py:434-474 |
-| A failed curator turn reaches terminal truth, emits nothing, and leaves the seat eligible rather than consumed. | `test_a_failed_curator_turn_never_wakes_the_manager` | mcp/tests/test_state_signal_curator_wake.py:476-501 |
-| The payload is the canonical terminal-truth derivation with no verdict appended, and the post-sweep coordination root equals the premise. | `test_the_curator_wake_neither_validates_nor_declares_curator_coherence` | mcp/tests/test_state_signal_curator_wake.py:503-530 |
-| A curator seat with no current manager fails closed instead of routing to another master's live manager, asserted as one reachable check. | `test_a_curator_seat_without_a_current_manager_fails_closed_without_global_routing` | mcp/tests/test_state_signal_curator_wake.py:532-553 |
-| One disposable production wiring per case: task topology, catalog, bridges, inbox, and the two real sweeps. | `_CuratorRelayWorld` | mcp/tests/test_state_signal_curator_wake.py:247-368 |
-| The two real liveness observations; the second is past the sweeper's own full-sweep rate limit. | `observe_adapter_evidence`; `settle` | mcp/tests/test_state_signal_curator_wake.py:291-302 |
-| One real notifier sweep under a bridge that accepts whatever it is handed, over temporary stores. | `notifier` | mcp/tests/test_state_signal_curator_wake.py:336-362 |
-| Every row addressed to, delivered to, or itself a state signal, in one reachable read whose failure modes cannot shadow each other. | `addressed_to` | mcp/tests/test_state_signal_curator_wake.py:321-334 |
-| One reader for both the pre-sweep premise and the post-sweep claim, so "the relay wrote no governed artifact" is a statement about one population. | `coordination_root_entries` | mcp/tests/test_state_signal_curator_wake.py:312-319 |
-| The adapter's own evidence surface: the native envelope on the first read, the consumed tail thereafter, empty pages for every other seat. | `_CuratorEvidence` | mcp/tests/test_state_signal_curator_wake.py:151-170 |
-| One native codex `turn/completed` envelope, mapped by the real vendor projector rather than pre-digested into a turn claim. | `_turn_completed_frame` | mcp/tests/test_state_signal_curator_wake.py:123-138 |
-| The production task-document tree the routing resolves structural owners from: one sprint, the curator's master, and a second master. | `_write_task_topology` | mcp/tests/test_state_signal_curator_wake.py:209-244 |
-| The stale spawn-ancestry address that routing must never select, because ownership comes from the task hierarchy. | `STALE_SPAWNER_ID` | mcp/tests/test_state_signal_curator_wake.py:77-79 |
-| The acceptance vocabulary deliberately asserted absent: delivery words are transport facts, not memory verdicts. | `VERDICT_VOCABULARY` | mcp/tests/test_state_signal_curator_wake.py:80-83 |
-| The single-signal reader every wake case asserts through. | `_single_signal` | mcp/tests/test_state_signal_curator_wake.py:377-381 |
-| The temporary-world context manager, including the no-master-manager variant the fail-closed case uses. | `_world` | mcp/tests/test_state_signal_curator_wake.py:371-374 |
-| The shared manager-routing predicate the curator seat must reach exactly as the worker seat does. | `current_seat_occupant` | mcp/src/agents_remember/controlplane/seats.py:148-170 |
-| The two sweeps whose composition produces the asserted turn truth and signal. | `TerminalCatalogLivenessSweeper`; `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/terminal_liveness.py:149-324; mcp/src/agents_remember/serving/agent_notifier.py:96-192 |
-| The canonical payload builders the signal text is asserted equal to. | `state_signal_ask`; `state_signal_response` | mcp/src/agents_remember/serving/state_signals.py:506-540 |
-| The durable marker the re-emission guard reads and the landed-row predicate the wake asserts. | `state_signal_landed` | mcp/src/agents_remember/controlplane/operator_inbox_records.py:29-39 |
+- A completed curator turn wakes the current manager of its own master with exactly one durable signal, no curator-authored row, and no second signal on re-observation. [1]
+- An interrupted curator turn wakes the manager with interruption truth and is re-emission-guarded on that path. [2]
+- A failed curator turn reaches terminal truth, emits nothing, and leaves the seat eligible rather than consumed. [3]
+- The payload is the canonical terminal-truth derivation with no verdict appended, and the post-sweep coordination root equals the premise. [4]
+- A curator seat with no current manager fails closed instead of routing to another master's live manager, asserted as one reachable check. [5]
+- One disposable production wiring per case: task topology, catalog, bridges, inbox, and the two real sweeps. [6]
+- The two real liveness observations; the second is past the sweeper's own full-sweep rate limit. [7]
+- One real notifier sweep under a bridge that accepts whatever it is handed, over temporary stores. [8]
+- Every row addressed to, delivered to, or itself a state signal, in one reachable read whose failure modes cannot shadow each other. [9]
+- One reader for both the pre-sweep premise and the post-sweep claim, so "the relay wrote no governed artifact" is a statement about one population. [10]
+- The adapter's own evidence surface: the native envelope on the first read, the consumed tail thereafter, empty pages for every other seat. [11]
+- One native codex `turn/completed` envelope, mapped by the real vendor projector rather than pre-digested into a turn claim. [12]
+- The production task-document tree the routing resolves structural owners from: one sprint, the curator's master, and a second master. [13]
+- The stale spawn-ancestry address that routing must never select, because ownership comes from the task hierarchy. [14]
+- The acceptance vocabulary deliberately asserted absent: delivery words are transport facts, not memory verdicts. [15]
+- The single-signal reader every wake case asserts through. [16]
+- The temporary-world context manager, including the no-master-manager variant the fail-closed case uses. [17]
+- The shared manager-routing predicate the curator seat must reach exactly as the worker seat does. [18]
+- The two sweeps whose composition produces the asserted turn truth and signal. [19]
+- The canonical payload builders the signal text is asserted equal to. [20]
+- The durable marker the re-emission guard reads and the landed-row predicate the wake asserts. [21]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-15T21:19+02:00 — 260831-LOCR-L07 curator (uncommitted change set on `ar/260831-locr-l07`,
-  base `e9678c56`, 2 changed paths: `mcp/tests/test_state_signal_curator_wake.py` added, sha256
-  `94f2ea0571ec6ad72da3f4e35a006aa13bbf321d9e65c26833ec2b385e619efa`, 557 lines / 5 cases; and
-  `mcp/tests/test-evidence-lanes.toml` modified, `+1/−0`, tracked-diff sha256
-  `0cfc1ea35a331f46983c2deeebc12cd26e5f7750ed4a16e58db55372115f92ab`): created this sidecar for the
-  new curator-wake module. Recorded each case's contract — the one durable signal per exact seat plus
-  evidence identity on both the `completed` and `interrupted` path with the re-emission guard asserted
-  on each, `failed` as the outside negative control that reaches terminal truth and emits nothing
-  without consuming the seat, the no-verdict/no-artifact claim read post-sweep through the same
-  reader as its premise, and the fail-closed refusal asserted as one reachable check rather than two
-  that could shadow each other. Recorded the `_CuratorRelayWorld` composition (two real liveness
-  sweeps past the sweep rate limit, a real `run_agent_notifier_sweep` over temporary stores, an
-  adapter evidence surface that hands back the native envelope once and the consumed tail
-  thereafter), and the two boundaries the module deliberately does not cross: no curator coherence,
-  memory readiness or closeout acceptance is validated or declared, and the stale spawn-ancestry
-  address is never selected because ownership resolves from the task hierarchy. This is a
-  preservation leaf: `mcp/src` is unchanged by the change set. Lane registration lives on the
-  `test-evidence-lanes.toml` card; this module holds no governed evidence registration. Verification
-  metadata is pinned to the leaf base until closeout stamps the leaf commit.
+No external evidence is needed for these assertions.

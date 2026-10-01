@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/IntentWordDiff.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/IntentWordDiff.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T13:18:53+02:00 |
-| lastVerifiedCommitHash | `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`|
-| lastVerifiedCommitDate | 2026-09-30T13:46:40+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -83,37 +73,28 @@ the real `SelectedStatement` inside `IntentWordDiffScope`. Assertions read what 
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packets `MIK-R35@v1` / `ICR-R35@v1`, the leaf's rulings
 and the reviewer's probes (`notes/reports/260928-MIK-L35-review-R1-checks/`) live outside the repositories, so they
 are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real bodies the cases start from, and the accessible-text reader. | "const payload = captured('gitTrees.invariant.captured.json');"; "function spoken(node: Node): string {" | dashboard/src/panels/review/IntentWordDiff.test.tsx:33-63 |
-| The one-field successor, per-side rows and the tree or dataset scope. | "function review(change: Partial<ReviewFamilyMember> = {}, options: Options = {}) {" | dashboard/src/panels/review/IntentWordDiff.test.tsx:65-113 |
-| The conforming example, condition-only, R2-1, list alignment and applicability cases. | "marks the changed words of the statement in place, in one passage"; "offers no layout control when a paired condition changed only its whitespace" | dashboard/src/panels/review/IntentWordDiff.test.tsx:118-198 |
-| Ruling Q4 on both paths, and the three F1 probes. | "reads only the selected revisions' field rows, on tree and dataset reviews alike"; "diffs one revision whose texts differ when %s" | dashboard/src/panels/review/IntentWordDiff.test.tsx:200-264 |
-| F4's cases and the same-revision label. | "labels an applicability recorded on one side only as a known absence, with no diff"; "shows a list the comparison only reported joined as reported, never aligned"; "diffs one revision whose text differs between the two sides, and says so" | dashboard/src/panels/review/IntentWordDiff.test.tsx:266-349 |
-| Whitespace-only, the rewrite and the preference. | "renders a whitespace-only change once, labelled, with both exact texts disclosed"; "shows a rewrite side by side by default, says why, and can still show it inline" | dashboard/src/panels/review/IntentWordDiff.test.tsx:351-422 |
-| One-sided, unavailable, ambiguous and dataset statements. | "describe('one-sided, unavailable and ambiguous statements'" | dashboard/src/panels/review/IntentWordDiff.test.tsx:424-505 |
-| The family guarantee. | "describe('the family guarantee'" | dashboard/src/panels/review/IntentWordDiff.test.tsx:507-580 |
-| F2's labels: the navigator's guarantee and member tag, and the details fact. | "describe('labels of one revision whose texts differ'" | dashboard/src/panels/review/IntentWordDiff.test.tsx:582-655 |
+- The real bodies the cases start from, and the accessible-text reader. [1]
+- The one-field successor, per-side rows and the tree or dataset scope. [2]
+- The conforming example, condition-only, R2-1, list alignment and applicability cases. [3]
+- Ruling Q4 on both paths, and the three F1 probes. [4]
+- F4's cases and the same-revision label. [5]
+- Whitespace-only, the rewrite and the preference. [6]
+- One-sided, unavailable, ambiguous and dataset statements. [7]
+- The family guarantee. [8]
+- F2's labels: the navigator's guarantee and member tag, and the details fact. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T13:18:53+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): created this card for the new test module (30 cases), recording rulings Q1, Q2, Q3 and Q4 (2026-09-30T11:53:13), review R1 F1 (the three probes), F2 (the labels), F3, F4 (X9–X11, X13, X19) and F5 (12:16:39), and R2-1's added case (12:43:15). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

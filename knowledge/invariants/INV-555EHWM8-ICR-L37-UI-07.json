@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The shared catalogue hook when repository, master or leaf target changes.",
+  "conditions": [
+    "The read target key must match the current target before rows can be returned.",
+    "Only the current mounted request sequence may complete the read."
+  ],
+  "exclusions": [
+    "The hook does not create catalogue rows or choose a published dataset."
+  ],
+  "id": "INV-555EHWM8",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "6ee3f28d-23c8-4123-9cea-7b6ebe064361",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Another task's catalogue entries are not exposed while the current task's catalogue read is pending.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,227 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/LaunchFlow.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dialog: reset/load, pickers, pair gating, outcomes, F9 watcher + dismiss.\n\nAnchor: \"launch-flow-overlay\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d92c426e6363f86e4e9739fd68ac727b7bb4b113",
+            "content": "sha256:e487e951587d92947e20cfa1469920f0786e4118e94ff27935def8bef434cf45",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 587
+            },
+            "path": "dashboard/src/panels/session-cockpit/launchFlowParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The open-response fixtures the classifier paths render.\n\nAnchor: `INVALID_PARTIAL_PAIR`, `FAILED_LAUNCH_ROWS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:f8b54603d0ba68ffe206625d24db22317f53d819424c40578979876204ce88fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "INVALID_PARTIAL_PAIR"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b11c0e6f64228835a2d48c7410a926e35131c14c",
+            "content": "sha256:a1ea823cb996dc455902e56523e2f1b15662487e77af8125bbf2422b1b70781e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAILED_LAUNCH_ROWS"
+            },
+            "path": "dashboard/src/test/fixtures/openResponses.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pure pair reducers + open classifier this renders (`chooseModel`/`chooseEffort`/`selectionComplete`/`openHostedSession`).\n\nAnchor: `chooseModel`, `chooseEffort`, `selectionComplete`, `openHostedSession`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:2031f68c4c80cc240495d57bd3f25ce93f330db2c14be9a60766d10b6058a566",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseModel"
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:9bea91fc06595747b4b22ef2f322652c666b03044ac7e13cd4f5505abd77b98f",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseEffort"
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:c2ee747cdc99b18bf493a4682f8041bb769827373c78a5ce257e83bf83d154cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectionComplete"
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:b9f8bbfa6be94c98cdd883d79ebcc1a453ff86014ba7dcbb46c5d8d0e2717fbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "openHostedSession"
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The envelope store + R2 cost/cache copy (`fetchHarnessCapabilities`, `capabilityCostNote`, `capabilityLoadingCopy`, `cacheStatusNote`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3e8f01973965be62ac2d4ba76d32966299ad0f9",
+            "content": "sha256:025e7439bb9c1a790167ff509d4b0a4f2beb23badbef2d3bf5601d92ec2d785d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapabilityCatalogState"
+            },
+            "path": "dashboard/src/data/capabilityCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tier machine stamping the retained pair at 'pending' on a 200.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:ff76d7c1946f463adeb382f50b8dd834fd2846b7076135f308e8994403472584",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchTier"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The typed narrow harness catalog read and explicit result states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:6a4891ea09b5bcfebe0fccd7330e8cc0e649274e8810071b490118ec74845e69",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessCatalogRead"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The hook owning timeout, abort, Retry, and one replacement per serving boot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "957ad0cf826da319a18711d8d87e3c399fcad4f0",
+            "content": "sha256:c4dbd8c6cb916fbff95892857cca3d95525b9b2e7f2264e954a34a55d9a18ed1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useHarnessCatalogRead"
+            },
+            "path": "dashboard/src/panels/session-cockpit/useHarnessCatalogRead.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The owner registering `session.launch` and mounting the dialog after the palette.\n\nAnchor: \"session.launch\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:e7ea60f0fd7fc0cc1ade2b1cecb1dbca14a433e5eb513dcbd4597b0a644d9b72",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The banner handing in the refused-pair prefill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The jsdom matrix: dynamic-only, cost parity, pair rules, all response paths, F9 dismiss/reopen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecdd32ec6adef06dace9eb4bfa8ea7c609066730",
+            "content": "sha256:449be05a37fe0946c2216ccf50a693cdc6e5b005392bf26d06c98cb1213f4ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "renderFlow"
+            },
+            "path": "dashboard/src/panels/session-cockpit/LaunchFlow.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

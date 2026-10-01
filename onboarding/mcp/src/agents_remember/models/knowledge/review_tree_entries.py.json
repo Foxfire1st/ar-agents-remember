@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_tree_entries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the per-side states, the locator fallback and the excerpt rule.\n\nAnchor: \"are different facts and are never merged\"; \"is shown once\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:6fbf4b48bc3edb15691e0ec82924b8783e3c2fc6488eec83fd742811f793b067",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:3bfd2b05e887dc7a28691f14abf3a30822993d98eeadc0d65718323f7177cb8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four range states, the three change states and the excerpt bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:4603a24e4848d4af639683c0df1fc25366931999abeed6c1d6f255f3e0ca08b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryRangeState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:8a8599cd0ef832c971072977a0a77ddd0fa1d5fda0e9b7b3a4b5a117d69fdf22",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:d9784cab59f1881ae77a1f67a68b796806e6d1dc76c09d60d79f00028d622d01",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCERPT_MAX_LINES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:b7ac45b1e06ed6773105b408a3388f30b2aed57b9edda647411f757a33c538d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXCERPT_MAX_CHARACTERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One entry on one side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:6b189b146e70b4f70dc31d97cf5e4307f08fca8a44b505d51cbbf354ca25a8cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntrySide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One entry on both sides, joined to a member by `invariant_key`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe635b61cf6d107c1f7ce647445850ea60b8eaa3",
+            "content": "sha256:3dd268f5c188ab1256b17b36153fcbf8b302ce0937377afeb9281f7febf4d51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The tree view's field that carries the entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:26ba24fd7657137d0d7f520dec283cd60f78b7f374ae219af50023890fc6a389",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The client mirror of this shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:9f7f18a60fc47136f90b96e501acec13a975b6685055a2ae5df99c27d96b0336",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntrySide"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
+            "content": "sha256:97721e68d0054cb2f2d703ac6d3af03d65725ddf332a62068b147090e630c36c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntry"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

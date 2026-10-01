@@ -1,0 +1,222 @@
+{
+  "path": "dashboard/src/data/seatEvents.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Kind gate, per-kind application, strictly-newer dedup, JSONL adapter, backlog gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:5d13a0533e65af7f41e6044dfdf14763bfe9c6bfa37ad479c17869cd6f3217cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySeatEvent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b6c3adce54894c03440db973f39692bf8425fe5",
+            "content": "sha256:ca32d06e9a764687e09e5dc7614981d442fe228053cf047ca4487c253bf791db",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The server emitter defining the four kinds + data field names.\n\nAnchor: `log_retire_event`, `log_landed_event`, `log_rename_event`, `log_turn_state_change_event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:a2843d71b44a8a6acf7b1ebb9a11a360ec33bad30e2daf1d9309d4fadaeb7a8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "log_retire_event"
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:b8aa351028cb60279b48fd58f9333872cb196b0a4ab56d993e5852497316d453",
+            "locator": {
+              "kind": "symbol",
+              "name": "log_landed_event"
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:fb360580d6bdcb52f6d191bd808abf8ea7e65bb02e47113850d613873ef0e45d",
+            "locator": {
+              "kind": "symbol",
+              "name": "log_rename_event"
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:3af5c79aa1340a2233aaa544672da58d69eaa5e3e1423bbddeec0e165f938251",
+            "locator": {
+              "kind": "symbol",
+              "name": "log_turn_state_change_event"
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:0c1c669addb4db9b6e4885496b233c9b8df66154969d8daabcbad3d3c19eca0e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:427839fc1c10463fd63780eab6545bfc998233116031afeeb3596289da948b80",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:67c8eddf88fcfbe425205fcef7f347fc3cc278e109b77524e13c2bf0fa74ddea",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e887bc2ae25ca37f94ac5cdd21a5ff2863f4f19f",
+            "content": "sha256:c584b4f3f88519ca6106e42dceeb8d40924e350c34b43af54b7cb44b999dd036",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/serving/seat_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `ready`/`error` transport hooks the gate rides (`connectEvents` + `onInterrupt`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5020b60dcc8107abe2430742d38707074ae80b",
+            "content": "sha256:2b8b3c83b9650d5a38b1b6656059c7d0b0d09d3d64061276ec2f898c806b5724",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectEvents"
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one-EventSource-two-consumers wiring + gate lifecycle.\n\nAnchor: `onInterrupt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "content": "sha256:cf21bb65abff4bf3b81ff3fa19d6fef15aa573d31c0086c0e800954a446b841f",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `patch`/`setStatus` store actions this applies through.\n\nAnchor: `patch`, `setStatus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:f8267a8fc11b6e1d581517198f5625af3a8413a76a5906f0964d994cdf4531b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "patch"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:51ffe946769dd3323c6a1b4c8ae93a3ec8f05767667a8b8f85a83bdf2f2458d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "setStatus"
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit suite: never-resurrect, unknown-session, strict-newer dedup, vocabulary guard, malformed lines, per-connection gate.\n\nAnchor: \"createGatedSeatEventApplier (per-connection backlog gate — review finding 2)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2da2fdae8f74fc7b31ff8a0bcb441eadec2b9f81",
+            "content": "sha256:b003badf3f3cb133105584f8da633195693ee8830fa79aa01e89daeb053bfbd8",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "dashboard/src/data/seatEvents.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

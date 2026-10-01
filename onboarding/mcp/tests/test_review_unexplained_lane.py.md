@@ -1,15 +1,5 @@
 # mcp/tests/test_review_unexplained_lane.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_review_unexplained_lane.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -90,45 +80,34 @@ tree. The route and live-leaf cases reuse `test_review_git_trees.py`'s `world` f
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R32@v1` (adopting `ICR-R33@v1`) and its rulings in `32_unexplained-changes-lane.json`; they live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ten changed paths the fixture comparison holds. | "the same throughout:" | mcp/tests/test_review_unexplained_lane.py:1-21 |
-| The memory tree over the code, and the curated re-record of `pkg/a.py`. | `_knowledge` | mcp/tests/test_review_unexplained_lane.py:208-277 |
-| The family records before and after. | `BEFORE_FAMILIES`; `AFTER_FAMILIES` | mcp/tests/test_review_unexplained_lane.py:280-281 |
-| A comparison reopened as the reviewer reopens it. | `Lane`; `precuration` | mcp/tests/test_review_unexplained_lane.py:284-323 |
-| Buckets, destinations, paths and the summary agree. | `test_every_changed_file_takes_one_bucket_and_the_destinations_reconcile`; `_every_path_bucket`; `_unexplained_destination`; `_unknown_destination` | mcp/tests/test_review_unexplained_lane.py:356-373; mcp/tests/test_review_unexplained_lane.py:376-394; mcp/tests/test_review_unexplained_lane.py:397-410; mcp/tests/test_review_unexplained_lane.py:413-427 |
-| The entry count reads no hunk. | `test_the_entry_count_reads_file_buckets_only` | mcp/tests/test_review_unexplained_lane.py:430-441 |
-| Hunks on their changed lines at each side's recorded blob, before and after curation. | `test_hunks_are_classified_on_their_changed_lines_at_each_sides_recorded_blob`; `_precuration_edit_and_insertion` | mcp/tests/test_review_unexplained_lane.py:447-474; mcp/tests/test_review_unexplained_lane.py:477-490 |
-| Links, revisions, proofs and membership. | `test_a_linked_hunk_names_its_entries_revisions_and_family_occurrences` | mcp/tests/test_review_unexplained_lane.py:493-509 |
-| An unread side and a partial index (review F3). | `test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links`; `test_a_partial_index_makes_only_its_unparsed_files_unknown`; `_gate_unknown_on_a_partial_side` | mcp/tests/test_review_unexplained_lane.py:515-532; mcp/tests/test_review_unexplained_lane.py:545-561; mcp/tests/test_review_unexplained_lane.py:564-571 |
-| Bounded reasons (review F4). | `test_a_reason_names_a_bounded_number_of_entries` | mcp/tests/test_review_unexplained_lane.py:574-593 |
-| Unmeasured change sets carry no count. | `test_an_unmeasured_change_set_has_no_count` | mcp/tests/test_review_unexplained_lane.py:596-618 |
-| One focused question per request. | `test_the_route_asks_one_focused_question_at_a_time` | mcp/tests/test_review_unexplained_lane.py:624-645 |
-| The live tree leaf, and long paths answered typed (review F2). | `test_a_live_tree_leaf_serves_the_lane_and_its_entry_count`; `_long_paths_are_typed_refusals` | mcp/tests/test_review_unexplained_lane.py:659-679; mcp/tests/test_review_unexplained_lane.py:682-695 |
-| A dataset review's entry has no attribution. | `test_a_dataset_review_entry_carries_no_attribution` | mcp/tests/test_review_unexplained_lane.py:698-703 |
-| The module's lane row. | "mcp/tests/test_review_unexplained_lane.py" | mcp/tests/test-evidence-lanes.toml:127-127 |
+- The ten changed paths the fixture comparison holds. [1]
+- The memory tree over the code, and the curated re-record of `pkg/a.py`. [2]
+- The family records before and after. [3]
+- A comparison reopened as the reviewer reopens it. [4]
+- Buckets, destinations, paths and the summary agree. [5]
+- The entry count reads no hunk. [6]
+- Hunks on their changed lines at each side's recorded blob, before and after curation. [7]
+- Links, revisions, proofs and membership. [8]
+- An unread side and a partial index (review F3). [9]
+- Bounded reasons (review F4). [10]
+- Unmeasured change sets carry no count. [11]
+- One focused question per request. [12]
+- The live tree leaf, and long paths answered typed (review F2). [13]
+- A dataset review's entry has no attribution. [14]
+- The module's lane row. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 4 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`test_review_unexplained_lane.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:32:18+00:00: Generated citation repair: "mcp/tests/test_review_unexplained_lane.py" repointed to mcp/tests/test-evidence-lanes.toml:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new test module (11 cases), recording ruling 2026-09-30T12:19:20 Q1 (`_every_path_bucket`) and review R1 F2, F3 and F4 (fixed at 13:07:38) with their mutation checks. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

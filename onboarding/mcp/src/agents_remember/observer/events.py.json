@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/observer/events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store serializes and reads these events.\n\nAnchor: `append`, `read`, `read_log`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:8d19221c32f845a5880c5b755a0f2009c3a577f65f773cfd1db2d9f252eba2ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "append"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:613fd1501d79b0d6b15be616bdc48eceb92f222df970f211e1629ab0a188260a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:c644418cbf19d594055229ae6272fafdba6864a4130d403c425a4fa1dacbe07f",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_log"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ids come from the local ULID mint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca1e65d5adf705f43b2e7e7645571d514f033d44",
+            "content": "sha256:6fccc769ef95e64d5c53e3ec6afd3a1828fc5ac5b1385c032b2b52665415ce52",
+            "locator": {
+              "kind": "symbol",
+              "name": "new_ulid"
+            },
+            "path": "mcp/src/agents_remember/observer/ulid.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response-contract convention this envelope mirrors (camelCase fields, strict extras).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:82b1223f6a2dfe69490f7dacf49a68f6da3450399b2d6266267c975685458548",
+            "locator": {
+              "kind": "symbol",
+              "name": "StrictResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:97a355f06bc816f40ec3e6d30faf87c55a9cec8e6da60eb216254b9c65165c90",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

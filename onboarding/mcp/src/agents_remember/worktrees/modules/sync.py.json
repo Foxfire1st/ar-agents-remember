@@ -1,0 +1,205 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/sync.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
+            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
+            "content": "sha256:57676232d84c5756ef9f3933b3b10a5a58c9774b5d96c625282968c17fe10d8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_live"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared upstream refresh reports per-side evidence without treating the remote as local mutation authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d46e597e17705e1b0155f61dd64c9e147408ec1",
+            "content": "sha256:fc636e752a2ab37f96acddcd352b9ce0923afeb9e4d1acdabffc5fc45187e223",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_source_upstreams"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_source_refresh.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Atomic-series sync binds the public wrapper to the exact transaction on this contract's own activation record: it validates ownership, publishes `reconciling`, reconciles the pinned source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof; a foreign master is never read or named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:5a07c603afd747ea33a5d098cd85e3ba5b4c5e079f79e5fd0cb541631ca38944",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_selected_atomic_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_selected_atomic_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8755dbb2fcf0a8edfa492a3d956df2e51bdf9497",
+            "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_contract_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stable status and recovery evidence lives at the enclosure-root journal, not in the queue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:6be71ead2ab0fa062b8d25688243be05d7de8629793066ee285653165e3928d7",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:cdbb70fe8b0319a8544a4e80e6d34e73417d82d9299e8aac73ac4ae9e2830d8a",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Focused integration tests exercise fast-forward sync and contract advance, a retained code merge conflict with continuation, stale-cache source-ref selection, and content-conflict preservation, including the knowledge conflict whose only working route is the manual continuation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:b11cca83b4e3bc23bfae5ce8fad3d08929203cdf21f308683d2930176f6a73e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_pure_fast_forward_sync_advances_both_sides_and_contract"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:90300c8308c8d7bcdd095cbf7b67fbe5375bd3925973e9732342578b43e689bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_merge_conflict_is_retained_and_can_continue"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:09a93975b5fcdccf4989ce4a7ee6d24e7049ccafa78d2ec5abea56f07a19950b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sync_uses_source_refs_when_the_cache_is_stale_missing_or_malformed"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:20b6465acb9ecadd287f52285ee0fb482674d070de9454a54ec2cf439e92bce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_merge_settles_content_and_knowledge_conflicts_in_the_transaction"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `requeued_same_generation` boundary implements the preparation contract above.\n\nAnchor: \"def requeued_same_generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resume requires exited worker proof and archives it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "kind": "symbol",
+              "name": "requeued_same_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only unchanged mutation evidence is reset; attempt and transient execution state advance within the same record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "kind": "symbol",
+              "name": "requeued_same_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

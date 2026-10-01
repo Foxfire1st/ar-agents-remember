@@ -1,0 +1,826 @@
+{
+  "path": "mcp/src/agents_remember/application/review_external_git_movement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what is measured, what is not claimed, and that no ancestry check identifies a pick or a revert.**\n\nAnchor: \"It measures; it decides nothing.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:a0efea72e721b613fdbfe86f77e66022482718c802ce50125c7aae5ac66b78fa",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The support matrix itself — six rows, one per shape, with `rebase` the only named transition an ancestry check can mark `stale`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:85312f9e8779d274e34d7f1ba9c08639079d754b4921d7a1dd099a562312e697",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_TRANSITION_SUPPORT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The by-name lookup derived from the matrix, so a row added above is reachable below with no second list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:940b44b66c6c096bb7e403ad06b56a4c509d1e03d023528cb55cefa0150b8d50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUPPORT_BY_TRANSITION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The named lookup that refuses an unknown transition instead of answering with a default.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:68e7f18dd2fdb8866bfdd3d31e27fd26cf3a1cd63bc019218c1d1a469729bbb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "supported_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The unsupported list derived from the matrix, which is what a report repeats where the reader is.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:69f6cb34917e9eb89897e982a79f3d7f631b09b4237d96dc7f5c4b5c4e731cde",
+            "locator": {
+              "kind": "symbol",
+              "name": "unsupported_transitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The Markdown renderer the documentation is asserted against, so the document is generated rather than transcribed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:1696c618c5b1ee0bf0db46f41c5d00e686f2f979ebdc98f3639456980744a991",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_git_transition_support"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "One channel's measurement, and the shape measured for it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:3f3d75f4c7f215322b0e8a3ced3aff10cb9bb0fd819ca011e0b77f5ec61025fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Finding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A branch tip read from a repository, or the reason there is none to read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:b298000959952239f48fa77ffb412132e8fb3e353488ba9aa551a0da3bed30f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BranchTip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The review read's entry point, whose `None` answers are all facts rather than failures, and whose unreadable generation is `unavailable` with the selection's own detail.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:ac10d2ef059faf48c7ca8add41eb3c75a7bb99dda49961ae448d5ccab2f4bfee",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_git_movement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The absence value: the cause in the words of the arm that established it, so the read and the published block share one branch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:8df704756a43e54c7fccbc15505f87e15e874687f40b8a1dd1b2d0eb9b11eb14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BoundaryAbsence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The declaration half of the measurement, where a non-leaf contract and a contract with no work branch are two different causes with two different sentences.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:fc27da5910fa0f34c8e2f4175ab05cf5e48da6e59606e89675346fe0bcc174f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The owners this module composes, and the three guarded Git reads it borrows.\n\nAnchor: `is_ancestor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:84da4cb3b9635722a479f21ecb4e2f5dc22264857a41d5182ada182006fe2303",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The store half of the measurement, where an unusable generation is `unavailable` and a leaf that published nothing carries the store's own detail.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:7ef6eedcbed1969f1fbc0970062861a327d651d1fae77e4253361f9f1de3981e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The contract-only half the closeout and integration owners call, so one implementation serves every caller.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:c5b7c8d853d005121f09cc5bd9501eed0daf8287f1a0514cbb1711d789b7398e",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_git_movement_for_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The closeout/integration statement that never refuses: a failed result is returned untouched and every absence becomes a typed block.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:1fdabb1e3579a09722ed88a73181ae93ab78c79abd88b847dec745426488a258",
+            "locator": {
+              "kind": "symbol",
+              "name": "external_git_movement_result_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The typed absence that repeats the matrix's unsupported transitions whether or not the boundary measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:74120cde5631dfc9547be309a8bc107ffff02f5d431e39260e1bfd58e6657ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absence_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The state an unusable generation earns, with no generation identity claimed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:ee61ee249c1724e2499f759829d77556dcb0b7ea9137abdfaf91725974878909",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unavailable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The state composition — `stale` over `current` over `not-measured`, with `current` requiring every channel compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:06d454b878e61c7be24123dd1207d3f18c9d20bf2d857955ecafea557a52bc24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The three declared channels turned into findings, in fixed order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:454bb196849743e5f7c3d5e3ac1837b61aeb5c8473187b72ee560211c6075179",
+            "locator": {
+              "kind": "symbol",
+              "name": "_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The one ancestry decision: `current` / `advanced` / `replaced` / `unavailable`, where `advanced` is a measurement of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:e7960476dfa1db539e97521f2d192d422959b549d80eabfe72efe0ad93ce00b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ancestry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The failure state an unreadable channel or repository earns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:2637b19c6ea979eeb75c830c77daef9e29270fb8511d6138ac2cac455f76f19d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The reads that can fail, each keeping its failure as a state rather than raising.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:26d1a48023b36fee8b8f923e493a238f75594a56f70a4cd0dfd760cff58e9e00",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object_readable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The published surface: the matrix, its row type, the three entry points, the renderer and the lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:e53798891cd16c72b4c9c08a8b97f872d69224ab67683c0e15c37632c9768e13",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The ancestry read that answers whether a recorded identity is still in a branch's history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:3b4cee1a794e2fa8de79d3805bea7db0bf26bdc1b57e55d0242d25a3ecaf4b46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_related"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The shape measured for one finding, never the command guessed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:fe8b9b5720e3292aa596b33ab9a65dc3bff88eaf5b4b5abac00b015f988fcb41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The replaced identity spelled `channel:identity` for the value no longer in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:2f9acf7522b87221fa6788a2ab6eeb2d468c1212ffba8fb2943df4a0637ca81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_moved_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The reason an absence carries, naming each unreadable channel with its own detail.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:6649266c87bf5e373abe2e08de8e32cf03972ef3fcfc8c4a37c9ca617996ab1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**One sentence per state, with no state borrowing another's clause.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:ac8bc391bea37eb903cd6f100a9387f767c48d23bf96d78d3647e1e16374dec8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The clause stating what an absence did compare, false only when nothing was compared.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:84e7d34ef8b8f40d028443b35404dbb20f45ad8e1b0f02780b9059224db1c812",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compared_clause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The agreement sentence, whose `unchanged` clause never describes an advance.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:4013bb5762eac6e3adc9b418810b18e86e2fb1cdd049c027a202be05a5defe78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agreement_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The movement sentence: the replaced channels first, then the channels that still stood.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:ba087855253067a869fda666080918e456a1d6e383d85cfade6773fc9f22ab6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_movement_statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The replacement spelled from the values the check read rather than from a diagnosis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:da43fc46a91a6fc2bcfa97f68f65fedb27853d6a12e0bd3437af6eade8658a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replacement_clause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The value this module publishes, its four-state union and the validator that refuses every false shape.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:344eb3143c693eee314cb20205e3d9f558eaefd7e0cf79cfd57ba03c071ffc43",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitMovement"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_external_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four states this module may report, declared once as the read surface's own vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:bef825256bffd69e74723b1126db3507ce2e551e112f4b2edc0298605147ef3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MovementState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The transition vocabulary, including `unchanged` as the measured absence of a transition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4be1bf3bf9b2ecdacf433ad84e2a6113f96873a",
+            "content": "sha256:658ffdf72709b07c7b03af8fb4a8e4c5d5b644fa81ef680bbc4a9a79d52f0a31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExternalGitTransition"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_external_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The review read that calls this owner and carries the value on the payload.**\n\nAnchor: `external_git_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:e3471e65b0ce0e4ce628d9197af00f1677f97c464839ede36eef006736e5a0ac",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The task-context review boundary, which takes the same measurement and refuses nothing on it.\n\nAnchor: `external_git_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "**The fold that lets an external `stale` outrank a carried comparison identity and a recorded managed-sync rebinding.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:bf2bd1cae7b975a95372f015ea6488d5bc4f4cb2c6f313d880dbce5ff0f7c5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness_with_external_movement"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The closeout preview, closeout apply and integration call sites that attach the statement.**\n\nAnchor: `external_git_movement_result_block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:0a52f8de458d97938fe8ceb89dc2907f338ac376e4b04b4ee44d12b7a2dccd9b",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The integration result block that carries the same statement.\n\nAnchor: `external_git_movement_result_block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:195ec06d6569979edb49e33788c3e1aa651d3d41f3594fbb6a614b9256de7eeb",
+            "locator": {
+              "end": 1016,
+              "kind": "line_range",
+              "start": 1012
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "**The documented matrix, asserted to be the rendered production table rather than a transcription.**\n\nAnchor: \"Raw Git Identity Boundary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a17a1f48a3af0ca0ff337739f01606e2ab358a",
+            "content": "sha256:eb3d5c24628816fd9af997ab2acd9f39217939c07784aafe5f67a2eb55d67c7d",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "**The cases that drive real Git through the shipped entry points and pin the states apart.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:511c67cdf1960356ee40101957853ce7a25113effdb75d1a7ed620cff71d2c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "RawGitIdentityBoundaryTests"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "The case that pins the documented matrix and the published matrix as one table, with unknown names refusing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:776877aff563b7366574566772689a159151c0cf7491c5b7de9060ca36d79434",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_documented_matrix_and_the_published_matrix_are_one_table"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "49": {
+      "note": "The case that pins the validator's five false shapes against the real published value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:5090829855d4686acf164e912ab52a3653cb40a76a275dc884463f7f981eaae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_movement_validator_refuses_each_false_shape"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The recovery a generation that cannot be read names, kept apart from the successor generation a movement names.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:19247f37515bb5400b6ece03fb909c4f96a98d303adaf9fdaaba8465ede3f13f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GENERATION_UNREADABLE_RECOVERY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The case that pins the control state as the value every untouched leaf publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10912c6c4aabf944329b780793458ea42566620",
+            "content": "sha256:6d0e55103a4a95e1304f20666fd10eb2f96065d95d15b9a9f05f70b375a3e2ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_unchanged_value_is_the_one_the_control_state_publishes"
+            },
+            "path": "mcp/tests/test_review_external_git_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The recovery a boundary names when nothing could be compared at all.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:856084220266170df4a1e417c961182c0c67d54d8bc726bfcd5e8437c0c38c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNCOMPARED_RECOVERY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The fold that derives every recovery sentence from the matrix rows rather than restating a verdict.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:25bda17792b777618dce57b57039cf4f5b2ad0ba5d35433c49cb9c34bd145f5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recovery_actions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The three declared channels, each named by the thing that moved rather than by the command that moved it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:1b27508cfe2e3cf712feba0470ca9c25dfdff623a2e3fe8bca25ec33697d423d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_CHANNEL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One matrix row: the transition, its measured Git signature, the state it renders in, whether it is reconciled, and the step a person takes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43308beac4e5f22c7ccb088cb8f22015b2117974",
+            "content": "sha256:87e4b07752820aab841bb4c715068cd2fd6fc08bed20e27e74c27976abd6354f",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitTransitionSupport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

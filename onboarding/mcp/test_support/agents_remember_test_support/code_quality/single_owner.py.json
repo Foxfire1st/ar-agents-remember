@@ -1,0 +1,679 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/single_owner.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Offender` (lines 75-84) — One place the primitive is reached outside its owner..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:c109bf87ee4e253bdee582e090d7640bade50482e3e2967f371ce16ba12101dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "Offender"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:e9d98fc6c0a9c877f5366aa16b003376f5598cdca369c57802cbe733a3fe57cd",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `_task_writer_call` (lines 199-213).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:e20ba9b84396c7d45fe5afd39520458251b9766e629e667c103924f4ad34a805",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_writer_call"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:e01c2c98adc5aace58906c8e22a17344d18aa58ed7ce07cf6c7b55139741b0a8",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Defines the function `module_task_document_writer_sites` (lines 216-233) — Every canonical task-document writer definition/call in one production module..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:0ccaaf52c17c85fe59fe7d8ee61c3cab4e6fd4e784c08c0e5cc974cfeb9ebee4",
+            "locator": {
+              "kind": "symbol",
+              "name": "module_task_document_writer_sites"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:c20cfc48507c2852e458a233ee8b83b8c14a34b98a292e74e5232e3db1da1d27",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 216
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Defines the function `_token` (lines 236-242) — The string this expression is statically known to be, or ``None``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:44655f27ec118878929bc98b422cc5cfee8aa727f8649f165563e8ea57c2e0e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_token"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:8995e303e9074021769cf120c52be18003864843c0af85205e5325f5ff7a66bf",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Defines the function `_argv_head` (lines 245-249) — The program word of an argv display, or ``None`` when this is not one..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:c577430eb1b61d5ee0659f8f6d6695c5ed3b61d58936442c4e089b8776e72ca9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_argv_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Defines the function `_spawn_kind` (lines 252-265) — ``\"program\"``, ``\"shell\"``, ``\"argv\"`` -- how this spawn names what it runs..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:bea1379bbbad17bf66244008647e45bc901cc4197e794470db68bade5841359b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_spawn_kind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:b81b368dd8211815180a50f82d423bfe9bcf80bccb3c382924d4d12ee2f1602e",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Defines the function `_program_token` (lines 268-283) — What this spawn will execute, when that can be read off the syntax tree..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:49e84096d5e09651960f67c120cde32bb3f20e6f7b8e76281402ead6bec28cb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_program_token"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:7886ead0a8da1449d0effe28cd94f1b1108a2ecf734ebc2ec0b3140bb4c7e997",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Defines the function `_git_spawn_offenders` (lines 286-306) — Spawns of git, plus the argv nodes those spawns already account for..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:eea9bb3136bd9b774e7e5fb85d804fe28a035228672eb0e42c04cf069092c69f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_spawn_offenders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:0356027277647cfd9cf3500bf29784c56f103acbb6b069815d62a5dc0103ea87",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 286
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Defines the function `_git_argv_offenders` (lines 309-322) — Git argv under construction, wherever it is later spawned..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:ee34cd99dd911d721ae118128170d434020d9b13e91d8e5aec0d5d5fedc25e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git_argv_offenders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:24268c7c3ab441294e908e65d86319947cc7499ced168e4538274e0d6b75ad7b",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Defines the function `module_git_offenders` (lines 325-330) — Every git-program reference in one parsed module, ordered by line..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:c1648e963cc38ae9e151646350279ca5439e3eed183b0ff3e7e9eb8006af9af7",
+            "locator": {
+              "kind": "symbol",
+              "name": "module_git_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Defines the function `module_replace_offenders` (lines 333-342) — Every reach for the replace syscall in one parsed module, ordered by line..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:09dc9c0e6d9cf6b9eb773a3b59b74ed70082f2dfc8fb7e5567de33744386ea6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "module_replace_offenders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:2587c528326c17fb51c659036f762ae565b372cd7bb58e9129acb9b1693d214b",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `package_modules` (lines 91-93) — Every module the rules apply to, in a stable order..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:3db0d81fc8b0d6aa2ce28a22e061f659f00d971e5c14d2b7647a6212ba675bb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "package_modules"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Defines the function `_replace_offender` (lines 345-362).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:d54696450cf42a34825516d233436da1d8f46e31271b936369bbaf997ce59531",
+            "locator": {
+              "kind": "symbol",
+              "name": "_replace_offender"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:6ebac27f97982b1ac94e14c2f8ae541ff1a19e61eef87e35169898cd575c0211",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Defines the function `_sweep` (lines 365-374) — Apply one per-module rule to every module except the primitive's owner..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:d31571305214d75314f1339d44965efdff49a4609fc16c3d3e95a6da6fb99ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweep"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:7b8cd0a8bc8f8f448a6252a8506f9cb79633fcfb1c2c1e1cfac76bad67c65f65",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Defines the function `git_program_offenders` (lines 377-379) — Every place outside :data:`GIT_RUNNER_OWNER` that names the git program..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:d2f2ce39bd0a69fa9c005339ba2423b9333f4bcdb7fb50d42de086daa38acb31",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_program_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Defines the function `os_replace_offenders` (lines 382-384) — Every place outside :data:`ATOMIC_WRITE_OWNER` that reaches the replace syscall..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:396f4c4e21bfd5932ffcaa5b830373915bbc569b74c817d0ec83b3c09fbd7004",
+            "locator": {
+              "kind": "symbol",
+              "name": "os_replace_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Defines the function `task_document_writer_sites` (lines 387-394) — The executable census of production task-document publication authorities..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:9e5cf479bb874c4b0ff38ff1fbac39a4a48810f4541b252d7cd32707c7c0febb",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_document_writer_sites"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:0aa28b1b67f680e38f6929dce165585fa144e0dc3a9b1ddbd6067ed023abfdcb",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Defines the function `task_document_writer_offenders` (lines 397-403) — Task-document writer sites outside the reviewed authority set..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:9367524f034b0782526c01d9a6647a69a111b8076b33efe9f40a7c4282dc7f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_document_writer_offenders"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:6e44ecbac3ed393deff535fd1d6c35d6446b7a732193b958e27edcd775c5af6a",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Defines the function `report` (lines 406-415) — The whole offender list with the fix named -- never just the first failure..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:b09730e32f2357f6543ce9f67a5dac88c679c3c0791549b93e640e7c1d606bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "report"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:45ac0edffd26d63da2b0083b147e1342b03be659ff6aec34328fc93139427db5",
+            "locator": {
+              "end": 415,
+              "kind": "line_range",
+              "start": 406
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The task-document writer allowlist names the extracted publication owner and no longer names organizational completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:92d37e2b193db41a7182745fcea6a0f41943d7264ec07cb516453c69824be448",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_DOCUMENT_WRITER_AUTHORITIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `names_git` (lines 96-102) — Whether a program token names the git binary..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:bd9adeff9dea4928b4e8ed193755f8162d2e49b9ed07244211767e78e5b7cedd",
+            "locator": {
+              "kind": "symbol",
+              "name": "names_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:0dac0623ed13a5685cf36405d769f6e536b40c09b175e5412aca29c0033abe15",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `string_constants` (lines 105-128) — Names bound to a string literal, so ``BINARY = \"git\"`` cannot launder the program word..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:3c8c02313b9332dfa4eb6fe7070f2b27fb600ca79ff4f6191aee6042ed2eee40",
+            "locator": {
+              "kind": "symbol",
+              "name": "string_constants"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:5497f69d94e154f57153b185a7bd08a6a8cc344a5181c0c66043011850be79e4",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `imported_names` (lines 131-142) — Bare names this module bound via ``from <module_name> import <wanted>``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:279830ccfb42ddc956eb2733307ced223700a58549150c7a74a090c28f9f2c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "imported_names"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:3b76299743bcf2c553fb067e608af07563c309288370e0e312881da66d1a6cd9",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_module_package` (lines 145-148) — The dotted package containing a module path relative to ``agents_remember``..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:aba088d04be1b85a2a1c0072204e266aeaca92c5c1f93f30777932f8606d261f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_module_package"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_import_from_origin` (lines 151-160) — Resolve one absolute or relative ``from`` import to its dotted module..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:5791e49b6d7c6fae32d78f45ddb3d7a5397dade5f3417148ee062b8a93667752",
+            "locator": {
+              "kind": "symbol",
+              "name": "_import_from_origin"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:ea20bf81cad745ae347288d6a04a1eeea8d4fc1337490fc4ed387f652714844a",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `_task_writer_bindings` (lines 163-187) — Return bare writer aliases and module aliases bound by imports..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:71e32015a47d317a9d394c5c55781eec08e6e1501cfa90eaf6dbd02b2e4ca16b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_writer_bindings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:cdcd92bc2894971ee4d0255b5f38c128975d364d12de70ed576696dee5033a86",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `_dotted_name` (lines 190-196).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:be93b83d029505fa57c2b653034d09f286d3b353806cd822440c3807b080a463",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dotted_name"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:2b48a650331a616088cce40ce0b5a6dea91b405fe33993596a9808f147ac7748",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

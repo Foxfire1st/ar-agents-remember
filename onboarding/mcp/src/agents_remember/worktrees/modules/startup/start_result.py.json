@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/start_result.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real starts distinguish terminal start from background provider setup while preserving task-addressed guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "content": "sha256:3f162e70f7e2adfcae930a63faffa656858932e15670692de18244c55ebffe3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "started_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "content": "sha256:83bec015347b2cc5aca71031090542578f137ee288c7d2d05de61740e7da1ab7",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preview builds the explicit apply packet and common task identity without mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "content": "sha256:69c936038c913fc60962e81e12bf8d893df6758bacd3a22f2493ccabf85fcd24",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_preview_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6b31b9bf73de7f399a59d1217cb197da7256ea0",
+            "content": "sha256:c13ad15a30eb4f48ec0dcad6a26221d22686865d5d77690222afc6d9510d8515",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_result_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

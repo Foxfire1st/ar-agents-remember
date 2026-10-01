@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_writer/report.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_writer/report.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:13:03+02:00 |
-| lastVerifiedCommitHash | `3eb034a6ab0493a51da5dcd6d013aa6f27f39496`|
-| lastVerifiedCommitDate | 2026-09-30T03:31:21+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -57,7 +47,9 @@ report-only findings; a refused one lists every problem and refusing violation. 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -66,37 +58,24 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The report shapes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The outcome of one evidence-bearing entry. | `EvidenceOutcome` | mcp/src/agents_remember/application/knowledge_writer/report.py:59-66 |
-| The report and its refused flag. | `WriteReport` | mcp/src/agents_remember/application/knowledge_writer/report.py:85-164 |
-| The JSON form. | `to_document` | mcp/src/agents_remember/application/knowledge_writer/report.py:109-129 |
-| The text form. | `render` | mcp/src/agents_remember/application/knowledge_writer/report.py:131-164 |
-| The carried entries in the report, JSON and text. | `carried`; "blob re-recorded at C (content unchanged)" | mcp/src/agents_remember/application/knowledge_writer/report.py:102-102; mcp/src/agents_remember/application/knowledge_writer/report.py:147-147 |
-| One requirement endpoint and the owner's answer; unresolved is reported, never refused. | `EndpointOutcome` | mcp/src/agents_remember/application/knowledge_writer/report.py:69-83 |
-| The report's requirement endpoints, and their JSON key. | `requirements`; `requirementEndpoints` | mcp/src/agents_remember/application/knowledge_writer/report.py:103-103; mcp/src/agents_remember/application/knowledge_writer/report.py:128-128 |
-| The text line per endpoint comes from a helper, so `render` does not grow (review F3). | `_endpoint_line` | mcp/src/agents_remember/application/knowledge_writer/report.py:162-162; mcp/src/agents_remember/application/knowledge_writer/report.py:221-226 |
+- The outcome of one evidence-bearing entry. [1]
+- The report and its refused flag. [2]
+- The JSON form. [3]
+- The text form. [4]
+- The carried entries in the report, JSON and text. [5]
+- One requirement endpoint and the owner's answer; unresolved is reported, never refused. [6]
+- The report's requirement endpoints, and their JSON key. [7]
+- The text line per endpoint comes from a helper, so `render` does not grow (review F3). [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **body updated for MIK-R13.** Purpose and Logic record `EndpointOutcome`, `WriteReport.requirements` (JSON `requirementEndpoints`) and the text lines from `_endpoint_line` (review F3, ruling 02:05:07: `render` stays at its base complexity). Three rows were added. The `WriteReport`, `to_document`, `render` and `carried` rows were re-pointed by the exact base-to-staged line shift (the new dataclass moved them +16/+18); no claim was reworded. No verification stamp was advanced.
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** Logic gains the `carried` field (the IDs `carry.carry_entries` re-recorded at C), with its JSON and text forms, and a row cites it.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

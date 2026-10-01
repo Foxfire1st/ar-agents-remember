@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/baseline.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The 10k baseline suite.\n\nAnchor: `describe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c0b923b44493b4e3065b7c846c206cf99d4a4b",
+            "content": "sha256:54f88e2ab59b49faa1a2d094f9f05752c95e91f4e93616082956a684cd131d41",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

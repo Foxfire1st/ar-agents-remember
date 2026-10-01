@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/seed.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provider-level CGC setup calls this module before optional refresh fallback.\n\nAnchor: \"def prepare_enabled_provider(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fd9365841b45fdc84d43cc0460e9e1079bd2c3c",
+            "content": "sha256:f0294b92fea8593c48cde2600289ba737df262a0e097edde1a0c64f4818dfe97",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bundle path rewriting is delegated to the CGC bundle module.\n\nAnchor: \"def rewrite_cgc_bundle_paths(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3dd160bb85e5cb5025b05175a14efdb77c6c1ba",
+            "content": "sha256:4790a7114c3a23a167417d04e18be883d1bab7bf908758813ce26e12d63c40fe",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/bundle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The GrepAI seed applies the same benchmark-scope hermetic guard.\n\nAnchor: \"benchmark grepai-memory is hermetic; seeding/cloning is disabled\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:66407d70221d346e2c5e516203e5b8ce8bb952d65446cebb23d9f68322b1f29c",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree setup constructs CGC seed options through the provider setup request.\n\nAnchor: \"cgc_seed=CgcSeedOptions(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:c5fd39865082e125d982cee69d93570688f4efabceed74fc42eeb51d0ad67f1b",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The post-watcher catch-up stage consuming the stashed divergence.\n\nAnchor: \"def _seed_catchup_results(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:e56e0300c0d2351067c0d2dc535a512750a47626fb193b114df2c04643462823",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

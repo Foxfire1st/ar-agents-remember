@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/setup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provider setup facade dispatches CGC install and preparation through this module.\n\nAnchor: \"def install_enabled_providers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:d53de2b2603d2c637f2926d23fb6a5b72509555619c74760a6067c3863c8e6ec",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC seed orchestration lives in the seed module.\n\nAnchor: \"def cgc_seed_bundle\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:24c652e51dd9c06f1db8295a739ca1bf463ebf8a496d90caeea98dbd1a89a683",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "CGC lifecycle install and refresh commands are dispatched through the lifecycle facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a90c2a0fe99768bd5cbd6a910e113452d8d8b6a8",
+            "content": "sha256:72a94a1221e0cb6c3bf2b407c034d72a476b085abfc5e5cece6394892ab08ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "__getattr__"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

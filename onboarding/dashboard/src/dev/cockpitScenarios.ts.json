@@ -1,0 +1,188 @@
+{
+  "path": "dashboard/src/dev/cockpitScenarios.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The announcer and `HarnessInfo` imports plus the `/api/harnesses` branch returning three-field rows pinned by `satisfies HarnessInfo[]`.\n\nAnchor: \"import { announcerStore } from '../data/announcer';\"; \"import type { HarnessInfo } from '../data/harnessCatalog';\"; `satisfies HarnessInfo[]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:9f30a7c337b33b1486158485025d47f2329b0ae1e1fcddf80b05e8d9806170e8",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae9008440a135e879842cd5affdde728677c2a90",
+            "content": "sha256:c4964415c2267fa9be71d537b7313e1b48185ffa34fbe2b0478c08ae4e2ec387",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 433
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`HarnessInfo` declared inline (`id`, `name`, `detected`) in a module carrying no mirror marker, which is why nothing compared the old fixture against it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87a333fcbc7605dad19267d7e48d7a354c2ee22",
+            "content": "sha256:382700cf19eb12ff3bc2d9c824123434a38f606118f4c2991885d37aa479e85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "HarnessInfo"
+            },
+            "path": "dashboard/src/data/harnessCatalog.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The server's `DetectedHarness` / `DetectedHarnessesResponse` for `GET /api/harnesses`: exactly three fields on a `WireResponse`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff876138fefb3521200868023030d0acb1e73b18",
+            "content": "sha256:29d177b2e2a02eb40a25bc6bcac134c02f344bbadd628a5a6bc430e4260b5124",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetectedHarness"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The guard's own note that its wire vocabulary is discovered from a house marker, that discovery is fail-closed in one direction only, and the five unmarked modules still in the blind spot.\n\nAnchor: \"A NEW UNMARKED MIRROR MODULE IS INVISIBLE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
+            "content": "sha256:ee7e3b65f5f6b9cf2e116648a1440e030f7ef3a34891bef4106500644cc950d4",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `describe` asserting the injector answers only what the daemon could: exact key sets for the catalog rows and for the withdrawal result.\n\nAnchor: \"the scenario server answers only what the daemon could answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce9e3543aed2bcdf8645a3e5ef61362adf36402",
+            "content": "sha256:e477915b236acceff4cf500f67b614b4663b719c887a8a24a742de2ebe894887",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Authority wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acbdd6a1b4a9d80d80e464a4080e79ef448d15b3",
+            "content": "sha256:60297071b3cbd010b9f8b9cf1ffa8f183e2438c8cb61a7db05355072ba98c1a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitScenarioHarness"
+            },
+            "path": "dashboard/src/dev/CockpitScenarioHarness.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Scenario registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:dbd4e595ed8877c525078fde8c58d9cb61b85a3707902aa8424c4dea29ce4f35",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCENARIOS"
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
+            "content": "sha256:a1ecce7e73c16f7f85ed27ac16982cfc0ae1613699281671f8f9d70d53e261cc",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cross-generation regressions.\n\nAnchor: \"cockpit scenario authority boundary\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ce9e3543aed2bcdf8645a3e5ef61362adf36402",
+            "content": "sha256:feac5aa22e02e7774a1db1ba2b53488f194d7e8b14a5d9908602c3186ccdf384",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/dev/cockpitScenarios.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The probe types and the `Window` augmentation this file installs into, shared with the Playwright driver tsconfig project.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e7f12a004a9c74928b2e045b77929bc74a1f1e6",
+            "content": "sha256:93897f1c036a1acb694c97184c2d60fe690e1adde919cfb75cb2005bccec7691",
+            "locator": {
+              "kind": "symbol",
+              "name": "Window"
+            },
+            "path": "dashboard/src/dev/benchProbes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

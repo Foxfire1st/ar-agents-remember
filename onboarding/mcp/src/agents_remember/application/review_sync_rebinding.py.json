@@ -1,0 +1,709 @@
+{
+  "path": "mcp/src/agents_remember/application/review_sync_rebinding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the gap it closes, the owners it reuses, and why it can never refuse a sync.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:b41bfa1f1b7af780e9b9538fcad820ec9276d07d0c7bcede8de267fc1c787e6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_review_sync_rebinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:d9dc4f93f271959a6e9a5c9731936c2a56686f880a2ca6d09262fdbae9fa4acb",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The read-back's three states, with the predicate a consumer branches on.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:4ae9140d50511795322cb5b7e037f5c0ea983fed6aac81cbdacf03702f95830f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebindingRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The one durable destination a generation's rebinding is published to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:c31f4b2ecf2066004b14e236e0427c6d34d9f2d4bb51703f318b080e4a1530bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_file_name"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**Measuring one finished sync and publishing it, and the two cases that publish nothing at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:b41bfa1f1b7af780e9b9538fcad820ec9276d07d0c7bcede8de267fc1c787e6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_review_sync_rebinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The never-raising entry point the sync tool calls, and the states it writes instead of raising.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:348f06ccf3563045b1b90e04911bb8a4f68d95cf72976dc4cb13b27595f0838b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_result_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**Reading one generation back: `recorded`, `not-recorded` naming the location, `unreadable` with the reason.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:9bb8f04741895dfb5a019a7e3b8ccf13cf7a6657ed555c4da60b68d2a1b7cee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_sync_rebinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The check against the store that a forged-but-consistent record cannot pass.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:fbe7001f206da3485404a0c930c675517fce07f0d65a639874c39667d90a368f",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_names_the_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The leaf-wide reader, and the code's own statement that no mounted tool calls it yet.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:acf206924ec20ec1edafea2c3e8d75b8df662561fbd50571e0b7140d8f26ac65",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_sync_rebindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The named reclamation owner: a derived measurement whose removal costs no retained input.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:fc5f38ba9f0d3a1acb3990356759c86bce2df37085dfc9a42bb4fe01e81bebf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_review_sync_rebindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The carried-nothing vocabulary, one entry per observed state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:aa2af9e2aabc3fad6c77e9b0427c2c4d0d81d1d9f0bd7202ecd09a142bf0b0eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nothing_to_bind_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The generation vocabulary in this block's own words, with the selection owner's answer carried beside it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:1c503df4008453569d9e2f0e6ac4ada0af1fbc2ee2e3e2c4cfddee9a53315d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_no_generation_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the record re-export, the two dataclasses, the readers and the block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:bc69ffa277b285b38148c7676a891389bf023536c1996b7a21d8f0997fe66dfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Assembly that selects nothing and re-derives no reviewed value, asking the vocabulary for the one verdict rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:df2af24dabeeda9ccdcc5b3b4fd31c00a13aa01252911c31883271b5745c3c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assemble"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The shipped capture owner's refusal converted into a state rather than an exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:29371591b6ebf403aac6c3358b9ea668ed517895490c3bd3ad57f5005854cdbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The resolved knowledge side read through the route a later planner selects knowledge with.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:25dae1369d097b4dc3614e110999fc64a11def80561695fc1e0b230a9f33c301",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolved_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The canonical `sha256:<hex>` reference of one published artifact's bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:4a7c2a4af7eae4725a08ae2355320eecab2e5c89a96e144002edf3fe803cd7d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The one verdict rule the writer and the record's validator share.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:158617bfc46805997cb88e9307da60d441550134fc68959c282deadc1e2266ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_sync_verdict"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The sealed record itself: the reviewed pair, the resolved pair, both channel matches and the state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:edcf10d3b6e45888bca6fffea81c111702471cd62ef209af70cdad28d15b38ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebinding"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The generation store's own order and the manifest this module reads and never rewrites.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The selection rule this record names, owned by the final-output receipt module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db8e6d4458f6338c1acae8e981d08b86d2b1138",
+            "content": "sha256:79c27df0371f049e45c9d015082ecf8b53c806d7d72559f7fa9f73b28a7b04cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_review_generation"
+            },
+            "path": "mcp/src/agents_remember/application/review_final_output_receipt.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The freeze route that publishes the successor this record's remedy names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The durable-evidence pair every rebinding is published and read back through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_durable_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_back_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one durable file-name prefix, one file per leaf and judged generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:1f64ea4d8bdae2397c176a965614efb2ac534341dc2b6c4cc05fcdbe217d42ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_REBINDINGS_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The shipped capture owner whose add-all tree is the resolved source side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_future_code_candidate"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The publication route whose declared location the resolved knowledge side is read at.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
+            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_publication_location"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The production call site: the sync tool's result, after its Git work and contract write.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
+            "content": "sha256:cabb77aa88aead381f04b713ca52f9f3ce5e8bf7bdf00d7e0d0d79100b76bd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The reopen owner's fifth channel, which makes the per-generation reader a production consumer.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:859453d50d61955b6cb7092347b46ca90c2744c0311219b08d34fd34fed8959e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonReopen"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
+            "content": "sha256:498c675da22a57e302b4153be20d0a0b04bb8db26268f502175eaf0cdc11d75d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measured_rebinding"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The live read that renders the measurement, and the movement that outranks a carried identity.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The cases that drive the real production sync tool: the movement measurement, the clean union with parked WIP returned, the forged verdict, every carried-nothing state, the locator clause, and the reader after its own reclamation.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
+            "content": "sha256:8935e06ba98a1216af90578e795e78ab12a5548ffd834b9e6089cae157474f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagedSyncReviewRebindingTests"
+            },
+            "path": "mcp/tests/test_review_sync_rebinding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The live code/memory worktree pair the managed-sync cases are built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
+            "content": "sha256:1cc99cb6f7f3e90741ff527ffc9474ddeea83b8e9c146dc7720788204c43f3f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncFixture"
+            },
+            "path": "mcp/tests/test_review_sync_rebinding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The read-side cases: the live read's rendering, the uncompared knowledge channel, the unusable record, the carrying-state-as-failure, and the validator refusals.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:144c970c2bd141cff70b0b5f86133e03fa7ee144fc40361e21372ec14b4ebcc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveReviewMovementTests"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:e3248f569d8e23ef4b0c5d864ab5709f08597ef30732355cd4b90cacac70f891",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_review_read_renders_what_the_sync_moved"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1f7a5c00243c61772ffbe8b1a4e92b8d0130ec0e",
+            "content": "sha256:407cb44f0690abe7b6049f7c2b76e1421651d1580bdeafb4c9228665773bdfb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_movement_validator_refuses_each_false_shape"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one action that produces a comparison current with the resolved pair, stated once.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:277c36e185e71d190de478e3a655f3528d8f77d3a4e93563e018b2da79537e16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SUPERSESSION_ACTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The three states in which the transaction carried the official line, and why `already-current` is not one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:aaea9b433ad7f6075eb18e20f7d04a3c99ad5738a5c4236baa4a39f0c664d767",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CARRYING_SYNC_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The five states that carried nothing, each with the store fact it observed.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:5b74811f5b27ce9bf72dea79f259162b5f8a1f6c2748142792c15f8e7e1889e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CARRIED_NOTHING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The three checked facts, including the success conjunct carried for a producer that does not exist yet.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:864b4a2b09b5bf0d4e5813682e9d748b63ca37c57cd1e5c4dadc4f3e1a24a28d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_pair_completed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The resolved source side as a state, with the named reason it could not be measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:2501e20d3657c13999f1d4bb401476afb2d589668d045fb94264d0967c430b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ResolvedCapture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One published rebinding: the durable artifact, the record, and the read-back that proves it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:c35b45c15560d3bd2f1f219933af464ea0c6e8d817808ca92c370616ec45dcc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebindingPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

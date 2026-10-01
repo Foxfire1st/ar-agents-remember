@@ -1,0 +1,879 @@
+{
+  "path": "dashboard/src/data/reviewFamily.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "da67c316868268721cc115696463cc89de324ae5",
+        "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewFamilyMemberSource"
+        }
+      },
+      "id": "RLZ-2E29HVGD",
+      "invariant": "INV-6W74GGC8",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "ReviewFamilyMemberSource in models/knowledge/review_family_source.py declares role and rationale as required non-empty strings; the same type in dashboard/src/data/reviewFamily.ts declares both as required.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da67c316868268721cc115696463cc89de324ae5",
+        "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewFamilyMemberSource"
+        }
+      },
+      "id": "RLZ-C0QPZAPT",
+      "invariant": "INV-ENTFR23T",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "ReviewFamilyMemberSource in dashboard/src/data/reviewFamily.ts is the client's mirror of the member source, declaring locator, resolved_ranges and locator_state without defaults.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The header's own statement of what this file mirrors, the packet revision it mirrors it for, and the rule that a field the server omits stays `undefined` rather than becoming a default.**\n\nAnchor: `review_family_context.py`; `ICR-R31@v1`; `undefined`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:03d2937e074d5a3591ec31c176c66e36816e62255701abde1685ca0161390435",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**One recorded membership: the exact member revision, the two member content states, and the shared-identity list.**\n\nAnchor: `content_not_on_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:873a01d3e0e4d56975809dd1839620ab4019664126808d172046c1f5958c0bb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMember"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:e4a75e2535dfb416d775102919eb18d266802e55c639f784767505c77bc2a017",
+            "locator": {
+              "kind": "symbol",
+              "name": "other_family_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The read owner's own counts, carried whole because the walk's arithmetic is the owner's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:06bb36b26116187b78b71f8e0d2e6e845d9c836b48284624f48b5ec1f8f130cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:8185b36b0ca62ab97e373daae650b4935efdaba8ee3d8833d511a2a3565e4715",
+            "locator": {
+              "kind": "symbol",
+              "name": "primary_items_remaining"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:79df3260ec1648c5e9079f2e9dc4ff22e7fe9df5cebd3235a58b0dcb484a6048",
+            "locator": {
+              "kind": "symbol",
+              "name": "unresolved_anchor_total"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**One roster page: the owner's own `enumeration_complete` flag, its two measures and the cursor that reaches the rest.**\n\nAnchor: `enumeration_complete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:f8d8f3952630dcc01ea566a0706f239e8db476d4a1e1974461fe0ccd92fd5950",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyRosterPage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:5b373faba8613a8910a85017c24c3d85f59bc2fee80703478625ab105341ee5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "continued_from"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:2171a48b88e93a92c61e90181ab67009af691b20ad9990ae75b4fa9b4fc7db6f",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**One side's family revision context, whose `recorded_revision_ids` is a larger population than the revisions a selection reached.**\n\nAnchor: `members_total`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:5e86d5681a4d23bd774b366d2ccc58296bdf047bacb2e0d9e3e7fc288641e457",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyRevisionContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:41d6f6813fd197a96df56740f773bea770a76d8d334a645c59bbfdafb95833d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The owner's revision-selection value, mirrored here and shared by the family context and the primary invariant statement pane; neither consumer selects a head.\n\nAnchor: \"shared by family context and the primary invariant\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:658b43aa2acb518c2cd2b0092a093a3728e723e00cb640b047f58e0678d7984c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRevisionSelectionState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:81d5d43c0095c296021ea6016d0ca77a8f68031b66edf816638b6c7a179331f2",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**One family entry: its selection, its two sides, the `candidates` present exactly for the two states that chose no revision, and on a tree comparison its optional change facts (MIK-L33).**\n\nAnchor: \"export interface ReviewFamilyContextEntry {\"; \"label_side?: ReviewFamilySideName;\"; \"candidates: ReviewFamilyGuarantee[];\"; \"change_kinds?: ReviewFamilyChanges;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:7a15161ad34b44cf9537712bead0d83aae10c46a64be68a21f30d0382de9184b",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The owner's own published collections a member context is referenced through, named by identity and joined on `join_key`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:659fae189be9b99f64781ca8b98a99b4eef3e3a6cced3c0723947d8d13be2a85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContextReferences"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:9c41d5d84f447a732f95111823a34c7ad9e1826557e1deda5575305591c4de75",
+            "locator": {
+              "kind": "symbol",
+              "name": "join_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The context itself: its four totals, its references and its stated limitations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:394328357c2e3b05e2777722c87ca0301cc3b5283ef8893394e67378c6a39910",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:029fa445974331dd07afa43fb09f03739ee21d614346ba0fe217dab5366c3767",
+            "locator": {
+              "kind": "symbol",
+              "name": "unique_member_revision_total"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:2986cf71b9e9c4e76607747481e8d72997b08285d93ebf52fa558b9040e9285b",
+            "locator": {
+              "kind": "symbol",
+              "name": "limitations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**`FAMILY_SIDES`: the two snapshots as a value, so a rendering cannot read one side twice.**\n\nAnchor: \"[\\\"before\\\", \\\"after\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:00cd1095607ac5c258bfc435bf8e4754ce449e52342362f0ee45eda700e63c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_SIDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The tree's own row shape: one member revision as one row, keyed by the revision rather than the association.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:410b16b33f740f0a98373200ad1c17cc14fdbcfcb235abfb4e4eb4f768f40b32",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyMemberRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:e4a75e2535dfb416d775102919eb18d266802e55c639f784767505c77bc2a017",
+            "locator": {
+              "kind": "symbol",
+              "name": "other_family_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The five context states, with `no_family_recorded` fixed as a *measured* zero.**\n\nAnchor: `no_family_recorded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:f6e3cb3bc84350956c7b0415f0b6856582e75e3c239967cc14772be6c8107f17",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyContextState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**`UNRESOLVED_SELECTION_STATES`: a lineage this context could not reduce to a head, which is a distinct answer from \"no members\".**\n\nAnchor: `ambiguous`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:124e0bb614c582cf7b7afe9edeaf289b4ac8f9209d38f1c7b46e607291a31969",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRESOLVED_SELECTION_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The five shapes of a guarantee comparison.**\n\nAnchor: `unrecorded`; `one_sided`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:aea857cf958c0cae6cfe05836e02434a01a8462f6cf8ab8586838decd815dfb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "GuaranteeComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The three \"did not change\" shapes kept apart on purpose: one revision, two revisions with identical text, and a one-sided record.**\n\nAnchor: `unchanged_revision`; `identical_text`; `one_sided`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:21ee11f9cd21a215498c27cc03ae9fd386598a4e70cdfc3267b30a4c57cc76bb",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**`guaranteeComparison`: the two recorded sides reduced to one shape, and the only place a surface may learn that a guarantee did not change.**\n\nAnchor: \"before === undefined\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:18c0a9cf06e74b35e01207a98fcbc8d5aaa77f7a50f4ad25d007e16a59e0eb15",
+            "locator": {
+              "kind": "symbol",
+              "name": "guaranteeComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The private second half: identities decide first, then the recorded text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:63e6387434715eb0c454946537ab63cbdebf7f0eab1aabe3b6a5ef6592d7f100",
+            "locator": {
+              "kind": "symbol",
+              "name": "twoRecordedGuarantees"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:7f7630b999c4cb6b2f74122afa51a459a1bc32457c28bdac944086e3656d3156",
+            "locator": {
+              "kind": "symbol",
+              "name": "joint_guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**`MemberComparison`'s four shapes, and the `not_on_page` / `one_sided` distinction that the caller must decide rather than the value.**\n\nAnchor: `not_on_page`; `missingRowNote`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:6f36d8a2f83541675c2bd0bab8e10069103e0e14b4744b33cf05c6eaf18f16bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**`memberComparison`: decided from each member's own carried `state`, never from the revision ids alone.**\n\nAnchor: \"before.state !== \\\"recorded\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:0636b12f71ae1af776e17acbe83718889b60b9416fd17890d23068376b3b251a",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The one-sided reducer: how many sides carried content is the question, and a row missing from a bounded page is the page's fact.\n\nAnchor: \"carried.length === 0\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:cfa4b68d9af84f957409ebb3a30e1c0e707d2893ce2cd52547f61bb5e49cf706",
+            "locator": {
+              "kind": "symbol",
+              "name": "oneSidedMember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The public entry that re-exports this module's names, so the surface imports one contract.**\n\nAnchor: `FAMILY_CONTEXT_JOIN_KEY`; `guaranteeComparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:4f3281cded776648dde6969e40ab692357e5c817e0ef33ea7c0b03b88a4b6d43",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The payload key whose absence is its own fact — a body that is not a measured zero and is never shown as `no_family_recorded`.\n\nAnchor: \"family_context?: ReviewFamilyContext\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 467
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two snapshot names, and the four side states none of which is an empty roster.\n\nAnchor: `not_resolved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:0b7f9f90b9a9018a27a732f90b896ea8655e23f347e992c9ba575e45e62dc525",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilySideName"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:d73dc218269763ea838fa46c2c62e94dbda78d02e3df93db99d2b634996fae4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilySideState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**The server module this file mirrors, and the packet revision that asked for the vocabulary.**\n\nAnchor: \"ICR-R31@v1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:1ee3eebbb106444b5f797873c47ef8b68bc793fa23bf9ac570f25944405ace1a",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate.\n\nAnchor: \"A guarantee is the family's own authored text\"; \"The five status dimensions stay separate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "304e83bc196b133c23159137f32b037102b0823d",
+            "content": "sha256:176cf6a051849f0667fa640aed3fd253edb9c995efd0e3ecccd8484cbd4232f4",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The tree uses shared side order and its own guarantee/roster helpers; central guarantee comparison stays separate from authoritative selected statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:ba89b949afbe2fdeb4eb5f25e3535fcd427f5a67f49bf0d6c8d8f8beca948166",
+            "locator": {
+              "kind": "symbol",
+              "name": "guaranteesOf"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberRows"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:bf97083e7c87d83ccc765b41a2b8fa3d9ec40849c659024c65a660a3cbce0ede",
+            "locator": {
+              "kind": "symbol",
+              "name": "GuaranteeComparisonBlock"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedStatement"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The change literals and one member occurrence's facts, primary, marks and three reason lists kept apart (MIK-L33).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:5095d2954a99b642181022b34fb876757ed62aa638244ea1c40f5bb727f63271",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:fb835babaedd00c6f2b406ad3dc6a36c24983716611d9bf7daebab0389749dd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeFact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:c53ef77bc55cacf30cc8ecee8d23f43773b5b9b7ba5e6a817d188ba4db40f31c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeMark"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:cfdc38c8a205eae017d16bee399919ce85eceac54ce1e7a1a109ee9cb1441c31",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMemberChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:5eb8af4751c24f22d44dc891c416fc57d5936e04377952ef5c33b98046ae46db",
+            "locator": {
+              "kind": "symbol",
+              "name": "membership_reasons"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "One family occurrence: its guarantee fact, its total when readable, its returned occurrences (MIK-L33).\n\nAnchor: `members_total`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:eda31ec526822901962a3a4e5ab79ebed7c3263c207c1b0b247c42e71eeef236",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyChanges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The entry's own four-state union.\n\nAnchor: `unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:9b3cbdfa394e55f59a3a2e60104ca70201cd9e1c1e6dc457843eefe8efe57f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyEntryState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The one join key, held as a value rather than prose because joining on a label or a path would be inventing the association.**\n\nAnchor: `invariant_revision_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:4f661310f5d8e294561067eda2b822f49a77dd4cf7c066867d3a2133d6363503",
+            "locator": {
+              "kind": "symbol",
+              "name": "FAMILY_CONTEXT_JOIN_KEY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The family revision's own authored guarantee, printed from the stored text rather than assembled from members.\n\nAnchor: `payload_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:be81241d1ce955c541d06ced6f74e02116b6ce0d2ca87a76000181e1fe1271a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyGuarantee"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:7f7630b999c4cb6b2f74122afa51a459a1bc32457c28bdac944086e3656d3156",
+            "locator": {
+              "kind": "symbol",
+              "name": "joint_guarantee"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One realization claim's source reference: the address and what the read resolved it to travel together or not at all; required stored role and rationale; the structured locator, this side's resolved ranges and the locator state.\n\nAnchor: `detail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:368a9962fc941889a9a3e78455d523832b0fbf9b232784a19b76d2a7bf6fa703",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFamilyMemberSource"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:9719ed50de4d717e1bbdb78b7bf6bc6011ef29756bfcd81f4b3eb1a1116b4655",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_source_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:e93b2f1cb764873121d8ad4918b5a15ec5ea40741845548c24452a088bbbe194",
+            "locator": {
+              "kind": "symbol",
+              "name": "locator_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The three locator declarations: the server's locator kinds, one resolved line range, and the four locator states with what each one carries.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:4d9b98fee7a48498685ef440e0a8a0d3c15f4c33c0d9991740c47dc0efc6aade",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocator"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:8db20c1bcf8d1d67505127d49ccd11ede97adcac871b07741e5cbde58e1341ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLineRange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:7579e6163c0ca902594f7dd86155a1e0ef920e4b508461056eed377578545cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceLocatorState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The server rule these states mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85dfa6c328bfb6459afa58f5525017f32e6a2ef6",
+            "content": "sha256:ff0dd523eefc2edc0438cc85e87c4a442204a47fedc4f3d71d168d95af8433cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_locator_state"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_family_source.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

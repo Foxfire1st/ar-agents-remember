@@ -1,0 +1,282 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.continued.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The envelope: the one review read the surface makes, its surface version, and its state.**\n\nAnchor: \"\\\"operation\\\":\\\"read_knowledge_review\\\"\"; \"\\\"surface_version\\\":\\\"knowledge-review-surface/1\\\"\"; \"\\\"state\\\":\\\"review\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eff072c6b9cb84f9968367a4ff3f44300bd0ef5",
+            "content": "sha256:9e13e39f3eb51f83c81f5eb878917c61c1aa6a68cf9bf895218333923c27e563",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The continuation cases preserve page-scoped missing content and owner-measured totals without inventing primary statement absence.\n\nAnchor: \"does not turn an uncarried roster operand into an absent statement\"; \"retains a bounded before-only membership without claiming that the invariant was removed\"; \"it(\\\"heads a bounded member context partial\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0b63b3507874e69c55a8317c24fc51ff3253e7b874e504c34968d0f0e4022d4f",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 600
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:bd6e9a3f1a277d8e943aa9ba7f22c10a2b508a0aa21286f1b2d719ec7ba55a3e",
+            "locator": {
+              "end": 630,
+              "kind": "line_range",
+              "start": 618
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:cb80bcf332c876026cf18876e67a53c9681c00e651192ef26b15ca7f28a48b78",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 504
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The captured continuation verifies that family selection, filter, layout, full-file preference and continuation controls survive two page reads.\n\nAnchor: \"keeps the reader's workspace state across two page requests through the centre's own control\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:7d8fdb788dae61fbbd93a50a81ccde3ade15c0188fce221a96cfdcd8d8af25a7",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 695
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The vocabulary the page-scoped row is read through: `content_not_on_page` as the state the distinction rests on, and `not_on_page` versus `one_sided` as two different facts.**\n\nAnchor: `content_not_on_page`; `not_on_page`; `one_sided`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:cfa4b68d9af84f957409ebb3a30e1c0e707d2893ce2cd52547f61bb5e49cf706",
+            "locator": {
+              "kind": "symbol",
+              "name": "oneSidedMember"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:10f66d1eddf12e1fc708ac687407075cc1466458e4fffa3f129b9d9f072f730a",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "da67c316868268721cc115696463cc89de324ae5",
+            "content": "sha256:3b546b90bed2272bf82fb4f1b50c3c9855a794ec6bbc4389c271c3fa56adb948",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The enclosure the bytes were recorded over, and the single normalization.**\n\nAnchor: \"\\\"leaf_id\\\":\\\"260921-icr-l1\\\"\"; \"review-source-endpoints-fixture\"; \"<repository_id>\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eff072c6b9cb84f9968367a4ff3f44300bd0ef5",
+            "content": "sha256:9e13e39f3eb51f83c81f5eb878917c61c1aa6a68cf9bf895218333923c27e563",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The page block that makes this a continuation: the collection, the continued state, both cursors, the returned/remaining/total arithmetic and the scope.**\n\nAnchor: \"\\\"collection\\\":\\\"family_members\\\"\"; \"\\\"state\\\":\\\"continued\\\"\"; \"\\\"continued_from\\\"\"; \"\\\"returned\\\":7\"; \"\\\"remaining\\\":5\"; \"\\\"total\\\":12\"; \"\\\"page_size=6\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eff072c6b9cb84f9968367a4ff3f44300bd0ef5",
+            "content": "sha256:9e13e39f3eb51f83c81f5eb878917c61c1aa6a68cf9bf895218333923c27e563",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The row listed by both sides whose content fell outside the page on one side.**\n\nAnchor: \"cb5d5f97-d379-457f-9fa4-f41ef41beeb5\"; \"3fb46ae4-dd0a-41c1-8833-7ecf69d76101\"; \"\\\"state\\\":\\\"content_not_on_page\\\"\"; \"stated as such, not filled in\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eff072c6b9cb84f9968367a4ff3f44300bd0ef5",
+            "content": "sha256:9e13e39f3eb51f83c81f5eb878917c61c1aa6a68cf9bf895218333923c27e563",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The family context and its owner's counts, still `partial`.**\n\nAnchor: \"\\\"family_context\\\":{\\\"detail\\\":\\\"this family context is partial\"; \"\\\"membership_rows_total\\\":8\"; \"\\\"unique_member_revision_total\\\":4\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6eff072c6b9cb84f9968367a4ff3f44300bd0ef5",
+            "content": "sha256:9e13e39f3eb51f83c81f5eb878917c61c1aa6a68cf9bf895218333923c27e563",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The receipt row for this file in the MIK-L31 re-capture: the truncated body's after-side cursor at page size 6.**\n\nAnchor: \"familyReview.continued.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:5a90e852e4b8ef6fcaf714be4d8b8aa071ed1d8f3ac701916f377df12a4fcc9f",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/review/familyReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one constant that binds this body to its cases, and the runtime narrowing.\n\nAnchor: \"const CONTINUED\"; \"function firstFamilyId\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:9f2374b0ddf7f616cfdcc6beb95554999ed99ad9daa9061fd3a87f008aa7d5e5",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:e9880751ae765a5cd7311a6bdfd34fb45abbfaae1b124652acb31b63c26f5a80",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The statement that bounds what this evidence is: a mounted tree over real server bytes, never a live page.**\n\nAnchor: \"These are not browser evidence\"; \"Dagger-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:77daab791b8d46dc60365f21f54af89ae2e273a412aa605db47feafbc341cd95",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The client sends the selected published cursor unchanged and rejects this capture when it answers another side or primary selection.\n\nAnchor: \"sends the family's published cursor and refuses a response from another walk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:0ba84c58bd5ba710a607739cefa2a4068df78b458e0f2683ce35e89adecf6b28",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

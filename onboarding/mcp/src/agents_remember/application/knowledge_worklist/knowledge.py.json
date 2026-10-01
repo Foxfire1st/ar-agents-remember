@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/knowledge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sides are parsed by the index builder; a side that does not parse whole is unreadable input.\n\nAnchor: \"That side is **unreadable input** (MIK-R08 rule 4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:f238e0faf5dfc7a7c07ec0548312c14689c658a882481b6b6f4cc2bf8c8a8c25",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unparseable K_C makes the run incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2d98d9fbd27e71988b3d7479afa45c9ab3b97ae",
+            "content": "sha256:e8a6eb41ff2cd1fd6cd25ed25aea110f66892a1254cda57b8184d24821836df4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_inputs_make_the_run_incomplete_and_name_them"
+            },
+            "path": "mcp/tests/test_knowledge_worklist.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unreadable-side error naming each failing file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:ec9bb4acb949d2362b38586c3ad91ce00963e173333694c8e6fef968807ffbab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeSideUnreadable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An entry's anchor with its source path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:57a8fe84da8c4ba8ce2f986874ee153f8bcd3ac61043527bda1751dbc23a10ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Parsing a snapshot, refusing any problem.\n\nAnchor: `parse_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:8147e9e96698cd7ac7711148af63e041ed6202844160df4ea5fe23a9fbccc20d",
+            "locator": {
+              "kind": "symbol",
+              "name": "from_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A side from the validator's tree (the converted base).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:0bccf15c18a6ba14fa7bed4021668bf8be39c20ffc75dbb2e3dd32cb2e90acb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "from_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entries grouped by invariant and by path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:59bda33f0c5d1d066d0acb2dfdd29d117458f4fca4f1b8c325ba6b9d61ffb9e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_by_invariant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:67e842af11d445256e17fc912c08eac5e38d5528c43d84609528732e8e58af3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_by_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Each invariant's families by membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:57fad7a008d5eb28b5a0e8b349d9df930b95aaae8d11127ab185efff2c702547",
+            "locator": {
+              "kind": "symbol",
+              "name": "families_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A record's file: location and exact bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:63c04affa76c9675906ce5e5ab75db72e618e5709bde74c3bf52c26681f72091",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `links` context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a248bf2e0630647020ea328f965b4b3217ae7c00",
+            "content": "sha256:bc46fac67e32079fdcf97aeabbd77391cde9cfea5b541d7f6b771876d20e31ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "linked_from"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

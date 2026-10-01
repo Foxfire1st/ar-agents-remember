@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/capsule_serving.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/mcp/registration/capsule_serving.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T12:20+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -104,73 +94,36 @@ happens to reuse its identity. The protocol-method installation itself lives in 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The specification this surface implements. Its two operative clauses for a reader here:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes. | `SKILLS_EXTENSION_ID` | mcp/src/agents_remember/models/skill_resources.py:32-32 |
-| **Declaring the extension itself commits the server** to `skills/list` and `skills/get` — which is why the declaration and the methods install together here. | `declare_skills_extension`; `install_extension_methods` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:150-150; mcp/src/agents_remember/mcp/registration/capsule_serving.py:157-184 |
-| This server's own index resource is the Agent Skills well-known-discovery shape and is explicitly *not* the extension's enumeration result. | `SKILL_INDEX_URI`; `SKILL_INDEX_SCHEMA` | mcp/src/agents_remember/models/skill_resources.py:37-37; mcp/src/agents_remember/models/skill_resources.py:40-40 |
+- The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes. [1]
+- **Declaring the extension itself commits the server** to `skills/list` and `skills/get` — which is why the declaration and the methods install together here. [2]
+- This server's own index resource is the Agent Skills well-known-discovery shape and is explicitly *not* the extension's enumeration result. [3]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
 extension specification, SEP-2640).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one entry point the registrar tuple calls, registering both tool families and the resource set. | `register_capsule_and_skill_tools` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90 |
-| The flat registered signature is the published schema; the test-only corpus overrides stay off the wire. | `role_capsule_compile`; `skill_catalog_read`; `_narrow_operation` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:82-107; mcp/src/agents_remember/mcp/registration/capsule_serving.py:110-118; mcp/src/agents_remember/mcp/registration/capsule_serving.py:132-140 |
-| The capability and the two protocol methods are installed by adjacent calls, so the advertisement cannot outrun the implementation. | `_register_skill_resources`; `install_extension_methods`; `_REGISTERED` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:70-70; mcp/src/agents_remember/mcp/registration/capsule_serving.py:143-154; mcp/src/agents_remember/mcp/registration/capsule_serving.py:155-166 |
-| The extension declaration extends the SDK's initialization options at their one construction point, without narrowing a typed field. | `declare_skills_extension`; `_EXTENSIONS`; `_DECLARED` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:61-61; mcp/src/agents_remember/mcp/registration/capsule_serving.py:65-65; mcp/src/agents_remember/mcp/registration/capsule_serving.py:157-184; mcp/src/agents_remember/mcp/registration/capsule_serving.py:73-73 |
-| The resource shapes, whose loader re-checks the revision and proves containment before serving. | `skill_file_resource`; `index_resource` | mcp/src/agents_remember/mcp/registration/capsule_serving.py:194-225; mcp/src/agents_remember/mcp/registration/capsule_serving.py:228-251 |
-| The two mandatory methods and their handlers. | `install_extension_methods`; `_skills_list_handler`; `_skills_get_handler` | mcp/src/agents_remember/mcp/registration/skills_extension.py:133-153; mcp/src/agents_remember/mcp/registration/skills_extension.py:243-257; mcp/src/agents_remember/mcp/registration/skills_extension.py:260-280 |
-| The payload builders every declaration forwards to. | `role_capsule_compile_payload`; `skill_catalog_list_payload`; `skill_catalog_read_payload` | mcp/src/agents_remember/mcp/tools/capsule_serving.py:22-41; mcp/src/agents_remember/mcp/tools/capsule_serving.py:44-52; mcp/src/agents_remember/mcp/tools/capsule_serving.py:55-63 |
-| The three response models the payloads are validated against. | `RoleCapsuleResponse`; `SkillCatalogListResponse`; `SkillCatalogReadResponse` | mcp/src/agents_remember/models/role_capsule_resources.py:86-166 |
-| The resource `_meta` provenance block every served file carries. | `skill_meta`; `index_resource_meta` | mcp/src/agents_remember/models/skill_resources.py:253-267; mcp/src/agents_remember/application/skill_resources/catalog.py:151-157 |
-| The live client/server exchange that executes the declaration, both methods and the resource list. | `test_a_real_client_and_server_exchange_over_the_installed_sdk` | mcp/tests/test_capsule_serving.py:1194-1264 |
-| The traversal case that reads a path outside a skill directory from the live process and must be refused. | `test_the_server_process_never_serves_a_file_outside_a_skill_directory` | mcp/tests/test_capsule_serving.py:1267-1298 |
-| The case that pins the install-once idempotence of the declaration. | `test_the_extension_declaration_is_installed_once_per_server` | mcp/tests/test_capsule_serving.py:1389-1403 |
+- The one entry point the registrar tuple calls, registering both tool families and the resource set. [4]
+- The flat registered signature is the published schema; the test-only corpus overrides stay off the wire. [5]
+- The capability and the two protocol methods are installed by adjacent calls, so the advertisement cannot outrun the implementation. [6]
+- The extension declaration extends the SDK's initialization options at their one construction point, without narrowing a typed field. [7]
+- The resource shapes, whose loader re-checks the revision and proves containment before serving. [8]
+- The two mandatory methods and their handlers. [9]
+- The payload builders every declaration forwards to. [10]
+- The three response models the payloads are validated against. [11]
+- The resource `_meta` provenance block every served file carries. [12]
+- The live client/server exchange that executes the declaration, both methods and the resource list. [13]
+- The traversal case that reads a path outside a skill directory from the live process and must be refused. [14]
+- The case that pins the install-once idempotence of the declaration. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency. The MCP SDK is a pinned external dependency
 (`mcp==1.29.1` at this leaf); this leaf neither moved nor migrated it, and substituted no legacy
 index/archive mode for a protocol method.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `register_capsule_and_skill_tools` repointed to mcp/src/agents_remember/mcp/registration/capsule_serving.py:85-90. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-16T12:25+02:00 — 260915-CAPS-L4 curator, **closing pass, citation work on this document
-  alone** (`citation_fix --document mcp/src/agents_remember/mcp/registration/capsule_serving.py.md`
-  against snapshot `d000fd91…`): one generated repair landed — the flat-signature row's three anchors
-  (`role_capsule_compile`, `_narrow_operation`, `skill_catalog_read`) were split onto their own precise
-  definition extents, replacing one coarse span — and ten ranges were normalised to the exact definition
-  extents they claim. **Blast radius avoided (defect `D8`):** the same tool run root-wide would have
-  rewritten **188 claims across many other leaves' documents**; running it per document confined every
-  write to this leaf's own file (`documentsWritten`: 1, `documentsScanned`: 1).
-- 2026-09-16T12:20+02:00 — 260915-CAPS-L4 curator, **closing pass**: rewrote this card against the
-  settled candidate. **Removed the rejection banner and the "adds no protocol method" wording** — both
-  described the withdrawn round-1 surface. `_register_skill_resources` now calls
-  `install_extension_methods(server._mcp_server)` beside `declare_skills_extension`, so the card
-  records the extension's **two mandatory protocol methods as installed here**, the index resource as
-  this server's own convenience surface rather than the extension's enumeration result, and the
-  capability/method adjacency as the repair for round 1's `F-L4-05`. Recorded a residual wording defect
-  in the production file itself: the module docstring at lines 10–15 still says the surface "adds no
-  protocol method", contradicted by its own line 150 and by `models/skill_resources.py`. All citation
-  ranges re-derived against the current 278-line source. Verification metadata remains closeout-owned;
-  no acceptance claim is made.
-
-- 2026-09-16T11:50+02:00 — 260915-CAPS-L4 curator, post-verdict correction (superseded): added a
-  rejection banner and restated the surface as non-conforming, against the round-1 candidate that the
-  baseline review rejected. That candidate has since been repaired, so this entry is now history about
-  the rejected candidate, not about the shipped code.
-
-- 2026-09-16T11:45+02:00 — 260915-CAPS-L4 curator: created the card for the new registration module.
-  Recorded the declaration and resource-registration coupling, that the registered tool signature is the
-  published schema so the corpus overrides stay off the wire, and that the per-server registration state
-  is weak-keyed to close the identity-reuse hazard. Its claim that the extension adds no protocol method
-  was wrong and is corrected above.

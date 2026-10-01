@@ -1,0 +1,113 @@
+{
+  "path": "mcp/native_helpers/conversation_library/src/pi.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The JSONL serve loop, handshake builder, offset/ordinal paging, signature, and typed error helpers consumed here.\n\nAnchor: `serveJsonLines`, `buildHandshake`, `pageByOffset`, `windowByOrdinal`, `signatureOf`, `failureFor`, `raiseHelperError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:20eff2b11d10b357b3b017b71d80a9ac8ac03e33d1c57d2e7d5603549f058ece",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveJsonLines"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:e29196e810d4b8e7751ebb86877d5922e16f1053430b486d57a9806ecdde76c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildHandshake"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:57d517c2b1b0a0e627e88c272ee26b7bd2f6257da5059d801cbfb635ae29faff",
+            "locator": {
+              "kind": "symbol",
+              "name": "pageByOffset"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:90f0cf5d425c58375b00dfef5b51ac2dcf6feef9391d12cde046444895b94a5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "windowByOrdinal"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:232915946dce17dc9b63a6f2907e7d443f2e0bd614df01857a07c7e6499929af",
+            "locator": {
+              "kind": "symbol",
+              "name": "signatureOf"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:1a077de5b436126e65b43ca12407b9d9b1e70b0101fc8d21c1db98e7cbc40079",
+            "locator": {
+              "kind": "symbol",
+              "name": "failureFor"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:6278f7357c6adfa4340c61af6a88b615a003c0ece3b80165b2d67b8a4c746b1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "raiseHelperError"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Python Pi port calls list/read/resolve-resume-target through the locked helper host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad5c905bdab26a647e6669cdb5b5ed44fccfe85b",
+            "content": "sha256:9ce7d4a9669814732c4746d975a373a98d75f7bf6dc28055135250c9baac1967",
+            "locator": {
+              "kind": "symbol",
+              "name": "PiConversationLibrary"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/library/pi.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

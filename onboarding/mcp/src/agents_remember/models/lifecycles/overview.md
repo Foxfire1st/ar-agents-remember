@@ -2,13 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/models/lifecycles/` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-27T05:02:28+00:00 |
-| lastVerifiedCommitHash | `a0b2c18d2b8d08ac1242a13f65bde900a190df7a` |
-| lastVerifiedCommitDate | 2026-09-27T07:57:14+02:00|
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
@@ -62,29 +56,36 @@ The package centralizes related model definitions without introducing a package 
 
 None.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle response vocabularies and models are owned together. | `LiveState`; `LifecycleResponse` | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:30-35 |
-| Finalization exposes edge proof and completion-seat result sets. | `LifecycleFinalizeTaskResponse` | mcp/src/agents_remember/models/lifecycles/finalize.py:18-54 |
-| Asynchronous operation records keep private identity out of the public projection. | "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" | mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340 |
+### Repo-Internal References
+
+- Lifecycle response vocabularies and models are owned together. [1]
+- Finalization exposes edge proof and completion-seat result sets. [2]
+- Asynchronous operation records keep private identity out of the public projection. [3]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery records have two output commits. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
-| A filtered content head does not replace actual Git head/tree facts. | `GitMutationSnapshot`; `contentHeadTree` | mcp/src/agents_remember/models/lifecycles/mutation_evidence.py:18-30 |
-| Prepared state has an ordered two-leg prefix. | `OperationPreparationState`; `_LEG_ORDER` | mcp/src/agents_remember/models/lifecycles/preparation_state.py:19-19; mcp/src/agents_remember/models/lifecycles/preparation_state.py:112-128 |
+- Recovery records have two output commits. [4]
+- A filtered content head does not replace actual Git head/tree facts. [5]
+- Prepared state has an ordered two-leg prefix. [6]
 
-## Docs References
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this route.
+
+### MCAR-L03 Pair-Bound Lifecycle Evidence
+
+`CuratorQualityAttestation` and `CuratorCoherenceRecord` now require the complete frozen
+`MemoryCandidatePairIdentity`, not merely independent code and memory tree strings. The public
+coherence response carries that same pair on prepared, published, valid, and typed-refusal paths;
+`pairField`, `expected`, `observed`, and `nextArgs` preserve exact mismatch and recovery facts
+without exposing a second authority. This makes a record from another otherwise-valid checkout,
+base, branch, onboarding root or contract structurally ineligible for the current leaf. The consumer cache path is excluded from candidate identity.
 
 ## How To Use This Area
 
@@ -111,12 +112,10 @@ The journal record is the durable authority after scheduling claim transfer. Ret
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Closeout and integrate inputs retain their kind-specific accepted decisions. | `CloseoutOperationInput`; `IntegrateOperationInput` | mcp/src/agents_remember/models/lifecycles/operation.py:308-317; mcp/src/agents_remember/models/lifecycles/operation.py:320-329 |
-| Organizational completion proof requires original full-prefix references and the exact selected integration authority. | `IntegrationQualityCertification`; `_require_integration_certification_authority` | mcp/src/agents_remember/models/lifecycles/operation.py:205-242; mcp/src/agents_remember/models/lifecycles/operation.py:562-585 |
-| Enclosure address models. | `EnclosurePublicationState`; `TerminalEnclosurePredecessor` | mcp/src/agents_remember/models/lifecycles/enclosure.py:20-25; mcp/src/agents_remember/models/lifecycles/enclosure.py:28-42 |
-| Worker termination evidence. | `WorkerTerminationEvidence`; `LifecycleCancellationEvidence` | mcp/src/agents_remember/models/lifecycles/termination.py:12-33; mcp/src/agents_remember/models/lifecycles/termination.py:36-53 |
+- Closeout and integrate inputs retain their kind-specific accepted decisions. [7]
+- Organizational completion proof requires original full-prefix references and the exact selected integration authority. [8]
+- Enclosure address models. [9]
+- Worker termination evidence. [10]
 
 ## 260821-CLIVE Final Door, Journal, And Enclosure Models
 
@@ -181,15 +180,6 @@ caller's only route to the field** — pydantic attaches a model-level validator
 defect, which is why the repair is pinned through the **real registered tool** in
 `mcp/tests/test_tools.py` and not only at the model boundary.
 
-## MCAR-L03 Pair-Bound Lifecycle Evidence
-
-`CuratorQualityAttestation` and `CuratorCoherenceRecord` now require the complete frozen
-`MemoryCandidatePairIdentity`, not merely independent code and memory tree strings. The public
-coherence response carries that same pair on prepared, published, valid, and typed-refusal paths;
-`pairField`, `expected`, `observed`, and `nextArgs` preserve exact mismatch and recovery facts
-without exposing a second authority. This makes a record from another otherwise-valid checkout,
-base, branch, onboarding root or contract structurally ineligible for the current leaf. The consumer cache path is excluded from candidate identity.
-
 ## CCR-R18@v1 Generation-Coherent Projection Contracts
 
 260831-CCR-L18 added `models/lifecycles/operation_projection.py` to this route: the closed state matrix (status/phase/worker-state/result-class/control-action cells, versioned `lifecycle-operation-state-matrix/v1`) and the revision-bound public `LifecycleOperationProjection` envelope (identity, component bindings, worker/approval/recommendation cells). `operation_kinds.py` now centralizes `LifecycleOperationStatus` and `LifecycleOperationPhase`; `operation.py` gained the monotonic `recordRevision` field and re-exports the envelope. File-level detail lives in the three sidecars.
@@ -201,10 +191,8 @@ base, branch, onboarding root or contract structurally ineligible for the curren
 `operation_projection.py` carries the optional public wait cursor in the versioned coherent
 envelope. These revisions have different purposes and must not be substituted for one another.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The durable record owns both revisions; its meaningful subset includes both selected certification cells. | `LifecycleOperationRecord`; `_MEANINGFUL_STATE_FIELDS`; `meaningful_state_payload`; `meaningful_state_changed` | mcp/src/agents_remember/models/lifecycles/operation.py:343-439; mcp/src/agents_remember/models/lifecycles/operation.py:521-548; mcp/src/agents_remember/models/lifecycles/operation.py:525-553; mcp/src/agents_remember/models/lifecycles/operation.py:556-559; mcp/src/agents_remember/models/lifecycles/operation.py:562-568 |
-| The public envelope carries the wait cursor beside versioned identity and component bindings. | `LifecycleOperationProjection` | mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393 |
+- The durable record owns both revisions; its meaningful subset includes both selected certification cells. [11]
+- The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
 
 ## L34 Preparation Ownership
 
@@ -288,75 +276,6 @@ Three facts a reader of this route should carry:
   failed one is `unavailable`. The two are different facts.
 - **The summary cannot disagree with its records.** The counts partition the entries and the status is
   re-derived from them, so a `current` subject holding an entry nothing measured is unrepresentable.
-
-## Update History
-
-- 2026-09-27T05:02:28+00:00 — Reconciled this route's durable assessment-history ownership and failure boundaries. Existing source/knowledge/evidence owners and authored judgment meaning are preserved; verification stamps remain closeout-owned.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 citation-repair curator (memory worktree only; no code changed, no commits; leaf base `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **route body updated (new section above).** `ICR-R15@v1` makes an assessment's currentness a measured fact: `models/lifecycles/review_assessment.py` (502 → 620) now declares the four-member `AssessmentBindingStatus` and the `not-measured`/`unavailable` subject states with the counts validator, and `models/lifecycles/review_assessment_binding.py` (276 → 497) gains `AssessmentCurrentnessMeasurement` and the whole rule in `measured_binding_status` over it. This route's two cards had no enforced citation row, so no range moved here. **No verification stamp was advanced**, because the candidate is uncommitted: the header's `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are untouched and remain closeout-owned, and this entry states a reading against the leaf base named above plus its working-tree delta rather than a verified commit.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T18:52+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this route against its changed sources at code `c5a74a85` and found the body already current; advanced the verification stamp and the reviewed-candidate row to that revision, which closeout re-stamps.** The delta since the old stamp is exactly the L15 landing recorded in the section above (`65e3791b`): the three `review_assessment*` modules, the `CuratorCoherenceRecord.assessments` collection with `MAX_CURATOR_REVIEW_ASSESSMENTS = 256`, the binding's stale-while-readable rule, the `review-assessment/v1` evidence-dependency policy, and `curator_coherence.py`'s own 212-line growth. Each of those is what the body already says, and the five module names in it were re-read against the files. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
-- 2026-09-18T17:04+02:00 — 260918-TSIP-L4 curator (uncommitted change set on `ar/260918-tsip-l4-ar`, base `0dd04d6a`): No route impact: `models/lifecycles/finalize.py` declared the two atomic-series projections it was already receiving; this route's composition and ownership are unchanged. The `+4` shift the import caused moved citations only.
-- 2026-09-18T14:56+02:00 — 260918-TSIP-L3 curator (uncommitted change set on `ar/260918-tsip-l3-ar`, base `a12c511f`):
-  this route's governed source changed (`models/lifecycles/curator_coherence.py`, 385 → 398 lines), so
-  a body section was **added rather than annotated** — `## 260918-TSIP-L3 The Publish Refusal Names
-  The Field (`T50`)` — recording that the model-level refusal now names every absent publication field,
-  why the message and not the schema is the caller's route to the field, and that the predicate itself
-  is unchanged. **Two citations into the changed source were repaired in the same pass** — the
-  `CuratorCoherenceRequest` row on `models/lifecycles/curator_coherence.py.md`
-  (`:259-317 → :259-330`) and the duplicate on `models/overview.md` (`:259-315 → :259-328`) — and the
-  eight rows that end below the change were re-read and are unchanged. No citation points into **this**
-  document, so it needed no sweep of its own. `lastUpdated` advances with this body edit; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are deliberately unchanged because
-  the candidate is uncommitted and the governed closeout owns the real code commit.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read this route against its changed sources and wrote the section above. The route gained three assessment modules and one field on `CuratorCoherenceRecord`; the body records why the collection is separate from `judgments` (a judgment's identity is a source-file triple and exact coverage is unchanged) and what each module owns. The reference rows for the changed modules were re-derived from the current files while re-reading them: `_publication_inputs_supplied` is `:464-478`, `_action_has_one_input_shape` `:480-494`, `publication_refusal` `:353-377`, `publication_input_statement` `:386-411`, `dependency` `:243-252` and `canonical_sha256` `:354-358`. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-18T03:25+02:00 — 260915-KS-L24 curator (uncommitted change set on `ar/260915-ks-l24`, base `9c12e8b1`): recorded, for this route's nearest-governed change, that the curator-coherence publication set is now **one declaration** (`PUBLICATION_MEMBERS` plus its three readers) and that the refusal and the `prepare` statement name their members instead of a prose category — the defect that made two earlier leaves of this master report an unpublished coherence authority as an impassable tool defect (`notes/DISCLOSURES.md` D-11). The paragraph also states what did **not** change (no member became optional or required, 0 accept/refuse differences over 80 request shapes) and where the `prepare` half is owned. Only the curator-coherence material in this route was re-read in this pass. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `LifecycleOperationProjection` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "class LifecycleOperationRecord(BaseModel):"; "class LifecycleOperationProjection(StrictResponseModel):" repointed to mcp/src/agents_remember/models/lifecycles/operation.py:340-340; mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-340. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: `LifecycleOperationProjection` repointed to mcp/src/agents_remember/models/lifecycles/operation_projection.py:340-393. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `_MEANINGFUL_STATE_FIELDS` in the row 178 of this card from mcp/src/agents_remember/models/lifecycles/operation.py:343-439 to mcp/src/agents_remember/models/lifecycles/operation.py:521, the extent of the construct the claim is about (the checker named line(s) [521, 554] as its live location)
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Removed ledger intent/output authority and documented raw versus filtered memory snapshot identities. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `mcp/src/agents_remember/models/lifecycles/` route changed since the recorded verification commit.
-  Re-read the card against the frozen on-disk source and re-checked its claims and cited ranges:
-  nothing this card asserts is falsified by the change, so no wording changed. Verification metadata
-  remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the route's files last
-  moved before this task line. Re-read the route card and spot-checked its cited anchors against the
-  current source: they still resolve. No wording changed; verification metadata remains
-  closeout-owned.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: recorded that `door_response.py` was deleted with the closeout-door tool entry point (commit `6982c6a7`) and dropped the stale "public join result" claim. Only this cut-affected claim was reconciled; the rest of this route was not re-read in this pass, so verification metadata remains pinned. Source documentation only; no acceptance or certification claim.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/models/lifecycles`, so no route/member/prose/invariant change is required. route-member-count=24; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
-- 2026-09-06T21:58:28+00:00 — Reconciled this route against the source delta from `245057ab16e19afdaabd5c188c9576b22e0c0870` to `d36109038b3f2b500c138f9dc1ea9c9f9a247489`. Updated current ownership and policy claims; prior verification commit/date and history remain unchanged. Source inspection only; no test, review or acceptance claim.
-
-
-### 2026-09-06T17:13:06+00:00 — L34 implementation memory
-
-Recorded the current private preparation/publication ownership from source. Existing verification identity is retained; this entry does not claim tests, certification or acceptance.
-- 2026-09-06T15:08:14+00:00 — Added the current selected-certification/refusal source routes and their precise fixture/model boundaries; corrected stale pending-candidate wording where present. Preserved broader prior verification stamps and all earlier history.
-- 2026-09-06T13:51:59+00:00 — L33 candidate curation: Added selected versus completed certification vocabulary and exact integration identity invariants; repaired affected operation/model source anchors. Reviewed uncommitted source; prior verification commit/date remain unchanged. This is source documentation, not gate or acceptance evidence.
-- 2026-09-05T06:21+00:00 — Re-read the reopened affected citation claims against the frozen source, corrected their current wording/ranges, and replaced ambiguous symbols with exact declaration anchors. Verification records this source-backed claim review; it is not a code acceptance or final Gate-5 verdict.
-- 2026-09-05T06:12+00:00 — Combined coherent projection and status-wait vocabularies; corrected current source anchors and distinguished record from meaningful revisions.
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage adds the typed status-change wait vocabulary (`operation_wait.py`) and refreshes `operation.py` / `operation_projection.py` with the CCR-R15 `meaningfulRevision` cursor; route index regenerated.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the new `operation_projection.py` module, the centralized status/phase vocabulary, and the record revision field. File-level detail in the models/lifecycles sidecars.
-- 2026-08-29T22:45+02:00 — MCAR-L03: bound quality attestations, coherence records, public
-  responses, and mismatch recovery to the complete contract-derived code-memory pair identity.
-- 2026-08-29T08:52+02:00 — Added the strict curator-coherence authority family and exact candidate
-  judgment coverage. Verification remains closeout-owned.
-- 2026-08-26T10:44:52+02:00 — Added the centralized operation/control-action vocabulary boundary and refreshed exact lifecycle model evidence anchors.
-- 2026-08-25T17:21+02:00 — Reconciled the final lifecycle validator and enclosure ownership split.
-  Verification remains closeout-owned.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled final door/journal/terminal-enclosure ownership and removed the obsolete successor model. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-- 2026-08-17T12:30+02:00 — No route impact: 260815-DAG-L5 added organizational-completion wire models to the lifecycles route; the route purpose is unchanged.
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-- 2026-08-14T06:25+02:00 — L23 final candidate review: the validated operation record carries
-  exact candidate and recovery-commit evidence used by monotonic restart reconciliation; no private
-  operation identity entered agent-facing projections. Verification remains closeout-owned.
-- 2026-08-13T08:40+02:00 — Created for the L23 move that groups lifecycle response, finalizer, and asynchronous-operation models under one cohesive route. Verification metadata remains closeout-owned.
 
 ## Retained curator generation and judgment custody
 

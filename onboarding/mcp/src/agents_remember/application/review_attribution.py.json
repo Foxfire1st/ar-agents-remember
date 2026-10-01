@@ -1,0 +1,255 @@
+{
+  "path": "mcp/src/agents_remember/application/review_attribution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one anchor resolution that establishes a registered mapping, with stale and unresolved states named as purported.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:d0ce4132bb7b16985e37e2c86111fbd4b8c972f2e502f15e7466bd65e4bab2b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_RESOLVED_MAPPINGS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The comparison's reader over its own two open snapshots — no second open, no second namespace.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:818628f7debcfb0a76b34230659b5a7b76ca2b5a01283ecdfeaa5a5048ca3bb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_mapping_reader"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The task-context route's own pair measurement, for a review that compares no dataset.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87a790a20dccd68d2513f8560187b443dd3a297a",
+            "content": "sha256:f706614b8af095e2ebff7acdcc2443f496aececfd041f61daa684bf4db9ce52d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_attribution"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87a790a20dccd68d2513f8560187b443dd3a297a",
+            "content": "sha256:c7ab1af5303c5dfe6abbd241954db1ebb118e91a5ca42a1a74a67cb6efcea970",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The subject the membership question needs, narrowed per seed kind rather than reached through `getattr`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:0b63795345185ad041e98e6d0a96e57e7ac45c213b33f180fd5a4f16ddc25bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:2efd96e643e7825355566834c3addd3cf6c6b8f125490c3ed1c6f6442cccf16d",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**One bound snapshot: its binding, its handle, and the carried reason when it never became readable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:f5b77e7c4912ef13f6367bd0970421eb18dea8cd08567ac531c3cbdbb264f340",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionSideInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:55da2863fee5d6ce3866bdc0e44bf8437e87efbff16367681d56d068bc514079",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The entry point: the caller's own observation partitioned by the bound snapshots' mappings.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:ed2b1a340d82597a734d98a463b25e25eece6da613211d3401da547233e185bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**One side's mappings read by exact path equality with each anchor observed, or the reason it could not be read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:7908ff28c73574f5eccd2e10ba4a3e1705400eb04e695d47eb019eb8ec90c432",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:3485cdaf6ea7fbdb74a0156e853cae39a44994305f69b6b48390fa19ea521c2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_mappings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The per-row subject predicate, with family membership from the family's own rows and degradation to membership-unknown.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:0f93ca3912eb970da70443cdf1d2936229304cac1e9af7933a9d4a6de69fd833",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_matcher"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:b55a8b08789d029faf226b5d738e5be840ff0b52b280bcdc33b77d5d7a06d08f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_revision_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**Completely inspected versus legitimately known-empty, claimed only for a checked first-generation before half.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:9b797a2e090e2c92da54aa2d77b1cf520929b2af947263b0365339ae5381183f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inspection_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:24ef978300fafe7d69b12c9a759e68499c4a7828df234ea096d43b6ff8b4f8a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identified_first_generation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A present-but-not-what-it-claims before half is unavailable with R05's own reason, and supports no negative conclusion.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf43d0f9b3f20bf7fa0879cf4bca003627801701",
+            "content": "sha256:22ee9d34a3ea5c7eb6b3193da0a451639a9ce8a8e966af9cefcb7c29f425b3ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_damaged_half"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The same lookup the registered-scope construction reads, so the two cannot disagree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
+            "content": "sha256:c610ab0cfeb3507211d26724d98b4a3a6ba0b516b131b7529c1fea5943c9bb82",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_at_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

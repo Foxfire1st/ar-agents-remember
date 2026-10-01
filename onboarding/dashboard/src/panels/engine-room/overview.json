@@ -1,0 +1,180 @@
+{
+  "path": "dashboard/src/panels/engine-room",
+  "references": {
+    "1": {
+      "note": "The server composer of the process nodes the client renders.\n\nAnchor: \"def build_analytics(\"; \"def _start_process_node(entry: dict[str\"; \"def _process_edges(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c75fc4b7f68ccc70a4e65a13e9e6098c65963e2",
+            "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The served `EngineProcessNode` / `Analytics.engineProcesses` contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
+            "content": "sha256:5928daf0403f755979bda3cda9b61eb1d9c27cfd81859767f54cf24f13a69593",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The honest-motion gate the GSAP/Motion read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cockpit shell that hides the rails for the Engine Room view (§4.1).\n\nAnchor: \"const fullBleed =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deeb695a7236219a48483dd0784ee75b1cd92585",
+            "content": "sha256:5a69db71ffed9224fc4adf25b7d0d0b64cdd00c15f0ad9673b9521607bf7f2e0",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 447
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`EngineProcessEdge` (`extra=\"forbid\"`) with the documented `kind` and `state` vocabularies the flash derives from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
+            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "\"def _seed_edge_state(\" and \"_DECISIVE_SETUP_EDGE_STATES: dict[str\" — the only producers of a seed lane's state, including the \"metrics=_metrics(lifecycles\" reroute.\n\nAnchor: \"def _seed_edge_state(\"; \"_DECISIVE_SETUP_EDGE_STATES: dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:c0f47225fc146990c9c9b8ce66c9716b9dc57f863a26a68e7296590bcee6216f",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 631
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f5202770805a4016e906e848217bb239e3c013",
+            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
+            "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The client mirror of the edge, which no longer declares a polarity field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

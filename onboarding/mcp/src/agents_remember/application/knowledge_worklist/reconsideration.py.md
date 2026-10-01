@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:05:38+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74`|
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -94,7 +84,9 @@ returns the items, each with `satisfiedBy`, and a `reconsideration.links` summar
   `anchor_stale`. It is loud, not silent, and one answer clears it.
 - **L09:** an unanswered candidate blocks closeout (D29) through the gate's generic rule.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R14@v2` of task
@@ -102,47 +94,36 @@ No domain documentation source is configured for this repository (`system/source
 2026-09-30T04:37:56 to 11:53:13); they live outside the code and memory repositories, so they are named here and
 not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: what is read, the five triggers, route and superseded rulings, and the items. | "item kind: a decision whose reconsider target changed" | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:1-39 |
-| The route dispositions and the decision prefix of the one-hop guard. | `ROUTE_TRIGGERING_DISPOSITIONS`; `_DECISION_PREFIX` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:90-94 |
-| The kind registered with its facts, satisfying row and owner. | `RECONSIDERATION_KIND` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:96-118 |
-| What the triggers read: both sides, the anchor classifier, the owner and the coordination root. | `ReconsiderationInputs` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:123-132 |
-| The run's items and link summary. | `ReconsiderationRun` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:135-140 |
-| A superseded decision's link, listed as skipped. | `_skipped` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:151-158 |
-| K_B decisions only, the superseded skip, and one item per changed alternative. | `run` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:165-187 |
-| One link into the summary, with its fired facts. | `_summarize`; `_evaluate` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:193-203; mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:207-223 |
-| Record targets: route, one-hop note, record file, then a triggering row. | `_record_trigger`; `_record_file_trigger`; `_row_trigger` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:225-230; mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:232-242; mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:244-254 |
-| A route fires only through a rerouting, retiring or deleting row (Q1). | `_route_trigger` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:256-280 |
-| An anchor classified like an entry; `stale_at_base` fires `anchor_stale` (F3). | `_anchor_trigger` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:282-294 |
-| A requirement fires only when resolved and a newer version is approved; facts carry `latestPacket` (F4). | `_requirement_trigger` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:296-315 |
-| The item: facts, `changed`, the ID over fired identities, and `satisfiedBy` from the stored predicate. | `_item` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:319-353 |
-| The entry point `compute.py` calls. | `reconsideration_candidates` | mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py:356-359 |
-| The packet's conforming example: a revised assumption surfaces the rejected alternative. | `test_a_revised_assumption_surfaces_the_rejected_alternative` | mcp/tests/test_reconsideration_surfacing.py:239-266 |
-| `rerouted` fires and `no_impact` does not. | `test_a_triggering_history_row_surfaces_and_other_dispositions_do_not` | mcp/tests/test_reconsideration_surfacing.py:273-293 |
-| `touched` and `moved_or_absent` fire, `carried` does not, and the link joins no entries. | `test_a_linked_anchor_triggers_when_touched_or_absent_and_not_otherwise` | mcp/tests/test_reconsideration_surfacing.py:296-311 |
-| Only a newer approved version fires; no manifest, an unresolved endpoint or no root never does. | `test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version` | mcp/tests/test_reconsideration_surfacing.py:314-346 |
-| One hop: D12 raises nothing when D18 changes. | `test_one_hop_a_decision_change_never_chains_on` | mcp/tests/test_reconsideration_surfacing.py:349-358 |
-| A route target fires only on a retiring row; code gone with no row raises nothing. | `test_a_route_target_fires_only_through_a_rerouting_or_retiring_row` | mcp/tests/test_reconsideration_surfacing.py:636-665 |
-| A superseded decision raises nothing and its links are listed skipped. | `test_a_superseded_decision_raises_nothing_and_its_links_are_listed_skipped` | mcp/tests/test_reconsideration_surfacing.py:668-681 |
-| A stale link anchor raises `anchor_stale`. | `test_a_stale_link_anchor_raises_and_still_rejected_reanchors_it` | mcp/tests/test_reconsideration_surfacing.py:829-845 |
+- The module docstring: what is read, the five triggers, route and superseded rulings, and the items. [1]
+- The route dispositions and the decision prefix of the one-hop guard. [2]
+- The kind registered with its facts, satisfying row and owner. [3]
+- What the triggers read: both sides, the anchor classifier, the owner and the coordination root. [4]
+- The run's items and link summary. [5]
+- A superseded decision's link, listed as skipped. [6]
+- K_B decisions only, the superseded skip, and one item per changed alternative. [7]
+- One link into the summary, with its fired facts. [8]
+- Record targets: route, one-hop note, record file, then a triggering row. [9]
+- A route fires only through a rerouting, retiring or deleting row (Q1). [10]
+- An anchor classified like an entry; `stale_at_base` fires `anchor_stale` (F3). [11]
+- A requirement fires only when resolved and a newer version is approved; facts carry `latestPacket` (F4). [12]
+- The item: facts, `changed`, the ID over fired identities, and `satisfiedBy` from the stored predicate. [13]
+- The entry point `compute.py` calls. [14]
+- The packet's conforming example: a revised assumption surfaces the rejected alternative. [15]
+- `rerouted` fires and `no_impact` does not. [16]
+- `touched` and `moved_or_absent` fire, `carried` does not, and the link joins no entries. [17]
+- Only a newer approved version fires; no manifest, an unresolved endpoint or no root never does. [18]
+- One hop: D12 raises nothing when D18 changes. [19]
+- A route target fires only on a retiring row; code gone with no row raises nothing. [20]
+- A superseded decision raises nothing and its links are listed skipped. [21]
+- A stale link anchor raises `anchor_stale`. [22]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The requirement trigger reads a task under the coordination root (`tasks/<repository>/<path>/requirements/manifest.json`)
 through `requirement_endpoint.py`; the task documents are coordination artifacts outside the code repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The manifest read happens in the resolver module, from the resolved task root. | `requirement_approval` | mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py:183-194 |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T12:05:38+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): created this card for the new file MIK-R14 adds, recording rulings 04:37:56 (Q1 route targets through rows only, Q5 superseded skipped), 05:31:11 (F3 `anchor_stale`, F4 `latestPacket`, F9 step 8), the review F8 notes and the accepted R6-1 note (11:53:13). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+- The manifest read happens in the resolver module, from the resolved task root. [23]

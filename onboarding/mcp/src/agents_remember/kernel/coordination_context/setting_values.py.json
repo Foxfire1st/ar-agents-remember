@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03194c9cd44ad38387e9232b636feaddc3fa72fc",
+            "content": "sha256:b38bb68029c1287d08aff7e0e338422c5c0e24ef5676c308d6c7130b8ecf133f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_storage_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cross-repo runtime resolution consumes parsed allow entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:f2dc973cf6d04d1f360b2b862ff729cab42dfefdc8c9e472faf3163aad37d5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_cross_repo_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:06f7182d0b0eef985ed6b4d5184c9bb87f4399497531046632851e07c936eefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_cross_repo_entry"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

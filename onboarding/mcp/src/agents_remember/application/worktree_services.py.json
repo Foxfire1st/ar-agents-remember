@@ -1,0 +1,244 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_services.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `build_default_worktree_services` boundary implements the preparation contract above.\n\nAnchor: \"def build_default_worktree_services\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:0db87eaed75d1f10ff89c35250f2a0471f1eaef06ce1973a2281bc736f774e61",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The closeout's quality phases get the converted-base port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityAdapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider translation/delegation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLifecycleAdapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Memory-rail and memory-quality adapters",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationMemoryRailsAdapter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryQualityAdapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The citation guard delegates terminal namespace protection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:23a49045179ee38de9c1fad154a88ff77548a609ed7fe41f0f95bfbaaae8ddf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationGuardAdapter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ce9f68e4902699ee4aab2194472936a91aefd07",
+            "content": "sha256:75c14335a1bed58790d86d4fc94943b7fcef5ab82f17aee9b11ad79804fd55f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitBaseConverter"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4bf1f63e5d4894418f9652c59aecbefc1b32b0ef",
+            "content": "sha256:0806ff8159b28f075cd569c53575cab2a083401a53dda313678ac0e7fb47fce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitKnowledgeCrossing"
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The default bundle's MIK-R09 binding: the mandatory gate's port adapter.\n\nAnchor: \"knowledge_gate=KnowledgeGate(),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:cffde9c4f56f6f69b5b9ce77b7806d7cc9ad2993c7eff13aca5ba3f8d30de17d",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The default bundle's MIK-R08 binding: the worklist recompute port adapter.\n\nAnchor: `knowledge_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:1ff58e949ac75e1df0d582965ccbc0e88b80755391158cdf67fbacf2f6e31ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafWorklistRecompute"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:011e097465e616d9d89b8a66e6cbfff2a209545f6503fd86c74c483ea1059c67",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "content": "sha256:20ed4a13532304fbd8ee64a1d33ddbc50160045457ab79711f9321a10ae7a631",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The default bundle's MIK-R25 binding: the review-artifact archive hook.\n\nAnchor: \"review_artifact_cleanup=ReviewArtifactCleanup()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "content": "sha256:b0cbb56eecc15a57361c27c296c3ae8d243031ca97ff22b3c92ecd694eec9b01",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 225
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The canonical binding owner installs the explicit service bundle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "bind_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

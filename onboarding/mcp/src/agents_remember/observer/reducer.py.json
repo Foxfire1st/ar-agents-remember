@@ -1,0 +1,580 @@
+{
+  "path": "mcp/src/agents_remember/observer/reducer.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projection schema this produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:39f472cfada99fc40b77caa93bbd20fb4863311c11ceed498bc3d54f3f270cce",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1131
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The durable gate set `_attach_gates` materializes onto lifecycles (slice 6c).\n\nAnchor: \"def _attach_gates(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:20f39ecd974a9ba5ad3c3c7daf0c92f47f8b72e82b29f4cb33c2d59d7be65df6",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Wires the engine facts + start-progress into `project_workspace`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:dd6c8dc88e614f2f3a1a6f62b428713e9bdafd8b33e320b3d8fc446b344a7893",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "579c3d068accfb68fb4977bf0542061fa39ec6a8",
+            "content": "sha256:065ddac2b36c48429b8296f7e366f9b1dc9b2cad5d1d31478fafa4842f232a39",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Missing provider placeholders are created for expected code/memory roles when no matching worktree provider facts exist.\n\nAnchor: \"def _provider_boot_nodes(\"; \"def _missing_facts(  # pragma: no cover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:63b44c901e99b836aa42c117a18ffacb1f268189d4911b74db13f66f1474dec8",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 443
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "content": "sha256:9288f1ac41614a27b10ae361593f3b48e9571ad011c31aaf2655a78f24887dfe",
+            "locator": {
+              "end": 658,
+              "kind": "line_range",
+              "start": 658
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Actionable drift queue rows carry repo/branch ids, provenance detail, and `checkedAt` signal timestamps.\n\nAnchor: \"def _drift_attention(drift_snapshots: list[DriftSnapshotNode]) -> list[AttentionItem]:\"; \"def _drift_attention_detail(drift: DriftSnapshotNode) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:f76cae4db56ad6eba5bd4e0751cefe347f4646e7d26d83fa636dec25f67305ad",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:fed6f545d04fe6312b933ca7801e9846434de8a06ad7261b51e079ed5236afb7",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`_is_dismissed` admits targetless suppression only for dismissible repo-level kinds.\n\nAnchor: \"def _is_dismissed(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec11f958c3ba654dad0a65a51861381d8b81ad90",
+            "content": "sha256:5aba9451b1e6d3aa523c2e27c2a597c94e4fa4a0ebcf3889452f07b0e6dfde40",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The whole-vocabulary tuple `_STATES` is built from, the `coerce_end_outcome` `_ended_updates` routes through, and the partition that decides which states get a bucket.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:56e93b2323d0803d185e9393755ac4d9e122bbb89db007a65f00fa5d0f9c5004",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATES"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3bf6f5d80827895aa75614dc7a48e78b9c5bf9e9",
+            "content": "sha256:16c89a41b06940d0acc7318ab9be0b1d262c3a8c91045d796963373d34c09df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_end_outcome"
+            },
+            "path": "mcp/src/agents_remember/observer/lifecycle_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "`STATE_COUNT_FIELDS` — the state → `Metrics` bucket map `_metrics` expands, and the `extra=\"forbid\"` model that makes a missing bucket raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:bd14e17972b2ee6bd78c172e9592ae34bf14e9c57a09224aa12a0e58d417035a",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_COUNT_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:73a21502dc2d51e2f15707959866f13d812073768fb62b660057d0cfcb5f871b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Metrics"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:cfeeac74e9e67cbdb630e20474906db5595893e4e7c1f7e3bde02042821dbe6e",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:0ab151605ce3eb826228254041185b01f55294339b36ee200f75797686b4959a",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The design: the reducer, inferred trust, corrections (§2.1, §2.5).\n\nAnchor: \"### 2.1 Envelope\"; `### 2.5 The observer and its projections`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:7dd5b7f48324e39f975a04eb5e2425e9f4ad3e4bfb67dd63fec1c91f7ef4f247",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:a7cd319a881ed9aa0a7c4d993728a4b256fd2917cec64890feed3a6d8e1ba43e",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "docs/design/observable-lifecycle.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The series-token helper that enriches `SeriesNode.seriesTokenTotal` before analytics assembly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42846b7c9ce7da533453aa95d96ef70250b36475",
+            "content": "sha256:cac30fe7c04d074eed4260e1a52c91b74dd2a2c198ef00e6f957dd829b215e20",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_series_token_totals"
+            },
+            "path": "mcp/src/agents_remember/observer/series_tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The event envelope + kinds it folds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The write-side dormancy sweep the abandoned-projection mirrors, and the `end` signal whose `outcome` `_ended_updates` reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:d2eeec1c8c6e6fc8d9c8da84dbeb2175f828aa0fb955a2c168655a003b1c47d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "AmbientLifecycle"
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bf408b0d04334071a43207138086e4cfb6f2a374",
+            "content": "sha256:dddaf894b6f57492fd9c15c2de513cceb7ca19e205b3f76a37830341b2a5ca7c",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/observer/ambient.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared stale/TTL thresholds + age helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:3810571c495a9d12911e78ba5ef66fc32c995c14c188597b20593aa5c97e75fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_AFTER_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:1a2a3fb162bf97300b7841f15d7f3f5d1be437b096886c0909abe4a78394f8a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TTL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35893ecd2b60c2f73d8d59bd85966045b0f60356",
+            "content": "sha256:ef97c60e5372125bff2b3b50c5a0a1c49e405da08332967feeac58f34ea10a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "age_seconds"
+            },
+            "path": "mcp/src/agents_remember/controlplane/stamps.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9da3bf265e34b2b14caff3d4f834635c3ee55f3",
+            "content": "sha256:cb4e48904110cae83a9250e3282ece1943b34aa29b370718c74a68848c926c0d",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/observer/timeutil.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The provider stale-projection idiom the paused-projection mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9edaa317e28fecbc451aa6731d9c7d5578217178",
+            "content": "sha256:d71e182a7d9c1ce81984006208997bfa59717d28cdf1a5944769094769a7ee59",
+            "locator": {
+              "kind": "symbol",
+              "name": "progress_status"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `EngineProcessNode`/`EngineProcessFacts`/`EngineProcessEdge`/`CommitRefNode`/`ProviderBootNode` schema the 5e map composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:439fc1955bc375c60fa7a9e6fd837012204585552c3b50c6df0da71a68c5a10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:92b50839dc4dd7a2ac0cf4607dd5336d4d93685cb250a6e6aacf997fe0e26db2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessFacts"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:4f1e22c055e259ce60bcbdd753f83f43fd585acf4f901a39e277da739b33a78c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CommitRefNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:2be03d89f6829ced1005ae1a112a30c822ebee7f07f51f186b566c63e30a16c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderBootNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:e112beb973396812b1dc3171d917843e579e7afe94124dd053b1f77d468fb569",
+            "locator": {
+              "end": 906,
+              "kind": "line_range",
+              "start": 886
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:1aa51177b39633a7e8697a20d9c682bdc07ee9ab387bea320c7c91239545f82d",
+            "locator": {
+              "end": 922,
+              "kind": "line_range",
+              "start": 909
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:b6fda7fb42fb974e256d15c21f24fc70e254109f0a492cc40b996682955b6233",
+            "locator": {
+              "end": 944,
+              "kind": "line_range",
+              "start": 925
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:4a76b079b0fb416687fa5ff69940956e4177090b0bc25434dfba1dd4882f7080",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 972
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:ac89db05a484e716671978d04298b2a14e7f5ef18f5b63b49423c398a7c1381a",
+            "locator": {
+              "end": 1064,
+              "kind": "line_range",
+              "start": 1044
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reads the engine-process facts + pre-contract start-progress entries at the call edge.\n\nAnchor: \"def read_engine_process_facts(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
+            "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pre-contract `worktree_start` progress source (§5.4) the synthesized node reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
+            "content": "sha256:673efc3b3d6d3a8f986a1d1723a55b1c972a49606faa36238990d71a991aa639",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_start_progress"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

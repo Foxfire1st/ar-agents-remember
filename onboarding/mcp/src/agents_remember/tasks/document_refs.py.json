@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document_refs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Task document topology is centralized in one typed resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentTopology"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:95cd9f982d04dd2ffce8b153cef1316f7145df0882a216cae73d07550706dba0",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Structural seats consume this topology to qualify parent and child relations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f9f51d45c6c05c4b98bfb9c5586d948624c2764",
+            "content": "sha256:1acb9b38b437626002a5693a509fb5de0b95ec0695f2ac060a905e791089fa6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralSeatResolver"
+            },
+            "path": "mcp/src/agents_remember/serving/structural_seats.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_segment_nodes_on_atomic_masters"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:c698d8ef82b4537c46bb74440e142c0ad04b6e931215139e7faba8f58a6a6765",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:7a3cd98085341a7f1d0a301fcd2964ae52220a312e940f27207ebb4f77146ad7",
+            "locator": {
+              "kind": "symbol",
+              "name": "execution_leaf_placement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRefError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_segment_nodes_on_atomic_masters"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:e22c5d645704895490e6d5492552357382ce2922f8530d460dce1e5c5e6f4692",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedTaskDocument"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:83e7a8ecbdfd3af4083b3f78cd1384fd731c424f5af32974fdaa99dca82a433b",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:79c19cfd0d98ace831ea3fe271d253380d1ce64c29f540eb5acd6e73c08a887a",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "content": "sha256:07e0ed222f80cd3ef8b7a5185269f4a4efbd1708623316ddd712bd5da232821b",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/closeout_fixture_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The waiting-door fixture builds a queue fixture for the requested memory mode and declares the master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "883313cd4c68474702899e7bd30c740a69201007",
+            "content": "sha256:c6bffd40d8e70396531d2b5b24c638cfb3010c1db8c8c098de3e75dd0052fdf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

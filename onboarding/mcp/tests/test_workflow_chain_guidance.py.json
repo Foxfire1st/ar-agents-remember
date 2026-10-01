@@ -1,0 +1,846 @@
+{
+  "path": "mcp/tests/test_workflow_chain_guidance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:f6c104244f87e83b53dade29f4d2c132681eab51f06e1b82a891bbd7dd188ef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKFLOW_OPERATIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "One operation, what its own guidance supplied, and what came back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:ef460ba8e700164430ff7e76cda068f08ee07cb43037a5ec037390e42c0e05fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "Hop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "One response's own operational triple, and what calling it exactly as published produced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:46537cc99828d2e4bdd3b094c42c8fe706d06c35f09b32a2f1c440acde63c767",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecommendedCall"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The disposable world: real repositories, a real server, one session per call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:1ae28781024cf41ee42c94323ec8d8d5f9e2fae86af5338c7dc1690314de8d79",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowWorld"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.\n\nAnchor: `call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:c69d1824fd81390798d929d34b533832a8d77eb403b01618a4f6ac6efa91db31",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The single walk of the chain, the hops it produced, and the three arrangements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:24b5a583908e9e0fd93fda1fc229e30deb8aef4a66ca09137ae9cb0f5591c9dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowChainObservation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "What the guidance supplies for a hop, and the arguments it declares as required.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:5cb970c968a280dfcc44b5d9752886eaa4a65891402b670a9f587b506ccc3b8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recommendation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The first call exactly as given, then again with only what the model named as missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:685f203edcbe701778d86c1fcc94b4ee4480df92fddb287c1277a0be38d348ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_as_given_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Execute one recommended step as given, then again with only the arguments it omitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:68130c3435689393c55299343d52ade63b54b59b1bccad8e4e0598f533119a23",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:ef96830a1f3b520fcfdadee56aed4102fbf849d7661c09548c3fab8eabdbaec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The `T54` arrangement, asserted before the property so a green cannot mean it tested nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:ea06b294ab171ee7ebd77f0b9f49c971f04b31b6232a4ba8ac7aaf1ab91a7366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sibling_arrangement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each operation's own state vocabulary, and the terminal cleanup cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:a65a165cb54d55273b82f73be6777c7ba7379e134039953793594a64abd7e399",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_STATES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:4ad42a87bc265a7621b07b3696c574e5b9f19e60de95c8abbd1e68d1203da71a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stale_base_arrangement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:36e2d3de861794b909486faacdb57f1339b284d4583879d04b8fd9363e24b762",
+            "locator": {
+              "kind": "symbol",
+              "name": "_probe_operational_triples"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The second producer of the same recommendation, driven in the same world rather than cited.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:746d5df423fe97b896c4ee42da5b39201f52cd071b8e3d4ccdb6a243199cdd46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retry_provider_setup_arrangement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The union of the walk's own as-given calls and every probe, asserted equal to the pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:12f7b894c72792bed3d39a30618573b10ef04a57e8c34f02379785736ee9c831",
+            "locator": {
+              "kind": "symbol",
+              "name": "callability_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The order, asserted against what the run actually did rather than stated beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:9efe7bc5e587b6afb144ec5bd01a6790ef2513a8be38e580d74097399cb54823",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The order derived from the guidance, with the derivation's own bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:ead2983065a8b78459a890e0409bcfce8632a824e5f52a0dc66ae7798386e964",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_hop_was_the_move_the_previous_response_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Guidance must name the response's own place, on every channel it uses (`T54`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:3eff1de2f738fa20d2904568bcb975269cea1fae40a199c5ea19612f4b483923",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_guidance_channel_names_the_callers_own_task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The sibling arrangement asserted first, then the property (`T54`'s arm).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:62d7bb484eb1cf77edfe94c3ca3d718aa3c3cfb0614c4d8ff9c55202bcdfd0da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_concurrent_siblings_guidance_never_reaches_this_task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The derived population, asserted equal to the pin over both channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:3e14af6ab317b9a857fe564b85409b03f9d988045ceb7b627a34478389f0bb99",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The population of the case above, so it cannot silently shrink — with its own boundary stated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:36584383d924e267b1506f23a8f2b65c121558954035b6f27d2796463ff40b40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_response_that_published_an_operational_triple_was_called_with_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The phase progression, read from the product's state machine and never restated from a literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:97c46f72c18bdfe4fd6821ade3ff7f0e8034820dc003570ef6beffb68c95701b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_PHASES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The classifier's control: an unusable recommendation must be seen as one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:604c714b8eb1b19fb2fdc00ac2bae3137165a28c28d32947d4626e8bf6ef7e18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_callability_arm_can_actually_fail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The withhold is real, counted, and explained in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:6c20aab7356881c81bfd36b6eb3aea4e61849b29d1e286ca5b5c42de29c0cc27",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guidance_that_could_not_be_validated_is_withheld_and_counted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "`T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:f815a91b6a78f49c23e1ce5d0512d3ffc105ddd312cca852fdbd3e49a5bfce6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_preview_step_answered_and_the_drift_snapshot_was_actually_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The stale base driven, and the raiser pinned by set equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:d335673cf828593cfeb53b4695068887715c114cefab136e74da360d7e017c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_base_closes_the_envelope_by_raising_and_is_counted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "`T109`: the declaring channel asserted where it is defined, and its four-phase population stated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:36e1d4abe81da191cd750a6d5af735bca00260cefb6ee4c85a224eaa719d0908",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The lane row that keeps this module in the default selection, inside the array opening at `:5`.\n\nAnchor: \"mcp/tests/test_workflow_chain_guidance.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:59e0e1653d5a589fe09a0646e0ece6d41f34bb59394ec582e7af93d79916c9f6",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 280
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The operational triple's declared home, and the reason it is a channel of the response's own contract.\n\nAnchor: `nextArgs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
+            "content": "sha256:1eafbb7c037d1730705006d347b1fbd9fd61fb76f4ac45e4ee7f0de7ecde45c7",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 406
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The overlay's model, which can declare what it leaves to the caller and the operational triple cannot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRequiredArgs"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The guard that withholds a hint which cannot name the response's own place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
+            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_next_step"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The process-global ambient lifecycle the overlay is derived from, which is why the guard exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
+            "content": "sha256:51be012d8c1fb51ca4d362f7a3eb8025862f19d7729b7894e11e315c169d102b",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_step_for"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The callability pin, with the repair rule stated at the constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:8c49ad5ee44785f88b9aa22d202446eaeac4abf4adb3260b53035f8047b67346",
+            "locator": {
+              "kind": "symbol",
+              "name": "GUIDANCE_STEPS_MISSING_REQUIRED_ARGS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_amended_closeout_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The snapshot path the preview's drift collection actually reads, derived from worktree and branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:8232e9eb442c1a4f7fd24cc18ba36e924475e60ed78e7875784d38e33890aa9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "drift_snapshot_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The real reclamation the preservation claim is measured against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d70d647b40f8b84669d1de3f0a9f357fa81e3327",
+            "content": "sha256:1b0c3421cd46f50e7fa1265d4f027d6ddb96ab078b53a1c3546fa6bd5efc804b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_drift_snapshot"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/drift_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The exception a stale base escapes as, carrying the remedy in prose only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf98dd82609e9c8b69d49d0ebe65be3a2f119d25",
+            "content": "sha256:1146a93c5c3991416fa852daa2ed23102d2d73fea31e568a29898635d9bed7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRefusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_lineage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The repaired pre-integration recommendation the walk reaches (`guidance.py:451`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:6edaa87c906bb3ddd1eb9f7837b359ebbc09e4f429110c2f635d55919f2a0275",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The repaired `checkpointed` recommendation the module does **not** reach (`guidance.py:369`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The declaration `T109` pins where it is defined; it is at `:433`, not the `:432` two reports cite.\n\nAnchor: `required_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:1375697bbc06445e3fe0f6ec2f0f1481c6b999fe50f9c379fe8232682763ffe1",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 433
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The declaration `A5c` shows is not asserted (`carryover-pending`).\n\nAnchor: `required_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:a452db68c18a3929567e68a1e2fb8d8c2fad9c8cfcc349c9659c3099fc4c946d",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.\n\nAnchor: `LifecycleRecommendedAction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:9195ca5d0d8276c93a32ae6d24737d3d6adc413d2542e3e0a288e57b28f90ee4",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:cfd259820d6ded63c7bb14d34ab02729cfffce52bcaa6be90a7c71c3d2f2a224",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection_without_control"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The withhold pinned by tool and count, so repairing the producers is a visible edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:399cf22e9c8297eef7614578af2f817a1d95f2a3ca9a5d2078200d1994e4b84e",
+            "locator": {
+              "kind": "symbol",
+              "name": "WITHHELD_GUIDANCE_HOPS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "50": {
+      "note": "The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:227aab9d916f3cbcf944ad694ce39625e496ba65d6c8045419947ec97bc2fe23",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryRoute"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Where the tuple becomes the operational triple a seat reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eacf36f408546b48942eacfcbc2568770f4fecb6",
+            "content": "sha256:446b71bb0a5b1934c3c32bd6629930a796e70171a39906021293ac7814a32f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_payload"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:a52982a353e3019485b6848ddec0fb0c666554b553d35abbd21fcff50cf5f671",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_BASE_RAISERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Values for arguments a recommendation leaves to the caller — values, never a population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:8070317511aa7d05bd2ffc04ad3d5b91d449b952c8ee23235e61af38d1a7960f",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIXTURE_ARGS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two refusal arms separated by model identity, never by wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:179f105168f5baffc1ea28bb0b185823f3c36a385ad393f17ef8e1769a40640c",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The fields a tool's own argument model named as required and absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d02656b5dcab9b193602c74f455dac9e965bf8",
+            "content": "sha256:0aaf70bbebeb59c71454a460c15bde3f59432628fcc8338f49cc838a7013b7ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_required_args"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

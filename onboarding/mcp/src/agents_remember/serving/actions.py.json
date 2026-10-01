@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/serving/actions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The precomputed availability + node shapes validated against.\n\nAnchor: `ActionAvailability`, `WorkspaceProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ActionAvailability"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:271fa231e78a733257a27a4e349db759ac2d738f2241972ec7561c85966222af",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "content": "sha256:39f472cfada99fc40b77caa93bbd20fb4863311c11ceed498bc3d54f3f270cce",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1131
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `Actor` provenance literal reused for attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:5d440db2ec53db4e801ae88f57b6831e8985ddfcec07b85404616e277c358261",
+            "locator": {
+              "kind": "symbol",
+              "name": "Actor"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The app that routes `POST /api/actions/{action}` to this and executes the gate write.\n\nAnchor: \"def _action_response(runtime: _ServingRuntime\", \"def _register_action_routes(app: FastAPI\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:22a46e509c87836924b5347996c17566b7b6d9d2d344889fc698e6c6eb406aca",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:e93f3b0d5f15df9f984c6f1aae2164f82e9fa910c6a0721264005db0578438a9",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The control-plane gate write path the router calls for a gate-decision verb (slice 6b).\n\nAnchor: `record_gate_decision`, `record_lifecycle_gate_decision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e8c335c3bd3e48fb27ef8fb2f3ca48f840505c727bc7d99d15d034c4a33ce0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_gate_decision"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e24d0d58a7df55ac8e008c409911b2deedba0eba51bbd4d3d66593b6dd3f2266",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_lifecycle_gate_decision"
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:b70c5470d101fac93aa71ecce4dead60e2d9fd490ec57173006d610f05512040",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:872a63d57ecbfd5d1ecac55bc2dc81eda1ae77e299ee75356b570a788bd1db94",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The compact acknowledgement store used for lifecycle attention dismissals.\n\nAnchor: `AttentionDismissalStore`, `dismiss`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:1a312daa6558f3b821abbf8270cd61217dbf6e1cdfb6ba149ab22b72e37d396d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "702e1a4a709d0898a95c78b3dc236065c165f9a1",
+            "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "dismiss"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_dismiss_action_outcome` allows target omission only for gate-open+gateId or actionable-drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "242a6fb92f99d2a1aad39de73695914998104fa9",
+            "content": "sha256:12712bd079a80ec83ba734218bacaca81e512397d83c68bcd8b7d83a22165ebb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dismiss_action_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/fixtures.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/fixtures.ts`   |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
@@ -60,150 +50,23 @@ anywhere in the file.
 
 Fixtures are presentation data only: they encode the wire shape (camelCase, `exclude_none` optionals) and carry no behavior. They must stay in lockstep with the imported node types in [types/projection.ts](../../types/projection.ts) — fields like `factState`, `health`, edge `state`, and `phase` use the unions defined there. cit:([`SOURCE_BRANCH`], dashboard/src/panels/engine-room/fixtures.ts:25-25) and the hard-coded commits (`08e9221a`, `d60a0511`) are illustrative, not live. Health/setup/edge state strings must remain valid members of `ProcessHealth` and the edge-state vocabulary so the map renders honestly — and "valid" means the SERVER's vocabulary, not the renderer's tolerance. `EngineProcessEdge` is `extra="forbid"`, so a fixture inventing a field (`refusedPolarity`) or a state (`refused`) that the reducer cannot produce describes a payload the server would reject; the scenario then exercises a branch no user can ever reach. Every fixture edge state must be one `_seed_edge_state`/`_materialize_edge_state` can actually return. `seedFallback: true` in `engine-cgc-fallback` cit:([`ENGINE_ROOM_SCENARIOS`], dashboard/src/panels/engine-room/fixtures.ts:721-1197) models a reroute-to-reindex, not a failure; `retryArgs` appears only on failed-setup scenarios. The active provider `runtimeState` is kept consistent with the running conduit (5g G4) — the engine being seeded/cloned is `indexing`, the done engine `nominal` — so the charging engine lines up with the flowing conduit (e.g. GrepAI cloning ⇒ `[boot("code"), boot("memory", "indexing")]`).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Node/edge types this file shapes — the import list here, resolving to the mirror there. | `EngineProcessEdge` | dashboard/src/types/projection.ts:223-231 |
-| `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. | `EngineProcessEdge` | mcp/src/agents_remember/observer/projection.py:934-953 |
-| `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` | `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS` | dashboard/src/panels/engine-room/fixtures.ts:19-23; dashboard/src/panels/engine-room/fixtures.ts:721-1197 |
-| `engineProcess` core builder (override-last spread) | `engineProcess` | dashboard/src/panels/engine-room/fixtures.ts:217-271 |
-| `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. | `edges`, `EdgeStates` | dashboard/src/panels/engine-room/fixtures.ts:132-139; dashboard/src/panels/engine-room/fixtures.ts:131-138; dashboard/src/panels/engine-room/fixtures.ts:144-215 |
-| `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. | "engine-cgc-seed-refused" | dashboard/src/panels/engine-room/fixtures.ts:834-834 |
-| `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail | `bootStages` | dashboard/src/panels/engine-room/fixtures.ts:276-418 |
-| `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) | "engine-retired" | dashboard/src/panels/engine-room/fixtures.ts:991-991 |
-| `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split | "engine-landing-pushed" | dashboard/src/panels/engine-room/fixtures.ts:1165-1165 |
-| The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag. | "engine-cleanup-pending"; "Replayed onto moved main" | dashboard/src/panels/engine-room/fixtures.ts:955-955; dashboard/src/panels/engine-room/fixtures.ts:982-982; dashboard/src/panels/engine-room/fixtures.ts:1133-1157 |
-| The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. The anchor is the declaration immediately above `nextAction?` inside `EngineProcessNode`, because a bare `nextAction` is not unique in this file (it also declares the `TaskDocProjectionEffect` field). | "missingFacts: string[];" | dashboard/src/types/projection.ts:260-261 |
+### Repo-Internal References
+
+- Node/edge types this file shapes — the import list here, resolving to the mirror there. [1]
+- `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. [2]
+- `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. [3]
+- `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` [4]
+- `engineProcess` core builder (override-last spread) [5]
+- `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. [6]
+- `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. [7]
+- `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail [8]
+- `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) [9]
+- `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split [10]
+- The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag. [11]
+- The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. The anchor is the declaration immediately above `nextAction?` inside `EngineProcessNode`, because a bare `nextAction` is not unique in this file (it also declares the `TaskDocProjectionEffect` field). [12]
 
 ## Series-Contract Notes
 
 Engine Room scenario factories now emit leaf enclosure contract paths (`tasks/<repo>/<task>/enclosures/<leaf-id>/series-contract.md`) in both `enclosure` and `sourceFiles`, and seed `leafId` from the fixture id by default. This keeps fixture source traces and rendered labels aligned with the backend resolver.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because the anchor `nextAction` appears twice in
-  dashboard/src/types/projection.ts, so no historical location was unique. Repaired the citation,
-  not the claim: the anchor is now the unique declaration immediately above `nextAction?` inside
-  `EngineProcessNode`, and the range covers it. The claim — that this route's scenarios carry an
-  untyped `nextAction` string the gate cannot flag — is unchanged. Verification metadata remains
-  closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 7 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 2 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-12T19:50+02:00 — 260831-LOCR-L31: re-labelled this file's cleanup-vocabulary section as
-  **stale demo data, deliberately left**. The two scenarios still carry
-  `nextAction: "retry_cleanup"`, a move the server projection can no longer emit now that
-  `cleanup-pending` routes `lifecycle_finalize_task`; nothing fails because `nextAction` is a plain
-  `string` on `dashboard/src/types/projection.ts` rather than a closed union, so no type or component
-  gate can observe the drift. Recorded that these are presentation fixtures with no live server
-  counterpart and that **no dashboard code was changed** — the memory change set that reconciled this
-  leaf is code-scoped to the MCP worktree modules. Added a reference row for the untyped field.
-  Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: The claim named `"engine-landing-merged"` for the merged scenario, but that literal occurs twice in the file (the D4 scenario name at 1133 and a later comment at 1164), so the anchor picked out no exact target and the cited `retry_cleanup` lines held neither name. The anchor is now the merged scenario's unique summary literal `"Replayed onto moved main"` (1154), cited alongside the two scenario names and their `nextAction: "retry_cleanup"` lines; `engine-landing-merged` still carries `nextAction: "retry_cleanup"` at 1155, so the claim wording is unchanged.
-- 2026-09-11T14:58+02:00 — Automatic post-integration cleanup vocabulary at code commit `76ce662a`: `engine-cleanup-pending` and `engine-landing-merged` now carry `nextAction: "retry_cleanup"`, replacing the retired `request_cleanup_decision` literal. Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
-
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the FL1 trim to 1,197 physical lines. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: removed duplicated Source ranges
-  from the `ENGINE_ROOM_SCENARIOS` and `edges`/`EdgeStates` rows; exact non-fixing check returns
-  zero findings.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 24 citation findings (8 rows plus prose); scoped recheck clean.
-
-- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
-  `observer/projection.py` citations — the reference row and the restatement in the 10:56 entry
-  below. `EngineProcessEdge` cit:([`EngineProcessEdge`], mcp/src/agents_remember/observer/projection.py:934-953)
-  is the class with the `extra="forbid"` model and the documented state vocabulary. No body claim changed.
-
-- 2026-08-01T10:56+02:00 — 260731-EFA-L4 curator: corrected the T9C fixture description. `EdgeStates`
-  no longer has a `cgcRefused: "amber" | "red"` flag, and the `cgc-seed` lane no longer emits
-  `state: "refused"` with a `refusedPolarity` — both were shapes the server cannot send. Verified
-  against `observer/projection.py` L762-L781 (`EngineProcessEdge` is `extra="forbid"`, declares no
-  `refusedPolarity`, and its state comment lists nominal|running|blocked|failed|stale|skipped|complete|
-  planned|unknown) and `git log --all -S 'state="refused"'` (zero commits ever). The scenario now seeds
-  `edges({ cgc: "stale", … })` — a state `_seed_edge_state` really returns — and the renderer derives
-  the amber polarity from it; its `currentPhase`/`summary` read "seed stale — reroute". The scenario
-  name `engine-cgc-seed-refused` is deliberately unchanged, so the body now says why: "refused" names
-  the visual beat, not the edge state. Added the fixture-honesty invariant (an `extra="forbid"` model
-  means an invented field or state is a payload the server would reject, and a branch no user reaches).
-  Repaired four citations: the projection-types row L61-L285 → L143-L154;L521-L608 (the old range
-  contained none of the five named types), `ENGINE_ROOM_SCENARIOS` L724 → L722, `engineProcess`
-  L216-L270 → L214-L268, and the `edges` row L132-L214 → L132-L212 (L214 is `engineProcess`).
-
-- 2026-07-31T18:05+02:00 — 260731-EFA-L2 curator: re-derived 10 stale self-citations after the file
-  grew to 1198 lines. The whole factory block moved down past the `LEDGER_ROWS`/`LEDGER_TOTAL`/
-  `OFFICIAL_LEDGER` window and the `landingRef` helper: `SOURCE_BRANCH` L21→L25,
-  `wsEngine` L23-L32→L27-L36, `WORKSPACE` L34→L38, `ref` L36-L38→L109-L111,
-  `boot` L40-L47→L113-L120, `EdgeStates` L49-L55→L132-L140, `edges` L57-L105→L142-L214,
-  `engineProcess` L107-L156→L216-L270, `EngineRoomScenario` L15-L19→L19-L23, and
-  `ENGINE_ROOM_SCENARIOS` L288-L623→L724-L1198 (the export tail now ends at the six spread stage
-  arrays). The same three ranges were re-stamped in the Repo-Internal References table. No claim
-  text changed; every range was read back against the current source.
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: the `engineProcess` fixture helper seeds `leafId` so bench/gallery projections exercise the same leaf-label contract as live series-contract projections. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: engine-room fixtures now point `enclosure` and `sourceFiles` at `<task>/enclosures/<leaf-id>/series-contract.md` instead of a task-root `contract.md`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-22T11:00 — slice 05o: added the fixtures for the six remaining failure modes (all reusing the
-  `engineProcess`/`edges` builders). `EdgeStates` gains a `cgcRefused` flag so the `cgc-seed` edge can emit
-  `state: "refused"` (+ `refusedPolarity`). New: `engine-boot-abandoned` (T18, in `bootStages` — the
-  `boot-demo` enclosure dissolves with no landing); `providerBlockStages` (T7B provider-plan verify + block);
-  `seedFaultStages` (T9B GrepAI seed-fault + seed-retry); `engine-cgc-seed-refused` (T9C — the amber SOFT
-  reroute, `health` stays `running`); `liveSyncStages` (T12B — `engine-sync-moved` + `-memory-blocked` +
-  `-recovered`, memory lane only); and `engine-integration-conflict-flash` (T14C — `integration: "failed"`
-  flashes BOTH return lanes red before the steady STOP). The three stage arrays spread into
-  `ENGINE_ROOM_SCENARIOS` (after `...staleBaseStages`); the two `device-mgmt`/`boot-audio` cards sit inline.
-  Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T10:45 — slice 05o T1B: added the `staleBaseStages` array (spread after `...memoryBlockStages`)
-  with two `boot-demo`-identity frames — `engine-boot-stale-verify` (`phase: code-worktree`,
-  `worktreeAdd: "running"` with the code worktree still `planned`: the code-lane preflight scan-ring beat,
-  base staleness not yet decided) and `engine-boot-stale-blocked` (`health: "blocked"`,
-  `codeSource.behindSource: 3`, both worktrees `planned`, all edges `planned`, actions
-  `fast-forward`/`proceed-stale`, `nextAction: "fast-forward"`, a contract-not-yet-written `missingFact`:
-  a FLEETING born-blocked enclosure with the main code node pruned). Same `boot-demo` enclosure as the boot
-  stages so the stale-base scenario's recover reuses the boot/clone frames. Verification metadata pinned
-  until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B: added the `memoryBlockStages` array (spread after `...bootStages`)
-  with two `boot-demo`-identity frames — `engine-boot-memory-verify` (`ledger: "running"` + memory worktree
-  `planned`: code lane solid, the ledger-verify scan-ring beat) and `engine-boot-memory-blocked`
-  (`ledger: "blocked"`, memory worktree `missing`, `health: "blocked"`, `nextAction: "reconciliation"`,
-  `ledgerRows: []`: the gate + ghosted-lane beat). Same `boot-demo` enclosure as the boot stages so the
-  `memory-block` scenario's recover reuses `engine-boot-2/3/4/5` and animates as one enclosure; the existing
-  `engine-memory-blocked` (`v12-feature`) stays the static GALLERY card. Verification metadata pinned until
-  closeout stamps the 05o code commit.
-- 2026-06-21T23:35 — added the memory-lane `integration-mem` edge to `edges()`: when integration runs it now
-  also pushes an `integration-mem` edge (`memory-worktree → memory-source`, mirroring the code `integration`
-  edge) so the memory worktree's ff-only integration back into the feat SOURCE is visible before carryover.
-  Emitted only with `external` memory and **skipped when `states.integration === "blocked"`**, so the
-  all-or-nothing integration conflict keeps a single code-lane STOP (no duplicate memory-lane gate).
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-21T02:27+02:00 — slice 05k: added the `engine-landing-pushed` scenario (D3 "code lands" —
-  `integration-pending`, `ff-only`, `landing[]` = origin-feat `pushed` / PR `merged` / origin-main `tip` /
-  origin-mem-main `planned`), splitting the previously-collapsed D2·D3 tear-down beat (D2 = `engine-landing-ffonly`
-  integrate/push/PR-open, D4 = `engine-landing-merged` memory carryover). Appended before `...bootStages`.
-  Verification metadata pinned until closeout stamps the 05k code commit.
-- 2026-06-19T23:58+02:00 — slice 5i: renumbered the boot stages B0→B5 (added `engine-boot-0-main-only`,
-  renamed the rest to the build-up beats — providers-dim / seeding / nominal); added `engine-retired` (D6
-  stack-removed); re-typed `engine-landing-merged` to `integration-pending` (D4 intact) and turned
-  `engine-cleanup-pending` into the D5 de-materialise (detaching worktree refs + `providers: []`); boot edges
-  carry the `worktree-add` lane state. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:27 — Dev-bench tab trim (mirrors task 5's `b3f2491`): removed the unused `engine-empty` scenario (empty `processes`) — no consumer (the dev gallery dropped it; the `EnclosureProcessMap` render tests reference only named live scenarios). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2: `LEDGER_ROWS` rows now carry `codeSubject`/`codeDate`/`memorySubject`/`memoryDate` (real on the 4 real commits, stepped synthetic on the 21 generated) so the bench popover's 6 columns read complete. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: added `LEDGER_ROWS` (25-row served window) + `LEDGER_TOTAL` + the exported `OFFICIAL_LEDGER`; the default `engineProcess` factory now carries `ledgerRows`/`ledgerRowCount` (live worktree coupler everywhere), and the no-worktree blocked fixtures override `ledgerRows: []`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T15:50+02:00 — slice 5h cleanup pass (feedback): dropped the unused `engine-empty` scenario; refreshed the now-stale line-number citations (the landing additions shifted the file). The `engine-boot-*` frames stay here for the component tests; only the bench gallery filters them (`dev/fixtures.ts`). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T11:55+02:00 — slice 5h H2: added the `engine-landing-closeout` scenario (`phase: closeout-pending`) so the T13 closeout train has a fixture. Verification metadata pinned until closeout stamps the 5h H2 code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1: added the `landingRef` helper + the `engine-landing-ffonly` / `engine-landing-merged` scenarios (the successful-landing arc surface for H2) and a default `landing: []` on `engineProcess`. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-17T16:15 — slice 5g G5: added the `engine-integration-conflict` (t14c, `integration-blocked` + a
-  blocked `integration` edge) and `engine-abandoned` (t18, `abandoned`) scenarios + an optional `integration`
-  edge in `EdgeStates`/`edges()`. Verification metadata pinned until closeout stamps the G5 code commit.
-- 2026-06-17T15:00 — slice 5g G4: made the boot/cloning fixtures' provider `runtimeState` consistent with the
-  running conduit — CGC-seeding gets `[boot("code", "indexing")]`; the GrepAI-cloning frames
-  (`engine-boot-4`, `engine-fleet` device-mgmt, `engine-setup-running`) get `[boot("code"), boot("memory",
-  "indexing")]` so the charging engine matches the flowing conduit. Verification metadata pinned until
-  closeout stamps the G4 code commit.
-- 2026-06-15T19:35 — Created for slice 5e: scenario fixtures (05e §11): bootstrap/running/failed/fallback/blocked/sync/cleanup + boot build-up stages. Verification metadata pinned until closeout stamps the 5e code commit.

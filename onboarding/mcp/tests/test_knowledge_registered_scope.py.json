@@ -1,0 +1,314 @@
+{
+  "path": "mcp/tests/test_knowledge_registered_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring states the clause group, the lane, and the six failures every case names — including the ambiguous common base resolved by picking one.\n\nAnchor: \"an ambiguous common base resolved by picking one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:1c1b66d20e0188112dba0f2c49fcd186ef82e904d4881434d9e2289160e8b38b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Determinism is asserted as two whole manifests comparing equal, with the edge list a tuple of itself.\n\nAnchor: \"assert first == second\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:ca5f5f5f83642128c38f889b18af4b9644561ce02b7893a34c2100a104343538",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The no-policy case is a successful construction with no policy identity and no composition edge, and the reached family membership survives.**\n\nAnchor: \"assert outcome.manifest.policy_identity is None\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:1e486f1a37c3764651b5e3202a03908041ad23c6fc346421178fa19e04aa5746",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The prefix case: a declared directory where an anchor path is stored selects no claim, no anchor and no edge.**\n\nAnchor: \"assert outcome.manifest.followed_edges == ()\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:4338c1a32686fc845ec494c5315e2b2b0a64c1b6866ee6fbc36472063b383e9d",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The frontier case reads the construction module's own text and requires the selection surface's names to be absent from it.\n\nAnchor: \"\"select_recorded_scope\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:13a9f8237cf5e697d77af11a698cb297ef0f600ba8eb77493c55c555d3288840",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The declared-snapshot refusal names the exact declared digest and carries the construction's own operation on the typed refusal.**\n\nAnchor: \"assert outcome.refusal.refusal.operation == CONSTRUCT_SCOPE_OPERATION\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:cecf1ad617b05f7d39c40ec7b78f5ff7aa4740484203b07fc2e7f7b2d571f1ac",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Two declarations for one side are refused as an ambiguous common base at declaration time rather than resolved by a tie-break.\n\nAnchor: \"with pytest.raises(ValidationError, match=\"ambiguous common base\"):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:7fb1274554c2e6f7f037d3bf4a64097bdee28c3ce3d91b1975bcbfd1e1c7079d",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The path helper refuses absolute, pathspec-magic and parent-escaping spellings, so the declared path stays an identity to compare.\n\nAnchor: \"for bad in (\"/src/integration.py\", \":(exclude)src/x.py\", \"../src/x.py\"):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:cbced2d5ba8f5f66030bcd974d65f0484bb8ab4fce8d0bde58b6fb898e28273d",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 425
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:2aa652b1f98ec49227ed7a559b1bbe021912152a22b0250f98611d0b1ce18dca",
+            "locator": {
+              "end": 463,
+              "kind": "line_range",
+              "start": 463
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two module constants pin the shipped registered-composition policy id and the declared version the fixture's policy row carries.\n\nAnchor: \"DECLARED_VERSION = \"2026-09-18.1\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:1b55d075a14a878ac49e4f3a580bd83a89faad58d2bba5fc55c0b09132d5a466",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module-scoped fixture builds the base dataset through the shared read-scope builder and copies it to a second candidate path.\n\nAnchor: \"base = build_read_scope_fixture(directory / \"base\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:525a26df824dd8441f800806f6a06b4c34643bcb2432c4c99c09f5c95523691e",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one declaration each case varies declares `scope-B-M` over both sides with the read-scope fixture's two changed paths.\n\nAnchor: \"\"scope_id\": \"scope-B-M\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:9152b38097e5020e9181e6b8ffc67e89b7d3768feeeccd67cc7d93b31ee149a3",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Each snapshot declaration records the dataset's own identity and the selector policy version it was read under.\n\nAnchor: \"selector_policy_version=\"recorded-family-frontier/v1\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:e1ad38d29f1cf8137252d53c9606c5a074d89fd40bd1599fed9809bcddd27a22",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:092e06d007c071023c010a3b94751840c23fc0d429eb5be3bf94134b79ab19cb",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The fixture's policy version is a forward, depth-one traversal that widens to the registered review scope.\n\nAnchor: \"widened_scope=REGISTERED_REVIEW_SCOPE,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:c5c3cbccd8467de0635e21c8bdbca2f0a96856a15d93da4fbe2aee3c848cca61",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The authored composition edge joins the fixture's family revision to its direct family revision under that policy version.\n\nAnchor: \"from_family_revision_id=base.family.revision_id,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:af7eee4005587a9b38e0aee45d652231b0248fdb949523a8617736a7d49c241f",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The acceptance case: construction version, resolved three-part policy identity, declared scope id, followed composition edge and non-empty membership in three kinds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:5d837ab0f9e3d435b0c580c23b6849bd3ae32f675c8c8553ade02d646a5bc0ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_declared_scope_is_constructed_with_its_policy_identity_and_resolved_membership"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:8bd57dd829842611b83c4cffd825cfc28c0111f0c3875ac2bf9d2c265ac06284",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The provenance case asserts both mapping sides for each recorded-link kind and the candidate side for the authored edge.**\n\nAnchor: \"assert (\"source_to_invariant\", \"candidate\") in recorded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c356d96e29029ba3a75b95dec830bd39370a6fb",
+            "content": "sha256:d61da3864b3bd6f088b16ba107a1b14af5689e612224a51af9a2dc14dcb97d54",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

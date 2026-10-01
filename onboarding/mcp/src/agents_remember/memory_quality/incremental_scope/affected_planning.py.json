@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Planning observes live candidate authority and validates the R06 scope against the current checker registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:70cfef7568c8fc4324b0c438b08f5c903b58aeef9bbacacf968b4f30011836d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_affected_closure_plan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:efcff75844b4b065449f4242209bf1ea4cd9f0ab130727f9d3526a13676829c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:4bba2dbe0233281dd2ad72cb9eb76fc55fa43d7a0286c25f86da3195b45bbf16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_scope_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "R21 admits the exact Gate 1-4 prefix and requires a memory-only Gate-5 start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:b1c138affbb2e1397c9a3f1039b95212d5a5ca8d8898b016ab3829e0c22b2bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_gate_certificates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One unit per incremental document/checker is compiled with a transitive reverse dependency closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:37a1a1d9ef31f2d5e6fe4649a5e1f053c46e7bbf03371ab148d962da477cb08d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_units"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:a22bce485b1ca158703e305ab0386b646472e9e62e5a2477b6bb0b18465c9869",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:3913fcb229891cc812f4842df219efe7fe997976ba1d4c158bef838e0914b19d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dependency_closure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Affected planning remains production-owned; deleted fixture coverage does not constitute current admission evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+            "content": "sha256:70cfef7568c8fc4324b0c438b08f5c903b58aeef9bbacacf968b4f30011836d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_affected_closure_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Gate certificate and reuse contracts come from the R21 owners inside this repository.\n\nAnchor: \"class GateCertificate(FrozenContractModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0950a19426b81088946c32342ba7c4a1e7227a47",
+            "content": "sha256:f04b26a3b97c7b2b3a793956dd94e6698cf041f49a9c3f0e4a921e7e6dda9072",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_certificate_reuse"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_invalidation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:71e25b16d25273c4d9d8946364bb322e963bf06f62b4808520d6739984750c71",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

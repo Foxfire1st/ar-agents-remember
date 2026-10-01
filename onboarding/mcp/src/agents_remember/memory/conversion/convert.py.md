@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/convert.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/convert.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T14:21:42+02:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f`|
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -96,7 +86,9 @@ Rule 2's fallback cards (none on the real tree) are the only cards whose output 
 code tree. The commit route's converted base and the crossing sync choose that tree differently (see
 `base.py`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -105,39 +97,28 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The entry point, its version pin and its steps.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pinned version and the rule that a changed output ships as a new version. | `CONVERSION_FORMAT_VERSION`; `SUPPORTED_VERSIONS` | mcp/src/agents_remember/memory/conversion/convert.py:44-51 |
-| An unsupported version is refused. | `require_version`; `ConversionVersionError` | mcp/src/agents_remember/memory/conversion/convert.py:91-100; mcp/src/agents_remember/memory/conversion/convert.py:56-57 |
-| The inputs: files, database, and the converted state the marker decides. | `MemoryInput` | mcp/src/agents_remember/memory/conversion/convert.py:68-78 |
-| The anchor commit: exact, prefix-resolved, or the listed fallback; an ambiguous prefix refuses. | `_anchor_commit` | mcp/src/agents_remember/memory/conversion/convert.py:177-206 |
-| Cards become Markdown plus a file or route sidecar. | `_convert_cards` | mcp/src/agents_remember/memory/conversion/convert.py:233-286 |
-| The per-card audit, including the governing-overview and path mismatches. | `_audit_card`; `nearest_overview` | mcp/src/agents_remember/memory/conversion/convert.py:289-309; mcp/src/agents_remember/memory/conversion/convert.py:117-127 |
-| Exported entries join their file's sidecar; a path without a card gets a sidecar without Markdown. | `_merge_entries` | mcp/src/agents_remember/memory/conversion/convert.py:312-329 |
-| The whole tree is validated before anything is returned for writing. | `_require_valid`; `ConversionRefused` | mcp/src/agents_remember/memory/conversion/convert.py:368-384; mcp/src/agents_remember/memory/conversion/convert.py:60-65 |
-| The conversion's steps, the no-op and the marker. | `convert_memory` | mcp/src/agents_remember/memory/conversion/convert.py:387-431 |
-| The report's measures. | `_report` | mcp/src/agents_remember/memory/conversion/convert.py:434-479 |
-| Determinism, the version refusal and the no-op. | `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted` | mcp/tests/test_knowledge_conversion.py:222-263 |
-| Version 1's pinned bytes. | `test_conversion_format_version_1_reproduces_its_pinned_bytes`; `VERSION_1_FIXTURE_DIGEST` | mcp/tests/test_knowledge_conversion.py:349-354; mcp/tests/test_knowledge_conversion.py:346-346 |
-| A refused conversion writes nothing and names what failed. | `test_a_refused_conversion_writes_nothing_and_names_what_failed` | mcp/tests/test_knowledge_conversion.py:266-303 |
+- The pinned version and the rule that a changed output ships as a new version. [1]
+- An unsupported version is refused. [2]
+- The inputs: files, database, and the converted state the marker decides. [3]
+- The anchor commit: exact, prefix-resolved, or the listed fallback; an ambiguous prefix refuses. [4]
+- Cards become Markdown plus a file or route sidecar. [5]
+- The per-card audit, including the governing-overview and path mismatches. [6]
+- Exported entries join their file's sidecar; a path without a card gets a sidecar without Markdown. [7]
+- The whole tree is validated before anything is returned for writing. [8]
+- The conversion's steps, the no-op and the marker. [9]
+- The report's measures. [10]
+- Determinism, the version refusal and the no-op. [11]
+- Version 1's pinned bytes. [12]
+- A refused conversion writes nothing and names what failed. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

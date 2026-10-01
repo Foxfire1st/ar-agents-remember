@@ -1,0 +1,1741 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias.\n\nAnchor: `review_source_inventory`; `review_statement_sides`; `review_revision_comparison`; `review_subject_catalogue`; `review_task_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_candidate_identity"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:bf2b35660e90380b885eeb16ffeb4c424c658bf32de81887aa75c3a2bd2d4810",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:4f0efbde9dda0ffc32327f6d20ebb8b165815972d91977692d032b88477c05f5",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:73b02c606fd1a6d98dbb70c50364e9fbd9d418fec971ad53f31899bde50153c7",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The catalogue's own population read, which the entry operation delegates to: both snapshots' identities through the store's own two list operations, and the globally kind-grouped union with per-row presence.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:3a3813e56013dbb70558be90128c7d1b8763130f1d06265f47a8730b27645bb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_identities"
+            },
+            "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:e8ba7d877a3a7ce700c9f186c045d49e2100950fbeb203819348efd8abb427af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union"
+            },
+            "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The pair preflight and the pair this leaf opened out of it: the absent half named as `baseline` or `candidate`, the sibling fact beside it (a side that is present but cannot be read), the unreadable receipt refused through the shared owner, and the step that runs both only when a subject was named — because a task-context review compares no dataset.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_dataset_half"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_half_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_candidate_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:f3a1e763b5a58bfeea6ef2341b85a518e5ef6e36afabfaa26f8dcd0d7c2a9309",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_dataset_pair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:f640e3e1eb27c055823c81bf1822b422dbf0305b14b6f251d76eb9458e900bb3",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:23a3500344240a159380702945bbd14a45b1d941a08e6cc8153a51956174d2ee",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 402
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The record-beside-the-bytes namespace this adapter threads through the whole render: the candidate's own sealed receipt when there is one, otherwise the before half's own `baseline-generation.json`, the requested repository used only when neither record exists, and an unreadable record refused rather than guessed past.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:7f5ce855ce3dfb30ab5c65f92bf2e989104ce00f061705ee89d95bcaf3c06054",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:35c38006e1c25acb36c6f04b941842e9b3f1b3be3ec1934d562349482dbb4107",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_RECEIPT_NAME"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:f5e3dc842b344811cd8ad59ebc8201cf4d0e408b83126d7addc6e400eb12ec22",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_baseline_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The entry route's single refusal builder, carrying the resolution's own refusal verbatim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:151736419cd320dfebf3e61db0f3e5f1fea5b47ed15927522a9bda5eb8768402",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_refused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The composition: the observation made once and handed to both renderings, the task-context branch, the three pair refusals (absent, unreadable receipt, unreadable dataset), the comparison, the matrix read through the shipped view operation with its selection channels stated, the endpoint recheck immediately before the payload, and the panes with staleness, submission and the declared limits.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:36e43058366a4dd9540b7b3c7fb454dee1c44b0ef514b2316f148351312be728",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_candidate_identity"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
+            "content": "sha256:62cf6d459b3b020429a11f14244aaa2ebde11fa29514e733e81dc88c849aca92",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_view"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_views.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
+            "content": "sha256:6b647ae2b2899fda0ee87e4a0ece8ee472286d84ea3c7ae0af7c40357020543a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ViewRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_half_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:576e6fcb8e980ee205a75689f4ee4631affd071709ba923e22d29d3e04b60899",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_selection_channels"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:5a9cc3b5eda3dbbfdc83560d5bfca425001144152c7fa7ff9d09c265037aeeb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_matrix_rows_remaining"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:c4127302ba62d88d836254ac430d88f9a721daa32c710b398bdb837e567b9f1f",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 578
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The recorded before/after relationship union traversed from the comparison's own page items and threaded into the source pane (`ICR-R08@v1`): one call, and the adapter adds no traversal logic of its own.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "locator": {
+              "kind": "symbol",
+              "name": "relationship_movements"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:d53c3239d838ce8c30e49a540ec93b5ef6dcec07826b1b2a155f79ba683ddf40",
+            "locator": {
+              "kind": "symbol",
+              "name": "RelationshipSources"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The comparison's own partition carried verbatim — never recomputed, because a second measurement could only disagree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:0b94f85fa9efd6d2146ae50b3fe5bd7031a0bc94699565a8560cf1486723b69e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_attribution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The review matrix read as its own step, so the composition reads as measure, branch, open, compare, read, recheck, publish.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:0ecc2536f73989c659700cd6ce3fc5b1400e1a1b15bfe7a989b5dd2cdd70d830",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_matrix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shipped comparison call over the two already-resolved sides, with the probe and the candidate's own namespace passed through and no side or selector added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:05fd2b3385201155486a7ba8b77c230eb40395775f98879cdd8c6546e3db3a6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:b6674c9a6519d5519f85e9dd396089661b4dd4d108b927663d1e332ddfba9a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_knowledge_scope"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The narrowing that lets a comparison refusal name a selector that is *absent* as `\"no selector\"` instead of reading `kind` through `None`, and the refusal it feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:080d639fe20f2c33e604a5aceb52e93da182a4e73218e8e0a9b1ead18a4b66c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selector_kind_or_absence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:a5e629944865662fd63096f5e667096535f06f43318c3577af724a384ddbc1ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The published adapter surface: the three entry points, the two dataclasses, the request model and the record-kind constant — and, re-exported from the sibling modules, the resolution callable, the resolution value, `candidate_ref` and the three published path constants.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:fbde7c98eafb8b902e303a3eccce22a4ab2d4933e5ee2a5a33b10a5e5f9a1d8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The comparison identity carried verbatim — now owned by [`application/review_comparison_staleness.py`](review_comparison_staleness.py.md): this leaf moved the identity helper out of this adapter and **deleted** its private `_comparison_identity` rather than keeping it as an alias, because nothing under `mcp/` imported it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:4a0aed11b9373e3c3765a85562f560ecd85de250022fd2f15bd1f1d77f575aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_identity"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The comparison's declared limits, omissions and side-absences **plus the inventory's own state**, carried as counted facts at the top level.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:fab69dcec914d9426595b300b85a732e6c0b0b89fcd40b3871722673fb900ff6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_limitations"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:da18442f8d770c5e82df635ee0f8f979610102b297bb04e265bde3b14979e62e",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_limitations"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The staleness rule — now owned by the sibling module: agreement, or an absent previous binding, is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named. This leaf deleted the private `_staleness` rather than keeping it as an alias.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:aaf46a13f4003029706f3d1c5ebf8af593de7f1953d75d945b3b77555fb3917b",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_staleness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**Submission as the other statement of the same fact, and the payload validators that refuse a payload where the two disagree — including the one that ties `comparison is None` to `not_compared` and to the knowledge pane's selection state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submission"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReviewPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:79c7ad311c9c50ee8963feb58d3a1eef36b2f2429f94cf04c1ecb3297692f681",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_submission_state_to_follow_staleness"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:4d2fbd2e9a158dd3998321393a307ae206a87835b4fcef156c334862c7080385",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_identity_and_staleness_to_agree"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The panes: identities and authored records never rendered as mechanical facts, the whole-task inventory, the six published remaining counts and the measured partition, and the evidence pane's two independent absence states — the last two now the extracted modules' own functions, called by both compositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_pane"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:1df1b35fd945f09e5018fd0cd4ce46acd1120d0f4e1e3363a25abcdd2cf1c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_pane"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**Pane 1's delegation, and the one wire-visible change this leaf made: the import of the statement-side module and the four calls inside `_knowledge_pane` that replaced the adapter's private `_side_content`/`_conditions`/`_field_changes`, where a changed structured field is now served as each side's own projection instead of `None`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_conditions"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
+            "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
+            "locator": {
+              "kind": "symbol",
+              "name": "field_changes"
+            },
+            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The cases that measure this adapter's one-sided output through the real composition: an addition, a removal, a one-sided field row, and a structured value served as its own projection on both sides.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:2c88cb7e4ccc6e6f31b85f6737cf90ce462e537c5625002e27cbb567f7f15df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_added_statement_renders_its_after_text_beside_a_named_absent_before"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:a66dedf43017f357632ebd53db6a7da972e44024adeed1da988bc30787095c62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_statement_renders_its_before_text_beside_a_named_absent_after"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b1fd5c61ebe1a483af7c8e3a8d3938c1a617e6f2",
+            "content": "sha256:ee1098a65dfd5c1400da329ddfc55569773a7a1a1f5a6c28b4119ff196270c00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_structured_field_value_is_rendered_as_its_own_text_and_never_as_an_absence"
+            },
+            "path": "mcp/tests/test_knowledge_review_one_sided_statements.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The per-subject assessment projection that reports an unmeasured assessment as not measured and a subject without an authored assessment as unassessed — now the extracted record renderer's, so both compositions display an unassessed collection identically.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:8d0f1ba791caa384ff4f4894836f1bb8604882089f5c7dcc7c105380e66b7cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "subject_states"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
+            "content": "sha256:0b44d7805fec6afeab23ec939d2a7cdba560f0b0f2b65ea8da7d97b637fcc1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_state_for"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The assessment displays and the observation displayed exactly with no sufficiency field, and the detection fact with no severity — all the extracted renderer's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:ec33869b9a88bb18078dbf63746c40135f781a0ae8ad3e9f60f81f5200e555e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "assessment_displays"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:9b960289a7f0ebe5891535a2f924eb6f4427117e145cdc7f4e7497357b5eb19a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assessment_display"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:59ead7ba2d7315ea8f983d9ea993bc56be7839c6ece03d8a74a4ade64d4e05da",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:d53053d65db9fd5467978678d42c86317161bba321e24da0d718754e22bc56ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "signal"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The deleted prefer-both-sides rule and what replaced it: `_identity_item` and `_selector_record_id` are gone, and the pane renders the head selection instead.** The old rule preferred the item present on both sides — the retained predecessor both snapshots happen to hold — and used a one-sided item only for additions/removals. `ICR-R07@v1` deletes that preference: `compose_review` computes the before/after head pair from authored successor edges and `_knowledge_pane` renders it through `_selected_statements`, with ambiguity or unresolved lineage rendered as an explicit non-pair.\n\nAnchor: `select_subject_revisions`; `revision_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_statements"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:07cfb08ca562837a930d6e041b66abd4dd55384a005ccdb61052f37deab5a873",
+            "locator": {
+              "end": 970,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:dce97d78bd0b2a2f0f4f6a0a732c49e193da5234093b36c96ea066651e4ef99c",
+            "locator": {
+              "end": 1020,
+              "kind": "line_range",
+              "start": 968
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:f78438af62f0beadad9c301b70492e5e7270dc509e52b497435fcd32da7430cc",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:95ecaf3397b450e80769e5aa36681e2928afe7c2322e7d938c3ed0290a5801b5",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The re-export itself: the import block that makes the sibling modules' names this module's public surface and keeps the ingest CLI's existing import resolving — the resolution surface and `candidate_ref` from `review_candidate_resolution`, and `EMPTY_REVIEW_RECORDS`/`ReviewRecordInputs` from `review_record_rendering`.\n\nAnchor: `EMPTY_REVIEW_RECORDS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_review_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:2b4eafe4c02c6e6a8db132cf914e0015ae6259fb71e9bd8e4056e4b645e5b343",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_BASELINE_DIRECTORY"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9e9e4b89469641daa8c6c1fdbeaf8c6aebc395bf80b7c6526e355739a1bd416b",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_ref"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:4f0efbde9dda0ffc32327f6d20ebb8b165815972d91977692d032b88477c05f5",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:432b3bed182a4f237f125437268d0e0d6d31334efec2967122ef16ebf4ccb1b0",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:c3010f2f606fd2f8101f53cbe3ffebccfd74536d3bd75de0622d225035d91402",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9bdc5da7a8d451e5a007b15cbb80b00f406ade2731c38b436f659e1abb36b34c",
+            "locator": {
+              "end": 428,
+              "kind": "line_range",
+              "start": 414
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The selected source location, now rendered by the recorded-relationship display owner from the movement side (`ICR-R08@v1`), with the recorded role kept `None` rather than guessed and the counterpart address named only when the other side records exactly one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:230d2c3bea6e49ded6cf05c3d8e4009255fd428b9ddfb7b24347ccea5f7410f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_location"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:56ddaefb73f0811e980231edc862d5af15247e046d0064aaf70bc9711c53045c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_counterpart_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:b5fa01f96fcb561d397ad1c2fb4e0d892ff78f5938ac3807dd6cc4e9e5d6038e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_only"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The comparison's own statement about one claim's source observation, carried verbatim by the recorded-relationship owner (the moved `_change_state`), and the realization payload the recorded side is read from — the deleted `_realization_read_item` was that payload selection, now `side_payload`/`read_snapshot_relationships` in the same owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:510346bde3071a0fc89249d1fa2ebafd0e5a858a2c510eef26e41b45874a6142",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_change_state"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:7b693f373842feb093fce6a7f376f260d54ab05c6700b61c44e7807f79dbd409",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_payload"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:71c191eba1829189e31c94cfa4fec3130df35a9e20560b93be7aae715b47f0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_snapshot_relationships"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The source half's own measurement: the delimiter-safe probe, the inventory value, its command, whether a name can be carried as text, and the byte form a name that cannot is carried by.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_difference_observation"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:e5bcd197569c6305486b21d1a7c8f6b62152d6ca18733ecd2fe51ecdf9083b14",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_inventory"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:6a9494f8c9472eadac703d43bd6308db806178caa52718744135863d5ab9b8ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "inventory_command"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:c49874f93f278f02503f968365c68a63812a4843f529cf8d504ee46360c7ee3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_text_path"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:a95444f2d47722f1fa92d64b4196cb129e380792691f5ea6f9f1a723442d3d11",
+            "locator": {
+              "kind": "symbol",
+              "name": "byte_form"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The entry that needs no subject: `comparison=None`, `staleness.state=\"not_compared\"`, a knowledge pane in the `task_context` selection state, the measured pair attribution, and the reason it names — including an absent or unreadable dataset half when there is one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:915f40663eed77e33ee073f5817616bad6e7c725ae1a1b0681ef9dbb41021987",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_context_detail"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:7d1071b571bbff289d4970fd937c12afd69555ca0d276e8ad908e430e9433c70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_context_pane"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:f706614b8af095e2ebff7acdcc2443f496aececfd041f61daa684bf4db9ce52d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_attribution"
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
+            "content": "sha256:abc73994f7598df139bf708ba331e7f37dda899bd6d8c0ea161d32c9d1f9be9a",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/application/review_task_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The refusal builder the composition reaches (`refused`, the extracted renderer's), the resolution module's refusal constructor it uses, and the **re-exported** record resolver the production port calls — whose owner is now the record module, and whose old assessment-only body is gone rather than kept beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:41be09c43fa88b5387d556120c363032f03a9a77dc5b82dc1abbe890bf0429c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_records_for"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "**The case that proves the surface stores nothing: the two datasets' row counts are identical across a full render.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:925cc6fcf0f1d0f349463d2015440f9449e42130e5fa1be0339e0a34480245c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_stores_nothing_so_deleting_every_rendering_loses_no_canonical_information"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The case that proves the adapter selects nothing: the comparison identity, item identities and counts are the shipped operation's own, compared value for value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:a57eae007b6c8e049cde12a7b37638dbe4a828974ffc0721bc6eb3588e26f4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The case that proves the candidate is resolved from task context and never from a browser-chosen path, and the case that proves an absent dataset refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_candidate_is_resolved_from_task_context_and_never_from_a_browser_chosen_path"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:9c07522003cc79886b73906cabb1c52ebcb0c0d366e2f947698688acb73af504",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_candidate_dataset_refuses_by_name_rather_than_substituting_one"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "The case that proves a stale comparison keeps its previous input and disables submission, and the case that proves a current one cannot be built with submission disabled for staleness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:e75eed75b1ca85e95163733a3d07486168d1859a54acd81823f40f9c1c616fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stale_rule_holds_in_both_directions"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The two cases the sibling leaf `260921-ICR-L5` added for the before half: an absent side refuses by name rather than being substituted with an empty one, and a side that is present but cannot be read refuses by name instead of raising.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:96eac29a5eb0201e3cf3c107bcf5ae1414ca1ff73f3cf73c07bdfb55ef7a2ffd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_absent_baseline_half_refuses_by_name_rather_than_substituting_an_empty_one"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:c516f5b1c2ffc7c0fd1c5e7acb5cf988860161a76cc2e505b525aaf1ddc2915d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_before_side_that_is_present_but_unreadable_refuses_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The record kinds the review matrix is asked for — an input to L20's view rather than a selection policy of this module's — and the authored kinds the knowledge pane separates from the mechanical signals, which the record owner now **declares** and this module imports back so the counted collection and the rendered one cannot drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:e7edee5ee01fc8fc6d55a66872db9b771355616f024f8f208fcff23c594bc9c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_MATRIX_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "content": "sha256:61b59a6b5160a907e9bf26bb4c11a903254d3ebfdacfc4e43e8dceb1b253a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "AUTHORED_EFFECT_KINDS"
+            },
+            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "**The entry route's own before-half case, and the fact that it proves the damage is the cause: a damaged half is refused by name rather than raising from inside the comparison.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67d7f42f3346e5e5611f092da043a170523f933a",
+            "content": "sha256:5e465a3acf376f5e5cdbd1e4a715d2ae8db2e631f1d89afa5632d88de540c1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_route_refuses_a_damaged_before_half_instead_of_raising"
+            },
+            "path": "mcp/tests/test_knowledge_review_resolution_and_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "**The case that measures the delegated resolution through the real composition: the bound endpoints published in the served payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:f03a976d2b5d0824e8b2a9a67a906b472e577858e747039e9fe7aac685577999",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:4ca4798e48d7f90c006c409d47aabc2b9906ef89ba63449a33ad3c9cb6a2203e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_capture_input_that_moves_before_publication_is_refused_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "**The cases this leaf added for the task-context entry: a review with neither dataset half lists the complete source inventory and answers 200 on the real route with no selector parameters; and a knowledge-only change leaves an openable review whose inventory is a *measured* empty set while the comparison is untouched.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
+            "content": "sha256:618694acaac3b3addb44a457fedda5723b373051acf3391df76ded38c069e017",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "02f29acb662ca678a1c2f6997c6c88f631ec55ca",
+            "content": "sha256:ca9f033c76a105fd9705d603b5df139629dbfc53a9a11ce74b77ab001706b984",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_knowledge_only_change_leaves_an_openable_review_with_a_measured_empty_inventory"
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The composition root that wires this adapter into the serving port.\n\nAnchor: `read_knowledge_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:b6b5dba20c73bf1657b4b0be86d099ad1a7df00c95c6a3ebe62bced45e3e72aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_port"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "**The composition measures what this leaf's own managed syncs recorded against the published generation and folds that measurement into the staleness it publishes (`ICR-R22@v1`): a measured movement outranks the reader's carried previous identity, so a review whose inputs a sync moved can never read `current`, and the payload carries the same measurement beside it.**\n\nAnchor: `sync_movement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:1b68626c1df4e3f1e3683ff4327f045cbff60658d4ede5c37bf83aaf964f3076",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_sync_movement"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:0ccfd42136229222421be834f0bcd59a7cec380180f6ace5e845db1926a75a18",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_staleness_with_sync_movement"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
+            "content": "sha256:7861822e0e45153b7960b29b5eb4977a43022b2dd12587351ed424618f05e710",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "A tree comparison's family context carries the change facts of the returned members; a dataset review's is published as composed (MIK-L33).\n\nAnchor: \"family_context=with_change_kinds(family.context, resolved.trees),\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:735029db67ae2076a984650eebf8c5265d1d88eb10a813c7c3113889dae4b5ce",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 553
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The facts' owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0614ddbb3b29a94ca3d8617609825a8bb3b85b2",
+            "content": "sha256:8119de1f5d96ed9b68912c635dbb69549524348d8714325e015030c6f9b3495c",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_change_kinds"
+            },
+            "path": "mcp/src/agents_remember/application/review_change_kinds.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The record input set, its frozen shape and its single module-level empty value — now declared in the extracted record renderer and imported here, so `review_records_for` and the ingest CLI keep resolving.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:2cb096ef366b92d0c4900ff4e0052c720803707eb438e5d96d834dbd55d75a34",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRecordInputs"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:6f91dd5339df6df91b5cdede991b96f3711ea0c9ecb6855d56f64c894750396e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EMPTY_REVIEW_RECORDS"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:4f0efbde9dda0ffc32327f6d20ebb8b165815972d91977692d032b88477c05f5",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The resolution value — now the sibling module's: the two datasets, the two code roots, the two tree ids, the carried contract and the captured identity the recheck re-derives, and the record a closed leaf's review was reopened from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one contract locator, now the sibling module's: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match.\n\nAnchor: `slugify`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_leaf_contract"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The whole comparison operation: delegate the resolution, then compose, with a refused resolution returned as a refused result before any comparison runs.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_review"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23d8f9881b56e27d64d08f9d0a414d422de3801b",
+            "content": "sha256:41be09c43fa88b5387d556120c363032f03a9a77dc5b82dc1abbe890bf0429c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "refused"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The entry operation: the same resolution as the comparison, then the pair's refusals through the shared `pair_preflight_refusal` (closed-leaf record, absent half, unreadable half, unreadable receipt — the rule the changed-intent summary also uses, since `260921-ICR-L47`), then the catalogue read — every recorded identity of both snapshots listed with presence and totals, no subject compared to earn its row. The enumeration itself is `review_subject_catalogue`'s, and the per-subject compare-to-earn-a-row helpers this module used to own are deleted.**\n\nAnchor: `unreadable_half_refusal`; `candidate_receipt_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_knowledge_review_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
+            "content": "sha256:075c9360f3cbc7bf7f22503dc169467135f7990dbe6bc32133557e18e25d0ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_preflight_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/review_pair_preflight.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            },
+            "path": "mcp/src/agents_remember/application/review_subject_catalogue.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

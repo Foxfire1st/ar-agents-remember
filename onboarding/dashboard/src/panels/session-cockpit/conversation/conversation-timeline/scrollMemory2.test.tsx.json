@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The second scroll-memory suite.\n\nAnchor: \"describe(\\\"ConversationTimeline — scroll memory (F-ac)\\\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5f110dcad64dde40cf6400beb977c20574c0d8",
+            "content": "sha256:6428fdb312c7e3437349350e1922b4496b1e3e7d4e0d87e8960a69e2993bed4f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

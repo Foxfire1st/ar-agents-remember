@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.trees.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The comparison it was read from.\n\nAnchor: \"\\\"number\\\": 2\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5036470ef5c8f46c02ab82b515ec7ca2b55c15",
+            "content": "sha256:7ba551364c5005d415540633227529c3f2d06b9da42756db77b57845924b14ae",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The worklist and its computed, complete state.\n\nAnchor: \"worklist\"; \"\\\"source\\\": \\\"computed\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5036470ef5c8f46c02ab82b515ec7ca2b55c15",
+            "content": "sha256:929d3c0ecbbf1fc5f8c0ee679c8748975ea0feddf608afccf1b408695336787e",
+            "locator": {
+              "end": 3021,
+              "kind": "line_range",
+              "start": 1867
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The gate's two `unexplained_file` items: the new binary and the mode-only module.\n\nAnchor: \"\\\"subject\\\": \\\"file:docs/scratch-lane.bin@c8b49c8cd518e58491924bfc364ff26e01a85009\\\"\"; \"\\\"subject\\\": \\\"file:mcp/src/agents_remember/application/review_family_rosters.py@863986f5f429c7e0e5821471bcf7cd11a3543cbf\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab5036470ef5c8f46c02ab82b515ec7ca2b55c15",
+            "content": "sha256:139f2ec00693462d827b3342e8c1e80164ce934291079fec491f45ae98fd37c7",
+            "locator": {
+              "end": 2897,
+              "kind": "line_range",
+              "start": 2870
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.trees.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:1e628465c81e4d80c37fe5196c0a2e8534c4da21cadb2d3ec8790dab666cfdef",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

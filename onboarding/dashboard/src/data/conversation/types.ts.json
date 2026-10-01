@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/data/conversation/types.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reducer consumes these item/block/event/status types.\n\nAnchor: \"export function applyInitialPage\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:87df4a1947501fc6aa8d95616f2a771868f0e74108902cd3781ca36a1cb9f877",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/data/conversation/reducer.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The roster derivation + focus model consumes `ConversationAgentRef`/`ConversationAgentStatus` and reads `ConversationItem.agent`.\n\nAnchor: \"export function deriveAgents\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "874689c9a35a59da18383a35960269deff02da47",
+            "content": "sha256:31af42029a67c0644bfea0d9eaa2b90bb1ef97c83d8f00b209158390fee5d2d8",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/data/conversation/agents.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The client + stream mirror these page/telemetry/interrupt/error shapes.\n\nAnchor: \"export async function fetchConversationTelemetry\", \"export const STREAM_OPEN_DEADLINE_MS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:655274cc918f7cd9bc08b67d28a97f09c3c737a8edee99e55fa727d1c491cf9d",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:64bcdea71d4b1f280a3cafff2295a83976b226279d82b99c3fd03ac986f9b9a3",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The server wire contract this file mirrors exactly (camelCase `to_camel`).\n\nAnchor: \"class ConversationEventEnvelope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37a39cfa82e04e111ebfd08355da0a038eb888ab",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The stale L1 control/telemetry capability view (`controls.interrupt`).\n\nAnchor: \"def _fixture_evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0ca24762a2fac8658350128416d9e8dc7b12483",
+            "content": "sha256:1c53c4bcf562956152428419f19111f02b2198fb6ffc4b36cccb5de0ff4e0c6b",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

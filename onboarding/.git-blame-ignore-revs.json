@@ -1,0 +1,61 @@
+{
+  "path": ".git-blame-ignore-revs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `ruff-format` gate step this reformat commit made possible.\n\nAnchor: \"ruff format --check\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:92ce66a9b5633d54c7d44a45b52f178c0ca86ea27409a7c69671867a72c8d7c0",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fast hook tier also runs `ruff format --check` over the whole tracked tree.\n\nAnchor: \"ruff format --check\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:92ce66a9b5633d54c7d44a45b52f178c0ca86ea27409a7c69671867a72c8d7c0",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Ruff formatting configuration, including the `E501` ignore that defers wrapping to the formatter.\n\nAnchor: `E501`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f38d0974cd3ba7437b6943fccbc4693fa5c8bb8c",
+            "content": "sha256:4dd1349047bc9464613c7eb03847edde6e9ce600273d4982c47cc892b78da578",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

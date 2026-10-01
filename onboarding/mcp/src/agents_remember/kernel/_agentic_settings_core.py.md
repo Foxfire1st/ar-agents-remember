@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/_agentic_settings_core.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/kernel/_agentic_settings_core.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `0dd1df9a950d59ac9622e5fb54250e528df08fa5` |
-| lastVerifiedCommitDate | 2026-09-16T20:47:18+02:00|
-| governingOverview      | `../../../overview.md`                                          |
-
 ## Governing Overview
 
 [MCP package overview](../../../overview.md)
@@ -60,11 +50,11 @@ family.
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/kernel/_agentic_settings_core.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+### Repo-Internal References
+
+The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
 
 ## L23 Final Candidate Disposition
 
@@ -81,30 +71,3 @@ systemd or address-space fallback is part of lifecycle acceptance.
 ## CCR-L42 current candidate
 
 The review budget now has one `MAX_REVIEW_ROUNDS = 3` authority constant, and the seeded loop default uses it so a settings value cannot silently authorize a fourth review.
-
-## Update History
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: The review budget now has one `MAX_REVIEW_ROUNDS = 3` authority constant, and the seeded loop default uses it so a settings value cannot silently authorize a fourth review.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): removed the executor-era claims -- QualityExecutor deleted, KNOWN_QUALITY_GATE_FIELDS narrowed to memoryCapBytes, QualityGateSettings carries only the memory cap; executor identity moved into the repository certification profile.
-
-
-- 2026-08-14T11:25+02:00 — R39 curator: reconciled resource prose with the container-only
-  executor. Verification remains closeout-owned.
-- 2026-08-14T06:32+02:00 — L23 final candidate review: quality settings preserve Dagger as the
-  only accepted executor; parsing no longer implies a local compatibility runner. Verification
-  remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: replaced the seeded 2 GiB
-  ceiling with an absent/`None` host-managed default while retaining one
-  explicit positive-integer cap. Verification metadata remains pinned until
-  closeout stamps the L24 code commit.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded the
-  `orchestration.qualityGate` family (known-key set, `QualityGateSettings` model,
-  `AgenticSettings.quality_gate` field, seeded 2 GiB default). Verification
-  metadata stays pinned until closeout stamps the 260731-EFA-L17 commit.
-
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.

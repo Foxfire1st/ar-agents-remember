@@ -1,15 +1,5 @@
 # dashboard/src/panels/file-viewer/FileViewer.tsx
 
-| Field                  | Value                                                |
-| ---------------------- | ---------------------------------------------------- |
-| repository             | agents-remember                                      |
-| path                   | `dashboard/src/panels/file-viewer/FileViewer.tsx`    |
-| doc_type               | `file-level-onboarding`                              |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `2e11db883f77bb1bf2827ae537b5d1d564e020b3`           |
-| lastVerifiedCommitDate | 2026-09-24T22:33:57+02:00|
-| governingOverview      | `overview.md`                                        |
-
 ## Governing Overview
 
 [file-viewer/ overview](overview.md)
@@ -70,16 +60,16 @@ only when the body is unavailable). View-mode lives outside file-scoped
 state so it survives file switches and reload. The page is kept mounted (hidden) by `Cockpit` across tab
 switches and is full-bleed (drops the rails), like the Engine Room / Topology / Chats views.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. | `SidecarView` | dashboard/src/panels/file-viewer/DualPane.tsx:14-18 |
-| The one tree explorer rendered twice (code + onboarding sides). | `FileTree` | dashboard/src/panels/file-viewer/FileTree.tsx:44-96 |
-| The persisted split/single flag (`localStorage`-backed). | `localStorage` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:1-1 |
-| The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. | `fetchRepos`; `readFile`; `resolveForward`; `resolveReverse` | dashboard/src/data/files.ts:116-121; dashboard/src/data/files.ts:123-131; dashboard/src/data/files.ts:133-141; dashboard/src/data/files.ts:93-93; dashboard/src/data/files.ts:113-116 |
-| The shell that registers + keeps this view mounted across tab switches. | `CockpitShell` | dashboard/src/cockpit/Cockpit.tsx:385-666; dashboard/src/cockpit/Cockpit.tsx:886-940 |
-| The route overview that governs this page. | `# dashboard/src/panels/file-viewer/ — File Viewer Overview` | onboarding/dashboard/src/panels/file-viewer/overview.md:1-107 |
+### Repo-Internal References
+
+- The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape. [1]
+- The one tree explorer rendered twice (code + onboarding sides). [2]
+- The persisted split/single flag (`localStorage`-backed). [3]
+- The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. [4]
+- The shell that registers + keeps this view mounted across tab switches. [5]
+- The route overview that governs this page. [6]
 
 ## Current L5I Maintenance
 
@@ -87,21 +77,3 @@ The mounted-but-hidden File Viewer defers its repository-catalog request until i
 showing. A settled success or failure is retained across later hide/show cycles, while concurrent
 StrictMode effects share the in-flight request instead of multiplying boot reads; the component is
 memoized between meaningful `active` transitions.
-
-## Update History
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 5 citation items; scoped citation check now passes.
-
-- 2026-07-24T13:17:17Z — Curator: documented first-visible catalog loading, settled read posture,
-  and the keep-alive memo boundary; verification fields remain pre-commit.
-
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (collateral, reviewer-accepted): one defensive line in
-  the repos mount effect — `cat.repos ?? []` — so a `repos`-less catalog response degrades to the
-  empty list instead of an `undefined` state that crash-looped `repos.find` on the next render
-  (deterministic latent bug; surfaced by the L2 leaf's microtask-timing shift under
-  `ChangeSetViewer.test.tsx`'s generic fetch stub, suite back to zero unhandled errors).
-  Verification metadata pinned to the leaf base until closeout stamps the L2 code commit.
-- 2026-06-30T00:00:00+02:00 — operations-integration L5: `openSidecar`'s overview branch now carries the doc body — it sets the sidecar to `{ state: "markdown", body }` when a `kind:"overview"` reverse-pairing has a non-null `body` (so opening an `overview.md` renders its prose full-pane), falling back to `{ state: "overview" }` only when the body is unreadable.
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the File Viewer page — repo/scope selectors driving two Headless Tree explorers (code + onboarding) over the L1 files API, a reusable `DualPane` on the right, bidirectional code↔onboarding pairing, and a persisted split/single mode; kept mounted full-bleed across tab switches. Verification metadata pinned to the task base until closeout stamps the L2 code commit.

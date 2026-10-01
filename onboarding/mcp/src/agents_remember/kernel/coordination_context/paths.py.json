@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Resolver selection uses these path primitives for topology and settings discovery.\n\nAnchor: `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:b32c60af0859592dfe4425df0f7ba7bbb048901372b075788f02de7b284ca549",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_roots"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:f0562b4ab845ee8912222ba4a7d75131a5c104002e8f6b36a631f12158f198a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_from_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:b01964883e1933c59f3656f7e4cb16b118fbf436f8782f33c29fee7598bad412",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:915b157c1065e560af49425ddc001e2a5c91d9f09ea9ee314e6613e660b7427a",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:d9708c7f68d91ce5266a986e865c1bfaae54687d4f75ff536137dcd1d52ae5c7",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

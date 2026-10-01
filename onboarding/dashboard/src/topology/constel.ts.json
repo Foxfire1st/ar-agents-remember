@@ -1,0 +1,180 @@
+{
+  "path": "dashboard/src/topology/constel.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
+            "locator": {
+              "kind": "symbol",
+              "name": "CssVarReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`mountConstel` builds its reader over `getComputedStyle`, calls `constelColors(v)` once, and `col` indexes the result with no `??` fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
+            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:6995f9835dafa8ba781ddb2c4a7946277d0f3595424f45737eb3c90e4fc82152",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSTEL_STATUSES"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConstelStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`lifecycleStatus` is the only producer of the statuses this file paints; its `UNCLASSIFIED_STATUS` is why an unrecognised state no longer arrives here as `undefined`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:7b65740d0a61f6c98d5fe366a26beae041534dfb70f1dbc8da6f89f0c14852e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
+            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCLASSIFIED_STATUS"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas.\n\nAnchor: \"gives every status in the vocabulary a colour of its own\"; \"declares no colour for a status the vocabulary does not contain\"; \"asks for a themed token per status and offers a concrete fallback for each\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "content": "sha256:dd68c3374aab0ffce0e884470a9e866efce01ad2f6738a101167414fedfb8a8f",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "content": "sha256:2be4d83dca97257d0da851a444e7d50a181bde6f4debd6f47f931b163f0e6ffa",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0a8841055fcd74ad579fda642fd56f6c010400c2",
+            "content": "sha256:a43f92d53bff2a94cf80bfa307c990669fc82f457b873a8343bb97e4d35ae6e9",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The React wrapper that mounts this renderer once and pushes new models through `update()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6f197168068ebede03bb29a8769b4dccc419147",
+            "content": "sha256:c420d1aa8394b04cdbc37e97e27d92604d46847c69806fa78679d90e877447be",
+            "locator": {
+              "kind": "symbol",
+              "name": "Topology"
+            },
+            "path": "dashboard/src/panels/Topology.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

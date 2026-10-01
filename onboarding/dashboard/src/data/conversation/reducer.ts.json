@@ -1,0 +1,194 @@
+{
+  "path": "dashboard/src/data/conversation/reducer.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The wire page and event-envelope types consumed by the reducer entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:eb52178bf5c9cdaf9b4f77c2d9543d48b4b5ed0fb1af494586bc5383973e9cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationPage"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb63cfbe6edcffd10c95a18dc471e626380e07fc",
+            "content": "sha256:d2854a0bb8eb07733aacda701d98f4e70a059b53002338634bbc5321edf7d797",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationEventEnvelope"
+            },
+            "path": "dashboard/src/data/conversation/types.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reducer's initial and older-page entry points apply typed page baselines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:e1045043988db2694eeba0207b2b55073418bc2592b8b428e51201752395021b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyInitialPage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:1cd9505379c95a5cb04d8d15a3580cbf9f449eb752ae9bb13a9faaf688eaa1f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyOlderPage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reducer's live event entry point applies identity, cursor, dedupe, and gap rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:54ee72c03bd664fe8535cfbe0f9ae3e0bc79ef03786549de08358cf2f25c9ad6",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyEvent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The store applies pages/events and consumes the reducer's `recovery` signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7b0e8a90c1bed09c86800be640a7d95a4ffeb42b8ddcef69e2e57b457dad1955",
+            "locator": {
+              "kind": "symbol",
+              "name": "activeConversationStore"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34b8790a2a6045ce4222a048b27ae76263487c89",
+            "content": "sha256:7bb166bb33bcca59cf27c72e6bc3fa31356cd68371a2fc341d5083df0f40013f",
+            "locator": {
+              "kind": "symbol",
+              "name": "handleRecovery"
+            },
+            "path": "dashboard/src/data/conversation/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The active conversation reducer suite is the focused regression source for cursor, dedupe, gap, revision, identity, replacement, and replay behavior.\n\nAnchor: \"active conversation reducer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99b808366e477143e36d2263c44873b7576bfb1",
+            "content": "sha256:b2f8bd9ecb172e6242e34c0596fec95f8fc728f691c3cc12aca52664f7c00b2b",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/data/conversation/reducer.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The interrupt hook reads reducer status and ordered item ids for working-turn correlation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:c12f9e49f9911c655b40d0d60f9905592bf609d208c04d7baf946798a57143b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWorkingTurnId"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The active serving API supplies page and event evidence consumed by the reducer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0107c5aa9c15fa13a7f710746bb7e3e56b601011",
+            "content": "sha256:c75e6d4adf6b9eb3bcf6d8db8b40f328caefcb369737635e1f38f35f4a7ec19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_page"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0107c5aa9c15fa13a7f710746bb7e3e56b601011",
+            "content": "sha256:3dd68df64570b368ea7c991e346663a270c530d65c5f12005884963018e9285b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_events"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:e1045043988db2694eeba0207b2b55073418bc2592b8b428e51201752395021b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyInitialPage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c019b5c8547f93218d666e6f3843497c39cc1fce",
+            "content": "sha256:54ee72c03bd664fe8535cfbe0f9ae3e0bc79ef03786549de08358cf2f25c9ad6",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyEvent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

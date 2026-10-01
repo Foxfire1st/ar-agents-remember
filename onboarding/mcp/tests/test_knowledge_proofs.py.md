@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_proofs.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_proofs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T15:26:13+02:00 |
-| lastVerifiedCommitHash | `e49ba07865b3848cd36759cea6b37bba7d0d51c3`|
-| lastVerifiedCommitDate | 2026-09-29T15:47:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -61,48 +51,39 @@ covered here: by architect ruling they belong to L08 and L03.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R28@v1` of task
 `260928_maintained-invariant-knowledge` (with the architect rulings in `28_first-class-test-proofs.json`);
 it lives outside the code and memory repositories, so it is named here and not cited as a row.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The cases, by rule.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement of the rules it covers. | "tests that prove an invariant are first-class proof entries" | mcp/tests/test_knowledge_proofs.py:1-11 |
-| The writer runs as this leaf's owner. | `OWNER`; `_write` | mcp/tests/test_knowledge_proofs.py:79-79; mcp/tests/test_knowledge_proofs.py:82-92 |
-| The parser's forms, expressions and helper modules. | `test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol` | mcp/tests/test_knowledge_proofs.py:98-146 |
-| No bare row for a file named with a test elsewhere. | `test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare` | mcp/tests/test_knowledge_proofs.py:149-152 |
-| Both forms become proofs once faceted; unresolvable evidence is reported. | `test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported` | mcp/tests/test_knowledge_proofs.py:155-200 |
-| A proof waits for the curator's facet. | `test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft` | mcp/tests/test_knowledge_proofs.py:203-224 |
-| The view cases' tree and read helper. | `_review_tree`; `_read` | mcp/tests/test_knowledge_proofs.py:230-235; mcp/tests/test_knowledge_proofs.py:238-242 |
-| Invariant and family views carry their proofs. | `test_the_invariant_and_family_views_carry_their_proofs` | mcp/tests/test_knowledge_proofs.py:245-277 |
-| A database read and the other views carry none. | `test_a_database_read_and_other_views_carry_no_proofs` | mcp/tests/test_knowledge_proofs.py:280-319 |
-| A family with no proof shows `[]`. | `test_a_family_whose_members_have_no_proof_shows_an_empty_list` | mcp/tests/test_knowledge_proofs.py:322-337 |
-| Live invariants without proof; a retired one is excluded. | `test_the_index_lists_live_invariants_without_proof` | mcp/tests/test_knowledge_proofs.py:343-356 |
-| The checklist section is information that moves no count. | `test_the_checklist_shows_the_list_as_information_that_moves_no_count` | mcp/tests/test_knowledge_proofs.py:398-426 |
-| Migrated evidence is listed, then a curator pass writes the proof. | `test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass` | mcp/tests/test_knowledge_proofs.py:429-466 |
-| The cached index is reused and an unreadable one reported. | `test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one` | mcp/tests/test_knowledge_proofs.py:469-485 |
+- The module's statement of the rules it covers. [1]
+- The writer runs as this leaf's owner. [2]
+- The parser's forms, expressions and helper modules. [3]
+- No bare row for a file named with a test elsewhere. [4]
+- Both forms become proofs once faceted; unresolvable evidence is reported. [5]
+- A proof waits for the curator's facet. [6]
+- The view cases' tree and read helper. [7]
+- Invariant and family views carry their proofs. [8]
+- A database read and the other views carry none. [9]
+- A family with no proof shows `[]`. [10]
+- Live invariants without proof; a retired one is excluded. [11]
+- The checklist section is information that moves no count. [12]
+- Migrated evidence is listed, then a curator pass writes the proof. [13]
+- The cached index is reused and an unreadable one reported. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: every case builds its own temporary code and memory
 repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): created this card for the new test module MIK-R28 adds (22 cases). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

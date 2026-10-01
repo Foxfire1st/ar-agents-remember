@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_decisions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_decisions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -62,7 +52,9 @@ change; it runs in the `unit-regression` lane (`test-evidence-lanes.toml`).
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R13@v2` of task
@@ -71,40 +63,27 @@ No domain documentation source is configured for this repository (`system/source
 shapes, and the coordination-root note Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`,
 section 4.5); they live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The fixtures and each case.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The packet's D12 and D18 as decision documents, and the assumption they reopen on. | `_d12`; `_d18`; `_assumption` | mcp/tests/test_knowledge_decisions.py:52-84; mcp/tests/test_knowledge_decisions.py:87-126; mcp/tests/test_knowledge_decisions.py:129-139 |
-| A converted tree with the given decisions, validated. | `_tree`; `_validate` | mcp/tests/test_knowledge_decisions.py:142-151; mcp/tests/test_knowledge_decisions.py:154-155 |
-| Both examples pass every rule. | `test_the_packets_d12_and_d18_decisions_pass_every_rule` | mcp/tests/test_knowledge_decisions.py:172-177 |
-| Alternative counts and the one chosen. | `test_alternative_counts_and_the_one_chosen_are_refused_by_rule` | mcp/tests/test_knowledge_decisions.py:180-197 |
-| A rejected or deferred alternative without `reconsider_when`. | `test_a_rejected_or_deferred_alternative_without_reconsider_when_is_refused` | mcp/tests/test_knowledge_decisions.py:200-213 |
-| A stored superseded, named by field. | `test_a_stored_superseded_status_is_refused_naming_the_field` | mcp/tests/test_knowledge_decisions.py:216-224 |
-| `reconsider_on` must name an existing rejected or deferred alternative. | `test_reconsider_on_names_an_existing_rejected_or_deferred_alternative` | mcp/tests/test_knowledge_decisions.py:227-239 |
-| A decision that governs nothing is reported, not refused. | `test_a_decision_that_governs_nothing_is_reported_not_refused` | mcp/tests/test_knowledge_decisions.py:242-248 |
-| Superseded is derived; reconsider links carry their subject. | `test_superseded_is_derived_and_reconsider_links_carry_their_subject` | mcp/tests/test_knowledge_decisions.py:251-266 |
-| Requirement endpoints resolve through the owner and never refuse. | `test_requirement_endpoints_resolve_through_the_owner_and_never_refuse` | mcp/tests/test_knowledge_decisions.py:280-311 |
-| A decision is never an export (review F6). | `test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing` | mcp/tests/test_knowledge_decisions.py:314-325 |
-| The lane row. | "mcp/tests/test_knowledge_decisions.py" | mcp/tests/test-evidence-lanes.toml:125-125 |
+- The packet's D12 and D18 as decision documents, and the assumption they reopen on. [1]
+- A converted tree with the given decisions, validated. [2]
+- Both examples pass every rule. [3]
+- Alternative counts and the one chosen. [4]
+- A rejected or deferred alternative without `reconsider_when`. [5]
+- A stored superseded, named by field. [6]
+- `reconsider_on` must name an existing rejected or deferred alternative. [7]
+- A decision that governs nothing is reported, not refused. [8]
+- Superseded is derived; reconsider links carry their subject. [9]
+- Requirement endpoints resolve through the owner and never refuse. [10]
+- A decision is never an export (review F6). [11]
+- The lane row. [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo boundary is crossed: every case builds its trees and task directory in memory or under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:27:12+00:00: Generated citation repair: "mcp/tests/test_knowledge_decisions.py" repointed to mcp/tests/test-evidence-lanes.toml:125-125. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): created this card for the new test file MIK-R13 adds (9 cases, including the review F6 case). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/data/submissionWithdrawal.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The withdrawal entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68fe8b8888f23d00845c97687b3f4196df2474ab",
+            "content": "sha256:e3f74f15860a9bc4046dc032d941fbbe5461cdc435e8d284da402ee83fc32e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "withdrawLastQueuedSubmission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68fe8b8888f23d00845c97687b3f4196df2474ab",
+            "content": "sha256:646b2f81d42a9455c1fc27924f8492d8e178fac5dfe7c40f4f22d187f55c7dcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyWithdrawalResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68fe8b8888f23d00845c97687b3f4196df2474ab",
+            "content": "sha256:bda119625a911cefca2d34b8779bdf9c5e611f65a2983c7eaead905aa18e578f",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreWithdrawnRecovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

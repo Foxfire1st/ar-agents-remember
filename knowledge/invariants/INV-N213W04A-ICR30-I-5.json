@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-N213W04A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The L27 landing recorded in this master's run log is one integration result carrying both refs (code 71a170796f5380bd3a5b65a5c3323ca4f92b0cc0, memory content 7f244fa4a4bc8cb4c6188434641249485a015814) with the ledger cache at 607 rows."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "1223bf88-2cfb-4110-85e0-09115e7f6678",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf's code commit and its refreshed external-memory content commit land as one recorded pair, and the memory ledger's rows are derived from committed attribution rather than from a working tree.",
+  "status": "proposed",
+  "supersedes": []
+}

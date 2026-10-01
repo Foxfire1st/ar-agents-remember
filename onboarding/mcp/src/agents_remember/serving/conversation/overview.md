@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
-| lastUpdated | 2026-09-05T06:21+00:00 |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28` |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
 
 ## What This Area Is
 
@@ -214,45 +209,41 @@ implemented control slice by `control/overview.md`.
   fallback here. HTTP status mapping of the typed `AuthorityError` is owned by the child leaves
   that add behavior routes.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The contract is pinned by hostile product-matrix tests and by a topology suite that checks route,
 port, helper, fixture, and registration boundaries. The runtime composition repair is pinned by its own
 composition and authorization contract suites.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
-| Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. |"class ConversationEventEnvelope"|mcp/src/agents_remember/models/conversations/stream_events.py:88-88|
-| Exactly two read ports separate active exact-session reads from dormant native library reads. | "class ActiveConversationPort" | mcp/src/agents_remember/serving/ports.py:62-62 |
-| Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
-| The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. | "class ConversationRuntime" | mcp/src/agents_remember/serving/conversation/runtime.py:59-59 |
-| The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. | "class ConversationAuthorizationResolver" | mcp/src/agents_remember/serving/conversation/authorization.py:34-34 |
-| The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. | "def resolve_conversation_authorization" | mcp/src/agents_remember/serving/conversation/dependencies.py:28-28 |
-| `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. | "def create_app", "def register_harness_control_routes" | mcp/src/agents_remember/serving/app.py:256-256; mcp/src/agents_remember/serving/harness_control_api.py:186-186 |
-| The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. | "class WireResponse" | mcp/src/agents_remember/serving/response_contract.py:89-89 |
+- Cursor brands, identity bindings, strict wire configuration, provenance authority, and the sub-agent participant grammar are centralized in the contract module. [1]
+- Canonical status, capability evidence, library agent rows, open rollback, withdrawal recovery, and fixture non-promotion are fail-closed products. [2]
+- Exactly two read ports separate active exact-session reads from dormant native library reads. [3]
+- Three owned child routers — all implemented, none behavior-empty — compose through one stable root that also installs the one runtime. [4]
+- The immutable runtime/scope types, install-once binding, and fail-closed retrieval define the app-scoped composition authority. [5]
+- The server-resolved local-operator resolver, loopback-only classification, and cross-principal rejection define the authorization ruling. [6]
+- The two request dependencies are the only child-facing consumption seam and consult only the TCP peer. [7]
+- `create_app` CONSTRUCTS the one runtime from existing authorities and hands it to the harness-control registration, which INSTALLS it exactly once through its single `register_conversation_routes(app, runtime)` call. [8]
+- The strict response contract for the 25 conversation routes: the three shapes assembled at a route that had no model at all, plus the six `responses=` tables the child APIs spread. [9]
 
 
 | The authorization contract suite proves local-operator identity, loopback-only resolution, fail-closed peers, no identity input channel, ignored browser claims, and cross-principal rejection in both directions. | "test_loopback_peers_resolve" | mcp/tests/test_conversation_authorization.py:130-130 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this route. The resolved memory policy allows
 no neighboring repository, and the native helper is part of this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo evidence found. | — | — |
+No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. This route therefore uses the
 repository-owned contract, fixtures, and tests as its direct evidence and does not fabricate an
 external citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this contract gate. | — | — |
+No configured domain documentation was available for this contract gate.
 
 ## File-Level Onboarding Map
 
@@ -471,148 +462,3 @@ forwarding shim). `ports.py` is now a thin re-export of the canonical `serving/p
 surface (the two read ports plus the control/terminal seams). This overview remains the contract
 and composition governor for the conversation route; the wire-model governance lives at
 `models/conversations/overview.md`. The `active`/`library`/`control` child routes are unchanged.
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/app.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "def create_app"; "def register_harness_control_routes" repointed to mcp/src/agents_remember/serving/app.py:255-255; mcp/src/agents_remember/serving/harness_control_api.py:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "def create_app"; "def register_harness_control_routes" repointed to mcp/src/agents_remember/serving/app.py:254-254; mcp/src/agents_remember/serving/harness_control_api.py:186-186. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T07:22:10Z — CCR L31 independent history readback: restored the original 243-243 coordinate in the dated 2026-08-01 entry and made its historical citation wrapper inert. The retained verification commit 60e429d17e9fcbca3ab1c02563afcaa5761b8c5a was checked and contains the declaration at that exact line; the current-body citation still resolves the current declaration at 244. This preserves historical coordinates without claiming the dated entry was authored against the later candidate.
-
-
-
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
-
-- 2026-08-29T16:13+02:00 — Marked the former Python 3.11-floor explanation as historical after the
-  repository-wide 3.13-only migration; the conversation wire contract remains unchanged.
-
-- 2026-08-28T14:15+02:00 — Re-read the Claude mapper delta at the conversation boundary. The
-  existing projector child owns its structured interaction, interrupt-correlation, mutation-diff,
-  and malformed-input preservation semantics; no parallel conversation authority was added.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 updates the conversation boundary for native Codex executable resolution and product-agnostic initialize diagnostics: the plane resolves the native executable, while exact client identity remains the handshake authority. Verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the conversation route's
-  current host-first initialize boundary and exact request-client validation in its library child.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 route impact: recorded the grammar move to
-  `models/conversations/`, the canonical port re-export, and the updated file map.
-  Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T22:30+02:00 — 260731-EFA-L16 route impact: recorded the event-loop offload across both child routes; wire contracts untouched. Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and converted the history `create_app` citation; exact non-fixing check returns zero
-  findings.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the two source changes in this route.
-  (1) Six fields across four `models.py` models became nullable AND defaulted, because the
-  serializers dump `exclude_none=True` and a required-but-nullable field made those models unable to
-  validate their own emitted body — the emitted bytes are unchanged. (2) The new
-  `conversation/response_contract.py` declares the 25 routes' responses; recorded why the module
-  split is an import-cycle boundary rather than a preference, which three bodies had no model at
-  all, how the six tables divide into refusal surfaces and outcome surfaces, and the
-  `{**a, **b}`-is-a-merge trap the outcome tables exist to work around. Added the module to
-  `What Belongs Here`, the file-level map and the reference table. Repaired 7 line citations. Six in
-  the fail-closed-products row, all moved by the `models.py` edits (+5/+10/+15/+20 by band):
-  canonical status L429-L552 → L429-L562 (now reaches `ConversationStatus.reject_false_ready`, which
-  the old end cut off), capability evidence L640-L737 → L655-L752 (`CapabilityEvidence` →
-  `ConversationCapabilities`), library agent rows L755-L775 → L775-L795
-  (`ConversationLibraryAgentRow`, previously only its `class` line), open rollback L811-L912 →
-  L831-L932 (`OpenConversationOperation` including `_phases_by_outcome`, `_failure_rollbacks` and
-  `require_coherent_rollback`, which the old end cut off), withdrawal recovery L983-L1097 →
-  L1003-L1117 (`AttachmentRecoveryRef` → `PendingWithdrawalRecoveryList`), fixture non-promotion
-  L1245-L1262 → L1265-L1282 (`RuntimeFixtureObservation`/`RuntimeFixtureEvidence`, whose
-  `enables_capabilities: Literal[False]` is at L1281). Seventh: the composition row cited
-  `harness_control_api.py` L144-L162, which is `resolve_terminal_open_selection` and was wrong
-  BEFORE this leaf; the claim was also wrong on its face — construction happens in
-  historical-source (recorded verification 60e429d17e9fcbca3ab1c02563afcaa5761b8c5a): `def create_app` at `mcp/src/agents_remember/serving/app.py:243-243`, and `harness_control_api.py` L182-L195 is where the single
-  `register_conversation_routes(app, runtime)` install call sits. Corrected the router row's
-  "three behavior-empty child routers", contradicted by this same file's own text. Verification
-  metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file line citations. The
-  fail-closed-products row's four ranges no longer covered the products it names, so it now cites
-  each one exactly in `models.py`: canonical status L429-L552 (`CanonicalStatusEvidence`,
-  `CANONICAL_TURN_STATE_BY_EVIDENCE`, the turn/process/status models and their
-  `require_waiting_evidence` / `require_terminal_evidence` / `reject_false_ready` validators),
-  capability evidence L640-L737, library agent rows L755-L775, open rollback L811-L912 (the
-  `_phases_by_outcome` / `_failure_rollbacks` tables and `require_coherent_rollback`), withdrawal
-  recovery L983-L1097, fixture non-promotion L1245-L1262 (`enables_capabilities: Literal[False]`).
-  The composition-suite row overran its file (252 lines); its tests are L113-L252. All ranges read
-  back; no claim text changed.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: no contract or composition change. `models.py` lost five
-  now-unnecessary `noqa: UP040`/`UP046` directives after Ruff's target version was reconciled with
-  the 3.11 floor. Added a map of the parameter objects the child routes introduced and the rule each
-  makes structural, with the note that they are internal call shapes and deliberately not wire
-  contracts. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: the active child now owns a
-  route-local `projector/` component graph rather than one monolith, and selected-child history
-  crosses the same authorization/epoch boundary as page and events. Codex acquisition probes
-  bounded native methods at runtime; typed child failure does not tear down parent control or
-  siblings. Verification metadata remains pinned until closeout.
-
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent participant grammar added
-  to `models.py` (agent status/ref, per-item `agent`, library agent rows, `agents_note`) and
-  re-anchored the stale `models.py` citation ranges in this overview's reference table (the
-  grammar blocks moved; the file is now 1305 lines). Route contract, composition, and child
-  ownership are unchanged; multiplexing detail is routed to the child overviews. Aggregate
-  route-index generation remains manager-owned; verification metadata stays pinned (L7 uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: corrected this route's capability doctrine to
-  the landed contract-verification rule (developer ruling 04:55, R4). The Operating Model's
-  "demotes on runtime/helper mismatch" clause and the Needs-Verification "passes the replay/version
-  gate" clause were both FALSE after the version-gate removal — a capability is now supported when
-  its contract probe verifies against the running harness and demotes only on failed or never-run
-  verification; version strings are informational metadata only; no version-string comparison gates
-  a capability at any of the seven former sites (grep-proven). Claude's `unverified` surfaces now
-  carry a never-probed contract reason, not a version reason. The wire grammar, two-port split,
-  `ConversationRuntime` composition, and child prefixes are unchanged. Verification metadata stays
-  pinned until closeout stamps the candidate commit.
-- 2026-07-21T11:00+02:00 — No route impact: reviewed the 260718-CHATS-L5 production-E2E hardening
-  (three source edits) against this contract/composition route — the wire grammar, two-port split,
-  `ConversationRuntime` composition, local-operator authorization ruling, and the three child
-  prefixes are all unchanged. The projector twin-projection fix (F1 disjoint-id-namespace
-  suppression) and the store input-authority pin (H2/F4) land inside the `active/` slice; the codex
-  disjoint-namespace truth is a `projectors/` grammar property; the terminal-liveness H1 quarantine
-  is a `serving/` change. Detail is routed to `active/overview.md`, `projectors/overview.md`, and the
-  `serving/` governor. Verification metadata unchanged.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: documented the `control/` child's
-  shell→implemented transition — the seventeen registered routes, the opaque signed reference
-  authority, the per-app service with bounded ledgers and per-session locks, and the R1–R6 owning
-  modules over the closed L2E/L3E substrate — with child-overview governance routed to the new
-  `control/overview.md`, all fourteen control file-map rows, the filled `control/api.py`
-  load-bearing row, the seventeen-route foundation pin, and the "all three children implemented"
-  invariant. The wire grammar, two-port split, composition, and public prefixes are unchanged.
-  Verification metadata stays pinned at the L1 code commit until L3 closeout stamps the candidate
-  commit.
-- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
-  library content with the L1 active/projectors content after the master memory branch advanced
-  (`fbc6907` → `900a7da`). Both implemented-slice descriptions, both child-overview rows, and
-  all map rows survive; `control/` is now the only behavior-empty shell; verification metadata
-  stays pinned at the L2 code commit until L1 closeout stamps the L1 candidate commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the active child's
-  shell→implemented transition and the new `projectors/` sibling route — the two authorized
-  production routes, signed cursor authority, per-app service and projector engines, idempotent
-  store, canonical status service (now also backing orchestration), fixture-gated capabilities,
-  and the per-harness mapper grammars — with child-overviews governance routed to
-  `active/overview.md` and `projectors/overview.md`. The wire grammar, two-port split,
-  composition, and public prefixes are unchanged; the `library/` slice is L2's (landed
-  separately) and `control/` stays a behavior-empty shell. Verification metadata remains pinned
-  until closeout stamps the candidate commit.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the library child's transition
-  from behavior-empty shell to the implemented L2 slice governed by the new
-  `library/overview.md` — five owned routes, live gates, signed token authority, and the
-  idempotent exact open — with the active/control shells, wire grammar, two-port split,
-  composition, and public prefixes unchanged. Verification metadata remains pinned until
-  closeout stamps the candidate commit.
-- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time runtime composition
-  repair — the immutable app-scoped `ConversationRuntime` authority, the server-resolved
-  local-operator authorization ruling, the two child-facing request dependencies, and the
-  install-once root registration — plus their composition and authorization contract suites. The
-  wire grammar, two-port split, child ownership shells, and public prefixes are unchanged.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: created the governing overview for the stable
-  structured-conversation grammar, exact two-port split, three behavior-empty route owners,
-  evidence/cursor/operation authority, and withdrawal-recovery privacy boundary. Verification is
-  blank until closeout commits and stamps the new source.

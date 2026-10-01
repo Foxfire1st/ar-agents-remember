@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/conversation/thinkingPreference.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The full-inline thinking item whose rendering this toggle suppresses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2538f1e4a4bad5081518887e5eb608e0ab67b4a",
+            "content": "sha256:babbc3cab60795608de5b191bf98bc78576c29d7f576cd5c4c40e3c85b35832c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ThinkingItem"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ThinkingItem.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The surface toolbar hosting the toggle control.\n\nAnchor: \"export function ConversationSurface\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:bad2587a19db813d728d9de5008a225039170d786074a101e1db0d5e5b5f9964",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The house persisted-preference idiom this mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb1400045f13dbb70b3167ab3cc4d00ace34229e",
+            "content": "sha256:27d1bb326251419b3eb89c8ebc37a38051ccc6d96e44b4e3e28c2a37ab12bd89",
+            "locator": {
+              "kind": "symbol",
+              "name": "KEYMAP_STORAGE_KEY"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_state_signal_boundary_delivery.py
 
-| Field                  | Value                                                    |
-| ---------------------- | -------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/tests/test_state_signal_boundary_delivery.py`       |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `8a46bc8d186d9444bf9a83b21ad4683ec4937e3d` |
-| lastVerifiedCommitDate | 2026-09-11T11:04:29+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -77,38 +67,30 @@ No dashboard, HTTP, or acknowledgement path is read or required by any case.
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Persist-before-marker ordering, one row on retry, no submission while the append fails | `test_persist_failure_keeps_marker_unset_and_retry_publishes_one_row` | mcp/tests/test_state_signal_boundary_delivery.py:299-360 |
-| A held row re-addressed to the replacement occupant lands once on the same row id | `test_held_signal_follows_replacement_manager_on_the_same_row` | mcp/tests/test_state_signal_boundary_delivery.py:362-401 |
-| A row persisted by one notifier context is delivered by a later fresh context | `test_held_signal_survives_a_fresh_notifier_context` | mcp/tests/test_state_signal_boundary_delivery.py:403-430 |
-| Each classified boundary state drains the same held row through the protocol path | `test_held_signal_lands_at_each_classified_turn_boundary` | mcp/tests/test_state_signal_boundary_delivery.py:432-460 |
-| An already ready-idle manager is admissible for the initial post without a hold | `test_ready_idle_manager_receives_the_signal_without_a_hold` | mcp/tests/test_state_signal_boundary_delivery.py:462-474 |
-| A failed submission keeps one pending row with its backoff, later landed unchanged | `test_failed_submission_keeps_the_same_row_pending_until_the_next_boundary` | mcp/tests/test_state_signal_boundary_delivery.py:476-531 |
-| Fresh store objects over the same durable files model a restarted notifier process | `_World` | mcp/tests/test_state_signal_boundary_delivery.py:202-237 |
-| The accepted-receipt patch keeps the delivery assertion on the shared protocol seam | `_submit_patch` | mcp/tests/test_state_signal_boundary_delivery.py:291-297 |
+- Persist-before-marker ordering, one row on retry, no submission while the append fails [1]
+- A held row re-addressed to the replacement occupant lands once on the same row id [2]
+- A row persisted by one notifier context is delivered by a later fresh context [3]
+- Each classified boundary state drains the same held row through the protocol path [4]
+- An already ready-idle manager is admissible for the initial post without a hold [5]
+- A failed submission keeps one pending row with its backoff, later landed unchanged [6]
+- Fresh store objects over the same durable files model a restarted notifier process [7]
+- The accepted-receipt patch keeps the delivery assertion on the shared protocol seam [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: created this sidecar for the six-case boundary-delivery forcing module (persist-before-marker, held-row replacement, fresh context, classified boundaries, ready-idle initial post, failed-submission retry) and recorded the state-signal-scoped no-attempt drain plus the unclassified-boundary delay limit. Source inspection only; verification metadata remains closeout-owned.
+No external evidence is needed for these assertions.

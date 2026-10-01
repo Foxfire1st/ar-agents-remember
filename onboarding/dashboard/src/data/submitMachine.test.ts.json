@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/data/submitMachine.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The system under test owns the normalized phase and partial-order rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3fc943903f2a407ffb09523813734595d4bf10b2",
+            "content": "sha256:8b002c3bce27ffe3b92f9d42237e8a82180e6908854208af6929b21610d2f059",
+            "locator": {
+              "kind": "symbol",
+              "name": "settleSubmissionObservation"
+            },
+            "path": "dashboard/src/data/submitMachine.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared scenario fixtures provide named lifecycle examples used across UI tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d773c64d2315d0322a017fb3fbf85059e8a83f20",
+            "content": "sha256:c1e6048607fd0c1c288aa4b35e10f3e971bc1d00f4d5a50eef2be80d7c5c3125",
+            "locator": {
+              "kind": "symbol",
+              "name": "submitReceipt"
+            },
+            "path": "dashboard/src/test/fixtures/submitScenarios.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

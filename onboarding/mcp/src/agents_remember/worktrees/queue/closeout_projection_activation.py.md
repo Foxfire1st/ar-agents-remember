@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash |  `e0820b04a499cbfb2079c78485346c50917a238a`|
-| lastVerifiedCommitDate |  2026-09-13T18:02:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [queue overview](overview.md)
@@ -57,38 +47,18 @@ guidance names the selecting transaction rather than an internal store edit.
 Repair wording and claims are reconciled to the per-contract selector observer; verification metadata
 awaits the real code commit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Selector observation and waiting-reason derivation are owned outside the queue; the reader takes the contract and the reason is derived from the observation alone. [1]
+- The queue route is a disposable rebuild projection with task truth and lifecycle state outside it. [2]
+- Focused tests prove two masters sharing one protected source pair both project with no waiting reason, including the graph-less sprint where nothing serializes the masters. [3]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Selector observation and waiting-reason derivation are owned outside the queue; the reader takes the contract and the reason is derived from the observation alone. | `observe_atomic_series`; `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-287 |
-| The queue route is a disposable rebuild projection with task truth and lifecycle state outside it. | `## 260821-CLIVE Final Disposable Projection Route` | onboarding/mcp/src/agents_remember/worktrees/queue/overview.md:72-107 |
-| Focused tests prove two masters sharing one protected source pair both project with no waiting reason, including the graph-less sprint where nothing serializes the masters. | "self.assertEqual(project_series_activation(series_a).waiting, ())" | mcp/tests/test_cross_master_concurrency.py:131-162 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-13T15:00:56+02:00 — Rebound the two-masters projection claim from the stale `126-146` range to `131-162` (the anchor `"self.assertEqual(project_series_activation(series_a).waiting, ())"` now sits at line 150; a second instance is at 523) — the earlier finding that the construct did not exist at the card's stamp no longer holds, because the two-masters case is present in this revision. Extended the claim wording and the Logic section so the graph-less sprint is covered too: nothing serializes its atomic masters and each contract's own observation reaches `active` with an empty `waiting` tuple. No verification-metadata change; no execution or acceptance claim.
-- 2026-09-13T14:19+02:00 — Per-contract activation record curation: `project_series_activation` now takes only the contract and calls `activation_waiting_reason(activation)` with the observation alone, so the card no longer describes a source-pair snapshot or the "not selected / paused by another master" waiting reasons; the only surviving reason is `atomic-series-reconciling`, a foreign record is refused as `atomic-series-activation-contract-mismatch`, and the record key is `contract_fingerprint`. Rebound the observer/reason citations to atomic_series_activation.py:145-152 and :275-287 and replaced the retired source-alias test row with the two-masters-one-source-pair projection test. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound queue projection citations to the current selector observer and waiting-reason definitions; queue ownership is unchanged and no acceptance claim is made.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `AtomicSeriesActivationTests` repointed to mcp/tests/test_atomic_series_activation.py:96-137. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of selector observation and scoped
-  invalid-empty projection behavior.
-
-- 2026-08-26T02:55+02:00 — Drafted the activation-observer sidecar; final source freeze and
-  verification remain open.

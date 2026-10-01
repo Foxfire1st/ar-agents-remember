@@ -1,0 +1,905 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/batch_commands.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The apply loop, the observed failure position and the deferred-foreign-key check at the end of a completed pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:2dbd7b2e69c7bf9a8d2b242b13c736d8d5bd2c4f01b8ee3630a83a50d894a56a",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_commands"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:b2818bb2cb665e134ad97f565afc5b59824943dc04eb0c679638abb8bd0ee7a4",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The outcome object that carries what the loop observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:01a30dda238e3e04af7ccacf3478aa6280671a804df6991455020462e1f93d40",
+            "locator": {
+              "kind": "symbol",
+              "name": "BatchApplication"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:aa12d20ccbd97d3af17075d20fc9b17755dd60d02bfdb963f8122fcb86c5e5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:b8be7be82d171380449901a7f2d2e9e45c7110bf7e957b014f3ffb544a58c4ce",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The ledger that produces the receipt and registers batch-created identities.\n\nAnchor: \"def written(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:b45a75b2f70900f4da5608dfd262f83c6895047db645c3c452d34916c3c8709f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BatchLedger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:3d30fe51034b3f6763752351b018d4518e67b0d759b62aac7e1d199b20535c88",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The seven-family dispatch and the unreachable-kind defect.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7146ac555b6c4329a9b113dc21982834deb1769a3886ff8a9a57a0d6949a682f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_command"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:f5dc7e761f353ea1ec9d1e6b2b7889d1ecea93b06f634bfa3db6fbcaf85c3880",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INSERTING_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:3264bc7517d46682b80db33e0c7c3f9e232c0673633a05d3c900394151fe9236",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LABELING_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:fd584de50a7713cecc4afaa1d07630196c95f38b6990d7dbe40f54f324d85bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_unreachable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7e0b5248d3490810ea201d1619a04e9fe9d9d9c8b74d560c34a77bd91d611fb0",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 654
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two receipt entries a claim that records its own anchor produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:53fa64aaf09273a1f198d3e2fc3ddc6f9af52c75396a92b71502cf086d2cf948",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_claim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:6338631d8968b480905b970be9accc93387b24fd87824e8a22666d787e2c53d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The removal steps, each reporting the digest the row had when it was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:4ea736a619e1c0109b12e012a04b3dea844ec9a9acb51acf1062cd13829e12ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:832fe37740eb65ef6889145b4ba0fa81686fb92c76722dc9828deec52f00d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:9f75cb1b74d0726c45ed7b66b8b31078f3fb9b90d60db7f1b0dbde97e9a085c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_claim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The no-op label edit that contributes no receipt entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:daf0d89cb469596c64900c6680eb511343ac577fd9f50ce83d431f91edb8e2fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_label"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:ccba831ca0328fca2c5708d0e48be863007a9c6dfe9434c2257a31b7b6f0f85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_invariant_label"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:80c65af4617b060d27457c14114520c2e4c284f39e928658e0537e6029238b66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_family_label"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:95c748a6fa7ba15ee055abc1f3440e96843d95d54140da05becd078786175fd8",
+            "locator": {
+              "end": 851,
+              "kind": "line_range",
+              "start": 833
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The after-integrity re-proof the apply step runs last: foreign keys, every revision seal, both lineage graphs — and, since this leaf, the authored-effect seals and the change-set succession graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7de0fd7efde6e6cb8dd3428581ca7587eb3e7f51557ea6d3f79c36db30b2affa",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_after_integrity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The seal half of the re-proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:5b80050d363b57deee6f7c1387fe3cc096fedd26efaad59b097736373d3bda3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sealed_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The graph half of the re-proof, and the composition pass this leaf added to it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:78e8114303ca26cc18fa519b1b521a5a5fa976c6806cc46024da1d14aa4c6a60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_acyclic_graph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The census record group's dispatch family — the seventh row of the dispatch table, handed no `pending` set and delegating to the group's own in-transaction step.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:32caab53464c9a337802494da792abe7b7caa173cbd6fd7936c8321f707d3c1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_family_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The outcome object that carries what the loop observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:01a30dda238e3e04af7ccacf3478aa6280671a804df6991455020462e1f93d40",
+            "locator": {
+              "kind": "symbol",
+              "name": "BatchApplication"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:aa12d20ccbd97d3af17075d20fc9b17755dd60d02bfdb963f8122fcb86c5e5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_failure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:b8be7be82d171380449901a7f2d2e9e45c7110bf7e957b014f3ffb544a58c4ce",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The in-transaction step the census family delegates to: it re-checks the dataset's generation, resolves the governing route, then applies the inventory row, the claim or the disposition and their relations in command order.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b66922cb8583d2fda87a198401f39928b86cbae",
+            "content": "sha256:121a390d196fe5bd5a4bd3437a90e58d922deb948a9dc0197be3683fb3e9ce3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_census_command"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/census_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The closed three-command vocabulary the census dispatch row and the isinstance guard are both built from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:03cc77cb9ad48a7231f47a5eaa6244637b3c97e8012d0eec2c147560fe632468",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_COMMAND_KINDS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The store's two batch-facing primitives, which the apply step calls instead of a nested operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:07323178b7870ca2ed1e9a164f3c4cacfd9a7005b1e08c825c9938f2834457c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_invariant_identity"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:8fae911d907371627e493bbb696629d6fed072ffbbb6ac06a09492cf77994c12",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_revision_aggregate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The invariant identity and revision insert bodies the same call reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:add442e12c7882ddcbbac6febf4e560438c387e61daa6c792ba6ed2d0f62797b",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_invariant"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:a14617ef617a74c2ca95fad29a3de75ee60444453ccef1207675cf04976ee28f",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:6ecf47394b6a61891924157689b6d0cbd44d9df9becf80ccfa84a2781b4bdbc0",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 536
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d1760f933abbb54eec5c46a68a75255d213e318",
+            "content": "sha256:ae004e5bef2bfd786fdc701c2111e74bbd494a4d999bdffcbbcea48cb719f17c",
+            "locator": {
+              "end": 632,
+              "kind": "line_range",
+              "start": 575
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The family half's in-transaction inserts, which the batch composes rather than re-implementing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:0c105bad99f53a1fc21766910dc371ad8c6ec535c4d7c609963ade72d22bce00",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97f3ecd2e6c3d4e597f27b5a729aa39e45bef332",
+            "content": "sha256:c96fb065de198de21d253749478a1a3a64a64d4c3dbb111587580fadd396a626",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The anchor insert and delete the batch shares with the anchor operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:bbf2d5b6fe8682e9e7356a07a1f8b3c6eff0b4894e050146c2c48a0ddd2b3437",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_anchor_row"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:cf64c50f51984d7f2fb0c79dc6a64573dbb033356227c1ff1b667d28a6ee4653",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_anchor"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:212358a27a898f47d285444f8f490af7703a78c2912f987b516a3aec6acb9a87",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6da9b8594800bbc6fbd46f935cd5ed58599644cb",
+            "content": "sha256:f8c08071159f5a02865954fabf0e728f842c054fd373cf05b2c4e47bbfa065a9",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/anchors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The membership draft-sealing insert, which is where the batch's member row digest is computed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f85aa0cc87342ebf62ab38b912c29344628e56c6",
+            "content": "sha256:fa8c36d9c938fbb37300823f2bcb6505bec098abd32c21a9488af5dece0c7d9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_family_member_draft"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/memberships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The realization claim insert whose `None` answer means the identical claim was already stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "988c86cd7030270954e63b950f30317ab5d72f61",
+            "content": "sha256:d575d3636a400f96650051193ad671685a9c3319c327683ac985d49d82a98767",
+            "locator": {
+              "kind": "symbol",
+              "name": "insert_realization_claim"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/realizations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The label edit whose `False` answer means no statement ran, which is why the apply step returns no receipt entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33eb33766585c5e356fd288d391eea19812bb25a",
+            "content": "sha256:c8dd6469c4cf68755b267861834e70255f10807c4e2200d5d9c6f10fee4dd9f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_invariant_label"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/labels.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The caller that turns an observed failure into the batch's typed refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:e27cd0ccbe58b97d6be3d44e27b62b8bb55fb8948209afa770a4db43bd36f6eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_within_transaction"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:1215834e1ddac19b1691162b11f8a1b4603ca580cc9f7cdc7e2202ecc876f86c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mapped_failure"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:df790c29b6638d03afe25cc7f62e16480f5bed9e731ca35e4e9f680a016273e2",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06dc9a823aa8dfc899319998c57a5dc3a3e87da0",
+            "content": "sha256:1c9e934320b0eb5c7452f8a961a9864ef9cb8a3e95397197eabea36d67069069",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ledger that produces the receipt and registers batch-created identities.\n\nAnchor: \"def written(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:b45a75b2f70900f4da5608dfd262f83c6895047db645c3c452d34916c3c8709f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BatchLedger"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:3d30fe51034b3f6763752351b018d4518e67b0d759b62aac7e1d199b20535c88",
+            "locator": {
+              "kind": "symbol",
+              "name": "removed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The nodes that prove a late failure rolls the whole batch back, and that a removal-only batch returns a typed result.\n\nAnchor: \"test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch\"; \"test_a_removal_only_batch_of_each_kind_returns_a_typed_result\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:0f633280a8cb0e78861d74a93855346eac2adffba7e6127deb9d8c4727d89b3b",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:d42418196e083a541daa452624ff9c212186bb84c95bc2fc3c958549e05f8e7d",
+            "locator": {
+              "end": 962,
+              "kind": "line_range",
+              "start": 933
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The node that proves the database's own refusal names the command that actually failed.\n\nAnchor: \"test_a_database_refusal_mid_batch_names_the_command_that_actually_failed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a4900498f7625c6e73f4548aa005635f1cc2f4d",
+            "content": "sha256:a539aaed22a86303c8bed32d2669f0621c5bb95fe6748ee51d37f38c8844d515",
+            "locator": {
+              "end": 1061,
+              "kind": "line_range",
+              "start": 993
+            },
+            "path": "mcp/tests/test_candidate_batch_transaction.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The dispatch table an apply step chooses between, keyed on the vocabulary's own kind sets — now seven family rows, the census group's `CENSUS_COMMAND_KINDS` row being this leaf's addition and the last.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:62ce048e45449ec4cd0594b5525a1d60049d65e8d10ce9d6fcc936648505b9bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_APPLY_FAMILIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inserting command kinds the dispatch admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:f5dc7e761f353ea1ec9d1e6b2b7889d1ecea93b06f634bfa3db6fbcaf85c3880",
+            "locator": {
+              "kind": "symbol",
+              "name": "_INSERTING_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The labelling command kinds the dispatch admits, which is a different set from the inserting ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:3264bc7517d46682b80db33e0c7c3f9e232c0673633a05d3c900394151fe9236",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LABELING_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unreachable-kind defect: a command that reaches the dispatch and belongs to no family is refused rather than silently skipped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:fd584de50a7713cecc4afaa1d07630196c95f38b6990d7dbe40f54f324d85bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_unreachable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:7e0b5248d3490810ea201d1619a04e9fe9d9d9c8b74d560c34a77bd91d611fb0",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 654
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two receipt entries a claim that records its own anchor produces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:53fa64aaf09273a1f198d3e2fc3ddc6f9af52c75396a92b71502cf086d2cf948",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_claim"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:6338631d8968b480905b970be9accc93387b24fd87824e8a22666d787e2c53d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The removal steps, each reporting the digest the row had when it was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:4ea736a619e1c0109b12e012a04b3dea844ec9a9acb51acf1062cd13829e12ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:832fe37740eb65ef6889145b4ba0fa81686fb92c76722dc9828deec52f00d47d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_member"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c89163646ff22709fb5d690476dad36ff4b94f2",
+            "content": "sha256:9f75cb1b74d0726c45ed7b66b8b31078f3fb9b90d60db7f1b0dbde97e9a085c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_claim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

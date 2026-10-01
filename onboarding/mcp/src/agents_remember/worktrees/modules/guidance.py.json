@@ -1,0 +1,236 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/guidance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed payloads and separate lifecycle/recovery builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:b1b396e2b5e0ef1177161a72ae252734249af9fa9137689b9c5e01d926ac7625",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextGuidance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:f2d81d7f90dd19a4123e31afd6ac3ee1329a8a29a705df77de5161fef7f8d8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_guidance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:2125bd6ce2fd347d0cc23e126d0385544b99126bbd4385eb50fe5687d3e65e14",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:38e61e36785dda5b4244f8b464d08cd556bdd4bd3af198f19dcd5d2119fef86d",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Carryover completion is a real two-repository ancestry proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "carryover_done"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:e45a80c7f53e3e839218cff767a620a64651eb6ebeb96bd3c07bfbf78860cbd1",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Phase precedence, finalization guidance, and the still-working checkpoint branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:656888b6f80fc1973338abb55a25f4b33bd3eba3d5b4a221a5bfafaf5ce12860",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_guidance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:1a47259c93d114ae5f9f094ac5cd3537012434d42944e406beb755899538e76f",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Freshness, consumer paths, identity fields, and interactive/projected observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:d7a93b664879df758f23a7b5bcbcbdee62cb95943f577f7db0cb610bd8cc11fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_freshness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:9ed51d4514fdc384e55b9df427f2c3d7526727d4a6adc150e0563788aedd7973",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeStatusFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:b0662bed46d4899ff3ec326a9f285b9bbfbd2e2cf432e194ff0fa619f137d956",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:db4590f6b06d799be71ad79635475bbf2092f5b240bcc76abf03272cfba7fab2",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical lifecycle wire vocabularies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b095b4ba1825547c16c0ca1581191c10f2e52d8b",
+            "content": "sha256:6ec06a7803b29cd2a5ce32ccef80a6b0cfefd4478eb4d47b67604f7075e795a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePhase"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b095b4ba1825547c16c0ca1581191c10f2e52d8b",
+            "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextOperation"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b095b4ba1825547c16c0ca1581191c10f2e52d8b",
+            "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextTool"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "External completion remains valid with damaged caches and rejects unlanded commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:bed6b4a3fd67105d46c67f019f143988f0646c47b20731e04a123696e73c563e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_completion_proves_landed_commits_without_reading_the_cache"
+            },
+            "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
+            "content": "sha256:760a46cf6be785dc3c5c006f8f47fa0f673fc86cc2c8986b307c93c83a64e404",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

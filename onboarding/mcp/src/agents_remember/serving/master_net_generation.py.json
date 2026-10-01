@@ -1,0 +1,286 @@
+{
+  "path": "mcp/src/agents_remember/serving/master_net_generation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one scope the selection ever serves, and the three-state request contract (live / pinned / absent) with the digest and currentness rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:a9ef33054e2b2c716c63128e7ff84fe89728ccfc6e94660bb3082f7f47c71abf",
+            "locator": {
+              "kind": "symbol",
+              "name": "MASTER_NET_SCOPE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Currentness measured against the live integrated tips in the same call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:0b1756e4c62ce07ebe2b6244b1f3d18ef8535916e935684f038cb5613c3ea20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fce1f986349fa61c312ffe82c885f9eb4bda00f",
+            "content": "sha256:c05746a0396ad5a7276164066781be3b539a8381708540ffb470ea6c4e9937a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The committed-range refusal vocabulary this module subclasses, with its three absence kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:5a28d4a0c426597856d7485be42352e3ed838fc9dfe210e30ae6652b0a109d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsent"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ea5a7585a7a97301d9e21239404bb2aa6b7a6f59",
+            "content": "sha256:0bd52fb074a9a9cf53d881f2c43ca86bade63063eb80290e44b0322dcf009da9",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The nine cases that measure the selection (eight plus the F1 diff-failure case) through real contracts, repos and routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d26be3bf54856de1b13d724d2a78f09a25110e",
+            "content": "sha256:2de796bf3226f012ae5d15a82940e8c11b88c163c9e563dfd6aca2252a8cb15e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_leaves_that_add_then_remove_a_file_net_to_exactly_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "72d26be3bf54856de1b13d724d2a78f09a25110e",
+            "content": "sha256:9ace9375d2a6e6c42c4bae2fd355a2648977fce3a93d80eb3818f7fc775a7705",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_failure_after_validation_is_refused_never_reported_as_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named refusal for a missing master endpoint, as the committed-range vocabulary applied to the master's base and result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:a5988124fd3546125bd509ee4ee7a2ceac7949ef752d2c51ffaaec03f3bb07e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterEndpointAbsent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The explicit generation selector: exact commits, never branch names; empty means the declared integrated result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:3463a844551a4ce8827a365719af639e0d01800f94e12a11981fd2d9aa4a6328",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetPins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact `base -> tip` commits one net comparison is computed over, and the resolved selection with its identity, scope and currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:06f1bc5e356decdc8f9fbd74f91416ad78efc5e8c9b7279a4962fecbf36a8ff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetEndpoints"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:d08dc7ceb4760c3bc7d32afa3a9c0a617c1ddd601408204e155a54be84211197",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Master task-root confinement and series-contract loading moved here from `changeset.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:dc40f47eebdfe073d2a20f0994feeb98e82e2264eab80d0840fdbd3d0086d2a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_task_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:3cbe768687d42d639f0d73c2c9ed5d8a4b65d59710fce8b937755bcae3eb844e",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_master_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The integration-branch head with deliberately no source-branch fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:34d567c866d82f404e15465c5a7694e782b64b43e13a8be9541ed76966f16143",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrated_tip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The deterministic generation identity over the four endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:7e4b9016dd83d515a08995c2571779347c9eaec5189fef2958695d1e5fcfac21",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_net_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The selector: `None` for an unknown master, named refusal for missing code endpoints, memory degradation for an absent leg.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_master_net"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Independent half resolution: required code pair vs degradable memory leg, and the `cat-file` resolve check with its two broken-state kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:d92950ac7cd763f3860dbebb860240fd7ef3e8ca80c75b3459ac0737bf87a23e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_endpoints"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:2cd9587ac6f26f7c38f0119be1f89bbfab16352c9fbcf6b86b39d3e913470e90",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_endpoints"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4325fdc725f89500cac3761c200a846f44e1904",
+            "content": "sha256:602f3d190552b38c96b63bd25f35d99b8d625030edf6bd230c5e4a11cacf99bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_resolves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

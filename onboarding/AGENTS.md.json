@@ -1,0 +1,75 @@
+{
+  "path": "AGENTS.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source scope and role routing.\n\nAnchor: `## Start Here — Route By Role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:62f06f70e6c408d3a15c7316e01aa72a686dc9d097b71627e6222fedcc4fd46c",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resolved memory and retrieval strategy.\n\nAnchor: `## Memory And Onboarding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:d138d6b4efeb42aae94027ddacafda429be62f07990ae9b11b3696f6d216b87e",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Canonical sources and generated-copy boundaries.\n\nAnchor: `## Source Layout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:2d95e28fb56459bb35b12480b4141c60e0c9686863a965e03250c684abb1f72c",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current testing, diagnostic and enforcing policy.\n\nAnchor: `## Code Quality Instructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

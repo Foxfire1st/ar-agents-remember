@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/timelineRestore.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The restore hooks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "692444c6a38550547985a0e88c276030ab298ec6",
+            "content": "sha256:65d7cdf45bb846c9804b3bdf268193fbe684aaabf9b40849623107ecb844951e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRestoreArm"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "692444c6a38550547985a0e88c276030ab298ec6",
+            "content": "sha256:660bfd67a055400fdafbc53079d843f3b70b84de4986c72c3155b56694bc153d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRestoreApply"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "692444c6a38550547985a0e88c276030ab298ec6",
+            "content": "sha256:c1d5e3e7b022384b3ee8e8628eb3734903bd0150736c2d3cbea3fb16c4734577",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRestoreDriver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

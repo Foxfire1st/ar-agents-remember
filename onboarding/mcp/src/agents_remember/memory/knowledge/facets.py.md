@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/facets.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/facets.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -141,71 +131,43 @@ Three further behaviours are worth naming:
   making the empty write impossible by construction — belongs to a later leaf; this card records it so the
   next reader does not have to rediscover it.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The six standalone operations, each naming the act it performs so a refusal is reported under the operation the caller asked for.** | `add_facet`; `attach_facet`; `remove_facet_attachment`; `author_explanation`; `add_explanation_revision`; `designate_explanation` | mcp/src/agents_remember/memory/knowledge/facets.py:153-192 |
-| **The one dispatch the batch path and the standalone driver share, and the alias that documents the split.** | `apply_facet_command`; `PendingIdentities` | mcp/src/agents_remember/memory/knowledge/facets.py:201-215; mcp/src/agents_remember/memory/knowledge/facets.py:667-670 |
-| **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** | `apply_add_facet`; "def validate_facet_payload(" | mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:215-215; mcp/src/agents_remember/memory/knowledge/record_envelope.py:216-249; mcp/src/agents_remember/memory/knowledge/record_envelope.py:249-249; mcp/src/agents_remember/memory/knowledge/record_envelope.py:276-283; mcp/src/agents_remember/memory/knowledge/record_envelope.py:300-300 |
-| **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** | `apply_add_facet`; "def validate_facet_payload(" | mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:300-300 |
-| **Proposed origin only, refused at both entry points with the shipped code.** | `require_proposed_origin` | mcp/src/agents_remember/memory/knowledge/facets.py:275-285 |
-| **The recorded supersession edge and the shared cycle rule applied to it.** | `_record_supersession`; `require_acyclic_supersessions` | mcp/src/agents_remember/memory/knowledge/facets.py:288-312; mcp/src/agents_remember/memory/knowledge/facets.py:349-364 |
-| The exact earlier decision revision the edge requires, refused by name before any row is written. | `require_decision_revision` | mcp/src/agents_remember/memory/knowledge/facets.py:315-337 |
-| The typed attachment write, with the facet revision and the typed endpoint both checked first. | `apply_attach_facet`; `_require_facet_revision` | mcp/src/agents_remember/memory/knowledge/facets.py:375-398; mcp/src/agents_remember/memory/knowledge/facets.py:401-416 |
-| **The removal that names its row and deletes that row only, and the designation guarded by the expected row digest.** | `apply_remove_facet_attachment`; `apply_designate_explanation` | mcp/src/agents_remember/memory/knowledge/facets.py:419-457; mcp/src/agents_remember/memory/knowledge/facets.py:589-639 |
-| **The explanation pair: the first revision with no designation, and the successor that must name a stored revision of its own explanation.** | `apply_author_explanation`; `apply_add_explanation_revision` | mcp/src/agents_remember/memory/knowledge/facets.py:460-497; mcp/src/agents_remember/memory/knowledge/facets.py:535-586 |
-| The subject check that keeps a family subject from being satisfied by an invariant revision. | `require_explanation_subject` | mcp/src/agents_remember/memory/knowledge/facets.py:500-532 |
-| The dispatch table over the six command kinds and the two uniform-signature adapters. | `_STEPS` | mcp/src/agents_remember/memory/knowledge/facets.py:673-694 |
-| **The standalone boundary: lock, one immediate transaction, scope and generation checks, and the receipt for a refusal.** | `_facet_operation`; `_refused_result` | mcp/src/agents_remember/memory/knowledge/facets.py:697-720; mcp/src/agents_remember/memory/knowledge/facets.py:733-742; mcp/src/agents_remember/memory/knowledge/facets.py:771-772 |
-| The operation-name check that refuses a command presented to another operation's entry point. | `_command_matches_operation` | mcp/src/agents_remember/memory/knowledge/facets.py:745-781 |
-| **The generation gate read from the dataset's own recorded version rather than the build's.** | `require_facet_generation` | mcp/src/agents_remember/memory/knowledge/facets.py:832-852 |
-| The authority home a facet envelope inherits from the namespace it was written into. | `_authority_home` | mcp/src/agents_remember/memory/knowledge/facets.py:859-871 |
-| The governing-route reference check, with the ungoverned state never refused. | `_require_governing_route`; "def route_exists(" | mcp/src/agents_remember/memory/knowledge/facets.py:874-887; mcp/src/agents_remember/memory/knowledge/routes.py:285-285 |
-| The shipped factories this module reports through, including the four the facet leaf added. | `facet_promotion_not_supported_refusal`; `facet_supersession_cycle_refusal`; `generation_mismatch_refusal`; `explanation_revision_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:1051-1073; mcp/src/agents_remember/memory/knowledge/refusals.py:1074-1130; mcp/src/agents_remember/memory/knowledge/refusals.py:1131-1164; mcp/src/agents_remember/memory/knowledge/refusals.py:1165-1196 |
-| The shared graph rule the third lineage graph is judged by. | `supersession_edges`; `cycle_vertices` | mcp/src/agents_remember/memory/knowledge/lineage.py:83-95; mcp/src/agents_remember/memory/knowledge/lineage.py:207-228 |
-| The pre-write endpoint existence check the attachment reaches. | `require_attachment_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:226-257 |
-| **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** | "test_the_two_entry_points_agree_and_a_refused_write_writes_nothing"; "test_accepted_origin_data_is_refused_at_both_entry_points"; "test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write" | mcp/tests/test_knowledge_facets.py:840-875; mcp/tests/test_knowledge_facets.py:363-458; mcp/tests/test_knowledge_facets.py:606-700; mcp/tests/test_knowledge_facets.py:985-1035; mcp/tests/test_knowledge_facets.py:958-965; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:467-467; mcp/tests/test_knowledge_facets.py:710-710; mcp/tests/test_knowledge_facets.py:1162-1162 |
-| The pre-write endpoint existence check the attachment reaches. | `require_attachment_endpoint` | mcp/src/agents_remember/memory/knowledge/endpoints.py:226-257 |
-| **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** | "test_accepted_origin_data_is_refused_at_both_entry_points"; "test_a_supersession_cycle_rolls_back_and_a_sealed_decision_cannot_be_rewritten"; "test_a_dataset_predating_the_facet_tables_refuses_a_facet_write"; "test_the_two_entry_points_agree_and_a_refused_write_writes_nothing" | mcp/tests/test_knowledge_facets.py:346-382; mcp/tests/test_knowledge_facets.py:589-671; mcp/tests/test_knowledge_facets.py:935-1017; mcp/tests/test_knowledge_facets.py:809-875; mcp/tests/test_knowledge_facets.py:448-455; mcp/tests/test_knowledge_facets.py:691-698; mcp/tests/test_knowledge_facets.py:1135-1142; mcp/tests/test_knowledge_facets.py:467-467; mcp/tests/test_knowledge_facets.py:710-710; mcp/tests/test_knowledge_facets.py:1162-1162 |
+- **The six standalone operations, each naming the act it performs so a refusal is reported under the operation the caller asked for.** [1]
+- **The one dispatch the batch path and the standalone driver share, and the alias that documents the split.** [2]
+- **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** [3]
+- **The payload seam as the only payload decision point, and the envelope-plus-first-revision write.** [4]
+- **Proposed origin only, refused at both entry points with the shipped code.** [5]
+- **The recorded supersession edge and the shared cycle rule applied to it.** [6]
+- The exact earlier decision revision the edge requires, refused by name before any row is written. [7]
+- The typed attachment write, with the facet revision and the typed endpoint both checked first. [8]
+- **The removal that names its row and deletes that row only, and the designation guarded by the expected row digest.** [9]
+- **The explanation pair: the first revision with no designation, and the successor that must name a stored revision of its own explanation.** [10]
+- The subject check that keeps a family subject from being satisfied by an invariant revision. [11]
+- The dispatch table over the six command kinds and the two uniform-signature adapters. [12]
+- **The standalone boundary: lock, one immediate transaction, scope and generation checks, and the receipt for a refusal.** [13]
+- The operation-name check that refuses a command presented to another operation's entry point. [14]
+- **The generation gate read from the dataset's own recorded version rather than the build's.** [15]
+- The authority home a facet envelope inherits from the namespace it was written into. [16]
+- The governing-route reference check, with the ungoverned state never refused. [17]
+- The shipped factories this module reports through, including the four the facet leaf added. [18]
+- The shared graph rule the third lineage graph is judged by. [19]
+- The pre-write endpoint existence check the attachment reaches. [20]
+- **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** [21]
+- The pre-write endpoint existence check the attachment reaches. [22]
+- **The cases that hold the two entry points, the cycle rollback, the sealed rows and the generation refusal.** [23]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: `_require_governing_route`; "def route_exists(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:874-887; mcp/src/agents_remember/memory/knowledge/routes.py:285-285. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `_require_governing_route`; "def route_exists(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:874-887; mcp/src/agents_remember/memory/knowledge/routes.py:268-268. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:52:24+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The payload-seam row cited `record_envelope.py:292-292` (the refusal message) for `"def validate_facet_payload("`; the definition sits at `300`, which is what that cell cites now — the same range the sibling row in this document already carried. The `apply_add_facet` cell, the rest of the row and the claim are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `apply_add_facet`; "def validate_facet_payload(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:300-300. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_require_governing_route`; "def route_exists(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:874-887; mcp/src/agents_remember/memory/knowledge/routes.py:242-242. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `apply_add_facet`; "def validate_facet_payload(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:292-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `require_facet_generation` repointed to mcp/src/agents_remember/memory/knowledge/facets.py:832-852. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_authority_home` repointed to mcp/src/agents_remember/memory/knowledge/facets.py:859-871. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `_require_governing_route`; "def route_exists(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:874-887; mcp/src/agents_remember/memory/knowledge/routes.py:233-233. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `apply_add_facet`; "def validate_facet_payload(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:283-283. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_attachment_endpoint` repointed to mcp/src/agents_remember/memory/knowledge/endpoints.py:226-257. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `require_attachment_endpoint` repointed to mcp/src/agents_remember/memory/knowledge/endpoints.py:226-257. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `apply_add_facet`; "def validate_facet_payload(" repointed to mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:249-249. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand while resolving the memory sync** — `apply_add_facet`, `def validate_facet_payload(`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `apply_add_facet`, `def validate_facet_payload(`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: ``apply_add_facet`; "def validate_facet_payload("` → `mcp/src/agents_remember/memory/knowledge/facets.py:218-272; mcp/src/agents_remember/memory/knowledge/record_envelope.py:191-191`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-
-- 2026-09-17T22:25:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the authored facet write path. It records the **two entry points per write** and why the split makes "a refused write leaves the dataset exactly as it was" a property of the transaction boundary, the payload seam as the only payload decision point (so an unknown subtype is the typed `invalid_payload` refusal rather than a parse error), provenance and `authority_home` taken from the admission and the namespace rather than from a command, proposed-origin-only with the shipped `promotion_not_supported` at both entry points, the **check-every-reference-before-the-row-it-belongs-to** rule across attachments, supersessions, subjects, designations and governing routes, the cycle walk as the shared lineage rule over the third graph, the `pending` split between what a batch declares and what is stored, the operation-name check that refuses an act performed under another name, and the generation gate read from the dataset's own recorded version. It also records a measured divergence rather than leaving it: `_apply_facet_command` constructs `state="no_change"` while the receipt declares only `applied`/`refused`, unreachable on every path the leaf's cases drive and carried as a todo. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

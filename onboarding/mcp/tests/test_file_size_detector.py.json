@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_file_size_detector.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Measure counts newlines like wc and flags only hard limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bc181f2aa3d648ba18869dcdbf942b114f18be7",
+            "content": "sha256:330a77376c17be78c3e6043a1a5302d980d4486a0ea999b249ce03a08e83a7c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_measure_counts_newlines_like_wc_and_flags_only_hard_limit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unarmed step reports and armed step fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bc181f2aa3d648ba18869dcdbf942b114f18be7",
+            "content": "sha256:942772e45984d05a7dc93d2ff34e853bd13b25d03a3ef7af8ada6d343bd168e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unarmed_step_reports_and_armed_step_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

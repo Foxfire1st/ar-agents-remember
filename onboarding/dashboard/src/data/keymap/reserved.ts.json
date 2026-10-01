@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/data/keymap/reserved.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reserved set, browser-forbidden records, and the single PTY matching gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:e2d72c0c9c0fc9f6298aac8eef4aa70e0c794bee34c387e6e8944e9b64421c0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PTY_RESERVED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:0b26ff166f09ff510fee37b56e12b33fdc12de8766c7b5c139f69e7d0bdd481d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BROWSER_FORBIDDEN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:d41ae9a1f4f1ea0ee440111ed4cc53e5b3f91a39dc4e0f273b0a77396e158bc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "matchReservedChord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:270b54598a81f52be90d7c7fa1cbf5dfbd78f2b955bd7a8e00b036f9ea0157a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`routeKey(\"pty\", …)` defers entirely to `matchReservedChord`.\n\nAnchor: `matchReservedChord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:102d5709fa45d81dd3ebfe675677819f22b9e57c706a9d4c6d894d0ef9a0eee2",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tinykeys binding installs only bound entries.\n\nAnchor: \"if (!reserved.bound\"; \"!reserved.tinykeys) continue;\"; \"add(reserved.tinykeys\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9428f12da2796a8267085f196e583f7874ba2f16",
+            "content": "sha256:77bc69090df44454a6d319b0469eb3477a99d86724f38064bdb6cb2bccf68aa9",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/panels/session-cockpit/useKeyboardZones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_curator_ingest_write_and_retention.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_curator_ingest_write_and_retention.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-24T17:20:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -78,32 +68,22 @@ each case states its input and its measured output without re-implementing the h
 - A planning run is asserted to write **nothing**; a case that ever made planning write would be a
   behaviour change, not a test fix.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The admitted ingest plans per-entry outcomes and commits accepted operations through the existing batch owner. | `ingest_curator_list` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243 |
-| The committed batch state the writing cases assert. | `COMMITTED` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:224-224 |
-| The CLI entry point the ninth case drives, and the adapter that owns its arguments. | `main` | mcp/src/agents_remember/cli/__main__.py:73-75 |
-| The sibling fixtures imported rather than duplicated: the family plane's authored meaning. | `candidate_of`; `conditions_of`; `committed_revision` | mcp/tests/test_curator_family_authoring.py:166-166; mcp/tests/test_curator_family_authoring.py:230-230; mcp/tests/test_curator_family_authoring.py:286-286 |
-| The list fixture and the contract pair the cases are built on. | `SourcePair`; `pair`; `entry` | mcp/tests/test_knowledge_curator_ingest_list.py:166-166; mcp/tests/test_knowledge_curator_ingest_list.py:183-183; mcp/tests/test_knowledge_curator_ingest_list.py:346-346 |
-| The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output. | `unit-regression`; "consumer_scope = \"exact\"" | mcp/tests/test-evidence-lanes.toml:22-22; mcp/tests/evidence-lifecycle.toml:700-700; mcp/tests/evidence-lifecycle.toml:1299-1299; mcp/tests/evidence-lifecycle.toml:96-96 |
-| The catalog pin the split re-took from a fresh `sha256sum`, with its population unchanged. | `LIFECYCLE_CATALOG_SHA256`; `LIFECYCLE_CONTRACT_COUNT`; `LIFECYCLE_ARTIFACT_COUNT` | mcp/tests/test_dependency_ownership_ast_helpers.py:44-46 |
-| The parent this module was extracted from, whose own docstring points at this sibling's subject. | `test_curator_ingest_write_and_retention` | mcp/tests/test_curator_family_authoring.py:32-32 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The admitted ingest plans per-entry outcomes and commits accepted operations through the existing batch owner. [1]
+- The committed batch state the writing cases assert. [2]
+- The CLI entry point the ninth case drives, and the adapter that owns its arguments. [3]
+- The sibling fixtures imported rather than duplicated: the family plane's authored meaning. [4]
+- The list fixture and the contract pair the cases are built on. [5]
+- The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output. [6]
+- The catalog pin the split re-took from a fresh `sha256sum`, with its population unchanged. [7]
+- The parent this module was extracted from, whose own docstring points at this sibling's subject. [8]
+
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file; the contract pair the cases build is a
 disposable repository pair created by the imported fixture, not a configured external repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 2 citations into `mcp/tests/evidence-lifecycle.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T18:18:00+02:00 — 260921-ICR-L47 curator (post-sync re-measure after the Architect's `worktree_sync` onto code `eda947325ccbe0791973953265278597e968a34a` / memory `6ccb9b615e383174c22f110a6492e6231a4e261f`; L47 candidate tree `5f22717e68041d6819e9671cee2ab30e4d3d3e13`): No content impact: citation ranges into files L44, L45 or L47 moved (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-measured against the post-sync code; each re-pointed row held its anchors in its own measurement tree (`eda94732` or the pre-sync L47 candidate `72efa4bb`) and holds them after the line mapping, or names a literal that occurs exactly once in the post-sync file within five lines of its cited place. Claim wording unchanged. No stamp advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/application/knowledge_curator_ingest.py`, `mcp/tests/evidence-lifecycle.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-26T22:01:44Z — Reconciled the ingest citation with the current admitted operation and its per-entry outcomes; verification stamps remain unchanged.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: `main` repointed to mcp/src/agents_remember/cli/__main__.py:73-75. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **created.** This module is L32's extraction from the over-rail `mcp/tests/test_curator_family_authoring.py` (1320 lines at L28), and it had no card, which was the leaf's one `missingOnboardingCount`. The card records the nine cases and the fact each pins, the sibling-fixture imports that keep the two modules one suite, the three local helpers, the lane row, and the two `consumer_scope="exact"` rows derived from the shipped census's own findings. The line-count and census figures are quoted with their **scope** (27 rail's own, 26 `mcp/`-only; 16 contracts / 66 artifacts) because the population is scope-dependent. No verification stamp is advanced as a commit: the candidate is uncommitted, so the header's pair is the leaf's base commit plus this working-tree delta, and the governed closeout owns the real stamp.
+No meaningful cross-repo references found.

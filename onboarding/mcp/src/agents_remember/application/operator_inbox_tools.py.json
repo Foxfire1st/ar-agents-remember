@@ -1,0 +1,119 @@
+{
+  "path": "mcp/src/agents_remember/application/operator_inbox_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `_result` (lines 31-33) — Return the raw use-case result for the MCP adapter to finalize..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:30d1f3e03b0cf9d65e6b8966cb95b7ebe4948908e2607b62ca70b1b01d34abef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `_store` (lines 40-41).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:878a0252406f5bc9c877aff5064f8ad01550e3bb1dcd99251e01b73749bb9e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_entry_payload` (lines 44-45).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:880b363b57d8b0631cb94b5a6c8f548539e21587b1f9f1537369a6aea119f7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `operator_inbox_post_tool` (lines 48-68).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:3f49510691b51693400b2039df5c022fb209f951a9ee31c4497925dca28ced7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_post_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `post_operator_inbox` (lines 71-98) — Compose flat transport fields into one operator-inbox post use case..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:cbb5bf649f3db643e1e6ec520f36008bb9a51085cfdb785ac3390a43085040ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "post_operator_inbox"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `operator_inbox_poll_tool` (lines 101-124).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:47ae2d3cd86a6fb24942c29781df9c7e5afb47a3a4b7933dd3d065bec4d1d4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_poll_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `operator_inbox_consume_tool` (lines 127-158).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "def84435356a887d0133f6812ae053fe21aaaf39",
+            "content": "sha256:2cde433c2bea8e046aa5462adaf3709d32752b01eee30ad722aecba73da2c464",
+            "locator": {
+              "kind": "symbol",
+              "name": "operator_inbox_consume_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

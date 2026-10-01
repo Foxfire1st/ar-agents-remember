@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/application/review_pair_preflight.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
+        "content": "sha256:075c9360f3cbc7bf7f22503dc169467135f7990dbe6bc32133557e18e25d0ee8",
+        "locator": {
+          "kind": "symbol",
+          "name": "pair_preflight_refusal"
+        }
+      },
+      "id": "RLZ-6H6ETWZD",
+      "invariant": "INV-8FWJM8RR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Defines the single ordered refusal chain for a resolved pair: closed-leaf record absence, then an absent half, then an unreadable half, then an unreadable candidate receipt. Both the subject catalogue (knowledge_review.py) and the changed-intent summary (review_intent_summary.py) call this one function.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The four refusals in their fixed order.\n\nAnchor: `closed_leaf_dataset_refusal`; `unreadable_half_refusal`; `candidate_receipt_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
+            "content": "sha256:075c9360f3cbc7bf7f22503dc169467135f7990dbe6bc32133557e18e25d0ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_preflight_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The live pair's absent-half refusal, naming the half and the file.\n\nAnchor: \"candidate_dataset_absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
+            "content": "sha256:0cc85c48aef232bb5d5e23a8b427b1abe601d1e6818921109e34a7af86377805",
+            "locator": {
+              "kind": "symbol",
+              "name": "absent_pair_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The catalogue caller: one call, refused before any subject is listed.\n\nAnchor: `pair_preflight_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_knowledge_review_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The summary caller: the same call before either side is read.\n\nAnchor: `pair_preflight_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:0b016e882e8081c06350e7308dc61d86a5e4daab96d18c3c8a27603e3d5549ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent_summary_of"
+            },
+            "path": "mcp/src/agents_remember/application/review_intent_summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The absent-half probe it builds on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
+            "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_dataset_half"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

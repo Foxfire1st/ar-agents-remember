@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_projection/types.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/task_projection/types.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T10:30+02:00 |
-| lastVerifiedCommitHash | `b00a4ac2daeec7411529d5a5593a3c007fcbf320` |
-| lastVerifiedCommitDate | 2026-09-16T10:52:30+02:00|
-| governingOverview      | `../overview.md`                           |
-
 ## Governing Overview
 
 [application overview](../overview.md)
@@ -82,44 +72,30 @@ field plus a renderer, not a widening of `ProjectedFact`.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking the configured sources. | N/A | N/A |
+No relevant documentation found after checking the configured sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The vocabularies this module declares and the owners whose types they must stay in step with.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The three fact planes and the runtime tuple that must agree with the alias. | `ProjectionFactKind`; `PROJECTION_FACT_KINDS` | mcp/src/agents_remember/application/task_projection/types.py:39-41 |
-| The read plan a consumer can print and a test can pin. | `ProjectionReadPlan`; `ProjectionSelection` | mcp/src/agents_remember/application/task_projection/types.py:221-234; mcp/src/agents_remember/application/task_projection/types.py:238-247 |
-| The three admissible requirement declaration shapes, and the `None` identity an exact-text declaration gets. | `RequirementProjection`; `RequirementPacketLocation` | mcp/src/agents_remember/application/task_projection/types.py:156-172; mcp/src/agents_remember/application/task_projection/types.py:137-152 |
-| The recorded, optional knowledge seam and its request value. | `TaskKnowledgeExpansionSource`; `KnowledgeExpansionRequest`; `KnowledgeExpansion` | mcp/src/agents_remember/application/task_projection/types.py:275-285; mcp/src/agents_remember/application/task_projection/types.py:251-262; mcp/src/agents_remember/application/task_projection/types.py:266-271 |
-| The complete projection value: model-visible markdown plus the inspectable half. | `TaskProjection` | mcp/src/agents_remember/application/task_projection/types.py:303-329 |
-| The relation vocabulary this module imports rather than retypes. | `CapsuleOperation`; `CapsuleRole` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:33-62; mcp/src/agents_remember/models/role_capsules/vocabulary.py:20-31 |
-| The task-altitude vocabulary owned by the task layer, which is why the types live at this rank. | `TaskAltitude` | mcp/src/agents_remember/tasks/document_refs.py:32-32 |
-| The duplicate-declaration guard for a PEP 695 alias beside its runtime tuple. | `test_the_role_and_operation_literals_agree_with_their_runtime_tuples` | mcp/tests/test_role_capsule_admission.py:153-157 |
+- The three fact planes and the runtime tuple that must agree with the alias. [1]
+- The read plan a consumer can print and a test can pin. [2]
+- The three admissible requirement declaration shapes, and the `None` identity an exact-text declaration gets. [3]
+- The recorded, optional knowledge seam and its request value. [4]
+- The complete projection value: model-visible markdown plus the inspectable half. [5]
+- The relation vocabulary this module imports rather than retypes. [6]
+- The task-altitude vocabulary owned by the task layer, which is why the types live at this rank. [7]
+- The duplicate-declaration guard for a PEP 695 alias beside its runtime tuple. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract consumes these values.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
-
-## Update History
-
-- 2026-09-16T10:30+02:00 — 260915-CAPS-L3 curator: created this card for the value layer of the
-  task-context projection added by the scoped-task-context leaf (`CAPS-R03@v1`). Records the
-  three-plane and nine-channel vocabularies with their runtime-tuple duplication, the read plan as
-  inspectable data, the three declaration shapes, the optional knowledge seam, and the
-  `layers.toml` reason the pure types live in `application` rather than `models`. Verification
-  metadata is left at the leaf base commit because the source is uncommitted — the governed closeout
-  stamps the real code commit.
+No meaningful cross-repo references found.

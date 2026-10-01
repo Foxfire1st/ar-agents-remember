@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T01:22:26+02:00 |
-| lastVerifiedCommitHash | `7127756cd132d1103cd0a24bc7dc6884ddb663ee`|
-| lastVerifiedCommitDate | 2026-09-30T01:41:06+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -120,7 +110,9 @@ predicate the generic closeout gate (MIK-R09, L09) applies.
 - **Review N8:** a family that exists only in K_C cannot be answered by a family row (`FamilyRow` judges a
   K_B family); it needs a new family routed at a directory the same range deletes, so nothing is done now.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R06@v2` of task
@@ -129,48 +121,37 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: conditions, evaluated families, views, registration, satisfying row, locations at C and the suggestion. | "family routes maintained with the code" | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:1-50 |
-| The kind name, the four conditions and the satisfying dispositions. | `CONDITIONS`; `SATISFYING_DISPOSITIONS` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:90-97 |
-| The family row of an item, found through its family ID. | `family_of`; `_family_row` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:100-110 |
-| The kind registered on import, with its facts, row rule and owner. | `FAMILY_ROUTE_CONDITION_KIND`; `register_item_kind` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:113-138 |
-| The stored-item predicate for the gate: never `no_impact`, and the record must satisfy the routes. | `family_route_item_open` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:141-154 |
-| MIK-R04 satisfied, or retired; `route_unassigned` needs a non-empty route set. | `record_satisfies_routes`; `require_routes` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:157-180 |
-| What each condition names in one view. | `_affected` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:202-215 |
-| The base view: K_B's routes over the current members. | `_Family`; `view` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:237-259 |
-| The facts shared by a family's conditions, recorded and effective locations. | `_Judged` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:265-287 |
-| Reached families on all four conditions, others only on a killed route; retired skipped. | `conditions` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:299-320 |
-| Entries judged where their files lie at C. | `_effective` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:330-348 |
-| A killed route, and the families that have one. | `_killed`; `_with_killed_routes` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:350-367 |
-| The two views; an unreached family answers only for killed routes. | `_views` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:369-382 |
-| One condition: its facts, identity and `satisfiedBy`. | `_condition` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:384-411 |
-| The record judged as recorded and at C. | `_record_satisfies` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:413-428 |
-| The suggestion, withheld without a rename or when ambiguous. | `_suggestion`; `unmapped` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:430-444 |
-| The rename candidates: outermost target directories. | `_rename_candidates`; `_renamed_under` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:456-476 |
-| The inputs and the entry point, sorted by subject. | `RouteInputs`; `family_route_conditions` | mcp/src/agents_remember/application/knowledge_worklist/route_conditions.py:479-505 |
-| Step 6 of the run. | `_route_items` | mcp/src/agents_remember/application/knowledge_worklist/compute.py:458-481 |
-| The conforming directory move, four worklists, stable IDs. | `test_a_directory_move_raises_emptied_and_uncovered_and_a_rerouted_row_satisfies_them` | mcp/tests/test_family_route_conditions.py:206-271 |
-| `no_impact` never satisfies; a kept dead route keeps the item open. | `test_a_no_impact_row_never_satisfies_and_a_kept_dead_route_keeps_the_item_open` | mcp/tests/test_family_route_conditions.py:274-307 |
-| The carried L04 decision: a killed route is a mandatory item. | `test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item` | mcp/tests/test_family_route_conditions.py:315-358 |
-| A route dead at B is not charged to the leaf. | `test_an_unreached_familys_route_already_dead_at_b_is_not_charged_to_the_leaf` | mcp/tests/test_family_route_conditions.py:479-491 |
+- The module docstring: conditions, evaluated families, views, registration, satisfying row, locations at C and the suggestion. [1]
+- The kind name, the four conditions and the satisfying dispositions. [2]
+- The family row of an item, found through its family ID. [3]
+- The kind registered on import, with its facts, row rule and owner. [4]
+- The stored-item predicate for the gate: never `no_impact`, and the record must satisfy the routes. [5]
+- MIK-R04 satisfied, or retired; `route_unassigned` needs a non-empty route set. [6]
+- What each condition names in one view. [7]
+- The base view: K_B's routes over the current members. [8]
+- The facts shared by a family's conditions, recorded and effective locations. [9]
+- Reached families on all four conditions, others only on a killed route; retired skipped. [10]
+- Entries judged where their files lie at C. [11]
+- A killed route, and the families that have one. [12]
+- The two views; an unreached family answers only for killed routes. [13]
+- One condition: its facts, identity and `satisfiedBy`. [14]
+- The record judged as recorded and at C. [15]
+- The suggestion, withheld without a rename or when ambiguous. [16]
+- The rename candidates: outermost target directories. [17]
+- The inputs and the entry point, sorted by subject. [18]
+- Step 6 of the run. [19]
+- The conforming directory move, four worklists, stable IDs. [20]
+- `no_impact` never satisfies; a kept dead route keeps the item open. [21]
+- The carried L04 decision: a killed route is a mandatory item. [22]
+- A route dead at B is not charged to the leaf. [23]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the module reads the parsed memory sides and the file lists of
 one code repository, handed to it by the worklist run.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T01:22:26+02:00 — 260928-MIK-L06 curator (uncommitted change set on `ar/260928-mik-l06`, code base `c493b55731545a090d6b81f504bf02e1e427ec74` plus the staged delta): created this card for the new file MIK-R06 adds, recording the carried L04 decision and the architect rulings of 21:49:19 (Q1–Q7), 22:40:22 (F1, N1, N2 to L09, N6, N7) and 23:14:41 (`recordSatisfiesRoutes` as recorded and at C). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

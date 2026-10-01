@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_paging/scope_pages.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_paging/scope_pages.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-29T21:41:17+02:00 |
-| lastVerifiedCommitHash | `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4`|
-| lastVerifiedCommitDate | 2026-09-29T22:20:46+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -42,7 +32,9 @@
 
 - R2-2: the collapsed entry's `counts` has no `remaining` (accepted, ruling 21:32:34).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R02@v2` of task
@@ -51,30 +43,19 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement: one rule for page 1 and later pages. | "Pages of the selective scope read" | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:1-14 |
-| The resuming view by seed kind. | `_RESUMING_VIEW` | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:67-73 |
-| Items as rows; a family revision heads its memberships. | `scope_rows` | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:106-124 |
-| A prepared seed, deferred or collapsed. | `PreparedScope`; `collapsed` | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:127-183 |
-| Selecting and checking a resumed position. | `prepare_scope`; `_next_manifest` | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:186-235 |
-| The next token, or the move on to a queued seed. | `_continuation`; `continuationSeed` | mcp/src/agents_remember/application/knowledge_paging/scope_pages.py:257-305 |
+- The module statement: one rule for page 1 and later pages. [1]
+- The resuming view by seed kind. [2]
+- Items as rows; a family revision heads its memberships. [3]
+- A prepared seed, deferred or collapsed. [4]
+- Selecting and checking a resumed position. [5]
+- The next token, or the move on to a queued seed. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the scope is one memory tree's recorded neighbourhood.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-29T21:41:17+02:00 — 260928-MIK-L02 curator (uncommitted change set on `ar/260928-mik-l02`, code base `a4eba7b7b5b5ffee7277f6c19086697925a22df2` plus the staged delta): created this card for the new file MIK-R02 adds. It records the architect rulings of 2026-09-29 19:56:40 (Q1 deferred seeds; Q6 page 1's code tree is bound), 20:40:40 (F2 the collapsed tail) and 21:32:34 (R2-2 accepted). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

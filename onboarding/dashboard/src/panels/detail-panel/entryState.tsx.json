@@ -1,0 +1,162 @@
+{
+  "path": "dashboard/src/panels/detail-panel/entryState.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+        "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryStateDetails"
+        }
+      },
+      "id": "RLZ-7T9XTN8G",
+      "invariant": "INV-TH4KXFTX",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Is the one disclosure every entry control uses for its explanation: a closed <details> whose summary is only a '?' with an accessible '<label>: details' name. The owner's full sentence goes into its body, so it stays out of the entry row until the developer opens it.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Why the pattern exists, and why the disclosure is outside the button.\n\nAnchor: \"interactive content inside a button\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:8e4d4eba51d64dd0a44f79e4c2a0b42439a4773bfaac23a06adcf290d1965714",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed disclosure with its accessible summary.\n\nAnchor: \"details\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The brief word per shared token.\n\nAnchor: \"no knowledge yet\"; \"offline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "briefProblem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The owner's full sentence, with nothing invented.\n\nAnchor: \"offending input: \"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:99c3ed0cc1ea5ac520ebcd472aa1bd2052e105e2d3f42141ad6c611fa131923e",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemSentence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The disclosure styles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:2063c5121eb7c1c49b39b37f93a47cce83512d06e61daee202f060cdcd469669",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:546ce106c54de41bb5fffa39ab5f6e482d7472db352483c39e6ce9d46a44ff44",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateSummary"
+            },
+            "path": "dashboard/src/panels/detail-panel/styles.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9023e3b12ff1d013be9ebac62b6c177e71144b66",
+            "content": "sha256:03f9427fcb001c9bd73da7812fdff4877fda682f17dd9d20f6957af4c6ad1fe0",
+            "locator": {
+              "kind": "symbol",
+              "name": "entryStateBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two consumers.\n\nAnchor: `EntryStateDetails`; `briefProblem`; `problemSentence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:b14fdede4bb0673a06842fcc47ac5d60bfd27a6a326b7b9c6f0b3db26c71a80c",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:b8e1fc0a245c08028b372dd146912592f7375ebee62528ff1bdaaffcf5a0a65d",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

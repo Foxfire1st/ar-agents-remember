@@ -1,0 +1,25 @@
+{
+  "path": "dev-skills/dashboard-experience-review/templates/review-report-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stage 6 of the pipeline, which emits this report.\n\nAnchor: `Emit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d9675efec08314d237737fc275cadad172934ec",
+            "content": "sha256:e48e30714cf6df60f50b93d2548bad857e67f0005597be78257774ed0ff4ecf4",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "dev-skills/dashboard-experience-review/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

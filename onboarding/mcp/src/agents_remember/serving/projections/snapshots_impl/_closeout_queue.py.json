@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Top-level reader covers every orchestrating sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "content": "sha256:0499c1d817917feaa0c5c0da174553c1076a92fbf4678f0da2b8b3ff03d3d570",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_closeout_queues"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Effective state is joined against the exact current source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "content": "sha256:69701aa3591bfee4652476acb0ec6307f2c14caadabb583608d86b339946ca04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project_queue"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Waiting-generation members project classification, priority, order, and reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "content": "sha256:ebe15ddc02d57762a26463d2aee46f26ce9fa3298cfe5730273b3a70aa1634a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

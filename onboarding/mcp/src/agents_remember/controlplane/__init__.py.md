@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/__init__.py
 
-| Field                  | Value                                                 |
-| ---------------------- | ----------------------------------------------------- |
-| repository             | agents-remember                                       |
-| path                   | `mcp/src/agents_remember/controlplane/__init__.py`    |
-| doc_type               | `file-level-onboarding`                               |
-| lastUpdated | 2026-09-06T00:28+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`            |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                         |
-
 ## Governing Overview
 
 [Control-plane overview](overview.md)
@@ -72,59 +62,27 @@ Keep the import list and `__all__` explicit; package exports remain distinct fro
 
 None identified in this bounded export review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation source. | N/A | N/A |
+No configured domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The records this package exports. | "class GateRecord" | mcp/src/agents_remember/controlplane/records.py:45-45 |
-| The gate delegation policy this package exports (moved to kernel primitives by L9). | "class GatePolicy:" | mcp/src/agents_remember/kernel/primitives/gate_policy.py:54-54 |
-| The store this package exports. | "class GateStore:" | mcp/src/agents_remember/controlplane/store.py:105-105 |
-| The enforcement policy this package exports (slice 6b). | "class GateGuard" | mcp/src/agents_remember/controlplane/enforcement.py:42-42 |
-| The operator inbox records and store this package now exports. | "class InboxAddress", "class OperatorInboxStore" | mcp/src/agents_remember/controlplane/operator_inbox_records.py:41-41; mcp/src/agents_remember/controlplane/operator_inbox_store.py:70-70 |
-| The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108. | `__all__` | mcp/src/agents_remember/controlplane/__init__.py:73-108 |
-| The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. | "SCHEMA_VERSION = " | mcp/src/agents_remember/controlplane/durable_store.py:46-46 |
+- The records this package exports. [1]
+- The gate delegation policy this package exports (moved to kernel primitives by L9). [2]
+- The store this package exports. [3]
+- The enforcement policy this package exports (slice 6b). [4]
+- The operator inbox records and store this package now exports. [5]
+- The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108. [6]
+- The module that defines every durable-store symbol re-exported here, and the six per-store ownership constants that are deliberately not re-exported. [7]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency is exported here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T00:28+02:00 — Corrected stale facade commentary after kernel lock extraction and reconciled the current explicit gate-policy exports. The source file is unchanged; its genuine prior verification stamp is preserved.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `__init__.py` with plane-owned seat identity, routing, and enforcement boundaries.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors and source-backed ranges; exact non-fixing check returns zero findings.
-
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded the new facade
-  exports from `durable_store.py` — `DURABLE_STORE_CONTRACT`, `SCHEMA_VERSION`, `DurableRecord`,
-  `StoreOwnership`, `DurableStoreError`, `CompactionOwnerError`, `UnsafeLockFilesystemError`,
-  `declare_process_role` and `declared_process_role` — and, as the load-bearing half, what is
-  deliberately withheld: the locking and rewrite primitives and the six per-store `*_OWNERSHIP`
-  constants stay package-internal so no caller outside `controlplane/` can write one of these logs
-  without going through the store that owns it. Recorded the new package-docstring paragraph
-  stating the contract in one place. Verification metadata pinned until closeout stamps the L5
-  commit.
-- 2026-07-04T12:32+02:00 — 260703-L4: facade now exports the gate-policy schema,
-  evidence-ref model, and kind-generic enforcement resolver. Verification
-  metadata pinned until closeout stamps the L4 commit.
-- 2026-06-23T13:44+02:00 — Task 10 backend inbox: re-exported the operator inbox record/store symbols and updated the package docstring to describe the external-chat pull channel. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: facade now re-exports `apply_gate` (from `records`) and `CloseoutGuard` / `evaluate_closeout_gate` (from the new `enforcement` module). Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the control-plane package facade. Verification metadata pinned until closeout stamps the 6a code commit.
+No cross-repository evidence is required.

@@ -1,0 +1,162 @@
+{
+  "path": "mcp/tests/test_memory_citation_fix.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen no discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:55585586d3410fc808d19003952f2a72a99b286d7bc86b5921a8fb31b4824236",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frozen_no_discovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:16a28618428d5d91e94c97cc86c3e899525da2c8223b0400bcd53979db53ad34",
+            "locator": {
+              "kind": "symbol",
+              "name": "document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Filler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:eac9d2c868e99801ce9d3f60f68b63e63319d6b456499eb78fbc5cda6ec68d54",
+            "locator": {
+              "kind": "symbol",
+              "name": "filler"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:fde2f72b4f809cd593609097ab9162cd2b78e49bc6e2e8abca0d5a7425fe4251",
+            "locator": {
+              "kind": "symbol",
+              "name": "Tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "One Git command per root, failing loudly on a non-zero exit.\n\nAnchor: \"    def git(self, root: Path, *args: str) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:d3672c8b870d14008236ca0b4baddb3db494afd31fe7c173351227fd5b22da79",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The code root is initialised, stamped by committing every source written so far, and one committed source can be removed so the move is discovered.\n\nAnchor: \"    def history(self) -> None:\"; \"    def stamp(self) -> str:\"; \"    def remove_source(self, relative: str) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:f906e0705d79b757f58ffad7e57ee87b8668c5df0abe789c6694a18cfb17c03a",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:15b84a399203c5333a54d6c566190803afaed217e25ddcb98d270b90ef9b542b",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:9836bf866cd71b8bbe700df5a0a1b3a3f7e5c01d3aaa23231f0ed26955c5e8fd",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A citation row is located by the citation header, not by a fixed row index.\n\nAnchor: \"    def row(self, relative: str, offset: int = 0) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:273388e655356d9bc9cc07e0fd8c65a52ff56a803f4276586c3cb2972586a139",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Treecase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87ec7b54dc0dec7226c28a6a37934cf958133735",
+            "content": "sha256:31f14f8d81c5fd1d77ef26c45a1aab83f62d5333a2c3d44507b344b087413efe",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeCase"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # candidate_progression.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/candidate_progression.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-26T20:13:29Z |
-| lastVerifiedCommitHash | `43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d`|
-| lastVerifiedCommitDate | 2026-09-27T00:14:33+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -36,34 +26,26 @@ Normal candidate open remains strict. Only the code tree may progress; knowledge
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured. This account concerns the repository's own admission contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain source could be checked. | — | — |
+No configured domain source could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These constructs bind the code capture and candidate progression to the existing authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `read_candidate_predecessor` implements the described admission boundary. | `read_candidate_predecessor` | mcp/src/agents_remember/memory/knowledge/candidate_progression.py:47-55 |
-| `plan_candidate_code` implements the described admission boundary. | `plan_candidate_code` | mcp/src/agents_remember/memory/knowledge/candidate_progression.py:88-99 |
-| `progress_candidate_code` implements the described admission boundary. | `progress_candidate_code` | mcp/src/agents_remember/memory/knowledge/candidate_progression.py:58-85 |
-| `_validate_progression` implements the described admission boundary. | `_validate_progression` | mcp/src/agents_remember/memory/knowledge/candidate_progression.py:117-143 |
-| `_same_scope` implements the described admission boundary. | `_same_scope` | mcp/src/agents_remember/memory/knowledge/candidate_progression.py:146-153 |
+- `read_candidate_predecessor` implements the described admission boundary. [1]
+- `plan_candidate_code` implements the described admission boundary. [2]
+- `progress_candidate_code` implements the described admission boundary. [3]
+- `_validate_progression` implements the described admission boundary. [4]
+- `_same_scope` implements the described admission boundary. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The leaf contract supplies code and memory roots; this module introduces no independent repository-selection authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separate cross-repository authority is introduced. | — | — |
-
-## Update History
-
-- 2026-09-26T20:13:29Z — Created the exact-source admission boundary card.
+No separate cross-repository authority is introduced.

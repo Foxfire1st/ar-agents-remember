@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ReviewSurface.applicability.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ReviewSurface.applicability.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T14:18:54+02:00 |
-| lastVerifiedCommitHash | `59daf5055eb1ceffba89170be64ac85cabf860f4` |
-| lastVerifiedCommitDate | 2026-09-30T15:02:26+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -90,45 +80,33 @@ label changes rather than when a prop does.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The two label fixtures the cases mount, each naming its own subject and references.** | `directLabel`; `historicalLabel` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:45-54; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:56-65 |
-| **The two real wire bodies: one with the labels, context rows and counts, one without any of them.** | `payload` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:67-210 |
-| **The envelope and the real `Response` the client decodes.** | `reviewed`; `response` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:204-210; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:212-217; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:219-226 |
-| **The one mount helper, and the cleanup that keeps no global across a case.** | `mountSubject` | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:228-238; dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:232-235 |
-| **The F09 client case: the treatment and the true subject are mounted, and the sibling's finding is nowhere in the document.** | "mounts each record's own treatment and the true subject of labelled context" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:246-273 |
-| **The counts case: the six-way partition is rendered beside the collections it filtered.** | "states the six-way counts beside the collections it filtered" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:275-289 |
-| **The historical case: a previous generation is labelled and never reads as the current result.** | "labels a previous generation's record as historical rather than as the current result" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:291-305 |
-| **The additive-compatibility case: a body published before the labels existed still renders.** | "still renders a payload published before the labels existed" | dashboard/src/panels/review/ReviewSurface.applicability.test.tsx:307-318 |
-| **The client vocabulary these cases mount, and the fields the surface gained.** | `ReviewDisplayedApplicability`; `ReviewContextRecord`; `ReviewApplicabilitySummary`; `ReviewKnowledgePane` | dashboard/src/data/review.ts:158-167; dashboard/src/data/review.ts:169-181; dashboard/src/data/review.ts:183-193; dashboard/src/data/review.ts:220-242 |
-| **The rendered labels themselves: the per-record note, the context list and the counts block.** | `applicabilityNote`; `contextList`; `applicabilityCounts` | dashboard/src/panels/review/ReviewRecordPanes.tsx:54-69; dashboard/src/panels/review/ReviewRecordPanes.tsx:71-87; dashboard/src/panels/review/ReviewRecordPanes.tsx:89-100 |
-| **The two call sites that mount them, on the knowledge pane and on the evidence pane.** | `KnowledgePane`; `EvidencePane` | dashboard/src/panels/review/ReviewRecordPanes.tsx:223-248; dashboard/src/panels/review/ReviewRecordPanes.tsx:359-415 |
-| **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** | `test_a_sibling_subjects_assessment_is_context_and_never_the_selected_subjects` | mcp/tests/test_knowledge_review_subject_isolation.py:221-252 |
+- **The two label fixtures the cases mount, each naming its own subject and references.** [1]
+- **The two real wire bodies: one with the labels, context rows and counts, one without any of them.** [2]
+- **The envelope and the real `Response` the client decodes.** [3]
+- **The one mount helper, and the cleanup that keeps no global across a case.** [4]
+- **The F09 client case: the treatment and the true subject are mounted, and the sibling's finding is nowhere in the document.** [5]
+- **The counts case: the six-way partition is rendered beside the collections it filtered.** [6]
+- **The historical case: a previous generation is labelled and never reads as the current result.** [7]
+- **The additive-compatibility case: a body published before the labels existed still renders.** [8]
+- **The client vocabulary these cases mount, and the fields the surface gained.** [9]
+- **The rendered labels themselves: the per-record note, the context list and the counts block.** [10]
+- **The two call sites that mount them, on the knowledge pane and on the evidence pane.** [11]
+- **The server-side case this client mirrors: a sibling's record is context and never the selected subject's.** [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this module. It mounts the dashboard's own surface over
 its own origin.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-30T14:18:54+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`): No content impact: this card's own source is unchanged. MIK-R32 moved lines in `dashboard/src/panels/review/ReviewRecordPanes.tsx`, so the citation rows into them that moved were re-pointed by the installed fixer (run once; its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; every re-pointed row was byte-identical to memory HEAD beforehand and was checked to hold its anchors in the new range. The fixer's normalisation also re-measured passing rows into files this leaf did not change (`dashboard/src/data/review.ts`); no claim changed. No verification stamp was advanced.
-- 2026-09-28T21:38:01+02:00 — 260921-ICR-L48 curator (uncommitted candidate tree `ac73216e2a763b72844a63b8c36c81f9a8b5f0e8` over code base `cb1b942af60a7ed5006ac992075d2bf96aeb9fa7`): **reopened claims re-read — the three attribution renderers and both mounting panes moved unchanged into `ReviewRecordPanes.tsx`.** `applicabilityNote`, `contextList` and `applicabilityCounts` are still called from the knowledge and evidence panes (`KnowledgePane` mounts `contextList`/`applicabilityCounts` for the knowledge records, `EvidencePane` mounts `applicabilityNote` on its links and observations plus the list and counts), so both claims hold and were re-pointed. One L48 difference matters to a reader of this module: the panes now render only for a payload that answers the subject on screen (`ReviewTechnicalDetails`), which this module's single-subject cases do not exercise. No verification stamp was advanced.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — The comparison-focused cases isolate the shared catalogue hook so its additional request cannot consume a comparison fixture. The ordinary-entry catalogue/comparison interaction is covered separately by ReviewSurface.navigation.test.tsx. Assertions follow the compact labels, central display controls and changed-region default without weakening the existing record, paging or refusal contracts.
-- 2026-09-24T00:43:00+02:00 — 260921-ICR-L24 curator (memory worktree only; no code changed; no commits; leaf base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta): **four enforced citation rows re-cited to the constructs they name, wording unchanged.** The vocabulary row gained the two ranges its own anchors needed — `ReviewContextRecord` at `data/review.ts:166-178` and `ReviewKnowledgePane` at `:217-238` — while the two contributing ranges it already carried (`ReviewDisplayedApplicability` `107-142`, `ReviewApplicabilitySummary` `169-191`) are kept verbatim; the call-site row followed the two panes this leaf's surface shortened to their own extents (`ReviewSurface.tsx:275-300` for `KnowledgePane`, `:354-407` for `EvidencePane`). No claim was reworded or dropped and no contributing range was removed. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted (base `5f14fc6790cafc3ad2ae612c2e67f176392dc1fe` plus the working-tree delta) and governed closeout owns the real stamp.
-- 2026-09-23T02:30:00+02:00 — 260921-ICR-L26 curator (candidate `ar/260921-icr-l26`, uncommitted; production line at this leaf's base `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`, confirmed from the enclosure contract): created this one-to-one card for the mounted-surface cases this leaf introduced (`ICR-R26@v1`). The card records the two real wire bodies the module builds (one labelled, one not), the four properties its cases pin — the true subject of a labelled context row and the absence of the sibling's finding, the six-way counts rendered as arithmetic, the historical label with the tree it examined, and the additive compatibility of a pre-label body — and the boundary that these are jsdom mount cases rather than the assembled A14/A15 acceptance R25 owns. **Stamp accounting:** the verification pair names the production line at this leaf's base — the last real commit the reading was taken against — because every construct this card cites exists only in this leaf's uncommitted candidate; the governed closeout owns the real stamp once the code commit exists.
+No meaningful cross-repo references found.

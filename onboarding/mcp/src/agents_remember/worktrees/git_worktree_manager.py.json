@@ -1,0 +1,228 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP worktree start writes temporary lifecycle settings and passes them to this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca49c29e8c5e6d4b0891e84f0847a6136d344502",
+            "content": "sha256:b9f26e8cbda6c0e6e812b5b23803a60fe0fc0e86ad28b27317ed8cbc19c39dc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca49c29e8c5e6d4b0891e84f0847a6136d344502",
+            "content": "sha256:0ce013d99eb28eb1ad54533430aa3dab051a939d1e52799d8e7c08817f150d11",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider setup performs isolated provider seed and runtime preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:b64aa089108121e0b97ec8199f606cb2089f7ee7e3fe6e977ce521f1390a394d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSetupRequest"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:014b352f04cb7276e6a67b68c60a49fe5d0a1c2a458082faf8e9d01525f997b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_enabled_providers"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:223a5612b91ac48282958e37f921b9967abde3245254e9b79bcdcb4cb011be9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_isolated_provider_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Worktree status packets project lifecycle payloads into context packets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00d06ec6ebe2a4416c2f4549b9c5cb39e7e2e93",
+            "content": "sha256:1178f685feb181073285f1905be1da7df392287846aa5176dc75bf4b54b3c7ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_packet"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree contract serialization lives in the package worktree contract module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_to_text"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:e716b22e10ba0963ceb1a6133816bc238c956f11486fc189e1a1aed31552f78b",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 689
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:5b820289a3bfca6a5e50133d985f88b342cb86018aa573494919b29b45cffad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path.\n\nAnchor: \"from agents_remember.worktrees.modules.pause import pause_result\"; \"\\\"pause_result\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:439df8d0b48a3e65681462f053ba23a4f12cea06bf25d4e402afb92b1554ce0a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "89ee15e0a44fd22952d655dc7d2286a21a87ba45",
+            "content": "sha256:743832ef54cd8c2ae6d843051c22abe08677f39c38da6df1ea34a33901609b39",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Terminal lifecycle finalization is implemented in the extracted module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7025775fd8acd40047a8500e4803211fd2ffb00",
+            "content": "sha256:dcb7aa69563bbc7deb0df357e25fba2ea1ca41d9ddef54bbc16b1599b8d019e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Long-path-safe filesystem wrappers live in the kernel filesystem helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:f56a47f8b8deb72d8df0140d21635a01192981c43e1827447d26d78f204c6a94",
+            "locator": {
+              "kind": "symbol",
+              "name": "extended_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:bc23ed7e3aa324bf33065e1783c06f5aa5e980913544dcbb5327f47f3190fbe4",
+            "locator": {
+              "kind": "symbol",
+              "name": "exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a134fcdc07997c9dc931f9f9c835c8cf0fb5906",
+            "content": "sha256:31248ad7e33576149eef72818d20bf9fda1a5e0c29ec936d31a162515ad9671e",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_file"
+            },
+            "path": "mcp/src/agents_remember/kernel/filesystem.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/citations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Test paths give `test` targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:b0fc27c9795f53d3ba1218ef5ec19887a8a1687390bd903159e8e7389ffb033d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_test_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Symbols bound exactly once in a cited file become symbol targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:5abef3e3fa537cdf1fb33082494dbb57affcd24ad9b07c38dccba9bf4f9319d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_symbol_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A range a symbol target lies inside, or that contains it, is covered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:a62f3700399bf9e7c660d3ff184e716f3dae50936e5342bf21fa36ac728c38fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_covered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ranges, whole files, URLs and unresolved sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:faa641abfcbc284c247c8637a302dabbae5bf6bf771e71eb518711c143714f5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An anchor records blob and content; path only when needed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:e7463c0193855dc5b4dd8f649800afcf6c160a111e04a501db9f81f0e05c9100",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reference: targets, a no-target fallback, and the note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:0831b895d3f4af9ab134544f3f3cb5aad6facafab4b255ad57c64a90ef4fbeef",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_reference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor text no target carries is kept byte for byte in the note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:bc17b517227631b5ae60f4d2dbd2f079cdb0f8ed3116ff35ab1aa48f992f3d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "unbound_anchor_text"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:9ebfe87e418a3347932faab404e76b17e3e348fd06b3079f4aa02c559b578920",
+            "locator": {
+              "kind": "symbol",
+              "name": "reference_note"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e81aa8cdb37026c3c446f865f6dd1ef8de5beec2",
+            "content": "sha256:02373f267d01559d44656c49c3925e2733040e29332ff5acbd557b1ef69a3db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ANCHOR_NOTE_LABEL"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture rows: several anchors, covered ranges, a quoted anchor, a removed path, a range past the end.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
+            "content": "sha256:a4331704d00458c653941537c9f3609c4eba11c917aa9acbf28d7040601b07ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_becomes_prose_one_evidence_section_and_numbered_references"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

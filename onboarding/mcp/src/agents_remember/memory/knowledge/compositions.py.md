@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/compositions.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/compositions.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:10+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -95,56 +85,33 @@ no `related_to` for an unchecked identity to land in.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one composition-edge write, which resolves both endpoints and names the offending identity in its refusal. | `insert_composition` | mcp/src/agents_remember/memory/knowledge/compositions.py:120-120 |
-| **The duplicate lookup that refuses a second row for the same declared tuple before either partial unique index is reached.** | `find_composition_by_pair` | mcp/src/agents_remember/memory/knowledge/compositions.py:244-244 |
-| **The read that reports every stored link of one revision in declared order, including two policies over one pair.** | `composition_links_of_revision` | mcp/src/agents_remember/memory/knowledge/compositions.py:279-279 |
-| The revision-altitude owning-route write, which refuses a route this namespace does not hold. | `insert_family_revision_route` | mcp/src/agents_remember/memory/knowledge/compositions.py:334-334 |
-| **The owning-route read that returns the explicit ungoverned state rather than inferring a route.** | `owning_route_of_family_revision` | mcp/src/agents_remember/memory/knowledge/compositions.py:392-392 |
-| The context write, whose subject is bound to the exact family revision and whose predecessor must already be stored. | `insert_context_revision` | mcp/src/agents_remember/memory/knowledge/compositions.py:417-417 |
-| **The read that returns the earlier context text after a successor appends.** | `get_context_revision` | mcp/src/agents_remember/memory/knowledge/compositions.py:618-618 |
-| The read the projection uses for one revision's recorded context. | `context_of_family_revision` | mcp/src/agents_remember/memory/knowledge/compositions.py:642-642 |
-| The edge fingerprint the receipt surface compares, which is an authored-row identity and not a content address on the context. | `_edge_fingerprint` | mcp/src/agents_remember/memory/knowledge/compositions.py:768-768 |
-| **The case that drives three tables past the write path and proves no update and no delete exists.** | "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" | mcp/tests/test_knowledge_family_composition.py:606-606 |
-| **The case that proves both policy rows over one pair are reported and neither is preferred.** | "test_one_pair_under_one_policy_is_stored_once_and_a_second_policy_is_a_second_edge" | mcp/tests/test_knowledge_family_composition.py:550-550 |
-| The case that proves a recorded route governs and the ungoverned state is reported rather than filled. | "test_a_recorded_route_governs_and_the_ungoverned_state_is_reported_not_filled" | mcp/tests/test_knowledge_family_composition.py:705-705 |
-| The case that proves the context is bound to the exact revision and a successor appends without rewriting the guarantee. | "test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends" | mcp/tests/test_knowledge_family_composition.py:787-787 |
+- The one composition-edge write, which resolves both endpoints and names the offending identity in its refusal. [1]
+- **The duplicate lookup that refuses a second row for the same declared tuple before either partial unique index is reached.** [2]
+- **The read that reports every stored link of one revision in declared order, including two policies over one pair.** [3]
+- The revision-altitude owning-route write, which refuses a route this namespace does not hold. [4]
+- **The owning-route read that returns the explicit ungoverned state rather than inferring a route.** [5]
+- The context write, whose subject is bound to the exact family revision and whose predecessor must already be stored. [6]
+- **The read that returns the earlier context text after a successor appends.** [7]
+- The read the projection uses for one revision's recorded context. [8]
+- The edge fingerprint the receipt surface compares, which is an authored-row identity and not a content address on the context. [9]
+- **The case that drives three tables past the write path and proves no update and no delete exists.** [10]
+- **The case that proves both policy rows over one pair are reported and neither is preferred.** [11]
+- The case that proves a recorded route governs and the ungoverned state is reported rather than filled. [12]
+- The case that proves the context is bound to the exact revision and a successor appends without rewriting the guarantee. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" repointed to mcp/tests/test_knowledge_family_composition.py:606-606. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_one_pair_under_one_policy_is_stored_once_and_a_second_policy_is_a_second_edge" repointed to mcp/tests/test_knowledge_family_composition.py:550-550. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_recorded_route_governs_and_the_ungoverned_state_is_reported_not_filled" repointed to mcp/tests/test_knowledge_family_composition.py:705-705. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends" repointed to mcp/tests/test_knowledge_family_composition.py:787-787. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends" repointed to mcp/tests/test_knowledge_family_composition.py:762-762. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database" repointed to mcp/tests/test_knowledge_family_composition.py:581-581. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_one_pair_under_one_policy_is_stored_once_and_a_second_policy_is_a_second_edge" repointed to mcp/tests/test_knowledge_family_composition.py:525-525. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_a_recorded_route_governs_and_the_ungoverned_state_is_reported_not_filled" repointed to mcp/tests/test_knowledge_family_composition.py:680-680. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends" repointed to mcp/tests/test_knowledge_family_composition.py:759-759. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 4 generated projection bullet(s) by hand** — `test_a_context_is_bound_to_the_exact_revision_and_a_successor_appends`, `test_a_recorded_route_governs_and_the_ungoverned_state_is_reported_not_filled`, `test_an_authored_edge_a_policy_and_a_context_are_immutable_at_the_database`, `test_one_pair_under_one_policy_is_stored_once_and_a_second_policy_is_a_second_edge`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T04:10:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): created this one-to-one card for the composition write module. It records that the edge is **authored and never inferred**, that a wrong endpoint kind is unrepresentable rather than merely rejected, that the module reports `None` for the explicit **ungoverned** state instead of deriving a route from where the members live, and that a correction is a new authored row rather than an update or a delete. It records the one-pair/two-policies decision (both rows reported, neither preferred) and the two partial unique indexes that enforce the declared tuple because a table `UNIQUE` over a nullable column would not stop a second bare edge. Verification metadata is the leaf's base commit `e963a01c`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

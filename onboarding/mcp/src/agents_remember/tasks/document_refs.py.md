@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/document_refs.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/document_refs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tasks overview](overview.md)
@@ -95,19 +85,19 @@ Canonical paths are coordination-root-relative and remain tied to the actual tas
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Task document topology is centralized in one typed resolver. | `TaskDocumentTopology` | mcp/src/agents_remember/tasks/document_refs.py:82-575 |
-| Structural seats consume this topology to qualify parent and child relations. | `StructuralSeatResolver` | mcp/src/agents_remember/serving/structural_seats.py:24-157 |
-| The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). | `refuse_segment_nodes_on_atomic_masters` | mcp/src/agents_remember/tasks/document_refs.py:42-59 |
-| Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement. | `execution_leaf_placement` | mcp/src/agents_remember/tasks/document_refs.py:409-443 |
+- Task document topology is centralized in one typed resolver. [1]
+- Structural seats consume this topology to qualify parent and child relations. [2]
+- The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). [3]
+- Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The task documents live in the configured coordination root, but the resolver contract is implemented
 inside agents-remember and has no sibling-repository code dependency.
@@ -136,9 +126,7 @@ their exact resolved refs.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. | `TaskDocumentRefError`; `refuse_segment_nodes_on_atomic_masters`; `ResolvedTaskDocument` | mcp/src/agents_remember/tasks/document_refs.py:37-42; mcp/src/agents_remember/tasks/document_refs.py:45-62; mcp/src/agents_remember/tasks/document_refs.py:65-69 |
+- The current module exposes `TaskDocumentRefError`, `refuse_segment_nodes_on_atomic_masters`, `ResolvedTaskDocument` at this ownership boundary. [5]
 
 ## 260821-CLIVE Projection-Consumer Resolution
 
@@ -157,62 +145,3 @@ because it composes topology primitives without making repository census another
 responsibility of `TaskDocumentTopology`; topology methods and application callers use the same
 function. The former public `repository_masters` method and private `_master_documents` duplicate
 route are removed rather than retained as compatibility readers.
-
-## Update History
-
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `execution_leaf_placement` now builds its blocking set from `master_is_terminal` — an `abandoned` master resolves exactly like a `Completed` one — and the invariant plus its source row were added. Content change, not a range repoint.
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded the one
-  polymorphic reviewer altitude contract while preserving parent ownership as a separate
-  generation-bound structural concern. Verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — Reconciled repository-wide master discovery with the single module-level `repository_master_documents` query and removal of the former public/private duplicate methods.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged override-aware, unrelated-failure-tolerant projection consumer resolution. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: extracted the shared atomic segment-node-kind refusal
-  (`refuse_segment_nodes_on_atomic_masters`) consumed by the final validator and the authoring
-  draft check; `nature_by_ref.get()` closes the L15-FIX-1 `KeyError` path. Verified at code commit
-  de3a0fd9.
-
-- 2026-08-20T04:16+02:00 — 260815-DAG-L14: `validate_sprint_linkage` hard-fails new-shape typed
-  sprint↔master linkage drift (typed row must resolve to a same-repository commanded non-orchestrating
-  master; no duplicate typed rows); legacy shapes stay facts. Altitude role sets now come from
-  `tasks/document.py`. Verified at code commit 8071a644.
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: a nature-less standalone master resolves at master
-  altitude by default (only an explicit `organizational` standalone stays a dead-end); migration
-  recovery strings re-point to `task_doc.author_execution_graph`; `commanded_masters` is public so
-  the atomic-sequential default derives membership from aliases without re-resolving the sprint.
-  Verification remains closeout-owned.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: topology validation compares resolved command membership
-  against `graph.master_refs()`, refuses segment nodes on atomic masters, and gains
-  `execution_leaf_placement` / `MasterLeafPlacement` reporting live unknown/unplaced leaf facts;
-  `execution_waves` returns node waves. Verification remains closeout-owned.
-- 2026-08-16T05:27+02:00 — L4 exact-review repair: exposed the existing canonical override
-  resolver through `resolve_candidate`, preserving its root-confinement and repository-identity
-  checks for live-leaf publication authority without adding a second validation route.
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-15T03:20:17+02:00 — 260815-DAG-L1 independent-review repair: `execution_waves` now pins
-  the first resolved sprint into topology validation before deriving its waves, closing the
-  double-read race in which validation and return could observe different graph generations.
-- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: forcing coverage now reaches
-  non-sprint topology use plus override root-confinement and repository-identity refusals.
-  `execution_waves` relies on the immediately preceding durable topology validation instead of
-  carrying a second impossible missing-graph branch.
-- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: added the affected-sprint census
-  used to revalidate old and new folder/id/title aliases, preventing commanded-master identity
-  drift or a new alias collision from bypassing exact execution-graph membership.
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: canonical task topology now validates exact
-  `orchestrates`/graph membership, rejects aliases and unresolved masters, requires every commanded
-  nature explicitly, and exposes graph-derived waves without inference.
-
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created as the real-document topology authority; absorbs canonical validation formerly described by `serving/leaf_ref_validation.py`.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: predecessor leaf-reference card was verified against the then-current worktree; stale moved-path references were repaired.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 curator: predecessor card rebound two onboarding citations to code authorities.
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 curator: predecessor card repaired three repo-internal citation rows.
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17: predecessor leaf validation added bounded legacy role-suffix detection and canonical leaf-plus-role refusal guidance.
-- 2026-07-07T20:50+02:00 — 260707-HFX-L4: predecessor card was created for terminal leaf-key normalization at serving and MCP write boundaries.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema_v2.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema_v2.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-17T19:11+00:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -119,58 +109,33 @@ None recorded. The concrete record groups the envelope will carry (`EvidenceClai
 `DetectionSignal`, …) are later leaves; this module declares the envelope they will use and the one
 internal conformance kind that exercises its seam.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ordered appended-table tuple whose prefix rule makes generation 2's manifest begin with generation 1's ten tables. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:42-49 |
-| The declared column order, key tuple and typed-JSON set per appended table — the encoder's ordering and decoding inputs. | `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:51-101 |
-| The six `STRICT` `CREATE TABLE` statements, including the route self-reference and its one-node cycle `CHECK`, and the typed-JSON payload column with `json_valid`. | `STRICT`; `CREATE TABLE`; `CHECK`; `json_valid` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:103-204 |
-| The nine reverse-direction indexes, including the governing-route lookup index. | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:205-221 |
-| The eight immutability triggers: sealed revisions cannot be rewritten or deleted, identities cannot be rebound, and a governing association cannot be repointed. | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:222-262 |
-| The one added required feature, which is part of the fingerprint because it is part of the manifest. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v2.py:263 |
-| The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. | `GENERATION_2` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313 |
-| The shipped generation-1 tables this module appends after and never touches. | `CANONICAL_TABLES` | mcp/src/agents_remember/memory/knowledge/schema.py:29-42 |
-| The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. | `author_route` | mcp/src/agents_remember/memory/knowledge/routes.py:285-339; mcp/src/agents_remember/memory/knowledge/routes.py:342-388 |
-| **The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
-| The one entry point that validates a payload for a kind and schema. | `validate_record_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280 |
-| The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build. | `selected_generation` | mcp/src/agents_remember/memory/knowledge/merge_schema.py:110-155 |
-| The envelope, route and governing-association cases, including the route-cycle rollback and the payload refusal. | `test_a_version_1_merge_on_the_generation_2_build_selects_generation_1`; `test_a_confined_path_is_authored_and_its_identity_returned` | mcp/tests/test_knowledge_merge_generations_and_envelope.py:1-311; mcp/tests/test_knowledge_routes.py:1-199 |
+- The ordered appended-table tuple whose prefix rule makes generation 2's manifest begin with generation 1's ten tables. [1]
+- The declared column order, key tuple and typed-JSON set per appended table — the encoder's ordering and decoding inputs. [2]
+- The six `STRICT` `CREATE TABLE` statements, including the route self-reference and its one-node cycle `CHECK`, and the typed-JSON payload column with `json_valid`. [3]
+- The nine reverse-direction indexes, including the governing-route lookup index. [4]
+- The eight immutability triggers: sealed revisions cannot be rewritten or deleted, identities cannot be rebound, and a governing association cannot be repointed. [5]
+- The one added required feature, which is part of the fingerprint because it is part of the manifest. [6]
+- The generation record this module's data is composed into, and the additive composition that keeps generation 1's prefix intact. [7]
+- The shipped generation-1 tables this module appends after and never touches. [8]
+- The write layer that authors a route and attaches a governed row, and the read side that reports an ungoverned row as ungoverned. [9]
+- **The registry these envelope tables' payloads are admitted through — re-read by hand; since `KS-R14@v1` it holds three groups (the internal conformance kind, the eight facet kinds and the two mechanical-detection kinds), and these tables' columns are unchanged by that.** [10]
+- The one entry point that validates a payload for a kind and schema. [11]
+- The schema disagreement the preflight refuses before any session exists, and the same-generation merge that must still pass on this build. [12]
+- The envelope, route and governing-association cases, including the route-cycle rollback and the payload refusal. [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T01:29+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared this card's one reopened claim.** The route row named `author_route` while citing `routes.py:225-279`, a span that now holds `_route_for_path`, `route_for_path` and `route_exists` — neither half of the Finding. The range was repointed onto the two constructs the Finding's own words name: `author_route`'s declaration extent `285-339` (the write layer that authors a route and attaches a governed row) and `find_governing_route`'s `342-388`, whose docstring is the read side exactly — "Return the id of the route governing this row, or ``None`` for explicitly ungoverned". The Finding text and the anchor are unchanged, no citation was added and no row was deleted. Re-read against the candidate the claim **holds as written**; the only thing wrong with it was the pointer. **Stamp accounting:** the stale `lastVerifiedCommitHash`/`lastVerifiedCommitDate` rows were replaced by ONE recorded working candidate naming this candidate, because no commit contains the body as it now stands and no stamp was measured on it.
-- 2026-09-20T00:29+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `schema_v2.py.md:143` (author_route) — re-read the claim against the current source: the construct moved and the range was re-derived from its real extent.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:313-313. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:310-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:299-299. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_record_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:236-280. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `GENERATION_2` repointed to mcp/src/agents_remember/memory/knowledge/schema_generations.py:292-292. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand while resolving the memory sync** — `validate_record_payload`, `GENERATION_2`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `GENERATION_2`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the payload-seam row against the current envelope and re-cited it by hand, replacing a generated projection.** `PAYLOAD_MODELS` changed structurally in this leaf — it registered the two mechanical-detection kinds beside the internal conformance kind and the eight facet kinds, so the registry holds three groups — and the reopened claim could not be cleared by a projected range, because a mechanically rewritten range is not evidence that the claim still holds. The row is therefore split into one anchor per row at each declaration's current range (`:86-100`, `:121-165`), and the claim records the fact this leaf changed while stating explicitly that **generation 2's own columns are untouched by it**. The generated bullet that produced the previous ranges was removed. This card's own subject — generation 2's six appended tables — is unchanged by `KS-R14@v1`, and no verification stamp is advanced over content that was not re-read.
-
-- 2026-09-17T19:11:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`): created this one-to-one card for generation 2's appended tables. It records the additive prefix rule that makes "generation 2 is generation 1 plus these six" checkable, the exact six table names in serialization order, the deliberate absence of any identity-valued column on the envelope, the typed-JSON payload column that is the reason generation 2 adds `json_functions`, the per-join-table primary key that makes "at most one governing route per governed row" a constraint rather than a convention, and the eight triggers as the database-level backstop. It also records the excluded form (`ALTER TABLE … ADD COLUMN governing_route_id`) with the reason, so a later leaf does not re-propose it. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

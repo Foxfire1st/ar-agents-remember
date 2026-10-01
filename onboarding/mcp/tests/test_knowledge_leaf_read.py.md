@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_leaf_read.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_leaf_read.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -52,7 +42,9 @@
 
 - The N2 case does not cover `_scope_response`'s refusal branches (review R2-I2); scope-token refusals are covered at the binding level by `test_knowledge_paging.py`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R01@v2` of task
@@ -61,46 +53,29 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module statement. | "The family-complete leaf read (MIK-R01) and the obligations L01 carries from L02." | mcp/tests/test_knowledge_leaf_read.py:1-13 |
-| The converted-tree world written through the text-file layout. | `_invariant`; `_family`; `_sidecar`; `_graph` | mcp/tests/test_knowledge_leaf_read.py:67-84; mcp/tests/test_knowledge_leaf_read.py:87-103; mcp/tests/test_knowledge_leaf_read.py:106-137; mcp/tests/test_knowledge_leaf_read.py:140-158 |
-| Selection, order, reference row, frontier, the chain rows after it, counts and policy. | `test_a_path_selects_one_family_hop_in_the_declared_order` | mcp/tests/test_knowledge_leaf_read.py:185-274 |
-| One selection on both surfaces. | `test_both_surfaces_return_one_selection_under_one_manifest` | mcp/tests/test_knowledge_leaf_read.py:277-296 |
-| Family names in the `invariant` view. | `test_the_invariant_view_names_its_families` | mcp/tests/test_knowledge_leaf_read.py:299-313 |
-| The conforming example in one response. | `test_the_conforming_example_returns_the_whole_family_in_one_response` | mcp/tests/test_knowledge_leaf_read.py:316-336 |
-| MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`. | `test_a_path_without_entries_still_returns_its_route_chain` | mcp/tests/test_knowledge_leaf_read.py:339-351 |
-| A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree. | `test_absent_and_partial_states_are_named` | mcp/tests/test_knowledge_leaf_read.py:354-373 |
-| A partial index named on both surfaces. | `test_a_partial_index_is_named_on_both_surfaces` | mcp/tests/test_knowledge_leaf_read.py:376-386 |
-| A root with no commit refused by name. | `test_a_repository_root_with_no_commit_is_refused_by_name` | mcp/tests/test_knowledge_leaf_read.py:389-402 |
-| A leaf walk resumes at its code tree, with no path in the token. | `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` | mcp/tests/test_knowledge_leaf_read.py:405-464 |
-| More than one queue of seeds refused by name within the threshold. | `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`; `_DEEP` | mcp/tests/test_knowledge_leaf_read.py:467-467; mcp/tests/test_knowledge_leaf_read.py:470-490 |
-| A tree projection carries every row of a view. | `test_a_tree_projection_carries_every_row_of_a_view` | mcp/tests/test_knowledge_leaf_read.py:493-524 |
-| The derived reference title. | `test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length` | mcp/tests/test_knowledge_leaf_read.py:527-532 |
-| Identity seeds keep the scope read beside the leaf, and the mixed-block policy. | `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`; `_walk_entries` | mcp/tests/test_knowledge_leaf_read.py:551-566; mcp/tests/test_knowledge_leaf_read.py:569-613 |
-| The lane row. | "mcp/tests/test_knowledge_leaf_read.py" | mcp/tests/test-evidence-lanes.toml:110-110 |
+- The module statement. [1]
+- The converted-tree world written through the text-file layout. [2]
+- Selection, order, reference row, frontier, the chain rows after it, counts and policy. [3]
+- One selection on both surfaces. [4]
+- Family names in the `invariant` view. [5]
+- The conforming example in one response. [6]
+- MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`. [7]
+- A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree. [8]
+- A partial index named on both surfaces. [9]
+- A root with no commit refused by name. [10]
+- A leaf walk resumes at its code tree, with no path in the token. [11]
+- More than one queue of seeds refused by name within the threshold. [12]
+- A tree projection carries every row of a view. [13]
+- The derived reference title. [14]
+- Identity seeds keep the scope read beside the leaf, and the mixed-block policy. [15]
+- The lane row. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the cases build their repositories under `tmp_path`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:28:38+00:00: Generated citation repair: "mcp/tests/test_knowledge_leaf_read.py" repointed to mcp/tests/test-evidence-lanes.toml:110-110. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): the MIK-R05 adaptations (two chain rows and `chainFamilies: 2` in the selection test, `family-complete-leaf/v2` per ruling Q4 of 2026-09-30 03:32:18) and review R1 F1's split (04:12:49) of the failure test into the entry-less page, the refusal with `routeChain`, and the partial-index case. Purpose, Logic, two new rows and two reworded rows.
-- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_repository_root_with_no_commit_is_refused_by_name` repointed to mcp/tests/test_knowledge_leaf_read.py:389-402. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold`; `_DEEP` repointed to mcp/tests/test_knowledge_leaf_read.py:470-490; mcp/tests/test_knowledge_leaf_read.py:467-467. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:52:40+00:00: Generated citation repair: `test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length` repointed to mcp/tests/test_knowledge_leaf_read.py:527-532. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T02:10:00+02:00 — 260928-MIK-L01 curator (uncommitted change set on `ar/260928-mik-l01`, code base `7127756cd132d1103cd0a24bc7dc6884ddb663ee` plus the staged delta): created this card for the new file MIK-R01 adds (11 collected cases). It records the carried obligations and the architect rulings of 2026-09-29 23:21:57 (Q1, Q3, Q5) and 2026-09-30 00:08:39 (N2, N3, N4, N6). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

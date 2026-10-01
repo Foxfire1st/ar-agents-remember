@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/ports.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                              |
-| path                   | `mcp/src/agents_remember/serving/ports.py`                    |
-| doc_type               | `file-level-onboarding`                                      |
-| lastUpdated            | 2026-09-08T14:42+02:00                                       |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`                   |
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
-| governingOverview      | `overview.md`                                                |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -46,44 +36,27 @@ last committed atomic snapshot for contention-safe sweeper callers; `__all__` (c
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The conversation package re-exports the canonical definitions. | `__all__` | mcp/src/agents_remember/serving/conversation/ports.py:17-22 |
+- The conversation package re-exports the canonical definitions. [1]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260821-CLIVE Retention Port Contract
 
 `TerminalCatalogPort.compact` accepts the exact set of task-registered execution ids. The port keeps
 registration proof explicit at the deletion boundary; it does not grant the catalog a task reader
 or permit unregistered worker/reviewer/curator rows to be reclaimed.
-
-## Update History
-
-- 2026-09-08T14:42+02:00 — 260831-LOCR-L22 curator: recorded the committed-snapshot catalog read
-  exposed by the port and refreshed the moved control-surface/export citations. Verification
-  remains closeout-owned for the uncommitted candidate.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: extended the catalog port with explicit registered execution ids. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `ports.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the canonical port surface added
-  by the backwards-edge removal. Verification metadata pinned until closeout stamps the L9 code
-  commit.

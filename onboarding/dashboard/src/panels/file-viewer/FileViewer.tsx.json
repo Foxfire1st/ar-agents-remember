@@ -1,0 +1,203 @@
+{
+  "path": "dashboard/src/panels/file-viewer/FileViewer.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reusable dual-pane this page mounts on the right; supplies its `SidecarView` shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
+            "content": "sha256:791c8c3e29f6b010546e12bfc0932c791256b73eed84ce7b4085dae0294889fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SidecarView"
+            },
+            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one tree explorer rendered twice (code + onboarding sides).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a4be0915cb59c7be0894392a69d719bdaf8c12",
+            "content": "sha256:7bebff0aed6ad548d5a4a65da9e2b0c7961c26af3bdf66372e888e34b2c20222",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileTree"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The persisted split/single flag (`localStorage`-backed).\n\nAnchor: `localStorage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+            "content": "sha256:c59139b5066dcd9af9e7ba613cef56a5ef63b838a74aa3a99fa7f218b6ccadad",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRepos"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFile"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveForward"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveReverse"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:7f0b42eb80272b73f6e4ceef8790cab1991706ca24f1d8fe0cf84f6183dc0c85",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:d172ffd91a44e4b0855c9e5359ede731c468dd64bfc04ad9ef9d0c05ff518631",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shell that registers + keeps this view mounted across tab switches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:6fdf1e0ad4f182baf776bf3ac64b7530e1f43832b9b646cb1f0c15a70085a52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "content": "sha256:1eda33cb057457f00b53b454c6b262f23d811d88b1fb828ff0cf6731aa329492",
+            "locator": {
+              "end": 666,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route overview that governs this page.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-107"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

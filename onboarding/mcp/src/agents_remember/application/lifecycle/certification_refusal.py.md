@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/lifecycle/certification_refusal.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/lifecycle/certification_refusal.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:05:21+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff`|
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing lifecycle overview](overview.md)
@@ -47,31 +37,21 @@ Use this renderer at the admission exception boundary after the actual owner ref
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `_json_value` owns the described value or transition boundary. | `_json_value` | mcp/src/agents_remember/application/lifecycle/certification_refusal.py:10-17 |
-| `certification_admission_refusal` owns the described value or transition boundary. | `certification_admission_refusal` | mcp/src/agents_remember/application/lifecycle/certification_refusal.py:20-32 |
+- `_json_value` owns the described value or transition boundary. [1]
+- `certification_admission_refusal` owns the described value or transition boundary. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: recorded the route-review finding promotion and exact-contract boundary from the frozen L38 source. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-09-06T15:06:50+00:00 — Created from actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented exact selection, refusal and transition ownership. Source verification does not assert runtime execution or CCR acceptance.
+No cross-repository reference is required.

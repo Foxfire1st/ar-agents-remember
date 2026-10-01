@@ -1,0 +1,807 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/projection_manifest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The manifest's own file name and format version, the staging directory a render is held in before publication, the accessor that keeps callers from spelling the name themselves, and the staging-and-rename publication that ends by moving the manifest last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:e1bd29170d1939dd32317e3a9a744caa7c8f472fb22835191282a84bab88a668",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTION_MANIFEST_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:10dd3b31e58bbd73c9c7c4c01cf27c62e3496f55458d2b958c89cd445b1a2961",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTION_MANIFEST_FORMAT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:98cfec5eec0f4f1f45889142f9068b3e11ffea964068bc2f0dde7dfd3cf05eb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_relative_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:3dd6af1ea3473a6e4d18df1117c74dd34907af8071364d8e78cb924889ebe712",
+            "locator": {
+              "kind": "symbol",
+              "name": "STAGING_DIRECTORY_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:c260a0f5d3b6b404f2be44571ddb1ef7632e0d7d140edbbde59309f24c338f43",
+            "locator": {
+              "end": 790,
+              "kind": "line_range",
+              "start": 782
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The accessors that make one entry per path safe: the owned-path union, the two keyed lookups, and the digest and identity readers that consult produced first and retained second.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:c3b8d55a2502c7a2a3f579e937c0573a5d543a41a84c8e11bd5af0bc52ca2cc0",
+            "locator": {
+              "kind": "symbol",
+              "name": "owned_paths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:781c58a3fe0de3d2f953e463b6fc37ec8eec838bed1ead3da8e8fafa4f15d4fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "output_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:2d5360169c9031e6f72b790873c321ff5b8a7c4a75ee3bdb6040530d78cd0412",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:6066c4b9b45bf4c72f6f47e1b2a97d1911aa8305ccd481b53faf290277581ff6",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_digest_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:85830fb42efc390e701400bcf32dafe0e887860c20f101eefcb4f28ac53095ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_identity_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The per-path outcome vocabulary of six states, the report whose validator refuses a refused run with no refusal or with a resulting manifest, and the discrepancy record whose two digests are optional because a deleted file has no observed bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:ac94e85bbcb7916595e3d1bce72d03d72435f94a6e51925a7f19de714acad6d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionOutcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:8decfdbac7bf5c9c6762a0d19ceb71964e6b714ae67f5792eb348c62caa29e14",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionReport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:417d6af27492ffaa05ac637d596f3c726b80b17d610b6ccf88ec9bdefa3d31e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:2650c9687618047677db478c17ac402272ce4dde3059e9500b87f78f23ace89f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Discrepancy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:fa3e7d9d7116d09fc0a5958b1b7026fc98e50c2b457c133012cb09ba184a8e58",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The write port as a protocol rather than a base class, whose only operation takes a whole plan and never a bare path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:a6f56a58c9276ae5f555556fdb55df6668f3193e4c9f5f92bc24e17d6aa7b7e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionWriter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:09ed3609a6d15db9ae0014fbf8d3ea0a023d11dc8d6f881467048d6c23b6e26b",
+            "locator": {
+              "kind": "symbol",
+              "name": "write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The collision record and its refusal, the validator that proves the refusal code, and the case-folded NFC comparison key with the whole-plan detection that reports both paths and both identities before either output is written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:844cad3fe4030428a773b580fad685c80d8d85098a18afff246c5b41c48647c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "Collision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:0db28e80b8bea5eedf713ba007a22e025eb8bcb2abd98afde462c0d2c62c400b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DestinationCollision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:b574f2b2aa1703e3aae4efe446877c2edc8f1eaf2a2f01acfd418b79c2159841",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_collision_code"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:f5135af0a8995ae9e828512f604781f9fea65aac8236f311caebde6fcdeac994",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_destination"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:8be9169b61b7763eab79ab63fb8e45cc49adf2e01bd0afd58b1dc6004056fc11",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_destination_collisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Both halves of confinement: the syntactic refusal with the builder every rejected spelling goes through, and the resolving check the docstring names as the real-path comparison a string prefix match is not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:4850a747f4b4f555af7316d7dac95e8b4f887c1f08d8c13fdbb907b965cf260e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_confined_relative_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:3edadb63f7f07af4d6c778ecf84b3bdf6d3adb71ac888dfd0923af6b19240aa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_escape_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:8032182ce4b6f81061718e9c9cdf1b43b56bb3b7937af0e895ce064643c63c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_inside_destination"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The written behaviour the vocabulary serves — the guard order that reads the prior manifest, refuses collisions, then escapes, then stages and publishes with one rename per output — its retention classification, and the carried-forward retentions that keep a retained file from becoming unowned.\n\nAnchor: `os.replace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:ce5aa5e994252736ab57f22dc3e2ebf07c6e79f92c304e4c460e8a8be532466e",
+            "locator": {
+              "kind": "symbol",
+              "name": "write"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:7def707ba3c75b2c46f55380500edc9f8bae9df7c39220b0905ff1d42064494a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retention_reason"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:0afd78d9a27b3a3daf2315a9dc6c20c06efb0901067069068badfcabbea53ce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_carried_retentions"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52cb4a97b1b1808c13131ae89a2c973ce59283e9",
+            "content": "sha256:77a7b5771afd037f561738ba3ebca68afdb99b706118a8a58732565dcc6dc9b0",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 513
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/managed_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The frozen, extra-forbidden base every shape derives from, its digest pattern and its three bounded-length constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:8d07fc9b5543d8774e7702f3755879f79229e50b72531f6d6e87e17dbe7e0094",
+            "locator": {
+              "kind": "symbol",
+              "name": "SHA256_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:2a98361d8a179d85a9ffb5448c0bda56c6c851b999dbc4e20fc845fce696b036",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROSE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:86e0636be3244bdbadf287486e0f5c74204862d312948070ba2364a55edbf612",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFERENCE_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:3eb2f7176a3550df9b7a7a2ca0105cfb6a5c57f24a99169106b4587720a1715a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LABEL_MAX_LENGTH"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The cases that measure confinement, collision reporting, the single-owner rule and the collision-refuses-the-plan rule, plus the acceptance case that drives every vault-safety checkpoint in one scenario.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4f7c8e84e4e8ba20b4f90e768b92a6a4db1f79c",
+            "content": "sha256:aa88308e26c7e865c3eb8aaee152e0031e58c067cd4cd198da1bb465fdff507c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_that_is_not_purely_destination_relative_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_views_and_projection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4f7c8e84e4e8ba20b4f90e768b92a6a4db1f79c",
+            "content": "sha256:25af2a6bf6eb847b8eecc5ef6ddbdf42f3c74476622ec1b0d71880c6605d50db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_case_collision_names_both_paths_and_both_records"
+            },
+            "path": "mcp/tests/test_knowledge_views_and_projection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4f7c8e84e4e8ba20b4f90e768b92a6a4db1f79c",
+            "content": "sha256:db92abd5b8acb568c97363e77d155edb64d904c57ade51445cb3736ff5223cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_collision_refuses_the_whole_plan_before_either_output_is_written"
+            },
+            "path": "mcp/tests/test_knowledge_views_and_projection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4f7c8e84e4e8ba20b4f90e768b92a6a4db1f79c",
+            "content": "sha256:2cc694878832bb72b95eb5649d99cefce497efc2e046047226e4d17a568afd70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_refuses_two_owners_for_one_path"
+            },
+            "path": "mcp/tests/test_knowledge_views_and_projection.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "73aeaf6b06b772ecb4f89fdb0e3f9b2b423153dc",
+            "content": "sha256:a74242978911ea9ee9c80259944a89e6d913e011cf4a5f72b3b8ab0c59394caf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_vault_safety_contract_holds_for_all_eight_checkpoints_in_one_scenario"
+            },
+            "path": "mcp/tests/test_knowledge_projection_vault_safety.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared sibling formats and the renderer profile/version pair, kept as a real recorded value rather than a package version read at display time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:8ac9c6e6b15167cb417a711d682f98523e67246cab7de367e5455fcdf59a4ce6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTION_FORMATS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:b5309539aaff986190e7fb937294a56e85de6f6eb3673cab0a167aba2725fac9",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTION_RENDERER_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four kinds a file on disk can differ from the prior manifest by, and the four reasons a surviving prior output is retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:f2eb573c5f21620b485528c4023e2085b5614c5de7c9ab99254bf621b1378647",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscrepancyKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:bda696a2a49f7797aad1574a49c63af5a0b74130c47f947230a91cf4918648f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetentionReason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The vault-safety refusal closure — eight members since MIK-R02 added `oversized_row`, declared as a namespace of literals and restated as one type — the refusal shape whose `code` is that type, and the dataset vocabulary it is deliberately not added to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:e8e6b29c2bf2271413464e804996b04d33c4aee73183d1c4f7a67c4899aeff83",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionRefusalCode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:a89805849ee3f6e187cfba8ae1bfcc2f61b073e4ddf78f94306b16e0fa7f16dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalCode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:d325f225d72c1972dd22b6ebba354c8f7336018a79f0023f67a67e3e55fbc1d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionRefusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:9ad63cabc80a512d5d4154554d0b0f620063e79c4c2b6cac619ee71dac2ed35e",
+            "locator": {
+              "kind": "symbol",
+              "name": "code"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:590e931683e445dd2602905dcaabc5bbf75b1eaaca814d97eeec199edc306822",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One artifact's three recorded values, required rather than defaulted, whose validator refuses a format list that is empty, duplicated or out of the declared sibling order.\n\nAnchor: `source_snapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:e6d703a4fe4f405a67f605c511171d62beeef23fd17c0957fbe2fa11c923e36d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RenderedOutput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:0572c0e99e0822ef0ee6fd8f06f1c2bb4a3a966f70febf5476d8af3115e418d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DestinationProfile"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:620135491628187db3e5a34a1bb5aebd468874b33286d5e0d53aff68ad07cfb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_a_declared_format"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The plan as a whole — its destination, its outputs, and the per-path authorization that is the sole route to replacing an externally edited file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:2ea25e0bdf3f3e32604778c1d14b3bec97abad3db314d69ab9cc1b286ea6adaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionPlan"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:1e669ae0a9572169302d1094b5d6bc942b8231b24780166cdefaf098669feb2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "authorized_overwrites"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The manifest entry: five recorded facts plus the digest material and byte count that answer only whether the file on disk has changed since the substrate wrote it — beside the canonical record columns, which declare no content-address, fingerprint or manifest-digest name for it to become.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:58f04aaf01166bdb6ffa14c6b3f1c860b1df55c601545abb5a09b49ff40fc83b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ManagedOutput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:815a7f139b3006ffb05057f999a2970e78c92793647b41bac75958236c7e4ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "digest_algorithm"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:d1bbc6a96c374a02e3539633eaa303ad806e160bbda09c9105ca23be6b9c3d9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "byte_count"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
+            "content": "sha256:1a9f3c47907380a1321458628a4d6d660eebb3daac5659bd99fe1fef006e99c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_COLUMNS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The retained state as its own model, keeping the prior generation's whole entry rather than reducing it to a digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:819a0f2f4c8438b4924079be9db1c28156df20a5bc80d8820c36299300907c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedOutput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:01f2cf92b98ae99bcf9dac4369e246eabf218759a3ae9f0d2761e315086c4aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The manifest's declared field set, the public export list it appears in, and the validator that refuses two owners or two states for one file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:34bc443754fe1ecaf44042656bb670aeedba7d4fad280eb6c2814b9719f3249e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:23be9dc427f6d292ccdbf0aa25abeabfe302d8dbaa98fe9ba1de19f841b92323",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df9db95e79aa80fd0e33f5db5091d60b713f2801",
+            "content": "sha256:f01c613335e424a0108b32d18a51acf7cb675a6d492d14173efd7b3681fbb721",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_one_entry_per_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

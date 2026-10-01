@@ -1,15 +1,5 @@
 # mcp/tests/test_memory_quality_runs.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_memory_quality_runs.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated            | 2026-09-29T17:20:02+02:00 |
-| lastVerifiedCommitHash | `e40c314ca55305f7e4334b4e8e16a10297f6f175` |
-| lastVerifiedCommitDate | 2026-09-29T18:13:06+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -59,33 +49,29 @@ alongside it. The module's own docstring states why the count assertion is the w
 count cannot show that both declaration forms were reported, so the corpus-side case beside it asserts
 the identity of the finding set instead.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Start poll completed failed and unknown. | `test_start_poll_completed_failed_and_unknown` | mcp/tests/test_memory_quality_runs.py:138-153 |
-| Launch failure rolls back the admitted slot. | `test_launch_failure_rolls_back_the_admitted_slot` | mcp/tests/test_memory_quality_runs.py:155-161 |
-| Wrong repository poll never discloses any run state. | `test_wrong_repository_poll_never_discloses_any_run_state` | mcp/tests/test_memory_quality_runs.py:163-175 |
-| Pair change during derived evidence refuses before curator publication. | `test_pair_change_during_derived_evidence_refuses_before_curator_publication` | mcp/tests/test_memory_quality_runs.py:212-268 |
-| The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle. | `test_a_dead_governing_overview_reaches_the_gated_repair_set`; "prepared=controller._PreparedInputs(census=cast(Any, census))" | mcp/tests/test_memory_quality_runs.py:358-461 |
+- Start poll completed failed and unknown. [1]
+- Launch failure rolls back the admitted slot. [2]
+- Wrong repository poll never discloses any run state. [3]
+- Pair change during derived evidence refuses before curator publication. [4]
+- The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+Fixture repositories and protocol doubles do not establish a live external integration.
 
 ## KS-R23@v1 The Ruler Stamp, And The Closeout-Owned Bucket's Wire
 
@@ -113,44 +99,3 @@ asserts the row lands in the closeout-owned half — and that an absent or non-m
 yields empty sets rather than raising. Red if the collection stops reading the bucket: those rows would
 then be in neither the repairable set nor the closeout-owned section, which is the silence the
 disposition rules forbid.
-
-## Update History
-- 2026-09-29T17:20:02+02:00 — 260928-MIK-L08 curator (uncommitted change set on `ar/260928-mik-l08`, code base `e49ba07865b3848cd36759cea6b37bba7d0d51c3` plus the working-tree delta and untracked files): **body updated for MIK-R08.** The dead-governing-overview case's description notes that the census now reaches `_attach_curator_checklist` as `prepared=controller._PreparedInputs(census=...)` (the controller's new bundle, whose worklist stays `None` here), with a citation row. The case's assertions are unchanged.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `test_launch_failure_rolls_back_the_admitted_slot` repointed to mcp/tests/test_memory_quality_runs.py:155-161. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:30+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the two classes this leaf added, which this card did not mention.** `MeasuringBuildStampTests` (`:626-696`) is item 26 (D-33): all three memory-quality entry points return the process's resolved `servingBuild`, the field is declared on `MemoryQualityCheckResponse` rather than tolerated by the flexible envelope, and `citation_fix_tool`'s response names its ruler too. `CloseoutOwnedProvenanceRoutingTests` (`:699-731`) is item 17 half (b): `controller._checklist_finding_sets` collects a check's own `closeoutOwnedFindings` bucket into the closeout-owned set, and empty sets are returned for an absent or non-mapping `checks` payload. The `### Logic` and `### Conventions` sections now say the body covers this leaf's working candidate, and the stale recorded working candidate (`ar/260915-caps-l20-ar`) names this leaf's. Read against the delivered but **uncommitted** working tree, so the verification stamp is not advanced: no commit carries these bytes and closeout owns the real code commit; the reference rows are left to the citation-range repair pass that owns them.
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: recorded this leaf's added case — the wiring that carries a dead governing-overview finding into the gated curator repair set, with the finding's code and the published `unresolvedLinkCount` asserted together. The module counted 11 cases before this leaf and 12 after. Verification metadata advanced to this leaf's frozen code base.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `test_start_poll_completed_failed_and_unknown` repointed to mcp/tests/test_memory_quality_runs.py:131-146. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `test_launch_failure_rolls_back_the_admitted_slot` repointed to mcp/tests/test_memory_quality_runs.py:148-154. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `test_wrong_repository_poll_never_discloses_any_run_state` repointed to mcp/tests/test_memory_quality_runs.py:156-168. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `test_pair_change_during_derived_evidence_refuses_before_curator_publication` repointed to mcp/tests/test_memory_quality_runs.py:205-261. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=d4111c853b47eda1fe5a6c3ff364e5de2b402c2e2f053ce0bd6c171bce159954; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
-
-
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller-under-test row (48-144 to exact spans) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the candidate-tree capture mock in the curator-publication controller case; prior registry, capacity, and pair-forcing prose preserved.
-
-- 2026-08-30T05:55+02:00 — MCAR-L03 A005: expanded total controller proof for async
-  pair refusal, stale candidate polling, official running/failed polling, final publication
-  identity, and pair revalidation. The derived-evidence race now mocks its unrelated Git-owned
-  classifier so it reaches the intended third revalidation seam.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: added exact-pair async start/poll/race/refusal coverage.
-  Dagger verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the memory-quality controller/run package extraction; concurrency, saturation, polling, and result-identity behavior are unchanged.
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: rebuilt the focused registry/controller tests around typed identity, hard live capacity, terminal-only pruning, and nondisclosing poll ownership. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: added the never-settles registry
-  regression and made the wrapper start/poll case deterministically observe the running envelope
-  before completion. Verified at code commit e5cb139f.
-
-- 2026-08-20T21:30+02:00 — Created for 260815-DAG-L15-R7: the run-registry forcing suite
-  (start/poll/completed/failed/single-flight/boundedness/TTL eviction) plus the application-wrapper
-  tests covering the started/run-not-found/running/failed envelope branches and the key-scoping
-  branches (extended in the gate-repair rounds). Verified at code commit de3a0fd9.

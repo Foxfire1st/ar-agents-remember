@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/IntentMarkers.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/IntentMarkers.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -64,32 +54,23 @@ cases use the landed `gitTrees.cards` and `gitTrees.family` captures.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The real bodies, the transport and the scope stand-in. | "hunkMarkers.classifier.captured.json"; `scopeOf`; `expansionOf` | dashboard/src/panels/review/IntentMarkers.test.tsx:1-178 |
-| A full diff's marks, lists, follow, proofs and the unread side. | "marks each owner hunk on the owner's side lines, a deletion in the before editor"; "lists a proof entry as a test with its facet, apart from the intents" | dashboard/src/panels/review/IntentMarkers.test.tsx:180-293 |
-| Files without per-hunk marks, the partial inventory and past-text notes. | "gives a confirmed-unregistered file one file-level unexplained mark"; "says why a changed file a partial inventory does not list carries no marks" | dashboard/src/panels/review/IntentMarkers.test.tsx:295-391 |
-| The return: list, view and focus; the hold never against the reader. | "reopens its list, brings its hunk into view and focuses it"; "keeps the returned mark focused while the pane settles, never against the reader" | dashboard/src/panels/review/IntentMarkers.test.tsx:393-438 |
-| The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. | "marks every hunk a window draws: the focused one and each neighbour its context shows" | dashboard/src/panels/review/IntentMarkers.test.tsx:440-564 |
-| Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file. | "reopens the card a marker was followed from, not the first card of its path"; "never reads, nor speaks for, an unchanged file's card" | dashboard/src/panels/review/IntentMarkers.test.tsx:566-770 |
+- The real bodies, the transport and the scope stand-in. [1]
+- A full diff's marks, lists, follow, proofs and the unread side. [2]
+- Files without per-hunk marks, the partial inventory and past-text notes. [3]
+- The return: list, view and focus; the hold never against the reader. [4]
+- The lane's windows: every drawn hunk marked (F5), the wording, the full file's return. [5]
+- Cards: the exact card reopened; excerpts with an unreadable side, other content, an unchanged file. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new renderer test module MIK-R34 adds (21 cases), recording the L32 F5 carry, rulings Q2 and Q4, review R1 F1, F4 (N1, N3, N11) and F5, and the review R2 gaps. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

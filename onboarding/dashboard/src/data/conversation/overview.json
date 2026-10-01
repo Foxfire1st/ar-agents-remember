@@ -1,0 +1,684 @@
+{
+  "path": "dashboard/src/data/conversation",
+  "references": {
+    "1": {
+      "note": "The active serving API exposes page, selected-child history, and event routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:c75e6d4adf6b9eb3bcf6d8db8b40f328caefcb369737635e1f38f35f4a7ec19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_page"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:f13f456f9914fcd7e56e50ae977e4b0b14a60d466a0b35ad4cb191d8840209a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "hydrate_agent_history"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:3dd68df64570b368ea7c991e346663a270c530d65c5f12005884963018e9285b",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_events"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:cfb9fd4ef2e07c11cdb14575ef83b7d2ee80fafb466dc7d5353f44874c429211",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:1ac788b5bbbd8a24caf6305a93a1e326b226865faa5922288e6c09073b02ca61",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:ccdcdb04694b1321ee08883922c072c785aa086cb934e96c2176a176b7fcf098",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 204
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The dashboard client exposes the exact-turn interrupt wrapper.\n\nAnchor: \"export function requestInterrupt(\"; \"return postInterrupt(\\\"interrupt\\\", sessionId, epoch, turnId, requestId, base, fetchImpl);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:6c5510b6f86254960a04cc511c8bb33939171538d47df28f5e944b1742431abf",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:a131cddce2403a28e84bee4574d6d368032676f645d2377ae67134319adc3c5f",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The dashboard client exposes status and reconcile wrappers.\n\nAnchor: \"export function interruptStatus(\"; \"return postInterrupt(\\\"interrupt-status\\\", sessionId, epoch, turnId, requestId, base, fetchImpl);\"; \"export function interruptReconcile(\"; \"return postInterrupt(\\\"interrupt-reconcile\\\", sessionId, epoch, turnId, requestId, base, fetchImpl);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:593c9856ae2b04773ecc4bd721ce42c7d3b560385012eba8261b4981a5835eba",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:93d1f656acefdba853213732a75fc33faf66881da9c3bae7e062edc7d774045d",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:1bd9b30fe3681560d4aa0dece673ae31d7a376afb3e361b1d0408b65b419cbf1",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:6c224c6f4507698269f6e5f901e4711578f6b8615461488064ea02685e12f47a",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The active conversation surface owns projection/focus behavior and renders the reconnect, agent, and timeline body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:e38710110592a6625ee9e1354acc88d3f88f1a165a11b4f70212d1e320d7f6ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyAgentFocus"
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:bad2587a19db813d728d9de5008a225039170d786074a101e1db0d5e5b5f9964",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d990293237f36da17bbb2b535f80c27752b06cd5",
+            "content": "sha256:633d4ef01621cb0a98e9150ca22a01917a0f8b30afea5e2d969b88f9b54884bd",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/useConversationControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99d367b1eab42c9ff685a63d685b12b257a74b14",
+            "content": "sha256:21d998041f5af534d651068b91ca5a82e5e609a89232ca592a4eca88c34e100d",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b30324ea794e609749543cc7e69b1ed497eb952d",
+            "content": "sha256:08b3fb7937873de712e2ee03cd4aa7c7e9ef071961bcbfa111345b1346ab1c95",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/e2e-chats/support/drive.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "456fc060c0e07b6ae717f034ab3555042578fa20",
+            "content": "sha256:f42d9cd244d867de8f580261376a1785396b3448f7da672d511fbac4766474b1",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/AgentsArea.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ec5f110dcad64dde40cf6400beb977c20574c0d8",
+            "content": "sha256:69f76dfe93b8f0152889085c1b204ad5bd0bc580ec2ca1c8050ef61816bba794",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversation-timeline/scrollMemory2.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:c1e334b60d3484422caf6d83a936df4b9a4bdbd51459fb929d60175d5a4c92e4",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9671e660bb1b94ee1ce3ac15a5d40b4d1b0bd3ca",
+            "content": "sha256:7dc715786955e8a0a772e6b49059db2a001d79e24c8a83426b87ecd0a9099160",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/ConversationWorkingLine.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7301ed8c6e1e3140c0dc6f6c223defd628646a43",
+            "content": "sha256:41dc73251bfd17e317fcc63acacc97f7e915735f787ac76e8e4fe8094b6804e1",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/conversationSurfaceParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The chats stage body mounts the active conversation surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChatsStageBody"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
+            "content": "sha256:7347793f45ae838b3d8a27518485301850ace38e1962ffb558c5f455cd401482",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard client fetches the active page.\n\nAnchor: \"if (query.before)\"; \"return { ok: true\"; \"return { ok: false\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:7b98925669b53072b1e13ef6d90e3b16fb83f5026acc566abab531ce78515453",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchConversationPage"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard client requests selected-child history.\n\nAnchor: \"export async function requestAgentHistory(\"; \"const response = await fetchImpl(url, withTimeout({ method: \\\"POST\\\" }));\"; \"history?\"; \"return parseAgentHistory(body\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:530c294d0cd519283b8151270bcafffcc05a09a2388c7eb8f31a4986d7299835",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:f129d1c8091ee2edd13bf21083de0075a9a15283be9970daf875f5726fcfce01",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:2ee94b2d600597e9c0cd6820c3dd04771babc6f677fc4c7f0885f3a2f7e35459",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 200
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:639e1f083d10b357c81306c49d39c47985bfddb85e26e55892387544e3cfb4e5",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The dashboard stream opens the active events URL built by `conversationEventsUrl`.\n\nAnchor: \"export function conversationEventsUrl(\"; \"const url = conversationEventsUrl(\"; \"const next = new runtime.eventSourceCtor(url);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:35c1d600db050f556b4597cc340dba400d4f7e20c58981f3552608b0252d2c45",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:ab2bb07dfdae5a8652625e8071f51800b34203ad6acea857e6dab1cb37648d61",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5bcbf91dd9e078714dc8aec7e3ef1aa7d230459",
+            "content": "sha256:782faf04b8c048776273472c7cd56cdc3316f42cdb317e567b8e4e14216102fb",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "dashboard/src/data/conversation/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The wire grammar this route mirrors (moved to `models/conversations/` by 260731-EFA-L9).\n\nAnchor: \"class WireModel(BaseModel):\"; \"class ActiveConversationRef(NativeConversationRef):\"; \"class ConversationItem(WireModel):\"; \"class ConversationStatus(WireModel):\"; \"class ConversationEventEnvelope(WireModel):\"; \"class ConversationCapabilities(WireModel):\"; \"class ConversationPage(WireModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d169fe1db7ab48cd76cc4e49cfb687e0301b9746",
+            "content": "sha256:5e4a033839ad595ce36b9a53532f42a111e49e7e4be702dfc8e466601535f51d",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/conversations/primitives.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7c0957e9ed10ec573ba9174f6f5ecf16aeeb408",
+            "content": "sha256:2ac2a08cb84865a41dc31102c35d5a919df35c64a2be281772f0b7ec003f545f",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "mcp/src/agents_remember/models/conversations/identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35089139cef4ef6981a20c8ef9314ff20a450a8d",
+            "content": "sha256:54e09774f599ec3d1f7664cf253a804854aa5eeea03af2faa5dc991a13a5b535",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/models/conversations/content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1499067d52d0a46c7e22a958ef7193f640c2c796",
+            "content": "sha256:4d0f3f24a77aca4004aa66818beb788444a66d8872d4b6f4cdd06607fa0618b7",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/models/conversations/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37a39cfa82e04e111ebfd08355da0a038eb888ab",
+            "content": "sha256:2a00663514e360fa87a2e922c9cc6bc42aa705519cd719b21527324c2ef947c9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/models/conversations/stream_events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0c849c256e95887423d0c54ae9b3b657666fb0be",
+            "content": "sha256:0ab8ce80b526627d65e34fdb4e907bd8c0f9502d1e9de9a7c7890b74646aea9e",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/src/agents_remember/models/conversations/capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b69e8a46b71a1eaa0b7e258db2871b18708935c2",
+            "content": "sha256:33145b3331e90946f63f826613d3eec9d26eedd49e4393a04c32caed3e229a77",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/models/conversations/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The codex backend mints one evidence-bound roster item per sub-agent.\n\nAnchor: \"def _roster_item(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecc5d56e85490aab91eef76324debab67aeefa93",
+            "content": "sha256:79cdf5f88cf01810c1a42d40e2a04bcabca519c5d8b59560c91ee291d0382853",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/_codex_collab.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Claude backend maps task lifecycle evidence into the roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6028ef70ded866cc44e49c3babb5c4063e6655bb",
+            "content": "sha256:e85e0e4af7a2e9f9b24100e436320f64010968f6a95493fe736487bf4bcdee59",
+            "locator": {
+              "kind": "symbol",
+              "name": "_map_task_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The control API exposes interrupt, status, and reconcile routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:a7ac49d277d47b2905c5b83d09a2c00dfd6bbfc04b2665641475435ea65a3687",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:2d4e62eb6df3a9ace57ffcaf6cdc4d17b98bc6ab07a7c16162916869cd55f496",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt_status"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:ad3b980809599c6380807a885744f67e9bd79bc49af57864a076d2af3b76e48f",
+            "locator": {
+              "kind": "symbol",
+              "name": "conversation_interrupt_reconcile"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:68c91b9ea620d65323949871d5f94dfccac98428c55e395a91ec1ff664a7c72d",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:dec9c90395d89944cb1f1db99ccc8b7290348f254fedd143644309077af07f4a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "236c9f9a6e147a688ceb7eac7549695fd39246ca",
+            "content": "sha256:3defc7cf94fdcee52deee691c0c4778182a7cb4f1eb558633393644339cd9b4d",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/control/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The dashboard client posts interrupt requests through one shared body.\n\nAnchor: \"body: JSON.stringify({ turnId\"; \"return parseInterrupt(await readJson(response)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afaa7e77134a401b4122e378a8f64c21875fc2ba",
+            "content": "sha256:27d553069afd5e3cc090bfcbca5b6ca65b56f78ffc09a5bfccd1f629221f79c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "postInterrupt"
+            },
+            "path": "dashboard/src/data/conversation/client.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

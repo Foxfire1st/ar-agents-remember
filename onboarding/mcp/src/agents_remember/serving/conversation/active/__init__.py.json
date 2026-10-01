@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sibling router implements the two owned active routes on the exact-session conversation prefix.\n\nAnchor: \"/api/terminal/{ar_session_id}/conversation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1a6f6f57249ea3b443d93c6889bdc2882b882d2",
+            "content": "sha256:99f0d9df4b492327f81ff66c351ac3f7dc707f9739ee4fa4ea6361f4048fc0d4",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/api.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

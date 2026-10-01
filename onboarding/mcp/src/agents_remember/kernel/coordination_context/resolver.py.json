@@ -1,0 +1,62 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Data models and missing-memory errors are defined separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:1ede5b8c40f21eda12c20adeb0437808689e88988b53a8977ba89a9a7cd74691",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoordinationHints"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
+            "content": "sha256:05c5a4d110599230ad222139fd4240846978f945928fd4ef1e2bcd0382dcdb8f",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules.\n\nAnchor: `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131"
+        }
+      ]
+    },
+    "3": {
+      "note": "Context construction owns resolved task/worktree/memory roots and ledger selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_coordination_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

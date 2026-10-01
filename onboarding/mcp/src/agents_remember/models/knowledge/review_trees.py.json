@@ -1,0 +1,217 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_trees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The record schema and the one ref namespace pins live under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:a19b3ca0e6b2c6af8c517dca36dd5870f4edad608c4746c0164411f0a61bed21",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_TREE_COMPARISON_SCHEMA"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:2f62a5c917806fe40620e9b32005587071ebbb1886104dfd9fbcf74681e26c35",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_REF_NAMESPACE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three states a side can resolve to when read back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:ee54d581ae8731d3f9ce726eae755963edd74269774512544fa0f90d23bc278e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeSideState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One tree, kept alive by a commit or a pinning ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:3d59bf0fdb6e3f04d75721629efe403c7222c3a5151245986b16b07ddcca65dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The conversion an unconverted base was read as, recorded by its inputs and tree id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:c07cbecb4b7303a2c327b1cfb73948fcd886208b72137ff5c2cef0232c35e257",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewConvertedBase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The record, and one comparison being the same task, leaf, four trees and converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeComparisonRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:e32a8305211d7ee2e35798c44388058f70130a3de40bff740426d61c97e4115c",
+            "locator": {
+              "kind": "symbol",
+              "name": "same_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A knowledge side with its index state and problems; a reopened code side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:03cfc854f89014328a346fc9af50e1281e13375b690066c2398ef4139921fd0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgeSide"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:8838c0fb16d0e562d4080e71afd72346e0ac599a45794ad2dd225d983aaf09f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCodeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The diff of the memory trees, grouped by record and by source path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:8df21687fc4ac34ae3cc0aaac5999ced473eaf405396435947990695357a8f60",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgeRecordGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:035d2aeffdb9be08e2567f7f648f85489647a44ff599f960b6bb2e4a5cc3b76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgeSourceGroup"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:5f76e0060d0267608c7dfcc6ab0a9756bc46e9922024e932df446a51e00cba73",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewKnowledgeTreeDiff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The worklist view: items, history rows without a mark, gate linkage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:b187523a9f9cd034d8d3576ad6913a9fdaa861f6f09ee10e13f9c420b8d321f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewWorklistView"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The route's answer: trees, not converted, or refused; the cards' entries, empty on the leaf-wide view (MIK-R31); the lane or one file's classification, only when asked (MIK-R32).\n\nAnchor: \"file_classification: ReviewFileClassification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:15c9571889a270c6939881a04e25eb1a52501d81a78004ed103f728d7d614d19",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27319176b39064c8608c691a11e974f7b28faad",
+            "content": "sha256:26ba24fd7657137d0d7f520dec283cd60f78b7f374ae219af50023890fc6a389",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

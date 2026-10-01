@@ -1,0 +1,815 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/authoring.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Both forms become proofs once faceted; an absent test and a bare test file are reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:8911a79e0c86c0b57ff0c032ec0e7ba0e65075fb4ce725cc23a291149ab7c393",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "What the ref names must exist or resolve.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:074435ec231fc540c49c1acc975370fcc1f092bc7a2fc4bb386f6ca8b496cd8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The writer's planned rows and every refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
+            "content": "sha256:de9307ccb45c682bf9b4c7df7d9ee6be289fc16a037649aaddd22d60c57d0922",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_writes_planned_rows_and_refuses_what_they_cannot_name"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "An invariant row tells its covers whether it is a moved row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:74d29d3b301d9dd0abe653d85532f779b16014af3ff61118e1ca7af9755b823d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:c96796058f3e01eb323003946772d228eb4ef645d57a8db1f7fc5570693a5372",
+            "locator": {
+              "kind": "symbol",
+              "name": "moving"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A path on any other disposition is refused.\n\nAnchor: \"only on a moved row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:968f9396cb068c9bb3206f7f7c86c8134f8200f2b3e74390b893cef0d0d88310",
+            "locator": {
+              "kind": "symbol",
+              "name": "_covers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The entry's `after`: relocated when the path differs, then re-anchored at C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:1d24ea96e701f974f5b59bf1b3640722b74120e3910a623dbf652d2ef856ea2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover_after"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:dc77774f739a7c039bf46833c075df0ea2a48e6157598cfba3d40b71f138201a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_relocate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The relocation: the entry keeps its ID and fields and moves sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:dc77774f739a7c039bf46833c075df0ea2a48e6157598cfba3d40b71f138201a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_relocate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:52c82a8871830d881e7a452f143a08ddffba667aad44f387070c04f042a31bae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_row_whose_after_names_another_path_relocates_the_entry"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The retired-attach guard, called before the record is placed.\n\nAnchor: \"if self._attaches_to_retired(entry, invariant_id, document):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:fee521803ddef20678e3aeaac0e262945fb2c78b482eacbeca598716fae9403f",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The refusal names the invariant and the alternatives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:07c0a6f52da4aec57d535f03e3d11f53164cb8942f4fa90a4a3cffd6e9ed6d40",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attaches_to_retired"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The special row kinds (L10's three, and MIK-R14's reconsideration row since L14), dispatched through one table.\n\nAnchor: `UnexplainedChangeRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:3ca00383791c845aaa5bbd0fe7013e204245ad81f1a734e3b75c8c908b8af966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "No sidecar until the facet is authored; a blank facet is refused and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
+            "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The no_invariant row: no extra members, the ID kept, validated, and a `file:` subject checked at C.\n\nAnchor: `file_subject_mismatch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:36bdfe3528f2282543fb80c8af7e0ed3c9698aae3f47fcae9189255256d92389",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97dd6328c8394f28d1487e9497564cbdcac3e7c8",
+            "content": "sha256:e1f0bc73ca0cf2a24b29abe88e25baa3226cd7235b151762c7c5994ca1683a29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_what_the_packet_refuses"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The port, the queued questions and the worklist's items.\n\nAnchor: \"questions: OpenQuestions\"; \"raised: list\"; \"reconsiderations: Mapping\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:edd926493d0834ce5adb30157679d0e72aec3cc0fcaf72709e5456f61c5ef908",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The fourth special row kind in the dispatch table.\n\nAnchor: \"(ReconsiderationRow, self._reconsideration_row)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:188a67e3b2a22f457b91275b45bb2c64e0b8d1a46a68009e0abbe5b4edc84732",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 639
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The row: common fields, the named alternative, then `raise` or the refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:07c8a23eb9123e33ed086e90caaea891ed942f9b67bd816ada7458d8bd27fc4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconsideration_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:10458a8462043e2db6816dc235449235459e276d9a0ad8737302a95dbb545456",
+            "locator": {
+              "kind": "symbol",
+              "name": "_common_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`still_rejected`: the answered item, the refresh, one bump when judged, carried in place otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:2146d0df7d72e13534ad04e97a28f85968496b943894460d3a7e5a27462d8ca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:e24e0e74ef4e86b48c6ab14f44022fc6e568ae2e4f85081f066b54f21a774c89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answered_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "`raise`: the checked question, the status, and the queued append.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:b2c022e291e34755f02beaf51c951e3076261a3e8510084cec66ed4f1a1cf666",
+            "locator": {
+              "kind": "symbol",
+              "name": "_raise"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The refusals of a wrong subject or an extra field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:350d2957762385ebe74fef43f68bcf4a9773658bef4946ef9ca505b8cec89c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raise_sets_the_status_and_appends_the_question_or_is_refused"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Fields that carry no meaning; a change elsewhere is a new revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:c056f9c5ef45c34f967265340be9da643751ce5da46807c8d535c0eea804ef85",
+            "locator": {
+              "kind": "symbol",
+              "name": "NON_MEANING_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An `onboarding:` subject goes to its own row builder.\n\nAnchor: `OnboardingTraceRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:3ca00383791c845aaa5bbd0fe7013e204245ad81f1a734e3b75c8c908b8af966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The operation: entries, records, rows, then unstored foreign evidence refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:3e17463397c76576726b5fad8bb6f1644d94b1a140741dce64d71334667bb16b",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "ID assignment and rerun reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:6bd6ab13136b05bf724b076ae7ef947916de4573204804070eb7e51c58f251cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assign_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Origin: own records gain evidence, another owner's origin is kept exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:6bab6f8b10d25d505320b1ad49253f6c0ef494fd99604f5cd4930281058df847",
+            "locator": {
+              "kind": "symbol",
+              "name": "_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Revision once per leaf against the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:82eb6e68a7d23678c22c1c9d04f73b0dea3b1a423372980d365572d6fee6c236",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Records of any kind, with defaults and resolved links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:f79d05d3af521741ab763b30275a10c3b80fe19fa1d1c0e904b67bdc7c2174cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Realization and proof entries upserted in the sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:f716245a6fd1349f069b43c806505951201ce697ba6e608804ed0c0685e12ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_upsert_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "A rerun removes only this owner's unnamed entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:53926f4e827946ff962bfa59a403c211b9e15765120e3732b82d57cbcd9fa2ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_unnamed_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "What became of a test the evidence names, and a test file named without a test is `unresolvable`.\n\nAnchor: `TestFileMention`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:76ff7413200b246c8762c46a4263e8ca643682274e3fdd6f032432bad3c4e827",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cited_test"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:2073a90e6ba651a5ad2a7974eed3d6fee2a2be098aa45a99721d3e460d6eb4ff",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 570
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "History rows into the owner's file; a closed file is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:d6e7fdd1bb10441a1df4afcd8c0483e5e40eacce650330d18c764400ff26d9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Foreign evidence stored in this owner's row reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:2f8fc6307333bcea8f1dc292f5b1661bc107296c2a0cd60b55bb5dbc8d2ed7e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reason_with_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The onboarding row: no extra members, the ID and moved markers kept, validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:e2a477db7905c4d67d532e7a2547a4f7f6994b849f0da3eafa108de96a2c53b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A cover's before and after, re-anchored at C when asked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:4501c2e624f54c724beaf65d4d6d49048fc64fdb0be258da39698dccedef5ca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The conforming example: decision, realization and proof, validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:bb2cf4dd9b773030da0cd6184d6daa71906840845643f755bef8cf05d0df996b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "Rerun idempotence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_of_the_same_list_writes_the_same_files_with_the_same_ids"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Revision increments once; foreign evidence goes to this leaf's row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_meaning_change_increments_the_revision_once_against_the_base"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "The record's revision after this operation: an unmerged record at the higher side's plus one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:070caafa05f32c7929b17938986cf96b2317d410d469068981009f39ad5306a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Rows are written to the history target, with its attempt when above 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:d6e7fdd1bb10441a1df4afcd8c0483e5e40eacce650330d18c764400ff26d9a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "A record both sides changed is resolved at one more than the higher side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
+            "content": "sha256:2d5a2622dbbef6146c60cda6f9e170aee71c3676175792825f24c3964eb33697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_both_sides_changed_is_resolved_at_one_more_than_the_higher_side"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A moved marker row satisfies its item and survives a rewrite through the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
+            "content": "sha256:0befbc5749ba99f1820dfd449809fa635426ea0f40c1129958b6196d758d39a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_moved_marker_row_satisfies_its_item_and_survives_a_rewrite"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task owner's answer about a decision, injected into the writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:298b0c2b84e265e2f9e1e1fbe602c5578ef7453d6e8109d3bbb60f4ddb604d3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionResolver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The resolver field; `None` has no task owner.\n\nAnchor: \"decisions: DecisionResolver\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:d50e77207a0cdeab22c56b029ac732cf46ed57f4e1fa7a9cc30a8063abef356f",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A `planned:` subject goes to its own row builder.\n\nAnchor: `PlannedEffectRow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:3ca00383791c845aaa5bbd0fe7013e204245ad81f1a734e3b75c8c908b8af966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The planned row: no extra members, `ref` required, the ID kept, validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db548b9f0bfe3060090b4d91477826f4b221fdeb",
+            "content": "sha256:df2c86f198b52614deafd07d5ab10b109e08b0392e0772b3bb12d3c0d35bf283",
+            "locator": {
+              "kind": "symbol",
+              "name": "_planned_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/tests/test_environment_reconstruction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite's refusal claims are backed by its retained tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:c4283d117ca223d9852f77985971d5c28fad4f143a32867ac7822124cc5f9aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_corrupt_or_different_reconstruction_never_matches_original"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The owner and bounded reconstruction request are loaded from the real source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:8a5e312b054fac2082a3b742ba8c78b2ea67de22a3dd42026559ebef271814a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:b62ea06dd2a080c4a39862922c962002d361b52bcb2bc7692566af2b667ec651",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Controlled roots include both scopes and a symlink.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:78b35b516b4e313c5c5e7dc0e9e4c02cdb534a776e8809101a7b0344c4e86cec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every listed corruption and an in-flight mutation must refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:c4283d117ca223d9852f77985971d5c28fad4f143a32867ac7822124cc5f9aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_corrupt_or_different_reconstruction_never_matches_original"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "20e9cccd8f68754db7533608be361bdfb4a446b5",
+            "content": "sha256:133adde1d23032b2cedbc4b36911c6532eee4f438e9a8440c2b620ce8e5e102d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_file_mutation_during_census_cannot_be_certified"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

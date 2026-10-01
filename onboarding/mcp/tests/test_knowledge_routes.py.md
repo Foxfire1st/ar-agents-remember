@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_routes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_routes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T18:47+02:00 |
-| lastVerifiedCommitHash | `7ca3ac48914a562bb90b5fe04d6c17b5a3f51d80`|
-| lastVerifiedCommitDate | 2026-09-20T02:00:33+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](../overview.md)
@@ -88,57 +78,35 @@ route id to a fresh UUID.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's scope: one rule per case, and constructor validation deliberately not re-tested. | "Constructor validation is not re-tested here" | mcp/tests/test_knowledge_routes.py:1-7 |
-| The initialized generation-2 candidate, its store and its authored provenance used by every case. | `admitted` | mcp/tests/test_knowledge_routes.py:27-42 |
-| The one authoring helper and the draft it wraps. | `_author`; `RouteDraft` | mcp/tests/test_knowledge_routes.py:45-51; mcp/src/agents_remember/memory/knowledge/routes.py:170-176 |
-| A confined path is authored and its identity returned. | `test_a_confined_path_is_authored_and_its_identity_returned` | mcp/tests/test_knowledge_routes.py:54-57 |
-| One scope keeps one route when the same spelling is restated, measured by a row count. | `test_one_scope_keeps_one_route_when_the_same_spelling_is_restated` | mcp/tests/test_knowledge_routes.py:60-68 |
-| Ten refused spellings, each `invalid_reference` with nothing written. | `test_a_path_outside_the_one_admitted_form_is_refused` | mcp/tests/test_knowledge_routes.py:71-91 |
-| An authored parent yields an acyclic hierarchy; an unauthored parent is `missing_expected_row`. | `test_a_childs_parent_must_be_an_authored_route` | mcp/tests/test_knowledge_routes.py:100-122 |
-| A cycle introduced by a direct UPDATE is still refused as `lineage_cycle`. | `test_a_hierarchy_that_reaches_itself_is_refused` | mcp/tests/test_knowledge_routes.py:125-152 |
-| At most one governing route per governed row: association, idempotent restatement, and the conflict refusal that keeps the first route. | `test_a_governed_row_names_at_most_one_governing_route` | mcp/tests/test_knowledge_routes.py:123-167 |
-| An ungoverned row reports ungoverned rather than a repository root. | `test_an_ungoverned_row_reports_ungoverned_rather_than_a_repository_root` | mcp/tests/test_knowledge_routes.py:210-217 |
-| The two remaining refusals: a non-governed table and an unauthored route. | `test_governing_refuses_an_unknown_governed_table_and_an_unauthored_route` | mcp/tests/test_knowledge_routes.py:311-332 |
-| The write layer under test: authoring, the read side, the association, and the governed-table mapping that makes the constraint a table key. | `author_route`; `find_governing_route`; `set_governing_route`; `_GOVERNED_TABLES` | mcp/src/agents_remember/memory/knowledge/routes.py:238-292; mcp/src/agents_remember/memory/knowledge/routes.py:342-388; mcp/src/agents_remember/memory/knowledge/routes.py:398-480; mcp/src/agents_remember/memory/knowledge/routes.py:199-203 |
-| The confinement rule and the cycle walk the refused cases exercise. | `normalize_route_path`; `require_acyclic_routes` | mcp/src/agents_remember/memory/knowledge/routes.py:75-89; mcp/src/agents_remember/memory/knowledge/routes.py:92-144 |
-| The drafts the cases construct. | `GoverningRouteDraft` | mcp/src/agents_remember/memory/knowledge/routes.py:205-211 |
-| The application entry points the fixture uses to build an initialized candidate and its provenance. | `admitted_knowledge_destination`; `initialize_knowledge_namespace`; `open_admitted_knowledge_store`; `write_authorship` | mcp/src/agents_remember/application/knowledge.py:117-125; mcp/src/agents_remember/application/knowledge.py:160; mcp/src/agents_remember/application/knowledge.py:193; mcp/src/agents_remember/application/knowledge.py:102-140 |
+- The module's scope: one rule per case, and constructor validation deliberately not re-tested. [1]
+- The initialized generation-2 candidate, its store and its authored provenance used by every case. [2]
+- The one authoring helper and the draft it wraps. [3]
+- A confined path is authored and its identity returned. [4]
+- One scope keeps one route when the same spelling is restated, measured by a row count. [5]
+- Ten refused spellings, each `invalid_reference` with nothing written. [6]
+- An authored parent yields an acyclic hierarchy; an unauthored parent is `missing_expected_row`. [7]
+- A cycle introduced by a direct UPDATE is still refused as `lineage_cycle`. [8]
+- At most one governing route per governed row: association, idempotent restatement, and the conflict refusal that keeps the first route. [9]
+- An ungoverned row reports ungoverned rather than a repository root. [10]
+- The two remaining refusals: a non-governed table and an unauthored route. [11]
+- The write layer under test: authoring, the read side, the association, and the governed-table mapping that makes the constraint a table key. [12]
+- The confinement rule and the cycle walk the refused cases exercise. [13]
+- The drafts the cases construct. [14]
+- The application entry points the fixture uses to build an initialized candidate and its provenance. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T01:24+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **cleared both enforced citation rows this card carried (`citation_anchor_absent_from_range`), by renaming the dead anchors to the surviving construct and citing its own extent.** `test_a_child_names_an_authored_parent_and_the_hierarchy_stays_acyclic` and `test_a_child_naming_an_unauthored_parent_is_refused` exist nowhere in the tree; reading `mcp/tests/test_knowledge_routes.py` shows the two cases were merged into `test_a_childs_parent_must_be_an_authored_route` at `:100`, whose own docstring says so in the source's words — *"One rule, both outcomes: the accepted parent joins the hierarchy, a dangling one is refused. These were two cases and are one -- each is unreadable without the other, because \"the parent must be authored\" is exactly the pair (an authored parent is accepted / an unauthored one is refused)."* Its body authors an accepted parent, asserts `require_acyclic_routes` returns `None`, then refuses a dangling parent with `missing_expected_row`, so its declaration extent is `:100-122`; the row's two ranges (`:94-99`, `:102-106`) were replaced by that one, which is the extent the surviving construct's own two halves occupy. The Finding text is unchanged and its two facts are both asserted inside the cited extent. One residual is recorded rather than repaired: the `### Logic` bullets at `:45` and `:47` still name the two pre-merge cases, because this pass's mandate is the claim's Anchor cell and body prose is not a citation row — the owning curator can align that prose with the surviving construct. Reviewed against the working candidate `ar/260915-ks-l30-ar`; no commit exists for these bytes and the commit stamp is not advanced.
-- 2026-09-20T00:58+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): the `find_governing_route` row was read against `mcp/src/agents_remember/memory/knowledge/routes.py` and is current (its ranges `238-292`, `295-341`, `398-480`, `199-203` all reach occurrences of the name the claim is about). One row is LEFT and reported, with no range changed: "An authored parent yields an acyclic hierarchy; an unauthored parent is `missing_expected_row`." names `test_a_child_names_an_authored_parent_and_the_hierarchy_stays_acyclic` and `test_a_child_naming_an_unauthored_parent_is_refused`, neither of which exists anywhere in the tree. Reading this module shows the two cases were merged into `test_a_childs_parent_must_be_an_authored_route` (`100-124`), whose docstring states the merge and whose body asserts both halves — the authored parent joins the hierarchy and `require_acyclic_routes` accepts it, and the dangling parent is refused with `missing_expected_row` — so the facts still hold but the anchors are stale names, which only a curator re-reading the claim can fix. No claim was re-worded, no anchor or range was dropped to silence a finding, and no verification stamp was advanced. No commits.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `find_governing_route`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_a_hierarchy_that_reaches_itself_is_refused` repointed to mcp/tests/test_knowledge_routes.py:125-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_an_ungoverned_row_reports_ungoverned_rather_than_a_repository_root` repointed to mcp/tests/test_knowledge_routes.py:210-217. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `test_governing_refuses_an_unknown_governed_table_and_an_unauthored_route` repointed to mcp/tests/test_knowledge_routes.py:311-332. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `GoverningRouteDraft` repointed to mcp/src/agents_remember/memory/knowledge/routes.py:205-211. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_knowledge_routes.py.md:110` (test_a_childs_parent_must_be_an_authored_route) — re-read the claim against the current module: the named case was renamed or consolidated, and the successor's own docstring names the consolidation.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 1 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `test_knowledge_routes.py.md:115` (`author_route`, `find_governing_route`, `set_governing_route`, `_GOVERNED_TABLES`).
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `GoverningRouteDraft` repointed to mcp/src/agents_remember/memory/knowledge/routes.py:193-199. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T18:47+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **re-read this card against its source at code `c5a74a85` and found the body already current; advanced the verification stamp to that revision, which closeout re-stamps.** The source delta since the old stamp is five added `assert isinstance(x, str)` lines — type-narrowing assertions inside four existing cases (`test_a_child_names_an_authored_parent_and_the_hierarchy_stays_acyclic`, `test_a_hierarchy_that_reaches_itself_is_refused`, `test_a_governed_row_names_at_most_one_governing_route`, and the governing-column case). They add **no case, no refusal and no behaviour**: each only narrows a helper's declared return before it is passed on, so every case description in the body above still says what the case does, and the conventions row that already states "each negative case asserts `isinstance`/code" is unaffected. **No content impact:** no claim byte was rewritten and nothing was added to fit the stamp.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 1 claim(s) here (1 x citation_provenance_invalid). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 2 generated projection bullet(s) by hand** — `test_an_ungoverned_row_reports_ungoverned_rather_than_a_repository_root`, `test_governing_refuses_an_unknown_governed_table_and_an_unauthored_route`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; their claims' ranges were **re-verified by hand against the current source in this pass** and repaired where this leaf's addition moved them, so a mechanically projected range is no longer the only evidence any of these claims carries. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-17T20:00:00+00:00 — 260915-KS-L10 curator (uncommitted change set on `ar/260915-ks-l10`, base `420669c4`; the module is untracked in the leaf's code worktree): created this one-to-one card for the route write-layer case module. It records the initialized-candidate fixture, the refused-spelling table that also asserts nothing was written, the cycle introduced outside the authoring path, and the three facts the governing-association case measures (association, idempotent restatement, conflict refused with the first route retained).
+No meaningful cross-repo references found.

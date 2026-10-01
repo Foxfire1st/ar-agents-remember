@@ -1,15 +1,5 @@
 # dashboard/src/data/requirements.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/requirements.test.ts`   |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -57,31 +47,21 @@ The suite pins the same no-guessing boundary as the client: only the server's ow
 listing authorizes a requirement address, and the reserved prefix is
 `requirements/` alone.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository-local client test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The client under test. | `listRequirements`; `resolveRequirementReference` | dashboard/src/data/requirements.ts:26-32; dashboard/src/data/requirements.ts:64-69 |
-| The component-level suite that exercises the same resolution through the detail reader. | "task requirement navigation" | dashboard/src/panels/detail-panel/taskRequirements.test.tsx:48-105 |
+- The client under test. [1]
+- The component-level suite that exercises the same resolution through the detail reader. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new
-  requirement-packet client test module (wire bindings + address/reference
-  resolution). Verified at code commit 1993dd25.
+No applicable cross-repository source was found.

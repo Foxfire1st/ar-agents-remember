@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/kernel/route_index_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The renderer consumes exactly one snapshot and separates repository membership from eligibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_indexes"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b796049080e27c790265266719406d3469c3a07",
+            "content": "sha256:2bc0a4808cb4d9781c95d1ccc1a9593291ef38647906beb7184fc4656465860a",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 182
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors=\"surrogateescape\"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "225bd50e187ff878594b3b6ac01455c78adbe07b",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

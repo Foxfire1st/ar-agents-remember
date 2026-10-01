@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/models/task_doc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registry row that maps `task_doc` to this model.\n\nAnchor: `task_reopen`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "content": "sha256:1b07e3a860d52c858396aa54385859cf4405abbbdb94a6ea3ba7fac33e7cbe88",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 210
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The strict `ToolResponse` envelope base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
+            "content": "sha256:ca5199c1cb508e337fc2b88eb8e795ae0ed267b3f32f4e4224ae759f0e28db6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolResponse"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef54a14f41a34d2429445ca5239646f05daf6eac",
+            "content": "sha256:bb2a5b99e2a3d919c309c6b4595e621a9ab9bd100439c8d876cae009b9a9cd34",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720dba86e0a43d96e27ffa5105f48b40b4ca6322",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The special-op identity merge that pairs with the declared wire fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720dba86e0a43d96e27ffa5105f48b40b4ca6322",
+            "content": "sha256:c6a424aed4190d0ce6ecfd752a1c11e1a7a2abe462479365ce478f6465929ec9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sprint_doc_identity"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

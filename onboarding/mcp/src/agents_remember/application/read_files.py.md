@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/read_files.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/read_files.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T05:58:11+02:00 |
-| lastVerifiedCommitHash | `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c` |
-| lastVerifiedCommitDate | 2026-09-30T06:21:14+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -214,16 +204,16 @@ ever appears it is honored once.
   every parsed request, so a path this entry point accepted is the path the intent read is asked about;
   path confinement and the intent seed are one spelling, not two.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The thin payload wrapper that returns this application entry point's dict through the token choke point. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** | `published_intent_block`; "published_intent" | mcp/src/agents_remember/application/published_intent.py:427-442; mcp/src/agents_remember/application/read_files.py:36-36; mcp/src/agents_remember/application/read_files.py:155-155 |
-| **The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.** | `_read_one`; `converted_card_parts`; "legacy-format" | mcp/src/agents_remember/application/read_files.py:214-238; mcp/src/agents_remember/application/read_files_format.py:65-93 |
-| The import of the format helpers. | `TEXT_FORMAT`; `memory_format` | mcp/src/agents_remember/application/read_files.py:37-42 |
-| **MIK-R05: a chain entry already served to this lifecycle is shortened to `served_earlier` through the served ledger, under its own kind; the rendering is imported from the chain module.** | `_chain_rendered`; `_KIND_CHAIN_FAMILY`; `shorten_served` | mcp/src/agents_remember/application/read_files.py:35-35; mcp/src/agents_remember/application/read_files.py:89-90; mcp/src/agents_remember/application/read_files.py:348-354 |
-| The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
+### Repo-Internal References
+
+- The thin payload wrapper that returns this application entry point's dict through the token choke point. [1]
+- **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** [2]
+- **The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.** [3]
+- The import of the format helpers. [4]
+- **MIK-R05: a chain entry already served to this lifecycle is shortened to `served_earlier` through the served ledger, under its own kind; the rendering is imported from the chain module.** [5]
+- The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. [6]
 
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:110-116 |
@@ -235,44 +225,3 @@ ever appears it is honored once.
 | `ROUTE_OVERVIEW_NAME` consumed read-only for the front-door route derivation. | `ROUTE_OVERVIEW_NAME` | mcp/src/agents_remember/kernel/route_index.py:17-17 |
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
-
-## Update History
-- 2026-09-30T05:58:11+02:00 — 260928-MIK-L05 curator (uncommitted change set on `ar/260928-mik-l05`, code base `31d761a241055d67b85ef3908033856b78a86a57` plus the staged and unstaged delta): MIK-R05 rule 4. A Logic paragraph on `_chain_rendered` (the `served_earlier` rendering of chain entries through the lifecycle's served ledger, kind `knowledge_chain_family`), an Invariants bullet (only this entry point shortens, the row still counts, overview attachment unchanged) and one row. The two `published_intent` prose citations the fixer declined were re-measured by hand: the assembly, now wrapped in `_chain_rendered` (`read_files.py:154-159` → `162-170`), and the import, shifted by five lines (`31-31` → `36-36`).
-- 2026-09-30T03:49:14+00:00: Generated citation repair: `published_intent_block` repointed to mcp/src/agents_remember/application/published_intent.py:464-479. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T03:49:14+00:00: Generated citation repair: "from agents_remember.models.read_files import FileReadStatus" repointed to mcp/src/agents_remember/application/read_files.py:73-73. No content impact: mechanical anchor-range projection bound to citation source snapshot 778874e9f7067e0c11ceadc4ef5d81e0b76e5e12eb31479c7b3ae9bc268513ab; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): **Body updated: this route now switches on the memory format (MIK-R24 rules 5 and 9).** On an unconverted tree the `published_intent` block is the `legacy-format` placeholder, and file results are marked `legacy-format`. On a converted tree, file results carry the sidecar and resolved references. **Corrected a claim this change made untrue:** "attached on every call" now says that the key is present on every call and that its content depends on the format. Recorded the architect ruling that legacy-format reads are active in this build, and where the displaced ICR-R19 coverage went. Two rows were added, and the assembly row now also names `memory_format` and `legacy_published_intent`.
-- 2026-09-29T12:03:52+00:00: Generated citation repair: "from agents_remember.models.read_files import FileReadStatus" repointed to mcp/src/agents_remember/application/read_files.py:68-68. No content impact: mechanical anchor-range projection bound to citation source snapshot 75677f16e5ed8ed01a37a3496ecf058f05e2f85f804720849cd36afc05309a98; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T08:01:17+02:00 — 260928-MIK-L23 curator (uncommitted change set on `ar/260928-mik-l23`, code base `ee5f14e5405505d126125830e5323f8915c8d047` plus the working-tree delta): No content impact: this card's source is unchanged. MIK-R23 changed `published_intent_block` (it now tries a converted memory tree's index before the database selection, and a tree-backed block carries `memoryTree` and per-page `indexState`); the claims citing it were re-read against the working tree and still hold — this entry point attaches the block it returns, whatever it selected — so their wording is retained. Their ranges were re-pointed to the function's extent `:420-435` (one row was still at the stale `:271-286`); the fixer's generated bullet for the same anchor, written minutes earlier in this same pass, is folded into this entry.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-21T15:14+02:00 — 260921-ICR-L19 curator (uncommitted change set on `ar/260921-icr-l19`, code base `0fca5c69`): **body updated — this route gained a returned half.** The payload now carries `published_intent` beside `files`, attached from the same `CoordinationContext` and seeded with the paths this call was addressed at (`:148`), imported from its owning module (`:31`); the Purpose section, a Logic paragraph and two invariants record it, including the boundary that the selection is **not** made here and that the block is additive and never fatal. `application/knowledge_read.py` was deliberately not touched: the shipped read is reused unchanged. Because this leaf's insertions moved the module's own declarations, the three in-body citations were re-derived against the candidate rather than carried — the `FileReadStatus` import to `:62-62` (was `:52-52`), `_parse_file_request` to `:165-189` (was `:139-160`) and `_resolve_onboarding` to `:235-267` (was `:209-238`) — and one reference row was added for the published-intent half. No claim was re-worded to fit a stale pointer, no anchor was renamed and no range was dropped. **Stamp accounting:** the recorded working candidate names this leaf's candidate; `lastVerifiedCommitHash`/`lastVerifiedCommitDate` are retained exactly as recorded, because no commit contains the body as it now stands and the governed closeout owns the real stamp. No commit was made.
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split three pooled helper claims and distinguished the ordinary symlink-resolving confiner from the stricter artifact confiner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `AuthorityError` repointed to mcp/src/agents_remember/errors.py:110-116. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: resolved the 4 manifest-assigned findings the W1-B10 pass had preserved as Tier 3. The staged reversal has since landed in the frozen source, so the false status-ownership claims were corrected to it: `FileReadStatus`/`VALID_FILE_READ_STATUSES` are declared in models/read_files.py L29/L32 and this module imports the alias at L46 — ownership paragraph, the vocabulary invariant, the models table row, and two history line-spellings now say so. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 21 citation findings (9 rows/prose pointers); preserved false status-ownership claims as Tier 3; scoped recheck clean except 4 preserved Tier-3 findings.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. The rename itself changed no behavior. **FLAGGED, NOT FIXED — this body is stale for a reason that is NOT the rename, and the curator who owns that change should repair it.** A separate staged change in the same code worktree moved `FileReadStatus` and `VALID_FILE_READ_STATUSES` back OUT of this module into `models/read_files.py` (now L29 and L32 there); this module imports the alias at L43 and declares neither. That reverses the 260731-EFA-L4 decision recorded below, so the "**This module declares `FileReadStatus`** (line 54)" claim in `Code Commentary`, the `VALID_FILE_READ_STATUSES` (line 57) claim, and the L54/L57/L146/L216-L218 anchors are all false against the current worktree. The claims are left verbatim rather than rewritten into something plausible, because the intent behind the reversal belongs to that change, not to this one. `_should_serve` also moved from `amb.is_served`/`amb.record_served` to `amb.served.is_served`/`amb.served.record`, which this card does not mention either way. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:42+02:00 — 260731-EFA-L4 curator: body updated. This module now DECLARES
-  `FileReadStatus` (line 54) and the derived `VALID_FILE_READ_STATUSES` (line 57); the alias moved here
-  from `models/read_files.py` because `_resolve_onboarding` is the only function that decides the
-  value, and its signature is now `-> tuple[FileReadStatus, str | None, bool]` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:209-238) instead
-  of `-> tuple[str, ...]`. The card had described the status vocabulary only as the returned tuple's
-  first element with no type and no owner. Added the ownership paragraph and the matching
-  invariant. Citations: `_parse_file_request` L146 and `_resolve_onboarding` L216-L218 pinned; the
-  `models/read_files.py` reference row now names `FileRead.status` L35 as the importer, and a row
-  was added for the exhaustiveness suite. Verification metadata pinned until closeout stamps the
-  L4 commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
-  resolver's `CoordinationHints` / `EnclosureSelector` parameter objects; the rest of the file was
-  touched only by the whole-tree `ruff format`. Batch limits, status vocabulary, dedup and the
-  `read.packet` emission are unchanged. Verification metadata pinned until closeout stamps the L2
-  code commit.
-- 2026-06-28T22:41+02:00 — operations-integration L1: extracted the path-confinement guard (`_confined_rel`) and the sidecar-pairing helpers (`_route_sidecar_status`/`_governing_indexes`/`_load_route_index`/`_sidecar_body`) into `kernel/sidecar_pairing.py`, shared with the new dashboard `serving/files.py`; they are now imported here under their former private names. Behavior-preserving — the slice-07 suite is unchanged. References updated (the direct `meaningful_body`/`mirror_onboarding_path`/`sidecar_status` rows now flow through `sidecar_pairing`). Verification metadata pinned until closeout stamps the L1 code commit.
-- 2026-06-23T01:40+02:00 — Slice 07b v1: the controller now passes `repo.repo_id` to `emit_read_packet`, so the emitted `read.packet` carries `data.repoId` (the read's repo). Body + invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the compact-reset note — the `compact-reset.json` **producer** is **not** a session-hook concern; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). `_maybe_reset_served` (consumer) + the `refresh=true` path remain as defensive scaffolding; `refresh=true` is the working manual reset. Docstring text only. Verification metadata pinned until closeout stamps the slice-07 code commit.
-- 2026-06-22T22:33+02:00 — Created for slice 07 (S2+S3): the `read_ar_files` controller — paired source+onboarding batch reads (≤5 files), the net-new `_confined_rel` path-confinement guard, ranged/full source read, storage-mode + route-index onboarding lookup (present→found, absent→missing without probing, external-as-sidecar), the session-deduped front-door auto-attach (repo overview + governing route chain + sidecar `meaningful_body`), facts-only `read.packet` emission, and the `refresh` + compact-reset-marker consumer (the marker producer is deferred to slice-07 S5 / Probe B). Verification metadata pinned until closeout stamps the slice-07 code commit.

@@ -1,0 +1,277 @@
+{
+  "path": "mcp/tests/test_knowledge_currentness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: real Git code, a converted memory tree, raw-Git edits.\n\nAnchor: \"outside any managed flow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:1766614ca2ff3dc6d607db22b2083451c97ef167d8ec9d20624bfd1abed0184c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Per side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_function_computes_each_side_of_a_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The cache key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:267d3264fac15b309b96232f0ebfd76909e72bb0603438c3ddf3e231d9a86923",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observations_are_keyed_by_blob_locator_and_extractor_version_and_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`knowledge_read` with a named tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:d4b9911b1395ec1a3b7268944d57fc41447f34349a1bbe67a23351679e305dcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`knowledge_read` without one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The published-intent block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:09c279f2f41db323726fa3e4a6d6054c028eeb2e2e05087fbc6d087fbe2e8ee2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A failing step never refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_currentness.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture world, with a fresh private cache by default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:9c14e9208b0fd4c0282ec3be55ba93734b00d5f1dd65370b18b10fe928962164",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:2426d928340128b6d9e856d2bcf2e2187b7685c3c214516082acf67c9017cb1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The packet's conforming example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:1332a7b1518ea7a268cc9cc4a6637b6319e256878f218877646f9989f62c21eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stale reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:a598b8a1610b62d906cfaffa6af5b0b139a534d4de5fa92f5e1afdf08132663f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_covers_an_absent_path_an_ambiguous_symbol_and_an_unmappable_range"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unverifiable reasons and the N1 order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:76f360523e4d81230992fb73e53e75815f37025d3a7be3c3f97d1654bb032aa3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Git failures and no caching of them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:b4b5303e01008d309a914dfee70cce629dc9ec69fdc15264cf4c27442b77bab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A missing recorded line-range blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:de0e19812ae05428df7cde62743eef7159f5ebef830931a487ad7cf3a9173b32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_range_recorded_against_a_blob_the_store_lacks_is_unverifiable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Precedence and `unrealized`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precedence_stale_before_unverifiable_before_unrealized"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Stale proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e3857e3cce0f6a7d1de75afd79360d3c65caef",
+            "content": "sha256:292b4b48d8b864b1f75ccd356fed044b251c6890bf93c054653477fc4cb53783",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

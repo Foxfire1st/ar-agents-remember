@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/HeaderStrip.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/HeaderStrip.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-04T00:41+02:00|
-| lastVerifiedCommitHash | `06ed70cfcde7e3860ee5b53435727e7512e4335c`       |
-| lastVerifiedCommitDate | 2026-09-24T10:53:01+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -61,17 +51,17 @@ provenance; model/effort values and their evidence are not duplicated outside th
 - There is one model/effort control in the stable header slot. Palette actions control this same
   popover rather than mounting a second surface.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance. | `HeaderStrip`; `header-leaf`; `header-provenance-level` | dashboard/src/panels/session-cockpit/HeaderStrip.tsx:88-185 |
-| Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional. | "renders the §1.2 anatomy in order: identity → controls → state → leaf → diagnostics"; "one plain pair (260723): the control carries model · effort; diagnostics never duplicate it"; "renders no provenance chips for a hand-opened session — absent" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:17-25; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:85-108; dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:110-115 |
-| The grammar + single dot renderer the state cluster uses. | `StateDot` | dashboard/src/panels/session-cockpit/StateDot.tsx:38-61 |
-| The freshness state consumed (`PerSessionCockpit`). | `PerSessionCockpit` | dashboard/src/data/sessionCockpitStore.ts:113-153 |
-| The stage container mounting this as the always-on header layer. | `SessionStage` | dashboard/src/panels/session-cockpit/SessionStage.tsx:46-102 |
-| The live exact-session model/effort control mounted in the slot. | `ModelEffortControl` | dashboard/src/panels/session-cockpit/ModelEffortControl.tsx:635-704 |
-| The suite pins anatomy order, the mounted control, the grammar state, freshness honesty, absence of duplicated model/effort provenance, and conditional spawn-level/source provenance. | "HeaderStrip (R10)" | dashboard/src/panels/session-cockpit/HeaderStrip.test.tsx:16-116 |
+### Repo-Internal References
+
+- HeaderStrip renders identity, one model/effort control, state, leaf-only context, and diagnostics with freshness plus optional spawn-level provenance. [1]
+- Focused tests assert that leaf context omits seat-role text, model/effort is not duplicated with evidence badges or tier words, and spawn-level provenance is conditional. [2]
+- The grammar + single dot renderer the state cluster uses. [3]
+- The freshness state consumed (`PerSessionCockpit`). [4]
+- The stage container mounting this as the always-on header layer. [5]
+- The live exact-session model/effort control mounted in the slot. [6]
+- The suite pins anatomy order, the mounted control, the grammar state, freshness honesty, absence of duplicated model/effort provenance, and conditional spawn-level/source provenance. [7]
 
 ## Current L5I Maintenance
 
@@ -79,45 +69,3 @@ The compact header no longer duplicates model/effort provenance or a seat-role f
 the control/inspector. An unclassified state is exposed to assistive technology as unavailable
 without painting a false visible state word; model/effort remains one plain current pair in its
 dedicated control.
-
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `HeaderStrip.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T02:20:03+02:00 — 260731-EFA-L6 S18-B06 curator delta: repaired the scoped citations against the frozen source snapshot; generated ranges were inspected and the managed index remained warm/frozen with zero source reads, tokenization, parsing, and build.
-
-- 2026-08-04T00:41:58+02:00 — 260731-EFA-L6 S18-SR1 worker: removed both B06 semantic-residual
-  scaffolds. Live prose now records leaf-id-only context with no seat-role suffix and the
-  one-plain-model/effort-pair rule: diagnostics omit model evidence badges/tier words while
-  retaining only optional spawn-level/source provenance. Replaced obsolete `launchTier` and
-  `EvidenceBadge` ownership rows with provisional current component/test bindings; preserved the
-  prior curator entry and did not run citation mechanics. Verification metadata remains pinned until
-  closeout stamps the L6 code commit.
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired current HeaderStrip citations and retained the stale seat/provenance statements as semantic residuals; final exact frozen-snapshot check is clean.
-- 2026-08-02T16:55+02:00 — 260731-EFA-L6 W1-B08 curator: repaired 8 citation claims; preserved 4 Tier 3 stale provenance/seat claims and verification metadata.
-
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-24T13:17:17Z — Curator: documented header decluttering and unavailable-state accessibility
-  copy; verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded R10 identity dedup (harness label dropped
-  when it case-insensitively equals the session label — no `codex codex` stutter) and the R3 diagnostics
-  collapse (the `ws` word shows only with a real pane; no bare `ws —` on a paneless seat). Anatomy,
-  controls slot, provenance badges unchanged. Verification pinned to the leaf base (`352d5cd`) until
-  closeout stamps the candidate commit.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 R2 filled the reserved controls slot with the sole
-  `ModelEffortControl`, added the controlled-popover bridge used by palette commands, and gave
-  its chips bounded shrink/overflow behavior without changing header anatomy. Verification
-  metadata is pinned to the contract base until code commit.
-- 2026-07-17T06:10+02:00 — 260715-FEUI-L3 (R7): the launch tier now DERIVES from row
-  control-state truth (`launchTier(session)` — starting⇒pending/"(requested)", ready Claude
-  pair⇒"(model-validated)", failed⇒refused) instead of the L2 store default, and the provenance
-  chip gains the `<EvidenceBadge size="sm">` glyph beside the tier word; testids/segments
-  unchanged. Verification metadata pinned to the leaf base until closeout stamps the L3 code
-  commit.
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S5 (R7/R10/R15): the §1.2 header anatomy
-  with diagnostics-first elision and never-eliding identity/state, the reserved EMPTY
-  ModelEffortControl slot, the shared-grammar state cluster, honest per-pane freshness (`ws —`,
-  quiet age, sweep-bound tooltip), and requested-tier provenance badges. Verification metadata
-  pinned to the leaf base until closeout stamps the L2 code commit.

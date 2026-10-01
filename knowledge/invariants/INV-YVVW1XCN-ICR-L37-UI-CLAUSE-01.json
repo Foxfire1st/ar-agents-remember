@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Opening recorded family and invariant subjects from family/member navigation in the normal reviewer.",
+  "conditions": [
+    "The roster provides the member canonical invariant identity.",
+    "The clicked family and revision remain navigation context while the existing reader obtains the selected subject payload."
+  ],
+  "exclusions": [
+    "An unaddressable roster member remains explicit context and cannot reuse another subject judgment.",
+    "The browser does not choose dataset paths or revision heads."
+  ],
+  "id": "INV-YVVW1XCN",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "84a4a21a-b345-42b1-80f4-8e145c0f7215",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A reviewer opens a recorded family or invariant through the existing subject reader, and a family member selection uses its canonical invariant identity while retaining the family and revision as navigation context.",
+  "status": "proposed",
+  "supersedes": []
+}

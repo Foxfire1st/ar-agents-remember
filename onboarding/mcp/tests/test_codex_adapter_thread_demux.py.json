@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_codex_adapter_thread_demux.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Eventually.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa5726419b51844069494481e1b2a7cb56e24f0",
+            "content": "sha256:268cc4d40958692e6c2821d6f51b30fc7bddc327849129fd36a652ae2a857343",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventually"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Live snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa5726419b51844069494481e1b2a7cb56e24f0",
+            "content": "sha256:e6840cfc2ee293c4d0b44c80c5c6b66f030de5fa853d3f9eb3dfebaf1a3823e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Agent registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfa5726419b51844069494481e1b2a7cb56e24f0",
+            "content": "sha256:050261b68cc76cfd6a8bc710bd1dc8f98caa22323d29928addc0e5b4ec8b758f",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_registry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

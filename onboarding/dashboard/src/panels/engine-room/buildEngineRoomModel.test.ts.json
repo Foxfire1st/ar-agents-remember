@@ -1,0 +1,174 @@
+{
+  "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`buildEngineRoomModel` under test",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:92ef339ef5925e22df44f86aa1f0fd701fba320ac6ab43653559e51e09ecbb80",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`node`/`lifecycle`/`worktreeEngine` fixture factories",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "content": "sha256:e7b043904ab116bd8e728f9a3d560335e0db2d03ff6449d3dbaf13127ade46d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "node"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "content": "sha256:8b7f1006fe8fdb654438a2bdf8fb8105413d27ffa121a16fb62bd4c535bff11c",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "content": "sha256:f151ac1ebaad81c68b67c7e0445790c2abce301df666545f723a83bb2a538d7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktreeEngine"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lifecycle join + workspace lift + fallback cases\n\nAnchor: `fallbackStacks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:92ef339ef5925e22df44f86aa1f0fd701fba320ac6ab43653559e51e09ecbb80",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:6255544aa6fc1553d5b9fdbf430289e4d1f7701796da2a6757fe4bb68a8235c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceEngines"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e21098fd928c9d619bc89b750a9475bd3dde3fb5",
+            "content": "sha256:4aeac1acc9f6b6967ac62ec4f227257192d258c3cead774e5217ef3985458343",
+            "locator": {
+              "kind": "symbol",
+              "name": "usesFallback"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`enclosureKey` = worktreeGroup stable-across-id-swap case\n\nAnchor: `enclosureKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1ab53a78b22bd21d8a03da7fd9383ac09899a25",
+            "content": "sha256:c49e71899d252f15f18a099f7bbdd1c95729543eadffa00e8ce8c4523095fb75",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "EngineProcessNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface EngineProcessNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "LifecycleProjection is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface LifecycleProjection {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:0150685acb034ab2c0bf7f04923aef100f5081c94e274216a472aa39b7269672",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 365
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "ProviderNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface ProviderNode {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c193202b7f4f19b0fbcba801e1dc68548d7b2b7",
+            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 513
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/providers/lifecycle/state_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC and GrepAI lifecycle modules use these helpers for provider state and image locks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:04b889661291000455b67144eac288a41975d42ea98f463590f64a2007ce7a12",
+            "locator": {
+              "kind": "symbol",
+              "name": "CgcBackendContext"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Provider settings reads reuse the JSON loader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d89958ab3d74e160f7c6bba3084ab68c09de6673",
+            "content": "sha256:e8ffc91e1601c8b2b9e6a06dce7503620cf9cdd9d9c148443d5c44f6b375fe45",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_settings_from_file"
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/provider_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

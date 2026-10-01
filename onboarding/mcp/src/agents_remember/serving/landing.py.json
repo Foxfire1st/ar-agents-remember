@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Landing matches canonical document and explicit role set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a30526c88d4c9cd3e076491b7bbe23155381351",
+            "content": "sha256:4ea7c4375a9fa852abe3fffc19d369751a9641fafaa589ff5e07a9622f8550b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "land_seats_for_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

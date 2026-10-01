@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/application/runtime/install.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MCP tool payload construction maps tool booleans into `RuntimeInstallRequest`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "content": "sha256:70b17206fab5788c32dddfc9fc1065bfbfb23e1677b40f0dc8282f445252977a",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_install_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "content": "sha256:b3aca64699b56aae10a328f1314f689da57bcfcac02202318ef4ac50e86c6f20",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tool declaration exposes `runtime_install` as a public tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5541a6ee024664b1451b8470c30bef0aef44e422",
+            "content": "sha256:2f654155a5223b6bf7d0ea829cd68e7df80d4dd8f531105924c4e6935c6912da",
+            "locator": {
+              "kind": "symbol",
+              "name": "runtime_install"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5541a6ee024664b1451b8470c30bef0aef44e422",
+            "content": "sha256:925042715a3c930b08b00d8d9a0fae20d152f67118eb9b5fd158ec3cefdfa992",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The service layer defines `RuntimeInstallRequest` and performs the actual runtime install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:a648e98f3a9e63b69d2d8b4c412cb573b29d59ec98cb93ebfd37bc1a14aa28a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeInstallRequest"
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

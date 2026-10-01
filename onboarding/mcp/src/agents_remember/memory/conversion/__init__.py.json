@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory/conversion/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module map this docstring gives.\n\nAnchor: \"the deterministic conversion\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3bf9c34d44307749acdef693b5e3f76ce2937d2",
+            "content": "sha256:0dce07544686d3ad77c56ca5d1c10ad83a768a1673029e4beeee0a19fb56a608",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/conversations/evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared evidence implementation owns bounded payload clipping; deleted evidence suites provide no current coverage claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "334b256763418afd153ef7baa735d19888fe5928",
+            "content": "sha256:9f814acd3a3dea8bb6c8311fc5e370fabd2c37ba17f379ba49ad8da12da65d5e",
+            "locator": {
+              "kind": "symbol",
+              "name": "clip_evidence_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

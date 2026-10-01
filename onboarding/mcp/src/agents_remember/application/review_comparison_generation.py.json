@@ -1,0 +1,819 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_generation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+        "content": "sha256:6f308968a95cb6eea289c022765e51c8eab9a29b734c2c3a664ec467abcdea85",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonRecordBinding"
+        }
+      },
+      "id": "RLZ-MN7TV1X5",
+      "invariant": "INV-53MJW8V0",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Stores the captured assessment availability as an optional assessment_channel beside the record counts. Its serializer drops the key when no channel was captured, so older sealed manifests keep their original canonical encoding and identity, and its validator requires a present channel to describe the bound assessment collection and its count.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it owns (the record, the layout, the deletion record) and of the separate responsibility next door.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The records binding, which asserts what the composition supplied and deliberately not whether an owner published none or could not be read (R14's fact).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:6f308968a95cb6eea289c022765e51c8eab9a29b734c2c3a664ec467abcdea85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonRecordBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:02906722478d48d1875144961ceaa8b71f99346772fba637e7afe712447947ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_total"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every policy version as a constant its owner declares, never a version derived here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:fe67f904f5f11b12767ad3ae2190ed722bd2021cc09ee9e434562ac18ac92935",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPolicyStamp"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The lineage: one predecessor named by id *and* manifest digest, plus the two optional owner digests.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:cd86731de23da33a01dfa8bde4c3ced074c1065c1952493400e697143feaa5a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonPublicationLineage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:9a98cc092af749a1ddd5438cd5e57b060364c69a4e130752cb1ea018b53c26a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_a_predecessor_is_named_by_identity_and_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The record itself, the seal it carries, and the four self-agreement checks including the re-derived generation id.**\n\nAnchor: `manifest_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:bd44b8de870712d461019f7032a67cf3764866f653e96af426e1a4c084ced1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationManifest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:86dd2b413d706148bd70c23f7eddb97fd0c5401271cecb53c6ea65dd93b31d0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_record_agrees_with_itself"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:66d6846ee6fcd837bc53f444fdd14683aff1d5a7e4a356de707de555fdef5e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "binding_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:ccba9283f5cecb95129ea13c843280a79499b1428c3f1b84c889f953efdbcadc",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute_binding_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:7bd6d52dcc2dd0856e6e851121141b8ab69112e1a484333b30f225e9de1f3fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The unavailable-history record an explicit deletion writes, including the custody measured *before* a pin was released.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The whole layout, derived from the one durable root owner.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:5ff43495dbfb832e1b82138cfae66fe0a4c0be2615e6963ecbdc1d1c2b976529",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_generations_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:8c4b20d59c40447ca2c2c625c1442a1a4cb42467ed83a24d719a4e10fbcae4dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_generation_root"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:ff4efef8e16256fd5037587d623d01989e9b9be01b9b3320746128707ab4155a",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_directory"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:b837958f90afb6bb41130fe5e04d9871f17888556daa925fd0be425b6fe096a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:57531b6b3e5627230d4a63bd3b7dd46c0267389cae1f4dd19dd70a175c8d537c",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:d3294a724c88c4bfa364b40edeb05f281c7292776ce69723346ae98fd91bbaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "deletion_record_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:86c676926d0f09f27ada6d3c7327e294ab92463a55fbe583bdf78e32f7901a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_root_for_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The derived generation id, and the one function that seals and validates a field set together.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:a5adbf45ab5a044a703998d99ca13a81e1ea299b9a5a3d3f89f3f357537fb2c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:9d6bba40fca9ab74eea1d7cfdead432fb7044ebc5b8e0e9ab0746f494aa4dcce",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The two-statement read: the record's own validation plus the containing directory's agreement with the id it claims.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The deletion reads and the canonical-bytes write, with \"present but unreadable is not absence\" stated in the code.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:7ae8ab396039b61473789744274cd015d6dc4eca442889b5a2134069dc39a48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_history_deletion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:45caf52e247338e80737728b123867c75868e42d906a7ca3a7e785490576f043",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_history_deletion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**Discovery: the one list of published-looking directories, and the pass that skips an unreadable record instead of guessing its fields.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:43d8b4eaf6bf9079b006388a4e67430ea6fdf45046ded7933b30c27ed4c25ef1",
+            "locator": {
+              "kind": "symbol",
+              "name": "generation_directories"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:99ec4ea3783af488b05781f374e7347d32a146a6f9979325f95ddbc9b04ffa92",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonGenerationRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: version, layout literals, the eleven models, the path helpers, the reads and the discovery functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:be9c4139e376f41a666d0506c0d1f38ae18f3b479bf0457d1d3072ab7bfee57e",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:60d6cdf7f686bb571b7263c93b26736a60362c6916f7e43b51c4d3c591176595",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_GENERATION_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The one durable-root owner this module asks instead of restating `<task_root>/notes/reports`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:235530d66b6a614a5e796a88c1b1f12d0d19f8e1194a5a30e4e12454ce537b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "durable_reports_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The R05 constant imported rather than re-spelled, so the accepted spelling and the recorded one cannot drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:d4df5cb13df1b5433b35b395e0582f21a8ab5ac77b3c765684c24b74b1274fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The owners whose values the manifest carries rather than re-derives: the capture identity, the resolved pair, the inventory and the comparison identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c80e7ae55cc5d07b72431cf1df92bd062a126c6",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3d217a4d6d609112d499be391c3c5b81ef3af88",
+            "content": "sha256:58db95157ca96a7ea081420afa9d4f1aac49b494f52c47c6f580e7c21f8e6778",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:a6ded60f6de0902dd814d1c229af2628aaa97baf14d42932e23e87cb7d90bb48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:f85866fb872c92ee60595940e4e9ca33e81e178dc4ae608c2c14185f7e223d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3d217a4d6d609112d499be391c3c5b81ef3af88",
+            "content": "sha256:f9b66208fa812fdc9115b7c31d5947089e36fa8c583792f11228b941d7837f2d",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "content": "sha256:e3a3f730342fb79c99327da8f33acfc8e843bb3123e11ffc8a7f9bef81bd843f",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The four cases that measure this record's own contract: what it binds, what it refuses to read, what converges, and what a damaged record is reported as.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:5b15cb5b8f559297154896238c02043a7b3577e57099e2a1b758131c8523c5d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_binds_the_owners_identities_versions_and_its_own_fields"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:9925a79e69d265e094566eb3ac362808e55618a38a99b377bc2e3ea4ae76c0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_cannot_be_read_is_not_a_readable_generation"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:a87b30d7eca60b82c23a0b0df2f0c528e8dcde8ef7a52baa9f588743f20b275a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_exact_retry_converges_and_a_superseding_generation_names_its_predecessor"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:58754f42d9606a638f36fc3c1df5aadd182f97ad413bc4186496f4301c71e8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Counts and optional assessment availability remain separate recorded facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:6f308968a95cb6eea289c022765e51c8eab9a29b734c2c3a664ec467abcdea85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonRecordBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The layout, named once**, and the two typed-absence spellings with their reason for being distinct from a failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:415ef56a520111e415dfe3c41be25eb342bf473b9e1aa43d8b3a09f684cdbb86",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_GENERATIONS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:eca5c99e15a60f69045c9d64bc9bcc0d9ddb5a7551a744475f5b2176230da4aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_MANIFEST_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:e9bd02dba482e28029f2414d939523a30c049c97e431350689862126716dbc26",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_KNOWLEDGE_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:e86ee893b339148666c725dc4afa72565f8aab424c4d898ff8537bcf17ed8e05",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_SNAPSHOT_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:0a1e180d97c1ca96220a58e805863fdf905bdca7098700c7457698a1bcaf6b82",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPARISON_DELETIONS_DIRECTORY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:1d9f87b33dd8dac1a75ec760b2fa122183bb0ef3eb798c7c8df0018fcbfae8f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_NOT_SELECTED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:bf75044f5a0c18e1352b1c65b2fffb32bbe5e605c85f1f1cfff0b9270775c6d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TYPED_ABSENCE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The fields the seal does not cover, and why each is excluded.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:55264320a7f56bb3b5bd6ed460e6a5f397fee7ef24bd87ae6794dda269ab0a28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNSEALED_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:2db59879199e0c163d7c2bdc46b47dbbd13ed3fd9d7399874b709cb55160fd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GENERATION_NAMESPACE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**One retained snapshot: a generation-relative path, the digest of the bytes written, and the deletion owner plus bounded scope that may delete it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:d404f35af062dade838d6205c912421144b911c43e5e393cf0a8220265432669",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSnapshotArtifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The validator that makes the packet's non-conforming example unconstructible: identity and bytes travel together, and a non-retained side states its reason.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:58e8d6a0b8c45ac5604510f6313bbf25ae1ac294739a94629dc07e1a8d9e23a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonKnowledgeBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:eb5689cb647c66f31961f62ffb8bd9d16c7fa5b095c360018b7c4f2aa2e07f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_means_identity_and_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The source binding: the capture owner's own identity carried verbatim, the custody measurement, the names it was measured against, and the pin's agreement with the custody.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:0d51335ed64ff98bb341847bc29b732f2cbbb69ab3c6983ad8f109842a53ced2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSourceBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:11492b1c893b139e15aaeab825a3115bf64d35c61c9568e97c919a2fc1b112d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_custody_and_the_pin_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The scope binding: the owner-produced inventory's state, digest and population, plus the selection that must name its selector.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:6bcc9083619ba2b74dc9f618a4c931764b68be285e0839c83c89841c8ccf0ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonScopeBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:579a1bffafb7bf066b67bf8bda5481ea506fdeabf1df95663969b28fa785442e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_selection_and_its_selectors_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One cited owner-produced artifact as a task-relative, digest-bearing reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "089d51d117d71e9f773b5d7297b03ddc037a9a97",
+            "content": "sha256:a3d8cff6ecef3d809a32be9dcfb1e11f1b545f3a1335d06f082687d51172d859",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonArtifactReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_closeout_gate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_closeout_gate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -88,39 +78,30 @@ separate support module was an unregistered evidence artifact on the worker's fi
 
 - Split the module before the next case (1,198 of 1,200 lines).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: a converted leaf on real repositories. | "The fixture below is a converted leaf on real repositories" | mcp/tests/test_knowledge_closeout_gate.py:1-7 |
-| The fixture world. | `Gated`; `build_gated` | mcp/tests/test_knowledge_closeout_gate.py:195-312; mcp/tests/test_knowledge_closeout_gate.py:331-374 |
-| Rule 2 and the packet's examples. | `test_a_leaf_is_ready_only_once_current_rows_answer_every_item_and_a_new_edit_reopens_two`; `test_a_sibling_whose_meaning_changed_after_the_family_row_reopens_the_family` | mcp/tests/test_knowledge_closeout_gate.py:404-487 |
-| New invariants, recompute after a sync, incomplete runs, the dispatch. | `test_a_new_invariant_needs_no_row_and_admission_judges_it_new_against_the_parent_line`; `test_every_registered_kind_is_decided_by_its_own_predicate_never_a_generic_lookup` | mcp/tests/test_knowledge_closeout_gate.py:490-667 |
-| The validator's history-row rule at the gate. | `test_the_gate_runs_the_validator_and_its_history_row_rule` | mcp/tests/test_knowledge_closeout_gate.py:675-701 |
-| The closeout validator and the closeout memory commit. | `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`; `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree` | mcp/tests/test_knowledge_closeout_gate.py:731-845 |
-| Direct, record, master and checkpoint landing. | `test_direct_landing_gates_names_its_leaf_closes_its_history_and_restores_on_refusal`; `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale` | mcp/tests/test_knowledge_closeout_gate.py:865-970 |
-| The insertion-only symmetry, the unconverted leaf, the prepared path. | `test_an_insertion_only_hunk_is_linked_only_by_a_candidate_range`; `test_an_unconverted_leaf_is_not_gated_at_any_route`; `test_the_prepared_closeout_path_fails_closed_on_converted_memory` | mcp/tests/test_knowledge_closeout_gate.py:978-1046 |
-| The memo and the approval state. | `test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs`; `test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes` | mcp/tests/test_knowledge_closeout_gate.py:1049-1198 |
-| The lane row. | "mcp/tests/test_knowledge_closeout_gate.py" | mcp/tests/test-evidence-lanes.toml:122-122 |
+- The module docstring: a converted leaf on real repositories. [1]
+- The fixture world. [2]
+- Rule 2 and the packet's examples. [3]
+- New invariants, recompute after a sync, incomplete runs, the dispatch. [4]
+- The validator's history-row rule at the gate. [5]
+- The closeout validator and the closeout memory commit. [6]
+- Direct, record, master and checkpoint landing. [7]
+- The insertion-only symmetry, the unconverted leaf, the prepared path. [8]
+- The memo and the approval state. [9]
+- The lane row. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the fixture builds its own repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new test module MIK-R09 adds, recording gaps 3 and 4 (14:38:47), the approval-state test (15:09:25), the F1 flip (16:07:55) and review R1 note 14 (split before the next case). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

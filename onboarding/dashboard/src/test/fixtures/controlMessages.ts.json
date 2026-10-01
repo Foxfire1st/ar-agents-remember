@@ -1,0 +1,110 @@
+{
+  "path": "dashboard/src/test/fixtures/controlMessages.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The five receipts + four reconciliations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9bd8566c3d316d5267022573703a19a3c7d93eb",
+            "content": "sha256:b69a8a5770a799ae16849bd11f0af398a2900d8ffc6f802c7dc61e9e43181507",
+            "locator": {
+              "kind": "symbol",
+              "name": "SUBMISSION_RECEIPTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9bd8566c3d316d5267022573703a19a3c7d93eb",
+            "content": "sha256:793325b9942a694f3bba060178e647ed238b3baeca0bbce244b28276e1eeb545",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONCILIATIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire mirrors (`SubmissionReceiptWire`, `ReconciliationResultWire`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:f69bf854b2bca46930d107f903bb16c69f948f7a2b4b7a5044763bfe8eb0c01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubmissionReceiptWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df24b8400293042856b26c2e57e43cfdcd6eaf61",
+            "content": "sha256:66bbb20bd791f33e4586e2cdc51f634c41aad6b90b2fa767b26a1bd2591856aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconciliationResultWire"
+            },
+            "path": "dashboard/src/types/harnessCapabilities.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Python serializers mirrored (`public_receipt_json`/`public_reconciliation_json`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:ea57df2eb40f427428ed41bd07ddc1162732cd83ab5da95cf65ffa133740b987",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_receipt_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "268d5ea598e01ce02ad82510c8735af852ddc11e",
+            "content": "sha256:c2bfca7fc0be94b4b93f409d1c46a202f161d4d526f1510c400952ee118e8c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_reconciliation_json"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The vocabulary-equality suite (five/four by sorted keys, shared requestId).\n\nAnchor: \"SetResult / receipt / reconciliation vocabularies\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebe461d98381e027f3b81ae8c1f58eb77dfc9585",
+            "content": "sha256:ae351c33dfe19d4b7b709b09bd65edb34bd0b0467bf6222660f50a4755a45f1e",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/test/contractCapabilities.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

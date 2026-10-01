@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application/overview.md](overview.md)
@@ -107,18 +97,18 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
   errors (L14-R7 backward tolerance). The F8 fact kinds keep facts-not-errors semantics:
   `seat-doc-row-unresolved` and the sprint exclusion are facts, never judgment.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes; `SprintSeat` itself is structurally unchanged in the candidate. | `SubTaskRef`; `SprintSeat`; `TaskDocument` | mcp/src/agents_remember/tasks/document.py:546-560; mcp/src/agents_remember/tasks/document.py:630-662; mcp/src/agents_remember/tasks/document.py:677-865 |
-| The typed-linkage cross-check and altitude role sets this module relies on. | `validate_sprint_linkage` | mcp/src/agents_remember/tasks/document_refs.py:311-361 |
-| The public tool-layer operation routing. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
-| The shared judgment verifier and completion gate. | `verify_sprint_judgment_ids`; `require_commanded_masters_completed` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:758-778 |
-| The rollback-safe batch writer and exact task publication transaction. | `write_task_doc_batch`; `publish_task_doc_set` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/tasks/store.py:176-218 |
-| The single-owner authority gate admitting this module as a task-document writer. | `TASK_DOCUMENT_WRITER_AUTHORITIES` | mcp/test_support/agents_remember_test_support/code_quality/single_owner.py:40-53 |
-| The linkage preflight wraps the served-build check in the linkage error family (L15-R4). | `_require_serving_topology_schema` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:84-90 |
-| The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. | `collect_linkage_facts`; `_row_facts` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:368-391; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:749-794 |
+### Repo-Internal References
+
+- The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes; `SprintSeat` itself is structurally unchanged in the candidate. [1]
+- The typed-linkage cross-check and altitude role sets this module relies on. [2]
+- The public tool-layer operation routing. [3]
+- The shared judgment verifier and completion gate. [4]
+- The rollback-safe batch writer and exact task publication transaction. [5]
+- The single-owner authority gate admitting this module as a task-document writer. [6]
+- The linkage preflight wraps the served-build check in the linkage error family (L15-R4). [7]
+- The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. [8]
 
 | Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
 | Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:253-253; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:326-326; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:646-646 |
@@ -163,45 +153,4 @@ lock or lifecycle evidence owner.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. | `SprintLinkageError`; `SprintLinkageRequest`; `SprintLinkageCall` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:102-103; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:106-115; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:177-186 |
-
-## Update History
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_row_facts`, `collect_linkage_facts` repointed to mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:368-391, mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:749-794. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `write_task_doc_batch`; `publish_task_doc_set` repointed to mcp/src/agents_remember/tasks/store.py:176-218; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_require_serving_topology_schema` repointed to mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:84-90. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-read the reopened `SprintSeat` claim,
-  retained its behavior, and regenerated all three schema ranges. Verification remains
-  closeout-owned.
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `_parse_payload` and confirmed that payload validation and sprint-linkage behavior remain as documented. Verification remains closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — Routed the uncommanded-master census through the shared module-level `repository_master_documents` query, preserving one repository-global authority API.
-
-- 2026-08-24T13:43+02:00 — 260821-DAGQC-L1: reconciled linkage preview/apply with the shared
-  zero-or-one graph-title owner and the landed task-first publication transaction; removed the
-  stale queue-governed/current-transitional narrative. Verification metadata remains pinned until
-  architect-owned closeout stamps the real code commit.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: served-build preflight wraps both linkage write
-  operations (L15-R4); attach/detach dry-runs lock with `create=False` (F2); F8 linkage-fact
-  hygiene — sprints excluded from `uncommanded-master`, `seat-doc-row-unresolved` for uncorrelated
-  seat rows — with tests. Verified at code commit de3a0fd9.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   sprint-linkage publish/preview threads joined graph titles (`_batch_graph_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:10+02:00 — 260815-DAG-L14: created — one atomic `attach_master`/`detach_master`
-  operation pair (typed row + `orchestrates` slug + graph lump node + nature assertion as one
-  validated batch), the read-only `linkage_report`/`linkageFacts` drift surface, and the moved
-  `validate_completed_master_row` for typed rows. Verified at code commit 8071a644 (L14 HEAD);
-  the 23-test suite passed under the Dagger-targeted gate.
+- The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. [9]

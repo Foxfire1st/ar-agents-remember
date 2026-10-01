@@ -1,0 +1,623 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The report prefix every rendered comparison carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:288d88a6ba68d5b3f8b86afe333de6724e7220ff81a43f7d9cab180cd7087f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPORT_PREFIX"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One task document reduced to the fields the comparisons read.\n\nAnchor: \"class LeafDocument:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:964e0f9227b828f029bcc62819a5dfafe587a79b182d3e069f2908f29a154fad",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "One `subTasks[]` row of a master document.\n\nAnchor: \"class MasterRow:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:43dbe68646898fe87aa4ee843be9373cff47776f9469405baf5c53089308d7d6",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Scalars and nested blocks read out of frontmatter, which is all the parsing there is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:a0aaabfb9f2d057871fe86e7fc0364669073178a74ad2276040dc91926718094",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scalar_fields"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:2b40bd1ebfab460055167a890d7e891d523f58e5201b538824e2209001ac0ca3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_block_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The leaf/contract comparison: contract cells are the authority, the document's status is the subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:1463b8360e77379f811e8bb3f039fedb2033d7a23503372f85e393d0abe6d63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_leaf_document_against_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`Completed` requires the document to be `Completed`, never merely every step marked (D42's rule).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:b65e076f64af2fd78c346f4bdddb6ff86de8eb21f737fbedbac49403ce2bc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_master_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The master-row comparison, with `row-completed-before-landing` named on every finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:ef79bb2eceb96012c14ee615cd6ac67b794716b6ee86c3dee52f13478b74aa86",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_master_rows_against_leaf_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The tolerant `L<n>` suffix key that found six leaves an exact match reported clean.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:523f389cc2d07896660b20ed3efaa8caf6d27194f9d8c6278e9505bdfa5f3f86",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0706787b662fd4a6b8934d88e1b993a03a9f67e67b1db85806d11f1fc5a5652e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_by_leaf_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Only the State cell is graded, because the Owner cell names owners rather than leaf-set membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:523066d0e4a3e2f1741ed568fb53177cf59b51920567f7c78a625bd59b23f87d",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATE_COLUMN"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:7ee31071b06cb0ca163e22c50100b3f76e824b98b1da4b8cb578db756add37d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARROW"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The register's arrow comparison, refusing rather than zeroing when the master declares no leaf set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:a52a38623b894d9650526cd19233443389e0caaa79748de0a30588b75c024ead",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_register_row_ownership"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:9840e64df632402cf86c5da6616927fbf45bc9567681dc6bbf1d7369e36a5300",
+            "locator": {
+              "kind": "symbol",
+              "name": "declared_leaf_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "One prose figure and the revision whose source value is the authority for it.\n\nAnchor: \"class FigureClaim:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:1ba1a51a1a30f62cd9def8b97ba182066128f6fb87d1baadab1dd82482b3f996",
+            "locator": {
+              "end": 857,
+              "kind": "line_range",
+              "start": 760
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The enclosure-contract glob the tree walk resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:3221301ec802406e4be109cc5acbb8d58aff0cb3e01482dd06833d477b57f090",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONTRACT_GLOB"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The prose-figure comparison `T45` records as absent from the product's own checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:2e25431d4a0cd8791d8b182f61b09d70ca16bd0486aba94567125429479a560e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_declared_figure_currency"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The two shipped figure shapes, and the CLI form that declares a claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:58e607165fc0828af24859d8cbca965e12ec4d507f5894f718533f1063cc2d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIGURE_SHAPES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0d36cc207e1eb686430276bf5ea191fcb7cad451fbc89fdeca3495a2a95c9bf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_figure_claim"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The coordination root as an input rather than a hard-coded layout, or a refusal naming it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:e14d746fbc59088035a4b552373ee2ad2f7cc27e141c28350a47a33da71aedc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "COORDINATION_ROOT_ENV"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:4e40c819019c902d0aa930692d5cf87f1003ac0f0c0c267aac6b938e8edcc2ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "coordination_root_from_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The run that joins the figure comparison only when claims are supplied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:45880537e3b2f07ae91e7ee5fc8df99eaee8a8386d038f38de149d70dec8fc7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_all"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The runner, its repeatable inputs, and the exit status that reports a finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:35e960abd35ed7aab0e67767bd64a38e4c64ef26fd7c015f5fd533cacb6b9586",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:f23e9f5daeada89319ed2cf6fb90933034fde958939fc381fa245a5a80490a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The 37 cases that pin these behaviours against the historical artifacts, in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:641cfc92557b492045d846241eed2825436d45c4c6e6c17b629aa035a575ce73",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafDocumentAgainstContractTests"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:34c4882b31c0b4e3fac1b04b2d794781c1dd43c247a300c865b7e600fc6050ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRowAgainstLeafDocumentTests"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:d2bc5fd0868bbec90f0906f0227e317e71aadd946faddf3552dcc8a5822aa49b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisterOwnerArrowTests"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:f8f28a79597b89d0df59a5c4c7ed45a5ca44e96bd50cd7d4e7ead04fd30c1b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeclaredFigureCurrencyTests"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b4cd4426c933c0a144fb3b446be0f4c8aef9119",
+            "content": "sha256:412c655412ac028af85c9c757852b34234de2178838a33ba007bf12b8b078a3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIntegrityReportTests"
+            },
+            "path": "mcp/tests/test_record_integrity.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The lane this module's contract suite is registered in, so the fail-closed manifest admits it.\n\nAnchor: \"mcp/tests/test_record_integrity.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:dd1150cac0a6e9fe146a70162940a8dfa3f1318cb72094a8f1f5af2e3294b878",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "What a \"case\" is, declared once so a figure check and its cases cannot disagree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:27976bcbbadcb9b4b9125d98c65a862b756c9c38b00310c5ba145a05e5ddd3b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TEST_DEFINITION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed status vocabularies, so an unrecognized status is reported rather than compared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:d282eab99cb447268d303dae052a417e708b169a48bc4795fbaa8e0fb112766d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACTIVE_STATUSES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:b5cf9419194ae2e4ed2c2f94223a936725e9447d7b5c9fb315df810133774a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "LANDED_CONTRACT_STATUSES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:a89ef9e5030f3b8b4933206e7b3e3fd90cbbf0a92d96a365eee14cb107822926",
+            "locator": {
+              "kind": "symbol",
+              "name": "STARTED_CONTRACT_STATUSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The seven named rules, so a finding says which comparison produced it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:5ea5d16f78955536eddaa29f5f9592867f33c0acdae926a17b4d05f4a630ebee",
+            "locator": {
+              "kind": "symbol",
+              "name": "RULE_LEAF_CONTRACT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0623034674a370884303f3709cd89bd3cf0b2dca3ab94787237deaf3bf364dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RULE_LEAF_CONTRACT_KEYED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:e8abab892cee5ea38bbafcd339406428e04abb9dedc2a67d3ecee3a3036ba099",
+            "locator": {
+              "kind": "symbol",
+              "name": "RULE_MASTER_EARLY"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:b74f607d936bf76158c10ae204217868eb1393f14c9b7dac49a60aab72a4b450",
+            "locator": {
+              "kind": "symbol",
+              "name": "RULE_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:5c3013cd3e402c49db52cb6632297d56dc60223f381300545709a1376e60bda0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RULE_FIGURE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A comparison that could not be made, named rather than returned as a silent zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:0b6bc72b0303f757020ff2a4b7bc5e70223155a79db2a1254da88d1e8086bf81",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordIntegrityError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One disagreement with both sides named and the line a reader can open.\n\nAnchor: \"class Finding:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:6132b9cfed99ceab017319a9df07cba4abb75a6a9e6573516545ab788fab0e57",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "What one check compared, so its finding count is readable rather than merely small.\n\nAnchor: \"class Comparison:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:564cea06bd1decc9d5dae30609fd7bdedf987558932cef1ddfb07b741cd7ce0a",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One enclosure contract reduced to the cells and identity a comparison needs.\n\nAnchor: \"class ContractCells:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b8bfad2c56f99d0ae1c91901f28aeb9715f87a7",
+            "content": "sha256:70c15193dde2ae2d08bef0c46d9bedf434898f7bc598b31617fa3e9cc00ae071",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

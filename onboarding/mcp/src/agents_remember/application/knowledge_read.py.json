@@ -1,0 +1,557 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The two absence codes, and the recorded-but-empty selection that is served rather than refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:4447df71d234eaf290e4e9255eb307fb38dd2c606d15615f6a635040be3a853c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absence_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:9aa1297b92e4397786e67325ec124f1de6580d52d21ed8ec321da3defd209088",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant_identity_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:27a035ef159797149d364c57ed83d410db0f249c76ef8bd3af44544cb5f6620f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_identity_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:7fac4a515910917c194b2343e4464bd76a900bfa8109ddde411f9ea968050eaf",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 357
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The persisted-nothing measurement, read through the same read-only handle the operation uses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:a303eb2bf1cfe36803355ebfb1bdbf8f81fadd5f47dc65fd18557ec81606e557",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_row_counts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:c269ff2814b3bee65896e3a2e6dba6eb9619f0000be446f7bd2e469296de319e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_COUNT_TEMPLATE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The result assembly for a page and for a refusal, and the unusable-snapshot rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:0ac5e66f3cfaf53fcf571512ab7c756a3087883c9c96f8ece3957b175d4b8568",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:c192a7cd4a12578d54ffd8968592fbdb5d7e3e8dfaff9f4e8ce9a37caf118daa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:94657ee31194513d5b2fe426db53805f4be5b9eb29a0da6d63b8a8d4a885f924",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unusable_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:2b3ea8eb49f5b20009b83117593b448f34c039ffbac43791c1511fea7b5645e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_small_budget_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The nodes that measure the binding refusals: the selector and the context/policy bindings in one merged case, one case each for the manifest binding, the past-the-selection position and the own-snapshot continuation.**\n\nAnchor: \"test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page\"; \"test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified\"; \"test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping\"; \"test_a_continuation_against_its_own_snapshot_continues_the_same_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:772cda6626a412846ec2939e441457e80caa0df3afa869d692fc0344c98ddd53",
+            "locator": {
+              "end": 624,
+              "kind": "line_range",
+              "start": 613
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:47bc72e56b1ec449a1f563f8f5d7cdad217216e3eea912ae4c7236ce0f3c1cdb",
+            "locator": {
+              "end": 769,
+              "kind": "line_range",
+              "start": 711
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:23460d0dbb9e6af4e5d61fa50a185c0866e49cc2ce9ade72280a7872b25d112b",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 772
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:28b880151a868e38ab1cfc9b4f8bc6ac7308d1bb3cbc79238e270b1fab9c288c",
+            "locator": {
+              "end": 954,
+              "kind": "line_range",
+              "start": 923
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The task-free baseline read node, the snapshot/namespace/schema refusal nodes and the absent-database node.**\n\nAnchor: \"test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope\"; \"test_a_context_naming_another_namespace_refuses_and_names_both_identities\"; \"test_a_context_whose_logical_digest_is_not_the_files_is_refused\"; \"test_a_context_declaring_another_schema_generation_is_refused_before_a_page_is_built\"; \"test_an_absent_database_refuses_as_an_unavailable_input_rather_than_as_empty_knowledge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:a8d83689ab08f390a2f3060144556c40d2fc4f2a095a85b6d56ac02600f14a77",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:8d13b984bc24b904258d54760b43eda0262c9a10540a9e9182b48447c003904e",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 498
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:907798c0af2dbd66275012f7af49f64ce659b5ca0316491d9c9108bd33e11f24",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 528
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:227d9701801f6fb20b4d4fd9a03f4d740e4e9c48d61193cc8338baa677778684",
+            "locator": {
+              "end": 826,
+              "kind": "line_range",
+              "start": 763
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:6574f8f3096b99cca238d33118ce0695177211db726effa2984cda7ca4a75866",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 591
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The nodes that measure the binding refusals, each with its own positive control.**\n\nAnchor: \"test_a_continuation_presented_with_another_binding_refuses_and_returns_no_partial_page\"; \"test_a_continuation_that_binds_another_manifest_is_refused_and_its_own_is_verified\"; \"test_a_continuation_naming_a_position_past_the_selection_refuses_rather_than_escaping\"; \"test_a_continuation_against_its_own_snapshot_continues_the_same_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:190dd8727955828bf9fef107fe10eb1aadb9985efafdb1fbe71565b472a9fd8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context_and_policy_bindings_refuse"
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:1e069e7734beaef8a1d3e62587e5a51b06fe11fc41328128eff454b9fad624f9",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 613
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:726cd8126c2e038105bd1dbc1577b0bf4149407f9b02afa352af03ff26655076",
+            "locator": {
+              "end": 724,
+              "kind": "line_range",
+              "start": 664
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:cf7d8bc6312a9a847b4a796dd6b42e4e9e50891875ebd9456840eaf77647ed9d",
+            "locator": {
+              "end": 772,
+              "kind": "line_range",
+              "start": 772
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:7f3fb46a3e7f799b24e39879c85477c009e8870fed0bf715c8ea45b7fe95212f",
+            "locator": {
+              "end": 923,
+              "kind": "line_range",
+              "start": 923
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The read-only connection the seam opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The schema identity the seam inspects before it selects anything.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect_schema"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The existing reader whose confinement helper must **not** be reused for tree paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The entry point, its typed parameters and the never-raises contract inside them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:b63a68e41ef6db74862e53d25e91c96ee6b4250062950b7ff58d84dca362f25e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_knowledge_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The read-only handle, the request-level cursor check before the file is opened, and the close.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:3a9352806fc159a0b3e89782121c1db4198b52d27553ddc817fe888f52f13e55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_inside_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The ordered sequence: verify the snapshot, select, decide absence, check the continuation, page, refuse a too-small budget.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:3ac5a01fc336b862a7515ebb875aa56dbde1f4579534d65c890a9d83a0543bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_and_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**MIK-R02: the verified selection shared by the paged read and the whole-scope read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:54fb68212cead17964a0474fae6f86e4d86dfaf3fe999716b5bf1088db0fdf2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verified_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**MIK-R02: the whole verified scope of one seed, unpaged, under the same guard and failure mapping.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:d02534dfbed20a60d8f317eee07c37fcdd267279fc0564447ba0518eb86c8e3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_knowledge_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:2066e84bbda10501e44f2137cd665b656601a1006292dd14a08426df2c87187c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_guarded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:6fdc83a77b912aeeb988ec413fbeb2aa889dbdb67a88859cb15ae383244eb006",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The three separate snapshot comparisons — namespace, schema generation, logical dataset — each naming the comparison that fired.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:fed05d8b49115da567f0fce4269d6cae1ca1c1e70a376c03ba48271493f78ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot_identity_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The scope-dependent half of the cursor binding: a position past the end is typed, and the manifest must be this selection's.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:e3301514b4db994194de303b66878f0d986d3ab01836fde8e373cb89933203bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continuation_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:1c0cf65605717638ad0a22f53f1773482e7c056fc2e932789759d69e9832ede7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_binding_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The request-level cursor bindings, checked once before the file is opened.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
+            "content": "sha256:5006badc163d70988d9418a8398fbfc98df686779cea3bf9d07cb0c37f24ff03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cursor_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

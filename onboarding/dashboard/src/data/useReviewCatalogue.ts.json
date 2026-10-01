@@ -1,0 +1,152 @@
+{
+  "path": "dashboard/src/data/useReviewCatalogue.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+        "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewCatalogue"
+        }
+      },
+      "id": "RLZ-6VEXGB6W",
+      "invariant": "INV-555EHWM8",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Files each catalogue answer under its comparisonKey (repo/master/leaf/history) and lets only the latest mounted request store one. It returns a loading state instead of the stored rows whenever those rows' comparisonKey differs from the current comparison, so another task's entries are never shown while this task's read is pending.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+        "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewCatalogue"
+        }
+      },
+      "id": "RLZ-DGEFJX48",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Keys the catalogue read on the comparison (repo/master/leaf/history, plus the snapshot generation) instead of the global analytics document, issues one intentReviewEntries request per key or explicit refresh, and lets only the latest mounted request store its answer; since only the reviewer calls it, selecting a leaf triggers no catalogue read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity.\n\nAnchor: \"It belongs to the reviewer, not to the task entry\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:c7ce7440d31a5c0dc24419015408ddc62d9e086e861bcfc05e12540d0fa7d8f9",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read state, now without the analytics `facts`/`stale` fields.\n\nAnchor: `comparisonKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:f7902fbf98dab07bf53fdd7b7b4be01039fea209da2deb3db41dc4974c731a5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCatalogueRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The comparison key: task context, record and generation.\n\nAnchor: `generation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:2cd9335ed65f7cf2ec5ac84b472208cdae5a547a90c9327379d35054f1c3f349",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCatalogueKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The answer mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:1460378f6fcca561369368a0535e8c9d68750020652c893b23df5617123d4380",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogueAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The hook: keyed read, sequence guard, refresh.\n\nAnchor: `comparisonKey`; `refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
+            "content": "sha256:00c98c628c16d8f8be11bb2456b3e7e7643226affeb824f5c52b4d0c365eb224",
+            "locator": {
+              "kind": "symbol",
+              "name": "targetKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Its caller, which bumps the generation on a new snapshot pair.\n\nAnchor: `useReviewCatalogue`; `observeComparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d781656bb73395d1724e71b0e17c6c77f53d506",
+            "content": "sha256:f2fec9b4d7b2e803781bc835698d3d6a5bf971cee4c54192d0f02667c6db59ea",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

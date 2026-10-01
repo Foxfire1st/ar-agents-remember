@@ -1,0 +1,63 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parser and main routine preserve the exact executor inputs and exit status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "content": "sha256:957f7d208d245909602746c29e4aeb73d50b4058c07902ff05cacc3d5b24986e",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "content": "sha256:2823ae22a4e1aad03fad6e50ba999f74199677d1570d0b23ee0190f4ceaf5a90",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The adapter is confined to one resolved code worktree and enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "content": "sha256:957f7d208d245909602746c29e4aeb73d50b4058c07902ff05cacc3d5b24986e",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+            "content": "sha256:eb2b4add9af00b8f0704a2607f7f8416ca045399bc65bc4e9fb46e3bcb93338e",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

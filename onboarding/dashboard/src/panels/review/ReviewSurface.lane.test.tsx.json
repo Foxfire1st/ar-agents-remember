@@ -1,0 +1,143 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The real bodies and the scratch leaf they describe.\n\nAnchor: \"captured<ReviewResult>('laneReview.task.captured.json')\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:9d900241c19c7ffdde9454628c509511eaf67337f07d5942bb33f3df535a7fd1",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fetch stub, with a held read.\n\nAnchor: \"function answer(url: URL): unknown {\"; \"function serve(hold?\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:e87e312bf6e184be391b6f49812ef40c613542592d8a0de5ce1c1182329940e7",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Case 1: destinations after the families, one lane read.\n\nAnchor: \"offers the two lane destinations after the families, with their file and hunk totals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:b4208a1f7f309f648eeddb28c688fab9ca1605233bf8fed064411149f37e100c",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case 2: rows in the server's order and a focused hunk.\n\nAnchor: \"lists unexplained files first, then attributed files, and opens one on its unexplained hunk\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:61fbde1e85324ed8d0b1b1af82a359cbd9ff7af7461e6fcdcc0df3fc578eaf80",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Case 3: the unknown file with its reason.\n\nAnchor: \"lists the file of unknown attribution with the reason no range is supplied\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:fad02b6c8c4835eb84c599e008bd154c2aefbefda1e778f4a55caa836c2b4d8c",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Case 4: the gate's items still being read.\n\nAnchor: \"says the gate's items are still being read, never that the gate raised none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:e1ba5a628ba9ab61d8111a94b70e2531f1c7b243b4aaad893963390beebbdba1",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Cases 5 and 6: the explorer labels from the lane, or pending (ruling Q1).\n\nAnchor: \"labels the source explorer with the lane's bucket for every changed file\"; \"labels the explorer pending while the lane is read, never with a guessed bucket\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:90459e7fdc1e6facca88e3499dc893abbff8e4ac302f0954e44de24918e3c92c",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Case 7: the technical details from the lane (review F1).\n\nAnchor: \"lists the lane's unexplained and unknown files in the technical details\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ee406f656356367bddc65e943a9505227d72194",
+            "content": "sha256:4fe0da5cecbd3cec551fd0fdfd7c4c6954b4d95580e52ac57f5e92c4068502bf",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 231
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

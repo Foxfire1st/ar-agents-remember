@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/migration/resolution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/migration/resolution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -133,15 +123,15 @@ function is pure over its arguments.
   caller-supplied spelling; it opens nothing, and the four mismatch constructors build a value from
   arguments rather than from a corpus they inspected themselves.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This module is the census's reference half: it decides the three states a reference can be in, reports
 the mechanical mismatches, and refuses every repair path. The rows below cite the two closed
@@ -149,38 +139,30 @@ vocabularies, the verbatim reference value, the self-checking resolution, the ex
 four mismatch constructors with the kinds they can and cannot build, and the deterministic report
 renderers.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of its two rules: three reportable states, and a refusal to repair a reference by resemblance. | `ReferenceState`; `MismatchKind`; `resolve_reference` | mcp/src/agents_remember/memory/migration/resolution.py:1-21; mcp/src/agents_remember/memory/migration/resolution.py:34-35; mcp/src/agents_remember/memory/migration/resolution.py:40-55 |
-| The three resolution states as one closed vocabulary, kept as one pair because a second literal at the aggregate site is how two spellings drift. | `ReferenceState`; `REFERENCE_STATES` | mcp/src/agents_remember/memory/migration/resolution.py:29-35 |
-| The six mechanical mismatch kinds, each a fact two observations disagree about and none a judgement about which is right. | `MismatchKind`; `MISMATCH_KINDS` | mcp/src/agents_remember/memory/migration/resolution.py:37-55 |
-| The verbatim reference value with the artifact, the location and the frozen baseline it was read at. | `Reference`; `FrozenBaseline` | mcp/src/agents_remember/memory/migration/resolution.py:58-72; mcp/src/agents_remember/memory/migration/baseline.py:35-48 |
-| The reason the reference text is not normalised: a canonicalised reference is one that was repaired rather than resolved. | `reference_text` | mcp/src/agents_remember/memory/migration/resolution.py:61-66 |
-| The resolution value and the three refusals that keep a state from contradicting its own candidate set. | `Resolution` | mcp/src/agents_remember/memory/migration/resolution.py:75-98 |
-| The mismatch record, which has no verdict field by construction because the four dispositions belong to a curator. | `Mismatch` | mcp/src/agents_remember/memory/migration/resolution.py:101-115 |
-| The fact rendering, with both tree ids truncated for readability while the baseline stays an exact identity. | `render`; `code_tree_id` | mcp/src/agents_remember/memory/migration/resolution.py:116-123 |
-| The three-state partition and the total that lets a caller check it accounts for every reference read. | `ReferenceCounts`; `total` | mcp/src/agents_remember/memory/migration/resolution.py:126-138 |
-| The exact-match resolver: kind lookup, equality only, and an unknown kind resolved as `unresolved` rather than raised. | `resolve_reference` | mcp/src/agents_remember/memory/migration/resolution.py:141-158 |
-| The order-preserving map over an iterable of references. | `resolve_all` | mcp/src/agents_remember/memory/migration/resolution.py:161-166 |
-| The partition count over a set of resolutions. | `count_resolutions` | mcp/src/agents_remember/memory/migration/resolution.py:169-176 |
-| Two non-resolved states reported as two different kinds, with the ambiguous one carrying its candidate count. | `mismatches_from_resolutions`; `declared_source_absent`; `route_reference_ambiguous` | mcp/src/agents_remember/memory/migration/resolution.py:179-212 |
-| The packet's worked example as one function: a declared source path absent at the baseline, reported as the mechanical fact and not classified. | `artifact_mismatches`; `declared_source_absent` | mcp/src/agents_remember/memory/migration/resolution.py:215-243 |
-| The contradiction between two declared values only, with nothing about either file's subject matter read. | `metadata_contradiction`; `metadata_contradicts_front_matter` | mcp/src/agents_remember/memory/migration/resolution.py:246-269 |
-| The duplicate-anchor fact: which records disagree, never which of them is right, returned as its own shape rather than as a `Mismatch`. | `duplicate_anchor_claims` | mcp/src/agents_remember/memory/migration/resolution.py:272-285 |
-| The report rendering, sorted by artifact and then reference so two runs over one corpus are byte-identical. | `render_report`; `render` | mcp/src/agents_remember/memory/migration/resolution.py:288-296; mcp/src/agents_remember/memory/migration/resolution.py:116-123 |
-| The kind tally, walked in the declared kind order and never yielded at zero. | `iter_kinds`; `MISMATCH_KINDS` | mcp/src/agents_remember/memory/migration/resolution.py:299-305; mcp/src/agents_remember/memory/migration/resolution.py:48-55 |
+- The module's own statement of its two rules: three reportable states, and a refusal to repair a reference by resemblance. [1]
+- The three resolution states as one closed vocabulary, kept as one pair because a second literal at the aggregate site is how two spellings drift. [2]
+- The six mechanical mismatch kinds, each a fact two observations disagree about and none a judgement about which is right. [3]
+- The verbatim reference value with the artifact, the location and the frozen baseline it was read at. [4]
+- The reason the reference text is not normalised: a canonicalised reference is one that was repaired rather than resolved. [5]
+- The resolution value and the three refusals that keep a state from contradicting its own candidate set. [6]
+- The mismatch record, which has no verdict field by construction because the four dispositions belong to a curator. [7]
+- The fact rendering, with both tree ids truncated for readability while the baseline stays an exact identity. [8]
+- The three-state partition and the total that lets a caller check it accounts for every reference read. [9]
+- The exact-match resolver: kind lookup, equality only, and an unknown kind resolved as `unresolved` rather than raised. [10]
+- The order-preserving map over an iterable of references. [11]
+- The partition count over a set of resolutions. [12]
+- Two non-resolved states reported as two different kinds, with the ambiguous one carrying its candidate count. [13]
+- The packet's worked example as one function: a declared source path absent at the baseline, reported as the mechanical fact and not classified. [14]
+- The contradiction between two declared values only, with nothing about either file's subject matter read. [15]
+- The duplicate-anchor fact: which records disagree, never which of them is right, returned as its own shape rather than as a `Mismatch`. [16]
+- The report rendering, sorted by artifact and then reference so two runs over one corpus are byte-identical. [17]
+- The kind tally, walked in the declared kind order and never yielded at zero. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every comparison is between a
 caller-supplied spelling and a caller-supplied candidate set, the only identity it reports is the
 frozen baseline pair it was handed, and nothing here opens a store, reads a path or reaches another
 repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for the census's reference-resolution and mismatch-reporting module. It records the two rules the module states as refusals — resolution has three reportable states and none stops a run, and no reference is repaired by resemblance, with no fuzzy match, prefix fallback, canonicalisation or row-creating path anywhere — together with the exact-equality comparison in `resolve_reference` and the unknown-kind case that resolves `unresolved` rather than raising. It records the self-checking `Resolution`, which refuses a state that contradicts its own candidate set in three directions, and the verbatim `Reference`, whose text is deliberately not normalised because a canonicalised reference is one that was repaired. It records the four mismatch constructors and the three kinds they can actually build, and the honest gap that follows: `anchor_claimed_by_two_records`, `cited_revision_absent` and `artifact_unreadable` are declared in `MismatchKind` and iterated by `iter_kinds` but constructed nowhere in the package, while `duplicate_anchor_claims` reports its fact in a shape that is not a `Mismatch` at all. It records the report's order-independence and the absence of any verdict field, since `Doc13:460`'s four dispositions belong to a curator. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

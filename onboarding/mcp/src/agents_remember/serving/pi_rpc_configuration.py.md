@@ -1,15 +1,5 @@
 # pi_rpc_configuration.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/pi_rpc_configuration.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-17T21:39+02:00 |
-| lastVerifiedCommitHash |  `25841d0ddc2d93c4950abf097168fa24b220c5ad`|
-| lastVerifiedCommitDate |  2026-08-18T11:30:22+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -56,33 +46,29 @@ incoherent evidence is `unknown`.
 
 None known for the L3 Pi mutation transaction.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live
 domain-documentation pass was available for this creation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter supplies candidate readers and the atomic committer; the transport supplies correlated
 request cancellation behavior; protocol parsing validates state and model-local menus.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. | `_read_configuration_state`; `_commit_configuration` | mcp/src/agents_remember/serving/pi_rpc_adapter.py:550-553; mcp/src/agents_remember/serving/pi_rpc_adapter.py:555-561 |
-| Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. | "except asyncio.CancelledError:"; `_dispatch` | mcp/src/agents_remember/serving/pi_rpc_process.py:112-112; mcp/src/agents_remember/serving/pi_rpc_process.py:226-243 |
-| Protocol helpers parse correlated responses, safe state, provider-qualified catalogs, and each model's own effort menu. | `parse_pi_response`; `parse_pi_state`; `parse_pi_models`; `_pi_effort_options` | mcp/src/agents_remember/serving/pi_rpc_protocol.py:180-194; mcp/src/agents_remember/serving/pi_rpc_protocol.py:197-215; mcp/src/agents_remember/serving/pi_rpc_protocol.py:218-255; mcp/src/agents_remember/serving/pi_rpc_protocol.py:450-475 |
+- Adapter delegates setters here, reads candidate state without publishing it, and commits state/catalog together. [1]
+- Transport removes cancelled pending futures and discards their later valid responses without an unbounded tombstone set. [2]
+- Protocol helpers parse correlated responses, safe state, provider-qualified catalogs, and each model's own effort menu. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented beyond Pi's native RPC process.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -101,16 +87,3 @@ adapter and committing to another. The transaction's steps, timeouts and corrobo
 requirements are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-03T03:08:58+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ConfigurationPorts` as the one atomic set-transaction surface.
-- 2026-07-17T21:39+02:00 — FEUI-L5: corrected timeout-release claims and documented guarded
-  configuration plus unknown-blocker behavior.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: created the sidecar for serialized finite
-  mutation/readback/catalog evidence, exact provider parsing, selected-model effort gating,
-  catalog-coherent clamp handling, atomic commit, and honest unsupported/unknown classification.

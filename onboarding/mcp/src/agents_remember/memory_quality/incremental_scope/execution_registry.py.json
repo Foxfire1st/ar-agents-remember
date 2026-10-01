@@ -1,0 +1,116 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The single execution policy binds the range-resolution checker to its validator/runtime/owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b94023ba976e489fb1b07bb5d7bdc4f86cbe889",
+            "content": "sha256:e6bcdee538649a2b5a4f9562801c4efe5a9087175fd4d00b39e2e41e6f947e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_EXECUTION_POLICIES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The registry refuses incomplete or stale populations relative to the checker scope registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b94023ba976e489fb1b07bb5d7bdc4f86cbe889",
+            "content": "sha256:f1230c25a2b420eb2d878fd3372a79ff4e8a128909d47daab6a32d086058b43b",
+            "locator": {
+              "kind": "symbol",
+              "name": "checker_execution_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The planner binds the registry version into every affected plan.\n\nAnchor: `checker_execution_registry_version`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681a4fa1a6beaf9a35669ac5fe352931f81c9dd1",
+            "content": "sha256:f767ce22d7c86d94b0df03fdb41941bd8d8cc709b0ad085749bc5d1c3dd2bffa",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "681a4fa1a6beaf9a35669ac5fe352931f81c9dd1",
+            "content": "sha256:e00c0b9a6e500d60976be6feddcc11eb77510476e4bd3014c659289a4427a2ab",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The execution registry owns the declared checker population, independently of deleted test fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b94023ba976e489fb1b07bb5d7bdc4f86cbe889",
+            "content": "sha256:f1230c25a2b420eb2d878fd3372a79ff4e8a128909d47daab6a32d086058b43b",
+            "locator": {
+              "kind": "symbol",
+              "name": "checker_execution_registry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The checker name and scope registry come from the same-repository R06 owners.\n\nAnchor: `range_resolution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee6747ecec75411f8793fccfb2905b5fdce46b2",
+            "content": "sha256:cfd5aca9cdcb96713fc7ebf4a9cb113782a5e3d383b80406e487bcfea02dba4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "checker_scope_registry"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5c3aa88c612abe2d1b0e76399f136e09f6ab87d",
+            "content": "sha256:35cc579deac69bf4e27f0b0282fd08094dc99fc1e86e86dc74de75a436b13bfe",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

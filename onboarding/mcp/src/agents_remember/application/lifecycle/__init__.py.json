@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The docstring declares lifecycle admission, control, status, and worker application ownership.\n\nAnchor: \"Public lifecycle admission, control, status, and worker application owners.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf3021199fb4355a0a92e12d1a5d7818834c7a3",
+            "content": "sha256:8a1b5e25da2220541caa64344d142209954e4787092ac15c0cb9cd80f1dc5711",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

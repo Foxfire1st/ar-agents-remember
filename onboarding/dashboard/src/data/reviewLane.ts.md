@@ -1,15 +1,5 @@
 # dashboard/src/data/reviewLane.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/reviewLane.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:14:26+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/data/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/data route overview](overview.md)
@@ -63,40 +53,29 @@ review asks this adapter nothing.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R32@v1` and its rulings live outside the code
 and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter's own statement: the server classifies once and this file only carries the answer. | "server classifies once and this adapter only carries the answer" | dashboard/src/data/reviewLane.ts:1-16 |
-| The entry's count: totals only when counted. | `ReviewLaneSummary` | dashboard/src/data/reviewLane.ts:39-47 |
-| A link's keys and family occurrences; the per-file response. | `ReviewLaneLink`; `ReviewFileClassification` | dashboard/src/data/reviewLane.ts:61-73; dashboard/src/data/reviewLane.ts:123-134 |
-| A destination, one path's bucket, and the lane with `paths`. | `ReviewLaneDestination`; `ReviewLanePath`; `ReviewUnexplainedLane` | dashboard/src/data/reviewLane.ts:150-156; dashboard/src/data/reviewLane.ts:159-162; dashboard/src/data/reviewLane.ts:164-176 |
-| The read states, and an answer without its value read as unavailable. | `LaneRead`; `readOf` | dashboard/src/data/reviewLane.ts:190-193; dashboard/src/data/reviewLane.ts:204-209 |
-| One answer kept with its URL; `null` asks nothing. | `useLaneAnswer` | dashboard/src/data/reviewLane.ts:218-236 |
-| The two reads: the lane (none for a dataset review) and one file. | `useReviewLane`; `useReviewFileClassification` | dashboard/src/data/reviewLane.ts:248-257; dashboard/src/data/reviewLane.ts:279-291 |
-| One file's classification as a single read for the intent markers; a transport failure is `unavailable`. | `readFileClassification` | dashboard/src/data/reviewLane.ts:259-276 |
-| Its one caller: the marker scope's per-surface cache, only for a tree comparison. | "comparison === undefined ? null : readFileClassification(repo, master, leaf, comparison, path)," | dashboard/src/panels/review/intentMarkerScope.ts:96-98 |
-| The one lane read of the surface. | "const laneRead = useReviewLane(" | dashboard/src/panels/review/ReviewSurface.tsx:335-340 |
-| The server's shapes this file mirrors. | `ReviewUnexplainedLane`; `ReviewFileClassification` | mcp/src/agents_remember/models/knowledge/review_lane.py:284-312; mcp/src/agents_remember/models/knowledge/review_lane.py:223-235 |
+- The adapter's own statement: the server classifies once and this file only carries the answer. [1]
+- The entry's count: totals only when counted. [2]
+- A link's keys and family occurrences; the per-file response. [3]
+- A destination, one path's bucket, and the lane with `paths`. [4]
+- The read states, and an answer without its value read as unavailable. [5]
+- One answer kept with its URL; `null` asks nothing. [6]
+- The two reads: the lane (none for a dataset review) and one file. [7]
+- One file's classification as a single read for the intent markers; a transport failure is `unavailable`. [8]
+- Its one caller: the marker scope's per-surface cache, only for a tree comparison. [9]
+- The one lane read of the surface. [10]
+- The server's shapes this file mirrors. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-- 2026-09-30T20:14:26+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): **body updated for MIK-R34's `readFileClassification`** (Purpose, Logic, Conventions; two rows added), the single per-file read the per-hunk intent markers' scope keeps per surface. The generated repair above re-points the two hook rows by the 19 inserted lines; no claim changed.
-- 2026-09-30T18:04:49+00:00: Generated citation repair: `useReviewLane`; `useReviewFileClassification` repointed to dashboard/src/data/reviewLane.ts:248-257; dashboard/src/data/reviewLane.ts:279-291. No content impact: mechanical anchor-range projection bound to citation source snapshot dd511ab0f1e150e6e017fdffb93a370d587225cb8c691b071ace179d457746ab; claim bytes unchanged; generated by ccr-r10@v1.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T14:06:33+02:00 — 260928-MIK-L32 curator (staged change set on `ar/260928-mik-l32`, code base `07d6584afba8a9504e4a3cf2e80eac41f68b28a9`; review R1 pass-with-notes, fixes, R2 pass): created this card for the new data adapter MIK-R32 adds, recording ruling 2026-09-30T12:19:20 Q1 (`paths`) and review R1 F1 (one lane read, made by the surface). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

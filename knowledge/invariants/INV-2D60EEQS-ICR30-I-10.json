@@ -1,0 +1,26 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [
+    "Family examination: no joint obligation is supported. Basis: The dashboard's production-route obligation is a presentation contract about which surface ships, and it shares no joint guarantee with the knowledge write plane, the attribution plane or the generated-artifact plane that this foundation examined; recording it as deliberate family-free keeps it from being forced into a grouping the evidence does not justify."
+  ],
+  "exclusions": [],
+  "id": "INV-2D60EEQS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: The routing module states the production-only route and places the developer import inside the import.meta.env.DEV ternary, which a production build drops; the range cited is the routing block itself."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "ff4194e5-1353-49cd-afbc-87c1e73b6c12",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The browser dashboard ships exactly one production route, the cockpit, and its developer gallery is reachable only in a development build, so a production bundle carries no route to the developer harness.",
+  "status": "proposed",
+  "supersedes": []
+}

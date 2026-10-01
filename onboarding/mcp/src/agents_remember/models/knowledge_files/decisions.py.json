@@ -1,0 +1,224 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/decisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The governs relations, the reconsiderable statuses and the minimum count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:5202900c1e03ace121f8d4c4f497c64b64c82345e6ff44da6ff412660f034025",
+            "locator": {
+              "kind": "symbol",
+              "name": "GOVERNS_RELATIONS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:d8a3c3b842b6367e7b623c18533bbe52951c0d450203130c31f0f3e94cf3c2b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RECONSIDERABLE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:a96f11975ba48af194c529f934197df4b175ed23a5e77c69aadfdafaa011d934",
+            "locator": {
+              "kind": "symbol",
+              "name": "MINIMUM_ALTERNATIVES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shape: the stored status literal and the decision record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:c98b0ca677f9a0234794d92aa5f363ac70f775ae52629e8b2eb87ca298582ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionStatus"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88c5ed9b298bc64b9856dec2638f2afd6d609fe1",
+            "content": "sha256:3c40835ed081f0af8797c4f9029799711be54f192e1fb98d4d5713e7971c4d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DecisionRecord"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A `reconsider_on` link with the alternative it reopens and MIK-R14's subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:88292cb6c6eec5290446f021499c8935b772913b12077df292f1d833c45e4e0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReconsiderLink"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "At least two alternatives, exactly one chosen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:adc1a91adfd9a30ced2608184041f567cc595790c49ed8a5a06d278737d67f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "alternative_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every rejected or deferred alternative carries `reconsider_when`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:6c447e8d60d82df2f3f5077553166b76339c5bc87910afef611a55e0133340ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsider_when_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A `reconsider_on` index must exist and name a rejected or deferred alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:707d81cfb8780b3ed470125bd30646b90f935eb663a131cb2f79d7c835fab9c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsider_link_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The three refusing checks together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:d806d2d6d1b49ff7be0476478bd6d154d273ca1ab62af56441eaad4f8ba20f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_problems"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The links the decision is read from, and the reconsider links with their subjects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:87877b5723af351d82142e6597ab89d1207c983c5fba9c27a95cbf251aa5b895",
+            "locator": {
+              "kind": "symbol",
+              "name": "governs_links"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:348b2767db3522712968f707a9d176b54646d86c16514cb63a51cd5b0dc673d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsider_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Superseded is derived from later decisions' `supersedes`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:ccb3dac648d342792064d74c1304150b735d7461840afdb588cd35564d54d9db",
+            "locator": {
+              "kind": "symbol",
+              "name": "superseded_by"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:f6d9d41902b3ed595af78185f9c9431dba2cbb148b3bc6f4950dd02870cd48dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Where a raw document stores `superseded`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
+            "content": "sha256:6ccd493ce1d93dcb271771838c4fef2eaba5320c34fb6b21bd2b66a313c1a8a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "stored_superseded_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

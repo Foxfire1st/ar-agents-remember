@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared process helpers provide durable namespace checks and command execution.\n\nAnchor: \"def process_namespace_status() -> dict[str\"; \"def run_command(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7548ad8fa6ef7ff70da29921cf6de403a2224236",
+            "content": "sha256:d07740071a26e48f00680a992b67403463c24834ff51b0dca629662803963f0a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46d785a42fdf7e9a82640d6dd94104b2b8a39dbb",
+            "content": "sha256:5362c901ebf8a3448b38dd62bd79702baca882cde2dd5f0624a64cfbfa105f59",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/process_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "CGC backend startup is delegated to the backend module.\n\nAnchor: \"def cgc_backend_start(args: argparse.Namespace) -> dict[str\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81a8436ca544b86f54234b9725547a8e697f6ebc",
+            "content": "sha256:c3d365638744ebc835a138cd4bc179b41f5c1762c16eedb9c7547ff07da6183e",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docker watcher command construction lives in the runner module.\n\nAnchor: \"def cgc_runner_image_build(args: argparse.Namespace\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:0fdb750d3c3463b5c1e25c189dd440c18c8c5d9c01f2b9b23a779cce50f9230b",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`cgc_index_concurrency` is also imported by `refresh.py` to report `indexConcurrency` in the refresh-all result.\n\nAnchor: \"def cgc_refresh_all(args: argparse.Namespace) -> dict[str\"; \"def cgc_index_concurrency(layout_count: int) -> int:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
+            "content": "sha256:a0c723f3bad531fcbbef58931eb5c20c958e6f9c815cb333fb871935f8ec21cf",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 259
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "802e06ff0a6d232ae127069221417d7a2eba1ecc",
+            "content": "sha256:fd5fcb8fae045686b8b98fe227e696eae6cb256ad2d24c312d5c75f94443cc6d",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/refresh.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

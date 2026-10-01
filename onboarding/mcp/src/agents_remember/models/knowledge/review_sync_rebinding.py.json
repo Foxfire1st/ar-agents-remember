@@ -1,0 +1,388 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the transition it makes readable, the owner-produced fields, and why the verdict can only claim measured coverage.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:edcf10d3b6e45888bca6fffea81c111702471cd62ef209af70cdad28d15b38ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:cbe776974b5811a19cbffaef881f23c393f4cb2198d0c54748a520426559e284",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The one verdict rule, shared by the writer and the record's own validator.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:158617bfc46805997cb88e9307da60d441550134fc68959c282deadc1e2266ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_sync_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**What the declared location held, with an identity carried exactly when a dataset was read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:0b49af36b4daf281db2d3d0499010a183a5c1cf6ac5e1b8b7a0dfe48b506c9cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncKnowledgeObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The record itself: every owner-produced identity, both channel matches, the verdict and the successor action.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:edcf10d3b6e45888bca6fffea81c111702471cd62ef209af70cdad28d15b38ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The self-consistency validator, including the refusal of an `unmeasured` channel beside a readable dataset.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:2638f562fa141bac7c09e0cdaaa1e038292c9f3ff2a746e136a63ea3ec86eb53",
+            "locator": {
+              "kind": "symbol",
+              "name": "_the_rebinding_agrees_with_itself"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The one predicate a consumer branches on instead of re-deriving the verdict rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:9ca5c70b787d2beca752a388c1a04dfb9c95938d263637a8c06cf0de83ae518d",
+            "locator": {
+              "kind": "symbol",
+              "name": "covers_resolved_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The sentence: one clause per verdict, each saying only what the record measured.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:922606b49a9aa2a7b6fb0bade10d13289eac9c53295d5483b906545af3f35f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "statement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The source clause that names the head as where the capture was taken, not as what carries it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:d3f59547a7fa137ceef97db94c8340959d6c2b847c7146908668c25c1e2425d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_code_clause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The knowledge clause, which never claims a comparison nobody made.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:eafc1a2b424d1be4628a3af74c3702a70d717825d5a25d126930d77ca7673a58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_clause"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The writer that assembles this record from the owners' values and asks this module's rule for the state.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
+            "content": "sha256:df2af24dabeeda9ccdcc5b3b4fd31c00a13aa01252911c31883271b5745c3c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assemble"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The durable publication and read-back the record travels through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:97189e515d2b74227fd659bbd308186abc5b49de8171ba308d9b45a013742c38",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_durable_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcd26120e2d3769670e1bd3b4b1406ef094002aa",
+            "content": "sha256:20f6a12e1f175ebc7ff71806b44144f91251d45d92d4dbce191f95ccd3f2fd03",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_back_evidence"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/durable_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the two literals, the three vocabularies, the observation model and the three rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:6b2c2a2290b13b3efd505eec1b774cc24f22b0e9606ab1bcf77431750c2b48c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The read half that projects this record's own verdict into the review's measured-currentness vocabulary.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56ebe2099b63186c9dff9deaef13101266fd13c6",
+            "content": "sha256:8f9ca922b68691ee041e2b5f39d96ababee0a521df37edd10be6a59796780642",
+            "locator": {
+              "kind": "symbol",
+              "name": "_project"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The successor route this record's remedy names and never performs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76323362bf83d9d2f92aff54463255ada99dc353",
+            "content": "sha256:eb169e55c808acd394b71f311f0afb0731330dc48aafda48da37c94a62245e64",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_review_comparison"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The case that forges this record's verdict and shows the validator refusing it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67148c9cd32ee2920e20b1e33a9f0678bd32381c",
+            "content": "sha256:097bc38a7fbad79a17eeeacf75e1220298910d7769111f658f90a3bf6b88252a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_forged_rebinding_verdict_is_refused_by_the_record_itself"
+            },
+            "path": "mcp/tests/test_review_sync_rebinding.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The record's own version literal, so records from different layouts are distinguishable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:5a06d44c0cb333d1a17ea12de20bd462634f1bc5d6820d1bc3ef4752cd10d31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_REBINDING_VERSION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Which generation a rebinding judges, spelled here so a reader need not import the selecting owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:50e653afe623874b498fb4bbf5232a8ff52eb8ef5a8e77b8718259484a2676ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_SYNC_SELECTION_RULE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The channel-match vocabulary, including why `selected-not-retained` is a fact about the review rather than a third mismatch.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:47b7e926b498b053db7c47c3f8bf9dfbb667f147fcc0feb73042d0ff67699c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncChannelMatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The three-value verdict, and the reason `unmeasured` is neither coverage nor a measured difference.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:efa1fb7875aa490893ce95abf51dcc13ce0aa7b3fffbcca55e299881f9cec8e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncRebindingVerdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two states a knowledge channel can hold instead of a readable dataset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:c7b5089fca78241be1bb21e356e7aaa138f2815cb27893acb6712f6fd26c7654",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncKnowledgeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The code channel: a pure comparison of two identities one owner produced.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:5c26764309a130dcac03c89d631c5ebfc4afaf0564757865719c2827edd2ab0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_channel_match"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The knowledge channel: `unmeasured` whenever one side is not a dataset at all, and never an agreement.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec2a40b7a16de3a039669fc3091bc2b280706a4",
+            "content": "sha256:376a7e952cfd4488cee719e59ca2368a20303dba7ea369ee80513b960a3d1414",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_channel_match"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # harness_control_api.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_api.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T12:15:39+02:00 |
-| lastVerifiedCommitHash | `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`|
-| lastVerifiedCommitDate | 2026-09-30T12:51:55+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -144,32 +134,30 @@ already uses them (`requestId`). Vendor-specific response shapes never cross thi
 
 Frontend and settings consumers are separate workstreams outside this module.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This route module composes existing normalized launch, exact-session client, liveness, and catalog
 boundaries rather than duplicating their policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. | `HarnessCapabilityCatalog` | mcp/src/agents_remember/serving/harness_capability_catalog.py:84-212 |
-| The exact-session client reads advertised capabilities and applies model/effort setters. | `read_control_capabilities` | mcp/src/agents_remember/serving/harness_control_client.py:149-156 |
-| The exact-session client distinguishes first-byte ambiguity from a request accepted before disconnect. | `_exchange_control` | mcp/src/agents_remember/serving/harness_control_client.py:541-577 |
-| The exact-session client submits whole messages and preserves request correlation. | `submit_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:216-254 |
-| The exact-session client reconciles a possibly lost submission by request id and bridge epoch. | `reconcile_control_prompt` | mcp/src/agents_remember/serving/harness_control_client.py:276-306 |
-| Public serializers deliberately omit the internal raw evidence mapping. | `public_receipt_json` | mcp/src/agents_remember/serving/harness_control_models.py:217-228 |
-| The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. | "register_harness_control_routes(" | mcp/src/agents_remember/serving/app.py:301-301; mcp/src/agents_remember/serving/app.py:308-308 |
-| The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. | "resolve_terminal_open_selection(" | mcp/src/agents_remember/serving/_app_terminal_routes.py:248-248 |
-| The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. | "SESSION_CONTROL_RESPONSES: dict[int" | mcp/src/agents_remember/serving/response_contract.py:1146-1146 |
-| The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery. | "class PreDispatchFailureRefusal(" | mcp/src/agents_remember/serving/response_contract.py:162-168 |
+- The pre-session catalog supplies the dynamic cached envelope and failed-refresh quarantine. [1]
+- The exact-session client reads advertised capabilities and applies model/effort setters. [2]
+- The exact-session client distinguishes first-byte ambiguity from a request accepted before disconnect. [3]
+- The exact-session client submits whole messages and preserves request correlation. [4]
+- The exact-session client reconciles a possibly lost submission by request id and bridge epoch. [5]
+- Public serializers deliberately omit the internal raw evidence mapping. [6]
+- The app registers these routes and passes `config.coordination_root` into the one `ConversationRuntime` scope. [7]
+- The app feeds complete launch selection into the shared opener via `resolve_terminal_open_selection`. [8]
+- The shared control-response table declares missing-session, unsupported/stale-seat, and control-unavailable refusals. [9]
+- The submit-specific pre-dispatch refusal carries retry-safe and stage evidence for zero socket-byte delivery. [10]
 
 
 | The structured-conversation root installs the one runtime and composes active, library, and control ownership behind one registration function. | "def register_conversation_routes" | mcp/src/agents_remember/serving/conversation/router.py:22-22 |
@@ -177,14 +165,12 @@ boundaries rather than duplicating their policy.
 | The server-resolved local-operator resolver bound into the runtime. | `LocalOperatorAuthorizationResolver` | mcp/src/agents_remember/serving/conversation/authorization.py:69-105 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented; the routes address AR-owned local adapters and
 catalog state.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Submission Authority Delta
 
@@ -236,70 +222,3 @@ The shared spine of every control route is now explicit:
   resulting snapshot.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-30T12:15:39+02:00 — 260928-MIK-L29 curator (staged change set on `ar/260928-mik-l29`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c`): No content impact: this card's own source is unchanged. MIK-R29 grew `mcp/src/agents_remember/serving/app.py` (one import and one route registration), so the citation rows into it that moved were re-pointed by the installed fixer's normalisation or by the exact base-to-staged line shift; every re-pointed row was checked to hold its anchors in the new range, and no claim was reworded. No verification stamp was advanced.
-- 2026-09-30T04:01:40+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): No content impact: this card's source is unchanged. Rows citing lines that MIK-R25 moved in `app.py` were re-pointed, by the installed fixer (its generated bullets are kept, since no claim was reworded) or by the exact base-to-staged line shift for the rows it declined; each such row was byte-identical to memory HEAD. No verification stamp was advanced.
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/src/agents_remember/serving/app.py`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: "register_harness_control_routes(" repointed to mcp/src/agents_remember/serving/app.py:298-298. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "register_harness_control_routes(" repointed to mcp/src/agents_remember/serving/app.py:296-296. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "register_harness_control_routes(" repointed to mcp/src/agents_remember/serving/app.py:294-294. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "resolve_terminal_open_selection(" repointed to mcp/src/agents_remember/serving/_app_terminal_routes.py:248-248. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "resolve_terminal_open_selection(" repointed to mcp/src/agents_remember/serving/_app_terminal_routes.py:242-242. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated the shared control table from the submit-specific refusal model; removed the unsupported count of submit-only refusals from this evidence row. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "register_harness_control_routes(" repointed to mcp/src/agents_remember/serving/app.py:293-293. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 14 repository-reference citations and normalized 1 prose citation (14/14 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T08:54+02:00 — 260731-EFA-L4 curator: recorded the ten `response_model`
-  declarations with their exact lines, the shared `SESSION_CONTROL_RESPONSES` table (which is
-  the liveness-first 404/409/503 ladder this card already documented, transcribed once), and the
-  three deliberate deviations — the seat-less pre-session capability route's own `{404, 503}`,
-  `/submit`'s widened 409 (reused request id) and 503 (`PreDispatchFailureRefusal`, the one
-  retry-safe certificate), and `/interaction-response`'s widened 409 (nothing pending). Noted
-  that the raw-free public shape is now *declared* by `PublicReceiptWire` /
-  `PublicReconciliationWire`, so an adapter-private `raw` key on the wire is a conformance
-  failure. Repaired 2 stale citations: the `pendingInteractions` self-citation L458-L466, which
-  the leaf's 99 added lines moved and which already ran two lines past the end of the `_ok(...)`
-  call — now `_answer_interaction` L537-L541; and the `app.py` row, whose `L946-L1049;
-  L1339-L1349` did not hold the named material even at the leaf base (that span is
-  `_task_document_response`/`_dismissal_response` and a `TerminalLaunchRequest` block) — replaced
-  with L752-L770, the `register_harness_control_routes` call carrying
-  `coordination_root=config.coordination_root`, and L1440-L1446, the
-  `resolve_terminal_open_selection` call. Verification metadata pinned until closeout stamps the
-  L4 commit.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation into
-  `mcp/tests/test_serving_harness_control_api.py`. The five properties the claim names are no longer
-  one contiguous block (the file has grown to 894 lines), so L103-L252 was replaced with the exact
-  tests: refresh at L129-L147 and L154-L159, honest set results plus exact submit correlation plus
-  raw-free authority/status/withdraw at L171-L313, reconcile correlation at L482-L518, and
-  liveness-before-support ordering
-  (`test_status_order_is_unknown_or_dead_then_live_unsupported_then_native`) at L677-L725.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the three route registrars and the shared `control_entry` / `_control_route` / `_ok` / per-class failure-responder spine; wire contract unchanged.
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: documented the additive `pendingInteractions` list on
-  the snapshot route (multiplexed sub-agent pendings, review R6) in Logic and Invariants; the
-  singular `pendingInteraction` contract is unchanged. Verification metadata stays pinned to the
-  pre-commit source history until closeout (the L7 change is uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the one-time composition binding —
-  the required `coordination_root` keyword, construction of the immutable `ConversationRuntime`
-  from existing authorities (including the server-resolved local-operator resolver), and the
-  install-once registration that keeps later child leaves out of this file. Verification metadata
-  remains pinned until closeout stamps the candidate commit.
-
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the single structured-conversation
-  root registration seam and the intentional absence of child behavior. Existing source
-  verification remains pinned to committed truth; closeout owns the candidate stamp.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented authority/status/withdraw routes, epoch/privacy
-  gates, 64-id bounds, conflicts, and the sole retry-safe certificate.
-
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: created the daemon contract sidecar for
-  complete-pair launch, pre/live advertise, honest exact-session set, reliable whole-message submit,
-  raw-free public evidence, and liveness-first status ordering. Verification remains empty until
-  closeout stamps the new source file.

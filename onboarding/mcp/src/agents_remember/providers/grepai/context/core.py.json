@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/context/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "GrepAI lifecycle modules consume these exports through the context package.\n\nAnchor: \"providers.grepai.context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:5b5f6bd30daf537ca3ca5a2260970d7cb3c5d2891fa7f76b814408d919e9968a",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

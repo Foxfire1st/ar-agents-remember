@@ -1,0 +1,39 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/check_cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full/targeted inputs and diagnostic-only CRAP threshold",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f05e936aad8d1bef2f96b9c4aa9ee1b52f764ac",
+            "content": "sha256:bd3328783f84086726f557ebd6dfac57d3c613d333d366a6d723240019c40e00",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence paths separated from policy arguments",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f05e936aad8d1bef2f96b9c4aa9ee1b52f764ac",
+            "content": "sha256:b4df7de959f3b8d7b3f010d739bd8d6cdc1f2783bfec36fde6e64ac4ab658d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_evidence_output_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

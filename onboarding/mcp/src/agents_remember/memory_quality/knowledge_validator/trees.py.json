@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared exclusion predicate: cache files and hidden directories only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_excluded_from_knowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:b415f592f50a05e11543c7caf8ad45a8308c83244ef7bc9eb17ca7abd6b018c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_knowledge_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A tree is converted exactly when it holds the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:339aef4512e94345d3b3f1783fa1c390ed850f1962a1984f90b0e9652d447946",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The code-tree protocol and its two implementations, each answering file and directory existence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:5115cec2a559fe1aef51db5c4370e0cbdc0760cdd99a440e9069c63672a6f734",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeTree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:d99ec0b0a252285a3822b475ce6ced5806d7dc4ab40f2a20baa8c217d8a332bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodePathSet"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:df7496d1f53fd01bd524b0782a30f00f14ea80a096da5a7b3cc5ff397b7d289a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeDirectory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both code trees answer directory existence, the root route included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f3bce1135e246b91bf929dcbcf6ba4b2e23aaa7",
+            "content": "sha256:14371ecfb22fbafc5a6d7905264c41b0fdf1aa43e9585bb4901a5000f7189b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_trees_answer_directory_existence"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The directory reader prunes dot directories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:cdb1520662f37b5cf55a86f420d51b6e9bf672179b0670971cb603e64fceb945",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_tree_from_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Git readers: regular files only, blobs read in one batch as exact bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:bc9f3f9b53496582f6a31bc4fe2066ae4f1efbf465329e2e2b92f6ed1387e36a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_blobs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:60df24e759ff9b87b8639cd1c22a352771e4b18c133fff4422fa4516a134d0e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_tree_from_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e32774bec7a070fc0866da43d181adf99eec80e",
+            "content": "sha256:f8e2f4c7da269458fa3223c3cc0b1e5515a7c7d2583aac7a9171e9deee76a32a",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_tree_from_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The formatter shares the predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:f92bfbf299e6245829812ffb5c6f0e29b453005a56e327d9120172061b11ab4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_json_files"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A dot-named card and its sidecar are validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:6631cf300cab0f9d694c9eb0fb88677bf250e6ba914c47bdaf6e4c9c78bbfff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dot_named_card_and_its_sidecar_are_validated"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Git reader reads exact bytes, ignores the cache, and matches the directory reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34ac0fc22ad054da064fc9228318a0cc446c95f1",
+            "content": "sha256:fa057418ad5d31763eec79e6c14e24de4b3f34df2c76cb183b4ec5a9c34bc8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

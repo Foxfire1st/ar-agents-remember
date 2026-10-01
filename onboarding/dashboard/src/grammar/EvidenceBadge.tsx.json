@@ -1,0 +1,152 @@
+{
+  "path": "dashboard/src/grammar/EvidenceBadge.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Glyph record, cva variants, and the badge component.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fc6f58685cf5cd4c8322afba303663ece819053",
+            "content": "sha256:cc20f8248b0265959cd8ac941596ea26db23bcc9ca4c1f39d7710530e75ab023",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tier machine + `TIER_SENSE` wording the aria-label embeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c097b1babdd047e5fde7da7a021436a0c1a9644",
+            "content": "sha256:c273c97a76797f7fd2433dcf637c84ca8ebd4309a623827258e6f8577c550cd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TIER_SENSE"
+            },
+            "path": "dashboard/src/data/launchEvidence.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The `EvidenceTier` union the props/glyph record key on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
+            "content": "sha256:cfd9da7e21731dd0396faa84aa2e44c22dad8de3776b32c261ba5fb470522cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceTier"
+            },
+            "path": "dashboard/src/data/sessionCockpitStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provenance-chip consumer (derived tier, `size=\"sm\"`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:071e490ee058f77161433e0aa682a1982131b81fdee42438d1e73174076be58a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HeaderStrip"
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5feca6c1ef45c47bfb13052a610fda7553e04905",
+            "content": "sha256:de2802d7f5e6096e0bc492ca3e9a406cc4d5b275a909e4c583ec04f08e0cfd4c",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/session-cockpit/HeaderStrip.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Inspector consumer (same derivation).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:cf6921ed2102d45126e0de529c02858f0882a8e6f24889c24ffc1708fa7fe532",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeatInspector"
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62615d8f9656187b619ed829b1748b6e107064d7",
+            "content": "sha256:ae987932e111c8637bd0624f3d98e0a8ce6b2c8efc89812d5edf84c9d65db128",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/panels/session-cockpit/SeatInspector.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Banner consumer (refused tier beside the never-validated pair).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4bb6753ffda68d0936feab0ae529da7d8795f5ec",
+            "content": "sha256:bfe4aa300a42bd27e753eed83f14d79ac2ef9e116fc148e78e192f0cd2db564b",
+            "locator": {
+              "kind": "symbol",
+              "name": "FailedLaunchBanner"
+            },
+            "path": "dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The jsdom suite pinning distinctness + the word at every size.\n\nAnchor: \"the tier WORD is present in the accessible name at EVERY size\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd6d0d176a7458398179688f178065d49973199b",
+            "content": "sha256:b6a95182974e694aa341ca87a45edd7c354151a3b5bd3c2c2f3293a4d7d4ab7f",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/grammar/EvidenceBadge.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

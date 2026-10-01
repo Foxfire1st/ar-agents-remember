@@ -1,0 +1,105 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The store publishes and loads exact SHA-256-addressed unit results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:088b4a8b8c14bc8135ab829e450bc1814ebcb701b944f049ecbb0f4cecd1d020",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContentAddressedSubresultStore"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:b64087dae06f5f0fb09daa3e5a3ea1341df4ea1a45d7043fa5a35afb725e3498",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:f3a3dc4dd3aabd546e8d9d9648a745db48551630943d7f7cab1705ae27b2934e",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capacity and object-safety boundaries are enforced with typed refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:29117b7a799972a9a2f560bc0a106931a1ba7286a4f301562cb783394036e8e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_capacity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:a50acd114362f03665bbb87c92e11927643569cf4c6eff4e6c3a715a4120542c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_regular_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Atomic writes come from the kernel-owned writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53a3558f41f4a2bd4da0bbff2ba2674fe92b5a00",
+            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_write_bytes"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The content-addressed store owns exact publish/load addressing and capacity checks; its source contract is the authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:088b4a8b8c14bc8135ab829e450bc1814ebcb701b944f049ecbb0f4cecd1d020",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContentAddressedSubresultStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

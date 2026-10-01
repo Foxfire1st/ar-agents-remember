@@ -1,15 +1,5 @@
 # dashboard/src/grammar/Dot.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/Dot.test.tsx`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:30+02:00                           |
-| lastVerifiedCommitHash | `e66f1f3894116e0bb37b49f178d8bfcb130a7e28`       |
-| lastVerifiedCommitDate | 2026-09-28T20:02:47+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -87,74 +77,43 @@ runs in `afterEach` since several helpers render inside loops.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and the component under test.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The suite closes over three declarations it does not own: the recipe's variant map, the wire state
 vocabulary, and the glyph table. All three are cited so a reader can see why no list is restated here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member. | `ALL_VARIANTS` | dashboard/src/grammar/Dot.test.tsx:17-17 |
-| `markOf` renders one mark and returns the rendered element for assertions. | `markOf` | dashboard/src/grammar/Dot.test.tsx:19-24 |
-| `appearanceOf` derives the observable appearance key from the rendered mark. | `appearanceOf` | dashboard/src/grammar/Dot.test.tsx:35-42 |
-| The suite asserts the wire/recipe vocabulary equality. | "treats exactly the states" | dashboard/src/grammar/Dot.test.tsx:45-51 |
-| The suite asserts distinct appearances for every variant and the fallback. | "renders every state" | dashboard/src/grammar/Dot.test.tsx:53-70 |
-| The suite asserts that every variant carries its own ink. | "gives every variant an ink" | dashboard/src/grammar/Dot.test.tsx:72-87 |
-| `DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying. | `DOT_VARIANTS` | dashboard/src/grammar/Dot.tsx:92-92 |
-| `DOT_GLYPHS` is the glyph table used by the dot recipe. | `DOT_GLYPHS` | dashboard/src/grammar/Dot.tsx:104-114 |
-| The `cva` base uses `color: "muted"`. | "color: \"muted\"" | dashboard/src/grammar/Dot.tsx:37-37 |
-| The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish. | `dot` | dashboard/src/grammar/Dot.tsx:23-87 |
-| `LIFECYCLE_STATES` is the composed lifecycle vocabulary. | `LIFECYCLE_STATES` | dashboard/src/types/projection.ts:13-13 |
-| `LIVE_STATES` declares the live lifecycle vocabulary. | `LIVE_STATES` | dashboard/src/types/projection.ts:9-9 |
-| `TERMINAL_STATES` declares the terminal lifecycle vocabulary. | `TERMINAL_STATES` | dashboard/src/types/projection.ts:11-11 |
-| The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer. | "Unlayered + !important so it always wins over the effects layer." | dashboard/src/index.css:136-137 |
-| The `html[data-effects="off"]` selector is declared here. | "html[data-effects=\"off\"] *," | dashboard/src/index.css:138-138 |
-| The effects-off rule disables animation with `!important`. | "animation: none" | dashboard/src/index.css:141-141 |
-| The effects-off rule disables transition with `!important`. | "transition: none" | dashboard/src/index.css:142-142 |
-| `Cockpit.tsx` renders `AttentionQueue`. | "<AttentionQueue" | dashboard/src/cockpit/Cockpit.tsx:667-667 |
-| `Cockpit.tsx` renders `LifecycleList`. | "<LifecycleList" | dashboard/src/cockpit/Cockpit.tsx:668-668 |
+- The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member. [1]
+- `markOf` renders one mark and returns the rendered element for assertions. [2]
+- `appearanceOf` derives the observable appearance key from the rendered mark. [3]
+- The suite asserts the wire/recipe vocabulary equality. [4]
+- The suite asserts distinct appearances for every variant and the fallback. [5]
+- The suite asserts that every variant carries its own ink. [6]
+- `DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying. [7]
+- `DOT_GLYPHS` is the glyph table used by the dot recipe. [8]
+- The `cva` base uses `color: "muted"`. [9]
+- The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish. [10]
+- `LIFECYCLE_STATES` is the composed lifecycle vocabulary. [11]
+- `LIVE_STATES` declares the live lifecycle vocabulary. [12]
+- `TERMINAL_STATES` declares the terminal lifecycle vocabulary. [13]
+- The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer. [14]
+- The `html[data-effects="off"]` selector is declared here. [15]
+- The effects-off rule disables animation with `!important`. [16]
+- The effects-off rule disables transition with `!important`. [17]
+- `Cockpit.tsx` renders `AttentionQueue`. [18]
+- `Cockpit.tsx` renders `LifecycleList`. [19]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. The vocabulary mirrors the served lifecycle states, but the
 mirror (`types/projection.ts`) is in this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-28T17:15:39+02:00 — 260921-ICR-L47 curator (uncommitted candidate tree `72efa4bbc169b16afe8ef249499edf79cad9940d` over code base `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`dashboard/src/cockpit/Cockpit.tsx`) were re-pointed to where the same anchors now sit; each re-pointed row held its anchors at the base and holds them after the base-to-candidate line mapping. Claim wording unchanged. No stamp advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<AttentionQueue" repointed to dashboard/src/cockpit/Cockpit.tsx:666-666. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "<LifecycleList" repointed to dashboard/src/cockpit/Cockpit.tsx:667-667. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<AttentionQueue" repointed to dashboard/src/cockpit/Cockpit.tsx:657-657. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "<LifecycleList" repointed to dashboard/src/cockpit/Cockpit.tsx:658-658. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<AttentionQueue" repointed to dashboard/src/cockpit/Cockpit.tsx:655-655. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "<LifecycleList" repointed to dashboard/src/cockpit/Cockpit.tsx:656-656. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "<AttentionQueue" repointed to dashboard/src/cockpit/Cockpit.tsx:640-640. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "<LifecycleList" repointed to dashboard/src/cockpit/Cockpit.tsx:641-641. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-04T15:56:39+02:00 — 260731-EFA-L6 S18-B10 curator: closed same-reviewer residuals D7 and D9 by binding the color-pair claim to the `dot` recipe extent and splitting the unlayered source-comment predicate from the literal selector declaration; rechecked this card through the locked exact-document fixer/check.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T10:30+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the one row citing that file: `LIFECYCLE_STATES` L21-L30 → L42-L59,
-  which spans both halves and the composed tuple. The equality assertion still imports the one tuple, so
-  no claim in the body changed.
-- 2026-08-01T09:46+02:00 — 260731-EFA-L4 curator: created. New suite pinning three flat properties of
-  `Dot` — vocabulary equality against `LIFECYCLE_STATES` in both directions, every variant plus the
-  fallback rendering distinguishably (with animation atoms excluded, so motion cannot stand in for
-  identity), and every variant carrying its own `c_*` ink so a hue-stripped build cannot pass on
-  glyphs alone. Verification metadata pinned to the leaf base (`abc7cbc`); the source file is still
-  uncommitted and closeout stamps the code commit.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # AGENTS.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff` |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
-| governingOverview      | `../../../../../../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../../../../../../overview.md)
@@ -68,51 +58,28 @@ memory layer's `system/tools.md`; repo-specific coding rules belong in optional
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation is needed for this repository-local runtime
 template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
 This onboarding is backed by the source template itself.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion. | `## Start-of-Task Onboarding Trust Gate` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:1-59 |
-| Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled. | `include_providers` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:22-22 |
-| Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. | `### Cross-Repository Workflow` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:50-59 |
-| Post-gate planning and research routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. | `## Post-Gate Planning and Research` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:60-67 |
-| Post-gate implementation updates or creates onboarding through `c-05-create-or-update-onboarding-files` skill when changed source files alter current-state knowledge. | `## Post-Gate Implementation` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:68-83 |
-| The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. | `## Code Quality Instructions` | mcp/src/agents_remember/package_data/runtime/agents-md-files/system/AGENTS.md:84-89 |
+- The start-of-task trust gate requires `c-08-ar-coordination-context-resolver` skill context resolution, a configured-provider check, `c-02-memory-quality-control` skill memory quality control, clean-source versus dirty-source drift classification, developer review of drift, approved `c-05-create-or-update-onboarding-files` skill refresh, a second `c-02-memory-quality-control` skill check, and drift report deletion. [1]
+- Gate 2 runs provider readiness through `context_packet` MCP tool only when the MCP server is configured and provider settings are enabled. [2]
+- Cross-repository drift handling runs the first three gates for every allowed repo before asking about onboarding refresh. [3]
+- Post-gate planning and research routes context-backed source reading to `c-04-retrieval-strategy-router`, which owns Semantics, Relationship, and Intent routing across providers, route indexes, onboarding, and bounded source confirmation. [4]
+- Post-gate implementation updates or creates onboarding through `c-05-create-or-update-onboarding-files` skill when changed source files alter current-state knowledge. [5]
+- The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this runtime template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 6 citation entries (12 findings); no Tier-3 findings.
-
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T10:06+02:00: Refreshed verification metadata after source commit `f48a346` added clean-source versus dirty-source drift classification to the installed system gate.
-- 2026-05-24T04:34+02:00: Updated after system template routed Gates 3 and 6 through `c-02-memory-quality-control` skill memory quality control.
-- 2026-05-23T21:25+02:00: Simplified provider-authority wording and added installed system code-quality routing to resolved memory-layer tools and coding guidelines.
-- 2026-05-23T04:43+02:00: Updated Gate 2 onboarding for `context_packet` MCP tool authority instead of coordinator settings.
-- 2026-05-21T15:42+02:00: Updated the provider readiness gate after the lifecycle script began defaulting the coordinator root from its installed location.
-- 2026-05-21T04:09+02:00: Added configured-provider readiness as Gate 2 and renumbered the onboarding drift gates.
-- 2026-05-21T03:05+02:00: Updated the post-gate read route from onboarding read mode to the `c-04-retrieval-strategy-router` skill retrieval strategy router.
-- 2026-05-18T21:44+02:00: Refreshed after pulling the committed `c-04-retrieval-strategy-router` skill onboarding read-mode rename from `origin/main`.
-- 2026-05-18T21:38+02:00: Refreshed against the current committed system template, removing unlanded `c-04-retrieval-strategy-router` skill read-mode wording and updating verification metadata.
-- 2026-05-18T17:03+02:00: Reduced the system onboarding description to the trust and maintenance gates plus `c-04-retrieval-strategy-router` skill routing for post-gate read behavior, matching the updated runtime template.
-- 2026-05-18T15:32+02:00: Tightened onboarding-led discovery into an ordering rule: candidate pairs must precede source discovery search, onboarding tree enumeration is fallback-only, and source search must stay route-local before broad fallback.
-- 2026-05-18T14:48+02:00: Renamed the system gate headings and added the onboarding-led source discovery path so warm-memory agents use overview and route maps to choose candidate files before broad source search.
-- 2026-05-15T00:38+02:00: Created onboarding after the former root `system/AGENTS.md` guidance moved to the installable system template path. Verification metadata remains pinned to the last committed source until closeout.
+No meaningful cross-repo references found.

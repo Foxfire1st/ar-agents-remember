@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-10T12:46+02:00 |
-| lastVerifiedCommitHash | `201b0599e5d79049252033c7b737df631135b11d` |
-| lastVerifiedCommitDate | 2026-08-10T13:54:43+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [memory quality overview](../../overview.md)
@@ -47,19 +37,14 @@ the full onboarding drift check.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The top-level checker enforces section presence and one-to-one entity alignment. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
-| Inventory and fingerprint parsing is shared with drift classification. | `parse_entity_fingerprint_rows`; `parse_entity_inventory_names` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:84-113; mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py:116-132 |
-| The registry places this check first in closeout's pre-metadata phase. | `BEFORE_METADATA_REFRESH_CHECKS` | mcp/src/agents_remember/memory_quality/check.py:87-92 |
-
-## Update History
-
-- 2026-08-10T12:46+02:00 — Created for the L9 closeout fail-fast repair; verification metadata
-  remains pinned to the prior code tip until closeout stamps the repair commit.
+- The top-level checker enforces section presence and one-to-one entity alignment. [1]
+- Inventory and fingerprint parsing is shared with drift classification. [2]
+- The registry places this check first in closeout's pre-metadata phase. [3]

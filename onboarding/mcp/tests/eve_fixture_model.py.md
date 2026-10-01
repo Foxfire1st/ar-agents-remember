@@ -1,15 +1,5 @@
 # mcp/tests/eve_fixture_model.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/eve_fixture_model.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -75,55 +65,21 @@ aggregate; `serve` and `main` are the CLI entry points (`--plan`, `--state`, `--
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the served shape is the OpenAI-compatible chat-completions API, which is a third-party contract this stub imitates rather than a configured domain source. | — | — |
+No configured `Domain Documentation` source; the served shape is the OpenAI-compatible chat-completions API, which is a third-party contract this stub imitates rather than a configured domain source.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The live fixture starts this stub and points the runtime at it, and is the only consumer. | `LiveFixture`; `_plan` | mcp/tests/live_eve_native_fixture.py:177-363; mcp/tests/live_eve_native_fixture.py:534-740 |
-| The runtime application reads the provider base URL, name and key from the adapter-owned launch environment. | `createOpenAICompatible`; `AR_EVE_PROVIDER_BASE_URL` | eve_runtime/agent/agent.ts:1-25; mcp/src/agents_remember/serving/eve_runtime_launch.py:67-76 |
-| The adapter's launched runtime is what actually consumes this provider, so the stub never appears on a production path. | `EveRuntimeProcess` | mcp/src/agents_remember/serving/eve_runtime_client.py:133-200 |
+- The live fixture starts this stub and points the runtime at it, and is the only consumer. [1]
+- The runtime application reads the provider base URL, name and key from the adapter-owned launch environment. [2]
+- The adapter's launched runtime is what actually consumes this provider, so the stub never appears on a production path. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stub imitates the OpenAI-compatible chat-completions API, and the runtime reaches it through the pinned `@ai-sdk/openai-compatible` provider. | "@ai-sdk/openai-compatible" | eve_runtime/package.json:16-16 |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the trace now records the provider's own
-  `messages` view.** Added beside the four original keys, which are unchanged, so a consumer can read
-  the **effective prompt** a model would actually receive — the system block and the durable history —
-  rather than inferring it from the plan the fixture wrote. It exists for the capsule scenarios: their
-  "an admitted capsule reaches the model" claim is only a measurement if the observed prompt is the
-  provider's own view, and the same field is what lets a seed's mutation be confirmed present in that
-  seed's trace, so no exit code is read from a run in which the mutation never reached the runtime. A
-  boundary was added stating the field must stay the provider's view and must not be re-rendered here.
-  Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is deliberately
-  uncommitted, so the governed closeout stamps the real code commit and no hash or fingerprint was
-  invented here.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **no content impact from the A2
-  revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so
-  the body is retained unchanged; the pass refreshed the verification metadata to the leaf's current
-  base `e9300687` and rewrote the three citation tables into the `Finding | Anchor | Source` shape
-  (Anchor alone, `path:start-end` plain in Source). No claim was re-worded and no hash or fingerprint
-  was invented; the governed closeout stamps the real code commit.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a fixture module added by the
-  native eve session-adapter change set. Records that it is a model provider rather than a harness or
-  adapter double, the two recorded failure modes that shaped it (module-global plan state causing
-  cross-session contamination, and a tool-call opening chunk without identity), and that it is a
-  test-only module outside pytest's collection. Verification metadata is pinned to the leaf's base
-  commit `67b21aeb` because the candidate is deliberately uncommitted — the governed closeout stamps
-  the real code commit, and no hash or fingerprint was invented here.
+- The stub imitates the OpenAI-compatible chat-completions API, and the runtime reaches it through the pinned `@ai-sdk/openai-compatible` provider. [4]

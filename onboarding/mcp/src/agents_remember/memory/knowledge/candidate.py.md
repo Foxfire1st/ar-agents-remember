@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/candidate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/candidate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `4a0442d62eb842661a3dd04686c376d0f0dbc61f`|
-| lastVerifiedCommitDate | 2026-09-20T14:22:54+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -109,71 +99,38 @@ None recorded for this slice. The disclosed cost is the logical body being compu
 (context re-derivation, before, after) — a deliberate cost for the pilot, which a later leaf may cache only
 after demonstrating equivalent conformance.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The entry point, its pre-lock lane check and its one lock and one transaction. | `change_candidate` | mcp/src/agents_remember/memory/knowledge/candidate.py:61-80 |
-| The two fail-closed lane rules and the alias that keeps the earlier spelling working. | `require_writable_lane`; `require_candidate_lane` | mcp/src/agents_remember/memory/knowledge/candidate.py:83-102; mcp/src/agents_remember/memory/knowledge/candidate.py:110-110 |
-| The four in-transaction comparisons against the candidate actually held open. | `_require_bound_context` | mcp/src/agents_remember/memory/knowledge/candidate.py:148-183 |
-| The transaction boundary and the observed-position mapping, including the no-position case. | `_within_batch_transaction`; `_apply_within_transaction`; `_mapped_failure` | mcp/src/agents_remember/memory/knowledge/candidate.py:110-125; mcp/src/agents_remember/memory/knowledge/candidate.py:128-145; mcp/src/agents_remember/memory/knowledge/candidate.py:251-267 |
-| The three result builders, including the after-equals-before rule for refusals. | `_success_result`; `_changed_result`; `_refused_result` | mcp/src/agents_remember/memory/knowledge/candidate.py:186-222 |
-| The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it. | "class MutationResult("; `_changed_result` | mcp/src/agents_remember/memory/knowledge/candidate.py:199-212; mcp/src/agents_remember/models/knowledge/candidate.py:707-707 |
-| The preconditions this operation runs inside the transaction. | "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:170-170 |
-| The only writing step and the after-integrity re-proof. | `apply_commands`; `require_after_integrity` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:212-240; mcp/src/agents_remember/memory/knowledge/batch_commands.py:937-958; mcp/src/agents_remember/memory/knowledge/batch_commands.py:934-958 |
-| The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it. | "class MutationResult("; `_changed_result` | mcp/src/agents_remember/memory/knowledge/candidate.py:199-212; mcp/src/agents_remember/models/knowledge/candidate.py:707-707 |
-| The preconditions this operation runs inside the transaction. | "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" | mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:170-170 |
-| The only writing step and the after-integrity re-proof. | `apply_commands`; `require_after_integrity` | mcp/src/agents_remember/memory/knowledge/batch_commands.py:212-240; mcp/src/agents_remember/memory/knowledge/batch_commands.py:937-958; mcp/src/agents_remember/memory/knowledge/batch_commands.py:934-958 |
-| The lock the operation takes once, outside its transaction — declared on the opened store. | `exclusive_candidate_lock` | mcp/src/agents_remember/memory/knowledge/store.py:545-562 |
-| The transaction wrapper the operation takes directly, because it spans many commands — also declared on the opened store. | ``immediate_transaction`` | mcp/src/agents_remember/memory/knowledge/store.py:527-534 |
-| The task-lane refusal wording, which names the missing binding rather than the unsupported lane. | `batch_task_binding_unresolved_refusal` | mcp/src/agents_remember/memory/knowledge/refusals.py:620-649 |
-| The composed-path case that drives this operation through the admitted destination. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-110 |
-| The lane refusals' own nodes. | "test_a_baseline_lane_is_refused_as_a_non_candidate_target"; "test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved" | mcp/tests/test_candidate_batch_transaction.py:374-394; mcp/tests/test_candidate_batch_transaction.py:1162-1188 |
+- The entry point, its pre-lock lane check and its one lock and one transaction. [1]
+- The two fail-closed lane rules and the alias that keeps the earlier spelling working. [2]
+- The four in-transaction comparisons against the candidate actually held open. [3]
+- The transaction boundary and the observed-position mapping, including the no-position case. [4]
+- The three result builders, including the after-equals-before rule for refusals. [5]
+- The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it. [6]
+- The preconditions this operation runs inside the transaction. [7]
+- The only writing step and the after-integrity re-proof. [8]
+- The receipt model that makes the no-moved-dataset-without-an-entry case unrepresentable, and the operation's own builder for it. [9]
+- The preconditions this operation runs inside the transaction. [10]
+- The only writing step and the after-integrity re-proof. [11]
+- The lock the operation takes once, outside its transaction — declared on the opened store. [12]
+- The transaction wrapper the operation takes directly, because it spans many commands — also declared on the opened store. [13]
+- The task-lane refusal wording, which names the missing binding rather than the unsupported lane. [14]
+- The composed-path case that drives this operation through the admitted destination. [15]
+- The lane refusals' own nodes. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The operation writes one SQLite file inside the
 worktree it was opened against; it resolves no Git object, writes no ledger row and addresses no sibling
 repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `exclusive_candidate_lock` repointed to mcp/src/agents_remember/memory/knowledge/store.py:545-562. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T11:53:49+00:00: Generated citation repair: `immediate_transaction` repointed to mcp/src/agents_remember/memory/knowledge/store.py:527-534. No content impact: mechanical anchor-range projection bound to citation source snapshot 0849f052762b22876ef5b9a278767e8b11854dff23a8149d48010a306f68021a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T01:00:02+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 4 enforced citation rows this card carried (citation_anchor_absent_from_range ×4) in the two duplicate "only writing step and the after-integrity re-proof" cells, one per reference section. Hand-read against `mcp/src/agents_remember/memory/knowledge/batch_commands.py`: `apply_commands` is declared at 212 (extent 212-240) and `require_after_integrity` at 937 (extent 937-958), while the cell cited helper territory (`:177-202`, `:859-902`) plus a blank line (`:913-913`, which at commit 2dcacb27 still held `require_after_integrity`); the three ranges now read `:212-240`, `:937-958` and `:934-958` (the integrity-pass banner through the re-proof). The fifth enforced row, `require_candidate_lane` at `candidate.py:83-102`; `:110-110`, was verified already current. The claim's wording, both anchors and the citation count are unchanged; no verification stamp was advanced.
-- 2026-09-20T00:31+02:00 — 260915-KS-L30 curator (uncommitted change set on `ar/260915-ks-l30-ar`, base `7dcec036094768c5f50e571fb45e59a27ae78efc`): **mechanical citation-range projection** against this leaf's candidate. The checklist reported 1 row(s) whose cited range no longer holds its anchor although the construct is present in the cited file; each range was widened to the lines that carry it — `require_candidate_lane`. No claim wording, anchor or citation was added, removed or re-worded, and no range was deleted: the new range is the checklist's own resolved extent for that anchor on this candidate. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:199-212; mcp/src/agents_remember/models/knowledge/candidate.py:707-707. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:33+02:00 — 260918-TSIP-L11 curator (memory worktree `fd1a024e`, code `7879f5b2`): cleared the inherited citation debt on 3 claim(s) by RE-READING each claim against the merged tree and RE-DERIVING every cited range from the construct's real extent in the file the claim cites (`extents.anchor_extents`), never by adding a delta to an old number and never through the mechanical projection (no generated citation-repair bullet is written, so no claim is reopened by this edit). Claims re-read: `candidate.py.md:126` (`require_writable_lane`, `require_candidate_lane`); `candidate.py.md:132` (`apply_commands`, `require_after_integrity`); `candidate.py.md:135` (`apply_commands`, `require_after_integrity`).
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:704-704. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:704-704. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:170-170. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:156-156. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:686-686. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:686-686. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:155-155. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:577-577. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `_changed_result`; "class MutationResult(" repointed to mcp/src/agents_remember/memory/knowledge/candidate.py:196-209; mcp/src/agents_remember/models/knowledge/candidate.py:577-577. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "def require_preconditions(store: OpenedKnowledgeStore, batch: ChangeBatch) -> None:" repointed to mcp/src/agents_remember/memory/knowledge/batch_preconditions.py:152-152. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand** — `require_preconditions`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-16T08:10:00+00:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new candidate-change operation. It records the one-lock/one-immediate-transaction boundary, the pre-lock fail-closed lane check (baseline refused by name, `task-candidate` refused until a checkable binding exists), the four in-transaction comparisons, the observed-position refusal mapping, the after-equals-before rule for refusals, and the disclosed cost of computing the logical body three times per batch. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

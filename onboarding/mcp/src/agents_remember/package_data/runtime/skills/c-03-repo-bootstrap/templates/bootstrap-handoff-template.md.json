@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-handoff-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The handoff template records run status and artifact coverage across root overview, plans, maps, packs, route overviews, and file onboarding.\n\nAnchor: `# Bootstrap Handoff — <repo>`; `## What Exists Now`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99fd330c04fa33cd17f5075ad722c6390892cd2",
+            "content": "sha256:b432d7ffc8655ac476c2dd5c441e2da0e2c89e93c2e7b1d59766a3b1092ef688",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The handoff captures slice maintenance results, trusted/deferred coverage, open questions, risks, waves, closeout boundary status, decisions, and future-agent usage order.\n\nAnchor: `## Slice Maintenance Results`; `## Trusted Coverage`; `## Deferred Coverage`; `## Open Questions`; `## Known Risks`; `## Completed Waves`; `## Recommended Next Waves`; `## Closeout Boundary`; `## Developer Decisions Recorded`; `## How Future Agents Should Use This Bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c99fd330c04fa33cd17f5075ad722c6390892cd2",
+            "content": "sha256:96a8ea650c83228768e6986a4dcdc179ab6a687dba557b5d8a908ee756ea9875",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill Phase 5 writes `bootstrap/handoff.md` from this template and makes handoff the automated-bootstrap boundary before separate closeout.\n\nAnchor: `## Phase 5 — Handoff`; \"bootstrap/handoff.md\"; \"templates/bootstrap-handoff-template.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44f14f781dba7d51c2892929b46289e59662ebc6",
+            "content": "sha256:61200d02e8e67740a682f4add28d37763f81f4f56d2ab339f4d2dbd308dc4a10",
+            "locator": {
+              "end": 1093,
+              "kind": "line_range",
+              "start": 1065
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/serving/static.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface.\n\nAnchor: \"def dashboard_static_dir\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:fda9644e0f850fd90455586b9b2938d870308bb3409dc2f69b2bc942c9ab5979",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`.\n\nAnchor: \"def mount_static\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "content": "sha256:dfa272c80932c4649486a55deaea7b2b53dc517372884bc2c8903a3ef80e73e4",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The release build step places the tree this module resolves; it refuses to place a stale one.\n\nAnchor: \"def sync\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:e91c1751a7c3936c01e1c45b87b92daa50bb941805453a6783accf204a05dcb6",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving app registers API routes before the static mount.\n\nAnchor: \"mount_static(app)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:dd34a9df779b9566b04ad2b9e6cdde3b1d5e6c1a8c8b97ab7c28a7b13a33bd6a",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 324
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "content": "sha256:0b518088925ef50559b9a014ab2d743430cf9d23c6507ec96c9c0fd23f10b750",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

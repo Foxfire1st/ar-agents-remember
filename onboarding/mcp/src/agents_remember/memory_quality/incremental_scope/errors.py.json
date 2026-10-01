@@ -1,0 +1,79 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The R07 planner raises typed closure refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "681a4fa1a6beaf9a35669ac5fe352931f81c9dd1",
+            "content": "sha256:892658eb39e78b707ed694ce49dec4ad57cd1aa606d26ce7dc23e3ff89b91337",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The R07 executor raises typed closure refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7484f7b61164e52874c68bacdab937ad003f0836",
+            "content": "sha256:892658eb39e78b707ed694ce49dec4ad57cd1aa606d26ce7dc23e3ff89b91337",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_execution.py:505-515"
+        }
+      ]
+    },
+    "3": {
+      "note": "The R07 subresult store raises typed closure refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad3284e96b783f7009d48674cda24143dbc0db27",
+            "content": "sha256:b8569502183d38a69fea1111082840787b15ece4e80c80769abf68d048062768",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/incremental_scope/subresult_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The base error carries the canonical agents-remember failure status machinery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "06dd36a87407c2334263526a547dea5692f3bd46",
+            "content": "sha256:20c20f4fc731011816f8a9403d598d5363e401ba2e3601ef7639543dfe232398",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentsRememberError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

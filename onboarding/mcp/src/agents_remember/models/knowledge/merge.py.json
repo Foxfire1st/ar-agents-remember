@@ -1,0 +1,453 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/merge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one non-refusal state name, which is the entire claim the operation makes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:13b16bce2c060034fbd08f64abcc365fa44c27b7ffc70078ce461aad05bbf3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "MERGE_STATES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The conflict record's two shapes, the old-side key rule, the deliberately absent foreign-key row and count, and the precondition field the row-less offer reads.\n\nAnchor: `MergeConflict.precondition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:6b44daba0ed55a442c286bbf0a30d42fea7f6814e9cc6f683e708752c0e53696",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeConflict"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:f89d2ade3ff671c789161756043773938e0506d757aa57299b1ec517f2b21a56",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The outcome that carries identities, coverage and publication state and no verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:9f3cbf55fd429c0ed8d9e741c18b152ce05e8916bd3d1cbb51d89a554cc52377",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeOutcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:0e16d1c9b5674295c0c20d464d1ae4e243c5d38c2b3456e9222ce3d9fb99a1c7",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 444
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The two operation names and twelve refusal codes this vocabulary is keyed by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeOperation"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The node that confirms the published result carries no forbidden field and reports the coverage record.\n\nAnchor: \"test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
+            "content": "sha256:0095d020e20d5be18d493ce882ef027915ac410b5ec99815dbccff8a31daafda",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 307
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The boundary node that holds the conflict record to the engine's own row identity.\n\nAnchor: \"test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be8045510eae43dc4a30d00474c0db1f34731ddd",
+            "content": "sha256:f0b28f05f8abac2264a961d00c1d8a39cdbdc4410967bab66b9b06f3c4b796d6",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/tests/test_knowledge_guarded_merge_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The node that drives the authored decision through the real merge and holds the unnamed-conflict refusal.**\n\nAnchor: `AuthoredReconciliation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73db989c360a0274c745d5dc8a67ca6fd3f9f104",
+            "content": "sha256:2cf1121e008dad4f53f6ff12dd449c61fe035e55f9705e596a0eb127fcc5d74a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authored_postcondition"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "content": "sha256:66f50ff8deef3ab5e2b49bafeb8b26cd24384c028816b07aa19d7fa7e60ff1b2",
+            "locator": {
+              "end": 418,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed two-member base claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:4ee655295f2196868937cef1037a52a272ded7e9202f883c62a43f8fe0ac11a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "SuppliedGitBase"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:bf9f65bf9cf73c11e29ecec51c166779b30083212f7adcf924e676e0a4a80d3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResolvedGitBase"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:f816ac47df9abe220496dae7ec9ce6b649ee62827f0dcabe1730c6bc87c21ace",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The explicit input that carries the identity a caller admitted and a reference that is never resolved here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:73cb0eb58104dce7b5f632734d4f95dad25f853ebd12ba0e8f26f77be9714a2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:b63ed4a4fa13ae70472ddc827308bf8c290f4016e4d8d5ef6dea4c39ddcf52f0",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The two authored decisions one refused conflict admits, the conflict-code sets that decide which of them is offered, and the measured precondition that decides the one offer the code cannot.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:69ee522f174058e2420c538b64808fe3c4fcca0dce585d01d28c2f94bd864c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredDecision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:d1087a04a233194c642c52bb72d9ea656233161c559ccba3be4ed940de076af7",
+            "locator": {
+              "kind": "symbol",
+              "name": "expressible_decisions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:5d2c389b757630f51e0d66b899e2ad59ccd7b0eda454182df0c6c6b3187a7fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetractionPrecondition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:9df4504fa62596b868ed397ca9decc36f3efa465f82c442131b9cff989b36e73",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The one authored-decision shape: the exact refused row with its side, or the row-less retraction that is the only decision a conflict without a row admits — and only where the measured precondition says it can apply.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a5c7bdac7dcd0b4c4cc5fab082b5ca5e7c0ddd9cdbd366baa19adfc95b72958d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AuthoredReconciliation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The base-resolution request and its exactly-one-input-per-role rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:3d0bd4b767c893a762e388ab34a3a39e6cfb9698bf4a337158c5f4022412774f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeBaseRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:892fe0758bcd33770fdb98aac148a36b49208ce0c95cd08e5d27a05d24f87e6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "input_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:863aa63b9fef7d1cc7575e45b1fac8563ac5ee2389712226db40a21a7810ac5f",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The resolution that records which of the two base claims applied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:c948a195a95f2a876166be2fa4b7308ebd321b65a03c1dc585647ab56044e170",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeBaseResolution"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:d7b7e45399ef17fb966c040d6414b0d3713dd04cb33f265a3a1b18dcc83e0b52",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The complete merge request, including the optional destination, the one authored decision it may carry, and why the paths are a dataclass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:a29df6f1a7ed478612a3f0835c65277acadfffbc4f224029f7b882f52d9c3830",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:253d230dad3a50b4c6f0427f3e354ff968e0ac7144b8b950474a9ca78c96be09",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two coverage records that separate \"changed\" from \"carried an operation\" and cover every canonical table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:6bc68813e6b91ee2119c185f87a2daeb0fa732d0e58d09064051a55444f020e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "TableCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:8606261a9720fad5f7d4f3bc36ffc2369959a7047b29aa83cb1ddbb4ab7b083b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MergeCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:806599345bdd81d288ec21e04a4b7a184ee3ba16078872738add80820a6bd23a",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 313
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
+            "content": "sha256:665f27441b9da001e3d29cc6d8b7bcff049cb8c6fbcf3934aede18edd6aac333",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,48 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PostgreSQL, Ollama, and runner modules provide the Docker stack that this module composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:8a3c59f7313dd1f7136f04513ed172989977c2b4ea6c36da504928006cc186d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "docker_wait_for_postgres"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:d05ed2526097fca46274fae418d3bfd60332ed8e8920e69bf43cf915371b8187",
+            "locator": {
+              "kind": "symbol",
+              "name": "docker_wait_for_ollama"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:47649d350ad0153e6cbea04794c5a718a6cfd4869143dd6e65e51723d1a8549a",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

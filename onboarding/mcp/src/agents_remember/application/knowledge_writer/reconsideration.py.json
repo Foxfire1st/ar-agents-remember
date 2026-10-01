@@ -1,0 +1,582 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/reconsideration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring: both rows, the refresh, and the five link states it names.\n\nAnchor: \"The writer's reconsideration rows (MIK-R14 rule 4)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:c11efe85cd07693214c50f241491634b19586d49ee1cbfc99c91ea369321eb77",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "One fired link to a target or a refusal; the new-change refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:5641ef1cef2c834a9f40350fec50e19603f3114435cb09eb88ea118e0e116e7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:c0cd9b4c1893b0aa22c82e1afa516e4af100f353d69c374622599c0757b871d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_new_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The K_B target: the base record's link, the facts' anchor, or the key alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:104393d072b1f5a8c92703c72d9b164e080f2def7f9c41a4dc1895cf57ab1750",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fired_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The state dispatch and the requirement states, with the R5-2 upper bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:10da8e89a804e33bff6186d782d1d0df90e43814a835788f93d3c04eb98f44d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:6109a34b42564f2cdf678eae2e30aa3027d414fbba3392d43eced1bb2f04a385",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:e2c6987e58029a719a609a25940ea9347f0b769487d0b7f1660754a62df8001d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_newer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The anchor states: stale item, unchanged, carried only when the content survives, changed again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:7865becd2cc64eca103b6a53f1dd3255ae1a0305d93f6b3232149e5b6edbc218",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:30d967a0ba8ce3eb6ef0b6314452a321d14eae5e393bdf49633c011353637c1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refreshed_anchor_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:e60bdd95d2a197ee2c69412bba5f5752d1e5ba605ba304f43e2b1d9ea214506c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seen_content"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refresh target: the item's version and packet, or the anchor mapped to C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:bbe5a0a084090dceecaeea5030adaf96631a6a1c46609a48c0e441c7ba7abe22",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refreshed_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`still_rejected` refusals of a wrong subject or extra field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3879c9dc6c6e7ec429fe38296c8f446a091e114846feedfe154fca532119efb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_answers_the_candidate_and_the_stored_predicate_agrees"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A requirement link re-pointed once, bumped once; the next leaf raises nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:72d80bffa60bd42b3f0d5e1296bc81b0b2668f92aea555318b27822f00cfa7e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_repoints_a_persistent_requirement_link_so_it_raises_once"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "An anchor re-anchored; a `raise` leaves it; a second change raises a new item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:365346857ffe67b1c4fbe209997acd0fea0e8d0f47fea7165e0e1de38e641e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_still_rejected_reanchors_a_linked_anchor_so_it_stays_live"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Only fired links; a range mapped through the diff (F1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:65ec616e0f52ea5b7f64933be0a6458f77a0ad8df4f0a7adcb30ea539503e5b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_refresh_maps_a_line_range_and_refreshes_only_the_fired_links"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "An unmappable range, or a row naming another item, refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:3b68be4fd0495ce700868c1d852ccfdf93978a4cea77af7f6b281a69da66f60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The task owner's `openQuestions` port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:0bb2a834a098b021fac670c32ab1dc2c82732c85763a85f5eca2e11386acca4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenQuestions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The re-point takes the item's facts (F4).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:c77aa8110ef6fb639481ebc6cbd7f8187f7c5bf0e7842e317feda8736d49cacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repoint_takes_the_items_approved_version_not_a_fresh_read"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Re-authored, lookalike and moved links refuse (N1, N2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:2886ee8d457ae5b2828d74250c28d022af81ba77c52850c668d8166a673c776d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refresh_refuses_a_fired_link_re_authored_or_moved_in_the_leaf"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Idempotent reruns (R3-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:fc262877656e70e66686f2bc931f97768932a9b674d701f76a86b332c088029a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_a_requirement_refresh_is_written_and_bumps_nothing"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a9861c7109c86456683bf897140619450f6b3e51657839117d683f3de447287b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_an_anchor_refresh_is_written_and_bumps_nothing"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Carried after an edit outside the range; committed re-authors and lookalikes refused (R4-1, R4-2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:d3867696df0907a13f8f729ade336f015f5a928f47f066c70efa014f1d7ff638",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rerun_after_more_code_changes_carries_the_refreshed_anchor"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:7bf2f2953b6b7a0e4e772c9d24eb88aa3fb5494c5bf92a21e2f4875ac3496969",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_lookalike_or_re_author_stays_refused"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A newer version needs the new item named (R4-3, explicit answer).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:8059748f0a31af137051c62217caa804b95dd4c6ea2f51ffede25241cf81c5c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_approved_after_the_refresh_is_named_and_needs_the_new_item"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "A second change inside the range needs the new item; a stale worklist is refused (R5-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:a57c3c9c232e0f2716580bf3317cfe216a95e6a8dd2529661d2cda81a012537d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_change_inside_the_anchored_range_needs_the_new_item"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "A curator-set unapproved version and an anchor re-pointed to other code are re-authored (R5-2).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:000264a37f2639d479ac17433ac081e9721a9a5eae95888e88c50ab1540be7b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_curator_set_unapproved_version_is_re_authored"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:b31ef05ca237ad7be0a00045d82fdf95159e1ae8484b38708f3deed09729c12d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_anchor_link_re_authored_to_other_code_is_refused"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "What a subject names: a decision, a rejected or deferred alternative, and a link addressing it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:6bed9579ea2dcb4b999c6235204a7249bc1cf57c38df402e12a0fa6b98c1f56b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconsidered_alternative"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:76ececec131b9ffae48201e47b1bd8d2323b308924da67dc1415216a1f9cbb49",
+            "locator": {
+              "kind": "symbol",
+              "name": "_alternative"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:75968f932ff6cf4d7cfb453118de52fddc6a945cfa9f9cf8d53c698742ccd395",
+            "locator": {
+              "kind": "symbol",
+              "name": "_addresses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `raise` question and its key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:29d7c003558fff6ab01259ee2bf1cb99f7ead1e84d17715fbebf3734fa1763e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "raise_question"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The append in a committing run; every refusal is returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:65533e8f1833890161e3deee51a35c44b0826278e313040bf99c8a7f9291a59c",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_questions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The code candidate a refresh maps anchors to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:c9c5024613ca51765b5c9b5a40079dd22885419642022c85d5fd57b9409584c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeAtC"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The link states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:a4f90acc3d3d108fb536350b5fecf56b84bc37782454ab6b69f224018f972a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCHANGED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:ad866703ab962baa07395b09e497a82e94cc2fe7e1a070e0308a6361ccf2a947",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_ITEM"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:ec436e08091a3d6d5201f32e9f102a13c4c1d5df1227e818043f9bc2e7f9e164",
+            "locator": {
+              "kind": "symbol",
+              "name": "NEW_CHANGES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "What a row answers, and the refresh's result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:b71244305e81d4bb7cb3f76661c71f5349e32975c9a58df9e254a5d196225b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "Answer"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:cec1c1c2fe71ee3da74998fa8813d718b2128e62e32b09ff9dc4a5ca7d4fce1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Refresh"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Only fired, refreshable links; each judged against its K_B target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
+            "content": "sha256:94e3b9178537e1589de688465b05b04cb177c9570e61f2380d49a0da1839ceea",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshed_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

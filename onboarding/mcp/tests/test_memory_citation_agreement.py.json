@@ -1,0 +1,538 @@
+{
+  "path": "mcp/tests/test_memory_citation_agreement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory tree the product refuses, cited at the definition rather than at the module header's old wrong line (`R2-3`, repaired).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "content": "sha256:3f98146e6af7044ba360f0e9afd15dac244dac4c2f57e63eb411f8e386a913cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_official_memory"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Both cells and the quote path: the escaped spelling must yield the anchor the plain spelling yields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:7b48d9153806a0a5f11ab37937580eb42c99b6bbc2565d3be7838e63e8edb783",
+            "locator": {
+              "kind": "symbol",
+              "name": "EscapedPipeAnchorTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:5833f6a043c7e8512c6399be91fbe628f9f3ca8c408ae4b8451a326255ec9aac",
+            "locator": {
+              "kind": "symbol",
+              "name": "wrapped_constructs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The code repository's own markdown, enumerated: zero wrapped constructs is the pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:0df4e20be394303b0cb144be023e898560251a8f8288114b2ee195dee3ec1b09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repository_carries_none"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:d248082a22cfa51db7af292f57cfef5839efe09370c0a4cc490f464bced8672f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_memory_tree_matches_the_pins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Every stale site the sweep found, with the pair it states and the ceiling it was written against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:8516d8246ab1dadcf6ff36523e1c1ba2cf8b65e93200bcd38446146a32716cc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "NON_HISTORY_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The subset a repair moves, counted separately from the worklist the next curation inherits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:a0533a837d54118edf922687e6e7ca47840ddf9fbc25b7c011bccf335d031a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIVE_SITE_COUNT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The superseded-pair worklist: **DERIVED from the tree**, never remembered. The rule is `superseded_pair_sites`, the producer it carries is `notes/reports/tsip-instruments/l7-curator-stale-pair-enum.py`, and a change in either direction is a finding (`T112`, `F2`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:38457f31d232216202dda762edd2bca504e80669fae89451ac0bb01a514f42d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "NON_HISTORY_SUPERSEDED_SITES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The derived rule itself, so the pin can fail when the derivation stops seeing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:15d4233fbaa6673622b926d00801d66bd8d186f9287968d830398d25fe324a83",
+            "locator": {
+              "kind": "symbol",
+              "name": "superseded_pair_sites"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The five hermetic arms that prove the derivation fires: counted outside history, dated inside it, not hidden by a qualified heading, the comma-grouped spelling, and the declared pair excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:8268a3728b3438a2db841b6e52f147bebd92c10a15e0f1f4ceb66f466669f5ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "SupersededPairDerivationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The live arm: the worklist count on the named tree equals the derived count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:c7a67a9dbde4f4dfa0b4336a498387fda043bb5c339047cf6a085308f0235304",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_superseded_pair_population_is_derived_from_the_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:ad2da9d788b1aa8d74843f0337f03ae8c4e0486203c2a7f8f3e220c1915a5c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:a78aa356aa1b6e848a8fab628eba29e0eaf4ca558a190c8cba9f5971585dafb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualifiedHistoryHeadingTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The census constant: the pinned tuple the live arm compares against, and what each entry means.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:020733557db49eaf2146498b58cf5dbc3fa193376bc62de1560864f2a21a8462",
+            "locator": {
+              "kind": "symbol",
+              "name": "QUALIFIED_HEADINGS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The live arm that reds when the pinned population moves in either direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:dbda2f220e377f998116842a262bca1b9f61013ccebfdb659253c5bd2c3670db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_named_tree_carries_exactly_the_pinned_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:58a253311ac54442743deebc123ab854f562d8be817078b39f5da2288878ccf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_section_flags"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The budget screen: the declared pair read from `pyproject.toml`, never restated here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:999f19e359bfcf576605973e892c41ff794ca4062cbcc06d9215df8dbe50dab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:b38f395ecafbdfeca6cbf50b0da249c8eeb250ada4f36b1aec4f2311c8cc8d20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repaired_site_states_the_declared_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Both figures asserted separately at every pinned site, so a site that has moved on is red.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:2cfed67e438bd555fa57eb65dda393663da83bf05c174fdbdd7930b42ccfb421",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_sites_still_state_the_figures_they_are_pinned_to"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:a0acded7c248b8bb33a24fefd950d13361836bd9d3e9fbf0b0376dac14aa142f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_two_figure_classes_are_counted_separately"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The module's own mutation boundary, read from its own AST (`T114`'s bound).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:f397c4c27b07fbaf3b964d004d1a10010170c05f8aafee394f2b76a979b7c11f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_this_module_shells_out_to_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_memory_citation_agreement.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The live tree, named by the run and skipped when no run names one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:60c98500e3dc6df435e3cfbef588afe0cea1e92065aa658dc88cf66c762d5a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_onboarding_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The product counter this module's live case reads, and the code string it emits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:c7c30fff66d0739b4c4b5b940a31e2a0c44946f74a09eba8e19bf4027e12dd86",
+            "locator": {
+              "kind": "symbol",
+              "name": "definition_outside_range_findings"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The entry point `memory_quality_check` dispatches through, so the case drives the product and not a copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:29ceb4754671b4fa47198685759e2b6d8709436d85f98da950f11ccedf9dd3f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The payload key the live pin reads.\n\nAnchor: \"definitionsOutsideCitedRanges\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49d2bb8af9f5438ea0827c703fed268a96b24f6",
+            "content": "sha256:1b028a202bbbc155f9e67dc86325c63f26f9738855f1d096a47e532348e8995c",
+            "locator": {
+              "end": 718,
+              "kind": "line_range",
+              "start": 718
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/range_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The `T52` REPORT-ONLY population pin, re-derived on the pair this leaf lands: **130** rows over 95 documents. It is a report and not a gate, and the rows that moved it are named at the constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:74a241ccfdf473378a3ca526234b0f53b9dc2b2ea4a76b31745293b81ec841a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "T52_DEFINITION_OUTSIDE_RANGE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The ENFORCED population on the same tree: **97**, which is the merged sibling line's inherited debt rather than this master's, so the check reports `ok: false` and the module says so. A change in either direction is a finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:ba2edd19dc1532103838952d95400e61ddbda07a79870ba121ef1e2e7a308f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "T52_ENFORCED_POPULATION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `T58` pins, derived by enumeration rather than from the fixer's counter, re-measured on the merged tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:bf336b44c6d4de5de799921ac69629c63be77d0c50618f290c00a8c200150735",
+            "locator": {
+              "kind": "symbol",
+              "name": "T58_WRAPPED_CITATIONS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:c6af79ea79b470453eb164f7dbd8918bd5d047abcb1dd09545331c258fc7d1a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "T58_WRAPPED_DOCUMENTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `T52` shape: green membership, definition outside the range, one report-only finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:fe2111f29c253bc44d0192e53f872d0db0af2e4b46ea2c35fd1bc9cf54858c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "DefinitionOutsideCitedRangeTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The negative that makes the check a check: a corrected range clears it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4514ac74e479cc0d9acace6067c0e30b8bceae8f",
+            "content": "sha256:7aededd41314ade999f383752de0ccc5b40fe1f44c10876266a36d4c8aa85947",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_corrected_range_clears_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2683de42d42a2b17a352d1eb0d67e39352e99944",
+            "content": "sha256:c1c350a52f7affeef62dc4e9fc77a18fd3cd2eec7c506b3822f51a69f8af67fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "unescaped"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

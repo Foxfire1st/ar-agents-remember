@@ -1,15 +1,5 @@
 # dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`|
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../../overview.md)
@@ -39,27 +29,16 @@ missing-view matrix and as a finding.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+### Docs References
 
-## Repo-Internal References
+No relevant external documentation found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The live catalog instantiated from this template. | `# Cockpit Dashboard — Workflow Scenario Catalog` | docs/design/dashboard/scenario-catalog.md:1-166 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The live catalog instantiated from this template. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+### Cross-Repo References
 
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 1 citation row; scoped citation fixing regenerated the source range.
-- 2026-06-23T05:31 — Created with the skill (issue #92).
+No meaningful cross-repo references found.

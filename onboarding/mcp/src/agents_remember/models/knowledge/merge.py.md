@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/merge.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/merge.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-20T14:20+02:00 |
-| lastVerifiedCommitHash | `2edad477bcd9127a90e4618d345ce34ef7e6a6d9` |
-| lastVerifiedCommitDate | 2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -68,49 +58,34 @@ Nothing is fabricated to fill either gap. A row-level conflict whose change carr
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one non-refusal state name, which is the entire claim the operation makes. | `MERGE_STATES` | mcp/src/agents_remember/models/knowledge/merge.py:82-82 |
-| The closed two-member base claim. | `SuppliedGitBase`; `ResolvedGitBase` | mcp/src/agents_remember/models/knowledge/merge.py:84-90; mcp/src/agents_remember/models/knowledge/merge.py:92-98 |
-| The explicit input that carries the identity a caller admitted and a reference that is never resolved here. | `MergeInput` | mcp/src/agents_remember/models/knowledge/merge.py:113-124 |
-| **The two authored decisions one refused conflict admits, the conflict-code sets that decide which of them is offered, and the measured precondition that decides the one offer the code cannot.** | `AuthoredDecision`; `expressible_decisions`; `RetractionPrecondition` | mcp/src/agents_remember/models/knowledge/merge.py:135-135; mcp/src/agents_remember/models/knowledge/merge.py:148-179; mcp/src/agents_remember/models/knowledge/merge.py:405-405 |
-| **The one authored-decision shape: the exact refused row with its side, or the row-less retraction that is the only decision a conflict without a row admits — and only where the measured precondition says it can apply.** | `AuthoredReconciliation` | mcp/src/agents_remember/models/knowledge/merge.py:182-218 |
-| The base-resolution request and its exactly-one-input-per-role rule. | `MergeBaseRequest`; `input_for` | mcp/src/agents_remember/models/knowledge/merge.py:212-243; mcp/src/agents_remember/models/knowledge/merge.py:234-243 |
-| The resolution that records which of the two base claims applied. | `MergeBaseResolution` | mcp/src/agents_remember/models/knowledge/merge.py:245-274 |
-| The complete merge request, including the optional destination, the one authored decision it may carry, and why the paths are a dataclass. | `MergeRequest` | mcp/src/agents_remember/models/knowledge/merge.py:277-310 |
-| The two coverage records that separate "changed" from "carried an operation" and cover every canonical table. | `TableCoverage`; `MergeCoverage` | mcp/src/agents_remember/models/knowledge/merge.py:313-335; mcp/src/agents_remember/models/knowledge/merge.py:338-379 |
-| The conflict record's two shapes, the old-side key rule, the deliberately absent foreign-key row and count, and the precondition field the row-less offer reads. | `MergeConflict`; `MergeConflict.precondition` | mcp/src/agents_remember/models/knowledge/merge.py:408-469; mcp/src/agents_remember/models/knowledge/merge.py:443-443 |
-| The outcome that carries identities, coverage and publication state and no verdict. | `MergeOutcome` | mcp/src/agents_remember/models/knowledge/merge.py:444-486 |
-| The two operation names and twelve refusal codes this vocabulary is keyed by. | `KnowledgeOperation`; `KnowledgeRefusalCode` | mcp/src/agents_remember/models/knowledge/result.py:36-36; mcp/src/agents_remember/models/knowledge/result.py:117-117; mcp/src/agents_remember/models/knowledge/result.py:116-116; mcp/src/agents_remember/models/knowledge/result.py:133-133; mcp/src/agents_remember/models/knowledge/result.py:220-221; mcp/src/agents_remember/models/knowledge/result.py:151-151; mcp/src/agents_remember/models/knowledge/result.py:161-191 |
-| The node that confirms the published result carries no forbidden field and reports the coverage record. | "test_disjoint_edits_from_both_sides_survive_in_a_closed_published_candidate" | mcp/tests/test_knowledge_guarded_merge.py:307-381 |
-| The boundary node that holds the conflict record to the engine's own row identity. | "test_the_conflict_record_prefers_the_old_side_and_reports_a_missing_key_as_such" | mcp/tests/test_knowledge_guarded_merge_boundaries.py:171-190 |
-| **The node that drives the authored decision through the real merge and holds the unnamed-conflict refusal.** | `AuthoredReconciliation`; `_authored_postcondition` | mcp/tests/test_worktree_sync.py:250-418; mcp/src/agents_remember/memory/knowledge/merge.py:404-438 |
+- The one non-refusal state name, which is the entire claim the operation makes. [1]
+- The closed two-member base claim. [2]
+- The explicit input that carries the identity a caller admitted and a reference that is never resolved here. [3]
+- **The two authored decisions one refused conflict admits, the conflict-code sets that decide which of them is offered, and the measured precondition that decides the one offer the code cannot.** [4]
+- **The one authored-decision shape: the exact refused row with its side, or the row-less retraction that is the only decision a conflict without a row admits — and only where the measured precondition says it can apply.** [5]
+- The base-resolution request and its exactly-one-input-per-role rule. [6]
+- The resolution that records which of the two base claims applied. [7]
+- The complete merge request, including the optional destination, the one authored decision it may carry, and why the paths are a dataclass. [8]
+- The two coverage records that separate "changed" from "carried an operation" and cover every canonical table. [9]
+- The conflict record's two shapes, the old-side key rule, the deliberately absent foreign-key row and count, and the precondition field the row-less offer reads. [10]
+- The outcome that carries identities, coverage and publication state and no verdict. [11]
+- The two operation names and twelve refusal codes this vocabulary is keyed by. [12]
+- The node that confirms the published result carries no forbidden field and reports the coverage record. [13]
+- The boundary node that holds the conflict record to the engine's own row identity. [14]
+- **The node that drives the authored decision through the real merge and holds the unnamed-conflict refusal.** [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (uncommitted change set on `ar/260915-ks-l43-ar`, code base `fb719f89`): **the authored-decision field became a tuple, and the card's singular form is corrected rather than annotated.** `MergeRequest.reconciliation: AuthoredReconciliation | None` is replaced by `MergeRequest.reconciliations: tuple[AuthoredReconciliation, ...] = ()`. The distinction the vocabulary exists to keep is unchanged — each entry still names exactly one row, a row-less decision still cannot overwrite anything, and `expressible_decisions` is still the one place that answers which decisions a conflict admits — but the field is now plural because a retained merge is answered one conflict at a time: a decision that settles the first conflict reveals the second, and the attempt that answers the second has to carry the first or the two alternate forever, re-offering a decision that has already been made and already had its effect. The Logic paragraph and the invariant bullet were rewritten to say both halves together, so a reader cannot take "plural" as licence for a policy. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded, because no commit contains the body as it now stands and no stamp was measured on it. No commit was made.
-
-- 2026-09-20T07:30+02:00 — 260915-KS-L42 curator (uncommitted CYCLE-02 repair change set on `ar/260915-ks-l42-ar`, code base `74c6c693`): **the vocabulary gained the one fact the conflict code cannot carry, and this card no longer states the row-less offer as unconditional.** `RetractionPrecondition` (`arriving_insertion` / `no_arriving_insertion`, published in `__all__`) and `MergeConflict.precondition` (default `arriving_insertion`, consulted only for the row-less referential code) are recorded, and the three-part answer `expressible_decisions` gives is corrected: the row-less referential conflict admits `keep-left` **only when the measured precondition says an arriving insertion can be retracted**, and admits nothing when it says otherwise, which is why the row-level question cannot be asked first for a conflict that has no row. The Purpose, the conflict-record paragraph and the invariant section now say that this bit is supplied by the application that ran the delta rather than inferred here, and a new invariant records that no row-less decision is offered on an unmeasured promise. One reported-as-stale-by-a-move range and five ranges whose claims this change moved were re-cited to their constructs' own declaration extents in the working tree (the `__all__` addition shifted the module's declarations by one line, and the new types moved the conflict record): `MERGE_STATES`, `AuthoredDecision`, `expressible_decisions`, `AuthoredReconciliation`, `MergeConflict` and the cited `_authored_postcondition` extent. No claim was weakened and no anchor was dropped. Verification metadata is advanced to this leaf's own base `74c6c693` with the uncommitted working candidate beside it; closeout owns the committed stamp.
-
-- 2026-09-20T05:50+02:00 — 260915-KS-L40 curator (uncommitted CYCLE-02-remainder change set on `ar/260915-ks-l40-ar`, code base `f79f4db7`): **the module gained the authored-decision vocabulary, and the card now says which decisions a conflict admits rather than leaving that to each caller.** `AuthoredDecision`, `expressible_decisions`, `AuthoredReconciliation` and `MergeRequest.reconciliation` are recorded with the three-part answer `expressible_decisions` gives (a rowless conflict admits nothing, the referential shape admits `keep-left` only, a named row admits `keep-left` and, where the overwrite direction is proven, `keep-right`), and with the structural reason `AuthoredReconciliation` cannot express a policy: it names one row, and half a row identity or an overwrite on a row-less decision is refused at construction. The invariant section gained the boundary that this is a decision about one row and never a preference, and that `expressible_decisions` reads no database. Two acceptance nodes are now cited so the card's own claim is checkable against the delivered tests. Verification metadata is **advanced to the candidate's base `f79f4db7`** with the working candidate recorded beside it, because the card's claims were re-read against the delivered tree; the completed closeout still owns the final stamp for the committed change set.
-
-- 2026-09-16T13:45+02:00 — 260915-KS-L5 curator (uncommitted change set on `ar/260915-ks-l05`, base `3332a4ce`): created this one-to-one card for the new merge vocabulary. It records the three load-bearing splits — an explicit input rather than a path the operation interprets, a base *claim* as a closed two-member union rather than a base the operation may pick, and a measurement rather than a verdict — plus the coverage distinction that makes the silent-omission class observable (`table_changed` read from the datasets versus `operations` counted from the changeset, over **every** canonical table) and the conflict record's two shapes. Two facts a consumer must not flatten are stated as the contract: a same-ID independent insert is a conflict even when the payloads are byte-identical, and the foreign-key shape reports no row and no violation count because the engine supplies neither. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

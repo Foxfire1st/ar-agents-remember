@@ -1,0 +1,82 @@
+{
+  "path": "dashboard/src/panels/session-cockpit/ModelEffortControl.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sourcing, failure, menu, apply, and chip cases.\n\nAnchor: \"ModelEffortControl\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78520d3e86828da4c388bedda904f8798bb707d5",
+            "content": "sha256:4b5c1924df79e117a8b7bfcaf820e18124464daa3667d502db6aef736d126447",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7244eb21672fd89aa04a39047e7d5273b3ee1",
+            "content": "sha256:da1406f7615a7ae7dc77665798f8bba46ebaca1fa17d0f205d48acf37e9f5ce0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModelEffortControl"
+            },
+            "path": "dashboard/src/panels/session-cockpit/ModelEffortControl.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Capability fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:c1f3224153359058bdd1e7b152af9083155293095b75474f6cde706d3f46da81",
+            "locator": {
+              "kind": "symbol",
+              "name": "effortOption"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:5c3057343678e205cbb78b35acbc965696fd1c25b674fc8f985e010d4bfb2a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "modelRow"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e33453ff89e1faf8187f2cf4161d6b674591c427",
+            "content": "sha256:4e878db726b4e22cac49eee59a2266ddf5a3d44fa8c59ea229446860fb656a4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SET_RESULTS"
+            },
+            "path": "dashboard/src/test/fixtures/capabilityEnvelopes.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

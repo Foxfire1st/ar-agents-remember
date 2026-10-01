@@ -1,0 +1,171 @@
+{
+  "path": "dashboard/src/panels/review/changeTriage.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement: pure functions over the delivered facts; a dataset entry is left as landed.\n\nAnchor: \"Pure functions over the delivered facts\"; \"here decides a fact\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:199d2eaaf45f7d8bbdc6e01b02d3abaecbc2195736171c397fb431d73032740e",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Precedence and sort weight, the labels and the accessible meanings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:91226cb48158f75abd6bed1dd97f3d0492039ec83c3994d5e7d3af2443436ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_WEIGHT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:8051511d88d2a9d7473ef2f6f9a0dc5f22bb82c6e87c4d4591dc494f675e4a85",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_LABEL"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:0d16541a9c15811aacbf114d94f168aefd7f21e548c3013289068de034a60b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGE_MEANING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An undescribed returned member reads unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:d468b58cdc4781433b2802cbd66d15ed0680538cc1d6d20be3239f440bac504c",
+            "locator": {
+              "kind": "symbol",
+              "name": "occurrenceKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A family's counts, partial and scoped state and weight (item 8; review R1 F2).\n\nAnchor: \"A total the server could not read never lets the returned members pass for the whole family.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:70873f42f0a38448afbed7e1b469ab45d7f1f426e7837c186f4f27b8f5894250",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyTriage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The breakdown text, never the intent count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:9de5945ee7c73ec46edd1a96588dcdcec7d9406da8ebd404e64848b32977dedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "breakdownText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Families and member rows ordered, siblings kept, one occurrence's rows together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:9436ab5f4df9a143bb65caef3be77dc6190f79d09c451e4781aadc5a1879b387",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderFamilies"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:35406d4d2b813e6cd12d4e1c012c40d64e8273010dfe1edb9955766d468d84d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderMemberRows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The union of two deliveries across a roster walk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:ee64c2bf4972913abb3f3618ae1734e9cbb14259ba9782ab8f1828e33c324513",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeChangeKinds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The centre's member list follows the tree's order.\n\nAnchor: \"const distinct = orderMemberRows(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:5e8e308dbbaa2289b957d593152f696b8df7163595618a6aed13e6e9bde2f43b",
+            "locator": {
+              "end": 672,
+              "kind": "line_range",
+              "start": 672
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

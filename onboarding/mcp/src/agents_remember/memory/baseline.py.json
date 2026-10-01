@@ -1,0 +1,352 @@
+{
+  "path": "mcp/src/agents_remember/memory/baseline.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Context, drift, and Git-history adoption decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:87089c2e6dbfe2eafe63643a5244b85b3c3c85bbd1dc809587118b6951816fd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_request_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:3b86a90a082ae2efbbd19c39b7c27b6766f4880aa40670557a243987a426f1f0",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The branch-authority cases this leaf added: adoption follows the recorded branch, and `bootstrap/` never enters the baseline commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e9143ef4dfeb6b8a097f945dceb9d53c4d85247",
+            "content": "sha256:97538ae5ecb1a2d1f3cc1d670f98a2c984e7a1014a03de4130f4c704692f7f46",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_follows_the_configured_branch"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e9143ef4dfeb6b8a097f945dceb9d53c4d85247",
+            "content": "sha256:4dc9bf1c786bee0736b7acfe41d7423733f7e910b106bcd8250e604520c1ea72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e9143ef4dfeb6b8a097f945dceb9d53c4d85247",
+            "content": "sha256:a177857033c2160f6da833552bf85e43325f6befc2f6e2e419070bb9f3af96ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_first_baseline_never_commits_bootstrap_scaffolding"
+            },
+            "path": "mcp/tests/test_memory_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The recorded-default authority this file now follows instead of a literal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7182038e35b49c2a44e998d12fde1ac501da3fd2",
+            "content": "sha256:ee82685964efd6df3a6c96c715cf7a437ea1d13596666122a071b71a3ea23ead",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repository_default_branch"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bootstrap branch proof and the one attributed content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_default_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:2287c0cf045f9c6fe1a22f6ed90f2672feefdceeff9d1df91de61a943458bdf7",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cache preparation and refresh are separate from Git commit publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5100d97eebd9e4a3f1b68fc62189e707e02528dd8d298f788e69d1fdbf252d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared staging excludes derived paths from the content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The existing baseline case checks unborn readiness, one attributed commit, and unavailable-history refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:84474b916d80410176e1759c0102ee6b31d0291336f2df2512c051d54f170133",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_attributes_its_memory_content_commit_to_the_code_source_branch"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_census_producer_reaches_the_shared_renderer"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Context, drift and Git-history adoption decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:6c003dff711cbfdebdf5a90aa5acd07e71ac5bb9d10652e1b12e295036c5b20a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaselineRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:d8445b203b66c95d257fffc5ea97a6a596f8997ef552a6d9781b6b410a6d1c15",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_baseline_context"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:7872ba472c8aca316040aa4280546d1ee5c4f28949b00ecedf46d290c23a9b6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:9e6973de4e2671f0c8e24cd553757810fb292b01199360184238048a54b4d2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_status"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:5120c75cd847d31608b00c8de3034947eb706366ddd84c0d851686477b9dff30",
+            "locator": {
+              "kind": "symbol",
+              "name": "baseline_adopt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:f3bd48c3cc0eb516a3c461d2a9d104d6af0ce8914da81e5b537e337ebef311d2",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Bootstrap branch proof from the branch `memory_init` recorded, and the one attributed content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
+            "locator": {
+              "kind": "symbol",
+              "name": "_baseline_default_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deb096fe0af4e38c92a8588b236463c0074f29ea",
+            "content": "sha256:71930f2857c3aaf6e9c1da5b17f5b2fdaf3f8ed1ca90e4a432b752b23d9bdc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "adopt_initial_baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared memory-content policy the content commit excludes, and the reason the exclusion belongs on the staging call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90848f80f5692b8abaeb3b2d3f7abe6b7344bed1",
+            "content": "sha256:713e1afb20cfa4c1cb6f5b2b3a9cac350984d950d549f2b1298434fcff637aa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_CONTENT_EXCLUDES"
+            },
+            "path": "mcp/src/agents_remember/models/memory_content_excludes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Shared staging, and the re-stage that makes a bare `git add` exclusion inert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,342 @@
+{
+  "path": "mcp/src/agents_remember/application/review_intent_summary.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify"
+        }
+      },
+      "id": "RLZ-A5SQ5633",
+      "invariant": "INV-WCEGX72X",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Classifies one identity from its before and after heads: a head only after counts +1, a head only before counts −1, and a successor whose compared content differs counts once on each side. A successor with identical content but different realizations or members is tallied attached-only outside +/−, while an unchanged head with unchanged attachments tallies nothing. When either side has no single head, the identity counts as unresolved only if the two sides' head sets differ, and otherwise tallies nothing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+        "content": "sha256:d377a0c3a0203f4c6de93667d2795a6fa494d9e0dba3f4697ba7974f7481fdf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_no_single_head"
+        }
+      },
+      "id": "RLZ-CC2NVWCA",
+      "invariant": "INV-R93S8Y30",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Decides when one side has no single head for an identity: several heads, or a populated identity with none. _classify uses it to count that identity as unresolved (making the summary partial) instead of as an unchanged zero.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+        "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_classify"
+        }
+      },
+      "id": "RLZ-K697ATH6",
+      "invariant": "INV-SVZY1FHR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Counts a successor head once on each side whenever its compared content differs from the superseded head's, which includes a record-only successor with identical text but a changed record status. Only a successor with identical content whose attached realizations or members differ is diverted to attached_only.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+        "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_STATEMENT_FIELDS"
+        }
+      },
+      "id": "RLZ-PVFA3GK8",
+      "invariant": "INV-SVZY1FHR",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Lists the invariant fields that make up a revision's compared content: the four statement fields plus state_at_origin and acceptance_ref. Because the record-status fields are in this list, a status-only successor differs in content and is counted as a revision rather than as a relationship-only change.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The public read: the reviewer's own resolution, a refused resolution returned as `unavailable`; a tree comparison's lane count attached (MIK-L32).\n\nAnchor: `resolve_review_candidate`; \"return summary.model_copy(update={\\\"attribution\\\": lane_summary(resolved.trees)})\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:49833409a0940d1b406bdcebfa65c3bd15268c2e6e9b4596d2d9070267344153",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_intent_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The fixture that pins added/revised/removed as +/− and realization-only/membership-only as typed counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:4ce9381aebcf2e062ad6fa08786c1b427c19f6d09d907f0facb6d3c41f15a817",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A revised member shared by two families counts once on each side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:17d9d5a6dbb29c998fcbf1ae0d434281d1d4edc9fef3af902b299bd1384c683d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_revised_statement_two_families_share_counts_once_on_each_side"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A status-only or version-only successor counts once on each side (L47-R1-F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:e08c68412231e30cc5bcb24aff2c8b57841cc9dd0b9b57f78ca1582ab9098aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_only_successor_counts_once_on_each_side"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Divergent heads make the answer `partial`; absent knowledge is `unavailable` with no counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:41faebf17042ef1336824db794c290d8b15ca5fe1e6d84800e4628b97d29456c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identity_without_one_head_makes_the_summary_partial"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f48c122dff924fe480a3e3a105c5df7c9010cb55",
+            "content": "sha256:ba11f7b16ebbb463e1f1ad1ae0f1ef727fef468c48d32dde5e9a14e935092cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_knowledge_is_unavailable_with_its_refusal_never_zero"
+            },
+            "path": "mcp/tests/test_review_intent_summary.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The composition root wires this read as the fourth review port.\n\nAnchor: `read_review_intent_summary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "content": "sha256:ebd17f93289f879070cf11a21c444e2aec77868ac3b97fd7764fcf9935af73a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_intent_summary_port"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One resolved pair: the shared preflight first, then both sides read, a mid-read storage failure refused as unreadable, `partial` exactly when something is unresolved.\n\nAnchor: `pair_preflight_refusal`; `unreadable_candidate_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:0b016e882e8081c06350e7308dc61d86a5e4daab96d18c3c8a27603e3d5549ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "intent_summary_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compared fields, including the record status that makes a record-only successor count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:f1ca2059e256eb7c1449aa1e27de969c2918988c46fbc1d5bab614d0cce4e3a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_STATEMENT_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:5ca08e123f8b79b449d04c06ae50531dd22b09ec95536ccd2505c51b89add9ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GUARANTEE_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The classification: unresolved, after-only, before-only, relationship-only, or a counted successor.\n\nAnchor: \"tally.attached_only\"; \"tally.after_only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:07b010d39b737ca0f657594d827cc59ed1d6a3a42cd6d1c6e5fb0052acc6565f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_classify"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Several heads, or a population with none, is not one head.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:d377a0c3a0203f4c6de93667d2795a6fa494d9e0dba3f4697ba7974f7481fdf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_no_single_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Family members compared by canonical invariant identity, so a member whose invariant moved is the same membership.\n\nAnchor: \"invariant_of.get(invariant_revision, invariant_revision)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:e6952ce2bd5be42f7de1e04e0a998f7500b6bc0cdaa02fe5548df4e95728f7cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "What one realization claim asserts, independent of the claim record's own identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d329c4f45719a62978a732785750f147d6e2e098",
+            "content": "sha256:40eb01c86fc499996e068463e5c320223a56741d27240f4e53c771f56e07db2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_claim_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The lane count read on a live tree leaf; none on a dataset leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:a41f10fa157c5828acde96f7c3d00513c32be7fc6b37a5dc9f1edfee7bf35001",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_tree_leaf_serves_the_lane_and_its_entry_count"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
+            "content": "sha256:d84cb286fa364b7acd14e99c5625f3d5fd7ddb6a86feb9b6a5ee613425ca736f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dataset_review_entry_carries_no_attribution"
+            },
+            "path": "mcp/tests/test_review_unexplained_lane.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The head rule reused from the revision comparison owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a052c7649e04f9df319c1eb28521f65e5a314970",
+            "content": "sha256:79bf54e417095b381827f162b7099f502b6d05eb46a0584a47578881ef423860",
+            "locator": {
+              "kind": "symbol",
+              "name": "revision_heads"
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

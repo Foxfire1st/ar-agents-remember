@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/data/terminal.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The WebSocket client under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:0637fde8273fcdcd9daa54f63fc3c93d88ffbeb0fd3050a6e5cd2426ca5323a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "connectTerminal"
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:2861139cb24ebb614ab880f740267717357650e159a2073da15a08df66b809bb",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

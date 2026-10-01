@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/eve_capsule_carrier.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/eve_capsule_carrier.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [models overview](overview.md)
@@ -93,46 +83,27 @@ confinement claim is supposed to make impossible.
 None known. The schema is `v1`; a format change increments `EVE_CAPSULE_CARRIER_SCHEMA` and must be
 made in the TypeScript reader in the same change.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation pass
 was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the serialization is plain JSON and the digest is standard `sha256`, so no external contract is being implemented. | — | — |
+No configured `Domain Documentation` source; the serialization is plain JSON and the digest is standard `sha256`, so no external contract is being implemented.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The writer that builds this value from one compilation result plus its admitted projection. | `build_carrier`; `materialize_eve_binding` | mcp/src/agents_remember/application/eve_capsule/__init__.py:282-324; mcp/src/agents_remember/application/eve_capsule/__init__.py:147-206 |
-| The Python reader that proves the declared digest, the binding identity and the git workspace before a process exists. | `verify_capsule_binding`; `_require_admitted_git_worktree` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/src/agents_remember/serving/eve_runtime_launch.py:499-527 |
-| The TypeScript reader that re-verifies the same carrier in-process and admits writes from its scope list. | `loadVerifiedCapsule`; `admitWritePath` | eve_runtime/agent/lib/capsule.ts:35-79; eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178 |
-| The git-identity comparison the workspace fields exist for, in both halves. | `verifyAdmittedWorkspace`; `readGitHead` | eve_runtime/agent/lib/git-workspace.ts:23-45; eve_runtime/agent/lib/git-workspace.ts:47-68 |
-| The channel distinction is realized as two separately-authored dynamic instruction entries. | "trusted system instructions"; "lower-authority context" | eve_runtime/agent/instructions/ar-capsule.ts:1-28; eve_runtime/agent/instructions/ar-task-context.ts:1-28 |
-| The cases over this format's refusals: degenerate instruction sets, a workspace scope that is not the workspace, and the digest-versus-disk check. | `test_carrier_refuses_a_degenerate_instruction_set`; `test_carrier_refuses_a_workspace_scope_that_is_not_its_workspace`; `test_carrier_digest_addresses_the_exact_bytes_on_disk` | mcp/tests/test_eve_capsule_binding.py:161-177; mcp/tests/test_eve_capsule_binding.py:179-196; mcp/tests/test_eve_capsule_binding.py:124-138 |
+- The writer that builds this value from one compilation result plus its admitted projection. [1]
+- The Python reader that proves the declared digest, the binding identity and the git workspace before a process exists. [2]
+- The TypeScript reader that re-verifies the same carrier in-process and admits writes from its scope list. [3]
+- The git-identity comparison the workspace fields exist for, in both halves. [4]
+- The channel distinction is realized as two separately-authored dynamic instruction entries. [5]
+- The cases over this format's refusals: degenerate instruction sets, a workspace scope that is not the workspace, and the digest-versus-disk check. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this module: the carrier is AR's own format, read by
 AR's own Python and TypeScript halves.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the carrier format added by
-  this leaf's change set. Records the four load-bearing properties the module enforces rather than
-  trusts (self-describing identity, digest over the exact bytes, every consumer-needed field required
-  at parse, workspace scope and workspace root forced equal), the parse-time confinement check and the
-  failure it prevents, and the two-channel distinction as load-bearing rather than stylistic: system
-  role for the trusted instructions so they survive turn boundaries, compaction and clear, user role
-  for task facts because they are content and compaction may summarize them. Also records the
-  boundary that this module performs no file I/O by design, which is what keeps compiler-side and
-  launch-side consumers symmetric. Verification metadata is pinned to the leaf's synced base
-  `23cc7a72` because the candidate is deliberately uncommitted — the governed closeout stamps the real
-  code commit, and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

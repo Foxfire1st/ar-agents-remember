@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/controlplane/records.py
 
-| Field                  | Value                                              |
-| ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember                                    |
-| path                   | `mcp/src/agents_remember/controlplane/records.py`  |
-| doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-08-01T18:30+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`         |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                      |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -107,15 +97,15 @@ advance). All helpers are pure.
   without either of them knowing the rule. Add a version branch to a reader and the two policies
   stop following from one place.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). | `Event` | mcp/src/agents_remember/observer/events.py:39-64 |
-| The append-only store that serializes and folds these snapshots. | `GateStore` | mcp/src/agents_remember/controlplane/store.py:96-325 |
-| Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. | `GateRecord` | mcp/src/agents_remember/controlplane/records.py:45-77 |
-| `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor. | `DurableRecord`; `schema_version_supported` | mcp/src/agents_remember/controlplane/durable_store.py:224-245; mcp/src/agents_remember/controlplane/durable_store.py:248-271 |
+### Repo-Internal References
+
+- Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). [1]
+- The append-only store that serializes and folds these snapshots. [2]
+- Ids come from the local ULID mint. [3]
+- `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. [4]
+- `DurableRecord` supplies the `extra="forbid"` config and the `schemaVersion` validator that rejects an unknown major and accepts an unknown minor. [5]
 
 As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handover-approval`: the master-exit seam gate the manager raises with the reviewer verdict attached and the orchestrator decides (delegable, never human-pinned — human review concentrates at the super gate).
 
@@ -124,45 +114,3 @@ As of the 260703-L8 seam ruling the GateKind vocabulary includes `master-handove
 `reopen_gate` now creates an answerable gate from a failed adapter decision while retaining the gate identity and attaching the failure detail. It is the records-layer counterpart to honest interaction failure handling; a failed delivery must not continue to look approved.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Updated the structural gate-model ownership path after the old flat
-  `models/gates.py` module was retired.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 5 repository-reference citations (5/5 anchored and sourced; scoped citation check clean).
-
-- 2026-08-01T18:30+02:00 — 260731-EFA-L5 (durable store integrity). Recorded that `GateRecord` now
-  subclasses `durable_store.DurableRecord` instead of `BaseModel`: the local
-  `model_config = ConfigDict(extra="forbid")` line is gone (the base supplies it) and one inherited
-  field, `schemaVersion`, is added. Recorded why the record now carries two version fields and that
-  they answer different questions — `schema` names the record vocabulary, `schemaVersion` versions
-  the durable-store contract the log is written under — and that the validator on the base rejects
-  an unknown major at parse time, which is what lets `GateStore.read` raise on it and
-  `GateStore.read_for_projection` skip it with no version branch in either. Confirmed by direct
-  construction: minor `1.99` accepted, major `2.0` rejected. No `GateRecord` field, alias, literal
-  or helper changed. Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `GateAnchor`, `GateRequest` and `GateVerdict` parameter objects and re-signed
-  the two builders — `create_gate(kind, *, gate_id, now, anchor=None, request=None)` (the former
-  `lifecycle_id` / `enclosure` / `repo_id` / `packet` / `required_decision` / `evidence_refs`
-  keywords) and `decide_gate(gate, verdict, *, now, evidence_refs=None)` (the former `decision` /
-  `by` / `via` / `note` / `deciding_role` keywords). `kind` became positional on `create_gate`.
-  `decide_gate`'s decision-time `evidence_refs` stayed a separate keyword on purpose. All helpers
-  remain pure and no `GateRecord` field changed. Verification metadata pinned until closeout
-  stamps the L2 commit.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): GateKind gains master-handover-approval (the ruled master-exit seam gate). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:32+02:00 — 260703-L4: added orchestration attribution
-  (`decidedVia="orchestration"`, `decidingRole`) and append-only
-  `GateEvidenceRef` / `evidenceRefs` so delegated gate decisions can cite
-  reviewer-verdict artifacts. Verification metadata pinned until closeout stamps
-  the L4 commit.
-- 2026-06-25T07:17+02:00 — Task 19: added pure `expire_gate(gate, now=...)` so creating a new lifecycle gate can supersede the previous open gate without deleting history. Verification metadata pinned until closeout stamps the task-19 code commit.
-- 2026-06-23T07:25+02:00 — slice 09 (gate-signal adoption, S2 kind extension): `GateKind` gained `plan-approval`, `worktree-intent`, and `push-approval` (the full l-01 gate spine alongside the existing closeout/integration/cleanup/question/retry/ack kinds). NB `closeout-approval` IS the commit gate — there is no separate `commit-approval` (closeout is the commit-of-record for code + memory + ledger). Envelope/helpers otherwise unchanged. Refreshed the Code Commentary `GateKind` listing. Verification metadata pinned until closeout stamps the slice-09 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: added pure `apply_gate(gate, now=...)`, the `open/approved → applied` snapshot a mutating tool writes when it consumes an approval (the transition this module's docstring anticipated). No change to the envelope or the create/decide helpers. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-18T01:05+02:00 — Created for task 6 slice 6a: the `GateRecord` envelope + pure `create_gate` / `decide_gate` / `coerce_gate_kind`. Verification metadata pinned until closeout stamps the 6a code commit.

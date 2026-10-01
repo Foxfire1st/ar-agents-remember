@@ -1,0 +1,357 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reference forms the detector recognises, D-IDs, commit hashes and ISO dates included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:bf1e0f29b2ee2fc7a74b737bed836d5a53cf715df7c7a4f3531828c21c791056",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REFERENCE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Every other record's unsupported claim is only reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:82461ced273b1b00f5765e851594f672cabada4081fc88dcf06740dd0cc7f83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_existing_record_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The live legacy-unassessed records are counted in one finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:cbc9d95e842b034f7ae505408357369efddb72c9f7d5909c28652bed257c4926",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_legacy_unassessed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The three rules, one refusing and two report-only, none writer-reported, registered on import.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:edc351652f7665c162a1e202b27a4f5647d0f505295f45f2634f4d819701e41f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ADMISSION_RULES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The derivation the conversion writes and the export test reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
+            "content": "sha256:fb93576f5f3152a3a6576058ad64001fb1a6b58a8b6ea329c09ac193d282c1f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_record_id"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/ids.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Reference-only justifications are refused, and real prose is admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a0c5c76c78d2d6b96c86608af3257f05cc177b1",
+            "content": "sha256:d7ef77f63545922409088ab8363e742a14519a896025bc46614a68e1efc312e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_record_whose_justification_is_only_a_reference_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "An unsupported checkable criterion on a new record is refused, naming it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a0c5c76c78d2d6b96c86608af3257f05cc177b1",
+            "content": "sha256:ec67874178091892a6e34378d016f7adbe8bb9da1c31fc8b47f5a61bd0926a91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unsupported_checkable_criterion_on_a_new_record_is_refused_naming_it"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "An existing record whose test was deleted is only reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a0c5c76c78d2d6b96c86608af3257f05cc177b1",
+            "content": "sha256:73d94d29f91146feba7ff3c6ab739c04c8e118bc8d6218bab9f642a38f83b499",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_record_whose_test_was_deleted_is_only_reported"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A forged legacy ID does not make a record exported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a0c5c76c78d2d6b96c86608af3257f05cc177b1",
+            "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The writer refuses a new invariant whose claim the tree does not support, and writes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0eae6b589390b6de2545ea9d07bf58c1dfded606",
+            "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_a_new_invariant_whose_claim_the_tree_does_not_support"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "A decision is never an export, so a legacy ID exempts it from nothing (L13 review F6).\n\nAnchor: \"if isinstance(record, DecisionRecord):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:2208746a1a33b3fdea0cb67417fbed8e562c0adf174452631e3fa247a61bcafc",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A master code before a leaf or requirement ID is joined into one reference; the provenance filler words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:9267b0c530b42f50a469772009c012961d2538ca01fd126eab59ab29a52f7404",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MASTER_PREFIXED"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:ff2f2a72a19565f751494faa5d431f316e8a864b7ee592382e4f8b245e579792",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FILLER_WORDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
+            "content": "sha256:0a49ae753910a15eea88f7e1ad72cb65d068f2edcb877f9afde23cbd83ecad1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A justification is reference-only when every token is filler, a number or a reference, and one is a reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:01ad7618e0af15ff971c581ab31a66a5751b9b13dd6692afb9fa97cb41912690",
+            "locator": {
+              "kind": "symbol",
+              "name": "_only_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The base record IDs come from the bases' record filenames.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:f998eb00d1b52fcd4b5b17e7dc7eba3e9d1a29b211a478e8e8cfac401748a280",
+            "locator": {
+              "kind": "symbol",
+              "name": "_base_record_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A record is new when no base holds its ID and it is not an export.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:df6ba79072231f1e8ae009462a9fad8fc1b35fccb7ddd665872a1a363c6e369b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An export is a record whose legacy ID derives its ID; retired records are exempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:ea17ccdd0945abadf165282bdc72a4f0dfb830e132696250b0d74b9fb6f1da72",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exported"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:43f50ef9dcd77531679f30dcc974356603a768c1a887cce32e9df2fd5f2a61cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retired"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The checkable facts come from the tree's sidecar realization and proof entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:337db1be9c520193eba23c7807bbd32424375bb2d8280851dd5d4892b7616715",
+            "locator": {
+              "kind": "symbol",
+              "name": "_entry_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unsupported spans_locations or guarded_by_test claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:531d2253cc202552ee0313d09d5e3fed55bdd71a060acd5d2a1707f733a27597",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unsupported"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A new record is refused for legacy-unassessed, a reference-only justification or an unsupported claim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
+            "content": "sha256:3c918e2da84a47cea7db603139138c6e6449401f4c5f24ea92a45981c56c143a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_new_record_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

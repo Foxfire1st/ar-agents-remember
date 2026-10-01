@@ -1,0 +1,83 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/final_certification/certificate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Derives the canonical coherence subrecord set from the current authority record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:71d4702e9fc7ddf7793928dad68000cd6cc577606d6207f92f20637caf982f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "coherence_subrecords"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One deterministic subrecord identity per judgment evidence reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:e02bd849126ce9a66c772be6c0f4d8cb5571b7e684c444cbbeb8444c3413b0ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judgment_subrecord_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Assembles the exact R21 Gate-5 semantic inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:fe22f8ecfb2dda3039b69e975b7917bbd33ac5a343ba42c3cb76fca816655b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble_gate_five_inputs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:8bfa4560c5a57f64ea0498b75de5bb03a76f3673fe42e063fefda47c616090b2",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed refusal helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:8bc9ca44791b6f2ac7b2bd3099f3803f585aa628c35524d399c75b5a3bbc2390",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

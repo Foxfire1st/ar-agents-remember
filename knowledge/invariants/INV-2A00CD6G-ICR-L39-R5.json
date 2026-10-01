@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Retry of an allocated curator family declaration whose authored content includes a nonempty retention set.",
+  "conditions": [
+    "The declaration content binds exact retained membership IDs and normalized nonblank authored bases in deterministic membership-ID order.",
+    "Reordering the same retention set preserves its content identity and held allocation.",
+    "Changing the retained set or a basis under the allocated key is a content conflict requiring an explicit successor declaration under a new key.",
+    "Absent and empty retention both add no retention content to the existing declaration digest."
+  ],
+  "exclusions": [
+    "Equal local labels or keys across distinct leaf scopes do not authorize reuse of another task’s allocation.",
+    "Formatting normalized by the parser is not a new semantic basis; this rule does not override source/candidate/publication admission."
+  ],
+  "id": "INV-2A00CD6G",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "b0a82502-2e6e-42e9-99f4-32b8329dfd70",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "An allocated family declaration binds its nonempty retention set and authored bases; reordering the same set is an exact retry, while changing the set or bases is a content conflict.",
+  "status": "proposed",
+  "supersedes": []
+}

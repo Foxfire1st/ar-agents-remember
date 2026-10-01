@@ -1,15 +1,5 @@
 # mcp/tests/test_task_reopen.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/tests/test_task_reopen.py`            |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-30T15:25:16+02:00 |
-| lastVerifiedCommitHash | `904e804b07a598d5d6c66f06b7e67ddab64d9b8e` |
-| lastVerifiedCommitDate | 2026-09-30T15:46:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -86,109 +76,32 @@ module is a cross-lane budget decision, not a local one.
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Resets contract doc and master index | `test_resets_contract_doc_and_master_index` | mcp/tests/test_task_reopen.py:39-80 |
-| Contract publish failure rolls back docs and landing | `test_contract_publish_failure_rolls_back_docs_and_landing` | mcp/tests/test_task_reopen.py:82-106 |
-| A leaf naming no master resets the row its folder master lists (MIK-R38). | "def test_a_leaf_naming_no_master_resets_the_row_its_folder_master_lists(self) -> None:" | mcp/tests/test_task_reopen.py:108-121 |
-| A light leaf that is the folder's `task.json` is not its own master. | "def test_a_light_leaf_that_is_the_folder_task_json_is_not_its_own_master(self) -> None:"; "self.assertEqual(planned, (None, \"no-master\"))" | mcp/tests/test_task_reopen.py:123-150 |
-| A leaf the store would write elsewhere is refused before any write. | "def test_a_leaf_the_store_would_write_elsewhere_is_refused_before_any_write(self) -> None:" | mcp/tests/test_task_reopen.py:152-184 |
-| A named master the store would write elsewhere is refused before any write. | "def test_a_named_master_the_store_would_write_elsewhere_is_refused(self) -> None:" | mcp/tests/test_task_reopen.py:186-218 |
-| The terminal series reopen, gathered as one collected subject across all three of its arrivals. | `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` | mcp/tests/test_task_reopen.py:230-341 |
-| The reset that is durable while the locator is still the collected generation is resumed, not refused. | `_assert_an_interrupted_series_reset_is_resumed` | mcp/tests/test_task_reopen.py:343-374 |
-| A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. | `_assert_a_live_unaddressed_series_is_re_addressed` | mcp/tests/test_task_reopen.py:376-469 |
+- Resets contract doc and master index [1]
+- Contract publish failure rolls back docs and landing [2]
+- A leaf naming no master resets the row its folder master lists (MIK-R38). [3]
+- A light leaf that is the folder's `task.json` is not its own master. [4]
+- A leaf the store would write elsewhere is refused before any write. [5]
+- A named master the store would write elsewhere is refused before any write. [6]
+- The terminal series reopen, gathered as one collected subject across all three of its arrivals. [7]
+- The reset that is durable while the locator is still the collected generation is resumed, not refused. [8]
+- A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-- 2026-09-30T15:25:16+02:00 — 260928-MIK-L38 curator (staged change set on `ar/260928-mik-l38`, code base `59daf5055eb1ceffba89170be64ac85cabf860f4`; review R1 pass-with-notes, fixes, R2 pass): **body updated for MIK-R38.** Purpose and Logic record the four new `ReopenResetTests` cases (the folder master through the shared helper and the light `task.json` case, ruling 12:33:07 Q2; the leaf-side and master-side placement refusals, review R1 finding 1 and ruling 13:35:32) and that the series helpers' case-budget reason is of its own time; four rows added. The existing rows moved with the one added import line and the inserted cases: two were re-pointed by the installed fixer (generated bullets kept) and three normalised by it. No verification stamp was advanced.
-- 2026-09-30T13:22:53+00:00: Generated citation repair: `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` repointed to mcp/tests/test_task_reopen.py:230-341. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-30T13:22:53+00:00: Generated citation repair: `_assert_an_interrupted_series_reset_is_resumed` repointed to mcp/tests/test_task_reopen.py:343-374. No content impact: mechanical anchor-range projection bound to citation source snapshot 7bf4b32298650854529d8e6c804df2de7f6bf2ad388d219d6f1439bc23af3bf3; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-
-- 2026-09-20T14:20+02:00 — 260915-KS-L43 curator (deterministic-check clearance inside this leaf's change set, uncommitted on `ar/260915-ks-l43-ar`, code base `fb719f89`): **one `ruff format` reflow inside an existing case; no claim changed.** In `SeriesReopenTests` the `commit_file(contract.code_repo_path, "late.txt", …)` call split across lines, which is a whitespace change inside that class's second method. The reflow is net two lines at its own span and **lands below `:146`**, so the card's five cited ranges are unchanged and each was verified at the reformatted tree: `ReopenResetTests` `:38-79` still opens on `test_resets_contract_doc_and_master_index`, `:81-105` still opens on `test_contract_publish_failure_rolls_back_docs_and_master_index`, `SeriesReopenTests` `:117-226` still opens on `test_a_terminal_series_is_reopened_without_ever_moving_its_line`, `:228-259` still opens on `self._assert_an_interrupted_series_reset_is_resumable` and `:261-358` still spans the resumed-locator assertions to the file's end. No range moved and no claim changed. **Stamp accounting:** the recorded working candidate is this leaf's candidate `ar/260915-ks-l43-ar` on base `fb719f89`; the `lastVerifiedCommitHash`/`lastVerifiedCommitDate` pair is retained exactly as recorded. No commit was made.
-
-- 2026-09-20T02:50+02:00 — 260915-KS-L34 curator (uncommitted change set on `ar/260915-ks-l34-ar`, code base `0da444b3`): **the series half of `task_reopen` is now covered here, and the two retained leaf rows were re-pointed at the ranges the file actually has.** The collected subject `test_a_terminal_series_is_reopened_without_ever_moving_a_live_ref` was extended from two facts to four (a live ref is never moved; the reset is otherwise complete; a series already live at a collected address is re-addressed instead of refused; and the review counter the completion spent is cleared), and it gained two plain helper methods — `_assert_an_interrupted_series_reset_is_resumed` and `_assert_a_live_unaddressed_series_is_re_addressed` — which it calls inside its own body. They are deliberately **not** `test_*` methods: both lanes sit at exactly their case budget, and a single added collected case makes the lane raise `UsageError` and execute **zero** tests rather than one more. The two pre-existing rows had drifted with the file's growth and now cite `:38-79` and `:81-105` (previously `:25-66` and `:68-92`), each re-derived against the file as it stands rather than shifted by arithmetic. No verification stamp advanced and none was invented: the candidate is uncommitted, the governed closeout owns the real code and memory commits, and the metadata carries a recorded working candidate naming this candidate because the body moved under the retained pair.
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-08-26T10:44:52+02:00 — No behavior change: common reopen contract/memory fixtures moved to `task_reopen_test_support`; reopen publication and authority assertions are unchanged.
-
-- 2026-08-24T14:48+02:00 — DAGQC cumulative CLIVE final-gap curation: reconciled this test card to current source while preserving prior history and verification provenance.
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled the L2 test boundary represented by the changed source. Verified at code commit `1d446724`.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`) and the `unittest.main` tail guard removed where present; reviewed — no content impact on the documented test contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-16T05:18+02:00 — Dagger repair: reopen preview proves byte preservation now that dry-run start does not create an authority lock; a missing legacy `master` field still resets the exact canonical parent row derived from task topology.
-- 2026-08-16T04:06+02:00 — 260815-DAG-L4 Dagger repair: migrated the shared reopen and start-after-reopen fixtures from the retired universal master-series chain to the production organizational direct-super lineage; exact Git commits replace placeholder candidate ids, and successful restart asserts that no series contract is created.
-- 2026-08-16T03:12+02:00 — No content impact: the sprint execution-graph fixture now validates its
-  raw payload through `SprintExecutionGraph` before passing it to `TaskDocument`, satisfying the
-  typed constructor while preserving the same atomic graph and reopen assertions.
-
-- 2026-08-15T23:38+02:00 — Reconciled the suite's L4 fixture and forcing role for protected integration branches, durable operation authority, external-memory parity, and recovery. Verification metadata remains closeout-owned.
-
-- 2026-08-15T10:24+02:00 — L3 file-size repair: moved `ReopenGuardTests` into the focused
-  `test_task_reopen_guards.py` suite; helpers and all reset/restamp/start behavior stay here.
-- 2026-08-15T09:10+02:00 — L3 content update: reconciled the restamp tests with publisher injection
-  and removed the retired direct-call citation; verification remains closeout-owned.
-- 2026-08-14T05:26Z — L23 final curator: re-anchored the ambient-end regression after the helper
-  became the public application-level owner; the single-writer lifecycle contract is unchanged.
-  Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented no-mutation reopen refusal on moved super ancestry; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: split reopen lookup/restamp and legacy
-  load/write normalization claims, with generated ranges delegated to the scoped fixer.
-
-- 2026-08-03T03:59:59+02:00 — Curated 10 citation findings (5 table rows, 5 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:50+02:00 — No content impact: 260731-EFA-L2 curator checked this file against the
-  leaf diff. Only fixture construction changed: the three `default_contract(...)` fixtures
-  (`_completed_leaf_contract` and both `StartAfterReopenTests` cases) now pass
-  `ContractTask(...)`, `leaf=LeafIdentity(...)` and `code=RepoBranchPlan(...)` instead of twelve
-  loose keyword arguments, and `AbandonAmbientLifecycleTests` builds
-  `AmbientLifecycle(store, timing=AmbientTiming(heartbeat_seconds=3600))`. Every field value,
-  test name, guard blocker and reset expectation is unchanged; this sidecar names neither
-  builder's argument list and carries no line citations, so the reopen-guard, reset, leaf-doc
-  lookup/restamp and start-after-reopen descriptions all still match.
-- 2026-07-07T20:50+02:00 — 260707-HFX-L4: legacy reopened contract fixtures now expect `load_contract`
-  to normalize a proven stem-shaped leaf id to the canonical task doc id. Verification metadata pinned
-  until closeout stamps the 260707-HFX-L4 commit.
-- 2026-07-03T12:50+02:00 — No content impact: L15 typed the blockers payload access (cast to list[str]) at three join sites for pyright; assertions unchanged.
-- 2026-07-03T00:30+02:00 — Created for L11: guards/resets for task_reopen, leaf-doc lookup/restamp,
-  start-after-reopen recreation with doc restamp, and abandon's ambient lifecycle end. Verification
-  metadata pinned until closeout stamps the code commit.
+No external evidence is needed for these assertions.

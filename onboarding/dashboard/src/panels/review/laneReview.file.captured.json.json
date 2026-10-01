@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.file.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The per-file response.\n\nAnchor: \"file_classification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43544aeaff2707f9dcbcfffd3359c87be314add1",
+            "content": "sha256:224f3d6cee358887f32591f52915e5706ff47b351ebf6ddf96beef28789ea670",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The linked edit and its link with revision and family occurrence.\n\nAnchor: \"\\\"classification\\\": \\\"linked\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43544aeaff2707f9dcbcfffd3359c87be314add1",
+            "content": "sha256:67ec81dea26f953c549cf4c5121edbc07c98ff3cc3304d644e8df6a311479927",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unexplained appended helper.\n\nAnchor: \"\\\"start\\\": 572\"; \"\\\"classification\\\": \\\"unexplained\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43544aeaff2707f9dcbcfffd3359c87be314add1",
+            "content": "sha256:4be9b359dac2bbffffbc0103b1101dd2ab2a4c9f325ec15f36a7c3f60a812dfd",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.file.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:32584848a6c73ed7bd15c33761c8a64a8c800289c33d9631ef18783c7782073d",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

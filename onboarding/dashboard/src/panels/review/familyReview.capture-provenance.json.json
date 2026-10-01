@@ -1,0 +1,128 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The earlier run's provenance: source tree, time, command, route and capture record.**\n\nAnchor: \"a8039b8e036e2c0d83100e9b4683901d6d54bd0d\"; \"aeae0851e110a5244ccebfa34555479662e2e8e6a5a611695e3a167be5fb0172\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:b5deb7fe9fdd8189f2119465217810e6d79b48cff22a2f3367ca8ad826c3440e",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "**How the earlier run accepted a build: the structural signature and the attempts per group.**\n\nAnchor: \"until every route body it produced carried the committed capture's structural signature\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:9c4eb274d278fde379d519f0c376a6cfcf2c1b6ef8cf6db9dbdff938098f6178",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The two re-captured fixtures with their digests, scenarios, requests and normalization.**\n\nAnchor: \"familyReview.complete.captured.json\"; \"familyReview.identical.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:20bea29d7b8ef2414863a2baf98e7e41a067b24c500c30c9b218995d5b57e6d9",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The MIK-L31 worker-stated re-capture: source tree, time, command, route, producer, first-build selection, one attempt per group, the capture record and why.**\n\nAnchor: \"mik_l31_recapture\"; \"the first build of each scenario is accepted (MIK-L31); no signature is matched\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:9607f01c5924e3e03890b2e8bb5864829d313d3b8876b211be53ea7efadab1a2",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**One row per re-captured fixture, and the tree note.**\n\nAnchor: \"familyReview.truncated.captured.json\"; \"familyPaging.captured.json\"; \"familyReview.emptyRoster.captured.json\"; \"tree_note\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146eb12e3f11da3c7cd7448c107f8bda4a135c6a",
+            "content": "sha256:24a1ca7ff557da65ef218e6264a86677e229bb4c56f24bcbfc8a85ce34cb0caf",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The workspace case header that points at this receipt and names both captures, the MIK-L31 one as `mik_l31_recapture`.\n\nAnchor: \"familyReview.capture-provenance.json\"; \"mik_l31_recapture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfb7a876a06691cfbd620c2f013c9ad531be79bc",
+            "content": "sha256:4edd8bb036c77026c9ca878a31b6fa41fedc1dc2d52ac717de9111a3cbdafe88",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The read-cycle case header that points at this receipt for the re-captured paging fixture.\n\nAnchor: \"familyReview.capture-provenance.json\"; \"re-captured by MIK-L31 with ICR-L44's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:b4675237bf275a74485899e379d72e51f78c9a467a4da861a36a52a6e229b543",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

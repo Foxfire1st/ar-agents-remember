@@ -2,12 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-30T12:13:48+02:00 |
-| lastVerifiedCommitHash | `f9e1262283469df895c98dda5b9549a1bbad5b74` |
-| lastVerifiedCommitDate | 2026-09-30T13:14:52+02:00|
 
 ## The reconsideration row in the curator hand-off template (260928-MIK-L14)
 
@@ -30,10 +25,8 @@ The stale-item refusal is not in the template; its message names its own fix (re
 the package copy and the eight harness starter copies through `sync-skills.py` (`--check` ok). They bind converted
 memory only, so no hand-off list of today's memory changes; no role, operation or other template changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reconsideration-row bullet in the writer section. | "A reconsideration row (MIK-R14, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:583-607 |
-| The decision section's reorder refusal. | "with a linked alternative moved to another index against the memory base" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:726-729 |
+- The reconsideration-row bullet in the writer section. [1]
+- The decision section's reorder refusal. [2]
 
 ## The no_invariant row in the curator hand-off template (260928-MIK-L10)
 
@@ -50,9 +43,7 @@ One file of this skill now serves MIK-R10 (unexplained change disposition):
 It reaches the package copy and the eight harness starter copies through `sync-skills.py`. It binds converted
 memory only, so no hand-off list of today's memory changes; no role, operation or other template changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The no_invariant-row bullet in the writer section. | "A no_invariant row (MIK-R10, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:575-582 |
+- The no_invariant-row bullet in the writer section. [3]
 
 ## Decision records in the curator hand-off template and the curator role (260928-MIK-L13)
 
@@ -73,10 +64,8 @@ Two files of this skill now serve MIK-R13 (decision records with rejected altern
 Both reach the package copy and the eight harness starter copies through `sync-skills.py`. They bind converted
 memory only, so no hand-off list of today's memory changes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The decision-record section of the hand-off template. | `## Decision records (MIK-R13)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:691-752 |
-| The curator role's pointer in step 3. | "Lift the decisions that keep governing code." | skills/l-01-agent-lifecycles/roles/curator.md:95-98 |
+- The decision-record section of the hand-off template. [4]
+- The curator role's pointer in step 3. [5]
 
 ## The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)
 
@@ -101,10 +90,8 @@ The paragraphs were rewrapped to 100 columns (ruling F5). All three reach the pa
 harness starter copies through `sync-skills.py`. The rule binds converted memory only, so no hand-off list,
 review or foundation run of today's memory changes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The admission section of the hand-off template. | `## The admission rule (MIK-R27)` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:638-690 |
-| OM-4, the requirement-bound reviewer criterion. | "Admission justifications are plausible" | skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:36-47 |
+- The admission section of the hand-off template. [6]
+- OM-4, the requirement-bound reviewer criterion. [7]
 
 ## The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)
 
@@ -126,10 +113,8 @@ Both reach the package copy and the eight harness starter copies through `sync-s
 emits changes, and no other role, operation or template in this route changed. No real task document carries
 the declaration before the L37 install (ruling Q2).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The planned-row history form in the writer section. | "A planned row (MIK-R11, converted memory only)" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:564-574 |
-| The reviewer's declaration check in step 7. | "check that declaration against the" | skills/l-01-agent-lifecycles/roles/reviewer.md:74-76 |
+- The planned-row history form in the writer section. [8]
+- The reviewer's declaration check in step 7. [9]
 
 ## The onboarding row in the curator hand-off template (260928-MIK-L30)
 
@@ -142,9 +127,7 @@ change; a counted change (the Markdown, or a sidecar field other than an anchor'
 (architect ruling 2026-09-29T18:49:50 (1)). Nothing a producer emits changes, and no role, operation or other
 template in this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The onboarding-row history form in the writer section. | "An onboarding row (MIK-R30, converted memory only)"; "needs no row." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:558-563 |
+- The onboarding-row history form in the writer section. [10]
 
 ## Test proofs in the curator hand-off template (260928-MIK-L28)
 
@@ -159,10 +142,8 @@ a curator pass turns a migrated record's "Evidence: …" text into proofs throug
 facet. It applies only on a converted memory tree; nothing a producer emits changes, and no role, operation or
 other template in this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Both evidence forms, and the facet authored beside the statement draft. | "as a path plus symbol"; "offers the statement as a draft" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:524-529 |
-| The views, the informational list and the migration pass. | "Proofs are shown and counted (MIK-R28)." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:530-534 |
+- Both evidence forms, and the facet authored beside the statement draft. [11]
+- The views, the informational list and the migration pass. [12]
 
 ## The file writer's sections in the curator hand-off template (260928-MIK-L12)
 
@@ -175,9 +156,7 @@ rows and their cover forms; `handoff:<key>` handles; what the writer fills in; a
 `incidental` line now says the writer writes it as `support`. Nothing a producer emits changes. No role,
 operation or other template in this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The section and the `incidental` decision. | `## The file writer's sections (MIK-R12)`; "writes it as" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:485-637; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:451-451 |
+- The section and the `incidental` decision. [13]
 
 ## Family routes in the curator hand-off template (260928-MIK-L04)
 
@@ -189,9 +168,7 @@ and `route_unassigned` reported, not refused; an added route must be a code dire
 one is reported for MIK-R06; and `agents-remember knowledge-routes`, whose mechanical suggestion never writes
 a route. Nothing a producer emits changes. No role, operation or other template in this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The subsection and the command it names. | `### Family routes (MIK-R04)`; "agents-remember knowledge-routes" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:460-484; skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:478-478 |
+- The subsection and the command it names. [14]
 
 ## Where a hand-off entry lands once knowledge is text (260928-MIK-L21)
 
@@ -204,18 +181,14 @@ knowledge-format`. It states that nothing a producer emits changes before MIK-R3
 role `incidental` has no file spelling (MIK-R12 decides its mapping). No role, operation or other template
 in this route changed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The section heading and its no-change statement. | `## Where an entry lands once knowledge is text (MIK-R21)`; "Nothing here changes what a producer emits today." | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:425-484 |
-| `incidental` has no spelling in the file format. | "has no spelling in the file format" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:450-450 |
+- The section heading and its no-change statement. [15]
+- `incidental` has no spelling in the file format. [16]
 
 ## Explicit sibling selection in curation
 
 A curator adding obligations to a family successor reads and names the exact old membership IDs with authored retention bases. Canonical role, operation and handoff carriers require this selection and published roster readback; no unchanged invariant is revised merely to populate the successor. The existing writer and role boundaries remain.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical handoff explains exact stored-sibling selection and readback. | `### Retain exact siblings when adding new obligations to a family successor` | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:356-424 |
+- The canonical handoff explains exact stored-sibling selection and readback. [17]
 
 ## Per-target realization rationale in curation (260921-ICR-L45)
 
@@ -229,11 +202,9 @@ revision 1 (the rest of rule 1 stands); the curator role (Process step 3) and th
 3) carry the same duty, and `c-14-knowledge-bootstrap` step 3 carries it for the foundation route. The
 generated copies follow through `scripts/sync-skills.py`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical per-target rationale section. | "Realization rationale and role: one authored explanation per target" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:101-140 |
-| The stated supersession of the external schema note's rule-1 element shape. | "this file's element shape supersedes rule 1's" | skills/l-01-agent-lifecycles/templates/curator-handoff-list.md:8-18 |
-| The curation operation's step 3 duty. | "Every target in it carries its own" | skills/l-01-agent-lifecycles/operations/curation.md:71-75 |
+- The canonical per-target rationale section. [18]
+- The stated supersession of the external schema note's rule-1 element shape. [19]
+- The curation operation's step 3 duty. [20]
 
 ## Curator semantic scope and comparison handoff
 
@@ -300,22 +271,20 @@ substitutes for the foundation, and the foundation substitutes for neither.
 `scripts/sync-skills.py` writes the package-owned copy under
 `mcp/src/agents_remember/package_data/runtime/skills/` and the eight self-hosted harness starter copies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The foundation entry as a second, bounded shape of the curator's work, with its own carrier and the seat's admission stated **either way** rather than a refusal assumed. | "This seat is admitted for it either way:"; "never required to start." | skills/l-01-agent-lifecycles/roles/curator.md:40-53 |
-| The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. | `## Process` | skills/l-01-agent-lifecycles/roles/curator.md:59-163 |
-| The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. | `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" | skills/l-01-agent-lifecycles/roles/curator.md:164-189 |
-| Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. | `## What you may do` | skills/l-01-agent-lifecycles/roles/curator.md:190-207 |
-| The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. | "named role scope is required" | skills/l-01-agent-lifecycles/operations/curation.md:23-29; skills/l-01-agent-lifecycles/operations/curation.md:26-26 |
-| The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. | `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` | skills/l-01-agent-lifecycles/operations/curation.md:190-219 |
-| The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. | `## Authority gates` | skills/l-01-agent-lifecycles/operations/curation.md:220-255 |
-| The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. | `## Handoff / exit` | skills/l-01-agent-lifecycles/operations/curation.md:273-286 |
-| The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. | "Reach the knowledge foundation and report its outcome" | skills/l-01-agent-lifecycles/roles/bootstrap.md:49-58 |
-| The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. | "Never author knowledge records either." | skills/l-01-agent-lifecycles/roles/bootstrap.md:136-139 |
-| The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. | "Reach the repository's knowledge foundation." | skills/l-01-agent-lifecycles/operations/bootstrap.md:73-84 |
-| The four knowledge rows the operation's failure table gains, keeping `unusable` and a refused admission distinct from `not-recorded`. | `not-recorded`; `snapshot_unavailable`; `context-not-admitted` | skills/l-01-agent-lifecycles/operations/bootstrap.md:111-114 |
-| The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. | "It does not author the knowledge foundation." | skills/l-01-agent-lifecycles/operations/bootstrap.md:148-150 |
-| The procedure these carriers delegate to, and its own statement that a taskless curator seat **now exists** and authors the foundation when no task does — the statement L27 landed in the opposite form and `260921-ICR-L32` reversed. | `## Who Runs It`; `task-binding-required` | skills/c-14-knowledge-bootstrap/SKILL.md:38-83 |
+- The foundation entry as a second, bounded shape of the curator's work, with its own carrier and the seat's admission stated **either way** rather than a refusal assumed. [21]
+- The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. [22]
+- The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. [23]
+- Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. [24]
+- The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. [25]
+- The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. [26]
+- The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. [27]
+- The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. [28]
+- The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. [29]
+- The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. [30]
+- The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. [31]
+- The four knowledge rows the operation's failure table gains, keeping `unusable` and a refused admission distinct from `not-recorded`. [32]
+- The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. [33]
+- The procedure these carriers delegate to, and its own statement that a taskless curator seat **now exists** and authors the foundation when no task does — the statement L27 landed in the opposite form and `260921-ICR-L32` reversed. [34]
 
 > **Seat-policy note at L27's bytes (dated 2026-09-24).** This records the policy of the candidate that curation read: code base `06ed70cfcde7e3860ee5b53435727e7512e4335c` plus that leaf's working-tree delta, where `TASKLESS_SEAT_ROLES` was `{"chat", "terminal", "bootstrap"}` and a document-less `curator` session was refused `task-binding-required`. That was true of those bytes and is **superseded**: whether `curator` joined the set was then a product decision under revision, and it was taken in `260921-ICR-L32`. The carrier instructions and their ten generated copies changed first and this memory followed them.
 >
@@ -387,15 +356,13 @@ to be written as prose.
   generated from it by `scripts/sync-skills.py`. This leaf ran the generator and its `--check`; **no
   harness skill root was installed**, which is the orchestrator's own acceptance step.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** | "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" | skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:81-81 |
-| **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** | "Route the durable knowledge through the real writer, and publish it."; "Consume the report, not the exit status"; `publicationRoute`; `publishedIdentity` | skills/l-01-agent-lifecycles/operations/curation.md:60-71; skills/l-01-agent-lifecycles/operations/curation.md:79-80; skills/l-01-agent-lifecycles/operations/curation.md:175-175; skills/l-01-agent-lifecycles/operations/curation.md:82-82; skills/l-01-agent-lifecycles/operations/curation.md:80-81 |
-| The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. | "The knowledge batch and its publication keep their existing owners."; "A partial or refused knowledge hand-off stays partial." | skills/l-01-agent-lifecycles/operations/curation.md:225-225; skills/l-01-agent-lifecycles/operations/curation.md:263-263 |
-| The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. | "Never write the knowledge dataset yourself."; "ordinary knowledge authoring route" | skills/l-01-agent-lifecycles/roles/curator.md:195-195; skills/l-01-agent-lifecycles/roles/curator.md:212-212 |
-| The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. | "knowledge hand-off result"; "published dataset identity" | skills/l-01-agent-lifecycles/operations/curation.md:259-259; skills/l-01-agent-lifecycles/operations/curation.md:260-260; skills/l-01-agent-lifecycles/roles/curator.md:172-172; skills/l-01-agent-lifecycles/roles/curator.md:173-173 |
-| The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. | "Where the route reads, and what publishes there."; `--publish` | skills/c-04-retrieval-strategy-router/SKILL.md:181-190 |
-| The write plane the carrier invokes, and the publication owner whose result it reads back. | `ingest_curator_list`; `declared_publication_location`; `published_identity_read_back` | mcp/src/agents_remember/application/knowledge_curator_ingest.py:1116-1243; mcp/src/agents_remember/application/knowledge_publication_route.py:115-132; mcp/src/agents_remember/application/knowledge_publication_route.py:202-250 |
+- **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** [35]
+- **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** [36]
+- The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. [37]
+- The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. [38]
+- The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. [39]
+- The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. [40]
+- The write plane the carrier invokes, and the publication owner whose result it reads back. [41]
 
 ## Purpose
 
@@ -557,24 +524,22 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shared routing, authority, loop, and dispatch doctrine is canonical here. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)"; "## Delegated series authority"; "comes only from process context"; "Every launcher or role that dispatches a hosted role calls"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)` | skills/l-01-agent-lifecycles/SKILL.md:13-13; skills/l-01-agent-lifecycles/SKILL.md:24-66; skills/l-01-agent-lifecycles/core/authority.md:50-68; skills/l-01-agent-lifecycles/core/authority.md:149-166; skills/l-01-agent-lifecycles/core/loop.md:1-115 |
-| The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. | "nothing serializes a graph-less"; "nothing serializes its masters"; "serializes the masters" | skills/l-01-agent-lifecycles/criteria/plan-review.md:65-68; skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-174; docs/reference/execution-topology-migration.md:61-63 |
-| The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. | "# Template — Architect Brief"; "This architect seat is now plane-hosted."; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. | "You run one leaf's coherence pass and you write onboarding."; `## Process`; "Reconcile three ways before writing anything"; `curator_coherence` | skills/l-01-agent-lifecycles/roles/curator.md:7-49; skills/l-01-agent-lifecycles/roles/curator.md:31-52; skills/l-01-agent-lifecycles/roles/curator.md:77-140; skills/l-01-agent-lifecycles/roles/curator.md:60-60; skills/l-01-agent-lifecycles/roles/curator.md:58-58; skills/l-01-agent-lifecycles/roles/curator.md:61-61; skills/l-01-agent-lifecycles/roles/curator.md:59-163 |
-| Manager owns one real master and its leaf closeout chain. | `# Manager`; "You drive exactly one master's leaf sequence from dispatch to handover." | skills/l-01-agent-lifecycles/roles/manager.md:6-211; skills/l-01-agent-lifecycles/roles/manager.md:10-30 |
-| Worker owns one real leaf's implementation and durable report. | `# Worker`; "You build one leaf."; "The turn report" | skills/l-01-agent-lifecycles/roles/worker.md:6-146; skills/l-01-agent-lifecycles/roles/worker.md:7-17; skills/l-01-agent-lifecycles/roles/worker.md:72-78 |
-| The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. | `## Acceptance is per stable ID and version, never aggregate` | skills/l-01-agent-lifecycles/core/acceptance.md:44-78 |
-| Core acceptance doctrine defines the mandatory per-ID worker envelope and the independent reviewer's adjudication. | `## Acceptance is per stable ID and version, never aggregate`; "The independent reviewer inspects the owned primary packet revision" | skills/l-01-agent-lifecycles/core/acceptance.md:44-78 |
+### Repo-Internal References
+
+- Shared routing, authority, loop, and dispatch doctrine is canonical here. [42]
+- The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. [43]
+- The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. [44]
+- Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. [45]
+- Manager owns one real master and its leaf closeout chain. [46]
+- Worker owns one real leaf's implementation and durable report. [47]
+- The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. [48]
+- Core acceptance doctrine defines the mandatory per-ID worker envelope and the independent reviewer's adjudication. [49]
 
 Current working-candidate evidence for this route:
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Lifecycle publication and recovery carry the actual code/memory outputs. | `LifecycleOperationRecoveryCommits` | mcp/src/agents_remember/models/lifecycles/operation.py:66-72 |
+- Lifecycle publication and recovery carry the actual code/memory outputs. [50]
 
 ## L23 Pre-Dispatch Lineage
 
@@ -680,174 +645,3 @@ updated cards on the tracked generated copy under
 decision this section already asks for (govern or remove the mirror) also determines whether those cards
 should be refreshed or deleted, so resolving it now by hand would prejudge it. No fingerprint or
 verification stamp was advanced.
-
-## Update History
-- 2026-09-30T12:13:48+02:00 — 260928-MIK-L14 curator (uncommitted change set on `ar/260928-mik-l14`, code base `b54d1b0331f67454bcf245a7a338b04900181c3c` plus the staged delta): **route body updated for MIK-R14.** A new top section, "The reconsideration row in the curator hand-off template (260928-MIK-L14)": the reconsideration-row bullet (rulings 10:39:15 and 11:01:18 R5-4) and the decision section's reorder refusal, note R6-3, and the sync to the package and eight starter copies; two rows. The other rows were normalised by the installed fixer, or re-pointed by the exact line shift of the template. No verification stamp was advanced.
-- 2026-09-30T04:44:12+02:00 — 260928-MIK-L10 curator (uncommitted change set on `ar/260928-mik-l10`, code base `8a2d4b478971bf40cca0f24d5e5d24a0844bd563` plus the staged delta): **route body updated for MIK-R10.** Added the section "The no_invariant row in the curator hand-off template (260928-MIK-L10)" at the top (rulings 01:56:39 Q1 and 03:24:28 N2), one row. The bullet was inserted at `:575-582`, so rows citing later template lines were re-pointed by the installed fixer or by the exact +8 shift. No verification stamp was advanced.
-- 2026-09-30T03:13:03+02:00 — 260928-MIK-L13 curator (uncommitted change set on `ar/260928-mik-l13`, code base `3772cdcd008fcacdc5a86e264a3ef63e879ea544` plus the staged delta): **route body updated.** Added the section "Decision records in the curator hand-off template and the curator role (260928-MIK-L13)" at the top: the template's new section and the role's step-3 pointer, synced to every copy. Two rows. The rows the installed fixer declined for the role file were re-pointed by the exact +4 shift below the insertion. No verification stamp was advanced.
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **route body updated for MIK-R27.** Added the section "The admission rule in the curator hand-off template, and the reviewer's OM-4 (260928-MIK-L27)" at the top (the template section, OM-4 by requirement, and c-14 step 3; rulings Q2, Q3, F1, F2 and F5), with two rows. No verification stamp was advanced.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): **route body updated for MIK-R11.** Added the section "The planned row in the curator hand-off template, and the reviewer's declaration check (260928-MIK-L11)" at the top, recording architect rulings 2026-09-29T21:56:18 (Q2, Q3). Rows citing the template below the inserted bullet were re-pointed by the installed fixer or the exact line shift. No verification stamp was advanced.
-- 2026-09-29T20:47:37+02:00 — 260928-MIK-L30 curator (uncommitted change set on `ar/260928-mik-l30`, code base `719acba61e491d0b7f1ee82dbeea5314ecec5083` plus the staged delta, including the untracked-then-staged new files): **route body updated for MIK-R30.** New section at the top, "The onboarding row in the curator hand-off template (260928-MIK-L30)", with architect ruling 2026-09-29T18:49:50 (1). One row. The six inserted template lines moved later template lines only; the L12, L04 and L21 sections cite lines above the insertion or were re-pointed by the installed fixer. No verification stamp was advanced.
-- 2026-09-29T15:26:13+02:00 — 260928-MIK-L28 curator (uncommitted change set on `ar/260928-mik-l28`, code base `8b0254263c6998b1d4814b2e97c1bd231d39350f` plus the working-tree delta and untracked files): **Route body update (MIK-R28).** New top section "Test proofs in the curator hand-off template": both evidence forms (the ruled `path -k name`), the facet authored beside the statement draft, and the new "Proofs are shown and counted (MIK-R28)" bullet. Two rows. The installed `memory-citations --fix` widened the MIK-R12 and MIK-R04 rows' heading citations to their sections, with no wording change.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): **route body updated — new section "The file writer's sections in the curator hand-off template (260928-MIK-L12)".** The L04 section's row moved by the one-line `incidental` insertion and was re-pointed. No verification stamp was advanced.
-- 2026-09-29T08:49:57+02:00 — 260928-MIK-L04 curator (uncommitted change set on `ar/260928-mik-l04`, code base `ffd043f1354e94a7dcf435e10b4b7224495cbcba` plus the staged delta): **route body updated — new section "Family routes in the curator hand-off template (260928-MIK-L04)"** for the template's new MIK-R04 subsection. No stamp advanced.
-- 2026-09-29T04:55:39+02:00 — 260928-MIK-L21 curator (uncommitted change set on `ar/260928-mik-l21`, code base `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` plus the working-tree delta): **route body updated — new section for the curator hand-off template's informational MIK-R21 section.** No stamp advanced.
-- 2026-09-28T17:19:01+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): body update — added the per-target realization rationale section (template shape, supersession of the external schema note revision 1's rule-1 element shape, role/operation/c-14 duties). Other ranges re-pointed through the exact base-to-candidate line map. No stamp advanced.
-
-- 2026-09-27T05:43:38+00:00 — Curator-authored re-citation of 1 investigated L41 source-linked claim(s). Each named registration or declaration was selected individually after the composite guarded projection declined. Prior explanation, refusal evidence, generated history and real verification stamps are preserved.
-- 2026-09-27T05:29:53+00:00: Generated citation repair: `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` repointed to skills/l-01-agent-lifecycles/operations/curation.md:187-216; skills/l-01-agent-lifecycles/operations/curation.md:206-206. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-27T05:29:53+00:00: Generated citation repair: `## Handoff / exit` repointed to skills/l-01-agent-lifecycles/operations/curation.md:270-283. No content impact: mechanical anchor-range projection bound to citation source snapshot a9e4bf20669ecb356be8a208a2ac77489c28fc161e108a6d1b20c61579617d84; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-27T00:34:45Z — L39: No content impact: resolved the affected registry/instruction/overview reference rows against their exact current named anchors after the scoped source changes. Existing factual meaning, verification stamps and earlier history are preserved.
-
-
-- 2026-09-26T23:48:33Z — L39: Reconciled the explicit retained-sibling input across existing curator carriers; no role, admission or transaction authority changed.
-
-- 2026-09-26T21:20:53+00:00: Generated citation repair: `## Outputs`; "the same report carries the foundation's own facts instead of a leaf's:" repointed to skills/l-01-agent-lifecycles/roles/curator.md:153-178; skills/l-01-agent-lifecycles/roles/curator.md:169-169. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:20:53+00:00: Generated citation repair: `## The repository-foundation entry — the curator's work, before a leaf exists`; `enclosure_in_scope` repointed to skills/l-01-agent-lifecycles/operations/curation.md:165-194; skills/l-01-agent-lifecycles/operations/curation.md:184-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:20:53+00:00: Generated citation repair: `## Authority gates` repointed to skills/l-01-agent-lifecycles/operations/curation.md:195-230. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T21:20:53+00:00: Generated citation repair: `## Handoff / exit` repointed to skills/l-01-agent-lifecycles/operations/curation.md:248-261. No content impact: mechanical anchor-range projection bound to citation source snapshot 4327ec15f102de46c16cef13f4d57a4013cc8f0e3ca10b9ae02b4b2b706c162e; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-26T20:57:44Z — Reconciled current source-owner citations and exact declarations; superseded wording is corrected in the affected reference rows.
-- 2026-09-26T19:49:05Z — Reconciled the current reviewer and curator responsibilities without changing role or transaction authority.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "Author and publish the durable knowledge through the real writer."; "Read the report, never the exit status" repointed to skills/l-01-agent-lifecycles/roles/curator.md:70-70; skills/l-01-agent-lifecycles/roles/curator.md:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **route body updated — the seat policy moves and these carriers follow it.** The new section records that the four carriers this route owns were corrected first and propagated into all ten copies, names the route-level statements that changed (the comparison table's carrier row, the bootstrap pair's read-and-report wording, the curator role's entry paragraph), and states that the L20 section's "the subcommand" became "the subcommands" because the mounted tool now names both write-plane entry points. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T12:25:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **route body updated for the repository-foundation entry and the seat gate it depends on.** `roles/curator.md` gained the entry paragraph and process block, `operations/curation.md` gained the comparison-table section and the authority-gate sentence, and `roles/bootstrap.md` / `operations/bootstrap.md` gained the first-hour read-and-hand-on step with the four knowledge rows in the failure table. The section states the rule a reader is most likely to invert — a session opened for the curator with no task document is refused `400 task-binding-required`, so **a taskless curator seat does not exist** and the pre-task step is carried by the taskless bootstrap seat plus the taskless writer with no enclosure in scope — because a round-one adversarial verdict was `blocking` on exactly that sentence in the procedure and its three sibling carriers. **Citation accounting:** the rows this section adds were derived from the carriers' own post-edit lines, not by adding a delta to an old number; the rows this document already carried into `roles/curator.md`, `operations/curation.md` and `skills/c-14-knowledge-bootstrap/SKILL.md` were re-read in the same pass and their drifted ranges re-anchored to the lines that now carry each construct. No claim and no row was dropped, and no verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T07:54+02:00 — 260921-ICR-L28 curator (uncommitted change set on `ar/260921-icr-l28`, base
-  `63b476297708f779de8ed5c0bf3555b9d1de70c2`): **route body updated for the curator method's family and
-  external-source steps.** `roles/curator.md` gained the numbered author-and-read-back step,
-  `operations/curation.md` gained the same for the reconciliation pass, and
-  `templates/curator-handoff-list.md` gained the section stating the shape of `family` and
-  `external_sources` beside the thirteen producer/curator fields. The section records the three rules a
-  seat is most likely to get wrong: an unexamined obligation is never reported as family-free, nothing
-  is grouped by directory/route/label/shared anchor, and an external document never becomes a repository
-  path with a Git blob. **Citation accounting:** the rows this route carries into the three carriers were
-  re-derived against this candidate's bytes rather than shifted by a remembered delta, and the
-  `citation_claim_reopened` rows the product reported for these files were re-read and disposed of by
-  hand. No claim and no row was dropped, and no verification stamp was advanced: the candidate is
-  uncommitted and the governed closeout owns the real stamp.
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-21T18:09+02:00 — 260921-ICR-L20 curator (uncommitted change set on `ar/260921-icr-l20`, production line `71a4433e686b3380af97a0836bb82bab2c8f2aad`): **route body updated for the curator's new authoring step, which is an obligation this route's carriers now state rather than an instruction detail.** `roles/curator.md` (144 lines) and `operations/curation.md` (161 lines) gained the real invocation (`knowledge-ingest … --baseline … --publish --commit --json`), what to consume from its report (`committed`/`rulings`/`refused`, `publicationRoute`, `publishedIdentity`), the authority gate that keeps the batch and publication with their existing owners, the rule that a partial hand-off stays partial, the prohibition on writing the dataset from the seat, and the handoff obligation to carry the published identity. The section states the route-level rule those carriers now depend on — `--commit` is the knowledge-batch write word and `--publish` is an explicit selection, never implied — and that `skills/` is canonical with the harness and package-data copies generated from it. **Citation accounting:** the section's ranges were read from the carriers' own post-edit lines, and the rows this document already carried into `roles/curator.md` were re-derived in the same pass (`:56-56` → `:74-74`) because that file grew 5 → 31 net lines at the top of the workflow. No claim and no row was dropped, and no verification stamp was advanced — the governed closeout owns it.
-- 2026-09-20T01:00+02:00 — 260915-KS citation residue clearance (uncommitted change set on memory base `66b2ae8adebea11bc2300d2d51822f321a128657`): cleared the 1 enforced citation row this card carried (citation_anchor_absent_from_range) — the dead single-line range skills/l-01-agent-lifecycles/roles/curator.md:31-31 in the curator row was repointed to skills/l-01-agent-lifecycles/roles/curator.md:74-137, which carries `curator_coherence`, while `## Process` and `Reconcile three ways before writing anything` remain held by the same row's other ranges; every claim wording, anchor and every other range is unchanged, and no verification stamp was advanced.
-- 2026-09-20T00:28+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `overview.md:180` (curator_coherence) — re-read the claim against the current source: the construct moved, and the range was re-derived from its real extent in the file the claim already cites.
-- 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the last five dead-anchor rows in this document were re-cited to the lines that now carry their facts, not re-pointed at adjacent sites.** `## Delegated Series Authority` was the *casing* of the live `## Delegated series authority` (now at `core/authority.md:149`, and the row already carried the live backticked form), so the quoted duplicate was corrected to the source's own heading text; `Caller kind comes only from process context` was the *casing and location* of `comes only from process context` at `core/authority.md:68`, so the quoted anchor was corrected and the `core/authority.md:50-52` extent widened to `50-68` (the whole `## Dispatch is one structural transaction` section, which still holds `Every launcher or role that dispatches a hosted role calls` at `:52`). `nothing serializes its masters` was carried by the row's sibling anchor in `criteria/plan-review.md` in the *wording the catalog actually uses* (`nothing serializes the masters`, `:65-66`), while the sentence the row quotes verbatim lives in `docs/reference/execution-topology-migration.md:63` — that per-site source was added rather than the anchor re-worded, because the migration note is a real live carrier and the claim's words are true there. The three `## What This Seat Is` anchors were the *rewritten* role files' old section heading: the live equivalent is each file's own `# Curator` / `# Manager` / `# Worker` title plus its opening duty sentence (`You run one leaf's coherence pass and you write onboarding.`, `You drive exactly one master's leaf sequence from dispatch to handover.`, `You build one leaf.`), so the dead heading was replaced by those quotes. No claim was deleted or softened and no anchor set was dropped. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T13:20+02:00 — 260915-KS-L13 curator (post-merge pass): **stale citations repaired in this document after the master's sync onto its moved super line.** The card rows whose anchors no longer exist anywhere in the indexed corpus were re-worded to the text the split files now carry — the `# Core — The Minimal Lifecycle Frame`, `# Core — Shared Invariants (every role can count on these)`, `## Acceptance is per stable ID and version, never aggregate` and `## Requirement revisions and delivery attempts are separate axes` headings, and `two disjoint caller kinds` — and their cited ranges were widened or given the carrying per-site source. Rows whose anchors name text that exists nowhere in the tree are named in `notes/reports/260915-KS-L13-named-residue.md` rather than re-pointed at an adjacent site.
-
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T14:15+02:00 — 260915-CAPS-L19 curator: **Field-name warrant corrected — `ready-for-closeout` read as *never* a value of the combined `checklistStatus`.** That absolute sentence was written by 260915-CAPS-L10's curator as the warrant for this card's `D35` correction, and `CAPS-R19` (`260915-CAPS-L19`) measures it **literally false** (`application/memory_quality/controller.py:685-687` leaves the combined field at its incoming `ready-for-closeout` value on the success path, with `closeoutReady=true`). The card now states the three-path model instead: the raw `qualityChecklistStatus` is the repair loop's gate; the combined `checklistStatus` is rewritten to `coherence-required` **only when the coherence record is then missing or stale**; and `closeoutReady` becomes true only once that validation passes. Corrected under `CAPS-R19`'s revision note (2026-09-17T13:55), which is the authority for this change. The field-name correction itself stands and attribution is complementary — `260915-CAPS-L10` corrected the onboarding cards, `CAPS-R19` corrected the shipped sources (the five loop-gate carriers, their nine generated copies, the guard registry's docstring) and brought `docs/reference/mcp-tools.md` into the loop-gate census and the guard's `LOOP_GATE_DOCUMENTS`. The earlier entries below are left exactly as written: they record what L10 did, and this entry is the correction of their warrant. No verification stamp advanced — the candidate is uncommitted and the governed closeout owns the real commits.
-- 2026-09-17T13:45+02:00 — 260915-CAPS-L10 curator: **the corpus restructure is labelled as structure, not as a measured saving.** Added the measured qualification to Purpose: the `620 → 179` router change moved doctrine into the new sibling layers rather than removing it, the one measurement that exists points the other way at the worker elevation (delivered capsule **11,828** vs a **5,928** legacy chain, **+5,900**; like-for-like 11,645, +5,717), manager and architect are **UNMEASURED** (`binding-unresolved`), preservation is intact at **36/36** across ten declared roles plus launcher routing, and **adoption acceptance FAILED** with disposition **REVISE**. Also **corrected a landed defect (`D35`)** in the CAPS-L18 section: `ready-for-closeout` is never a value of the combined `checklistStatus`; the repair loop's gate is the **raw** `qualityChecklistStatus`, the combined field then reports `coherence-required`, and `closeoutReady` follows validation (`application/memory_quality/controller.py:664,671,678,687`). No verification stamp or fingerprint advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: the complete-curation doctrine reaches this route. The canonical sources on this route now state that the full `memory_quality_check` operation is part of every leaf's curation, that a subset never stands in for it, and that closeout and integration carry the completed result as a prerequisite while invoking nothing. Body updated as above; no verification stamp advanced because the sources are uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "nothing serializes a graph-less"; "nothing serializes its masters" repointed to skills/l-01-agent-lifecycles/templates/orchestration-task.md:172-172; skills/l-01-agent-lifecycles/roles/orchestrator.md:266-266. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:321-321. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `## Delegated Series Authority` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:13-13 to skills/l-01-agent-lifecycles/SKILL.md:448, the extent of the construct the claim is about (the checker named line(s) [448] as its live location); re-pointed `Caller kind comes only from process context` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:448 to skills/l-01-agent-lifecycles/SKILL.md:492, the extent of the construct the claim is about (the checker named line(s) [492] as its live location); re-pointed `Every launcher or role that dispatches a hosted role calls` in the row 152 of this card from skills/l-01-agent-lifecycles/SKILL.md:492 to skills/l-01-agent-lifecycles/SKILL.md:499, the extent of the construct the claim is about (the checker named line(s) [499] as its live location)
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **route body updated** for the corpus consolidation. Purpose now names the route's actual 260915-CAPS-L1 shape (thin router + `core/` + nine role files + eight `operations/` blocks + `reference/` + `composition-manifest.json`), and the Ungoverned Mirror Status section records this pass's explicit decision: the overview is updated because route meaning changed, while the legacy `onboarding/skills/l-01-agent-lifecycles/**` sidecars are deliberately left untouched because they are outside `pathRules.include`, already declared knowingly stale, and a partial hand-refresh would duplicate the governed cards on the tracked generated `mcp/**` copy without resolving the govern-or-remove question this section already raises. No verification stamp or fingerprint was advanced.
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned role/template handoff doctrine with two outputs and non-authoritative cache status. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-13T15:01:46+02:00 — Gate-required ungoverned-mirror curation: rewrote the planning/runtime
-  boundary to the shipped per-contract activation (each canonical series contract owns its own
-  activation record; `reconciling` suspends nothing and excludes no other master; multiple
-  nonterminal contracts remain valid) and added the explicit developer ruling that nothing serializes
-  a graph-less sprint — `atomic-sequential` describes sprint SHAPE, not a serialization mechanism.
-  Repaired the rotated citation row after `grep -n` verification: `"## Delegated Series Authority"`
-  → SKILL.md:422-422, `"Caller kind comes only from process context"` → SKILL.md:466-466, `"Every
-  launcher or role that dispatches a hosted role calls"` → SKILL.md:473-473 (all three had been bound
-  to each other's line), and added the graph-less ruling row citing
-  templates/orchestration-task.md:172-172 and roles/orchestrator.md:265-265. Added the Ungoverned
-  Mirror Status defect statement. Verification metadata remains closeout-owned.
-- 2026-09-10T09:58+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the curator reference row against the rewritten `skills/l-01-agent-lifecycles/roles/curator.md` — section 4 is now `### 4 — Repair Affected Onboarding, Then Publish`, so the row carries the current heading and its 153-195 extent. Verification metadata remains closeout-owned.
-
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:295-295. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded task-altitude
-  reviewer binding, generation-bound parent stamping, and the fail-closed unstamped sprint seam.
-  Verification remains closeout-owned.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 adopted one public `dispatch_agent` verb, separated
-  ordinary architect bootstrap from explicit takeover, clarified fixed role authority versus
-  launch settings, and preserved resumable lineage-conflict recovery. Verification remains
-  closeout-owned.
-
-- 2026-08-29T09:14+02:00 — MCAR-L02 replaced the hand-authored coherence report with one
-  lifecycle-published structured authority and a generated Markdown projection. Verification
-  remains closeout-owned.
-
-- 2026-08-28T14:18+02:00 — Reconciled lifecycle overview citations against the committed PDLS
-  candidate; the architect/seat routing and acceptance boundaries are unchanged.
-
-- 2026-08-27T22:15+02:00 — Clarified the route-wide attempt boundary: never-handed-off malformed
-  rows are non-attempt corrections, while handed-off malformed records require reviewer rejection.
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2 route correction: formal attempts now begin at review
-  handoff, internal protocol events stay separate, and lightweight journal records link frozen
-  expanded evidence without inflating the master summary.
-- 2026-08-27T20:45+02:00 — Clarified that each leaf has one physical append-only attempt journal;
-  worker and reviewer records share that authority while reports and verdicts link exact anchors.
-- 2026-08-27T19:59+02:00 — M40-M45 route impact: recorded leaf-authoritative attempt journals,
-  non-gating summaries, and the M42 distinction between stale in-flight candidates and unrelated
-  post-acceptance movement.
-- 2026-08-27T12:43+02:00 — M38: documented the exact stable-ID acceptance set, worker evidence
-  envelope, independent reviewer adjudication, non-code citation form, and overall no-rejection
-  rule. The durable-evidence promotion hold point remains separately mandatory. Verification
-  metadata stays pinned until governed closeout stamps the PDLS commit.
-
-- 2026-08-26T08:20+02:00 — Reconciled the planning/runtime source-pair boundary and synchronized
-  doctrine set to the frozen candidate; verification remains closeout-owned.
-
-- 2026-08-24T14:19+02:00 — No route impact: aligned the curator brief's quality examples with the canonical sync/start/poll request. Verification metadata remains pinned until architect-owned closeout.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: orchestration-task template heading restored to `## Canonical executionGraph Adoption Payload`; copies re-synced. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: review-doctrine repair — no-self-review + evidence-type matching (reviewer/orchestrator), PR-8, RV-1 extension, D-6 bounded requirement ids, verdict/manager-brief templates, SKILL.md three-party loop. Verified at code commit de3a0fd9.
-
-
-- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: doctrine files updated to the
-  `attach_master` flow and seats structure. Verified at code commit 8071a644.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: the architect/orchestrator roles and the
-  orchestration-task template now teach the atomic-sequential default — a graph-less sprint runs
-  one master at a time, `task_doc.author_execution_graph` owns graph bootstrap and edits, and the
-  `migrate_execution_topology` cutover reference is gone; lifecycle routing doctrine is unchanged.
-  Verification remains closeout-owned.
-
-- 2026-08-18T09:25+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned initial planning,
-  evidence-cited judgment, ready-frontier recomputation, organizational versus atomic master
-  topology, exact pre-landing organizational completion, and the no-workbench boundary.
-  Verification remains closeout-owned.
-- 2026-08-14T11:29+02:00 — R39 curator: removed Agents Remember-specific quality commands from
-  generic lifecycle guidance while preserving exact cadence. Verification remains closeout-owned.
-- 2026-08-14T06:25+02:00 — L23 final candidate review: lifecycle doctrine keeps Dagger as the sole
-  acceptance graph and makes manager lineage plus exact candidate-bound route review mandatory
-  before curator dispatch. Verification provenance remains closeout-owned.
-- 2026-08-13T14:32+02:00 — L23 final route review: synchronized Dagger-only acceptance,
-  targeted/full altitude, explicit diff-base ownership, and diagnostic-only host execution across
-  canonical lifecycle doctrine. Verification remains closeout-owned.
-- 2026-08-13T08:47+02:00 — L23 integration-gate repair: added the manager-owned pre-curator lineage gate, brief-carried projection, and pre-host dispatch recheck to canonical lifecycle doctrine. Verification metadata remains closeout-owned.
-
-- 2026-08-12T20:20+02:00 — L23 curator: documented canonical pre-dispatch lineage policy; verification remains closeout-owned.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 route impact: manager,
-  orchestrator, worker, and their dispatch briefs now state that master full
-  gates use host-managed RAM/swap by default. Verification metadata remains
-  pinned until closeout stamps L24.
-
-- 2026-08-11T14:40+02:00 — Made the required missing-onboarding and full leaf-quality
-  repair-and-rerun loop part of current curator completion doctrine; real-commit fields remain
-  closeout-owned only after the curator-actionable worklist is empty.
-- 2026-08-11T14:10+02:00 — Replaced accumulated route-impact sections with the compact current
-  lifecycle topology, authority, dispatch, and synchronization contract.
-- 2026-08-10T07:30+02:00 — Completion cleanup kept durable reports/transcripts while reclaiming
-  completed subordinate seats.
-- 2026-08-09T12:08+02:00 — Fact-relay supervision superseded ladder and watcher doctrine.
-- 2026-08-08T02:00+02:00 — Quality work was assigned to leaf closeout and master integration
-  altitudes.
-- 2026-07-12T14:20+02:00 — Established governing route coverage.

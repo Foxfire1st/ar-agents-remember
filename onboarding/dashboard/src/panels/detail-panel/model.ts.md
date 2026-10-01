@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/model.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/model.ts`                |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:04+02:00 |
-| lastVerifiedCommitHash | `3e5d04d8756f5c19aa5ea7657a121752400875b8` |
-| lastVerifiedCommitDate | 2026-09-16T14:49:02+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -48,29 +38,25 @@ The cross-series `→` jump is reachable only when `linkedLifecycleId` is presen
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader-doc resolution entry points. | `displayedReaderDoc`; `displayedLeafDoc` | dashboard/src/panels/detail-panel/model.ts:89-154 |
-| The master/series view assembly. | `seriesAsMasterDoc`; `masterDocWithSeriesTokens`; `subTaskKey` | dashboard/src/panels/detail-panel/model.ts:196-213; dashboard/src/panels/detail-panel/model.ts:216-219; dashboard/src/panels/detail-panel/model.ts:226-228 |
+- The reader-doc resolution entry points. [1]
+- The master/series view assembly. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 
 ## 260815-DAG-L12 Execution Graph View
@@ -84,20 +70,3 @@ No cross-repository implementation source governs this file.
 passes both producer-owned values through without folding them into live subtasks or completion.
 The existing execution-graph view, repository-qualified `masterRef` resolution, ordering, and token
 rollup behavior are unchanged.
-
-## Update History
-
-- 2026-08-24T15:04+02:00 — Extended the derived master view with the distinct discard-before-start
-  audit fields; no discarded item becomes a live or completed subtask.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `MasterDocView` includes the optional `executionGraphView` (L12-R4/R5). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:34+02:00 — 260815-DAG-L14: added `docPathForTaskRef` — resolves a typed
-  `masterRef` against the full projected task-document pool (undefined when unprojected, the
-  fallback signal for sprint rows). Verified at code commit 9c3180c1.
-
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the pure
-  model module extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.

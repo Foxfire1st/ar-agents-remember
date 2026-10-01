@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/conversion/code_objects.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/conversion/code_objects.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -73,7 +63,9 @@ The `top_level` reading is accepted by the architect (ruling 5) for the one real
 `cli/knowledge_bootstrap.py::run`, which the report lists. MIK-R03 still reads that claim as a
 non-unique symbol, that is, stale.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
@@ -82,36 +74,24 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The object store's read-only surface.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The class and its caches. | `CodeObjects` | mcp/src/agents_remember/memory/conversion/code_objects.py:51-225 |
-| A commit by exact name. | `commit` | mcp/src/agents_remember/memory/conversion/code_objects.py:66-77 |
-| Every commit with a prefix, so ambiguity is seen. | `commits_with_prefix` | mcp/src/agents_remember/memory/conversion/code_objects.py:79-109 |
-| A commit's file-to-blob map. | `tree` | mcp/src/agents_remember/memory/conversion/code_objects.py:111-124 |
-| Git's not-found exit, and a Git failure named rather than read as absent (R3-2). | `_GIT_NOT_FOUND`; "def has_blob(self, blob_id: str) -> bool:"; "the object store cannot say whether it holds" | mcp/src/agents_remember/memory/conversion/code_objects.py:42-44; mcp/src/agents_remember/memory/conversion/code_objects.py:143-168 |
-| Batched blob reads. | `prefetch`; `CodeObjectError` | mcp/src/agents_remember/memory/conversion/code_objects.py:126-136; mcp/src/agents_remember/memory/conversion/code_objects.py:47-48 |
-| One symbol extent per (blob, grammar); the top-level reading for recorded claims. | `symbol_span`; `_outermost` | mcp/src/agents_remember/memory/conversion/code_objects.py:170-196; mcp/src/agents_remember/memory/conversion/code_objects.py:228-240 |
-| An anchor's content in a blob. | `content` | mcp/src/agents_remember/memory/conversion/code_objects.py:201-225 |
-| The shared binding rule. | `qualified_spans` | mcp/src/agents_remember/memory_quality/style/citations/extents.py:159-178 |
+- The class and its caches. [1]
+- A commit by exact name. [2]
+- Every commit with a prefix, so ambiguity is seen. [3]
+- A commit's file-to-blob map. [4]
+- Git's not-found exit, and a Git failure named rather than read as absent (R3-2). [5]
+- Batched blob reads. [6]
+- One symbol extent per (blob, grammar); the top-level reading for recorded claims. [7]
+- An anchor's content in a blob. [8]
+- The shared binding rule. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** A Logic bullet and an Invariants bullet record that `has_blob` now tells Git's documented not-found exit from a Git failure (`cat-file -e`, then `-t`; a failure raises `CodeObjectError`), its three callers, and that the conversion now refuses on such a failure (review R3-2, ruling 19:16:07; one of L09's stated exceptions to the cutover inertness). One row added. The `prefetch` row, which the installed fixer declined, was re-pointed by the exact base-to-staged line shift (+5 for both ranges; both anchors checked); the fixer projected or normalised the other rows.
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): created this card for the new file MIK-R24 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

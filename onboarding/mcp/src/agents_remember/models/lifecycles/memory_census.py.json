@@ -1,0 +1,82 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/memory_census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict census vocabulary is repository-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a03faf5cd25cd53d4f5ef32933d742ad97118b6",
+            "content": "sha256:38b8882d6b9589c3d880104a52e8e68ccc6dd22827f3c13d58b338bf281a424d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact relative path spelling is validated without normalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a03faf5cd25cd53d4f5ef32933d742ad97118b6",
+            "content": "sha256:82cc2b5483f97b86e076d8259b7ad7a92ac934274aeae688c3577c272b05b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_git_relative_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Artifact identity and entity subidentity rules are enforced together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a03faf5cd25cd53d4f5ef32933d742ad97118b6",
+            "content": "sha256:48c64e0fa39e0c3f982c1889e0f6f2547daa571a876f716e5910f3133b3d1158",
+            "locator": {
+              "kind": "symbol",
+              "name": "GovernedArtifactIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Presence, source reasons, and structural ordering are validated in the census result models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a03faf5cd25cd53d4f5ef32933d742ad97118b6",
+            "content": "sha256:0a06c8af65fdf1fb0aedc3bbf5c7869e8e69dc189acde223b8a6650d25ece47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a03faf5cd25cd53d4f5ef32933d742ad97118b6",
+            "content": "sha256:38b8882d6b9589c3d880104a52e8e68ccc6dd22827f3c13d58b338bf281a424d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/memory.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                            |
-| path                   | `mcp/src/agents_remember/mcp/registration/memory.py`       |
-| doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `8b0254263c6998b1d4814b2e97c1bd231d39350f` |
-| lastVerifiedCommitDate | 2026-09-29T15:00:35+02:00|
-| governingOverview      | `overview.md`                                              |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -65,6 +55,12 @@ ledger cache and is gated on clean drift unless `accept_drift=true`;
 `memory_carryover_apply` may only run after the code has landed officially and after
 `memory_carryover_plan` has been reviewed.
 
+- **`citation_fix` on converted memory (L37 fix round P1b).** The registered tool's description now says that on
+  converted memory it authors the cards' citation rows into sidecar references and re-records moved anchors,
+  and that `document` then needs no `expected_snapshot` and scopes the run to that one card. The response still
+  carries the tree-wide `stale` reference list even for one document, so it can be very large; the CLI
+  (`memory-citations --fix --document`) returns the same JSON for a caller that needs to bound it.
+
 ### Conventions
 
 Flat baseline/carryover arguments are packed into their application parameter objects. The quality request keeps its existing discriminated shape.
@@ -86,33 +82,37 @@ Flat baseline/carryover arguments are packed into their application parameter ob
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory repository. The current
 contract is supported by the implementation and the authorized cache-retirement requirement.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain source applies. | — | — |
+No configured external domain source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Carryover registration declares one memory subject and describes the computed cache refresh. | `memory_carryover_apply` | mcp/src/agents_remember/mcp/registration/memory.py:212-242; mcp/src/agents_remember/mcp/registration/memory.py:261-292 |
-| The payload builders for the carryover plan and report-filing apply pair. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The typed sync/start/poll payload builders. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
-| The `MemoryBranches` parameter object. | `MemoryBranches` | mcp/src/agents_remember/application/memory_tools.py:334-446; mcp/src/agents_remember/application/memory_tools.py:369-438 |
-| The `CarryoverSelection` parameter object. | `CarryoverSelection` | mcp/src/agents_remember/application/memory_tools.py:347-451; mcp/src/agents_remember/application/memory_tools.py:439-458 |
-| The `CarryoverCommitMessages` parameter object. | `CarryoverCommitMessages` | mcp/src/agents_remember/application/memory_tools.py:388-477; mcp/src/agents_remember/application/memory_tools.py:459-473 |
-| The payload builder for the carryover plan. | `memory_carryover_plan_payload` | mcp/src/agents_remember/mcp/tools/memory.py:232-243 |
-| The payload builder for the report-filing apply. | `memory_carryover_apply_payload` | mcp/src/agents_remember/mcp/tools/memory.py:246-267 |
-| The typed sync payload builder. | `memory_quality_check_payload` | mcp/src/agents_remember/mcp/tools/memory.py:59-66 |
-| The typed start payload builder. | `memory_quality_check_start_payload` | mcp/src/agents_remember/mcp/tools/memory.py:69-78 |
-| The typed poll payload builder. | `memory_quality_check_poll_payload` | mcp/src/agents_remember/mcp/tools/memory.py:81-90 |
-| The `citation_fix` registration and its caller-exclude parameter. | `citation_fix` | mcp/src/agents_remember/mcp/registration/memory.py:100-128 |
-| The scope object the excludes ride with. | `CitationOperationScope` | mcp/src/agents_remember/application/memory_tools.py:57-87 |
-| The one construction point that carries them into every citation operation. | `_citation_trees` | mcp/src/agents_remember/application/memory_tools.py:154-170 |
+- Carryover registration declares one memory subject and describes the computed cache refresh. [1]
+- The payload builders for the carryover plan and report-filing apply pair. [2]
+- The typed sync/start/poll payload builders. [3]
+- The `MemoryBranches` parameter object. [4]
+- The `CarryoverSelection` parameter object. [5]
+- The `CarryoverCommitMessages` parameter object. [6]
+- The payload builder for the carryover plan. [7]
+- The payload builder for the report-filing apply. [8]
+- The typed sync payload builder. [9]
+- The typed start payload builder. [10]
+- The typed poll payload builder. [11]
+- The `citation_fix` registration and its caller-exclude parameter. [12]
+- The scope object the excludes ride with. [13]
+- The one construction point that carries them into every citation operation. [14]
+
+### Cross-Repo References
+
+No separate cross-repository implementation claim is made.
+
+No external implementation source applies.
 
 ## 260915-CAPS-L14 The Citation Surface Gains A Caller Exclude
 
@@ -167,63 +167,3 @@ validator used by closeout, and a `coherence-required` response directs the call
 The registration advertises repository-only calls as official diagnostics and requires candidate
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
-
-
-## Cross-Repo References
-
-No separate cross-repository implementation claim is made.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external implementation source applies. | — | — |
-
-## Update History
-- 2026-09-29T14:21:42+02:00 — 260928-MIK-L24 curator (uncommitted change set on `ar/260928-mik-l24`, code base `cd3e943d740b490d391722389af0a6bca0ccf93e` plus the working-tree delta and untracked files): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`memory_tools.py`) were re-pointed by the installed `memory-citations --fix` or, for multi-anchor rows it declined, by the exact base-to-working line map; no claim wording changed. No verification stamp was advanced.
-- 2026-09-18T19:55:32+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The parameter-object row cited `memory_tools.py:369-376`, which ends one line above `class CarryoverCommitMessages:` at `377`; the range was widened to `369-383` so it reaches the declaration and `DEFAULT_CARRYOVER_MESSAGES`. The claim, the anchor and the other range are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: `memory_carryover_plan_payload` repointed to mcp/src/agents_remember/mcp/tools/memory.py:232-243. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_carryover_apply` repointed to mcp/src/agents_remember/mcp/registration/memory.py:261-292. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `memory_carryover_plan_payload` repointed to mcp/src/agents_remember/mcp/tools/memory.py:232-243. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-17T11:45+02:00 — 260915-CAPS-L14 curator: recorded the registered tool's new optional, keyword-only `exclude: list[str] | None` and what it does — caller-supplied, code-root-relative globs that narrow **one call's** acquisition on top of the register every call already honours (`onboarding.pathRules.exclude` plus the code repo's `.gitignore`), packed onto `CitationOperationScope.excludes` and carried through the shared `_citation_trees` construction point, with a meaningless pattern refused by name. Added the matching CLI note and the service-section above. **Flattened the Repo-Internal References table** from the legacy `| Finding | Citations | Source Path |` shape to the required `| Finding | Anchor | Source |` form: the rows carried `L212-L242`-style shorthand with a link instead of a plain `path:start-end`, and four of them cited parameter objects at stale line numbers, so every row was re-derived against the current source. Verification metadata is left at this leaf's synced base `0346da9c`; the candidate is deliberately uncommitted, so the governed closeout stamps the real code commit.
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Aligned baseline/carryover registration descriptions and message packing with the derived-cache contract. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4345d17994bf47dcf3f795becd6e45481f2076058bb07d50090ad9ec2aa6101c; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: documented exact candidate polling and diagnostic-only
-  repository scope in the public tool description. Verification remains closeout-owned.
-
-- 2026-08-29T08:52+02:00 — Documented deterministic quality attestations and combined structured
-  coherence readiness. Verification remains closeout-owned.
-
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: replaced flat wait/run-id branching with one strict discriminated request and typed adapter dispatch. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `memory_quality_check` registration gained keyword-only
-  `wait`/`run_id` with start/poll dispatch (L15-R7); the synchronous path is unchanged. Verified at
-  code commit de3a0fd9.
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: documented the paired structured curator
-  attestation on the public memory-quality tool; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T16:54+02:00 — Documented the single enclosure-local checklist side effect and the
-  curator-specific zeroable count/status while preserving code/memory read-only behavior.
-- 2026-08-11T14:40+02:00 — Clarified the contract-scoped quality tool as the curator's complete
-  pre-closeout worklist and regenerated shifted application-model citations; real-commit metadata
-  remains closeout-owned.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): expanded the payload-builder claim to cover both the carryover plan builder (163-174) and the report-filing apply builder (177-198); parameter objects and registration tests retained; the scoped fixer confirmed the final ranges with no writes.
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 7 table citations for carryover payloads, branch selection, commit messages, and related tests; fixer-generated ranges verified.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The eight memory
-  declarations moved out of `server.py`; adopt and the carryover pair now pack their arguments into
-  `MemoryBranches` / `CarryoverSelection` / `CarryoverCommitMessages` in the body. Verification
-  metadata pinned to the pre-change commit until closeout stamps the L2 code commit.

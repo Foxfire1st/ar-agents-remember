@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`LifecycleControlError` bounds refusal details and emits executable two-message closeout corrections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8822267e155e23d5bb0933a59e032f17c721aaae",
+            "content": "sha256:b090943821dbb317012e7f877a6acf6941e9fc3a3f17edeacf9dd2926098a710",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleControlError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module defines `LifecycleControlError` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8822267e155e23d5bb0933a59e032f17c721aaae",
+            "content": "sha256:b090943821dbb317012e7f877a6acf6941e9fc3a3f17edeacf9dd2926098a710",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleControlError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

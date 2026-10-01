@@ -1,0 +1,177 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact selected journal is bounded and validates certificate rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:a3a0f3231cc91ad83aed892dec3b94225d668eb378b642863aaabcc1c562d265",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_gate_records"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:4f5d902e246974d70580ac33b60a64c37cd795b7d275b6aece1705d0684364ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_gate_records"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:a58766f95a44d69eacb76f299f0a00d43bbf037e03f0f80ac842fe50ccd06f25",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:f364b5c1665941832c2ec2ce28f897676453e1f3da160e8d81e5ea58bf69fa1a",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cross-bind selections to their exact stored objects before publishing or pruning.\n\nAnchor: \"def verify_selected_publications\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:3594061237f18fc9c9fae6c9f1480ec7600858d81d3efbd74820acde0b0a8ed8",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selected certificates pin exact generations until journal replacement or cleanup.\n\nAnchor: \"def protected_certificate_generations\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:f051918714e726ee36693ad606061659e07ba09fb1bc60d47966a497c996f482",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Publication verification checks certificate, result and publication identity together.\n\nAnchor: \"def verify_publication_authority\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:b03d2ead9ec7aee8a34b44552dc370fd246b54654c19c1c700a2ac019b3c72e0",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retain the original selected generation for a semantically identical certificate.\n\nAnchor: \"def publication_binding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:6fb59f94e05463d7ccd94a0e9e831635ce6c2a29d578835699acf833522111c6",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Execution identity excludes physical generation, report bytes and audit provenance.\n\nAnchor: \"def _execution_authority\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:6b848d1fd979314f4451f1a8a1840e2fad55df66d44e2d6e4d5c663240a38454",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Open every emitted binding through its one accepted immutable generation.\n\nAnchor: \"def verify_result_evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:e01d94edae281696dc7146b562ef71841bef6a3ea82469c3ace0df86a4fbfc3a",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Published artifact references are opened through their accepted snapshot.\n\nAnchor: \"def _verify_reference\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:2593f468b1cc0af50da8af76946b8ad0f9f91c4b49f4746bf318a5ff34e47089",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

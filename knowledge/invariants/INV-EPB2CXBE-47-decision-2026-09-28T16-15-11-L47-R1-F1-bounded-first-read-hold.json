@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "The reviewer's first review read when it is opened with no subject and its subject catalogue has not answered.",
+  "conditions": [
+    "The hold lasts at most SUBJECT_HOLD_MS (750 ms), after which the task-context review is read as for a refused catalogue.",
+    "Family examination: no joint obligation is supported. Basis: This bounds the reviewer's own read cycle; it is not part of what the task entry shows, so it does not support the entry family's guarantee, and no stored family guarantees reviewer read latency."
+  ],
+  "exclusions": [
+    "What happens when the catalogue answers after the bound (auto-selection, focus), owned by L48."
+  ],
+  "id": "INV-EPB2CXBE",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "b058e6be-1f78-44fd-b557-321a7a252479",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "F1 (medium): the first-read hold must be bounded; a stalled or slow catalogue may not block the task-context review or source explorer, which base showed immediately.",
+  "status": "proposed",
+  "supersedes": []
+}

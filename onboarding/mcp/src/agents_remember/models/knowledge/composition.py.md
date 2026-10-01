@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/composition.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/composition.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T06:24+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -80,57 +70,32 @@ two exist together on purpose.
 None recorded. The registered-review-scope *construction* is a later leaf's; this module publishes
 the one scope name such a construction may widen.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The four command kinds, published as a named constant so a later leaf unions its own set rather than restating members.** | `COMPOSITION_COMMAND_KINDS` | mcp/src/agents_remember/models/knowledge/composition.py:62-62 |
-| **The six record tables those commands write, exactly generation 5's appended set.** | `COMPOSITION_WRITABLE_TABLES` | mcp/src/agents_remember/models/knowledge/composition.py:71-71 |
-| **The one registered scope a traversal policy may widen, and nothing else.** | `REGISTERED_REVIEW_SCOPE` | mcp/src/agents_remember/models/knowledge/composition.py:45-45 |
-| The closed direction vocabulary, which decides which endpoints a traversal may step through. | `FOLLOW_DIRECTIONS` | mcp/src/agents_remember/models/knowledge/composition.py:51-51 |
-| **The value-boundary half of the policy validation: a half-declared policy fails construction.** | `FamilyCompositionPolicyDraft` | mcp/src/agents_remember/models/knowledge/composition.py:83-83 |
-| The stored policy version, whose row identity and author spelling are separate fields. | `FamilyCompositionPolicyVersion` | mcp/src/agents_remember/models/knowledge/composition.py:110-110 |
-| The reported link, carrying its direction and the policy version it was declared under. | `FamilyCompositionLink` | mcp/src/agents_remember/models/knowledge/composition.py:179-179 |
-| **The authored context model, which declares no content address, digest or fingerprint of its own.** | `FamilyExplanationContext` | mcp/src/agents_remember/models/knowledge/composition.py:206-206 |
-| The context draft, whose successor cites a predecessor that must already be stored. | `FamilyExplanationContextDraft` | mcp/src/agents_remember/models/knowledge/composition.py:244-244 |
-| **The case that proves the union is exactly its own members and the six tables declare no content-address column.** | "test_the_composition_commands_are_the_closed_unions_own_members" | mcp/tests/test_knowledge_family_composition.py:245-245 |
-| **The case that proves every half-declared policy state is refused at the value boundary.** | "test_the_declared_policy_shape_refuses_every_half_declared_state" | mcp/tests/test_knowledge_family_composition.py:307-307 |
-| **The facet suite's re-scoped assertion, which now unions this leaf's published constant instead of a literal.** | "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" | mcp/tests/test_knowledge_facets.py:913-913 |
+- **The four command kinds, published as a named constant so a later leaf unions its own set rather than restating members.** [1]
+- **The six record tables those commands write, exactly generation 5's appended set.** [2]
+- **The one registered scope a traversal policy may widen, and nothing else.** [3]
+- The closed direction vocabulary, which decides which endpoints a traversal may step through. [4]
+- **The value-boundary half of the policy validation: a half-declared policy fails construction.** [5]
+- The stored policy version, whose row identity and author spelling are separate fields. [6]
+- The reported link, carrying its direction and the policy version it was declared under. [7]
+- **The authored context model, which declares no content address, digest or fingerprint of its own.** [8]
+- The context draft, whose successor cites a predecessor that must already be stored. [9]
+- **The case that proves the union is exactly its own members and the six tables declare no content-address column.** [10]
+- **The case that proves every half-declared policy state is refused at the value boundary.** [11]
+- **The facet suite's re-scoped assertion, which now unions this leaf's published constant instead of a literal.** [12]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_the_composition_commands_are_the_closed_unions_own_members" repointed to mcp/tests/test_knowledge_family_composition.py:245-245. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: "test_the_declared_policy_shape_refuses_every_half_declared_state" repointed to mcp/tests/test_knowledge_family_composition.py:307-307. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:913-913. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T10:45:13+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:901-901. No content impact: mechanical anchor-range projection bound to citation source snapshot a1ce4e2ec12e0f7b6d953d252db00653f23138548de5122388515485a9e05d23; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:866-866. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_the_composition_commands_are_the_closed_unions_own_members" repointed to mcp/tests/test_knowledge_family_composition.py:244-244. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_the_declared_policy_shape_refuses_every_half_declared_state" repointed to mcp/tests/test_knowledge_family_composition.py:282-282. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:824-824. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 2 generated projection bullet(s) by hand** — `test_the_composition_commands_are_the_closed_unions_own_members`, `test_the_declared_policy_shape_refuses_every_half_declared_state`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T06:09:03+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:816-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 014df62463362d92ea768ade7d81f0ca0b615347d5c6feed94e130d80244a24d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T06:06:32+00:00: Generated citation repair: "test_the_facet_commands_join_the_closed_union_and_its_dispatch_tables" repointed to mcp/tests/test_knowledge_facets.py:817-817. No content impact: mechanical anchor-range projection bound to citation source snapshot ff98360f8649d71f1a69cbfa94559ed9eed708a54fcd5378afa764553cd788b4; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T04:24:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `e963a01c`): created this one-to-one card for the composition vocabulary. It records why the four command kinds and six writable tables are **published named constants** rather than literals — so a case pins membership by unioning declarations, which is what the facet suite's re-scoped assertion now does — and it records the value-boundary half of the two-place policy validation. It records that no value model here carries a content address, that the one registered scope is the only thing a policy may widen, and that the two shipped `Literal` unions gained this leaf's members (`create_composition` and `set_family_revision_route`, and the read operation `follow_family_composition`). Verification metadata is the leaf's base commit `e963a01c`: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

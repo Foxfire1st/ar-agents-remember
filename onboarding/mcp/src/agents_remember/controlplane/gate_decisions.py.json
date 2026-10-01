@@ -1,0 +1,219 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/gate_decisions.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `GateDecisionContext` (lines 30-37) — Stores, policy, and clock that make one gate decision atomic in meaning..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e634334725dac297af8a0f9c710886b98fdc027ccd796e8886b4cbed10d41133",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateDecisionContext"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:0bb1b5841d8310bd0ad81fbac1e59f1f6505832cc7dcccbf9248d57834d12115",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `_target_gate` (lines 40-46).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:5a4c088cf61c8b2a02a0a8d824ea3eccf97092a5953b3adfb1614ec24e2c235c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_target_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:34a190fbf8fbf27a981f75c054e7ffe6c664480fa6f410724fa04cfb4e368382",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `_require_undelegated_cli_decision` (lines 49-54).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:98195c4150764d6c0ed549d9e9bbc321cd1a8be6efba3c84eda9d8308fd73c12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_undelegated_cli_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:379bc177ac9e5be07bbb9150bcedfa7dde513934e7024c4d73af072073729294",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_evidence_refs` (lines 57-58).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e270f0e941c90a08c4564dc8ce8c8af45acc98bd0340a4277fd179f5633d5f98",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `_meet_verdict_expectation` (lines 61-71).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:afbcecbd0b44012368d98cca8a6869766c7c8cc77fe480fb4fbae2807fd07f05",
+            "locator": {
+              "kind": "symbol",
+              "name": "_meet_verdict_expectation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:6ed56861646f9ed49c82926cb7723595c06d9f4b77b5b6570c705bf33296b1c4",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `_reclaim_gate_log` (lines 74-80) — Reclaim terminal history only in the process that owns gate compaction..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:9c1f77e54b06fb86d995723c5b890b5cfeab63bec654cd15d090793ea5061811",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reclaim_gate_log"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:1fd7e3773c8bb6b493202b036586e421669b93b7420f15fbfb932cbf8b6318eb",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `record_gate_decision` (lines 83-128) — Apply one decision and return the shared raw gate response payload..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e8c335c3bd3e48fb27ef8fb2f3ca48f840505c727bc7d99d15d034c4a33ce0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_gate_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:b70c5470d101fac93aa71ecce4dead60e2d9fd490ec57173006d610f05512040",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `record_lifecycle_gate_decision` (lines 131-156) — Resolve a lifecycle's latest open gate, then apply the shared decision service..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:e24d0d58a7df55ac8e008c409911b2deedba0eba51bbd4d3d66593b6dd3f2266",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_lifecycle_gate_decision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef5a529f82a09759edeb5f26cf02c08ae7e066c7",
+            "content": "sha256:872a63d57ecbfd5d1ecac55bc2dc81eda1ae77e299ee75356b570a788bd1db94",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,45 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "Within a bound comparison, all changed source files remain reachable while selected intent, recorded evidence and family context stay together and inspection state survives navigation.",
+  "id": "FAM-R6R095RW",
+  "members": [
+    "INV-21SDZECS",
+    "INV-2E8MG43K",
+    "INV-49H32B3F",
+    "INV-4DVNECH3",
+    "INV-53F058MT",
+    "INV-555EHWM8",
+    "INV-8VQR13WX",
+    "INV-BR5MTSTY",
+    "INV-H8EM1VJR",
+    "INV-KKJYVB40",
+    "INV-MC654E0T",
+    "INV-MCVSM81V",
+    "INV-RMTHRQ0K",
+    "INV-RT13RESK",
+    "INV-VPX81HXV",
+    "INV-W5CTZJGD",
+    "INV-WQZ2WFCN",
+    "INV-XX178P3W",
+    "INV-YVVW1XCN",
+    "INV-Z385RTQS",
+    "INV-ZE4QPG25",
+    "INV-ZS9ZS878",
+    "INV-ZY0YMXMQ"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "e19e8b3f-aa4c-4c5b-891d-accdd3462cd0",
+    "task": "260921-ICR"
+  },
+  "revision": 5,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/panels/review",
+    "mcp/src/agents_remember/application"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Coherent intent and source review"
+}

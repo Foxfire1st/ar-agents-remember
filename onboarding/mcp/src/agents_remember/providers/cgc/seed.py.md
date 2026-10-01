@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/seed.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/seed.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T17:20+02:00                     |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -129,66 +119,20 @@ The argv after `--` in `_seed_export`/`_seed_load` executes inside the Linux run
 - `_cgc_settings_path` is the canonical priority chain for the cgc settings file; it must match the chain in `cgc_extra_args`.
 - Argv after `--` runs inside the Linux container and must be container-form (`to_container_path`); `--from-settings` and other pre-`--` arguments are consumed host-side and stay host paths (GitHub #58).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Provider-level CGC setup calls this module before optional refresh fallback. | "def prepare_enabled_provider(" | mcp/src/agents_remember/providers/cgc/setup.py:241-241 |
-| Bundle path rewriting is delegated to the CGC bundle module. | "def rewrite_cgc_bundle_paths(" | mcp/src/agents_remember/providers/cgc/bundle.py:79-79 |
-| The GrepAI seed applies the same benchmark-scope hermetic guard. | "benchmark grepai-memory is hermetic; seeding/cloning is disabled" | mcp/src/agents_remember/providers/grepai/seed.py:153-153 |
-| Worktree setup constructs CGC seed options through the provider setup request. | "cgc_seed=CgcSeedOptions(" | mcp/src/agents_remember/providers/provider_setup.py:137-137 |
-| The post-watcher catch-up stage consuming the stashed divergence. | "def _seed_catchup_results(" | mcp/src/agents_remember/providers/provider_setup.py:250-250 |
+- Provider-level CGC setup calls this module before optional refresh fallback. [1]
+- Bundle path rewriting is delegated to the CGC bundle module. [2]
+- The GrepAI seed applies the same benchmark-scope hermetic guard. [3]
+- Worktree setup constructs CGC seed options through the provider setup request. [4]
+- The post-watcher catch-up stage consuming the stashed divergence. [5]
 
 | The canonical selector list identifies inherited Git variables to remove. | `GIT_REPOSITORY_SELECTOR_ENV` | mcp/src/agents_remember/kernel/git_command.py:55-64 |
 | The Git environment removes canonical repository selectors before execution. | `git_environment` | mcp/src/agents_remember/kernel/git_command.py:140-146 |
 | The shared Git runner applies caller-selected bounds and isolated repository environment; the catch-up diff passes its 60s bound as `GitRunnerOptions(timeout=...)`. | `run_git` | mcp/src/agents_remember/kernel/git_command.py:149-213 |
-
-## Update History
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead `governingOverview` field repaired.** This card's field named `../../../overview.md`, which resolves under no base — not relative to the card, the onboarding root, or the root's parent — so the route the card declares did not exist. The field now names `overview.md`, the route-local overview of this card's own directory. The card carries no `## Governing Overview` section, so no body link existed to repair and none was invented. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `seed_commit_divergence` now calls `run_git(source_repo_root, ["diff", "--name-status", source_head, target_head], GitRunnerOptions(timeout=_CATCH_UP_DIFF_TIMEOUT_SECONDS))`, the timeout keyword having become a field of the runner's one options object; the timeout class the catch-up diff names is unchanged, and `git_head_or_none` still inherits the runner's 300s default. Re-derived the three runner-row ranges the migration shifted (`GIT_REPOSITORY_SELECTOR_ENV` 33-42 → 55-64, `git_environment` 124-130 → 140-146, `run_git` 133-184 → 149-213).
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-02T17:00+02:00 — 260731-EFA-L6 curator W1-B03: repaired 8 citation rows with exact anchors and current source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T20:55+02:00 — 260731-EFA-L3 curator: this module lost both of its local
-  `subprocess.run` calls. `git_head_or_none` and `seed_commit_divergence` now call
-  `kernel.git_command.run_git`, so the seed's HEAD comparison runs with the `GIT_DIR`-family
-  selectors stripped — the removed body passed `-C <repo_root>` but no `env=`, so an exported
-  `GIT_DIR` (likely during worktree start, which is when seeding runs) would have returned another
-  repository's HEAD and the seed would have been declared fresh against a commit this repo never
-  had. `git_head_or_none` also gains a bound it never had (the runner's 300 s local default), and
-  the catch-up diff's 60 s is now the named `_CATCH_UP_DIFF_TIMEOUT_SECONDS`. Recorded this as a
-  new Code Commentary section plus an invariant, and superseded the "detaches stdin" detail from
-  the 2026-06-10 entry: stdin is still `DEVNULL`, now as the runner's default rather than this
-  module's own argument. Skip reasons, divergence classification and the produced `CgcSeedContext`
-  are unchanged. Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `C901`/`PLR0911`/`PLR0913` armed with no
-  exemptions): extracted `_seed_precondition_skip` and `_seed_locations` from
-  `_resolve_seed_context`, and re-signed `_validated_seed_context` / `_seed_validation_failure`
-  onto the new frozen `_CgcSeedEnd` (source and target as named ends). Skip reasons, validation
-  failures and the produced `CgcSeedContext` are unchanged. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-07-07T20:45+02:00 — 260707-HFX-L2 review fix (L2/B2): `seed_commit_divergence` switched to
-  `git diff --name-status` and returns classified `entries` (`[{status, path, from?}]`; a rename
-  carries its old path as `from`) so the catch-up stage can be honest about deliverability —
-  deletions and rename-sources are phantom residuals no touch can fix. Verification metadata
-  pinned until closeout stamps the HFX-L2 commit.
-- 2026-07-07T19:30+02:00 — 260707-HFX-L2 (index lifecycle): a HEAD difference is a state to catch
-  up from, not a teardown — added `seed_commit_divergence` (git diff in the source repo, shared
-  object database; `None` = unrelatable) and `CgcSeedOptions.delta_max_files`
-  (`0` = `DEFAULT_SEED_DELTA_MAX_FILES` = 200); `_seed_commit_mismatch` now proceeds on relatable
-  divergence and stashes the delta on `args._cgc_seed_divergence` for the catch-up stage,
-  refusing only unrelatable heads (foreign-graph protection, new reason text). Verification
-  metadata pinned until closeout stamps the HFX-L2 commit.
-- 2026-06-19T13:42: `_resolve_seed_context` now refuses a benchmark-scoped target (`instance.scope == "benchmark"`) with a `_seed_skip` before any source/backend work — mirrors the GrepAI hermetic guard so a benchmark never seeds from the live workspace cgc backend (task 260619).
-- 2026-06-10T07:05+02:00 — Export/load in-container argv (bundle paths, export `--repo`) now rendered via `to_container_path` (GitHub #58): raw host paths made every Windows seed export fail and silently forced the full reindex fallback. `to_container_path`'s canonical home moved to `providers/context_common.py` (provider-agnostic; also avoids the facade star-import diamond a `cgc/seed.py → cgc.context.core` import would trip).
-- 2026-06-10T05:30+02:00 — `git_head_or_none` detaches stdin (protocol-pipe hygiene), and `_seed_export`/`_seed_load` are bounded by the configurable provider-setup cap (`timeoutCaps.providerSetupSeconds`) instead of UNLIMITED — only a wedge can reach the cap since bundle copies run <60s in practice.
-- 2026-06-01T23:40+02:00 — Added `_cgc_settings_path(args)` as the single-source settings-path resolver (priority: `cgc_from_settings > provider_from_settings > from_settings`) used by both `cgc_extra_args` and the new `_seed_target_runtime_root`. Added `_seed_target_runtime_root(args, settings, repo_id)`: in an isolated worktree seed resolves the bundle's host path from the isolated worktree settings (via `_cgc_settings_path` + `_seed_runtime_root`) so the bundle lands under the worktree runner's instance mount, not the workspace runner root where the worktree runner can't find it. Fixes OQ5 ("Bundle file not found" / silent full re-index fallback). Falls back to workspace `_seed_runtime_root` when not isolated or isolated settings are unreadable. Updated Logic and Invariants accordingly.
-- 2026-05-31T12:50+02:00 — Renamed `git_head` to `git_head_or_none` (now with a docstring) and removed the local `_cgc_provider` wrapper in favor of `setup_common.provider_settings`; `load_settings`/`settings_path` now take only the settings file path. Corrected Logic prose to name `git_head_or_none` and the shared `provider_settings` lookup (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Documented that seed export/load now run with `UNLIMITED_TIMEOUT` (never-cap-indexing run). Verified against `825a172`.
-- 2026-05-29T18:35+02:00: Narrowed the `CgcSeedContext | dict` union via `isinstance` at the consumption boundary and removed the now-dead `_first_seed_skip`; behavior-preserving (commit `0549b28`).
-- 2026-05-25T19:50+02:00: Created when CGC seed orchestration was extracted out of `provider_setup.py`.

@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:c4582c385a83a5be2b690c1361c166ed45977f206285824ebf9cba8ceccc959d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PRIORITY_RANK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:c4582c385a83a5be2b690c1361c166ed45977f206285824ebf9cba8ceccc959d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PRIORITY_RANK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every live series is observed independently from its own contract-keyed record; `_projection_members` supplies each member the already-derived v2 topology fingerprint, while activation waiting remains candidate-local.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:6045cb954f9ce5345eee73ce8a5c02787aef6bc3a230357626bed8010097897f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_projection_members"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:743e15b21eab8c3c9b8e395b034ca25415e343b8bef9406c2c0a61f4a5e6f91e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_series_activation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Member source facts bind the canonical task-intent identity.\n\nAnchor: \"intent = task_intent_identity(contract.task_root, leaf)\"; \"source_fact[\\\"taskIntent\\\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:4c11eecbd4cdb459269fb6c4d9c82a5aaf9469abafa06c7bbc8e03e17d5baebe",
+            "locator": {
+              "end": 545,
+              "kind": "line_range",
+              "start": 522
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The focused adapter converts strict per-contract selector observation into disposable source facts/waits/problems without lifecycle ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9040255b9fe65e637cd8469b8a2711949b2eb6c",
+            "content": "sha256:aaf759eee260e3913f4bb5fcae5070fc9738d86d1312757a473eb4d08691fb74",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_series_activation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A capacity refusal is classified `invalid` from the declaration that owns the code, while a genuinely unreadable source still reports `unreadable`.\n\nAnchor: \"error_type in CAPACITY_REFUSAL_CODES\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:9e2c4586cfa4767dc641dc8f7525d26b2f6cdff84d6d304c5f4183a238ccf1bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_problem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Waiting-door admission refuses only an identity conflict (a repeated generation id or task reference); no population ceiling remains.\n\nAnchor: \"waiting-door-identity-conflict\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:539986657b439f1276a83ebe69fc072e7ada72174c8164837b2803515bc91c2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_waiting_door_identities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ac9063ddf25a2849fb479acdb7827267c29afc2",
+            "content": "sha256:c4582c385a83a5be2b690c1361c166ed45977f206285824ebf9cba8ceccc959d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PRIORITY_RANK"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

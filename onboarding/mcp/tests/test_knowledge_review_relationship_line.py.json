@@ -1,0 +1,241 @@
+{
+  "path": "mcp/tests/test_knowledge_review_relationship_line.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the three shapes it owns and of the read-back the cases use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:fccf1690942450a0d637b1cff745f167428054ca844bf0bb1f4e420cdaae52d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_split_with_relationships_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:1843f8b973855708e11cbcb6bac7b8d8eb52456df8c804e46c52d8eb9b23627a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The sibling case module this one imports its builders from, and the reach fixture it reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9896a776a4b04fef5c4779a83f648ef6434e338a",
+            "content": "sha256:6269835c32a6dc55a58d7a09fee5540ee87f057b446f7a829af868705368d34a",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_split_head_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_reach.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a509f66249a7ce3a51d1b0497607ba40882704d9",
+            "content": "sha256:d6b4786c861f860432626748737a02fce1b8d4c0f7a1c290f09e4150f2e099fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_movement_fixture"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixtures that author an intermediate descendant, a split with relationships on both successors, and a membership moved onto a successor family revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:bcd17b81eb378cd2f5ce661c216a073905eacbc9dbffc049fbe84785d72f0f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_intermediate_descendant_fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:a89ca7564a77d45577797fb2a4945b3f66aeccab2fb59ea1b1474188b7ff0383",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_family_head_membership_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The split line that names its recorded relationships and never denies them (round-2 F1).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:d2fa3dbc1ae5ff4db88dc6c39a004af41044aab58616f0372e0e912cdc0328b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_split_line_that_records_relationships_names_them_and_never_denies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The multi-ended line that never claims a unique head (round-3 F5).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:887e669a5699e36b7e8edb003f765832b2ea5cea4ddaf0b070b388bc65a08c40",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_multi_head_line_with_relationships_never_claims_a_unique_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The split that records nothing: only what was read is claimed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:8295c93d0addffdc5a7e686ef74c819d553efa6f23fddd2454dbba9bb0f1ab79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_split_line_that_records_nothing_states_only_what_was_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The relationship recorded on an intermediate descendant is displayed (round-2 F3).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:2c823e1e287336470cf7d0239e5972b1124fa591a6002d927639513e369720dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_relationship_on_an_intermediate_descendant_is_displayed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The membership moved onto an unselected successor family revision, read through the family-revision owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ee498d9246838492521d493ee17cdef9ce0e2",
+            "content": "sha256:9e61847646ff702cfc3fa26c6cd8bb34f8eb6e58241ffb38eae301cbd30825d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_membership_moved_onto_an_unselected_family_revision_is_displayed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The display sentences these cases pin, and the pairing bases the head rule chooses between.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:cfc09e4ad2c35952c3b3f12547784a0a4b509916bb032afbcd2e2d0ccfdbf811",
+            "locator": {
+              "kind": "symbol",
+              "name": "_withdrawal_statement"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
+            "content": "sha256:f17ce4af92394ee7e37c0d306784bba064036abb3c171092f91fe9b6b13dc74d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BASIS_SENTENCES"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
+            "content": "sha256:c9f329f9266ad8595ffe6568f7858d146ecf9fe1bf6d6ae36058e7a33c026c60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_line_head"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The whole-line read and the head rule the cases measure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:dbee53c97e2dfb3d420cecb4729fc582b755be6fa5aac19bb77b48a02b9ad020",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_line_relationships"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0556bb2e8a16d427b3eab0e3c8f503007d1aaf33",
+            "content": "sha256:84f74eecc2fdfaa33e34d94b3d7f9bb7c34f917ea8256d0aa83659accea9a6ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "successor_line"
+            },
+            "path": "mcp/src/agents_remember/application/review_recorded_relationships.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_global_state_isolation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_global_state_isolation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -40,13 +30,13 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `GlobalStateLeakDetectionTests` (lines 14-38). | `GlobalStateLeakDetectionTests` | mcp/tests/test_global_state_isolation.py:14-38 |
+- Defines the class `GlobalStateLeakDetectionTests` (lines 14-38). [1]
 
 ## 260824-PDLS Route Impact
 
@@ -54,14 +44,3 @@ The production owner moved from `mcp/tests/_global_state.py` to
 `agents_remember_test_support.testing.global_state`. This suite still expects root certifying bootstrap to have
 declared the normal `test` mode, deliberately leaks dashboard mode, and proves restoration happens
 before failure. It is therefore a Dagger-suite contract, not a valid standalone raw-host test.
-
-## Update History
-
-- 2026-08-24T21:23+02:00 — Updated imports and route expectations after shared state ownership
-  moved into production testing.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: updated leak diagnostics and ownership enumeration for
-  the kernel-owned checkout execution mode and explicit pytest baseline. Verification metadata
-  remains pinned until approved closeout.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.

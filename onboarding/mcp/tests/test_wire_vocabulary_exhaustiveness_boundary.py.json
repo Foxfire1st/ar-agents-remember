@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every vocabulary cell degrades rather than stranding the task",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "content": "sha256:0586d97a4430cced1f871606d4ec4112db5c522e7c9da4f8dee36a461a7b5f30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_vocabulary_cell_degrades_rather_than_stranding_the_task"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A rewrite heals the file and that is the recovery path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "content": "sha256:510c3cfc330b617940c2f98b871f0378dc9d8bddaf9e098848ff46fb48c3e3a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewrite_heals_the_file_and_that_is_the_recovery_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The writer refuses what the reader tolerated",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "content": "sha256:08646ff626e4f5d42d7b40376e7db3719c1dad023de2e79a589f8886b72a4033",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_refuses_what_the_reader_tolerated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A live contract projects onto the wire model",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
+            "content": "sha256:b4f014d7e37376ae9098e5a7a8adfd0de0cbda0fad3aafbc9d332d8054e1e85d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_contract_projects_onto_the_wire_model"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

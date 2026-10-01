@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Claude echo mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d9b779060902566e6c400682e2f427b660172a6",
+            "content": "sha256:1edd9276a5edb89de613bfef23c79df7842343f075374eca132b18ea69ce093d",
+            "locator": {
+              "kind": "symbol",
+              "name": "map_transcript_echo"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/projectors/claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

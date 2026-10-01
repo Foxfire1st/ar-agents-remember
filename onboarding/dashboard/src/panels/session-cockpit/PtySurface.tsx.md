@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/PtySurface.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/PtySurface.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -81,29 +71,34 @@ those panes get byte-stream harvesting hooks.
   datapoint (the bench reproduces one in ~15 s in any real browser).
 - The badge slot renders nothing until server truth exists — reserved, never faked.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff. | "export function PtySurface" | dashboard/src/panels/session-cockpit/PtySurface.tsx:334-334 |
-| The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols. | "export function Terminal" | dashboard/src/panels/Terminal.tsx:110-110 |
-| The archetype predicate + pane copy + accessible name + toggle cost note. | "export function cleanupOutcomeCopy" | dashboard/src/panels/session-cockpit/lifecycleCopy.ts:39-39 |
-| The harvest store + OSC parsers the legacy-raw hooks feed. | "export interface PtyHarvest" | dashboard/src/data/ptyHarvest.ts:21-21 |
-| The reserved-chord matcher the key filter consults. | "export const PTY_RESERVED" | dashboard/src/data/keymap/reserved.ts:62-62 |
-| The freshness fields the socket/output callbacks write. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| The view mounting this surface + the measured-cols floor chip. | "export const SessionsView" | dashboard/src/panels/session-cockpit/sessions-view/SessionsView.tsx:23-23 |
-| The measurement harness behind the renderer record. | "export function PtyRenderBench" | dashboard/src/dev/PtyRenderBench.tsx:83-83 |
-| The jsdom suite (Terminal mocked out — xterm never enters jsdom). | "controlled panes are labeled as the runner line-log and get NO harvesting hooks" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:54-69 |
+- Renderer record, keep-alive, archetypes, hooks, toggle, slots, focus handoff. [1]
+- The wrapped terminal: fit rules, live screenReaderMode, key filter, hooks, cols. [2]
+- The archetype predicate + pane copy + accessible name + toggle cost note. [3]
+- The harvest store + OSC parsers the legacy-raw hooks feed. [4]
+- The reserved-chord matcher the key filter consults. [5]
+- The freshness fields the socket/output callbacks write. [6]
+- The view mounting this surface + the measured-cols floor chip. [7]
+- The measurement harness behind the renderer record. [8]
+- The jsdom suite (Terminal mocked out — xterm never enters jsdom). [9]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -111,15 +106,6 @@ The keep-alive owner stays mounted when focus is temporarily absent, retaining v
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
 
 ## 260718-CHATS-L4 Reviewed Candidate Delta
 
@@ -139,30 +125,3 @@ The PTY pane no longer reserves a standing chrome bar for archetype text or an e
 Archetype context remains available through the inspector and the screen-reader toggle tooltip,
 which now floats inside the pane. A hidden layer has no keyboard zone or ended-state focus target,
 so focus routing reaches only the currently visible terminal surface.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the inspectableIds memoization fix. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B23 curator: replaced the superseded `(L…)`
-  prose citations and the `n/a` rows with exact anchors and fixer-generated ranges; exact
-  non-fixing check returns zero findings.
-
-- 2026-07-24T13:17:17Z — Curator: corrected PTY declutter, retained archetype disclosure, and
-  hidden-layer focus invariants; verification fields remain pre-commit.
-
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator: recorded the optional `readOnly` prop (default
-  false) that lets the terminal-diagnostics drawer host the controlled runner PTY input-disabled
-  (§12.6), and noted that for a controlled seat this surface is now a default-off read-only diagnostic
-  rather than the primary stage body. Verification metadata remains pinned to the leaf base until
-  closeout stamps the L4 commit.
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — Created for 260715-FEUI-L6 R1–R3/R7/R8: the keep-alive PTY surface
-  wrapping the lazy Terminal (Chats' layer pattern, prune on tombstone only), the measured
-  `PTY_RENDERER="dom"` decision with the SwiftShader caveat recorded in place, the two-archetype
-  switch with legacy-raw-only harvesting hooks, bell acknowledge-on-focus, the reserved
-  scrollback-paused badge slot (empty, never faked), the bound-only reserved-chord filter, the
-  persisted live screen-reader toggle with its cost named, and the real-cols wiring for the
-  ~80-col floor chip. Verification metadata pinned to the leaf base until closeout stamps the L6
-  code commit.

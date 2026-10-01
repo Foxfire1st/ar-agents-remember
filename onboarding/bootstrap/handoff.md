@@ -50,12 +50,3 @@ rollback proof, the frozen-finding delta review, and the final exact-candidate D
 the PDLS task reports. Closeout must stamp the resulting code commit, run the memory-quality gate,
 align the ledger, and preserve the review's historical process violations rather than rewriting
 them as green.
-
-## Update History
-
-- 2026-08-28T06:40+02:00 — Corrected the lifecycle inventory to 34 artifacts, completed the six
-  missing focused test cards, and recorded v21 as historical pending the successor freeze.
-- 2026-08-28T02:38+02:00 — Added the verified Dagger candidate-base/attempt-binding boundary that
-  stopped nonce-specific evidence runs from invalidating identical dependency and source setup.
-- 2026-08-27T11:14+02:00 — Replaced the obsolete pre-review handoff with the explicit
-  verification-ownership, lane, retry, lifecycle, causal, and generated-index delta.

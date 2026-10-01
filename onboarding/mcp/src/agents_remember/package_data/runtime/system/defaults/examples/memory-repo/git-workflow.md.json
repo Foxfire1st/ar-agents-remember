@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/git-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory-repo git-workflow example says it belongs in memory-layer `system/git-workflow.md`, captures the gated-branch landing flow + gates + merge convention + release flow, and uses placeholders for per-repo specifics.\n\nAnchor: `# Git Workflow Example`; `## The landing flow`; `## PR merge: prefer a merge commit over squash`; `## Commit and push quality gates`; `## Release And Changelog Convention`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6addcd3ee3d13cfe236efe8f63f3a47408d50942",
+            "content": "sha256:9225e82058fe29a8f264d0e8b0aacdf268b1b7691072282002ecb915a9bfc122",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The examples README documents that the memory layer owns this landing-flow file.\n\nAnchor: `## Memory Repo`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da59187180babded977992a66270693bccc7cf4",
+            "content": "sha256:9dfc9396f4ccf07e70004cb0ac96bc204582491fbb61a01761cfd23e1c297b39",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

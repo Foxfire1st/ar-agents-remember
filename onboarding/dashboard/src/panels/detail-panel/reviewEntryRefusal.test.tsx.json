@@ -1,0 +1,394 @@
+{
+  "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header: what is exercised and the measured pre-L47 defects (line totals, a second committed request, eager catalogue).**\n\nAnchor: \"+3775 −1056\"; `DocChangeSetBar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:75eff76db8115f7ad60e36f58f94bd4f5f98e606a41ba278d4dbc5a6a7ac6aa3",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.**\n\nAnchor: \"states missing knowledge briefly, never as +0 −0, with the owner's refusal in the disclosure\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:abffe14419e4e7726a20364d99a98ec86189881050ad4084b44e7e7861a0ed2f",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "An unreadable answer, with no invented refusal.\n\nAnchor: \"says a response the route did not produce is unreadable, and invents no refusal for it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:797cc70c93b4df5169d3a6ce8e5205cdfe3137646e49cb553e5c9ac3b0cd1b18",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Partial counts marked and explained.\n\nAnchor: \"marks partial counts as partial and explains what they leave out\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:cfd150bb85dcc0b503717bb6401f34ddfa90342ca180dcf8291926ef35a37b3d",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**No re-read for unrelated publications; a re-read when this leaf's lifecycle moves.**\n\nAnchor: \"ignores unrelated workspace publications and re-reads when this leaf's lifecycle moves\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:4d67d89f82c92c5ab95a1c2283c3c1cb2b9a2d67b4bf59b2a06b9473923caf8f",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 229
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A previous leaf's late answer is dropped.\n\nAnchor: \"never lets an answer for a previous leaf overwrite the leaf on screen now\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:09575a13f5d306bd2bd8785daffcb523031e152bbd703a0bbd9aa56dc6a81b20",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.**\n\nAnchor: \"changeset-state\"; \"unrecorded\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:6e388ef6192e015a79877e740a5c9c5668c874eea77f31b6bf3b90c48b6c93e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRECORDED_BODY"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:86110b617f612befca3857cf82c01dff0f89961446eac1950e84c33dce03a586",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 341
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The control, its summary read and the disclosure these cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
+            "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentReviewSummary"
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
+            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryStateDetails"
+            },
+            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The bar's composition and the leaf-scoped invalidation facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
+            "content": "sha256:5893e0ccb478f7ddb7f5363b31684d2172f3a903818cf528a472e0fc0521b5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafFacts"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real bar and the shipped store-seeding helpers.\n\nAnchor: `DocChangeSetBar`; `enclosure`; `seedProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:ba1b3a61721cee81fa50a02145e579cb5bd93e22e4cd26eacc41c89aca1a59e7",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The summary route's unavailable answer with the owner's refusal verbatim.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:252baef9c1255bde6325d713eaf19fd0e973eeb59b01880875fdc1cf9ae76c07",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNAVAILABLE"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:3abfd317706c52be3c110381901e86ae9c67cb20c5f25239b8a0edc5f9fe5540",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_DETAIL"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:2043a749b36c91331a998ac50f489d7b86669c69f6bb2a9bf591af728e9a3507",
+            "locator": {
+              "kind": "symbol",
+              "name": "ABSENT_NEXT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A counted or partial body whose parts sum to its totals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:42c386f5613043307239cec27dc0d7d0fb27d129835f9e406c99de775e61b59f",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Line totals that must never appear on the Intent review control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:d293b84a5a263aa4f359fd807a28fb911fcd851de7be5b328a50eb989bc29aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "COUNTERS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one stub and the per-route request counter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:d54423f0fe2c0f0abf0d512386842da8463c3974b13e2c4d33e4220aea881f21",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:c171f6e8de83b4eb62460e114bd8014e432e189de07bde13f9711bb544f8578d",
+            "locator": {
+              "kind": "symbol",
+              "name": "urlsOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The live-leaf seeding and the mount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:b871c2c135854b3e18d1e5c64a5665271a474226fc281e83d0a052b97a7edeb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "liveLeaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:afa2353ce32a16542b94900bc7a42767a2a9aead54a1da29c8d0d22989daa577",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "**One control with intent counts and nothing beside it; the click opens the task context.**\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**One summary read, no catalogue read, one committed read.**\n\nAnchor: \"makes one summary read, no catalogue read and one committed change-set read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
+            "content": "sha256:5c58a33f6b8294557f19143782143fadf93148ac970ae24a55086d43154b1582",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

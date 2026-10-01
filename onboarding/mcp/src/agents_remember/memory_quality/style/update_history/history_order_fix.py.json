@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order_fix.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring's converted-tree paragraph.\n\nAnchor: \"has no Update History: its onboarding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381d6b2bcb51b43282869d8033507d8dfff065fd",
+            "content": "sha256:819aaf24f48a1c47664d22c2ef34eb32d7f203d750984cfb8080e47c67383bf2",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The early return before any file is read.\n\nAnchor: \"not-applicable-converted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "381d6b2bcb51b43282869d8033507d8dfff065fd",
+            "content": "sha256:f5401e81b4c5fbc5fc4373ce6441692f9de8c8d0741587731fc6abf864b49834",
+            "locator": {
+              "kind": "symbol",
+              "name": "fix_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No stamps and no history sort on a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ada8210b8ba51924d296eabc4622d81df718621",
+            "content": "sha256:8309bc08492d1071db3ef30b54411678c005e642754f18bf1f7edae9e478d437",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_trees_get_no_verification_stamps_and_no_history_sort"
+            },
+            "path": "mcp/tests/test_onboarding_trace_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The diagnostic checker provides the timestamp and section parsing helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "961d92b07979a970b038f73798a14caacdafa71c",
+            "content": "sha256:173c07be9eb05cc7d0c33215f89878f2de45df6aa9ccf91c671662ca4abf04a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHECK_NAME"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/update_history/history_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `rel` path-relativization helper is now imported from the drift-check discovery module instead of defined locally.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47fbe0fe7452568f5bb7f766308430b516d8f247",
+            "content": "sha256:7a9c34c9d98d9287ba75e16a2e4b3030569517b34f49d5d0e4eb2b3f198ee018",
+            "locator": {
+              "kind": "symbol",
+              "name": "rel"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

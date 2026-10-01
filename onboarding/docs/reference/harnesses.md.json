@@ -1,0 +1,298 @@
+{
+  "path": "docs/reference/harnesses.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The effective harness registry merges built-ins with settings and role-per-level knobs deep-merge over role defaults.\n\nAnchor: `resolved_role_knobs`, \"def _parse_harnesses(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:519dbfa017fcaac2517ef4fa4b97a6e6c52a56dc497a9f0743b9ebb5b7111636",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_role_knobs"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "content": "sha256:fe1555957576906cd1d370509efb03d3cb0a30f63a21cb41c7d3120378206506",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 290
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b0f97f41ccb521b0b843c9a3da322228565d363",
+            "content": "sha256:a1614ac7eab328fac7417c1e58d26d18d0af935251601834a7cedc8bf3ab9e74",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Built-in ids are registry identities, while native model validation is dynamic rather than a registry enum.\n\nAnchor: `find_harness`, `invalid_model_detail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:4690b35feda79af317d1cda81211e7452f9d7d1e0580f4f8c9a1caa0e4b03d02",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_harness"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:1f4a1594c6f468c4473eb9dcc6d603ec7bc3718bb7a836b36e798589a2f3ab9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "invalid_model_detail"
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:c7ee3bba64750fec35a72487392e8d3cda850defc3f087a7ebae58850ec6646a",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "913e30ac380231f64e1f00051394053b4a3b7853",
+            "content": "sha256:c0fd362bf44d9192abe72ee261036be206147002f9910fdc945102a9e96cdb91",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Spawn rejects caller spend overrides before side effects and sends settings-resolved model/effort through one typed native runner payload.\n\nAnchor: `_caller_spend_override_refusal`, `spawn_agent_session_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:d5e1a44e10e307d60f55ef47fe221c547c2b2eb7367163153bac142c654132fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_caller_spend_override_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "spawn_agent_session_tool"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:b0d94b4b2d1f2f14962a227ce3b1ff5432e57b7407639ba79422330083653e95",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "content": "sha256:b563c001e54a741f1b53d0b74eb4781fa75e457969718652666c30e7e98ed447",
+            "locator": {
+              "end": 873,
+              "kind": "line_range",
+              "start": 764
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Claude initialize and `system/init` parse different required fields; the catalog request is a separate control message.\n\nAnchor: `parse_control_initialization`, `parse_system_initialization`, `list_models_request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:97890c0746e799557152184d4bb2af8cf40e233e608be37674e985d08eeecbb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_control_initialization"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:2a513aabb0c00f10b2d25d51cfd41db2ad0e1fc8f5ffda5b5e4ed773abb45c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_system_initialization"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:bf60fc12b1155daa9341c5e48b925265b7cda3e8566ab4e748045ec1ba0aab1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_models_request"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:72c14ac8df990fcff79b45e8cfe9e7c487635d9e6c2cf27a01294bb61069c77b",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:757fdf6682590b93d5b2cea53b5a140d72ae5313a430be9a9c9a55ad03626901",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8f336bede7faf84fff72b90f5b369023ff3171a",
+            "content": "sha256:7adaf328cd890ecf7e9855dc06caea570c543ddbd74c67b4c8aa6a2422863f34",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Startup orders correlated initialize/bootstrap before a separate correlated dynamic catalog request.\n\nAnchor: `negotiate_claude_startup`, `negotiate_claude_catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "335a1c6878e2f9d5c1dcab83eb2bd7f68bfc5867",
+            "content": "sha256:a70da620eb0a94ea96313970919c478279e58e7f6bb014ed1df5d1d1f063b60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "negotiate_claude_startup"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "335a1c6878e2f9d5c1dcab83eb2bd7f68bfc5867",
+            "content": "sha256:cf88617e4fa5f2e66bb4e96569a513ed3115f2c9c05f7e667eedc7b86f874de8",
+            "locator": {
+              "kind": "symbol",
+              "name": "negotiate_claude_catalog"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_startup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Catalog parsing preserves native model keys and nests each effort menu under its owning model row.\n\nAnchor: `parse_list_models_response`, `_parse_model`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:03766ed7b240678706909f24497a7799e73c386c3e5655ad9eeed631b570b988",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_list_models_response"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7907ed927e34b64195d50aab2a0baa2109383621",
+            "content": "sha256:26dba7ec10a2221d8638eb3b307681afb2e515cb7ceb53a94f6c8f7f035c3a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_model"
+            },
+            "path": "mcp/src/agents_remember/serving/claude_stream_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

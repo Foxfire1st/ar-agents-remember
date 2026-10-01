@@ -1,0 +1,381 @@
+{
+  "path": "mcp/src/agents_remember/tasks/leaf_doc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it.\n\nAnchor: \"def _plan_leaf_doc_reset(\"; \"require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:ac187f17699856e16148daef0e2c23405896254239757086dc1c67c12bdb2ed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_leaf_doc_enclosure_registration"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:f385d1f9b46411fb9108ead17cec81e435a6e8cd9ae088defc30583cdb1626c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_registration_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:67d173a11adfb1315913dca948f6964a0b30a6ca7309863994a9fa658146c3d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure_registration_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The path helpers this module imports — now from the task domain, which is what keeps the package order intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_contract_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:468dab315dedf798ee9bcaa4564f178effddecf0072eadc49a84465f03a93d45",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_dir"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The package order this module's import direction must respect, with no baseline and no exception.\n\nAnchor: \"a module in package P may import package Q only when rank(Q) < rank(P)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:ded9434595ee95aa22bb7a4663f23ce66d79f845bb753c206d9512e29970ee22",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+            "content": "sha256:d8567095454d3719c73cef2c7f50dbc0d6e7b9da657cdb5f961600618a6e9046",
+            "locator": {
+              "kind": "symbol",
+              "name": "_layering_step"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The observer joins this lookup mirrors (doc id → enclosures[] refs → stem).\n\nAnchor: \"def read_task_documents(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "content": "sha256:43b15bfd7db981b739d72d3c6476c8f74733223abdafec3d5f8d3823e281f23a",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised.\n\nAnchor: \"def require_task_document_in_place(\"; \"target = json_path_for(json_path.parent, doc)\"; \"would be rewritten to {target}; its file name must match\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:e6584c09e9aecd5d9370b777f4eb632869ba4e102abfa86cf5efcc55a812a286",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen.\n\nAnchor: \"require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(master_path, master, ReopenTaskDocumentError)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 393
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
+            "content": "sha256:c4375611d8a906ce2c5dca7fb66b6fcd3c3b502feee719e395cc93b7910620f1",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 518
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "content": "sha256:971ac8ba4f870866276d1dd33c74c891ee4a6d024f9ca800245d524b5e88d6e9",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 611
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:69ccec8898c2c8818e049ebdf39539f58432a690a78576ed80336c8df2163327",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The start/attach publisher that actually binds a missing master link — the live repair path, since `restamp_leaf_doc_lifecycle` has no caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:8af478d5fd0c649ee215e10416d04cbaf1110d83d672561697f4ddf107ebb15d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_leaf_task_enclosure_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:0ffd79b744b7109023faaac368528614523a417295e9b5a447af892600b67003",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_current_leaf_enclosure_registration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
+            "content": "sha256:53e338ecd6b60e94356ce55a36630d7831af36729cf3c38f0e5dde95b2aa8210",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_leaf_enclosure_binding"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Start's read-only restamp preflight, the one `plan_leaf_doc_lifecycle_restamp` caller in `mcp/src`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "content": "sha256:25dd2f931db64684a4a83eb1053fb7f01b8bbf6fe258f2b99475f8d5461eb07b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_restamp_preflight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "content": "sha256:f4bba8c40bb72dd9b65e2b2ec7d464bad2fee174863f4763054cab62ac8da773",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_will_restamp"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two derived-field computations: absent-only binding, never a rewire.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:86abd7865bdbebe948fda3ff8163c01d53c0b235507d070670f5fad398f1165a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derived_bindings"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:9cb170d14835d4e9ff522c3427f88a1fa1c48fc2b4e52ab527e6971de545c311",
+            "locator": {
+              "kind": "symbol",
+              "name": "_derived_leaf_bindings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:1864160246055865046cad2b462f3081fa6fe99c2bc70836e887bf49732225af",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_leaf_doc_lifecycle_restamp"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
+            "content": "sha256:0c6c9205c794c386ab820fe9fa581bcd2b4aab24fd51d3165141a5ab20b34cb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "restamp_leaf_doc_lifecycle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

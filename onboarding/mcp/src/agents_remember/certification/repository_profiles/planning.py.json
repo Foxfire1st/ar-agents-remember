@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact one-selection resolution with typed missing/ambiguous findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "content": "sha256:eb80b6b7aae2bccc5fc7a0559d5a132c114d27d453c4bfce42c05f74fc649831",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_repository_profile_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Compile exact Gates 1-4 without claiming the framework-owned Gate 5.\n\nAnchor: \"def compile_repository_profile_plan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "content": "sha256:33e40ef884d376e28eece6d8ad4ee5fb1f9bb865c7d69d19d75101be61295421",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Gate compilation binds applicable rails, artifacts and semantic inputs.\n\nAnchor: \"def _compile_gate_plan\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "content": "sha256:4727b30fcd5a7e3b2987572e0ecbb3ed5eeca0a5dff8a413abbb5eea7c328a16",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Plan admission refuses bytes that differ from the sole canonical compilation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "content": "sha256:9ecaf690b9c2062ce3d7ea1bace56931e54c342eb61121c4c62e4e01bd4d6d92",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_repository_profile_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Render an exact journal selection after full original-object and artifact readback.\n\nAnchor: \"def render_selected_code_certification\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d7cfbaaa8e85258051b7c84e0e5d31ee237a71b",
+            "content": "sha256:5fc3d8d72cd67e9c044e5e4baea38dd22840d5e6cda7c9f71e9637afb1429de4",
+            "locator": {
+              "end": 395,
+              "kind": "line_range",
+              "start": 364
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

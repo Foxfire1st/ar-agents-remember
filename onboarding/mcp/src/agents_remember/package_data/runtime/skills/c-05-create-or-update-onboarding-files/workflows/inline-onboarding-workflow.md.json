@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The workflow states that inline onboarding stores file-level onboarding inside the source file and keeps the semantic content from the file-level template.\n\nAnchor: `# Inline Onboarding Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:cedffc44e3267a41a9afbfae0cd78c33909960c5d9141567253e94c4f83d7ad8",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Inline workflow steps cover comment delimiter selection, safe placement, stable markers, digest recomputation, and sidecar fallback.\n\nAnchor: `## Workflow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:1398669ef94b71dc2f57bde9b019c99a9ab770182ca45f689ccdd16200c883a2",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Verification rules require timestamp and digest fields and classify missing markers or digest as missing verification.\n\nAnchor: `## Verification Rules`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
+            "content": "sha256:01d2f452abdc414ee4a616472d82575fadc0a14f12643b24c2b83688a7d1530b",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

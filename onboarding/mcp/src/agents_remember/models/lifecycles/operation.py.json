@@ -1,0 +1,442 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/operation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `_require_altitude_authority` boundary implements the preparation contract above.\n\nAnchor: `_require_altitude_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:80627f82ee4e1248f61228ebdca1564abe74e2109c1abdf2e6afc1290d394f5c",
+            "locator": {
+              "end": 641,
+              "kind": "line_range",
+              "start": 592
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The public projection intentionally omits private execution identifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:5ec3b41e02623b995cb350315b0b85c4ebc0f03a7ded88863768b609411b082e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "39635827ccc7d2dfc1c1bb5e217062cb3b596354",
+            "content": "sha256:aba7a6aacf32b85d742fb8c0df0a57c9439b84fac5ae320a08c9e5086324b709",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleWorkerObservation"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The R03 dependency vocabulary is shared by these record types.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
+            "content": "sha256:691a1226e5ed295b83f147dbed7b0f63d611d94781a738c0a0b1a6a6e497c7a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceRecordType"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
+            "content": "sha256:1ebe9e346661801b2b8f725837b8e1699f5cbfc26f6531e61a1a3397ea42f035",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_DEPENDENCY_POLICIES"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Recovery evidence records the exact code and memory-content commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:90bea8be85a0ad2f0a8ff2cf52aa048ee45dccd44a5814fc2a4c23cffd9de7a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_recovery_commit_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Organizational publication intent records and validates accepted/intended task-document bytes and digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:ebe22dbde64181f3ca7ecd375d103a6e2032839a0027103a85bde3eb7757c6ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalTaskPublicationIntent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Integration publication intent captures the claimed source operation and checks completeness of that identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:1a63465bb927801d1d35ed91f3ff60c83d2b605827f821fb469a4ab2378b40fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_identity_is_complete"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:1e33e0c3516cadd82e021206d2d45f65c586346e197ed20c60cb16a8b635d3fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationPublicationIntent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`LifecycleOperationRecoveryCommits` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "`OrganizationalTaskPublicationIntent` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:ebe22dbde64181f3ca7ecd375d103a6e2032839a0027103a85bde3eb7757c6ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalTaskPublicationIntent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "`_require_cancellation_evidence` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:be1e96e6b7c887885ef205ccea36132dcd0cdccc35623d9f760310a7bccbb460",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_cancellation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`_require_organizational_repair_evidence` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:aeef8b2db6c2fafc0601d06adba4123113fdccaaa10cadc5f8eb417453b42b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_organizational_repair_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`_require_integration_publication` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:06bc65e3a156b79db09b5916fee8f36feafa8bb4bfbcb0f5c01ebd8b9c476714",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_integration_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current `_require_cancellation_evidence` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:be1e96e6b7c887885ef205ccea36132dcd0cdccc35623d9f760310a7bccbb460",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_cancellation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "`_require_canonical_cancellation_handoff` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:22bc6bca42fddb7a20cc6aeb3bc98a6a88d89ec11a2af3178025e7fab356b847",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_canonical_cancellation_handoff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery and integration authority retain real code/memory outputs and validate those outputs against accepted publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:06bc65e3a156b79db09b5916fee8f36feafa8bb4bfbcb0f5c01ebd8b9c476714",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_integration_publication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closeout input retains the contract, effective input, approval, policy and corrective dispositions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:6c8837dbdbd9baaf3cbb55bc1cf370d0f4072927c3622f2aa79c9deb83243d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutOperationInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:fea07215b0d8f84ac64ebe8a45a507ac875979c2aff2a02118954b8a4cc17ded",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_legacy_effective_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The durable record carries both selected certification states and the completed quality proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:889eb9e188da88d5fe7591330d94e044ac29ce28e65004870f4efc720334f3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decode_legacy_missing_intent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:60ffe14086f76d874b1b11c68a19dd05bc39ff89b7d6858af233cb558f0ad513",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationQualityCertification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Completed integration requires an exact original full code prefix and a matching result digest.\n\nAnchor: \"original full code prefix\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:60ffe14086f76d874b1b11c68a19dd05bc39ff89b7d6858af233cb558f0ad513",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationQualityCertification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Attestation, passing result, comparison base and memory policy are checked together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:3e023e8a39c382cfcfa86a99b799050c51bcb8eaaf8309257d60e3c211e8f655",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_quality_certification_attestation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:6162c2eef2ea1b0463ef21597f4141409e91bc46fff195ca641785444de10e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_policy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Completed proof must match the selected operation generation, references and integration code authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:8dd89f143ab8df92e9afa3fb62b225f04dc7c5a9acfd5502e31024224ea652d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_integration_certification_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:0635220f17ee9a3518b8099e1f6dad56d5fc771982cf7961751ee8d1ed8d9fb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationOperationAuthority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Both certification cells participate in meaningful state; ordinary durable-write revision remains separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:9c53d0202943dfa6492618940e596cdbb1299d0e6fe6b0cda8669de4b8b2e497",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeoutFinalizedContractSha256"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:a14895a41e27b356c6786293df4b9cde446c3c1312fc36e6506e1cc1583a818e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MEANINGFUL_STATE_FIELDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

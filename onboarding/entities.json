@@ -1,0 +1,464 @@
+{
+  "path": "entities",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cache derives only attributed history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The contract stores the actual two outputs and informational cache location.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:9bc38fef7bc11ddc1de1d2b7ae2ea61cc327316538063fd9bab0c61b808c8678",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:0f765bc2dcf4c715068f78a3659053af844c1e783850d5109959f557ea0a1d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_commit"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "One normalizer/validator owns contract serialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:78334e01841f3edf7966468e2fc130757a77aa97da9d16493a05166347a87698",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_publication_text"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:8a42883742de5bb67811b56bd75ca2056b7f40e55427162b5f9bb007effca913",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_contract_text"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:c4d00ddb632af514dd84a2a1df82481bbc8b8a9d9495b9766b7a923f86662a9e",
+            "locator": {
+              "end": 477,
+              "kind": "line_range",
+              "start": 470
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9e5c720f228936289ad0ee64c8cfb9fb1b66a9b4",
+            "content": "sha256:97baf7cb74933938fd44dff425ea36a1ba3a56a4886eecc5bf01021e3eb82fda",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 480
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Admission checks actual sources, ancestry and content before refs move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_ref_move"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
+            "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integrated_memory_ancestry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Carryover/cleanup readiness proves both outputs reached their official sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d681782b83c8602795db5974818af4c77eadac89",
+            "content": "sha256:ecf13dc8ed059a3e33a54b93596d18e2ef1b67905eac792832e52a61c0cb41d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "carryover_done"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d681782b83c8602795db5974818af4c77eadac89",
+            "content": "sha256:3a9ed852bded5a0be69300f9238acb27569c8e4621028fc2de9200cdf5ef2c08",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 193
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cache write failure is reported without a Git publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "content": "sha256:5100d97eebd9e4a3f1b68fc62189e707e02528dd8d298f788e69d1fdbf252d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The source reader does not import cached rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ledger_source"
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The normalized input and message vocabulary contain only code/memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1bb98ae938e3f8199bbf76edf8798070a0a4798",
+            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_message"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1bb98ae938e3f8199bbf76edf8798070a0a4798",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1bb98ae938e3f8199bbf76edf8798070a0a4798",
+            "content": "sha256:a600f2bc8ecb4f071d947761ee0912f90c48a1095a1ef8a7d6bd64c463b66e87",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1bb98ae938e3f8199bbf76edf8798070a0a4798",
+            "content": "sha256:953074c5bbef8da58e17a1ee6efc98aff0d26fd5718296069266f194a88b14aa",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Raw Git facts and the filtered memory-content head are separate fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:676028d407a623f20445d2780262e688f7780dde977111121d388d2e879596fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "contentHeadTree"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The recovery tuple contains only actual code and memory outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recovery verifies refs/ancestry before cache refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_memory_output"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:9aad08be1ba59d94bac34779f4a1dcf871999eb945971a94b30b49b7bbce6c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_closeout_recovery_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Adoption creates the memory-content output and refreshes its cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:1834a2483ffa461724103e034967198529657d465a220947126a075820851cdf",
+            "locator": {
+              "kind": "symbol",
+              "name": "adopt_initial_baseline"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:5cf1c1740890e174725b28aa72721dc0e1a4b74583e4ca900ce12a6fc84e5cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_content_commit"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:ebd8def7005648fdd3cd109b8a1423b9bd7d99e3c5b0e7dc3dc1fa8bcc0efaba",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Adoption status is derived from Git attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_adopted_baseline"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_status"
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:54db39c277083dab87a1a463a2d00dd6c303001aa204b4851452de4e461745cf",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ccc62bc5c20527aa57ad9ad9c51ce8ce762e4b2",
+            "content": "sha256:5a6b1c2938cdd94d020e4577fede262e2d07ac0c0819d28ab391196777696fd2",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

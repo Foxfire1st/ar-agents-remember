@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/projectors/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/projectors/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T13:26+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation projectors overview](overview.md)
@@ -63,86 +53,35 @@ and declare flags — no state, no IO, no engine knowledge. Channels a harness d
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. The per-harness schema authorities
 (the codex app-server v2 generated protocol, the locked claude stream-json fixtures, the locked
 Pi RPC documentation) are cited by the individual mapper sidecars.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this registry. | — | — |
+No configured domain documentation was available for this registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The three mapper modules own the actual frame grammars; the engine in the `active/projector/`
 package drives mappers through these flags; the factory in `active/factories.py` resolves
 harnesses through `projector_for`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. | `NativeEvidenceIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/native_ingestion.py:45-304 |
-| The echo projector applies the transcript-echo channel flag. | `EchoIngestion` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:37-189 |
-| The child-history projector applies the native-pages channel flag. | `ChildHistoryProjection` | mcp/src/agents_remember/serving/conversation/active/projector/child_history.py:27-175 |
-| The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation. | `RebuildCoordinator` | mcp/src/agents_remember/serving/conversation/active/projector/rebuild_coordinator.py:67-196 |
-| The session factory resolves the per-harness projector and fails closed when none exists. | `build_identity` | mcp/src/agents_remember/serving/conversation/active/factories.py:82-108 |
-| Mapper output types the protocol's entry points return are defined in the shared module. | `MappedItem` | mcp/src/agents_remember/serving/conversation/projectors/common.py:58-62 |
-| The eve projector bound here, and the three flags that make the durable stream its only evidence surface. | `_EveProjector`; `uses_native_pages`; `uses_transcript_echo`; `eager_native_continuation` | mcp/src/agents_remember/serving/conversation/projectors/__init__.py:115-125 |
-| The per-harness mapper module the registration binds. | `map_evidence_frame`; `map_native_frame`; `map_transcript_echo` | mcp/src/agents_remember/serving/conversation/projectors/eve.py:147-159; mcp/src/agents_remember/serving/conversation/projectors/eve.py:347-351; mcp/src/agents_remember/serving/conversation/projectors/eve.py:354-362 |
-| The harness union a registered projector's `harness_id` is typed with, widened so eve could register. | `HarnessId` | mcp/src/agents_remember/models/conversations/identity.py:10-10 |
-| The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence. | `test_every_registered_harness_id_has_a_projector`; `test_the_eve_projector_declares_stream_only_evidence` | mcp/tests/test_eve_product_integration.py:1109-1112; mcp/tests/test_eve_product_integration.py:1114-1120; mcp/tests/test_eve_product_integration.py:1369-1372; mcp/tests/test_eve_product_integration.py:1374-1380 |
+- The engine's native ingest reads all three channel flags: `uses_native_pages` seeds `native_complete` and gates the dirty-tip refresh, `uses_transcript_echo` arms the echo-zipper eviction guard and diverts frames to the echo buffer, and `eager_native_continuation` picks lazy tip-refresh vs the eager continuation poll. [1]
+- The echo projector applies the transcript-echo channel flag. [2]
+- The child-history projector applies the native-pages channel flag. [3]
+- The rebuild coordinator applies the native-pages channel flag for parent-history re-derivation. [4]
+- The session factory resolves the per-harness projector and fails closed when none exists. [5]
+- Mapper output types the protocol's entry points return are defined in the shared module. [6]
+- The eve projector bound here, and the three flags that make the durable stream its only evidence surface. [7]
+- The per-harness mapper module the registration binds. [8]
+- The harness union a registered projector's `harness_id` is typed with, widened so eve could register. [9]
+- The cases: every registered harness id has a projector, and the eve projector declares stream-only evidence. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T13:26+02:00 — 260915-CAPS-L8 curator: registered the eve projector. `_EveProjector` joins
-  the `PROJECTORS` map under the `eve` harness id, so every registered harness id now resolves a
-  projector and the engine reaches eve without a special case. The class declares the durable stream as
-  its only evidence surface (`uses_native_pages = False`, `uses_transcript_echo = False`,
-  `eager_native_continuation = False`), so both other channels fail closed for a harness that carries
-  neither. Body updated on Logic and the reference table. Verification metadata moves to the leaf's
-  synced base `ff97072c`; the candidate is deliberately uncommitted, so the governed closeout stamps the
-  real code commit and no hash or fingerprint was invented here.
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 6 repository-reference citations (6/6 anchored and sourced; scoped citation check clean).
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the channel-flag citation, broken when
-  `active/projector.py` became the `active/projector/` package (commit `3a8ff70`). Grepped all
-  three flag names across the package and read every hit: `native_ingestion.py` L60 (`native_complete
-  = not mapper.uses_native_pages`), L106-L113 (`refresh_native_tip` short-circuit), L131-L138
-  (the `uses_transcript_echo` + hydrated eviction guard raising `ZipperEvidenceEvicted`), L148-L157
-  (`_consume_frame` diverting to the echo buffer, then the lazy live-turn record) and L244-L246
-  (`poll_native_continuation`'s eager gate); plus `echo_ingestion.py` L64-L66, `child_history.py`
-  L67-L73 and `rebuild_coordinator.py` L159-L161. Split into two rows and made the claim name which
-  flag drives which behavior, since the old one-line summary no longer mapped to one file. Also
-  corrected the paragraph above the table, which still named the retired `active/projector.py`.
-
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/conversation/projectors/__init__.py` since the L2 base commit
-  is the whole-tree `ruff format` pass in `00e8379`, which re-wrapped 1 line(s) with no token
-  change whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds. Noted while checking: the references table also
-  cites line ranges inside `factories.py`; those ranges shifted because this task edited those
-  files, so treat the cited numbers as approximate and the linked cards as authoritative.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-26T15:34 — 260718-CHATS-L7: `map_evidence_frame` gained the optional keyword-only
-  `parent_thread_id` parameter — the multiplexed demux context for harnesses with
-  sub-agent threads (codex/claude); pi accepts and ignores it. Sidecar: documented the seam and
-  cit:([`parent_thread_id`], mcp/src/agents_remember/serving/conversation/projectors/__init__.py:46-46)
-  its `None`-means-parent invariant; refreshed all line citations (protocol L24-L52, adapters
-  L55-L110, registry L113-L117, lookup L120-L121) and re-pointed the projector.py flag-
-  consumption citations, which the L7 multiplexed-projection rewrite had displaced
-  (L176-L181/L306-L310 → L414; L556-L586; L670-L671; L945-L947). Uncommitted; closeout
-  re-stamps verification.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the projector
-  protocol/registry — channel flags, three per-harness bindings, fail-closed lookup. Verification
-  is blank because the new source file is uncommitted; closeout owns its first source stamp.
+No meaningful cross-repo references found.

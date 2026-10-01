@@ -1,0 +1,138 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`run_git` is imported from the kernel git command module rather than defined locally, and both helpers here pass `GIT_METADATA_TIMEOUT_SECONDS` from it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cross-repo entries are parsed from settings before this module resolves repository state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "402f54b3bcf759ffce9556a74e0242d2bcc1d770",
+            "content": "sha256:29562bedcb2b686ee5f0dcd5ef80bfc49dc7f4e2636c4ac11e344ed83edd5ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_cross_repo_allow"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "402f54b3bcf759ffce9556a74e0242d2bcc1d770",
+            "content": "sha256:7015779c158eebb10cc0a905e21cb21faa7cb439110a3e93270dfd737ae7ad06",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_cross_repo_allow_entry"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/setting_values.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "External memory ledger parsing supplies memory compatibility facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:cb9ceb6c2d9479fe707737d5efd7026e024da04971b3fba200c963ee5c526fdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_ledger_text"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:5ee2f0a9bae68c4ea79f251c6603a9d67967d25df3d84b06198cc29376df54b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_ledger_rows"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:5fe9f7329f21f7507be08f1dc33f17547a2385a24eeabad8d6519852fc40249a",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "content": "sha256:ccb9e64842859db4d4129412d7e3ba5b44e96f719472bc066e3b11dbd8a36a21",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Worktree support tests cover branch-gated cross-repo inclusion and legacy-string exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba332bd7c862238120bda1b5023b38b817a970f5",
+            "content": "sha256:fd4a26f7576f3296e511a5a3e0cc79165e8b233fae04235ab1ea8fff91d42614",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSupportTests"
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

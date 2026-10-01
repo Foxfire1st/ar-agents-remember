@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/closeout_input.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/closeout_input.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:53 |
-| lastVerifiedCommitHash |  `ea9cf0abeab4fe88961bda10b4f54d30266a9634`|
-| lastVerifiedCommitDate |  2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -51,62 +41,29 @@ through its existing committed-tree route.
 
 Revision and public recovery controls are deferred to L2.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate. | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:80-114 |
-| `normalize_closeout_input` validates the two explicit messages and returns one effective input. | `normalize_closeout_input` | mcp/src/agents_remember/worktrees/closeout_input.py:117-170 |
-| `effective_message_arguments` renders only enabled code/memory messages for next-call guidance. | `effective_message_arguments` | mcp/src/agents_remember/worktrees/closeout_input.py:316-322 |
+- `resolve_closeout_plan` derives code/memory enabledness from the admitted route and candidate. [1]
+- `normalize_closeout_input` validates the two explicit messages and returns one effective input. [2]
+- `effective_message_arguments` renders only enabled code/memory messages for next-call guidance. [3]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) | `capture_closeout_candidate` | mcp/src/agents_remember/worktrees/closeout_input.py:193-207 |
-| Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) | `resolve_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:80-114 |
-| Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) | `CloseoutInputError` | mcp/src/agents_remember/worktrees/closeout_input.py:50-77 |
-| Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) | `require_effective_closeout_plan` | mcp/src/agents_remember/worktrees/closeout_input.py:173-190 |
+- Leaf candidate capture consumes the strict plane-derived future-code identity, while series capture remains branch-addressed. (`capture_closeout_candidate`) [4]
+- Enabled/not-applicable legs derive from validated route, contract, and candidate facts. (`resolve_closeout_plan`) [5]
+- Typed refusal and corrected-call data are emitted together. (`CloseoutInputError`; `normalize_closeout_input`) [6]
+- Retried durable input is checked against its accepted plan. (`require_effective_closeout_plan`) [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
-## Update History
-
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=4aa067e9998742ba8d100e221b9319cb75df70f3acb5b07cb2716e2160afd07f. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): all four Repo-Internal
-  rows started about two lines before their construct and ended short of it. Re-read the frozen
-  source and repointed each range at its declaration (`resolve_closeout_plan` 81-120,
-  `CloseoutInputError` 51-79, `normalize_closeout_input` 123-177, `require_effective_closeout_plan`
-  180-197, `capture_closeout_candidate` 200-214). The offset predates the imported relocation, so
-  the earlier entry's "every cited range still covers its anchor" was too generous; the claims
-  themselves are unchanged. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the future-code-candidate import relocated to `memory_quality`,
-  a net-zero line change). Re-read the card against the current source: every cited range still
-  covers its anchor. No wording changed; verification metadata remains closeout-owned.
-- 2026-08-29T04:55+02:00 — MCAR-L02 citation maintenance: normalized all evidence tables to
-  canonical finding/anchor/source cells after the full memory-quality check rejected the obsolete
-  link-and-line format.
-
-- 2026-08-29T04:55+02:00 — Routed ordinary-leaf capture through the strict future-code identity
-  owner, documented the acceptance-versus-operation-identity boundary, repaired the governing
-  overview link, and refreshed exact source citations. Verification metadata remains pinned until
-  closeout stamps the real commit.
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout input-model package relocation to `models.closeout.input`; normalization, leg planning, and retry validation behavior are unchanged.
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from candidate tree `4241908c`; verification metadata remains blank until closeout.
+No additional cross-repository evidence applies.

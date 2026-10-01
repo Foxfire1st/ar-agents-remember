@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_install_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime install preserves docker provider state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69acf68e4237e40dbd831f47a99fd0d8a315231",
+            "content": "sha256:70c4ed3f1bb695fd2b7cf786c60ccfd5b872de4314c2969ecd6822d16d660115",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_preserves_docker_provider_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime install provider dependency failure attempts watcher recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69acf68e4237e40dbd831f47a99fd0d8a315231",
+            "content": "sha256:9d8b9c66d2cb7750794cac353befad5afabf2dd1bbc211f9f8378eb25678980f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_provider_dependency_failure_attempts_watcher_recovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing settings file is never clobbered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69acf68e4237e40dbd831f47a99fd0d8a315231",
+            "content": "sha256:d303e6496cd1879ec86967a7ca26652a120ec3318bab69b4463ed2ad48bc85df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_settings_file_is_never_clobbered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dry run counts the seed without writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d69acf68e4237e40dbd831f47a99fd0d8a315231",
+            "content": "sha256:04fdbb1f57b182d943acba09de2b312807bf0b1120dafc519bb0e6b7559f8760",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_counts_the_seed_without_writing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

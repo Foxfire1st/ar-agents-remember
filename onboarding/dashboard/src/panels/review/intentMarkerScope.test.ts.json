@@ -1,0 +1,70 @@
+{
+  "path": "dashboard/src/panels/review/intentMarkerScope.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One read per listed path per surface; none for an unlisted path.\n\nAnchor: \"classifies a listed path once per surface, and never an unlisted one\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745e29c9225323bdb1441c166028b1e07650d3aa",
+            "content": "sha256:96c70b99238e2c14ebd9b1f78e7fd8aed8d468d653dc0199a5cb1f481a75cf1d",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A partial or unmeasured inventory is partial.\n\nAnchor: \"counts an inventory that is partial, or not measured at all, as partial (review R2)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745e29c9225323bdb1441c166028b1e07650d3aa",
+            "content": "sha256:f0da4500f7fe77dab52b0f494983ebe7c0d995178368f0b84beef80390feb162",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The scope under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:22d82c3f7699dd9ae13f4299d94eb4948ed5d648081ec13e1e92d5880a6c7617",
+            "locator": {
+              "kind": "symbol",
+              "name": "markerInventory"
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "667f28385f40263179298fd17e129d05591551ff",
+            "content": "sha256:462ae2d4435ac736e591813783fe6f120420dfa25a0e0e6fad849efd9d176ff8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useIntentMarkerScope"
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

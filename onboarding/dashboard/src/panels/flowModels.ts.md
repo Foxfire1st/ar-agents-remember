@@ -1,15 +1,5 @@
 # dashboard/src/panels/flowModels.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/flowModels.ts`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-31T04:59+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -141,7 +131,9 @@ FlowTab's default auto-fire notification text.
 - **`FlowSegment` is the contract with the renderer.** Adding a segment kind means updating both this
   union and FlowTab's `Segment` switch; keep them in lockstep.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 | Source | Relevance |
 | --- | --- |
@@ -149,52 +141,14 @@ FlowTab's default auto-fire notification text.
 No relevant documentation found after checking live sources; the design record backing these models is
 same-repository (see Repo-Internal References).
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The renderer + nav that consume this registry (segment switch, gate rider default, model fallback). | "Flow model" | dashboard/src/panels/FlowTab.tsx:119-119 |
-| The coverage that asserts the render census + several invariant strings on these models. | "renders every registered model without crashing" | dashboard/src/panels/FlowTab.test.tsx:39-55 |
-| `lifecycle_start`, which emits the orchestrator lifecycle's front-half prose rundown. | `lifecycle_start_payload` | mcp/src/agents_remember/mcp/tools/lifecycle.py:20-21 |
+- The renderer + nav that consume this registry (segment switch, gate rider default, model fallback). [1]
+- The coverage that asserts the render census + several invariant strings on these models. [2]
+- `lifecycle_start`, which emits the orchestrator lifecycle's front-half prose rundown. [3]
 
 As of the 260703-L8 remediation the registry drew the then-converged doctrine: a ROUTER model (three conditions, edge cases, the D·P·O event loop, the task-doc→branch→worktree ladder) replaced the retired FRAME and BUILD-JOB models; the worker model was brief-started with no lifecycle machinery; the manager raised master-handover-approval; the orchestrator model drew the event loop with the super-branch INTENT as a branch-only act; and the comms takeaway scoped the spirit test to the bird's-eye coordination rung. Cycle 6 aligned the two seam nodes with the ruled channel: the manager's handover node draws the non-blocking raise (`wait=false`) with the returned gateId riding the packet, and the backend orchestrator's handover node draws the decide-by-packet-carried-gateId — a canvas-onboarded manager no longer reproduces the blocking raise. Cycle 7 completes the raise node's address (AR4-4): its detail now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by, so a canvas-onboarded manager raises an addressed (matchable) gate instead of an unaddressed one.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
-
-## Update History
-
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: replaced the drawn
-  unknown-role fallthrough with fail-closed hosted admission and expanded reviewer from two prose
-  seams to four explicit task-altitude/parent addresses. Verification remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `flowModels.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint provenance as part of command-seat flow
-  identity. Verification metadata remains pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded Types
-  prose citation and the `n/a` table rows with exact anchors; deleted the unresolvable
-  design-doc rows (task-provenance sources outside the code/memory roots) and the removed
-  `next_step.py` row; exact non-fixing check returns zero findings.
-
-- 2026-07-07T21:17+02:00 — 260707-HFX-L6 review remediation: the FlowTab registry now has
-  a 9-model census with an ARCHITECT model between Router and Designer; the Router model routes
-  developer-facing sessions to architect; Designer is the architect hat; Orchestrator is a spawned
-  backend loop; Comms shows worker -> manager -> orchestrator -> architect -> developer; and
-  super/developer review wording is architect-mediated. Verification metadata pinned until closeout
-  stamps the HFX-L6 commit.
-
-- 2026-07-06T15:40+02:00 — 260703-L12 (three-party loops): the census becomes 8 — the STRATEGIST model (L105-149: mandatory pre-run gate, eight-phase method with two-sided surfaces and cited edges, orchestration-task deliver node, plan-review loop gate, drawing-board convergence, reader-not-mutator adoption) joins between DESIGNER and ORCHESTRATOR; loop ride-along lines land on the manager (tier scoring + cap/convergence junction), worker (builder resume), reviewer (criteria catalogs + delta-verify reuse), comms (cap/convergence + quo-vadis junction), and orchestrator (strategist pre-run line, orchestration-task gate detail, visible-behavior-first single review point); `FLOW_MODELS` moved to L400. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-06T13:35+02:00 — 260703-L10 round 2 (L10R-3): the References row's leftover "8 models" became the 7-model census (and its parenthetical drops the dead frame-doctrine item) — the last pre-convergence count in this sidecar, missed by the round-1 body de-stale. No source change. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep, S2 verification): the canvas was verified against the converged `l-01-agent-lifecycles` doctrine — the ROUTER/role/COMMS structure, seam channel, and invariant strings were already current from L8; the one residual vocabulary drift fixed is the designer model's reframe-agreement node phase label, `"frame"` → `"reframe"` (the doctrine word in `roles/designer.md`). Sidecar body de-staled from the pre-convergence 8-model census (build-job/frame, BUILD_JOB default) to the shipped 7-model registry with ROUTER as `FLOW_MODELS[0]`. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-07-05T19:55+02:00 - L8 builder cycle 7: manager RAISE node detail now names the enclosure address (`enclosure="<master task name>"`, AR4-4). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 - L8 builder cycle 6: seam nodes updated — manager RAISE node carries wait=false + gateId-in-packet, orchestrator decide node carries decide-by-packet-carried-id (AR3-6a). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): canvas redrawn to the converged doctrine (visuals ride every doctrine change from now on). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T09:40+02:00 — Created for 260703-L0 (Canvas & playground): the flow-model registry for the
-  FlowTab canvas — the segment/model types (`Status`, `FlowStart`, `FlowNode` incl. `rides`/`ridesNote`,
-  `FlowRundown`, `FlowDivider`, `FlowSegment`, `FlowModel`) plus 8 static models (build-job with the
-  task-26 chain preserved and the Wollmilchsau self-id added; frame; designer; orchestrator; manager;
-  worker; reviewer; comms). The models encode the agent-orchestration series' agreed invariants and back
-  the extracted content that FlowTab used to hold inline. Verification metadata pinned until closeout
-  stamps the L0 commit.

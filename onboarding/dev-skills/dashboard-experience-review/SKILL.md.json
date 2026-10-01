@@ -1,0 +1,87 @@
+{
+  "path": "dev-skills/dashboard-experience-review/SKILL.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cyan/amber/green grammar, observability-parity, and settled-beat rules the skill enforces.\n\nAnchor: `## 2 · Observability-parity (the dominant rule)`; `## 3 · The state-by-colour grammar`; `## 6 · Settled-beat sampling (reliability rule)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b03f380ad4729710613edb19be006631824405d",
+            "content": "sha256:aa8e4c246f70f983e9cc8a4bcb1bbdf2df68a5bbdfa1d0e222c6b60ee20a8a97",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "docs/design/dashboard/review-doctrine.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3b03f380ad4729710613edb19be006631824405d",
+            "content": "sha256:6135498187a85ddb0491e93078cbd081e64a15ffe2b8ef7af3478581f5298ee1",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "docs/design/dashboard/review-doctrine.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The five encoded analysis passes + persona/severity model the pipeline runs.\n\nAnchor: `## Severity model`; `## Method 1 — Scenario-driven cognitive walkthrough (Stage 3a)`; `## Method 2 — Workflow × UI-state matrix → missing views (Stage 3b)`; `## Method 3 — Observability canon audit: RED/USE + altitude (Stage 3c)`; `## Method 4 — Motion-as-communication (Stage 3d)`; `## Method 5 — Task-6 TUI control-plane review (Stage 3e)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08f62e5f3898e41a9ff9aba51db3096ce63a4204",
+            "content": "sha256:993ff3a0d3e91a5f0f5f05b1d9b45318a5139263cc6faa87d197ae7199b8afaa",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08f62e5f3898e41a9ff9aba51db3096ce63a4204",
+            "content": "sha256:10a4ee2080814e6509d2328327651f89e07f117e9ac75cd6858ab61f8b59cf52",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-dimension delegate map + constraints.\n\nAnchor: `## What the conductor OWNS (no delegate exists)`; `## Delegation table`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6110a0617d9c4d34660a60da0663225ebf0f35a4",
+            "content": "sha256:21e14c4f0844231f8b0ec9f7f75f9433278982b3396ed9d2cd722ebba0751bca",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dev-skills/dashboard-experience-review/delegation-map.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

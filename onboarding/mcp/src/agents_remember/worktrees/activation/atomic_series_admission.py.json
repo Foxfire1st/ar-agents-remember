@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Request fields define the optional contract, requested identity, activation observation, and edge-evidence inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:1f665278c30bc9b96a15e6e4e420d3d16f2d07468e53e26adacdb43394d14641",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesAdmissionRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public projection assembles requested identity, contract fingerprint, activation, retry, and status evidence while bounding its public detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:85bd47f3bdd06d8a0318d43353a8c94570de8fa1188f078f837fbad4308c3480",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_series_admission_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Requested identity resolves the canonical master reference and the exact contract path with no source-pair fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:1345824667fb85c53626d5b330a7ba52618f8da9f9b95845f4cc82591b922a85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_requested_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:bee3089d8ef5a31b9a800b21d3bf0b5a2a14dcf72e6ce88d47357523530a2220",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_activation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The status action keeps the repository and exact contract path for a read-only `worktree_status` call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:eb99d275ec0c0e24df726204b7a3d955bf9285d9127f4b687aee668234a99e45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_status_action"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:528e75fed2c6f9e3f9a97b4b10135ef04822f30266e26db50a1b587db434da30",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_retry_precondition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field.\n\nAnchor: \"class AtomicSeriesAdmission(StrictResponseModel):\"; \"class AtomicSeriesAdmissionActivation(StrictResponseModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:e32f212ad2f3c07085b3051dcd25435365220a7ae2cc80e49cf033911584d26a",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "content": "sha256:9a5bb3c6131fb60e85d7d7b12b894d0cd9d8069d58a724521b33dce2aa8d9588",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail.\n\nAnchor: \"def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:\"; \"def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:b2896e61b76908922674683e6ea2262b72c1e0a343bfec96328e141130f2cfb2",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/tests/test_activation_admission_registered.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
+            "content": "sha256:ea0418384aa1455b2aa2f742f4d72b7177ce1f687b35fa7eba0861b49e7e3f1c",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/tests/test_activation_admission_registered.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

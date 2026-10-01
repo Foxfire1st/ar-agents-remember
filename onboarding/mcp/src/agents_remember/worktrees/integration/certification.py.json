@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/certification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`IntegrationCertificationOwner` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:9b7d980904046f8abb0bad71b2624ac366cf510f363775b9fe4950779792207a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCertificationOwner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`_select` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:2d8a665ec1321ebce842bd3d39feeb099c0d61275a65f470a39c9b2f678118e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`_require_interrupted` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:9dffbaf3362fc2716e9d633de94bd8cdef8a91e342a5141a66ad2234f87800c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_interrupted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "`require_resumable_integration` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:0e59df62716ebf6250fa2a6d09eaf177aee0245d4b960f10511c6f9c33f886b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_resumable_integration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`select_integration_terminals` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:bcbc31837767e1fbf9bef5b501deb6a89b22c19c88af7987426b9010bd7e5041",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_integration_terminals"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`select_completed_integration` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:c3efb44186b31cc466a9c863b21521527f8f28b4ef2de202d85649dc2c11e9cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_completed_integration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`IntegrationCertificationRequest` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:2beed545b63f38bdf5844fed47fafd9079636f607f63b3eef15d14381caa0937",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationCertificationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`LoadedIntegrationCertification` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:f09605d1be1154e114fc4f80df8e90f9d08c9a2e0f0a590841a53127dfd1e12c",
+            "locator": {
+              "kind": "symbol",
+              "name": "LoadedIntegrationCertification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_current` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:831be2838fececb4c8c4b45cc3405bccd798f98514a6f4f9f32304c51315ebb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`authorize_integration_start` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:62ae846b60b5be861d804d5572460551099972c4f1a46c90ca7e8c4d3940ec4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "authorize_integration_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_identity` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:a24a5888c2894815e6ba52f1a240bfef0e83f36d704b6f64b7bb89076ffa4d43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`prepare_integration_certification` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:d40aa87012b3b10aabac28476b26ae2c827c1f0d6de300fb8cba325792ab0521",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_integration_certification"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`protected_integration_generations` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:00e2f25ab4096fe2268cc7b6c22647afa8962d98a4dcd22f1cdc9260f9ec5f5c",
+            "locator": {
+              "kind": "symbol",
+              "name": "protected_integration_generations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`_load` owns the described selection or observation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cb95339e4f76f49841455962d45af6b3048e42",
+            "content": "sha256:ae2287bf16d25ee0dfbc758a66f46a77f7b71493c6ecf4949cef591ddc09a163",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

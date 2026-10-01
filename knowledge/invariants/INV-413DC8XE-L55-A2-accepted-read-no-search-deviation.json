@@ -1,0 +1,22 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "A directory under the notes root that has read but not search (x) permission, reached directly or through an in-root directory symlink (the 2026-09-28T16:55:00 ruling places the symlink case under the same ruling).",
+  "conditions": [
+    "The listing process can read the directory but cannot open its children.",
+    "Family examination: no joint obligation is supported. Basis: This is a ruled exception that bounds the byte-identity member rather than an obligation supporting the joint guarantee; the family guarantee names it as its one exception."
+  ],
+  "exclusions": [
+    "A directory with neither read nor search permission, which still answers 500 as before."
+  ],
+  "id": "INV-413DC8XE",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "1415ff15-3b07-455e-bce4-2b817af0184a",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A notes directory that is readable but not searchable lists without its children (HTTP 200) where the path-based walk answered 500; accepted as the one deliberate deviation from byte identity.",
+  "status": "proposed",
+  "supersedes": []
+}

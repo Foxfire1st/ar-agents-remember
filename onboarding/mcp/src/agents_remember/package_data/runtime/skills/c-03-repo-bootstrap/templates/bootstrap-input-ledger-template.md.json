@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/templates/bootstrap-input-ledger-template.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The input ledger records run metadata, onboarding root, source inventory gate status, and the presented source inventory with status, planned use, and user decision.\n\nAnchor: `# Bootstrap Input Ledger — <repo>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:b08ad14f383a20a61996d25372316d9bd575d1108221074d980929dbc51e5749",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The template captures excluded sources, weak source categories, additional user sources, corrections, source deltas, settings path-rule exclude review, cross-repo context, assumptions, hard stops, and proceed/no-proceed decision.\n\nAnchor: `# Bootstrap Input Ledger — <repo>`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6dbd803ead31b1ec9368b823c0996f522331ba4d",
+            "content": "sha256:b08ad14f383a20a61996d25372316d9bd575d1108221074d980929dbc51e5749",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`c-03-repo-bootstrap` skill requires source inventory review to be written to `bootstrap/input-ledger.md` using this template before automated execution starts.\n\nAnchor: `### 0.3 Present source inventory before asking for additions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01b60378194af6bdc864a84f3d1fb04a6b1f246",
+            "content": "sha256:c12228dc721ef9492453e7fa11f1c2d1b6c5e73324d7d10681076c6689b10171",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 533
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-03-repo-bootstrap/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

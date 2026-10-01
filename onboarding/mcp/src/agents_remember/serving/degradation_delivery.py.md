@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/degradation_delivery.py
 
-| Field                  | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| repository             | agents-remember                                                |
-| path                   | `mcp/src/agents_remember/serving/degradation_delivery.py`       |
-| doc_type               | `file-level-onboarding`                                        |
-| lastUpdated            | 2026-08-08T14:38+02:00                                         |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb`                     |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `overview.md`                                                  |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -36,29 +26,20 @@ by the degradation detector to post role-addressed inbox alerts; `__all__` expor
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The degradation detector declares the alert port this module implements. | `DegradationAlertPort` | mcp/src/agents_remember/providers/degradation.py:74-74 |
+- The degradation detector declares the alert port this module implements. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the degradation alert delivery
-  port implementation. Verification metadata pinned until closeout stamps the L9 code commit.
+No meaningful cross-repo references found.

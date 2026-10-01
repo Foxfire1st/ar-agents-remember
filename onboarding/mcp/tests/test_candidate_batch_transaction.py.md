@@ -1,15 +1,5 @@
 # mcp/tests/test_candidate_batch_transaction.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_candidate_batch_transaction.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:10+02:00 |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`|
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -98,41 +88,32 @@ The 27 nodes group into five concerns, and each group is where a later reader sh
 
 None recorded for this slice.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's scope statement, and that every refusal case measures the dataset before and after. | "measures the stored dataset before and after" | mcp/tests/test_candidate_batch_transaction.py:1-10 |
-| The named rollback proof — the harness's registered evidence node. | "test_a_late_invalid_command_rolls_back_every_earlier_insert_in_the_batch" | mcp/tests/test_candidate_batch_transaction.py:62-110 |
-| The constraint-failure rollback and the audit-row case. | "test_a_late_constraint_failure_inside_one_batch_rolls_the_whole_batch_back"; "test_a_refused_batch_leaves_no_audit_row_of_its_own" | mcp/tests/test_candidate_batch_transaction.py:111-171; mcp/tests/test_candidate_batch_transaction.py:888-911 |
-| The mid-batch attribution case and the concept guard's own node, which together replaced one conflated case. | "test_a_database_refusal_mid_batch_names_the_command_that_actually_failed"; "test_the_membership_guard_refuses_a_pair_the_declared_unique_tuple_would_also_refuse" | mcp/tests/test_candidate_batch_transaction.py:993-1061; mcp/tests/test_candidate_batch_transaction.py:1062-1119 |
-| The competing-writer, changed-expectation and expected-absence cases. | "test_a_competing_writer_leaves_the_second_batch_refused_with_the_state_untouched"; "test_an_expected_record_that_changed_refuses_and_leaves_the_row_alone"; "test_an_expected_absence_that_is_not_absent_refuses_the_batch" | mcp/tests/test_candidate_batch_transaction.py:172-224; mcp/tests/test_candidate_batch_transaction.py:225-268; mcp/tests/test_candidate_batch_transaction.py:269-290 |
-| The admission cases: spoofed provenance, accepted origin, baseline lane, foreign namespace and the task lane. | "test_a_payload_that_claims_its_own_author_and_approval_is_not_an_authority"; "test_an_accepted_origin_state_is_refused_as_a_promotion"; "test_a_baseline_lane_is_refused_as_a_non_candidate_target"; "test_a_batch_from_another_namespace_is_refused"; "test_a_task_candidate_lane_is_refused_until_its_binding_can_be_resolved" | mcp/tests/test_candidate_batch_transaction.py:291-338; mcp/tests/test_candidate_batch_transaction.py:339-373; mcp/tests/test_candidate_batch_transaction.py:374-394; mcp/tests/test_candidate_batch_transaction.py:395-416; mcp/tests/test_candidate_batch_transaction.py:1162-1188 |
-| The completed-graph nodes, including the spy that proves the shared rule receives the batch's edges. | "test_a_batch_may_author_its_lineage_in_any_order"; "test_a_cycle_the_batch_declares_among_its_own_revisions_is_refused_by_name"; "test_the_completed_graph_pass_refuses_a_cycle_the_operation_cannot_see_yet"; "test_the_batch_cycle_rule_is_handed_the_batchs_own_declared_edges"; "test_a_cycle_among_a_batchs_own_family_revisions_is_refused_by_name" | mcp/tests/test_candidate_batch_transaction.py:470-516; mcp/tests/test_candidate_batch_transaction.py:517-560; mcp/tests/test_candidate_batch_transaction.py:561-604; mcp/tests/test_candidate_batch_transaction.py:605-675; mcp/tests/test_candidate_batch_transaction.py:676-710 |
-| The receipt and removal nodes, including the smuggled-context case. | "test_a_removal_only_batch_of_each_kind_returns_a_typed_result"; "test_a_removal_only_batch_removing_all_three_kinds_at_once_returns_a_typed_result"; "test_a_mixed_batch_reports_both_the_removal_and_the_write"; "test_a_no_op_label_edit_inside_a_mixed_batch_is_not_reported_as_a_write"; "test_a_context_smuggled_past_the_model_seal_is_refused_by_the_operation" | mcp/tests/test_candidate_batch_transaction.py:933-962; mcp/tests/test_candidate_batch_transaction.py:963-992; mcp/tests/test_candidate_batch_transaction.py:711-776; mcp/tests/test_candidate_batch_transaction.py:799-845; mcp/tests/test_candidate_batch_transaction.py:1120-1161 |
-| The unit-lane row that makes the module's classification explicit. | "mcp/tests/test_candidate_batch_transaction.py" | mcp/tests/test-evidence-lanes.toml:19-19 |
-| The harness whose refusal measurement these cases assert on. | `measure_refusal`; `CandidateHarness` | mcp/tests/candidate_batch_test_support.py:324-344; mcp/tests/candidate_batch_test_support.py:92-235 |
-| The shared lineage rule the spy case instruments. | `find_cycle`; `declared_cycle` | mcp/src/agents_remember/memory/knowledge/lineage.py:107-131; mcp/src/agents_remember/memory/knowledge/lineage.py:71-105 |
+- The module's scope statement, and that every refusal case measures the dataset before and after. [1]
+- The named rollback proof — the harness's registered evidence node. [2]
+- The constraint-failure rollback and the audit-row case. [3]
+- The mid-batch attribution case and the concept guard's own node, which together replaced one conflated case. [4]
+- The competing-writer, changed-expectation and expected-absence cases. [5]
+- The admission cases: spoofed provenance, accepted origin, baseline lane, foreign namespace and the task lane. [6]
+- The completed-graph nodes, including the spy that proves the shared rule receives the batch's edges. [7]
+- The receipt and removal nodes, including the smuggled-context case. [8]
+- The unit-lane row that makes the module's classification explicit. [9]
+- The harness whose refusal measurement these cases assert on. [10]
+- The shared lineage rule the spy case instruments. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is involved in this module. The mutation evidence for it was taken in isolated
 copies outside the repository, and no case writes outside its temporary directory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_candidate_batch_transaction.py" repointed to mcp/tests/test-evidence-lanes.toml:20-20. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T10:10+02:00 — 260915-KS-L3 curator (uncommitted change set on `ar/260915-ks-l03`, base `27242ecb`): created this one-to-one card for the new candidate-batch transaction suite (27 nodes, unit-regression lane). It records the five concerns the module covers, that the atomicity claim is load-bearing here rather than in prose, and the reusable rule the two split cases teach: a node named for a mechanism must discriminate that mechanism — which is why the database-caught path and the membership guard each have their own node, and why the lineage spy fails when the shared rule is neutered. Verification metadata remains empty until closeout stamps the code commit.
+No meaningful cross-repo references found.

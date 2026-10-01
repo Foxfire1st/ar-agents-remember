@@ -1,0 +1,274 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/evidence_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The projection's own declared policy name and the bound that makes a selection complete or refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:0ebbe2e38a1eec253f274124c48c8b220737ba954dfe088ca43849e45c1a3bce",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_SELECTION_POLICY_VERSION"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:689a65bd493dddf1abcdcd2230c994b695b9148f1e1bebe5a753aadd62c77113",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_SELECTION_ITEM_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:ef129c8baf40fb49898052de2df74129b69582815cd75c37e8bbb0ba7478cd46",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_ITEM_LIMIT_REASON"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The claim record and revision items, and the subject and coverage items that carry what the claim asserts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:f6a9612a735244b9b3bf6e3e980e86e24119e098d205d9544f8db732ef115a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceClaimRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:93ae8aded58207be98ba239f27de8fad4d78a76f1641bbe0ec6913aaefc041a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceClaimRevision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:b320af7c3ab95134a020f5ff8bf3467b57048e90ac52d0fd85020433c13178a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimSubject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:da89ec939ae0dbc3dfd396735eaa0ea2147720ce81bf461b3bced194fa08d0c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClaimCoverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The observation record and revision items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:26f7df8d13982ce7e85431a829cb1f72c508154d747f9d801c3759a97cce3471",
+            "locator": {
+              "kind": "symbol",
+              "name": "VerificationObservationRecord"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:fe115fc3355984f12c4d4fd1a6fed8d75a31ffffb64c09cf73a556bab7708a75",
+            "locator": {
+              "kind": "symbol",
+              "name": "VerificationObservationRevision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four distinguishable artifact-resolution states, whose own validator refuses a state that claims bytes it did not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:c708c2f76d517239f3e56288ac3fae3c930386a85d752049a678f2208c12c84e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ArtifactResolution"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unassessed state a claim with no assessment reference is served with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:96afb3365bdd9c63c161063e75ac6726c462737c34c7a4bfd26db42258a519ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "AssessmentReferenceState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The two seed kinds and the seed's own identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:fe0985f064c554a94f7b31dd9f628c3fd60a61822e7aa35801fa50a3ea69778f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceClaimSeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:33956036a745d0972eaafcd617dad80f49ad847da92846fe5a6ef0ea799013cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObservationCandidateSeed"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:ecc99d50e6e2091d4906157286d01aa72c389f23287704673697b44216576b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_seed_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The item union and its fixed kind order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:631bc12c7636280835b16813df96d199e1a3807e307f3187981cdf9fd640c117",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceReadItem"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:fcd3b0ad913eaa690913be66ed12172b655a1d6fd3ddd9ad822b4dd9a810814f",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_item_sort_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The counts, the page and the result a caller carries away.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:c012962e4f13eda8797530c94b60978b5bc822a7d386a745df17a691f32fea12",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceReadCounts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:f96ee966250bee0ada02d101c97eaa96282b610d6719f27d97c768bebd9cef87",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceReadPage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bcf7b605a5253d5129487bcc62a0c101785bb4d8",
+            "content": "sha256:f46967a131d0ef9b3f2ea718667502b52e257b945e9b38a753abaa9ad4b01b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceReadResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The case that asserts the four states are distinguishable and that a stored reference survives a mismatch unchanged.\n\nAnchor: \"def test_the_four_artifact_resolution_states_are_distinguishable(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21a59dfc5ed2eba2d7b36f782cdb4244a3594cd",
+            "content": "sha256:2f67b05f6bc21030afbe6ea92c8f6b3d6d410eafbb426b9a21f315aebb0b7bc2",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/tests/test_knowledge_evidence_observations.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

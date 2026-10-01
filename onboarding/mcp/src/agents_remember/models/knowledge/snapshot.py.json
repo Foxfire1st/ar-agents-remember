@@ -1,0 +1,573 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one declaration of the local candidate layout and its two derived paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:41f589742d293ea113b9383d3fdd5dd040a7fef94f875ea4a4115ac3da6cc2cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_DATABASE_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:35c38006e1c25acb36c6f04b941842e9b3f1b3be3ec1934d562349482dbb4107",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANDIDATE_RECEIPT_NAME"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:aa4f2dacfb2d536a664a6c5ec2ea8cd434e978cf9e11530822e0c49fb7425d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_database_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:c3ba3b3d58162370d3d8a55fd3614ec20ba8602383fd66881ac176c256d5e0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_receipt_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The publication-state measurement that never guesses which side moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:fbcc177883cf622599cbd773a5fdc33f901d78271fc6fd2a1b6aae3cd22a5523",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The closed disposal union, its carried-not-examined authorization reference and its verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:0670a5afd2e5d41e81d43a0b9d77c62a5b70eede8ff3e26ca4bd94b2ddbb5468",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscardCandidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:45b7592d3d1bccf304546389dbe8275c95b246351c55f8c00efc5c5b99656a0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedCandidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:2d0e10cf8807dad8fe862485aa6d3bb8c8cbc3ffd543daa00ca9d805a974be8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateDisposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:b7fa6b5c7ee6312421b3dcaf03085c0d2ea786dc8ed44f326fd83611346a3908",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateDisposalResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The resolution shape every receipt field is derived from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d213806fd3e34b1f40d5c8b344500c14517d972811280d37d8d1606efff75813",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:5c9c01393796382cdc2ae5516b926d195261936e161d99d7e8af38a7c7927e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExactCandidateInput"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:729f796f81cbb158752ae02bceebba4d37049ce2bd1a92ce6c9a2f82bf392002",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeLane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:7403948d6e6c6964e24e6d41e87b35d006cf528aee4f63ca6ace4b8f7e832c08",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:9d89e456e0ff758421bb25b3fa0e1d4e151d24ad7242bec2d2a3e8deddcf439f",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 169
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d68a2d5c38aca972621894f285cf9cb23523390aa12197109cbe725a11849656",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 498
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:edc9d063ab9af6fe69bffa26ca0b38c704c839068c9cad4e35676fb1112d9d03",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 638
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:de30e8f445a611c603da779f50081ade2ffa439d438270238dad96d809188ee8",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The resolution shape every receipt field is derived from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d213806fd3e34b1f40d5c8b344500c14517d972811280d37d8d1606efff75813",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateResolution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:5c9c01393796382cdc2ae5516b926d195261936e161d99d7e8af38a7c7927e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExactCandidateInput"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:729f796f81cbb158752ae02bceebba4d37049ce2bd1a92ce6c9a2f82bf392002",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeLane"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The canonical encoder the receipt seal is computed through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a939ca21bb16d7edca85c2bc76c955a42e67ad06",
+            "content": "sha256:6014728eba1656282dfde160fc7befd2794422d005031effd3d2315aed7a0715",
+            "locator": {
+              "kind": "symbol",
+              "name": "sha256_digest"
+            },
+            "path": "mcp/src/agents_remember/kernel/canonical_json.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The candidate lifecycle in which these shapes are produced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d531b3318016ae477789be1f8d6eb3fd2fad01fe",
+            "content": "sha256:ddcf681eac8f6b8713489ac20c6b812d476cad70c854459b5f1ce44b0a8b04cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d531b3318016ae477789be1f8d6eb3fd2fad01fe",
+            "content": "sha256:1908831e465a12a525453b306bb05ca708470f6512a17291f9a7e4fc802d5404",
+            "locator": {
+              "kind": "symbol",
+              "name": "clone_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d531b3318016ae477789be1f8d6eb3fd2fad01fe",
+            "content": "sha256:682171253930e7af7be64a4c16f910e15ec390af58404805591771733f4745b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_candidate"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d531b3318016ae477789be1f8d6eb3fd2fad01fe",
+            "content": "sha256:c886f0ec71faad2effb215aa808b18b9dc03f7d586fc128c8770419be67679fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "authorize_candidate_disposal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/candidate_workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The publication that installs a prepared stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:bd49cee6355dc020a0a6090787f18af15b392dacd2925cb55114ef67462d1c92",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_candidate_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "content": "sha256:d3a2e2e0aa23e2543a5557d1902ee574596af6ce1cbde971f45c527ca520e75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_prepared_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The node that proves a WAL-resident batch is published whole while a main-file copy is not.\n\nAnchor: \"test_a_wal_resident_batch_is_published_whole_while_a_main_file_copy_is_not\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48c63d3786063cf858be3f628ffa5c42f521a97a",
+            "content": "sha256:e0a366bf433ae22a4f5041ad90816ddd89cb955268435809552b610b3486b177",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_knowledge_snapshot_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The typed admitted handle that confers no authority by itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:9600d94ee6783ba860bbbfb641e550b79cdaed202a59064b8161405a2a7de43f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AdmittedCandidateDestination"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The baseline that requires both a file and the identity admitted for it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:6108909fb57cf0e848f7a2a84cfeeabe246c2cfbfe3b93e74bd608f352d909d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateBaseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sealed receipt, its no-dataset-digest rule and the read-time seal validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:1b325bf19a812c589bbba0f6254d0253ea389717794a2b2e762efaef82cc4ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The digest and the one derived constructor that seals a receipt.\n\nAnchor: `receipt_digest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:cb181d2e9415a1ae4e35495481377b60164967baa6097d7f2b8f12d5457f5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_candidate_receipt"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:6e49f7f9c10a71db9906fb5d5ffffd9e2abd1b2128a8738fc830da430090e490",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The factual candidate outcome with its refusal/identity consistency rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:680387ef20e16d14a4c3a893d5fb0f6326c25c42e2f6e805534746a96031f3f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The closed stage carrying both the logical identity and the physical digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:b4976d515679b5d53e8d19cc703d7576614a57038104bbac75b7c4dc7fe1a15a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedKnowledgeSnapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The destination request whose absent-expectation mode is the only way to overwrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:360227c079281d6d07d49e107b5e63e371c0bf5fa405e451c0f381725f5e8f46",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotDestinationRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:3528a15b49e6ff08e7f6949585173f4fc1cbb77c8a936ca98fce82a17ab765a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishSnapshotRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The factual publication outcome with the previous identity it replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c96c7b0432485c2421b9b950d55026436d2e887",
+            "content": "sha256:16ef5dfaba9b04d6f697253cc15037fa11c884cd411534a16bf3d652d8276c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotPublicationResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

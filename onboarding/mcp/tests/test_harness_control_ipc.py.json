@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_harness_control_ipc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Private lifecycle status and withdraw round trip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7825b83d800fb6b42378a0fb99e33a711effb1e0",
+            "content": "sha256:504d415ed820eda7d1584161c27b5030e93b61a9fc76f1af5ee25714a6a67fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_private_lifecycle_status_and_withdraw_round_trip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Outer socket lost receipt reconciles retained known truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7825b83d800fb6b42378a0fb99e33a711effb1e0",
+            "content": "sha256:c83e78a9863d8c1c7a506313dcfb2169fa681248753dd623b3973e6933030eac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_outer_socket_lost_receipt_reconciles_retained_known_truth"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public duplicate returns retained result with one adapter call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7825b83d800fb6b42378a0fb99e33a711effb1e0",
+            "content": "sha256:69182681ae37c1165b0c7c1b210b88ccef3faa55fdb7dfd874abcde67acef13d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_duplicate_returns_retained_result_with_one_adapter_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Private endpoint exact identity and submission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7825b83d800fb6b42378a0fb99e33a711effb1e0",
+            "content": "sha256:ac9097687cc0b0eca1f21718e851111c2b028321e269a5d0680ef6e62a2641d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_private_endpoint_exact_identity_and_submission"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Malformed ipc request is rejected without control fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7825b83d800fb6b42378a0fb99e33a711effb1e0",
+            "content": "sha256:8e0ca7b03556daa8fa11a5f48290ad7968e8e8d8fb06c3984c0ba45027456142",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_malformed_ipc_request_is_rejected_without_control_fallback"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

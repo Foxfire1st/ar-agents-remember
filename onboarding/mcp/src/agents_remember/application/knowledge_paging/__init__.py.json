@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package statement: one threshold, whole-row pages, one continuation any surface's page resumes.\n\nAnchor: \"Bounded pages of a memory tree's knowledge\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67e38141462a005c3f1c11cc524db2804e99b0de",
+            "content": "sha256:fb7d5c05c20e988d4b65538fb47e3b021c3bfdc18145f8ce3a33416371daadd4",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-exported names.\n\nAnchor: `KNOWLEDGE_PAGE_THRESHOLD_TOKENS`; `cut_page`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67e38141462a005c3f1c11cc524db2804e99b0de",
+            "content": "sha256:e4e335cfcb66c0d6375a31821fb3d175d0af81dcc77ffd0c4f3198e9a7469eb8",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

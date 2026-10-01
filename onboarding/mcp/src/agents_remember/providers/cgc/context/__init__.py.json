@@ -1,0 +1,16 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public context facade imports CGC exports through this subpackage facade.\n\nAnchor: \"agents_remember.providers.cgc.context\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "mcp/src/agents_remember/providers/context/__init__.py:13-13"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,25 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Family coverage and membership outcomes returned by the ordinary curator ingest report.",
+  "conditions": [
+    "Added, reused and retired describe membership edges; retainedFromMemberId identifies the old membership that selected an unchanged invariant revision.",
+    "A recorded successor roster’s unchangedSiblingMembers count includes explicitly retained revisions while distinguishing genuinely new member endpoints.",
+    "Recorded counts require post-batch stored facts. Projected or not-recorded coverage leaves unmeasured member counts null.",
+    "An exact replay reports already-stored edges as reused and preserves their exact endpoints."
+  ],
+  "exclusions": [
+    "These counts and states are not a semantic verdict, test certificate or complete-project coverage claim.",
+    "The caller still checks the selected publication result and reads the exact published roster; a projected report is not publication."
+  ],
+  "id": "INV-6080HQF9",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "64cf169e-8980-49d3-ac47-e315ff3ed390",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator coverage distinguishes newly added membership edges from retained invariant revisions and leaves uncommitted member counts unmeasured.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/markers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fence and marker patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:c6c36d088d69c04294ae47cf5d566413f010689b2808a007f403c4a685baea34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FENCE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:f5c1da11ff3323201dc35ce7154199abb65a44a0527d6fdf9ad1a6bb96690b4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_MARKER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A marker is valid only as a reference number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:8b5ab585e3f0d7e695d284db9567665205777a0aab455abb2e52e9fb3ed4b849",
+            "locator": {
+              "kind": "symbol",
+              "name": "Marker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Fenced blocks, inline spans and escapes are excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:0841ec4a8098c0551b4d86269aed901c1b1dda76cefd25250d3995d4238a59b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paragraphs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:a9c588f96f403c984383f7eee29eaabc57ce4398c0df1676a987e0097c275cbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prose_spans"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:54f54f44a2876c498cf408a4121b0110950f18b5c3c86b570cbbbd7ed53fe1fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_escaped"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:8cc5dd8d1bb5ece940a7d60defb45ca345c82d661d785b52195cf81cf3944e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "find_markers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One escaping rule, the validator's own grammar: exactly the markers `find_markers` reports are escaped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:c6d4832ad5896d4390f0b4a00c87d5086d5578f50cad5d8f1a82f0bfef85e78a",
+            "locator": {
+              "kind": "symbol",
+              "name": "escape_markers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0c2c582e2b70e6168404055b454502b8816075f",
+            "content": "sha256:a0c29fa819efa9072908f2c35b169ca9e054ddb839a053c35f792074c7df370b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_paragraph_marker_offsets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The grammar cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "content": "sha256:5860ebbafeb6a74e46595f75ac62cbd285bac8a071747bd268fbd66f04a96667",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_markers_are_unescaped_bracketed_numbers_outside_code"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

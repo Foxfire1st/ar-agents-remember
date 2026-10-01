@@ -1,0 +1,668 @@
+{
+  "path": "mcp/tests/test_review_family_context.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.**\n\nAnchor: \"Every population is produced by the store's own operations over the shared endpoint fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:643f6b78dce0de4c51691636d2b9bd8c22a43b2365aaab6ac980d50bb8df6ca6",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The one family context selected out of the payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:3f6873b3d82e3d9ea7a8dcde01d3ae410dcb42ea7dc2311a5471d0f31b4f10be",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_for"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A side's roster indexed by member revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:647eec84575f88665c35ffbb1d828ab5515e718ac5ac41fbce8eaa5641b4c8a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "members_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**A selected invariant resolving every recorded family it belongs to, each with its own guarantee text.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:316eb67aa9a8163f8e3f94bdb6dfb4658570ebc28ffdb75fde574759258dad51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selected_invariant_resolves_both_recorded_families_with_their_own_guarantees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "An unchanged family still composed at its own revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:75908044475e2941eaea7e3dc8d6fdce412d1f2c9a8c0176fd4f4084cfc33d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_that_did_not_move_is_still_composed_at_its_own_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**A successor revision read from its own rows, with the dropped membership still carried on the side that records it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:d39754d6376ebea839ee166c5469ff4e28e0307a7c6e8b38d4e9120e22551726",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**One canonical revision referenced in two contexts, with the unique count not growing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:e50b9ab7a3d30e3badc4a2a3005ec44a0f83f38129256e1940736c8ee70f206d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**A member change making its family context available and concluding nothing about the guarantee.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:dc628de00e2b636665eff8af10c8ce5c80dc7b530b86174a0ec78dada657267f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_member_change_makes_its_family_context_available_and_concludes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A selection in no recorded family as the measured zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:87cb9bbe5b9f2b4610ba0c2cef638f3f3fcc0682939c458f1e922b7120a88251",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selection_in_no_recorded_family_is_a_measured_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Missing knowledge as the review's own refusal rather than an empty family context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:4a96b2f2715b6ae54ce0bb4a46be04669f042e40bdb09a3300437768d5dc8ca1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The task-context review stating that it selected no subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:eb22ff5b03bcac6d12325be3c6a82ef9421e9fe7276e81ae56ce0f0f1b79dc1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_context_review_states_that_it_selected_no_subject"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The frozen scenario handle the cases read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:06f3d0dcac73a11c942e4a1704c4f30f9268b9b68dcd23b00a70d94cf2a4d388",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyScenario"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A family only the candidate records as a one-sided context with a stated absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:6c7a4a32081885db20534c08b8f645918aedcf93fac4d56ce3d7d6f0e18ce2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**An authored ambiguity naming its candidates and choosing no revision.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:2f18bc0f9a0c83bf5ed7376052e1a04d8e2e7d526c41d0d09c4ff26782167b94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_ambiguous_family_lineage_names_its_candidates_and_chooses_no_revision"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The sibling family revisions that build the ambiguity fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:88edc6537ad64d089235fa71beac0f200168459010d9d2a44f0f929922f3821b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_sibling_family_revisions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:0141b01f6d466f2dc8c1e2b3a2c2d77df8c6bb8a7dc45cc2b88b8df3dccc4947",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The roster page's completeness as the case reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:3a8e3899ae9c77bd8b5fe0ea9997c92f22f51c0b26a259a14ddaf7f803543eba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The published cursor continuing exactly the walk that minted it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:3f20aeadf06591947c1cb32bf37b371480244ff4225ca1da6b6c2f643b76eee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_cursor_continues_exactly_the_walk_that_minted_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "**A cursor that binds no composed walk refused beside every first page.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:c843df0735fee9c74f0bd3897e2e4a03de65a2ff87f0c7e81a90655a0f524601",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cursor_that_binds_no_walk_is_refused_beside_the_first_pages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Naming the roster collection without a cursor earning the collection's own refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:1abf318900d0df914418afdf04c0d9170ae747cc83291e715170cccbd356e832",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_naming_the_roster_collection_without_a_cursor_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "A token of another format answered in the owner's own vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:e157b8681c725e8634add396a8cbe08c9ab00719b1feec0a54ac780e0cd68f71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_token_that_is_not_a_roster_cursor_is_answered_with_the_owner_vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The complete source inventory and its unique counts not growing with a repeated membership.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:7ccf82a518450b2395334a1c352f5dc203c948c3793148811f6159d91513ed55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_complete_source_population_does_not_grow_with_a_repeated_membership"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module-scoped scenario fixture.\n\nAnchor: `scenario`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:615cf6855246a5abf266d5d6749cade1e2a6a30c58dd24d8ea8598a3b68b9910",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The one-sided family fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:fc3541b2abd258210ad7180f045670b669a70010c73c9cb4d744f1f5eb71576b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_added_family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The review of a subject the fixture never authored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:2313fae382384da8354ee1e04985b3c8c8944c8f9e5f10b9b2dfa16701a29bf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_of_unfamiliar_invariant"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The context reaching the client over the real review route, which is what makes this a transport proof.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:ca4f2764502b0e8a42a713e1e682739caf27bb92c42bd99d2543ae8dbf2555ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_family_context_reaches_the_client_over_the_real_review_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The real application the route case serves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:b96452313345b08d194ce27e457e3636025d12fc05ecd758423c06c2c3c6fdcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "**Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:747252aa1337eb9e83d4c4adee2ae81c01e81df789ae8867e606019f5c7bc6e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_extra_roster_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "**One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:efddf612bc46aab78ea6cefdbc7372fb900d35de4d478e63ad9e97e0fa388b12",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk_the_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:c8abbe0c101e73c3af483adf8a09805f216d3f1c5bbdcdf377172da387a7fa2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_that_fits_one_page_is_carried_whole_and_says_so"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:c41925da33f3f69df8fb03c6c84ec3b70e3e9665858f08ad142824d4e5022094",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_final_page_of_a_long_walk_may_carry_only_its_own_share"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "**The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:4faadd5478ffef5d7e9a50b7f4c68ccd83d761ea15419fd700802d0713e1961d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "**The production read these cases drive, which composes the context and carries it on the payload.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:27368b5407b8f2b664ad9f4ba4e6894965a62c4568db3e8b7401491d23ea5885",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_family_scenario"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "The population cases this module's fixtures are shared with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "157258eb83dbf2b7452758c7684d5e20dd8c96d1",
+            "content": "sha256:0e457f893388e558ecaf11d5afe9154f07a58461be178a7f7d09c31ae8e17787",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_canonical_memberless_successor_shape_is_an_ambiguity"
+            },
+            "path": "mcp/tests/test_review_family_context_population.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "The values cases that pin the construction rules of the same deliverable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c08615b0bf7e53940171bcb9ae01a300b2b9d63d",
+            "content": "sha256:eae2bd394000fc965ea5198178eede91537bc0051b2d5aeb2e972e1f6cddc679",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_context_whose_counts_do_not_describe_its_roster_is_refused"
+            },
+            "path": "mcp/tests/test_review_family_context_values.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The authored successor revision of a member invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:c7773bdf21ff5a35c580fad97e5511a5d34eb2dde21397907929a43465439dbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_member_successor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authored successor family revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:ff28375c2db9402b7f7bc667f33c9ffd2debd08b700f8d3a9e869c438c826ca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_family_successor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**One membership row authored through the membership owner, so a membership exists only because a case recorded it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:ec1f67219014c54a7b73f5cc62864f2aa72c62dc730bae39b3e6f48d34afe424",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_membership"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The review request built for a given selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:3d3bce080767be5b51fb5e92ef5367f803c5d7282534d3fb3fa097be7744a0ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The production read the cases drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3abb375483fe4a1e8345de486ca6b4b88e3ade4a",
+            "content": "sha256:8c6140ba41cc60a2a42308c06d47fda4d4d3ea193cd5def14592556f3aa0ad65",
+            "locator": {
+              "kind": "symbol",
+              "name": "review"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

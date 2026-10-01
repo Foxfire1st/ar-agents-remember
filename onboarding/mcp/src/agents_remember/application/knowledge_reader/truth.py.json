@@ -1,0 +1,233 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/truth.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the truth views per kind and the census view.\n\nAnchor: \"A **truth view** shows one record of the selected tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:d3a007e474f1c21391fb40676137d90e75c33ec6cf12201be934372340357e1a",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One record's truth view with its links, kind part and timeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:0ae16615f2e3971029d42490717bec0949e98bb96ce3592718a7172c05144c08",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The kind's own part, and the entries that feed its timeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:41976ea94dceb0c370b4a9fde5402ce7992ebda5459adc2e37507b773ce6a47a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kind_part"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:99218c29b802e572b76feb88b0f0332414ad971c00c7e5925d6bb0c36389b91e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_member_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Outgoing links, or the reason they could not be read (F11).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:cf6a1294113f57e14297b0e4047546d04fb2b39e2bc405752385757e9b6bd0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outgoing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:dd388475cbd25655fb9a729ab99bb9d53d1ded378727e448f045c81fba8590c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_links_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The invariant and family parts with their states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:f9de606ca146c631d08d186b5a68212bebe8bf8a39abc8a62e9740ac89aa8184",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:e29a1a30254b344b0e519a2e866a09c5010464650614c6739650c993f4018b87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every record by kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:801279ae58903d828cbacfe6c38e7637d3588710a6eff99287786d8af1978fc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "MIK-R20's census report; an unknown census by membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:846355c025bc06ceb4c81f1aea4f10a3f8ad9c45fdc75615f3249e0a3873f73d",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A code file at a locator; a malformed locator is a bad request (F3).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:f1a8b8213aa92860b53e3327748b7fa1e75999cde0a48d611db3b9f403c68c48",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e41d11c06748842a1f0cf24176210b9ac57b47d",
+            "content": "sha256:c0a17512cfb7cd2868a43a58d45f84d9be9b43d4b884e0d5454a35b8f83bdf76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The family, decision, incident and facet, and census cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:b16bf1ef7d162c95f1bb1259eefda7931c86c75fb51e44538c92e2bed19fdd41",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_truth_view_shows_guarantee_members_routes_and_every_location"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:aa44a1dedc3db2bab142d620572c5896682b98cb777e9f1b8d8a538c09f8e63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_decision_truth_view_shows_alternatives_and_derived_supersession"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e87d855ec9ffef79a1148c805a82b272bc5a492c79df1bc3a61dfbdcf099ccf5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incident_and_facet_views_show_every_field_and_typed_links_both_ways"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "content": "sha256:e353d581810d23c2fc4449c389ce71c54e2d2eb49e7f1a19f91bd8d67084a675",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_view_shows_measures_and_each_routes_status_history"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

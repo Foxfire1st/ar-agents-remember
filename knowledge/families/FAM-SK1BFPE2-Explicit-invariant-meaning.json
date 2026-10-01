@@ -1,0 +1,19 @@
+{
+  "admission": "legacy-unassessed",
+  "guarantee": "An invariant receives explicit curator-authored scope, and a change to that meaning creates a named revision instead of silently redefining a stored entry.",
+  "id": "FAM-SK1BFPE2",
+  "members": [
+    "INV-KBCKV7N1",
+    "INV-TPDQGXYK"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "329301b4-701b-4bc6-b2a0-40aca8e5b8ad",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "routes": [],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Explicit invariant meaning"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_relationship_display.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_relationship_display.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-22T19:40:00+02:00 |
-| lastVerifiedCommitHash | `fdf3e4b6cfe73040d35cbfd4d8b93fd55369e499` |
-| lastVerifiedCommitDate | 2026-09-23T22:41:36+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -123,49 +113,41 @@ built.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the uncommitted candidate: the module's own docstring and
 thirty-one definitions, the traversal and read owners it consumes, the wire vocabulary it fills, and
 the case modules that measure it.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The module's own statement of what it owns: both sides, the lineage and unresolved states, the address view, and that nothing here selects, ranks or concludes.** | `paired_movement` | mcp/src/agents_remember/application/review_relationship_display.py:1-20; mcp/src/agents_remember/application/review_relationship_display.py:107-139 |
-| The published surface: the search value, the two movement builders and the address view. | `__all__` | mcp/src/agents_remember/application/review_relationship_display.py:42-47 |
-| **The tested search value a one-sided sentence must be built from.** | `ContinuationSearch` | mcp/src/agents_remember/application/review_relationship_display.py:51-73 |
-| **The address view: one location per recorded realization side, deduped by relationship and path, each carrying its movement.** | `source_locations`; `_displayed_sides`; `_location` | mcp/src/agents_remember/application/review_relationship_display.py:76-104; mcp/src/agents_remember/application/review_relationship_display.py:769-788; mcp/src/agents_remember/application/review_relationship_display.py:791-821 |
-| **The two-sided movement: both recorded sides, the transition from the recorded facts, the authored lineage, the paired gaps and the statement that names its basis.** | `paired_movement`; `_transition`; `_paired_statement` | mcp/src/agents_remember/application/review_relationship_display.py:107-139; mcp/src/agents_remember/application/review_relationship_display.py:260-283; mcp/src/agents_remember/application/review_relationship_display.py:286-316 |
-| **The one-sided movement: retraction and outside-selection are different states, and the sentence states only what the search read.** | `single_sided_movement`; `_outside_selection_statement` | mcp/src/agents_remember/application/review_relationship_display.py:142-174; mcp/src/agents_remember/application/review_relationship_display.py:202-209 |
-| The side rendering with the fact it states, and the reason a recorded address is unresolved rather than absent. | `_side_of`; `_side_detail` | mcp/src/agents_remember/application/review_relationship_display.py:177-199; mcp/src/agents_remember/application/review_relationship_display.py:244-257 |
-| **The basis table: one recorded relation per basis, with the head basis reserved for a row that is the line's uniquely established head.** | `_basis_sentence`; `_BasisSentence`; `_BASIS_SENTENCES` | mcp/src/agents_remember/application/review_relationship_display.py:319-344; mcp/src/agents_remember/application/review_relationship_display.py:347-351; mcp/src/agents_remember/application/review_relationship_display.py:354-387 |
-| **The four-state withdrawal sentence: the same-citation rows named, the line's rows named, a non-unique head stated unresolved, only an established negative asserted.** | `_withdrawal_statement`; `_single_sided_gaps` | mcp/src/agents_remember/application/review_relationship_display.py:398-458; mcp/src/agents_remember/application/review_relationship_display.py:212-241 |
-| The authored lineage: succession, split and merge read from the snapshots' own predecessor rows, and the withdrawal lineage that states what was read. | `_lineage`; `_add_succession`; `_add_split`; `_add_merge`; `_withdrawal_lineage`; `_successors`; `_predecessors` | mcp/src/agents_remember/application/review_relationship_display.py:511-532; mcp/src/agents_remember/application/review_relationship_display.py:535-556; mcp/src/agents_remember/application/review_relationship_display.py:559-580; mcp/src/agents_remember/application/review_relationship_display.py:583-602; mcp/src/agents_remember/application/review_relationship_display.py:605-645; mcp/src/agents_remember/application/review_relationship_display.py:495-500; mcp/src/agents_remember/application/review_relationship_display.py:503-508 |
-| The gaps one movement states: paired gaps, per-side gaps, the resolved-anchor gap, the identity difference and the recorded predecessor that holds no relationship. | `_paired_gaps`; `_side_gaps`; `_side_gap`; `_identity_gaps`; `_unpaired_predecessor_gaps`; `_identity_unresolved_gap` | mcp/src/agents_remember/application/review_relationship_display.py:648-663; mcp/src/agents_remember/application/review_relationship_display.py:666-681; mcp/src/agents_remember/application/review_relationship_display.py:684-711; mcp/src/agents_remember/application/review_relationship_display.py:714-734; mcp/src/agents_remember/application/review_relationship_display.py:737-763; mcp/src/agents_remember/application/review_relationship_display.py:461-473 |
-| **An address is named as the counterpart only when the other side records exactly one.** | `_counterpart_path`; `_other_side`; `_baseline_only` | mcp/src/agents_remember/application/review_relationship_display.py:835-848; mcp/src/agents_remember/application/review_relationship_display.py:851-858; mcp/src/agents_remember/application/review_relationship_display.py:824-832 |
-| The wire vocabulary the display fills: the sides and their states, the lineage, the gap with its code and reason, and the movement's validators. | `ReviewRelationshipSide`; `ReviewAuthoredLineage`; `ReviewRelationshipGap`; `ReviewRelationshipMovement` | mcp/src/agents_remember/models/knowledge/review_relationships.py:153-201; mcp/src/agents_remember/models/knowledge/review_relationships.py:204-218; mcp/src/agents_remember/models/knowledge/review_relationships.py:138-150; mcp/src/agents_remember/models/knowledge/review_relationships.py:258-372 |
-| The pane row the address view builds, with the movement carried beside the pane's own long-standing fields. | `ReviewSourceLocation`; `ReviewSourcePane` | mcp/src/agents_remember/models/knowledge/review.py:644-915; mcp/src/agents_remember/models/knowledge/review.py:921-953 |
-| **The cases that measure the displayed sentences: the split line that names its rows, the multi-ended line that never claims a head, the split that records nothing, the intermediate descendant, and the withdrawal that never denies what the same payload displays.** | `test_a_split_line_that_records_relationships_names_them_and_never_denies`; `test_a_multi_head_line_with_relationships_never_claims_a_unique_head`; `test_a_split_line_that_records_nothing_states_only_what_was_read`; `test_a_relationship_on_an_intermediate_descendant_is_displayed`; `test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays` | mcp/tests/test_knowledge_review_relationship_line.py:211-263; mcp/tests/test_knowledge_review_relationship_line.py:266-291; mcp/tests/test_knowledge_review_relationship_line.py:294-313; mcp/tests/test_knowledge_review_relationship_line.py:316-350; mcp/tests/test_knowledge_review_relationship_reach.py:392-432 |
-| The qualification cases: a pairing states the recorded relation it was made on, and an address resemblance never pairs. | `test_a_pairing_states_the_recorded_relation_it_was_made_on`; `test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs` | mcp/tests/test_knowledge_review_relationship_reach.py:472-500; mcp/tests/test_knowledge_review_relationship_reach.py:503-541 |
+- **The module's own statement of what it owns: both sides, the lineage and unresolved states, the address view, and that nothing here selects, ranks or concludes.** [1]
+- The published surface: the search value, the two movement builders and the address view. [2]
+- **The tested search value a one-sided sentence must be built from.** [3]
+- **The address view: one location per recorded realization side, deduped by relationship and path, each carrying its movement.** [4]
+- **The two-sided movement: both recorded sides, the transition from the recorded facts, the authored lineage, the paired gaps and the statement that names its basis.** [5]
+- **The one-sided movement: retraction and outside-selection are different states, and the sentence states only what the search read.** [6]
+- The side rendering with the fact it states, and the reason a recorded address is unresolved rather than absent. [7]
+- **The basis table: one recorded relation per basis, with the head basis reserved for a row that is the line's uniquely established head.** [8]
+- **The four-state withdrawal sentence: the same-citation rows named, the line's rows named, a non-unique head stated unresolved, only an established negative asserted.** [9]
+- The authored lineage: succession, split and merge read from the snapshots' own predecessor rows, and the withdrawal lineage that states what was read. [10]
+- The gaps one movement states: paired gaps, per-side gaps, the resolved-anchor gap, the identity difference and the recorded predecessor that holds no relationship. [11]
+- **An address is named as the counterpart only when the other side records exactly one.** [12]
+- The wire vocabulary the display fills: the sides and their states, the lineage, the gap with its code and reason, and the movement's validators. [13]
+- The pane row the address view builds, with the movement carried beside the pane's own long-standing fields. [14]
+- **The cases that measure the displayed sentences: the split line that names its rows, the multi-ended line that never claims a head, the split that records nothing, the intermediate descendant, and the withdrawal that never denies what the same payload displays.** [15]
+- The qualification cases: a pairing states the recorded relation it was made on, and an address resemblance never pairs. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. It renders values built from the two
 datasets the server resolved and one repository namespace.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`, confirmed from the enclosure contract): **created.** The module is new in this leaf (`ICR-R08@v1`) and this is its one-to-one card. It records the display contract and the three verified correction rounds that shaped it: every one-sided sentence is built from the tested `ContinuationSearch` value (a record the store holds is named, never denied); the head sentence is reserved for a row that **is** the line's uniquely established head, with the line basis carrying the intermediate and multi-ended cases; the lineage sentence states what was read on the line; and the address view carries the movement beside the pane's existing row. It also records the routed `source_locations` consequence — one location per `(relationship_id, path)`, so one old address that is a side of two movements carries only the first movement in that row while the complete set is in `source.relationships` (`ICR-R24` mounts it) — and the reachability truth that separates the reached gaps from the defensive-only codes. **Basis accounting:** the verification pair above names this leaf's base, the last real commit the reading was taken against; the candidate is named here in the body rather than in a metadata row, and closeout owns the stamp once the code commit exists.
+No applicable cross-repository source was found.

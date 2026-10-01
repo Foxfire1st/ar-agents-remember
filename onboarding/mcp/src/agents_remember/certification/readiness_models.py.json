@@ -1,0 +1,181 @@
+{
+  "path": "mcp/src/agents_remember/certification/readiness_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The required states (lifecycle, gate, rail, certificate, profile) are closed typed literals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:ae35f05e1bdc3f7d299f3200819837d086b09412d7b2d3901c3c3d85d2d6c911",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleReadinessState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:b0da7443662ed6dfcee8a123d00d82f495a516445aaadb518a26c9b57067dfc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateReadinessState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closed surface catalog drives dispatch in the readiness compiler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:fce30aff09c6e3b8444fb533fb41db8884843c3b5081552ed576c5a42856b13b",
+            "locator": {
+              "kind": "symbol",
+              "name": "READINESS_SURFACES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:7b7bcc1e392806d120a2bf13f07abd036b334cf0433870616561d13ec56d624f",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The readiness input model fixes exactly five gate observations and the admission/finalization authorities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:13b885ff551bafa51a6eb20ee86a10d074c369c50a38aa4bcd381f371926ccaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutReadinessInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:caa9bd9001a587cc8de994ec302365a92686140e47ca2ee7afaea4460f6da631",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Compilation consumes these observation models and emits these projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:2ced7be92666c223587298a1b087e60ca6a52e87410cab86144320e277b447be",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutReadinessProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:32fca68c66ba6eca06d1b03170676283f6053f8ba34760d28fd765b5d1697446",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateReadinessObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projection digest self-verification rejects tampered outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:1cf54b8277e8112bfb2cef21e18d10463fb1bf665a0dad9670d2a52c61aac9c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_digest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
+            "content": "sha256:f7a8ac1b40359733b9d6dd78ea11281661609425571869079abd42d932be41ff",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The transition-rule shape is consumed by the canonical same-generation transition table.\n\nAnchor: `ReadinessTransitionRule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11dd787b17f4fda9458c319ed64b6660036e0b9",
+            "content": "sha256:de01500e37ad0597786414dc6a06c0901920391bc8860503cedb15eed989ba5a",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/certification/readiness_transitions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification facade imports and re-exports the readiness observations and projection models.\n\nAnchor: `readiness_models`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
+            "content": "sha256:d7e5ffbdd9b8302795c35185ef1ffbcc854b9348521932c42f31d93a134a4ba3",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,120 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/code_view.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The running-owner observation reloads the selected output and builds a bound physical view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:1756867cc23f3b27fab977b34d9a5077898b4d6f2321d8b03cff9da8c095447a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_selected_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected-record path reuses strict existing-code or sealed private-code proof without inventing a worker lease.\n\nAnchor: \"Reprove a selected code output without requiring a live worker lease.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_selected_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selected record and intent currentness are rechecked around observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:e13c420e85ee5c0bd16a834bba3570df6b1b54a36b07cfe91785f0c3b54b3f7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_selected_code_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The execution view binds the exact output bytes, raw commit/tree, and logical pair.\n\nAnchor: \"logicalPair\"; \"codeCommit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:b4075c7052a82972ed3711613462d97316f6907945f408557cef9b5faee15f33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:9836ba73cb8985f846ebf977dee075303dbf714bdf01001db3916cbe2f099ec7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PreparedCodeViewBuild"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Preparation precedes a fresh observation when the caller requests a prepared view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:ae0d7670a97535fb778abf0c0febfdeaeab79897132f9696fa42a8acb154a4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_code_view"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc342eaf10982eba18ca7b3ccaca49e9a677a2",
+            "content": "sha256:0b0a4d63142c0bc83576f154401261583371860d335f06178dcd6245239988a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_selected_prepared_code_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

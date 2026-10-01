@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/structural/outcomes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The outcome vocabulary contains no runtime occupant identifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bef0a59c61e5f247fdf9aae13b33dba819a5e8b",
+            "content": "sha256:07251dab8f40a60145808555a53b4bc1e4040f27cc0813efa63fdd3b7db6b1e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "StructuralOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The single structural payload projector emits stable work identity and delivery state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bef0a59c61e5f247fdf9aae13b33dba819a5e8b",
+            "content": "sha256:58c5aba0f696b092481f5af2f2dc0884818c88ce1dfd6193c2eff4ef590de93f",
+            "locator": {
+              "kind": "symbol",
+              "name": "structural_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

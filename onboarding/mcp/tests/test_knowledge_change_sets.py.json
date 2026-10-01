@@ -1,0 +1,633 @@
+{
+  "path": "mcp/tests/test_knowledge_change_sets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module docstring stating what these cases protect: the six declared parts, the two exact snapshot identities, the membership, the succession edge, and preservation as a record that is not an effect.\n\nAnchor: `SemanticChangeSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:7e1f40009c5cf2e4756fb95ed588b9b00741f32647a7dd0485486054cc442060",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The case that asserts the preservation subject kind set is exactly the four declared kinds, with an effect label refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:17fa73ae83729ba6d6c4a2d95e5aae064e195ae73bfc1d07bbd330ab57f395df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_preservation_subject_is_a_named_reference_of_one_declared_kind"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The case that asserts a preservation subject that resolves to nothing is kept verbatim and reported unresolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:1862ed93c41d610c3492b04394a1a4d5cba973c4c98014786faed65e049d13e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_preservation_subject_that_resolves_to_nothing_is_reported_unresolved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The case that asserts the unresolved state is reported for the subject that resolves to nothing and not for one that resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:cf9055a489c16e88644f4cf26de2d7c7a3e329f26d87703921b0a6abff1b07fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_preservation_subject_that_resolves_is_not_reported_unresolved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The case that asserts supersession is a new record naming its exact predecessor while the predecessor survives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:865152504f2564de3305f06fb665ac32d3c0ad6ff59fb951fb92ed89a2ed9d3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_successor_change_set_is_a_new_record_with_a_predecessor_edge"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The case that asserts the edge is written inside the successor's own creation batch and that no union member appends an edge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:d1e78390c058cc70b72ebd7072e887bbb27d69fc8ce3480ef69539978fb79380",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_predecessor_edge_is_written_inside_the_successors_own_creation_batch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The case that asserts a self-named predecessor is refused as the shipped lineage cycle with nothing written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:eefcb44e703c269d71a7cf60227f821b3ed7a4a51bfc080633d3316bd1527fd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_set_naming_itself_as_predecessor_is_refused_as_lineage_cycle"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The case that asserts the appended generation's triggers seal the edge against an update and a delete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:d80c2b285f78e5b47d3e24f11e32bc7534eb6697c830a16ff77c275378fbc4e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_succession_edge_table_is_sealed_against_update_and_delete"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The case that asserts two successors of one predecessor are two records and neither edits the other.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:24e4fd22c4148dc85cb37576856f8c4c2714e1244cf669fcf6bff98094284559",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_successor_of_one_predecessor_is_a_separate_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The generation-8 append: generation 7's thirty-three names keep their columns and primary keys and exactly one table is appended. **Re-scoped by `260915-KS-L21`:** the registry-tip identity assertion became an ordering assertion, so the case now records where generation 8 sits in the registry instead of asserting it is the tip.\n\nAnchor: `def test_generation_eight_appends_one_table_to_the_generation_it_descends_from()`; \"generation 7's thirty-three\"; `\"change_set_predecessor\"`; `CURRENT_GENERATION.user_version > GENERATION_8.user_version`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:17d6cb247c822e191b4689c6ae55faba074803f726f839e66b484b6722b1b812",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 649
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:8c0bc75947292b82e4558d4936d53fe0390d22b0734978cc271aa2324b8d702c",
+            "locator": {
+              "end": 654,
+              "kind": "line_range",
+              "start": 654
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:0b230f9e6d5700406246b09348a0688164521102800466253003c8a0ca4c3592",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:c56ba322f4a87d950badc6fb43ab7b8901f238feb5c28fff5b0b6c92da4cf674",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 676
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**Generation 9, appended by `260915-KS-L21`, is why that assertion was re-scoped: generation 9's tables are generation 8's with only the census tables appended, and every generation-8 table keeps its columns and primary keys.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c68fb7ffeb0eee19d99c2ef4ee0c6dcdac124925",
+            "content": "sha256:1c5f06e7d0730a34fd834233722642a0fb3c213121ecc89a16eb3f7b87bc2629",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_record_kinds_join_a_registered_generation_that_appends_to_its_predecessor"
+            },
+            "path": "mcp/tests/test_migration_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The probe names that would make a change set a task authority rather than a record of authored work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:fdab043ddaf3a41fb4dd4f52f570df656db81514bfab5874c644c743059a1fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_AUTHORITY_FIELD_NAMES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The case that asserts a new store declares the current generation and is served by this record group's read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:34a3dc1be60a8f49e493d19f59dfd1d67ab2f0d02d6f6fa1e677f462e394a12e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_store_declares_the_generation_that_carries_this_leafs_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The case that asserts a requirement-revision reference is stored verbatim, reported unresolved with its holder, and fabricates no requirement record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:47ab27d5d5d75dc9e9897069f1c3f2099117002cfa142768ea240bc24a202ae7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_revision_reference_is_stored_verbatim_and_reported_unresolved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The case that asserts near-miss spellings round-trip byte-identically and stay distinct, so nothing canonicalises them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:bd7724b8619aec50fca728a36097a11671695f903964200bd35042b528b2a9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_revision_reference_is_never_parsed_or_canonicalised"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The case that asserts the shipped reference-length bound is a property of the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:6a48cb3638a7b571187f16d435a5aefc51f235b334d63419041b799739c25c10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_revision_reference_beyond_the_shipped_bound_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The case that asserts a reference or a realization-claim identity declared twice is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:e1fd59b201eb6807f27092e1df0e30e2387f85044d9c6ca6f37e1e43d4db06a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reference_declared_twice_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The case that asserts an identity no stored claim carries is refused as an invalid reference naming it, with nothing written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:dd5261e402ab07fe53a9627143fa0b18a9f4ddaec4361b9ee5aef1d6bc4863d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_candidate_realization_claim_that_resolves_to_nothing_is_refused_as_invalid_reference"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The case that asserts a reference whose row is gone is reported unresolved rather than dropped or re-pointed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:453240d53a9a1f57a932da0684740f5059947d886e9556eb74ff9b6869bfd91a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_realization_claim_removed_after_the_change_set_is_reported_unresolved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The case that asserts an open question declares exactly its fields and nothing records it answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:4730c6ad44a8921d5301902490fd9f0533f4e7ae8e74525da9442687e165dcde",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_open_question_is_reported_open_and_nothing_records_it_answered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The case that asserts no task status, seat ownership or approval is representable at either plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:bd2b076a241999eb97df7062768905e99bb34453b29b1d6f265cd39a0881a229",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nothing_here_stores_task_status_seat_ownership_or_approval"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The case that asserts no verdict or generated summary field is representable and the payload's field set is exactly its declared composition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:7a200b9bb5a1e2e9854fccc0088282d25626b74beeb4553ec635d8d715d1b42e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_set_carries_no_verdict_and_no_generated_summary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The probe names that would make a change set a decision, or a generated narrative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:b16ea740af167b259610cae4537e40503fd5c7387c0eeaf5309ae871e120e876",
+            "locator": {
+              "kind": "symbol",
+              "name": "VERDICT_AND_SUMMARY_FIELD_NAMES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The case that asserts the payload registers under exactly one kind and one schema.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:079b5da539d584f7424bb630032ad31d14a0d0445926fdc21261cd537cffd444",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_change_set_payload_registers_under_one_kind_and_one_schema"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The case that asserts the read projection reports every unresolved reference verbatim with its holder and that the scope list is exactly the union of the per-record lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:691385199f597de6b046be3afce3fe557282c2158a0e9be5dcc85880c168aa11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_read_projection_reports_every_unresolved_reference_verbatim_with_its_holder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The case that asserts the read is derived: two reads over unchanged rows are equal and dump to the same JSON.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:86d14f60ba16d63cdd8b2da7b170bd01bc01bf363c91a4251f51421655c96020",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_read_is_derived_and_a_rebuild_reproduces_it_byte_for_byte"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The lane row placing this module in the unit population, as the last entry of the `unit-regression` list. **Re-cited by `260915-KS-L21`:** the leaf's one-line insertion of `mcp/tests/test_migration_census.py` at `:128` shifted every later row, so the four ranges this row carried were re-derived against the file as it now stands.\n\nAnchor: \"mcp/tests/test_knowledge_change_sets.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:0db919b69dac89e8d4fdc14689ed5c5acdcc993a397972386a5d80e6f5f3aaf5",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The registration listing this module among the exact consumers of the shared candidate-batch case harness.\n\nAnchor: \"candidate-batch-case-harness\"; `\"mcp/tests/test_knowledge_change_sets.py\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e8aec8d8b9ac5f0ba2b1a0f0c4acd34c26d21f99c3a8df86042284fda8baee1d",
+            "locator": {
+              "end": 1256,
+              "kind": "line_range",
+              "start": 1238
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:c0b7338c6aea3db85b66242cfb383f13aeb9f7746d482ec5f81d12771b8292d8",
+            "locator": {
+              "end": 1255,
+              "kind": "line_range",
+              "start": 1255
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:60d4cbca8eeb012571d9c37ed5b3fd5205daabefb962b3bfdb3a92f3a55b64e7",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:a78d76920518684d93b3b67aa788b194c3e404c8f98fde6c64c0105c78b272f5",
+            "locator": {
+              "end": 1269,
+              "kind": "line_range",
+              "start": 1261
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case that asserts both snapshot identities are stored verbatim, are not re-derived at read time, and must be two sides of one namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:18e70a8c4f0efed1263e42a4ea7c12469f1d3d79d779959d72bcc5122860a54c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_set_records_both_snapshot_identities_verbatim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case that asserts all six declared parts are readable from one change set, the three member-declared ones as computed membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:6ee78bd9c945a06c33a2c5abbc7287f9bc9908348385151b25b8692a469ba86e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_six_declared_parts_are_all_readable_from_one_change_set"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case that asserts membership is computed from the members' own declarations, so a member is listed under one change set only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:61b761dc1f003a767f055d61081ca70db18f8d20a8961d834fc5fb67a4680ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_membership_is_computed_from_the_members_own_declarations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The case that asserts preservation-without-effect and the memberless change set are both complete states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:4f196c5808421524b43ac9806a3c36ed1280999cc16e9e530c6c89ec71e2ee2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_set_may_hold_preservation_claims_and_no_effect_claims"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that asserts no preservation spelling is in the closed effect set and no preservation flag fits the effect payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:c02d58f0cbf50b38523a5fa340c2fe439d72f643d59cf1fca1f8b560cc48cb79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_preservation_claim_is_representable_in_the_effect_vocabulary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The case that asserts the three member kinds resolve to three distinct models sharing no table and no inheritance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8949d0da56f6b1235acd46f1301ae959042e77",
+            "content": "sha256:140622558bf1482104c878a15961572523877de46e92ee4fb4400fa1bd5b5528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_effect_claim_and_a_preservation_claim_are_two_kinds_and_never_one_table"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

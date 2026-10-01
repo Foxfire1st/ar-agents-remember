@@ -1,0 +1,332 @@
+{
+  "path": "mcp/tests/test_knowledge_diff_attribution.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of what it measures, and the import of the sibling's helpers.\n\nAnchor: \"The comparison's source attribution partition: every measured changed path in exactly one bucket.\"; \"from test_knowledge_diff_scope import diff_seed, run_diff\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:e34fa66a73a7cc4f46b5edfd283a8c0733b88256032b4ce54ad55c1038f8db11",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope.**\n\nAnchor: \"test_an_unavailable_partition_states_no_total_and_never_a_measured_zero\"; \"test_a_partial_observation_states_the_scope_of_its_own_denominator\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:33f1394c0db417d6fa432940fcb684b0a6d5dd43b59bf207533ecdadd883dba2",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 529
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:7d97cc1b0e1fb4d3b606cbf7eb50917e68095fdc3469d155f226250885e45616",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 558
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The arithmetic cases' two input builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:3e67fd2826ce12e28b2a3319da65b131ee296a509db9f7fd1a8e385e860d7368",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:2b6c535e7cc296acdd18cef0837997bb0e1c96002b50f5eba6bbcbbf146693f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_inspected_sides"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unit-regression lane row, beside its sibling's.\n\nAnchor: \"mcp/tests/test_knowledge_diff_attribution.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The two support artifacts whose exact `consumers` lists declare this module (at `:1442` and `:1493`).\n\nAnchor: \"path = \\\"mcp/tests/diff_scope_test_support.py\\\"\"; \"path = \\\"mcp/tests/read_scope_test_support.py\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:10376b5b780b80146f40765243adc592b7964790854d13302bee55d14cefd9b4",
+            "locator": {
+              "end": 1470,
+              "kind": "line_range",
+              "start": 1425
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "content": "sha256:e7118f76415412eb4a1bebac16ee47221367526e65f12eefdc33592700c9008d",
+            "locator": {
+              "end": 1529,
+              "kind": "line_range",
+              "start": 1473
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unit marker and the per-case fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:9ab933a025c006b785e30de6053488b4f4df789d99d5ccef255413f54db5aa19",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sibling's comparison helpers these cases reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:21e0116ccc01bad8e77724e0b820a374828bdc0d9136c366d71a045aaed78f17",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_seed"
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
+            "content": "sha256:9eb12fcbe341dcc7e38f40d3e4b30ebe873a4e888bf17948c22dd72885fa3737",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_diff"
+            },
+            "path": "mcp/tests/test_knowledge_diff_scope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.**\n\nAnchor: \"test_the_measured_changes_are_partitioned_once_and_the_buckets_are_disjoint_and_exhaustive\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:bfb954ef713b6314a3acbfa4a8dd27ef6c854cfe66e34b5217c57f8e1f164b13",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The boundary case: a change mapped only to another invariant is outside selection, never unregistered.**\n\nAnchor: \"test_a_change_mapped_only_to_another_invariant_is_outside_selection_not_unregistered\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:8e4f2ebbcee4ef4b3716c336784e46ea2656dee2b7bb7893e0e12b2922a9182a",
+            "locator": {
+              "kind": "symbol",
+              "name": "entry_link"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:ddba12e243e37abe2dcd7dede7eb8b38df638024c4623e57f588439d730ce3a6",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The family-subject case: a family's members' own links count as selected attribution.**\n\nAnchor: \"test_a_family_subject_counts_its_members_own_links_as_selected_attribution\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:ff86ad71a2833937629e71ede473056b31d16ea8de46533217018b5fcc828704",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution.**\n\nAnchor: \"test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution\"; \"test_a_stale_or_unresolvable_mapping_does_not_establish_attribution\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:0f8d38c4dcd374095093c928791fcf4effff9a15c3e42d2ac0b868c34b9bd5e1",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:f00a6cf4de9654c74338eb792e1c67f103e66c5f3ea5087c24508648b1c6d595",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The production-composition helpers the stale-mapping case authors and reads claims through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:08fe61526f7d57e62b9651d66ca61d7c5187bbb48791acd9827e8ec162679525",
+            "locator": {
+              "kind": "symbol",
+              "name": "_author_candidate_claim"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:2caceef9845b67bd9c62dc52914aea4c00bc2ccc1cd1f103b6ba7b5a2cbbb328",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_claim_resolutions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected.**\n\nAnchor: \"test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution\"; \"test_a_legitimately_empty_side_counts_as_completely_inspected_for_absence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:5540210c704f6e7e9222e4257871e3c36fe63965ecb408c8599b1ccf40f3a162",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 426
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a334cdf092b200588a7ad0395235a82506e41f5b",
+            "content": "sha256:3161876d1ea5ad23792583879c9b87d1fa0a89b4a0750932834a78e8a663043b",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

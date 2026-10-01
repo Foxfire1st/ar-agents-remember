@@ -1,0 +1,272 @@
+{
+  "path": "mcp/src/agents_remember/application/task_projection/selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The total altitude table — the load-bearing rule that a leaf never reads a sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:09b0210ac5fd385abd7c94fcc2cfc945cbbfcf6ae99d8c66066558b4f4fc0de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_READ_ALTITUDES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:4a7ab5f6e4bafa7b42f5c1ce420e327fb56412d48a09ea6ce4c1fb92ab380374",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PARENT_BUCKETS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Who admits portfolio facts, and the launcher's thin channel set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:8d06bb5ac1ad4d4598b2af4697432f16faa64df3e1b7478c309416084b15c092",
+            "locator": {
+              "kind": "symbol",
+              "name": "_PORTFOLIO_FACTS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:981029d0494e43916def8e4a6ccca73fa422e83c47687c0c862b69e1d4bec40b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SEAT_KIND_CHANNELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The per-operation channel table and the refusal that guards it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:b5cf292934c2d2ec88f6bc25a744f2862d5ea8076dae444ec77027da26219391",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OPERATION_CHANNELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:b0467f03fa8c98920ea6cdaf207d7acbf70695f12ad473de9bb82dc423ffd72c",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_channels"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:10e6f8a744944ceaf7a461f73a906c0dc72def17c992c2dc3f02e4d26d36505d",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The plan builder that resolves the plan with no default branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272abeffe488c0e5d9442f354461b74e02ddcce0",
+            "content": "sha256:e6330ee0420722480f14212217d7bb8e84ceb0a8a43c00c0fcafbed27b335338",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The frozen operation and role vocabularies this table must cover exactly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:3a81988b2621a84cf8ecdd0f0376e12573bceb809fcbc3a90aaf277e8bdec783",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
+            "content": "sha256:2d93a316172360fecd70e32acce79278dd510a6124200ea6b137acea201f9db2",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single enforcement point that hands the projection only the planned documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:15d1e21b6de0cc5eab87e37db3e71fe1b0f12cdf369635b9317d44f50e4bdfc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_documents"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:e82f2d5dedba62d23f18930b0e583898c0606a083f6cc81fbb3a7f5887c882fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenced_documents"
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:3370cbeed73afc658d7f88ef6754dbf1adc5d584c8bcffa2b0ef6485664fce0b",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 376
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
+            "content": "sha256:77d70275d3b93fe4f8ff338767657e1b91e3e9c176ec93fe90eb8b7c5d9308e9",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 394
+            },
+            "path": "mcp/src/agents_remember/application/task_projection/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The case that proves sprint history reaches an orchestrator but never a leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:6f214939d516356c166ffedf2c6fd010f36816c90464dffab1e6cf154b233086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_sprint_decision_history_reaches_orchestrator_but_never_a_leaf"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that proves each frozen operation selects its own channels and its own document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9991ab53e44e727208b5ce953c5a72c0e9ad25d",
+            "content": "sha256:f9fbf8f71910bfcfadec11b1022c654b1bbcf83393cc929f2912e431f3ebfb81",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_frozen_operation_selects_its_own_channels_and_its_own_document"
+            },
+            "path": "mcp/tests/test_task_projection.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

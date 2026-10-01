@@ -1,15 +1,5 @@
 # dev-skills/dashboard-experience-review/owned-methods.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dev-skills/dashboard-experience-review/owned-methods.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-23T05:31 |
-| lastVerifiedCommitHash | `8e39b62c3550e974486479203d191aac39a0f0f3`|
-| lastVerifiedCommitDate | 2026-06-23T06:11:39+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -46,30 +36,17 @@ applies to every visibility/state check.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+### Docs References
 
-## Repo-Internal References
+No relevant external documentation found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split. | `# dashboard-experience-review Dashboard Experience Review` | dev-skills/dashboard-experience-review/SKILL.md:6-134 |
-| The doctrine whose violations raise severity by a tier. | `# Cockpit Dashboard — Review Doctrine` | docs/design/dashboard/review-doctrine.md:1-112 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split. [1]
+- The doctrine whose violations raise severity by a tier. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+### Cross-Repo References
 
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B21 curator: replaced the `n/a` rows with exact
-  heading anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-06-23T05:31 — Created with the skill (issue #92).
+No meaningful cross-repo references found.

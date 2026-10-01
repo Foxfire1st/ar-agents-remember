@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/grammar/ProgressFill.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detail panel renders this for task-step progress.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
+            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProgressFill"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

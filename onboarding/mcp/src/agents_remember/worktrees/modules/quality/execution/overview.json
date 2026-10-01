@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/execution",
+  "references": {
+    "1": {
+      "note": "The code boundary recomputes reuse and rejects zero-code-start decisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e9c4da6a49ad402e6d6562b032ff50f7393f1ff",
+            "content": "sha256:99645b8aa91df47d6fa72db8eccf853f636f25899322d1d7cab3e9f37a87b143",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeCertificationExecution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Original result membership and frozen declarations jointly bound retained files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:6ea8fef4e7d26f902c51191dd027dd8a86d079ba5a4d201f7d5b59ec2a13c62c",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_report_inventory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Snapshotting reopens the original publication before exclusive copies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "282fe6ee087803e3a963f412833ab1f321d55df7",
+            "content": "sha256:7d55996dcc2ece2897f6e83862c8403062fe0420e76b0df15b5a4af81b53b9c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_retained_reports"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/retained_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Selected admission preserves frozen semantic profile authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:c6f93502fa251785ee8c645f9db21601c7490b41be32be2917559b196611a4d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selected_profile"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Manifest composition reobserves actual source selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:3d594ab559ced4191d7a7a82941a00770ac4f0c1d9b4281bf747b47f97f7d20c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_sandbox_manifest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:97f912523050da24c93a235f60224743586f1a519bce530b458fbe1bafc4d5f4",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The surrounding gate receives explicit owner selection/start/retention callbacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fd2237c3e2c6c511d27b513c38978383ba3aa9da",
+            "content": "sha256:038ed2c98d99ffc25201bb438712c2ad3a022be3416cb9f7a8e97ace599f4902",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedCodeCertification"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

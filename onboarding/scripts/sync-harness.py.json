@@ -1,0 +1,150 @@
+{
+  "path": "scripts/sync-harness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fragment library for the eight `render-starter.py` programs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48702d860710153a5eceeaead202c3492b62aeb9",
+            "content": "sha256:8c295a34cdc886d831c3010960f7f283cf941570958f3b939cae49ed3838ca54",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_settings"
+            },
+            "path": "scripts/harness/render_starter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fragment library for the four session-start hook scripts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:79f06f6571f7e8d4d1f12a2317796b8e4ebc2ded18056a388ae2b82b6d4abfbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "hook_specific_output"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The classification of genuine per-harness requirements versus drift, and the shared-source inventory.\n\nAnchor: `## What is shared and what is per-harness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "content": "sha256:b0b3ba3a0417afff4a0c7a8fee084ed1b319f904b1667756e66e215e3531d57c",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "scripts/harness/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both hook tiers run `--check` beside the skill and runtime generated-copy checks.\n\nAnchor: \"run_fast_checks() {\"; \"run_full_checks() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:b1240edbab147167518a215de0a2a21d79061b5447401a92df4a7a2c0c5fa3e2",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:3ed9c2917ca1dcf28b0156b44abd3cbe6c6bd5bc1e4c3f5dca1595d5a7c798c9",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sibling generators this one is modelled on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "content": "sha256:932ecfb6de5eb944491881bceacb9f148bc06c2a7032a15f5f3eaad604b79419",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillTarget"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51dfa4f817728595227ad8815840659786725c59",
+            "content": "sha256:f22d8dd43ccaab0c1949a6098773981815b9048a17bf59ae4232d4eb9330ade0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RuntimeTarget"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Repo instructions route harness edits through `scripts/harness/` and forbid editing generated starter files.\n\nAnchor: `## Source Layout`; `## Boundaries`; `## Repository Layout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:2c6f7a44bcf0a197c489055768c97d6090766f3ae50a8883834517b86a9cfb81",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 99
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f146f145805754bb2e7a760c6ad950ca21ed1c36",
+            "content": "sha256:34d27dce1622b9a4a3e948e5c2fd4afc4281d478a19195810acb43d74f07daf4",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

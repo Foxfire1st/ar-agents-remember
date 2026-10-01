@@ -1,15 +1,5 @@
 # dashboard/src/data/railChatSelection.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/railChatSelection.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-31T07:35+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate |  2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -42,22 +32,18 @@ placement and display share one parent contract.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Role sets and creation boundaries are explicit by altitude. | `SPRINT_ROLE_ORDER`; `CREATABLE_SPRINT_ROLES`; `MASTER_ROLE_ORDER` | dashboard/src/data/railChatSelection.ts:15-25 |
-| Reviewer generations are parent-validated before seat selection. | `reviewerIsValid`; `roleSeats` | dashboard/src/data/railChatSelection.ts:60-117 |
-| The hook returns topology-specific seats and free-chat state. | `useRailChatSessions` | dashboard/src/data/railChatSelection.ts:119-169 |
+- Role sets and creation boundaries are explicit by altitude. [1]
+- Reviewer generations are parent-validated before seat selection. [2]
+- The hook returns topology-specific seats and free-chat state. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-
-- 2026-08-31T07:35+02:00 — Created for 260821-ARSPAWN-L5 independent-review repair. Verification remains closeout-owned.

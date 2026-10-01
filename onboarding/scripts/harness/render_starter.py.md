@@ -1,15 +1,5 @@
 # scripts/harness/render_starter.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `scripts/harness/render_starter.py`        |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:31+02:00 |
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `../../overview.md`                        |
-
 ## Governing Overview
 
 [overview.md](../../overview.md)
@@ -75,21 +65,10 @@ byte-identical in every generated file.
 - Every generated program is expected to survive `ruff format --check` unchanged, which
   constrains how the generator emits constants around these fragments.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The generator that slices, orders, and assembles these fragments. | `generated_files`, `render_starter_program` | scripts/sync-harness.py:522-548; scripts/sync-harness.py:576-621 |
-| The classification of which fragments are genuinely per-harness and why. | `## What is shared and what is per-harness` | scripts/harness/README.md:38-94 |
-| The hook fragment library with the same contract. | `hook_specific_output`, `emit` | scripts/harness/session_start_hook.py:28-34; scripts/harness/session_start_hook.py:57-59 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-09-07T00:31+02:00 — Retired obsolete deleted-suite proof citations; the documented implementation contracts remain, without claiming those removed tests still protect them. Verification pins unchanged.
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal generator, README, hook-library, and sync-test references; final scoped result 0 (checker-clean).
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 created this fragment library, collapsing eight
-  independent `render-starter.py` copies (96–143 lines each, roughly 940 lines) into one
-  checked definition (requirement L2-R12). Verification metadata is pinned to the leaf's
-  reformat commit until closeout stamps the code commit.
+- The generator that slices, orders, and assembles these fragments. [1]
+- The classification of which fragments are genuinely per-harness and why. [2]
+- The hook fragment library with the same contract. [3]

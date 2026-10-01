@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/hosted_control_projection.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/hosted_control_projection.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-10T09:30+02:00 |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4` |
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -81,36 +71,32 @@ seat state from adapter fields; the canonical authority is the only classificati
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external/domain documentation was configured; catalog and projection tests are authoritative.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The canonical status authority classifies adapter evidence once for every consumer; the catalog
 owns the persisted additive fields the projection writes, including the multiplexed plural pendings; the
 snapshot grammar defines the multiplexed tuple this module serializes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The canonical status authority this module now delegates to (classification plus single seat projection rule). | `snapshot_seat_turn_state` | mcp/src/agents_remember/serving/conversation/active/status.py:205-223 |
+- The canonical status authority this module now delegates to (classification plus single seat projection rule). [1]
 
 | `terminal_catalog.py` owns persisted additive fields and the `SeatTurnState` vocabulary. | `SeatTurnState` | mcp/src/agents_remember/models/terminal_catalog.py:32-32 |
 | The catalog field this projection fills: `control_pending_interactions` persisted additively and serialized as `controlPendingInteractions`. | `control_snapshot_entry` | mcp/src/agents_remember/serving/hosted_control_projection.py:36-58 |
 | The pure raw-TUI unsupported projection the liveness sweep composes before its one final upsert; the persistence wrapper delegates to it. | `legacy_control_unsupported_entry`; `mark_legacy_control_unsupported` | mcp/src/agents_remember/serving/hosted_control_projection.py:72-83; mcp/src/agents_remember/serving/hosted_control_projection.py:61-69 |
 | `AdapterSnapshot.pending_interactions` is the multiplexed sub-agent pending tuple this module serializes end-to-end; the singular slot stays the parent-thread entry (D3). | `AdapterSnapshot`, `pending_interaction_json` | mcp/src/agents_remember/models/conversations/control_wire.py:126-151; mcp/src/agents_remember/models/conversations/control_wire.py:305-316 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Canonical Turn-Status Delegation Delta
 
@@ -137,49 +123,3 @@ and would need its own ruling. `control_snapshot_entry` remains a live consumer 
 `hosted_readiness.py`. The `paneDiagnostic`-is-diagnostic-only invariant is unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: recorded the pure
-  `legacy_control_unsupported_entry` builder, the guarded persistence wrappers, and the
-  one-final-upsert rule for live observation; repaired the moved/off-by-one
-  `control_snapshot_entry`, `control_pending_interactions`, and `snapshot_turn_state` citations.
-  Verification metadata remains pinned until closeout stamps the leaf code commit.
-- 2026-08-09T01:21+02:00 — 260713-TES-L2 curator: recorded the forwarded `terminal` parameter
-  and terminal precedence in `snapshot_turn_state` (and superseded the "terminal_liveness
-  untouched" claim). Verification metadata pinned until closeout stamps the 260713-TES-L2
-  commit.
-- 2026-08-08T23:15+02:00 — 260713-TES-L1 completion round 3 (curator): body refreshed for the supervisor -> agent-notifier rename (citation ranges and/or rename wording); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 9 citations (citation_anchor_missing=4, citation_prose_not_in_cit_form=1, citation_source_malformed=4); final scoped citation check clean.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/serving/hosted_control_projection.py` since the L2 base commit is the
-  whole-tree `ruff format` pass in `00e8379`, which re-wrapped 2 line(s) with no token change
-  whatsoever. Checked by parsing both revisions and comparing the abstract syntax trees
-  (identical) and the comment tokens (identical), so no symbol, signature, default, decorator,
-  control-flow branch, docstring, or assertion this card describes has moved,and every claim this
-  card makes about its own source still holds. Noted while checking: the references table also
-  cites line ranges inside `terminal_catalog.py`, `test_conversation_active_status.py`; those
-  ranges shifted because this task edited those files, so treat the cited numbers as approximate
-  and the linked cards as authoritative.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator ATTESTATION: this file was touched by the whole-tree `ruff format` commit (`00e8379`) and by nothing else — `git diff 00e8379 -- <this file>` is empty, so no identifier, signature, branch or behaviour in it changed in this leaf and no claim in this sidecar can have been invalidated by it. Attested, deliberately not rewritten.
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: recorded the multiplexed sub-agent pendings
-  projection (review R6): `control_snapshot_entry` now serializes every entry of the snapshot's
-  plural `pending_interactions` into the additive `control_pending_interactions` catalog field
-  cit:([`control_snapshot_entry`], mcp/src/agents_remember/serving/hosted_control_projection.py:35-57), while the singular slot stays the parent-thread entry exactly as before and an
-  empty tuple serializes as `None`. Refreshed stale line citations (`snapshot_turn_state`
-  L77-L100, status authority L205-L224, parity suite L168-L258) and added the
-  catalog-field and snapshot-grammar reference rows. Verification metadata stays pinned — the
-  L7 change is uncommitted, so no commit hash can attest it.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the R3 orchestration migration —
-  `snapshot_turn_state` delegates to the canonical status authority with an optional harness
-  parameter and a documented function-local import; the legacy inline activity/control mapping
-  is gone, parity is test-pinned, `terminal_liveness.py` untouched. Verification hash stays
-  pinned at the last commit that touched the source until closeout stamps the candidate commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: documented additive adapter projection, legacy unsupported
-  labeling, and protocol-derived turn state.

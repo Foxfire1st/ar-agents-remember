@@ -1,0 +1,678 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+        "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_line_range"
+        }
+      },
+      "id": "RLZ-59KAEFRW",
+      "invariant": "INV-1RWT3JRR",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "_observed_line_range (memory/knowledge/read_anchors.py) compares the recorded end line with the exact blob's line count and publishes no range, with the reason in detail, when the blob does not hold those lines.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+        "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_symbol"
+        }
+      },
+      "id": "RLZ-GB76X8G2",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "_observed_symbol (memory/knowledge/read_anchors.py) places every defining extent of a symbol on the exact recorded blob; _observed_line_range places a recorded line range only when that blob holds the lines; AnchorResolution (models/knowledge/read_anchor.py) carries the resulting structured resolved_ranges and refuses them beside any other resolution.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+        "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observed_line_range"
+        }
+      },
+      "id": "RLZ-HG48GKN1",
+      "invariant": "INV-RANN4DC0",
+      "origin": {
+        "leaf": "260921-ICR-L44"
+      },
+      "rationale": "_observed_symbol (memory/knowledge/read_anchors.py) places every defining extent of a symbol on the exact recorded blob; _observed_line_range places a recorded line range only when that blob holds the lines; AnchorResolution (models/knowledge/read_anchor.py) carries the resulting structured resolved_ranges and refuses them beside any other resolution.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The three genuinely different facts, and the rule that a caller is never told \"absent\" for a spelling that was refused.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_anchor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:2ca33e9b6a9aae9d879c6a71c5a75c3a67319d81f43cc9a874ab00ec556ae305",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UnaddressableRecordedPath"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:20abb41e24de5aa9b91673cccec7a7452e4c9c3c496acfb8227ae17dbcb9931e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TreeLookupFailed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "How many lines a blob holds, where a final newline ends the last line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:8965416a0ebb24e6b5812c1db2cc986cfdeae20b5fb4286abb99dd215cf027e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_line_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:92c9da2995279e3b764e4cc6fe382bbcc5a8d9f1b61084a7ce1e474c6a21ab73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:0dfba156d4b68b4209cbcdf8a83a178b85ee40c3f42191190a5412cbafee7fc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_defining_extents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:5af787370ce4411072fd753185ec3ebadbc2553e231c6cf12b33c96f766c5c31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_lines"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:92c9da2995279e3b764e4cc6fe382bbcc5a8d9f1b61084a7ce1e474c6a21ab73",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_definitions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The tree probe that is never remembered, run once per resolver, and the guard that serves remembered answers only behind it; the two residuals stated in the module docstring.**\n\nAnchor: \"Two cases fall outside that guard\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:cd6d1ad8308b3f52292105ae8270d4aa20731fa78367fc6b1e7d474cd447dcf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_exists"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:46148201232cbdca872d79c8aff9237655b6ab64c9d5aed52734a51c62d32e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TreeAnchorResolver"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:21c60770de4bc93b278b5d31e24dec947875e331a43cf1ef4eb512e5cafabff8",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The tables, their keys and the one admission test for a key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TREE_ENTRIES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_LINES"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BLOB_DEFINITIONS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_complete_object_id"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**\n\nAnchor: \"test_repeated_observations_answer_identically_from_one_read_per_object\"; \"test_a_failure_is_never_remembered_and_the_later_success_is_observed\"; \"test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered\"; \"test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered\"; \"test_one_repositorys_answers_are_never_served_for_another\"; \"test_one_blob_is_parsed_per_grammar_whichever_is_asked_first\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:b0bff82050b19eacc270d81bb1c8604c4709c6ae3641eb9c9b0935f702013f9a",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cc55a05c99442d0513753f4957bfa3b0950c2be3",
+            "content": "sha256:a1d35d0d1ae71413dd8872293e990a39da151935110d1f8693df927cc563e0e9",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 387
+            },
+            "path": "mcp/tests/test_read_anchor_memo.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The cases that pin the ranges: two members at distinct ranges in one file, a double definition carrying both ranges, a range past the blob end unresolved, and a mismatched blob carrying none.**\n\nAnchor: \"test_a_recorded_range_past_the_blob_end_is_unresolved_with_no_range\"; \"test_a_symbol_defined_twice_carries_every_defining_range\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:974be0d8c6aad9c0556486f3a2b34d605f5188f720aed629c10b69d632df0b4e",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "78a5998962b38d43feb13a4172c434d9f79f4c52",
+            "content": "sha256:56d86807fe1700866bb64dbea52a81ff44f6336055fb71dbbd8e885f41045e21",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/tests/test_review_family_member_sources.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.**\n\nAnchor: \"test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
+            "content": "sha256:9339d7116db3790f81930a608eddd1671996cb66bbc285553ea6bbbecd15f558",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 370
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The case that drives the second producer: a Git this process cannot run.**\n\nAnchor: \"test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
+            "content": "sha256:43dd430782d42ac17564c616c1abc263724d0267f34793bc7fbf2fb7bbb316ec",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 539
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The case that shows a failed lookup is unavailable rather than absent.**\n\nAnchor: \"test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
+            "content": "sha256:0658ec11fa1ada6392371208e51507415f1830d5b2bb9e102a6581ddf930e53c",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 445
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The path-refusal set: leading `:` (pathspec magic), absolute, `~`, drive/UNC, backslash, NUL and empty/`.`/`..` segments refused; `*`, `?` and `[` admitted as literal characters.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_posix_relative"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The case that authors, stores, seeds and resolves a path holding glob characters to its own blob, and measures the Git facts itself.**\n\nAnchor: \"test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
+            "content": "sha256:4e3e98ce9d1253f673ce3d4968acd69c324444ce187eaafb23b0322918a7213b",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The non-blob entry case, and the ordinary absent-path case.\n\nAnchor: \"test_a_non_blob_tree_entry_is_reported_as_an_entry_and_never_read_as_source_bytes\"; \"test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:4801f656e0af8f515cdf17268378304f2a795cdf7fafebf6ba2a5a98f641366a",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b82454cb20ee189dd62b25b60a0eea4f41ad5f80",
+            "content": "sha256:f138d9a59dd9b44e0923dd827bdfee315cabd3cc6439b23d847f6a6d3bcd8751",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**`None` means only \"Git looked and found nothing\"; the entry kind comes from the entry mode, not the object kind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:4c5aac44aba12702668c799f1f4d4f1bc11570169d3ec88466bd81459f94afe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_ls_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:1c0602e811691ffa334ba461731dc248fd78e3ec14ee74d212cd44bbfa774b80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TREE_ENTRY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared rule the typed write and seed boundaries apply, with the measured Git table in its docstring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_plain_git_path"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two resolvers, and why an unrequested tree is a supported state rather than a degraded one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:d4531f57e5c69f17628ad313df7a9555b7b0492aa986e742f7ea79ab28a539a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchor_resolver_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:0ea7ecb27d8f5ea4cbc904337efa60921100c10580d0d46e8410af162baa896e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UnrequestedAnchorResolver"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:46148201232cbdca872d79c8aff9237655b6ab64c9d5aed52734a51c62d32e2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TreeAnchorResolver"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:cd6d1ad8308b3f52292105ae8270d4aa20731fa78367fc6b1e7d474cd447dcf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observation vocabulary this module reports into (seven members), declared in `read_anchor.py` and imported through `read.py`'s re-export, with the validator that refuses ranges beside any resolution other than the exact recorded blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:bac0ca502dab452e2e32d5cdc45f6bf068b406df36d0d6215d795e3ce17c7f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolutionState"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorResolution"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7abc7f3bcd44ba6885cdd18277e9962f24e42aa",
+            "content": "sha256:6df7b2ab9a7f184f1a6c860739d84c54b1058c1706a4f901f3f63aa2dde00b27",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_ranges_only_on_the_recorded_bytes"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The dispatch that sends an exact-blob `symbol` or `line_range` locator to its range-measuring observer and answers a `file` locator with no range.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:cccae8bed2f4f9d0e92903bd9872801ea2401c83cb41cb6b6e52aaaa3d0e72e7",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**A symbol's every defining extent carried as structured ranges, with the unchanged `detail` sentence spelled from them.**\n\nAnchor: `resolved_ranges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:bfc0319d634856fb8f98a46fa53fcb0eb7fbba8a55532e4e7e19bc8d804a5b5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_symbol"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**A recorded line range published as a resolved range only when the exact blob holds those lines; past the end, or unreadable, it keeps `exact_recorded_blob` and carries none.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
+            "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observed_line_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

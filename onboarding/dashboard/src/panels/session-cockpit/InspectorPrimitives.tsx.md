@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-21T05:30+02:00 |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f` |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -44,37 +34,23 @@ panes: pane/section layout, optional facts, notes, raw payloads, and compact ins
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain citation applies. | — | — |
+No external domain citation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shared pane, fact, note, raw, and action grammar in `InspectorSection`. | `InspectorSection` | dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx:81-96 |
-| Evidence consumer, `EvidencePane`. | `EvidencePane` | dashboard/src/panels/session-cockpit/EvidencePane.tsx:407-463 |
-| Capability consumer, `CapabilitiesPane`. | `CapabilitiesPane` | dashboard/src/panels/session-cockpit/CapabilitiesPane.tsx:84-240 |
-| Bus consumer, `BusPane`. | `BusPane` | dashboard/src/panels/session-cockpit/BusPane.tsx:116-276 |
+- Shared pane, fact, note, raw, and action grammar in `InspectorSection`. [1]
+- Evidence consumer, `EvidencePane`. [2]
+- Capability consumer, `CapabilitiesPane`. [3]
+- Bus consumer, `BusPane`. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo evidence applies. | — | — |
-
-## Update History
-- 2026-08-03T02:57+02:00 — W3-B03 curator: curated 4 table citations for inspector, evidence, capability, and bus primitives; fixer-generated ranges verified.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V2 value-wrapping fix — `dd`
-  `overflowWrap` `anywhere → break-word` (whole-token wrapping), noting its dependency on the `index.css`
-  `word-break: normal` root override (RV-1). Verification pinned to the leaf base (`352d5cd`) until
-  closeout stamps the candidate commit.
-- 2026-07-17T23:54+02:00 — Created for 260715-FEUI-L7 after Round 3 reviewer PASS. Verification
-  metadata remains pinned to the leaf base until closeout.
+No cross-repo evidence applies.

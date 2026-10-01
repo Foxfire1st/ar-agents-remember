@@ -1,0 +1,201 @@
+{
+  "path": "mcp/tests/test_knowledge_conversion_toolchain.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The read tool on both formats, with the converted knowledge section through the tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:111a7dafacf68cc3b315012d0ac60e68e64e397bb250afb5da1a780c23486e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_ar_files_returns_legacy_format_or_resolved_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The converted check compares an unconverted HEAD through its converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:45a98b59f3d0b0cc65020b6a97b7826ba61fa2c326f078231c620085d6a5455f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converted_check_compares_an_unconverted_head_through_its_converted_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fixer checks every card first and refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:ffed780182abfbb04ce28956d6ca536955a4b321426f1b6f3f1565bc1854e3ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_fixer_checks_every_card_first_and_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A leftover evidence line is refused, and only the named card loses references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:860d2d836b299d7e77bfee0c94485d0cef0baae27859b3fa5f117f4a5079c282",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference check and fixer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:2d63c14aee7e1b3369e902a5c73e9c20b76158a403a72893ee402b8e38909ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_references_are_checked_and_only_mechanical_moves_are_fixed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Memory quality on a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:a5e492332b2ba4271dc045430f67f4b5f20581b4850092a979dd871954417784",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_reads_the_converted_format"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rule 9 refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:ce973bceccdc86d02c658e0d9d5a9cc626c1112b5d2d58b469d2e5879098d739",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leaf_is_refused_only_once_its_official_line_is_converted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`memory_init` in the text format.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:6090ce7ef3c04c42c8448bb9179d3c922c8abfe88f4dfe7cd27cd7d9b35fd4ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_creates_new_memory_in_the_text_format_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_conversion_toolchain.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "119efc5d27e3b25fea633405ec5995d2fdebda87",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The census compares a converting leaf with its converted base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:58e0b33c8ea09d6a860dfeb5ba28fd9dd6cebea773fbbf584b31d741c5b03a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_compares_a_converting_leaf_with_its_converted_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Citation rows author a converted card's sidecar with resolved anchors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:2d7823696a9b555e9ce97a1b24c2add26a4d60d10295f69dce40a901707ce83d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_citation_rows_author_a_converted_cards_sidecar_with_resolved_anchors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "One converted card is fixed by its document alone; legacy keeps the snapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "content": "sha256:b6e32a0dd170d7d477b4725252fb0dcb1e2767189edd6a873ba2f412918a77f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_converted_card_is_fixed_by_its_document_alone_and_legacy_keeps_the_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

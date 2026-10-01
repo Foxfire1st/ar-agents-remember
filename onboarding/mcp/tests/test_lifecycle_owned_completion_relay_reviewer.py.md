@@ -1,15 +1,5 @@
 # mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:35:02+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076` |
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -134,74 +124,35 @@ cost classification only: it is not execution, certification or acceptance evide
 None. The six cases are complete for `LOCR-R06@v1`; the candidates for extension (another role's
 relay, or a further terminal outcome) belong to the leaves that decide them.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in the resolved memory root. The module tests
 repository-owned relay behavior, so no external domain claim is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These rows describe the production behavior and the candidate that protects it. They are not a
 certification result, and the candidate is uncommitted.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The eligibility decision the module pins: a harness row, still running, with a resolvable owner, an ended turn, a canonical outcome, an evidence identity, and no marker already stamped for that identity. | `_state_signal_finding` | mcp/src/agents_remember/serving/state_signals.py:237-260 |
-| The exact eligible outcome set — `completed` and `interrupted` — which is why `failed` is refused rather than merely unproven. | "completed"; "interrupted" | mcp/src/agents_remember/serving/state_signals.py:245-251 |
-| The idempotence marker: the same seat does not re-emit for an evidence identity it already emitted for, which is what makes one review produce one wake. | "entry.state_signal_emitted_for != entry.terminal_evidence_id" | mcp/src/agents_remember/serving/state_signals.py:250-250 |
-| Current-occupancy addressing for a subordinate, including the reviewer branch that resolves a reviewer's manager from the structural parent role and document. | `_manager_for_subordinate` | mcp/src/agents_remember/serving/state_signals.py:86-109 |
-| The finding evaluation the module drives directly in its silence cases, returning no finding while the eligible set is unsatisfied. | `evaluate_state_signal_findings` | mcp/src/agents_remember/serving/state_signals.py:199-207 |
-| The derived durable row's own text, asserted to carry the outcome and evidence identity and to speak no verdict vocabulary. | `state_signal_ask`; `state_signal_response` | mcp/src/agents_remember/serving/state_signals.py:506-518; mcp/src/agents_remember/serving/state_signals.py:521-527 |
-| The real notifier sweep the module drives to persist the wake and to land it at the owner's next boundary. | `run_agent_notifier_sweep` | mcp/src/agents_remember/serving/agent_notifier.py:96-190 |
-| The real terminal-evidence lift the module uses instead of typing an outcome: the projector registry decides the outcome and the evidence identity. | `latest_native_terminal_evidence` | mcp/src/agents_remember/serving/terminal_evidence.py:146-184 |
-| The real observer whose passes produce the terminal truth the wake rides on. | `TerminalCatalogLivenessSweeper`; `LivenessProbe` | mcp/src/agents_remember/serving/terminal_liveness.py:89-110; mcp/src/agents_remember/serving/terminal_liveness.py:149-322 |
-| The wake scenario class and its single-seat scripted adapter endpoint. | `ReviewerTurnOwnerWakeTests`; `_Bridge` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:230-266; mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:269-651 |
-| The tmux double that answers "session alive", with the `gone` set that keeps a departed generation departed. | `_AliveHost` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:163-184 |
-| The negative control: `failed` is real terminal truth with an evidence identity, is not wakeable, and consumes nothing. | `test_a_failed_reviewer_turn_never_wakes_the_manager_and_stays_eligible` | mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py:605-651 |
-| The fixtures this module imports rather than rebuilds, owned by the sibling relay card. | `_accepted_paster`; `_write_task_topology` | mcp/tests/test_state_signal_relay.py:120-132; mcp/tests/test_state_signal_relay.py:149-193 |
-| The sibling module that owns the relay's own structural contract. | `StateSignalRelayTests` | mcp/tests/test_state_signal_relay.py:196-603 |
-| The candidate classifies this module once, in the explicit unit-regression lane. | "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" |mcp/tests/test-evidence-lanes.toml:184-184|
+- The eligibility decision the module pins: a harness row, still running, with a resolvable owner, an ended turn, a canonical outcome, an evidence identity, and no marker already stamped for that identity. [1]
+- The exact eligible outcome set — `completed` and `interrupted` — which is why `failed` is refused rather than merely unproven. [2]
+- The idempotence marker: the same seat does not re-emit for an evidence identity it already emitted for, which is what makes one review produce one wake. [3]
+- Current-occupancy addressing for a subordinate, including the reviewer branch that resolves a reviewer's manager from the structural parent role and document. [4]
+- The finding evaluation the module drives directly in its silence cases, returning no finding while the eligible set is unsatisfied. [5]
+- The derived durable row's own text, asserted to carry the outcome and evidence identity and to speak no verdict vocabulary. [6]
+- The real notifier sweep the module drives to persist the wake and to land it at the owner's next boundary. [7]
+- The real terminal-evidence lift the module uses instead of typing an outcome: the projector registry decides the outcome and the evidence identity. [8]
+- The real observer whose passes produce the terminal truth the wake rides on. [9]
+- The wake scenario class and its single-seat scripted adapter endpoint. [10]
+- The tmux double that answers "session alive", with the `gone` set that keeps a departed generation departed. [11]
+- The negative control: `failed` is real terminal truth with an evidence identity, is not wakeable, and consumes nothing. [12]
+- The fixtures this module imports rather than rebuilds, owned by the sibling relay card. [13]
+- The sibling module that owns the relay's own structural contract. [14]
+- The candidate classifies this module once, in the explicit unit-regression lane. [15]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository implementation boundary is established by this repository-owned
 unit-regression module.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-30T22:35:02+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): No content impact: citation repair only; this document's own source is unchanged by MIK-L33. Rows citing MIK-L33's changed sources (`test-evidence-lanes.toml`) moved with the leaf's inserted lines: 1 row(s) re-pointed by the installed fixer (its generated bullets kept); 3 passing row(s) normalised by the fixer. The fixer's normalisation also re-measured ranges into files this leaf did not change (`terminal_liveness.py`, `test_lifecycle_owned_completion_relay_reviewer.py`, `test_state_signal_relay.py`). No claim wording changed, and no verification stamp was advanced.
-- 2026-09-30T20:30:11+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:184-184. No content impact: mechanical anchor-range projection bound to citation source snapshot 8b6fd4477f4e6588d3a971c6b77ff9a95df2a0849774b3a5c948b24cd8c436b5; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 1 citation into `mcp/tests/test-evidence-lanes.toml` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:136-136. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-21T19:16:12+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 4fbe69f2d182c46961e2554810a980cd29ac68e855e9213c9f6c1f2ac72173ec; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T16:13:35+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot e93679ab5a75f0a02b7b5f3d8b80c429fc541ff3ead9181d4e4fbf176c901462; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:36:47+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:114-114. No content impact: mechanical anchor-range projection bound to citation source snapshot 468e47519c1a75ea8349538fbc4903207afc60f299e5295d1631f1f15f11a5ef; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T12:07:24+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:112-112. No content impact: mechanical anchor-range projection bound to citation source snapshot 5571c165ff8c0fb8964492349c8f2d6be0134e3c91863ce685e4c34bb24aa86b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:21:19+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:97-97. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 5 generated projection bullet(s) by hand while resolving the memory sync** — `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:40:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand** — `mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen; **this leaf's own addition moved the ranges they project**, so a bullet that still names the old extent is stale evidence; this document's claims were not otherwise re-read in this pass and its rows were left as they stand. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: `"mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py"` → `mcp/tests/test-evidence-lanes.toml:92-92`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-
-- 2026-09-17T20:42:17+00:00: Generated citation repair: "mcp/tests/test_lifecycle_owned_completion_relay_reviewer.py" repointed to mcp/tests/test-evidence-lanes.toml:84-84. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-15T19:21:00+00:00 — 260831-LOCR-L06 curator, **re-dispatch** (uncommitted change set on
-  `ar/260831-locr-l06`, pair code base `e9678c56`, memory base `ee93a0fc`): created this file card for
-  the leaf's new reviewer-relay module — 6 cases in one class, 655 lines, sha256 `aaed2736…` — and
-  recorded the contract each case protects: the wake produced by observation rather than seeded, the
-  eligibility boundary that refuses liveness/readiness/pane text, the `interrupted` outcome preserved
-  as itself, current-occupancy addressing past a departed manager generation, one signal per evidence
-  identity, and the `failed` negative control that makes the eligible set a claim. Recorded the
-  production anchors that make the boundary real rather than defensive — the eligible set at
-  `state_signals.py:245-251`, the marker at `:250`, and the reviewer-specific owner resolution at
-  `:86-109` — and the boundary the module deliberately does not claim (the relay's own structural
-  rules, owned by the sibling card). The lane row this card cites is
-  `mcp/tests/test-evidence-lanes.toml:68`. The candidate is uncommitted, so no acceptance is implied
-  and verification metadata remains closeout-owned; no stamp advanced.

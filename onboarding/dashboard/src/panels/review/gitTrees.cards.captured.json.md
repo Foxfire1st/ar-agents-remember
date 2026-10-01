@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/gitTrees.cards.captured.json
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/gitTrees.cards.captured.json` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:36:31+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -51,33 +41,22 @@ current project knowledge. Its line ranges are the scratch tree's.
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R31@v1` and its rulings live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The proof entry, added in this leaf, with its facet. | "PRF-7Q3M5K" | dashboard/src/panels/review/gitTrees.cards.captured.json:67-67 |
-| The one changed entry. | "\"change\": \"changed\""; "RLZ-CXH58B4W" | dashboard/src/panels/review/gitTrees.cards.captured.json:101-102 |
-| The comparison it was read from. | "\"number\": 1" | dashboard/src/panels/review/gitTrees.cards.captured.json:36-36 |
-| The receipt row for this body, with the invariants it names. | "gitTrees.cards.captured.json" | dashboard/src/panels/review/gitTrees.capture-provenance.json:67-67 |
+- The proof entry, added in this leaf, with its facet. [1]
+- The one changed entry. [2]
+- The comparison it was read from. [3]
+- The receipt row for this body, with the invariants it names. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:36:31+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): Body updated: MIK-L34's `IntentMarkers.test.tsx` now also reads this body (its two `review_source_admission.py` cards, for the exact-card return), so Purpose names it. Bytes unchanged. No stamp advanced.
-- 2026-09-30T13:23:08+02:00 — 260928-MIK-L35 curator (staged change set on `ar/260928-mik-l35`, code base `ce4594231eac0b18950d22d6aee0d3b9f3eba3db`; review R1 changes-required, R2 pass-with-notes, R2-1 fixed): body update, bytes unchanged. Purpose names its MIK-L35 consumer (`ReviewSurface.wordDiff.test.tsx`).
-- 2026-09-30T09:59:20+02:00 — 260928-MIK-L31 curator (staged change set on `ar/260928-mik-l31`, code base `48f680d5b95b8cb6eafff4f1ccd19c8f32e8c48c`; review R3 pass-with-notes): created this card for the new captured fixture (MIK-R31 rule 6: a captured fixture whose member entries have resolved, non-empty ranges). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

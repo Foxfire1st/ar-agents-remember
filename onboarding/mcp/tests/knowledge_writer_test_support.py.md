@@ -1,15 +1,5 @@
 # mcp/tests/knowledge_writer_test_support.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/knowledge_writer_test_support.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T00:17:15+02:00 |
-| lastVerifiedCommitHash | `c493b55731545a090d6b81f504bf02e1e427ec74`|
-| lastVerifiedCommitDate | 2026-09-30T00:38:11+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -53,7 +43,9 @@ and a leaf contract naming both worktrees, so the command line runs exactly as a
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
@@ -62,34 +54,22 @@ No domain documentation source is configured for this repository (`system/source
 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
 code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The world.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The base records' legacy IDs and the IDs derived from them. | `BASE_INVARIANT_LEGACY_ID`; `BASE_FAMILY` | mcp/tests/knowledge_writer_test_support.py:28-28; mcp/tests/knowledge_writer_test_support.py:32-32 |
-| The shared admission claims a criterion the validator does not check. | `ADMISSION` | mcp/tests/knowledge_writer_test_support.py:251-254 |
-| The base memory: one exported invariant, one realization, one exported family. | `base_memory` | mcp/tests/knowledge_writer_test_support.py:117-171 |
-| The leaf contract naming both worktrees. | `contract_text` | mcp/tests/knowledge_writer_test_support.py:174-210 |
-| Both repositories and the task root. | `build_world` | mcp/tests/knowledge_writer_test_support.py:213-224 |
-| A producer entry with curator keys. | `entry` | mcp/tests/knowledge_writer_test_support.py:227-245 |
+- The base records' legacy IDs and the IDs derived from them. [1]
+- The shared admission claims a criterion the validator does not check. [2]
+- The base memory: one exported invariant, one realization, one exported family. [3]
+- The leaf contract naming both worktrees. [4]
+- Both repositories and the task root. [5]
+- A producer entry with curator keys. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
 worktree of one repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T00:17:15+02:00 — 260928-MIK-L27 curator (uncommitted change set on `ar/260928-mik-l27`, code base `46ca74302e76cf40fb6370ea9ece16d8fa719f00` plus the staged delta): **body update — the base records are exports whose IDs derive from their legacy IDs, and `ADMISSION` claims `prevents_costly_mistake` (MIK-R27, ruling F2).** Purpose reworded (the `INV-BASE01`/`FAM-FAM001` literals are gone); two Logic bullets; two rows added and the `base_memory` row reworded; the other rows re-pointed by the exact line shifts. No verification stamp was advanced.
-- 2026-09-29T10:05:46+02:00 — 260928-MIK-L12 curator (uncommitted change set on `ar/260928-mik-l12`, code base `6ad4e076bbbc5d98b8c770fc374d56ddc4a2d695` plus the staged delta): created this card for the new file MIK-R12 adds. The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

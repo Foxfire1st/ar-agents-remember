@@ -1,0 +1,191 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/documents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The layout table.\n\nAnchor: \"knowledge/<kind-dir>/<ID>-<slug>.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:5e5e22e6741d3a1b6deb093efb10d4807b8ce4f2dad47cb9dca4120b8d279017",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Attempt files are named, ordered and backward compatible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The schema table, including the history schema and the four census schemas.\n\nAnchor: `HISTORY_SCHEMA`; `CENSUS_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:b19066baadb97c7ba006e8a8b85fcabbce1a2963f78e7c0833c873ef7ede1bc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCHEMA_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The document union gains the census documents.\n\nAnchor: `CensusDocument`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:96ebbd4d896ea23a908140e3b628e8221cb4a1d411da1debb4adc26ae6740f58",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDocument"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Schema dispatch, refusing unknown schemas.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:78d89ba17192f51af2d2efb3e48efaa2744e16a64a761e0b1c2f767da139d473",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A history file is read only at its owner's path, with its attempt for a reopened leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:d03b17d93bdc7ff9a9ab1787eaa7dedb4f3974cbfba5f970e9e9e5169c04a807",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_history_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Record paths and the filename split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:a0b56890204683f9ffedf70a407c8f654fb7f46ec78467636be7bde1e184fb43",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:661bb77185893191411eed5dc12d3bc8f367dcca3fdad810df18c109a341b0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "split_record_filename"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Sidecar paths, with `.` as the root route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:0e14a0cc2449655a53074bfc8857a5c396b2b4fec62829abe0e8b812d488280d",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_sidecar_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:71311d676cc0fa5bed3e19f1de73fee8ec27d48a0bbdde43ffa531d4fe48b12a",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_sidecar_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The history path of an owner and attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:3e3b9ca453335e459c9046b02bb9379a76f657b3b7f14586a1c8f02ccf177d14",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Which attempt of an owner's history a path names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee163457bbfa37383052b9ad92fda170e8fc57c",
+            "content": "sha256:a6fcf22f2f60f6d0f9cf2b21b8be819e0ca04fc0352f7a6c946b0dd91853597f",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_history_attempt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

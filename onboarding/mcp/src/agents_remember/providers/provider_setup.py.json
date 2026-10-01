@@ -1,0 +1,184 @@
+{
+  "path": "mcp/src/agents_remember/providers/provider_setup.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Worktree start calls provider setup with MCP-derived provider settings.\n\nAnchor: `run_or_launch_provider_setup`, `_provider_setup_request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_or_launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "content": "sha256:1ca400fa9df2a72c617014a06da2fcf194c730ac1569fe0da55950fced99e05c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provider_setup_request"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "content": "sha256:c64f94720c8a9fa70ceef7b88e85f99052a935904c0f068c0571075ba33d5efa",
+            "locator": {
+              "end": 1020,
+              "kind": "line_range",
+              "start": 983
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "content": "sha256:be3682059146c7644753ba074c442eab8e7d5e5d89da58075fc2ee61e70bf76f",
+            "locator": {
+              "end": 1165,
+              "kind": "line_range",
+              "start": 1133
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Benchmark preparation calls package-local provider setup instead of a source script.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:af8258abc42c3660a450fa042ee7e3fcd9537c70a89f3d87b5b6ee41bad390d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_provider_setup"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Provider lifecycle calls are captured through package-local command capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ddc8d8fd96f4582bc44c9cb2f7792804486b401",
+            "content": "sha256:4068d8565c3a85db99a8cffc4e21c8ae7f4e7b798fde75c8713fc498e1c65e70",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_package_main"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/command_capture.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "CGC seed orchestration and bundle rewriting now live outside the facade.\n\nAnchor: \"def cgc_seed_bundle(\"; \"def rewrite_cgc_bundle_paths(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:de806af6a401279709294a1396517505ac9e5dc8b606d038a55791030c7050c0",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3dd160bb85e5cb5025b05175a14efdb77c6c1ba",
+            "content": "sha256:1e2f95e891e9b5db562d68474838b8a59501ffa50c166e1639fe205d03358c34",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/bundle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Shared settings and command helpers live in the setup common module.\n\nAnchor: `run_command`, `LifecycleCommand`, `run_lifecycle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "content": "sha256:9fb13b92492b8bf66cb3e776d750e5f14b6ec0027de7965b67a50e84d36e3087",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_command"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "content": "sha256:cae0af8d2b4badc125d3877517c8cac6b5841cf8b1aa856614c26665e63ca963",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleCommand"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ba58b03a56e398af531689e5afc2eabaad21e600",
+            "content": "sha256:9fedec650ef6711e3ad80e7a88a9eb186eb9500f99ceec3537dbe8464b474f1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_lifecycle"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Setup payload summaries and failed-phase compaction live in the setup reporting module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20b3e05eb740ab1f14aa73b5d442ba3186c8f9cf",
+            "content": "sha256:9e0a7e8b9b03cc39236a62381409ff19a1454ac6a171bf606802bb344754e8f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_setup_payload"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_reporting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

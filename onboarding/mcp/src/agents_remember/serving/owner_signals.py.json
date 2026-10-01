@@ -1,0 +1,185 @@
+{
+  "path": "mcp/src/agents_remember/serving/owner_signals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external/domain document defines this posting primitive; the ruled coalescing contract is the source of truth.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:48a13fcf93c3703aa56411d93fbb8e4390ad687badcb1d81d52627f62e6139b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_owner_signal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:46f45d1e37a90d99c04f5a3e71cca983a7ff1e2b61c587fc30dbfec4eb253524",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The inbox row record/creation and renewal/readdress transitions it composes.\n\nAnchor: \"def create_operator_inbox_entry(\"; \"def renew(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bf6786f6e546a7f79d0be5ccb3200c4da94e75a",
+            "content": "sha256:99783bf7a9540bf6956bf2db6b382a3433643addbf308d95e889aa34b3c9a102",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35a27ccc55fad7cadcaf0f601df65cfd9801074e",
+            "content": "sha256:4d4d224757810182098defcf72a11f320319a73f606d7246bf4a108b7f21fb26",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/controlplane/operator_inbox_transitions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The delivery attempt it drives and the admission policy it carries.\n\nAnchor: \"def deliver_inbox_entry(\"; \"class DeliveryAdmission:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:010a66df0c24ef271cca50d6e38159c277a139e3105781e3c17757600bab64b5",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa8c28490d56023e8587e750c0369311759e71a2",
+            "content": "sha256:6ce8f233dbbc15d80696d01dae92f8428701e542df0c878ebc02e4952be734b9",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/serving/inbox_delivery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The row is durable and on the sweep fold before the optional marker step (lines 185-192), which precedes the delivery attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:48a13fcf93c3703aa56411d93fbb8e4390ad687badcb1d81d52627f62e6139b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_owner_signal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The kind-scoped source identity the lookup delegates to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:6e88dd5fae2e85e187e180c35d7b24d29b5dd4589ac4cf1f1ebdf84fb284944c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coalesces_on_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:3090d726f14f3c58d4fb6de184ddaa79875dec4fcedd608617d056fce443855f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_find_coalescible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The sweep facade re-exporting the primitive for existing callers. Note the lookup's signature is now the single `signal=` carrier, not the five keyword values it used to take.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:48a13fcf93c3703aa56411d93fbb8e4390ad687badcb1d81d52627f62e6139b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_owner_signal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a3f029fe8789d411e75e5bf1f555751646de480",
+            "content": "sha256:3090d726f14f3c58d4fb6de184ddaa79875dec4fcedd608617d056fce443855f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_find_coalescible"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ask-identity normalization shared with the evaluation module.\n\nAnchor: \"def _seat_liveness_ask_identity(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e595e89dacda7d4cffcb03ae09034a21e501bd3",
+            "content": "sha256:38f17146221b3ed1742d76d3ac054653d2136bf384bd89905c2215fbc48c7ee4",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/serving/_agent_notifier_evaluation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

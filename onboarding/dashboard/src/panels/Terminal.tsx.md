@@ -1,15 +1,5 @@
 # dashboard/src/panels/Terminal.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/Terminal.tsx`              |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-24T13:17:17Z |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`       |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [panels overview](overview.md)
@@ -145,27 +135,32 @@ call after `fit.fit()`).
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries
 are configured. This one-to-one card therefore relies on its direct agents-remember source/tests and
 the reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for this file. | — | — |
+No relevant domain documentation was found for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). | `onSocketState` | dashboard/src/data/terminal.ts:55-55 |
-| The canonical keep-alive owner lazy-loads and mounts this per inspectable session. | `PtySurface` | dashboard/src/panels/session-cockpit/PtySurface.tsx:136-336 |
-| The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. | `PTY_RENDERER` | dashboard/src/panels/session-cockpit/PtySurface.tsx:39-39 |
-| The wrapper handles wheel input with three-way precedence: app mouse tracking passes through, normal-buffer viewport scrolls, and mouse-less alternate-buffer wheel input maps to PageUp/PageDown. | `handleWheel` | dashboard/src/panels/terminalSession.ts:272-301 |
-| The L6 additive surface includes the always-named group landmark (`role="group"` + `aria-label` fallback). | `tabIndex` | dashboard/src/panels/Terminal.tsx:183-183 |
-| The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts the always-named landmark plus scrollback. | "the group landmark is ALWAYS named", `attachCustomKeyEventHandler`, `onBell` | dashboard/src/panels/Terminal.test.tsx:74-76; dashboard/src/panels/Terminal.test.tsx:95-97; dashboard/src/panels/Terminal.test.tsx:132-143 |
-| The renderer measurement behind the DOM default (master OQ-B). | `PtyRenderBench` | dashboard/src/dev/PtyRenderBench.tsx:83-164 |
+- The WebSocket client this adapts a `Terminal` onto (incl. the L6 `onSocketState` option). [1]
+- The canonical keep-alive owner lazy-loads and mounts this per inspectable session. [2]
+- The cockpit surface that mounts this per seat: archetypes, keep-alive layers, hooks/filter wiring, accessible names. [3]
+- The wrapper handles wheel input with three-way precedence: app mouse tracking passes through, normal-buffer viewport scrolls, and mouse-less alternate-buffer wheel input maps to PageUp/PageDown. [4]
+- The L6 additive surface includes the always-named group landmark (`role="group"` + `aria-label` fallback). [5]
+- The focused component test mocks xterm (extended for options/parser/onBell/onTitleChange/attachCustomKeyEventHandler) and asserts the always-named landmark plus scrollback. [6]
+- The renderer measurement behind the DOM default (master OQ-B). [7]
+
+### Cross-Repo References
+
+This card maps a repository-local agents-remember source. Import and task-boundary review found no
+cross-repository implementation source that governs its behavior.
+
+No applicable cross-repository source was found.
 
 ## FEUI-L8 Reviewed Candidate Delta
 
@@ -173,15 +168,6 @@ Defers only xterm object disposal by one task after detaching application listen
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
-
-## Cross-Repo References
-
-This card maps a repository-local agents-remember source. Import and task-boundary review found no
-cross-repository implementation source that governs its behavior.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
 
 ## Current L5I Maintenance
 
@@ -191,73 +177,3 @@ next Ctrl+C/Cmd+C can reach the PTY. `plainTextSelection` promotes an ordinary d
 selection path only for terminals whose application lacks useful mouse gestures. Refit is keyed to
 the last fitted visible box, corrects only genuinely overflowing rows, and does not churn scroll or
 PTY winsize on a keep-alive re-show; disposal is synchronous after all listeners are detached.
-
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the headless-focus delegation fix and the terminalSession extraction. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the seven `n/a`-anchor
-  table citations and the two superseded `(L…​)` prose citations with exact frozen-source anchors
-  and fixer-generated ranges (`data/terminal.ts:55`, `PtySurface.tsx:39,136-336`,
-  `Terminal.tsx:316-338,451`, `Terminal.test.tsx:74-76;95-97;132-143`,
-  `dev/PtyRenderBench.tsx:83-164`); the exact non-fixing check returns zero findings.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 2 stale self-citations. `renderer`
-  cited L190-L212, which is now the serving-boot reattach effect and the xterm constructor; the
-  prop default is L121, its typed doc L134-L136, and the lazy `@xterm/addon-webgl` escalation with
-  its load-failure / constructor-throw / `onContextLoss` demotion is L274-L296. `keyEventFilter`
-  cited L173-L177, now unrelated refs (`termRef`, `screenReaderModeRef`); the prop contract is
-  L141-L143 and the `attachCustomKeyEventHandler` veto that consults `keyEventFilterRef` is
-  L218-L226.
-
-- 2026-07-24T13:17:17Z — Curator: corrected xterm copy/interrupt, selection, refit, and cleanup
-  invariants; verification fields remain pre-commit.
-
-- 2026-07-21T05:30+02:00 — 260718-CHATS-L5P curator: recorded the V31 well-token migration — the host
-  `background` `#070b0f` literal → the `well` token (shared with the FB7.1 conversation stage/composer).
-  No behavior change; the xterm THEME keeps its literal colours. Verification pinned to the leaf base
-  (`352d5cd`) until closeout stamps the candidate commit.
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented xterm-preserving, once-per-serving-boot socket
-  reattach and stale-ref-safe teardown; verification metadata remains pinned pending closeout.
-
-- 2026-07-18T07:22+02:00 — Curated the final same-reviewer-PASS FEUI-L8 behavior above using direct
-  source/test/task evidence; no Domain Documentation source is configured.
-
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (PTY stage surface): additive cockpit-pane surface —
-  `renderer` prop (DOM default by OQ-B measurement; lazy webgl escalation demoting to DOM on
-  failure/context loss), opt-in `screenReaderMode` applied LIVE via options mutation (never a
-  reconnect), the always-named `role="group"` host (`ariaLabel` with the
-  `terminal session <sessionId>` fallback — review finding F6) + focus delegation into xterm,
-  `keyEventFilter` (reserved-chord veto seam), observe-only `TerminalStreamHooks`
-  (onBell/onTitleChange/OSC 133/OSC 9, `return false`), and freshness/floor reporting
-  (`onOutput`, `onSocketState`, `onResizeCols` after every fit). The refit/keep-alive block is
-  unchanged; all new props default to prior behavior, Chats/RailChat call sites byte-compatible
-  (plus `ariaLabel`). Cockpit panes mount this through `PtySurface`. Verification metadata pinned
-  to the leaf base until closeout stamps the L6 code commit.
-- 2026-07-09T14:05+02:00 — HFX2-L11 (landed chat archive): added the `readOnly` prop so a landed/
-  archived seat's terminal stays fully inspectable (output rendered, scrollback intact) but cannot
-  send input — `onData` is not subscribed and the wheel-driven PageUp/PageDown send is gated when
-  `readOnly` is true. `Chats.tsx` passes `readOnly` for non-`running` sessions. Verification metadata
-  pinned until closeout stamps the 260707-HFX2-L11 commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel-precedence fix: the wheel handler now yields to xterm's
-  native mouse-report path when `term.modes.mouseTrackingMode !== "none"` instead of synthesizing
-  PageUp/PageDown for every alternate-buffer pane. Rationale: tmux hosts every dashboard session and
-  always presents the alternate screen to the client, so synthesized keys only scrolled TUIs that bind
-  PageUp/PageDown (Claude Code yes, Codex no); with the backend's tmux `mouse on`, mouse reports scroll
-  tmux pane history (Codex) or pass through to the TUI (Claude Code). Verification metadata pinned until
-  closeout stamps the follow-up commit.
-- 2026-07-02T15:03+02:00 — Reopened L6 served-page follow-up: live 8770 inspection showed agent
-  sessions in xterm's alternate buffer (`scrollHeight == clientHeight`), so wheel input now keeps normal
-  viewport scrolling for real scrollback but maps alternate-buffer wheel steps to PageUp/PageDown instead
-  of xterm's default Up/Down arrow history mapping. Verification metadata pinned until closeout stamps
-  the follow-up commit.
-- 2026-07-02T14:28+02:00 — Reopened L6 wheel follow-up: host wheel events now scroll the xterm
-  viewport via `term.scrollLines(...)`, swallow partial pixel deltas, and stop before xterm can convert
-  them into PTY up/down input. The `scrollback: 5000` setting remains in place. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-- 2026-07-02T13:07+02:00 — Reopened L6 follow-up: restored chat/terminal scrollback by enabling the
-  internal xterm viewport to scroll and setting `scrollback: 5000` on the xterm instance. Added focused
-  component coverage in `Terminal.test.tsx`. Verification metadata pinned until closeout stamps the
-  follow-up commit.
-- 2026-06-19T14:05 — Task 6 slice 6e-4: hardened resize — the fit logic became a `refit()` that **skips while the host is hidden** (`display:none`/0×0, so a kept-mounted-but-hidden session never ships a degenerate winsize) and runs on mount + `requestAnimationFrame` + `document.fonts.ready` (the mono font settles after the effect), on top of the `ResizeObserver` that re-fits when a hidden layer is shown. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-19T05:48 — Task 6 slice 6e-3: added an optional `onConnection(conn|null)` prop that hands the live `TerminalConnection` up to `Chats` (the context composer's stdin-injection seam); a ref keeps a changing callback from re-running the connect effect. Verification metadata pinned until closeout stamps the 6e-3 code commit.
-- 2026-06-18T16:50 — Created for task 6 slice 6e-1: the imperative xterm.js terminal wrapper (FitAddon + ResizeObserver → `sendResize`; `onData` → `sendInput`; exit notice; effects-gated cursor blink). Code-split behind `Chats`. Verification metadata pinned to the task base until closeout stamps the 6e-1 code commit.

@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Embedder settings and container endpoint are derived in GrepAI core.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:bd25bc3a0c9be13a5316de2ba328665f8fb2109a321abdc719e828de65c8c2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_backend_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`grepai_install_workspace` is the GrepAI install/start entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a0f8c16695c0b7a31b0d963603d1e843814ae72",
+            "content": "sha256:8c44df2d7e1fec9e9a926ae8e8afadfa87a73fc9877b5a8749e4dff165f9159e",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_install_workspace"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/actions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`grepai_backend_start` is the GrepAI backend startup entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:7ac492e6b9e8a62a4c06f5f0edb1cad6a270b83afdeb7489d3f55c69c0a70a84",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The embedder lifecycle is the compose-owned startup path that consumes the migrated settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:bb6a2e2ddadbf974bf58818459a417a687e6a64d02a5f0752e7f34a2aa374766",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_backend_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`isolated.py` populates `seedFromContainer` in worktree embedder settings.\n\nAnchor: `seedFromContainer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fdf03ecb43f804b88f71c9a1a116d4cc4e68784d",
+            "content": "sha256:4aac2996ba91c9f9c2e519b948f285f5c55bef70fc03b45ef8df5a986fcc725c",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/isolated.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

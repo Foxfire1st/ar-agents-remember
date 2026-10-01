@@ -1,0 +1,148 @@
+{
+  "path": "scripts/sync-skills.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+        "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_target"
+        }
+      },
+      "id": "RLZ-VZ6CNGRW",
+      "invariant": "INV-GRVXS8R9",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The sync script is the propagation owner and the install tool is where the copy reaches a harness skill root, which is the pair that makes one source authoritative.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets.\n\nAnchor: `CANONICAL_SKILLS`, `TARGETS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:17c47dd48cd733f916a959f009cc6d8a4b8a626a9310d1a59abd479874ef2def",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:f35d9bc1c4491781420f8987e479b45f3169879ccd845e11bc9cadd2fbeaf700",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:8fbd9ebfe0acdf40f935fe337d0cddb9b12b37bdefd46155ad53f319f950f16f",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly.\n\nAnchor: `# Agents Remember Source Checkout Instructions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
+            "content": "sha256:8ae65118d9ec5b5998e11492c0f087b3b4f6e41f2e152ea839fd339ed78c435a",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

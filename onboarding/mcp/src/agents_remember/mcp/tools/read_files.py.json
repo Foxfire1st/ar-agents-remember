@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/read_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The application entry point that does the actual resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
+            "content": "sha256:72a13e66e6301e5866b57fd320680e70a97a1898bb0d4c4c4e89dbe456916dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_tool"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
+            "content": "sha256:4382c85b06a94cdc6899656aff9e5ee1f450210eaca76052557a386e569db5d3",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared choke point that validates the response and stamps tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
+            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict response model `read_ar_files` validates against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "083055f2c7d95a055184de187832ec0c0cb7a515",
+            "content": "sha256:49926087a6de95d2287e755c56e9716c8245b74b3627de8bb2fb5906f87e8a04",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
+            },
+            "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

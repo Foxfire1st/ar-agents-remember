@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/eve_runtime_client.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/eve_runtime_client.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -97,63 +87,27 @@ transport error becomes a `HarnessAdapterDisconnectedError` with `may_have_sent=
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; the HTTP session routes and status codes are eve's published contract, mirrored from the wire module. | — | — |
+No configured `Domain Documentation` source; the HTTP session routes and status codes are eve's published contract, mirrored from the wire module.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Routes, status codes, headers and the queue policy constant are declared once in the wire module and imported here. | `EVE_HEALTH_PATH`; `TURN_POLICY_QUEUE`; `parse_session_acceptance`; `parse_stream_version` | mcp/src/agents_remember/serving/eve_protocol.py:20-60; mcp/src/agents_remember/serving/eve_protocol.py:147-230 |
-| Both request bodies are built here from that one literal, which is what pins the queued policy on the wire rather than only in a comment. | `create_session_body`; `follow_up_body`; `cancel_turn_body` | mcp/src/agents_remember/serving/eve_runtime_client.py:62-89 |
-| Frame decoding from one transport read is the cursor decoder's job, not this module's. | `EveNdjsonDecoder` | mcp/src/agents_remember/serving/eve_stream_cursor.py:18-69 |
-| Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed. | `resolve_node_executable`; `EveRuntimeLaunch.node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:101-124; mcp/src/agents_remember/serving/eve_runtime_launch.py:406-453; mcp/src/agents_remember/serving/eve_runtime_launch.py:605-635 |
-| The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion. | `TracingEveRuntime` | mcp/tests/live_eve_native_fixture.py:89-103; mcp/tests/live_eve_native_fixture.py:584-670; mcp/tests/live_eve_native_fixture.py:123-169 |
-| The deterministic conformance suites implement this seam and leave every other layer production. | `FakeEveRuntime` | mcp/tests/eve_adapter_test_support.py:74-278 |
-| The two session controls this client gained, and why they matter to the trusted-instruction claim: clear does not rerun resolvers, compaction may summarize user-role history. | `session_control_body`; `compact_session`; `clear_session` | mcp/src/agents_remember/serving/eve_runtime_client.py:91-101; mcp/src/agents_remember/serving/eve_runtime_client.py:242-268 |
-| The trusted instructions are applied in the system role so they survive turn boundaries, compaction and clear. | `ROLE_INSTRUCTION_CHANNEL`; `TASK_CONTEXT_CHANNEL` | mcp/src/agents_remember/models/eve_capsule_carrier.py:46-58 |
-| The cases that exercise the controls through this client's own seam. | `EveWireRequestTests` | mcp/tests/test_eve_protocol.py:218-526 |
+- Routes, status codes, headers and the queue policy constant are declared once in the wire module and imported here. [1]
+- Both request bodies are built here from that one literal, which is what pins the queued policy on the wire rather than only in a comment. [2]
+- Frame decoding from one transport read is the cursor decoder's job, not this module's. [3]
+- Node resolution is owned by the launch module so the client never guesses an interpreter, and the caller's choice arrives on the launch it is handed. [4]
+- The native fixture subclasses this client to trace traffic, which is why the route surface must stay observable and every sent body is recorded for assertion. [5]
+- The deterministic conformance suites implement this seam and leave every other layer production. [6]
+- The two session controls this client gained, and why they matter to the trusted-instruction claim: clear does not rerun resolvers, compaction may summarize user-role history. [7]
+- The trusted instructions are applied in the system role so they survive turn boundaries, compaction and clear. [8]
+- The cases that exercise the controls through this client's own seam. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract. | `## Pinned dependency` | eve_runtime/package.json:14-20; eve_runtime/README.md:1-22 |
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: **the client gained eve's two session controls.**
-  `compact_session` and `clear_session` were added to the transport seam and its production
-  implementation, both posting through a new `session_control_body()` that sends **no body at all** —
-  the routes are ID-addressed and accept no continuation token or options, so a body would be a field
-  the route does not declare. They are recorded here because they carry the trusted-instruction
-  survival claim's boundary: compaction may summarize user-role history while system-role instructions
-  stay outside it, and clear removes the model-message history **without** rerunning instruction
-  definitions or resolvers — which is precisely why the mandatory capsule is applied at the route gate
-  in the system role rather than through a per-turn resolver a clear could drop. A new invariant records
-  that boundary. Verification metadata moves to the leaf's synced base `23cc7a72`; the candidate is
-  deliberately uncommitted, so the governed closeout stamps the real code commit and no hash or
-  fingerprint was invented here.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): the request bodies moved into named
-  builders and the **follow-up now spells the queued policy too**. `create_session_body` and
-  `follow_up_body` both return `{"message": …, "turnPolicy": TURN_POLICY_QUEUE}` from the wire module's
-  one literal, `cancel_turn_body` names the exact observed turn, and the production client is now
-  driven through a mock transport so the sent body is asserted rather than inferred. Previously the
-  follow-up carried no policy, so a seeded steer inheritance passed both suites. Citation tables
-  rewritten into the `Finding | Anchor | Source` shape; verification metadata moves to the leaf's
-  current base `e9300687`, with the governed closeout stamping the real code commit.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: created this card for a file added by the native
-  eve session-adapter change set. Records the two ownership rules (subscriber close is not session
-  end; `stop` touches only owned resources), the deliberate bounded line-based read with its measured
-  cause, and the `may_have_sent` ambiguity carried on write failures. Verification metadata is pinned
-  to the leaf's base commit `67b21aeb` because the candidate is deliberately uncommitted — the
-  governed closeout stamps the real code commit, and no hash or fingerprint was invented here.
+- The session routes, the `x-eve-stream-*` headers and the `turnPolicy` vocabulary are the pinned published package's contract. [10]

@@ -1,0 +1,390 @@
+{
+  "path": "mcp/src/agents_remember/providers/current_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current state payloads include version, kind, instance, aggregate state, `ok` (`state == \"ready\"`), check time, settings file, enabled providers, process namespace, and per-provider state.\n\nAnchor: \"def build_current_provider_state(\"; \"def aggregate_state(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:843242cbd207c63638d68a7641890d7a2f1e112c1d5a35af43445f31a88b17f3",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:3860755ac7a36e0078df737100a0537aa95ea1ad090eea4dcbe63ea7ca5b7710",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Provider status writes this current-state payload and returns both the file path and current-state object to MCP callers through `provider_status_packet` and `refresh_current_provider_state`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:307bccc4a446f7721aea7542ee90face4d445321c2de4b5129bae4146f382b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_status_packet"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "514d04f97f4a75aec95d03c476627d2325a95f01",
+            "content": "sha256:b8154df4a41e5781707efbb815161642427736d08f9f37da22dbdd0586e52971",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_current_provider_state"
+            },
+            "path": "mcp/src/agents_remember/providers/status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Unit tests assert the file path, current truth shape, disabled-provider behavior, workflow-local instance paths, and provider-status integration in `ProviderCurrentStateTests`.\n\nAnchor: \"class ProviderCurrentStateTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a07a58ef1520668aff31c0e701f11a398ec34b",
+            "content": "sha256:eacda27b45e0143b16cbdc6fde4b4d139a235a29d32a2d2503a77cbc879adbd0",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/tests/test_provider_current_state.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current state files are written under `logs/providers/status/<scope>/<instance>/current.json` by `current_state_path`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:f415ae214ac810e36b1c38961d53f663c346f1d395a01441935aec7805ee1276",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_state_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:8a2c49e42bb909da44d8c23669be73e7a6102f59cc37749aa00b1ab134dc2e16",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Instance identity uses the shared configured provider scope/id or a deterministic mixed digest through `current_state_instance`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:1167127ddc34f7a14204914f8958289dc81fe032ecafb3cc44e3378e6ca0dfb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_state_instance"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:6fef8edd5f6d6f45556d1faf8c4220e42bb737226c71fe37e49b73eb15a86f08",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "GrepAI and CGC status mappers keep provider-specific resources, watcher state, and indexing state separate through `grepai_current_state` and `cgc_current_state`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:71fdb47d6ac053455744ea07c9d1a47ce58132988b87f7125037abc5aadd54a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_current_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:281346dee2c479c1dc59aa255196a541d1f10da1bc7fa4e8c541b3ab7fc82bfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_current_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:604c198303e8fdf34036039c8d193d71da79b6a93e91e4949bd745c9c2d44764",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:68ee6712b23cca58ecb19851b9a853be8727fc52cb1ebc2cd4a73ef03b40e3e9",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "GrepAI target repos are derived from configured repository memory roots and persisted as `targetRepos` in current state.\n\nAnchor: `targetRepos`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:264fd141ba4f9c4dddbdf90503a13897dd5f83db64c4ef3b0b6d1bdb9f3f1d1a",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "GrepAI lifecycle settings use the same repository memory-root mapping for roots (`projectId == repoId`) through `_grepai_roots`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:f4289a850488be23cace28df79f391a0f0641ea47032427c9552b2bbdedd4e3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_grepai_roots"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:f259af7ea428b0a83c099b40eb0561eb3be943b6a86345c4c1b85f034ae1edac",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "GrepAI readiness is gated on workspace presence: `grepai_workspace_present` reads the watcher `workspaceStatus` stdout, `grepai_current_state` downgrades to `degraded`, and `grepai_indexing_state` returns `noWorkspace` when absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:95f01f14134bae0523ac54fbf901c75971ac63e48861172c44eb467266fcb320",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_workspace_present"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:71fdb47d6ac053455744ea07c9d1a47ce58132988b87f7125037abc5aadd54a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_current_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:0646a63a5de6646f311a6b512da8b76de5f9932179098647f0364557d10c7dd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_indexing_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:604c198303e8fdf34036039c8d193d71da79b6a93e91e4949bd745c9c2d44764",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:760439fecda1ba1a24d2103c189c0f3bec719074b8805a36ddd087b96e91ccad",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:5319deca76e5f36234e6848f98889905b1b6fb79bc1416e114ae0e90fb76e6b6",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Container normalization keeps container state, running flag, started-at time, uptime seconds, and health in the current-state payload through `normalize_container_state` and `resource_state`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:564ee9eca69736bc013fe0be8a068ae526dadd6e7f7fa63b2c1ff6ee76e1ce09",
+            "locator": {
+              "kind": "symbol",
+              "name": "normalize_container_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:8a0b4d59749708f1eaea69b5e7ae590ac5102fc11db4a6f2cec7fcbd7f312323",
+            "locator": {
+              "kind": "symbol",
+              "name": "resource_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:b6889d2d2b1ba7f03b3c2befcf721c8167efa435f9daad33dd889016d152fb7c",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:734088c58fdb1ada8f786d2789d5e44170aab04ee2a31646e0a9f2ba103859f1",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Aggregate state ignores disabled providers and reports ready, degraded, failed, unknown, disabled, or noProviders from current provider facts through `aggregate_state`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:4539564d08ceb51c3dd9a291ab1d2c3f5b1afcd29a12845eefea0b8f75022359",
+            "locator": {
+              "kind": "symbol",
+              "name": "aggregate_state"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:cc418dfe657f739d3926eae859da471bd06f763ee97e22989eab9591b98f735a",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

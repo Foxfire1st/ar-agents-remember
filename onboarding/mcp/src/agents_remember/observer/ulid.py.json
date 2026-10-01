@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/observer/ulid.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Events carry a ULID `id`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
+            "content": "sha256:e629bf67abcca60e0aa51fd18f0e190412ba329a14ce8844cf989cd4d2a0ea5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "id"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

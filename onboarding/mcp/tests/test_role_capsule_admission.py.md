@@ -1,15 +1,5 @@
 # mcp/tests/test_role_capsule_admission.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/tests/test_role_capsule_admission.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-16T09:38+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [tests overview](overview.md)
@@ -87,50 +77,28 @@ the compiler module, owns every case that reads real bytes.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external or domain documentation is configured for this memory root
 (`system/sources.md` has no entries), so no external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking live sources. | n/a | n/a |
+No relevant documentation found after checking live sources.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The frozen vocabulary and its completeness guard the vocabulary group pins. | `CAPSULE_ROLES`; `CAPSULE_OPERATIONS`; `CAPSULE_STATUSES` | mcp/src/agents_remember/models/role_capsules/vocabulary.py:82-97; mcp/src/agents_remember/models/role_capsules/vocabulary.py:98-119; mcp/src/agents_remember/models/role_capsules/statuses.py:27-43 |
-| The manifest parser the shipped-manifest group exercises against the real file. | `parse_composition_manifest`; `_require_one_path_serves_one_identity`; `_require_operation_applicability_agrees`; `_require_role_skills_are_declared` | mcp/src/agents_remember/models/role_capsules/manifest.py:168-216; mcp/src/agents_remember/models/role_capsules/manifest.py:513-553; mcp/src/agents_remember/models/role_capsules/manifest.py:554-601; mcp/src/agents_remember/models/role_capsules/manifest.py:479-508 |
-| The admission boundary the admission group refuses through. | `admit_capsule_sources`; `_require_confined_relative` | mcp/src/agents_remember/application/role_capsules/sources.py:78-94; mcp/src/agents_remember/application/role_capsules/sources.py:169-196 |
-| The both-directions plan validation, including the skill-root gate. | `admit_source_set`; `_require_declared_skills_present` | mcp/src/agents_remember/models/role_capsules/source_set.py:91-108; mcp/src/agents_remember/models/role_capsules/source_set.py:195-228 |
-| **The carried skill channel** these cases pin, and the helper that names a skill identity. | `skills_declared_identity`; "The canonical identity of a skill reference: origin plus skill name."; `CapsuleSkillReference` | mcp/src/agents_remember/models/role_capsules/sources.py:175-185; mcp/src/agents_remember/models/role_capsules/types.py:414-431 |
-| The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). | `compile_admitted_capsule`; `CapsuleCompilationOutcome`; `CapsuleSourceError` | mcp/src/agents_remember/application/role_capsules/compilation.py:89-122; mcp/src/agents_remember/application/role_capsules/compilation.py:46-88; mcp/src/agents_remember/models/role_capsules/sources.py:74-103 |
-| The real corpus this module is the only role-capsule test to read. | "ar-role-capsule-composition/v1" | skills/l-01-agent-lifecycles/composition-manifest.json:1-4 |
-| The sibling module that owns the compiler's own property cases. | `test_identical_input_compiles_to_identical_ordered_content_and_digest` | mcp/tests/test_role_capsule_compiler.py:381-392 |
+- The frozen vocabulary and its completeness guard the vocabulary group pins. [1]
+- The manifest parser the shipped-manifest group exercises against the real file. [2]
+- The admission boundary the admission group refuses through. [3]
+- The both-directions plan validation, including the skill-root gate. [4]
+- **The carried skill channel** these cases pin, and the helper that names a skill identity. [5]
+- The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). [6]
+- The real corpus this module is the only role-capsule test to read. [7]
+- The sibling module that owns the compiler's own property cases. [8]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling-repository contract is exercised by these cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T15:52+02:00 — 260915-CAPS-L11 curator (**final-verification leaf**): recorded the candidate's **D25 case** and corrected the card's stale vocabulary and ranges. The `root-local admission` group now carries the **emptied-source seed** inside `test_an_unreadable_source_returns_a_refusal_rather_than_raising` (338-390): it copies the shipped corpus into a disposable tree, empties a selected source, drives the **real** application boundary, and asserts the outcome is a refusal carrying `status == "source-empty"` rather than an escaping `ValueError` — which is what makes the seed failable. **Corrected a stale vocabulary the card had carried since L2:** the frozen registry is **ten roles / nine operations**, not nine/eight, so the group's cases, the purpose line, the conventions line and the reference row were all corrected to the registry's own current names. Ranges advanced by the candidate's +36 lines: helper inventory 100-114→**104-117**, 115-126→**118-129**, 127-145→**130-147**, 359-362→**395-398**, 363-386→**399-422**, 387-416→**423-452**, 417-430→**453-466**, 816-819→**852-855**, 820-829→**856-865**, 830-906→**866-942**; the vocabulary rows → **82-97** / **98-119** / **27-43**; `test_a_source_root_that_is_not_a_path_is_refused` 1146-1156→**1149-1159**; `skills_declared_identity` 126-138→**135-147**; the compiler sibling case 377-388→**381-392**. The composition-manifest anchor now reads as a **double-quoted literal** (the form the checker accepts) instead of the nested-backtick JSON fragment that named no anchor. The L14 curator's D7 table-shape repair above is untouched, as is every earlier entry and every verification stamp.
-
-- 2026-09-17T13:05+02:00 — 260915-CAPS-L14 curator: **D7 wrong-form evidence table repaired (memory-layer shape defect).** This card's evidence tables used the legacy header `| Finding | Citations | Source Path |` with the delimiter `| --- | --- | --- |`. The memory-quality checker requires `| Finding | Anchor | Source |` with the identifier alone in **Anchor** and a plain `path:start-end` in **Source** — which is what every row in these tables already carried, so the repair is the header and delimiter only: **no row content, anchor, range, prose or verification stamp was changed.** Each table's width was widened in all three parts together (header, delimiter, rows) as the checker's own guidance requires.
-
-- 2026-09-16T09:38+02:00 — 260915-CAPS-L2 curator: corrected against the A3 candidate, which grew this module **429 → 1258 lines** and **30 → 43 test functions (54 collected)**. The old four-group summary no longer described the file: added the three groups the repairs introduced — **routing agreement** (each role's own file must declare the blocks and operations it inherits, and the compiled routing must agree with it across all declared operations), the **carried skill channel** (one reference per declaration, empty tuple for a role declaring none, revision tracking admitted bytes, missing/unknown skill refused), and the **admitted-set and lookup guards** (no-admitted-bytes, duplicate path, manifest dropped mid-compile, blank identity, single narrowing gate, `composing_roots`). Recorded the invariant that no skill case carries a permission assertion, because the channel is carried rather than narrowed. Refreshed every range, including the helper inventory, which now names `declared_inherits` and the `_manifest_with` builder. Verification metadata stays at the leaf base commit — the closeout stamps the real code commit.
-
-- 2026-09-16T08:56+02:00 — 260915-CAPS-L2 curator: created this card for the 30 admission,
-  manifest-parser and vocabulary cases added by the deterministic capsule compiler leaf
-  (`CAPS-R02@v1`). Records the four boundary groups, the deliberate literal/tuple duplication and
-  its silent-empty-registry hazard, the public-roster guard on declared tool ids, the
-  `CAPSULE_STATUSES` completeness guard, and the rule that only this module reads the real corpus.
-  Verification metadata is left at the leaf base commit because the source is uncommitted — the
-  governed closeout stamps the real code commit.
+No meaningful cross-repo references found.

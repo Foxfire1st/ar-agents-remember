@@ -1,0 +1,33 @@
+{
+  "path": "examples/mcp/coding-guidelines.example.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example.\n\nAnchor: `# Code Shape and Refactor Discipline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c855617489e56a0ce2d5a2fc98b759482726e7b",
+            "content": "sha256:64b6e661a14f8edac763916c031e4ac69b1bcbb5db3fd76056f7db8a6faf0608",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The example sits in the `examples/mcp` route governed by the route overview, alongside `settings.example.json`.\n\nAnchor: `# examples/mcp Overview`",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/examples/mcp/overview.md:1-90"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal_catalog.py
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/serving/terminal_catalog.py`        |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-09-10T09:30+02:00 |
-| lastVerifiedCommitHash | `a5c29cb63dcb6f0d1ca32d0cf7822457df43cfa4`|
-| lastVerifiedCommitDate | 2026-09-11T18:44:06+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -88,23 +78,23 @@ task/structural resolver rather than this persistence class.
 
 Removal of migration code requires a separately governed durability-epoch decision.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The catalog queries current occupancy by task document and role through the shared selector. | `active_for_task` | mcp/src/agents_remember/serving/terminal_catalog.py:97-106 |
-| One exact generation idempotently binds one durable pinned-brief receipt. | `DispatchBriefReceiptStore` | mcp/src/agents_remember/serving/terminal_catalog.py:434-460 |
-| Legacy rows migrate before strict model parsing. | "rows = migrate_terminal_catalog_v1(self.path.parent.parent.parent, rows)" | mcp/src/agents_remember/serving/terminal_catalog.py:411-411 |
-| The current catalog model owns strict row serialization. | `TerminalCatalogEntry` | mcp/src/agents_remember/models/terminal_catalog.py:68-571 |
-| The explicit contention read decodes the last atomically replaced file and never joins an active batch. | `list_committed` | mcp/src/agents_remember/serving/terminal_catalog.py:86-92 |
-| An exactly-equal single matching row is not rewritten; duplicate ids still take the replace-and-append path. | `upsert` | mcp/src/agents_remember/serving/terminal_catalog.py:108-116 |
-| One dirty-gated atomic replacement per batch, including dirty-partial flush on a body exception. | `batch`; `_write_disk` | mcp/src/agents_remember/serving/terminal_catalog.py:281-313; mcp/src/agents_remember/serving/terminal_catalog.py:422-431 |
+- The catalog queries current occupancy by task document and role through the shared selector. [1]
+- One exact generation idempotently binds one durable pinned-brief receipt. [2]
+- Legacy rows migrate before strict model parsing. [3]
+- The current catalog model owns strict row serialization. [4]
+- The explicit contention read decodes the last atomically replaced file and never joins an active batch. [5]
+- An exactly-equal single matching row is not rewritten; duplicate ids still take the replace-and-append path. [6]
+- One dirty-gated atomic replacement per batch, including dirty-partial flush on a body exception. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
@@ -135,38 +125,3 @@ Three catalog-local facts are now explicit, and ordinary read semantics are deli
 Verified against the uncommitted LOCR-L22 candidate (branch `ar/260831-locr-l22`, HEAD
 `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`); verification metadata stays pinned until closeout
 stamps the leaf code commit.
-
-## Update History
-
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: recorded the committed-snapshot contention read,
-  the exact-equal single-row `upsert` no-op guard, and the dirty-gated zero-or-one batch replacement
-  contract; repaired the moved `active_for_task`, `DispatchBriefReceiptStore`, migration, and
-  `TerminalCatalogEntry` citations. Verification metadata remains pinned until closeout.
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: bounded execution-evidence
-  compaction to worker/curator and leaf-altitude reviewer generations rather than treating every
-  polymorphic reviewer as leaf execution. Verification remains closeout-owned.
-
-- 2026-08-26T16:03+02:00 — Post-failure repair: extracted dispatch-receipt mutation into
-  `DispatchBriefReceiptStore`, preserving the same atomic catalog storage boundary while returning
-  `TerminalCatalog` to the 15-operation surface cap. Verification remains closeout-owned.
-
-
-- 2026-08-25T23:19+02:00 — Contract-wide citation curation: re-read the current anchored claim(s), retained the supported wording, and cleared verification metadata for closeout-owned restamping.
-
-- 2026-08-25T22:27+02:00 — 260821-ARSPAWN-L2 final curation: clarified one-receipt idempotency
-  and the prohibition on carrying address-bound proof across a document or role move. Verification
-  remains closeout-owned.
-
-- 2026-08-25T19:51+02:00 — 260821-ARSPAWN-L2: current-seat lookup now recognizes the staged heir
-  after incumbent exit, and the catalog owns idempotent pinned-brief receipt binding. Verification
-  remains closeout-owned.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded task-registration gating for terminated leaf-seat reclamation. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-11T14:29+02:00 — Re-read the current `TerminalCatalogEntry` model used by this store
-  and widened its citation to include the dataclass declaration; verification metadata remains
-  unchanged for governed closeout.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: rewrote after the row vocabulary moved to
-  `models/terminal_catalog.py`; preserved the batch/compact/atomic-write store knowledge from the
-  pre-split card. Verification metadata pinned until closeout stamps the L9 code commit.

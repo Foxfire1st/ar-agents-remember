@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/benchmarks/runner_modules/analysis.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/benchmarks/runner_modules/analysis.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-07T00:25+02:00 |
-| lastVerifiedCommitHash | `60e429d17e9fcbca3ab1c02563afcaa5761b8c5a`
-| lastVerifiedCommitDate | 2026-08-29T20:33:10+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [runner_modules overview](overview.md)
@@ -31,31 +21,17 @@ JSONL and run-output analysis helpers for benchmark results.
 - This module parses benchmark output only; it must not run Codex or mutate benchmark workspaces.
 - The set of usage token keys (`USAGE_TOKEN_KEYS`) lives in `constants.py` so event parsing stays data-driven.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public benchmark facade re-exports this module's public functions and classes for compatibility. | "from agents_remember.benchmarks.runner_modules.analysis import *" | mcp/src/agents_remember/benchmarks/runner.py:11-11 |
-| The route-local overview summarizes how this module fits into the benchmark runner split. | `# mcp/src/agents_remember/benchmarks/runner_modules Overview` | onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137 |
+- The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
+- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No configured sibling repository is required for this module.
-
-## Update History
-
-- 2026-09-07T00:25+02:00 — Removed the obsolete deleted-test coverage claim; production behavior and original verification history remain unchanged.
-
-- 2026-09-06T22:16:30+00:00 — Preserved metric-range formatting semantics from retired test onboarding; verification pins unchanged.
-
-- 2026-08-04T18:25+02:00 — 260731-EFA-L6 S18-B17 curator: corrected the test-slice ranges — the
-  `WorktreeSupportTests` class extent had overshot into the next class (573-3049 → 573-3093) and
-  the benchmark-provider-ids test citation pointed past its method (3125-3125 → 3167-3226, inside
-  `BenchmarkRunnerPortabilityTests`). Claim wording unchanged.
-- 2026-08-03T02:55:58+02:00 — W3-B04 curator: curated 3 table citations (3 total), supplying exact anchors and paths; the scoped fixer generated all final extents.
-- 2026-05-31T12:30+02:00 — Rewrote Logic/Invariants for type-driven event parsing: per-turn `usage` summing via `USAGE_TOKEN_KEYS`, typed `command_execution`/`agent_message` items, fixed `TOKEN_KEYS`→`USAGE_TOKEN_KEYS` citation (1.0.0 review remediation).
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.

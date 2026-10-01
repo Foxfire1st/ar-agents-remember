@@ -1,15 +1,5 @@
 # mcp/tests/test_eve_capsule_runtime.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_eve_capsule_runtime.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T20:42+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp/tests overview](overview.md)
@@ -79,45 +69,27 @@ near-identical bodies, and adding a defect is one row.
 
 None known.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation pass
 was available for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured `Domain Documentation` source; Node's `node:module` `register` API is the external mechanism the loader hook uses and is standard-library behaviour rather than a product contract. | — | — |
+No configured `Domain Documentation` source; Node's `node:module` `register` API is the external mechanism the loader hook uses and is standard-library behaviour rather than a product contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shipped modules under test: the in-process carrier verifier and the git-workspace comparison. | `loadVerifiedCapsule`; `admitWritePath`; `verifyAdmittedWorkspace` | eve_runtime/agent/lib/capsule.ts:109-149; eve_runtime/agent/lib/capsule.ts:164-178; eve_runtime/agent/lib/git-workspace.ts:47-68 |
-| The git metadata reader the workspace comparison is built on, and the linked-worktree `.git`-file shape it must handle. | `readGitHead`; `gitDirectory` | eve_runtime/agent/lib/git-workspace.ts:23-45; eve_runtime/agent/lib/git-workspace.ts:70-95 |
-| The production Node resolver these cases use, so the interpreter under test is the one a launch would pick. | `resolve_node_executable` | mcp/src/agents_remember/serving/eve_runtime_launch.py:605-635 |
-| The Python half of the same seam, which asserts the format and the launch-time verification these cases complement. | `verify_capsule_binding`; `test_launch_verification_refuses_every_declared_defect` | mcp/src/agents_remember/serving/eve_runtime_launch.py:447-497; mcp/tests/test_eve_capsule_binding.py:364-395 |
-| The fixture world supplying the real repositories, worktrees and task documents. | `FixtureWorld`; `build_world` | mcp/tests/eve_capsule_test_support.py:396-455; mcp/tests/eve_capsule_test_support.py:457-549 |
-| The live native fixture, which is the only artifact that proves the binding end to end against a real eve process. | "capsule-binding" | mcp/tests/live_eve_native_fixture.py:1137-1137 |
+- The shipped modules under test: the in-process carrier verifier and the git-workspace comparison. [1]
+- The git metadata reader the workspace comparison is built on, and the linked-worktree `.git`-file shape it must handle. [2]
+- The production Node resolver these cases use, so the interpreter under test is the one a launch would pick. [3]
+- The Python half of the same seam, which asserts the format and the launch-time verification these cases complement. [4]
+- The fixture world supplying the real repositories, worktrees and task documents. [5]
+- The live native fixture, which is the only artifact that proves the binding end to end against a real eve process. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by these cases: the Node they execute is the pinned eve
 application's own, resolved from this repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-16T20:42+02:00 — 260915-CAPS-L7 curator: created this card for the real-runtime cases added
-  by this leaf's change set. Records why they exist at all — the runtime half is TypeScript inside the
-  pinned application and no Python case can observe whether it refuses a foreign binding, a tampered
-  carrier or a sibling worktree — and the mechanism that makes the observation direct rather than
-  indirect: a `node:module` loader hook that resolves the eve compiler's `.js`-for-`.ts` convention, so
-  the **shipped** modules execute with no build step, no copy and no transform. Records the defects-as-data
-  design (`CarrierDefect`/`LaunchDefect` tables carrying the expected refusal code, not merely that an
-  error occurred), and the boundary that the acceptance control must stay, because without it an
-  over-strict verifier would pass the entire refusal group. Verification metadata is pinned to the
-  leaf's synced base `23cc7a72` because the candidate is deliberately uncommitted — the governed
-  closeout stamps the real code commit, and no hash or fingerprint was invented here.
+No meaningful cross-repo references found.

@@ -1,0 +1,189 @@
+{
+  "path": "dashboard/src/data/pairChange.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pure state, step/result/readback transitions, route provenance, and copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:b3608b3e37700576eccb3fe77f892c60c304fc4462d6f245542611d87f09f319",
+            "locator": {
+              "kind": "symbol",
+              "name": "startPairChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:3a05288cf06ce1bea8bd87fc746f9b597db942146f3057213eda6099a1a5b84b",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairStepResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:169326367b71e865cdac382f4800b8e9b1c430e3509c71ba9093536874a4b8a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairRouteError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:8519eaf304a46d494d50598dad873782d6da6cb5d96f47b828b6ef0b2a8f5fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyPairReadback"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:d9af30df53c4a53df5cfd70c310e8b44e575657a3caac7f869d92d7360b5a1f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairProgressCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:db3f8dc2a9b7c14136efc55137a313ef3173a778ae8f7a86393f59a558b737e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairRouteTerminationCopy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:5f617cba2ecf0f6448f03bf1b8b960ade2362ea261cb1aaf0733e4275d7acfe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "pairPartialFailureCopy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exhaustive acceptance, guard, readback, route, and copy tables.\n\nAnchor: \"step 1 (model) — every acceptance\"; \"step 2 (effort) — every acceptance\"; \"readback resolution of an unknown-held step\"; \"route failures end the pair story\"; \"machine guards\"; \"copy (R5 — one source\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:b67de5e63051e7789febd08beee71a28af1433213e25d7571fe7adf77920fde7",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:81d4c5e4c8d5cf9932ee8488e719d9a6f1fb7f2789d5644a67228f48a6f1960f",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:d3816068c1af1ba40ba41403ea86e94c378a1928c5027550fd7dc744fcc51326",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:c4f8867fb0c7e45e2628376ff248b7bb73bc0a51314be77899078abc4f837cde",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:b0373db061669ac2337bfd5b1f090a646369a9a319dbf8b587aac16490a9effe",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "163d4e6d6ccdf0be10fc778fc8149f5b070b08a2",
+            "content": "sha256:075c79403b09b071426ebd114b9df3cfad89cf20ddb21b669037176d4b45f1bd",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "dashboard/src/data/pairChange.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "I/O driver consuming directives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0731f03bb3b8ce6ae00bdd5f094145958de994ac",
+            "content": "sha256:6cb35640a257e0c2518aee8bff3d15602e4386bdb0d93e89b95bed0e136a4faa",
+            "locator": {
+              "kind": "symbol",
+              "name": "commitPairDirective"
+            },
+            "path": "dashboard/src/data/setClient.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

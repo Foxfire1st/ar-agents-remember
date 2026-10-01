@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/ChangeBadges.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/ChangeBadges.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T22:21:58+02:00 |
-| lastVerifiedCommitHash | `3dc2ab0cf59cdc87ec478f6563d4ac6696871076`|
-| lastVerifiedCommitDate | 2026-09-30T23:11:04+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -82,37 +72,28 @@ tree comparison's member row, as a tag on the membership line.
 Review R3-2 (accepted as a note): at 390 px, as the tree section scrolls out, the sticky bar slides up under the sticky
 Back for one step; Back stays on top and clickable.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R33@v1` (adopting `ICR-R32@v1`) and the architect's rulings in `33_review-triage-order-and-change-kind-badges.json` live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement: every value is the server's fact or a count of them. | "Every value rendered here is the server's fact or a count of them" | dashboard/src/panels/review/ChangeBadges.tsx:1-3 |
-| The kind styles on existing tokens; an unknown is dashed. | `KIND_STYLE` | dashboard/src/panels/review/ChangeBadges.tsx:33-39 |
-| The sticky triage bar below the workspace's sticky way back. | `triageBar`; "top: 'var(--review-sticky-top, 0)'," | dashboard/src/panels/review/ChangeBadges.tsx:66-84 |
-| The marks and the labelled reason line. | `Marks`; `UnknownReason`; `firstOf` | dashboard/src/panels/review/ChangeBadges.tsx:97-133 |
-| A returned member without facts reads unknown and says why. | `UNDESCRIBED_CHANGE` | dashboard/src/panels/review/ChangeBadges.tsx:136-149 |
-| The row's change state: the marker's target from L34's own check, and the description in the ruled order. | `MemberChangeState`; `useMemberChange` | dashboard/src/panels/review/ChangeBadges.tsx:155-188 |
-| The membership line and the followed marker's tag on it. | `membershipLine`; `MembershipReason` | dashboard/src/panels/review/ChangeBadges.tsx:195-232 |
-| The member badge: the tagged membership line drawn first under a followed marker. | `MemberChangeBadge` | dashboard/src/panels/review/ChangeBadges.tsx:237-270 |
-| The family's guarantee badge and the breakdown line. | `GuaranteeChangeBadge`; `FamilyBreakdown` | dashboard/src/panels/review/ChangeBadges.tsx:273-307 |
-| The order, previous and next controls and the polite status. | `TriageControls`; "aria-live=\"polite\"" | dashboard/src/panels/review/ChangeBadges.tsx:311-359 |
-| Its mounts in the tree. | "<MemberChangeBadge state={change} />"; "<GuaranteeChangeBadge kinds={entry.change_kinds} />"; "<TriageControls order={order} onMove={traversal.move} status={traversal.status} />" | dashboard/src/panels/review/FamilyTree.tsx:552-552; dashboard/src/panels/review/FamilyTree.tsx:647-649; dashboard/src/panels/review/FamilyTree.tsx:804-804 |
+- The module's statement: every value is the server's fact or a count of them. [1]
+- The kind styles on existing tokens; an unknown is dashed. [2]
+- The sticky triage bar below the workspace's sticky way back. [3]
+- The marks and the labelled reason line. [4]
+- A returned member without facts reads unknown and says why. [5]
+- The row's change state: the marker's target from L34's own check, and the description in the ruled order. [6]
+- The membership line and the followed marker's tag on it. [7]
+- The member badge: the tagged membership line drawn first under a followed marker. [8]
+- The family's guarantee badge and the breakdown line. [9]
+- The order, previous and next controls and the polite status. [10]
+- Its mounts in the tree. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T22:21:58+02:00 — 260928-MIK-L33 curator (staged change set on `ar/260928-mik-l33`, code base `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`; review R1 changes-required, R2 and R3 pass-with-notes, each followed by a fix round, with the merge round after MIK-L34): created this card for the new badge, breakdown and controls module of MIK-R33, recording rulings 2026-09-30T16:22:22 (items 4 and 9), 17:47:43 (one statement per fact; the merge plan), 21:41:02 (merge round) and 21:55:02 (R3-1, R3-2), and one candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

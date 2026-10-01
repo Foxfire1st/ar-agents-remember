@@ -1,0 +1,102 @@
+{
+  "path": "mcp/src/agents_remember/certification/certificate_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The R21 packet requires admission to compile and freeze direct-input identities before Gate 1.\n\nAnchor: \"Required Behavior\"; \"Admission compiles and freezes direct-input identities before Gate 1\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:77-91"
+        }
+      ]
+    },
+    "2": {
+      "note": "The admission transaction freezes the dual plan authorities and derives gate identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:e9b8f8af4acba0103bd3360568ce661a3dae73470b5f7e16687339fc951f48bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_certification_admission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Identity and rail alignment between R11 and R22 refuse mismatches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:5fbe6480ab2724a04a054b13b9abdc19a900758cf4cab61d0b855a6b666da6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admission_identity_alignment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:d5bae93067c99de57d30f74ed06dd74691ae1b8053efe91cda69901c461bf672",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_rail_alignment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Per-gate semantic inputs include rail definition/adapter/runtime/scope/artifact contracts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:ed36bf1b4a17fa318e6bcc56539c7cc4e1370921e881ff3dba055dda0b017843",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_admission_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:c30d7e612e37f807a488a3166c6a70dea3acd934b8f2f283a6aec425eef8b787",
+            "locator": {
+              "kind": "symbol",
+              "name": "_generic_gate_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Inputs are canonicalized and conflict-rejected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:f3dcf3bbc16a2adf5d61e5dab6c3070c0282343c89d08e304e0699eadb3ef576",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalize_certificate_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

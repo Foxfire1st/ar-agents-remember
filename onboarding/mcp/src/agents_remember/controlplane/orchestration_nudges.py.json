@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/orchestration_nudges.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public nudge tool records these rows and emits the manager inbox message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23f4c87954b6eac5eef2d1046a0c54d7b4c643c6",
+            "content": "sha256:e7d16317c0cfab22b2d139f7364354edfa1dfc2cea874dccfbe55baa5416193b",
+            "locator": {
+              "kind": "symbol",
+              "name": "orchestration_nudge_manager_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/orchestration.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Nudge events are written into the observer workspace event log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
+            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`append` at L64-L68 checks the declared writer and locks; the new `compact` at L91-L107 holds one lock across read, filter and rewrite; `replace_records` at L145-L155 raises unless the caller already holds the lock, and `_rewrite` at L158-L165 delegates to `rewrite_lines` without unlinking.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be4175dba3da7dc3d3c67bc8ed85a100657439d0",
+            "content": "sha256:508c1d9977d3ec60e9df7a6e263eb50490995a3daf71dfbe8d9213e6bc5c77f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`ORCHESTRATION_NUDGE_OWNERSHIP` names both processes as writers and the dashboard as compaction owner even though no production reclaim pass exists yet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b63866a03f776042f245d2e3e1542d182dd4503",
+            "content": "sha256:0ece4b0f3fecff1f2ec52527fe2a61b0d048a45b60772ac00640ed69538b6a21",
+            "locator": {
+              "kind": "symbol",
+              "name": "ORCHESTRATION_NUDGE_OWNERSHIP"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b63866a03f776042f245d2e3e1542d182dd4503",
+            "content": "sha256:135c9a07af177c546c52dc19f47c15a989d079fb120f99a8fd3bdf6a3e64c3a3",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

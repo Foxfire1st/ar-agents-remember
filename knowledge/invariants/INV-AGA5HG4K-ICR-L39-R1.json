@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Curator handoffs declaring a successor of an existing family while adding a genuine obligation and selecting unchanged sibling support.",
+  "conditions": [
+    "Each selected sibling is named by an exact stored membership UUID and a nonblank curator-authored basis in the declaration’s retain_memberships list.",
+    "Each selected membership exists in the selected dataset, belongs to an explicitly declared predecessor revision of the same family, and resolves to a unique successor-family/invariant-revision endpoint.",
+    "Omitted or empty retention selects no old members; malformed, absent, mismatched or duplicate references refuse the affected authoring."
+  ],
+  "exclusions": [
+    "No automatic predecessor-roster inheritance, latest-head selection, label-based grouping or replay of another leaf’s allocation.",
+    "This is not a standalone family-only operation or authority to bypass the existing admitted writer."
+  ],
+  "id": "INV-AGA5HG4K",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "779b780b-8a3c-4552-b7e1-09ca6804bc1c",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The curator explicitly selects retained siblings by exact stored membership identity and an authored basis; omission retains none rather than copying a predecessor roster.",
+  "status": "proposed",
+  "supersedes": []
+}

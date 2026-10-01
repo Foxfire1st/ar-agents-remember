@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_atomic_series_landing_l3.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact declared parent same target permits leaf landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c53131e728038e8a8fb8413ac762604ab425150",
+            "content": "sha256:68c3dd6d0c9c040d3803102fa3f1af6f8f744831fb44c6ad3feb81fdca7cc2d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_declared_parent_same_target_permits_leaf_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Live nonterminal unrelated same target contract blocks landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c53131e728038e8a8fb8413ac762604ab425150",
+            "content": "sha256:046dffee617e3f0856db640cf8066cee212f2906f68dbeb2d215a99e301578f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_nonterminal_unrelated_same_target_contract_blocks_landing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

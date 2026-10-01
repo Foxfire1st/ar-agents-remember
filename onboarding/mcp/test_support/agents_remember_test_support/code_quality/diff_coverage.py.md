@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Quality support overview](overview.md)
@@ -157,68 +147,14 @@ the current wrapper return-code handling preserves.
   a failed diff is never represented as an empty successful diff.
 - Unmeasured files are visible and are not described as covered.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Canonical runner and typed startup/timeout failures | `_git` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:80-90 |
-| Explicit and inferred comparison-base resolution | `resolve_base` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:145-173 |
-| Changed statements and source-line branch arcs | `tally_file` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:258-281 |
-| Measured/nonmeasurable states | `measure` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:289-317 |
-| All findings remain diagnostic without a floor | `render` | mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py:344-375 |
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Reconciled the d3610903 test-policy reduction against the current source, preserved integrity/ownership boundaries, and replaced stale forcing-suite citations with current owner evidence. Existing verification hash/date retained; source comparison is not final acceptance.
-- 2026-08-28T12:10:34+02:00 — Corrected the complete case-insensitive identity contract:
-  both the normalized coverage index and the changed-path lookup are now case-folded. The first
-  final Dagger gate exposed the asymmetric lookup as `no-changed-lines` in the focused regression.
-- 2026-08-28T11:32+02:00 — Made coverage lookup case-insensitive after path canonicalization so
-  Windows casing differences do not drop real measurements.
-- 2026-08-14T09:37+02:00 — Reopened L23 cadence: removed the retired GitHub Dagger-job claim;
-  changed-lines coverage remains lifecycle-owned and bound to the explicit leaf/master diff base.
-- 2026-08-14T05:26Z — L23 final curator: re-anchored changed-lines CI provenance to the current
-  full-history checkout and pinned Dagger job after the host-side matrix was removed. Verification
-  remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-04T18:07+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 8 citation rows with exact anchors (definition identifiers, quoted config literals, and the exact-level CONTRIBUTING heading) and ledger-verified ranges across crap_calculator, test_diff_coverage, pyproject, _gate.sh, quality-checks.yml, CONTRIBUTING, git_command, and test_git_command; the fixer normalized the CONTRIBUTING section extent. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
-
-- 2026-07-31T21:20+02:00 — 260731-EFA-L3 curator (second pass): the fix worker moved the
-  `OSError`/`SubprocessError` → `DiffScopeError` conversion out of `run_git` and **into `_git`**
-  after the entry below was written, so the card's account of the failure split was wrong.
-  Corrected three claims in "Every Git Call Goes Through `_git`": (1) the quoted `_git` body no
-  longer matched the source — it now carries the `try` / `except (OSError, subprocess.SubprocessError)`
-  that raises `DiffScopeError`; (2) "four git call sites" was wrong — `_git` has exactly three
-  callers (`run_git`, `revision_exists`, `merge_base`), with `changed_python_lines` /
-  `state_for_empty_diff` reaching it through `run_git`; (3) the card credited `run_git` with both
-  failure halves, when `run_git` now retains only the `completed.returncode != 0` branch and the
-  "could not run" half is shared by all three. Recorded why it moved: the shared runner bounds
-  every call at `GIT_LOCAL_TIMEOUT_SECONDS` = 300s where the old inline call had no timeout, and
-  passes `cwd=repo_root`, so a missing `project_root` raises `FileNotFoundError` before git starts
-  where the old `git -C <path>` merely exited non-zero — both would have escaped `revision_exists`
-  and `merge_base` untyped. Added the matching invariant and named the two new
-  `BaseResolutionTests` regressions in the `test_diff_coverage.py` reference row. No citation
-  ranges to repair: this card's reference table carries source paths only.
-
-- 2026-07-31T20:48+02:00 — 260731-EFA-L3 curator: this module's git calls were consolidated onto
-  the package's one runner and the card said nothing about them. Added "Every Git Call Goes Through
-  `_git`, On The Package's One Runner": the new private `_git` helper keeps `-c core.quotePath=false`
-  (this gate's own requirement — without it `parse_unified_diff` cannot see non-ASCII paths) and
-  delegates the spawn to `kernel.git_command.run_git`, which strips the `GIT_DIR`-family selectors.
-  That matters most here: the full tier runs from `pre-push`, where git exports `GIT_DIR`, so an
-  unstripped `git diff` would have scored a different repository than the one being pushed. Also
-  recorded the failure conversion (`check=True`/`CalledProcessError` → explicit `returncode != 0`
-  plus `OSError`/`subprocess.SubprocessError`, which now includes the runner's timeout) and why
-  `revision_exists`/`merge_base` still read `returncode` directly. Added four invariants and the
-  `git_command.py` / `test_git_command.py` reference rows. No citation ranges in this card point
-  into a file this leaf changed — its reference table carries source paths only.
-
-- 2026-07-31T16:10+02:00 — Created for 260731-EFA-L2 (requirement L2-R7). Records the new
-  binding coverage gate: the changed-lines floor of 100% with the measured derivation that
-  rules out 80/85/90/95, the unit definition (statements plus branch arcs leaving a changed
-  line), the printed base-resolution chain ending at the empty tree, the four reported
-  states, and the named-findings report with no exemption list. Verification metadata is
-  pinned to the leaf's reformat commit until closeout stamps the code commit.
+- Canonical runner and typed startup/timeout failures [1]
+- Explicit and inferred comparison-base resolution [2]
+- Changed statements and source-line branch arcs [3]
+- Measured/nonmeasurable states [4]
+- All findings remain diagnostic without a floor [5]

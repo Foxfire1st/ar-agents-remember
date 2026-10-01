@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/events.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/events.py`     |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634`       |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview      | `overview.md`                                     |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -47,16 +37,10 @@ Python attribute name — so records must be dumped with
 - `data` is the open extension point; the envelope fields are fixed and
   Literal-guarded.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store serializes and reads these events. | `append`, `read`, `read_log` | mcp/src/agents_remember/observer/store.py:119-132; mcp/src/agents_remember/observer/store.py:134-148; mcp/src/agents_remember/observer/store.py:150-163 |
-| Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| The response-contract convention this envelope mirrors (camelCase fields, strict extras). | `StrictResponseModel` | mcp/src/agents_remember/models/base.py:10-13 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
-- 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
-  until closeout stamps the 2a code commit.
+- The store serializes and reads these events. [1]
+- Ids come from the local ULID mint. [2]
+- The response-contract convention this envelope mirrors (camelCase fields, strict extras). [3]

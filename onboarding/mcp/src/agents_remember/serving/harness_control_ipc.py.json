@@ -1,0 +1,85 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_control_ipc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bridge exposes live advertise and ordered setter operations only while running.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:84dfa277f2b6a3f32626c1cdb27c5537281a146fe52ce60bdad24b2806a8071d",
+            "locator": {
+              "kind": "symbol",
+              "name": "submissions"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:4a7ab9d1381e8d5a4d00255665f62391fc3f561ca59791630714d98fb5dce3d7",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 323
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:88d2d0768172c99464a44bc1c7d98344a00a67d374360bfaec0c5f8627328942",
+            "locator": {
+              "kind": "symbol",
+              "name": "native_page"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "553098e993e65624161728ad2517c1ab411073fd",
+            "content": "sha256:066b32250f847c6e1e1e27882368fd35ef37abab267ce1aee96cc8b679270157",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_bridge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The blocking client validates exact identity and distinguishes pre-write from post-write loss.\n\nAnchor: \"before any request bytes were accepted\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6b97c16282a6caa98131c6e6ce05970a78a8d2",
+            "content": "sha256:da7957a60d449db2ce235b4c8151c91ea1812ed9d192eb9e697e61f4b83ea36a",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 572
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_client.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

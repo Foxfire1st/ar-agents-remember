@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/tasks/route_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Route and child-intent model shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:50e93ee6d6a95ce3372308f2f3ce9df40517b33a420ab5f076da862e136d3697",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewUnit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewChildIntent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:c362f1e9336f07cccf8472710ca186614d1057c6bf255d39b700d7bf517f125e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:123fbc9fd64a7c66b2da8b56cf2765e79813e71904565d8cb12358efd897d03f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:980ec3e3cb9884bccadd740d8473d00afb0315a9dced2c290aa88937320cbe4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate-bound route record coherence and content-addressing checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

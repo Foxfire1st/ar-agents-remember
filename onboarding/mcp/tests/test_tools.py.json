@@ -1,0 +1,315 @@
+{
+  "path": "mcp/tests/test_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ping payload",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:bc3523be0c26fbd36b7da7ba6d31cfcd23532281978cbcc1dcf5ce29237da720",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ping_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:cef487cd0b19ba9c322e61709696bc642a5e5089c252b3b0c910d3ff7350dd50",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pause_advertises_a_stop_that_publishes_nothing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:4ae2c3f9931365c644bf850c7e4fdad1730a5c09ae30ce5365f6d143f2fc1f08",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The description names every field `curator_coherence`'s `publish` requires, and pins that the JSON schema cannot carry the requirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:d095ab9504ff7f8cd688b22551ce4ed8dd9568ee55c45507dc6824b6747c3046",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_description_names_every_field_publish_requires"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`publish` refuses by naming **every** missing field, one omission per field with the complete-shape acceptance as the positive control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:f89738187f77ab049acc16fdf19db71c3c090d5b0c355fd0cc9dcd8e3ab32f2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publish_refuses_by_naming_every_missing_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The one list both pins compare — the nine publish-required fields, spelled once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:7a43fb96593496550567deaa9a5f60603a34cfbec9e7aef505588876efc72745",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLISH_REQUIRED_FIELDS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The permissive registration-time config stub the registration cases build against",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:7fe98c8374cd589324b7c3be755156effbec69fe01e62ecfe4f83e8531537eb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_permissive_registration_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Server info payload reports safe config summary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:a7c540b564a4f70b43238020cc5398b72ae9e8051fc96713452ea5f3e762ab4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_server_info_payload_reports_safe_config_summary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Memory init repairs authority after config write failure",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:936aaf3062a32442fd8b80329baeb89e9e36b24108e4ddf417aead6b6382ff21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_init_repairs_authority_after_config_write_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Typed cgc payloads reject invalid inputs before provider execution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:5b77c4fe61a1fd3aeeb22e88812b8b82593225c0bbf55608abe1575e271953ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:fd8784fc66056433d934794603ababc2ec17659055fe43f6b27084c6b3b76bde",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Grepai payloads reject invalid scope and trace inputs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:5aac2d9cc9d5297ac6dd6fe069dcbb99751556de2fb89dade0d69a816dbf91b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_grepai_payloads_reject_invalid_scope_and_trace_inputs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:4ed6f3af6d13c5ed97676e10c9307610042cba307c8acd8ff9728897dc07f745",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Live FastMCP registration order equals the advertised public tuple",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:9b5dae6c11fe566eb7b371edc887037e07c8a9706b502cc29849e48a4b701248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_registration_matches_the_public_inventory_in_order"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:d6b3f25fafaba27dcd143e9dc612426b6d0ff61a232f4c1387152fd99a937acc",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The record-landing tool has a registered response model that validates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:5319f993c559291e3b720caa230d0a29bb5c50a11a75b5cfceef5c6635bf98d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_record_landing_has_a_response_model_that_validates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:4871fce57c7aa66b58e7dfc4a4c41f84f6fc1ded874fe0fe29b9b3dd9f09b000",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 243
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The checkpoint-landing tool has a registered response model that validates, which the set comparison alone cannot establish",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:7b9a97fd24780e0f32be71cd530ed614372b798a8318e6e5177066ba6b7b7ce9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_checkpoint_landing_has_a_response_model_that_validates"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:91bb1ef6223fa560b7dce897013f90efa58b79ab7e1042a66f7dc24981b35661",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 263
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The checkpoint description presents a partial publication and denies being the pause: it says `PUBLISH`, says \"not a pause\", says pausing is a \"separate matter and is NOT this call\", and no longer opens with \"Use this to pause\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:5b75019b3ffbc4d3e4a39bd0fb07638657128f43d4db984d5218401220ac7e24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checkpoint_description_publishes_rather_than_pausing"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
+            "content": "sha256:8705d2cf3ffa2fc4027dec8b325cd6a9a6688ea19b99cd8092a7b007f82aae08",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 284
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

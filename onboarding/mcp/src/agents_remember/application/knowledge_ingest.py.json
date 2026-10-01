@@ -1,0 +1,266 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_ingest.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement of what it is: the first production caller of the knowledge write plane, the curator entry turned into one batch, the second-record citation that keeps an existing revision's digest still, and provenance not being a parameter.\n\nAnchor: \"This is the first production caller of the knowledge write plane.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:e7eaa68ea00951879766eb67e323dadeb1ce1e86614c01b7e852f0d2eebcf115",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shapes it builds and returns: the ordered all-or-nothing batch, and the factual receipt whose refusal leaves the logical identity unchanged and reports no touched record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:0d2e70c574ca5933d43f3b0fdeb35527b92baf076b7ce94e6b5d6243a62c2568",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeBatch"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:d57eb29b54ac8b2aa959558bae6c700b2aba3a53c80b026c3971b693ea347524",
+            "locator": {
+              "kind": "symbol",
+              "name": "MutationResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The only production importer, the curator's whole-operation layer, which reuses this module's entry and citation dataclasses and its batch commit, and builds one entry per plan.\n\nAnchor: \"from agents_remember.application.knowledge_ingest import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:f56e29abdb3a404863b9244bac8f57fce6cd9a6388c546fca253998f9f138b46",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_entry"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:36128d20e5a44b5f0ff5e5d2212bf25eeb5a6def6d595f6410d59c4b3689b802",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The cases that drive this module directly: one curator entry committed through the public commit entry point, and the documented empty-citations path the whole-operation layer deliberately does not reach.\n\nAnchor: \"from agents_remember.application.knowledge_ingest import (\"; \"``CuratorEntry.citations`` permits an empty list\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4233ac16c84a105fbd03041c9dedbfa5d2ab527c",
+            "content": "sha256:36128d20e5a44b5f0ff5e5d2212bf25eeb5a6def6d595f6410d59c4b3689b802",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aed8df38838a843ccf994003ad75b841ab154d90",
+            "content": "sha256:6c30f8b82a4b2399018afd8865e2cbdc02f51615c836ff363392985052a183ee",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 507
+            },
+            "path": "mcp/tests/test_knowledge_curator_ingest_list.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the two entry dataclasses and the four command/batch/commit functions, and nothing else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:f2eadc5604efab7ea2d20505eb74f4831b4430763e49cccd91bd2edb2f1b449b",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One resolved target plus the claim that cites it — the shipped anchor draft with the authored claim identity, role and rationale, and `declares_anchor`, which is what makes \"reuse a stored anchor\" expressible instead of a second spelling of \"insert a duplicate of it\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:aa5c53bdb9e8b4918eb51e12f352ae5793ca8fe5bf02c6d279410ee05fa86d18",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorCitation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One requirement-shaped entry: the invariant identity shared by the identity row and the revision, the authored revision fields, the empty-citations case that records an obligation with no realization, and `declares_invariant`, which keeps a successor from re-declaring the invariant it revises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:7befe7bcafa311c083c1d242d58ede0f993c2c08ecf6c614dd195ca587669ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CuratorEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The load-bearing command order: the invariant row only when the entry declares it, then its revision, then each anchor *that the citation declares* before the claim that cites it, with the claim referencing the row the same batch declared or the stored row a reused anchor names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:e273f8d8f10e59ff7c6c203fb5c8a1b9aa9046dff233fb24a15738bf0f0c8656",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_entry_commands"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single all-or-nothing batch for a whole hand-off list, with the context resolved against the candidate as it stands rather than accepted from the caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:c5fb26a17cd3a8f1771931718a07f119622e2189204ee63f9e5147a4b7a17170",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_batch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two commit entry points: one entry committed as one batch, and the whole hand-off list committed as one batch through the closed write path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:eb6bc409ddeeae5aa762075806f95e5f3ce15f1b394d972b5ae096e7886da0f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_curator_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:9a514deafeb8022c0473515e010283875001067bef772e1abcaaf5da03416735",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_curator_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one authoring step: the revision draft built from the entry's fields and sealed under the admitted destination's own provenance envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "347d97b15fe558572b2b5071aa76f9dab535d5e3",
+            "content": "sha256:0eccdf75edb3ac8e943a6e3583412eac92728fb4b059e38cb257ef7abf54e3a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revision_draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The two seams it delegates to: the resolver that reads the identity the candidate actually holds, and the operation that applies the batch under the destination's provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:06b9d994af2ab160a80335495e8a3094adfaf3bab34774390d2010c294ee19f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_candidate_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b27b86aae575bd8d9d63d727f841fc0b4ab08fa3",
+            "content": "sha256:a5458d013b8e8003e84bb7b3368e3bfbd86bc525e1b69d26ed07b13f71ff816b",
+            "locator": {
+              "kind": "symbol",
+              "name": "change_knowledge_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

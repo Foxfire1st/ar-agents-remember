@@ -1,0 +1,173 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Call-level knobs and the branch-addressed policy gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:5b0b1da1b7bddbef985732db4362271d8eef6d8cd459c67301688f0e548ac47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocCall"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:00c5cdff8748eb46f066053f0205a3b25ecbdd3a59fee37bafad061034fe5c84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enforce_branch_addressed_policy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:ec5cbf5520d96b9d79914936c7895b3acfaca595518db455a2c23b2ae7404438",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:034464f95d24a11a4a2ba75b660ba647874b0b1cbac6b7f57e7052d7cec0ba76",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The binding form that records a review over the resolved candidate document and re-validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:ef0b929d18193b628ffd6b04697b43b520433b140ac8981ebdd404627b802fb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_route_review_bound"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The legacy positional recorder passing the resolved leaf document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:2c13594de1ce9714a2b21408eb4f1d0d3d9d08c1abc8382b0b0234296596edb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_route_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exact-binding refusal with the L16-R9 recovery dialect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:fb124fced687eb7abeb40d511d845fc4d1b44e290bf302c1be359e2cfd9eb2a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_route_review_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The route-review authority rule (create/replace cannot author or change evidence).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
+            "content": "sha256:db08fdd411786e5288c10612f19f9008b933b596c7d2f4d60cffb27cae6e889e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enforce_route_review_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The stamping owner it delegates to; now takes the resolved candidate document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The typed candidate ref derived from the selected path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6212eb167b92e58fc738c440b92575ca390218c3",
+            "content": "sha256:cb4b111e923137661468aa784ee449c699836dcd393da4f0d3e0f36cdfa79340",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The facade that dispatches into this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ffd88e9b159b96000042376541d730d91c38651",
+            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_doc_tool"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

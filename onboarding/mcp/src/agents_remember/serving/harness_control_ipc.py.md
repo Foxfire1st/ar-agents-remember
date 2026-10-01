@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_control_ipc.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_ipc.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-27T14:20+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914` |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -103,39 +93,35 @@ normalized camel-case names. The socket transports commands but does not decide 
 
 None known for the private IPC action set.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The bridge supplies ordered native truth and the blocking client applies first-byte retry safety.
 The `threadId` selector lands on the bridge's additive `native_page(thread_id=...)`
 parameter, whose `None` default keeps the parent-thread read byte-identical.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The bridge exposes live advertise and ordered setter operations only while running. | `submissions` | mcp/src/agents_remember/serving/harness_control_bridge.py:323-332 |
-| The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. | `native_page` | mcp/src/agents_remember/serving/harness_control_bridge.py:226-271 |
-| The blocking client validates exact identity and distinguishes pre-write from post-write loss. | "before any request bytes were accepted" | mcp/src/agents_remember/serving/harness_control_client.py:572-572 |
+- The bridge exposes live advertise and ordered setter operations only while running. [1]
+- The bridge's `native_page` accepts the additive `thread_id` selector (`None` = parent thread) and forwards it to multiplexing adapters. [2]
+- The blocking client validates exact identity and distinguishes pre-write from post-write loss. [3]
 
 
 | The channel bounds and the `InterruptResult`/`OperationTimeline` DTOs these actions serialize. | `MAX_OPERATION_TIMELINE_PAGE` | mcp/src/agents_remember/serving/harness_control_models.py:63-63 |
 | The bridge's epoch-guarded interrupt dispatch and timeline delegation behind the two additive actions. | "interrupt adapter must not mint the bridge epoch" | mcp/src/agents_remember/serving/harness_control_bridge.py:303-303 |
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by the local exact-session socket.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Submission Authority Delta
 
@@ -176,54 +162,3 @@ match. Verifying one field against another asset's claim is exactly the substitu
 check exists to catch, so the claim travels as one value.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-02T21:28:06+02:00 — 260731-EFA-L6 curator W2-B10: repaired 19 citation findings (8 reference rows and 3 prose pointers); scoped recheck clean.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired the `test_harness_control.py` citation.
-  The stamped `L988-L1285` sits inside `HarnessControlConformanceTests`, not the IPC suite; the
-  IPC tests are `HarnessControlIpcTests` (opens L1355). The five behaviours the row names are
-  L1423-L1670 — `test_exact_session_ipc_advertises_and_returns_set_acceptance` (capability read +
-  both setters and their accept/unsupported acceptances),
-  `test_outer_socket_lost_receipt_reconciles_retained_known_truth` and
-  `test_durable_inbox_outer_loss_converges_by_reconcile_without_resend` (response loss +
-  reconciliation), and `test_public_duplicate_returns_retained_result_with_one_adapter_call`
-  (same-id retention, exactly one adapter submission) — plus L1844-L1898,
-  `test_peer_timeout_after_submit_preserves_reconciliation_result`. Both ranges read back; claim
-  unchanged.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded the `_CONTROL_ACTIONS` handler table (one unknown-action refusal) and `StagedAssetClaim` as the pre-verification wire claim.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: documented typed history
-  unavailable/limit serialization and strict byte-evidence reconstruction across the private
-  control IPC. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T15:37 — 260718-CHATS-L7 curator: documented the additive optional `threadId` payload
-  key on `evidence-native-page` (`_evidence_native_page`, cit:([`thread_id`], mcp/src/agents_remember/serving/harness_control_ipc.py:399-399)) — the multiplexed-thread
-  selector forwarded to `bridge.native_page`; absent = parent/session thread byte-identical to
-  before, no new action, protocol unchanged. Added the additive/absent-means-parent invariant and
-  refreshed the bridge (advertise L413-L425, native_page L209-L246, interrupt/timeline L264-L328),
-  client (L186-L326; L475-L585), and models (L113-L122; L403-L443) citation ranges against the
-  current sources. Verification metadata stays pinned: the L7 change is uncommitted, so no commit
-  hash can attest it.
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two additive actions
-  (`interrupt`, `operation-timeline`) and the additive `assets` submit key — schema validation,
-  resolve-and-verify confinement under the request-independent assets anchor with the lexical
-  separator/dot-segment ban and NUL translation, and admission-time size/sha256 verification —
-  with the action set now 20 under the unchanged v1 protocol. Verification metadata stays pinned
-  until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the three additive read actions
-  (`evidence`, `evidence-native-page`, `submission-provenance`), their bounds and epoch scoping,
-  and the byte-preserved 14-action/protocol baseline. Verification metadata stays pinned until
-  closeout stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented lifecycle IPC actions, epoch/source validation,
-  cockpit privacy, bounded batches, and typed error preservation.
-- 2026-07-16T06:15+02:00 — 260714-ACPUI-L4 curator: documented exact-session advertise and set
-  actions, normalized serialization, and retained private receipt evidence for ambiguity closure.
-- 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented narrow post-dispatch peer-disconnect
-  containment during reply and close lifecycle, with delayed-reply reconciliation preserved.
-
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for private exact-identity
-  IPC, permissions, bounded messages, and explicit control operations.

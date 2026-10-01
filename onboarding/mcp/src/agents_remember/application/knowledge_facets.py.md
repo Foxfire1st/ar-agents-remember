@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_facets.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_facets.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-28T16:55:00+02:00 |
-| lastVerifiedCommitHash | `9b2f775f1ab0fca5f82b4f661785dd8216d4a8b3`|
-| lastVerifiedCommitDate | 2026-09-28T17:43:09+02:00|
-| governingOverview | `mcp/src/agents_remember/application/overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -103,44 +93,33 @@ be inferred from the diff.
 None recorded. `FacetReadRequest` carries one seed today; a later leaf that needs a second question asks
 for a second seed kind rather than widening this request with optional filters.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one entry point, its three refusal families and the operation name every refusal carries. | `read_facet_scope` | mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| The read-only handle, the delegate call and the served result, closed in a `finally`. | `_read_inside_snapshot`; "def select_facet_scope(" | mcp/src/agents_remember/application/knowledge_facets.py:124-154; mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129 |
-| **The absence-versus-emptiness split, and why a recorded record with no attachments is a page.** | `_absence_refusal`; `seed_recorded` | mcp/src/agents_remember/application/knowledge_facets.py:163-188 |
-| **The three snapshot comparisons run before any selection, each naming expected and observed.** | `_snapshot_identity_refusal` | mcp/src/agents_remember/application/knowledge_facets.py:191-224 |
-| The fallback that refuses a file which is not the selected snapshot, naming both identities. | `_unusable_snapshot` | mcp/src/agents_remember/application/knowledge_facets.py:227-241 |
-| The refused result, which carries the snapshot and digests but no page. | `_refused` | mcp/src/agents_remember/application/knowledge_facets.py:244-256 |
-| The declared policy name and the one operation name the module publishes. | "FACET_SELECTION_POLICY_VERSION ="; "def read_facet_scope(" | mcp/src/agents_remember/models/knowledge/facet_read.py:56-56; mcp/src/agents_remember/application/knowledge_facets.py:71-121 |
-| The selection this seam delegates to: one query, one complete aggregate, the bound it raises past. | `FacetSelectionQuery`; `select_facet_scope`; `FacetSelectionIncomplete` | mcp/src/agents_remember/memory/knowledge/facet_read.py:85-91; mcp/src/agents_remember/memory/knowledge/facet_read.py:109-129; mcp/src/agents_remember/memory/knowledge/facet_read.py:68-82 |
-| The shared read context the facet read reuses, and the shipped helpers that produce the result's snapshot and digests. | `KnowledgeReadContext`; `snapshot_of_context`; `read_context_digest` | mcp/src/agents_remember/models/knowledge/read.py:200-247; mcp/src/agents_remember/models/knowledge/read.py:506-526 |
-| The seed digest and the seed union the request carries. | `facet_seed_digest`; `FacetReadSeed` | mcp/src/agents_remember/models/knowledge/facet_read.py:188-191; mcp/src/agents_remember/models/knowledge/facet_read.py:182-185 |
-| The refusal helpers this seam reports through, including the absence the read owns. | `selector_absent_refusal`; `selection_incomplete_refusal`; `snapshot_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/read_refusals.py:35-63; mcp/src/agents_remember/memory/knowledge/read_refusals.py:169-186; mcp/src/agents_remember/memory/knowledge/read_refusals.py:142-168 |
-| The read-only open this seam is built on, and the refusal an absent path earns. | `open_read_only_database`; `selected_input_unavailable_refusal` | mcp/src/agents_remember/memory/knowledge/connection.py:52-65; mcp/src/agents_remember/memory/knowledge/refusals.py:882-902 |
-| **The cases that hold the seam's own boundaries: its own-policy page, the byte-identical shipped page, and the incompleteness refusal.** | "test_the_shipped_seed_page_is_byte_identical_and_the_facet_page_is_its_own_policy"; "test_a_facet_does_not_join_a_shipped_seed_and_the_facet_page_is_exact" | mcp/tests/test_knowledge_facets.py:1053-1068; mcp/tests/test_knowledge_facets.py:1104-1119; mcp/tests/test_knowledge_facets.py:1068-1068; mcp/tests/test_knowledge_facets.py:1187-1194; mcp/tests/test_knowledge_facets.py:1239-1246; mcp/tests/test_knowledge_facets.py:1214-1214; mcp/tests/test_knowledge_facets.py:1266-1266 |
+- The one entry point, its three refusal families and the operation name every refusal carries. [1]
+- The read-only handle, the delegate call and the served result, closed in a `finally`. [2]
+- **The absence-versus-emptiness split, and why a recorded record with no attachments is a page.** [3]
+- **The three snapshot comparisons run before any selection, each naming expected and observed.** [4]
+- The fallback that refuses a file which is not the selected snapshot, naming both identities. [5]
+- The refused result, which carries the snapshot and digests but no page. [6]
+- The declared policy name and the one operation name the module publishes. [7]
+- The selection this seam delegates to: one query, one complete aggregate, the bound it raises past. [8]
+- The shared read context the facet read reuses, and the shipped helpers that produce the result's snapshot and digests. [9]
+- The seed digest and the seed union the request carries. [10]
+- The refusal helpers this seam reports through, including the absence the read owns. [11]
+- The read-only open this seam is built on, and the refusal an absent path earns. [12]
+- **The cases that hold the seam's own boundaries: its own-policy page, the byte-identical shipped page, and the incompleteness refusal.** [13]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-09-28T16:55:00+02:00 — 260921-ICR-L44 curator (uncommitted change set on `ar/260921-icr-l44`, code base `55c62237132eaa56b0df28ae5a8420a8dc05303d`): No content impact: this card's source is unchanged. Citation ranges into files this change set edited (`models/knowledge/read.py` lost the moved anchor vocabulary; the evidence TOMLs gained one row) were re-measured against the candidate by the curator so each anchor lands on its construct again; no claim wording changed.
-
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T00:25+02:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the route's sixth composition seam. It records the read-only handle as the structural reason "a refused facet read persisted nothing" holds, the **three** snapshot comparisons (namespace, schema generation, logical dataset) that run before any selection, the **absence-versus-emptiness** split where a recorded facet record with no attachments is served as a real page rather than reported as `selector_absent`, the complete-or-refused selection with no cursor, the one operation name every refusal carries, the shared `KnowledgeReadContext` and shipped digest helpers rather than second definitions, and the non-overlap with `KS-R07@v1`'s selection that makes a shipped seed's page byte-identical. It also records, as a position rather than a defect claim, that the module docstring counts itself the **fifth** seam while naming five predecessors. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:16:46+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea` |
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [closeout integration overview](overview.md)
@@ -87,42 +77,36 @@ recomputed from the same canonical inputs the validator reads — never from cal
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source governs this repository-local lifecycle authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source applies. | — | — |
+No configured Domain Documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:146-209 |
-| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:228-273 |
-| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:471-472 |
-| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:118-123; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:126-143 |
-| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:535-562 |
-| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py:37-68 |
-| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:372-468; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:475-532 |
+- Observation freezes code, memory, task, and attestation identities. [1]
+- Loading validates the sole manifest, generation bytes, generated projection, and evidence. [2]
+- All admission paths share one currentness validator. [3]
+- Exact current judgments project into separate content and route no-impact sets. [4]
+- Candidate task context binds the authored graph once and returns the bound sprint generation. [5]
+- Explicit evidence namespaces prevent implicit-root fallback. [6]
+- R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. [7]
 
 The following declarations carry the changed boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A named retained generation is read without asserting live readiness. | `load_curator_coherence_generation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:276-283 |
-| The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). | `_require_knowledge_gate`; "curator-coherence-knowledge-gate-refused" | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:349-369 |
-| The closeout validator refuses until the gate passes and never runs ungated. | `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated` | mcp/tests/test_knowledge_closeout_gate.py:731-790 |
-| Current readiness still validates live inputs and dependencies. | `require_current_curator_coherence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346 |
+- A named retained generation is read without asserting live readiness. [8]
+- The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
+- The closeout validator refuses until the gate passes and never runs ungated. [10]
+- Current readiness still validates live inputs and dependencies. [11]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External memory must remain the exact contract-resolved paired worktree. | `require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_paths.py:22-34 |
+- External memory must remain the exact contract-resolved paired worktree. [12]
 
 ## MCAR-L03 Exact Pair Authority
 
@@ -179,39 +163,3 @@ to bytes recoverable nowhere, and a reader cannot tell a candidate-empty publica
 attestation listed candidates. This resolver only *names* the location — the write, its verification
 against the observed digest, and the refusals that guard it live in the publication module (see that
 card).
-
-## Update History
-
-- 2026-09-30T20:16:46+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): **body updated for MIK-R09.** Logic gains the paragraph on `_require_knowledge_gate`: the closeout validator recomputes the gate over the authority's own candidate trees and refuses `curator-coherence-knowledge-gate-refused` (next action `memory_quality_check`) on converted memory; unconverted leaves are validated as before; the record and pair identity are unchanged. Two rows added. The rows below the insertion were re-pointed by the installed fixer (its bullets are kept) or, for the evidence row it declined, by the exact base-to-staged line shift.
-- 2026-09-27T05:25:19+00:00 — Reconciled the L41 moved record/path owners and explicit retained-parent recovery boundary with current source. Prior generated history and real verification stamps are preserved.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 5 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-
-- 2026-09-27T04:56:35+00:00 — Reconciled shared durable reading with strict live readiness after the owner extraction. Verification hashes/dates remain closeout-owned.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (uncommitted change set; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta): **cleared the two enforced `citation_anchor_absent_from_range` rows in this document (two table rows).** (a) The shared-admission row cited `:501-502` for `curator_coherence_evidence`, whose definition this candidate leaves at `:503-504`; the range was widened to `501-504`, which now reaches it. (b) The no-impact row cited `:115-141` for `curator_coherence_no_impact`; the projector's declaration is at `:143` (extent `:143-160`), so the range was widened to `115-160`, which now reaches it and still holds `CuratorCoherenceNoImpact` at `:136`. Claims, anchors and the other ranges are unchanged; no claim was re-worded and no range was dropped to silence a row. **Recorded rather than repaired:** the `KS-R15@v1 Assessment Read Projection` section below still states the superseded default — "an assessment the caller supplied **no entry for is reported `stale`**" — which this leaf's `ICR-R15@v1` change replaces: an omitted or empty measurement now answers `not-measured` through `supplied_measurement_statuses`, and the route overview's own `260921-ICR-L15 Measured assessment currentness` section records the new behaviour. No verification stamp was advanced: the candidate is uncommitted — the honest basis is the leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58` plus the working-tree delta — so no commit contains the content a stamp would claim to have verified, and the governed closeout owns the real code and memory commits.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:56:14+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the three enforced `citation_anchor_absent_from_range` rows in this document** (two table rows). (a) and (b) The no-impact row cited `107-112` and `115-132` for `CuratorCoherenceNoImpact` and `curator_coherence_no_impact`; this leaf's changes left the dataclass at `134` and the projector at `141`, so the second range was widened to `115-141`, which now reaches both. (c) The evidence row cited `487-488` (an exception branch) for `curator_coherence_evidence`, whose definition is at `501-502`; that cell cites it now. Claims, anchors and the other ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `_require_leaf_external_memory` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:673-685. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T19:25+02:00 — 260915-KS-L23 curator (uncommitted change set on `ar/260915-ks-l23`, base `c5a74a85`): **recorded the durable attestation-copy path this leaf's item 18 added, which this card did not mention.** `CuratorCoherencePaths` now carries an `attestations` directory (`:85`) with `attestation_copy(digest)` (`:93-103`), resolved by `curator_coherence_paths` at `:169` beside the generations and attempt snapshots — the task-local tree the record survives in, so the bytes `attestationSha256` commits to outlive the enclosure that finalize's automatic cleanup reclaims. The section above states it and the boundary that this resolver only names the location while the publication owns the write and its refusals. The existing reference rows were left untouched for the citation-range repair pass that owns them, and the verification stamp is not advanced: the candidate is uncommitted and closeout owns the real code commit.
-- 2026-09-18T06:05+02:00 — 260915-KS-L15 curator (uncommitted change set on `ar/260915-ks-l15`, base `837961d4`): re-read every claim in this card whose cited range the leaf's own source edits had moved. This leaf's insertion of `mcp/tests/test-evidence-lanes.toml` rows and a test module shifted the anchors below them, and the re-cited range of each claim was checked against the construct it is about rather than accepted from the mechanical projection. Ranges re-cited: `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:521-548` -> `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:551-578`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:614-645` -> `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:714-745`; `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:559-571` -> `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:659-671`. The generated projection bullets that recorded the same moves are retired here, so no mechanically rewritten range remains recorded as unverified evidence. Verification metadata remains closeout-owned; no acceptance or certification claim is made.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_QualityAttestationSource`, `_quality_attestation`, `_require_current_dependencies`, `curator_coherence_evidence`, `require_current_curator_coherence` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:314-372, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:375-454, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:457-458, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:461-518, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-104. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-132. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_task_context` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:521-548. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `resolve_curator_evidence_ref` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:614-645. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_require_leaf_external_memory` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:559-571. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency-currentness seam (`_QualityAttestationSource`, `_require_current_dependencies`, attestation dependency re-requirement) added by the R03 leaf; prior graph-binding and pair authority prose preserved.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: candidate topology observation now binds
-  the already resolved authored graph once and freezes the same immutable graph generation used by
-  queue and door consumers. Verification remains closeout-owned.
-
-- 2026-08-29T21:46+02:00 — MCAR-L03: made exact pair identity a first-class observation,
-  attestation, record, and currentness fact. Verification remains closeout-owned.
-
-- 2026-08-29T18:29+02:00 — Added the disposition-exact no-impact projection consumed by the
-  onboarding body gates; semantic decisions remain curator/developer-owned.
-- 2026-08-29T11:00+02:00 — Re-read the shared admission claim against the current source and
-  widened its citation through `curator_coherence_evidence`; the disposition remains unchanged.
-- 2026-08-29T08:52+02:00 — Created for the single structured coherence authority and shared
-  currentness validator. Verification remains closeout-owned.

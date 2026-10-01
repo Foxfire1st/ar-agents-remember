@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command, at which source tree and over which broken scratch record the bodies were captured.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"break-family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:eb972b01c79c017bdce870cb25e79a34fc3391538258634c095cd69a5062e5ca",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per captured body, the card entries last, and the merge-round note (MIK-L33).\n\nAnchor: \"\\\"fixtures\\\": [\"; \"src/panels/review/markerReturn.cards.captured.json\"; \"merge_round\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92897c5349f3345fff3e532e3c2380b0ed621a1c",
+            "content": "sha256:c65463a0d245bedac05b533dc19d4e7bbcb0ec3ee1c8c35d3ca0d39a2ca456ff",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

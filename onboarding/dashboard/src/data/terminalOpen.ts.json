@@ -1,0 +1,113 @@
+{
+  "path": "dashboard/src/data/terminalOpen.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The result union and exact accepted-response identity checks.\n\nAnchor: \"export type TerminalOpenResult =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:4e3cf95a2942663f318295e0bc4ba439f83ccc4009fa4963f3d56aa80a34c8f9",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sole POST plus network, body, HTTP, and harness-failure classification.\n\nAnchor: \"export async function openTerminalSession\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a08577d8aa03c3895b5e7db4c16943fa05372100",
+            "content": "sha256:aa124a4a0ac872c6d49441d77cf3d9f9df71639b5a190b09444cff6eb98f9aa3",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 350
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compatibility import surface re-exports this authority instead of owning a second opener.\n\nAnchor: \"from \\\"./terminalOpen\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ccfb77566c2ec22884be60d4ef38617b60a93",
+            "content": "sha256:f332da66274508483c597ab8c7651583e2944e2ebbd83c93e0c0670c5c7437d5",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "dashboard/src/data/terminal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The session store mutates and broadcasts only after `outcome: opened`.\n\nAnchor: \"sessionStore.getState().upsert(result.session\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
+            "content": "sha256:c1359e1f918fc3803be7f8bf0e4f0dffa97ab3119d82c994dff0be0d87e016e6",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 841
+            },
+            "path": "dashboard/src/data/sessions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Hosted launch delegates to this opener while preserving its established response grammar.\n\nAnchor: \"export async function openHostedSession\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49473969fb9aeb35eeec329807b913f540bb8328",
+            "content": "sha256:7c56cec1447aaa728da7dc97536235cdbfe5a52befcd04ccf925e4d9c451b544",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/data/launchFlow.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Direct parser and caller regressions cover accepted identity and every failure family.\n\nAnchor: \"POSTs raw metadata and accepts the exact server-owned row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a43b46bd818cb00f7676500b0de56c23e37fa4b2",
+            "content": "sha256:054b9d092ce9acf2cf65c287b2ad654d774630cc6a36d5729d366a6561020c4c",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 356
+            },
+            "path": "dashboard/src/data/terminal.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

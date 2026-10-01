@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/data/keymap/zones.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The contract under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cf09fc2cc7b5cd77e4b6a3662a135ea22c8951d",
+            "content": "sha256:8411b3483d6fad9439e6272849de52d5d9bcf15634e4bb08c68b5f9142d8f77d",
+            "locator": {
+              "kind": "symbol",
+              "name": "zoneForTarget"
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reserved set + verification records the hygiene describe walks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54343cbe0afefa4637c171ffb732d318dff6a422",
+            "content": "sha256:0b26ff166f09ff510fee37b56e12b33fdc12de8766c7b5c139f69e7d0bdd481d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BROWSER_FORBIDDEN"
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The DOM-level counterpart (real markers, tinykeys, preventDefault observation).\n\nAnchor: `preventDefault`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63eea4bd1f9d5462193341b7a1b75a2dc42e855b",
+            "content": "sha256:5cbecdbf5353f51257d79916d6969bce3846d9e5c6d8ec7968287068140fd3fb",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/panels/session-cockpit/sessions-view/shell.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

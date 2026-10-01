@@ -1,0 +1,822 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:5a746ae9e83118cef6fdf077213f22939958394f28d4e82657b82891781d19c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "operationRows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:6681525123433a091796367cefcc7c4dab2b8df6eeb05ae2cfe074883e4ec367",
+            "locator": {
+              "kind": "symbol",
+              "name": "isRootTaskDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:4a2e91a7fe4e79de578e1c4da6f8c14ccffb78102c32e91cb7b4c7a29cd80a6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosureForDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:5251bf2c737c99c143488d4c74167f7f086f4c267203c45e1e44c8af3dba5f16",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:820591271d7a545d7dbdc24aaee542d41a2536342a58e5ab3de4fffeeafe5435",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 480
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:ec98dde2d2dd2eeab8264b9ae7d0a28aace105868a76f20d93f7f3090ecd8177",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 479
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role=\"option\"` names it.\n\nAnchor: \"<ListBoxItem\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:a1386bd576ce91eacaf853f066fd8ada761ef65513bdf3e0b61b53c8aac75345",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 647
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared hierarchy helper computes parent matches, child-id hierarchy labels, parent selection keys, and the exported `orderedByCreation`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:f86d2d2b3b470b09bca48768dc634712d657abcb4d6b1b22df566e48f5a4ef61",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderedByCreation"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:70612c94f87937832879955d71f7cb2faddcdb2b797c5db714a84831ea8e9366",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The L14 orchestration-command helpers this list's `commandFacts`/`seriesRow` tier derivation calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:91526ae7167461e1574ed05dd74af8ebef10b94a4a30d0d6b58b50fd18204e74",
+            "locator": {
+              "kind": "symbol",
+              "name": "isOrchestrationDoc"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:7afd4163b075219cea73c08fd8264cfe0806cf3bfd20ea056e40ce8823737761",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterCommandNames"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "213518abed80e566e38ea691861377467f06ee0d",
+            "content": "sha256:d8e1f9610296784050a22d03ca3fcaa6a946e3511e00d8d9bfb5be153ebf3567",
+            "locator": {
+              "kind": "symbol",
+              "name": "orchestratorParentKey"
+            },
+            "path": "dashboard/src/data/taskHierarchy.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The V4 chevron insignia rendered on tier rows (size `row`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f899249cd471ec02db2dcb780f43829ecf1da624",
+            "content": "sha256:d54b8dd525bc7b35012979498e081a730bc39d887141f297bc814c05c239ca42",
+            "locator": {
+              "kind": "symbol",
+              "name": "RankBadge"
+            },
+            "path": "dashboard/src/grammar/RankBadge.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "L14 tier tests: the three-level hierarchy with 22px indents + the D3 flat-run regression.\n\nAnchor: \"renders the orchestration tier above its commanded masters with the V4 treatment (L14)\"; \"renders NO orchestration row or insignia in a flat run (D3 regression)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:ae24751802a2462ccfd04e2bb807e39e7adc01448a69ef6069c7801c402c7c52",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:c5762aad5822cd8ad2b9536594d7cf28b72c31201c51250559ba64676ce11642",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Focused tests assert root docs, active-enclosure leaves, enclosure fallbacks, and tooltip context are visible while loose/inactive/cleanup-completed leaves are absent, then prove BY REPO indentation/parent keys and BY PHASE flatness.\n\nAnchor: \"limits sidebar rows to root docs\"; \"keeps standalone root task documents visible without listing loose leaf docs\"; \"exposes the full long task title and row context on title hover\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:892ab092a299ce2ded321d5a6f2a825b271f87f05f616da0d954b1358342143e",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:000f8d35b8f7338d3a22669400588e5742199e387ffdc07737fef3ef445fded3",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 540
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "content": "sha256:7fd9d68c9c928146aa1be35e549365e22ae3119757ee549fe28d0592efe9add5",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "`fmtWait` for server-computed stale/wait ages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d51e34bf1af86a00f562f7192a6055f039cdd622",
+            "content": "sha256:62037153cf0b147b87950ac58603f70f56d3ea0b2daf892759e0fdf10a74a172",
+            "locator": {
+              "kind": "symbol",
+              "name": "fmtWait"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Shared typed selection keys (`taskDocSelectionKey`/`seriesSelectionKey`/`lifecycleSelectionKey`, `parseTaskSelection`) and the `taskLabel`/`taskDocumentLabel` helpers used by the list and detail panel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:7d65fda57b3ea27116cf835d80c62f19c05c18d14fdab64f88e039a6e61c3e55",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocSelectionKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d7f7a06b097b77cccca102a258b60d8143a07558cac28991192305fcecdc6f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesSelectionKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:f3e6062b6cec88536e2c8ed18a53a06fb8b0c5d35108f106e4a98e1ad0544351",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleSelectionKey"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:946d84d3e5db6a791ffa7bd49a9524899d3611ed09672419978503695448037c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseTaskSelection"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:86383b3c238500b02d8f7732008333316d1708d25977d666e54e156794db34ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "40a0e24637b2a8f8a50c03cf09db2ea3976e83cc",
+            "content": "sha256:d06692e6f0f3b9e031dd184f6ceffee2ef3bef4a16b971b443a233499df51516",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskDocumentLabel"
+            },
+            "path": "dashboard/src/data/taskIdentity.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shared `Panel` head/sticky band the pivot sits in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:a496f7643da43edb989182547364cec0d2eb92106d175da69102a945a8b91a9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "Panel"
+            },
+            "path": "dashboard/src/grammar/Panel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Task-row pickup spinner/check-chat notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f4348f9d417ec5f7744217df78ddbebc9143fd",
+            "content": "sha256:5390c3d38b730372c454a86a67bad7362107ae084087616b7f59e96388ead934",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentPickupIndicator"
+            },
+            "path": "dashboard/src/panels/AgentPickupIndicator.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:4a2e91a7fe4e79de578e1c4da6f8c14ccffb78102c32e91cb7b4c7a29cd80a6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosureForDoc"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:11b02a9f1d7edca88406d010929683a1a8700544a5fa2760295f64a780ab72e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterParentKeyForEnclosure"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:48708a2042283e26aa14af60b16a1d0cc7c0423ba19b2f7c8c2380fe122706a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:ec98dde2d2dd2eeab8264b9ae7d0a28aace105868a76f20d93f7f3090ecd8177",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 479
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:b44db912b4bc1e3200ca829574d4f90fe4cc198b0c114a62d5ffc9adf5953344",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it.\n\nAnchor: \"hides a reopened leaf (cleanup=reopened\"; \"re-admits a reopened leaf once its worktrees physically exist again\"; \"hides an abandoned enclosure from the active operations rows\"; \"nests a doc-less orphan lifecycle under its master instead of floating top-level\"; \"renders ONE task entry per enclosureId: a bound lifecycle annotates the doc row\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:82a39849b31478b85846da5074dc02fd71c311dc912d749a39cce5960e58a1e4",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:742e034c38c3dbabf4e19d6052348bd9ea3182090ca80da23b5adc8d1c4ccb13",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:980fb1fd0396f20839e272053cebc80def3ac96b451160527eae9a0d3e1804b8",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 463
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:7e7767be0123e13218965a1081a4939ef5cab10c9c8a3d4270a8affef4c6f6b6",
+            "locator": {
+              "end": 538,
+              "kind": "line_range",
+              "start": 502
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56f420ce7f7aa94ba4031632a42bbc2a530f5dd3",
+            "content": "sha256:fb2d495d2bd3fdf44f9b36430f55852598a327a85e190124aed071fd42b21c27",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 369
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:4f9696a96f7c1146d3d4f27c51d5a0f7b8f4c740974626f7b16d251b500adb13",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupRows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:797cd7bdfbbf3af8c34fc9f9072aba171acde34c9f1dcea3fcac9a408d8ffc8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "hierarchyRows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:834c42faefba23b0b3da41dd68d025d818d8f6658d9c4a59f051b56275e86411",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`.\n\nAnchor: \"const sizing = css({ flex: \\\"1 1 0\\\", minWidth: \\\"0\\\", overflowX: \\\"hidden\\\" });\"; \"const listBox = css({\"; \"const section = css({\"; \"const row = cva({\"; \"const rowId = css({\"; \"const rowSec = css({\"; \"const rowGate = css({\"; \"const rowMeta = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:976d7661ace050604a634ed01288b27de1bdaf055d2fcf24fc42e721c0206748",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:eace09d677cc500fc164d79a7138677de005fbf5827cc6f8badb8e61037bcece",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:3917e50cd8597cad842e841fe876fd8edfde103ddbc61def259cae07d3fa9c8c",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:ae674e75ecf2e78e3a8c2d39f9c6e1b3fdc21e6fd2668b8bd51d37cf4bfd0012",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:9839909cda5674f2526e6b8324a59bbd8bc6f343ba9b1363f275dcf102813c7b",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:b930eac16e53e71600efdbfc85f8f0404f3d8228ecf409b9e3fcd6c2410a3b6b",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:0a10a9dbb62fb84b831c4c403619f97d79ffe91ea8697eac82c9894a775170a3",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:924eaa542ad794393d69f5fb979440fab609f233fe10e8a3b36fdff8a5fb3ec9",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:9839909cda5674f2526e6b8324a59bbd8bc6f343ba9b1363f275dcf102813c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowId"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:0ec85bd13b646bd79e5359ac593f85df6451aae9c5a9f5b397889ac9562262e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskTitle"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:58653a0ff262bc7bb8bfaa8446b73b65d51a90a8da17dd423ab118b18a6553ea",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 757
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The two row builders and the variant they compute. **Re-read against the reverted module:** the ranges below are the CALL SITES (`docRow(`/`seriesRow(`), which is what this row can point at now; the builders themselves are `docRow` at `:738-786` and `seriesRow` at `:788-837`, they compute the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:33b8ef9f2a470333421a44a6acd19d16ec6825710e8b1430b752850d1d0bb848",
+            "locator": {
+              "kind": "symbol",
+              "name": "docRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:d48df5e9d4d12cdfaee2dd53189f7db410f12a8b20e0f6e0c2a6982abeb292e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:d3592f9ee6580f5a3ff59d3dc5523d0ca24fe85b9770ec161fa3ad4cb76f3fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "statusVariant"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:b4102deb8597bd479c3fd177d59bda9deab4bbafa4f261d5579cedcd85c51301",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 489
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "content": "sha256:c21b1210951d83ac147528567aec61e3d78c73f2f06a6f6b677818aba6dcf042",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 515
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "\"from agents_remember.models.task_document import DocStatus\" — `statusVariant`'s entire input vocabulary (imported from \"from agents_remember.models.task_document import DocStatus, StepStatus\").\n\nAnchor: \"from agents_remember.models.task_document import DocStatus\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "content": "sha256:9f37622c422a4d718eb844c8b24deea23a0c95e9248873f74a408670def4a983",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:8c2edda1c2305b95f5517495c5620ad3444d736a6b014a5c4aa72335f3be9d3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "Dot"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:f21c21409320c8d8d9bb08014f00711f758a7bbf2eb2396daee3d8cfc7ecc901",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_GLYPHS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
+            "content": "sha256:023487c06052b5eb304abe6196955463f88887fe2a01d869f44a212d78066acb",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/output_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`retain_prepared_output` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5ed9119fdd40bddd560cac3aa9c9cb551dcbdca",
+            "content": "sha256:97461cf2bf42454a04184173a4189a26d1114dcce138e48a2eab0acd7b9e00ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_prepared_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

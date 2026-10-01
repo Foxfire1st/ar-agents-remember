@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/mcp/__main__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Guarded delegation to the server entrypoint\n\nAnchor: `main`; `SystemExit`; \"__main__\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab78be40f9d47ecdb224d994180945115476b92b",
+            "content": "sha256:448b810687a197ba2f2083859164a29faa8d70453018bc36225db491bc508bef",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

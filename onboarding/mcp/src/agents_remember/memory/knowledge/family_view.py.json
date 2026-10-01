@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/family_view.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The one projection entry point, which reports the stored links, the route or the explicit ungoverned state, and the recorded context.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3155b27e94d83a1edb8f899ffee6b4f5f29c55d",
+            "content": "sha256:f50cadf3385628fc9dfeefcc7f17156df83117891e0d006ff4e37a6cd3fa2a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_revision_view"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection's value, whose links carry their direction and the policy version they were declared under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3155b27e94d83a1edb8f899ffee6b4f5f29c55d",
+            "content": "sha256:745bd2c609eb24f9680b4e9d25f648d8fdaefa844e6786f25da53900fc222f59",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRevisionView"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3155b27e94d83a1edb8f899ffee6b4f5f29c55d",
+            "content": "sha256:ec5091d116a7d9abf6f55bbeb493e59e4c797f14501fbfab65a8afdfedd37408",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The ungoverned state's own read, which never fills the gap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70fc8ed92d8fb199a9f3ff535f95d34e56a90580",
+            "content": "sha256:8d13b2a6e144ce30cfd5932da2105e64e0bd9820b0fe5258558dc86d3feb213e",
+            "locator": {
+              "kind": "symbol",
+              "name": "owning_route_of_family_revision"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/compositions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The case that drives the projection through the read-only application seam and asserts the recorded link is reported with its policy version.**\n\nAnchor: \"test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:de6c0ee5898946e1cabd311872da8a8c780b568e4dac98a50df334887fea28be",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 615
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The same case's second half: a family revision this namespace does not hold is a typed refusal, and the file is byte-identical afterwards.**\n\nAnchor: \"test_the_application_seam_is_read_only_carries_the_operation_and_moves_no_selection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:de6c0ee5898946e1cabd311872da8a8c780b568e4dac98a50df334887fea28be",
+            "locator": {
+              "end": 615,
+              "kind": "line_range",
+              "start": 615
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The case that proves a composition graph leaves the shipped selection exactly as it was.**\n\nAnchor: \"test_a_composition_graph_leaves_the_shipped_selection_exactly_as_it_was\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d55216d76124e171004006d0ddce90fafccd9de7",
+            "content": "sha256:b2cadcf76a062fe95dfe425207eaae440c42730fe7cfa53aba6b70534066cc08",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "mcp/tests/test_knowledge_family_composition_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

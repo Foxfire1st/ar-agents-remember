@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/final_certification/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Re-exports the catalog plan/attestation/readiness surface and version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "content": "sha256:c4f8c30e438f5e7dc4bc1769e90deda83e9d6a142beee2464fa13f0771b133d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINAL_FULL_CATALOG_VERSION"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "content": "sha256:db5240aa6ac5bce7ba12320ce6be3607257a41f754204f47e229ae42f74affd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_final_catalog_plan"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "content": "sha256:c52189592c367935d50eaa3ec6c898f27fcc2f6c8869b86a2019c3e89ae22a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_final_catalog"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "content": "sha256:e3ad43851acd5c23737e4541f9ea1803619c604c6bb9a9c2c868f95fd642cce1",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_catalog_attestation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "content": "sha256:7e1330dae428cbfd13dd27aa5f57b0686470fe1df48be3644cc50c3c50f5a28a",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_catalog_readiness"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Re-exports the Gate-5 semantic-input assembly and coherence subrecord derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:fe22f8ecfb2dda3039b69e975b7917bbd33ac5a343ba42c3cb76fca816655b63",
+            "locator": {
+              "kind": "symbol",
+              "name": "assemble_gate_five_inputs"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/certificate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:71d4702e9fc7ddf7793928dad68000cd6cc577606d6207f92f20637caf982f40",
+            "locator": {
+              "kind": "symbol",
+              "name": "coherence_subrecords"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/certificate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "069e8668f402803b738df24e66bbc469839fa449",
+            "content": "sha256:8bfa4560c5a57f64ea0498b75de5bb03a76f3673fe42e063fefda47c616090b2",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/certificate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Re-exports final-result assembly over caller-supplied executed checks and validated authorities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8e3ebebc6dd7687aa51bdefbc565a3239e1db3b",
+            "content": "sha256:90f68a6d51a8945ea4d75f0eede91b8a9473654755ee15fbb13d6f3a1c270ee1",
+            "locator": {
+              "kind": "symbol",
+              "name": "certify_final_full_memory_coherence"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/certify.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Re-exports the green Gate 1-4 prefix adapter proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:9ce03194ff6758c1fa550e95b391d5a67a24b6061d53caa0143d875fef52334f",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateFourPrefixProof"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:bcb224ff21c8642cb7f079730a533884012b720f17b6ca5e7ca2b8eaa8b8581b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_green_gate_prefix"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e482167e7e01d8ee0350bd21e7c29a43782df2fe",
+            "content": "sha256:8206fa6e007f817e42231388a1ccc90a2d222ca15d4dacd8acda6ba6d7bcec64",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/gate_prefix.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Re-exports the closed typed final-certification models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:a08b767212ffc5c1389bbf5584c41794ac06ad5deebe4eef4667d440a608a9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:eecc7565800b97269830632145c7337ea853dcd37e26dde98a89d88389a1bca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemResult"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:19cfef217d83663856ca99d41b5fd7f85cd6cfb84ef31e5ef593c9a9b343f0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCertificationResult"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:c7df19377b5e8f5b189825c2a8e0a203553dcdd6d3867b381a3a881db78f96c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalFullCatalogAttestation"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fccea05a0891416a51340d715344717950e51e8",
+            "content": "sha256:72ef94e3cfce939062ada1599c627eede5cf0ca5b549b9dcfaa1e64ca6ddcebd",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalFullCatalogPlan"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_execution_topology.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application/overview.md](overview.md)
@@ -94,19 +84,19 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 - Errors use the shared `AgentsRememberError` family and are translated to `TaskDocError` at the
   MCP application boundary.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:194-266 |
-| Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). | `_verify_authoring_judgments`; `verify_sprint_judgment_ids` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:404-430; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:433-474 |
-| Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. | `_require_complete_partitions` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:713-741 |
-| The read-only inventory previews every sprint and commanded master's proposed nature and blockers. | `inventory_execution_topology` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:953-1015 |
-| Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. | `enforce_execution_topology_edit` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:780-802 |
-| The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor). | `require_serving_topology_schema` | mcp/src/agents_remember/tasks/serving_preflight.py:32-42 |
-| A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). | `_require_move_does_not_retarget_edge` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:638-659 |
-| The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). | `_require_draft_node_kinds` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:683-710 |
-| The edit preflight fires only for edits that emit topology schema bytes (L15-R4). | `_edit_emits_topology_schema` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:864-878 |
+### Repo-Internal References
+
+- The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. [1]
+- Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). [2]
+- Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. [3]
+- The read-only inventory previews every sprint and commanded master's proposed nature and blockers. [4]
+- Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. [5]
+- The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor). [6]
+- A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). [7]
+- The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). [8]
+- The edit preflight fires only for edits that emit topology schema bytes (L15-R4). [9]
 
 | The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982; mcp/tests/test_author_execution_graph.py:53-53 |
 | Preview and apply both route graph cardinality/title preparation through the central application owner. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:201-284 |
@@ -166,69 +156,4 @@ and title-context precondition without changing that ownership.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary. | `ExecutionTopologyError`; `ExecutionTopologyAuthoringRequest`; `ExecutionTopologyEditRequest` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:61-62; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:65-74; mcp/src/agents_remember/application/task_docs/task_execution_topology.py:77-85 |
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `enforce_execution_topology_edit` repointed to mcp/src/agents_remember/application/task_docs/task_execution_topology.py:780-802. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `require_serving_topology_schema` repointed to mcp/src/agents_remember/tasks/serving_preflight.py:32-42. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-26T10:44:52+02:00 — Routed repository-global master discovery through the module-level `repository_master_documents` query; graph authoring retains no topology-object census variant.
-
-- 2026-08-24T13:43+02:00 — DAGQC L1: topology preview/apply now share the central
-  zero/one graph-publication title owner; the private first-graph helper is removed. Verification
-  metadata remains pinned until closeout.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_execution_topology.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: served-build preflight gate on every topology-schema
-  write (L15-R4); typed judgment-required dialect for judgmentless edge/move/nature mutations (F5);
-  named move-retargets-edge refusal (F3); draft node-kind check before graph construction with the
-  L15-FIX-1 `None`-recording unresolvable-ref branch; `create=False` on dry-run locks (F2).
-  Verified at code commit de3a0fd9.
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   graph-authoring publish/preview threads joined graph titles (`_authoring_batch_titles`, L12-R1/R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:22+02:00 — 260815-DAG-L14: extracted `verify_sprint_judgment_ids` as the shared
-  judgment-register verifier, reused by the sprint linkage operations; `_verify_authoring_judgments`
-  delegates to it. Verified at code commit 2f494982.
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13: removed `migrate_execution_topology` — a graph-less
-  sprint runs the atomic-sequential default, and `author_execution_graph` is now the bootstrap
-  seam (empty draft, `bootstrapped: true`, exact membership plus explicit natures at final
-  validation). `enforce_execution_topology_edit` skips graph validation for graph-less sprints and
-  refuses to drop an authored `executionGraph` through ordinary writes; the missing-register
-  refusal names the scaffolded-register/`set_section` repair. Verification remains closeout-owned.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: added `author_execution_graph` — the incremental,
-  judgment-provenanced structural mutation batch (add/remove node, add/remove edge, move_leaf,
-  set_nature) over a migrated sprint graph, with typed refusals (missing Judgment Register section,
-  unknown/unauthorized judgment, segment-on-atomic, incomplete partitions), dry-run diff/wouldLose
-  preview, queue-serialized atomic publish, and `leafPlacementFacts`/`numberingHints` reporting;
-  `migrate_execution_topology` remains the lump-only bootstrap. Verification remains closeout-owned.
-
-- 2026-08-18T12:00:00+00:00 — 260815-DAG-L9: added `inventory_execution_topology` (read-only pre-migration
-  enumeration with branch-backed atomic classification); verification remains closeout-owned.
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-15T09:10+02:00 — L3 content update: documented queue-serialized topology migration and
-  exact commanded-master completion proof; verification remains closeout-owned.
-
-- 2026-08-15T03:10:06+02:00 — 260815-DAG-L1 targeted-Dagger repair: retained strict explicit
-  migration while extending forcing proof across malformed request shapes, missing and wrong-kind
-  targets, unresolved masters, and out-of-repository task roots. Removed only an unreachable
-  second task-document validation translation after the migration envelope and source documents
-  are already validated.
-- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: ordinary master
-  `create`/`replace` and identity-bearing `set_field` edits now revalidate every sprint whose
-  alias resolution could change, including same-path master-to-leaf kind replacement; migration
-  canonical-reference failures are normalized at the task-doc boundary, and previews expose each
-  master reference with its declared nature.
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: created for the explicit execution-topology
-  authoring and finite migration application policy. Verification remains closeout-owned.
+- The current module exposes `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`, `ExecutionTopologyEditRequest` at this ownership boundary. [10]

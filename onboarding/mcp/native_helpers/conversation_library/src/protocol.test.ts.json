@@ -1,0 +1,108 @@
+{
+  "path": "mcp/native_helpers/conversation_library/src/protocol.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Production protocol code implements the exact versions, handshake, fixed error output, and per-operation key validator under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROTOCOL_VERSION"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:6fda37481ef725c191f0895f833cdea5222a396d9fa5c8618104842f82389ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAUDE_SDK_VERSION"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:2777f3346906e64541e769e0af8966ca972a3ff4f78ab149fb210e5ec0c8b284",
+            "locator": {
+              "kind": "symbol",
+              "name": "PI_CODING_AGENT_VERSION"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:2530f0fa57763facc1c6056e12b87468720c34946e0ba57687c59bcaa75382f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "redactHelperError"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:e29196e810d4b8e7751ebb86877d5922e16f1053430b486d57a9806ecdde76c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildHandshake"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:cdf0d1c2244ab3662354c24b67c30cfa0a061006b343afdf027415db77821f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "parseHelperRequest"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:866ee07c0323af5c84a247fc1908ac22708d7014eb1715a5f08306f96e008ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "validateOperationShape"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:39d01051f0d93dafa81debaf04a568977806f3cd0b97e75d7f09d22a259d5b4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireExactKeys"
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

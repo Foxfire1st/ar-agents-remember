@@ -1,0 +1,119 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: real served answers, SCRATCH-AUTHORED curation, only `fetch` stubbed.\n\nAnchor: \"MIK-R29 on real data\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:44773d1744b919cb1d102d8481622ee740bcfd639c5f1a7ff88a4517cda8cfe7",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The captured bodies and the request-to-body map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
+            "locator": {
+              "kind": "symbol",
+              "name": "captured"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:b3a9376f1127391a6c9857ff7de50c8e72591e806d5926eda7ecc89bf5ad4b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "bodyFor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The file, directory, root-summary and test-file cases.\n\nAnchor: \"opens a file with its prose, resolved references, entries, families and linked records\"; \"opens a directory with its overview, routed families elsewhere and the route decisions\"; \"lands on the bounded root summary and follows a subtree page to the next\"; \"shows a test file its proofs by invariant with their facets\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:40d92a8790c4ce3559fcdccef75d9bbb59e50e307a93abd9fcf7ee581089c3d0",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The invariant, family, decision and incident, and census cases.\n\nAnchor: \"opens an invariant truth view with its states, links and a three-source timeline\"; \"opens a family, a decision and an incident with every field and their links\"; \"shows the census, the without-proof list and code opened at its symbol\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:c24887d1ef5aea565b06c2656fba7a8b0e2e318dae62072f66eabea7af202c97",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Navigation, and failures named.\n\nAnchor: \"navigates by URL: explorer and links change the shareable hash, and the hash round-trips\"; \"names a partial index, unavailable prose, unverifiable states and an unconverted tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:c4de5cce9298e505cc8d7382ff48f5127105d3b02bc080c779e8c0fe39c43ba1",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links.\n\nAnchor: \"links [n] markers in prose text only, never inside code spans or fences\"; \"marks the located code lines, and names a timeline source that could not be read\"; \"heads a superseded decision with its derived status\"; \"names side reads that failed, pins a clean published view, and drops stale explorer answers\"; \"names record links that could not be read instead of claiming there are none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "content": "sha256:55fbad5ec5c3f22a00674070fe8209df434658a968de12ee53de99f92f4dd965",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

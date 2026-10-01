@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/projectors/claude.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/projectors/claude.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Active conversation projectors overview](overview.md)
@@ -148,7 +138,9 @@ cross-session guesses.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. The schema authorities named by the
 module — the surviving 2.1.210 turn/interaction fixtures and 2.1.217 interrupt fixture, the
@@ -159,11 +151,9 @@ consumers), and the 2.1.220 sub-agent frame shapes (`parent_tool_use_id` sidecha
 task_* lifecycle, `background_tasks_changed`) probe-locked in the module docstring from the
 2026-07-26 live probes — are repository-owned and cited below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this mapper. | — | — |
+No configured domain documentation was available for this mapper.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The adapter's stream state builds the exact submission echo and the parsed frame surface; the
 claude runtime fixture records the claude evidence rows (informational version metadata only —
@@ -172,22 +162,18 @@ store's block union converges the split tool items and absorbs the block-less ta
 upsert; the conversation grammar carries the roster identity as `ConversationAgentRef` on
 `ConversationItem`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. | "def _handle_replayed_user("; "def _transcript_entry("; `MAX_TRANSCRIPT_TEXT_CHARS`; "def clip_transcript_text(" | mcp/src/agents_remember/serving/claude_stream_protocol.py:21-21; mcp/src/agents_remember/serving/claude_stream_protocol.py:429-429; mcp/src/agents_remember/serving/claude_stream_state.py:628-628; mcp/src/agents_remember/serving/claude_stream_state.py:929-929 |
-| Historical evidence (retired with the d3610903 suite reduction): The Claude runtime fixture recorded runtime/helper versions and sets `enablesCapabilities` to false. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
-| The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. | `ProjectionStore`; `apply_item`; `_union_blocks` | mcp/src/agents_remember/serving/conversation/active/store.py:135-445; mcp/src/agents_remember/serving/conversation/active/store.py:466-482 |
-| The engine's echo zipper merges echo and frame channels by strict turn order. | `_zip_entry`; `_drain_one_turn_body` | mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:82-97; mcp/src/agents_remember/serving/conversation/active/projector/echo_ingestion.py:99-111 |
-| The conversation grammar declares the `ConversationAgentRef` roster-reference model. |"class ConversationAgentRef"|mcp/src/agents_remember/models/conversations/content.py:139-139|
+- The adapter defines replay-user and transcript-entry handlers together with a 128 KiB transcript-text bound and clipping helper. [1]
+Historical evidence (retired with the d3610903 suite reduction): The Claude runtime fixture recorded runtime/helper versions and sets `enablesCapabilities` to false. These removed artifacts provide no current execution or capability-enablement proof.
+- The store unions tool-call blocks by `block_id` so `tool_use` → `tool_result` keeps input and output, and a late tagging upsert does not regress a terminal phase. [2]
+- The engine's echo zipper merges echo and frame channels by strict turn order. [3]
+- The conversation grammar declares the `ConversationAgentRef` roster-reference model. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this mapper; the Claude Code process is a
 local subprocess reached through this repository's own adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## Mutation-Diff Facade Delta
 
@@ -228,63 +214,3 @@ which feeds L3 exactly like codex `rateLimits`). The mapped output is unchanged 
 shape is still preserved, never guessed.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-28T06:27+02:00 — PDLS wave 005 curator: corrected the module-level schema provenance
-  after the unconsumed 2.1.207 fixture cohort was removed. The surviving locked authorities are
-  the 2.1.210 turn/interaction fixtures and the 2.1.217 interrupt fixture; no compatibility copy or
-  stale memory sidecar remains. Verification metadata stays pinned until closeout stamps the
-  landed code candidate.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T11:43:39+02:00 — 260731-EFA-L6 S18-B03 curator: rewrote the submission-echo claim to the
-  bounded retained-text definitions, narrowed fixture/roster/system claims to their cited extents,
-  and replaced stale rate-limit line references with exact anchors.
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 1 stale self-citation. `rate_limit_event`
-  is no longer its own `if frame_type == …` branch in `map_evidence_frame`; the silent-contract frame
-  types are now a table lookup (cit:([`_SILENT_FRAME_CONTRACTS`; `_require_rate_limit_event`], mcp/src/agents_remember/serving/conversation/projectors/claude.py:253-256; mcp/src/agents_remember/serving/conversation/projectors/claude.py:263-266)). The current cited behavior binds the frame to the validator, which requires object-shaped `rate_limit_info`.
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file citation whose target file
-  was split into a package upstream. `serving/conversation/active/projector.py` no longer exists;
-  the echo zipper now lives in `active/projector/echo_ingestion.py`. Repointed both the link path
-  and the range: `EchoIngestion` ("Own the strict turn-order zip between Claude echoes and evidence
-  frames") at L35-L36, and the zip itself — `_zip_entry` plus `_drain_one_turn_body` — at L82-L111.
-  Read the module to confirm a user echo still opens the next turn and flushes the frames queued
-  behind the previous one.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `_TaskIdentity` and the named `task_*` / strict-recognition readers; mapped output unchanged.
-- 2026-07-26T15:34 — 260718-CHATS-L7 curator: the projector learned claude sub-agent mapping (D6)
-  — `system` frames `task_started`/`task_progress`/`task_notification` now mint one roster item per
-  agent, `background_tasks_changed` registers never-bound background tasks, a bounded session-keyed
-  `_AgentBindingRegistry` binds `task_id` ↔ `tool_use_id`, sidechain assistant/user frames carry
-  `ConversationAgentRef` via `parent_tool_use_id` (plus `_spawned_agent_ref` on settling Agent
-  tool_results and sidechain user-text message items), malformed task_* frames degrade to preserved
-  unknown-vendor instead of killing the projection, and `map_evidence_frame` accepts the (unused,
-  in-band instead) `parent_thread_id` demux context. Corrected the stale "system frames feed
-  canonical status via the snapshot and mint no items" behavior record (now only true for
-  non-lifecycle subtypes), refreshed every Logic citation against the grown source, added the
-  sub-agent invariants, re-pointed the store/projector/state reference rows to their current line
-  ranges, and added the `ConversationAgentRef` grammar row. Verification metadata stays pinned —
-  the L7 change is uncommitted, so no commit hash can attest it.
-
-- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: documented the stable mutation-diff
-  facade, per-tool parser split, vendor-shape boundary, and position-preserving MultiEdit behavior;
-  verification remains pinned until the code commit.
-
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded R3 — the mapper now learns the
-  installed Claude Code 2.1.216 frame contracts as first-class typed frames. `command_lifecycle` is
-  strictly validated against the captured 3-state contract (`command_uuid` + `state ∈
-  {queued,started,completed}`) and mints no timeline item (native history renders the command), so
-  an ordinary session no longer floods with `claude:command_lifecycle` boxes; a drifted state
-  raises `UnmappableShape` and surfaces as visible drift, never a silently tolerated stranger.
-  `rate_limit_event` is shape-validated then dropped as telemetry. Corrected the Repo-Internal
-  claude-fixture finding to metadata-only language (R4 removed the version gate). Verification
-  metadata stays pinned until L5F closeout stamps the candidate commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: created the sidecar for the claude active
-  projector — stream-json frame mapping, stable tool identity with split upserts, exact
-  submission echo, terminal outcomes. Verification is blank because the new source file is
-  uncommitted; closeout owns its first source stamp.

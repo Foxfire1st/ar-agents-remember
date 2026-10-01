@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/review_artifact_cleanup.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/review_artifact_cleanup.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T03:46:54+02:00 |
-| lastVerifiedCommitHash | `8a2d4b478971bf40cca0f24d5e5d24a0844bd563`|
-| lastVerifiedCommitDate | 2026-09-30T04:16:14+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application route overview](overview.md)
@@ -105,46 +95,37 @@ task's archive report, `notes/reports/review-artifact-cleanup.json`, which the f
 - **L37 (rulings 22:22:37 Q4 and 23:15:34 F7):** the cutover notes state that archival deletes all legacy dataset
   copies, including curator scratch copies (65 in the ICR task: 44 through the owner, 21 by content).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository. The design authority is the requirement packet
 `MIK-R25@v1` (rule 5), MIK-R26 rule 6 and D17 of task `260928_maintained-invariant-knowledge`, with the rulings in
 `25_reviewer-on-git-trees.json`; they live outside the code and memory repositories, so they are named here and not
 cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's statement of every target's identity source, the trust line, the confinement and the accepted window. | "Where every target's identity comes from" | mcp/src/agents_remember/application/review_artifact_cleanup.py:22-38 |
-| The report file, the reason, and the two tables that make a file a knowledge dataset. | `CLEANUP_REPORT_NAME`; `_KNOWLEDGE_TABLES` | mcp/src/agents_remember/application/review_artifact_cleanup.py:81-85 |
-| The report, and holding a generation's pin and snapshots with the reason. | `_Report`; `hold` | mcp/src/agents_remember/application/review_artifact_cleanup.py:88-127 |
-| The composition-bound port implementation. | `ReviewArtifactCleanup` | mcp/src/agents_remember/application/review_artifact_cleanup.py:130-135 |
-| The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report. | `cleanup_review_artifacts` | mcp/src/agents_remember/application/review_artifact_cleanup.py:138-172 |
-| The report is written only inside the task. | `_write_report` | mcp/src/agents_remember/application/review_artifact_cleanup.py:175-189 |
-| Physical confinement: no symlink on the way, and the resolved path inside the resolved root. | `_Confinement`; `problem` | mcp/src/agents_remember/application/review_artifact_cleanup.py:195-229 |
-| The legacy identity by the trust line, and `task.json` read only when it is the task's own. | `_confirmed_task_id`; `_task_document_id` | mcp/src/agents_remember/application/review_artifact_cleanup.py:232-276 |
-| Generations released through their owners, or held. | `_release_generations`; `_release_one` | mcp/src/agents_remember/application/review_artifact_cleanup.py:282-312; mcp/src/agents_remember/application/review_artifact_cleanup.py:400-440 |
-| A manifest naming another leaf, pin, repository or directory is held. | `_foreign_generation`; `_outside_generation` | mcp/src/agents_remember/application/review_artifact_cleanup.py:315-351; mcp/src/agents_remember/application/review_artifact_cleanup.py:364-376 |
-| The F1 exact own-task rule and the retained-code refs it selects. | `_own_leaf`; `_retained_code_refs` | mcp/src/agents_remember/application/review_artifact_cleanup.py:379-382; mcp/src/agents_remember/application/review_artifact_cleanup.py:446-454 |
-| The content scan: confined root, confined candidates, knowledge schema, untracked. | `_delete_dataset_copies`; `_scan_root`; `_is_leftover_copy`; `_is_knowledge_dataset` | mcp/src/agents_remember/application/review_artifact_cleanup.py:496-557 |
-| The finalizer carries the report after the archive move, and never raises. | `_with_review_artifact_cleanup` | mcp/src/agents_remember/worktrees/modules/finalize.py:229-267 |
-| The main archive case and the colliding-task case. | `test_archiving_deletes_the_tasks_review_refs_legacy_pins_and_dataset_copies`; `test_archiving_one_task_never_selects_a_colliding_tasks_pins` | mcp/tests/test_review_artifact_cleanup.py:228-278; mcp/tests/test_review_artifact_cleanup.py:281-299 |
+- The module's statement of every target's identity source, the trust line, the confinement and the accepted window. [1]
+- The report file, the reason, and the two tables that make a file a knowledge dataset. [2]
+- The report, and holding a generation's pin and snapshots with the reason. [3]
+- The composition-bound port implementation. [4]
+- The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report. [5]
+- The report is written only inside the task. [6]
+- Physical confinement: no symlink on the way, and the resolved path inside the resolved root. [7]
+- The legacy identity by the trust line, and `task.json` read only when it is the task's own. [8]
+- Generations released through their owners, or held. [9]
+- A manifest naming another leaf, pin, repository or directory is held. [10]
+- The F1 exact own-task rule and the retained-code refs it selects. [11]
+- The content scan: confined root, confined candidates, knowledge schema, untracked. [12]
+- The finalizer carries the report after the archive move, and never raises. [13]
+- The main archive case and the colliding-task case. [14]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The hook deletes refs only in the two repositories the archived task's series contract names; a manifest's
 repository is only compared against them.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T03:46:54+02:00 — 260928-MIK-L25 curator (uncommitted change set on `ar/260928-mik-l25`, code base `3eb034a6ab0493a51da5dcd6d013aa6f27f39496` plus the staged delta): created this card for the new file MIK-R25 adds, recording rulings 22:22:37 (Q3, Q4), 23:15:34 (F1, F2, F3, F7), 2026-09-30T00:08:39 (the record sweep removed), 01:00:07 (identity-derived deletion scope), 01:37:42 (physical confinement), 02:12:06 (the `task.json` id confirmation) and 02:32:42 (the directory-name review namespace, the trust line, the accepted TOCTOU window), and the archive candidate invariant. The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

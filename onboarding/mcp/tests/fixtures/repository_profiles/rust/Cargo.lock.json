@@ -1,0 +1,50 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/Cargo.lock",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Rust fixture lockfile consumed via --locked by fixture suite/e2e scripts.\n\nAnchor: \"repository-profile-rust-fixture\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f6cedf72fdf73fad410c9023e8764db7ef4ca58",
+            "content": "sha256:681e944e67a7209db73972de559533a393d58fb1ef9eb388e3318fc9f88fe382",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2283cd63b1a900b2661fae76a1a065dd4d016eea",
+            "content": "sha256:92df49754630acc34090ebbd6d882112d3cd0b499c5245daed9066b78bd84128",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1278cfa2291b15d50010bb4f49652f9946814fcc",
+            "content": "sha256:a9d9ae6ca4eee461a3c2455be6dfcae2133822b8d74005b620a56cba17687c98",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/run-e2e.sh"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

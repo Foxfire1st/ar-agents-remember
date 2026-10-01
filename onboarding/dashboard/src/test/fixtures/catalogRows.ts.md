@@ -1,15 +1,5 @@
 # dashboard/src/test/fixtures/catalogRows.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/fixtures/catalogRows.ts`     |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-26T15:40+0200                            |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`       |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `../../overview.md`                              |
-
 ## Governing Overview
 
 [dashboard/src overview](../../overview.md)
@@ -81,72 +71,29 @@ second builder.
 The shared catalog fixtures now cover structured multi-question and permission interactions, direct
 responses without a lifecycle, and a legacy runner's nested native question shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; repository code and tests are the authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live domain-documentation source was available. | — | — |
+No configured live domain-documentation source was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared row builder. | "export function catalogRow" | dashboard/src/test/fixtures/catalogRows.ts:12-12 |
-| The mockup-mirroring terminal-row `FLEET` scenario, distinct from its task-document fixture. | "export const FLEET: TerminalCatalogRow[]" | dashboard/src/test/fixtures/catalogRows.ts:82-82 |
-| The appended L6 PTY, interaction, and residual fixture pack. | `L6_CONTROLLED_WORKING` | dashboard/src/test/fixtures/catalogRows.ts:245-257 |
-| The appended L5I structured-interaction fixture pack. | `L5I_INTERACTION_QUESTIONS` | dashboard/src/test/fixtures/catalogRows.ts:326-363 |
-| The appended L7 multiplexed-interaction fixture. | `L7_MULTIPLEXED_INTERACTIONS` | dashboard/src/test/fixtures/catalogRows.ts:477-509 |
-| The wire type instantiated by these fixtures. | "interface TerminalCatalogRow" | dashboard/src/types/terminalCatalog.ts:32-32 |
-| The rail-state fixture consumer. | "hydrate(FLEET" | dashboard/src/panels/session-cockpit/SessionRail.test.tsx:58-58 |
-| The lifecycle-flow consumer of the appended fixtures. | "const retired = fromTerminalSessionInfo(L6_RETIRED_WITH_STOP_ERROR)" | dashboard/src/data/sessionLifecycle.test.ts:89-89 |
-| The interaction-bar consumer, including the multiplex suite. | "const multiplexedSession" | dashboard/src/panels/session-cockpit/InteractionBar.test.tsx:481-481 |
-| The PTY archetype-surface consumer. | "const controlled = () => fromTerminalSessionInfo(L6_CONTROLLED_WORKING)" | dashboard/src/panels/session-cockpit/PtySurface.test.tsx:39-39 |
+- The shared row builder. [1]
+- The mockup-mirroring terminal-row `FLEET` scenario, distinct from its task-document fixture. [2]
+- The appended L6 PTY, interaction, and residual fixture pack. [3]
+- The appended L5I structured-interaction fixture pack. [4]
+- The appended L7 multiplexed-interaction fixture. [5]
+- The wire type instantiated by these fixtures. [6]
+- The rail-state fixture consumer. [7]
+- The lifecycle-flow consumer of the appended fixtures. [8]
+- The interaction-bar consumer, including the multiplex suite. [9]
+- The PTY archetype-surface consumer. [10]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This file implements a repository-local contract. | — | — |
-
-## Update History
-
-- 2026-08-31T09:02+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
-  source ranges after the reviewed code moved; no semantic onboarding claim changed. Verification
-  remains closeout-owned.
-
-- 2026-08-14T05:26Z — L23 final curator: documented the separate sprint/master task-document
-  fixture used to preserve dashboard grouping and disambiguated the terminal-row `FLEET` anchor.
-  Verification remains closeout-owned.
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `catalogRows.ts` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: bound the normal catalog fixtures to a repository+sprint
-  and reserved unbound fixtures for explicit migration cases. Verification metadata remains pinned
-  until closeout stamps the code commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the RAW_TERMINAL_ROW fixture addition. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 10 repository-reference citations and normalized 2 prose citations (10/10 anchored and sourced; scoped citation check clean).
-
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: documented the appended
-  `L7_MULTIPLEXED_INTERACTIONS` seat (parent singular slot + plural list carrying the parent AND a
-  labeled sub-agent approval) and the previously undocumented L5I structured pack; corrected the
-  stale L6 pack citation (the L6 rows include the two archetypes, interaction kinds, and residuals,
-  with the L5I rows interleaved). The L7 code is uncommitted in the code worktree;
-  closeout re-stamps verification.
-
-- 2026-07-24T13:17:50Z — Added interaction-routing fixture coverage. Verification hash/date remain
-  pinned to the pre-commit source stamp.
-
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 (R9): appended the L6 fixture pack after FLEET — the
-  controlled/legacy-raw archetype rows, the choices/freetext/unrepresentable interaction rows,
-  the retired-with-stop-error row, and the terminate-response-with-residual shape. FLEET is
-  byte-identical (zero removed/modified lines — reviewer-verified), keeping order-dependent
-  tests stable. Verification metadata pinned to the leaf base until closeout stamps the L6 code
-  commit.
-- 2026-07-17T02:30+02:00 — Created for 260715-FEUI-L2 S6 (R11): the shared full-wire catalog
-  fixtures — `catalogRow` builder + the mockup-mirroring `FLEET` (spine, clusters, completed
-  folder, awaiting-input prompt, failed scout, landed probe) — the fixture base the L3 pack
-  extends. Verification metadata pinned to the leaf base until closeout stamps the L2 code
-  commit.
+This file implements a repository-local contract.

@@ -1,0 +1,539 @@
+{
+  "path": "dashboard/src/panels/review/ReviewWorkspace.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:78b5f90184631da1d5c369344f75ae3d3548185b0d1b37b4a63dd4953f9c460a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWorkspaceState"
+        }
+      },
+      "id": "RLZ-6T67PT58",
+      "invariant": "INV-Z385RTQS",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Holds diff layout, full-file disclosure and the open expression path as workspace-level state, with full-file off so changed regions show by default; it remembers the element that opened an expression, and closePath(null) returns focus to that opener.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:3639917827efca703ecf0f261bc970ac18767f8538553b6eb403ff7ef72b4bab",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingStatusCenter"
+        }
+      },
+      "id": "RLZ-7V7CX6FK",
+      "invariant": "INV-WQZ2WFCN",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Renders the requested subject's pending state or its failure/refusal inside the reading area while the rest of the workspace keeps its DOM.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:bb0d9f515ee13eb130a26e08f9a727b6e40dbbc0108c07a81bf7573b83277128",
+        "locator": {
+          "kind": "symbol",
+          "name": "sourceAttribution"
+        }
+      },
+      "id": "RLZ-M82RW0QW",
+      "invariant": "INV-4DVNECH3",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Labels every entry of the measured source inventory Mapped, Unmapped or Attribution unknown from the backend's attributed and unattributed changed-path lists; it maps over all entries without filtering, and a path in neither list is shown as unknown rather than inferred unmapped.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:440393136cd4b181e85f8e8e8d566cd884682f114ff1e2b968f2d331e2ea937d",
+        "locator": {
+          "kind": "symbol",
+          "name": "chooseSubject"
+        }
+      },
+      "id": "RLZ-PEMTZ4PE",
+      "invariant": "INV-YVVW1XCN",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Resolves a roster click against the payload's family context: a family click hands navigation.onSelect the family subject, and a member click hands it the invariant subject keyed by the member row's canonical invariant_id, with the clicked selection passed alongside. In both cases the clicked family and revision stay stored as the workspace selection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:cd861cda8197debd9272e3d68fa8504cb38ccc841a0edb616dd428f8f6601ba4",
+        "locator": {
+          "kind": "symbol",
+          "name": "jumpToReview"
+        }
+      },
+      "id": "RLZ-RN6RFP1N",
+      "invariant": "INV-ZE4QPG25",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Focuses the review center with preventScroll and then explicitly scrolls it into view aligned at block start, so keyboard focus lands on the existing center without relying on the browser's default focus scroll.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:6f4392bffde82cb144f49437db6e73c9ea7a0001dac6b46a09e3c4917a322b79",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorkspaceCenter"
+        }
+      },
+      "id": "RLZ-TS5M83QM",
+      "invariant": "INV-KKJYVB40",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "The reading-area column is one DOM node for the life of the workspace; it swaps only its content between the pending statement and the answered subject's reading.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+        "content": "sha256:cfa1459f3e099937884de39d60a0285484de4f079336e26147ddfa1b46b69a43",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSelectionFocus"
+        }
+      },
+      "id": "RLZ-WZNMZVS9",
+      "invariant": "INV-MCVSM81V",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Applies the deferred selection focus on the answer only when the active element is still the one recorded at selection time or body.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`useWorkspaceState` owns the behavior described above, including the lane selection a family choice clears (MIK-L32) and the raw `setOpenPath` an intent marker's follow and return use (MIK-L34).\n\nAnchor: \"setLaneState(null);\"; \"const setLane = (next: LaneSelection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:78b5f90184631da1d5c369344f75ae3d3548185b0d1b37b4a63dd4953f9c460a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The workspace's moves for a marker: select the target through the rail's own selection; restore subject, lane, opened path, layout and full file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+            "content": "sha256:f6701f377661e687c1f1db5c6ddf5823df848151e48dfff6bf421e59bd16fff6",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspaceMarkerMoves"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lane's rail nodes, for a tree comparison only (MIK-L32).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:79b1ebd181c2826fb645f073837c0c6b9b6b5368dbec62158a12772ef8b0b46e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailLaneDestinations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane's centre and the gate's items only from the same comparison's leaf-wide read (MIK-L32).\n\nAnchor: \"<UnexplainedLaneCenter\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:e4a50d8df4a5c1bff851024d743216c9e31c03cccac143e432b39ff9bcee7a21",
+            "locator": {
+              "kind": "symbol",
+              "name": "gateRead"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:e7e220b200071e44fbf9d34edfbede3e24c3a76a9958dc972537d40093ae0ce9",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 413
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`recordLabelOf` (moved to the scope header's module by L48) owns the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordLabelOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The explorer's labels: a tree comparison's from the lane (ruling Q1), a dataset review's from the landed partitions.\n\nAnchor: \"function sourceAttribution(\"; \"return explorerAttribution(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:e006ea466a773c9103320a3dfb3cc1fbf8b4e8282018ba11c49f99f04a9cacfb",
+            "locator": {
+              "end": 685,
+              "kind": "line_range",
+              "start": 685
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:43bae5e55b06ebe37ac4035ad0f0f8f76ac2fc220640c86e579beae309012cd8",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 690
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The stacked layout's one sticky offset while a way back is open, and the way back's fixed box (MIK-L33).\n\nAnchor: \"'&[data-marker-return=\\\"open\\\"]': { '--review-sticky-top': '2.75rem' },\"; \"height: '2rem',\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:ca762327fdbe28aa0337df7418931c82b7e0d441c369d6f84b6ddfea61776a7c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The workspace carries the state of the way back (MIK-L33).\n\nAnchor: \"data-marker-return={returning}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:e931fd76596f0c934dc17c3f939bd28c40006b620eae882b026e23cb86f8f584",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMarkerReturnState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:de7af54c8138213345d4a4b1318127293b671e025e2c3e53054b87eac1889c94",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The triage bar sticks below it.\n\nAnchor: \"top: 'var(--review-sticky-top, 0)',\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
+            "content": "sha256:1dca568c5e0f711e293305fc6e84f97793d5fb7170bfebcf930af37e889e30ac",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "dashboard/src/panels/review/ChangeBadges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`ReviewWorkspace` is a thin wrapper that provides the intent markers' scope (MIK-L34) around `WorkspaceBody`, the landed body, which owns the behavior described above; its props include the surface's lane read (MIK-L32).\n\nAnchor: \"interface ReviewWorkspaceProps {\"; \"export function ReviewWorkspace(props: ReviewWorkspaceProps) {\"; \"function WorkspaceBody({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:b89910f845081bda1c0ce5827bd34cf361e850e321c71a4e21d91674b2f6b16d",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:5c1e9c63f332243ef1ea5b166e1d906cbf9d5c8e8cabb07490eec0990d6753ac",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The unanswered subject's status and its two renderings in the reading area.**\n\nAnchor: `review-reading-pending`; `review-reading-problem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:9f6987421f42aa3fe53cb5a6116ba6d0b6df97c8f79f0973b705e0d8d28691c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadingStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:3639917827efca703ecf0f261bc970ac18767f8538553b6eb403ff7ef72b4bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadingStatusCenter"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:0e3f231ee728d3437124c68928f07a677b3a55156a1d842767d5abfb76037814",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The reading-area column: one DOM node, only its content swapped; for a tree comparison it reads the leaf-wide tree view pinned to the payload's comparison (MIK-L31).**\n\nAnchor: `review-center-column`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:6f4392bffde82cb144f49437db6e73c9ea7a0001dac6b46a09e3c4917a322b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceCenter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Selection focus lands only if the reader has not moved it; it prefers a followed marker's unknown-membership state to the tree's current node (MIK-L34, review R1 F3).**\n\nAnchor: `focusSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:cfa1459f3e099937884de39d60a0285484de4f079336e26147ddfa1b46b69a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:37ae6a0769e0069cf4a58d9a119a3cc69c29eda347e970ca0dcde345c749be05",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectionNode"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:fc6f00563a19ea92297859f18fd2fc8ea33bbf5cb929088202eec3937aa9b359",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rail's family navigator, told whether the payload is a tree comparison (MIK-L35); for a followed marker's unknown membership with no row in the tree, the `Attribution unknown` state in place of the review's statement or above the composed tree (MIK-L34).\n\nAnchor: \"tree={treeComparisonNumber(payload.limitations)\"; \"const unknown = useInvariantTargetState(subject, context);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:45adb8054da5c41484251bec404ec56689aee3afad35874734287bcda892f78c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRailContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`WorkspaceRail` owns the behavior described above, with the lane's destinations after the families and no family node current while a destination is on screen (MIK-L32), and hands the answered subject to the family navigator for a followed marker's target state (MIK-L34).\n\nAnchor: \"function WorkspaceRail({\"; \"const treeChosen = state.lane ? null : chosen;\"; \"<RailLaneDestinations laneRead={laneRead} state={state} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:0d223f7d90d199747f47106130b346ce86f768eb874b06032642095c360641ad",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:7c2e9eb6e2ad429d5cbd64c9c29964196ed58b1e034ce231fc002ffc2aca0313",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 511
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:6bc97376014082e371d2a1d1cf9b209bb4e62f54dcc7aba2f64094b5fee72dea",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 542
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The subject the rail receives: none while another subject is read.\n\nAnchor: \"subject={reading ? undefined : navigation?.subject}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:644d42517a1949c7f13f62679113a8abfd91982061c836668d25663672dc94cf",
+            "locator": {
+              "end": 350,
+              "kind": "line_range",
+              "start": 350
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`Back to <file>` in the grid's full row, sticky below 60rem so it stays in view at the target (MIK-L34).\n\nAnchor: \"const markerReturn = css({\"; \"<MarkerReturn className={markerReturn} />\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:18fc101ff1c7c1a6cb97cf1abdfcbf2ffa3509168311ff32e3bed8ebeff8d0fb",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:dfa5407c4419097e43960dc281c0170f7d4e21afbfaf2b895f0e89f5422e02e5",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

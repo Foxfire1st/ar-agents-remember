@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Publication returns the committed value plus per-scope effects; the injected `validate` callable and scope resolution both run before the publication write, and the former `validate_task_fact_mutation` seam no longer exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:bf00bd1f8f1c8bdfc6defc50b75f2c956d80a223207b4d0533e234a5202fb92f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskFactPublicationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_fact_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contract scope and task-fact adapters share the task-first owner; contract scope short-circuits when no override invalidates a projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:16a0a716bd61cb4314d54c76d96343028502dee62843d4dce65ccfc985d57483",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_projection_scopes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:ed69405f1735e82ceff7b31dc51443dac66df59b3549c22848235bc01d7c8755",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_contract_task_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:a0bb2d61ff9317968aae14d1523dfefcabb0b2f26ee5e68e7c6d36c2efd52106",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_contract_task_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invalidation and rebuild failures become bounded per-scope effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:64fc0f062d622e33dcc65a167a75d9cc8652e996029c152db86546cea8a56c55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalidate_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:9a8e1cb66ab25b1bc452bd7a5d7e0f588a40879da0d556448c1f3e41f1e46bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalidation_failure_effect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
+            "content": "sha256:d56c715a4efc3b6706e3bcf56784c3255624b464ca1c1555744b35fb85465a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rebuild_failure_effect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The schema-owned classifier decides whether an override invalidates projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a86108972b18702721ab58db93ad0d13abd4a0af",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

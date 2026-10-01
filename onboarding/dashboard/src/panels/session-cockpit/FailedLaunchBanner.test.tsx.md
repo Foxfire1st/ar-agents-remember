@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/session-cockpit/FailedLaunchBanner.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-17T06:10+02:00                           |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`       |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/session-cockpit overview](overview.md)
@@ -49,22 +39,10 @@ variants built inline); fetch stubbed per-case via `vi.stubGlobal`. Test-only.
 The verbatim ×3 loop is the R6 uniformity net (a harness-specific rewording fails it); the
 zero-fetch-before-confirm assertions are the no-auto-retry net.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The banner under test. | `FailedLaunchBanner` | dashboard/src/panels/session-cockpit/FailedLaunchBanner.tsx:69-143 |
-| The failed-row fixtures ×3 harnesses with verbatim bridgeErrors. | `FAILED_CLAUDE_ROW` | dashboard/src/test/fixtures/openResponses.ts:93-106 |
-| The shared row builder for the leafed/bare variants. | `catalogRow` | dashboard/src/test/fixtures/catalogRows.ts:10-27 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-11T19:58+02:00 — Aligned the current dashboard card for `FailedLaunchBanner.test.tsx` with its task-document, seat-state, and lifecycle interaction boundaries.
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the six superseded
-  `(L…)` prose citations with exact test-title anchors and the three `n/a` table rows with
-  exact anchors; exact non-fixing check returns zero findings.
-
-- 2026-07-17T06:10+02:00 — Created for 260715-FEUI-L3 S4 (R6): verbatim bridgeError ×3 harnesses,
-  refused-not-validated pair + badge tier, refused-pair prefill, the honest armed confirm with a
-  single terminate POST, the decline path sending nothing, and stated bridgeError absence.
-  Verification metadata pinned to the leaf base until closeout stamps the L3 code commit.
+- The banner under test. [1]
+- The failed-row fixtures ×3 harnesses with verbatim bridgeErrors. [2]
+- The shared row builder for the leafed/bare variants. [3]

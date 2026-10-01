@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/lenses.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lenses tune the `reframe-research` opening move and the `decide` default of the shared spine.\n\nAnchor: `# Lenses — How the Scoping Seats Read a Job`; \"the first concrete thing\"; \"where this job usually lands\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f277b06418f09d15c044e6bd09c3ed87916dd41",
+            "content": "sha256:3e64414a5b51608efc3ab0ce2ea23793bc364e412b5b2c281944c4631a2af476",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

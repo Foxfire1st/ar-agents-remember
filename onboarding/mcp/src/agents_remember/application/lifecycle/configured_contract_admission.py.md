@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-30T05:55+02:00 |
-| lastVerifiedCommitHash | `b281bcd68261866be306cc80a48241921b6dd0d2` |
-| lastVerifiedCommitDate | 2026-09-16T14:24:58+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [governing route overview](../overview.md)
@@ -40,19 +30,19 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. | `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` | mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:58-64; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:77-87; mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py:96-169 |
+- The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
@@ -64,18 +54,3 @@ readable surviving contract truth, the exact external archive and receipt, and c
 repository identity for the archived contract without requiring worktrees cleanup already removed.
 Present-invalid archive or authority evidence becomes a bounded refusal. Terminal admission is
 only for status and exact cleanup retry; it is never a generic fallback for live mutations.
-
-## Update History
-
-- 2026-08-30T05:55+02:00 — MCAR-L03 A005: exposed the strict-by-default candidate-identity
-  choice to exact-pair consumers. Relaxed callers still pass the same closed configured admission
-  and retain repository, task, and enclosure authority; only the shared pair API owns candidate
-  liveness and field-specific refusal.
-
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 local type-parameter migration for the configured-operation result and confirmed that the documented admission, refusal, and reread boundary is unchanged. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged the final live-versus-terminal admission contract into the current DAGQC card. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

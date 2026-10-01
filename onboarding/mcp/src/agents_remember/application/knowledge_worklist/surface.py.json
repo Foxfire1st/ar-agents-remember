@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/surface.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tool returns the last persisted worklist and computes nothing.\n\nAnchor: \"The tool computes nothing here\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
+            "content": "sha256:ca18a0a4e37093d4b9d23b31255e24c527a37a4a81e17f13f9b08d199db17ea2",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The compact item row, with its `planning` mark where present.\n\nAnchor: `planning`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
+            "content": "sha256:ee72f82e4688f8ff786afa1effaf6f716fcf068a795daa6da1702dbff56cfe3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three states, the compact item rows and `plannedEffects`.\n\nAnchor: `worklist_summary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93f9cc7b1e87fde3103b6798c2d8245be88d94a5",
+            "content": "sha256:246c2c53aa05e422046961c197ad4be6066796da8ece43467bb2014e9b31141a",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_worklist_fields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The tool's consumer of these fields.\n\nAnchor: `leaf_worklist_fields`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29c2308cf0f8e1ed57295aa90c2586f0c05fb07",
+            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The tool returns the latest worklist and the checklist shows it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ded49fb4b2667cc5f179d4c2bcf790497527730",
+            "content": "sha256:39cd3e4bd5be71e49e30992579712cae4b348a04c4d7f5c9aae1e7ce439d1d73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+            },
+            "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

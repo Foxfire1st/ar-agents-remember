@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/knowledge/facet.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/knowledge/facet.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T00:25+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `mcp/src/agents_remember/models/overview.md` |
-
 ## Governing Overview
 
 [models route overview](../overview.md)
@@ -133,80 +123,44 @@ members, while the *shapes* belong with the facet kinds they carry.
 None recorded. The eight subtypes are the whole vocabulary this leaf was asked for; widening it is a
 vocabulary change with its own packet rather than an edit here.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The one closed list, as a literal and as an ordered tuple, with the schema derivation that keeps them in step.** | `FACET_KINDS`; `FacetKind`; `facet_record_schema` | mcp/src/agents_remember/models/knowledge/facet.py:57-88 |
-| **The eight frozen payload models, one per subtype, each carrying its own `facet_kind` literal and its own minimum meanings.** | `DecisionPayload`; `AssumptionPayload`; `IncidentPayload`; `FailureModePayload`; `ScenarioPayload`; `LimitationPayload`; `DiagnosticGuidancePayload`; `TerminologyPayload` | mcp/src/agents_remember/models/knowledge/facet.py:91-177 |
-| **The discriminator whose member set is exactly the eight subtypes.** | `FacetPayload` | mcp/src/agents_remember/models/knowledge/facet.py:183-193 |
-| The kind-to-schema map, the kind-to-model map and the two accessors, including the `None` an undeclared kind earns. | `FACET_RECORD_SCHEMAS`; `facet_payload_model`; `facet_payload_models` | mcp/src/agents_remember/models/knowledge/facet.py:198-230 |
-| **The four closed endpoint kinds, their four frozen models, the column each populates, and the route's deliberate absence.** | `AttachmentEndpointKind`; `InvariantRevisionEndpoint`; `FamilyRevisionEndpoint`; `SourceAnchorEndpoint`; `RealizationClaimEndpoint`; `ENDPOINT_COLUMNS`; `endpoint_identity` | mcp/src/agents_remember/models/knowledge/facet.py:238-320 |
-| **The two closed subject kinds, their typed models and the separate constants that keep the two sets from being confused.** | `ExplanationSubjectKind`; `InvariantStatementSubject`; `FamilyJointGuaranteeSubject`; `SUBJECT_COLUMNS`; `subject_identity` | mcp/src/agents_remember/models/knowledge/facet.py:329-382 |
-| **The six authored commands, including `AddFacet`'s mapping payload and the validator that confines supersession to a decision.** | `AddFacet`; `AttachFacet`; `RemoveFacetAttachment`; `AuthorExplanation`; `AddExplanationRevision`; `DesignateExplanation` | mcp/src/agents_remember/models/knowledge/facet.py:391-486 |
-| The command union and its kind tuple, named here and joined to the operation's reach in the candidate module. | `FacetCommand`; `FACET_COMMAND_KINDS` | mcp/src/agents_remember/models/knowledge/facet.py:492-509 |
-| **The standalone request, the touched-row identity and the receipt whose validator makes a refusal and a write mutually exclusive.** | `FacetWriteRequest`; `FacetWriteIdentity`; `FacetWriteResult` | mcp/src/agents_remember/models/knowledge/facet.py:512-585 |
-| The six canonical tables a facet command writes, and the candidate module's table vocabulary they fold into. | `FACET_WRITABLE_TABLES`; "MutableRecordTable = Literal[" | mcp/src/agents_remember/models/knowledge/candidate.py:140-140; mcp/src/agents_remember/models/knowledge/facet.py:532-539 |
-| The sealed, extra-forbidding base every model here inherits. | `KnowledgeModel` | mcp/src/agents_remember/models/knowledge/base.py:34-37 |
-| The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. | `validate_facet_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:283-310 |
-| **The registry those models are registered in — which since `KS-R19@v1` holds four groups (the internal conformance kind, these eight facet kinds, the two detection kinds and the requirement-revision kind).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157 |
-|The facet kind set derived from those entries rather than restated.|`FACET_RECORD_KINDS`| mcp/src/agents_remember/memory/knowledge/record_envelope.py:136-136; mcp/src/agents_remember/memory/knowledge/record_envelope.py:137-183; mcp/src/agents_remember/memory/knowledge/record_envelope.py:192-197 |
-| The requirement family the registry gained, derived from the entries it unpacks. | `REQUIREMENT_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:211-213 |
-| The requirement kind and its frozen shape, declared in the vocabulary module rather than restated in the registry. | `REQUIREMENT_REVISION_KIND`; `REQUIREMENT_REVISION_SCHEMA` | mcp/src/agents_remember/models/knowledge/requirement.py:80-84 |
-| **The case that keeps this closure a measurement: the union of all four groups, so a ninth subtype cannot be admitted without that line changing.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes" | mcp/tests/test_knowledge_facets.py:183-247 |
-| The closed union these six commands join, and the dispatch tables that must cover every member. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626 |
-| The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. | `validate_facet_payload` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:283-310 |
-| **The registry those models are registered in — which now holds six groups (the internal conformance kind, these eight facet kinds, the two detection kinds, the requirement-revision kind, the supporting-record pair and this leaf's authored-effect kinds).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:132-178 |
-| The facet kind set derived from those entries rather than restated. | `FACET_RECORD_KINDS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:197-197 |
-| The closed union these six commands join, and the dispatch tables that must cover every member — twenty-two members now that this leaf's four composition command kinds joined it. | `ProposedCommand` | mcp/src/agents_remember/models/knowledge/candidate.py:596-626 |
-| **The cases that hold the closed vocabulary, the per-subtype refusals and the receipt's absent verdict fields.** | "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"; "test_every_subtype_refuses_a_bad_shape_a_missing_meaning_and_its_own_provenance"; "test_a_facets_authorship_lifecycle_and_receipt_are_stored_data_with_no_verdict" | mcp/tests/test_knowledge_facets.py:181-227; mcp/tests/test_knowledge_facets.py:229-280; mcp/tests/test_knowledge_facets.py:306-343; mcp/tests/test_knowledge_facets.py:408-415; mcp/tests/test_knowledge_facets.py:228-228; mcp/tests/test_knowledge_facets.py:344-344; mcp/tests/test_knowledge_facets.py:427-427 |
+- **The one closed list, as a literal and as an ordered tuple, with the schema derivation that keeps them in step.** [1]
+- **The eight frozen payload models, one per subtype, each carrying its own `facet_kind` literal and its own minimum meanings.** [2]
+- **The discriminator whose member set is exactly the eight subtypes.** [3]
+- The kind-to-schema map, the kind-to-model map and the two accessors, including the `None` an undeclared kind earns. [4]
+- **The four closed endpoint kinds, their four frozen models, the column each populates, and the route's deliberate absence.** [5]
+- **The two closed subject kinds, their typed models and the separate constants that keep the two sets from being confused.** [6]
+- **The six authored commands, including `AddFacet`'s mapping payload and the validator that confines supersession to a decision.** [7]
+- The command union and its kind tuple, named here and joined to the operation's reach in the candidate module. [8]
+- **The standalone request, the touched-row identity and the receipt whose validator makes a refusal and a write mutually exclusive.** [9]
+- The six canonical tables a facet command writes, and the candidate module's table vocabulary they fold into. [10]
+- The sealed, extra-forbidding base every model here inherits. [11]
+- The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. [12]
+- **The registry those models are registered in — which since `KS-R19@v1` holds four groups (the internal conformance kind, these eight facet kinds, the two detection kinds and the requirement-revision kind).** [13]
+- The facet kind set derived from those entries rather than restated. [14]
+- The requirement family the registry gained, derived from the entries it unpacks. [15]
+- The requirement kind and its frozen shape, declared in the vocabulary module rather than restated in the registry. [16]
+- **The case that keeps this closure a measurement: the union of all four groups, so a ninth subtype cannot be admitted without that line changing.** [17]
+- The closed union these six commands join, and the dispatch tables that must cover every member. [18]
+- The facet-specific entry point that resolves the `(kind, record_schema)` pair and refuses an unknown kind. [19]
+- **The registry those models are registered in — which now holds six groups (the internal conformance kind, these eight facet kinds, the two detection kinds, the requirement-revision kind, the supporting-record pair and this leaf's authored-effect kinds).** [20]
+- The facet kind set derived from those entries rather than restated. [21]
+- The closed union these six commands join, and the dispatch tables that must cover every member — twenty-two members now that this leaf's four composition command kinds joined it. [22]
+- **The cases that hold the closed vocabulary, the per-subtype refusals and the receipt's absent verdict fields.** [23]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-| **The registry those models are registered in — which since `KS-R14@v1` holds three groups (the internal conformance kind, these eight facet kinds and the two detection kinds).** | `PAYLOAD_MODELS` | mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187 |
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-18T19:56:02+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The derived-kind-set row cited `record_envelope.py:192-192`, the closing brace of the registry, for `FACET_RECORD_KINDS`; the derived set is declared at `197`, so the range was widened to `192-197` — the same line the sibling row in this document already carried. The claim and the registry ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:211-213. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T17:30:57+00:00: Generated citation repair: `FACET_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:197-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 90ac134ffc3f8e781bc1feb4daa6ea3e6fd982366fb532c5a9c6ca2e3d9aa040; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:204-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `FACET_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:192-192. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T15:12:32+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:133-187. No content impact: mechanical anchor-range projection bound to citation source snapshot 418f5ce580b3710b5d8fe417585d48fd22eccd55346c84b05f01fef243a17917; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `FACET_WRITABLE_TABLES`; "MutableRecordTable = Literal[" repointed to mcp/src/agents_remember/models/knowledge/facet.py:532-539; mcp/src/agents_remember/models/knowledge/candidate.py:140-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_facet_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:283-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `REQUIREMENT_RECORD_KINDS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:195-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T08:36:42+00:00: Generated citation repair: `validate_facet_payload` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:283-310. No content impact: mechanical anchor-range projection bound to citation source snapshot 62bb4ecc832f24577a616642ab14d8fff48bf74187b0e3c11571c9de796a4ee4; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T07:45:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `66f8b9f0`): **re-read every claim this card carries against the construct as the merged, post-landing line now stands, and advanced the verification stamp to `66f8b9f0` because the body was re-read against the current source.** The engine had reopened 2 claim(s) here (2 x citation_claim_reopened). Each was read at its cited extent: the wording is **retained as it stands**, because the constructs it names still exist and still mean what the card says — what moved was a *range* this leaf's own addition had shifted, together with the payload-model, registry and budget facts the merged line grew. No claim was deleted, softened or dropped from an anchor set, and no range was advanced without a reading.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:21:19+00:00: Generated citation repair: `PAYLOAD_MODELS` repointed to mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-157. No content impact: mechanical anchor-range projection bound to citation source snapshot 9c25e22b4a75362a466772fad50098779327e24acf1460715dd01e0595ea5288; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-18T07:15:00+00:00 — 260915-KS-L12 curator (uncommitted change set on `ar/260915-ks-l12`, base `e963a01c`): **retired 3 generated projection bullet(s) by hand while resolving the memory sync** — `REQUIREMENT_RECORD_KINDS`, `FACET_RECORD_KINDS`. Each was a `citation_fix` projection rather than a reading, and each kept its claim in enforced reopen until an agent had read what it points at. This leaf's own addition moved the ranges they project, so a bullet still naming the old extent is stale evidence; the resident claims' ranges were re-verified against the current source in this pass. Nothing in the body above was deleted to clear a finding.
-
-- 2026-09-18T06:30:00+00:00 — 260915-KS-L17 curator (uncommitted change set on `ar/260915-ks-l17`, base `15fe8678`): **re-read each of this card's reopened claims against the construct as the merged line now stands, confirmed the cited range is current, and retired 1 generated projection bullet(s) by hand** — `ProposedCommand`. A mechanically projected range is unverified evidence, which is exactly why the check kept these claims reopened until an agent had read the construct they point at; the claims' wording is retained because each states what the construct does, and the ranges are the declarations the claims are about. Verification metadata advances to the merged base commit `15fe8678`.
-
-- 2026-09-18T05:45:00+00:00 — 260915-KS-L18 curator (uncommitted change set on `ar/260915-ks-l18`, base `a0665505`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the range recorded in the row above is the one that now holds its anchor. The anchors concerned: `PAYLOAD_MODELS`. No claim wording changed, and the verification metadata advances to the landed base because the claims were re-read against the current source.
-
-- 2026-09-18T04:45:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **re-read the envelope-seam rows and recorded the fourth group this registry gained, then retired the card's generated projection bullet by hand.** The registry row named **three** groups because that was the fact when it was written; `KS-R19@v1` registers the requirement-revision kind, so the row now states **four** and the derived-set rows name `REQUIREMENT_RECORD_KINDS` beside `FACET_RECORD_KINDS`. The citation was **re-derived rather than shifted**: the registry moved to `:93-113` with the requirement pair unpacked at `:112`, `FACET_RECORD_KINDS` to `:118`, and the new derived set to `:130-132`. Nothing about this module's own eight-kind vocabulary changed, and this leaf did not modify `models/knowledge/facet.py`, so **no verification stamp is advanced** on this card — the reviewed candidate is recorded only where the body was actually re-read against a file this leaf changed. A row for the seam-registry case was added, because that case is what makes the closure a measurement: it asserts the union of all four groups, so a fifth group cannot be admitted without that line changing.
-
-- 2026-09-18T04:35:00+00:00 — 260915-KS-L19 curator (uncommitted change set on `ar/260915-ks-l19`, base `e963a01c`): **retired 1 generated projection bullet(s) by hand, after re-reading each claim against the construct its range now covers.** A projected range is unverified evidence and keeps the claim reopened until an agent has read what it points at; each of these was read, and the resulting citation is the one recorded here rather than the range the tool wrote: ``FACET_RECORD_KINDS`` → `mcp/src/agents_remember/memory/knowledge/record_envelope.py:118-118`. No claim wording changed — the byte-unchanged claims these bullets were attached to are unchanged — and no verification stamp is advanced over prose that was not re-read.
-
-- 2026-09-18T03:15:00+00:00 — 260915-KS-L14 curator (uncommitted change set on `ar/260915-ks-l14`, base `4264dcc9`): **re-read the envelope-seam row and re-cited it by hand, and recorded what the seam now holds.** The row named three anchors across three ranges that no longer held them, so it is now one anchor per row at each declaration's current range, and the registry row states the fact `KS-R14@v1` changed: `PAYLOAD_MODELS` holds **three groups** — the internal conformance kind, these eight facet kinds, and the two mechanical-detection kinds — with `FACET_RECORD_KINDS` still derived from its own entries rather than restated. Nothing about this module's own vocabulary changed, and no verification stamp is advanced for a file this leaf did not modify.
-
-- 2026-09-17T22:25:00+00:00 — 260915-KS-L11 curator (uncommitted change set on `ar/260915-ks-l11`, base `4904e08f`): created this one-to-one card for the closed authored-judgment vocabulary. It records the one closed list and the three declarations derived from it, the eight frozen payload models with the two nonempty-tuple meanings that keep an empty value from satisfying a field, the **two load-bearing properties** (no payload field can be read as provenance, and guidance carries an interpretation plus its limit rather than a verdict), the four closed endpoint kinds with the route's **deliberate absence** from them, the two closed subject sets kept as separate declarations rather than a shared literal, the six authored commands, and `AddFacet`'s mapping payload validated at the envelope seam so an unknown subtype is the typed `invalid_payload` refusal rather than a parse error. It also states the precision that the *command* accepts any nonempty kind name while the closure is enforced one seam later, so a reader does not conclude the ninth subtype is unconstructible. Verification metadata stays at the last real commit: the code commit does not exist yet and closeout owns that stamp.
+No meaningful cross-repo references found.
+- **The registry those models are registered in — which since `KS-R14@v1` holds three groups (the internal conformance kind, these eight facet kinds and the two detection kinds).** [24]

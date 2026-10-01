@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/registration/code_search.py
 
-| Field                  | Value                                                          |
-| ---------------------- | -------------------------------------------------------------- |
-| repository             | agents-remember                                                 |
-| path                   | `mcp/src/agents_remember/mcp/registration/code_search.py`       |
-| doc_type               | `file-level-onboarding`                                         |
-| lastUpdated            | 2026-08-02T01:05+02:00                                          |
-| lastVerifiedCommitHash | `7879f5b22c34a912f939e27868786818463c3b9c`                      |
-| lastVerifiedCommitDate | 2026-09-19T20:18:09+02:00|
-| governingOverview      | `overview.md`                                                   |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
@@ -60,23 +50,9 @@ contract rather than forwarding native arguments.
 - Query construction, provider dispatch, and the dry-run command rendering live in
   `application/provider_tools.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The payload builders these forward to. | `grepai_search_payload`; `cgc_symbol_search_payload` | mcp/src/agents_remember/mcp/tools/providers.py:129-139; mcp/src/agents_remember/mcp/tools/providers.py:155-165 |
-| `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. | "class ProviderQueryScope:"; "class GrepaiRepoScope:"; "class GrepaiSearchQuery:"; "class GrepaiTraceQuery:" | mcp/src/agents_remember/application/provider_tools.py:305-305; mcp/src/agents_remember/application/provider_tools.py:320-320; mcp/src/agents_remember/application/provider_tools.py:339-339; mcp/src/agents_remember/application/provider_tools.py:348-348 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 6 citation finding(s); scoped recheck clean.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The eight search
-  declarations moved out of `server.py`; each now packs `dry_run`/`timeout`/`worktree` into
-  `ProviderQueryScope` and the GrepAI pair splits query from repo scope. Verification metadata pinned
-  to the pre-change commit until closeout stamps the L2 code commit.
+- The payload builders these forward to. [1]
+- `ProviderQueryScope`, `GrepaiRepoScope`, `GrepaiSearchQuery`, `GrepaiTraceQuery`. [2]

@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/review/ReviewScopeHeader.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+        "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectScopeOf"
+        }
+      },
+      "id": "RLZ-90HFC6S9",
+      "invariant": "INV-8VQR13WX",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Replaces the subject-bound comparison identity, currentness and family-context lines with a being-read statement while a subject is pending.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+        "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
+        "locator": {
+          "kind": "symbol",
+          "name": "recordLabelOf"
+        }
+      },
+      "id": "RLZ-GRQB2X9K",
+      "invariant": "INV-S26EBC8P",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Returns 'Reconstructed from recorded endpoints' whenever the payload's limitations carry history:reconstructed-recorded-endpoints, and only otherwise the recorded or live comparison label, so a reconstruction is never titled as a recorded task comparison.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of which lines are the task's and which describe one subject's read.**\n\nAnchor: \"The inventory and code trees are the task's whichever subject is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "content": "sha256:44bf2f9af9651af1e53d050e53533be174e933449f938458bd7e276372308cec",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The header and its test ids.\n\nAnchor: `review-scope-header`; `review-scope-comparison`; `review-scope-families`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "content": "sha256:a184f1d918d65f188ab26fa691b96dee20ce026418bfdbeff2aff95e5b98ef15",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewScopeHeader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The subject-bound lines, replaced while pending or unavailable.\n\nAnchor: \"is being read\"; \"could not be read\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "content": "sha256:209e1c2849c607bdd5d46126d880bfa8c565e494b57902065da3f8fe0057ccbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectScopeOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The record label.\n\nAnchor: \"Reconstructed from recorded endpoints\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cda7fc4b409d9cc0fc82d054ec8c237fffbee12f",
+            "content": "sha256:fe23b30006ef4be89563c0548e217ba643853d12811316d0ccc9e6a6203aa65f",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordLabelOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The workspace mounts it with a status derived from `reading`.\n\nAnchor: `ReviewScopeHeader`; `status=`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:3b79d5b276a05b61cf7f7436d16d9f6d7136c7ceb7a3455ff5b05b9edbd930b5",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

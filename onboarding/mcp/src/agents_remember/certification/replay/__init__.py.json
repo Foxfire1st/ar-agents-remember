@@ -1,0 +1,126 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's declared replay protocol excludes numeric reduction thresholds from its records.\n\nAnchor: \"Numeric reduction thresholds are\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e99d4c12926f75b6de4455fca68da41f40002652a60d864bfabe05dc5286bb37",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The facade re-exports the comparison-report surface from its owning module.\n\nAnchor: `compare`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:a5f4a63ce496989af42ff47653db301bb4dcbb41e6587fe370fe60cd53dc2635",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The facade re-exports the freeze/population surface from its owning module.\n\nAnchor: `freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:524633dc1f3f1e6d9a9989d096319564c60b002eaeb17940646c2fe820575cbd",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The facade re-exports the measured-run reducer from its owning module.\n\nAnchor: `measure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:95388a42b3b7635eb9581a294c2e5f41d82305eb097ee633063ec99ce0c62423",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The facade re-exports the span analyzer from its owning module.\n\nAnchor: `spans`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:13cbc8ea57b9c358acbe608b5f576f33f0cd6c25a11289920094f842d351b288",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`__all__` fixes the complete public replay surface in one place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The certification route facade re-exports this whole subpackage.\n\nAnchor: `replay`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b492117ef51bf9e631b9f11726d3f165e9f25f9a",
+            "content": "sha256:f3cdc559cf5c2e108c421ea47cdd54f6bb8960e237a5310b3cd4ed5ab614756c",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

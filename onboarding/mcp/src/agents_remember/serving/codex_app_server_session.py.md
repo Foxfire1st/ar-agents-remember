@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/codex_app_server_session.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/codex_app_server_session.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T14:15+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -101,39 +91,35 @@ state; it is not acceptance evidence by itself.
 None known for the L3 desired/effective state owner. The capsule seam's own open items are declared
 limits (vendor resume effect, `FORK_THREAD` in production, the payload size bound routed as `D12`).
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Strict model-page parsing is isolated from session lifecycle, while the adapter consumes retained
 catalog and thread evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `parse_model_page` validates model descriptions, effort menus/defaults, visibility, and identity. | `parse_model_page` | mcp/src/agents_remember/serving/codex_app_server_state.py:172-243 |
-| Session-owned desired-model and desired-effort setters stage the next selection. | `set_desired_model`; `set_desired_effort` | mcp/src/agents_remember/serving/codex_app_server_session.py:257-276; mcp/src/agents_remember/serving/codex_app_server_session.py:278-284 |
-| Fresh adapter `turn/start` acceptance promotes the submission's captured pair. | `_start_turn`; `_accept_started_turn` | mcp/src/agents_remember/serving/codex_app_server_adapter.py:484-530; mcp/src/agents_remember/serving/codex_app_server_adapter.py:583-618 |
-| The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults, and it is the only producer of these settings. | `create_harness_protocol_adapter` | mcp/src/agents_remember/serving/harness_control_factories.py:120-167 |
-| Initialize sends and then reuses the exact client identity when validating the host response. | `_initialize` | mcp/src/agents_remember/serving/codex_app_server_session.py:390-413 |
-| The capsule carrier on the settings is consumed here and nowhere else; the value type and the refresh rules live in their own module. | `CodexAppServerSettings`; `CodexCapsuleDelivery`; `plan_refresh` | mcp/src/agents_remember/serving/codex_app_server_session.py:73-119; mcp/src/agents_remember/serving/capsule_delivery.py:169-273; mcp/src/agents_remember/serving/capsule_delivery.py:399-440 |
-| The refresh decision compares the recorded binding and digest and never substitutes the incoming one. | `_capsule_refresh_plan`; `_capsule_report` | mcp/src/agents_remember/serving/codex_app_server_session.py:435-474; mcp/src/agents_remember/serving/codex_app_server_session.py:476-491 |
-| The instruction parameter and the scoped legacy switch are applied on the thread-open parameters; a refusal drops `threadId`. | `_thread_params` | mcp/src/agents_remember/serving/codex_app_server_session.py:493-558 |
-| The host's own loaded instruction documents are parsed from the thread-open response and published verbatim. | `_instruction_sources`; `CodexThreadEvidence` | mcp/src/agents_remember/serving/codex_app_server_state.py:274-294; mcp/src/agents_remember/serving/codex_app_server_state.py:59-75 |
+- `parse_model_page` validates model descriptions, effort menus/defaults, visibility, and identity. [1]
+- Session-owned desired-model and desired-effort setters stage the next selection. [2]
+- Fresh adapter `turn/start` acceptance promotes the submission's captured pair. [3]
+- The factory deliberately leaves a roleless Codex selection empty so this session resolves catalog defaults, and it is the only producer of these settings. [4]
+- Initialize sends and then reuses the exact client identity when validating the host response. [5]
+- The capsule carrier on the settings is consumed here and nowhere else; the value type and the refresh rules live in their own module. [6]
+- The refresh decision compares the recorded binding and digest and never substitutes the incoming one. [7]
+- The instruction parameter and the scoped legacy switch are applied on the thread-open parameters; a refusal drops `threadId`. [8]
+- The host's own loaded instruction documents are parsed from the thread-open response and published verbatim. [9]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this session owner.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -162,48 +148,3 @@ revision on a live thread opens a bounded fresh thread (or a fork when the calle
 stacked second revision; (4) an unsupported refresh is reported through the plan's reason, never faked.
 The pre-existing operation identity, receipts, cancellation, approvals, model/effort selection,
 transcript and native subagent demultiplexing are untouched.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-
-- 2026-09-16T14:15+02:00 — 260915-CAPS-L5 curator: documented the capsule path this session now owns —
-  the settings carrier, the refresh decision that compares the **recorded** binding and digest and
-  opens a bounded fresh thread on an unknown revision, the scoped legacy-chain switch on the existing
-  per-thread `config`, the published `instructionSources` observation, and the rule that a capsule-free
-  launch keeps byte-identical thread-open parameters. Recorded the three declared limits (unmeasured
-  vendor `thread/resume` effect, `FORK_THREAD` unexercised in production, no live opener spawn).
-  Re-anchored five stale cross-file ranges and added the capsule rows. Verification metadata moves to
-  the last committed source `c1dbebf8`; closeout re-stamps the real code commit.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: bound initialize-response client
-  suffix validation to the exact `clientInfo` name/version sent by this session while retaining
-  primary host-version agreement with the opened thread; the old CLI-shaped form is intentionally
-  outside this project's runtime contract.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T16:40:00+02:00 — 260731-EFA-L6 S18-B12 curator correction (reviewer-BLOCK repair): bound `set_desired_model`/`set_desired_effort` to their complete session-owned setter bodies (226-245, 247-253) instead of one-line adapter calls; model-page parsing and adapter turn/start acceptance keep their own owners; the scoped fixer confirmed the final ranges with no writes.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the experimental API opt-in as
-  permission to probe bounded history, never as a version/capability assertion. Verification
-  metadata remains pinned while the source change is uncommitted.
-
-- 2026-07-17T21:39+02:00 — FEUI-L5: removed obsolete busy-policy/native-queue claims and recorded
-  the authority boundary.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented desired/effective separation,
-  model-local effort rebasing, pending comparison, accepted-selection promotion, supplementary
-  settings notifications, deliberate reconnect overrides, and vendor-drift refusal.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented settings-selected and roleless
-  catalog-default resolution, native thread config for model/effort, duplicate config refusal, and
-  retention of the resolved desired effort for later turns.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented full retained model metadata,
-  include-hidden pagination, no-thread discovery, cached advertise, and fail-clean transport
-  ownership.
-- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: replaced the exact-0.144.3
-  convention with consumed initialize/thread identity and field validation; fixture pins are
-  historical evidence only.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: documented cross-message Codex capability negotiation and
-  loud failure for inconsistent structured identity.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator pass: created onboarding for exact initialize,
-  model/effort discovery, thread start/resume, and preserved settings. Verification remains unset
-  until closeout stamps the code commit.

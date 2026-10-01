@@ -1,15 +1,5 @@
 # skills/w-02-light-task-workflow/workflow.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/w-02-light-task-workflow/workflow.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T11:32+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `onboarding/overview.md` |
-
 ## Governing Overview
 
 [repository onboarding overview](../../overview.md)
@@ -67,21 +57,21 @@ None.
 
 A light-task handoff records relevant targeted checks and honest failed or not-run results before the authorized Git transaction. Its commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside closeout/integration remains unchanged. Full quality, full tests, full memory quality, certification, and review remain explicit operations and are not automatic closeout or integration prerequisites.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this workflow.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Requirement compilation, cold read, and approval precede topology. | `## Phase 0 — Compile And Approve Requirements Before Task Topology` | skills/w-02-light-task-workflow/workflow.md:16-49 |
-| Tasks carry filtered projections rather than rewritten contracts. | `## Phase 1 — Project The Approved Corpus Into Task Documents`; "### 7. Write `task.md`" | skills/w-02-light-task-workflow/workflow.md:50-175 |
-| Implementation maintains one acceptance block per exact revision. | `## Phase 2 — Implement Against The Live Checklist` | skills/w-02-light-task-workflow/workflow.md:176-254 |
-| Requirement changes version, invalidate, update, and rebrief affected work. | `## Three-touch iteration cycle` | skills/w-02-light-task-workflow/workflow.md:284-315 |
-| Phase 2 and closure append exact worker/reviewer records, while master-series summaries remain rebuildable and non-gating. | `## Phase 2 — Implement Against The Live Checklist`; `## Phase 3 — Close`; `## Master Task Series` | skills/w-02-light-task-workflow/workflow.md:176-254; skills/w-02-light-task-workflow/workflow.md:255-329; skills/w-02-light-task-workflow/workflow.md:330-387 |
+- Requirement compilation, cold read, and approval precede topology. [1]
+- Tasks carry filtered projections rather than rewritten contracts. [2]
+- Implementation maintains one acceptance block per exact revision. [3]
+- Requirement changes version, invalidate, update, and rebrief affected work. [4]
+- Phase 2 and closure append exact worker/reviewer records, while master-series summaries remain rebuildable and non-gating. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The context resolver supplies target-repository paths, tools, and memory policy; this workflow does
 not hard-code them.
@@ -92,23 +82,3 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
-
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: formal attempts now advance only at review handoff;
-  internal protocol events stay separate and journal records link frozen expanded evidence.
-- 2026-08-27T19:59+02:00 — M42 clarification: prevented ordinary candidate churn from globally
-  reopening accepted requirement manifestations.
-- 2026-08-27T18:06+02:00 — M40-M45: added immutable worker/reviewer attempt records, successor
-  lineage, failure ownership, bounded invalidation, and leaf-authoritative/non-gating master
-  summary behavior.
-- 2026-08-27T14:52+02:00 — Created onboarding for the architect-owned requirement compilation gate,
-  one-primary topology, version invalidation, and per-revision evidence flow.

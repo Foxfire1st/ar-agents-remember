@@ -1,0 +1,140 @@
+{
+  "path": "dashboard/src/index.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `:root` vars referenced by the base layer.\n\nAnchor: \":root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba6ed9b5f830cc758ade244a573ce03c2ca8eb29",
+            "content": "sha256:3eea504bf20b41c4729d3cce40c23851d3ae95b5017e6b0a1a8ca385eb3357c8",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/styles/tokens.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Panda PostCSS plugin that fills the layers.\n\nAnchor: \"@pandacss/dev/postcss\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c57708428ffc5d46e4fb9fb5ee569e7d96aa153a",
+            "content": "sha256:6e830312171f300da7870835bf1e57520dde57af125e479f927f821fd5fbe93c",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/postcss.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one WebTUI mapping file whose `layer(webtui)` imports fill the new slot.\n\nAnchor: \"base.css\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4226c7769b30f0ae479e448cb3a0259f36223b45",
+            "content": "sha256:8d8d4f288ed3866f4aafe4498f1befda128a7dd406f1f7094a0017a309dcec4f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/styles/webtui.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Asserts the exact layer-order statement and the unlayered freeze.\n\nAnchor: \"S1 spike (d): layer order + focus-visible survival (React Aria intact)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbb44ef6a06b0f3fe66d75235ff425a536988d52",
+            "content": "sha256:5abd01ce6b7ab0d288af66fd9bf9298d3bb2d3e31bc5055356a3fcc02afd953d",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "dashboard/src/test/webtuiSpike.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The scoped WebTUI base whose `word-break: break-all` the RV-1 root override neutralizes.\n\nAnchor: \"word-break: break-all\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
+            "content": "sha256:3d181388701d1e86b6aac1ecd1c6dec738e993d220ce377eb623ea364a904b1b",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Consumers whose overflow-wrap fixes only hold under the RV-1 override (Inspector values, prose, rail footer).\n\nAnchor: \"export function InspectorFact\"; \"export const MarkdownBlock\"; \"export function SessionRail\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4963511b537c77c83c3d2357d1c1a761872b28b",
+            "content": "sha256:4419deeeee57d488185664ed633fbbca9b9b3e3a939cf1831b7aa855e7de649e",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/src/panels/session-cockpit/InspectorPrimitives.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
+            "content": "sha256:bec076531e0f098ee5fc8628532bb63eb94abd5565768334806c6bdac7e6fb2c",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e017e9192e01c59b745e9e89cf94fb1712fb1d04",
+            "content": "sha256:f9977686d9ab8494f4f9d55ab2b2f744a7be9761e837f77c6c7f1ed99eba0ac5",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "dashboard/src/panels/session-cockpit/conversation/MarkdownBlock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

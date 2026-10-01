@@ -1,0 +1,272 @@
+{
+  "path": "mcp/tests/test_citation_document_transaction.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scenario fixture: code/onboarding roots, the recorded stamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:debcf2b6b99be64a6dc0cbaec9492f84fddde31f59d44d0cd574de137ff0c992",
+            "locator": {
+              "kind": "symbol",
+              "name": "Scenario"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Crlf document bytes and history line endings survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:d472123751bd719963ba1fc52b30153acffd616d3e3144d55a9fda1c905eecf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_crlf_document_bytes_and_history_line_endings_survive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Stale explicit snapshot refuses the actual scoped fixer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:8a108e2f4f781cd30060a9e6382ba0f7a947ab7184be7783fef701ef27f965b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_explicit_snapshot_refuses_the_actual_scoped_fixer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The migration fixture: a code tree plus the superseded three-column card the transaction rewrites.\n\nAnchor: \"def migration_tree(tmp_path: Path) -> Migration:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:6cc26224dbed18cc564d164ff27d63da3afb635d502a57fbe8b0e0ff2cb5db30",
+            "locator": {
+              "kind": "symbol",
+              "name": "Migration"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:020a56a13a4f3c6371ac8bbe6ca72d1caa956f1b399be1e551ec8eebd2831ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_migration"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:8231323a5f77be13632505b9c13fb34c85f3c4c797aedffaf2146d0c3204a37e",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 342
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A live cited file that lost the anchor declines the row as `anchor_left_live_file` and the pointer is not moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:7109b40076fcc0854143d6fe3147a611ff13180575a2e6d0be3611d5cccb19c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_migration_declines_a_claim_whose_anchor_left_a_live_cited_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A gone cited file is refused earlier as `source_unresolvable`, both stamped and unstamped, with the row's evidence retained.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:45b33e730e94faae031e4870273cf5199e8b0518123f1bb1339b22a04c4d2f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_migration_refuses_a_gone_cited_file_before_the_continuity_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A declared seam reaching the two production-unreachable continuity branches: unproven origin declines, stamped kind-preserving relocation converts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:046f7b79076634e9d1fb01d779d3f707eff4c07252bb273f6dc6230185ab139d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_continuity_authority_decides_once_an_absent_source_reaches_placement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One Git command per root, failing loudly on a non-zero exit.\n\nAnchor: \"    def git(root: Path, *args: str) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:fc5a639a73eb7c7eb8a3c150a7cafea695f3c7ecb4ab6d6d854b7fe64c4093d2",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A card writes its metadata stamp above the citation header.\n\nAnchor: \"    def card(self, name: str, *rows: str) -> Path:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:74f8fe808e5b170505343039a7538662f06b728931c8d6467f76b21ecd04c7a6",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The verified tree is committed and stamped before both cited files are deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:c0a7041174f13f37ed7094b79eac47a63e6148ee1f665295b9726bec4a168f35",
+            "locator": {
+              "kind": "symbol",
+              "name": "scenario"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Mixed claims publish only the accepted edit and history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:b50e7e2ec7ff5c026befb1c9dc7eb0a99c115e4c9f67b2500188bbe8c82d07ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mixed_claims_publish_only_the_accepted_edit_and_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Preview digest matches later publication and binds the complete batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:2f09536ef12cc62ab7d2a365564b2e0247a78511f2911fe4bff4501599a68a00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_digest_matches_later_publication_and_binds_the_complete_batch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Two prose source cells on one line keep their original offsets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:3c47b054333f5661e7cb24cc5256c9e5d755fae416221a414d5106061a21124b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_prose_source_cells_on_one_line_keep_their_original_offsets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Observed conflict refuses the whole document and preserves other batches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:f4bc844813a8e8faad861a67ca3ba2c2eb91c43a08bbea6eee85e351be2b3be0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observed_conflict_refuses_the_whole_document_and_preserves_other_batches"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Atomic replace failure keeps the original document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd382bbf07ffed501fdda26ccad9e3f21291637f",
+            "content": "sha256:9d16afbbb7c01afbcd3f27018ca181371fe70e0e7c964ae722159618e6550414",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_atomic_replace_failure_keeps_the_original_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

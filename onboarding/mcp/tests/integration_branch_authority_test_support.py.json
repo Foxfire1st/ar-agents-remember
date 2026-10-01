@@ -1,0 +1,72 @@
+{
+  "path": "mcp/tests/integration_branch_authority_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Closed external leaves are backed by two actual commits and a disposable cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
+            "content": "sha256:8f527dcea9f8ae2d26df0a019823d846d30382e6eb8fcffd641e12c976b34e68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Optional lifecycle admission precedes fixture finalization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
+            "content": "sha256:37f86b938dbb9ed42e341fec15d0412bc699d498e57d4fbfd639de200688ba3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_completed_closeout_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Configured repository, profile, protected branches, and task topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
+            "content": "sha256:81fe9c58ed01adf62e4575fd28fd8e920a7081a780c560226b8bc9e3515cf174",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumers retain ownership, cache-independence, and CAS scenarios.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f50834048a5d93766dce2eb701040f614f49a0f",
+            "content": "sha256:5531733451c3fb886f1cb15c34c058422fb4a06dba377947b0aaf566115ccb21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_external_pair_cas_retains_torn_pair_without_clobbering_memory_race"
+            },
+            "path": "mcp/tests/test_integration_branch_authority.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

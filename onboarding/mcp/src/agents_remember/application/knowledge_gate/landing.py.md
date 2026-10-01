@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/knowledge_gate/landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/knowledge_gate/landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:09:38+02:00 |
-| lastVerifiedCommitHash | `c052b2593b85d9baf425cc1d5c46f384b13fc9ea`|
-| lastVerifiedCommitDate | 2026-09-30T21:09:40+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [application route overview](../overview.md)
@@ -42,6 +32,12 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
   `unverifiable` for a locator reason or a persistently unavailable object → `knowledge-unverifiable-at-landing`, naming
   why; a Git read that failed (`GitReadFailed`) → `knowledge-worklist-incomplete [git]`. An unreadable K_C, C or net
   diff blocks as an unreadable input.
+- **Record landing checks the leaf's latest history file (L37 reopen ruling, review R1 F5).** `_history_closed`
+  asks `_latest_history_path(request)`, which lists `knowledge/history/` in the landed memory commit (`ls-tree
+  --name-only`) and takes the owner's highest attempt (`owner_history_attempt`), or the plain file when it has no
+  attempt file. A listing Git cannot give is an `_unreadable` finding (`run-incomplete`: "the landed memory
+  commit's history files cannot be listed"); it never falls back to the plain first file, which for a reopened
+  leaf is the closed attempt 1 and would pass while attempt 2 is still open.
 
 ### Conventions
 
@@ -65,36 +61,30 @@ the worktree layer through `memory_commit_refusal`, the one route entry point ev
 
 - None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
 outside the repositories.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring: master routes and record landing. | "A master-to-parent landing and a checkpoint landing" | mcp/src/agents_remember/application/knowledge_gate/landing.py:1-19 |
-| The finding codes. | `STALE_AT_LANDING`; `UNVERIFIABLE_AT_LANDING`; `HISTORY_NOT_CLOSED` | mcp/src/agents_remember/application/knowledge_gate/landing.py:50-52 |
-| The refusal and the named remedy. | `landing_refusal`; `_findings` | mcp/src/agents_remember/application/knowledge_gate/landing.py:60-97 |
-| The closed history file in the landed commit. | `_history_closed` | mcp/src/agents_remember/application/knowledge_gate/landing.py:100-127 |
-| The master's net staleness, refusing anything not current. | `net_stale_entries`; `_net_diff`; `_not_current` | mcp/src/agents_remember/application/knowledge_gate/landing.py:130-201 |
-| The master route test. | `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale` | mcp/tests/test_knowledge_closeout_gate.py:933-970 |
+- The module docstring: master routes and record landing. [1]
+- The finding codes. [2]
+- The refusal and the named remedy. [3]
+- The closed history file in the landed commit. [4]
+- The master's net staleness, refusing anything not current. [5]
+- The master route test. [6]
 
-## Cross-Repo References
+- The leaf's latest history file in the landed commit; an unlistable directory is an unreadable input. [7]
+- Record landing refuses when the landed history cannot be listed. [8]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:09:38+02:00 — 260928-MIK-L09 curator (staged change set on `ar/260928-mik-l09`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; review R1 changes-required, fix round, R2 pass-with-notes, round, R3 pass with R3-1 and R3-2 fixed): created this card for the new file MIK-R09 adds, recording the accepted smaller choice of 14:38:47 (a master's record landing gets the validator without the staleness check), review R1 F4 (unverifiable refuses too, 16:07:55) and R2-3 (an unavailable code object is named as unverifiable, never as a Git failure). The verification stamp is left empty: the file is new and uncommitted, so no commit yet holds the content it would claim to have verified; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

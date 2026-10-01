@@ -1,15 +1,5 @@
 # c-13-install-and-onboard/SKILL.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `86639933d61528387ce106dbd4d7a334bd468671` |
-| lastVerifiedCommitDate | 2026-09-24T18:51:31+02:00|
-| governingOverview      | `../../../../../../overview.md`            |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../overview.md)
@@ -121,33 +111,29 @@ No open file-local todos.
 
 Repository certification profiles and full code-quality operations are explicit setup requests made only when the developer asks for them. Their absence does not block routine closeout or integration, and they are not curation; this installer only reports configured setup and delegates any requested certification or memory/bootstrap work to its owning workflow, while curation is always complete on every leaf and its result travels with the handoff.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 Harness-native setup details now live in the install guides and starter packages.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external documentation is needed to prove this repository-local skill contract. | n/a | n/a |
+No external documentation is needed to prove this repository-local skill contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. | `# c-13-install-and-onboard Install And Onboard` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:6-273 |
-| Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. | `## Stage 0 - Preflight` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:67-103 |
-| Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. | `## Stage 1 - Runtime Scaffold` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:104-123 |
-| Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. | `## Stage 2 - Agentic Settings: Interview The Developer` | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:125-189 |
-| Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. | "## Stage 3 - Repository Certification Profile (explicit operation only)"; "## Stage 4 - Memory Repo: Ask Scaffold Vs Existing"; "## Stage 5 - Bootstrap"; "## Stage 6 - Configure Providers To Index" | mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:206-243; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:244-262; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:263-272; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:273-297; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:299-299; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:333-333; mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:335-335 |
-| The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). | "def provider_watchers_tool("; "if action == \"refresh\":"; "if action not in {\"status\", \"start\", \"stop\", \"restart\", \"invalidate-indexes\", \"shutdown-all\"}:"; "if action in {\"start\", \"restart\", \"invalidate-indexes\"}:" | mcp/src/agents_remember/application/provider_tools.py:50-73 |
-| The install-side seeding the interview builds on (copy-if-missing global file). | `seed_agentic_settings` | mcp/src/agents_remember/install/runtime.py:239-255 |
+- The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts. [1]
+- Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks. [2]
+- Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup. [3]
+- Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction. [4]
+- Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers. [5]
+- The `provider_watchers` tool Stage 5 drives: it accepts `status`/`start`/`stop`/`restart`/`invalidate-indexes`/`shutdown-all`, and the `action="refresh"` this SKILL.md still names now raises a `ValueError` directing callers to `restart` (watchers only, indexes preserved) or `invalidate-indexes` (full re-embed). [6]
+- The install-side seeding the interview builds on (copy-if-missing global file). [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this skill.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260921-ICR-L27 Setup Also Reaches The Knowledge Foundation, And It Stops Reporting Ready Without It
 
@@ -175,69 +161,3 @@ a development leaf, worktree or enclosure to give the writer an argument list it
 
 **This card describes a generated copy**, propagated from `skills/c-13-install-and-onboard/SKILL.md` by
 `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
-
-## Update History
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **body update — the seat-gate wording follows the developer's 2026-09-24 ruling (D56).** The carrier no longer says the opener will not admit a taskless curator seat; it states that such a seat IS admitted and that the authoring is handed on as `c-14-knowledge-bootstrap` states rather than worked around. **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-24T12:40:00+02:00 — 260921-ICR-L27 curator (uncommitted change set on `ar/260921-icr-l27-ar`, code base `06ed70cfcde7e3860ee5b53435727e7512e4335c`): **body update: the knowledge foundation joins setup.** Stage 5 gained its knowledge half (applying to both memory-repo answers), the state read through `memory_init`'s `knowledge` block and `knowledge-bootstrap --status`, the report's own foundation line, the closing sentence that must state the foundation's state, the anti-pattern that delegates rather than reimplements, and the correct naming of the carrying seat (`task-binding-required` for a document-less curator session). **Citation accounting:** the rows this card carries were re-read against this candidate and the drifted ranges re-anchored to the lines that now carry each construct. No verification stamp was advanced: the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `seed_agentic_settings` repointed to mcp/src/agents_remember/install/runtime.py:239-255. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Updated the repository-certification paragraph to separate the profile (an explicitly requested operation) from curation (always complete), and re-pointed the `## Stage 6` citation to the line the source now carries it on.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new Stage 3 (Repository Certification Profile) and the renumbered Stage 4/5/6 in the packaged install-and-onboard skill.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 synchronized the settings interview with the sole
-  public dispatch verb, separated ordinary architect bootstrap from explicit takeover, and retained
-  the two process-derived caller kinds plus no-fallback boundary. Verification remains
-  closeout-owned.
-
-- 2026-08-11T15:20+02:00 — Re-anchored provider-watcher vocabulary and the removed `refresh`
-  behavior to the exact declaration and validation branches.
-- 2026-08-03T03:59:59+02:00 — Curated 13 citation findings (6 table rows, 1 prose citation, 6 source-form repairs): added exact anchors and source paths; scoped fixer generated the final ranges.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 1 cross-file line citation and rewrote
-  its claim. The row's `L196-L216` were SKILL.md stage-heading line numbers carried onto a
-  `provider_tools.py` link, so they never pointed at that file's material; the row now cites
-  `provider_watchers_tool` at `provider_tools.py` L47-L86. Reading it showed the claim was also
-  false: the tool no longer accepts `action="refresh"` (it raises and points at `restart` /
-  `invalidate-indexes`), while this SKILL.md's Stage 5 still instructs `refresh`: cit:([`## Stage 6 - Configure Providers To Index`], mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md:272-297). The
-  row now states the tool's real action vocabulary and names that drift instead of asserting a
-  refresh path that fails.
-
-- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: updated the packaged installer interview to
-  require complete dynamically advertised native selections, exact Pi provider identity, and
-  native launch application; removed the obsolete static Claude/paste teaching while preserving
-  explicitly user-authored free-form commands. Added and final-audited the nearest MCP governing
-  overview backlink. Verification metadata remains pinned until closeout stamps the L2 code commit.
-
-- 2026-07-09T12:04+02:00 — 260707-HFX2-L10 (spawn settings authority): Stage 2's knob interview now
-  says `orchestration.spawn.harness` is the fallback when no role/level knob supplies a harness and
-  that ordinary spawned seats cannot pass harness/model/effort, launch/session spend controls, or
-  harness-native spend/endpoint env keys directly. Sync-propagated bundle copy of the canonical
-  skill. Verification metadata pinned until closeout stamps the 260707-HFX2-L10 commit.
-
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): Stage 2 item 4 now interviews the
-  full knob surface (roles + rolesPerLevel, orchestration.harnesses extensibility, per-harness
-  effort vocabularies, the free-form escape hatch) and references the `docs/reference/harnesses.md`
-  manual. Sync-propagated bundle copy of the canonical skill. Verification metadata pinned until
-  closeout stamps the L16 commit.
-
-- 2026-07-06T23:45+02:00 — L13 adversarial-review follow-up (L13R-2): Stage 2 gate-delegation item marked global-layer only. Verification metadata pinned until closeout stamps the L13 commit.
-
-- 2026-07-06T22:54+02:00 — 260703-L13 (settings unification): the agentic-settings interview
-  joins as Stage 2 (gate delegation posture, loop defaults, concurrency caps, harness
-  preference; global file at `<coordinationRoot>/system/settings.json`, repo-local overrides
-  on request only), the later stages renumber 3/4/5, Stage 0's settings check reports the
-  global file, and the report gains the agentic-settings line. Sync-propagated bundle copy of
-  the canonical `skills/c-13-install-and-onboard/SKILL.md`. Verification metadata pinned
-  until closeout stamps the L13 commit.
-
-- 2026-06-06T18:42+02:00: Updated after c-13 clarified that rendering can use the convenience script or manual path/repository/hook-command placeholder replacement. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-06T18:19+02:00: Updated after c-13 clarified the copied package renderer contract: one explicit `--repo` list and inferred workspace root. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-06T16:45+02:00: Updated after c-13 switched its prerequisite from manual placeholder replacement to running the copied package's `render-starter` script, and after its preflight language corrected the legacy `jq` misconception. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-03T18:58+02:00: Reframed the install-and-onboard skill around package-first setup: starter packages own skills/hooks/rules/instructions/MCP templates; this skill runs after one harness restart, verifies/runs `runtime_install`, sets up/adopts memory, bootstraps when needed, and configures providers without calling `skills_install` or installing hooks. Verification metadata stays pinned until closeout.
-- 2026-06-02T16:35+02:00: Second batch (install-location defaults) — documented the new workspace-first **Install Locations** section (explicit per-target defaults rooted at `<workspace>`, never the home directory; accept-or-override prompts; `ar-coordination/` the one constant) and the shortened MANDATORY-FIRST-ACTION directive. fix/skill-ref-naming-and-grepai-status branch; verification pinned until closeout.
-- 2026-06-02T04:25+02:00: Replaced the "chat / W-02 light / W-01 heavy" routing line with L-01's build-mode (read-only exit / chat build / W-02 light task) after W-01 retirement. L-01 series, Sub-task B/S6, mcp 1.1.0.
-- 2026-05-30T21:51+02:00: Documented the hook-activation restart guidance added in the 0.9.x run — a freshly installed context-injecting start hook activates only on the next session, a distinct restart from the post-`skills_install` one. Verified against `57944df`.
-- 2026-05-29T20:25+02:00: Reviewed for the act-by-default `dry_run` flip — `c-13-install-and-onboard` skill install/provider guidance now models preview-first (`dry_run=true`) then the real run for `runtime_install`/`skills_install`/`provider_watchers`.
-- 2026-05-29T13:22+02:00: Created with the `c-13-install-and-onboard` skill install-and-onboard orchestration skill (replaces the reverted scripted start_hook_install MCP tool with a model-driven skill stage). Metadata pending closeout refresh.

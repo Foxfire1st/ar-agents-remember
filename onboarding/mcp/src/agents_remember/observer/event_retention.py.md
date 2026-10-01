@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/event_retention.py
 
-| Field                  | Value                                               |
-| ---------------------- | --------------------------------------------------- |
-| repository             | agents-remember                                     |
-| path                   | `mcp/src/agents_remember/observer/event_retention.py` |
-| doc_type               | `file-level-onboarding`                             |
-| lastUpdated            | 2026-08-11T15:20+02:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`          |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `overview.md`                                       |
-
 ## Governing Overview
 
 [observer overview](overview.md)
@@ -118,67 +108,31 @@ without a live dashboard server.
 
 No file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation was found after checking the in-repo design docs.
 This file implements repository-local dashboard retention policy.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found after checking in-repo design docs for raw dashboard retention mechanics. | n/a | n/a |
+No relevant external documentation found after checking in-repo design docs for raw dashboard retention mechanics.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The serving layer calls this policy before raw event replay. The production owners below
 define dormant pruning, heartbeat-skipping activity reads and bounded active replay.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. | `initial_event_offsets` | mcp/src/agents_remember/observer/event_retention.py:44-70 |
-| `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. | `lifecycle_is_dormant`; `_retention_facts`; `last_activity_at` | mcp/src/agents_remember/observer/event_retention.py:155-166; mcp/src/agents_remember/observer/event_retention.py:169-171; mcp/src/agents_remember/observer/event_retention.py:186-207 |
-| Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. | `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. | `protected_lifecycle_ids`; `prune_expired_lifecycle_event_logs` | mcp/src/agents_remember/observer/event_retention.py:73-107 |
-| The protection set is derived from durable enclosure state (a live master series) by the admission module. | `series_retained_lifecycle_ids` | mcp/src/agents_remember/observer/worktree_provider_admission.py:76-101 |
-| `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. | `_first_retained_offset` | mcp/src/agents_remember/observer/event_retention.py:210-223 |
-| The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. | "async def stream_raw_events("; "offsets = await asyncio.to_thread(initial_event_offsets, root, now=now)"; "await asyncio.to_thread(prune_expired_lifecycle_event_logs, root, now=now)" | mcp/src/agents_remember/serving/events.py:232-277 |
+- Fresh-connect offsets are bounded: dormant logs to EOF, active logs to the recent replay window, workspace to its TTL boundary. [1]
+- `lifecycle_is_dormant` is the inactivity cleanup key; `_retention_facts`/`last_activity_at` read the last real activity and ignore heartbeats. [2]
+- Any dormant lifecycle log (inactivity past its per-type TTL) is physically removed — not only terminal ones. [3]
+- `protected_lifecycle_ids` exempts a log from pruning regardless of inactivity; the projection store passes a not-yet-retired master series' leaf ids so a live durable task keeps its history. [4]
+- The protection set is derived from durable enclosure state (a live master series) by the admission module. [5]
+- `_first_retained_offset` keeps unparseable-timestamp events and skips only events with a valid ts strictly older than the cutoff. [6]
+- The raw SSE tailer calls retention pruning and uses retained initial offsets only when no cursor is supplied. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found. This policy is local to the observer
 log layout.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-11T15:20+02:00 — Replaced generic retention-call anchors with the unique stream
-  declaration and its exact initial-offset and pruning calls.
-- 2026-08-03T03:56+02:00 — 260731-EFA-L6 W3-B10 curator: anchored 6 table citations and normalized 6 source paths; no unresolved Tier-3 claims.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F3/F7: made workspace-river compaction live and
-  virtual-cursor-aware, then changed dormant unprotected lifecycle cleanup to reclaim the complete
-  sidecar-bearing directory. Verification metadata remains pinned until closeout stamps the eventual
-  L13 code commit.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: documented the CS-6 scaling/reclamation change for this file. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (260628_operations-integration): `prune_expired_lifecycle_event_logs` gained a
-  `protected_lifecycle_ids` exemption checked before dormancy. A not-yet-retired master series' leaf
-  ids (from `series_retained_lifecycle_ids`) are passed in by `projection_store.project_and_write`, so a
-  running durable task keeps its (and its siblings') full event history regardless of inactivity —
-  superseding the per-type TTL for enclosure-backed work. Documented in Logic, Invariants, and
-  Repo-Internal References. Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-06-28T13:54+02:00 — Task 34: retention now keys on INACTIVITY per lifecycle type
-  (seconds since the last real, non-heartbeat activity event), not a written `lifecycle.ended`.
-  Added `lifecycle_is_dormant` (the cleanup key) / single-pass `_retention_facts` / `last_activity_at`
-  and `FLEETING_INACTIVE_TTL_SECONDS`/`ENCLOSURE_INACTIVE_GRACE_SECONDS`/`REPLAY_WINDOW_SECONDS`/
-  `HEARTBEAT_KIND`; prune now deletes ANY dormant log and `initial_event_offsets` bounds active replay
-  to the recent window (dormant → EOF) while `_first_retained_offset` keeps unparseable-ts events.
-  Verification metadata pinned until closeout stamps the task-34 code commit.
-- 2026-06-28T05:38+02:00 — Created for task 29: lifecycle-aware raw Event River
-  retention now owns fresh-connect offsets, one-hour terminal lifecycle pruning,
-  workspace TTL replay, and complete-line parsing. Verification metadata pinned
-  until closeout stamps the task-29 code commit.
+No meaningful cross-repo references found.

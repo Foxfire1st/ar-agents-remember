@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_durable_store_contract.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A second thread is kept out of a log that is already held.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:8d0f4e6cfeff893bba1cc3d375ca2eb7c888352a38da616818539c193aeb6b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_second_thread_is_kept_out_of_a_log_that_is_already_held"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Taking a logs exclusivity twice on one thread does not deadlock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:1730e2ee0b0b9fba3e7440f0141acb336c818dd9a505c6539b55f1785803c77f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_taking_a_logs_exclusivity_twice_on_one_thread_does_not_deadlock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A dismissal is not lost to a prune sweeping on another thread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:95042d3cd977bfa85f487aa68d93ca66d12c51cc26b563cf704c52db6485b14a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A store refuses the append itself and recovers once the lock works.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:627c39a29299c3691df2b7125e1c04dd6fe23b7a39c68da046153372a85e8f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_store_refuses_the_append_itself_and_recovers_once_the_lock_works"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A future row stops the authority read and only costs projection a tick.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:d20b13775112110d3dffa03766cec0b6fc7a17caa94c04b628f329fd67eb471d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_future_row_stops_the_authority_read_and_only_costs_projection_a_tick"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compact drops what keep rejects and reports the count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:9c831c8d16d80d52867033af50fdbd422ca05a95e1eeced035458e6d696f1095",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compact_drops_what_keep_rejects_and_reports_the_count"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Replace records refuses an unlocked caller and changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:721f983a7e71e658cdf83b0fdabce6adf7cd470a087b77e4111f9c985e181113",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replace_records_refuses_an_unlocked_caller_and_changes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An interrupted rewrite cleans up too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "content": "sha256:fc4199446e0b666880a4389dfef591227d03e19ddeab06e8033d81ca1668f31e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_interrupted_rewrite_cleans_up_too"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

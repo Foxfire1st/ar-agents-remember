@@ -1,0 +1,656 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_diff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The row-count measurement, and the one statement shape this module runs that changes nothing.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:d0f850d506a1836e6ad007d0f85cb9c203601cd7d75083f4b26582c2e6dc38a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_row_counts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:c269ff2814b3bee65896e3a2e6dba6eb9619f0000be446f7bd2e469296de319e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_COUNT_TEMPLATE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**Both sides verified before either is selected, and the three separate comparisons inside each.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:a1e1e1e1a8776fc3be839f51a6663f404693a20ec6901fa1196e5386810bda81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_any_side_snapshot_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:fe69c24c451c17c36c4277099db771ebd74012e5d5ab850bf905a3005dc7361b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_snapshot_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The page arithmetic: the comparison total on every page, the cumulative returned, the display's own two numbers, and no continuation a page cannot serve.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:0166d02a0339061d3de626c110048f5c5e09a390dd9b799c5a2167b36d4eb712",
+            "locator": {
+              "kind": "symbol",
+              "name": "_page"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The per-side absence vocabulary and the recorded-but-empty selection served rather than refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:55b1e24a6173eeffe55d45b72110ea888765f0409d809d18cdfe613eec52f10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_absences"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:c4c8b884053dc4d6ea55d5fcdbde58b6f60abbe8cd8245a262297823354ba07c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_absence_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:7c4ffe57cbf0be21731134bf0daaaefaf26cb79bdd9457ac574cd567bba2b7a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selector_is_recorded"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:fa78c573a51adc7836b883b2866f457d41b3777660d5506afe6eb51f7106e51b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity_is_recorded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The empty comparison refused rather than reported as \"nothing changed\", with the contributing side absences named.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:89f22f6bb5377f9ff59ea92316f6691e5c958e787da38f8390ab5e9f3f2282e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_empty_comparison"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:94ffecf5ad644dbd41f1f0185532b2f7b8141cc69ddae220e11815e65ad96c0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absence_naming_both"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The cursor check order: policy, selector, filter, then the snapshot pair.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:9440ab1ff4b895653f846b1dc78b4f9b0883f28554e3cb382261ac300a35d847",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cursor_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The typed refusal constructors that bind a refusal to the comparison identity, and the one that cannot bind because a side never resolved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:4e62262a762dc8f07520118587f10de9ce55a98745d297befd16b3f3a28deac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unusable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:34e427ca2d57ccc8c6ee67614be2a11791b3c03e9fbb8a5527995c09e17c846d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:b8c31042c18568f7ab6458124c8463b1c8af95d63398bd3217c504e299609f3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refused_without_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The storage layer this seam delegates to: R07's one selection policy, applied per side.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "168addb396027ec5d4d193806fd25fc905b2be5e",
+            "content": "sha256:c4b61ef2a26bb608e577de2c376640ac2dbff9bf2f808672da15ebc38e138cd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_recorded_scope"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The union comparison and the display builder this seam calls.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
+            "content": "sha256:b31c1bc20fc116b9c05dc30a9c8b0c8abaa7295f2091e7b730c7291a233ac6b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "compare_selected_scopes"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The display builder, which turns one comparison into a page's items, omissions, expansion and carried partition.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_display"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The node that measures a real candidate write refusing its continuation, and the node that measures a side naming another snapshot of its own file refusing before any page.**\n\nAnchor: \"test_a_candidate_that_changed_after_a_continuation_refuses_the_continuation\"; \"test_a_side_naming_another_snapshot_of_its_own_file_refuses_before_any_page\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:62afd1b646e225b25f919575f662f95ed2fd4bac5c30dc3f725f54d1203225cb",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 325
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:40bc2ad21154ca95abd1e35beae9dd537aefdc99ad6de4ad031db161dd50cf97",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 438
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The side resolver: the identity comes from the file, and the root/tree pair is supplied together or not at all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:d24433a793584ab2d095c789461fb00c4361cc8df5bb2b6a94105a19defd7dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_diff_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The nodes that measure a missing side refusing without a substitute, a continuation against another selector returning no page, and a small budget not shrinking the totals.\n\nAnchor: \"test_a_missing_side_refuses_and_substitutes_no_other_snapshot\"; \"test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page\"; \"test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:baf1381d29613c5fb3b3648f7398a75474925f9185b69a84fadc6d795f9d8776",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:e6cc5b87fbc410994f7a82001e09237da0d94e700d8e2f98795edd9043ffe8c2",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 408
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:f5349844e4bf7e350dde15da6346c243e52072f32c9a93d0e5823ceed405f130",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The node that measures the paging rule through the public seam: a page of a selection is what the comparison displays, not what it selected.**\n\nAnchor: \"test_a_page_of_a_selection_is_what_the_comparison_displays_not_what_it_selected\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:79cff0facd4862fe2697cc884fdd2b581da8c636498d817c084e55c7a572102b",
+            "locator": {
+              "end": 749,
+              "kind": "line_range",
+              "start": 708
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The last nodes of the population: no mounted UI and no approval the comparison cannot make.\n\nAnchor: \"test_a_comparison_names_no_mounted_ui_and_no_approval_it_cannot_make\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d9115005b531950418960f3030fb71e5e46490",
+            "content": "sha256:4ee1ccfc52c22e654027ddb3a4b3bc89023b46e7b863de2308ce8dce50e58066",
+            "locator": {
+              "end": 771,
+              "kind": "line_range",
+              "start": 752
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The comparison request, the side that names one snapshot and its selector, and the typed result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:21a54311c4f697e6f9f55e18c34c0bd02353886b74710bffc07972ebc4c84842",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffRequest"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The result that is a page or a refusal, never both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:3642fd44cdcc23015719c7ffced132a8d998adabfd17d64431b75ea793164d6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "One side of a comparison: the exact snapshot and the per-side selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
+            "content": "sha256:ac05fc620ee5cccf91fe2f271a9897f4db11571d41a2646314d831b755583093",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffSide"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/diff.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The one operation member this seam's results carry.**\n\nAnchor: \"diff_knowledge_scope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:092bfd3134e2612a57d76e1953fce8cab55daf78adc7fedb325afa025c66b2a5",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The production probe, now a one-line delegation: the two trees addressed by object id, the never-substitute-`HEAD` rule, and the delimiter-safe observation the review's own inventory reads too.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_difference_probe"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_difference_observation"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "locator": {
+              "kind": "symbol",
+              "name": "source_tree_side"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The one operation: the ordered sequence, the injectable probe default and the typed catch of selection/storage/SQLite/OS failures.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:b6674c9a6519d5519f85e9dd396089661b4dd4d108b927663d1e332ddfba9a4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "diff_knowledge_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The four input classes a failed read is mapped onto, each naming its own fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:b1b38ac279a68a46395cf5a8692637d5bfba17ac66ec4a61132aeb87e1bdd19b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reading_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The binding computed before either file is opened, and the per-side effective selector it digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:73dc5b9db4466be58381bca1b755bd95cbc1dcc39579a33759cb9841528d461a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:40f225b064fa0e86068091901e5f93cf2aca87897ddad28e6534377b82381a2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_effective_selector"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:45f12ee827e06416c94e47a40365792a63d59e07dcd11d6b8eedd79c348fb068",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The values that must not be crossed: the snapshot pair, the connection pair and the whole opened comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:26dcccd247b5cf98a977c30ea09824a1b48fc7493d04bd3a6fbd980ab36a19c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotPair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:25d766c2753d03af275400770d4b8fdd4583af9b0e00e3a7888e761e40539d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenPair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:45f844abdb59490bb55b1dd11574fe17949c1eca13f0d5706f46fe55d7404d10",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenComparison"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:06562eec91bf31c4364e4152c7fe9dc21b6ed1991916a0108982d70d8a0b1e92",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compare_inside_one_snapshot_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, display with the comparison's own mapping reader, page.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:3c8fb9f41437c5a2de4f7366333fc6a70e28441909b88d8591f9c2a436a4d43d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_and_compare"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:5a6067a6f98719070e1be868b9031c5a8bc31971736c6f437bc9c49353354542",
+            "locator": {
+              "kind": "symbol",
+              "name": "_select_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The registered-mapping reader over this comparison's own two open snapshots — the partition decided from exactly the bytes the selection was made from.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
+            "content": "sha256:818628f7debcfb0a76b34230659b5a7b76ca2b5a01283ecdfeaa5a5048ca3bb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_registered_mapping_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

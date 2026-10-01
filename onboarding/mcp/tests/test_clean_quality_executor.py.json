@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_clean_quality_executor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact staged candidate is passed to one pinned dagger pipeline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
+            "content": "sha256:3da0882b0ce87deb0a5cc7ee73d06a3bf86e3405bf4ad1b126a1e4934126f9a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exported failure is the authoritative pipeline exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
+            "content": "sha256:7f8d8248510e7c4c0e280e91aeaa2b8be0bbf81f96da3244a7eb23a230f17404",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exported_failure_is_the_authoritative_pipeline_exit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invalid or unowned exports never replace durable evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
+            "content": "sha256:b90baa42eaec1fdd2909cc4d0ff01f41ad09917dfae25b327008656112fad66d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_or_unowned_exports_never_replace_durable_evidence"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Report generation pointer never exposes a partial copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
+            "content": "sha256:e495c916f9f473d2c524a07f34a266d64ae12efddccf1685c2567598320e829e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_generation_pointer_never_exposes_a_partial_copy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

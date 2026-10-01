@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/scripts/require-dagger-test-environment.d.mts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The declaration exposes the constants, pure validator, and throwing facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:27f6cc522159314d8c010082634a3e0ffdb05cde4e57fd79f873bc4441b5135e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_ENV"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:713ffc605c3ecc8abb614ac9ac0e1cd6e658ee92e387dc67b278f4e53db72a7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_PATH"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:964bced0f0ba69fe975cc6af95b6c4bb0f753a74b8aefa5a2b7496aede2413b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:18d76d7e5a65f878d9670b98f644de279c70f45855573bb9701f643f5513ea79",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime validation and refusal behavior live in the paired ESM file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:cca86771e02079a74809fd0d101dedf1e9881b65a63991f1103d60b14591d5fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_ENV"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:f01d260480c09a205c3b3174264de781e6f6351dc75030c7cdc19f34fcde4270",
+            "locator": {
+              "kind": "symbol",
+              "name": "DAGGER_TEST_ATTESTATION_PATH"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:aa10c6c1e8543a7962406400499148de4d7cd42667a97a69f61af0c0a5280616",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:1de2dde639c181144bafc495e4c5c0e171c566a10e6eb82bd2c14d11940e7a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

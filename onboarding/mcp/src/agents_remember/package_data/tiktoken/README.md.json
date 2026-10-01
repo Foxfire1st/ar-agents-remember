@@ -1,0 +1,238 @@
+{
+  "path": "mcp/src/agents_remember/package_data/tiktoken/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The token module defines the vendored URL, directory, and digest constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:0793393a76f92bd1579c7c614e12ef9c4b632ab398a54da30df7956a24aad874",
+            "locator": {
+              "kind": "symbol",
+              "name": "VENDORED_VOCABULARY_URL"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:ec4ce07f1c3d077a39756d628f799b6d1df38061a2697dde7de71a5f7fdbf882",
+            "locator": {
+              "kind": "symbol",
+              "name": "VENDORED_VOCABULARY_DIR"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:076b75a924e2e2dc46a0043004336115f2a6d70bcf981fb90e07742374633bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "VENDORED_VOCABULARY_SHA256"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The loader derives the hash-named path and verifies the file before loading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:edab0626ba1ce6e91eebc7daddde0e402cb4c10f39a09a6a1e6c62dc8d90ed37",
+            "locator": {
+              "kind": "symbol",
+              "name": "vendored_vocabulary_path"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:b8b49ac55ff021a80b079fb474448b44ae52debb30eb2bb37219ad99166d05d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_verify_vendored_vocabulary"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The cache context scopes `TIKTOKEN_CACHE_DIR` to the verified file and restores it after the load.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:886883449db0141676b94f3049a5c5a32fea3b7dd39dea4d5c38f412dbea619a",
+            "locator": {
+              "kind": "symbol",
+              "name": "vendored_vocabulary_cache"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`TiktokenTokenCounter` is the production counter that reads the verified vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:c329b9ff75695e72c65a15a7a98bc457ea3bd9e7ed55a5784b9e298b1882c596",
+            "locator": {
+              "kind": "symbol",
+              "name": "TiktokenTokenCounter"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`DEFAULT_TOKEN_COUNTER` constructs the default token counter at module scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:42c61f4b8237b871dd4b9d9732f0658a30766a8916bc31aff278808dbc8f70bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_TOKEN_COUNTER"
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed.\n\nAnchor: \"-text\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e763507bac7d8fb9f1d43a06466ad60ae299f0e6",
+            "content": "sha256:0bff9ec49ab3191ffb72ba723fc0c41fb342b85e356f5fcf7ee8f779d44b2551",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`).\n\nAnchor: \"tiktoken>=0.12\"; \"package_data/**/*\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:1c098f6a1d799c6b5a3aadcd6a4b190bf887d814111e7bd71223547eec22c802",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:aefd0fb5d8f022d0d0f617e785bcbe95d9db6895327e7bb08e1f9da5b83e411f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "content": "sha256:fbcc5eca4d066d160a2c5fde84e04b662c983dfb7c381168a4bc30b742c1d637",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point.\n\nAnchor: \"class CorruptVendoredVocabularyTests(unittest.TestCase):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef801deaa27e358ede61f4497e72165051c9c2d8",
+            "content": "sha256:258846007e445ea917eee95d7ca81200604dc5920f6850623bcba8b557e55673",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 208
+            },
+            "path": "mcp/tests/test_cold_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed.\n\nAnchor: \"this file is committed\"; \"/mcp/src/agents_remember/package_data/dashboard/\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afb87543ec96021dfba87dc7c116839404262b90",
+            "content": "sha256:ab49d34b844693d16dde81fc22a2ce66fcf0ce7a04f0a8587f7989812874cb16",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": ".gitignore"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2aac78785258416fcbb86b21ac6a285943449211",
+            "content": "sha256:56646739a4d05e696650b541b5ebf3fafe13b5f71598f97eff67d6c74ea108b8",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

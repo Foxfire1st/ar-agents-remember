@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_task_execution_topology_segments.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Leaf ids are unique sprint wide",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:9ddf4d17288a177a15164176632fb57d6b55913bcdf6a0b655ef664425b45adb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_ids_are_unique_sprint_wide"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lump and segment appearances of one master are mutually exclusive",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:22693f2e9ecfda6aa425f88d4d477f735e3b4fa7e70ff7bedd1bb519ae73f2e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lump_and_segment_appearances_of_one_master_are_mutually_exclusive"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Edge endpoints address segments by leaf sample",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:91678a67e58c91fae92ebba905cf24e438a714797a9dd2a595dd3262af676fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_edge_endpoints_address_segments_by_leaf_sample"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cycle through segments is refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:fbeda39e40d0aad4c73565a0ce343ab0c778370718aaf1885199117a5d0a7c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cycle_through_segments_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unplaced leaf derives to the latest unblocked segment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:8a02550de06524a7f577c579d27a05de2335b6976c285fed1be0f71244c24f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unplaced_leaf_derives_to_the_latest_unblocked_segment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Segmented membership matches orchestrates and waves run over nodes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:838c708507ef49a3282b484365a2fc29ff8ffc15f75d4e439eec83f6dc709b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_segmented_membership_matches_orchestrates_and_waves_run_over_nodes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Segment on atomic master is refused citing the node",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43214ef1e3327bb4324e41be0bc9ea5605f37b60",
+            "content": "sha256:eba75303a275634d818aa0f484f2fc2e6b29532365e2f140bc3b9f3fa48fa609",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_segment_on_atomic_master_is_refused_citing_the_node"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

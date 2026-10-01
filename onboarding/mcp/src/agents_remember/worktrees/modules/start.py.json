@@ -1,0 +1,500 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Attach activates and reconciles an atomic leaf's exact parent before returning the workbench.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:40ead51e5130e405d692d3d222b39375b07f4b7314fa37280057829a10292557",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:e86004e7b1d3bb2ce6f2fda8300c31400a77e93a7f751b02f3fac8f82606ebcb",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`recovery_guidance` and the `RecoveryOperation` vocabulary the three blocked starts belong to, plus `next_guidance`/`status_payload` for the phase side.\n\nAnchor: `RecoveryOperation`, `recovery_guidance`, `next_guidance`, `status_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:0d6fa275f1382d8bee165ec35f677b118a387c442aa516d3fb6e4915304b88e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryOperation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:f2d81d7f90dd19a4123e31afd6ac3ee1329a8a29a705df77de5161fef7f8d8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "recovery_guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:2687647418b48afe4b8cfec5618f187a16e0078a69bbc57bccac22cd70965336",
+            "locator": {
+              "kind": "symbol",
+              "name": "next_guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:45b26a8b0a279bdd72416d85b11c3e768d1ee61c66a78bbbbde9b7b784427f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "status_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
+            "content": "sha256:16e72a2af773dd094199d574372125067f890125c176cc3569d35a36c980ec41",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 563
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "`ContractCells` / `amend_contract`, the typed path every vocabulary-cell write takes.\n\nAnchor: `ContractCells`, `amend_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:6233fd7a927ec9708dcd82a543270f16b9d64d74115ad83af7efcb864a6c3ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCells"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:93106f4627f5d51b7669b2ba39255fb45eddd4ee73bf573f03e9dbf19bbb41fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "amend_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:0749af96a39a4f9c9c3e6f215ae2d6c41515e5938ca0cfe68edd204dd337733c",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "content": "sha256:4c492def0fcec9a9c086320a49e3c5ca243c8dde4021df8886a79d4a0e33d0a7",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes `ProviderStartPaths`, `load_contract_from_args`, `contract_path_from_args` at this ownership boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:28fd5041fe7752e741d8488964b033472c1e08ef070d5f26f076920aca2943b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderStartPaths"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:c1c83640701904e09ab79d92ca6e296b5f51d9bef532c8f7062c1a061b82ff8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract_from_args"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:3f19162064cca36ceb142ed7eacb4a2f674c69d01e1ac9de37b61b58469adbc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_path_from_args"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:da833ab5098c9ebf36ddfa51185a2cc354c55a23b321cf79f0b30b7e47c8f86a",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves.\n\nAnchor: \"parent_series = require_parent_series(\"; \"require_parent_series(contract, operation=\\\"worktree_start\\\")\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:01947668f607627f0031a5183f503e94c4a4869a2ef2827c8ba99f646ecc248e",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 177
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:4c789dde540ca88925e45ebce9fb7a70fd52c34944b73b26dfb7582fcc2d5dae",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 703
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:1a6bfe1305281b199fa50f1959599e7b5dbc0f97c6bf59041c01f61840ed933f",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:00858493375cd09c83c38a77417c78b51957cc677a9aeb15298945db26494ee5",
+            "locator": {
+              "end": 758,
+              "kind": "line_range",
+              "start": 758
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            },
+            "path": "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction.\n\nAnchor: \"def atomic_series_status_projection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:d192ee251b2b309342402534cafc75e81d007e372bc13fe5dd17c9b0f8f0a427",
+            "locator": {
+              "kind": "symbol",
+              "name": "status_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "content": "sha256:15b424e8d9c68c39d4d1467aa3ac4b87bf1bc7689a0c0cf2b719c0212b7385b8",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "682aa80f78746e7ec45a149845acbbf31f95811f",
+            "content": "sha256:b30afb81685f6278f24f316adbd5c5d3a9237ea09d8dede02021c3f955c151d1",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_atomic_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
+            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sync_selected_atomic_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the `WorktreeArgs` dataclass that types every start/attach/status input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ccd751d667a22aa1fbdfc5cf3d915d81132200f",
+            "content": "sha256:6b97a970a5f049dbef0ebced52c5f2f04b864c6c63e9c2b6803b3bbc73c93fde",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Provider setup requests are implemented by the providers package.\n\nAnchor: `ProviderSetupRequest`, `run_provider_setup`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:b64aa089108121e0b97ec8199f606cb2089f7ee7e3fe6e977ce521f1390a394d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSetupRequest"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:af8258abc42c3660a450fa042ee7e3fcd9537c70a89f3d87b5b6ee41bad390d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Background launcher and status projection.\n\nAnchor: `ProviderSetupJob`, `launch_provider_setup`, `provider_setup_status`, `provider_setup_running`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:659fe846d45593ca1388b0a6bbd9c4f2daecb4b3c7d3a602e8e82778cfc49ee7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderSetupJob"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2566a6eb7ce057c6650bab6d2e43067da2f364273b27787c6e484c73fb51cb39",
+            "locator": {
+              "kind": "symbol",
+              "name": "launch_provider_setup"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:47ca76b33804db8d3d52e6c5eb0dfb3303ff25e0a57613af13a2836ef985f2cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_setup_status"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:26913c1d35e3a0ef2a884b8d4229c71fbcf53abd618c8e7bdef24fdaa6dc6d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_setup_running"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Branch freshness facts come from the shared kernel.\n\nAnchor: `read_branch_freshness`, `freshness_to_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:0b2089562fc3fb113c6393fd5b9ae364c6e107d06b1a50c1b9836cfb7581af5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_branch_freshness"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:9984c8ad73edd4b1ae9bb4f539820b50aa01b1392924e78e500b233200ff0228",
+            "locator": {
+              "kind": "symbol",
+              "name": "freshness_to_packet"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:17e46f35fc38f69c1fa24f2da3d98a1f625bd911a46ce99deb15e16f30ed9984",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79ef372a5f71986f703d7b1e8404f3cbabfa76c2",
+            "content": "sha256:ff6f27b0a60e61e2c478a032ecbb896af2a781c8946410896efd4ed52aeae992",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/src/agents_remember/kernel/git_freshness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

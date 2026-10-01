@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_registered_scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_registered_scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T14:25+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [tests route overview](overview.md)
@@ -130,52 +120,37 @@ refusal vocabulary already had.
 - **Nothing is certified.** The module writes no record outside its temporary stores and makes no
   requirement-acceptance claim; it protects behavior only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring states the clause group, the lane, and the six failures every case names — including the ambiguous common base resolved by picking one. | "an ambiguous common base resolved by picking one" | mcp/tests/test_knowledge_registered_scope.py:1-12 |
-| The two module constants pin the shipped registered-composition policy id and the declared version the fixture's policy row carries. | "DECLARED_VERSION = "2026-09-18.1"" | mcp/tests/test_knowledge_registered_scope.py:58-58 |
-| The module-scoped fixture builds the base dataset through the shared read-scope builder and copies it to a second candidate path. | "base = build_read_scope_fixture(directory / "base")" | mcp/tests/test_knowledge_registered_scope.py:56-71 |
-| The one declaration each case varies declares `scope-B-M` over both sides with the read-scope fixture's two changed paths. | ""scope_id": "scope-B-M"," | mcp/tests/test_knowledge_registered_scope.py:89-102 |
-| Each snapshot declaration records the dataset's own identity and the selector policy version it was read under. | "selector_policy_version="recorded-family-frontier/v1"," | mcp/tests/test_knowledge_registered_scope.py:123-123; mcp/tests/test_knowledge_registered_scope.py:127-127 |
-| The fixture's policy version is a forward, depth-one traversal that widens to the registered review scope. | "widened_scope=REGISTERED_REVIEW_SCOPE," | mcp/tests/test_knowledge_registered_scope.py:126-143 |
-| The authored composition edge joins the fixture's family revision to its direct family revision under that policy version. | "from_family_revision_id=base.family.revision_id," | mcp/tests/test_knowledge_registered_scope.py:146-162 |
-| **The acceptance case: construction version, resolved three-part policy identity, declared scope id, followed composition edge and non-empty membership in three kinds.** | `test_a_declared_scope_is_constructed_with_its_policy_identity_and_resolved_membership` | mcp/tests/test_knowledge_registered_scope.py:180-200 |
-| **The provenance case asserts both mapping sides for each recorded-link kind and the candidate side for the authored edge.** | "assert ("source_to_invariant", "candidate") in recorded" | mcp/tests/test_knowledge_registered_scope.py:203-218 |
-| Determinism is asserted as two whole manifests comparing equal, with the edge list a tuple of itself. | "assert first == second" | mcp/tests/test_knowledge_registered_scope.py:239-239 |
-| **The no-policy case is a successful construction with no policy identity and no composition edge, and the reached family membership survives.** | "assert outcome.manifest.policy_identity is None" | mcp/tests/test_knowledge_registered_scope.py:253-253 |
-| **The prefix case: a declared directory where an anchor path is stored selects no claim, no anchor and no edge.** | "assert outcome.manifest.followed_edges == ()" | mcp/tests/test_knowledge_registered_scope.py:271-271 |
-| The frontier case reads the construction module's own text and requires the selection surface's names to be absent from it. | ""select_recorded_scope"," | mcp/tests/test_knowledge_registered_scope.py:269-286 |
-| **The declared-snapshot refusal names the exact declared digest and carries the construction's own operation on the typed refusal.** | "assert outcome.refusal.refusal.operation == CONSTRUCT_SCOPE_OPERATION" | mcp/tests/test_knowledge_registered_scope.py:339-339 |
-| Two declarations for one side are refused as an ambiguous common base at declaration time rather than resolved by a tie-break. | "with pytest.raises(ValidationError, match="ambiguous common base"):" | mcp/tests/test_knowledge_registered_scope.py:370-406 |
-| The path helper refuses absolute, pathspec-magic and parent-escaping spellings, so the declared path stays an identity to compare. | "for bad in ("/src/integration.py", ":(exclude)src/x.py", "../src/x.py"):" | mcp/tests/test_knowledge_registered_scope.py:425-437; mcp/tests/test_knowledge_registered_scope.py:463-463 |
+- The module docstring states the clause group, the lane, and the six failures every case names — including the ambiguous common base resolved by picking one. [1]
+- The two module constants pin the shipped registered-composition policy id and the declared version the fixture's policy row carries. [2]
+- The module-scoped fixture builds the base dataset through the shared read-scope builder and copies it to a second candidate path. [3]
+- The one declaration each case varies declares `scope-B-M` over both sides with the read-scope fixture's two changed paths. [4]
+- Each snapshot declaration records the dataset's own identity and the selector policy version it was read under. [5]
+- The fixture's policy version is a forward, depth-one traversal that widens to the registered review scope. [6]
+- The authored composition edge joins the fixture's family revision to its direct family revision under that policy version. [7]
+- **The acceptance case: construction version, resolved three-part policy identity, declared scope id, followed composition edge and non-empty membership in three kinds.** [8]
+- **The provenance case asserts both mapping sides for each recorded-link kind and the candidate side for the authored edge.** [9]
+- Determinism is asserted as two whole manifests comparing equal, with the edge list a tuple of itself. [10]
+- **The no-policy case is a successful construction with no policy identity and no composition edge, and the reached family membership survives.** [11]
+- **The prefix case: a declared directory where an anchor path is stored selects no claim, no anchor and no edge.** [12]
+- The frontier case reads the construction module's own text and requires the selection surface's names to be absent from it. [13]
+- **The declared-snapshot refusal names the exact declared digest and carries the construction's own operation on the typed refusal.** [14]
+- Two declarations for one side are refused as an ambiguous common base at declaration time rather than resolved by a tie-break. [15]
+- The path helper refuses absolute, pathspec-magic and parent-escaping spellings, so the declared path stays an identity to compare. [16]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Every dataset it builds is an in-process knowledge
 store under a temporary directory, and the two family revisions the fixture's edge joins are the shared
 read-scope fixture's own — same-repository test data, not another repository's state.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "DECLARED_VERSION =" repointed to mcp/tests/test_knowledge_registered_scope.py:58-58. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "selector_policy_version="; "," repointed to mcp/tests/test_knowledge_registered_scope.py:127-127; mcp/tests/test_knowledge_registered_scope.py:123-123. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "assert first == second" repointed to mcp/tests/test_knowledge_registered_scope.py:239-239. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "assert outcome.manifest.policy_identity is None" repointed to mcp/tests/test_knowledge_registered_scope.py:253-253. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "assert outcome.manifest.followed_edges == ()" repointed to mcp/tests/test_knowledge_registered_scope.py:271-271. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T17:17:10+00:00: Generated citation repair: "assert outcome.refusal.refusal.operation == CONSTRUCT_SCOPE_OPERATION" repointed to mcp/tests/test_knowledge_registered_scope.py:339-339. No content impact: mechanical anchor-range projection bound to citation source snapshot 02d8f0b256fe50bf7458ae56160b7e02e4466423e76d3ab197e12477f370f5b8; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-20T01:20+02:00 — 260918-TSIP-L11 closing seat (memory worktree `84152b9e`, code `79fa817f`): re-read and re-derived 1 claim row(s) on the merged tip. Every row was read against the construct it cites before its range was regenerated: the merged `mcp/tests/test-evidence-lanes.toml` was read at the line that carries each lane anchor, `pyproject.toml` was read at its declaration, and every renamed or consolidated case was re-anchored on the successor whose own docstring records the consolidation. No range was produced by adding a delta to an old number and the product's mechanical fixer was not run, so **no projection bullet is written and no claim is reopened on this edit's account**. Rows: `test_knowledge_registered_scope.py.md:160` (?, "):") — re-read the claim against the landed source: the construct moved and the cited range was widened to the line that actually carries it, per the checker's own remedy.
-- 2026-09-18T14:25+02:00 — 260915-KS-L16 curator (uncommitted change set on `ar/260915-ks-l16`, base `7b1db4e0`): created this one-to-one card for the registered-scope suite. It records the two-snapshot fixture whose policy row and authored edge live in the candidate dataset only, the six acceptance cases (construction identity and membership, per-side edge provenance, field-for-field determinism, the no-policy absence, the prefix that selects nothing, and the frontier exclusion asserted as a derivation over the construction module's text), the eight refusals that each name an exact missing input and fall back to nothing, and the boundary the module does not cross: it protects the construction and asserts nothing about a run over the scope or about the retrieval read. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

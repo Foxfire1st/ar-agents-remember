@@ -1,0 +1,24 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "conditions": [],
+  "exclusions": [],
+  "id": "INV-103S55GN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Hand-off kind: clause.",
+        "Producer's disposition: satisfied.",
+        "Evidence: This run's foundation batch writes a Git-bound realization for every code citation and retains two non-Git documents (RFC 2119 and the MCP specification revision) through the manifest, so both halves of the statement are exercised in one batch."
+      ]
+    },
+    "leaf": "260921-ICR-L30",
+    "legacyId": "361ea08d-3661-4d15-98dd-fb04dc37c100",
+    "task": "260921-ICR"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A stored statement's code realization is a repository-relative path together with the exact blob the recorded tree holds, while a source that is not a repository file is retained as an explicit origin reference and a bounded manifest entry instead of being written as a Git anchor.",
+  "status": "proposed",
+  "supersedes": []
+}

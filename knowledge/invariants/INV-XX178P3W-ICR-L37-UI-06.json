@@ -1,0 +1,23 @@
+{
+  "admission": "legacy-unassessed",
+  "applicability": "Deduplication of family expression excerpts from carried before/after realization claims.",
+  "conditions": [
+    "Claims are grouped by repository path and recorded source identity.",
+    "Observed identities and resolution outcomes remain separate per-side readings."
+  ],
+  "exclusions": [
+    "The same path with different recorded identities must remain distinct.",
+    "A realization mismatch is not an authored semantic verdict or the comparison source-inventory count."
+  ],
+  "id": "INV-XX178P3W",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "1745450b-cb44-4812-a727-9acc4469c79a",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Expression grouping keeps recorded source identity in the deduplication key and observed identities as per-side readings.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -2,14 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| doc_type | `route-local-overview` |
 | sourceRoute | `mcp/src/agents_remember/serving/conversation/library/` |
 | onboardingRoute | `mcp/src/agents_remember/serving/conversation/library/overview.md` |
 | parentOverview | [`conversation/overview.md`](../overview.md) |
-| lastUpdated | 2026-09-17T11:10+02:00 |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc` |
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
 
 ## What This Area Is
 
@@ -175,12 +170,10 @@ any `TerminalLaunchRequest(` site has neither disposition or if the set of sites
 future capsule-carrying reopen: the final-verification leaf, with the harness delivery leaves that own
 the thread lifecycle.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The declared reason and the explicit legacy declaration on the launch. | `LIBRARY_REOPEN_LEGACY_REASON`; `legacy_launch_capsule` | mcp/src/agents_remember/serving/conversation/library/open_service.py:113-124; mcp/src/agents_remember/serving/conversation/library/open_service.py:475-478 |
-| The refresh plan that makes a capsule-carrying reopen a fresh thread. | `plan_refresh`; `FRESH_THREAD` | mcp/src/agents_remember/serving/capsule_delivery.py:399-440; mcp/src/agents_remember/serving/capsule_delivery.py:56-72 |
-| The identity proof the reopen exists for, which the exclusion protects. | `_settle_observation` | mcp/src/agents_remember/serving/conversation/library/open_service.py:535-571 |
-| The cases pinning the declaration and the whole-site enumeration. | `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule`; `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` | mcp/tests/test_capsule_launch_wiring.py:803-814; mcp/tests/test_capsule_launch_wiring.py:761-801; mcp/tests/test_capsule_launch_wiring.py:847-856 |
+- The declared reason and the explicit legacy declaration on the launch. [1]
+- The refresh plan that makes a capsule-carrying reopen a fresh thread. [2]
+- The identity proof the reopen exists for, which the exclusion protects. [3]
+- The cases pinning the declaration and the whole-site enumeration. [4]
 
 ## Load-Bearing Files
 
@@ -230,7 +223,9 @@ the thread lifecycle.
   ::test_the_open_status_map_is_total_over_the_declared_outcomes` asserts set equality between the
   map's keys and the `Literal`'s eight members, which is what makes the direct index safe.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 The parent contract route supplies the wire grammar and the two-port split this slice
 implements; the composition supplies the runtime, authorization, and dependency seams; the
@@ -238,37 +233,31 @@ tracked opener/readiness/retire authorities execute the open. Six new test suite
 foundation pin prove the contract on doubled boundaries, and the installed-runtime suite proves
 the live gates and both real open E2Es.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. | `ConversationLibraryPort` | mcp/src/agents_remember/serving/ports.py:93-118 |
-| The L0 request dependencies are the only consumption seam the handlers use. | `get_conversation_runtime`; `resolve_conversation_authorization` | mcp/src/agents_remember/serving/conversation/dependencies.py:21-23; mcp/src/agents_remember/serving/conversation/dependencies.py:26-36 |
-| The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. | `open_terminal_session` | mcp/src/agents_remember/serving/terminal_opener.py:821-879 |
-| The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. | `handleClaude`; `handlePi` | mcp/native_helpers/conversation_library/src/claude.ts:65-78; mcp/native_helpers/conversation_library/src/pi.ts:54-67 |
+- The dormant library read port defines scoped list, historical read, and server-private resume-target resolution. [5]
+- The L0 request dependencies are the only consumption seam the handlers use. [6]
+- The tracked opener absorbs identical replays through the live catalog row and carries the codex-only `resume_thread_id`. [7]
+- The locked Claude and Pi helpers dispatch list, read, and resume operations through their request handlers. [8]
 
 | The five route declarations, the total (no-`.get`-default) `_OPEN_STATUS_BY_OUTCOME`, and the `_error_response`/`_ERROR_STATUS_TABLE` mapper the shared refusal table transcribes. | `api_library_list`; `api_library_read`; `api_library_open`; `api_library_open_status`; `api_library_open_reconcile`; `_OPEN_STATUS_BY_OUTCOME`; `_error_response`; `_ERROR_STATUS_TABLE` | mcp/src/agents_remember/serving/conversation/library/api.py:75-84; mcp/src/agents_remember/serving/conversation/library/api.py:109-130; mcp/src/agents_remember/serving/conversation/library/api.py:133-158; mcp/src/agents_remember/serving/conversation/library/api.py:169-199; mcp/src/agents_remember/serving/conversation/library/api.py:202-221; mcp/src/agents_remember/serving/conversation/library/api.py:224-243; mcp/src/agents_remember/serving/conversation/library/api.py:271-286; mcp/src/agents_remember/serving/conversation/library/api.py:291-305 |
 | `LIBRARY_RESPONSES` (six statuses) and `OPEN_OUTCOME_RESPONSES` — the open trio's own outcomes as success shapes, each union-ed with the refusal model the shared table declares for the same status. | `LIBRARY_RESPONSES`; `OPEN_OUTCOME_RESPONSES` | mcp/src/agents_remember/serving/conversation/response_contract.py:125-135; mcp/src/agents_remember/serving/conversation/response_contract.py:178-198 |
 | The six focused suites cover routes, cursors/scope, gates, ports, the open service, and installed-runtime production gates. | `# mcp/tests` | onboarding/mcp/tests/overview.md:1-4986 |
 | Historical evidence (retired with the d3610903 suite reduction): The installed Codex 0.144.5 runtime fixture recorded disabled capabilities and the native-history/list-read-resume production-gate evidence. These removed artifacts provide no current execution or capability-enablement proof. | N/A | N/A |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation participates in this route. The locked npm dependencies are
 third-party libraries resolved only from this repository's package/lock, and the resolved memory
 policy allows no neighboring repository.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant cross-repo evidence found. | — | — |
+No relevant cross-repo evidence found.
 
-## Docs References
+### Docs References
 
 The resolved `Domain Documentation` registry has no entries. This route therefore uses the
 repository-owned contract, production seams, fixtures, and tests as its direct evidence and does
 not fabricate an external citation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available for this library gate. | — | — |
+No configured domain documentation was available for this library gate.
 
 ## File-Level Onboarding Map
 
@@ -400,79 +389,3 @@ with a recorded reason.
 ## 260731-EFA-L9 Route Impact — Contract Imports Moved
 
 The library child routes now import the page/history wire contracts from `models/conversations/history.py` and the canonical library port from `serving/ports.py` after the L9 monolith split. Library behavior is unchanged.
-
-## Update History
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **No route impact:** this route's own governed sources are unchanged by `ICR-R08@v1`. The only edit to this document is citation-coordinate regeneration against the grown `mcp/tests` route overview (the leaf recorded three relationship case modules and their lane and consumer registrations). No claim, anchor, wording or table shape changed, no verification stamp was advanced, and the candidate is uncommitted.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-17T11:10+02:00 — 260915-CAPS-L15 curator: **route meaning changed: this route is now the
-  *declared* legacy launch point, so the body was updated rather than annotated.** The exact open passes
-  `legacy_launch_capsule(role, LIBRARY_REOPEN_LEGACY_REASON)` explicitly, recording `legacy` with its
-  reason on every run instead of leaving the mode to an absent field. A current-intent section records
-  the measured trade — the route proves the vendor identity it resumed, while a capsule on a thread this
-  session did not open resolves as a bounded fresh thread — and states what a reader must not conclude
-  (the exclusion is this route's alone; every other production launch point is wired, and the enumeration
-  case fails if a site has neither disposition). Three reference rows added, and **two citation ranges
-  in this overview's own existing tables were re-read and repaired by hand** because this leaf's
-  insertions shifted the constructs they point at: the tracked-opener row's `open_terminal_session`
-  `738-791` → **`821-879`**, and the suite-population row's `# mcp/tests` target
-  `onboarding/mcp/tests/overview.md:1-2122` → **`1-2669`**. The sanctioned per-document `citation_fix`
-  is unreachable in a leaf worktree (D14), so both were rebind by reading the candidate. Verification metadata moves
-  to this leaf's base `15fa0e2c`; the candidate is deliberately uncommitted, so the governed closeout
-  stamps the real code commit and no hash or fingerprint was invented here.
-
-- 2026-08-13T07:53+02:00 — 260731-EFA-L23 super-line reconciliation: re-reviewed this card and its Repo-Internal citation targets after absorbing the super-integration memory line. Retained claims remain supported by the current tree. Verification is pinned to real code HEAD `1580f92715ff93c988f9a15439ad9bec60ef4c5d`; the new-line memory mapping remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Codex executable selection a native-PATH resolver seam and treats the initialize server product as diagnostic rather than authority. Exact Agents Remember client suffix and version agreement remain mandatory, and resolution failures surface as typed store errors. Verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded current Desktop
-  host-first initialize identity and exact request client-name/version validation for the native
-  library connector.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: updated the exact-open operating model for
-  canonical `TaskDocumentRef` launch context; no leaf or caller-visible runtime address survives as
-  a second routing authority.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split helper dispatch from runtime-fixture ownership under the adversarial verdict, then the exact scoped fixer/check passed.
-
-- 2026-08-02T18:15+02:00 — 260731-EFA-L6 curator W1-B06: anchored 9 Repo-Internal reference rows; scoped result 0 findings.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: recorded the five route declarations and the one
-  real behaviour change — `_open_call` dropped `_OPEN_STATUS_BY_OUTCOME.get(outcome, 500)` for a
-  direct index, so an unmapped outcome is now a loud failure instead of a silent 500 carrying a full
-  operation body on an undeclared status, held total by a set-equality test against the outcome
-  `Literal`'s eight members. Recorded why the open trio need a second `responses` table (the same
-  statuses carry either the operation or a refusal) and why every entry in it unions both models
-  (`{**a, **b}` is a merge, so an operation-only entry would delete the shared refusal on nine
-  (route, status) pairs). Added the totality rule to Local Invariants And Traps and two reference
-  rows (`library/api.py`, `conversation/response_contract.py`); all ranges read back. Named the
-  conformance suite rather than FastAPI as the enforcement, since every handler here returns a
-  `JSONResponse` it built itself. Gate, cursor/key, scope and open-ledger behaviour are unchanged.
-  Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: `LibraryBinding` (per-app runtime/shared bound to a
-  per-caller authorization) and `OpenRequest` (the four facts whose joint fingerprint is what makes
-  a replay a conflict rather than a second open) replaced the parallel parameter lists;
-  `AppServerSeams` and `GateProbes` made the two substitution surfaces all-or-nothing, with frozen
-  defaults standing for the real machine. No wire, gate, digest rule or read path changed.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: documented the sub-agent library rows (codex
-  `subAgent*` source-kind grouping, claude `subagents/*.jsonl` enumeration/reads, the
-  capability-honest `agents_note`, fail-closed sub-agent identity/resume) in the port rows and
-  Structures list. Routes, token authority, gates, and open/reconcile are unchanged. Aggregate
-  route-index generation remains manager-owned; verification metadata stays pinned
-  (L7 uncommitted).
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: version-gate REMOVAL (developer ruling
-  2026-07-21, R4). Corrected the now-false "supported at the exact locked versions / observed-versus-
-  locked reason / version re-proof on every spawn" doctrine throughout: the live production-path
-  CONTRACT probe (codex `thread/list`; claude/pi helper `list`) is the only gate, the handshake
-  reports observed runtime/helper versions as informational evidence, and no version comparison gates
-  or demotes. Routes, cursor/key authority, ports, and open/reconcile service unchanged. Verification
-  stays pinned until L5F closeout stamps the candidate commit.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: created the governing overview for the
-  implemented dormant native library — authorized list/read, live capability gates, signed
-  cursor/key authority, narrow-only scope, locked-helper and direct app-server ports, and the
-  idempotent exact open/status/reconcile service with honest retirement — after same-reviewer
-  PASS closed findings F1–F5 across four fix rounds. Verification is blank because the new
-  source route is uncommitted; closeout owns its first source stamp.

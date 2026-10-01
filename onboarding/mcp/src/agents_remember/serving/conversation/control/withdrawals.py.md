@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/conversation/control/withdrawals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/conversation/control/withdrawals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-20T15:45+02:00 |
-| lastVerifiedCommitHash |  `7bf564a663bb61f12844dee39538dd09a1633cdb`|
-| lastVerifiedCommitDate |  2026-08-10T12:28:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structured conversation control overview](overview.md)
@@ -73,33 +63,29 @@ replace/keep choice stays revision-safe.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; the withdrawal/recovery contract is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The substrate owns the atomic withdraw + pre-tombstone recovery payload; the recovery assembly and
 attachment recoverable-marking are sibling modules; the ref authority re-binds every wire.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The L2E atomic `cockpit_only` withdraw and pre-tombstone recovery capture. | `HarnessSubmissionAuthority` | mcp/src/agents_remember/serving/harness_submission_authority.py:116-1023 |
-| Recovery content/digest/asset-ref assembly extracted to the sibling module. | `recovery_text`; `recovery_digest`; `recovery_payload`; `recover_attachment_refs`; `attachment_recovery_ref` | mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:40-47; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:50-61; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:64-77; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:80-93; mcp/src/agents_remember/serving/conversation/control/recovery_assembly.py:96-123 |
-| Attachment recoverable-marking and byte deletion under the same lease. | `mark_recoverable`; `delete_recoverable` | mcp/src/agents_remember/serving/conversation/control/attachments.py:460-481; mcp/src/agents_remember/serving/conversation/control/attachments.py:484-497 |
-| The withdrawal/operation/recovery ref brands re-bound on every wire. | `RefBinding`; `mint_ref`; `decode_ref`; `ref_identity` | mcp/src/agents_remember/serving/conversation/control/refs.py:113-124; mcp/src/agents_remember/serving/conversation/control/refs.py:136-161; mcp/src/agents_remember/serving/conversation/control/refs.py:164-193; mcp/src/agents_remember/serving/conversation/control/refs.py:221-233 |
+- The L2E atomic `cockpit_only` withdraw and pre-tombstone recovery capture. [1]
+- Recovery content/digest/asset-ref assembly extracted to the sibling module. [2]
+- Attachment recoverable-marking and byte deletion under the same lease. [3]
+- The withdrawal/operation/recovery ref brands re-bound on every wire. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260731-EFA-L2 Current Delta
 
@@ -115,46 +101,3 @@ Withdrawal semantics — what may be withdrawn, the idempotent replay, and the r
 crossing exactly once — are unchanged.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-05T19:58+02:00 — No content impact: 260731-EFA-L16 made `ConversationControlService.resolve_entry` async (event-loop offload of the lock-taking catalog read), so this module's five call sites (`withdraw`, `withdraw_status`, `pending_recoveries`, `fetch_recovery`, `acknowledge_recovery`) gained only the matching `await` — one-for-one line replacements; no handler logic, lease sweep, wire shape, or error mapping changed, and this card names neither the seam's signature nor the call shape.
-- 2026-08-03T02:54:18+02:00 — W3-B01 curator: curated 4 Repo-Internal table citations and 5 prose citation groups with exact authority, recovery, attachment, ref, withdrawal, lease, projection, and status anchors. Verification metadata remains unchanged for closeout.
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 11 stale self-citations in Logic and
-  corrected one wrong claim they were hiding. The `WithdrawalTicket` refactor moved the record
-  builders up and the wire helpers down, so: `RecoveryRecord` L87 → L90-L101, `WithdrawalRecord`
-  L101 → L104-L118, `withdraw` L117 → L121-L184, `_failure_for_result` L425 → L416-L439,
-  `_settled_failure` L538 → L514-L545, `_unknown_withdrawal` L573 → L548-L574, `fetch_recovery` L263
-  → L266-L297, `_live_row` L657 → L631-L648, `_replay_response` L735 → L708-L732, `_verify_refs`
-  L792 → L757-L769, and `withdraw_http_status` L832 → L782-L791 (L832 was past the end of an
-  802-line file). The claim that `_verify_refs` re-binds the ref pair "against the live `_live_row`"
-  is not what the code does: `_verify_refs` only decodes both refs under one `RefBinding` and
-  refuses a pair naming different operation identities; `_live_row` is called from `_drive_withdrawal`
-  (cit:([`_live_row`, `_drive_withdrawal`], mcp/src/agents_remember/serving/conversation/control/withdrawals.py:358-398; mcp/src/agents_remember/serving/conversation/control/withdrawals.py:631-648)) to refuse anything that is not a still-`queued` cockpit-source row.
-  Rewritten to say that, with `_drive_withdrawal` L358 → L358-L398,
-  `_apply_withdrawal_result` L401 → L401-L413, `_build_withdrawn_record` L442 → L442-L511, the ref
-  mint L775 → `_mint_operation_ref` L748-L754, and the projection/coercions L735/L822/L827 →
-  `_withdrawal_projection` L735-L745 / `_as_withdrawal` L772-L774 / `_as_recovery` L777-L779.
-  `pending_recoveries` L226, `withdraw_status` L187, `_redrive_withdrawal` L577, `sweep_recoveries`
-  L651 and the lease anchors L457-L458 were re-checked and are correct. NOT fixed (beyond this
-  worklist): the sweep's disposal span L652-L660 is really L657-L663 (the expiry branch through
-  `attachments.delete_recoverable`).
-
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 sibling-module citations, both read
-  back. `recovery_assembly.py` is 123 lines, so the stamped `L36-L128` ran off the end; the real
-  extraction is L37-L123 — `EMPTY_DIGEST` plus `recovery_text` / `recovery_digest` /
-  `recovery_payload` / `recover_attachment_refs` / `attachment_recovery_ref`, i.e. exactly the
-  content/digest/asset-ref trio the claim names, ending at the last line of the file. `refs.py`
-  needed two ranges instead of one: the brands are the `RefPurpose` literal and
-  `_PREFIX_BY_PURPOSE` prefix table at L37-L44, and the re-binding is L113-L219 — `RefBinding` /
-  `RefTarget`, `mint_ref`, `decode_ref`, and `_check_payload`, whose docstring is literally
-  "Re-validate the decoded payload's full binding on every wire". Claims unchanged; both still true.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `WithdrawalTicket` as the single stamp for every withdrawal record, plus `_unknown_withdrawal` and `_mint_operation_ref`.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: created the sidecar for the cockpit-only
-  withdrawal + bounded recovery authority — preserved atomicity, 900 s authorization-bound recovery
-  lease with opaque discovery/authenticated fetch/ack disposal/expiry, journal-of-last-resort
-  reconciliation, and revision-safe newer-draft semantics. Verification is blank because the new
-  source file is uncommitted; closeout owns its first source stamp.

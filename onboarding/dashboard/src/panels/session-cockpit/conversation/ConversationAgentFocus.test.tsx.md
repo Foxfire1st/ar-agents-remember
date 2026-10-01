@@ -1,15 +1,5 @@
 # dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-01T11:50+02:00 |
-| lastVerifiedCommitHash | `ea9cf0abeab4fe88961bda10b4f54d30266a9634` |
-| lastVerifiedCommitDate | 2026-09-17T23:56:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [session-cockpit/conversation overview](overview.md)
@@ -89,36 +79,32 @@ parent stream failure.
   a capability tree in front of `ConversationSurface`'s `capabilities?.live.completeness` and
   `capabilities?.history` cues for the first time.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; no Domain Documentation entries are
 configured. This one-to-one card therefore relies on its direct agents-remember source/tests and the
 reviewed task evidence for any current behavioral claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The surface under test; imported at L34. | `statusRevision` | dashboard/src/panels/session-cockpit/conversation/AmbientTelemetry.tsx:73-73 |
-| The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. | `ArrowDown` | dashboard/src/panels/session-cockpit/conversation/conversation-timeline/measurements.ts:75-75 |
-| The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. | "export const activeConversationStore =" | dashboard/src/data/conversation/store.ts:207-207 |
-| The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection. | `applyInitialPage` | dashboard/src/data/conversation/reducer.ts:168-202 |
-| The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27. | `agent` | dashboard/src/data/conversation/types.ts:175-175 |
-| The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40. | `announcePolite` | dashboard/src/data/announcer.ts:33-35 |
-| `conversationIdentity` / `conversationItem` / `conversationStatus` / `conversationPage` — the builders the fixtures now use; imported at L28-L33. | `conversationItem` | dashboard/src/test/fixtures/conversationWire.ts:209-226 |
+- The surface under test; imported at L34. [1]
+- The exported scroll-key set the ArrowDown-absence pin imports; imported at L35. [2]
+- The real store seeded with projections (`activeConversationStore`, `connectConversation`, `disconnectConversation`); imported at L16-L20. [3]
+- The projection type + `emptyProjection` the fixtures extend; imported at L14-L15. `applyInitialPage` at L182-L195 is what copies a page's `capabilities`/`totalItems` onto the projection. [4]
+- The item/identity/status/page wire types the fixtures build (incl. the `agent` ref); imported at L22-L27. [5]
+- The mocked announcer side channel the visibility gate is asserted against; imported at L13, mocked at L37-L40. [6]
+- `conversationIdentity` / `conversationItem` / `conversationStatus` / `conversationPage` — the builders the fixtures now use; imported at L28-L33. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card maps a repository-local agents-remember source. Import and task-boundary review found no
 cross-repository implementation source that governs its behavior.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260727-CHATS-IM-L2 Persisted-Focus And Retry Delta
 
@@ -126,52 +112,3 @@ The persisted-focus regression proves a valid effective child hydrates exactly o
 mount/remount while a stale stored id sends zero POSTs cit:(["hydrates a valid persisted focus once"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:297-348). The failure/retry regression
 renders the server's child-scoped detail, keeps the parent projection `live` with no parent error,
 retries explicitly, and clears the local error after success cit:(["child-scoped history failure"], dashboard/src/panels/session-cockpit/conversation/ConversationAgentFocus.test.tsx:350-391).
-
-## Update History
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `agent` repointed to dashboard/src/data/conversation/types.ts:175-175. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B22 curator: replaced the superseded `(L…)`
-  prose citations with exact test-title anchors, the `n/a` table rows with exact frozen-source
-  anchors, and the history `applyInitialPage` range via the scoped fixer; exact non-fixing
-  check returns zero findings.
-
-- 2026-08-01T11:50+02:00 — 260731-EFA-L4 curator: recorded the conversation-wire fixture conversion
-  and repaired every case range. The two fixture details worth a reader's time are named in the
-  Fixtures bullet: `item()` now writes `turnId: undefined` EXPLICITLY, because `conversationItem`'s
-  base supplies `turnId: "t1"` and this suite's items deliberately carry none — a silent inheritance
-  there would have changed what `resolveWorkingTurnId`-adjacent code sees; and `initialPage()`'s
-  `capabilities` went from `{} as ConversationCapabilities` (a tree the server cannot send) to the
-  full 23-leaf tree, with `page.totalItems` now set. That second one looked consequential, so I
-  traced it instead of trusting the green run: `applyInitialPage` cit:([`applyInitialPage`], dashboard/src/data/conversation/reducer.ts:168-202) really does copy `page.capabilities` and `page.page.totalItems` onto the projection, and
-  `ConversationSurface.tsx` — unchanged by this leaf — reads `capabilities?.live.completeness` at
-  L319-L321 and `capabilities?.history` at L279. What makes it inert is ORDERING: all three
-  `connectRuntime` cases flush the GET and then call `seed()`, which overwrites the session's
-  projection with a spread of `emptyProjection(identity())` carrying no `capabilities` key, so the
-  surface renders with `capabilities === undefined` both before and after this change. That ordering
-  is now written into Invariants, because a future case that reversed it would be the first to put a
-  capability tree in front of those two cues. Suite re-run: all cases pass. Citation repairs — every
-  Logic range and both IM-L2 ranges were stale and were re-anchored on their `it`/`describe`
-  (Setup L25-L31,L119-L142 → L37-L42,L146-L171; Fixtures L34-L115 → L44-L116; the eleven case ranges
-  L144-L285 → L172-L296 and L393-L409; IM-L2 L311-L362 → L297-L349 and L364-L405 → L350-L392), and the
-  six import-line citations were re-checked against the reshuffled import block (surface L22 → L34,
-  timeline L23 → L35, store L16 → L16-L20, types L17-L21 → L22-L27). One row added for the builder
-  module.
-
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded exact-once valid persisted-focus
-  hydration, stale-focus non-hydration, and child-local visible failure/recovery with parent
-  continuity. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the ArrowDown-primary-path pins —
-  the hijack moves DOM focus into the agents line from a timeline row AND from the scroll viewport
-  (focus-only; Enter opens the menu, Enter selects and announces), the ArrowUp return to the
-  timeline's tabbable row, and the exported `OPERATOR_SCROLL_KEYS` ArrowDown-absence contract; the
-  parent-view pin now asserts the one-compact-line area and the stale-focus pin asserts no viewing
-  note (the focus bar is gone). Re-anchored the test spans. Verification stays pinned
-  (uncommitted); closeout re-stamps.
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator: created the sidecar for the R7 surface focus
-  suite — ArrowLeft/ArrowRight parent↔agents cycling with wrap-around, Escape/back-button return,
-  timeline filtering to the focused lane, polite visibility-gated announcements, interactive-target
-  key exclusion, and the stale-stored-focus recompute to the parent. Verification is pinned to the
-  leaf base (`842b487`) because the new source file is uncommitted; closeout owns its first source
-  stamp.

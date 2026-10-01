@@ -1,0 +1,237 @@
+{
+  "path": "mcp/tests/test_knowledge_validator.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture tree passes with only the legacy count, and MIK-R22's report-only set is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:037e6597c8624f1080c1a16534c7c34a6f993b4ca15c8802e72e11db08b07fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_fixture_tree_passes_every_rule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "MIK-R27: exported, retired and merge-parent records are never refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:908e5a73e613e4d5bb4887e56694ca5e28fc9c8423e41b33015130254a19946a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exported_retired_and_merged_records_are_never_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "MIK-R27: a forged legacy ID does not make a record exported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "MIK-R27: the legacy count and the rules' registration flags.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:679753060036ab6c3258c7e021fd935680b03e08124f0a7b940b49cbb69ec493",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_legacy_records_are_counted_until_assessed_or_demoted"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:76e98eb2e6f9c0ebf22e41a172facb56445135ec18952b6c9fefd901b02b52bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rules_are_registered_refusing_new_and_reporting_the_rest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A later rule runs everywhere; report-only never refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:ddbdd1414ffa1f78899897fc2f2de39aed2c1912dcdecb739816b44707a85f8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_later_packets_rule_runs_everywhere_and_report_only_never_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Merge duplicates are conflicts naming both files; parallel mints merge cleanly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:ec3057f0f50f72b2665253fd96380574eec7c26422d70eabd928dee46f107182",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_ids_after_a_merge_are_a_conflict_naming_both_files"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:7bd1074e567fa35a18cfb427750ac186eb9b52b1ffd34784c929e2dfcad8697b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parallel_leaves_minting_different_ids_merge_cleanly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The hand-added marker is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:0670aeda506e093647aaa77c8d54dbb1a253b430f599a95c3e7b6531e682acd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_added_marker_without_a_reference_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A dot-named card and its sidecar are validated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:6631cf300cab0f9d694c9eb0fb88677bf250e6ba914c47bdaf6e4c9c78bbfff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dot_named_card_and_its_sidecar_are_validated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The boundary merge: three rows, passes, three stale reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:0c4aded6e6bee9ab9a6f2722c21400cdba03cd92aaf1e76e624559b12aa402c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retired record the history fixtures keep in every tree (records are never deleted, MIK-R22 rule 3; L09 R2-1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:983bccf913d29299ec2bac6b90e1c2acfecfbbeee33202240132a1119f699852",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A closed history file is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:1d507a0b00204f774835f0a32174e0897627d28c7a84aa3c4077b1045aa65f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_history_file_is_frozen"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "MIK-R27: reference-only justifications are refused, real prose is admitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:d7ef77f63545922409088ab8363e742a14519a896025bc46614a68e1efc312e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_record_whose_justification_is_only_a_reference_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "MIK-R27: an existing record whose test was deleted is only reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
+            "content": "sha256:73d94d29f91146feba7ff3c6ab739c04c8e118bc8d6218bab9f642a38f83b499",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_record_whose_test_was_deleted_is_only_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

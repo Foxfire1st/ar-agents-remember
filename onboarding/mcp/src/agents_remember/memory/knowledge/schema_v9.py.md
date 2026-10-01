@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/knowledge/schema_v9.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory/knowledge/schema_v9.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-18T17:00+02:00 |
-| lastVerifiedCommitHash |  `2edad477bcd9127a90e4618d345ce34ef7e6a6d9`|
-| lastVerifiedCommitDate |  2026-09-23T00:33:19+02:00|
-| governingOverview | `mcp/src/agents_remember/memory/overview.md` |
-
 ## Governing Overview
 
 [memory route overview](../overview.md)
@@ -149,54 +139,45 @@ re-exported.
   the base argument live in `schema_generations.__compose_generation_9`, so the append's content is the
   only thing this file owns.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The rows below ground the card's claims in the declarations themselves: the six appended tables and the
 eight names the composition reads, the declared columns, keys, typed-JSON sets, vocabularies, DDL
 rendering and triggers, and the composition function in the registry that turns this module's literals
 into generation 9.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of what it appends and why: six tables, an additive-only file, and the refusal of a wide row because each census entry is a record kind with its own identity. | `APPENDED_TABLES` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:1-53; mcp/src/agents_remember/memory/knowledge/schema_v9.py:61-68 |
-| The six tables generation 9 appends, in the order the encoder serializes them, appended after generation 8's thirty-four. | `APPENDED_TABLES`; `GENERATION_9` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:59-68; mcp/src/agents_remember/memory/knowledge/schema_generations.py:433-450 |
-| The declared column order of each appended table, which is what the encoder orders rows by and what the record group's INSERT statements are written against. | `APPENDED_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:117-173 |
-| The declared primary keys: one identity column per record table, and a relation keyed by its whole recorded content so re-recording one relation is one row. | `APPENDED_PRIMARY_KEYS` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:175-190 |
-| The typed-JSON columns: provenance in all six tables and the exact unparsed content on the inventory row, held as a document so a reader can compare it byte for byte with the artifact. | `APPENDED_JSON_COLUMNS` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:192-204 |
-| The closed vocabularies the DDL constrains, with the three dispositions a curator's authored assessment may record and the reason that column is the nullable one. | `CENSUS_ARTIFACT_KINDS`; `CENSUS_PARSE_OUTCOMES`; `CENSUS_INVENTORY_STATES`; `CENSUS_CLAIM_KINDS`; `CENSUS_APPLICABILITY`; `CENSUS_DISPOSITION_KINDS`; `CENSUS_DISPOSITION_STATES`; `CENSUS_EVIDENCE_STATES`; `CENSUS_ASSESSMENT_DISPOSITIONS`; `CENSUS_REALIZATION_STATES`; `CENSUS_LINK_KINDS`; `CENSUS_TARGET_STATES` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:70-115 |
-| Which column of which table is closed by which vocabulary, so a value added to a vocabulary is a value the schema already admits. | `_VOCABULARY_CHECKS`; `_vocabulary_closes` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:206-242 |
-| The one DDL renderer: key, body, not-null provenance, declared primary key, vocabulary closes, repository foreign key and optional parent edge, closed `STRICT`. | `_record_table_ddl` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:245-264 |
-| The composite parent edge the two claim relations declare, plus the disposition link's own parent edge written inline at its table, and the DDL mapping both are rendered through. | `_claim_parent`; `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:267-274; mcp/src/agents_remember/memory/knowledge/schema_v9.py:277-332; mcp/src/agents_remember/memory/knowledge/schema_v9.py:305-327 |
-| The six rendered table declarations, each naming its own key columns and body. | `APPENDED_TABLE_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:277-327 |
-| The seven declared indexes, each covering the reverse direction of a declared lookup rather than a forward scan. | `APPENDED_INDEX_DDL` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:329-343 |
-| The trigger pair every appended table gets, with the reason nothing is exempt: a census row has no lifecycle field a later operation is entitled to move. | `APPENDED_TRIGGERS` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:345-361 |
-| The declared-empty feature tuple, present so this generation states the same fact its predecessor does. | `APPENDED_FEATURES` | mcp/src/agents_remember/memory/knowledge/schema_v9.py:363-368 |
-| The composition function that turns this module's literals into generation 9, as generation 8 with one module's declarations appended. | `_compose_generation_9`; `_append_generation`; `_AppendedGeneration` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:439-450; mcp/src/agents_remember/memory/knowledge/schema_generations.py:243-270; mcp/src/agents_remember/memory/knowledge/schema_generations.py:98-113 |
-| Generation 9's own identity in the registry, and the created generation a new store declares. | `GENERATION_9_SCHEMA_NAME`; `GENERATIONS`; `CURRENT_GENERATION` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:226-226; mcp/src/agents_remember/memory/knowledge/schema_generations.py:452-466; mcp/src/agents_remember/memory/knowledge/schema_generations.py:479-482 |
-| The additive rule as one predicate — the appended tables follow the base's exactly and every earlier name keeps its column tuple, its primary key and its typed-JSON set — and the composition commentary that spells the rule out as a generation appending tables and never retyping, reordering or dropping an earlier generation's, with each successor's own composer beside it. | `descends_from`; `_compose_generation_5`; `_compose_generation_9` | mcp/src/agents_remember/memory/knowledge/schema_generations.py:273-296; mcp/src/agents_remember/memory/knowledge/schema_generations.py:341-346; mcp/src/agents_remember/memory/knowledge/schema_generations.py:347-358; mcp/src/agents_remember/memory/knowledge/schema_generations.py:435-452 |
-| Where the census record kinds and their relations are registered as payload shapes, which is why this generation appends relations rather than a wide table. | `CENSUS_PAYLOAD_MODELS`; `PAYLOAD_MODELS` | mcp/src/agents_remember/models/knowledge/census.py:339-350; mcp/src/agents_remember/memory/knowledge/record_envelope.py:172-187 |
-| Where the write path takes its column order and its vocabulary closes from, so a column added to a table without a statement is a storage error rather than a mis-ordered write. | `_inventory_columns`; `_decode_closed` | mcp/src/agents_remember/memory/knowledge/census_records.py:163-183; mcp/src/agents_remember/memory/knowledge/census_records.py:186-200 |
+- The module's own statement of what it appends and why: six tables, an additive-only file, and the refusal of a wide row because each census entry is a record kind with its own identity. [1]
+- The six tables generation 9 appends, in the order the encoder serializes them, appended after generation 8's thirty-four. [2]
+- The declared column order of each appended table, which is what the encoder orders rows by and what the record group's INSERT statements are written against. [3]
+- The declared primary keys: one identity column per record table, and a relation keyed by its whole recorded content so re-recording one relation is one row. [4]
+- The typed-JSON columns: provenance in all six tables and the exact unparsed content on the inventory row, held as a document so a reader can compare it byte for byte with the artifact. [5]
+- The closed vocabularies the DDL constrains, with the three dispositions a curator's authored assessment may record and the reason that column is the nullable one. [6]
+- Which column of which table is closed by which vocabulary, so a value added to a vocabulary is a value the schema already admits. [7]
+- The one DDL renderer: key, body, not-null provenance, declared primary key, vocabulary closes, repository foreign key and optional parent edge, closed `STRICT`. [8]
+- The composite parent edge the two claim relations declare, plus the disposition link's own parent edge written inline at its table, and the DDL mapping both are rendered through. [9]
+- The six rendered table declarations, each naming its own key columns and body. [10]
+- The seven declared indexes, each covering the reverse direction of a declared lookup rather than a forward scan. [11]
+- The trigger pair every appended table gets, with the reason nothing is exempt: a census row has no lifecycle field a later operation is entitled to move. [12]
+- The declared-empty feature tuple, present so this generation states the same fact its predecessor does. [13]
+- The composition function that turns this module's literals into generation 9, as generation 8 with one module's declarations appended. [14]
+- Generation 9's own identity in the registry, and the created generation a new store declares. [15]
+- The additive rule as one predicate — the appended tables follow the base's exactly and every earlier name keeps its column tuple, its primary key and its typed-JSON set — and the composition commentary that spells the rule out as a generation appending tables and never retyping, reordering or dropping an earlier generation's, with each successor's own composer beside it. [16]
+- Where the census record kinds and their relations are registered as payload shapes, which is why this generation appends relations rather than a wide table. [17]
+- Where the write path takes its column order and its vocabulary closes from, so a column added to a table without a statement is a storage error rather than a mis-ordered write. [18]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. The module declares SQLite DDL text, column
 tuples, primary keys, typed-JSON sets and trigger bodies for one local database schema; every name it
 references is another declaration in the same package or a table of the same dataset, and nothing here
 reaches another repository, another dataset or a remote.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-23T00:45:00+02:00 — 260921-ICR-L10 curator: **removed a verification metadata row for a field that does not exist.** The developer ruled that field out on 2026-09-22 — it has no purpose and had spread by copy-paste — and this pass deleted it here and reworded the sentences that referred to it. The fact it carried (this card describes an uncommitted candidate whose base the verification pair names) is stated in the history entries around it. No content impact: no claim about the source changed.
-- 2026-09-18T19:56:45+02:00 — 260915-KS-L23 residue clearance, seat B (uncommitted change set on `ar/260915-ks-l23`, memory base `59eab7a0`): **cleared the one enforced `citation_anchor_absent_from_range` row in this document.** The generation-9 identity row cited `schema_generations.py:476-479` (the `GENERATIONS_BY_KEY` mapping and the comment above the created generation) for `CURRENT_GENERATION`, which is declared at `482`; the range was widened to `479-482`. The claim, the anchors and the other two ranges are unchanged. No claim was re-worded, no anchor or range was dropped to silence a row, and no verification stamp advanced: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T17:00+02:00 — 260915-KS-L21 curator (uncommitted change set on `ar/260915-ks-l21`, base `a7076008`): created this one-to-one card for generation 9's appended tables. It records the six tables — the census's three record kinds and the three relations they resolve through — the eight `APPENDED_*` names `_AppendedGeneration` reads and `_append_generation` composes, the declared column orders, the three relation primary keys that make re-recording a relation idempotent, and the twelve trigger names that seal every census observation against update and delete with the reason no table is exempt. It states why the leaf appends three records and three relations rather than one wide table — `KS-R21@v1` §6.2's "a census record kind with its own identity", and an envelope that cannot express a relation — why no census table carries a content-address, logical digest or fingerprint column, and why `observed_doc_type`, `claim_kind` and `applicability` are recorded facts the census's own readers consume. It also records the deliberate absences: no `GENERATION_N` constant and no schema-name string in this module, no `ALTER TABLE` anywhere in the package, and an empty `APPENDED_FEATURES` declared rather than omitted. This card carries **no `lastVerifiedCommitHash`**: every construct it cites exists only in this leaf's uncommitted candidate, so no real commit contains the content a stamp would claim to have verified. What was actually read is this leaf's uncommitted working tree, and closeout owns the stamp once the code commit exists.
+No meaningful cross-repo references found.

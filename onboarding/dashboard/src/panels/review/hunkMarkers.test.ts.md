@@ -1,15 +1,5 @@
 # dashboard/src/panels/review/hunkMarkers.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/review/hunkMarkers.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-30T20:26:08+02:00 |
-| lastVerifiedCommitHash | `d3a22213ad3124603b0210afb7e3d049c5589b82`|
-| lastVerifiedCommitDate | 2026-09-30T20:52:55+02:00|
-| governingOverview | `dashboard/src/panels/overview.md` |
-
 ## Governing Overview
 
 [dashboard/src/panels route overview](../overview.md)
@@ -52,30 +42,21 @@ scenarios: `precuration`, `curated`, `before_unread`, `after_unread`, `both_unre
 
 No additional work is asserted by this card.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured; the requirement packet `MIK-R34@v1` (adopting `ICR-R34@v1`), the adopted `ICR-R24@v3` item 2 and the architect's rulings live outside the code and memory repositories, so they are named here and not cited as rows.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured live documentation source was available for this pass. | — | — |
+No configured live documentation source was available for this pass.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The six scenarios of real bodies. | "hunkMarkers.classifier.captured.json" | dashboard/src/panels/review/hunkMarkers.test.ts:1-32 |
-| What each hunk names: occurrences, targets, proofs, unknown membership and its reason, the unread side, file marks. | "names every intersecting invariant of a replace hunk, with each family occurrence"; "carries the reason an unknown membership is not established to its target"; "gives a confirmed-unregistered file, or one no side of which is readable, one file mark" | dashboard/src/panels/review/hunkMarkers.test.ts:34-165 |
-| Where each mark sits, including a window's neighbours and an inline mid-file deletion. | "places an inline deletion on the after line below its removed lines, or the last one"; "marks every hunk a window draws, a neighbour shown as context too" | dashboard/src/panels/review/hunkMarkers.test.ts:167-227 |
-| The model under test. | `fileMarks`; `markAnchor` | dashboard/src/panels/review/hunkMarkers.ts:91-102; dashboard/src/panels/review/hunkMarkers.ts:329-342 |
+- The six scenarios of real bodies. [1]
+- What each hunk names: occurrences, targets, proofs, unknown membership and its reason, the unread side, file marks. [2]
+- Where each mark sits, including a window's neighbours and an inline mid-file deletion. [3]
+- The model under test. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repo boundary is crossed by this file. | — | — |
-
-## Update History
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-- 2026-09-30T20:26:08+02:00 — 260928-MIK-L34 curator (staged change set on `ar/260928-mik-l34`, code base `904e804b07a598d5d6c66f06b7e67ddab64d9b8e`; reviews R1 to R3 changes-required, each followed by a fix round): created this card for the new unit-test module MIK-R34 adds (12 cases). The verification stamp is left empty: the file is new and uncommitted; closeout owns the real stamp.
+No cross-repo boundary is crossed by this file.

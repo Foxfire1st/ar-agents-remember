@@ -1,15 +1,5 @@
 # skills/l-01-agent-lifecycles/roles/strategist.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | skills/l-01-agent-lifecycles/roles/strategist.md |
-| doc_type | file-level-onboarding |
-| lastUpdated | 2026-08-30T12:34+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | skills/l-01-agent-lifecycles/roles/overview.md |
-
 ## Governing Overview
 
 [l-01 role overview](overview.md)
@@ -41,15 +31,17 @@ fail-closed.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Worker source inventory, reviewer verdict, and governing route overview.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
 
@@ -76,25 +68,3 @@ journal; it does not prove that the former integrated or terminated.
 
 The strategist keeps planning truth upstream of runtime selection. Queue or selector state may
 inform current feasibility, but cannot veto task authoring or rewrite dependency judgment.
-
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 classified strategist as target-only plus explicit
-  ambient-takeover target, replaced stale public readiness sequencing, and kept structural
-  authority outside settings. Verification remains closeout-owned.
-
-- 2026-08-26T08:35+02:00 — Restored the required navigable governing-overview link while
-  reconciling strategist activation doctrine.
-
-- 2026-08-26T05:20+02:00 — Reconciled graph-less planning with source-pair activation and made
-  pause-without-retirement distinct from dependency/full-integration order. Final source ranges and
-  verification remain post-Dagger/closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented architect-owned strategist input,
-  fact/judgment separation, auditable graph-edge judgment, and organizational/atomic classification.
-  Verification remains closeout-owned.
-
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.

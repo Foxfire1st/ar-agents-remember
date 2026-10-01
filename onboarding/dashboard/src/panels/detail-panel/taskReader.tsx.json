@@ -1,0 +1,132 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskReader.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reader entry and master overview mount optional graph content and the independently scoped queue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:9a66071f150b76a4041842bd304697241de8dca1126c59637b88e61c1cd23622",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskContent"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:870f45dc6d4b00dc1d5a9a77d0b6aec42efb4c4df16fd13c52b6e9fe1580d60f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:2a3ea56090c549a9c7b3e00420b2d37ff98336f464bd9b34655201ba37445850",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:8b55f46e23532085fc5e4bcc0b877cc080df83c11c2c3fc67938dc70f28f78ad",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:ae375ba403f6e49c4bdbbc8cbf517581d63c2636000aad3de5bea04a162b9402",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:c30b4698a8a428219b6572fb334b2c06fb5838779f40b6d2b67e105abe46e9e8",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 614
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sub-task index composes rows in received order.\n\nAnchor: \"export function SubTaskIndex({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:eacc4b146c3a29d72410d4221eba175af9217a97374ff828fd96339719f30f52",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 464
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The slice list orders and opens authored task documents.\n\nAnchor: \"export function SliceList({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:71281a37eaefa7915e1cab7933523c828002dd9a6ed11836e51de5bd2624d08b",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 505
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "StepList renders implementation steps, nested substeps, and explicit skip dispositions.\n\nAnchor: \"export function StepList({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65150d6b9dc643f5ddb48dae19e76a9ad141b816",
+            "content": "sha256:3450a6703e4f2e0d4726af52db3c736829973d7cccc199b94a02b229dac0ca4d",
+            "locator": {
+              "end": 750,
+              "kind": "line_range",
+              "start": 726
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

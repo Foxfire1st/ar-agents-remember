@@ -1,0 +1,677 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_retention.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+        "content": "sha256:97e7075eee3fba5c2649a44df315f25b18cc37e615a9ccc60e847dd3c47ce40c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_freeze_side"
+        }
+      },
+      "id": "RLZ-15WP0QCN",
+      "invariant": "INV-9BH2BNCT",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Copies one knowledge half into the stage through the snapshot owner. For a recovery parent it first requires the half to be recorded as retained with the exact identity now read. A moved half or a snapshot that cannot be opened returns a named refusal rather than being bound as an ordinary absent side.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+        "content": "sha256:bfebbf86142444834662aa0477abc0ba4e42a907f9e843f2df380e167e1dffd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retained_capture"
+        }
+      },
+      "id": "RLZ-A54M1HGQ",
+      "invariant": "INV-9BH2BNCT",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Revalidates custody of the explicitly selected historical capture. The resolution must be that exact parent generation, the manifest re-read from disk must still match its recorded digest and the reopened manifest, and the resolved code trees and root must equal the manifest's recorded source. Only then does it return the recorded candidate capture as retained input, never as a live one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+        "content": "sha256:b32365c75a1f16a9cd2daaeef9fd447f4def91254371b53ccba604d104e7108e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_side_binding"
+        }
+      },
+      "id": "RLZ-D2SEVSM9",
+      "invariant": "INV-9BH2BNCT",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Decides each knowledge half's binding. If the half's dataset file is missing while the parent manifest recorded it as retained, it refuses 'the expected retained snapshot disappeared' instead of falling through to the ordinary absent-side binding; otherwise it binds absence, refuses a contradicted declared absence, or freezes the half.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module's own statement of the two kinds of content, the two owners that retain them, and the rule that a failure is a named refusal rather than an escaping error.\n\nAnchor: `freeze_closed_snapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:8afd9b901a6077132710d87e23be721a90eaf2e0493874ad7d3c003bf8c43605",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_comparison_source"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:9e59aea45978b1a76d8b271ba849a3bedfaef44f806859e05608ef50cd4e3b76",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The explicit pin: the object-derived ref key, the pre-existence question, and the binding that names the pin's deletion owner and bounded scope.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b36a7bc722f8ba102a35f8098e3f012a9f231f68bd262db28825a0043cd6f580",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pinned_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:737fdfd5bad98c2a2f515ac78c72393ae569dd438c8e795f0f669f639ebaed3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pin_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:6fb75e3bf7608d72c2fcb1b38b46facb6cdb4190413b280b7d20463e197ef465",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ref_present"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**Both halves, preflighted with R05's own reader before anything is copied.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:990f7b13756217443e3bba3c3594ed882849d9c131f39ba79a87a25417419e6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_knowledge_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The four-way branch that decides one half: retained, `not-recorded`, `not-selected`, or a refused contradicted declaration.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b32365c75a1f16a9cd2daaeef9fd447f4def91254371b53ccba604d104e7108e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_binding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:d2cc62b6d36ca030a9fce64605a006119cee8342c82875737cde1e9ee8566a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:bd979d400741f7a2c518af1d0671ce2eab2595d48c915d066eda6f9f5a02af28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contradicted_absence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**One half copied through the storage snapshot owner, under the dataset's own bound namespace, with the two refusals that keep a storage error out of the freeze.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:97e7075eee3fba5c2649a44df315f25b18cc37e615a9ccc60e847dd3c47ce40c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze_side"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:2e355f2d97cf7b5a2a8b5b16a797dcbb0f19b2f0f1d7462eb5b12ccd12a51a89",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:4f8cdcf8b33835622f03c2fc583f82431d1c4c4cbd48e9fd04dfb3a3bf7ec481",
+            "locator": {
+              "kind": "symbol",
+              "name": "_namespace_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The retention owner that writes the ref, and the custody measurement this module calls instead of reimplementing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:c27fc00460c90c4a2bf15e0ff0c1cc4f62f4692b8a029ca1f8607ef2744de7dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e56036b983a88cecfd9553c96ecd7bea613c3fa0",
+            "content": "sha256:4456ef183916291ef3c37b7ada50bc861b0104429880e05e092a9e5835cc34c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CustodyNames"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The two deletion-owner constants the bindings carry, defined by the module that performs the deletions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:b3cad26dc6444ea9c4a238f9cee1763b484a948ba6a2649f29ebce4e50d7e822",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_OBJECT_DELETION_OWNER"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cfbf5c30069d677cef8beed0bc6ad8dfbeae09b",
+            "content": "sha256:cf20c8006bfd6e4a4ffc2e98b10dad9b4ae8990afa7686fe2e68475cf676a17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SNAPSHOT_DELETION_OWNER"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The storage snapshot owner, and the identity value it returns for a proven-closed copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd368f39143f6a486710acaeddd059952326c3b8",
+            "content": "sha256:476bef8bf10732464341e0a814e0974b157895e5f4b389720787363b94e2fb87",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_closed_snapshot"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/closed_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "kind": "symbol",
+              "name": "SnapshotIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e546b1b51357a040df3bf17f5546842f57c0867e",
+            "content": "sha256:8457e1a5304704ebad2b3bd38e2bf26e62b9bc3cbf4a739b6b4f1824d1598b6e",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "R05's own reader and its typed-absence spelling, called rather than restated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:7c0acaa2e493375e33bd50bc097d04c98d0ba772fb635fdb53c4131fbcf6d930",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_half_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
+            "content": "sha256:d4df5cb13df1b5433b35b395e0582f21a8ab5ac77b3c765684c24b74b1274fef",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The namespace a half is opened under: read from the record beside those bytes — the candidate's receipt, otherwise the before half's own generation record — and only from the requested repository when neither exists (the rule `260921-ICR-L34` corrected; the receipt-only form made a placed baseline unopenable and every continuity run's comparison unfreezable).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3d217a4d6d609112d499be391c3c5b81ef3af88",
+            "content": "sha256:1245858c6f3acbe9c11f334473d19489e3729b4fb7b6bf93ee33c523f9be651c",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "485c1482076db8bd595d2466839e2d6d36271021",
+            "content": "sha256:f5e3dc842b344811cd8ad59ebc8201cf4d0e408b83126d7addc6e400eb12ec22",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_baseline_generation"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_baseline_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The branch spelling the protected source branch is named by.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "local_branch_ref"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface, the refusal codes and the four values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:c230f529f89e63a48250c479b1a7383b77c999fa2cf4aedae1405d6c08673f97",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:6eed6819b3e5e2cf893877f4f1efc21ae1bffad2b8e3d026f79fb7ec37c7cb88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ABSENT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:25f60b9325b8287296661ca79ca967e65b690f62ee11c712605a9b35bea29421",
+            "locator": {
+              "kind": "symbol",
+              "name": "_UNRESOLVED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The two cases that protect the custody rule: the leaf's own work branch is *not* custody, and genuine protected history taking custody stops the pin while the generation still reopens.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:3ab2c7c416950b356ec46d542b66412e6beae23aa37014881761dd974d6dc48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_s_own_work_branch_is_not_custody_and_the_pin_survives_losing_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:5b50a133f74f13c3d98febd5ee526b2fe75346f8a6d11957dba36cbcdd32828d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_protected_history_taking_custody_stops_the_pin_and_the_generation_still_reopens"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The case that protects the typed absence, and the one that refuses a declared absence beside present bytes.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:58754f42d9606a638f36fc3c1df5aadd182f97ad413bc4186496f4301c71e8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_with_no_recorded_generation_freezes_as_typed_absence_never_as_inference"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:fddca7f4abd1ca38385a34f303c7f1a546ffda18f869c7c0be8f374f371c08ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_declared_absence_beside_present_bytes_is_refused"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The end-to-end case whose read-back of both halves proves the retained snapshots really are the recorded datasets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51c4dbe5cc61a427f31d6564ea2f5f6f211a586f",
+            "content": "sha256:1250e3851a53dfd9512df6c9a57649f32b3ca388ce0aeacc4753145611e122d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_frozen_comparison_reopens_the_exact_content_after_restart_and_reclamation"
+            },
+            "path": "mcp/tests/test_knowledge_review_comparison_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "An old capture is validated for retention without becoming live.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:bfebbf86142444834662aa0477abc0ba4e42a907f9e843f2df380e167e1dffd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retained_capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Expected retained snapshot loss refuses before ordinary absence classification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b32365c75a1f16a9cd2daaeef9fd447f4def91254371b53ccba604d104e7108e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Copied retained knowledge must match the named parent identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:97e7075eee3fba5c2649a44df315f25b18cc37e615a9ccc60e847dd3c47ce40c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_freeze_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The deliberately narrow request: the resolution and the declared absences, and nothing a record owns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:129dccd948ab9f56a47c197eeb298565c3d96e55230bd30206da4bc22adaab15",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRetentionRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The four facts that travel together through every decision below.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b431aa2d5956ce5aadd239e3723ce2f67ff1aa2ffab9955120aa15e36b4f7cd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The source-retention outcome, with the pin *this call* created separated from the binding the record stores.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:76f671a736a0a81c38a101e53f0c31be0206287e41cf420b768e3cd375e0f6e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonSourceRetention"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one decision: measure custody against the named history, and pin only when it does not already hold the tree.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:8afd9b901a6077132710d87e23be721a90eaf2e0493874ad7d3c003bf8c43605",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_comparison_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The refusal for a resolution with no enclosure contract, with the reason an empty name set would be wrong.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:3d8a6b20a9c26c5a66efe99329018e59739e5ba33351353f628c4bfc58589682",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolved_capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**The whole definition of durable history for this feature — the protected source branch plus the recorded landed commits — and the stated reason the work branch is absent.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:b434548ce5950f69923fdeab1d86c7ddf29758e41725532ecd2ed67b1e018415",
+            "locator": {
+              "kind": "symbol",
+              "name": "custody_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unpinned binding for content durable history already holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87c7c5dcefcbaf93baf68a0c8eec34ad2dd11703",
+            "content": "sha256:1765bc893a4304ae90ef236f88edcdd7af4790a6de8419fd4b48a81593b63012",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unpinned_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

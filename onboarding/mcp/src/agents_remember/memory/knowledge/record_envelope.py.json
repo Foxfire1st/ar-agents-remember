@@ -1,0 +1,572 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/record_envelope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:85c56878c779a0618821a6333c74f4b422606789b5992a3f72a9477cb6146cb3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The registry the two detection payload shapes are registered in, and the derived two-kind set that names them without restating them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:548d8c6816989e072f66190c5199b59d93ed171cc34bcddd9988fa960ea17f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETECTION_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:d29d0d90dd6335b1f3ea34bcc9cd6b40c054c1691f154323a24f31a616f9912d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KIND_SCHEMAS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The frozen, strict, extra-forbidding base that makes a validated payload a value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:770c387ee275ee397402391f33ba68467fe3c4e8fd0f6411e59f57807632a7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeModel"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The requirement family this registry gained, its own declaration of the pair, and the payload model the pair resolves to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:a15f4b4ea3350dd63a24a41a21cae347e05165acda78d7a4f60ccd2ef5f5ebb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementRevisionPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:4624b0fe6d86c6b1fdb594380dcb8ae731e1b7b59cc89763baf2a05bd0586709",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REVISION_KIND"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The case that pins the registry as the union of all the declared groups, so a group the registry does not declare cannot be admitted without that line changing.\n\nAnchor: \"test_the_seam_registry_is_exactly_the_eight_declared_subtypes\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:889648437997be89b1dc2d8488aca5f5d9ff62150df08e7d058fb8af08685aa6",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 183
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`invalid_payload` as a member of the shipped refusal vocabulary, and the shared refusal factory this module builds through.\n\nAnchor: `invalid_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "content": "sha256:3dee27664140f8ba3ea612bef63a24478122e82dc3aa0944399d8ac625dc9923",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The envelope table this seam validates payloads for: no identity-valued column, `record_schema` alongside `kind`, a nullable governing route.\n\nAnchor: `record_schema`; `kind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:b38118c35bbe223b59202f4d8f2f1b7555722afa682597aa0d4d3114974b81f7",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The typed-JSON payload column and the immutability triggers that seal a validated revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b226f76c7b6e8b273666362c2edb3921c41c547",
+            "content": "sha256:4cfd6498646b7d9893c5a13a0a4fbd667c85ff8ad35a625ed59c340ce3ebebc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "APPENDED_TABLE_DDL"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema_v2.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The envelope and payload cases, including the five inadmissible inputs refused with `invalid_payload`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0861a42b824dc1650d3fa998fda5f1dbde6a572",
+            "content": "sha256:a38f0bd230322e760e7e21e0b0963d0a89771f407f6a96b033f2d579bc95b77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_version_1_merge_on_the_generation_2_build_selects_generation_1"
+            },
+            "path": "mcp/tests/test_knowledge_merge_generations_and_envelope.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The census mapping the registry unpacks as its last entry — three `(kind, schema)` pairs declared beside the census's commands and payload models, so the registry cannot hold a census kind that vocabulary does not declare.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:1aa632338d8e78e635b4408f0517b7941c67949ecc4d2aacf0a2096a7aa41c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_PAYLOAD_MODELS"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The marked-internal conformance kind and the minimal frozen shape that exercises the seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:002dbe7b27a0889ed92295375a7d4bacfda983ec36bb0a443b47ce1eb7baa5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_CONFORMANCE_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:465514e8b5bc04e3e112774dbfb697d5573b4bd3744e8c0ac1b8418c8a475e0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConformancePayload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:4fa616817ed10e9296906a687a62c98b027945720115f684905c8390f2fa3bdc",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The site in this module where the census's three kinds join the one payload seam, with no value of their closed vocabularies named here.**\n\nAnchor: `CENSUS_PAYLOAD_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:93d3cba3db5b06f8421baf9836c236044bd87e10a4447f0486e3062987849f5f",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The three frozen census payload shapes the census pairs resolve to, each declared once in the vocabulary module the registry unpacks.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:90305c7699abef4fd15bdfac4bc21b51996f542c2e14357eff3b66dc1c0958a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInventoryRowPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:3ce0f8f3c7d2022f814773f49a0d0f7062e8faf92ecac284099836aa6521e207",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusClaimPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5301c3fcd588b1ef3d9759304152df1ace3d38a6",
+            "content": "sha256:d14937e198a1c9118fa11b0220db8dd749649736a702eb3daf1854f15cfc2c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusDispositionPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/census.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The registry the detection and citation-binding payload shapes are registered in, and the two derived sets that name them without restating them.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:548d8c6816989e072f66190c5199b59d93ed171cc34bcddd9988fa960ea17f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETECTION_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e86b194cf32bc090f10b570474479677a4cfb3b6f2111b8434bd3a5f20b0dcd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "CITATION_BINDING_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The citation-binding payload model this seam resolves the new kind to, and the binding facts that are payload rather than columns.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:301dc418071ba1cf0d2791121755f380bd085a71351269af0d27881615fab5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationBindingPayload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/citation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:2c56ff942f8313dc3126a26f5eccf4a6903bd6af51fa7a654975b410eb3440fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_RECORD_KIND"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/citation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "063c57009ccc80902b325066df3947d061970d28",
+            "content": "sha256:a432e95987cc8172331b7774ff54776ffa01b70cfac369b2bd5b5201652ca649",
+            "locator": {
+              "kind": "symbol",
+              "name": "BINDING_RECORD_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/citation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "**The case that measures the seam's membership after this leaf's registration: the kind union named in the seam registry, and its second additive re-scope that names this leaf's own group constant instead of trimming the expectation back.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:f21d03d210beda4d2dd0d010a0603061a45f88fcfd3a336db940b90f048d173f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_seam_registry_is_exactly_the_eight_declared_subtypes"
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "820a69732cf486335385d5954031b80c6dc23217",
+            "content": "sha256:f31a187697193057ccd464eec58ce99e360b83bfb99c26a7f3ebbf6105d5ba19",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 183
+            },
+            "path": "mcp/tests/test_knowledge_facets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The registry every typed payload shape is registered in — the internal kind, the eight facet kinds, the detection pair, the requirement revision, the citation binding, the supporting-record pair, the authored-effect family and, newest, the census's three kinds unpacked from `CENSUS_PAYLOAD_MODELS`. Twenty-two pairs in all.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:e40bffc1c68bc773d83a14ad9be4f7361e463883b38fa5a7268c6758de8bcb5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "PAYLOAD_MODELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The derived two-kind set that names the detection group without restating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:548d8c6816989e072f66190c5199b59d93ed171cc34bcddd9988fa960ea17f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DETECTION_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The derived requirement-kind set, derived from the same declarations its registry entry is built from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:efc08a68f078d0131b00023ba5af28d4c7dc3be8e1d498cc0fdf4ec0e83219ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_RECORD_KINDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The requirement kind and its frozen shape, declared once in the vocabulary module the registry unpacks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:4624b0fe6d86c6b1fdb594380dcb8ae731e1b7b59cc89763baf2a05bd0586709",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REVISION_KIND"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a56e90c252bdaf1b81b3ed10b53f73fe2af8448d",
+            "content": "sha256:ff9c5d443a795838ced074d78b96a6380da3e61811bcf047b1e83a748466a1fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REVISION_SCHEMA"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/requirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The derived kind-to-schema map, which is what makes a kind unable to admit a shape the registry does not hold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:d29d0d90dd6335b1f3ea34bcc9cd6b40c054c1691f154323a24f31a616f9912d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KIND_SCHEMAS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The one entry point, its pair-keyed registry and the derived kind-to-schema map; three refusal paths, one code.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:a70c5252d91317d7a1e283ddcb483f6714da87613f16dd6229fe84b06582cb7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_record_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:85c56878c779a0618821a6333c74f4b422606789b5992a3f72a9477cb6146cb3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The marked-internal conformance kind and the minimal frozen shape that exercises the seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e10708cad491813d46667826fb049d3612605d5",
+            "content": "sha256:002dbe7b27a0889ed92295375a7d4bacfda983ec36bb0a443b47ce1eb7baa5a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "INTERNAL_CONFORMANCE_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

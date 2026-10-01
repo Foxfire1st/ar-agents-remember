@@ -1,14 +1,5 @@
 # AGENTS.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-24T15:04+02:00                     |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb` |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-
 ## Purpose
 
 This file is the package-owned template for installed
@@ -52,27 +43,23 @@ committed.
 No external domain documentation is needed for this repository-local task
 doctrine template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This onboarding is backed by the source template itself.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The template covers meta-questioning, task reframing, top-down/bottom-up design philosophy, assumptions, and truth gaps. | `## The Design Philosophy` | mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md:67-85 |
-| Evidence-first reasoning and representative examples are required when correctness depends on interpretation or risky structure. | `## Evidence-First Reasoning` | mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md:111-128 |
-| The visible planning standard lists the context agents should surface before non-trivial implementation. | `## Visible Planning Standard` | mcp/src/agents_remember/package_data/runtime/agents-md-files/tasks/AGENTS.md:145-162 |
+- The template covers meta-questioning, task reframing, top-down/bottom-up design philosophy, assumptions, and truth gaps. [1]
+- Evidence-first reasoning and representative examples are required when correctness depends on interpretation or risky structure. [2]
+- The visible planning standard lists the context agents should surface before non-trivial implementation. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this task doctrine template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260821-CLIVE Task Authoring Doctrine
 
@@ -84,12 +71,3 @@ canonical task truth is already accepted, projections become invalid-empty, and 
 rebuild failures carry exact next actions. No queue row is patched or retained as fallback.
 `discard-unstarted` is separately defined as a reasoned, centralized no-execution proof plus typed
 parent audit; present or ambiguous evidence routes to real abandon/archive/recovery/completion.
-
-## Update History
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged authoritative task authoring, projection effects, and audited planning discard into the installed task doctrine. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 source-template citations for design philosophy, evidence-first reasoning, and visible planning.
-- 2026-06-01T11:18+02:00: Documented the new title preamble (the task collaboration doctrine applies up front, before a task format is chosen or task file exists) and the `c-04-retrieval-strategy-router` route added to Evidence-First Reasoning. Verification metadata stays pinned; Repo-Internal Reference line ranges and the `Runtime AGENTS Template Package` entity fingerprint will be re-verified/recomputed at closeout.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-15T00:38+02:00: Created onboarding after the former skills-folder task collaboration doctrine moved to the installable tasks template path. Verification metadata remains pinned to the last committed source until closeout.

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/harness_control_adapter.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/harness_control_adapter.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-16T10:15+02:00 |
-| lastVerifiedCommitHash | `14582854955223f75588c23c9f29f9d51bde9675` |
-| lastVerifiedCommitDate | 2026-09-18T09:05:03+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -80,36 +70,32 @@ discovery is asynchronous because it owns a transient protocol process. Built-in
 
 None known for the normalized L3 adapter port.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository, so no live domain-documentation
 pass was available for this update.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Capability data and mutation evidence have a dedicated model module; bridge lifecycle remains a
 separate consumer of the adapter protocol.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. | `CapabilitySnapshot`; `LaunchKnobs`; `SetResult` | mcp/src/agents_remember/serving/harness_capabilities.py:75-133; mcp/src/agents_remember/serving/harness_capabilities.py:136-148; mcp/src/agents_remember/serving/harness_capabilities.py:151-159 |
-| The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. | `_prepare_controlled_launch` | mcp/src/agents_remember/serving/harness_control_runner.py:282-331 |
-| The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. | `HarnessControlBridge` | mcp/src/agents_remember/serving/harness_control_bridge.py:77-543 |
-| The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. | "InterruptCapableAdapter):" | mcp/src/agents_remember/serving/harness_control_bridge.py:293-293 |
-| The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. | `_invoke_adapter` | mcp/src/agents_remember/serving/harness_submission_authority.py:729-757 |
-| Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. | "self._last_interrupt: tuple[tuple[str" | mcp/src/agents_remember/serving/codex_app_server_adapter.py:133-133 |
+- Normalized model/effort catalogs, ACP-style options, owned launch knobs, exact acceptance values, and set evidence are declared separately. [1]
+- The hosted runner requires the combined launchable seam for preflight, discovery, validation, and runtime construction. [2]
+- The bridge validates handshake identity/version/capabilities and routes both setters through its ordered queue. [3]
+- The bridge's interrupt dispatch detects `InterruptCapableAdapter` structurally, refuses unsupported harnesses typed naming the adapter, and rejects an adapter-minted epoch. [4]
+- The authority routes asset-carrying submissions to `submit_with_assets` and fails non-capable adapters closed with an unsupported receipt. [5]
+- Codex and Pi implement both sub-protocols: exact-active-turn/expected-operation interrupt writes with replay-once, and verified asset construction. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No external repository boundary is implemented by this protocol contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260715-FEUI-L5 Submission Authority Delta
 
@@ -117,46 +103,3 @@ Adapter methods now accept full operation refs and a final guarded-write claim. 
 and advisory; the authority lock-linearizes the subsequent claim before any native byte. The base
 unsupported implementation and reducer callback preserve exact refs so adapters cannot release work
 by FIFO or request id alone.
-
-## Update History
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-
-- 2026-09-16T10:15+02:00 — 260915-CAPS-L6 curator (A2 delta pass): **No content impact from the A2
-  revision.** This file is byte-identical between the A1 and A2 candidates of the same change set, so
-  the body — including the `eve` registration in `BUILTIN_PROTOCOL_HARNESSES` and the two-registry
-  boundary — is retained unchanged. The pass advanced the verification metadata to the leaf's current
-  base `e9300687` under the leaf's one consistent convention (the candidate is uncommitted, so the
-  governed closeout re-stamps the real code commit) and re-read the existing citations, which remain
-  in the required `Finding | Anchor | Source` shape. No hash or fingerprint was invented.
-
-- 2026-09-16T09:00+02:00 — 260915-CAPS-L6 curator: registered `eve` in the built-in protocol set and
-  recorded the boundary that matters most here — this registry is the protocol-adapter plane, not the
-  kernel's developer-curated terminal harness set, so eve is reachable only through the protocol
-  factory until a kernel row is deliberately added by the packaging/capability leaf. Also recorded
-  eve's participation in the existing structural interrupt port (turn-addressed, replay-once,
-  acceptance-only acknowledgement). Verification metadata stays pinned to the last committed source
-  until closeout stamps the candidate commit.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 5 citation entries (10 findings); no Tier-3 findings.
-
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the two runtime-checkable
-  structural sub-protocols — `InterruptCapableAdapter.interrupt` (identity guards ride the write;
-  replay-once per (expected, active) pair) and `AssetSubmitCapable.submit_with_assets` — with the
-  base protocol byte-compatible and structural capability detection failing unsupported harnesses
-  closed typed. Verification metadata stays pinned to the last committed source until closeout
-  stamps the candidate commit.
-- 2026-07-17T21:39+02:00 — FEUI-L5: documented op-aware setter/prompt ports, async preflight, final
-  guarded claim, and exact completion refs.
-
-- 2026-07-16T01:19+02:00 — 260714-ACPUI-L3 curator: documented setters on the live protocol seam,
-  explicit unsupported-adapter results, and queue-routed mutation ownership.
-- 2026-07-15T23:00+02:00 — 260714-ACPUI-L2 curator: documented the combined launchable adapter
-  protocol and explicit unsupported launch-knob refusal used by the hosted runner.
-- 2026-07-15T20:05+02:00 — 260714-ACPUI-L1 curator: documented cached advertise, transient
-  discovery, and the progressive launch/set capability port while preserving the explicit
-  unsupported and hosted-bridge boundaries.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator pass: created onboarding for the explicit
-  adapter protocol, registry, unsupported path, handshake gate, and event reduction rules.

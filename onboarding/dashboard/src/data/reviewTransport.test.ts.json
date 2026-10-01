@@ -1,0 +1,428 @@
+{
+  "path": "dashboard/src/data/reviewTransport.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The header's own provenance: the real client functions and the real decode, with only `fetch` stubbed, and each body's measured digest.**\n\nAnchor: `intentReview`; `intentReviewEntries`; `reviewSourceContent`; `getJson`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:ab41c2116ebb302f241784c32df4e04501b3c768a78ffdf7399c952d931047d6",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**One decode serving all three reads: the entry and expansion typed refusals resolve the same way, and an ordinary 200 answer still resolves as itself.**\n\nAnchor: \"resolves the entry read's and the expansion read's typed refusals the same way\"; \"still resolves an ordinary 200 typed answer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:294eeb96f8ac336861d4ddedee62cfb378d8eb7d3a7b1ce51a266f70c9584c40",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The transport-level body carried whole: token, code, status, reason, offending input, expected and next action.**\n\nAnchor: \"carries a transport-level refusal body's reason, offending input and next action\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:86829b7acbe755e7df112f6454efc04a0b3738f52514b67a4b60083e43f63d9e",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unwired adapter as unavailable history, with the action that wires it.\n\nAnchor: \"names an unwired adapter as unavailable history, with the action that wires it\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:46d14ee530e0878583f9eb5f2686f2ee75c71d16c67e2faae9d5bb5324b4c20b",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**A refused authority as its own state rather than as a network or review failure.**\n\nAnchor: \"names a refused authority as its own state, not as a network or review failure\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:0e20598158f236f6626ad92678d63e82a029bb07e7ae3cb038c7e67d7124d14f",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "**A response this route did not produce is `unreadable`, with the HTTP status as its code and a detail saying no reason was published.**\n\nAnchor: \"names an HTTP response this route did not produce as unreadable\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:51157ace902bc05a1e875acb4196094a6ff4c3375ce749bd6a37a773f97fa753",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**A socket that never answered is `network`, carrying no status and no invented next action.**\n\nAnchor: \"names a socket that never answered as a network failure\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:d29bd513479795dd0aaa7eb717ed1cdb49b686d552cec4aafbbc6172bf0761e3",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The thrown error stays a `FilesApiError` with the older message idiom, so an existing catcher keeps working.**\n\nAnchor: \"throws the review transport error, which stays a FilesApiError for existing catchers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:102bd455301c47c9425907b98e4e19f38a8225e751e1f3176f8a392d7d984392",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The decode these cases pin, and the error whose type the existing catchers keep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:a7bc0043eb876ab57a01745946b74e720cf5875e15f479a41be9803d4677c9f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
+            "content": "sha256:499bcbcd05724dcb2ba554a23c69c05a530465d4e4be674fbcb1fc9ae139017d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTransportError"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The shared client the control case proves unchanged: it still reads only `body.status` and still throws on a non-2xx.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getJson"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "FilesApiError"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The mounted counterpart that consumes the same classification, so the transport contract and the rendered states are pinned against one table.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
+            "content": "sha256:6b9166d8315b9240e5c6e3daa4d1335413bf9f4ac740c62439f47fa3c1ee6e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three real client functions and the error type under test, imported from the public entries.\n\nAnchor: `intentReview`; `intentReviewEntries`; `reviewSourceContent`; `ReviewTransportError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:bcbd7bf988ff64c577c5fab6dd763985dc739f7e5e919d55e83130d13b7f4ca9",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The measured bodies, each carrying the digest of the run that produced it.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:213a06a89b5563c1d7766c06020858626e64774444f757688860f47abb67c2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "DATASET_ABSENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:71e5336baa9ba66950aac1cb3d99539e90730b0a5aa62ec61722f75c2de1a95a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENTRIES_DATASET_ABSENT"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:d257daadb2c090c9070fb7db4a8d51ecb7cdd6b8692bd5ca9ad7d104c95ffa21",
+            "locator": {
+              "kind": "symbol",
+              "name": "BAD_REQUEST"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:15404da34476145a96dace540907fcc0150b9f3f2758e0fd1afefc4d1178ac45",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNWIRED"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:ec45439a49c45d8a3c3ae8fc6e55141b30b588afe2806744b742f6220ff6ad15",
+            "locator": {
+              "kind": "symbol",
+              "name": "BAD_PATH"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:3b5065f3be73fb6ecf0c8b4ddf1b9c0706ff0cff17da21b0bb69165edde076d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CONTENT_REFUSED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The expansion refusal re-measured by MIK-L31 on its converted scratch leaf, with its normalized digest.\n\nAnchor: \"re-measured by MIK-L31\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:3b5065f3be73fb6ecf0c8b4ddf1b9c0706ff0cff17da21b0bb69165edde076d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CONTENT_REFUSED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The one spelled URL, which is the literal the route serves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:2d58a977cbe94a4ba2f134a6e18e5f65a8a4226dff1f5d6fe58104f1b9330d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentUrl"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The one stub, replacing the global `fetch` with a real-shaped response so status, body and decode all travel the real path.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:8d65283f138d55e952e50110c197d55db82d3a4fd5b3c6d7784242b72f7d605d",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The one way a failure is read, which fails loudly if the read resolves instead.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:103e4bf69f71cc6ac26624d1aef8515ba60fb9f5222ce4782bfe547fb69c89d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "failureOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The restore of the global fetch between cases.\n\nAnchor: `afterEach`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:5b867c386a9f64dde7b0e6fe0287aff3ddd3a9c654fe1606431c40e87208dcdf",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:8d4e4a82bbcf63b775d3228e391884c4aa5393e5a0901c997a77c44ffe7757cd",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The defect as a pair over one identical response: the review client resolves with the refusal intact, and `getJson` still throws with the body dropped.**\n\nAnchor: \"resolves a 404 typed refusal through the review client, refusal intact\"; \"drops the same body through getJson: the shared client's semantics are unchanged\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:0b5c95d2113eb77a030860e5a3530b37834b959e7befa83287fce7e9611cf7ea",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # c-04-retrieval-strategy-router/grepai-high-leverage-usage.md
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                     |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md` |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-05-26T23:11+02:00                     |
-| lastVerifiedCommitHash | `53b17f574a53ae400f8abb9fda264fa9fa3e8dff`             |
-| lastVerifiedCommitDate | 2026-06-02T16:24:22+02:00|
-| governingOverview      | `../../../../../../../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../../../../../../../overview.md)
@@ -70,45 +60,28 @@ snippets, or search results. Use placeholder examples only.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external documentation is cited here. The document records the local
 Agents Remember MCP GrepAI invocation contract and presents only synthetic
 example outputs.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The GrepAI catalog requires synthetic examples only and positions GrepAI as the fuzzy discovery tool for memory/onboarding, with CGC reserved for structural code relationships. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
-| The managed invocation section routes through `grepai_search` MCP tool and `grepai_trace`, defaults examples to JSON, and says `repo_ids` must be MCP-configured repositories. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
-| The command chooser maps semantic routing, JSON anchors, configured repo scoping, route-focused follow-up reads, trace, and health checks to MCP tool calls. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
-| Broad semantic routing, scoped project search, and route-focused snippet search sections show placeholder MCP calls and synthetic JSON output shapes. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
-| Trace, coverage, and practical rules explain when GrepAI trace is acceptable, how to check status, how to keep result budgets small, and that MCP GrepAI does not expose path scoping. | `# GrepAI High-Leverage Usage` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/grepai-high-leverage-usage.md:1-211 |
-| The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Semantics section. | `## Semantics: GrepAI` | mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md:32-81 |
+- The GrepAI catalog requires synthetic examples only and positions GrepAI as the fuzzy discovery tool for memory/onboarding, with CGC reserved for structural code relationships. [1]
+- The managed invocation section routes through `grepai_search` MCP tool and `grepai_trace`, defaults examples to JSON, and says `repo_ids` must be MCP-configured repositories. [2]
+- The command chooser maps semantic routing, JSON anchors, configured repo scoping, route-focused follow-up reads, trace, and health checks to MCP tool calls. [3]
+- Broad semantic routing, scoped project search, and route-focused snippet search sections show placeholder MCP calls and synthetic JSON output shapes. [4]
+- Trace, coverage, and practical rules explain when GrepAI trace is acceptable, how to check status, how to keep result budgets small, and that MCP GrepAI does not expose path scoping. [5]
+- The `c-04-retrieval-strategy-router` skill links agents to this catalog from the Semantics section. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The example outputs are synthetic response-shape illustrations. They do not
 contain private sibling repository names, symbols, paths, snippets, or results.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No source-code contract is imported from a sibling repository. | n/a | n/a |
-
-## Update History
-
-- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: anchored the synthetic GrepAI catalog references and its governing Semantics link; scoped fixer will generate citation ranges.
-- 2026-05-29T20:25+02:00: Dropped the now-redundant `dry_run=false` from the GrepAI examples (queries return results by default after the act-by-default flip) and noted `dry_run=true` is a command-preview/debug-only affordance.
-- 2026-05-26T23:11+02:00: Refreshed verification metadata after source commit `5ab704a` landed the updated GrepAI MCP usage catalog.
-- 2026-05-26T22:54+02:00: Updated after the catalog switched to the typed GrepAI MCP shape with JSON defaults, configured `repo_ids`, explicit trace actions, and route-follow-up reads instead of raw path scoping.
-- 2026-05-25T18:07+02:00: Updated managed invocation commentary after GrepAI became Docker-runner-owned rather than runtime-binary-owned.
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-24T00:37+02:00: Refreshed verification and citations after the catalog moved fully to MCP provider-tool invocation examples.
-- 2026-05-23T13:46+02:00: Updated examples to use MCP provider tools instead of direct runtime binary or deleted source lifecycle script calls.
-- 2026-05-23T05:32+02:00: Updated GrepAI managed invocation paths after provider instances moved under `providers/runners/grepai`.
-- 2026-05-21T16:14+02:00: Created onboarding for the GrepAI high-leverage usage catalog.
+No source-code contract is imported from a sibling repository.

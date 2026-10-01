@@ -1,0 +1,103 @@
+{
+  "path": "mcp/tests/test_harness_control_claude_interrupt.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Accepted interrupt settles interrupted not failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:ed8a298564d12524bc9cf9339b7c51921761eb14453aa983e6434777545a70d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accepted_interrupt_settles_interrupted_not_failed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Interrupt replays first acknowledgement without a second write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:73e6001ed1aafb8aa3fc541300772a91325110601d2048e43549682bdc7d5c79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupt_replays_first_acknowledgement_without_a_second_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Interrupt guards reject before any native write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:6868a70e01fcb638a650e9d23ba04621cd60b57460fbe48bc60455a519e565f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupt_guards_reject_before_any_native_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Accepted interrupt racing a rate limit error stays failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:8211b0c4d2cc9aac49f71ce24073cd43904699c7acb3bd8b9b8073697ced4d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accepted_interrupt_racing_a_rate_limit_error_stays_failed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Natural completion after an accepted interrupt stays completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:1633954a2dae573272fa0abac782e5da36ac342c79999d4b5f895f45ca214605",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_natural_completion_after_an_accepted_interrupt_stays_completed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Lost acknowledgement is unknown and a late success still correlates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7d1d550e5dd7419c5a3b9bdd90e59a36ff0337d",
+            "content": "sha256:990f90068bb137e551b7be899d2db0ee5aadbb5c2497e8aa9e5a2fd52d679960",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lost_acknowledgement_is_unknown_and_a_late_success_still_correlates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

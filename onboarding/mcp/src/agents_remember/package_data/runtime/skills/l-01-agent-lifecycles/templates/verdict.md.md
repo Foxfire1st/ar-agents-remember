@@ -1,15 +1,5 @@
 # l-01-agent-lifecycles/templates/verdict.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-16T08:01+02:00 |
-| lastVerifiedCommitHash | `46ca74302e76cf40fb6370ea9ece16d8fa719f00` |
-| lastVerifiedCommitDate | 2026-09-30T00:07:49+02:00|
-| governingOverview | `../../../../../../../overview.md` |
-
 ## Governing Overview
 
 [MCP package overview](../../../../../../../overview.md)
@@ -49,33 +39,29 @@ This template records the exact checks and their failed or not-run status as han
 
 No external domain documentation applies to this repository-local report template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
+
+### Repo-Internal References
 
 This bundle copy is the shape the adversarial-reviewer job writes at each seam; its lenses cite the impact-analysis and onboarding-coherency backing reports.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Sync-propagated bundle copy of the canonical templates source. | `# Verdict Template (adversarial reviewer)` | skills/l-01-agent-lifecycles/templates/verdict.md:1-389 |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. | "as judge evidence"; `## Master-Exit Variant` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:238-304; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:301-301 |
-| The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. | "# Adversarial Verdict — master-exit"; `# Impact-Analysis Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:236-236; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241 |
-| The master-exit onboarding lens names a backing onboarding-coherency report. | "# Adversarial Verdict — master-exit"; `# Onboarding-Coherency Template` | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-54; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:236-236; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241 |
-| The frame defines the evidence-not-decision doctrine in `core/loop.md` and `operations/review.md`, and the block-decomposes-into-fix-leaves doctrine in the reviewer role. | "verdicts are evidence"; "Verdicts are evidence, not decisions."; "a master-exit block without an applicable listed repair is invalid" | skills/l-01-agent-lifecycles/core/loop.md:4-4; skills/l-01-agent-lifecycles/operations/review.md:77-77; skills/l-01-agent-lifecycles/roles/reviewer.md:131-132 |
-| The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence, and each seam's blocking rule returns fix leaves to its owner. | "Master-exit (before manager → orchestrator handover)."; "Super-exit (before orchestrator → architect handover)."; "Blocking rule, both seams:" | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:112-112; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:124-124; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:130-130 |
-| The two seams and the evidence-not-decision doctrine now live in `core/loop.md` and `operations/review.md`; the block-decomposes-into-fix-leaves doctrine lives in the reviewer role. | `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; "**Verdicts are evidence, not decisions.**" | skills/l-01-agent-lifecycles/core/loop.md:1-115; skills/l-01-agent-lifecycles/operations/review.md:1-120 |
+- Sync-propagated bundle copy of the canonical templates source. [1]
+- The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence. [2]
+- The master-exit completion and code-quality lenses name impact-analysis and quality/impact backing evidence. [3]
+- The master-exit onboarding lens names a backing onboarding-coherency report. [4]
+- The frame defines the evidence-not-decision doctrine in `core/loop.md` and `operations/review.md`, and the block-decomposes-into-fix-leaves doctrine in the reviewer role. [5]
+- The adversarial reviewer writes this verdict at the master-exit and super-exit seams as judge evidence, and each seam's blocking rule returns fix leaves to its owner. [6]
+- The two seams and the evidence-not-decision doctrine now live in `core/loop.md` and `operations/review.md`; the block-decomposes-into-fix-leaves doctrine lives in the reviewer role. [7]
 
 As of cycle 4 the decider rows are ruled: master-exit = orchestrator (delegated master-handover-approval; serious issues escalate to the developer); super-exit = developer (human review concentrates at the super gate); the reviewer role file reference is roles/reviewer.md.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No sibling repository evidence is needed for this report template.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
 ## 260815-DAG-L2 Verdict Scope
 
@@ -114,77 +100,3 @@ owning seat's bounded invalidation record.
 This packaged projection preserves the canonical phase boundary: validate before append; a
 malformed never-handed-off row receives a non-attempt correction/void without consuming an ID;
 a malformed handed-off attempt requires independent rejection before successor handoff.
-
-## Update History
-- 2026-09-29T21:51:42+00:00: Generated citation repair: "verdicts are evidence"; "Verdicts are evidence, not decisions."; "a master-exit block without an applicable listed repair is invalid" repointed to skills/l-01-agent-lifecycles/core/loop.md:4-4; skills/l-01-agent-lifecycles/operations/review.md:77-77; skills/l-01-agent-lifecycles/roles/reviewer.md:131-132. No content impact: mechanical anchor-range projection bound to citation source snapshot 638702294543ccef6675e0edeea49c5b9a4c8b527268ae6b389f7cfbcbb941b1; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-29T23:27:43+02:00 — 260928-MIK-L11 curator (uncommitted change set on `ar/260928-mik-l11`, code base `2c6f170ef07bf6767d582f76c9f9dd06bbdd06a4` plus the staged delta): No content impact: citation-only repair. Ranges into `mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md`, `skills/l-01-agent-lifecycles/roles/reviewer.md`, moved by MIK-R11's changes, were re-pointed by the installed `memory-citations --fix` or, for rows it declined, by the exact base-to-staged line map. Claim wording unchanged. No verification stamp was advanced.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "verdicts are evidence"; "Verdicts are evidence, not decisions."; "a master-exit block without an applicable listed repair is invalid" repointed to skills/l-01-agent-lifecycles/core/loop.md:4-4; skills/l-01-agent-lifecycles/operations/review.md:77-77; skills/l-01-agent-lifecycles/roles/reviewer.md:128-129. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-19T22:28:52+00:00: Generated citation repair: "Master-exit (before manager → orchestrator handover)."; "Super-exit (before orchestrator → architect handover)."; "Blocking rule, both seams:" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:109-109; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:121-121; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:127-127. No content impact: mechanical anchor-range projection bound to citation source snapshot 440311ed835ff15c77271ad85c2bef2103d2b46ebe061b96476b211b3d19cd24; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-18T13:27+02:00 — 260915-KS-L13 curator (range-closure pass): **the one row anchored only to the generated `.agents/` composition manifest was re-cited to the doctrine's live homes.** `A master-exit block without an applicable listed repair is invalid` differs from the reviewer role's own sentence only in its first letter — the source reads `a master-exit block without an applicable listed repair is invalid` at `roles/reviewer.md:120` — so the quote was corrected to the source's own casing and given that extent. The evidence-not-decision half now cites the two files that carry it: `verdicts are evidence` in `core/loop.md:1-5` and `Verdicts are evidence, not decisions.` in `operations/review.md:77`. No claim was deleted or softened, and the generated `.agents/` copy is no longer cited. No verification stamp advanced: the source is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-18T05:26:45+00:00: Generated citation repair: `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`; `# Operation — Review`; "**Verdicts are evidence, not decisions.**" repointed to skills/l-01-agent-lifecycles/core/loop.md:1-115; skills/l-01-agent-lifecycles/operations/review.md:1-120; skills/l-01-agent-lifecycles/operations/review.md:77-77. No content impact: mechanical anchor-range projection bound to citation source snapshot 70078cc4ca208e40e9a66742bdc38893ecfb1757ca7d77a526e6ba2159339959; claim bytes unchanged; generated by ccr-r10@v1.
-2026-09-18T06:55+02:00 — 260915-CAPS-L24 curator: **stale citations repaired in this document.** This leaf's curator re-derived every failing citation row against the file it cites: each Anchor cell now names text that exists inside the cited range, each Source cell is a plain `path:start-end` in bounds of the file as it stands, and a claim whose construct the source no longer carries was re-worded to what the source now says rather than re-pointed at something adjacent. Mechanically regenerable ranges were rewritten by the shipped citation fixer; the rest were repaired by reading the source. No verification stamp advanced on content alone: the candidate is uncommitted and the governed closeout owns the real code and memory commits.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Impact-Analysis Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T20:42:17+00:00: Generated citation repair: `# Onboarding-Coherency Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-54; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:241-241. No content impact: mechanical anchor-range projection bound to citation source snapshot a7178848e5b50ce4b2c04d35c06a10a15d6ed52d29d3880b7d032b23fc57f74b; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-17T19:30+02:00 — 260915-CAPS-L20 curator: **dead governing-overview body link repaired, and the field brought into agreement with it.** The field named `../../../../../../../overview.md` — which resolves, but only under the onboarding root rather than against this card's own route — while the body link named `../../../../../overview.md` and resolved card-relative to nothing, so a reader clicking it landed nowhere and the two declarations disagreed. Both now name `../../../../../../../overview.md`, the route-local overview of this card's own directory, so the field and the link agree by construction. Recorded under `260915-CAPS-L20` as this leaf's **S3** (D3, the packaged `l-01-agent-lifecycles` family) and **S4** (D16, govern-or-remove per card). The checker that previously reported this corpus clean now resolves both declarations, so this card reaches the curator's gated repair set instead of passing silently; that is the gap this leaf closed. Superseded history entries above stand unedited — including any entry that asserted an earlier repair this card did not in fact carry, which is the finding rather than an error to erase. No prose, anchor, range or verification stamp was otherwise changed.
-
-- 2026-09-17T12:55+02:00 — 260915-CAPS-L14 curator: **D3 dead governing-overview link repaired.** This card's `governingOverview` was one directory level short, so it resolved to a path that does not exist instead of the `mcp/` route overview. The card directory sits seven levels below `onboarding/`, so seven `../` steps reach `onboarding/` and the correct target is `../../../../../../../overview.md` (→ `onboarding/mcp/overview.md`). Reversed here: `../../../../../overview.md` (which resolved to the nonexistent `mcp/src/agents_remember/overview.md`) or `../../../../../../overview.md` (→ the nonexistent `mcp/src/overview.md`) → **`../../../../../../../overview.md`**. The body's own `[mcp/overview.md](…)` link was re-pointed with it. No prose, anchor, range or verification stamp was otherwise changed.
-- 2026-09-17T12:28+02:00 — 260915-CAPS-L18 curator: **complete curation inverts the doctrine this card recorded.** CAPS-R18@v1 removes the optional/narrow-curation sentences from the shipped instruction corpus and states the rule normatively — the full `memory_quality_check` operation runs as part of every leaf's curation at its contract scope, a named scoped check or `checks=[...]` subset never stands in for it, every curator-actionable finding is repaired or escalated as blocked with its exact returned code, and closeout and integration **carry** the completed curation as a prerequisite while invoking nothing. Replaced the handoff-evidence boilerplate sentence, which still presented full memory quality as an explicit request, with the completed-curation rule; `onboarding-coherency` already carries the full-operation check block this leaf's template now names.
-- 2026-09-17T06:49:47+00:00: Generated citation repair: "verdicts are evidence"; "A master-exit block without an applicable listed repair is invalid" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:247-247; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md:277-277. No content impact: mechanical anchor-range projection bound to citation source snapshot 3fa9290dfd218ae31f16951129eb57f6acdf1a92ecb95026b64d55227e9f1ad6; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-16T08:01+02:00 — 260915-CAPS-L1 curator: **body updated for the corpus consolidation.** The
-  canonical verdict template gained the marker stating it shapes the artifact and does not author the
-  rules, naming `../roles/reviewer.md`, `../operations/review.md`, and `../core/acceptance.md` as the
-  owners; the packaged card now records that marker. Repo-Internal References: two rows with dead
-  anchors were repointed — the seams/evidence-not-decision doctrine left `SKILL.md` for `core/loop.md`
-  and `operations/review.md`, and the reviewer ranges `:250-278` / `:334-337` no longer exist and are
-  now the two seam sections. **Metadata repair:** `governingOverview` was absent from this card (the c-05 content model requires the field and its `## Governing Overview` section); added as `../../../../../overview.md`, the `onboarding/mcp/overview.md` route-local overview that governs this generated tree. Verification metadata remains closeout-owned — the source is uncommitted, so no stamp was advanced and no commit hash invented.
-
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `# Impact-Analysis Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:236-236. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `# Onboarding-Coherency Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-51; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:236-236. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `# Impact-Analysis Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/impact-analysis.md:1-52; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `# Onboarding-Coherency Template`; "# Adversarial Verdict — master-exit" repointed to mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/onboarding-coherency.md:1-48; mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md:235-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-28T11:32+02:00 — No content impact: synchronized projection payload changed with the
-  canonical one-primary requirement doctrine; projection ownership and byte-identity rules remain
-  unchanged.
-
-- 2026-08-27T22:15+02:00 — Synchronized the pre-handoff correction versus post-handoff rejection
-  contract from canonical lifecycle/task doctrine.
-
-- 2026-08-27T18:06+02:00 — M41-M43: synchronized exact-attempt reviewer adjudication and
-  invalidation authority.
-
-- 2026-08-27T14:04+02:00 — Added approved version-addressed packet and packet-local durable-ruling
-  rejection criteria to the installed verdict projection.
-- 2026-08-27T13:32+02:00 — M39@v1: all verdict variants adjudicate exact requirement revisions,
-  inspect the matching canonical packet, and reject packet/version mismatch. Delta review retains
-  only acceptance for unchanged revisions. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: recorded structural per-ID adjudication across all verdict
-  variants. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: rule 7 adds reviewer/author seat distinction and
-  requirement-evidence-class matching; the leaf route-review variant gains the "author seat" row.
-  Verified at code commit de3a0fd9.
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: synchronized nature-aware candidates,
-  architect-owned plan verdicts, leaf-only fixes, and rectangular table wording. Verification
-  remains closeout-owned.
-- 2026-08-14T06:34+02:00 — L23 synchronized runtime template: verdicts identify the reviewed route,
-  exact candidate, surrounding ownership, forcing evidence, and delta-review disposition.
-
-- 2026-08-11T15:20+02:00 — Rebound both backing-report rows to the unique master-exit variant and
-  the referenced template headings; the paired super-exit copy no longer makes provenance ambiguous.
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: repaired 5 citation rows; the judge-evidence row was re-bound from the removed roles/adversarial-reviewer.md to roles/reviewer.md (L31-L36 + the seam rubrics L90-L135), the fix-leaf doctrine split to SKILL.md L190-L201 plus reviewer.md L109-L111, and the stale role-file mention in Logic corrected. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-07-06T17:35+02:00 — 260703-L12 round 2 (L12R-3): Rule 6 (report every bound catalog criterion) + the Criteria Catalog Results section in both variants + the Loop-Review Adaptation note (master-exit shape minus gate machinery; decider = loop owner; delta sections append). The ruled-deciders shape is unchanged. Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-05T16:20+02:00 - L8 seam-ruling remediation (cycle 4): decider rows ruled per the seam decision; L4 shorthand replaced. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:30+02:00 - L9 lifecycle convergence: re-homed under l-01-agent-lifecycles/templates/; role-file reference now roles/adversarial-reviewer.md. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-04T13:16+02:00: 260703-L6 split the verdict shape into explicit master-exit and super-exit
-  variants, added evidence-file and gate-evidence-ref fields, and made BLOCK fix-leaf decomposition
-  seam-specific for the manager or orchestrator owner. Verification metadata pinned until closeout
-  stamps the L6 commit.
-- 2026-07-04T11:00+02:00: Created file-level onboarding for the new `l-01-agent-lifecycles` verdict report template (leaf 260703-L1) — the adversarial reviewer's master-exit/super-exit artifact that is evidence not a decision, whose BLOCK must decompose into fix leaves, covering the completion/code-quality/onboarding-vs-code lenses under a refute-or-confirm posture. Verification metadata pinned until closeout stamps the L1 commit.

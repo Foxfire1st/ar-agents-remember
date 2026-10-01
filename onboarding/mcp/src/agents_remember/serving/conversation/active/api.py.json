@@ -1,0 +1,84 @@
+{
+  "path": "mcp/src/agents_remember/serving/conversation/active/api.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The active service these routes invoke for page assembly and subscription validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9460000d36ec6fc93ecbeda40bf9ef38945bb2",
+            "content": "sha256:9b5b06d8e67709f5c507dbb56d6f3e7a9f4000ed20363775846635057f4efeb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_conversation_service"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The cursor error family mapped to exact statuses here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:73f9ab939e5d787ad58d43ba3ad4f0ae911208ab4818f3940e30858a211cd823",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConversationCursorError"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d6cf3a4f2147199259cad445c3ba082b9ee00a2",
+            "content": "sha256:12ae724834b044bb9ef2bb3cdf2060e3ed5c6c4a277b485533b4b8833d8c5e4b",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/active/cursor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The L0 request dependencies invoked directly in-handler for typed mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:57d50753cfe99f0a8c0b0ff4ac9461d7b4d3b9b7185d3509a949813ff62fccbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_conversation_authorization"
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e20a9a143461e227bf171e145130a2d0a4a63a06",
+            "content": "sha256:f755ee8ac1086b9e97408980809c36c18374c9d074709c3c6938ef57bdc81f6d",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/serving/conversation/dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

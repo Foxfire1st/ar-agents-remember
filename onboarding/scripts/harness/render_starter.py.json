@@ -1,0 +1,83 @@
+{
+  "path": "scripts/harness/render_starter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The generator that slices, orders, and assembles these fragments.\n\nAnchor: `generated_files`, `render_starter_program`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:1558c093be0e087e187b21ff6e42f2a7cdbda8555d6072199861142e5160295b",
+            "locator": {
+              "kind": "symbol",
+              "name": "generated_files"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "df2df8eb6a7946cae73c722a1129ae93857073e3",
+            "content": "sha256:3d4ab829b673691fbd2219a2ed9b8281008500ee4eaf041a91cad3d143122c87",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_starter_program"
+            },
+            "path": "scripts/sync-harness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The classification of which fragments are genuinely per-harness and why.\n\nAnchor: `## What is shared and what is per-harness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9da5860bd14bef74bc1c3b989b28c190edb154",
+            "content": "sha256:b0b3ba3a0417afff4a0c7a8fee084ed1b319f904b1667756e66e215e3531d57c",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "scripts/harness/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The hook fragment library with the same contract.\n\nAnchor: `hook_specific_output`, `emit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:79f06f6571f7e8d4d1f12a2317796b8e4ebc2ded18056a388ae2b82b6d4abfbb",
+            "locator": {
+              "kind": "symbol",
+              "name": "hook_specific_output"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b21f57d74bcbc0e7e88136f6c9af11efffaa4ee",
+            "content": "sha256:1267a7b5ff2f0bde99f71f901d7338006f8bbf48ee2a307686c2b2ce51d0cadc",
+            "locator": {
+              "kind": "symbol",
+              "name": "emit"
+            },
+            "path": "scripts/harness/session_start_hook.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

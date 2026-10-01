@@ -1,15 +1,5 @@
 # mcp/tests/test_knowledge_review_evidence_channels.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_knowledge_review_evidence_channels.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-27T05:23:46+00:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4` |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview | `mcp/tests/overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -133,55 +123,42 @@ the module writes outside its temporary root, and no shipped case was changed.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The statements below are grounded in repository source only.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every claim on this card is checkable in the module's own docstring, fixture and cases, in the
 production port they drive, in the composition and vocabulary under test, and in the two catalogs that
 register the module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own statement of the defect, the ports it drives, the four record-producing operations, and the five load-bearing properties. | "The production composition supplies every owner-produced record class" | mcp/tests/test_knowledge_review_evidence_channels.py:1-27 |
-| **The live-enclosure fixture with the two reads every case uses, and the two halves of its candidate binding.** | `RecordedFixture`; `records`; `payload` | mcp/tests/test_knowledge_review_evidence_channels.py:131-187 |
-| **The production port every case reads through — the same `serving_collaborators` the dashboard app is built with.** | `review_through_port`; `serving_collaborators` | mcp/tests/test_knowledge_review_evidence_channels.py:170-183; mcp/src/agents_remember/cli/dashboard.py:67-101 |
-| **The fixture that produces one record of every class through its own owner, over an external-memory enclosure.** | `build_recorded_fixture`; `recorded`; `build_endpoint_fixture` | mcp/tests/test_knowledge_review_evidence_channels.py:180-226; mcp/tests/test_knowledge_review_source_endpoints.py:94-175 |
-| The four record-producing helpers: the detection run, the claim, the observation and the authored effect. | `_record_detection_run`; `_record_evidence_claim`; `_record_observation`; `_record_authored_effect` | mcp/tests/test_knowledge_review_evidence_channels.py:228-315; mcp/tests/test_knowledge_review_evidence_channels.py:316-337; mcp/tests/test_knowledge_review_evidence_channels.py:338-375; mcp/tests/test_knowledge_review_evidence_channels.py:386-430 |
-| **The damage helper that keeps the dataset readable as this schema: drop the trigger, rewrite the row, restore the trigger with the schema's own SQL.** | `_rewrite_stored_revision`; `_damage_detection_run`; `_damage_claim`; `APPENDED_TRIGGERS` | mcp/tests/test_knowledge_review_evidence_channels.py:431-469; mcp/src/agents_remember/memory/knowledge/schema_v2.py:1-60 |
-| The publication helper the assessment channel is produced through, and the channel index the cases state states with. | `_publish_assessment`; `_assessment_revision`; `_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:467-528; mcp/tests/test_knowledge_review_evidence_channels.py:562-563 |
-| **The case that proves every available class arrives with its owner's own fields, and that a foreign candidate's observation is not selected.** | `test_the_production_composition_supplies_every_owner_produced_record_class` | mcp/tests/test_knowledge_review_evidence_channels.py:552-605 |
-| **The case that measures the two states the defect collapsed, side by side on one fixture.** | `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:607-634 |
-| **The packet's boundary example: one unreadable authority, every readable class still supplied.** | `test_one_unreadable_authority_leaves_every_readable_class_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:636-653 |
-| **The case that distinguishes "not read" from "read and empty" for the matrix-owned collection.** | `test_a_task_context_review_reports_the_matrix_collection_as_not_selected` | mcp/tests/test_knowledge_review_evidence_channels.py:655-677 |
-| **The case that proves the composition measures the bindings it reads rather than inferring from a mapping's presence, and that a partial measurement promotes nothing to current.** | `test_the_composition_measures_the_bindings_it_reads` | mcp/tests/test_knowledge_review_evidence_channels.py:693-743 |
-| **The two per-record damage cases: one damaged identity named while its siblings are supplied.** | `test_a_damaged_detection_run_is_named_while_its_siblings_are_supplied`; `test_a_damaged_evidence_claim_is_named_while_its_siblings_are_supplied` | mcp/tests/test_knowledge_review_evidence_channels.py:825-844; mcp/tests/test_knowledge_review_evidence_channels.py:847-870 |
-| **The case that an unresolvable candidate reports every collection unavailable rather than empty.** | `test_an_unresolvable_candidate_reports_every_collection_unavailable` | mcp/tests/test_knowledge_review_evidence_channels.py:747-873 |
-| **The case that measures the vocabulary's own refusals, and the wire case that the channels travel in the served schema.** | `test_the_channel_model_refuses_a_count_no_owner_measured`; `test_the_wire_payload_carries_the_channels` | mcp/tests/test_knowledge_review_evidence_channels.py:887-912; mcp/tests/test_knowledge_review_evidence_channels.py:959-966 |
-| **The lane row that registers the module, and the four catalog consumer rows it is a source-derived consumer of.** | `unit-regression`; `consumers`; `consumer_scope` | mcp/tests/test-evidence-lanes.toml:5-116; mcp/tests/evidence-lifecycle.toml:389-453; mcp/tests/evidence-lifecycle.toml:670-803; mcp/tests/evidence-lifecycle.toml:1406-1428; mcp/tests/evidence-lifecycle.toml:1431-1472 |
-| The composition, the resolver and the vocabulary the cases measure. | `review_records_for`; `with_selection_channels`; `ReviewRecordChannel` | mcp/src/agents_remember/application/review_evidence_records.py:170-195; mcp/src/agents_remember/application/review_evidence_records.py:274-299; mcp/src/agents_remember/models/knowledge/review_records.py:68-123 |
+- The module's own statement of the defect, the ports it drives, the four record-producing operations, and the five load-bearing properties. [1]
+- **The live-enclosure fixture with the two reads every case uses, and the two halves of its candidate binding.** [2]
+- **The production port every case reads through — the same `serving_collaborators` the dashboard app is built with.** [3]
+- **The fixture that produces one record of every class through its own owner, over an external-memory enclosure.** [4]
+- The four record-producing helpers: the detection run, the claim, the observation and the authored effect. [5]
+- **The damage helper that keeps the dataset readable as this schema: drop the trigger, rewrite the row, restore the trigger with the schema's own SQL.** [6]
+- The publication helper the assessment channel is produced through, and the channel index the cases state states with. [7]
+- **The case that proves every available class arrives with its owner's own fields, and that a foreign candidate's observation is not selected.** [8]
+- **The case that measures the two states the defect collapsed, side by side on one fixture.** [9]
+- **The packet's boundary example: one unreadable authority, every readable class still supplied.** [10]
+- **The case that distinguishes "not read" from "read and empty" for the matrix-owned collection.** [11]
+- **The case that proves the composition measures the bindings it reads rather than inferring from a mapping's presence, and that a partial measurement promotes nothing to current.** [12]
+- **The two per-record damage cases: one damaged identity named while its siblings are supplied.** [13]
+- **The case that an unresolvable candidate reports every collection unavailable rather than empty.** [14]
+- **The case that measures the vocabulary's own refusals, and the wire case that the channels travel in the served schema.** [15]
+- **The lane row that registers the module, and the four catalog consumer rows it is a source-derived consumer of.** [16]
+- The composition, the resolver and the vocabulary the cases measure. [17]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository behavior is implemented in this file. Its fixtures are in-process or local
 temporary directories and it touches no repository boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 4 citations into `mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-28T17:08:17+02:00 — 260921-ICR-L45 curator (uncommitted candidate over code base `9b2f775f` after the L44 sync; first measured on tree `0daccca407864fe0da7b0b034d647b5eecd0a640` over `58e22246cc09ef0ee12095e284a111a475081c38`): No content impact: citation ranges into files this leaf changed (`mcp/tests/evidence-lifecycle.toml`, `mcp/tests/test-evidence-lanes.toml`) were re-pointed through the exact base-to-candidate line map; each moved row cites the same line content it cited at base. Wording is unchanged, and no stamp was advanced.
-
-- 2026-09-27T05:23:46+00:00 — Re-resolved 1 source-linked citation claim(s) against the extracted or shifted L41 owners. Each selected symbol uses its current declaration extent; other source references and prior generated history remain unchanged. Verification stamps remain closeout-owned.
-- 2026-09-23T12:00:00+02:00 — 260921-ICR-L15 curator (candidate `ar/260921-icr-l15`, uncommitted; leaf base commit `3103e1142a3ded8a843c3e5bbefca14861ba4a58`, so the honest basis for every claim below is that commit plus the working-tree delta): **citation repair only, forced by this leaf's rewrite of this module (796 → 966 lines).** Six ranges were re-pointed or widened against the construct each row names, and every one was read back before it was written: the fixture row `:131-167` → `:131-187` (widened to the lines that now carry `RecordedFixture`, `records` and `payload`, whose declaration is `:180`); the helper row's channel index `:548-550` → `:562-563` (`_channels` moved there); the per-record damage pair `:695-717` → `:825-844` and `:719-745` → `:847-870`; and the vocabulary/wire pair `:761-787` → `:887-912` and `:789-796` → `:959-966`. One row could **not** be repaired and was left exactly as it stands: `test_no_measurement_is_reported_as_one` (`:679-693`) is the case this leaf renamed — the name exists nowhere in the code tree, the successor that measures the same property is `test_the_composition_measures_the_bindings_it_reads` (`:693`) — and the checker's own remediation for that class is to re-read the claim, which is a claim-content decision and not a range edit, so no anchor was renamed and no pointer was invented. The claim-reopen that row carries is left with it for the same reason. No Finding, anchor or claim wording changed, no range was deleted and none was appended, and **no verification stamp was advanced**: the candidate is uncommitted, so `lastVerifiedCommitHash`/`lastVerifiedCommitDate` keep the values they hold and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-21T21:30:00+02:00 — 260921-ICR-L14 curator (uncommitted change set on `ar/260921-icr-l14`, production line `d80a0513e928ef29a973527d09597c82c96fde87`): created this one-to-one card for the case module this leaf added as `ICR-R14@v1`'s production-composition evidence. The card records what the module measures rather than only how many cases it holds: that every case drives the **production port** the dashboard app is built with, that every record class is produced through the owner's own operation before it is read back (so a prebuilt-payload assertion cannot stand in for a production-composition claim), the five load-bearing properties one case each, and the two per-record damage cases that were added in response to independent verification (F1/F2) — including *how* they damage a row, because a dropped trigger that is never restored makes the whole dataset unreadable as this schema and would hide the isolation being measured. It also records the module's catalog footprint: no artifact and no contract of its own, one lane row and four source-derived consumer rows. **Stamp accounting:** `lastVerifiedCommitHash`/`lastVerifiedCommitDate` name the **production line this reading was against** — `d80a0513e928ef29a973527d09597c82c96fde87`, the master line `ar/260921_complete-code-and-intent-review` at its current tip and this leaf's own base — because every construct cited here exists only in this leaf's uncommitted candidate and no commit contains the content a stamp would otherwise claim to have verified. That is a statement of what the reading was against, not a claim that these constructs exist in that commit; the governed closeout's own metadata refresh re-stamps the card against the code commit its transaction creates, and that remains the real stamp.
+No meaningful cross-repo references found.

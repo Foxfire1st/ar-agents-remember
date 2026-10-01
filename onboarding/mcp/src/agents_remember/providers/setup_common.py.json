@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/providers/setup_common.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provider setup facade re-exports these helpers for existing callers and tests.\n\nAnchor: \"re-exports only the narrow set of symbols callers and tests still use\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:15-18"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:41-46"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/provider_setup.py.md:48-48"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lifecycle calls are dispatched through the direct lifecycle facade.\n\nAnchor: \"Callers import this facade directly\"",
+      "targets": [
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:19-22"
+        },
+        {
+          "kind": "unresolved",
+          "text": "onboarding/mcp/src/agents_remember/providers/lifecycle/__init__.py.md:36-39"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

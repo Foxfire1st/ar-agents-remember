@@ -1,0 +1,151 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The producer of every `DriftStatus` member; its three summary builders are typed `-> DriftSummaryPacket`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:8f0c78909c98191b6046d39ddedf7d4eaa25fd71f9dd3a5bf6615fc4ee0eb9e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "not_checked"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_summary"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:d40dea78696f8a990093cafdaa16ab6f1592cac82fe8762035e47ad0236fa3be",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_rows"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:26c1c4f6dfc976407a946dd1c877931ac154aceee412dc06fb07f1f50f8df632",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
+            "content": "sha256:cf84f63b992c5f1a1030a90c4a0173def01695732959639b2211b658df6e02c0",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The context-packet wire model that reads `DriftStatus` and gained the matching `error` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:a2f120037b4a3244a65f708669bdaf5da721a923c27f8840f5e61f28108cbf20",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ab63c1685825e580ce7dbc3f0c8c6f32f8acbf",
+            "content": "sha256:0673052126dfb9f14e4482f0ad5dc18d83e74317290c4bb65d77742f15f8038d",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/drift.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tool response model that dropped its third copy of the enum for the same alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftCheckResponse"
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "content": "sha256:eae68a099e750bd7082ee4781091aad96ef7d6ad5141ca8319a227b2adb7a9dd",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The quality runner that consumes the packet and reads its status-conditional keys with `.get`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "081f643fabc8dc1c57edc4e281633945994d9ef9",
+            "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_drift_quality_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

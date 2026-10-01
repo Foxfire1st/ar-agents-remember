@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/changeset.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                                |
-| path                   | `mcp/src/agents_remember/serving/changeset.py` |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated | 2026-09-22T11:00:00+02:00 |
-| lastVerifiedCommitHash | `b7ef73f8efadc46b3a9bf5706b2cf61757aa63b4`     |
-| lastVerifiedCommitDate | 2026-09-29T00:17:28+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -194,16 +184,16 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
   `working` remains the one view whose after-side is a filesystem location, and its own `mode` says
   so.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). | `FileScope`; `run_scoped`; `language_for` | mcp/src/agents_remember/serving/scope.py:71-73; mcp/src/agents_remember/serving/scope.py:102-113; mcp/src/agents_remember/serving/scope.py:216-236 |
-| The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. | `changed_files_with_counts`; `branch_exists`; `commit_text_or_none` | mcp/src/agents_remember/worktrees/modules/git.py:309-348; mcp/src/agents_remember/worktrees/modules/git.py:94-97; mcp/src/agents_remember/worktrees/modules/git.py:255-258; mcp/src/agents_remember/worktrees/modules/git.py:407-407 |
-| Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. | "def route_sidecar_status(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:91-106 |
-| Shared path confinement resolves the requested path and refuses repository escape. | "def confine_rel(" | mcp/src/agents_remember/kernel/sidecar_pairing.py:37-49 |
-| The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. | "def load_contract(path: Path) -> WorktreeContract:"; "def load_contract(path: Path) -> WorktreeContract:"; "slug = slugify(worktree_name)" | mcp/src/agents_remember/worktrees/worktree_contract.py:233-472; mcp/src/agents_remember/tasks/task_paths.py:25-28; mcp/src/agents_remember/worktrees/task_resolver.py:16-27 |
-| The app factory that calls `register_changeset_routes` before `mount_static`. | "def register_changeset_routes(app: FastAPI" | mcp/src/agents_remember/serving/changeset.py:657-657 |
+### Repo-Internal References
+
+- The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). [1]
+- The change-set primitive (counts/status, keeps deletions), branch existence probe, and BEFORE reader. [2]
+- Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. [3]
+- Shared path confinement resolves the requested path and refuses repository escape. [4]
+- The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]
+- The app factory that calls `register_changeset_routes` before `mount_static`. [6]
 
 | The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
 | The leaf change-set extends the task shape with the selected committed/working mode, and (260921-ICR-L25) with the `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. | "class LeafChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:843-860 |
@@ -259,13 +249,11 @@ content comes from the same recorded pair as the path list.
 `worktree-HEAD → worktree`, the one view whose after-side is a filesystem location, and its own `mode`
 says so. The two modes are never mixed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The two sides resolve independently, with the code half carrying its named absence in the return value while only an unrecorded memory half degrades to empty.** | `_leaf_range` | mcp/src/agents_remember/serving/changeset.py:386-440 |
-| The committed branch of the file diff, now reading both sides from the recorded range's own repository. | `leaf_file_diff` | mcp/src/agents_remember/serving/changeset.py:596-630 |
-| The doc-reader entry point that publishes the `committed` view's `state`/`stateDetail` and states the live-worktree requirement for `working`. | `leaf_changeset` | mcp/src/agents_remember/serving/changeset.py:455-497 |
-| **The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named absence an unrecorded endpoint reports.** | `recorded_committed_range`; `RecordedEndpointAbsent`; `NOT_RECORDED` | mcp/src/agents_remember/serving/changeset_endpoints.py:68-125 |
-| **The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** | `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it`; `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:629-679; mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779; mcp/tests/test_knowledge_review_source_endpoints.py:782-826 |
+- **The two sides resolve independently, with the code half carrying its named absence in the return value while only an unrecorded memory half degrades to empty.** [7]
+- The committed branch of the file diff, now reading both sides from the recorded range's own repository. [8]
+- The doc-reader entry point that publishes the `committed` view's `state`/`stateDetail` and states the live-worktree requirement for `working`. [9]
+- **The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named absence an unrecorded endpoint reports.** [10]
+- **The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** [11]
 
 ## 260921-ICR-L13 Current Delta — The Master Net Is Generation-Bound, And Selection Moved Out
 
@@ -290,15 +278,13 @@ complexity overflow (C901 11>10) was cleared by that extraction, with no suppres
 limit widening. `LeafSummary` rows carry the new `state` (`committed`/`working`, from
 `_leaf_state`).
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.** | `master_changeset` | mcp/src/agents_remember/serving/changeset.py:247-323 |
-| **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** | `_net_diff` | mcp/src/agents_remember/serving/changeset.py:217-245 |
-| **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** | `master_file_diff` | mcp/src/agents_remember/serving/changeset.py:325-357 |
-| **Whether a breakdown row shows live work or its landed delta.** | `_leaf_state` | mcp/src/agents_remember/serving/changeset.py:175-186 |
-| **The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.** | `MasterFileRef`; `MasterChangesetRef`; `_pins_from_ref`; `_pins_from_master_ref`; `_master_json` | mcp/src/agents_remember/serving/changeset.py:553-710; mcp/src/agents_remember/serving/changeset.py:553-711 |
-| **The new collaborator that owns the selection this entry delegates to.** | `select_master_net`; `MasterNetPins`; `MasterEndpointAbsent` | mcp/src/agents_remember/serving/master_net_generation.py:171-200; mcp/src/agents_remember/serving/master_net_generation.py:86-97; mcp/src/agents_remember/serving/master_net_generation.py:73-81 |
-| **The F1 refusal case: a post-validation diff failure is refused, never an empty net.** | `test_a_diff_failure_after_validation_is_refused_never_reported_as_zero` | mcp/tests/test_master_net_generation.py:472-488 |
+- **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.** [12]
+- **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** [13]
+- **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** [14]
+- **Whether a breakdown row shows live work or its landed delta.** [15]
+- **The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.** [16]
+- **The new collaborator that owns the selection this entry delegates to.** [17]
+- **The F1 refusal case: a post-validation diff failure is refused, never an empty net.** [18]
 
 This entry supersedes the earlier `### Logic` master paragraphs and the `### 260731-EFA-L4 Current Delta`
 master-route paragraph where they conflict (deleted privates, source-branch fallback, no-refusal-table);
@@ -338,115 +324,8 @@ withholds the `+0 −0` total for exactly that reason (`dashboard/src/data/chang
 constant**: the same case drives `recorded_range(...)` afterwards and reads `state="recorded"` with
 an empty `stateDetail`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| **The caller that now carries the code half's named absence instead of raising it, and the memory half that still degrades to empty.** | `_leaf_range` | mcp/src/agents_remember/serving/changeset.py:386-440 |
-| **The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.** | `leaf_changeset` | mcp/src/agents_remember/serving/changeset.py:455-497 |
-| **The served vocabulary of the two states.** | `LeafChangeSet` | mcp/src/agents_remember/serving/response_contract.py:843-860 |
-| **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** | `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head`; `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error`; `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half` | mcp/tests/test_knowledge_review_source_endpoints.py:682-728; mcp/tests/test_knowledge_review_source_endpoints.py:731-779; mcp/tests/test_knowledge_review_source_endpoints.py:782-826 |
-| **The client that carries the state and withholds the total it would misprint.** | `TaskChangeset`; `ChangeSetButton` | dashboard/src/data/changeset.ts:41-48; dashboard/src/panels/detail-panel/changeSetBar.tsx:47-181 |
-
-## Update History
-- 2026-09-28T23:41:23+02:00 — 260921-ICR-L57 curator (uncommitted candidate tree `a0358351a0f6b5157f7abc2255a0a6e46066ae6b` over code base `69883386d36d7cdb7faeed5bdf275ddd66d87aea`): No content impact: re-pointed 7 citations into `mcp/tests/test_knowledge_review_source_endpoints.py` through the exact base-to-candidate line map after this leaf's behaviour-preserving splits and catalog/lane/pin repairs; each moved range cites the same line content it cited at the landed base. Wording is unchanged, and no stamp was advanced.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "def register_changeset_routes(app: FastAPI" repointed to mcp/src/agents_remember/serving/changeset.py:657-657. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "/api/changeset/task" repointed to mcp/src/agents_remember/serving/changeset.py:669-669. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "/api/changeset/file-diff" repointed to mcp/src/agents_remember/serving/changeset.py:682-682. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T22:19:46+00:00: Generated citation repair: "/api/changeset/master" repointed to mcp/src/agents_remember/serving/changeset.py:708-708. No content impact: mechanical anchor-range projection bound to citation source snapshot 387c4db0e7315fbee092befda9bc6a3baaa4f61fe1047d8e9d84107b1952fdc6; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-25T23:45+02:00 — 260921-ICR-L25 curator, round 2 (uncommitted change set on `ar/260921-icr-l25-ar`, code base `d9e7e6e79ce532d16c689435ae95a63aab430f94` plus the working-tree delta, memory base `39adea206651654dbfacf2ee1bb4e2f3763b515b`; round-2 report `report-l25-round2.md` = `9446232d…`): **body update — the committed code half's unrecorded endpoint is answered, not refused, and the L1 account of it was corrected rather than left standing.** The `### Logic` paragraph, the leaf-view invariant and the L1 section all said a `committed` view of a live leaf "keeps the named refusal"/is "a named `404` refusal"; at this tip `_leaf_range` returns `tuple[list[...], str]`, `leaf_changeset` publishes the carried `not-recorded` sentence as the body's `state`/`stateDetail`, and the L1 paragraph now says so in place with the new section above recording the full change. **What did not change and is retained:** `HEAD` is still never substituted for the missing endpoint, the published list is still not a measurement, `no-repository`/`unresolvable` still raise on both sides, an unrecorded memory half still degrades to `[]`, and an unknown leaf / bad mode / enclosure scope remain three distinct refusals (the route's own case measures the leaf `404` beside the new `200`). **Citation accounting:** every range this card carries into `changeset.py`, `changeset_endpoints.py`, `response_contract.py` and the case module was re-derived from each construct's own declaration at this tip — `_leaf_range` `:386-429` → `:386-440`, `leaf_changeset` `:443-477` → `:455-497`, `leaf_file_diff` `:577-612` → `:596-630`, `register_changeset_routes` `:638-700` → `:657-719`, `LeafChangeSet` `:843-846` → `:843-860`, `MasterChangeSet` `:856-863`/`:872` → `:886-902`, `FileDiff` `:872-880`/`:891` → `:905-1134`, `SCOPED_READ_RESPONSES` `:1103-1109`/`:1122` → `:1136-1169` — and the renamed case is cited by the name it now carries. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted, so the governed closeout owns the real stamp. No commit was made.
-- 2026-09-24T23:30:00+02:00 — 260921-ICR-L33 curator (candidate `ar/260921-icr-l33-ar`, uncommitted; code base `86639933d61528387ce106dbd4d7a334bd468671` plus the working-tree delta; adversarial round 2 `verify-l33.md` = `pass`): **one dated reader note added; no claim about this module changed.** This serving module is byte-unchanged by the leaf, and the `includeLeaves` escape it documents — including the extra-git-work rationale — is still exactly what the endpoint does. What changed is the CLIENT side: both dashboard master-net readers now ask for the breakdown (R33.2), so the Logic paragraph records that no dashboard caller takes the net-only path any more while the path itself is retained. **Citation accounting:** the rows this card carries into other files that this leaf moved were re-derived against the candidate with the gate's own resolver. **Stamp accounting:** no verification stamp was advanced — the candidate is uncommitted and the governed closeout owns the real stamp.
-- 2026-09-24T17:20:00+02:00 — 260921-ICR-L32 curator (uncommitted change set on `ar/260921-icr-l32-ar`, code base `71a170796f5380bd3a5b65a5c3323ca4f92b0cc0` plus the working-tree delta; gate `verify-l32-round2.md` = `pass`): **citation pass — the rows this leaf's own line movement displaced were re-anchored from each row's own finding message.** Every flagged range was repointed or widened to the lines that actually carry the anchor at this candidate, using the memory-quality checklist's own per-row message as the ground truth rather than adding a delta to an old number; the repair was applied row-scoped by the cited-range string, so duplicate rows were each corrected. No claim was re-worded to fit a stale pointer, no anchor or range was dropped to silence a finding, and the two legacy mechanical-projection bullets on rows this pass re-read were retired with this entry as their dated disposition, and no new projection bullet was written. No verification stamp was advanced: the candidate is uncommitted, so no commit carries this body, and the governed closeout owns the real stamp.
-- 2026-09-22T19:40:00+02:00 — 260921-ICR-L8 curator (candidate `ar/260921-icr-l8`, uncommitted; production line at this leaf's base `02957762709c9b515b4ff57f7f13524a7c0dfb8d`): **metadata-row removal.** The candidate-reading metadata rows this card carried were removed under the developer's 2026-09-22 rule: the field is not a real metadata field, has no purpose, and must not be written or carried anywhere. The reading those rows recorded is preserved in this entry's own words — the claims on this card were taken against the leaf candidate named above where they describe uncommitted work, and against the last real commit the card's stamp names where they describe shipped code. No claim, anchor, wording or citation range changed, no table shape changed, and no verification stamp was advanced.
-- 2026-09-22T11:00:00+02:00 — 260921-ICR-L13 curator (candidate `ar/260921-icr-l13`, uncommitted; base `6695a2a12961ef340c8864d56f0a1ce12b51b3c5`): **the master net is now generation-bound, and selection moved to the new sibling.** The section above records it; the earlier `### Logic` master paragraphs said `_load_master_contract`/`_series_tip`/`_net_changed` lived here with a source-branch fallback, which this leaf deleted and replaced (`master_task_root`/`load_master_contract`/`integrated_tip` with no fallback, plus `_net_diff`), so those paragraphs, the L4 master-route "no refusal shape" paragraph, the card's Purpose-adjacent net description and its master invariant were corrected in the same pass rather than superseded silently. `master_changeset` publishes `generation`+`currentness`+`scope`, `master_file_diff` takes a bundled `MasterFileRef` with pins, both master routes share `_master_json`, breakdown rows carry `state`, and the F1 post-validation diff failure refuses (`unresolvable`) instead of publishing `[]`. **Citation accounting:** every in-file self-citation plus the route extents were re-derived against this candidate (import block + selector dataclasses + docstrings moved everything below `:49`; deleted-privates rows now cite the new module). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
-- 2026-09-21T13:07:00+02:00 — 260921-ICR-L1 curator (uncommitted change set on `ar/260921-icr-l1`, base `f745e16659c5602252bb185a2ffccc356c2bde26`): **the committed leaf range is now a recorded range or a named refusal, and the resolver is a module of its own.** The section above records it; the earlier `### Logic` description of `_leaf_range` said a live leaf fell back to the worktree's `HEAD`, which is what this leaf replaced, so that paragraph, the card's Purpose and its leaf-view invariant were corrected in the same pass rather than superseded silently. `committed` now reads the contract's two recorded commits through the new `serving/changeset_endpoints.py`, an unrecorded code endpoint is a named 404 (`RecordedEndpointAbsent` with `kind`) that does not so much as name the live `HEAD`, an unrecorded memory endpoint degrades only its own half, and `unresolvable`/`no-repository` stay refusals on both sides. **Citation accounting:** all seven in-file self-citations plus the three route extents and the `register_changeset_routes` rows were re-derived against this candidate, because the module grew (the endpoint import block, the extended docstrings and the rewritten `_leaf_range`). Verification metadata is **not** advanced: the candidate is uncommitted and closeout owns the stamp.
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `branch_exists` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:309-311 to mcp/src/agents_remember/worktrees/modules/git.py:94-97, the extent of the construct the claim is about (the checker named line(s) [94, 184] as its live location); re-pointed `commit_text_or_none` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:94-97 to mcp/src/agents_remember/worktrees/modules/git.py:255-256, the extent of the construct the claim is about (the checker named line(s) [255, 263] as its live location)
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `branch_exists` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:255-256 to mcp/src/agents_remember/worktrees/modules/git.py:94, the extent of the construct the claim is about (the checker named line(s) [94, 184] as its live location); re-pointed `commit_text_or_none` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:94 to mcp/src/agents_remember/worktrees/modules/git.py:255, the extent of the construct the claim is about (the checker named line(s) [255, 263] as its live location)
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): re-pointed `branch_exists` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:255-256 to mcp/src/agents_remember/worktrees/modules/git.py:94-97, the extent of the construct the claim is about (the checker named line(s) [94, 184] as its live location); re-pointed `changed_files_with_counts` in the row 167 of this card from mcp/src/agents_remember/worktrees/modules/git.py:94-97 to mcp/src/agents_remember/worktrees/modules/git.py:309-311, the extent of the construct the claim is about (the checker named line(s) [309] as its live location)
-
-- 2026-09-17T03:31:11+02:00 — 260915-KS-L9 curator (re-scoped repair): kept one copy of the repeated citation mcp/src/agents_remember/worktrees/modules/git.py:309-311 in the row 167 of this card; the repetition added no pooled evidence
-  the 260913-LCA-L5 move. `slugify` is now defined in `mcp/src/agents_remember/tasks/task_paths.py:25-28`
-  and re-exported by `worktrees/task_resolver.py` (whose `:16-27` is the import block that publishes it),
-  so the previous `task_resolver.py:18-23` anchor no longer resolved to a definition. The claim itself —
-  leaf-id normalization goes through `slugify(worktree_name)` — is unchanged, and no source file this card
-  documents changed. Verification metadata remains closeout-owned; no execution or acceptance claim.
-
-
-- 2026-09-14T07:05+02:00 — 260913-LCA-L5 curator: repaired the `slugify` half of the contract row after
-  the 260913-LCA-L5 move. `slugify` is now defined in `mcp/src/agents_remember/tasks/task_paths.py:25-28`
-  and re-exported by `worktrees/task_resolver.py` (whose `:16-27` is the import block that publishes it),
-  so the previous `task_resolver.py:18-23` anchor no longer resolved to a definition. The claim itself —
-  leaf-id normalization goes through `slugify(worktree_name)` — is unchanged, and no source file this card
-  documents changed. Verification metadata remains closeout-owned; no execution or acceptance claim.
-
-
-- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
-
-
-
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 2 declined citation claims against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split the pairing and confinement helpers and selected their actual definitions. Separated five independent response contracts rather than pooling moved source ranges. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `test_changeset_routes_conform` repointed to mcp/tests/test_serving_response_conformance_cases_2.py:82-106. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-
-- 2026-08-04T18:46+02:00 — 260731-EFA-L6 S18-B17 curator: rewrote the three superseded `(L…)`
-  route-declaration cites as cit forms with exact decorator+handler extents, repaired the eight
-  malformed table rows with ledger-verified anchors (scope/git/sidecar helpers, the app factory,
-  both test suites, and the response-contract models — the last previously linked at the
-  response_contract.py.md CARD instead of the code), and fixed two genuine mis-citations: the
-  contract row now points at `WorktreeContract`/`load_contract` in `worktree_contract.py` (they
-  were never in `task_resolver.py`; `slugify` is what task_resolver contributes), and the
-  `_load_leaf_contract` prose now names `_master_enclosure_contracts`, the enumerator the code
-  actually iterates. Row 170's wording was adjusted to match that evidence.
-
-- 2026-08-01T08:46+02:00 — 260731-EFA-L4 curator: recorded the three `response_model`
-  declarations — `LeafChangeSet | TaskChangeSet` on `/api/changeset/task` (two real success
-  shapes, picked by the `leaf` selector), `FileDiff` on `/api/changeset/file-diff`, both under
-  the shared `SCOPED_READ_RESPONSES`, and `MasterChangeSet` on `/api/changeset/master` with no
-  refusal table at all because an unresolvable master degrades to empty lists. Noted that
-  FastAPI validates none of them (every handler returns a `Response`), so the gate is
-  `test_serving_response_conformance.py`, and that the `Conventions` "no pydantic models" line
-  still describes the handlers. Re-derived all **7** in-file self-citations, which the leaf's
-  seven-line import block shifted by exactly +7: `_require_contract` L38-L45 → L59-L66, `_sum`
-  L62-L68 → L69-L75, `task_changeset` L57-L76 → L78-L97, `file_diff` L79-L104 → L100-L125,
-  `_leaf_counts` L113-L127 → L128-L142, `_load_master_contract` L153-L163 → L160-L170, and
-  `_master_leaf_summaries` L193-L215 → L200-L222. Every behaviour claim was re-read against the
-  source and is unchanged. Verification metadata pinned until closeout stamps the L4 commit.
-
-
-- 2026-07-31T19:30+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the module grew above them. `_sum` L48-L54 → L62-L68 (L48-L54 is now inside `_require_contract`), `_load_master_contract` L130-L142 → L153-L163, and `_master_leaf_summaries` L156-L178 → L193-L215 (that old range now spans `_series_tip`/`_net_changed`). Behaviour claims unchanged and re-read against the source.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `ChangesetFileRef` as the single file-diff selector (`leaf_file_diff(config, ref)`, route bound via `Depends()`; wire query unchanged).
-
-- 2026-07-12T12:55+02:00 — 260712-TRH-L2: bounded master/leaf contract discovery to the requested repo/master enclosure, normalized requested and persisted leaf ids, and made master per-leaf summaries optional through `includeLeaves`; committed/working/master range semantics remain unchanged. Verification metadata pinned until closeout stamps the L2 code commit.
-
-
-- 2026-07-04T23:43+02:00 — L8 content update: master series net diffs now resolve a shared series tip through the work branch while it exists, falling back to the source branch after landing/deletion; `master_changeset` counters and `master_file_diff` BEFORE/AFTER content use the same resolved code/memory tip. Verification metadata pinned until closeout stamps the L8 commit.
-
-- 2026-07-03T12:50+02:00 — No content impact: L15 replaced the `live` boolean alias with visible `worktree is None` narrowing in the change-set file listing and file-diff functions so pyright proves the Optional[Path] uses; behavior identical (same guards, same fallbacks).
-
-- 2026-06-29T23:00+02:00 — L4a: doc-reader leaf views. Adds `leaf_changeset` + `leaf_file_diff`
-  (resolved by leaf-id via `_load_leaf_contract`, which persists past cleanup), `_leaf_range`
-  (`committed` = base→code_commit with a live-worktree-HEAD fallback; `working` = HEAD→worktree
-  uncommitted delta, `[]` for a side with no worktree), `_leaf_onboarding_root`, and `_leaf_json`
-  (selector validation + 400/404 idiom). The `/api/changeset/{task,file-diff}` routes gained a
-  `leaf` + `mode` selector with precedence `leaf > master > scope`; `task_changeset` /
-  `master_changeset` semantics unchanged. Verification metadata pinned until closeout stamps the
-  L4a commit.
-
-- 2026-06-29T17:00+02:00 — L4 follow-up: `master_changeset` is now the **NET** series diff
-  `git diff <master-base> <series-tip>` for code + memory (one coherent, per-file-inspectable
-  range) instead of the sum-of-leaves; adds `master_file_diff` (base→tip), `_load_master_contract`
-  (loads `tasks/<repo>/<master>/series-contract.md`, `master` confined to one path segment),
-  `_net_changed`, and `_master_leaf_summaries` (the per-leaf counter breakdown kept). The
-  `/api/changeset/file-diff` route gained an optional `master` param → `master_file_diff`. Reflects
-  the committed/landed series (an un-integrated in-flight leaf shows in `leaves` but not the net).
-  Verification metadata pinned until closeout stamps the L4 follow-up commit.
-
-- 2026-06-29T15:30+02:00 — Created for operations-integration L3: the read-only change-set API — `GET /api/changeset/{task,file-diff,master}` (registered before the static mount), computing a task's `base → current` code + memory change-set with insertion/deletion counts + A/M/D/R status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and the master's accumulation across leaf enclosures (active leaf → worktree, completed leaf → integrated commit; dedup by path, sum counts). Reuses `serving/scope.py` + the L1 posture; mainline has no base → 404. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
+- **The caller that now carries the code half's named absence instead of raising it, and the memory half that still degrades to empty.** [19]
+- **The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.** [20]
+- **The served vocabulary of the two states.** [21]
+- **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** [22]
+- **The client that carries the state and withholds the total it would misprint.** [23]

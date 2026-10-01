@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/cgc/lifecycle/backend.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/lifecycle/backend.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00|
-| lastVerifiedCommitHash | `f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d` |
-| lastVerifiedCommitDate | 2026-07-31T19:28:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -74,31 +64,9 @@ when Docker labels do not show the expected Compose project.
 - Layout parameters and layout lists are typed as `CgcRuntimeLayout` (imported
   from `agents_remember.providers.context`), not bare `Any`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| CGC backend settings are derived in the CGC core module. | `cgc_backend_settings` | mcp/src/agents_remember/providers/cgc/lifecycle/core.py:140-170 |
-| Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. | `docker_container_port`; `docker_data_mount_source`; `docker_wait_for_ping`; `allocate_host_port`; `remove_unmanaged_compose_container`; `remove_unmanaged_compose_network` | mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:127-139; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:146-158; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:196-204; mcp/src/agents_remember/providers/lifecycle/host_ports.py:21-28; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:252-269; mcp/src/agents_remember/providers/lifecycle/compose_runtime.py:272-289 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-03T10:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (2 missing anchors and 4 malformed sources); final scoped check is clean.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  the two backend context builders now return `CgcBackendContext` instead of a five-tuple;
-  `cgc_backend_endpoint` takes a `CgcBackendPort` (`FALKORDB_PORT` / `BROWSER_PORT`) instead of
-  four key keywords; `CgcHostPorts` and `BackendStartReconciliation` name the published-port and
-  host-reconciliation groups. Emitted payloads are unchanged. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-10T06:20+02:00 — Body-quality pass: merged the `dataDestination` mount-verification and migration mechanics into Logic and extended the container-reuse invariant with the destination-sync rule (documentation only).
-- 2026-06-09T22:10+02:00 — Mount verification (`cgc_backend_runtime_details`, `cgc_backend_remove_mismatched_container`) now checks the mount at the configured backend `dataDestination` instead of hardcoded `/data`; an existing container mounted at the old destination is treated as mismatched and recreated on the next backend start (the built-in migration path for the persistence fix).
-- 2026-05-31T12:50+02:00 — Re-typed `layout` params and `layouts` lists from bare `Any` to `CgcRuntimeLayout` (newly imported from `agents_remember.providers.context`) across the backend helpers; behavior-preserving, added a layout-type note to Invariants And Boundaries (1.0.0 review remediation).
-- 2026-05-29T18:35+02:00: Fixed `cgc_backend_dry_run_result` `commands` type to `list[dict[str, Any]]` (compose-plan dicts, not arg lists); behavior-preserving (commit `0549b28`).
-- 2026-05-28T12:32+02:00: Updated after backend status began including normalized container-state summaries.
-- 2026-05-27T00:25+02:00: Updated after CGC backend startup added
-  project-wide pre-Compose migration and existing-port reuse for repeated
-  Compose starts.
-- 2026-05-26T13:58+02:00: Updated after CGC backend start/status began ensuring and reporting the shared CGC Docker network for runner-to-FalkorDB connectivity.
-- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
-- 2026-05-25T19:01+02:00: Created from the CGC backend lifecycle portion of provider lifecycle and refactored below Radon B complexity.
+- CGC backend settings are derived in the CGC core module. [1]
+- Shared Docker and Compose helpers provide port inspection/allocation, data mount checks, FalkorDB ping polling, and unmanaged migration. [2]

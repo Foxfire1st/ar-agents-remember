@@ -1,0 +1,150 @@
+{
+  "path": "mcp/src/agents_remember/serving/harness_launch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The normalized capability types nest effort under each model and declare owned launch selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e12328b33e1f9b89550d3410bfda3e5b50882b3",
+            "content": "sha256:519bce3f63db0423d06f6356e66d6beafb2c2a58a1a8364a8dad3d7c7fda6b69",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchKnobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_capabilities.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runner performs pure conflict preflight, transient discovery, dynamic validation, then fresh runtime construction.\n\nAnchor: `launch_knobs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74bba9bf8acb43c869701149ba097298a24a1dcb",
+            "content": "sha256:4500f0f1ee17190bf30d683aca12551efe2493b0f72f84705c46b9e100642472",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Claude produces native model/effort flags and verifies the model echo without fabricating effort echo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:dac48a01c6af918abe21fbfd802b518a53f990673c188eb672a80b416fc96be7",
+            "locator": {
+              "kind": "symbol",
+              "name": "claude_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "abcafdef39c36a6bfa87914e38aa13e676b473cc",
+            "content": "sha256:3c6b51f8f06e4f65ee507b013b3798fc80bd21f13e9fa3fb669987812603cc2a",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/serving/harness_control_claude.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Codex produces thread config plus owned model/config selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:9230cca454e47a3eb5ba92577453308928f99454ca63c8725c18a1a9adb15861",
+            "locator": {
+              "kind": "symbol",
+              "name": "codex_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72d2ac7dfe4bd2cf29ff697583a206460501cc6f",
+            "content": "sha256:79e1155c653e4b29c1c758cc6d37993e16757e283662f88264a8b477f4289053",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/serving/codex_app_server_session.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Pi produces native provider-qualified model/thinking flags and requires both effective echoes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:463aadf8d623f3d4d3b4edd2a1e583e2e62878ece290491f10ab67357a0fa8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "pi_launch_knobs"
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "84d5c0fb2b144b0bfd8e6101c1b15c963c5509e0",
+            "content": "sha256:84624ff45ce4683111031278123055402a574df626a44d73839e717a760777b4",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/serving/pi_rpc_protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The opener serializes this typed object into the runner and persists its selected values as catalog provenance.\n\nAnchor: \"The durable row for the process this open just spawned\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:d60ed5348a10a5b63b7431f1220d6b07e82d46b256241910cf7bf81c9068ffb9",
+            "locator": {
+              "end": 608,
+              "kind": "line_range",
+              "start": 608
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

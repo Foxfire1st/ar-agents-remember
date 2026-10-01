@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/terminal.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/terminal.py`    |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-18T12:43+02:00                           |
-| lastVerifiedCommitHash | `dcf35a0e0fc06bccdafd22390b7588b0aea811bc`|
-| lastVerifiedCommitDate | 2026-09-22T20:08:58+02:00|
-| governingOverview      | `overview.md`                                     |
-
 ## Governing Overview
 
 [serving/ overview](overview.md)
@@ -164,25 +154,29 @@ variables are retained and the caller's environment mapping is never mutated.
 
 No task-independent technical debt was identified during FEUI-L9R review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant documentation was found after checking the configured sources; terminal-host behavior
 is proven by repository source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local terminal host. | — | — |
+No relevant external or domain documentation was found for this repository-local terminal host.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The serving layer this host joins (transport; localhost posture). | `TerminalHost` | mcp/src/agents_remember/serving/terminal.py:109-255 |
-| The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. | "async def _serve_terminal_websocket("; "def _register_terminal_session_routes(app: FastAPI" | mcp/src/agents_remember/serving/_app_terminal_routes.py:86-86; mcp/src/agents_remember/serving/_app_terminal_routes.py:130-130; mcp/src/agents_remember/serving/_app_terminal_routes.py:92-92; mcp/src/agents_remember/serving/_app_terminal_routes.py:136-136 |
-| Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and "class TerminalCatalogEntry:" persists and reads those entries. | "class TerminalCatalogEntry:"; "class TerminalCatalogEntry:" | mcp/src/agents_remember/models/terminal_catalog.py:44-474; mcp/src/agents_remember/serving/terminal_catalog.py:48-386 |
-| The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. | `_open_terminal_transaction` | mcp/src/agents_remember/serving/terminal_opener.py:619-708 |
+- The serving layer this host joins (transport; localhost posture). [1]
+- The FastAPI app wires the WebSocket bridge and terminal-session routes over this host. [2]
+- Catalog entries declare durable identity/cwd/tmux/command/lifecycle/status fields, and "class TerminalCatalogEntry:" persists and reads those entries. [3]
+- The opener resolves the spawn environment, builds the terminal session spec, calls the host ensure operation, and upserts the catalog entry. [4]
 
 | The optional real-tmux integration is exercised by the dedicated integration test class. | `TerminalHostTmuxIntegrationTests` | mcp/tests/test_terminal.py:792-844; mcp/tests/test_terminal.py:123-123 |
+
+### Cross-Repo References
+
+No meaningful cross-repository implementation source governs this repository-local terminal host.
+
+The reviewed behavior is wholly repository-local.
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -194,14 +188,6 @@ Reviewed this file against the accepted hosted-session cutover and PASS verdict.
 contract now follows exact adapter evidence for readiness, delivery, liveness, or interactions;
 legacy/custom sessions are unsupported, pane/log classifiers are diagnostics-only, and durable
 inbox acceptance remains distinct from explicit consumption where applicable.
-
-## Cross-Repo References
-
-No meaningful cross-repository implementation source governs this repository-local terminal host.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
 
 ## 260718-CHATS-L5I Current Delta
 
@@ -235,72 +221,3 @@ Callers updated accordingly: the opener and `app.py` both call `host.ensure(sid,
 TerminalSessionSpec(...))`.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
-
-## Update History
-
-- 2026-08-04T11:34:10+02:00 — 260731-EFA-L6 S18-B12 curator: restored the terminal application route family, catalog field/persistence body, and opener environment/spec/ensure/upsert flow with a single full-transaction anchor; the scoped fixer will generate citation ranges.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: recorded `TerminalSessionSpec` (shared by open/ensure/attach, with `tmux_name_for`) and `TerminalHostSeams` (the one impure OS boundary).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded owned tmux-client terminal identity across all six
-  administrative clients and attached PTY spawn; verification metadata remains pinned pending
-  candidate closeout.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed hosted cutover impact and refreshed the body.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-07T23:45+02:00 — 260707-HFX-L5 (catalog liveness hysteresis): the tmux probe is now
-  **evidence-bearing** — new `TmuxProbeResult(exists, evidence)` +
-  `TmuxProbeEvidence = "alive"|"pane-gone"|"tmux-command-failed"`, `TerminalHost.probe_session`
-  beside the boolean `has_session`. The production `_tmux_probe_session` captures stderr and is
-  **stderr-aware** (L5R2 fix round): only explicit missing-session stderr
-  (`can't find session` / `session not found`, via `_tmux_missing_session_stderr`) classifies as
-  `pane-gone`; every other nonzero exit and every subprocess error/timeout classifies as the
-  transient `tmux-command-failed` so catalog hysteresis applies — an unrecognized future tmux
-  wording fails toward fewer false exits. Injected legacy boolean probes are wrapped by
-  `_tmux_probe_result_from_bool` (back-compat for fakes/tests). Consumed by
-  `terminal_liveness.py`'s sweeper + shared observation path. Verification metadata pinned until
-  closeout stamps the HFX-L5 commit.
-- 2026-07-04T11:10+02:00 — L2 (agent-orchestration knob injection): `TmuxCreator` gained an `env`
-  parameter and `_tmux_create_detached`/`_build_tmux_command` now emit `tmux new-session -e KEY=VALUE`
-  flags (via the new pure `_env_flags`); `ensure`/`open`/`_ensure_binding` thread an optional
-  `env: Mapping[str, str]` through, seeded only at creation and inert on re-attach. Empty-safe (an empty
-  mapping keeps the byte-identical legacy argv). This is the minimal env-passthrough seam the agent-facing
-  `spawn_agent_session` tool composes over to inject role knobs (model/effort/env) at spawn. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape: `write_session` now recognizes SGR
-  mouse-report-only stdin frames (arming a per-connection `mouse_seen` flag) and cancels tmux
-  copy-mode via the new injectable `TmuxModeCanceller` (`tmux send-keys -X cancel`, suppressed
-  failures, DEVNULL hygiene) on the first typed input after scrolling. Rationale: copy-mode captures
-  the keyboard, so scrolled-up non-mouse panes (Codex) swallowed typing until the operator scrolled
-  back to the bottom; tmux offers no any-key-cancels binding, but the host sees every stdin frame.
-  Verification metadata pinned until closeout stamps the follow-up commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix: added the injectable `TmuxConfigurer` seam with the
-  `_tmux_enable_mouse` default (`tmux set-option -t <name> mouse on`, suppressed failures, DEVNULL
-  hygiene), asserted by `ensure` after create/probe and by `attach` against the existing durable
-  session. Rationale: xterm always sees the tmux client's alternate screen, so browser wheel input can
-  only scroll correctly when tmux itself handles it as mouse reports (pane history for normal-buffer
-  TUIs, pass-through for mouse-aware TUIs). Verification metadata pinned until closeout stamps the
-  follow-up commit.
-- 2026-06-27T18:43+02:00 — Subprocess-hygiene fix (GitHub #49): added `stdin=subprocess.DEVNULL` to the
-  three default tmux `subprocess.run` call sites (`_tmux_has_session`/`_tmux_kill_session`/
-  `_tmux_create_detached`) so a fire-and-forget tmux call cannot inherit and consume the stdio MCP
-  transport's protocol pipe. Behavior-preserving; the `_spawn_pty` Popen child (already wired to the PTY
-  slave) was unchanged. Repo enforces it via `mcp/tests/test_subprocess_hygiene.py`. Verification metadata
-  left pinned until closeout stamps the code commit.
-- 2026-06-27T02:28+02:00 — Task 22 follow-up: added `TerminalHost.ensure` and
-  `TerminalSessionBinding` so the opener can create a detached durable tmux session without spawning a
-  starter PTY client that then gets closed. This keeps a new chat alive until the first WebSocket
-  attaches while preserving per-tab `attach` clients. Verification metadata pinned until closeout
-  stamps the task-22 follow-up code commit.
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: added unregistered `attach` clients plus
-  `read_session`/`write_session`/`resize_session`/`close_session` so each browser WebSocket gets its own
-  tmux client PTY while the durable catalog identity remains one tmux session. This fixes multi-tab
-  terminal sharing by removing shared-fd read/close contention. Verification metadata pinned until
-  closeout stamps the task-22 follow-up code commit.
-- 2026-06-26T23:05+02:00 — Task 22: added injectable tmux probe/kill hooks, `has_session`, and
-  `terminate`. The catalog rehydrate path can now verify a tmux name exists before calling `open`, and
-  the UI terminate route can kill tmux explicitly without changing detach semantics. Verification
-  metadata pinned until closeout stamps the task-22 code commit.
-- 2026-06-19T20:30 — Task 6 slice 6f hardening: `TerminalSession` gained `suspend_unsafe` and `TerminalHost.write` now strips the Ctrl-Z byte `0x1a` for **suspend-unsafe (bare-pane harness)** sessions only — it self-suspends Claude Code with no shell to `fg`, soft-locking the session and dropping the operator's message; a plain shell session keeps Ctrl-Z (job control). `write` resolves the sid before stripping (unknown sid still raises), and `open` carries the new `suspend_unsafe` flag (the opener sets it `True` for `kind="harness"`). Verification metadata pinned until closeout stamps the 6f code commit.
-- 2026-06-19T14:05 — Task 6 slice 6e-4: `_spawn_pty` now makes the PTY slave the child's **controlling terminal** via `os.login_tty` in a `preexec_fn` (setsid + `TIOCSCTTY` + dup2) and seeds a `_DEFAULT_PTY_SIZE` winsize before exec — without a controlling tty tmux ignored every resize and stayed at 80×24. Kept the explicit `stdin/stdout/stderr=slave` (deliberate handle off the MCP stdio pipe, GitHub #49 hygiene) + `pass_fds=(slave_fd,)`; the `preexec_fn` is async-signal-safe, so it carries a local `# noqa: PLW1509`. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-18T15:40+02:00 — Created for task 6 slice 6d-1: the `TerminalHost` + `PtyProcess`/`TerminalSession` + the pure `_build_tmux_command`/`_tmux_session_name` builders + the stdlib-`pty` default spawner `_spawn_pty` — the backend half of Mode B2 (tmux-wrapped PTY sessions; injectable spawn; localhost/fixed-argv posture). The WebSocket bridge is 6d-2. Verification metadata pinned to the task base until closeout stamps the 6d-1 code commit.
