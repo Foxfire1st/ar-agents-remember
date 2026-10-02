@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R29 on real data: the Knowledge reader's views over the real served answers of `/api/knowledge/reader`
-for a converted scratch copy of the real repositories.** 14 component tests. `KnowledgeReader` is the real
+for a converted scratch copy of the real repositories.** 15 component tests. `KnowledgeReader` is the real
 component; only `fetch` is stubbed, and it answers from `knowledgeReader.captured.json` (the bodies' provenance is
 its `_provenance` key). The memory was converted by L24's `knowledge-convert`; the decisions, incident, family
 routes, history rows, proof and census on top of it are SCRATCH-AUTHORED, because converted memory holds none yet.
@@ -39,7 +39,10 @@ routes, history rows, proof and census on top of it are SCRATCH-AUTHORED, becaus
   12. a superseded decision headed with its derived status (F9);
   13. side reads that failed named, a clean published view pinned, and stale explorer answers dropped (F11, N2,
       F13);
-  14. record links that could not be read named instead of "no outgoing link" (F17).
+  14. record links that could not be read named instead of "no outgoing link" (F17);
+  15. a history row with its effect and its `because` (a requirement named, a decision as a link that
+      navigates), a row with neither rendered as before, and a decision's incoming link from a row naming the
+      row's subject and leading to its page, while a row served without its subject stays the plain row ID.
 
 ### Conventions
 
@@ -71,7 +74,10 @@ No configured live documentation source was available for this pass.
 - The file, directory, root-summary and test-file cases. [3]
 - The invariant, family, decision and incident, and census cases. [4]
 - Navigation, and failures named. [5]
+
 - The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links. [6]
+
+- A history row shows its effect and decision, and a decision the rows it caused. [7]
 
 ### Cross-Repo References
 

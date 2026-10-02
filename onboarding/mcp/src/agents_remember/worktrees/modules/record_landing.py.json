@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
+        "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+        "locator": {
+          "kind": "symbol",
+          "name": "_landing_request"
+        }
+      },
+      "id": "RLZ-5Z5DFP",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Hands the landing check the landed commit's parents as frozen only when the landed commit is the memory commit the contract records as its completed closeout; a commit made by any other hand freezes nothing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
+        "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
+        "locator": {
+          "kind": "symbol",
+          "name": "_knowledge_gate_refusal"
+        }
+      },
+      "id": "RLZ-BQ1Y8W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Refuses record_landing through the lock when neither the line nor the landed memory commit is converted; in a repository that holds no converted memory such a landing is recorded as before.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring's gate and probe-first paragraphs.\n\nAnchor: \"On converted memory the record route commits no memory but still checks the landed memory commit\"",
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:f3b036f83d474bd74722a5edaebe761dc013ae5bbae2a2e7f8451b617026c70c",
             "locator": {
               "end": 24,
@@ -102,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
             "locator": {
               "kind": "symbol",
@@ -113,12 +150,45 @@
         }
       ]
     },
+    "16": {
+      "note": "Only the recorded closeout commit freezes what it was made on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
+            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "A hand-closed file is refused also when landed one commit later, or through a merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
+            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Probe the line first; an unconverted line's commit is only probed.",
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -129,7 +199,7 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:142e1ce0a7275d9ccc270af5231d9c4c8a937494d01a2fd2801579a649abb3ef",
             "locator": {
               "kind": "symbol",
@@ -140,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:a1b596b6f0429719e7b4397794458ef506cbb5acb0fd7b2bedaa4a15628afefa",
             "locator": {
               "kind": "symbol",
@@ -156,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
             "locator": {
               "kind": "symbol",
@@ -167,8 +237,8 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
-            "content": "sha256:ce152a2b04c3cbd786ee7344c97ea3861f867cf652ecbce290fe76b9be4671b6",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
+            "content": "sha256:8135cad9b222b0270b45d030ee357afa35a0b77af84cef8d8f461cad5d32d055",
             "locator": {
               "kind": "symbol",
               "name": "_landing_request"
@@ -178,7 +248,7 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:26447a338805e76253ac2be226fb1d747384f5a0668542febde9a45489442f3c",
             "locator": {
               "kind": "symbol",
@@ -194,12 +264,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:2dd77c3cb7f0b22ef748390e32660b647405d5dd8c40beb9441f62a3f486f60e",
             "locator": {
-              "end": 223,
+              "end": 227,
               "kind": "line_range",
-              "start": 223
+              "start": 227
             }
           },
           "kind": "code"
@@ -211,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:ba4270ec0157e79338912f11f9d78b4b12a8aeaeda4a5976751f046174799819",
             "locator": {
               "kind": "symbol",
@@ -244,7 +314,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
             "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
             "locator": {
               "kind": "symbol",
@@ -261,24 +331,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:9c3f5d2c194083193c864ed94c6628a421221898b376460ff11e8c801032e303",
             "locator": {
-              "end": 183,
+              "end": 187,
               "kind": "line_range",
-              "start": 183
+              "start": 187
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:2dfdfd9a65625d68ba4b9bed1cbe5c2b804ff4f09c6a3a05006f731449c0c718",
             "locator": {
-              "end": 189,
+              "end": 193,
               "kind": "line_range",
-              "start": 189
+              "start": 193
             }
           },
           "kind": "code"
@@ -290,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:9db17d68dfdaf16e8709349c7c942ea72fe3b4dba2de6fd6db2a1b21259f3611",
             "locator": {
               "kind": "symbol",
@@ -301,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:756cc38e13d31592539c0bad896f4c064849b2c2e74372eb78292d0e122c2776",
             "locator": {
-              "end": 193,
+              "end": 197,
               "kind": "line_range",
-              "start": 193
+              "start": 197
             }
           },
           "kind": "code"

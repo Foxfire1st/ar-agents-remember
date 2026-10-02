@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7c8689debd9c9f5dadc09793df80e38d7497bf6b",
+        "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "history_target"
+        }
+      },
+      "id": "RLZ-T44AEA",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Chooses the file a leaf's rows go to: its latest attempt, and the next attempt once the latest is closed in the writer's base. A file closed only in the candidate stays the target, and the write refuses it by name.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Who authors the operation, and whether a document names it.",
@@ -19,7 +38,7 @@
       ]
     },
     "10": {
-      "note": "The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the base.",
+      "note": "The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD.",
       "targets": [
         {
           "anchor": {
@@ -66,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
             "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
             "locator": {
               "kind": "symbol",

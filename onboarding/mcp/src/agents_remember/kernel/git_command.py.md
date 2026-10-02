@@ -76,6 +76,15 @@ failure and raises `GitPreparationError`. The crossing sync's structural merge
 (`memory/conversion/crossing.py`) uses it to merge a card's Markdown three-way by line.
 The validator's Git tree reader (`memory_quality/knowledge_validator/trees.py`) is its caller.
 
+`copy_git_index(source, target)` (L37, INV-656CYW) copies a Git index for a disposable capture and gives the copy
+the source file's modification time. Git trusts an index entry's recorded stat data unless the file may have been
+rewritten in the second the index was written; it recognises such a "racily clean" entry by its recorded time not
+being older than the index file's own time, and compares it by content. A plain copy has a new time, so no entry is
+racily clean on it, and a same-size rewrite made in that second keeps its old blob in whatever `git add` then
+captures. Bytes and time are read from one open file, so an index replaced meanwhile cannot pair one index's bytes
+with another's time. The knowledge index's capture (`memory/knowledge_index/tree.py`) and the mutation snapshot
+(`worktrees/integration/mutation_evidence.py`) copy through it.
+
 ### Conventions
 
 The selector tuple is production authority and is imported by tests instead of copied. Repository
@@ -149,6 +158,8 @@ The generic runner has distinct Git-fact callers and private/publication observe
 - Many blobs are read as exact bytes through one batch call; a missing or non-blob object raises. [19]
 - The knowledge validator reads a memory tree's knowledge files through the batch reader. [20]
 - The module declares a separate 1800-second bulk-network timeout. [21]
+
+- A copied index keeps the index file's modification time. [28]
 
 ### Cross-Repo References
 

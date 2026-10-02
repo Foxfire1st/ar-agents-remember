@@ -167,7 +167,7 @@
         },
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -391,6 +391,44 @@
             "locator": {
               "kind": "symbol",
               "name": "validate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The three card writers, which ask no cutover lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:88ee98a2e116d21f76242e567dbf3a401eb1c177fc5d7de2018d276de82dd046",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_migrate_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_tool"
             }
           },
           "kind": "code"

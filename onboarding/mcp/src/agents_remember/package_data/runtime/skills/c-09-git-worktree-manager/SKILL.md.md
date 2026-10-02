@@ -157,6 +157,11 @@ finalizes standalone, is not covered). The authored `skills/` source changed, an
 this copy and the eight harness starter copies byte-identically (`--check` ok for all nine). The same clauses are in
 the `lifecycle_finalize_task` tool description and `docs/reference/mcp-tools.md`.
 
+The closeout paragraph says since L37 that the preview, which runs no quality, test, memory, certification or
+review tool, does ask the mandatory invariant gate on converted memory: a leaf the apply would refuse is answered
+`knowledge-gate-refused` with the open findings, never `would-closeout`. It points to `c-12-closeout` for the
+detail.
+
 ### Conventions
 
 `c-09-git-worktree-manager` skill is a wrapper, not a replacement workflow. Task identity should be settled
@@ -236,6 +241,7 @@ No relevant external documentation found.
 
 - `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. [1]
 - `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. [2]
+
 - The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. [3]
 - The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. [4]
 - Developer-gated starts run preflight, notify-and-stop, then auto-resume on the next AR call; accepted-series subordinate starts continue under recorded authority. [5]
@@ -247,6 +253,8 @@ No relevant external documentation found.
 - The shipped text is corrected: admission is contract-scoped, each canonical series contract owns its own activation record, and masters sharing one exact code/memory source pair never share that state. [11]
 - The shipped closeout-queue paragraph now projects only active, reconciling, or vacant waiting candidates and owns none of those lifecycle facts. [12]
 - The shipped sync-scope "source pair" is current: sync derives one contract's code/memory branch pair from the contract, so the phrase describes a two-branch reconciliation, not a serialization claim. [13]
+
+- The preview asks the mandatory gate on converted memory. [14]
 
 ### Cross-Repo References
 

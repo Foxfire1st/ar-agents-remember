@@ -27,6 +27,24 @@
           "name": "_require_unfrozen_database"
         }
       },
+      "id": "RLZ-KB4QFQ",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the lock at the database batch writer's front door for an unconverted memory tree, so the batch writer writes nothing in a locked repository.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
+        "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_unfrozen_database"
+        }
+      },
       "id": "RLZ-Y9GSNQ",
       "invariant": "INV-1XKX9ERN",
       "origin": {

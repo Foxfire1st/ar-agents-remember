@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/memory/carryover.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3098aadd9b50a1d925939290c164e59afb43611a",
+        "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_legacy_format_target"
+        }
+      },
+      "id": "RLZ-KSMDRZ",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Refuses memory_carryover_apply for a converted target, naming the file writer, and for an unconverted target once its memory repository holds converted memory, naming the crossing sync.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Candidate comparison and explicit review selection.",

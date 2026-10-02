@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals.\n\nAnchor: \"so a run never stops with some cards written and others\"",
+      "note": "The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals, two touching tables among them.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
-            "content": "sha256:9210615047e16b8cdbbd1f3bb46931ca523347556be8a9763a77ac8446097285",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
+            "content": "sha256:c59b1c021b9ab901580c7dc4fd8701f42e7414c80def8ed2dc645277960e7274",
             "locator": {
-              "end": 36,
+              "end": 40,
               "kind": "line_range",
               "start": 1
             }
@@ -19,12 +19,29 @@
         }
       ]
     },
+    "10": {
+      "note": "Merged tables are refused by name and nothing is written; a single-dash row is a placeholder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "content": "sha256:f2dde7a95d731493b66677960d67be86e66497273740783fdd10fd50abae0f35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_tables_with_no_blank_line_between_them_are_refused_by_name"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The entry: author in memory first, then write the cards that passed.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
@@ -40,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:8daa6629906d4c216d6ce6135c557b82d9c064f4c8c0ef755fcd60cbf5d6777e",
             "locator": {
               "kind": "symbol",
@@ -56,7 +73,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:14d5f4ea97b2f8ed7170ff5549d33528e493359b93959273ce694e621b9fe148",
             "locator": {
               "kind": "symbol",
@@ -72,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:c8fb1829ffe2f8da2520f380d0fe0d9bd7c48974b7861e33b7cacc2444a4634c",
             "locator": {
               "kind": "symbol",
@@ -88,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:3c14c12500a9f14b25be8fd9c376810b7d6716a252d633d9435d951122bdb7d3",
             "locator": {
               "kind": "symbol",
@@ -111,6 +128,38 @@
               "name": "_converted_citation_fix"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Two tables with no blank line between them are refused when either holds citations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
+            "content": "sha256:82dfd3e55eeae211238e5f46695e37de83130fee22142419132fb53db93f623e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_merged_tables"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A delimiter row: every cell three dashes or more.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
+            "content": "sha256:380a00b881e365da16c6bbb64325b8c4cf6d9c8af01af937f0c085aca07c1914",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_delimiter"
+            }
           },
           "kind": "code"
         }

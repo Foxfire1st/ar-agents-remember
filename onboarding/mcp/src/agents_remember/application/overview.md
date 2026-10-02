@@ -6,8 +6,8 @@
 
 ## 260928-MIK-L37 The Cutover: One Converted Base For Every Reader, The Frozen Database, And Reads That Refuse An Unheld Seed
 
-`260928-MIK-L37` (MIK-R37). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on. This route gains four modules and changes eighteen.
+`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`. This route gains four modules and changes twenty-five.
 
 - **One converted base (MIK-R24 rule 7).** [`knowledge_writer/base_side.py`](knowledge_writer/base_side.py.md) (new)
   gives the writer `HEAD`'s conversion as its base when `HEAD` is unconverted and the candidate is converted; it
@@ -42,6 +42,33 @@ memory line. What earlier sections of this overview call "inert until the cutove
 - A seed the tree does not hold is refused. [377]
 - The history file an owner writes, with a reopened leaf's attempt. [378]
 - The memory-quality run refuses unconverted memory at both scopes. [379]
+
+- **The gate over a leaf that continues after its closeout (decision record DEC-0AEQ28).**
+  [`knowledge_gate/gate.py`](knowledge_gate/gate.py.md) reads the leaf's memory `HEAD` beside the parent line's tip,
+  freezes the history files of the leaf's recorded closeout commit for its validator, and names the attempt file a
+  row goes to as the writer does; [`knowledge_gate/memo.py`](knowledge_gate/memo.py.md) keys the memo on that `HEAD`
+  too.
+- **The governing row of a changed record (INV-XN0FG8).**
+  [`knowledge_gate/predicates.py`](knowledge_gate/predicates.py.md) holds an invariant item open unless the
+  `changed` row governs an invariant whose revision the leaf changed, and a family item open unless the `changed`
+  row governs a family whose guarantee the leaf changed;
+  [`knowledge_worklist/compute.py`](knowledge_worklist/compute.py.md) and
+  [`knowledge_worklist/registry.py`](knowledge_worklist/registry.py.md) mark such a family `guarantee-changed`;
+  [`knowledge_writer/history_check.py`](knowledge_writer/history_check.py.md) accepts a `changed` row at an
+  unchanged revision only as a restatement of the leaf's earlier `changed` row.
+- **The writer.** [`knowledge_writer/authoring.py`](knowledge_writer/authoring.py.md) fills a row's `items` from the
+  leaf's worklist and replaces a realization entry's rationale in place when a cover carries one;
+  [`knowledge_writer/handoff.py`](knowledge_writer/handoff.py.md) reads that cover form, and
+  [`knowledge_writer/writer.py`](knowledge_writer/writer.py.md) hands the worklist's items over.
+- **Readers.** [`knowledge_reader/records.py`](knowledge_reader/records.py.md) gives a link whose source is a history
+  row the record the row is about; [`review_tree_knowledge.py`](review_tree_knowledge.py.md) shows only each
+  owner's latest attempt's row about a subject.
+
+- The gate reads the leaf's memory HEAD and keys its memo on it. [380]
+- An invariant the leaf changed is answered only by its changed row. [381]
+- A row whose hand-off names no item lists the worklist items it answers. [382]
+- A cover's rationale replaces the entry's rationale in place. [383]
+- Each owner's row about a subject from its latest attempt file. [384]
 
 
 ## 260921-ICR-L44 A Family Member's Sources Carry Their Own Region, Projected By A Dedicated Owner
@@ -2552,7 +2579,9 @@ change is one module's worth of new surface in `application/knowledge_merge.py` 
 
 - The driving entry point: three materialised stages in, one settled-or-not boolean out, and the identity read only this layer may perform. [225]
 - The three commits one conflicted merge spans, grouped because the adapter's base claim needs them together. [226]
+
 - The one non-test importer this module gained, the Git half that cannot live here, and the single-path entry point the authored retry re-enters. [227]
+
 - The transaction seam that routes the conflict and narrows the agent's list. [228]
 - The layer rule that forces the split, enforced by a test rather than documented. [229]
 
@@ -3094,8 +3123,10 @@ The writer writes converted memory trees only. By architect ruling the database 
 production path for unconverted memory until MIK-R26 (leaf L26) retires them.
 
 - The operation: read, author, check history, render, validate, then write or refuse. [265]
+
 - Route rules are reports inside the writer only. [266]
 - Another owner's origin is kept exactly; its evidence is queued for this owner's history row. [267]
+
 - Every row of the owner's history file is checked against the candidate. [268]
 
 
@@ -4057,9 +4088,12 @@ Touched modules:
   and `has_blob`'s naming of a Git failure are not behind the marker probe.
 
 - The gate over a leaf's exact candidate: probe, tip, memo, recorded evaluation. [363]
+
 - The findings over one recomputed worklist. [364]
+
 - Rule 2's invariant and family rows. [365]
 - The memo's key and reuse. [366]
+
 - The curator publication counts each gate finding once. [367]
 - The worklist over the exact candidate, shared with direct landing. [368]
 - The symmetric linkage. [369]

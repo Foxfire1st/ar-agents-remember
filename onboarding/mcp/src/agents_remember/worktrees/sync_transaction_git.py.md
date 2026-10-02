@@ -74,8 +74,8 @@ All commands use the shared runner. `SyncGitProofError` exposes an unproven Git 
   `memory.md` from the index, which leaves it on disk as an untracked file; `git merge --abort` then refuses to
   overwrite it. `rollback_side` therefore calls `discard_memory_cache_changes(side)` before the abort: a tracked
   cache is restored from `HEAD`, an untracked one is removed, and the code side is untouched. An abort that still
-  does not restore the head raises `_abort_failure`, which names Git's own stderr. Lines that untrack the cache (every
-  active line) could already cancel; 48 dormant branches still track it.
+  does not restore the head raises `_abort_failure`, which names Git's own stderr. A line that
+  untracks the cache could already cancel.
 
 ### Todos
 
@@ -96,7 +96,9 @@ These current source spans identify the implementation owners and the specific a
 - Content-domain conflicts and narrowly scoped cache state handling. [3]
 - **The typed merge outcome that replaced the three-tuple, and the adapter's refusal and (since MIK-R24) the crossing report path it carries out of the merge.** [4]
 - **The conflict routing: knowledge datasets settle in the transaction, the undecided remainder reaches the agent, and the explanation travels with it.** [5]
+
 - **The authored retry's Git half, which is the same route the automatic pass takes.** [6]
+
 - **The adapter the routing calls, and the one importer that makes this module depend on the application layer rather than on the memory domain.** [7]
 - Native merge, exact continuation, and cache-free merge output; both entry points carry the paired code commit to the final memory merge, which first closes any master-line crossing history file the merge adds. [8]
 - **The crossing branch of the memory merge (MIK-R24 rule 8): the plan is computed before Git merges, then replaces the merge's knowledge and onboarding paths, and the report path rides the outcome.** [9]

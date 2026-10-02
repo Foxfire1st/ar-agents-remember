@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Refuses the unchanged-knowledge mode unless the leaf is live with a recorded memory base, reads the dataset at that exact memory-base commit, and passes its identity to _prepare_and_record, which refuses any published or task half that differs from it before and after placing the pair through the ordinary candidate and baseline owners.",
+      "rationale": "Refuses the unchanged-knowledge mode first for a leaf that does not resolve and for a converted leaf, through _dataset_resolution, before any dataset is read. For a dataset pair it refuses unless the leaf is live with a recorded memory base, reads the dataset at that exact memory-base commit, and passes its identity to _prepare_and_record, which refuses any published or task half that differs from it before and after placing the pair through the ordinary candidate and baseline owners.",
       "role": "primary-authority"
     },
     {

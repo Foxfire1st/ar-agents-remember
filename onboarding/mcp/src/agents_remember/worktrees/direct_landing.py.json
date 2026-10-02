@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/direct_landing.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
+        "content": "sha256:a556c9d631cc7b7ddd6a9d5a9d33c4b0a769fc0caad09453666329c49b429836",
+        "locator": {
+          "kind": "symbol",
+          "name": "_direct_gate_owner"
+        }
+      },
+      "id": "RLZ-0WT63S",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Probes the memory checkout before anything is captured or written and raises the lock's refusal for unconverted memory in a locked repository, for a preview and an apply alike.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring's gate and closing paragraphs.\n\nAnchor: \"On converted memory (the layout marker on either side) the mandatory\"",

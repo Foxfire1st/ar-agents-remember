@@ -25,7 +25,10 @@
   (>= 2, a leaf only). A leaf reopened after its closeout keeps its closed file frozen and writes
   `<leaf-id>-attempt-<n>.json`. `writable_attempt` names the attempt a write or closeout goes to, and
   `merged_leaf_history` reads all of a leaf's files as one history: a later row about a subject supersedes the
-  earlier one. A first file carries no `attempt`, so every existing file keeps its bytes.
+  earlier one. A first file carries no `attempt`, so every existing file keeps its bytes. The same module holds
+  the rules for the governing row of a record a leaf changed (`changed_record_row_violation`,
+  `changed_family_row_violation`, `keeps_change_visible`), and `invariant_revision_violation` accepts a `changed`
+  row at an unchanged revision only as a restatement of the leaf's earlier `changed` row (INV-XN0FG8).
 - **[`knowledge_files/documents.py`](knowledge_files/documents.py.md).** `history_path(owner, attempt)` and its
   inverse `owner_history_attempt(path, owner)`.
 - **[`knowledge/result.py`](knowledge/result.py.md).** `database_frozen` joins the refusal codes: a database write
@@ -33,6 +36,8 @@
 
 - All of an owner's history files read as one. [272]
 - The attempt-qualified history path. [273]
+
+- Why a row cannot govern an invariant whose revision the leaf changed. [274]
 
 
 ## 260921-ICR-L44 Two Pure Extractions, And The Anchor Observation Gains A Structured Region

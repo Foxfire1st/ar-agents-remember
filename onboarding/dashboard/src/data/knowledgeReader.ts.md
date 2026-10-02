@@ -34,6 +34,9 @@ link is a navigation (rule 5).
   `continuation`.
 - **Code links.** `codeAddress` builds the code view's address for an anchor (its locator as JSON, and its
   recorded blob); `locatorLabel` names a symbol, a line range or the whole file.
+- **A link from a history row (L37, MIK-R29 rule 5).** `IncomingLink.sourceSubject` is the summary of the record
+  a `history_row` source is about: a row has no page of its own, so the reader navigates to that record.
+  `sourceRecord` stays the summary of a record source.
 
 ### Conventions
 
@@ -77,6 +80,8 @@ No configured live documentation source was available for this pass.
 - An address's own read, and one subtree page. [11]
 - The code address of an anchor, and its label. [12]
 - The navigation case: links change the shareable hash, and the hash round-trips. [13]
+
+- An incoming link may carry the record its history-row source is about. [14]
 
 ### Cross-Repo References
 

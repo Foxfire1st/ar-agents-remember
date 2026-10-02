@@ -10,8 +10,8 @@
 
 ## 260928-MIK-L37 The Cutover To Text Storage: The Installed Build Governs Converted Memory
 
-`260928-MIK-L37` (MIK-R37). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on. From this leaf on, on this master's line:
+`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`. On a converted line:
 
 - knowledge is written through the curator file writer and read through the derived index;
 - the knowledge database is frozen: the database writer and the publication sink refuse a converted tree and name
@@ -36,12 +36,24 @@ Files this overview governs directly:
 - **The packaged skills.** The c-05 skill gains
   [`workflows/converted-card-workflow.md`](src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md.md),
   and the c-02 skill, the c-05 skill, its file-level workflow and the curator role each gain their converted-memory
-  paragraph.
+  paragraph. [`c-12-closeout/SKILL.md`](src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md.md) and
+  [`c-09-git-worktree-manager/SKILL.md`](src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md.md)
+  say that the closeout preview and apply ask the mandatory gate on converted memory, and the
+  [curator hand-off template](src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md.md)
+  states the rules for a row's items, a cover's rationale and the governing row of a changed record.
+- **[`kernel/git_command.py`](src/agents_remember/kernel/git_command.py.md) and
+  [`kernel/memory_cache.py`](src/agents_remember/kernel/memory_cache.py.md).** `copy_git_index` copies a Git index
+  with its file's modification time, so a capture through the copy still sees a file rewritten in the second the
+  index was written (INV-656CYW). `ignore_memory_cache` is the cache preparation's one write to memory content,
+  which the gated closeout makes before it judges the tree.
 
 - The crossing owner's route of knowledge-ingest. [222]
 - The bootstrap's database route takes the cutover lock. [223]
 - The converted-card workflow's opening. [224]
 - The lock every memory route asks. [225]
+
+- A copied Git index keeps the index file's modification time. [226]
+- The cache's ignore rule alone. [227]
 
 
 ## 260928-MIK-L33 Review Triage Order And Change-Kind Badges, Inert Until The Cutover
@@ -185,9 +197,12 @@ flag or report-only mode exists.
   passed.
 
 - The gate over a leaf's exact candidate. [3]
+
 - Each kind's own predicate, registered beside the kind. [4]
 - The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
+
 - The history-row rule over every file's subjects and the leaf's own file. [6]
+
 - The two lane rows. [7]
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master

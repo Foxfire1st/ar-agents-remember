@@ -1,30 +1,357 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-1GS7KY",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Sends a resumed closeout that carries a recovered memory commit through the recovery gate before it resumes, and a fresh closeout through the history closing into the gated memory commit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-7ENMV3",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the lock before any stamping or commit of an unconverted leaf's memory at the worktree closeout.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-AS19NV",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Calls the validator and the gate on the exact tree before the memory commit's Git mutation begins, also when nothing is left to commit, and restores the history closing and .gitignore on any failure before that commit begins. The closeout has committed the code by then, and a refusal here leaves that commit in place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_ungated_candidate"
+        }
+      },
+      "id": "RLZ-AVX93M",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the preflight: it asks the gate over the accepted code candidate tree and the memory worktree's current tree before the approval is claimed or the code is committed. It can only deny; what it permits is judged again at the memory commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_exact_memory_tree"
+        }
+      },
+      "id": "RLZ-FJ0671",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Captures the exact tree the commit records: the working tree with the commit's exclusions, through a fresh index, so every file is hashed.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-K4M788",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Writes the cache's ignore rule before it reads the exact tree, hands the judged tree to the mutation's proof as the expected output tree, and stages the commit from that tree object instead of from the working tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:641f15ccb51458c4e4607ce8ba4fe383f72a4eca16a990cabc326abdf8322433",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_judged_tree"
+        }
+      },
+      "id": "RLZ-M2XFSX",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Reads the tree the commit would stage through the repository's own index, before the memory commit's Git mutation begins, and refuses when it is not the judged tree, naming both trees.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_gate_verdict"
+        }
+      },
+      "id": "RLZ-SR7CGW",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the one verdict both the preview and the apply's preflight read: nothing when the gate passes, the refusal naming every finding, or not-applicable for a contract the gate does not govern. It writes nothing to either worktree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_ungated_memory"
+        }
+      },
+      "id": "RLZ-VRHJYJ",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Runs the knowledge validator as a leaf publication and then the mandatory gate over the closeout's code commit tree and the exact memory tree, with the parent line's memory tip as the base and the leaf's recorded closeout commit frozen; a refusal from either is raised with its findings, and no argument skips it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_gated_recovery"
+        }
+      },
+      "id": "RLZ-ZTW3GN",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Judges the tree of a memory commit that a resumed closeout recovered, exactly as a fresh closeout's tree is judged, before that commit is recorded; a commit made without the gate is refused by name.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The converted leaf's history file is closed before the memory commit.\n\nAnchor: \"closing = close_owner_history(contract.memory_worktree, _owner(contract))\"",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
             "content": "sha256:b3da04f908195c30b9a75fac6ffb644efe136034ef15edaa30c9b5bef7ecff9d",
             "locator": {
-              "end": 88,
+              "end": 99,
               "kind": "line_range",
-              "start": 77
+              "start": 88
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The owner, and the exact tree validated as a leaf publication against the parent tip.",
+    "10": {
+      "note": "The validator and the mandatory gate over the leaf's exact memory output.",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The exact tree the memory commit records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The one verdict the preview and the apply's preflight read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:34f04b6b57aac6604805a6905a669f16b208a605bec1ff24ec7489b710dcf867",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The preflight before the approval is claimed or anything is committed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_ungated_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A recovered closeout is judged like a fresh one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A commit whose tree is not the judged tree is refused before the memory commit's Git mutation begins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:641f15ccb51458c4e4607ce8ba4fe383f72a4eca16a990cabc326abdf8322433",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A refused closeout takes back the ignore rule it recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:b33942a88a862cc968fdfec13615bd9f7691f4560474bb5a20a632a430e2f663",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_ignore_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "A file rewritten while the gate runs is never committed unjudged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:65095f3c51eddfe5fe68ea6ccb93890f5a4eaadef69a18aee42137e861fcbe91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The owner of the history file the closeout closes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
             "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
             "locator": {
               "kind": "symbol",
@@ -32,27 +359,16 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:505ff343f40adcbcc74f44642af9e6cc526b257e74938e90144f187574db3c51",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refuse_invalid_memory_commit"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Any failure before the commit restores the file.\n\nAnchor: \"closing.restore()\"",
+      "note": "Any failure before the commit restores the file.",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -63,16 +379,15 @@
       ]
     },
     "4": {
-      "note": "`external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory), then refreshes its informational cache.\n\nAnchor: \"def external_closeout_commits(\"",
+      "note": "`external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory, and judging a recovered memory commit before it resumes), then refreshes its informational cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 51
+              "kind": "symbol",
+              "name": "external_closeout_commits"
             }
           },
           "kind": "code"
@@ -80,12 +395,12 @@
       ]
     },
     "5": {
-      "note": "`_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit.",
+      "note": "`_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded; since MIK-R09 it validates a converted leaf's exact tree first and restores the closing on any failure before the commit; since L37 it also runs the mandatory gate and stages the commit from the judged tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -100,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
             "content": "sha256:0b819e606d55516db053afe7c44c1ae304eed817f524ba0d3a79e49e82a63319",
             "locator": {
               "kind": "symbol",
@@ -116,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
             "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
             "locator": {
               "kind": "symbol",
@@ -132,7 +447,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
             "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
             "locator": {
               "kind": "symbol",
@@ -149,8 +464,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"

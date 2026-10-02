@@ -40,8 +40,8 @@ closing across calls in per-generation receipts until that generation is decided
   `port.leaf_refusal`.
 - **`direct_gate_verdict`** probes the candidate tree and `HEAD`, then asks `port.direct_verdict`.
 - **`landing_gate_refusal(request)`** probes the landed memory commit and its bases, then runs the validator through
-  `memory_commit_refusal` (with `leaf_publication` for a leaf's recorded landing) **and** `port.landing_refusal`, and
-  joins the named refusals.
+  `memory_commit_refusal` (for a leaf's recorded landing as a `LeafPublication` that carries the request's `frozen`
+  commits) **and** `port.landing_refusal`, and joins the named refusals.
 - **`prepared_closeout_refusal(contract)`** (ruling 14:38:47 gap 3): the certified (prepared) closeout binds its memory
   commit to the curator-attested candidate, so it cannot set `closed: true`; on converted memory it refuses with
   `PREPARED_CLOSEOUT_UNCLOSABLE` (`prepared-closeout-knowledge-history-unclosable`), naming why and that the leaf
@@ -80,6 +80,12 @@ closing across calls in per-generation receipts until that generation is decided
     naming the landed memory commit;
   - the closeout commit, direct landing, record landing and a leaf's integration call `leaf_cutover_refusal`
     themselves.
+- **`closed_out_memory(contract)`** (L37, decision record DEC-0AEQ28; INV-MS9BMJ) returns the memory commit of the
+  leaf's completed closeout when the contract records one (`closeout_status == "completed"` and a
+  `memory_content_commit`), else nothing. A leaf that continues after a closeout that was not integrated sits on
+  that commit: the history file the closeout closed there is frozen for the validator and the gate, though the
+  parent line does not hold it, and the leaf's later rows go to its next attempt file. A file closed by a hand
+  commit is not frozen and is read whatever its flag.
 
 ### Conventions
 
@@ -126,7 +132,9 @@ No configured live documentation source was available for this pass.
 - The prepared path fails closed on converted memory. [4]
 - The closeout validator's gate. [5]
 - Direct landing's probe and verdict. [6]
+
 - A landing: the validator through the route entry point, plus the port. [7]
+
 - The closeout's own write and its restore. [8]
 - Per-generation receipts, the blob in the repository's own format. [9]
 - Settling each receipt; an unreadable one refuses by name. [10]
@@ -137,6 +145,9 @@ No configured live documentation source was available for this pass.
 - The closeout closes the latest attempt of a reopened leaf. [14]
 - The closeout closes the latest attempt and never reopens a closed one. [15]
 - The converting candidate is gated at every route, never locked. [16]
+
+- The commit whose closed history files are frozen: the recorded, completed closeout's. [17]
+- A history file closed by a hand commit is not frozen. [18]
 
 ### Cross-Repo References
 

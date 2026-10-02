@@ -16,6 +16,10 @@
 - `validation_applies(candidate, bases)` is true when the candidate or any base holds the layout marker.
 - **`leaf_publication` (MIK-R09, leaf 260928-MIK-L09).** `validate_tree` and `require_valid_commit` gained a defaulted `leaf_publication` keyword that they pass into the `ValidationContext`: a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing) then has MIK-R09's history-row rule read every history file not closed in a base, whatever its own `closed` flag (review R1 F1). Every other caller is unchanged.
 - `require_valid_commit(candidate, *, bases, code)` returns `None` when validation does not apply, the report when the candidate passes (report-only findings included), and raises `KnowledgeValidationError` naming every refusing violation otherwise.
+- **`LeafCommit` (L37).** `leaf_publication` is `False`, `True` or a `LeafCommit(frozen)`. A `LeafCommit` marks a
+  leaf publication and also hands in the history files of the commit(s) the candidate sits on when they are not
+  bases; `validate_tree` puts them into `ValidationContext.frozen`. A history file closed there is frozen like
+  one closed in a base.
 
 ### Conventions
 
@@ -49,14 +53,22 @@ No configured live documentation source was available for this pass.
 The three entry points.
 
 - The validator: every registered rule over the candidate. [1]
+
 - Rule 8's applicability: the marker on any side. [2]
+
 - The commit route's call: nothing, the report, or the refusal. [3]
+
 - Commit routes validate only when a side has the marker. [4]
 - An unconverted base is refused, and a standalone conversion checks no path. [5]
 - The registering import of MIK-R09's history-row rules. [6]
-- A leaf publication reaches the context (MIK-R09). [7]
+
+- A leaf publication, and the frozen history files of a `LeafCommit`, reach the context (MIK-R09). [7]
+
 - The registering import of MIK-R14's link guard. [8]
 - The registering import of MIK-R13's decision content rules. [9]
+
+- A commit that publishes a leaf, with the history files of the commit it sits on. [10]
+- The frozen trees reach the validation context. [11]
 
 ### Cross-Repo References
 

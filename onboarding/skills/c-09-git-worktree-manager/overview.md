@@ -148,6 +148,15 @@ copy and the eight harness starter copies byte-identically.
 
 - The finalizer paragraph's two new clauses. [7]
 
+## 260928-MIK-L37 The Closeout Preview Asks The Mandatory Gate On Converted Memory
+
+The route's closeout paragraph gains one statement: the preview, which runs no quality, test, memory, certification
+or review tool, does ask the mandatory invariant gate on converted memory, and a leaf the apply would refuse is
+answered `knowledge-gate-refused` with the open findings, never `would-closeout`. `c-12-closeout` holds the detail.
+`scripts/sync-skills.py` rewrote the package copy and the eight harness starter copies byte-identically.
+
+- The preview asks the mandatory gate on converted memory. [8]
+
 ## Ungoverned Mirror Status (known defect)
 
 This route overview lives in the `onboarding/skills/**` tree, which mirrors the code repository's

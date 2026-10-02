@@ -73,6 +73,11 @@ backend's camelCase document keys; the adapter issues GETs only.
 - A typed answer returned whatever its status; only transport failures throw. [8]
 - The selection block every answer carries. [9]
 
+Since `260928-MIK-L37` the adapter's `IncomingLink` carries `sourceSubject`: the record a `history_row` source is
+about, which the truth view links to, because a row has no page of its own (MIK-R29 rule 5).
+
+- An incoming link may carry the record its history-row source is about. [59]
+
 ## 260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing
 
 [`reviewTrees.ts`](reviewTrees.ts.md) now carries what the reviewer's focused expression cards need (MIK-R31):

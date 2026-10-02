@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:785c69b589559d197d852585accb3267a482eed8c9f9e03ab2d1a4a954247377",
             "locator": {
               "end": 7,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca7c1a3c2e466bb09c1b110b8af88263381803e",
+            "blob": "119efc5d27e3b25fea633405ec5995d2fdebda87",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
               "end": 122,
@@ -37,12 +37,44 @@
         }
       ]
     },
+    "11": {
+      "note": "The closeout test answers the items its code commit opens, because the memory commit is gated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
+            "content": "sha256:eb0bda15ddf28db79515817a61d05a66c4bba9ae08325495fc0949c9e4174c2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The memo key names the parent tip and the leaf's memory HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
+            "content": "sha256:53c76e27c8bde62b1bb05d764fd74a92423b423a4f229a4a354dbe01cd4178cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The fixture world.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:ad7aeffb07dfe654d5f2e218407e612f550d05133c5338769132c96258539ddb",
             "locator": {
               "kind": "symbol",
@@ -53,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:b8224bede0fdfe8cb37f13c5b260a09b74981e985fe5e14f21c9590c7cafba9a",
             "locator": {
               "kind": "symbol",
@@ -69,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:539fede000fd2d62aa31b95bfb43ab55974f5776e6a4b112bec5b8faab2747f6",
             "locator": {
               "kind": "symbol",
@@ -80,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:ca461555d0ebd72df46efa61ad1683dedc580f83b96cef1d9abca8e56439a393",
             "locator": {
               "kind": "symbol",
@@ -96,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:978964c6c6e84c8e7ff058abf3e9f16cff4a1be1b4270b2541fcba0d50ab765b",
             "locator": {
               "kind": "symbol",
@@ -107,7 +139,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:24c19a7ec6d96a2314e2ea37a56a49d1ee3b6d87722f9fb8cfce4f0f9eea00b1",
             "locator": {
               "kind": "symbol",
@@ -123,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:8515e2f139ed80a16575d774814dfd486764105ae85fdac29fbc450460c38c68",
             "locator": {
               "kind": "symbol",
@@ -139,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:cfe113e57b1695454646631dfbbc5289a1dcaa436245cdbcfc5f611a0d1362ca",
             "locator": {
               "kind": "symbol",
@@ -150,8 +182,8 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
-            "content": "sha256:4d12409467f93735175a706a980632a5f3ca7abee0709ded00a920e7d8b94e87",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
+            "content": "sha256:eb0bda15ddf28db79515817a61d05a66c4bba9ae08325495fc0949c9e4174c2b",
             "locator": {
               "kind": "symbol",
               "name": "test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree"
@@ -166,7 +198,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:9684007c3c4abd98a35440692ff27c4bfedc74612fd78ea7e019334e29471b59",
             "locator": {
               "kind": "symbol",
@@ -177,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:e44ec880899fdfc9c26fc8badf1daa5332c03510efe2cb288076b166c5e58cb3",
             "locator": {
               "kind": "symbol",
@@ -193,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:7fa5b29eda280e79edd29520a8d31ea4dd75359eb169b3a1c7ffcdf8451d38d6",
             "locator": {
               "kind": "symbol",
@@ -204,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:5e662159a1575f5fd4f2721519c47d5d94418db893fba41bd1c5aacc36d1e6c9",
             "locator": {
               "kind": "symbol",
@@ -215,7 +247,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:c4fad6b8bca82c1ce80ab4075b633dba932f329419868ffa04d005c1af78aa8b",
             "locator": {
               "kind": "symbol",
@@ -231,8 +263,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
-            "content": "sha256:74746b4d59f362ac41001eae047ad11460c1f86fd80da1221bd80ef45112b7ea",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
+            "content": "sha256:53c76e27c8bde62b1bb05d764fd74a92423b423a4f229a4a354dbe01cd4178cb",
             "locator": {
               "kind": "symbol",
               "name": "test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs"
@@ -242,7 +274,7 @@
         },
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:60a98806c5d48ef840917eba8fb8e664786e7a4a659aa8399e3c2739b74b7e63",
             "locator": {
               "kind": "symbol",

@@ -79,6 +79,11 @@ lane is the separate review destination).
   (`_row_subjects`; an unexplained hunk is answered by a `hunk:…` row, MIK-R10; PS-1 from L10's post-sync review,
   fixed here and accepted at 05:36:19), without a currency mark; `changes` is the worklist's own gate linkage. Items,
   rows, changes and incomplete entries are re-keyed by `snake_keys`.
+- **Only an owner's latest attempt's row is shown (L37, decision record DEC-0AEQ28; INV-MS9BMJ).** `_history_rows` passes the
+  rows about a subject through `_governing`: of one owner's rows, only the row from that owner's latest attempt
+  file (`owner_history_attempt`). A leaf that continued after a closeout answers the subject again in its next
+  attempt, and that judgment governs. Another owner's row about the subject is still shown, and the superseded row
+  stays in its frozen file and in the knowledge diff.
 
 ### Conventions
 
@@ -128,7 +133,11 @@ No configured live documentation source was available for this pass.
 - The tree view on the fixture: diff groups, currentness per side, worklist. [12]
 - No review path opens a database other than the derived index. [13]
 - The pinned numbered read keeps a live leaf's computed worklist; the cards read and the key-length bound at the route. [14]
+
 - Rows found by the subject an item's `facts.row` names. [15]
+
+- Each owner's row about a subject from that owner's latest attempt file. [16]
+- A leaf's next attempt's row replaces its earlier row in the worklist view; another owner's row stays. [17]
 
 ### Cross-Repo References
 

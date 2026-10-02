@@ -10,6 +10,24 @@
           "name": "_run"
         }
       },
+      "id": "RLZ-NV4NKB",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the lock before the database ingest of a taskless bootstrap on unconverted memory, and prints the refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+        "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
       "id": "RLZ-Y766ENWA",
       "invariant": "INV-1XKX9ERN",
       "origin": {

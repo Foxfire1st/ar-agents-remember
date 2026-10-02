@@ -235,6 +235,25 @@ Q6, 2026-09-29T21:49:19+02:00):
 - The refusals of a wrong subject or an extra field. [27]
 - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 
+## 260928-MIK-L37 The Writer Fills A Row's Items, And A Cover Revises A Rationale In Place
+
+- **`items` (MIK-R07 rule 1).** `_write_rows` collects the rows it wrote and calls `_fill_items`. A row whose
+  hand-off names no item gets the IDs of the worklist items it answers: `_answered_items` asks each item kind's own
+  satisfying-row rule (`registry.satisfying_row`) over the file as written, for every `(kind, subject, id)` in
+  `Authoring.worklist_items`. Items the hand-off names are kept. Without a worklist, or with a file that does not
+  parse as a history file, nothing is filled in and nothing is refused: the field is informational, and the gate
+  matches rows by subject.
+- **A cover's `rationale`.** `_cover` calls `_revise_rationale` after the cover's `after` anchor is settled. When the
+  cover carries a rationale, the realization entry's `rationale` is replaced in its sidecar and the entry keeps its
+  ID, role, invariant and anchor. A rationale on a proof entry is a named problem ("a proof has a facet"). The entry
+  is looked up again first, because the cover may have moved it.
+
+- A row whose hand-off names no item lists the worklist items it answers. [47]
+- The items a row answers, by each kind's satisfying-row rule. [48]
+- A cover's rationale replaces the realization entry's rationale in place. [49]
+- The writer fills a row's items from the leaf's worklist. [50]
+- A cover revises a realization entry's rationale in place. [51]
+
 ## Evidence
 
 ### Docs References
@@ -261,15 +280,21 @@ The mechanical fields, by concern.
 - Realization and proof entries upserted in the sidecar. [35]
 - A rerun removes only this owner's unnamed entries. [36]
 - What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
+
 - History rows into the owner's file; a closed file is frozen. [38]
+
 - Foreign evidence stored in this owner's row reason. [39]
+
 - A cover's before and after, re-anchored at C when asked. [40]
+
 - The conforming example: decision, realization and proof, validated. [41]
 - Rerun idempotence. [42]
 - Revision increments once; foreign evidence goes to this leaf's row. [43]
 
 - The record's revision after this operation: an unmerged record at the higher side's plus one. [44]
+
 - Rows are written to the history target, with its attempt when above 1. [45]
+
 - A record both sides changed is resolved at one more than the higher side. [46]
 
 ### Cross-Repo References

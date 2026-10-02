@@ -33,6 +33,11 @@ bytes. The result reports `updated` or `current`, the path and row count; deriva
 write failures report `unavailable` with a reason. Those cache outcomes do not determine whether an
 already completed Git action succeeded.
 
+`ignore_memory_cache(repository)` (L37) records the cache's ignore rule in `.gitignore` and does nothing else. It is
+the one write `prepare_memory_cache` makes to memory content, and `prepare_memory_cache` calls it first. A route
+that judges the exact tree it is about to commit calls it before it reads that tree, so the judged tree already
+holds the line, and restores `.gitignore` when it refuses: the converted worktree closeout does (INV-49E649).
+
 ### Conventions
 
 Callers own repository/path authority and decide when to prepare or refresh. Use derivation for a
@@ -68,10 +73,15 @@ Source declarations and test assertions are distinguished from execution and acc
 
 - Terminal removal discards only the root memory cache. [1]
 - Derivation reads Git attribution and computes current/base metadata. [2]
+
 - Preparation excludes the cache and refresh reports materialization outcomes. [3]
+
 - Committed attribution and row mapping have one reader. [4]
 - The consumer representation supports empty derived history. [5]
 - Cache independence and exact local-ref derivation are exercised by the retained projection tests. [6]
+
+- The ignore rule alone: the one write the preparation makes to content. [7]
+- The preparation records the rule first, then removes the cache from the index. [8]
 
 ### Cross-Repo References
 

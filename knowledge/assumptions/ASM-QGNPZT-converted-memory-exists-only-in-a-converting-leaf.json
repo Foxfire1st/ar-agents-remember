@@ -1,0 +1,17 @@
+{
+  "basis": "Before the conversion the live agents-remember memory repository held no converted branch or worktree (74 branches and 28 worktrees were checked), and the cutover notes forbid creating one outside a leaf: experiments use a shared scratch clone.",
+  "id": "ASM-QGNPZT",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "ASM-NO-STRAY-CONVERTED",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "proposition": "In a live memory repository, converted memory exists outside the converted lines only in the branch and worktree of a leaf that is converting.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "accepted"
+}

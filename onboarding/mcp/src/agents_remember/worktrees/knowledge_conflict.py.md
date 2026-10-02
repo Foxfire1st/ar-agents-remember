@@ -77,6 +77,11 @@ automatic pass. Every step reports its own reason instead of declining silently:
 vocabulary the adapter's request uses — `base` is the merge base, `left` is the side being merged into
 (ours), `right` is the side arriving (theirs) — so nothing is translated twice.
 
+- **The stage copies are removed on every way out (L37).** `settle_knowledge_conflict` materialises the three
+  stages in a `tempfile.TemporaryDirectory` named with `STAGE_DIRECTORY_PREFIX` (`ar-merge-stages-`) and hands the
+  directory to `_stage`. The merge's outcome carries no path into it, so the directory is gone whether the merge
+  settled, refused or raised, and when a stage could not be written.
+
 ### Conventions
 
 - **Binary safety is a property of the command, not of a code path.** The stages are materialised with
@@ -138,10 +143,14 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The automatic pass over the conflicted paths and the settlement it returns. [1]
+
 - **The single-path pipeline, which is also the authored retry: the decision travels in, the engine's fresh explanation travels out.** [2]
+
 - **The refusal that carries the engine's own conflict and refusal with the path, and the decisions that conflict admits.** [3]
 - **Which refusal's explanation belongs in the public response, and why the structured one is preferred.** [4]
+
 - The per-path stage builder and the three reasons it declines to settle. [5]
+
 - Binary-safe stage materialisation through `git checkout-index` rather than a text-decoding read. [6]
 - The unique-common-base proof that refuses rather than choosing between candidates. [7]
 - The stage positions, named once and matching the adapter's own roles. [8]
@@ -151,6 +160,9 @@ No configured domain documentation could be checked.
 - The declared ranks and the sentence stating that lower owners receive `models/knowledge` values and never import the storage package. [12]
 - The integration case that drives a real divergent knowledge dataset through the transaction and asserts both sides survive. [13]
 - **The integration cases that assert the diagnosis reaches the public response, that one authored decision settles it, that the row-less shape is retracted, that the orientation with nothing to retract advertises only a route that works, and that a schema disagreement is reported rather than reconciled.** [14]
+
+- One settlement's stage directory is temporary and removed on every way out. [15]
+- The stage copies are removed whether the merge settled, refused or raised. [16]
 
 ### Cross-Repo References
 

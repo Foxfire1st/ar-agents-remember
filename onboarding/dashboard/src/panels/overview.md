@@ -343,7 +343,7 @@ mode (not full-bleed; a `#knowledge?…` URL opens the Cockpit on it).
 - [`knowledge-reader/readerParts.tsx`](knowledge-reader/readerParts.tsx.md): every link a navigation (rule 5), state
   badges, `DecisionCard` (the rule carried from L13), and the prose whose `[n]` markers are linked in text nodes only,
   never inside code spans or fences (F4).
-- [`knowledge-reader/KnowledgeReader.test.tsx`](knowledge-reader/KnowledgeReader.test.tsx.md) (14 cases) over
+- [`knowledge-reader/KnowledgeReader.test.tsx`](knowledge-reader/KnowledgeReader.test.tsx.md) (15 cases) over
   [`knowledge-reader/knowledgeReader.captured.json`](knowledge-reader/knowledgeReader.captured.json.md), 17 real served
   bodies from a converted scratch copy with SCRATCH-AUTHORED routes, decisions, incident, proof, history rows and census.
   A debugging `console.log` that curation found left in one case was removed by a staged, test-only follow-up.
@@ -355,6 +355,13 @@ The data adapter is `data/knowledgeReader.ts`.
 - The bounded directory summary and the paged subtree. [21]
 - The truth view. [22]
 - A decision in full; markers linked in text nodes only. [23]
+
+Since `260928-MIK-L37` the truth view shows a history row with its `effect` and its `because` targets (a record ID
+as a navigation link, a requirement named), and a link whose source is a history row as the record the row is about
+(MIK-R29 rules 4 and 5).
+
+- A history row's line: its effect, and its because targets as links. [120]
+- An incoming link from a history row names the record the row is about. [121]
 
 ## 260928-MIK-L31 Focused Expression Cards In The Central Reading Path
 

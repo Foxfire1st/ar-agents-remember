@@ -34,6 +34,12 @@ other facet record from the backend's `record` answer.
   (`RecordLine`), a history row with its leaf and disposition (`HistoryLine`), and an entry event with its
   change and its from/to paths and locators (`EntryLine`, which shows `moved` and `re-anchored` as the backend
   labels them).
+- **History rows and decisions, both ways (L37, MIK-R29 rules 4 and 5).** `HistoryLine` shows a row's `effect`
+  after its disposition ("changed · replace") and, under `because`, each target of the row's `because`
+  (`becauseTargets`): a record ID is a navigation link, a requirement is named as elsewhere in the reader. A row
+  with neither renders as before. `IncomingSource` shows a link whose source is a history row as the record the
+  row is about (`sourceSubject`, a navigation link) followed by "row <ROW-ID>"; a row served without its subject
+  stays the plain row ID.
 
 ### Conventions
 
@@ -71,10 +77,16 @@ No configured live documentation source was available for this pass.
 - Outgoing links, or why they could not be read; incoming links. [4]
 - The truth view. [5]
 - The invariant and family parts. [6]
+
 - History rows, entry events and record events with meaning diffs. [7]
+
 - The timeline, each source's state named. [8]
 - The invariant, and family, decision and incident cases. [9]
 - The superseded header, and unreadable links named. [10]
+
+- A history row's line: its effect, and its because targets as links. [11]
+- A row's because: a record ID navigates, a requirement is named. [12]
+- An incoming link from a history row names the record the row is about. [13]
 
 ### Cross-Repo References
 

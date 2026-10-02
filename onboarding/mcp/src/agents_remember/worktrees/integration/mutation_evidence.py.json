@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+        "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ephemeral_git_mutation_snapshot"
+        }
+      },
+      "id": "RLZ-WZ3W15",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L37-index-copy-keeps-its-time",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Copies the index the same way for the mutation snapshots of the memory leg, which the closeout's judged-tree check reads.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Only enabled code/memory legs receive mutation cells.",
       "targets": [
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
             "content": "sha256:47a6be4de4f5791a84043f62cd700a9161f6d397cfa29514657fe093fbe2734e",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
             "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
             "content": "sha256:a0e1d7e5dcf94d641d8e483e56f74b7652a52d3bae92570c414605d0361b99f0",
             "locator": {
               "kind": "symbol",
@@ -50,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
             "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
             "locator": {
               "kind": "symbol",
@@ -66,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
             "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
             "locator": {
               "kind": "symbol",
@@ -77,8 +96,8 @@
         },
         {
           "anchor": {
-            "blob": "8b9a6d69a112d6693d9cb08f3cdf59e84e6e3d29",
-            "content": "sha256:0132be34609d77a9785585724809e24a3f369d1e6b3023bf5e8ce1782da9c7eb",
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+            "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
             "locator": {
               "kind": "symbol",
               "name": "ephemeral_git_mutation_snapshot"
@@ -112,6 +131,22 @@
               "name": "contentHeadTree"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The disposable snapshot copies the index with its time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+            "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            }
           },
           "kind": "code"
         }

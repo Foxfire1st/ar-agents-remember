@@ -1,10 +1,13 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "applicability": "Every authored write of knowledge: the records, the realization and proof entries, and the history rows that a hand-off list carries.",
   "conditions": [
-    "Disposition source: this leaf's own measurement at the accepted line, 2026-09-24"
+    "The write authors or changes knowledge content: a record, an entry or a judgment row."
   ],
-  "exclusions": [],
+  "exclusions": [
+    "The mechanical writers of knowledge files, which author nothing: the conversion (knowledge-convert) and the crossing sync (worktree_sync), which write the knowledge tree from existing memory; the formatter (knowledge-format), which rewrites a file in canonical formatting; and the closeout routes, which set the closed flag of the leaf's history file.",
+    "The onboarding card writers, which write a card's sidecar references and no record, entry or row."
+  ],
   "id": "INV-1XKX9ERN",
   "origin": {
     "handoff": {
@@ -18,9 +21,9 @@
     "legacyId": "bad62dd0-d67f-4efc-a733-c78eebc6a6b0",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Every reachable knowledge write goes through one of two command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and the mounted MCP tool surface exposes no knowledge writer of its own. Each command line selects its writer by the memory tree it writes: a converted tree (one that holds knowledge/layout.json) is written as knowledge files by the curator file writer, and an unconverted tree is written as one admitted batch by the single knowledge batch writer, which refuses a converted tree and is locked once its memory repository holds converted memory. Which of the two command-line entries a run can actually use is decided by how its process was loaded, because an undeclared process whose package came from a Git checkout is confined to that checkout's own disposable coordination root and undeclared execution from the primary checkout is refused, so the taskless entry is reachable from an installed package or from a declared daemon surface rather than from the checkout it was built in.",
+  "statement": "Every authored knowledge write -- a record, a realization or proof entry, or a history row that a curator hands in -- goes through one of two command lines, the leaf-scoped knowledge-ingest and the taskless knowledge-bootstrap, and the mounted MCP tool surface exposes no authoring writer of its own. Each command line selects its writer by the memory tree it writes: a converted tree (one that holds knowledge/layout.json) is written as knowledge files by the curator file writer, and an unconverted tree is written as one admitted batch by the single knowledge batch writer, which refuses a converted tree and is locked once its memory repository holds converted memory. Which of the two command-line entries a run can actually use is decided by how its process was loaded, because an undeclared process whose package came from a Git checkout is confined to that checkout's own disposable coordination root and undeclared execution from the primary checkout is refused, so the taskless entry is reachable from an installed package or from a declared daemon surface rather than from the checkout it was built in.",
   "status": "proposed",
   "supersedes": []
 }

@@ -1,16 +1,53 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+        "content": "sha256:6c8ba940c4e72e649c55c1f55f7694696b67d675afc9d4436ddcccd0c750b90d",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-HK1WEC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Holds a reached-family item open when the worklist marks the family's guarantee as changed and the governing family row is neither changed nor retired.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+        "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariant_row_open"
+        }
+      },
+      "id": "RLZ-QE6KRP",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Holds an invariant item open when the governing row is not the changed row of a record whose revision the leaf changed, and names the remedy.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module docstring: one predicate per kind, never a generic lookup.\n\nAnchor: \"never through a generic row\"",
+      "note": "The module docstring: one predicate per kind, never a generic lookup; while a record's revision differs from the parent line's, only its changed row governs.",
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
-            "content": "sha256:80443014643e86d58b8a0f1946bf6a6eaf63ff764342bec599bd866ca4359516",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:de3a6cfb0deab4a4092e9d17bcf934f9f69d882d21cd1e5baf71999599629cf7",
             "locator": {
-              "end": 32,
+              "end": 34,
               "kind": "line_range",
               "start": 1
             }
@@ -19,12 +56,62 @@
         }
       ]
     },
+    "10": {
+      "note": "A family whose guarantee the leaf changed is answered only by its changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:53da6194c78e5f14575a85286184420ff70a0222d6b399631d1a07c452270bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_guarantee_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A changed record is governed by its changed row in every attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:043f5668cb5ae5a0b3ce51c90b551f588de79b91fe1fc7d9aaeb7433b446f570",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A family whose guarantee the leaf changed is governed by its changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:30d8f2cb537a6cea931c2216c79b7c8c11263b26ea90687b2a4e8c43667e14a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_whose_guarantee_the_leaf_changed_is_governed_by_its_changed_row"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "What a predicate reads, and the entry state that raises on a failed read.",
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:b6aaf90cc945ae59b774ddfe476f0b2e4e5ac76c7c7bac312c76446362723793",
             "locator": {
               "kind": "symbol",
@@ -35,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:f052d9e85680da1c7eed7a67ecb1918551051cc2c708e0a89819c744363d970f",
             "locator": {
               "kind": "symbol",
@@ -51,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:1db214f0c369d9d12b79468e6ef43c88bbf2a2bcfbc6c1756e03960cb69c0470",
             "locator": {
               "kind": "symbol",
@@ -62,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:dac1f15525909756ca3c2f0c59a91dda327a1c6796e1dc710ec87dc6ac813585",
             "locator": {
               "kind": "symbol",
@@ -78,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:990bc710c5e6e326f454b4c14f2278f6a6cec94c725cf749873d8c74292f4782",
             "locator": {
               "kind": "symbol",
@@ -89,8 +176,8 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
-            "content": "sha256:9d90c79191ecfa0efc5a2144da6b1d43fb77f1d94f086abc8d7f2e5eac4142c0",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
             "locator": {
               "kind": "symbol",
               "name": "invariant_row_open"
@@ -101,12 +188,12 @@
       ]
     },
     "5": {
-      "note": "The family row's three reasons.",
+      "note": "The family row's four reasons: a hidden guarantee change, the examined set, moved members and uncovered members.",
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
-            "content": "sha256:f8682943425ca775b728d57465ce217861ec73415b9988996011f66b39cdf1ed",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:6c8ba940c4e72e649c55c1f55f7694696b67d675afc9d4436ddcccd0c750b90d",
             "locator": {
               "kind": "symbol",
               "name": "family_row_open"
@@ -116,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:eeb5319929c96c2fc422644c3afef139450e14aabb2868bc3c1bc51d891bf51b",
             "locator": {
               "kind": "symbol",
@@ -127,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:c79e5f2da5074ebfe36e4dc7fd4ae12a219d9a97dcc5964f4b554dcd86d1e5ba",
             "locator": {
               "kind": "symbol",
@@ -138,7 +225,7 @@
         },
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:5448e0ef869acb762bf95fab4bd8ff2419369dfffcf989ffa013799171cd5bec",
             "locator": {
               "kind": "symbol",
@@ -154,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:53ed51284a461e9c83c28a51ae91b466b430fa376c21c4b19760a28cbedd6a37",
             "locator": {
               "kind": "symbol",
@@ -170,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03c9466fb331f6f1cef398cfd972a674fe159963",
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
             "content": "sha256:a9a7031e241d1184ae2773c87a9d12712b2b74147d3674cc5de3e714ed58b238",
             "locator": {
-              "end": 290,
+              "end": 315,
               "kind": "line_range",
-              "start": 282
+              "start": 307
             }
           },
           "kind": "code"
@@ -187,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:24c19a7ec6d96a2314e2ea37a56a49d1ee3b6d87722f9fb8cfce4f0f9eea00b1",
             "locator": {
               "kind": "symbol",
@@ -196,6 +283,22 @@
             "path": "mcp/tests/test_knowledge_closeout_gate.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An invariant the leaf changed is answered only by its changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:fc0d7d5fa0439df2397680b9f176fc6db44615e9673ed2ee53e36447ecd34865",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariant_row_open"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

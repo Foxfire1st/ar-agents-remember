@@ -79,7 +79,9 @@ No relevant documentation found after checking live sources.
 - Producer 1 — baseline adoption consumes the constant on the call that stages. [3]
 - Producer 2 — memory carryover consumes the same constant in its apply path. [4]
 - Producer 3 — external closeout consumes it on the dirty check, the stage and the commit. [5]
-- Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_refuse_invalid_memory_commit`, direct landing's `_memory_content_tree`), so the tree the gate validates is the tree the commit records. [6]
+
+- Since MIK-R09 the mandatory gate's exact-tree captures use it too (the closeout's `_exact_memory_tree`, direct landing's `_memory_content_tree`), so the tree the gate judges leaves out what the memory commit leaves out. [6]
+
 - Producer 4 — direct landing consumes it on its memory commit. [7]
 - The two cases that fail if the exclusion becomes inert again. [8]
 

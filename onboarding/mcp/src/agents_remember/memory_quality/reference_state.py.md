@@ -40,7 +40,9 @@ run's converted check reports the same states.
   sidecar that is not valid JSON in `unreadableSidecars` and skips it; a sidecar that is not shaped as one
   (`_MALFORMED`) is named the same way by `check_references` and `fix_references`. Neither raises on it: the
   knowledge validator refuses it by its own rule. An unreadable sidecar makes the fix not `ok`; the others are
-  still fixed. Even with `only`, the result's `stale` list is the tree-wide reference check.
+  still fixed. `check_references(memory_root, code_root, *, only=None)` takes the same `only`, and `fix_references`
+  passes it on, so with `only` the result's `stale` list holds that one document's stale references and nothing
+  else.
 
 ### Conventions
 
@@ -77,12 +79,18 @@ The format test, the anchor states, the check and the fixer.
 - A tree is converted exactly when it has the layout marker. [1]
 - The located bytes of a file, symbol or range locator. [2]
 - An anchor's state in the working tree. [3]
+
 - Stale references are report-only findings naming the onboarding gate. [4]
 - Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. [5]
+
 - References are checked, and only mechanical moves are fixed. [6]
 
 - The fixer can be scoped to one sidecar, and names unreadable sidecars. [7]
+
 - A sidecar that is not valid JSON is named and skipped. [8]
+
+- The reference check scoped to one sidecar. [9]
+- One document's fix lists its own stale references. [10]
 
 ### Cross-Repo References
 

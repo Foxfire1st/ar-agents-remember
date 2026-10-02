@@ -937,7 +937,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:e22f532b1e78b5f7ca07006275cbd106aeacd7d80d7e515343bc1bb7a6aee0f9",
             "locator": {
               "kind": "symbol",
@@ -1979,7 +1979,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
             "content": "sha256:eb639788fafda9748453c1c89c3e71f78a2abd1e70452d10dc7f55306123c1c3",
             "locator": {
               "end": 12,
@@ -2320,7 +2320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
             "content": "sha256:7421f6fb089297a8ddbe4a9b682d9a78af5f6e46cbac65039b12f43ad0e193b3",
             "locator": {
               "kind": "symbol",
@@ -2796,7 +2796,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
+            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
             "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
             "locator": {
               "kind": "symbol",
@@ -3583,7 +3583,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57fef0675dd3dd1aabd83c357b5d7642d52195a7",
+            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
             "content": "sha256:8b69520899d5d6334e2b2c3297cf085f335d4ab5a94f72029832b3acb575a12f",
             "locator": {
               "kind": "symbol",
@@ -3893,7 +3893,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57fef0675dd3dd1aabd83c357b5d7642d52195a7",
+            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
             "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
             "locator": {
               "kind": "symbol",
@@ -6915,7 +6915,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:719b829a279cbc7281668c55fcb5c69a192a2de2ec6fce993e5cc98c2ef6d067",
             "locator": {
               "kind": "symbol",
@@ -7048,7 +7048,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:539fede000fd2d62aa31b95bfb43ab55974f5776e6a4b112bec5b8faab2747f6",
             "locator": {
               "kind": "symbol",
@@ -7587,7 +7587,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57fef0675dd3dd1aabd83c357b5d7642d52195a7",
+            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
             "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
             "locator": {
               "kind": "symbol",
@@ -8352,7 +8352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
             "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
             "locator": {
               "kind": "symbol",
@@ -9640,7 +9640,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b30cab10b78d1d19fe987d333d029cc99f1ec0ea",
+            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
             "content": "sha256:5cec50c0ff86e0bb20293318db0b652a4605a39d0bd073ff51ce0854816faa6d",
             "locator": {
               "kind": "symbol",
@@ -10446,7 +10446,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
             "content": "sha256:52c82a8871830d881e7a452f143a08ddffba667aad44f387070c04f042a31bae",
             "locator": {
               "kind": "symbol",
@@ -11170,7 +11170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
             "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
             "locator": {
               "kind": "symbol",
@@ -11411,7 +11411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:21acbdc267adebaf0d858e87021d6b8b1a14462795d6f74e83faa28999c54701",
             "locator": {
               "kind": "symbol",
@@ -11428,7 +11428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:20b6465acb9ecadd287f52285ee0fb482674d070de9454a54ec2cf439e92bce3",
             "locator": {
               "kind": "symbol",
@@ -11440,7 +11440,7 @@
         },
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:dfc2bdb9c57686d48af729cb029f1f26d2567096091bee74a3cb4e8af536f27f",
             "locator": {
               "kind": "symbol",
@@ -11452,7 +11452,7 @@
         },
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:36a53060aeff1ddae226f99bafc0b72756ab013ae4944da9de5485f5515ba72e",
             "locator": {
               "kind": "symbol",
@@ -11464,12 +11464,12 @@
         },
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:e464c02207b342e675b9412fa04395a2817dd8d411b41adae56efe09704e0a86",
             "locator": {
-              "end": 679,
+              "end": 680,
               "kind": "line_range",
-              "start": 647
+              "start": 648
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -11529,7 +11529,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6e749dee7f65d4e29564820a26900ba9c36303",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:477235dbc4fdec00825083edb74b73282bd3b008cc8a9bc1e42765211b086c01",
             "locator": {
               "kind": "symbol",
@@ -12503,7 +12503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
             "content": "sha256:3828e1999d448304e2838f428eda640979075d4b1bc6370a6b76346173bb4988",
             "locator": {
               "end": 13,
@@ -12539,7 +12539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
             "content": "sha256:5888ea59991d06b1ee1ec958c0f376e5909029216ab58110d1569bee0e0698f5",
             "locator": {
               "end": 8,
@@ -12565,6 +12565,23 @@
               "start": 124
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "492": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
           },
           "kind": "test"
         }
@@ -13133,7 +13150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11eb5b95d0936d0f22e2a0d02fa573436c2e4cff",
+            "blob": "94729363bfc469047ff18fa929954280c3e57a43",
             "content": "sha256:c8d0758a2993716516d8d13d17f86d4c5bcf9a31877b3cb01af414839345552c",
             "locator": {
               "kind": "symbol",
@@ -13272,7 +13289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
             "locator": {
               "kind": "symbol",
@@ -13289,7 +13306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
             "locator": {
               "kind": "symbol",

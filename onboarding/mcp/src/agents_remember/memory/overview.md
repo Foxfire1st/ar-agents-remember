@@ -11,25 +11,33 @@
 
 ## 260928-MIK-L37 The Cutover: Card Authoring, The Frozen Publication Sink, And History Files By Path
 
-`260928-MIK-L37` (MIK-R37). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on.
+`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`.
 
 - **[`conversion/card_authoring.py`](conversion/card_authoring.py.md) (new).** The fixer on a converted tree
   authors a card's citation table into `- <finding> [n]` lines and sidecar references with resolved anchors:
   a new card's sidecar, a reference re-authored by its number, and, for one named card, the removal of references
-  its Markdown no longer cites. Every card is checked before anything is written.
+  its Markdown no longer cites. Every card is checked before anything is written, and a card whose citation table
+  touches another table with no blank line between them is refused by name.
 - **[`knowledge/publication.py`](knowledge/publication.py.md).** `publish_prepared_snapshot` refuses a destination
   inside a converted memory tree as `database_frozen` (MIK-R37 rule 3), at the one install sink.
 - **[`carryover.py`](carryover.py.md).** `memory_carryover_apply` refuses a converted target, naming the file
   writer, and takes the cutover lock for an unconverted one.
 - **[`knowledge_index/build.py`](knowledge_index/build.py.md).** The parsed tree holds each history file by path
   and each owner's merged history, so a reopened leaf's closed file and later attempts are all indexed.
+- **[`knowledge_index/tree.py`](knowledge_index/tree.py.md) and [`knowledge_index/query.py`](knowledge_index/query.py.md).**
+  The working-tree capture copies the repository's index with its modification time, so a file rewritten in the
+  second the index was written changes the key (INV-656CYW); `KnowledgeIndex.history_row` answers one history row
+  by its ID.
 - [`conversion/crossing_sync.py`](conversion/crossing_sync.py.md): a docstring correction only.
 
 - The card authoring's entry. [114]
 - The publication sink refuses a converted destination. [115]
 - Carryover writes legacy-format memory only, and only while the repository is not locked. [116]
 - The index keeps each history file by path. [117]
+
+- Two tables with no blank line between them are refused when either holds citations. [118]
+- The capture copies the index with its time. [119]
 
 
 ## 260928-MIK-L09 The Approval Reads Are Recorded, And A Missing Object Is Told From A Git Failure
@@ -1883,7 +1891,9 @@ application's dataset selection (`application/published_intent.py`) and the CLI;
 production memory tree is converted, so the installed runtime never reaches it.
 
 - The package map. [101]
+
 - The captured-state key. [102]
+
 - The build, which names every failing file. [103]
 - Retired records are left out of the projection. [104]
 - The cache refuses a Git working tree. [105]

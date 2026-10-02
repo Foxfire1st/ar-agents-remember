@@ -90,6 +90,23 @@
         }
       ]
     },
+    "12": {
+      "note": "The disposable snapshot copies the index with its time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3763def788002f26aa599a49000b816d3842d0ad",
+            "content": "sha256:72072c64df8d50b2d711548d99a0fa1deee17afe12f260b49b1cdf78589bfa1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Completed organizational proof binds original selected references through the operation owner.",
       "targets": [

@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "A reopened review identifies the comparison it can reproduce and preserves its recorded operands; reconstruction or missing channels remain explicit instead of borrowing unrelated state.",
+  "guarantee": "A reopened review identifies the comparison it can reproduce and preserves the operands it can still read: a recorded tree comparison its recorded tree ids, and a dataset comparison of an unconverted repository its recorded snapshots and code endpoints. Once the repository's official memory line is converted, a leaf that recorded only a dataset comparison keeps its code sides and states its knowledge sides as legacy-unavailable. Reconstruction and missing channels remain explicit instead of borrowing unrelated state.",
   "id": "FAM-XZ5BR65G",
   "members": [
     "INV-09FC73JC",
@@ -20,7 +20,7 @@
     "legacyId": "b5e4aaf8-cd20-45bc-b5a2-b485f7983ca5",
     "task": "260921-ICR"
   },
-  "revision": 4,
+  "revision": 5,
   "routes": [
     "dashboard/src/panels/review",
     "mcp/src/agents_remember/application",

@@ -703,6 +703,40 @@
         }
       ]
     },
+    "120": {
+      "note": "A history row's line: its effect, and its because targets as links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
+            "content": "sha256:8daa7e6741491afb69e246d736f3d7d034e693ea6c20f852dbba8586c6c9a267",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryLine"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "An incoming link from a history row names the record the row is about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
+            "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
+            "locator": {
+              "kind": "symbol",
+              "name": "IncomingSource"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "13": {
       "note": "The one lane read handed to the workspace and the details.\n\nAnchor: \"const laneRead = useReviewLane(\"",
       "targets": [
@@ -996,7 +1030,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0004a60812de941f8c9bbd3f0ab5c8d7c96ab662",
+            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
             "content": "sha256:5474d9dfdc5533741c33fbac6342206d918f7f02ae6d6cd9cbefd5726afbc773",
             "locator": {
               "kind": "symbol",

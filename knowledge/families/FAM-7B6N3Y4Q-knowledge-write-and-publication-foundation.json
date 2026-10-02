@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "guarantee": "Every reachable knowledge write goes through the two admitted command lines and the one writer of the memory tree's format -- the curator file writer for a converted tree, the knowledge batch writer for an unconverted one -- lands in the repository's one declared knowledge location, and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written.",
+  "guarantee": "Every authored knowledge write -- a record, an entry or a history row -- goes through the two admitted command lines and the one writer of the memory tree's format, the curator file writer for a converted tree and the knowledge batch writer for an unconverted one; it lands in the repository's one declared knowledge location and is admitted only from real setup authority, so a writer and a reader of the same repository's knowledge can never disagree about where it lives or by what right it was written. The mechanical writers author nothing and are outside this guarantee: the conversion and the crossing sync, the formatter, and the closeout's closed flag.",
   "id": "FAM-7B6N3Y4Q",
   "members": [
     "INV-1XKX9ERN",
@@ -12,7 +12,7 @@
     "legacyId": "23ce40dc-51de-4eda-926c-25a2948f8e00",
     "task": "260921-ICR"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/cli",

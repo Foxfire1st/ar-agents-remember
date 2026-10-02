@@ -16,7 +16,7 @@ no switch, flag or install-time state: the lock is a fact about the repository.
 
 ### Logic
 
-- **When the lock holds (L37 ruling).** `converted_memory_location(repository)` answers where the repository holds
+- **When the lock holds (decision record DEC-FCNRNT).** `converted_memory_location(repository)` answers where the repository holds
   converted memory, or `None`:
   - `_converted_branch` lists every local branch tip (`for-each-ref refs/heads`) and asks one
     `cat-file --batch-check` whether each tip holds `knowledge/layout.json`. The first branch that does is named
@@ -34,7 +34,8 @@ no switch, flag or install-time state: the lock is a fact about the repository.
   validator, the closeout memory commit, direct landing, record landing, a leaf's integration),
   `knowledge_gate.prepared_closeout_lock` (both prepared-closeout entries), `knowledge_gate.landing_gate_refusal`
   (master and checkpoint landing), `knowledge_crossing.unconverted_line_refusal` (writes and leaf memory-quality
-  runs) and `sync_transaction._cutover_locked` (managed sync admission). The application and CLI layers call it
+  runs) and `sync_transaction._cutover_locked` (managed sync admission). Each of these call sites carries a
+  realization of the lock's stored invariant, INV-JT28KJ. The application and CLI layers call it
   directly for the database writer's front door, a repository-level memory-quality run, `knowledge-bootstrap` and
   `memory_carryover_apply`.
 
@@ -56,9 +57,12 @@ no switch, flag or install-time state: the lock is a fact about the repository.
   linked worktree, a `safe.directory` ownership refusal, a permission error or a broken repository raises
   `CutoverProbeError`. The check is structural, so a localized Git message cannot read as "unlocked".
 - **A refused route writes nothing here.** The module only reads Git metadata and the marker file.
-- **Never create a converted branch or worktree in a live memory repository outside a leaf.** One branch tip or one
-  registered worktree that holds the marker locks every unconverted line of that repository, for every session on
-  the machine. Experiments use a `git clone --shared` scratch clone.
+- **One converted branch tip or one registered worktree that holds the marker locks every unconverted line of that
+  repository**, for every session on the machine (the assumption ASM-QGNPZT says that such memory exists only in a
+  converting leaf).
+- **The onboarding card writers are not locked.** `citation_fix`, `citation_migrate` and `route_index_refresh` do
+  not ask this module: they write cards and route indexes only, commit nothing, and the closeout that would commit
+  their edits is locked (decision record DEC-VMMJDN).
 
 ### Todos
 
@@ -70,9 +74,9 @@ no switch, flag or install-time state: the lock is a fact about the repository.
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
 `Domain Documentation` entries). The design authority is `MIK-R09@v2` rule 6, `MIK-R24@v1` rule 9 and `MIK-R37@v1`
-rule 6 of task `260928_maintained-invariant-knowledge`, with the rulings in its leaf document
-`37_cutover-to-text-storage.json` (2026-10-01T03:36:39 and 2026-10-01T05:05:16); they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+rule 6 of task `260928_maintained-invariant-knowledge`, which live outside the code and memory repositories and are
+named here, not cited as rows; and the decision records DEC-FCNRNT (when the lock holds) and DEC-VMMJDN (the
+unlocked card writers) in this memory's `knowledge/decisions/`.
 
 No configured live documentation source was available for this pass.
 

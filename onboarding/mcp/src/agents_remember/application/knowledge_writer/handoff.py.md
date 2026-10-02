@@ -98,11 +98,23 @@ is the hand-off shape:
     review N7).
 - Which dispositions may carry a path is `authoring._covers`'s decision (only `moved`), not this module's.
 
-- The module docstring: a moved row's cover may name another source path. [3]
-- The cover request and its `path`. [4]
-- A cover read: its ID, locator and path, with both problems reported. [5]
+- The module docstring: a moved row's cover may name another source path, and a cover may carry a rationale that replaces the entry's in place. [3]
+- The cover request, its `path` and its `rationale`. [4]
+
+- A cover read: its ID, locator, path and rationale, with every problem reported. [5]
+
 - The path check: remove plus path, and a path that is not a repository path, are named problems. [6]
 - The four refusals and the relocation, end to end. [7]
+
+## 260928-MIK-L37 A Cover May Carry A Rationale
+
+`CoverRequest.rationale` carries a realization entry's revised rationale; the entry keeps its ID. `_cover` reads it
+through `_cover_rationale`, beside the locator and the path. A blank rationale ("a cover's rationale is a non-empty
+text") and a rationale on a cover that removes its entry ("a cover either removes its entry or revises its
+rationale") are named problems. A cover is an entry ID, `{id, path?, locator?, rationale?, remove?}` or `{handoff}`.
+
+- The cover request and its rationale. [23]
+- A cover's rationale: non-empty, and never beside remove. [24]
 
 ## Evidence
 

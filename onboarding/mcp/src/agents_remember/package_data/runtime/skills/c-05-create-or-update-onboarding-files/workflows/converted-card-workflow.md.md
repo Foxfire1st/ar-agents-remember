@@ -7,7 +7,7 @@
 ## Purpose
 
 **The c-05 skill's workflow for converted memory: how a curator creates and maintains a card once the memory tree
-holds `knowledge/layout.json` (L37 fix round P1b).** It replaces `file-level-onboarding-workflow.md` on converted
+holds `knowledge/layout.json` (L37).** It replaces `file-level-onboarding-workflow.md` on converted
 trees. This is the packaged copy that `runtime_install` ships; the canonical source is
 `skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md`, and the harness starter
 copies are generated from it by `scripts/sync-skills.py`. All copies are byte-identical.
@@ -26,7 +26,9 @@ The workflow states, in order:
 - **Create a card for a new source file.** Write the Markdown with a citation table (`| Finding | Anchor |
   Source |`), then run the fixer on that one card (`memory-citations --fix --document <card>`, or `citation_fix`
   with `document`); on converted memory `--document` needs no `--expected-snapshot`. Read the `authoring` block:
-  `authoredReferences`, `createdSidecars`, `unresolvedTargets`, `refused`, `unreadableSidecars`.
+  `authoredReferences`, `createdSidecars`, `unresolvedTargets`, `refused`, `unreadableSidecars`. The refusal reasons
+  include two tables with no blank line between them when either is a citation table: a delimiter row (every cell
+  three dashes or more) inside a table; the reason names the line, and a blank line above the second header fixes it.
 - **Refresh a card after the code changed.** Prose is edited directly. One reference is re-authored by replacing
   its `- <finding> [n]` line with a one-row table whose finding ends in `[n]`; a leftover line with the same number
   refuses the card. Mechanically moved anchors are re-recorded by the same run and never count as a change.
@@ -47,12 +49,12 @@ The workflow states, in order:
 
 - **Never write sidecar JSON by hand.** The fixer authors `references`; the writer authors `realizes` and
   `proves`.
-- The tree-wide fixer run re-records moved anchors across the whole tree (about 778 sidecars on the cutover leaf),
-  so a curator names one document at a time.
-- The statement "Numbers are not reused" has one known exception (review R4-1, carried to L26): a removed highest
-  number is reused by a later run.
-- The MCP `citation_fix` response carries the tree-wide stale-reference list even for one document; the CLI gives
-  the same JSON to a caller that needs to bound it.
+- The tree-wide fixer run re-records moved anchors across the whole tree, so a curator names one document at a
+  time.
+- The statement "Numbers are not reused" has one known exception: a removed highest number is reused by a later
+  run.
+- With a document named, the fixer's result lists that document's stale references only, and the MCP
+  `citation_fix` response caps every list at 50 entries with its full count.
 
 ### Todos
 
@@ -71,12 +73,16 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - What a converted card is, and that sidecar JSON is never written by hand. [1]
-- Creating a card for a new source file: the Markdown, the citation table and one fixer run. [2]
+
+- Creating a card for a new source file: the Markdown, the citation table, one fixer run and the refusal reasons. [2]
+
 - Refreshing a card: prose, re-authoring one reference by its number, and mechanical moves. [3]
 - Removing a reference, and the moved-source and deleted-source procedures. [4]
 - The no-change trace rows, and what never belongs on converted memory. [5]
 - The c-05 skill routes converted memory to this workflow. [6]
 - The authoring the workflow drives. [7]
+
+- The refusal for two tables with no blank line between them. [8]
 
 ### Cross-Repo References
 

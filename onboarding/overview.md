@@ -8,17 +8,20 @@
 
 ## 260928-MIK-L37 The Cutover To Text Storage
 
-Repository-level consequence of leaf `260928-MIK-L37` (MIK-R37, developer direction D18 and D33): the cutover build is
-installed, and this master's memory line is converted by this leaf's own closeout. From here on its knowledge is text
-(Markdown and JSON sidecars under `onboarding/`, records under `knowledge/`), written through the curator file writer
-and read through the derived index; the knowledge database is frozen; and the validator, the onboarding gate on
-history files, the worklist and the mandatory gate govern every closeout of a converted line. Until this master
-lands on the sprint line, every other agents-remember line stays unconverted and is only read: the cutover lock
-refuses its writes, checks, managed memory syncs, closeouts and landings, naming the crossing sync.
+Repository-level consequence of leaf `260928-MIK-L37` (MIK-R37; decision record DEC-YZA7E4): on a converted memory
+line, knowledge is text (Markdown and JSON sidecars under `onboarding/`, records under `knowledge/`), written through
+the curator file writer and read through the derived index; the knowledge database is frozen there; and the
+validator, the onboarding gate on history files, the worklist and the mandatory gate govern every closeout of a
+converted line. The plain worktree closeout runs that gate itself before it commits a leaf's memory (decision record
+DEC-TJ0CX7). A memory line that is still unconverted, in a repository that holds converted memory, is only read: the
+cutover lock refuses its writes, checks, managed memory syncs, closeouts and landings, naming the crossing sync
+(decision record DEC-FCNRNT).
 
 The skills say how a curator works on converted memory: the c-05 skill gains `workflows/converted-card-workflow.md`,
 and the c-02 skill, the c-05 skill, its file-level workflow and the curator role each gain a converted-memory
-paragraph. These are the authored `skills/` copies, synchronized by `scripts/sync-skills.py` into the package copy
+paragraph. The c-12 and c-09 skills say that the closeout preview and apply ask the mandatory gate on converted
+memory, and the curator hand-off template's History section states the rules for a row's items, a cover's
+rationale, naming a row again and the governing row of a changed invariant or family. These are the authored `skills/` copies, synchronized by `scripts/sync-skills.py` into the package copy
 and the eight harness starter copies this route governs. The package copies' cards carry the detail.
 
 - The converted-card workflow's opening, in the authored skill copy. [67]
@@ -254,6 +257,7 @@ curator hand-off template gained the section "The file writer's sections (MIK-R1
 runtime does changes before MIK-R37**: no production memory tree is converted.
 
 - The template's file-writer section and its converted-memory condition. [21]
+
 - The writer refuses an unconverted memory tree. [22]
 
 ## 260928-MIK-L04 Family Routes Are Checked, Not Yet Used
@@ -1327,7 +1331,9 @@ These current source and policy ranges establish the development/certification d
 Current working-candidate evidence for this route:
 
 - Git attribution is the source of the consumer ledger. [50]
-- Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating the exact tree). [51]
+
+- Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree). [51]
+
 - Integration proves exact memory source ancestry independently of cache rows. [52]
 
 ### Docs References

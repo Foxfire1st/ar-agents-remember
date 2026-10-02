@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/panels/review/ExpressionCards.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+        "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ScopeLine"
+        }
+      },
+      "id": "RLZ-QQMRX6",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "handoffEntry": "L37-R2-tree-scope-notice",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "States above a tree comparison's cards that they cover only the loaded N of M members, that the locations of the others are not counted, and that the family's roster walk loads the rest.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The props the centre passes: the read, the seed, the planning marks, layout and open path, and the scope.",

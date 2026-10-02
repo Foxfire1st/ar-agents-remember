@@ -32,6 +32,9 @@ owner packet. MIK-R08 registers the three kinds it raises (`touched_invariant`, 
   satisfied by the leaf's invariant row, MIK-R07 rule 2) and `reached_family` (subject a family ID,
   satisfied by the leaf's family row, MIK-R07 rule 5). `kinds_document` renders the registry as data,
   sorted by name, for the worklist file and the checklist.
+- `GUARANTEE_CHANGED` (`"guarantee-changed"`, L37) is a `reached_family` item's `reachedBy` reason, beside
+  `record-changed`: K_C restates the family's guarantee. The gate then holds the family's governing row to
+  `changed` (INV-XN0FG8). Facts are not part of an item's identity, so the item ID does not change with it.
 
 ### Conventions
 
@@ -76,6 +79,8 @@ No configured live documentation source was available for this pass.
 - The registry as data. [8]
 - Four declarations per kind, a refused duplicate, and a later registrant's lookup. [9]
 - An edit elsewhere in the file keeps the ID; different range content changes it. [10]
+
+- The reachedBy reason for a restated guarantee. [11]
 
 ### Cross-Repo References
 

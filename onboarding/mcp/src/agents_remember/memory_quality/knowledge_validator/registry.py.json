@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+        "content": "sha256:323e5b5660ce755861594dabd7b3bbf9608ff272c0d56aa0ffb102ddf46fcdf3",
+        "locator": {
+          "kind": "symbol",
+          "name": "closed_before"
+        }
+      },
+      "id": "RLZ-AT0HVP",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Joins the comparison bases and the frozen commits into the one set of trees whose closed history files the freeze rule and the re-anchor rule treat as frozen.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "A rule, with its `report_only` and `writer_reports` flags, and what a check returns.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:7a4a4bb2a52c447055d842771a35358afb726602c8f5c3b80ede0d32f0644bd8",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:f8426a2db586cd5d96e4131a2e87c0e68d598810ab6347a67caf51ab500ca82e",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:93d5f335443f6b1c4144a68c70a68d5bd998f8c00c5f50d5e245801a736ca7d3",
             "locator": {
               "kind": "symbol",
@@ -45,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
             "locator": {
               "kind": "symbol",
@@ -61,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
             "locator": {
               "kind": "symbol",
@@ -72,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:d40be055dfb49563dbe86aa3a3bba96288476fb8e003fec4df344331b5483e79",
             "locator": {
               "end": 8,
@@ -106,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:2673554761807852785e6a37922cd2f9546e69de3bb1177d33fb7ef575bedf8d",
             "locator": {
               "kind": "symbol",
@@ -117,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:3eac4ef752328b41a6c7337bfe15b2de955e85ff380b18eef629a35428d13e74",
             "locator": {
               "kind": "symbol",
@@ -128,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:498d9ff6fca7ce10c8f2a052de74325866bbc2a7dfdd90c0e3b571164f9c7fea",
             "locator": {
               "kind": "symbol",
@@ -144,8 +163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
-            "content": "sha256:5179e891772633830d7e8fb4f479600339c977994d8c6f2672bea4b6f15c3f71",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "content": "sha256:c039b5ef7bd638c37a2e421780d36996e56cbb529359e91ea9d3763f81735c32",
             "locator": {
               "kind": "symbol",
               "name": "ValidationContext"
@@ -160,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:c6d79341a499f45319cb71f3db62c6627a95eba44d48a5829cf8f4c8d7573217",
             "locator": {
               "end": 151,
@@ -186,6 +205,22 @@
             "path": "mcp/tests/test_knowledge_validator.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The context's frozen trees, and every tree whose closed history files are frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
+            "content": "sha256:c039b5ef7bd638c37a2e421780d36996e56cbb529359e91ea9d3763f81735c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "ValidationContext"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

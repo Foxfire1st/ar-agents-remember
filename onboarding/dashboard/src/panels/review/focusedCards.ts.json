@@ -1,6 +1,25 @@
 {
   "path": "dashboard/src/panels/review/focusedCards.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aabdb0205910ea625a61e6f59e5b711182c48afa",
+        "content": "sha256:e147f3e2f54b176f022c7cd49657a45093bc4f086de34e4d7d63a1fc0dac8e0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "cardScope"
+        }
+      },
+      "id": "RLZ-HSKQNM",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "handoffEntry": "L37-R2-tree-scope-notice",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Decides for a tree comparison whether the family's roster is bounded: it returns nothing when every recorded side is complete, and otherwise the number of distinct loaded members and the widest side's recorded membership total, counted on one side so that loaded never exceeds the total.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's own statement of grouping and order.\n\nAnchor: \"never one path\"; \"A card takes the position of its first entry.\"",

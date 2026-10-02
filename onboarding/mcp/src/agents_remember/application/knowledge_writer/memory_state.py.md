@@ -37,7 +37,9 @@ nothing reaches disk until `MemoryState.write` is called with the validated resu
 - `write` writes each changed file through a temporary sibling and `replace`, then unlinks removed files.
 - **`history_target(owner)` (L37 reopen ruling)** returns the history file the owner writes and its attempt. A
   wave or a crossing has one file. A leaf writes its latest attempt, and the next attempt once the latest is closed
-  **in the base**: the leaf closed out and was reopened on a line that holds its frozen file. A file closed only
+  **in the base**, which is the memory worktree's `HEAD` commit (or its conversion): the leaf closed out and was
+  reopened on a line that holds its frozen file, or it continues after a completed closeout that was not integrated
+  and sits on that closeout's commit (decision record DEC-0AEQ28; INV-MS9BMJ). A file closed only
   in the candidate is still the target, and the write refuses it by name (MIK-R07 rule 7).
 - **`merged_sides_revision(record_id)` (L37, MIK-R24 rule 8 step 4)** returns the higher of the two sides'
   revisions of a record a merge left unmerged, else `None`. `_unmerged_stages` reads `git ls-files -u` for the
@@ -86,7 +88,7 @@ The candidate, the owner, the base and the write.
 - An entry's anchor as the base holds it. [8]
 - The atomic per-file write and the removals. [9]
 
-- The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the base. [10]
+- The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD. [10]
 - The higher side's revision of a record a merge left unmerged. [11]
 - A reopened leaf writes its next attempt, and its history is every file. [12]
 

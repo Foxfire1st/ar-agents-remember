@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:c52189592c367935d50eaa3ec6c898f27fcc2f6c8869b86a2019c3e89ae22a88",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,29 @@
         }
       ]
     },
+    "10": {
+      "note": "The drift item of a converted run reads pass, fail with its findings, or fail when neither spelling ran.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "content": "sha256:d201622fbc0b6e8297c7d01b455708781d29ef06c07413abc29c5500c4fa1043",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_quality_reads_the_converted_format"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Compiles the exact plan bound to one candidate pair with a self-digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:db5240aa6ac5bce7ba12320ce6be3607257a41f754204f47e229ae42f74affd2",
             "locator": {
               "kind": "symbol",
@@ -39,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
-            "content": "sha256:e3ad43851acd5c23737e4541f9ea1803619c604c6bb9a9c2c868f95fd642cce1",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "content": "sha256:9fc04d359c4937d51c2749aa58c64c734a3e60fb23838216a6e3b4e758303a69",
             "locator": {
               "kind": "symbol",
               "name": "final_catalog_attestation"
@@ -55,8 +72,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
-            "content": "sha256:7e1330dae428cbfd13dd27aa5f57b0686470fe1df48be3644cc50c3c50f5a28a",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "content": "sha256:31e357a1dd646a4879fe63763c35759d8c94bbc311706dc052537ef8bc938c93",
             "locator": {
               "kind": "symbol",
               "name": "final_catalog_readiness"
@@ -71,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:b39ca977f8cc0154d47148bca3bfb5790c15e9525cd8f3ecd5e28e2cbf05bed2",
             "locator": {
               "kind": "symbol",
@@ -82,7 +99,7 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:42523b59adb6ef4e7a4bb0fa475d31ef3bef1e840dc4d1737d44151c6154e0c0",
             "locator": {
               "kind": "symbol",
@@ -98,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:6e712a0094b00699abd68d409f20252edce316a7c1e6596700094f72bc48ce8a",
             "locator": {
               "kind": "symbol",
@@ -109,7 +126,7 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:0670889dbb65af12a7d4882062299f507b20227dbf670baf54ab8e5890741e81",
             "locator": {
               "kind": "symbol",
@@ -120,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:4f639e545aab6d256481864533232951b3d16546573b9a808e563f605e5124a8",
             "locator": {
               "kind": "symbol",
@@ -136,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:02b621924cc35a83ecc632c36fde0310f15509dd8234f3d7b08e44f7c5e29822",
             "locator": {
               "kind": "symbol",
@@ -147,7 +164,7 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:302273ef5349d8ae7d6d70b38f0a8fc149f5e5b25a4e40f6d0f21ceecb1a93af",
             "locator": {
               "kind": "symbol",
@@ -158,8 +175,8 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
-            "content": "sha256:d9fd64cdb38d8bbc3fa6e9a0ef1c60cfb48989ab140871e6c1cf34a79d99d000",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "content": "sha256:4bc15fd636dbab5aebca14b9ea59a2779070ca4f02ec30d2a76511fa56b1ca8a",
             "locator": {
               "kind": "symbol",
               "name": "_require_executed_population"
@@ -174,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:3f607b87b984368cb8384d5a713f81eb3730f93373f072e1ef5ec27e73d6f8e5",
             "locator": {
               "kind": "symbol",
@@ -185,11 +202,27 @@
         },
         {
           "anchor": {
-            "blob": "59f8a04e5d9e81e815fb12f4f8d30b4f4887f749",
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
             "content": "sha256:9374ca166d71dc4bf775c3f7216f693939546826396de5f9d64dc1a5b452848d",
             "locator": {
               "kind": "symbol",
               "name": "_refuse_unknown_item"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One standard check's executed result; the drift item of a converted tree is the converted check's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "content": "sha256:b549df9727a2948e7d8df4befaf94086d4246e45e34e903b9ed925fb10539383",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executed_result"
             }
           },
           "kind": "code"

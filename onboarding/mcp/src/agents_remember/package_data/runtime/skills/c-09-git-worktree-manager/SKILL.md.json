@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill.\n\nAnchor: `# c-09-git-worktree-manager Git Worktree Manager`",
+      "note": "`c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
-            "content": "sha256:beff285115be3f42153de107aa896b9f4d5e450140f6949c239bd394db145585",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "content": "sha256:ff16055ecc24788e4d9997a4fdb9d12b410beb5fc97af68b534dc7d3b48a61b7",
             "locator": {
-              "end": 567,
+              "end": 569,
               "kind": "line_range",
               "start": 6
             }
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 503,
+              "end": 505,
               "kind": "line_range",
-              "start": 496
+              "start": 498
             }
           },
           "kind": "code"
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:ff4da9185a4acb4d8fd505057f8649092f120823f91391fafc5276cc193cec71",
             "locator": {
               "end": 247,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:89c0a82ad678a941eef6f02b27f379d7523e957cd95dd102dcbaecaac9e2b2ee",
             "locator": {
               "end": 254,
@@ -88,15 +88,32 @@
         }
       ]
     },
-    "2": {
-      "note": "`c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout.\n\nAnchor: `# c-12-closeout Closeout`",
+    "14": {
+      "note": "The preview asks the mandatory gate on converted memory.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
-            "content": "sha256:e3c9649d873f62a1e0b6a83803e0b83ecbaa891f2d8fb458e805ffa2874752cb",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
             "locator": {
-              "end": 320,
+              "end": 346,
+              "kind": "line_range",
+              "start": 336
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:c0d00fa18d3b4a7fdfacfdc0e55907259f8fee40dad1f95f11b1c70796ccd15a",
+            "locator": {
+              "end": 337,
               "kind": "line_range",
               "start": 6
             },
@@ -111,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:67790debda6ad72d6fbf9ca6dd3c5919f80f2de54d445dbefca9f78f097943ad",
             "locator": {
               "end": 205,
@@ -128,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:29ec02729e239fa61d1b04c403728200cacd7798556cf9b284035aab0a5967e6",
             "locator": {
               "end": 130,
@@ -145,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:6d75bef9aab46ced3f512d6ee9468bf558a3790af63fe17835bb923ae3dfb520",
             "locator": {
               "end": 163,
@@ -162,24 +179,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:67f3f5edd19f2594dee9ce60b0cacb7dafed44708c730596b375326ef85c74b8",
             "locator": {
-              "end": 435,
+              "end": 437,
               "kind": "line_range",
-              "start": 368
+              "start": 370
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
             "locator": {
-              "end": 516,
+              "end": 518,
               "kind": "line_range",
-              "start": 436
+              "start": 438
             }
           },
           "kind": "code"
@@ -191,24 +208,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:aa3a46e1a38484817e87bad222052465dfeddbe1cd2ee89555d30d6c0075f717",
             "locator": {
-              "end": 406,
+              "end": 408,
               "kind": "line_range",
-              "start": 406
+              "start": 408
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:4dfb1c6ca01cb2ef8466faa95e0aa76d01d4a1658dbfa39d7b5be4ebb401bde9",
             "locator": {
-              "end": 409,
+              "end": 411,
               "kind": "line_range",
-              "start": 409
+              "start": 411
             }
           },
           "kind": "code"
@@ -220,12 +237,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:67f3f5edd19f2594dee9ce60b0cacb7dafed44708c730596b375326ef85c74b8",
             "locator": {
-              "end": 435,
+              "end": 437,
               "kind": "line_range",
-              "start": 368
+              "start": 370
             }
           },
           "kind": "code"
@@ -237,12 +254,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
             "locator": {
-              "end": 516,
+              "end": 518,
               "kind": "line_range",
-              "start": 436
+              "start": 438
             }
           },
           "kind": "code"

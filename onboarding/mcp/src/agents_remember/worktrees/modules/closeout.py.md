@@ -325,10 +325,12 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
-- `closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately. [1]
+- `closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval. [1]
 - `_validate_closeout_source_heads` proves code and memory source tips against their recorded base or landed output. [2]
+
 - `_amended_closeout_contract` records actual code/memory output and clears integration fields only when reopening. [3]
-- `_recover_closeout_finalization` re-proves existing output commits before exact contract publication. [4]
+
+- `_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication. [4]
 
 - Closeout refresh helpers provide sidecar metadata, route overview metadata, route index, and entity fingerprint updates before the memory commit. (`refresh_onboarding_metadata`; `refresh_route_overview_metadata_for_context`; `refresh_route_indexes_for_context`; `refresh_entity_fingerprints_for_context`) [5]
 - Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. [6]
@@ -340,7 +342,9 @@ The following current source boundaries establish the ledger-retirement behavior
 - `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. [12]
 - Closeout imports the self-healing lineage guard that carries a settleable stale break through the existing sync. (`heal_current_source_lineage,`) [13]
 - Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module. [14]
+
 - Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`) [15]
+
 - The extracted owner binds and certifies the exact staged candidate. (`gate_staged_code`) [16]
 - The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. (`run_memory_quality_phase`; `combine_memory_quality`) [17]
 - `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. [18]
@@ -503,13 +507,17 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 ### Reconciled Source Evidence
 
 - The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [21]
+
 - The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [22]
 - The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [23]
+
 - The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [24]
+
 - The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [25]
 - The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [26]
+
 - The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`) [27]
-- The closeout entry threads the healed contract through preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
+- The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
 
 ## 260821-CLIVE Journal-Owned Claim Boundary
 
@@ -560,3 +568,38 @@ from whatever enclosure the *process* happened to hold was emitted verbatim — 
 closeout for one leaf shipped a `nextStep` naming another master's contract. The producer is
 driven end to end by `mcp/tests/test_transaction_only_worktree_delivery.py:275-284`; the guard's
 own four cases are in `mcp/tests/test_response_address_binding.py`.
+
+## 260928-MIK-L37 The Closeout Asks The Mandatory Gate Before It Claims Anything, And The Preview Says What The Apply Will Do
+
+On converted memory three places of this module ask the mandatory invariant gate (MIK-R09), through
+`closeout_external` (decision record DEC-TJ0CX7; invariants INV-HWAWFT and INV-WV1YQE):
+
+- **The apply's preflight.** `closeout_result` calls `refuse_ungated_candidate(contract, accepted_candidate_tree)`
+  after `_revalidate_candidate` and before `_publish_closeout_candidate`. A closeout refused here claims no approval
+  and commits neither side. The exact memory tree is judged again at the memory commit, after the code commit
+  (`_closeout_commit_phase` commits the code first): a refusal there leaves the code commit made and no memory
+  committed, and a rerun takes that commit as it is and completes once the gate passes.
+- **The preview.** `closeout_preview_payload` calls `candidate_gate_verdict` after the publication checks. When the
+  gate refuses, it returns `_gate_refused_preview` instead of the plan:
+  - `state: "knowledge-gate-refused"` (`GATE_REFUSED_PREVIEW`), never `would-closeout`;
+  - `knowledge_gate: {state: "refused", findingCount, findings, truncated}` with at most `MAX_PREVIEW_FINDINGS` (50)
+    findings;
+  - `commit_approval_required: false`, `nextOperation: "continue_work"`, no `nextTool`, and a `nextStep` that says to
+    answer the findings, rerun `memory_quality_check` and preview again.
+
+  `_closeout_entry` returns that preview with return code 2. A passing preview of a converted leaf carries
+  `knowledge_gate: {"state": "pass"}`; an unconverted leaf's preview carries no such block. The preview writes
+  nothing, and the gate's memo lets the apply that follows reuse its verdict. The preview evaluates the gate itself
+  whenever the memo holds no verdict for the same inputs; that is sound while the preview is called only on explicit
+  request and nothing polls it (assumption ASM-NJ9P83, which the decision record DEC-TJ0CX7 links as a reason to
+  reconsider).
+- **A recovered closeout.** `_recover_closeout_finalization` calls `require_gated_recovery` before it proves the
+  recovered commits, so the contract is finalized only for a memory commit the gate passes.
+
+- The apply asks the gate before it publishes the closeout. [29]
+- The preview asks the same verdict and answers the refused preview. [30]
+- The refused preview: the findings, no approval, no next tool. [31]
+- A refused preview returns code 2. [32]
+- A recovered closeout is finalized only for a gated memory commit. [33]
+- The preview answers what the apply will do. [34]
+- An unconverted leaf's preview carries no gate verdict. [35]

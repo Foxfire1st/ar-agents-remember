@@ -10,35 +10,45 @@
 
 ## 260928-MIK-L37 The Cutover Lock Joins This Route, And A Reopened Leaf Writes A New History Attempt
 
-`260928-MIK-L37` (MIK-R37) adds one module and wires it at every memory route of this layer. The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on.
+`260928-MIK-L37` (MIK-R37) adds one module and wires it at every memory route of this layer. What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`.
 
 - **[`cutover_lock.py`](cutover_lock.py.md) (new): unconverted memory is read, never written, checked, synced or
   landed (MIK-R09 rule 6, second bullet; MIK-R24 rule 9).** A route that found its memory unconverted on every side
   asks `cutover_lock_refusal`. The lock holds once the memory repository holds converted memory anywhere (a local
   branch tip or a registered worktree's working tree with `knowledge/layout.json`); the refusal names the crossing
   sync. A repository that holds none is not locked and behaves as before this master. A probe Git cannot answer
-  refuses by name. A converting candidate is gated, never locked.
+  refuses by name. A converting candidate is gated, never locked. Decision record DEC-FCNRNT holds why the lock is
+  this fact about the repository, and DEC-VMMJDN why the onboarding card writers stay unlocked.
 - **Where it is asked.** [`knowledge_gate.py`](knowledge_gate.py.md) (`leaf_cutover_refusal`,
   `prepared_closeout_lock`, and inside `leaf_gate_refusal` and `landing_gate_refusal`),
   [`knowledge_crossing.py`](knowledge_crossing.py.md) (`unconverted_line_refusal`),
   [`direct_landing.py`](direct_landing.py.md), [`sync_transaction.py`](sync_transaction.py.md) (`_cutover_locked`,
   at admission), and the `modules/` routes (closeout, record landing, a leaf's integration).
-- **Reopen after a converted closeout.** `knowledge_gate.latest_owner_history` finds a reopened leaf's latest
-  attempt file (`<leaf-id>-attempt-<n>.json`), and `close_owner_history` closes that one; the closed first file stays
-  frozen.
+- **A leaf that writes again after its closeout (decision record DEC-0AEQ28).** `knowledge_gate.latest_owner_history`
+  finds the leaf's latest attempt file (`<leaf-id>-attempt-<n>.json`), and `close_owner_history` closes that one; the
+  closed first file stays frozen. `knowledge_gate.closed_out_memory` names the memory commit of the leaf's recorded,
+  completed closeout: its closed history files are frozen for the validator and the gate also while the parent line
+  does not hold them. [`services.py`](services.py.md) carries those commits as `LeafPublication.frozen` and
+  `LandingGateRequest.frozen`, and [`knowledge_validation.py`](knowledge_validation.py.md) passes them to the
+  validator.
+- **The stage copies of a knowledge conflict.** [`knowledge_conflict.py`](knowledge_conflict.py.md) materialises a
+  settlement's three index stages in a temporary directory that is removed on every way out.
 - **Cancel after a memory conflict.** [`sync_transaction_git.py`](sync_transaction_git.py.md)'s `rollback_side`
   restores a tracked `memory.md` before `git merge --abort`, so a conflicted memory sync can be cancelled on a line
   that still tracks the cache.
 
-The lock is a stored invariant (INV-JT28KJ), realized in `cutover_lock.py`, `knowledge_gate.py`,
-`sync_transaction.py` and `modules/integrate.py`, and proved by `mcp/tests/test_knowledge_cutover.py`.
+The lock is a stored invariant (INV-JT28KJ), realized in `cutover_lock.py` and at each route that asks it, in this
+layer and in the application, memory and command-line layers, and proved by `mcp/tests/test_knowledge_cutover.py`.
 
 - The lock's one question and its refusal. [65]
 - The worktree layer's helper that names the leaf's line. [66]
 - The managed sync asks the lock at admission. [67]
 - The closeout closes a reopened leaf's latest attempt. [68]
 - The rollback restores the cache before the merge abort. [69]
+
+- The commit whose closed history files are frozen: the recorded, completed closeout's. [70]
+- The memory trees of a commit that publishes a leaf. [71]
 
 
 ## Route Impact: Explicit Code-Object Retention (260921-ICR-L11)
@@ -1040,6 +1050,7 @@ already-current) are not validated at the sync.
 
 - The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator. [42]
 - The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09). [43]
+
 - The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7). [44]
 - The driver maps the refusal to its own state with a recovery line. [45]
 - The route never commits converted memory unvalidated, and an unreadable tree is refused. [46]
@@ -1203,7 +1214,11 @@ build: identical apart from the build label, including the real memory commit tr
 payload and the direct-landing preview). **Inert until the cutover.**
 
 - The layer's probes, the unbound refusal and the closeout's own write. [60]
+
 - The closeout validator's and the landings' gate. [61]
+
 - The direct landing's closing, kept and settled per generation. [62]
+
 - The port, the landing request and the direct verdict. [63]
+
 - Direct landing's gate and closing. [64]

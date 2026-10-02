@@ -21,8 +21,8 @@
   ],
   "consequences": [
     "Coverage and Non-empty are checked over a family's whole route set, not per route owner.",
-    "The family record owns its routes; overviews never register families, and a family is not repeated at every overview above its code.",
-    "Routes are placed as deep as makes sense; a moved or emptied route is route maintenance for the leaf that causes it."
+    "The family record owns its routes; overviews never register families, and a family is not repeated at every overview above its code (developer direction D20, folded in here).",
+    "Routes are placed as deep as makes sense (developer direction D20); a moved or emptied route is route maintenance for the leaf that causes it."
   ],
   "context": "A family's realizations live in several subtrees of the code. Its routes must make all of that code easy to find across the codebase, and must stay accurate as code moves.",
   "decider": "developer (260928-MIK DEVELOPER-DIRECTION D12)",
@@ -73,7 +73,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

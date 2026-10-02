@@ -54,7 +54,8 @@ function of its inputs.
   identities are the raising entries' contents, the added, retired and re-anchored contents, and the record
   revisions only when the record changed; carried and untouched siblings are listed but excluded.
   `_stale_item` carries each stale entry's blob, B blob and both content identities. `_family_items` gives a
-  `reached_family` per reached family (reasons `touched:<INV>` and `record-changed`) and per family of a
+  `reached_family` per reached family (reasons `touched:<INV>`, `record-changed` and, since L37, `guarantee-changed`
+  when K_C states another guarantee for the family than K_B: `_guarantee_changed`) and per family of a
   stale invariant (reason `stale:<INV>`); `_family_item` lists the union of members with each side's revision
   and both sides' routes, and its identities are the members' `{ id, revision }` per side.
 - **Gate linkage** (`_change`, definition 8): each changed path's text hunks are linked when a changed line
@@ -173,7 +174,9 @@ No configured live documentation source was available for this pass.
 - Step 3: families reached by a touched member or a changed record. [10]
 - The `touched_invariant` facts and identities. [11]
 - The `stale_invariant` item. [12]
+
 - The `reached_family` items and their member identities. [13]
+
 - The leaf's declarations, one input of the run. [14]
 - Step 5: marks, `planned_untouched` items, one sort over both, and the summary. [15]
 - Step 6 in the docstring: the route conditions of reached families and of killed routes. [16]
@@ -191,6 +194,9 @@ No configured live documentation source was available for this pass.
 - A binary change touches a file anchor and links at file level. [28]
 - A partial inventory is incomplete and names the path. [29]
 - A mode change keeps its hunks' linkage and adds the mode fact. [30]
+
+- A reached family whose guarantee K_C restates carries the reason guarantee-changed. [31]
+- Whether K_C states another guarantee for a K_B family. [32]
 
 ### Cross-Repo References
 

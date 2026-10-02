@@ -59,8 +59,7 @@ asks `reference_state.is_converted_memory` whether the onboarding root's parent 
 - every other check runs as before.
 
 The result key of the drift slot is `knowledge.converted`, not the drift check's name. An unconverted tree
-runs exactly as before. Since the cutover (L37) the installed runtime carries this dispatch, and this master's
-memory line is converted.
+runs exactly as before.
 
 **The converted check's base (L37 review R3-1).** `DriftCheckContext.knowledge_base` is an optional
 `KnowledgeBasePort`; `_converted_check` passes it to `converted_knowledge_check(..., base=...)`. The

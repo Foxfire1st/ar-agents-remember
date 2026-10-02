@@ -10,13 +10,22 @@
 
 ## 260928-MIK-L37 The Memory Routes Ask The Cutover Lock, And The Onboarding Gate Reads Every History File
 
-`260928-MIK-L37` (MIK-R37). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on. Four modules of this route changed:
+`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`. Six modules of this route changed:
 
 - **[`closeout_external.py`](closeout_external.py.md).** `external_closeout_commits` asks
-  `leaf_cutover_refusal(contract, "the closeout")` before any stamping or commit of unconverted memory.
+  `leaf_cutover_refusal(contract, "the closeout")` before any stamping or commit of unconverted memory. On converted
+  memory the memory commit runs the knowledge validator and the mandatory gate over the exact tree before its Git
+  mutation, also when nothing is left to commit and for a recovered commit, and the commit is staged from the
+  judged tree (decision record DEC-TJ0CX7; INV-HWAWFT, INV-49E649; family FAM-61DY2V). The code is committed
+  first, so a refusal at the memory commit leaves the code commit made, and a rerun completes.
+- **[`closeout.py`](closeout.py.md).** The apply asks the gate before it claims its approval or commits either
+  side; the preview reads the same verdict and answers `knowledge-gate-refused` for a leaf the apply would refuse
+  (INV-WV1YQE); the finalization of a recovered closeout asks the gate too.
+- **[`git.py`](git.py.md).** `stage_tree` makes the index exactly one tree.
 - **[`record_landing.py`](record_landing.py.md).** On unconverted memory the gate helper returns the cutover lock's
-  answer, with or without a named memory commit.
+  answer, with or without a named memory commit. On converted memory the landing check freezes the landed commit's
+  parents only when that commit is the one the contract records as the leaf's completed closeout.
 - **[`integrate.py`](integrate.py.md).** `_knowledge_gate_block` now runs for a leaf's integration too:
   `_leaf_landing_lock` refuses only when neither the landed memory commit nor the line it lands on holds the layout
   marker and the repository holds converted memory, so the converting leaf's own landing is never locked. A series
@@ -24,12 +33,18 @@ memory line. What earlier sections of this overview call "inert until the cutove
 - **[`onboarding_trace.py`](onboarding_trace.py.md).** `_history_rows` reads every history file of the leaf (a
   reopened leaf's closed file and its later attempts) as one history.
 
-In a repository that holds no converted memory, unconverted memory passes all three routes exactly as before.
+In a repository that holds no converted memory, unconverted memory passes the closeout, record landing and
+integration routes exactly as before.
 
 - The closeout's memory side asks the lock before any stamping or commit. [51]
 - A leaf's integration is refused only by the lock. [52]
+
 - Record landing on unconverted memory returns the lock's answer. [53]
 - The onboarding gate reads all of a leaf's history files. [54]
+
+- The validator and the mandatory gate over the leaf's exact memory output. [55]
+- The preview answers the refused preview for a leaf the gate refuses. [56]
+- The index made exactly one tree. [57]
 
 
 ## 260928-MIK-L09 Closeout, Record Landing And Integration Ask The Mandatory Invariant Gate
@@ -39,8 +54,9 @@ Three modules of this route are MIK-R09 routes (leaf 260928-MIK-L09, D5). Each a
 
 - **`closeout_external.py` (rule 3, the closeout memory commit).** On a converted leaf, `external_closeout_commits`
   closes the leaf's history file (`close_owner_history`, MIK-R07 rule 7), and `_commit_memory_content(closing=…)`
-  validates the exact tree it is about to commit (`_refuse_invalid_memory_commit`: `memory_commit_refusal` as a leaf
-  publication, against the parent line's memory tip, the carried L22 and L27 obligations) before `begin_git_mutation`;
+  validates and gates the exact tree it is about to commit (`_refuse_ungated_memory`: `memory_commit_refusal` as a
+  leaf publication, against the parent line's memory tip, the carried L22 and L27 obligations, then the mandatory
+  gate; see the L37 section) before `begin_git_mutation`;
   any refusal or failure before the commit restores the file (review R1 F2). The closing is inside the one memory
   commit, which keeps its `Code-Commit` trailer.
 - **`record_landing.py` (rule 3, commits no memory).** It probes the memory line and the task's memory base first (F7),
@@ -58,7 +74,8 @@ through each public route entry (`test_knowledge_gate_routes.py`). **Inert until
 260928-MIK-L37: since then the cutover lock refuses unconverted memory at each of them once the repository holds
 converted memory (the L37 section above).
 
-- The closeout closes the history file and validates its exact tree, restoring on refusal. [1]
+- The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
+
 - Record landing probes first, then asks the gate over the landed commit. [2]
 - Master and checkpoint landing wait for valid, current knowledge. [3]
 
@@ -264,6 +281,7 @@ No external Domain Documentation source is configured for this memory repo.
 Current working-candidate evidence for this route:
 
 - External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
+
 - Final memory staging removes and excludes the cache. [30]
 - Carryover completion is actual memory ancestry. [31]
 
@@ -1079,6 +1097,7 @@ Closeout and integrate start or resume journal generations; sync/cleanup/abandon
 ### Reconciled Source Evidence
 
 - Closeout public execution boundary. [41]
+
 - Fail-closed cleanup result. [42]
 - Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. [43]
 - Start helpers now live below the dedicated startup package marker. [44]

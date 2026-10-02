@@ -49,6 +49,11 @@ tool surface are tested beside their own suites: `knowledge-bootstrap` and the c
 - The module imports no CLI or MCP surface, which keeps it out of the dependency-ownership census's pinned
   consumers.
 
+- `_unconverted` builds the unconverted world with **one** unconverted commit under both the `main` and the `leaf`
+  branch, beside a converted sibling branch. Two separate commits would be the same commit only when they fall in
+  one second; otherwise their merge base is the converted commit, and the sync is a crossing sync, which is rightly
+  not refused.
+
 ### Invariants And Boundaries
 
 - Each guard is pinned by a mutation that the case kills (worker and reviewer mutation runs, 33 in review R2).
@@ -64,8 +69,10 @@ tool surface are tested beside their own suites: `knowledge-bootstrap` and the c
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is `MIK-R37@v1` rules 3 and 6, `MIK-R09@v2` rule 6 and `MIK-R24@v1` rule 9, with the L37 decisions in `37_cutover-to-text-storage.json`; it lives outside the code and memory
-repositories, so it is named here and not cited as a row.
+`Domain Documentation` entries). The design authority is `MIK-R37@v1` rules 3 and 6, `MIK-R09@v2` rule 6 and
+`MIK-R24@v1` rule 9; the packets live outside the code and memory repositories, so they are named here and not
+cited as a row. The lock's rulings are the decision records DEC-FCNRNT (the lock holds once a repository holds
+converted memory) and DEC-VMMJDN (the onboarding card writers stay unlocked).
 
 No configured live documentation source was available for this pass.
 
@@ -80,6 +87,8 @@ No configured live documentation source was available for this pass.
 - The database writer is frozen on a converted tree. [7]
 - No read selects the database of a converted tree. [8]
 - The lock under test. [9]
+
+- One unconverted commit under both branches. [10]
 
 ### Cross-Repo References
 

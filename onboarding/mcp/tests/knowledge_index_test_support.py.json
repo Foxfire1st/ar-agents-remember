@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:6be004876566af4fb359eb573dfe228b38b5dcddc428b3d473dc3cde3724f4a8",
             "locator": {
               "end": 15,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:2f859d67e363d8825234bae19243c1c04126b54199f024989db9ba1d661ffb6d",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:d27c728453b05311cdabba3e09a4707d0338480561b76601cd867bd1d70bf274",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:26b0faeab708d7820dd37a46e72fdd4391e1f1fdd4e015a02000041d38ef220a",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:bce115e814f888e929ad982ba066fed481f1779fb35c29a5d87c8dd7d393a99d",
             "locator": {
               "kind": "symbol",
@@ -73,7 +73,7 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:6d36cc6ce6c1c73f9a3f36dcf6a9a2431bd6c312bcac26feede347bf548a562a",
             "locator": {
               "kind": "symbol",
@@ -84,7 +84,7 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:b0665e526b395e8a62634e006314b58e198f0f70e5b86b5e064017036ab5d96b",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:1aebeb9406c4c9fad8b19a0e50b46d4f0f4e6b5f7fe79bb984a45a4b0d87b6ac",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:81ab449a136983de86cc1283ef9e1db6ff39bfb0976a7b667ef392fd7f06bee3",
             "locator": {
               "kind": "symbol",
@@ -122,11 +122,27 @@
         },
         {
           "anchor": {
-            "blob": "ad5d844886750435c1fd9ea580b6ab9ecd179852",
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
             "content": "sha256:a6d8913508785deb8636c7fbdc411f3949ae57e4df57cc8ec7fd9ccef0273a1c",
             "locator": {
               "kind": "symbol",
               "name": "add_parity_claim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A same-size rewrite placed in the second of the index write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "content": "sha256:06f26b53913cd5657b003d108b29ac9c4ce3830d5b03287a184ab1068f7e7e08",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_in_the_second_of_the_index_write"
             }
           },
           "kind": "test"

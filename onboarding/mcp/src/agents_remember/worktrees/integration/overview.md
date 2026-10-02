@@ -378,3 +378,13 @@ the remedy. `integration_branch_repository.py` now says so in the type system â€
 `BranchAuthorityUnavailable` (`:11-28`), a member of the product's error family â€” raised by
 `repository_default_branch` (`:58-69`, no `origin/HEAD`) and `memory_repository_default_branch`
 (`:70-107`, the memory repository does not record its default branch).
+
+## 260928-MIK-L37 The Mutation Snapshot Copies The Index With Its Time
+
+[`mutation_evidence.py`](mutation_evidence.py.md)'s `ephemeral_git_mutation_snapshot` copies the repository's index
+through `kernel.git_command.copy_git_index`, which keeps the index file's modification time, so the snapshot sees a
+file rewritten, same size, in the second the index was written (INV-656CYW; under a plain copy's new time Git
+trusts the entry's recorded stat data). The converted worktree closeout reads this snapshot to check that the tree its memory commit would stage is the tree its
+gate judged.
+
+- The disposable snapshot copies the index with its time. [12]

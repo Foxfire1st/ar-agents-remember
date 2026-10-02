@@ -61,6 +61,10 @@ refused" (review R1 note 5, ruling 13:11:32; "sub-task" rather than "leaf" by ru
 is its own `task.json`, which finalizes standalone, is not covered). `scripts/sync-skills.py` rewrote the package
 copy and the eight harness starter copies byte-identically from this source.
 
+The closeout paragraph says since L37 that the preview does ask the mandatory invariant gate on converted memory:
+a leaf the apply would refuse is answered `knowledge-gate-refused` with the open findings, never `would-closeout`
+(see `c-12-closeout`).
+
 ### Conventions
 
 - Preview before mutation and keep dry-run side-effect free.
@@ -103,6 +107,8 @@ No Domain Documentation source is configured for this memory root.
 - Exact cleanup/finalization boundary. [3]
 - The finalizer paragraph names the folder master's row and refuses a sub-task naming none whose folder `task.json` is not a master (MIK-R38). [4]
 - Public implementation facade preserves the same contract-addressed API. [5]
+
+- The preview asks the mandatory gate on converted memory. [6]
 
 ### Cross-Repo References
 

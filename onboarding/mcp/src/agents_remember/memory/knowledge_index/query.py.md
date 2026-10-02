@@ -19,6 +19,8 @@
 - Since MIK-R29, five lookups serve the path-based knowledge reader: `entries_under(directory)`, `entries_in_directory(directory)`, `live_entry_paths_under(directory)`, `links_to_path(path)` and `records_of_kind(kind)`. See the section below. `_incoming` now delegates to a shared `_links(where, parameters)` with the same SQL and the same `ORDER BY`, so the MIK-R05 and MIK-R25 callers are unaffected.
 - `text_id(projected_uuid)` reads `ix_uuid`, the reverse of the projection's identity map.
 - `database_path` is the file itself — the dataset the reused read code opens — and `repository_id` is the index's constant namespace.
+- `history_row(row_id)` (L37) answers one history row by its ID, or `None`. The reader uses it to name the
+  record a row is about when a link's source is a history row.
 
 ### Conventions
 
@@ -101,12 +103,16 @@ The index handle, the answer types and the lookups.
 - The lookup list and the rule that every answer carries the index state. [11]
 - Every record ID of one kind, sorted: the reviewer's per-side currentness (MIK-R25) and, since MIK-R29, the reader's `records_of_kind`. [12]
 - The state every answer carries, and the answer wrapper. [13]
+
 - Opening refuses another format or another tree's key. [14]
+
 - The reused read code opens the index file under the index namespace. [15]
 - The rule-3 lookups. [16]
 - The reverse identity lookup and the ancestor match that never matches on a name prefix and ends with the root route. [17]
 - A family routed at the root governs a root-level file and a deep file. [18]
 - The answer cases: path lookups, invariant, family and route, incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07). [19]
+
+- One history row by its ID. [20]
 
 ### Cross-Repo References
 

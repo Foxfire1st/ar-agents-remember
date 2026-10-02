@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R24 rules 5 and 9: the master line's toolchain reads the text format, and unconverted memory is read
-as legacy-format and refused elsewhere once its official line is converted.** Five cases in the
+as legacy-format and refused elsewhere once its official line is converted.** 16 test functions in the
 `unit-regression` lane.
 
 ## Code Commentary
@@ -35,8 +35,8 @@ as legacy-format and refused elsewhere once its official line is converted.** Fi
 - `test_memory_init_creates_new_memory_in_the_text_format_only`: a new root gets the marker with exactly
   `LAYOUT_MARKER_TEXT` (`created`); a root holding a legacy card is `unconverted-existing-memory` and gets
   no marker.
-- **L37: the census, the card authoring and the converted check on a converted candidate (fix round P1b and
-  review R3).** Nine cases:
+- **L37: the census, the card authoring and the converted check on a converted candidate.** Eleven test
+  functions:
   - `test_the_census_compares_a_converting_leaf_with_its_converted_base`: a converted card's source comes from
     the converted format, the conversion itself is no task edit, and a sidecar counts only beyond its anchors'
     mechanical fields (MIK-R30 rule 3);
@@ -50,9 +50,17 @@ as legacy-format and refused elsewhere once its official line is converted.** Fi
     reference to a file the candidate deleted or moved is reported, never refused as newly written;
   - `test_authoring_numbers_after_existing_references_dry_runs_and_validates` (R3-2);
   - `test_the_fixer_checks_every_card_first_and_refuses_by_name` (R3-3);
-  - `test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references` (R3-3).
+  - `test_a_leftover_evidence_line_is_refused_and_only_the_named_card_loses_references` (R3-3);
+  - `test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded`: a fix of one
+    document lists that document's stale references, and the MCP response caps every list at 50 with its full
+    count, while an unconverted tree's result passes through;
+  - `test_two_tables_with_no_blank_line_between_them_are_refused_by_name`: a card is refused, naming the line,
+    when a second table starts inside one and either holds citations; nothing is written; a card whose
+    tables hold no citations is left alone; a body row of single dashes is a placeholder.
 
   The existing `memory_init` case also asserts the L24 nit: the failed-Git early return carries `layoutMarker`.
+  `test_memory_quality_reads_the_converted_format` also asserts the final catalog's drift item on a converted
+  run: `pass`, `fail` with the converted check's findings, and `fail` when neither spelling ran.
 
 ### Conventions
 
@@ -86,7 +94,9 @@ The cases.
 
 - The read tool on both formats, with the converted knowledge section through the tool. [1]
 - The reference check and fixer. [2]
+
 - Memory quality on a converted tree. [3]
+
 - The rule 9 refusal. [4]
 - `memory_init` in the text format. [5]
 - Its lane row. [6]
@@ -97,6 +107,9 @@ The cases.
 - The converted check compares an unconverted HEAD through its converted base. [10]
 - The fixer checks every card first and refuses by name. [11]
 - A leftover evidence line is refused, and only the named card loses references. [12]
+
+- One document's fix reports its own stale references, and the response is bounded. [13]
+- Two tables with no blank line between them are refused by name. [14]
 
 ### Cross-Repo References
 

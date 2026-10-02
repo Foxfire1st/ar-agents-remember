@@ -10,8 +10,8 @@
 
 ## 260928-MIK-L37 The Census And The Converted Check Read A Converted Candidate Against Its Converted Base
 
-`260928-MIK-L37` (MIK-R37, fix round P1b and review R3). The cutover build was installed on 2026-10-01 (MIK-R37 rule 4), and this leaf's closeout converts the master's
-memory line. What earlier sections of this overview call "inert until the cutover" is live from this leaf on.
+`260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
+memory tree that holds `knowledge/layout.json`.
 
 - **[`converted_cards.py`](converted_cards.py.md) (new).** A converted card's kind and source come from its place
   in the tree and its sidecar's `path`, answered in the legacy metadata table's keys.
@@ -23,13 +23,29 @@ memory line. What earlier sections of this overview call "inert until the cutove
 - **[`converted_check.py`](converted_check.py.md) and [`check.py`](check.py.md).** The `knowledge.converted` check
   takes its base through a `KnowledgeBasePort`: `HEAD`, or its conversion when `HEAD` is unconverted. A base that
   cannot be built is the finding `R24.7-converted-base`.
-- **[`reference_state.py`](reference_state.py.md).** The fixer's re-recording can be scoped to one sidecar and
-  names unreadable sidecars instead of raising.
+- **[`reference_state.py`](reference_state.py.md).** The fixer's re-recording and the reference check can be scoped
+  to one sidecar, whose stale references are then the only ones listed; unreadable sidecars are named instead of
+  raising.
+- **The validator and a leaf that continues after its closeout (decision record DEC-0AEQ28; INV-MS9BMJ,
+  INV-XN0FG8).** A leaf publication names the commits its candidate sits on
+  ([`knowledge_validator/commit_route.py`](knowledge_validator/commit_route.py.md),
+  [`validator.py`](knowledge_validator/validator.py.md), [`trees.py`](knowledge_validator/trees.py.md)); a history
+  file closed there is frozen like one closed in a base ([`registry.py`](knowledge_validator/registry.py.md),
+  [`rules_structure.py`](knowledge_validator/rules_structure.py.md)).
+  [`rules_history.py`](knowledge_validator/rules_history.py.md) re-anchor-checks only an owner's latest row about a
+  subject, and refuses a later row of another disposition that would replace the leaf's `changed` row.
+- **[`final_certification/catalog.py`](final_certification/catalog.py.md).** On a converted tree the drift item of
+  the final catalog is the `knowledge.converted` check's result.
 
 - A converted card's kind and source. [71]
 - What the task edited on a converted tree. [72]
 - The converted check's bases. [73]
+
 - The re-recording scoped to one sidecar. [74]
+
+- A history file closed in a base or a frozen commit is left out of the re-anchor check. [75]
+- A later row of another disposition that would replace the leaf's changed row is found. [76]
+- The drift item of a converted tree is the converted check's result. [77]
 
 
 ## 260915-CAPS-L20 The Dead Governing Declaration Becomes Visible
@@ -748,8 +764,11 @@ file-level cards carry the per-module detail; the route-level facts are these:
 
 - The package's module map and public API. [30]
 - The single registry. [31]
+
 - The commit route's call, with no skip parameter. [32]
+
 - The Git adapter the worktree port binds to. [33]
+
 - The registered rule sets, with their report-only flags. [34]
 
 ## 260928-MIK-L04 Family Route Rules Join The Knowledge Validator
@@ -837,9 +856,12 @@ before MIK-R37.
   the `application` route). It is inert until the official line is converted (architect ruling).
 
 - Stale references are report-only. [41]
+
 - The converted run's legacy-format checks and its validator slot. [42]
 - The runner's dispatch by format. [43]
+
 - The commit route's optional base converter. [44]
+
 - The escaping rule on the validator's grammar. [45]
 - The one symbol-binding rule. [46]
 
@@ -1091,6 +1113,9 @@ one registry.** Route meaning extended in three ways:
 
 - The files the re-anchor check reads. [66]
 - The refusing and the merge-reported rule. [67]
+
 - The registering import. [68]
+
 - The leaf-publication route of the adapter. [69]
+
 - The section's lead: the gate counts each open item. [70]

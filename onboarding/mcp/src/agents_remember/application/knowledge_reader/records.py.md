@@ -40,6 +40,10 @@ and 3).** Every other reader module builds its rows from these four shapes:
   record targets carry a summary so they open their truth view.
 - **Linking records.** `records_linking` groups links by their source record, never a sidecar or history
   row, each record once with every link it records.
+- **A link from a history row names the record the row is about (L37, MIK-R29 rule 5).** A history row has no
+  page of its own. For a link whose source is a `history_row`, `link_document` reads the row through
+  `KnowledgeIndex.history_row` and adds `sourceSubject`, the summary of the row's subject, when the index holds the
+  row. Such a link carries no `sourceRecord`. File and route sources are unchanged.
 
 ### Conventions
 
@@ -79,10 +83,16 @@ No configured live documentation source was available for this pass.
 - Every decision of the tree read once; the superseding map. [4]
 - A decision in full: alternatives, stored and derived status, supersession, governs. [5]
 - The L13 helpers every decision field is read through. [6]
+
 - A link target's kind; one indexed link with its record ends summarised. [7]
+
 - Numbered references, every target resolved. [8]
 - Linking records, each once. [9]
+
 - The decision case: alternatives, and superseded derived at the later commit. [10]
+
+- A history row's incoming link carries the record the row is about. [11]
+- A decision's incoming link from a history row names the row's subject. [12]
 
 ### Cross-Repo References
 

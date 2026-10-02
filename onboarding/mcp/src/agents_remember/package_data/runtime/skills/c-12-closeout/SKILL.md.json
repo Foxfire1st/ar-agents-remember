@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:ee31ecbd38a7cb0d68509d7cbc9f6980e34e8938744fc95462c2b32c58305607",
             "locator": {
-              "end": 219,
+              "end": 236,
               "kind": "line_range",
-              "start": 211
+              "start": 228
             }
           },
           "kind": "code"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
             "locator": {
-              "end": 226,
+              "end": 243,
               "kind": "line_range",
-              "start": 182
+              "start": 199
             },
             "path": "skills/c-12-closeout/SKILL.md"
           },
@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
             "locator": {
-              "end": 226,
+              "end": 243,
               "kind": "line_range",
-              "start": 182
+              "start": 199
             }
           },
           "kind": "code"
@@ -88,12 +88,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:2df36e1b981a0272f8013f86cf7cec6bf4b68ee2a99e1f4b41998207b496a173",
             "locator": {
-              "end": 106,
+              "end": 123,
               "kind": "line_range",
-              "start": 97
+              "start": 114
             }
           },
           "kind": "code"
@@ -117,15 +117,32 @@
         }
       ]
     },
-    "2": {
-      "note": "`c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence.\n\nAnchor: `# c-12-closeout Closeout`",
+    "15": {
+      "note": "On converted memory both closeout tools ask the mandatory gate; the preview never answers would-closeout for a refused leaf, and the commit records exactly the judged tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
-            "content": "sha256:e3c9649d873f62a1e0b6a83803e0b83ecbaa891f2d8fb458e805ffa2874752cb",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:dd052653f02d83be41dbe24ee29cc5d4c4deee5c12843fedc88ece133ec32204",
             "locator": {
-              "end": 320,
+              "end": 63,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:c0d00fa18d3b4a7fdfacfdc0e55907259f8fee40dad1f95f11b1c70796ccd15a",
+            "locator": {
+              "end": 337,
               "kind": "line_range",
               "start": 6
             }
@@ -139,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
             "locator": {
-              "end": 139,
+              "end": 156,
               "kind": "line_range",
-              "start": 48
+              "start": 65
             }
           },
           "kind": "code"
@@ -156,24 +173,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
             "locator": {
-              "end": 139,
+              "end": 156,
               "kind": "line_range",
-              "start": 48
+              "start": 65
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:d29ff8f9f7e1931a5904b21b28cdb2920607cdcb6e60e7e845e3dc605d927870",
             "locator": {
-              "end": 152,
+              "end": 169,
               "kind": "line_range",
-              "start": 140
+              "start": 157
             }
           },
           "kind": "code"
@@ -185,12 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:553df76532136a5d9351a11bb934354b4454a1a0d1a25bb250655ac2ac80c4c0",
             "locator": {
-              "end": 181,
+              "end": 198,
               "kind": "line_range",
-              "start": 153
+              "start": 170
             }
           },
           "kind": "code"
@@ -220,24 +237,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:a0b62d45ca0d28fbfc7b234df4049920f840b16e33734de764c38146f7cb6a44",
             "locator": {
-              "end": 212,
+              "end": 229,
               "kind": "line_range",
-              "start": 212
+              "start": 229
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:89fd1a502b17ac99ce596cba38da71a0b879995a2b59d0556b017d95ee7336b5",
             "locator": {
-              "end": 217,
+              "end": 234,
               "kind": "line_range",
-              "start": 217
+              "start": 234
             }
           },
           "kind": "code"
@@ -249,12 +266,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
             "locator": {
-              "end": 139,
+              "end": 156,
               "kind": "line_range",
-              "start": 48
+              "start": 65
             }
           },
           "kind": "code"
@@ -266,24 +283,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:fbbfdeba68dbde8f189c9c1068d354fe2cf194d9084ba25ca32549e18b9eebb4",
             "locator": {
-              "end": 110,
+              "end": 127,
               "kind": "line_range",
-              "start": 110
+              "start": 127
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ca3c6009b32b999139da1da8ee389e8019b955db",
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
             "content": "sha256:f1ed709efab6017546419cade58c8fb43486b179993c0b78343eb386e73fed70",
             "locator": {
-              "end": 274,
+              "end": 291,
               "kind": "line_range",
-              "start": 274
+              "start": 291
             }
           },
           "kind": "code"

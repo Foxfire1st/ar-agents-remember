@@ -17,6 +17,12 @@
 - **Converted base (MIK-R24 rule 7).** `GitKnowledgeValidation` is a frozen dataclass with an optional `base_converter` (`BaseConverter`: `(memory_repository, base, *, after, code_repository, code_commit) -> KnowledgeTree`). When the candidate is converted and a converter is bound, each unconverted base tree is replaced by `base_converter(...)` before `require_valid_commit` runs, so the mechanical conversion never counts as a change. The composition binds `memory/conversion/base.GitBaseConverter`, which converts the base at its own `Code-Commit`. Without a converter such a base is still refused by rule 6 (`R22.6-base-converted`).
 - Any other `ValueError` (an unreadable tree) becomes "the knowledge validator (MIK-R22) cannot read this commit's trees: …". An unreadable tree is refused, never committed unchecked.
 - **Leaf publications and Git failures (MIK-R09, leaf 260928-MIK-L09).** The body moved into `_refusal(commit, *, leaf_publication=False)` over a small `_Commit` record, and two entry points call it: `refusal(...)` as before, and the new `leaf_refusal(...)` for a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing), which passes `leaf_publication=True` to `require_valid_commit`. The history-row rule then re-anchor-checks every history file not closed in a base, whatever its own `closed` flag (review R1 F1, ruling 2026-09-30T16:07:55). A `subprocess.SubprocessError` (a Git read that failed or timed out) is now a named refusal ("… a Git call failed or timed out …"), never an escaping error (F9).
+- **A leaf publication names its frozen commits (L37, decision record DEC-0AEQ28).** `leaf_refusal` takes a
+  `LeafPublication` (from `worktrees.services`): its candidate tree, its bases, and `frozen`, the commits the
+  candidate sits on when they are not bases. `_Commit.frozen` carries them, and `_validate` reads only their
+  history files (`history_tree_from_git`) and passes `LeafCommit(frozen)` to `require_valid_commit`. A history
+  file closed in a frozen commit is then frozen like one closed in a base. The body that reads the trees and
+  validates moved from `_refusal` into `_validate`; `_refusal` keeps turning each failure into a refusal text.
 
 ### Conventions
 
@@ -47,13 +53,20 @@ No configured live documentation source was available for this pass.
 The adapter, the port it implements and its binding.
 
 - The adapter, with its optional base converter. [1]
-- An unconverted base of a converted candidate is replaced by its conversion before the rules run, since MIK-R09 inside `_refusal`, which both entry points call. [2]
-- The two entry points; a leaf publication checks the leaf's own history file whatever its flag; a Git failure is named (MIK-R09). [3]
+
+- An unconverted base of a converted candidate is replaced by its conversion before the rules run, inside `_validate`, which `_refusal` calls for both entry points. [2]
+- The two entry points; a leaf publication checks the leaf's own history file whatever its flag and hands in the frozen commits; a Git failure is named (MIK-R09). [3]
+
 - The converter the composition binds. [4]
 - The commit route validates against the conversion of an unconverted base. [5]
+
 - The port it implements. [6]
+
 - The default composition binds it. [7]
 - The adapter refuses naming every violation. [8]
+
+- A leaf publication carries the commits whose closed history files are frozen. [9]
+- The trees are read and validated; the frozen commits contribute their history files only. [10]
 
 ### Cross-Repo References
 

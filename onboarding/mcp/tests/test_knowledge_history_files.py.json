@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_knowledge_history_files.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
+        "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_revision_binding_for_invariant_and_family_rows"
+        }
+      },
+      "facet": "The three rule functions on their own: which dispositions may govern a changed invariant and a family with a changed guarantee, and that a changed row at an unchanged revision is accepted only when an earlier changed row sits at that revision.",
+      "id": "PRF-Q5RMGC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:f5519846d66872753a0207719bd947dc068feccb064a8338b98ed6a9aafd75ad",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c02261f5476c684e5ed67b0f1688537e74c30d8",
+            "blob": "119efc5d27e3b25fea633405ec5995d2fdebda87",
             "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
             "locator": {
               "end": 100,
@@ -36,12 +55,28 @@
         }
       ]
     },
+    "11": {
+      "note": "The governing-row rules for a changed invariant and a family with a changed guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
+            "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_revision_binding_for_invariant_and_family_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "File shape, owner and uniqueness.",
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:86548a37579d7f5f68203c6416188e2614906e615b77da5a50fe7d8a9a4982af",
             "locator": {
               "kind": "symbol",
@@ -57,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:e22f532b1e78b5f7ca07006275cbd106aeacd7d80d7e515343bc1bb7a6aee0f9",
             "locator": {
               "kind": "symbol",
@@ -73,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:a5253795907644a91a27781cdadecd95ef26ea6bdf7e82b3f4030d9af2563674",
             "locator": {
               "kind": "symbol",
@@ -89,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:f0bb710c4af7ff2a0e92f96a74df6c2b2c7ba20a51a50e631f66684529edde35",
             "locator": {
               "kind": "symbol",
@@ -105,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:9af3bb5491effb15fefc11368cb5123763b72fdd07df71e2e392b42506d2d7ab",
             "locator": {
               "kind": "symbol",
@@ -121,8 +156,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
-            "content": "sha256:8a53295e0ea47a67fd8288750d4b124b8387f4e5d7e66416f78a18733ffb5860",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
+            "content": "sha256:0c2644af9e53ff91013f9faa163c6ca0567eba4fff8afeffff280751d66255d9",
             "locator": {
               "kind": "symbol",
               "name": "test_revision_binding_for_invariant_and_family_rows"
@@ -137,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:cc07275c03ffc4de7ac31092738e9c078adbe1e07f614d48baafd7615173367e",
             "locator": {
               "kind": "symbol",
@@ -153,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8df683c2592653c671217cae28c2c855d3cf51b9",
+            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
             "content": "sha256:ccadf67bf45823113abfc3b08498d7233dc827a2239af4a335fb18b7d962ba7b",
             "locator": {
               "kind": "symbol",

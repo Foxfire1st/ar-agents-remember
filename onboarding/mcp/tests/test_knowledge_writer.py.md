@@ -7,7 +7,7 @@
 ## Purpose
 
 **MIK-R12: the curator writer creates and updates every knowledge kind as validated files.** Registered
-in the `unit-regression` lane; 20 collected cases, each over real Git repositories.
+in the `unit-regression` lane; 23 test functions, each over real Git repositories.
 
 ## Code Commentary
 
@@ -65,6 +65,10 @@ in the `unit-regression` lane; 20 collected cases, each over real Git repositori
   contract.code_base_commit`, and the crossing route passes the series' code work branch (review R1 F10b).
   One earlier expectation changed with the reopen ruling: a write after a **committed** closed history file now
   writes attempt 2; a file closed only in the working tree is still refused as closed and frozen.
+- **L37: a cover revises a rationale.** `test_a_cover_revises_a_realization_entrys_rationale_in_place`: under the
+  invariant's row, `{id, rationale}` replaces the entry's rationale and nothing else of the entry; a blank
+  rationale, one beside `remove`, and one on a proof entry are named problems with the tree unchanged; a rerun
+  changes nothing.
 
 ### Conventions
 
@@ -111,6 +115,8 @@ The cases.
 
 - knowledge-bootstrap refuses unconverted memory once the repository holds converted memory. [14]
 - A master line's crossing records its rows through the writer. [15]
+
+- A cover revises a realization entry's rationale in place. [16]
 
 ### Cross-Repo References
 

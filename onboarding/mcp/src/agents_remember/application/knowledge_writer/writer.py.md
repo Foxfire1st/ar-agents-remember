@@ -71,6 +71,9 @@ its conversion when `HEAD` is unconverted and the candidate is converted (L37, M
   `crossing`, `_crossing_problems` refuses `entries`, rulings and any record without an `id`
   (`CROSSING_ROWS_ONLY`): the owner may update an existing record its sync left conflicted, which the writer
   resolves at one more than the higher side's revision, and write `history` rows.
+- **The worklist's items for a row's `items` (L37, MIK-R07 rule 1).** `_worklist_items` reads `(kind, subject, id)`
+  of every well-formed item of `WriteRequest.worklist` (an ID must be `sha256:` plus 64 hex digits) and hands them
+  to `Authoring` as `worklist_items`. Without a worklist no item is filled in.
 
 ### Conventions
 
@@ -124,8 +127,10 @@ No configured live documentation source was available for this pass.
 The operation and its stages.
 
 - The refusal text for an unconverted memory tree. [1]
+
 - One operation's inputs, including the authorization reference the report records and the task owner's decision resolver. [2]
 - Read, author, check history, render, validate, then finish or refuse. [3]
+
 - The worklist and the task document's questions, both optional (MIK-R14). [4]
 - The questions reach the task document after validation and before any file. [5]
 - The worklist's reconsideration items by subject; the append in a committing run. [6]
@@ -144,6 +149,8 @@ The operation and its stages.
 - A crossing owner authors no entry, ruling or new record. [18]
 - The writer compares an unconverted HEAD through its converted base. [19]
 - A master line's crossing records its rows through the writer. [20]
+
+- The worklist's well-formed items, for the rows' items. [21]
 
 ### Cross-Repo References
 

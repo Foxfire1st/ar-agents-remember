@@ -41,6 +41,11 @@ Changed-path helpers retain their distinct semantics: existing-file worklists om
 `changed_files_with_counts` reports additions/deletions, rename targets, counts, and binary-file
 unknown counts for the serving change-set view.
 
+`stage_tree(repo, tree)` makes the index exactly `tree` with `git read-tree` and reads nothing from the working
+tree. The converted closeout stages its memory commit this way, from the tree its gate judged, so a file written to
+the working tree after the tree was read is not committed and stays an uncommitted change (INV-49E649). The index
+then keeps no stat data, so Git's next comparison with the working tree reads every file once.
+
 ### Conventions
 
 Callers must supply exclusions for an owned derived artifact; this is not a blanket ignore rule for
@@ -79,6 +84,8 @@ Source declarations and test assertions are distinguished from execution and acc
 - Filtered status and staging/commit APIs share the exclusion contract. [3]
 - The exact cache pathspec is defined beside the consumer filename. [4]
 - Changed-file reporting preserves its distinct deletion/rename/count semantics. [5]
+
+- `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [6]
 
 ### Cross-Repo References
 

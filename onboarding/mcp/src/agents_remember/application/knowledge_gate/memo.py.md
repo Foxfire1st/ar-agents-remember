@@ -20,7 +20,8 @@ always recomputed.
 
 - **`GateMemoKey`**: the exact code tree C and memory tree K_C; the contract's path plus the SHA-256 of its bytes
   (which carry B, the branches and `memory_base_commit`); the parent line's memory tip (the validator base and the line
-  K_B pairs on; review R1 F6); the SHA-256 of the leaf task document read through `strict_leaf_doc` (maintenance scope
+  K_B pairs on; review R1 F6); the leaf's own memory `HEAD` (L37: a history file closed there is frozen, so two leaf
+  heads over one candidate tree are two keys); the SHA-256 of the leaf task document read through `strict_leaf_doc` (maintenance scope
   and declared effects); and the build (`measuring_build_stamp`). `memo_key` returns `None` (no memo) when any of
   these cannot be identified.
 - **`_Kept`** holds when the verdict was computed, the verdict, and **the read set**: every file outside the trees
@@ -72,12 +73,21 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module docstring: the key, inputs outside the trees, the bounds, what is never kept. [1]
+
 - The bounds and the key. [2]
+
 - A kept verdict with its read set, hashed again before reuse. [3]
+
 - The key of one evaluation, or no memo. [4]
+
 - Reuse and keep. [5]
+
 - Only identical inputs reuse a verdict. [6]
+
 - A changed approval state recomputes a kept pass. [7]
+
+- The key names the leaf's memory HEAD beside the parent line's tip. [8]
+- The memo tells two leaf heads apart. [9]
 
 ### Cross-Repo References
 

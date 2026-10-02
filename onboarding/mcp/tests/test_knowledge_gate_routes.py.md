@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**MIK-R09 at every public route entry, and the fixes of the L09 reviews (27 collected cases, 992 lines).** Review
+**MIK-R09 at every public route entry, and the fixes of the L09 reviews (28 test functions, 1,074 lines).** Review
 R1 finding 5 found that deleting any route's gate call left the suites green, because the refusal tests called
 private helpers. Each route test here enters through the route's own entry point, so removing the route's gate call
 fails it: worktree closeout (`external_closeout_commits`), direct landing apply and preview (`direct_landing`), record
@@ -64,6 +64,10 @@ census pins.
   raising (N23). `test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing`: direct landing
   restores the history file to its open bytes when the closing receipt cannot be written (N25). Each fails under
   its mutation.
+- **L37: a hand-closed file landed later.** `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`
+  also lands the bad file one commit later, as an empty child and as a merge commit: both are refused with
+  `R09-history-rows`. A parent that holds the file closed freezes nothing; only a closeout the contract records
+  does.
 
 ### Conventions
 
@@ -92,7 +96,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module docstring: each route test enters through its own entry point. [1]
+
 - F1 and the worktree closeout, record, master and checkpoint route entries. [2]
+
 - Direct landing's route entries and its closing across calls. [3]
 - Master landing refuses anything not current; ghost subjects; the scoping. [4]
 - The exact trees re-anchor-check the file they just closed; an unavailable object. [5]
@@ -103,6 +109,8 @@ No configured live documentation source was available for this pass.
 
 - A Git failure asking for a recorded blob is named by the trees and the lane. [10]
 - An unwritable closing receipt restores the file and admits nothing. [11]
+
+- A hand-closed file is refused also one commit later and through a merge. [12]
 
 ### Cross-Repo References
 

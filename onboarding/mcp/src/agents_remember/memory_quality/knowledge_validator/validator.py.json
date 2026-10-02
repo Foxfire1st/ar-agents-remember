@@ -7,8 +7,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
-            "content": "sha256:21bbebeba01ef754b3df22f36d73aadfae6abbbcab42bd98502cf4cd79bedb0f",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:ef5f5be60f003b6d7daf0e4eab11245a20ffbb6f9f2e019b95016f3b4d943fe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A commit that publishes a leaf, with the history files of the commit it sits on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:e1bbc45700df7fca07a1b8e0b80aa785c663180d45c5b8279dd7a38c2a413ce8",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafCommit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The frozen trees reach the validation context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:ef5f5be60f003b6d7daf0e4eab11245a20ffbb6f9f2e019b95016f3b4d943fe8",
             "locator": {
               "kind": "symbol",
               "name": "validate_tree"
@@ -23,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:094ef17761f5eb9ce46f5fb6cd8ef49a30cf278a9c1b46dfa979358481ae3193",
             "locator": {
               "kind": "symbol",
@@ -39,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
-            "content": "sha256:624fa9d6a4d2330f50ab697674b03f9ac47af0853524208f54718fb9c871dfac",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:38104cfc2ea2242ea31ca2343e2c3d0ec00d85a47a2dcae0b932d70adceb8227",
             "locator": {
               "kind": "symbol",
               "name": "require_valid_commit"
@@ -89,12 +121,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:edb0d5948b13f47b679dd00bde75cc27d16721e425b8f627cdfd67927fcda242",
             "locator": {
-              "end": 29,
+              "end": 30,
               "kind": "line_range",
-              "start": 27
+              "start": 28
             }
           },
           "kind": "code"
@@ -102,16 +134,15 @@
       ]
     },
     "7": {
-      "note": "A leaf publication reaches the context (MIK-R09).\n\nAnchor: \"leaf_publication=leaf_publication,\"",
+      "note": "A leaf publication, and the frozen history files of a `LeafCommit`, reach the context (MIK-R09).",
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
-            "content": "sha256:e96acbf4a61468df914b975c7e7f6102b4ecbf45e4384d9899920b975d75154f",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:ef5f5be60f003b6d7daf0e4eab11245a20ffbb6f9f2e019b95016f3b4d943fe8",
             "locator": {
-              "end": 81,
-              "kind": "line_range",
-              "start": 81
+              "kind": "symbol",
+              "name": "validate_tree"
             }
           },
           "kind": "code"
@@ -123,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:4beea48b7f752cbd777ca2a1d668b50dc7f70a100bb0d28a8c4257e9bac9537e",
             "locator": {
-              "end": 31,
+              "end": 32,
               "kind": "line_range",
-              "start": 31
+              "start": 32
             }
           },
           "kind": "code"
@@ -140,12 +171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:bfe534ad8976f20b23872f51fa7bd2448ba80562d1591816c0fcc7563255966b",
             "locator": {
-              "end": 26,
+              "end": 27,
               "kind": "line_range",
-              "start": 24
+              "start": 25
             }
           },
           "kind": "code"

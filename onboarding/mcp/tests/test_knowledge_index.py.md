@@ -17,6 +17,11 @@
 - **Freshness and failure:** an edited working tree is never answered from the previous content; a file failing its schema marks the index `partial` and is named; an unconverted tree indexes empty and says so.
 - **Cache:** reuse, rebuild and loss-free deletion; eviction by age and size; a cache inside a Git working tree is refused with no directory left behind; an `assume-unchanged` or `skip-worktree` flag never hides an edit; the file declares its format and key.
 - **Command and filter:** `knowledge-index` reports JSON and exits 0/1/2 by state; the index reads the files the validator reads (knowledge record, hidden directory, route cache, census, Markdown).
+- **A rewrite in the second of the index write (L37, INV-656CYW):**
+  `test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content` rewrites a record in
+  place, same size, in the second the repository's index was written (`rewrite_in_the_second_of_the_index_write`).
+  The directory key changes, the cache builds a new index that holds the rewritten statement, and the control
+  without a rewrite still reuses its index.
 
 ### Conventions
 
@@ -54,6 +59,8 @@ The cases.
 - Cache, flags and format. [6]
 - The command and the shared file filter. [7]
 - The lane row. [8]
+
+- A rewrite in the second of the index write is never answered from the old content. [9]
 
 ### Cross-Repo References
 

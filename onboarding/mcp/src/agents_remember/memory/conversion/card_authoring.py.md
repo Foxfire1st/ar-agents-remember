@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**Authoring a converted card's references: citation rows in, resolved sidecar references out (L37 fix round P1b).**
+**Authoring a converted card's references: citation rows in, resolved sidecar references out (L37).**
 A converted card's evidence is `- <finding> [n]` lines whose `[n]` names a reference in the card's sidecar, each
 target an anchor (blob, content hash and locator). A curator never writes that JSON by hand. They write the evidence
 as a citation table (`| Finding | Anchor | Source |`), and the fixer (`citation_fix`, or `memory-citations --fix`,
@@ -43,15 +43,23 @@ on a converted tree) calls `author_card_references` to turn it into references.
 
 ### Invariants And Boundaries
 
-- **Refusals are by name, and nothing of a refused card is written**: a sidecar that is not valid JSON or does not
-  parse as a sidecar, before (`_existing_sidecar`) or after the authoring; and a row that re-authors `[n]` while
-  another evidence line still cites `[n]` (`_leftover`), which would silently re-point that line.
+- **Refusals are by name, and nothing of a refused card is written**:
+  - a sidecar that is not valid JSON or does not parse as a sidecar, before (`_existing_sidecar`) or after the
+    authoring;
+  - a row that re-authors `[n]` while another evidence line still cites `[n]` (`_leftover`), which would silently
+    re-point that line;
+  - two tables with no blank line between them, when either holds citations (`_merged_tables`, called in `_load`).
+    The table reader ends a table only at a blank line, so the second table's header and delimiter rows would be
+    authored as findings, or a citation table below another table would be skipped. A delimiter row inside a table
+    is the sign (`_is_delimiter`: every cell three dashes or more, with optional alignment colons; a body cell of
+    one dash is a placeholder, not a delimiter). The reason names the line and says to put a blank line above the
+    second header. A card whose tables hold no citations is never refused.
 - **Every card is checked before anything is written**, so a run never stops with some cards written and others
   not.
 - Cards without a citation table are never touched, except the named card's unused references.
 - The module authors `references` only. `realizes` and `proves` entries are the writer's (`knowledge-ingest`).
-- Known limits carried to L26 (review R4): a removed highest number is reused by a later run, and two rows that
-  re-author the same `[n]` in one run are not refused.
+- Known limits: a removed highest number is reused by a later run; two rows that re-author the same `[n]` in one
+  run are not refused; and a second table whose delimiter cells have fewer than three dashes is not refused by name.
 
 ### Todos
 
@@ -69,13 +77,18 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals. [1]
+- The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals, two touching tables among them. [1]
+
 - The entry: author in memory first, then write the cards that passed. [2]
 - One card: its tables removed, its rows authored, a leftover line refused, unused references removed for the named card. [3]
 - One row: a placeholder stays prose; otherwise a numbered line and a resolved reference. [4]
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
 - The fixer calls this module on a converted tree, scoped to one document when one is named. [7]
+
+- Two tables with no blank line between them are refused when either holds citations. [8]
+- A delimiter row: every cell three dashes or more. [9]
+- Merged tables are refused by name and nothing is written; a single-dash row is a placeholder. [10]
 
 ### Cross-Repo References
 

@@ -43,6 +43,11 @@ test to MIK-R22. Registered in the `unit-regression` lane; 9 tests, 29 collected
 - `test_two_parallel_leaves_merge_their_history_files_without_conflict`: in a real git repository,
   two leaf branches each add their closed history file; both merge cleanly and each merged file is
   byte-identical and parses.
+- **L37 (INV-XN0FG8).** `test_revision_binding_for_invariant_and_family_rows` also pins the three rule functions:
+  a `changed` row at an unchanged revision is accepted only when `restated_revision` equals that revision;
+  `changed_record_row_violation` refuses a `no_impact` or `moved` row while the base and candidate revisions
+  differ, and accepts `changed` and `deleted`; `changed_family_row_violation` accepts only `changed` and `retired`
+  for a family whose guarantee changed, and anything for one whose guarantee is as it was.
 
 ### Conventions
 
@@ -78,10 +83,14 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 - Invariant dispositions, covers and effects. [4]
 - Family rows. [5]
 - Re-anchoring against the candidate. [6]
+
 - The revision binding. [7]
+
 - The freeze predicate. [8]
 - The parallel merge in a real repository. [9]
 - Lane registration. [10]
+
+- The governing-row rules for a changed invariant and a family with a changed guarantee. [11]
 
 ### Cross-Repo References
 

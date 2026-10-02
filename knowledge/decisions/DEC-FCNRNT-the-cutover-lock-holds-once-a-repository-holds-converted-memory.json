@@ -1,0 +1,68 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The narrower trigger, branch tips only, was offered with its consequence and declined, and every memory route's refusal now depends on this one fact about the repository."
+  },
+  "alternatives": [
+    {
+      "option": "The lock holds once the memory repository holds converted memory anywhere: a local branch tip, or a registered worktree's working tree, that holds knowledge/layout.json. No switch, flag or install-time state.",
+      "reason": "It is a fact about the repository, so the lock is live from the installation, is scoped per memory repository, and never locks another code repository's memory.",
+      "status": "chosen"
+    },
+    {
+      "option": "Only a branch tip that holds the marker locks the repository.",
+      "reason": "The lock would start only at the converting leaf's first memory commit that holds the conversion, and that conversion stays uncommitted until the leaf's closeout.",
+      "reconsider_when": "Uncommitted converted worktrees outside a converting leaf have to be allowed in a live memory repository.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A route asks the lock only after it has decided that its memory is unconverted on every side; a converting candidate holds the marker and is gated, never locked.",
+    "One converted branch tip or registered worktree locks every unconverted line of that memory repository, for every session on the machine.",
+    "A probe Git cannot answer refuses by name; only a directory that is definitely no repository reads as unlocked."
+  ],
+  "context": "Unconverted memory must be refused at every write, check, sync, closeout and landing route once the cutover build is installed (MIK-R09 rule 6, MIK-R24 rule 9). The lock had to stay inert for a memory repository that never converted, and be live from the installation although the converting leaf's conversion stays uncommitted until that leaf's closeout (MIK-R37 rule 2).",
+  "decider": "architect under developer direction D31 (260928-MIK-L37 leaf document, decision 2026-10-01T03:36:39, Q1)",
+  "id": "DEC-FCNRNT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-JT28KJ"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+        "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_memory_location"
+        },
+        "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "ASM-QGNPZT"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Leaf document decision 2026-10-01T03:36:39 (Q1), on the worker report 260928-MIK-L37-worker.md, 'Gaps, choices and questions' 1; decision 2026-10-01T05:05:16 (F4)"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "RULING-LOCK-TRIGGER",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -49,7 +49,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Asks one bound snapshot through the read owner's exact fetch_realizations_at_path query, which reads claims at one path and expands no family, so scope size cannot fail it. An absent or unreadable snapshot is reported as unread with its cause, never as not_linked.",
+      "rationale": "Asks one bound snapshot through the read owner's exact fetch_realizations_at_path query, which reads claims at one path and expands no family, so scope size cannot fail it. When that finds no realization it asks the snapshot's derived index for a proof entry at the path, which only a tree comparison's index holds, and reads a proof as linked too. An absent snapshot is reported as unread and marked absent, an unreadable one as unread with its cause, never as not_linked.",
       "role": "primary-authority"
     },
     {

@@ -19,6 +19,12 @@ where current seeds come from. `knowledge_read` gets the same refusal one layer 
 
 - The projection's dataset, or the refusal of an unheld seed. [35]
 
+[`memory.py`](memory.py.md) bounds a converted tree's `citation_fix` response: `bounded_citation_fix` caps every
+list at 50 entries, adds each list's full count and names the capped lists. An unconverted tree's result passes
+through unchanged.
+
+- A converted tree's citation-fix result is bounded for transport. [36]
+
 
 ## 260928-MIK-L01 The Family-Complete Leaf Read, And A Root With No Commit Refused By Name
 

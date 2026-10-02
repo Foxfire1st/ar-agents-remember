@@ -1,0 +1,86 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Leaving the closeout loosened and enforcing through the orchestrator was offered as the second option and declined, and every later change to the closeout has to keep the gate at the memory commit."
+  },
+  "alternatives": [
+    {
+      "option": "The worktree closeout itself runs the invariant gate, and only that: before it commits a leaf's memory it recomputes the worklist and runs the validator over its exact code and memory pair, and refuses while an item is open.",
+      "reason": "The developer's words on the choice are \"option 1 is fine\" (D34, 2026-10-01). The reason is the architect's, recorded in the leaf decisions of 2026-10-01T17:17:07 (ruling A) and 2026-10-01T18:04:23 and accepted by the developer with that choice: invariant work is mandatory at every route that commits a leaf's memory (D5, MIK-R09), and the narrow mechanical check keeps the closeout free of the broad checks that caused churn.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave the closeout as loosened and amend MIK-R09: the curator's run and the orchestrator enforce the gate.",
+      "reason": "The developer chose option 1 and gave no further reason. The architect's recorded reason (leaf decisions 2026-10-01T17:17:07 and 2026-10-01T18:04:23): this route had just committed a leaf's memory with items open, and the mechanical check was preferred to leaving the gate to the orchestrator.",
+      "reconsider_when": "The gate at the closeout brings back the churn that led the developer to loosen the closeout-time checks; for example, something starts to poll the closeout preview, which evaluates the gate on every call.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The closeout does not run the memory-quality suite and does not require the coherence record; the curator runs the suite at intake and after repairs, and the orchestrator watches it (D34).",
+    "The gate judges the exact pair the closeout commits, before the memory commit's Git mutation, also for a recovered closeout and when nothing is left to commit (leaf decision 2026-10-01T17:17:07, ruling A).",
+    "The closeout preview asks the same gate, so it never answers would-closeout for a leaf the apply refuses, as long as the preview is called only on explicit request (leaf decision 2026-10-01T22:49:36, Q4).",
+    "A leaf's integration does not judge the recorded pair again: the gate stays at the commit (leaf decision 2026-10-01T22:49:36, Q1)."
+  ],
+  "context": "The first closeout of the cutover leaf committed its memory with three worklist items open: the gate was called only from the coherence validator, which the plain worktree closeout does not require. The developer's account of the earlier loosening, quoted in D34: several checks that all ran at the closeout caused back and forth and unintended churn, so the developer loosened them; the coder runs its focused tests, and the curator runs its check at the start so that it gets a full list. The architect offered two options (leaf decision 2026-10-01T17:17:07, ruling A, as the first), and the developer chose.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D34: \"option 1 is fine\"), on the architect's recommendation (leaf document decisions 2026-10-01T17:17:07, ruling A, and 2026-10-01T18:04:23); the consequences for the preview and for integration are the architect's rulings of 2026-10-01T22:49:36 (Q4 and Q1) under D31 and D34",
+  "id": "DEC-TJ0CX7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-HWAWFT"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-WV1YQE"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+        "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_ungated_memory"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R09",
+        "packet": "requirements/MIK-R09-v2-mandatory-invariant-closeout-gate.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "ASM-NJ9P83"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION D34 (260928-MIK, developer ruling of 2026-10-01); leaf document decisions 2026-10-01T17:17:07 (ruling A) and 2026-10-01T18:04:23",
+        "DEVELOPER-DIRECTION D34 (260928-MIK, developer ruling of 2026-10-01: \"option 1 is fine\"); leaf document decisions 2026-10-01T17:17:07 (ruling A, the architect's recommendation), 2026-10-01T18:04:23 (D34 recorded with the architect's reasons) and 2026-10-01T22:49:36 (Q1: integration does not judge the recorded pair again; Q4: the preview reports the gate's verdict while it is called only on explicit request)"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "RULING-D34",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

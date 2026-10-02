@@ -2,15 +2,15 @@
   "path": "mcp/src/agents_remember/worktrees/modules",
   "references": {
     "1": {
-      "note": "The closeout closes the history file and validates its exact tree, restoring on refusal.",
+      "note": "The closeout closes the history file and validates and gates its exact tree, restoring on refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:505ff343f40adcbcc74f44642af9e6cc526b257e74938e90144f187574db3c51",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
             "locator": {
               "kind": "symbol",
-              "name": "_refuse_invalid_memory_commit"
+              "name": "_refuse_ungated_memory"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:75c4060c7c4e4f399250356dae222c256bb5aea496cadb60e83e7f4367516072",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -325,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:6edb891f498478825ee6f4dae434bdf0e06bf5f2957162656c61eda1ba855855",
             "locator": {
               "kind": "symbol",
@@ -337,7 +337,7 @@
         },
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
             "locator": {
               "kind": "symbol",
@@ -448,7 +448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
             "content": "sha256:c37e22cd9045bf316672d3f14d7db587ddb38016375cc167cbb8505504c2f669",
             "locator": {
               "end": 581,
@@ -609,8 +609,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -626,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
             "content": "sha256:0bec9cd2363539a35c94971e5d8a05b9b2bfd510337b47e36d877ba738ce95a0",
             "locator": {
               "kind": "symbol",
@@ -643,7 +643,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
             "content": "sha256:29e3637539d1baca5fa93c83090eeb2ca62ea0b2b26efd5056c91eced5a69367",
             "locator": {
               "kind": "symbol",
@@ -947,8 +947,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:d28c4f12de419f138eb55900c4c2f07f4657123404ed9e8b357d3780ec1d54af",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
             "locator": {
               "kind": "symbol",
               "name": "closeout_preview_payload"
@@ -959,8 +959,8 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -1197,8 +1197,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "720551f7d086e7275a2e6b0d95e3420df846da3c",
-            "content": "sha256:3a29acdbf90d780b670d2760cb304936c8c3517807e4081a6ac68c2278d27665",
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:0ebf4a5e3e684b912685fc0c90666637f1884a59f1ae8c895d4b53db53e665d1",
             "locator": {
               "kind": "symbol",
               "name": "external_closeout_commits"
@@ -1214,8 +1214,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c54d74e15aed78c79b08ce68bacb2a8c3aadcc4",
-            "content": "sha256:2cd0e31252639d3e522bec0e3ef8183121c83a88c208345ddcd734e3ea036d42",
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
+            "content": "sha256:a94715293d68c9774f5fe64a9deed77f880545129eba51dfe873e0cd867fe0ab",
             "locator": {
               "kind": "symbol",
               "name": "_leaf_landing_lock"
@@ -1231,7 +1231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80ab1479412c46b01a9fd2ad48a941caf05194cd",
+            "blob": "c4e1ee51d62f77e078f26f24ba5af719fcee5e32",
             "content": "sha256:93e402d78b4c47289168347505c4e0bcdb60e2672560e4fcd2786dc2a889a716",
             "locator": {
               "kind": "symbol",
@@ -1255,6 +1255,57 @@
               "name": "_history_rows"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "The validator and the mandatory gate over the leaf's exact memory output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f691898dcd00ca9d02cd290832852fa2be5c2c42",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "The preview answers the refused preview for a leaf the gate refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "The index made exactly one tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "content": "sha256:466010a76618adb027af2f51ddb28edb6a5953d38e9d8077befd1184048fbae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
           "kind": "code"
         }

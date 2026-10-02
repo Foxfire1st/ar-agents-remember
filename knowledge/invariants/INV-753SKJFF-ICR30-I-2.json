@@ -1,6 +1,6 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Every curator entry ingested from the orchestrator's hand-off list.",
+  "applicability": "The resolution of a repository's published knowledge, for the ordinary read route and for the write route that consumes the same owner.",
   "conditions": [],
   "exclusions": [],
   "id": "INV-753SKJFF",
@@ -16,9 +16,9 @@
     "legacyId": "3ac4c376-9a30-4aff-a219-9ade903d183e",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A repository's published knowledge dataset has exactly one declared location, named by the ordinary read route's own owner as the memory layer's knowledge.sqlite, and the memory layer that location belongs to is the canonical external memory root when no enclosure is in scope and that task's own memory worktree inside a leaf.",
+  "statement": "A repository's published knowledge has exactly one declared location per memory layer, and that memory layer is the canonical external memory root when no enclosure is in scope and the task's own memory worktree inside a leaf. For an unconverted memory layer the location is the dataset the ordinary read route's own owner names, the memory layer's knowledge.sqlite. A converted memory layer (one that holds knowledge/layout.json) publishes no dataset: its knowledge is the tree's text files, read through that tree's derived index, and the database file frozen there is never selected -- the resolution answers not-recorded, naming the tree.",
   "status": "proposed",
   "supersedes": []
 }

@@ -16,9 +16,9 @@
     "legacyId": "cc02559f-d96a-4656-b1a6-53a0797cf303",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "A recorded comparison keeps the knowledge operand it was frozen on: a leaf that recorded a tree comparison is reopened from its recorded tree ids, and a leaf of an unconverted repository reopened from its own dataset generation still answers a selected invariant or family with that family's authored guarantee and its exact member revisions rather than refusing for want of a dataset. Once the repository's official memory line is converted, a leaf that recorded only a dataset comparison keeps its code sides and states its knowledge sides as legacy-unavailable; no database is read for it.",
+  "statement": "Once a repository's official memory line is converted, a closed leaf that recorded only a dataset comparison keeps its code sides and states its knowledge sides as legacy-unavailable, and no database is read for it. Every other recorded comparison keeps the knowledge operand it was frozen on: a leaf that recorded a tree comparison is reopened from its recorded tree ids, and a leaf of an unconverted repository reopened from its own dataset generation still answers a selected invariant or family with that family's authored guarantee and its exact member revisions rather than refusing for want of a dataset.",
   "status": "proposed",
   "supersedes": []
 }

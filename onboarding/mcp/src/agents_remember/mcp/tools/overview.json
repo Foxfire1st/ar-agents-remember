@@ -552,6 +552,23 @@
         }
       ]
     },
+    "36": {
+      "note": "A converted tree's citation-fix result is bounded for transport.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
+            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "The seam that pages a converted tree's read, and the per-page extras.\n\nAnchor: `read_tree_page`",
       "targets": [

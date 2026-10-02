@@ -83,8 +83,19 @@ every finding):
 
 - The module docstring's gate and probe-first paragraphs. [1]
 - Probe the line first; an unconverted line's commit is only probed. [2]
+
 - The gate's request over the landed commit, based on the task's memory base. [3]
+
 - The gate runs before the dry-run and apply branches. [4]
+
+- **What is frozen at a recorded landing (L37, decision record DEC-0AEQ28; INV-MS9BMJ).** `_landing_request` names
+  the landed commit's parents as `frozen` only when the landed commit is the memory commit that
+  `closed_out_memory(contract)` reads from the contract as its completed closeout: that commit is judged as the
+  closeout judged it, with what it was made on frozen. A commit made by any other hand (a child of the closeout
+  commit, a merge made afterwards) freezes nothing, so every row of the leaf is checked against the landed tree.
+
+- Only the recorded closeout commit freezes what it was made on. [16]
+- A hand-closed file is refused also when landed one commit later, or through a merge. [17]
 
 ### Conventions
 

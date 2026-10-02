@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Resolves a closed leaf from durable records in a fixed order: its recorded enclosure contract, then its comparison generation, and only when none was recorded the bare source range. An ambiguous or unreadable generation is refused rather than replaced, and a readable one resolves through _generation_resolution to the two retained knowledge snapshots and code trees it was frozen on.",
+      "rationale": "Resolves a closed leaf from durable records, never from a worktree. It reads the leaf's recorded enclosure contract first. It then asks the converted-repository resolution: a leaf that recorded a tree comparison reopens from its tree ids, and on a converted official line a leaf that recorded only a dataset comparison keeps its code sides and reports its knowledge sides legacy-unavailable, with no database read. Only an unconverted repository's leaf goes on to its comparison generation, and to the bare source range when none was published; an ambiguous or unreadable generation is refused rather than replaced.",
       "role": "primary-authority"
     },
     {

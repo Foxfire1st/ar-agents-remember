@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+        "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_writable_history"
+        }
+      },
+      "id": "RLZ-9RQ2RP",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Names in the gate's findings the file a row goes to, reading an attempt as frozen when it is closed in a base or in the leaf's memory HEAD, as the writer does.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module docstring: the rule, always recomputed, applicability and what is not wired.\n\nAnchor: \"The gate never reads a persisted worklist or trusts its digest\"",
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:f161eb79947e4084920a054dbe824abb852518985e3aa8c96fd0b1ffeb65e04d",
             "locator": {
               "end": 28,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:539fede000fd2d62aa31b95bfb43ab55974f5776e6a4b112bec5b8faab2747f6",
             "locator": {
               "kind": "symbol",
@@ -41,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b30cab10b78d1d19fe987d333d029cc99f1ec0ea",
+            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
             "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
             "locator": {
               "kind": "symbol",
@@ -54,12 +73,12 @@
       ]
     },
     "12": {
-      "note": "The file a row answering the leaf's items goes to: the latest attempt not closed in a base.",
+      "note": "The file a row answering the leaf's items goes to: the latest attempt not closed in a base or in the leaf's memory HEAD.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:25a1926ac57aa232258ded4f89f86c99dfcea99d8f857ef72fe7af3aba789c49",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:1557b61d8f9f64ea72f61cb3d47d899a22625aadf36044fd5f6bf1a4cfa9d0d4",
             "locator": {
               "kind": "symbol",
               "name": "_writable_history"
@@ -70,15 +89,15 @@
       ]
     },
     "13": {
-      "note": "Whether a comparison base holds the path as a closed history file.",
+      "note": "Whether a comparison base or the leaf's memory HEAD commit holds the path as a closed history file.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:1b94a01bd848e4ddad2a69cee2c528e53918f01e6f3164b9253d4c2f7f191044",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:ee396c2f7e34b571e447ffdf355dad7fd2a1f32c3f18f68a2a7d82020fc34e2b",
             "locator": {
               "kind": "symbol",
-              "name": "_closed_in_bases"
+              "name": "_closed_in"
             }
           },
           "kind": "code"
@@ -90,11 +109,92 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31454c94570bcb21e639619486b42a9454278c42",
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
             "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
             "locator": {
               "kind": "symbol",
               "name": "test_the_gate_names_the_attempt_the_writer_writes"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:02f37ffbb9758065d669c38ff5c5f43942e4e1fe7040701a89c7e717f55c3e3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_leaf_gate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The leaf's memory HEAD, or nothing when it cannot be read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:00e8d3c2644548425cdaf3a7df1b879b6c11e4353bb44cae12464f1ba9e0ac17",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_memory_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The commits whose closed history files are frozen for the writer: the bases and HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:77a0a195ed0edbb32108aed3e34a5581ea4c853012dfae7fa18fb3a23d2d1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closing_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The validator inside the gate is handed the frozen commit's history files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:f16ec98d0f124b63defc04a2c45d39f39297256d91a1796d218a356a25e50d9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "validation_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
             },
             "path": "mcp/tests/test_knowledge_reopen.py"
           },
@@ -107,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:fd1c2453eab711c730a817cd061eb137272c4a519a223ec660826f949f200f7e",
             "locator": {
               "kind": "symbol",
@@ -118,7 +218,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:8a568b536b4ae188bd7d81571bc2bc7d76953c74f7a8c911d3cdf2639fad9382",
             "locator": {
               "kind": "symbol",
@@ -134,8 +234,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:c4599473bef84e805144cf92e58565f1bed2384104967957b060b2e76eaa774d",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:6ddf9b4dfc8bd9675596ce7343efb9344a7e35d2a1f3fb1f0d3414ea3b59fa99",
             "locator": {
               "kind": "symbol",
               "name": "GateTrees"
@@ -150,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:740c17c91d0fc3c65e5ed3530761e8e984c2510390b236c50389c77dbe5d5432",
             "locator": {
               "kind": "symbol",
@@ -166,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:d933a755a1153049feff1f7157f4afed912fe5f0ff83b43663061e60bc24506f",
             "locator": {
               "kind": "symbol",
@@ -182,8 +282,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:635b73aeb5f3232dba0437fac09790ad67876a74389f6dd2f16e432d284c73f0",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:02f37ffbb9758065d669c38ff5c5f43942e4e1fe7040701a89c7e717f55c3e3c",
             "locator": {
               "kind": "symbol",
               "name": "evaluate_leaf_gate"
@@ -193,7 +293,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:590b94dd5e304d0e3da4bb3e7ba39a4f75b4c940dfc1cb75c8ef909560292014",
             "locator": {
               "kind": "symbol",
@@ -204,7 +304,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:4b0d9dfa5ed953514cf630cae717815b34cc2297755e9258dd9d44e5b77339bb",
             "locator": {
               "kind": "symbol",
@@ -220,8 +320,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:cff51ab0bce15149ec49128b467666eaec0ad80727bf7e52ac4644c4457519b6",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:fe3ab12a0c3aeba41336f8d8f9235d826aea83048268ca3a81eb717763b72b24",
             "locator": {
               "kind": "symbol",
               "name": "_evaluate"
@@ -231,7 +331,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:3af1450a2461edec9852f158e36e1ee5bcb7bc8b28bc87377fa717436d877abd",
             "locator": {
               "kind": "symbol",
@@ -247,7 +347,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:17037a175f4593b8725b96f39919c45e55126337a9a2eb70e4be495d849db0f8",
             "locator": {
               "kind": "symbol",
@@ -258,7 +358,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:db034f419381cdeaaae2de3db0235fd24e8c1790df7b66963a6d0848f2e9b589",
             "locator": {
               "kind": "symbol",
@@ -269,7 +369,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:6c218e48ab1053e4ab0d65a1ea4e7486a8768d8badb050a32279c09fa393bc3f",
             "locator": {
               "kind": "symbol",
@@ -285,8 +385,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
-            "content": "sha256:418a5c055e5ca84c9d4e9e14b3037e26258a91d36c916f9d29ccafeeebfd7ed7",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
+            "content": "sha256:f16ec98d0f124b63defc04a2c45d39f39297256d91a1796d218a356a25e50d9b",
             "locator": {
               "kind": "symbol",
               "name": "validation_findings"
@@ -296,7 +396,7 @@
         },
         {
           "anchor": {
-            "blob": "2e315919f367b4c3768e92beb093a333c1279748",
+            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
             "content": "sha256:cba31d7e6cdb7ddbc1ae81b2bfd2b43ffea73bd6575b3ff3ee5040f50514e3e2",
             "locator": {
               "kind": "symbol",

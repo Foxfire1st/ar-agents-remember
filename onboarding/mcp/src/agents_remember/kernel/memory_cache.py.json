@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/kernel/memory_cache.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+        "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ignore_memory_cache"
+        }
+      },
+      "id": "RLZ-1TR608",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the one write the cache preparation makes to memory content, split out so that the closeout records the ignore rule before it judges the tree.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Terminal removal discards only the root memory cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
             "content": "sha256:3ce2dafbfeb64e05c0e9d47e4ff9e69d06c53c8adc7ffbac6089f73b70f7d392",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
             "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
             "locator": {
               "kind": "symbol",
@@ -39,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
-            "content": "sha256:5100d97eebd9e4a3f1b68fc62189e707e02528dd8d298f788e69d1fdbf252d39",
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "content": "sha256:ef5f9203cdfcd0b246fdc721c537d4ebbbafbe3df375707ffca280ff74512204",
             "locator": {
               "kind": "symbol",
               "name": "prepare_memory_cache"
@@ -50,7 +69,7 @@
         },
         {
           "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
             "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
             "locator": {
               "kind": "symbol",
@@ -125,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7c7a08f0826c6f143907af618e5c57b6685955e",
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
             "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
             "locator": {
               "kind": "symbol",
@@ -134,6 +153,38 @@
             "path": "mcp/tests/test_memory_ledger.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ignore rule alone: the one write the preparation makes to content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The preparation records the rule first, then removes the cache from the index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
+            "content": "sha256:ef5f9203cdfcd0b246fdc721c537d4ebbbafbe3df375707ffca280ff74512204",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

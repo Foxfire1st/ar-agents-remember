@@ -27,6 +27,12 @@
 - The capture honours `.gitignore` as a commit would, so identical content gets an identical key and ignored caches (`overview.index.json`) never reach it.
 - A snapshot's bytes are always the bytes its key names; mixed state is never served.
 - An index flag never hides an edit from the key.
+- **A file rewritten in the second the index was written is never answered from its old content (L37,
+  INV-656CYW).** `_capture` copies the repository's index with `kernel.git_command.copy_git_index`, which keeps the
+  index file's modification time. Git compares such a file by content, and it recognises it by the entry's time
+  not being older than the index file's own time. A plain copy is a new file with a new time, under which Git
+  trusts every entry's recorded stat data; with the time kept, a same-size rewrite in that second changes the key,
+  and the cache builds a new index for it.
 
 ### Todos
 
@@ -53,9 +59,14 @@ The filter, the two readers and the capture.
 - The indexed-file filter, sharing the validator's exclusion predicate. [3]
 - The Git-object reader: one batch read, nothing checked out. [4]
 - The directory reader and its key, with the blob-id check and retry. [5]
+
 - The isolated capture and the index-flag clearing on the scratch copy. [6]
+
 - Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key. [7]
 - An index flag never hides an edit; the index reads the files the validator reads. [8]
+
+- The capture copies the index with its time. [9]
+- A rewrite in the second of the index write changes the key, and the cache builds a new index. [10]
 
 ### Cross-Repo References
 

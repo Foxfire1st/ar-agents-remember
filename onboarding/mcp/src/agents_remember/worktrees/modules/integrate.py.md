@@ -39,7 +39,9 @@ apply, no developer decision), naming every finding and the remedy (a knowledge-
 `knowledgeMaintenanceScope: true`). Unconverted memory is not gated (the probe returns `None`); the cutover lock
 refuses it instead once the repository holds converted memory (L37, MIK-R09 rule 6). Since L37 the block also
 runs for a **leaf's** integration with external memory: `_leaf_landing_lock` returns `None` when no memory lands or
-when the landed memory commit or the line it lands on holds the layout marker (the leaf was gated at its closeout),
+when the landed memory commit or the line it lands on holds the layout marker (the leaf was gated at its closeout:
+the worktree closeout runs the mandatory gate over the exact tree it commits, over the commit it records when
+nothing is left to commit, and over a recovered commit; a leaf's integration does not judge the recorded pair again),
 names a probe Git cannot answer, and otherwise asks `leaf_cutover_refusal(contract, "the leaf's integration")`.
 So the converting leaf's own integration onto its unconverted line is never locked. Tests:
 `test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale` and, through the route,
@@ -81,6 +83,7 @@ These current source spans identify the implementation owners and the specific a
 - The shared writer records the two accepted output commits. [7]
 
 - A leaf's closed-out memory lands only when converted, or in a repository that holds no converted memory. [8]
+
 - The block runs for leaves (the lock) and for series contracts (the landing gate). [9]
 
 ### Cross-Repo References

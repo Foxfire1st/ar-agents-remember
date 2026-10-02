@@ -36,6 +36,9 @@ The module also became a consumer of the shared `merge_case_test_support` fixtur
   `sync-cancelled`, the head is restored, there is no `MERGE_HEAD`, `git status` is empty, the cache is still
   tracked, and the next sync conflicts again. Before the fix in `sync_transaction_git.rollback_side` this case
   returned `sync-operation-refused`.
+- **L37.** `test_the_merge_stage_copies_are_removed_on_every_way_out`: a settlement's three stage copies live in
+  one temporary directory (`STAGE_DIRECTORY_PREFIX`). The directory is gone when the merge refused, when it
+  raised, and when a stage could not be written.
 
 ### Conventions
 
@@ -75,6 +78,8 @@ These current source spans identify the implementation owners and the specific a
 - Nonregular journal quarantine preserves the outside target. [9]
 
 - Cancel after a memory conflict restores the branch and its tracked cache. [10]
+
+- The merge stage copies are removed on every way out. [11]
 
 ### Cross-Repo References
 

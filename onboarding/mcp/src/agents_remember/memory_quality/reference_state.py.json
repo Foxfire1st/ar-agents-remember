@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -18,12 +18,29 @@
         }
       ]
     },
+    "10": {
+      "note": "One document's fix lists its own stale references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "content": "sha256:c69fc638c7048214c08a7d809605e5451b242f96cc4a106102802dce0f1af01a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The located bytes of a file, symbol or range locator.",
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:d5a78ce00a59a66e7d0d29b949c031082d0301ae2901b304f5781a3e56080dc3",
             "locator": {
               "kind": "symbol",
@@ -39,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:3a48d929bee49d77e968dce8842e753c75ec437f33c6d3730a2a811c6c4ca49a",
             "locator": {
               "kind": "symbol",
@@ -50,7 +67,7 @@
         },
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:6d63bbaf8d5a866d9817c9baf298afafcd70c7f6920a11b44db26bd6e70d3554",
             "locator": {
               "kind": "symbol",
@@ -66,8 +83,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
-            "content": "sha256:d2802ad365047d4ef2e74f95d6031439bb1e4cdcea8286e0ebd28b1b11768944",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:1351b5c5d88c8123e73798fd9e7b3eef6834d4c213fdce3b283d2bb6e4681b9a",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
@@ -77,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:c97f5111fd6f84686578516ba41dd1602d38eb325ff395cba22ac24580bfdeb0",
             "locator": {
               "kind": "symbol",
@@ -93,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:f0274d6ddcde7d15035f21e86d63b74b10e7e3ad3d5bfc51a50ed7bd43f33f73",
             "locator": {
               "kind": "symbol",
@@ -104,8 +121,8 @@
         },
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
-            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
@@ -120,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee7dd84d1803368bef8e4a3e64a232f8b614ab3d",
+            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
             "content": "sha256:2d63c14aee7e1b3369e902a5c73e9c20b76158a403a72893ee402b8e38909ed2",
             "locator": {
               "kind": "symbol",
@@ -137,8 +154,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
-            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
@@ -153,11 +170,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
             "content": "sha256:268bc8cd158bbd6a69fb8daf965aa7a426ce5ec36720a4716dacb0caa673f4ce",
             "locator": {
               "kind": "symbol",
               "name": "_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reference check scoped to one sidecar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:1351b5c5d88c8123e73798fd9e7b3eef6834d4c213fdce3b283d2bb6e4681b9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_references"
             }
           },
           "kind": "code"

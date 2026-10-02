@@ -4,7 +4,7 @@
       "real_alternatives",
       "constrains_future_work"
     ],
-    "justification": "A canonical database was built and measured against text files, and every knowledge reader, writer and gate now depends on the file layout."
+    "justification": "A canonical database was built, and the cost of the source that existed only because it was canonical was measured; no text implementation was measured against it. Every knowledge reader, writer and gate now depends on the file layout."
   },
   "alternatives": [
     {
@@ -23,7 +23,8 @@
     "A mandatory validator guards every memory commit in place of database constraints.",
     "The SQLite index is derived, uncommitted and rebuilt from the files.",
     "The knowledge database is frozen at the cutover and stays only until it is removed; a converted memory tree publishes no dataset.",
-    "Per-file Update History is dropped: content history is the Git log, and judgment history is the per-leaf history files."
+    "Once a repository's official memory line is converted, a reopened review of a leaf that recorded only a dataset comparison -- every leaf closed before the cutover -- shows its knowledge sides as legacy-unavailable; no database is read for it (MIK-R25 rule 4).",
+    "Per-file Update History is dropped: content history is the Git log, and judgment history is the per-leaf history files (developer direction D23, folded in here)."
   ],
   "context": "Knowledge needs one source of truth that people can read and that Git can diff, merge and review. The canonical-database design of the KS and ICR masters made both hard, and its complexity was far too high.",
   "decider": "developer (260928-MIK DEVELOPER-DIRECTION D18)",
@@ -78,7 +79,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A leaf's latest row about a subject governs, so without this rule a row written after a closeout could replace the judgment of a changed record with a no_impact row, and the change would land with no effect and no reason recorded."
+  },
+  "applicability": "The history rows of a leaf on converted memory about an invariant or a family whose record the leaf changed and has not landed on its parent line.",
+  "conditions": [
+    "The invariant's revision, or the family's guarantee, in the candidate differs from the parent line's.",
+    "The validator's form of the rule holds at a commit that publishes a leaf and reads the history files no comparison base holds closed."
+  ],
+  "exclusions": [
+    "A change that has landed on the leaf's parent line: a leaf reopened after its integration may answer the record with a row of any disposition.",
+    "A master's or checkpoint's landing, which is not refused for one of its leaves' rows.",
+    "The writer: it counts from the leaf's own HEAD and writes such a row; the refusal comes from the gate and the validator.",
+    "A changed row replaced by hand inside one attempt, which the validator's rule cannot see; the gate's rule does."
+  ],
+  "id": "INV-XN0FG8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_reopen.py::test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt; mcp/tests/test_knowledge_reopen.py::test_a_family_whose_guarantee_the_leaf_changed_is_governed_by_its_changed_row; mcp/tests/test_knowledge_reopen.py::test_a_change_on_the_parent_line_may_be_answered_by_any_later_row; mcp/tests/test_knowledge_history_files.py::test_revision_binding_for_invariant_and_family_rows; MIK-R07 rules 2 and 5; MIK-R09 rule 2"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "L37-changed-row-governs",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "While a leaf's candidate holds another revision of an invariant, or another guarantee of a family, than the leaf's parent line, the leaf's governing row about that record -- its latest across its attempt files -- is the changed row of that change, or the row that retires the record. A later no_impact, moved or extended row about such an invariant, or a no_impact, assigned or rerouted row about such a family, leaves the item open at the gate and is refused by the validator at a commit that publishes the leaf. The writer accepts a changed row at an unchanged revision only as a restatement of the leaf's own changed row of that revision in an earlier attempt.",
+  "status": "proposed",
+  "supersedes": []
+}

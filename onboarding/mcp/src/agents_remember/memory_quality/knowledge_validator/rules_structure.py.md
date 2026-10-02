@@ -19,6 +19,9 @@
 - `R22.6-locator` and `R22.6-content`: the locator kind and the `content` hash format problems.
 - `R22.6-base-converted` (`check_bases_converted`): a comparison base without the marker is refused, naming its conversion (MIK-R24 rules 7 and 8) and the crossing sync; skipped for a standalone conversion.
 - `R22.7-history-frozen` (`check_history_frozen`): over every history path in any base or the candidate, L07's `frozen_history_violation` decides; a closed file changed or deleted is refused.
+- `check_history_frozen` (L37, INV-MS9BMJ) reads `context.closed_before`, the bases and the frozen commits: a
+  history file closed in the commit the candidate sits on is frozen as one closed in a base. Its message says a
+  correction belongs to a new leaf's rows, or to the same leaf's next attempt file.
 
 ### Conventions
 
@@ -54,10 +57,14 @@ The structure rules and their registration.
 - Unique IDs across records and entries; a merge duplicate is a conflict naming both files. [2]
 - A relationship on the wrong side is a rule-4 refusal. [3]
 - An unconverted base is refused unless this is a standalone conversion. [4]
+
 - A closed history file is frozen. [5]
+
 - The eight registered structure rules. [6]
 - Duplicate IDs after a merge are a conflict naming both files. [7]
 - A closed history file is frozen, including deletion and closure in one merge parent; since MIK-R09 its trees keep the retired subject `INV-RET1R3` (records are never deleted, rule 3), assertions unchanged. [8]
+
+- A history file closed in a base or in a frozen commit may not change. [9]
 
 ### Cross-Repo References
 

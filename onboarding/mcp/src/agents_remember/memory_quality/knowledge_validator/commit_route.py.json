@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeValidation"
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
             "content": "sha256:937bf70e534a8c66af7c6fa04cf54b2f09da4aceee64c93b061aa63747948e5b",
             "locator": {
               "kind": "symbol",
@@ -29,16 +29,32 @@
         }
       ]
     },
-    "2": {
-      "note": "An unconverted base of a converted candidate is replaced by its conversion before the rules run, since MIK-R09 inside `_refusal`, which both entry points call.\n\nAnchor: \"if candidate.converted and self.base_converter is not None:\"",
+    "10": {
+      "note": "The trees are read and validated; the frozen commits contribute their history files only.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:7afa26789e833122d7c0faec07cfdc3b13ff70537162a2c5759086c2c504a72e",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:62352eeb8bd1b892218b9afc9c7f402d3a759d74d7a4f518dc884d88a1f0f973",
             "locator": {
               "kind": "symbol",
-              "name": "_refusal"
+              "name": "_validate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unconverted base of a converted candidate is replaced by its conversion before the rules run, inside `_validate`, which `_refusal` calls for both entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:62352eeb8bd1b892218b9afc9c7f402d3a759d74d7a4f518dc884d88a1f0f973",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate"
             }
           },
           "kind": "code"
@@ -46,39 +62,37 @@
       ]
     },
     "3": {
-      "note": "The two entry points; a leaf publication checks the leaf's own history file whatever its flag; a Git failure is named (MIK-R09).\n\nAnchor: \"def leaf_refusal(\"; \"except subprocess.SubprocessError as error:\"",
+      "note": "The two entry points; a leaf publication checks the leaf's own history file whatever its flag and hands in the frozen commits; a Git failure is named (MIK-R09).",
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:1c835b6b749348107f6966a08500c1a445efa32a96c377da49f7642e3fc0ad79",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:9ced8610b08876bd1fb9214f931a68616555e63002425794721a298402bbd497",
             "locator": {
               "kind": "symbol",
-              "name": "_Commit"
+              "name": "refusal"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:11f69f9c7f232759e5796843f35fca9a613e6c7eea0f8a17a5fd67bdc6ae4f79",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:5d77aa20e73ecf7bb686e08c275db199f1ab826b5c917809d54c13cc8d86056d",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 65
+              "kind": "symbol",
+              "name": "leaf_refusal"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:218fe27bf3c776bcf485b05dbadea8c2143f5be9cf424e42ef277ee9f7abca9b",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:5435d0c318fae61a69858a42f69492b51425e239406782723e38a103843df7e4",
             "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 119
+              "kind": "symbol",
+              "name": "_refusal"
             }
           },
           "kind": "code"
@@ -107,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3554bf0bcc08fedc5f9b1a4f2ab5160dec976bc2",
+            "blob": "5d3b30310a2b56118b7442daccaf763fae792980",
             "content": "sha256:710ffa62bab4ded60e4038a8f12ebab029d34c2cbb3989aa471584da8261a0af",
             "locator": {
               "kind": "symbol",
@@ -124,8 +138,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
-            "content": "sha256:27eea00a32e7c89a71f9fcafadeb9ba87df61f84e2de04175ec9bb745ea7a19c",
+            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
+            "content": "sha256:6b948cc0a0a6cfabb5116fc3fabbb632de3c30b476b462856555207593d221e0",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeValidationPort"
@@ -141,7 +155,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
             "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
             "locator": {
               "kind": "symbol",
@@ -167,6 +181,22 @@
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaf publication carries the commits whose closed history files are frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:5d77aa20e73ecf7bb686e08c275db199f1ab826b5c917809d54c13cc8d86056d",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_refusal"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

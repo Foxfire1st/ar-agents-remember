@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A plain copy of an index is a new file with a new time, so Git trusts every entry's recorded stat data: a same-size rewrite in that second keeps its old blob in the capture, and a cached knowledge index of the old content is served as current."
+  },
+  "applicability": "Every capture of a working tree that starts from a copy of the repository's own Git index.",
+  "conditions": [
+    "The repository has an index file to copy."
+  ],
+  "exclusions": [
+    "A capture that seeds a fresh index from a tree (worktree_candidate_tree): its entries carry no stat data, so every file is hashed.",
+    "Staging through the repository's own index, where Git's own check applies."
+  ],
+  "id": "INV-656CYW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_index.py::test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content; mcp/tests/test_knowledge_reopen.py::test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "L37-index-copy-keeps-its-time",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A disposable capture taken through a copy of a repository's Git index copies the index together with its file's modification time, bytes and time read from one open file, so Git still compares by content a file that was rewritten in the second the index was written. The knowledge index's directory key and the closeout's staging snapshot therefore never answer such a rewrite from its old blob.",
+  "status": "proposed",
+  "supersedes": []
+}

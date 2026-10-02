@@ -4,6 +4,18 @@
 | --- | --- |
 | sourceRoute | `skills/l-01-agent-lifecycles` |
 
+## The governing row and the rationale cover in the curator hand-off template (260928-MIK-L37)
+
+One file of this skill changed: `templates/curator-handoff-list.md`'s History section. It now says that the writer
+fills a row's `items` from the leaf's persisted worklist; that a cover may carry a `rationale`, which replaces a
+realization entry's rationale in place; that a row named again replaces the earlier row with its covers; that an
+invariant whose record the leaf changed is governed by its `changed` row, which may be named again at an unchanged
+revision to correct its effect, because or reason and to carry entry work; and that a family has one governing row,
+`changed` whenever the leaf changes the guarantee. The changes reach the package copy and the eight harness starter
+copies through `sync-skills.py`. They bind converted memory only.
+
+- The History section: items, the rationale cover, the governing row of a changed invariant, and a family's one governing row. [51]
+
 ## The reconsideration row in the curator hand-off template (260928-MIK-L14)
 
 One file of this skill now serves MIK-R14 (reconsideration surfacing):

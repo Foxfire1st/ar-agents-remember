@@ -26,6 +26,13 @@ architect ruling F1).** After all edits, `owner_history_problems` checks every r
   leaf's rows are checked in its latest attempt and its closed file is not a refusal reason. A `changed` row's
   revision counts from `_base_revision`: the higher merge side's revision while a merge leaves the record unmerged
   (MIK-R24 rule 8 step 4), else the base's. So the writer accepts a crossing's resolution at maximum plus one.
+- **A `changed` row at an unchanged revision (L37, INV-XN0FG8).** `_earlier_attempts` reads the owner's earlier
+  attempt files from the writer's base, latest first; these are the leaf's frozen files, and a wave or a crossing
+  has none. `_restated_revision` returns the revision of the latest earlier row about the subject when that row is
+  a `changed` row, else nothing. `_row_messages` hands it to `invariant_revision_violation`, which accepts a
+  `changed` row whose revision equals the base revision only when it equals that restated revision: the leaf
+  closed out, was not integrated, and corrects the row's effect, because or reason, or does entry work under it.
+  The record is not edited.
 
 ### Conventions
 
@@ -60,11 +67,17 @@ No configured live documentation source was available for this pass.
 The check and its per-row messages.
 
 - The two remedies. [1]
+
 - Every row of the owner's file, as problems. [2]
 - Invariant and family row checks. [3]
+
 - A contradicted row refuses until it is named again; a closed file is frozen. [4]
 
 - The revision a row's change counts from: the higher merge side's for an unmerged record. [5]
+
+- The owner's earlier attempts as the base holds them. [6]
+- The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row. [7]
+- A changed row cannot restate a revision once a later row of another disposition is the latest earlier row. [8]
 
 ### Cross-Repo References
 

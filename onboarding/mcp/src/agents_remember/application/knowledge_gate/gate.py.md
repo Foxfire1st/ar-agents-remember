@@ -59,17 +59,24 @@ every commit route refuse while any exists. None is report-only, and there is no
   - A leaf with no leaf ID gets one open-item finding: it has no history file whose rows could answer its items.
 - **`validation_findings(trees)`** reads K_C and each base (`_base` replaces an unconverted base of a converted
   candidate by its conversion, MIK-R24 rule 7), and, when `validation_applies`, runs `validate_tree(…,
-  leaf_publication=True)`: every judged candidate publishes a leaf, so the history-row rule reads the leaf's own file
-  whatever its `closed` flag (review R1 F1). A `SubprocessError` is `incomplete [git]`, never a validity verdict
+  leaf_publication=LeafCommit(frozen))`: every judged candidate publishes a leaf, so the history-row rule reads the leaf's own file
+  whatever its `closed` flag (review R1 F1), except a file closed in a base or in a frozen commit. `frozen` holds the
+  history files (`history_tree_from_git`) of `GateTrees.frozen`: the memory commit of the leaf's completed closeout,
+  from `closed_out_memory(contract)`. A `SubprocessError` is `incomplete [git]`, never a validity verdict
   (F9); `OSError`/`ValueError` is `knowledge-validator-unreadable`.
 - **Findings name the history file the writer writes (L37 reopen ruling, review R1 F10a).** `_item_findings` takes
   the file from `_writable_history(context, owner, trees)`, not from the plain `history_path(owner)`. For every
   history file of the owner in the candidate (`owner_history_attempt`), an attempt counts as frozen when it is
-  closed in a comparison base (`_closed_in_bases`: `git cat-file blob <base>:<path>`, the parent line's memory
-  tip), which is the writer's own rule; `writable_attempt` then names the latest open attempt, or the next one. An
-  attempt that only the candidate closes (this closeout's own) is still the one named. Without a comparison base
-  the candidate's own `closed` flags stand in. The base read is for the message only: a failed read counts as not
+  closed in a comparison base or in the leaf's memory `HEAD` commit (`_closing_commits`, then `_closed_in`: `git
+  cat-file blob <commit>:<path>`), which is the writer's own rule: a leaf that closed out and continues before it is
+  integrated writes its next attempt; `writable_attempt` then names the latest open attempt, or the next one. An
+  attempt that only the candidate closes (this closeout's own) is still the one named. Without any commit to
+  read, the candidate's own `closed` flags stand in. The read is for the message only: a failed read counts as not
   closed.
+- **The two memory commits beside the candidate (L37, decision record DEC-0AEQ28; INV-MS9BMJ).** `evaluate_leaf_gate`
+  reads the leaf's memory `HEAD` (`_leaf_memory_head`; `None` when it cannot be read) beside the parent line's tip
+  and carries both as `_MemoryLines`. `HEAD` is part of the memo key, and `GateTrees.leaf_memory_head` is read only
+  to name the file a row goes to. `GateTrees.frozen` is what the validator freezes.
 
 ### Conventions
 
@@ -119,19 +126,33 @@ No configured live documentation source was available for this pass.
 
 - The module docstring: the rule, always recomputed, applicability and what is not wired. [1]
 - The finding codes and the repair row. [2]
+
 - The exact candidate the gate judges. [3]
+
 - The verdict: memoisable, brief and refusal. [4]
 - The recompute that never raises. [5]
+
 - Probe, tip, memo, then the recorded evaluation. [6]
 - The evaluation and the judgment. [7]
+
 - K_C and C read once; the invariant kinds first; a failed read is incomplete. [8]
+
 - The validator at the gate, as a leaf publication. [9]
+
 - The packet's examples: ready only once current rows answer every item; a new edit reopens two. [10]
 - A failed Git read inside a predicate or the validator is never a verdict. [11]
 
-- The file a row answering the leaf's items goes to: the latest attempt not closed in a base. [12]
-- Whether a comparison base holds the path as a closed history file. [13]
+- The file a row answering the leaf's items goes to: the latest attempt not closed in a base or in the leaf's memory HEAD. [12]
+
+- Whether a comparison base or the leaf's memory HEAD commit holds the path as a closed history file. [13]
+
 - The gate names the attempt the writer writes. [14]
+
+- The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both. [15]
+- The leaf's memory HEAD, or nothing when it cannot be read. [16]
+- The commits whose closed history files are frozen for the writer: the bases and HEAD. [17]
+- The validator inside the gate is handed the frozen commit's history files. [18]
+- A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2. [19]
 
 ### Cross-Repo References
 

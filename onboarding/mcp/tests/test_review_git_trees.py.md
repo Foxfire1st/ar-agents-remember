@@ -60,6 +60,9 @@ file is 1,022 lines after MIK-L31. It uses no shared support module, so there is
     K_C proof it is `attributed_unchanged` with the detail "a realization or proof recorded for the path in the
     comparison's after knowledge" naming "the after snapshot records a proof here". `_inventory` and `_named`
     assert the payload and the tree IDs before use (review R2-1's pyright fix).
+- **L37.** `test_history_rows_are_found_by_the_row_subject_an_item_names` also writes the leaf's attempt-2 file
+  with a row about the same subject, and another leaf's file: the worklist view shows the attempt-2 row for this
+  leaf and the other owner's row, and no longer the first attempt's (a proof of INV-MS9BMJ).
 
 ### Conventions
 
@@ -98,10 +101,14 @@ No configured live documentation source was available for this pass.
 - No database but the index; unconverted unchanged; never frozen. [7]
 - Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds. [8]
 - The cards read: four entries located on both sides, each helper's per-entry facts. [9]
+
 - Unavailable against absent, and the history row found through `facts.row`. [10]
+
 - The excerpt bound and the placement cache (review F3). [11]
 - The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1). [12]
 - The lane row. [13]
+
+- Only an owner's latest attempt's row is shown; another owner's row stays. [14]
 
 ### Cross-Repo References
 

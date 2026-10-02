@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:82e40bcbd51fedd068b0bcd2e25fe0adfa6408348a879a8d5df076bf8c8d6518",
             "locator": {
               "end": 35,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:e686ed45465e41e63fc2bf410ff08e56ab3cfcfb5cbb4b30381de4675fc726b9",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:2d7e6ec6090a5beb014a48c0788de897f3063de2822524ba907e62545973fc6c",
             "locator": {
               "kind": "symbol",
@@ -46,8 +46,8 @@
         },
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
-            "content": "sha256:c41140236ad406d64eb0bad047d91221b4ba3015e86c288d6276278927fe42d6",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
+            "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
               "name": "GateMemoKey"
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:3666812befcb8f9a437fd2c6d6dd7a62c083481c66c04148aa31d24f64feec41",
             "locator": {
               "kind": "symbol",
@@ -78,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
-            "content": "sha256:259de3efe221e71a7f63dfea13916a5e28c8b5d95523f7af00e0603927b1f851",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
+            "content": "sha256:7550da317fce3e4ae2a2e43b8712295bb8f965eb8568fb9cc638fb373dec96d9",
             "locator": {
               "kind": "symbol",
               "name": "memo_key"
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:30ee54a0949b5d8e434add6a188d8fab6cb75d013e454a2c954de9067bf3383d",
             "locator": {
               "kind": "symbol",
@@ -105,7 +105,7 @@
         },
         {
           "anchor": {
-            "blob": "02add19296d0d14ca2eedf4be0e47d812e7b2623",
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
             "content": "sha256:9a4df1f073632fb9bf820be492876834fb3bb9800f0c979ede3af9810f572de7",
             "locator": {
               "kind": "symbol",
@@ -121,8 +121,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
-            "content": "sha256:74746b4d59f362ac41001eae047ad11460c1f86fd80da1221bd80ef45112b7ea",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
+            "content": "sha256:53c76e27c8bde62b1bb05d764fd74a92423b423a4f229a4a354dbe01cd4178cb",
             "locator": {
               "kind": "symbol",
               "name": "test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs"
@@ -138,13 +138,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4adaaa447f5601087b62de777142eaab41d1434",
+            "blob": "374cbadfa7fd71a304df7567b23c6b1b2b7e8862",
             "content": "sha256:60a98806c5d48ef840917eba8fb8e664786e7a4a659aa8399e3c2739b74b7e63",
             "locator": {
               "kind": "symbol",
               "name": "test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes"
             },
             "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The key names the leaf's memory HEAD beside the parent line's tip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92d10a03db60be2c3294efd145f56b05e3e0f52b",
+            "content": "sha256:7550da317fce3e4ae2a2e43b8712295bb8f965eb8568fb9cc638fb373dec96d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "memo_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The memo tells two leaf heads apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:df10fd4187e2527246129ca568eb6f33ff02afccb180bf9e9b244ac2eeb33b28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_history_file_closed_by_a_hand_commit_is_not_frozen"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
           },
           "kind": "test"
         }

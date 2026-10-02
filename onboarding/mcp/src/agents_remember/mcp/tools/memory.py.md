@@ -70,3 +70,16 @@ The transport continues to delegate memory-quality execution without reinterpret
 canonical application owner now lives at `application.memory_quality.controller`. This is a
 package extraction only: sync/start/poll semantics and response finalization remain owned by that
 controller.
+
+## 260928-MIK-L37 The Converted Citation Fix Response Is Bounded
+
+`citation_fix_payload` passes the tool's result through `bounded_citation_fix`. For a converted tree's result
+(`status: "converted"`) every list is capped at `MAX_INLINE_CITATION_ITEMS` (50): `stale`, `rewrittenSidecars` and
+`unreadableSidecars`, and inside `authoring` `authoredCards`, `createdSidecars`, `unresolvedTargets` and `refused`
+(`_bounded_lists`). Each list gets `<name>Count` with the full number; `truncated` names the capped lists, and
+`truncatedNote` says how to get the rest: name one card, or run the command line's dry run. An unconverted tree's
+result is passed through unchanged, because its complete repair list is that fixer's contract.
+
+- A converted tree's citation-fix result is bounded for transport; a legacy result passes through. [1]
+- Each named list capped, with its full count. [2]
+- The response caps every list, says so, and keeps the full counts. [3]

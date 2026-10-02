@@ -1,29 +1,108 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/closeout.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+        "content": "sha256:72a6c65ceaf42298f4600ff0414c42ba14b22ae9f5042957809356bd264ee1f7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_gate_refused_preview"
+        }
+      },
+      "id": "RLZ-3KPY73",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Builds the refused preview: the state knowledge-gate-refused, the finding count and at most fifty findings, no commit approval, no next tool, and a next step that says to answer the findings and preview again.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+        "content": "sha256:9affcf2ca650e2906c4478bc044c1cf3bd29f3cf7e0258d323e6ecfcb72df27d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recover_closeout_finalization"
+        }
+      },
+      "id": "RLZ-A6HS4Z",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the recovery gate before it proves and finalizes recovered commits, so a recovered closeout writes the contract only for a memory commit the gate passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+        "content": "sha256:4cb78b5a9f012b7ce02ac18dcce5624b9dd57eb9112d73f425b6bec68361ac42",
+        "locator": {
+          "kind": "symbol",
+          "name": "_closeout_entry"
+        }
+      },
+      "id": "RLZ-BEW05J",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Returns a refused preview with return code 2, so the tool's response is not ok.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+        "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "closeout_preview_payload"
+        }
+      },
+      "id": "RLZ-JWRH8T",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks that verdict after the publication checks and returns the refused preview instead of would-closeout; a passing converted leaf's preview carries knowledge_gate pass, and an unconverted leaf's carries no such block.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+        "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
+        "locator": {
+          "kind": "symbol",
+          "name": "closeout_result"
+        }
+      },
+      "id": "RLZ-K790KV",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Calls the preflight after the candidate is revalidated and before the closeout is published, so a closeout refused there spends no approval and commits neither side.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
-      "note": "`closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately.",
+      "note": "`closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:d28c4f12de419f138eb55900c4c2f07f4657123404ed9e8b357d3780ec1d54af",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
             "locator": {
               "kind": "symbol",
               "name": "closeout_preview_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:6d2ac93b3f78de41170f341f85626bb84114988a587598003fa796d7b73497e1",
-            "locator": {
-              "end": 292,
-              "kind": "line_range",
-              "start": 235
             }
           },
           "kind": "code"
@@ -69,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
             "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
             "locator": {
               "kind": "symbol",
@@ -86,12 +165,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:ca25847faae6280c0d3b8d101453d1626646a66d82cd26afc1a33c821616dbec",
             "locator": {
-              "end": 37,
+              "end": 41,
               "kind": "line_range",
-              "start": 37
+              "start": 41
             }
           },
           "kind": "code"
@@ -120,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -131,8 +210,8 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -265,23 +344,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:d3cd50045f8b6c79d866084720477390733553d0ab7262bd149c9e9659d091c1",
             "locator": {
               "kind": "symbol",
               "name": "_validate_closeout_source_heads"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:d75a7e75c4e4313d2de606a6264eb581d3853c5707efa4bf58357c6553977396",
-            "locator": {
-              "end": 322,
-              "kind": "line_range",
-              "start": 295
             }
           },
           "kind": "code"
@@ -293,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -304,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:4f07051566e418e09ff95e8f4cceba083780b2c03d0bdefcde5cd3e6b1e4a154",
             "locator": {
-              "end": 493,
+              "end": 549,
               "kind": "line_range",
-              "start": 459
+              "start": 515
             }
           },
           "kind": "code"
@@ -321,7 +388,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
             "locator": {
               "kind": "symbol",
@@ -332,8 +399,8 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -348,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
             "locator": {
               "kind": "symbol",
@@ -359,7 +426,7 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -370,12 +437,12 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:2a392373031fc637afa2ec67e56055b63e8f43375f44843e6b4ff9daba4fc945",
             "locator": {
-              "end": 646,
+              "end": 704,
               "kind": "line_range",
-              "start": 611
+              "start": 669
             }
           },
           "kind": "code"
@@ -387,7 +454,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
             "locator": {
               "kind": "symbol",
@@ -398,12 +465,12 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:6261ac2793c349868c1f8558ac523024d853f49d9c84738a7e985bd2c48672f4",
             "locator": {
-              "end": 167,
+              "end": 171,
               "kind": "line_range",
-              "start": 145
+              "start": 149
             }
           },
           "kind": "code"
@@ -415,23 +482,33 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
             "locator": {
               "kind": "symbol",
-              "name": "closeout_result"
+              "name": "closeout_changed_paths"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
             "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 715
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
             }
           },
           "kind": "code"
@@ -443,7 +520,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -459,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a78ffd6d3d92c4fb25cbde809372d8d24a0e9affe0645d5d0d9aeb89104c7d50",
             "locator": {
               "kind": "symbol",
@@ -475,8 +552,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -486,12 +563,11 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:4cb78b5a9f012b7ce02ac18dcce5624b9dd57eb9112d73f425b6bec68361ac42",
             "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 715
+              "kind": "symbol",
+              "name": "_closeout_entry"
             }
           },
           "kind": "code"
@@ -499,12 +575,12 @@
       ]
     },
     "28": {
-      "note": "The closeout entry threads the healed contract through preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`)",
+      "note": "The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`)",
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:e8fbbd8b9d6f2950c438dc45434a6906eb01f2ad3113d7158fe7bfc8eb9dc0a1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -514,12 +590,38 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:bbde8eab44ea1f54e23c8b86a236712eb2acd56d544d84cafc2cd50fb679eaa1",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:586750be188df447b4edb84a4cadd2919c6b8d639cdbe8fe6f58a01be0b76045",
             "locator": {
-              "end": 749,
-              "kind": "line_range",
-              "start": 715
+              "kind": "symbol",
+              "name": "_publish_closeout_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:4cb78b5a9f012b7ce02ac18dcce5624b9dd57eb9112d73f425b6bec68361ac42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The apply asks the gate before it publishes the closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:232974369ed9cc372a023fa9753a51948b2f296e332c668ce33b3c10075cc51e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_result"
             }
           },
           "kind": "code"
@@ -531,7 +633,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:27502a84ab1a28a5c8ace3d8b4facc50dedf942ad12f1cbdfef928ed528911a5",
             "locator": {
               "kind": "symbol",
@@ -542,40 +644,126 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:4f07051566e418e09ff95e8f4cceba083780b2c03d0bdefcde5cd3e6b1e4a154",
             "locator": {
-              "end": 493,
+              "end": 549,
               "kind": "line_range",
-              "start": 459
+              "start": 515
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "`_recover_closeout_finalization` re-proves existing output commits before exact contract publication.",
+    "30": {
+      "note": "The preview asks the same verdict and answers the refused preview.",
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:c75a65dd54ae2f1a0b4295e91971c25518454b2c646bff5c3cd4400c149d8612",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The refused preview: the findings, no approval, no next tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:72a6c65ceaf42298f4600ff0414c42ba14b22ae9f5042957809356bd264ee1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_refused_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "A refused preview returns code 2.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:4cb78b5a9f012b7ce02ac18dcce5624b9dd57eb9112d73f425b6bec68361ac42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "A recovered closeout is finalized only for a gated memory commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:9affcf2ca650e2906c4478bc044c1cf3bd29f3cf7e0258d323e6ecfcb72df27d",
             "locator": {
               "kind": "symbol",
               "name": "_recover_closeout_finalization"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "34": {
+      "note": "The preview answers what the apply will do.",
+      "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
-            "content": "sha256:95d8025a217c5cbd94225c3a12cb79721a72bab566b21611120a93700e08f8bc",
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
             "locator": {
-              "end": 570,
-              "kind": "line_range",
-              "start": 504
+              "kind": "symbol",
+              "name": "test_the_closeout_preview_answers_what_the_apply_will_do"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "An unconverted leaf's preview carries no gate verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:8175fc7b29aee6a15876e507081b4bf925be85c7b57fe3ae6997392c3bed9ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leafs_preview_carries_no_gate_verdict"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:9affcf2ca650e2906c4478bc044c1cf3bd29f3cf7e0258d323e6ecfcb72df27d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recover_closeout_finalization"
             }
           },
           "kind": "code"
@@ -587,7 +775,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9e8a1495400eb762fd4f80e791d84ab59e6192fd",
+            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
             "content": "sha256:ab4809bfaf5016dc9c458ff8b5e0acf8e57a377b60385ca1357696be66c90ce5",
             "locator": {
               "kind": "symbol",

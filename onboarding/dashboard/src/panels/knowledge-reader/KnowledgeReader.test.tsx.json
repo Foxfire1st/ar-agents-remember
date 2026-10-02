@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:44773d1744b919cb1d102d8481622ee740bcfd639c5f1a7ff88a4517cda8cfe7",
             "locator": {
               "end": 6,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:b3a9376f1127391a6c9857ff7de50c8e72591e806d5926eda7ecc89bf5ad4b30",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:40d92a8790c4ce3559fcdccef75d9bbb59e50e307a93abd9fcf7ee581089c3d0",
             "locator": {
               "end": 233,
@@ -68,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:c24887d1ef5aea565b06c2656fba7a8b0e2e318dae62072f66eabea7af202c97",
             "locator": {
               "end": 338,
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
             "content": "sha256:c4de5cce9298e505cc8d7382ff48f5127105d3b02bc080c779e8c0fe39c43ba1",
             "locator": {
               "end": 398,
@@ -98,16 +98,45 @@
       ]
     },
     "6": {
-      "note": "The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links.\n\nAnchor: \"links [n] markers in prose text only, never inside code spans or fences\"; \"marks the located code lines, and names a timeline source that could not be read\"; \"heads a superseded decision with its derived status\"; \"names side reads that failed, pins a clean published view, and drops stale explorer answers\"; \"names record links that could not be read instead of claiming there are none\"",
+      "note": "The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links.",
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
-            "content": "sha256:55fbad5ec5c3f22a00674070fe8209df434658a968de12ee53de99f92f4dd965",
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
+            "content": "sha256:a2977312a5a1b0ea9064aac0b518ca4fffdd7885b81d6647e626e7ec3269d1ce",
             "locator": {
-              "end": 503,
+              "end": 447,
               "kind": "line_range",
               "start": 400
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
+            "content": "sha256:3cc29231aaa959d9893524f22f70237fc34e91018300287957544554944160f4",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A history row shows its effect and decision, and a decision the rows it caused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
+            "content": "sha256:1a0e9e6fb4e63bae664b441eda961d67c9793621bc0fc6d533616213f959fe9e",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 449
             }
           },
           "kind": "test"

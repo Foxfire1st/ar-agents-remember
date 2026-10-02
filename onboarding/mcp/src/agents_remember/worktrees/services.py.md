@@ -18,7 +18,7 @@ Defines the service protocols and process-local binding consumed by worktree lif
 
 `KnowledgeValidationPort.refusal` (MIK-R22 rule 8) takes the memory repository, the exact candidate tree a route is about to commit, its comparison bases (K_B or every merge parent), and the paired code repository and commit, and returns the refusal text naming every violation, or `None`. The worktree layer calls it only through `worktrees/knowledge_validation.memory_commit_refusal`, which first probes the layout marker and refuses a converted commit when the port is unbound.
 
-Since MIK-R09, `KnowledgeValidationPort.leaf_refusal(...)` takes the same arguments for a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing): the leaf's own history file is re-anchor-checked whatever its `closed` flag (review R1 F1); `memory_commit_refusal(..., leaf_publication=True)` chooses it.
+Since MIK-R09, `KnowledgeValidationPort.leaf_refusal(...)` judges a commit that publishes a leaf (closeout, direct landing, a leaf's recorded landing): the leaf's own history file is re-anchor-checked whatever its `closed` flag (review R1 F1), unless it is closed in a base or in a frozen commit; `memory_commit_refusal` chooses it when `leaf_publication` is set. Since L37 it takes a `LeafPublication(candidate_tree, bases, frozen=())` in place of the tree and the bases. `frozen` are the commits the candidate sits on when they are not bases: a history file closed there was closed by an earlier closeout of the same leaf that was not integrated, and stays frozen (decision record DEC-0AEQ28). `LandingGateRequest.frozen` carries the same commits for a recorded landing; the caller names them only for the memory commit the leaf's contract records as its completed closeout.
 
 **`KnowledgeGatePort` (MIK-R09).** Bound by the composition layer (`application/knowledge_gate/adapter.KnowledgeGate`); each method recomputes from the exact trees it is given, trusts nothing persisted, and returns the refusal naming every finding, or `None`:
 - `leaf_refusal(contract, *, code_tree, memory_tree, parent_memory_tip)`: the gate over a leaf's exact closeout candidate (the closeout validator);
@@ -69,8 +69,11 @@ External domain documentation is not configured.
 The protocols establish the downward dependency boundary; the application supplies adapters and the selected executor requires the continuation. Protocol definitions do not themselves prove execution or provide a missing implementation.
 
 - Citation and provider lifecycle protocols remain explicit. [1]
-- The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out; since MIK-R09 a `leaf_refusal` twin for a leaf publication. [2]
+
+- The knowledge validator's commit-route port: candidate tree, bases and paired code commit in, refusal text or `None` out; since MIK-R09 a `leaf_refusal` twin that takes a `LeafPublication`. [2]
+
 - The mandatory gate's port, its landing request and the direct-landing verdict (MIK-R09). [3]
+
 - The crossing sync's port, its request and plan view, and the step failure it raises. [4]
 - The worklist recompute port and the bundle field that carries it. [5]
 - The archive hook's request and port (MIK-R25 rule 5): one archived task, its directory name and its two repositories in; the cleanup report out, never raising. [6]
@@ -81,8 +84,12 @@ The protocols establish the downward dependency boundary; the application suppli
 - Clear the bound services (tests and process teardown). [11]
 - Reading unbound worktree services refuses instead of constructing ambient owners. [12]
 - The default application bundle binds rails, the prepared continuation and certification, the knowledge validator with its base converter, and the knowledge crossing. [13]
+
 - The route helper refuses a converted commit when the port is unbound. [14]
+
 - Selected execution, which since MIK-R09 first refuses the prepared path on converted memory, observes memory before reuse and refuses an absent continuation. [15]
+
+- The memory trees of a commit that publishes a leaf, with the commits whose closed files stay frozen. [22]
 
 ### Cross-Repo References
 

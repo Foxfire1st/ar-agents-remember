@@ -37,6 +37,12 @@ The former pending-ledger-intent special case and ledger repository/cell mapping
 Recovery/cancellation still depend on actual mutation evidence; a desired output tree alone is not
 proof that Git committed it.
 
+`ephemeral_git_mutation_snapshot` copies the repository's index with `kernel.git_command.copy_git_index`, which
+keeps the index file's modification time. Git compares a file by content when it may have been rewritten in the
+second its index was written, and it knows that from the index file's own time. A plain copy has a new time, under
+which Git trusts every entry's recorded stat data; with the time kept, a same-size rewrite in that second enters
+the snapshot's candidate tree with its new blob (INV-656CYW). The closeout's judged-tree check reads this snapshot.
+
 ### Conventions
 
 The shared snapshot predicate is the only cleanliness definition used by direct execution and
@@ -73,8 +79,12 @@ Source declarations and test assertions are distinguished from execution and acc
 - Only enabled code/memory legs receive mutation cells. [1]
 - Intent, expected-output binding, and commit proof retain their order. [2]
 - Interrupted attempts are reconciled from actual Git evidence. [3]
+
 - Cache-excluded snapshots retain actual object/ref identity. [4]
+
 - The snapshot model declares the separate content comparison tree. [5]
+
+- The disposable snapshot copies the index with its time. [6]
 
 ### Cross-Repo References
 

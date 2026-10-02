@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d137af1a77fb633b90407595c57af9b5794458ad",
+        "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+        "locator": {
+          "kind": "symbol",
+          "name": "unconverted_line_refusal"
+        }
+      },
+      "id": "RLZ-2CB6AP",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Refuses an operation on an unconverted tree whose official line is converted, and otherwise lets the lock decide, so an unconverted tree in a repository that holds converted memory anywhere is refused as well; knowledge-ingest and a leaf's memory-quality run call it.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "A crossing sync: one tree unconverted and one converted.",

@@ -34,8 +34,9 @@ candidate deleted or moved is reported (`R22.6-carried-stale`), not refused as a
 
 ### Invariants And Boundaries
 
-- The port never converts by itself: it reads the same cache under the same key (memory commit, version, K_B's own
-  `Code-Commit` or B) as the other readers.
+- The port holds no conversion logic of its own. It calls `writer_bases`, which reads the shared converted-base
+  cache under the same key (memory commit, version, K_B's own `Code-Commit` or B) as the other readers. On a cache
+  miss that call runs the conversion and stores it, so whichever reader runs first converts.
 - A base that cannot be built comes back as the problem text, which the check reports as the refusing finding
   `R24.7-converted-base`.
 

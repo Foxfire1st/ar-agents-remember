@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/history_check.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+        "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
+        "locator": {
+          "kind": "symbol",
+          "name": "_restated_revision"
+        }
+      },
+      "id": "RLZ-RA87RM",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Returns the revision of the leaf's latest earlier row about the subject when that row is a changed row: the only revision a changed row at an unchanged revision may restate.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The two remedies.",
       "targets": [
         {
           "anchor": {
-            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
             "content": "sha256:c57a75f0a25aa52a8c8a6e45108c1a1734ba06beaae78a50b30f151b5905424c",
             "locator": {
               "kind": "symbol",
@@ -23,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
-            "content": "sha256:8d87dff04e2f5fbc4c73a2e53af7a2e7fbfa80ed7dd7edafb354408b732b0873",
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "content": "sha256:6e3ea3044e5ad749eb217d8b1d2056bb4ab7edc73087e2290b23a58122d65299",
             "locator": {
               "kind": "symbol",
               "name": "owner_history_problems"
@@ -39,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
-            "content": "sha256:747042e44d8a17d08e2ac6f88f20a660dd387ad5d661931708cc981780dbfeae",
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "content": "sha256:75f0a1aeed257770a8b86882ca462f21c05b0bdcf7df337a2bd16666143240c8",
             "locator": {
               "kind": "symbol",
               "name": "_row_messages"
@@ -55,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151cd53042239788e38d38462791980b972911c0",
+            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
             "content": "sha256:8c711c7d1c1ffe0e6e0e7c52a0707e84cabf3d5a41c21ed05580d2f28c4d8832",
             "locator": {
               "kind": "symbol",
@@ -72,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d697a7a0ac3c6b971ff4ba50f6816fdb7f478f22",
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
             "content": "sha256:a3d28fc52505d21b8e41965767c5da4a5b3291441398c20b5b0187640ec2595a",
             "locator": {
               "kind": "symbol",
@@ -80,6 +99,55 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The owner's earlier attempts as the base holds them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "content": "sha256:de44e03ca872897b86a4888c162830f5fb7c3e202f6cfec5883a03a3f5901c1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_earlier_attempts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
+            "content": "sha256:3cd222aedb40c187c6d3bd4813d007c090ed727bf40f4b65fa695ee893f8d186",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restated_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A changed row cannot restate a revision once a later row of another disposition is the latest earlier row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:eed46188fc2716f74becc34b0d56746240e72145e7dbab72e5518fd729886a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
         }
       ]
     }

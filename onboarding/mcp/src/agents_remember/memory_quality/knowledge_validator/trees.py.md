@@ -19,6 +19,9 @@
 - `code_tree_from_git` returns a `CodePathSet` of every regular file path; `CodeDirectory` answers `has_file` from a working tree.
 - `has_directory` (MIK-R04): `CodePathSet` derives a cached `directories` set, every directory that holds a file of the set at any depth, and answers the root route `.` (`ROOT_ROUTE_PATH`) as always present; `CodeDirectory` answers with `is_dir()`, which also holds for `.`. The empty string and a file path are not directories.
 - A tree-ish that names no tree raises `KnowledgeTreeReadError` (a `ValueError`).
+- `history_tree_from_git(repository, treeish)` (L37) reads only the files under `knowledge/history/` of a commit
+  or tree, as a `KnowledgeTree`. It is all the freeze rules read of a commit that is not a comparison base: the
+  commit a leaf's candidate sits on.
 
 ### Conventions
 
@@ -61,6 +64,8 @@ The predicate, the tree types and the two readers.
 - The formatter shares the predicate. [7]
 - A dot-named card and its sidecar are validated. [8]
 - The Git reader reads exact bytes, ignores the cache, and matches the directory reader. [9]
+
+- Only the history files of a commit that is not a comparison base. [10]
 
 ### Cross-Repo References
 

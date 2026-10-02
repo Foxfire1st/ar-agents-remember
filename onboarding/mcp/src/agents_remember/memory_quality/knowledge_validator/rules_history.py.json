@@ -1,16 +1,71 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+        "locator": {
+          "kind": "symbol",
+          "name": "_mismatches"
+        }
+      },
+      "id": "RLZ-11T0CS",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Skips a row about a subject that a later attempt of the same owner answers again, so the latest judgment is the one that is re-anchor-checked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_hidden_changes"
+        }
+      },
+      "id": "RLZ-8XBYNC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "At a commit that publishes a leaf, finds every invariant and family whose earlier unlanded row is a changed row and whose latest unlanded row has another disposition. It needs no converted base, so it also runs at a recorded landing, which the worklist does not reach.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+        "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "checked_history_files"
+        }
+      },
+      "id": "RLZ-BAD8R3",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "At a leaf's publication reads every history file that is not closed in a base or in a frozen commit, whatever its own flag, so only a recorded closeout's file is left out of the re-anchor check.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "The module docstring: the two checks, which files, rows the merge moved.\n\nAnchor: \"a closed file committed outside the AR routes cannot carry a ghost subject\"",
+      "note": "The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved.",
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:b03c843c0921334da4972d6be6c9212d27db5640e310b9fa92e820087a1a62ac",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:d185c8da12aaab4b4e72e38dee5bdc23005dda05d10323b96978295353039ec2",
             "locator": {
-              "end": 44,
+              "end": 67,
               "kind": "line_range",
               "start": 1
             }
@@ -36,13 +91,127 @@
         }
       ]
     },
+    "11": {
+      "note": "A file closed in a base or in a frozen commit is left out of the re-anchor check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Each owner's latest attempt about a subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:53f33a86c22abbd5093804d624057da20622979d983fe06abc4ef321e661e03f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing_attempts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A row that a later attempt answers again is not re-anchor-checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mismatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A later row of another disposition that would replace the leaf's changed row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The refusal names the changed row it replaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:f7abed20650cba1d743187c351a7bdfd498ab954797afc796f245b4314079860",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_change_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The validator alone refuses a no_impact row that replaces a changed row at a recorded landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:043f5668cb5ae5a0b3ce51c90b551f588de79b91fe1fc7d9aaeb7433b446f570",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The rule's two limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a897777c854a4170c0e27151bf6954c22a736ce4",
+            "content": "sha256:eed46188fc2716f74becc34b0d56746240e72145e7dbab72e5518fd729886a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The files the re-anchor check reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:607e314390e67e9afd96f5a5250ab1c06ade4287f753d465ee917e9de5219c20",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
               "name": "checked_history_files"
@@ -57,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
             "content": "sha256:cf108146f9604aa3fd19b01e83275815d1131c62fbf6683583a4b6655d6b1585",
             "locator": {
               "kind": "symbol",
@@ -69,12 +238,12 @@
       ]
     },
     "4": {
-      "note": "Every disagreeing row, and whether the merge moved it.",
+      "note": "Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it.",
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:045827ee90fe765679dc84f6735efe489ad9f51b81d0f7d8598a15952012dc04",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:8b4227c9d3360ee30a300328b6cc7814300ea3eb301ad606403403bb52bb9dae",
             "locator": {
               "kind": "symbol",
               "name": "_mismatches"
@@ -89,8 +258,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:26594f68a1698246e77a95bbf03efddae9d67d53d2a0af672488ad6cfaa2e92e",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:ee0eabc38a03a35c93292319a8cba532ef6494c923682d7e705123b17ffbb69a",
             "locator": {
               "kind": "symbol",
               "name": "check_history_rows"
@@ -105,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
             "content": "sha256:08f2d807a28da98b65a7dd1b88fcca427d7f99ec4af82708b3a4fc50ff1b6f03",
             "locator": {
               "kind": "symbol",
@@ -121,7 +290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
             "content": "sha256:ada10dcf1b001a10048f21dde3833e4c18cf80cb08e0a1a22bb08a27bb39f403",
             "locator": {
               "kind": "symbol",
@@ -132,7 +301,7 @@
         },
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
             "content": "sha256:9810864eafef596d9db43cd1edaae57748cabf4b3a8128db9dcf0bfc8c0bf58e",
             "locator": {
               "kind": "symbol",
@@ -148,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:d2f3d96dd8948e4416449730447149f27c8cf5b9d69b79f5949fa145243ee771",
             "locator": {
               "end": 149,
@@ -166,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0232362ee0ee427401f2d21d0cbc238ab3db594c",
+            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
             "content": "sha256:ef8538598b8aee42a9457276d2d54cc12edf8860af6a1b50d66b4b8cbef5863d",
             "locator": {
               "kind": "symbol",

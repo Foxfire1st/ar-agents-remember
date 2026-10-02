@@ -102,14 +102,24 @@ checks that compare a row with facts the caller reads from the base (K_B) and ca
 - The models check shape and the helpers check facts the caller supplies; whether a row is current
   for a worklist item is the gate's rule (MIK-R09 rule 2), and the writer is MIK-R12's.
 - Nothing in the installed runtime reads or writes history files before MIK-R37.
-- **Reopen after a converted closeout (L37 ruling, 2026-10-01T01:57:55).** `HistoryFile.attempt` is optional
+- **A leaf that writes again after its closeout (L37, decision record DEC-0AEQ28).** `HistoryFile.attempt` is optional
   (>= 2, a leaf only; a wave or crossing file with `attempt` is refused), so every existing file keeps its
-  bytes; `attempt_number` is 1 without it. A reopened leaf keeps its closed file frozen and writes
-  `<leaf-id>-attempt-<n>.json`. `writable_attempt(closed_by_attempt)` names the attempt a write or a closeout
+  bytes; `attempt_number` is 1 without it. A leaf whose latest file a closeout closed (reopened after its integration, or continuing after a closeout that
+  was not integrated) keeps that file frozen and writes `<leaf-id>-attempt-<n>.json`. `writable_attempt(closed_by_attempt)` names the attempt a write or a closeout
   goes to: the latest while it is open, the next once it is closed, 1 when there is no file.
   `merged_leaf_history(files)` reads all of an owner's files as one history, in attempt order: a later row about
   a subject supersedes the earlier one, and every other row, a closed file's included, still counts. The merge
   is a reading and is never written back. `empty_history(..., attempt=n)` creates an attempt file.
+- **The governing row of a record the leaf changed (L37, INV-XN0FG8).**
+  - `invariant_revision_violation(..., restated_revision=None)` accepts a `changed` row at an unchanged revision
+    only when the candidate revision, the base revision and `restated_revision` are equal: the row restates the
+    leaf's own `changed` row of that revision step in an earlier, frozen attempt. It corrects that step's effect,
+    because and reason, and may carry entry work; it is no second change.
+  - `keeps_change_visible(row)` is true for `changed`, `deleted` (an invariant) and `retired` (a family).
+  - `changed_record_row_violation(row, base_revision, candidate_revision)` returns why a row cannot govern an
+    invariant whose revision differs between the parent line and K_C; `changed_family_row_violation(row,
+    guarantee_changed)` does the same for a family whose guarantee K_C restates. Both refusal sentences name the
+    disposition ("a no_impact row", "an assigned row").
 
 ### Todos
 
@@ -219,13 +229,21 @@ each rule.
 - The file: one owner, one row per subject. [24]
 - The freeze predicate. [25]
 - Re-anchoring checked against K_C. [26]
+
 - The revision binding for invariant and family rows. [27]
+
 - The history schema is dispatched by `documents.py`. [28]
 - Closed files stay byte-identical, even when reformatted. [29]
 
 - The optional attempt of a reopened leaf's file. [30]
 - The attempt a write or closeout goes to. [31]
 - All of an owner's history files read as one history. [32]
+
+- A changed row at an unchanged revision is accepted only as a restatement. [33]
+- The dispositions that may govern a record its leaf changed. [34]
+- Why a row cannot govern an invariant whose revision the leaf changed. [35]
+- Why a row cannot govern a family whose guarantee the leaf changed. [36]
+- The three rules on their own, for every disposition. [37]
 
 ### Cross-Repo References
 

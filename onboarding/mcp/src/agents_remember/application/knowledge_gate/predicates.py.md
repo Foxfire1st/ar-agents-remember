@@ -32,8 +32,14 @@ counted change) satisfies it. An item whose kind has no predicate is open.
   `moved_or_absent`, `stale_at_base`); plus every `added`, `retired` and `reanchored` entry.
   `invariant_row_open` requires an `InvariantRow` about the subject, the required covers, a `revision` equal to the
   invariant's K_C revision, and every covered entry that still exists in K_C `current` at C (`_not_current` names
-  each one that is not, with its MIK-R03 reason).
+  each one that is not, with its MIK-R03 reason). Since L37 (INV-XN0FG8) it also asks
+  `changed_record_row_violation` with the item's `facts.record.baseRevision`: while the invariant's revision on the
+  parent line differs from its K_C revision, the governing row is the `changed` row of that change, or the `deleted`
+  row that retires it. A later `no_impact`, `moved` or `extended` row leaves the item open, and the reason says to
+  restate the changed row.
 - **Family rows (rule 2).** `family_row_open` requires a `FamilyRow` about the family and then the first failing of:
+  `_hidden_guarantee_reason` (L37: when the item's `reachedBy` holds `guarantee-changed`, the row is `changed` or
+  `retired`; a `no_impact`, `assigned` or `rerouted` row does not answer a family whose guarantee the leaf changed),
   `_examined_set_reason` (`examined` equals the union of the family's K_B and K_C members, naming the unexamined and
   the extra), `_moved_members_reason` (every examined revision equals the member's K_C revision, or the member left
   K_C: "INV-BBBBBB (examined at 1, now 2)", D7) and `_uncovered_members_reason` (no member has an open invariant item).
@@ -83,14 +89,22 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: one predicate per kind, never a generic lookup. [1]
+- The module docstring: one predicate per kind, never a generic lookup; while a record's revision differs from the parent line's, only its changed row governs. [1]
+
 - What a predicate reads, and the entry state that raises on a failed read. [2]
 - Registration and dispatch; an unregistered kind is open. [3]
+
 - The covers an invariant row must hold, and its currentness. [4]
-- The family row's three reasons. [5]
+- The family row's four reasons: a hidden guarantee change, the examined set, moved members and uncovered members. [5]
+
 - The route condition decided by subject. [6]
 - The ten registrations. [7]
 - The dispatch test. [8]
+
+- An invariant the leaf changed is answered only by its changed row. [9]
+- A family whose guarantee the leaf changed is answered only by its changed row. [10]
+- A changed record is governed by its changed row in every attempt. [11]
+- A family whose guarantee the leaf changed is governed by its changed row. [12]
 
 ### Cross-Repo References
 

@@ -4,35 +4,46 @@
 | --- | --- |
 | sourceRoute | `mcp/tests/` |
 
-## 260928-MIK-L37 The Cutover And Reopen Cases In Two New Modules, And Eight Adapted Modules
+## 260928-MIK-L37 The Cutover And Reopen Cases In Two New Modules, And Fourteen Adapted Modules
 
-`260928-MIK-L37` (MIK-R37) adds two case modules and two lane rows, and extends eight modules:
+`260928-MIK-L37` (MIK-R37) adds two case modules and two lane rows, and extends fourteen modules:
 
 - [`test_knowledge_cutover.py`](test_knowledge_cutover.py.md) (new, 9 cases, `unit-regression`): the cutover lock
   at fourteen routes, the converting candidate, the probe's fail-closed cases, the frozen database, no read of a
   converted tree's database, and the hand-off evidence shape.
-- [`test_knowledge_reopen.py`](test_knowledge_reopen.py.md) (new, 5 cases, `unit-regression`): a reopened leaf's
-  next attempt through the writer, the gate, the validator's freeze, the index, the onboarding gate and record
-  landing.
+- [`test_knowledge_reopen.py`](test_knowledge_reopen.py.md) (new, 19 test functions, `unit-regression`): a reopened
+  leaf's next attempt through the writer, the gate, the validator's freeze, the index, the onboarding gate and record
+  landing; the gate at the worktree closeout, entered through `closeout_result`, and its preview; a leaf that
+  continues after a closeout that was not integrated; the commit bound to the judged tree; the governing row of a
+  changed record across attempts; and the writer's `items`.
 - [`test-evidence-lanes.toml`](test-evidence-lanes.toml.md): the two rows at `:124` and `:125`.
-- [`test_knowledge_conversion_toolchain.py`](test_knowledge_conversion_toolchain.py.md): nine cases for the census
-  on a converted candidate, the card authoring and the converted check's base.
+- [`test_knowledge_conversion_toolchain.py`](test_knowledge_conversion_toolchain.py.md): eleven test functions for
+  the census on a converted candidate, the card authoring (with the refusal of merged tables), the converted check's
+  base, and the one-document fix with its bounded response.
 - [`test_knowledge_crossing.py`](test_knowledge_crossing.py.md): the crossing owner's resolution at the higher
   side's revision plus one, the writer's converted base, and cancel inside the crossing case.
-- [`test_knowledge_writer.py`](test_knowledge_writer.py.md): the bootstrap lock and the crossing owner's rows.
-- [`test_knowledge_gate_routes.py`](test_knowledge_gate_routes.py.md): the N23 to N25 guards.
+- [`test_knowledge_writer.py`](test_knowledge_writer.py.md): the bootstrap lock, the crossing owner's rows, and a
+  cover that revises a rationale in place.
+- [`test_knowledge_gate_routes.py`](test_knowledge_gate_routes.py.md): the N23 to N25 guards, and a hand-closed
+  file refused also when landed a commit later.
 - [`test_knowledge_index_surfaces.py`](test_knowledge_index_surfaces.py.md): unheld read seeds.
 - [`test_memory_attribution_producers.py`](test_memory_attribution_producers.py.md): carryover on converted memory.
 - [`test_worktree_sync.py`](test_worktree_sync.py.md): cancel after a memory conflict (integration lane).
 - [`test_onboarding_trace_gate.py`](test_onboarding_trace_gate.py.md): the run's converted check gets its base.
-
-Review R2 ran the full unit suite (3,441 passed) and the integration lane (458 passed) on the first installed
-candidate, with 33 mutations (30 killed; the three survivors were two benign ones and the bare-repository case that
-`test_a_bare_repository_git_cannot_open_refuses_by_name` now pins).
+- [`test_knowledge_closeout_gate.py`](test_knowledge_closeout_gate.py.md),
+  [`test_knowledge_history_files.py`](test_knowledge_history_files.py.md),
+  [`test_knowledge_index.py`](test_knowledge_index.py.md) with
+  [`knowledge_index_test_support.py`](knowledge_index_test_support.py.md),
+  [`test_knowledge_reader.py`](test_knowledge_reader.py.md) and
+  [`test_review_git_trees.py`](test_review_git_trees.py.md): the gated memory commit and the memo key, the
+  governing-row rules, a rewrite in the second of the index write, a history row's incoming link, and the
+  reviewer's latest-attempt rows.
 
 - The new cutover module's docstring: what it covers. [489]
 - The new reopen module's docstring. [490]
 - The two lane rows. [491]
+
+- The public closeout refuses an open item and commits once it is answered. [492]
 
 
 ## 260928-MIK-L33 The Change-Kind Cases In One New Module

@@ -1,0 +1,94 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "A reopen row written by the closeout routes was the other design named when the question was carried, and the writer, the gate, the validator, the index and the reviewer all read a leaf's history through the attempt files now."
+  },
+  "alternatives": [
+    {
+      "option": "A new, attempt-qualified history file for the same leaf (knowledge/history/<leaf>-attempt-<n>.json): the closed file stays frozen, and the gate and the validator read all of the leaf's files as its history.",
+      "reason": "It keeps one rule for every reopen and needs no hand edit of a history file.",
+      "status": "chosen"
+    },
+    {
+      "option": "An explicit reopen row created by the closeout routes.",
+      "reason": "The ruling keeps the closed file frozen and records no further reason against this option.",
+      "reconsider_when": "A published judgment has to be withdrawn from a closed file, where a later row that supersedes it is not enough.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The writer starts the next attempt once the latest attempt is closed in a comparison base or in the leaf's memory HEAD commit; a file closed only in the uncommitted candidate is still refused by name.",
+    "For the gate and the validator only a closeout the leaf's contract records as completed freezes a file; a file closed by a hand commit is read whatever its flag.",
+    "The latest row about a subject governs across a leaf's attempts, and a row named again replaces the earlier row together with its covers, so it names every earlier cover again (leaf decision 2026-10-02T03:11:49, R6-2).",
+    "While the leaf changed an invariant's revision or a family's guarantee against its parent line, the governing row is the changed row of that change, or the row that retires the record. A changed row at an unchanged revision restates the leaf's own earlier changed row: it may correct effect, because and reason and carry covers for entry work, and it changes neither the record nor its revision (leaf decisions 2026-10-01T22:49:36, Q2, and 2026-10-02T03:11:49, R6-1).",
+    "A family has exactly one governing row per leaf, and a changed row answers the family's route conditions too (leaf decision 2026-10-02T02:19:46)."
+  ],
+  "context": "A closeout closes the leaf's history file, and a closed history file is frozen (MIK-R07 rule 7). A leaf reopened after its integration, and a leaf that continues after a completed closeout that was not integrated, still have to record answers, and the freeze refused every row they added.",
+  "decider": "architect under developer direction D31 (260928-MIK-L37 leaf document, decisions 2026-10-01T01:57:55, 2026-10-01T03:36:39 Q6, 2026-10-01T17:17:07 B, 2026-10-01T22:49:36 Q2, 2026-10-02T01:04:49, 2026-10-02T02:19:46 and 2026-10-02T03:11:49)",
+  "id": "DEC-0AEQ28",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-MS9BMJ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XN0FG8"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
+        "content": "sha256:274273b127cd7bae61dbedb33794d3d26a4da04425a05a43b2138f987a38aad7",
+        "locator": {
+          "kind": "symbol",
+          "name": "merged_leaf_history"
+        },
+        "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
+        "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+        "locator": {
+          "kind": "symbol",
+          "name": "closed_out_memory"
+        },
+        "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R07",
+        "packet": "requirements/MIK-R07-v2-per-leaf-history-files.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Leaf document decisions 2026-09-30T16:08:08 (the carry), 2026-10-01T01:57:55 (reopen ruling), 2026-10-01T03:36:39 (Q6), 2026-10-01T17:17:07 (ruling B), 2026-10-01T22:49:36 (Q2) and 2026-10-02T01:04:49 (family rows)",
+        "Leaf document decisions 2026-09-30T16:08:08 (the carry), 2026-10-01T01:57:55 (reopen ruling), 2026-10-01T03:36:39 (Q6), 2026-10-01T17:17:07 (ruling B), 2026-10-01T22:49:36 (Q2), 2026-10-02T01:04:49 (family rows), 2026-10-02T02:19:46 (one governing row per family) and 2026-10-02T03:11:49 (R6-1: a changed row named again may carry entry work; R6-2: a row named again names its covers again)"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "RULING-ATTEMPTS",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

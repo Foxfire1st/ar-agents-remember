@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Builds the refusal for an unlisted path whose link could not be determined. It states that the link was undetermined, carries the detail naming which knowledge was unread and why, and directs repair of that snapshot, without claiming that no realization links the path.",
+      "rationale": "Builds the refusal for an unlisted path whose link could not be determined. It states that the link was undetermined, carries the detail naming which knowledge was unread and why, and directs the remedy that matches the cause: initializing the leaf's knowledge when the caller found every unread snapshot file absent, and restoring or repairing the named snapshot otherwise. It never claims that no realization links the path.",
       "role": "primary-authority"
     },
     {

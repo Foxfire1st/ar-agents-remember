@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/memory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A converted tree's citation-fix result is bounded for transport; a legacy result passes through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
+            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded_citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each named list capped, with its full count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
+            "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bounded_lists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The response caps every list, says so, and keeps the full counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35ed5331f0d66f87bd2128c05dc99f847778bbfb",
+            "content": "sha256:c69fc638c7048214c08a7d809605e5451b242f96cc4a106102802dce0f1af01a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

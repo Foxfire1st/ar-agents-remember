@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_write_route.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+        "content": "sha256:7f8b8f69f67d04451c6c83e1669692a65d015c65e3109eae177a9e3772c66530",
+        "locator": {
+          "kind": "symbol",
+          "name": "unconverted_write_refusal"
+        }
+      },
+      "id": "RLZ-TWXJK6",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is knowledge-ingest's route to the unconverted-line refusal for a leaf's memory worktree, and through it to the lock.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The database-only flags refused by name.",

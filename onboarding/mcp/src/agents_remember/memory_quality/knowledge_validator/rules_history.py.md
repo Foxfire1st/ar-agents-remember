@@ -25,7 +25,7 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
     file committed outside the AR routes cannot carry a ghost subject past a master or checkpoint landing.
   - `checked_history_files(context)` picks the files the re-anchor check reads: every **open** file; and, when
     `context.leaf_publication` is set (closeout, direct landing, a leaf's recorded landing), every file closed in K_C
-    but **not closed in any comparison base**. The leaf's own file stays editable until its closeout commit writes
+    but **not closed in any comparison base or frozen commit** (`context.closed_before`). The leaf's own file stays editable until its closeout commit writes
     `closed: true` (MIK-R07 rule 7), so a flag set earlier, by hand or left by a refused attempt, is never a waiver.
   - A file closed in a base is frozen (MIK-R22 rule 7 keeps it byte-identical) and historical: its rows describe the
     tree it closed on, and it is not re-anchor-checked again (a later leaf may re-anchor an entry an earlier row
@@ -42,6 +42,21 @@ that entry's anchor in the candidate (`reanchor_mismatches` over `sidecar_entry_
     reopen).
 - The revision and examined-member bindings are currentness, not validity: a row whose invariant changed revision
   afterwards reopens its item at the gate and is not invalid here.
+- **A leaf's attempt files are one history (L37, decision record DEC-0AEQ28; INV-MS9BMJ).**
+  - A file closed in the commit the candidate sits on (`context.frozen`) is frozen and historical like one closed
+    in a base: an earlier, recorded closeout of the same leaf closed it, and the leaf's later rows are in its next
+    attempt file.
+  - `_governing_attempts` maps each `(owner, subject)` to the attempt of the owner's latest row about it.
+    `_mismatches` skips a row that a later attempt of the same owner answers again, whether or not its file is
+    frozen. The later row is checked.
+- **A change the leaf made stays visible (L37, INV-XN0FG8).** At a commit that publishes a leaf,
+  `_unlanded_judgments` lists the invariant and family rows of every history file that no comparison base holds
+  closed, each owner's attempts in order. `_hidden_changes` yields a latest row that is neither `changed` nor a
+  retiring row (`keeps_change_visible`) when an earlier row about the same subject is a `changed` row.
+  `check_history_rows` refuses it under `R09-history-rows`; the message names the row it replaces, with its
+  revision and effect for an invariant, and says to name that changed row again through the writer. The rule
+  needs no converted base, so it also runs at a leaf's recorded landing. Two limits: a change that has landed on
+  the parent line is no longer covered, and a master's landing is not judged by it.
 
 ### Conventions
 
@@ -89,16 +104,28 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module docstring: the two checks, which files, rows the merge moved. [1]
+- The module docstring: the two checks, which files, frozen attempts, the governing changed row, rows the merge moved. [1]
+
 - The files the re-anchor check reads. [2]
+
 - A merge parent's rows, read only when a row disagrees. [3]
-- Every disagreeing row, and whether the merge moved it. [4]
+
+- Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it. [4]
 - The refusing check over every file's subjects and the unmoved mismatches. [5]
+
 - The report-only check of rows the merge moved. [6]
 - The two rules registered on import. [7]
 - The context flag a leaf publication sets. [8]
 - A ghost subject in a closed file is refused at master landing. [9]
 - The sync merge cases. [10]
+
+- A file closed in a base or in a frozen commit is left out of the re-anchor check. [11]
+- Each owner's latest attempt about a subject. [12]
+- A row that a later attempt answers again is not re-anchor-checked. [13]
+- A later row of another disposition that would replace the leaf's changed row. [14]
+- The refusal names the changed row it replaces. [15]
+- The validator alone refuses a no_impact row that replaces a changed row at a recorded landing. [16]
+- The rule's two limits. [17]
 
 ### Cross-Repo References
 

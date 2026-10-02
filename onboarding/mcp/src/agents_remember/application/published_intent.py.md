@@ -30,8 +30,16 @@ ordinary read's published intent is the memory tree itself, read through the der
 runtime. The index file is a dataset of the store's schema, so the same `open_read_context` +
 `read_knowledge_scope` pair reads it. The same resolution (`select_knowledge_dataset`) is what the mounted
 `knowledge_read`, `knowledge_diff` and `knowledge_project` tools apply to a caller's `databasePath`. A memory
-root without the marker keeps the database selection unchanged, and only the read switches: the write
-side's `resolve_published_intent` still selects the database, and no writer reaches the index.
+root without the marker keeps the database selection unchanged, and no writer reaches the index.
+
+**The write side never selects a converted tree's database either (260928-MIK-L37; MIK-R37 rule 3; decision
+record DEC-YZA7E4).** `resolve_published_intent` first asks `converted_memory_tree(context.memory_root)`. For a
+converted root it returns `PublishedIntentUnavailable(state="not-recorded", code="selected_input_unavailable")`
+without opening the file: the detail names the tree and says that its knowledge is text, read through the derived
+index of that tree (MIK-R23), that no knowledge dataset is published at the path, and that the database file
+frozen there is not read. Its callers therefore report the publication location of a converted tree as
+`not-recorded`: the final-output receipt, the sync rebinding, the bootstrap and `memory_init` foundation reads,
+and the ingest read-back. An unconverted root resolves exactly as before.
 
 ## Code Commentary
 
@@ -296,6 +304,9 @@ No configured domain documentation could be checked.
 - The carrier-parity case that holds the retrieval instructions to the payload's real field spellings. [42]
 - The route the ordinary read attaches this block from, the import it attaches it through, and the response field it travels on. [43]
 - **The MIK-R23 cases for the converted-tree selection: the ordinary read reads a converted tree through its index, a partial index's pages say so, an unconverted root keeps the database selection, and a real database in an unconverted root reads byte-identically through the tools.** [44]
+
+- A converted memory tree publishes no dataset: the resolution answers not-recorded, naming the tree, and never opens the frozen database. [45]
+- No read selects the database of a converted tree. [46]
 
 ### Cross-Repo References
 

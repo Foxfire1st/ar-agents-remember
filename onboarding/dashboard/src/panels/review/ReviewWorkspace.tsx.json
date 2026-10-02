@@ -49,7 +49,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Labels every entry of the measured source inventory Mapped, Unmapped or Attribution unknown from the backend's attributed and unattributed changed-path lists; it maps over all entries without filtering, and a path in neither list is shown as unknown rather than inferred unmapped.",
+      "rationale": "Labels every entry of the measured source inventory, without filtering. For a tree comparison the label is the unexplained-changes lane's bucket of the path (Mapped, Unmapped or Attribution unknown), 'Attribution pending' while the lane is being read, and unknown when the lane could not be read. For a dataset review it comes from the backend's attributed and unattributed changed-path lists, and a path in neither list is shown as unknown rather than inferred unmapped.",
       "role": "presentation"
     },
     {
@@ -100,7 +100,7 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "The reading-area column is one DOM node for the life of the workspace; it swaps only its content between the pending statement and the answered subject's reading.",
+      "rationale": "The reading-area column is one DOM node for the life of the workspace. It swaps only its content: the pending statement while the selected subject is read, the unexplained-changes lane's reading when a lane selection is on screen for a tree comparison, and otherwise the answered subject's reading.",
       "role": "presentation"
     },
     {

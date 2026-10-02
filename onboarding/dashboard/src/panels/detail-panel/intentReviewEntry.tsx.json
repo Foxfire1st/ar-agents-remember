@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Renders the entry's single Intent review button: it reads useIntentReviewSummary for this leaf, labels the button '(recorded)' for a closed leaf, shows IntentCounts' +added −removed from that summary (or a brief loading/unavailable state), and always calls onOpen with the task-context target, live or historical. No catalogue read, picker or refresh control appears here.",
+      "rationale": "Renders the entry's single Intent review button: it reads useIntentReviewSummary for this leaf, labels the button '(recorded)' for a closed leaf, shows IntentCounts' +added −removed from that summary (or a brief loading or unavailable state) and, through AttributionCount, the summary's attribution of the changed files when the summary carries one. AttributionDetails explains a partial or unmeasured attribution beside the button. It always calls onOpen with the task-context target, live or historical. No catalogue read, picker or refresh control appears here.",
       "role": "primary-authority"
     }
   ],

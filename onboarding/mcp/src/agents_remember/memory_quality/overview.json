@@ -281,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
+            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
             "content": "sha256:a9de81dbbdf4642cdad7ec87883e50f74e457a6689267d0c456b3eda641ebe61",
             "locator": {
               "kind": "symbol",
@@ -598,7 +598,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:93d5f335443f6b1c4144a68c70a68d5bd998f8c00c5f50d5e245801a736ca7d3",
             "locator": {
               "kind": "symbol",
@@ -610,7 +610,7 @@
         },
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:b686db237a84460cf8dc4004905167d727daf56b73c375de4008a12d9f1bb32d",
             "locator": {
               "kind": "symbol",
@@ -627,8 +627,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
-            "content": "sha256:624fa9d6a4d2330f50ab697674b03f9ac47af0853524208f54718fb9c871dfac",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
+            "content": "sha256:38104cfc2ea2242ea31ca2343e2c3d0ec00d85a47a2dcae0b932d70adceb8227",
             "locator": {
               "kind": "symbol",
               "name": "require_valid_commit"
@@ -639,24 +639,11 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:094ef17761f5eb9ce46f5fb6cd8ef49a30cf278a9c1b46dfa979358481ae3193",
             "locator": {
               "kind": "symbol",
               "name": "validation_applies"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
-            "content": "sha256:dac3529981df3ce0032b18a29adb9602f1a15eb1ee36d5179dd692ec366bf018",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 91
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -669,8 +656,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeValidation"
@@ -686,7 +673,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c68aecac834f2ca5fdc4107ed1cd253a0771a0f0",
+            "blob": "2d97bd09671eb1aee4a00e8dac33dbecc0c949ea",
             "content": "sha256:37a949b8d928e8a4a6aa537a4a70eeedf40f087d6886c7277aa4fbee20d49bba",
             "locator": {
               "kind": "symbol",
@@ -749,7 +736,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f18d9e5032847a1225ecab08e40a819314ffc7e",
+            "blob": "261ea87a01a3cb468b17b3bede77e2b9fe29f4d7",
             "content": "sha256:912287966d4ad2fe95234b62f0cfb089d5c40649015a914445b40054ba8d0797",
             "locator": {
               "kind": "symbol",
@@ -834,8 +821,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
-            "content": "sha256:d2802ad365047d4ef2e74f95d6031439bb1e4cdcea8286e0ebd28b1b11768944",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:1351b5c5d88c8123e73798fd9e7b3eef6834d4c213fdce3b283d2bb6e4681b9a",
             "locator": {
               "kind": "symbol",
               "name": "check_references"
@@ -897,8 +884,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:7dce94a987c6103da6908cfe0a1167b479263995df126d1907da7fb0f28ba36e",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeValidation"
@@ -1407,8 +1394,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:607e314390e67e9afd96f5a5250ab1c06ade4287f753d465ee917e9de5219c20",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
             "locator": {
               "kind": "symbol",
               "name": "checked_history_files"
@@ -1424,8 +1411,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
-            "content": "sha256:26594f68a1698246e77a95bbf03efddae9d67d53d2a0af672488ad6cfaa2e92e",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:ee0eabc38a03a35c93292319a8cba532ef6494c923682d7e705123b17ffbb69a",
             "locator": {
               "kind": "symbol",
               "name": "check_history_rows"
@@ -1436,7 +1423,7 @@
         },
         {
           "anchor": {
-            "blob": "d96240ddd53b6acc8bd16edd74b43eba993932ce",
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
             "content": "sha256:08f2d807a28da98b65a7dd1b88fcca427d7f99ec4af82708b3a4fc50ff1b6f03",
             "locator": {
               "kind": "symbol",
@@ -1453,12 +1440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:edb0d5948b13f47b679dd00bde75cc27d16721e425b8f627cdfd67927fcda242",
             "locator": {
-              "end": 29,
+              "end": 30,
               "kind": "line_range",
-              "start": 27
+              "start": 28
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -1467,16 +1454,15 @@
       ]
     },
     "69": {
-      "note": "The leaf-publication route of the adapter.\n\nAnchor: \"def leaf_refusal(\"",
+      "note": "The leaf-publication route of the adapter.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a3e2ab1f23c38e0a3be9a7de9a2af91a0566f1b",
-            "content": "sha256:11f69f9c7f232759e5796843f35fca9a613e6c7eea0f8a17a5fd67bdc6ae4f79",
+            "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
+            "content": "sha256:5d77aa20e73ecf7bb686e08c275db199f1ab826b5c917809d54c13cc8d86056d",
             "locator": {
-              "end": 79,
-              "kind": "line_range",
-              "start": 65
+              "kind": "symbol",
+              "name": "leaf_refusal"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
           },
@@ -1575,13 +1561,64 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a074f221424060ad09db8825baa9825bb9a3d4c2",
-            "content": "sha256:e35d54d4d08535fcbc2e88e5556c31be6819e30175054d4b0641c2c1f80d4bba",
+            "blob": "890d4f88833d19f881459eb824b61b84d4e6b430",
+            "content": "sha256:86ea7c2796d9ad1ea4f1141671be57d678471dedb914c18f7dfb9a0c563fab53",
             "locator": {
               "kind": "symbol",
               "name": "fix_references"
             },
             "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "A history file closed in a base or a frozen commit is left out of the re-anchor check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "checked_history_files"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "A later row of another disposition that would replace the leaf's changed row is found.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c0202279737c46af9d3cdbd32309d0f29503a76",
+            "content": "sha256:8958b1d5e7974ce9450138ae54b86b9c439181230800167a1796f056a74b96b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_changes"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The drift item of a converted tree is the converted check's result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8c3bf0f7388179f0d5bc71b49c22089f7557793",
+            "content": "sha256:b549df9727a2948e7d8df4befaf94086d4246e45e34e903b9ed925fb10539383",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executed_result"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
           },
           "kind": "code"
         }

@@ -18,6 +18,10 @@
 - `ValidationContext` holds the candidate, its `ParsedTree`, the comparison `bases`, the paired `code` tree (or `None` for a standalone conversion), `conversion` and, since MIK-R09 (leaf 260928-MIK-L09), `leaf_publication` (default `False`): the commit publishes a leaf (its closeout, direct landing or recorded landing), so MIK-R09's history-row rule (`rules_history`) re-anchor-checks every history file not closed in a base, whatever its own `closed` flag (review R1 F1, ruling 2026-09-30T16:07:55). `record_ids` is every parsed record ID plus the IDs of unparsed record files.
 - `base_anchors` (cached) collects, from every base's leniently parsed sidecars, each realization/proof entry as `(entry ID, anchor key)` and each reference anchor target as `(sidecar path, anchor key)`. `anchor_key` serialises the anchor with its own path filled in from the sidecar, so an anchor that omits `path` compares equal to one that spells it.
 - `sidecar_entries` returns a file sidecar's `realizes` and `proves` entries.
+- `ValidationContext.frozen` (L37, INV-MS9BMJ) holds the history files of the commit(s) the candidate sits on
+  when they are not comparison bases: a leaf's base is its parent line's tip, so a leaf that continues after a
+  closeout that was not integrated sits on a commit that is no base. `closed_before` is the bases plus `frozen`:
+  every tree whose closed history files are frozen. The freeze rule and the re-anchor rule read it.
 
 ### Conventions
 
@@ -56,9 +60,13 @@ The registry, the context and the carried-anchor computation.
 - The refusing rules a writer reports instead; the docstring states the contract. [3]
 - The refusing route rules are reported inside the writer, and still refuse in `validate_tree`. [4]
 - The anchor comparison key and the base anchors. [5]
+
 - The context every rule reads. [6]
+
 - The flag a leaf-publication commit sets (MIK-R09). [7]
 - A later packet's rule runs everywhere, and report-only never refuses. [8]
+
+- The context's frozen trees, and every tree whose closed history files are frozen. [9]
 
 ### Cross-Repo References
 

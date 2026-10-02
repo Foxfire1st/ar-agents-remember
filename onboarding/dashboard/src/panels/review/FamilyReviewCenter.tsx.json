@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L46"
       },
-      "rationale": "Derives linksIncomplete from centerSelection (true while the selected family's members are not complete) and passes it into the one expressions element that every center variant renders. It also passes onRosterNext to the member, family and unavailable-member centers, so the partial-links notice and the user-driven roster continuation survive whichever view is shown.",
+      "rationale": "Derives linksIncomplete and the selected family entry from centerSelection and passes both into the one expressions element that every center variant renders (CenterExpressions). That element hands linksIncomplete to ReviewExpressions for a dataset review and the family entry to cardScope for a tree comparison. It also passes onRosterNext to the member, family and unavailable-member centers, so the partial-links notice and the user-driven roster continuation survive whichever view is shown.",
       "role": "propagation-persistence"
     },
     {

@@ -1446,6 +1446,24 @@
         }
       ]
     },
+    "59": {
+      "note": "An incoming link may carry the record its history-row source is about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
+            "content": "sha256:66cb63de23c042cf0174db4b81d76f32c98e9bd39c3c51a84e4d85a82997e4f8",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "dashboard/src/data/knowledgeReader.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The summary carries the lane's count on both answered states.\n\nAnchor: \"const attribution = result.attribution ? { attribution: result.attribution } : {};\"",
       "targets": [
@@ -1469,7 +1487,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6aabab08f3b92fcedb8c2c88135f244417d44ee",
+            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
             "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
             "locator": {
               "kind": "symbol",
@@ -1481,7 +1499,7 @@
         },
         {
           "anchor": {
-            "blob": "f6aabab08f3b92fcedb8c2c88135f244417d44ee",
+            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
             "content": "sha256:15f70b6870a24452a148a06dfa75248f9a6c960d88c355baa91e2ed88cc975c0",
             "locator": {
               "kind": "symbol",
@@ -1498,7 +1516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6aabab08f3b92fcedb8c2c88135f244417d44ee",
+            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
             "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
             "locator": {
               "kind": "symbol",
@@ -1515,7 +1533,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6aabab08f3b92fcedb8c2c88135f244417d44ee",
+            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
             "content": "sha256:7bc8633a1ba277589e8b7476efd0234a310b96c8e6c431070b4cdf98e734c94d",
             "locator": {
               "kind": "symbol",

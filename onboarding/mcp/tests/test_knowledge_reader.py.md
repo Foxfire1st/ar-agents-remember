@@ -50,6 +50,10 @@ imports no test support module, so the evidence-lifecycle catalog needed no re-p
     its bytes being read (F14, F17).
 - **Read-only proof.** `_snapshot` records refs, `--no-optional-locks` status, `count-objects` and the index
   file of both repositories; the route case and the published case compare it before and after.
+- **L37 (MIK-R29 rule 5).** `test_a_decision_truth_view_shows_alternatives_and_derived_supersession` also asserts
+  that a decision's incoming link from a history row that names it in `because` carries `sourceSubject`, the
+  record the row is about, and no `sourceRecord`; and that the subject's timeline serves the row whole, its
+  `because` included.
 
 ### Conventions
 
@@ -85,10 +89,14 @@ No configured live documentation source was available for this pass.
 - The whole answer, envelope included, within the bound (F17). [6]
 - The test file, the explorer and the without-proof list. [7]
 - The invariant view, moves and re-anchors, and the timeline cache. [8]
+
 - The family, decision, incident and facet, and census views. [9]
+
 - The selections: commits, published, a leaf, and a partial index with no code tree. [10]
 - The route, and bad requests and bounded code notices. [11]
 - The lane row. [12]
+
+- A history row's incoming link carries the record the row is about. [13]
 
 ### Cross-Repo References
 

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:07d0a1f9b62f3472228b098386bf593631716ca922f77c4d558bf0595d49221c",
             "locator": {
               "end": 249,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:6bb20940da2a28d941b98dd945aff8c59ea93b419d4f4824dc4f5d7c3003baca",
             "locator": {
               "end": 304,
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
             "locator": {
-              "end": 516,
+              "end": 518,
               "kind": "line_range",
-              "start": 436
+              "start": 438
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 503,
+              "end": 505,
               "kind": "line_range",
-              "start": 496
+              "start": 498
             }
           },
           "kind": "code"
@@ -82,6 +82,23 @@
               "name": "sync_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The preview asks the mandatory gate on converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 336
+            }
           },
           "kind": "code"
         }

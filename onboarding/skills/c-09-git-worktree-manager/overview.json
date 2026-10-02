@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:403098fe8eac8bcce4a4dd4b255f9863440e03a8d13d8fbde4823df1155f6782",
             "locator": {
               "end": 303,
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:5247148b0def207f01376a572644afee92f5487cd8d4f909dce98b08973b1e00",
             "locator": {
-              "end": 516,
+              "end": 518,
               "kind": "line_range",
-              "start": 436
+              "start": 438
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -37,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:332ff661c33ba89aaa1fe379ab5d78267416ad499f14645aa514cf2f4a18b190",
             "locator": {
-              "end": 380,
+              "end": 382,
               "kind": "line_range",
-              "start": 380
+              "start": 382
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:9ffec959ba59abc1da65b6d90b974b0497386a48bcb6115a9a892a9f71ecdb2c",
             "locator": {
-              "end": 384,
+              "end": 386,
               "kind": "line_range",
-              "start": 381
+              "start": 383
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:0a2c532f1844c058d2f36b382a89f71b4faafaac0b04ab2eec8e04bf547a151f",
             "locator": {
-              "end": 387,
+              "end": 389,
               "kind": "line_range",
-              "start": 387
+              "start": 389
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },
@@ -150,12 +150,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cc334c3b527b5e7aac32873e8e36e61c9a14859",
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
             "content": "sha256:c6e72960e0a1a170399bd784eeadc15a7c60ad7af6b4c7df51d972a4645d89dc",
             "locator": {
-              "end": 503,
+              "end": 505,
               "kind": "line_range",
-              "start": 496
+              "start": 498
+            },
+            "path": "skills/c-09-git-worktree-manager/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The preview asks the mandatory gate on converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb83d20631949cf4497ed58db6faa6b2205119f6",
+            "content": "sha256:668421fb6b05d84e5564e63af3d8d7d8d21b6895d299ce3418caf564b40c069b",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 336
             },
             "path": "skills/c-09-git-worktree-manager/SKILL.md"
           },

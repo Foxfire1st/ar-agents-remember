@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/memory_quality/controller.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+        "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unconverted_refusal"
+        }
+      },
+      "id": "RLZ-NBXFG9",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Refuses a memory-quality run on unconverted memory: a leaf's tree through the unconverted-line refusal, which falls through to the lock, and the official checkout of a repository-level run through the lock directly.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The refusal runs before any scan and returns a refused result naming the crossing sync.",

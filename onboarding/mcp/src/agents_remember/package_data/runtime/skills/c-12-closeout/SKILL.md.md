@@ -40,6 +40,18 @@ also applies after an authorized manual Git landing. A refusal leaves cleanup ex
 with its concrete reason; `lifecycle_finalize_task` then verifies cleanup and completes the
 current task and its immediate parent row.
 
+On converted memory (the memory tree holds `knowledge/layout.json`) the skill says that both closeout tools ask the
+mandatory invariant gate (MIK-R09) about the leaf's exact code and memory candidate (L37):
+
+- `worktree_closeout_preview` answers `state: "knowledge-gate-refused"` instead of `"would-closeout"` while a
+  worklist item is open, the worklist run is incomplete or the validator fails. `knowledge_gate.findingCount` and
+  `knowledge_gate.findings` name what is open (at most 50 are listed, and `truncated` says so). It asks for no
+  commit approval. A passing preview carries `knowledge_gate: {"state": "pass"}`.
+- `worktree_closeout_apply` refuses the same leaf with the same findings before it claims the approval or commits
+  either side, and judges the exact memory tree once more at the memory commit.
+- The memory commit records exactly the tree the gate judged. A file written to the memory worktree while the
+  closeout runs is either refused ("changed while the gate ran") or left as an uncommitted change.
+
 ### Conventions
 
 - Preview before mutation and keep the preview/apply input immutable across retries.
@@ -72,7 +84,9 @@ states visible.
 ### Repo-Internal References
 
 - Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing. [1]
+
 - `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. [2]
+
 - `c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report. [3]
 - Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. [4]
 - `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. [5]
@@ -85,6 +99,8 @@ states visible.
 - The closeout order is now one external-memory six-step list: confirm the worker's targeted-check report and the curator's handoff, preview the enabled code and memory legs, call `worktree_closeout_apply`, commit code then the prepared memory content with its code attribution, refuse before mutation on a moved ref or an unresolved conflict, then update the task contract closeout state. [12]
 - The skill's own statement of the staging contract: a refused gate leaves the worktree fully staged and uncommitted, and because a retry must not inherit that index, each gate run begins with a reset and restages from the working tree, so resetting first recomputes the staged set under the ignore rules in force. [13]
 - `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. [14]
+
+- On converted memory both closeout tools ask the mandatory gate; the preview never answers would-closeout for a refused leaf, and the commit records exactly the judged tree. [15]
 
 ### Cross-Repo References
 

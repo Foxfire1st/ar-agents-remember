@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
             "content": "sha256:fa05f2f4e4de41f5a498c9b55173b133eadf2815f40ca95a3e2193228e54f780",
             "locator": {
               "end": 26,
@@ -20,14 +20,14 @@
       ]
     },
     "2": {
-      "note": "Creating a card for a new source file: the Markdown, the citation table and one fixer run.\n\nAnchor: \"Create a card for a new source file\"",
+      "note": "Creating a card for a new source file: the Markdown, the citation table, one fixer run and the refusal reasons.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
-            "content": "sha256:0ad1d406713fd3bc8ee0ac763d6f37558c229b2e2007eefcd86035c1147a12ea",
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
+            "content": "sha256:b366fad80dbb51f4ddc4c7da041baa3bba4f317f3dcf16b37cc12f4c9079cebf",
             "locator": {
-              "end": 75,
+              "end": 77,
               "kind": "line_range",
               "start": 27
             }
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
             "content": "sha256:e036e0cb99863e6fba61f72bb065b3fdf79ec46ffe25c8744c38cf33c0a6fa64",
             "locator": {
-              "end": 95,
+              "end": 98,
               "kind": "line_range",
-              "start": 76
+              "start": 79
             }
           },
           "kind": "code"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
             "content": "sha256:a2382ceb5d6f6beb7c13e1a1b64cf015b80511bf5f63992711c2bc2850f19e77",
             "locator": {
-              "end": 134,
+              "end": 137,
               "kind": "line_range",
-              "start": 96
+              "start": 99
             }
           },
           "kind": "code"
@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef81b8dc2ef9ac0243abb8c60c9ebaa6c6476074",
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
             "content": "sha256:44025590f2b83bafa525c3bdd92ed9c9266abeac1e1de577e755f1a947586192",
             "locator": {
-              "end": 159,
+              "end": 162,
               "kind": "line_range",
-              "start": 135
+              "start": 138
             }
           },
           "kind": "code"
@@ -110,13 +110,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e7c3775252241e65f8436065959867da0223b0",
+            "blob": "00b3d16c678d1f0fad8b3b9c125f3318fe22b112",
             "content": "sha256:9d3fbd5c0cfdfbead4c902953d9802b9d2dd4cfa712d461b3174a814aa78cb4c",
             "locator": {
               "kind": "symbol",
               "name": "author_card_references"
             },
             "path": "mcp/src/agents_remember/memory/conversion/card_authoring.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The refusal for two tables with no blank line between them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "170c3c9033ad5d65c82c9caefb8f8059c9979856",
+            "content": "sha256:13a3891b08283cb375d8372fa61599ca7c6c1866cd31fe38ac6a71f9fa427597",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 70
+            }
           },
           "kind": "code"
         }

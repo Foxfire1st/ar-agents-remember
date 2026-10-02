@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:c69a6ef30e247687c0885edbc82eaf19c1d965502a91f2d96ec325f00d89c05d",
             "locator": {
               "kind": "symbol",
@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
             "content": "sha256:df7bca7aceaa9ac4de87839def636a2e905f8b9a8a12e1e14bc204c389fe86e2",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
             "content": "sha256:0a53fe45579b8493120d4cc8287e34fdb50c2835cc85a80787ed5052cc972af1",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
         },
         {
           "anchor": {
-            "blob": "aa5c9a74ca8a2c4c3e4e8f42644ee6e8c94af20b",
+            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
             "content": "sha256:92c44e342bc9f788bc58282ff89286ceee66b02584d663e2efcaebbd7382594e",
             "locator": {
               "end": 48,
@@ -124,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:21acbdc267adebaf0d858e87021d6b8b1a14462795d6f74e83faa28999c54701",
             "locator": {
               "kind": "symbol",
@@ -141,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
             "locator": {
               "kind": "symbol",
@@ -153,7 +153,7 @@
         },
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:90ffb809ef139a3aaae5cd15901c789719d74a935bcfa5531b72a92341d249eb",
             "locator": {
               "kind": "symbol",
@@ -165,7 +165,7 @@
         },
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:5a279d335ee691000f851cf4607ed048b6e81784fede2960b20c3f5cd60132e8",
             "locator": {
               "kind": "symbol",
@@ -177,11 +177,44 @@
         },
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:783214fdc6941666eda5045fe82a81ee414df897c46b32fd77568e2937c1a1ee",
             "locator": {
               "kind": "symbol",
               "name": "_assert_schema_disagreement_is_reported_not_reconciled"
+            },
+            "path": "mcp/tests/test_worktree_sync.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "One settlement's stage directory is temporary and removed on every way out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
+            "content": "sha256:7835a23f1d9547ef9216d0168ae62a6e417ad652af09def0df55efc1f0d2f113",
+            "locator": {
+              "kind": "symbol",
+              "name": "settle_knowledge_conflict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The stage copies are removed whether the merge settled, refused or raised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
+            "content": "sha256:bfa2e012fdcacdc347a9bb23b3998e89e96ad110650046077b506a32d21615db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_merge_stage_copies_are_removed_on_every_way_out"
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },
@@ -194,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
-            "content": "sha256:af5b746a5e33bfc07ffa2c95a00664852cfc7126076351c4c32bf9739827edf8",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
+            "content": "sha256:7835a23f1d9547ef9216d0168ae62a6e417ad652af09def0df55efc1f0d2f113",
             "locator": {
               "kind": "symbol",
               "name": "settle_knowledge_conflict"
@@ -210,7 +243,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:a7b4bdf9c26c532957bd938f63528ded441f568fc820ab6832833e7f6f1d39a3",
             "locator": {
               "kind": "symbol",
@@ -226,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:a3b916014567db883a1f5f761c4b49f90c3259fb92def49de11d2ddfaf62d4a1",
             "locator": {
               "kind": "symbol",
@@ -242,8 +275,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
-            "content": "sha256:6748e7fac257503d66c382a68eb316b3ba7b1270a542950a6060ccaa1fc939dd",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
+            "content": "sha256:abe0e5ffb0baadba0092dc2687f2cac095d3eaf1cfdb9a33e045fcfbad533836",
             "locator": {
               "kind": "symbol",
               "name": "_stage"
@@ -258,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:db5f68b46cd86162d369f122bef2938251f9cea9bff93e44319b315e82bfef52",
             "locator": {
               "kind": "symbol",
@@ -274,7 +307,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:d3c098446be2c00b076faa12a00394c728cacb4690fba0199df6e0367ffbdf76",
             "locator": {
               "kind": "symbol",
@@ -290,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:14e62e096723ea9c90668eb74325e5c53cc4490753ce4056e5b6b8d6ebeb869f",
             "locator": {
               "kind": "symbol",

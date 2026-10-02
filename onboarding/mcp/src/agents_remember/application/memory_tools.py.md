@@ -181,3 +181,13 @@ must understand and change, and they keep raising: widening the catch to `Runtim
 a misuse behind an envelope.
 `mcp/tests/test_memory_branch_authority.py::test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`
 is the case that holds that boundary, and the docstring states it.
+
+## 260928-MIK-L37 The Card Writers Stay Unlocked On An Unconverted Line
+
+`citation_fix_tool`, `citation_migrate_tool` and `route_index_refresh_tool` do not ask the cutover lock. They write
+onboarding cards and route indexes into a leaf's working tree, never knowledge records and never the database, and
+they commit nothing; the closeout that would commit their edits is locked. The decision record DEC-VMMJDN states
+this exception to MIK-R24 rule 9 and is linked to the three functions, so a change to one of them raises the
+decision's rejected alternative (lock the three tools like every other write) for reconsideration.
+
+- The three card writers, which ask no cutover lock. [27]

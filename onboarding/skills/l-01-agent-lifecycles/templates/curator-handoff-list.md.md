@@ -166,6 +166,22 @@ template; its message names its own fix (review note R6-3). It reaches the packa
 starter copies through `sync-skills.py`, and binds converted memory only, so today's hand-off lists are
 unchanged.
 
+**The History section since L37 (decision record DEC-0AEQ28; INV-MS9BMJ and INV-XN0FG8).** It now says:
+
+- `items` is left out: the writer lists the items of the leaf's persisted worklist that the row answers;
+- a cover may be `{id, rationale: "<text>"}`, which replaces a realization entry's rationale in place while the
+  entry keeps its ID, also beside `locator`; a proof entry has a facet, not a rationale;
+- an invariant whose record the leaf changed is governed by its `changed` row. While the record's revision differs
+  from the parent line's, a later `no_impact`, `moved` or `extended` row as the leaf's latest row is refused at the
+  closeout and at a recorded landing;
+- a row named again replaces the earlier row and its covers, so it names every cover of the earlier row again;
+- a `changed` row named again at an unchanged revision may correct `effect`, `because` and `reason` and carry
+  entry work; it may not change the revision or stand for a second change of the statement. A second change is a
+  new revision with its own `changed` row; a move is a `moved` row first, then the `changed` row again;
+- a family has one governing row, the leaf's latest: it answers the `reached_family` item through `examined` and
+  each route condition through its disposition (`rerouted`, `assigned`, `changed` or `retired`). `changed` is the
+  disposition whenever the leaf changes the guarantee, also when it assigns or reroutes routes.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
@@ -194,7 +210,9 @@ The operative contract is defined by the repository sources cited below.
 These references name the current owners and the behavior they establish.
 
 - **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** [1]
+
 - **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** [2]
+
 - **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** [3]
 - Curator-owned semantic scope remains required. [4]
 - The public retention input and exact readback requirements. [5]
@@ -207,6 +225,8 @@ These references name the current owners and the behavior they establish.
 - The decision section's refusal list names the reorder of a linked alternative (MIK-R14). [12]
 - The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. [13]
 - The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example. [14]
+
+- The History section: items filled by the writer, the rationale cover, the governing row of a changed invariant, naming a row again, and a family's one governing row. [15]
 
 ### Cross-Repo References
 
