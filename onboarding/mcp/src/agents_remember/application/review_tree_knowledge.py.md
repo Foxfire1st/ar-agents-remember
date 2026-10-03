@@ -34,6 +34,22 @@ served by `review_unexplained_lane.py` over the one classification of `review_la
 view of rule 3 stays in the leaf-wide view beside them (MIK-R32's substitution: MIK-R25's worklist view stays, and the
 lane is the separate review destination).
 
+## One held-tree computation with actual-read admission
+
+The leaf-wide path receives the comparison's captured trees and passes them as `CandidateTrees` into the existing worklist owner. It captures nothing itself. `_compute_leaf_parts` observes the diff/worklist's actual external reads; `_leaf_wide_parts` checks them against the request identity before returning or admitting complete parts to the parent memo. Changed-and-restored task bytes are refused as `candidate_unresolved`; no automatic retry supplies an older successful answer.
+
+The knowledge diff uses raw NUL-delimited exact paths/blob identities, one aggregate patch and one batched blob read. Git's C-quoted header spellings are matched under either quotePath setting. Indexed metacharacters are literal addresses: only the addressed file's unchanged patch bytes are returned, without a pattern-selected sibling. Type changes consume two sections, rename/status/order/grouping and truncation retain their existing meanings. A section mismatch refuses explicitly. A first aggregate nonzero outcome permits one identical batch recovery and permanently makes the result unkeepable; the existing unreadable-blob recovery likewise reports incomplete.
+
+While the worklist is computed, the existing guarded context pauses cyclic collection to avoid whole-heap pauses across request threads. A lock/refcount coordinates overlapping users and the final exit restores the originally enabled state; exceptions leave restoration in the same finally path. This is a local computation optimization and establishes no first-view concurrency pass.
+
+There is no per-filename patch path, second worklist, composed server-answer cache or disk review copy. R42 owns first-miss process isolation and the original <=1.6 s small / <=2.0 s L37-sized concurrent-click latency limits.
+
+
+- Actual reads govern successful return and parent memo admission. [18]
+- One observed computation supplies its exact reads and completeness. [19]
+- Exact path patches use a bounded aggregate read and honest recovery. [20]
+- Patch sections bind to the exact raw filename listing. [21]
+
 ## Code Commentary
 
 ### Logic
@@ -61,19 +77,12 @@ lane is the separate review destination).
   (`_IDENTIFIER_KEY`, `^[a-z][A-Za-z0-9]*$`) in snake_case (`_snake`); a key that is not identifier-shaped (a path, an
   ID) is never rewritten. The real leaf-wide body has no camelCase key (`codeTree` → `code_tree`, `staleMembers` →
   `stale_members`, `ownerKind` → `owner_kind`).
-- **The diff (rule 2).** `_name_status` parses `git diff --name-status -z -M` over the knowledge and onboarding
-  roots; `_changed_files` keeps the paths `is_indexed_path` accepts and attaches each patch, truncated at
-  `PROSE_MAX_LENGTH - 200`. `_Groups.add` files a change as history (under `knowledge/history/`), as a record
-  (a knowledge file whose schema names a record kind), as a source (an onboarding sidecar with a `path`), or as
-  other; a sidecar's changed `realizes`/`proves` entries (`_changed_entries`: added, removed or changed) are also
-  listed under the invariant they name, so a record's code-side changes are visible from both groupings. The
-  accumulator split (`_Groups`, `_name_status`) is ruling 22:22:37's complexity action; every function is radon A or
-  B.
+- **The diff (rule 2).** `_listed_changes` parses `git diff --raw -z -M` over the knowledge/onboarding roots, including exact paths and blob identities. `_measured_tree_diff` binds unchanged aggregate patch sections to that listing, keeps indexed files and reads their JSON documents as exact batched blob bytes. `_Groups` preserves history/record/source/other grouping and changed realization/proof attribution. Patches remain bounded by `PROSE_MAX_LENGTH - 200`; literal filenames never expand into matching siblings. Failure stays explicit and never makes a successful memo entry.
 - **Currentness (rule 2).** `side_currentness` calls `invariant_currentness` for each available side with that
   side's code tree and the index's `record_ids("invariant")`/`record_ids("family")`, adding `indexState`; an
   unread side answers `unverifiableReason`.
 - **The worklist (rule 3).** `worklist_view` computes the leaf's worklist without persisting it
-  (`leaf_worklist(contract, persist=False)`) for a live leaf, or reads the persisted one for a record. `bound` says
+  (`leaf_worklist(contract, persist=False, candidate=CandidateTrees(...))`) over the comparison's supplied trees for a live leaf, or reads the persisted one for a record. `bound` says
   whether its recorded pairing is exactly this comparison's four trees (`_bound`); `_history_rows` reads the after
   index's `history_rows_about` for each item subject **and for the subject its `facts.row` names**
   (`_row_subjects`; an unexplained hunk is answered by a `hunk:…` row, MIK-R10; PS-1 from L10's post-sync review,
@@ -124,7 +133,7 @@ No configured live documentation source was available for this pass.
 - The leaf-wide view with its re-keyed currentness; one focused answer (the cards' entries, the lane, or one file's classification or refusal). [3]
 - One snake_case wire convention, identifier-shaped keys only. [4]
 - The knowledge diff and its two groupings. [5]
-- Every changed indexed file with its patch, from `--name-status -z`. [6]
+- Every indexed patch is paired with the exact raw filename/blob listing and retains literal selection and grouping. [6]
 - A sidecar's changed realization and proof entries. [7]
 - MIK-R03 currentness per side at that side's own code tree. [8]
 - The worklist view, its binding to the four trees, and the history rows about each item's subject and its `facts.row` subject. [9]
@@ -142,3 +151,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- Worklist-only cyclic collection pause coordinates overlapping holders and restores the original enabled state after normal or exceptional final exit. [22]

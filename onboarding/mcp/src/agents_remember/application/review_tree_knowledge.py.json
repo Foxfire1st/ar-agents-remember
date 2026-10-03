@@ -3,7 +3,97 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:48fe7371789409f8b89aa341396e74d2de500c1bdd3990dafcc233dcd422b159",
+        "locator": {
+          "kind": "symbol",
+          "name": "_worklist_view"
+        }
+      },
+      "id": "RLZ-4DBN10",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Passes the comparison's captured code/memory CandidateTrees into the existing worklist owner with persist=False, and exposes completeness to parent memo admission without capturing again.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:1bd66e6e8cd213641e26490dec58f08d8b657c5ea074a8879dce92d8e40c3fef",
+        "locator": {
+          "kind": "symbol",
+          "name": "_listed_changes"
+        }
+      },
+      "id": "RLZ-646SPE",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-diff-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Reads raw NUL-delimited exact path/status/blob identities, preserving rename pairs before aggregate patch binding; this is where filenames become literal indexed addresses.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:4e45656d60fae6cc03888aee288f514e15d9d5a921ecdfaa936502266baa36d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_wide_parts"
+        }
+      },
+      "id": "RLZ-BA531Z",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Checks actual consumed task/dependency identities before successful return and keeps only fully settled parts; raced inputs become the existing candidate_unresolved refusal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:f549cc2ca8e1e31c8458825e6826764712fcbe8dc8997791757d664a74f8db7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Listed"
+        }
+      },
+      "id": "RLZ-D0CC0H",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Retains the exact raw path/blob/status tuple and derives both admissible Git header spellings and type-change section count used to bind aggregate patches to literal filenames.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:1a7b83b1b277da4dc2a0726815efebb30b59ed14939d84e23f14bdf8384c5a52",
+        "locator": {
+          "kind": "symbol",
+          "name": "_quoted_git_path"
+        }
+      },
+      "id": "RLZ-H028XD",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-diff-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Derives Git's exact C-quoted UTF-8/byte escape header spellings under either quotePath policy, so matching aggregate sections preserves literal path identity.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
         "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
         "locator": {
           "kind": "symbol",
@@ -18,6 +108,114 @@
       },
       "rationale": "Is the reviewer's own form of the rule: of each owner's rows about one subject it keeps only those from that owner's latest attempt file that answers the subject, so the worklist view shows the judgment that governs. It reads the index's rows and does not go through merged_leaf_history.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cut_patch"
+        }
+      },
+      "id": "RLZ-S383FG",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Binds unchanged patch-section bytes to each raw indexed path, including both Git quoting policies and two sections for type changes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:b5cea8f91155ca80d9d2d822eaf04d58065be99238c5bbe11b055fd772f0b999",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compute_leaf_parts"
+        }
+      },
+      "id": "RLZ-TKD181",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Observes one diff/worklist computation over held trees and carries aggregate completeness and actual reads to parent admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:418d775e510785617bee2adfab40c36d2f7f3f956effa02719c5ff287370add5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_patches"
+        }
+      },
+      "id": "RLZ-TVPKC8",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Reads one aggregate patch, performs only the existing bounded identical-batch recovery after nonzero outcome, and permanently marks that first failure incomplete.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:251682e00048ea1933419d2aa8f4afb644fec374898474412a95126355e775dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_documents"
+        }
+      },
+      "id": "RLZ-WW3W2C",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-diff-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Reads listed exact blob IDs in one batch, with the existing individual unreadable-blob recovery explicitly incomplete; it keeps bounded successful diff reads and honest no-cache failure state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:0a5d60c4071eacd09af72106062521fa47da31547ee1bbd4fcf22a36036d8855",
+        "locator": {
+          "kind": "symbol",
+          "name": "_measured_tree_diff"
+        }
+      },
+      "id": "RLZ-ZNK8DX",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "One raw NUL-delimited listing, aggregate patch and batched blob read retain ordered exact path/object answers.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+        "content": "sha256:02dfe153942e654aa2f6b848f761c107775111b85852007e21f869342fbbd15b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_view"
+        }
+      },
+      "id": "RLZ-ZXPVGB",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-leaf-view-refusal-propagation",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Propagates a moved-actual-input refusal as the owner's refused result before composing a tree answer, and supplies diff/worklist from the same admitted LeafViewParts rather than independently recomputing either.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -26,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:757cbc2ec59f7021cf0c27b579a47581825a6b6121395dddf2c75bd6ecdb6b97",
             "locator": {
               "kind": "symbol",
@@ -76,7 +274,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
+            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
             "content": "sha256:5e335ba532c7a2b2bdfeb0230be82352af288a6c40cb260c0dccfecfb72cfb9d",
             "locator": {
               "kind": "symbol",
@@ -93,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
+            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
             "content": "sha256:9e50c83bb33d5d0206d2fcd5078e536bf7c5471b2d11edfa30f151bc51983cb2",
             "locator": {
               "kind": "symbol",
@@ -110,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
+            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
             "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
             "locator": {
               "kind": "symbol",
@@ -144,7 +342,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
             "locator": {
               "kind": "symbol",
@@ -172,29 +370,109 @@
         }
       ]
     },
+    "18": {
+      "note": "Actual reads govern successful return and parent memo admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:4e45656d60fae6cc03888aee288f514e15d9d5a921ecdfaa936502266baa36d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_wide_parts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "One observed computation supplies its exact reads and completeness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:b5cea8f91155ca80d9d2d822eaf04d58065be99238c5bbe11b055fd772f0b999",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compute_leaf_parts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A numbered leaf-wide read pinned to that comparison, live only when it is the current number; a focused read always reopens.\n\nAnchor: \"def _comparison(\"; \"if not query.focused:\"; \"def _resolved(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:9c92527674d0f47ceab571fe67aff14f40ef8cc8f72a2b31257832bab3ab686d",
             "locator": {
-              "end": 156,
+              "end": 183,
               "kind": "line_range",
-              "start": 135
+              "start": 162
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:a7ea40703e83622b7b36644136acedea0785b088109a4a70a3c13d43c974e66c",
             "locator": {
-              "end": 169,
+              "end": 196,
               "kind": "line_range",
-              "start": 159
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Exact path patches use a bounded aggregate read and honest recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:418d775e510785617bee2adfab40c36d2f7f3f956effa02719c5ff287370add5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_patches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Patch sections bind to the exact raw filename listing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:87dd950d41bd76c27e6902f17c94851c7df49d6461b0ad89a7152dbfcf77cc9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cut_patch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Worklist-only cyclic collection pause coordinates overlapping holders and restores the original enabled state after normal or exceptional final exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:2cabb27b170cfdf41e4086da81fa114d536bd4447c3c36de8f0f8bfb08e1b9bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cyclic_collector_paused"
             }
           },
           "kind": "code"
@@ -223,7 +501,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:dc0ec326b53c9081e2c7254de6fc1c598dcfa41fe0795d2d0d41243cab2c3146",
             "locator": {
               "kind": "symbol",
@@ -234,7 +512,7 @@
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:710f82dc78613e80c25c681fd4cddc48b9e33120e4a535f2414569c4a00ccd4d",
             "locator": {
               "kind": "symbol",
@@ -245,7 +523,7 @@
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:d2a67663e614c60c09d8d22e7a54bdfc95bf00ce8de83943449e2cd2ba3f3264",
             "locator": {
               "kind": "symbol",
@@ -272,7 +550,7 @@
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:9e26178b34636b3baa763879ac6a2ddac715dbc46fc942de5dfd42a65398f1d6",
             "locator": {
               "kind": "symbol",
@@ -283,12 +561,12 @@
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:489adb5e98f506623992cb74828b0316e6a4f5c5d5395a3f08614cf2067b5b15",
             "locator": {
-              "end": 231,
+              "end": 311,
               "kind": "line_range",
-              "start": 214
+              "start": 294
             }
           },
           "kind": "code"
@@ -296,38 +574,15 @@
       ]
     },
     "6": {
-      "note": "Every changed indexed file with its patch, from `--name-status -z`.",
+      "note": "Every indexed patch is paired with the exact raw filename/blob listing and retains literal selection and grouping.",
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
-            "content": "sha256:1df054097be513e7f7d69e386b8a2679a5e8092f711f33317e0b449cefffa1b0",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
+            "content": "sha256:0a5d60c4071eacd09af72106062521fa47da31547ee1bbd4fcf22a36036d8855",
             "locator": {
               "kind": "symbol",
-              "name": "_changed_files"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
-            "content": "sha256:9b6fee1a2c31fc6e2ed0a502f6d0ce8921e01958cc426abde0c16f756a3bd25e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_name_status"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
-            "content": "sha256:237703f3670316aadad1abd14a6fe9426a2bfb2e3d40184a4c8f149e8001131a",
-            "locator": {
-              "end": 305,
-              "kind": "line_range",
-              "start": 290
+              "name": "_measured_tree_diff"
             }
           },
           "kind": "code"
@@ -339,7 +594,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:04f28af2ed5b08839f020af88a36ac44143531cd3d942a111c587819a3f7c8e2",
             "locator": {
               "kind": "symbol",
@@ -355,7 +610,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:370521d079a27e69aaf5c328e1aa7fc7a5a79b9ad80b4286168b13671337463d",
             "locator": {
               "kind": "symbol",
@@ -371,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:1868095f0bdbc8a5ab5c1a9ec35b3a48e57c7c38426fdc4adeaa43cefd1490e2",
             "locator": {
               "kind": "symbol",
@@ -394,12 +649,12 @@
         },
         {
           "anchor": {
-            "blob": "3648f9ae146549e536af2ac76a9375adbcbef668",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:901fc7b7c8e793dab6b858e52522ccb9fca45874e19d565876dddbbd2aab851c",
             "locator": {
-              "end": 521,
+              "end": 833,
               "kind": "line_range",
-              "start": 509
+              "start": 821
             }
           },
           "kind": "code"

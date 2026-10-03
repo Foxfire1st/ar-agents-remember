@@ -2178,6 +2178,10 @@ unchanged — including `test_serving_observation_loop.py` (`:97`) and
 untouched by this leaf. Classification only: lane membership is not execution, certification or
 acceptance evidence, and the verification stamps remain closeout-owned.
 
+## Current verification scope
+
+The reviewer operation and copied-index capture modules have explicit unit-regression lane rows. The existing serving integration row remains unchanged; no runtime boundary test is relabelled by curation.
+
 ## Code Commentary
 
 ### Logic

@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "All three owners must limit their own recurring work while retaining truthful change/landing delivery; any single reduction still leaves another source of background contention or stale-state claims."
+  },
+  "guarantee": "The live dashboard uses native input events, completion-paced projection and open-landing observation together to avoid recursive watcher polling, continuous expensive ticks and recurring historical probes, while preserving retained domains, exact one-attempt eligible terminal observations and honest missing final facts. The pacing cap bounds added rest and does not claim total publication freshness or subject-read acceptance.",
+  "id": "FAM-CAG581",
+  "members": [
+    "INV-AD1MRN",
+    "INV-GP90VQ",
+    "INV-D0551J"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L40-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L40-truthful-background-work",
+    "leaf": "260928-MIK-L40",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/serving"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Truthful paced dashboard background work"
+}

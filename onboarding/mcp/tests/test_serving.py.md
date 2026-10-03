@@ -6,7 +6,17 @@
 
 ## Purpose
 
-Protects two dashboard-serving behaviors: a subscription cannot lose a projection interleaved with its initial snapshot, and HTTP ETag revalidation returns 304 until content changes. The broad historical SSE, simulation, actions and CLI inventory was removed; this card makes no current coverage claim for those paths.
+Protects dashboard-serving behavior, including the existing two publication operations: a subscription cannot lose a projection interleaved with its initial snapshot, and HTTP ETag revalidation returns 304 until content changes. The broad historical SSE, simulation, actions and CLI inventory was removed; this card makes no current coverage claim for those paths.
+
+## Background owner regressions
+
+The retained subscription-gap and ETag operations are joined by native nested atomic-write delivery despite a polling override, completed-tick rest and retained pending domains, success/failure/prime completion ownership, two-size historical-zero-probe eligibility and reopen behavior, and honest failed finishing observations with no recurring repair. These are focused owner tests; installed CPU/lag, process isolation and whole-product acceptance remain separate evidence.
+
+
+- The real native watcher observes the nested atomic rename. [3]
+- Work/rest notifications and rest bounds share one timeline. [4]
+- Terminal history and one in-flight finishing observation are distinguished. [5]
+- A failed finishing attempt stays honest missing and never retries history. [6]
 
 ## Code Commentary
 

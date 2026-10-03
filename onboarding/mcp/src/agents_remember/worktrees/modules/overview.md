@@ -311,6 +311,10 @@ Selected closeout admission, original-reference readback and code-suffix executi
 - Required files are checked on the actual publication branch. [39]
 - Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. [40]
 
+## Shared copied-index candidate capture
+
+The one candidate capture owner copies the real index with its file time, restores HEAD starting entries, clears trust flags on the private copy and stages actual working files with explicit derived exclusions. The same owner serves review, gate, preview and closeout. It preserves same-second rewrites, real-index isolation, addressed object retention and the approved unchanged conversion-rule boundary. An unusable copy retains the existing full private capture; no second API owns a competing candidate tree.
+
 ## Purpose
 
 Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.

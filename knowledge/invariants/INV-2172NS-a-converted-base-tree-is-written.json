@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reusing a conversion without exact inputs could silently compare another code/memory baseline; the mismatch matrix protects reuse while avoiding repeated materialization of an already held tree."
+  },
+  "applicability": "Live tree comparisons whose before memory is converted from a legacy base.",
+  "conditions": [
+    "The latest comparison record binds the same memory commit, pinned conversion version and paired code commit.",
+    "git cat-file confirms the recorded root object is a tree before reuse."
+  ],
+  "exclusions": [
+    "A missing tree or mismatched conversion inputs retains the existing conversion/materialization behavior.",
+    "This does not skip capture of either live candidate or replace recorded comparison numbering and pins."
+  ],
+  "id": "INV-2172NS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R40-v2-reviewer-read-latency-on-git-trees.md rule 3; exact post-B1 source notes/reports/260928-MIK-L40-worker-R2-evidence/final-2026-10-03/candidate-reader-post-b1.json sha256:ff7a5201d4ed37a6d2e109d9a8d3b9374adbd5f44009b7e7f686274ed218b6b2; independent R1/R2 plus notes/reports/260928-MIK-L40-review-R3.md (SHA-256 c9a9ea931c18de68182a0f1f12d57cc7e72d29358ed463328ce3d11ca3c988fd); phase-specific performance evidence remains pending"
+      ],
+      "path": "notes/reports/260928-MIK-L40-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L40-held-converted-base",
+    "leaf": "260928-MIK-L40",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted base tree is written only when Git does not hold it.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -12,6 +12,10 @@ no subject; these cases pin what the reviewer then does: read the catalogue **on
 comparison, ask for the chosen subject rather than reading the whole task first, and — since L47-A2
 (L47-R1-F1) — never withhold the task-context review for longer than `SUBJECT_HOLD_MS`.
 
+## Current verification scope
+
+The mounted 300 ms and 600 ms catalogue cases keep one catalogue read and one chosen-subject review request. The stalled catalogue still releases the bounded whole-task read; the new reuse branch is exercised by the navigation case rather than by extending this hold.
+
 ## Code Commentary
 
 ### Logic

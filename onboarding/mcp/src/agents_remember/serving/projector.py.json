@@ -1,18 +1,37 @@
 {
   "path": "mcp/src/agents_remember/serving/projector.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+        "content": "sha256:93e5e4d456727d00c2b6871c9d6a8a861fbba926b4feb1ca1fd15e07ec0e2e33",
+        "locator": {
+          "kind": "symbol",
+          "name": "Projector._tick"
+        }
+      },
+      "id": "RLZ-7JZBQ0",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The shared finally hook reports elapsed real thread work after success, failure or cancellation drain.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.\n\nAnchor: \"def _publish_projection(\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 292,
+              "end": 298,
               "kind": "line_range",
-              "start": 292
+              "start": 298
             }
           },
           "kind": "code"
@@ -24,24 +43,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
             "locator": {
-              "end": 346,
+              "end": 352,
               "kind": "line_range",
-              "start": 346
+              "start": 352
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
             "locator": {
-              "end": 354,
+              "end": 360,
               "kind": "line_range",
-              "start": 354
+              "start": 360
             }
           },
           "kind": "code"
@@ -100,6 +119,23 @@
               "start": 13
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "All real tick outcomes reach completion only after actual work/drain.\n\nAnchor: `Projector._tick`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
+            "content": "sha256:93e5e4d456727d00c2b6871c9d6a8a861fbba926b4feb1ca1fd15e07ec0e2e33",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 244
+            }
           },
           "kind": "code"
         }

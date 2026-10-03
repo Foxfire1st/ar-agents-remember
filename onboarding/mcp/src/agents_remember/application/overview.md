@@ -1180,6 +1180,10 @@ which the checklist consults only after the raw status reaches `ready-for-closeo
 this master has ever reached it. Both statements are true; stating only the first would overstate
 today's reach and stating only the second would understate the fix.
 
+## Live reviewer reuse and exact actual inputs
+
+The complete reviewer operation shares one candidate resolution with owner records/composition. The comparison confirms exact held converted bases before reuse. The leaf-wide worklist consumes held trees and is governed by [review_leaf_view_memo.py](review_leaf_view_memo.py.md), the one bounded parent-process memo whose actual task/dependency reads and failed-read completeness control successful return/storage. Canonical JSON-byte observation belongs to tasks/store, and exact source capture remains the shared worktree owner. Batched knowledge patch sections bind literal indexed paths; no second worklist, per-file patch owner, composed answer cache or review copy is introduced. Heavy first computation/process isolation and concurrent-click proof remain R42 obligations.
+
 ## Purpose
 
 `application/` owns operation-level MCP composition. Application entry points translate

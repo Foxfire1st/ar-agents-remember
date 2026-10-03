@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-        "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+        "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
+        "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
         "locator": {
           "kind": "symbol",
           "name": "ReviewReadCache"
@@ -15,7 +15,7 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Owns the two bounded stores, the generation rule that empties them, and the rule that only answers (never refusals) are kept.",
+      "rationale": "Owns bounded review/source stores and generation invalidation; keepUnshown rejects an incompatible generation before observe can advance the generation or clear current stores.",
       "role": "primary-authority"
     }
   ],
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:96bd0a7a17bf5fbb8a3152261527288e88d45170316551fed5e4b44db4fa5781",
             "locator": {
               "end": 23,
@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fadc7bfd99c25a68b54cf9a21b7b62bc2e8e894b",
+            "blob": "ef438e7752b5dcd7b34bed8a8e8460ad69bac8bd",
             "content": "sha256:b01198b909739699d667662ff6ac11a10d9398804dbcd409d2e3ef5113fb116b",
             "locator": {
               "end": 110,
@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:e23c9fffb91786b70f478e9fa62606c2e97fe76f143d98031b2c8ca00575fb09",
             "locator": {
               "kind": "symbol",
@@ -119,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:9548dc5972046f4df005ba1f846ab4b1be6a1786414de629f130307b51d85022",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
             "locator": {
               "kind": "symbol",
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:f1e77d298b4b7382b5d23f1b8591951d3160b203a709f835656a58e7a50ad1f1",
             "locator": {
               "kind": "symbol",
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
             "locator": {
               "kind": "symbol",
@@ -195,59 +195,15 @@
       ]
     },
     "7": {
-      "note": "The cache: observe empties both stores on another generation; only content answers with an expansion are kept.",
+      "note": "The bounded mounted-surface cache invalidates by displayed generation; keepUnshown rejects an incompatible answer without advancing that generation, and sources are kept only as content with an expansion.",
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-            "content": "sha256:80fa789e9ed0f0485d84ae13c3c95f7ebb77d4f53aed847098394632276a28b2",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
+            "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
             "locator": {
               "kind": "symbol",
               "name": "ReviewReadCache"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-            "content": "sha256:8055b29464cf72eac01d189162c65f6f85686e52738526e32679a60998486137",
-            "locator": {
-              "kind": "symbol",
-              "name": "observe"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-            "content": "sha256:70467ba98a237cca0fb0aa9f0586d67b3df1d88659e71a6b3e4a43281a5ac346",
-            "locator": {
-              "kind": "symbol",
-              "name": "keepReview"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-            "content": "sha256:cfaf5af8fafe7e8c97d6b2397509bc1c68543d6fcd5b48bec9a9b532314b14d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "forgetReview"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
-            "content": "sha256:a740d3052df748d7f531ad89c2097e4bf54ad7b3bfcc26a384449d1f69c59f4a",
-            "locator": {
-              "kind": "symbol",
-              "name": "keepSource"
             }
           },
           "kind": "code"
@@ -259,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
             "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
             "locator": {
               "kind": "symbol",
@@ -287,12 +243,12 @@
         },
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
             "locator": {
-              "end": 439,
+              "end": 451,
               "kind": "line_range",
-              "start": 423
+              "start": 435
             },
             "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
           },

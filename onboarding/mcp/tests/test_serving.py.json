@@ -1,5 +1,92 @@
 {
   "path": "mcp/tests/test_serving.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
+        }
+      },
+      "facet": "Four and forty terminal histories add zero probes; one active key finishes once, later history stays quiet, and reopen resumes only at landing. The same case deterministically preserves old/new final mtime and verifies immediate fresh serving after one finishing observation.",
+      "id": "PRF-1XA4WX",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundProjectionTests.test_live_tick_completion_paces_success_failure_and_startup"
+        }
+      },
+      "facet": "Prime and failed live tick reach the same completion hook while replay has no pacer.",
+      "id": "PRF-BKXSK8",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "content": "sha256:2c2a2f6d44133667f26c461d0737af95a05805d51080e5216053c1a787fe751b",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling"
+        }
+      },
+      "facet": "The actual backend stays native despite a polling override and emits the tasks-domain wake for a nested atomic rename.",
+      "id": "PRF-BWKMZH",
+      "invariant": "INV-AD1MRN",
+      "origin": {
+        "handoffEntry": "L40-native-watcher",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
+        }
+      },
+      "facet": "A failed finishing attempt creates no successful final, serves honest missing facts, and neither failure nor later corrupt final triggers retries.",
+      "id": "PRF-JEZARM",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
+        "locator": {
+          "kind": "symbol",
+          "name": "BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest"
+        }
+      },
+      "facet": "Five-second work retains work/rest notifications; short/medium/long durations yield one/two/three-second rests, with degraded and heartbeat deadlines.",
+      "id": "PRF-KE364C",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ed1f37fa26cbcbafe1fdb37cd35ca5a249f5c40",
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
             "content": "sha256:3eeee82508f94d728d856c4b1b472401be58c7474677f4ba25f47cc65a3c3033",
             "locator": {
               "kind": "symbol",
@@ -23,11 +110,79 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ed1f37fa26cbcbafe1fdb37cd35ca5a249f5c40",
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
             "content": "sha256:03f45f2e5bb58d50c612ddccdaa038d173445b65045a16bed9dc69757c8a51c6",
             "locator": {
               "kind": "symbol",
               "name": "test_etag_304_cycle_then_new_etag_on_content_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The real native watcher observes the nested atomic rename.\n\nAnchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "content": "sha256:2c2a2f6d44133667f26c461d0737af95a05805d51080e5216053c1a787fe751b",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Work/rest notifications and rest bounds share one timeline.\n\nAnchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal history and one in-flight finishing observation are distinguished.\n\nAnchor: `BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 315
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A failed finishing attempt stays honest missing and never retries history.\n\nAnchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 394
             }
           },
           "kind": "test"

@@ -11,6 +11,10 @@ Ordinary-entry navigation through the real shared catalogue and comparison clien
 answer: the mounted reviewer, the subject-bound pending and problem states, per-comparison reuse, the
 latest selection winning, focus the reader moved, and a late catalogue.
 
+## Current verification scope
+
+A late catalogue supersedes the released whole-task request with its first family selection. The complete whole-task answer is kept unshown and later All source changes reuses it without another request. Existing stale-selected-subject, mounted pending/failure and retained-focus journeys remain.
+
 ## Code Commentary
 
 ### Logic

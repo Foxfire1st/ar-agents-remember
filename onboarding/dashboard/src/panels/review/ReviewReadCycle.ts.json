@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
         "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -49,13 +49,13 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Serves a kept whole-subject answer without a request, keeps only admitted whole answers that carried no refresh identity, and lets paged and refresh answers invalidate by generation without being kept.",
+      "rationale": "Only admitted unpaged non-refresh answers enter the bounded surface cache; the superseded whole-task branch retains only a compatible generation and never writes display state.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -66,12 +66,12 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "The read's sequence number and cleanup flag drop a superseded answer before it can reach the read state or the cache.",
+      "rationale": "The sequence/cleanup guards still prohibit superseded display and subject caching; only an admitted whole-task, unpaged, non-refresh answer may enter keepUnshown under the compatible existing generation.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
         "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
         "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-        "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+        "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+        "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
         "locator": {
           "kind": "symbol",
           "name": "startRead"
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:e89ae01a65ec45bf57e4196e03e0bcaa764c320f1b5d9ad39c897284e9814644",
             "locator": {
               "kind": "symbol",
@@ -143,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:71d5dd2985bb524df4df02d98618b3409e4823fc712c5bb9d42f5b771d169ca5",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:bccb0ae9804fbada06083515cde5defddd94fcbf6f5429b21a6e1307cbffc1aa",
             "locator": {
               "kind": "symbol",
@@ -170,7 +170,7 @@
         },
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:31861b7a4eaa330e2c86cd286cfbe6e1671eb2b7ef9f86872ccadc33c1bcb0e4",
             "locator": {
               "kind": "symbol",
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:18b276a27056f4aea66913f01dc6dd1ef13375c67e7d2125f9028d730554159e",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:5d7ffbdfea5f63649a2a3be5a5c9ca771d6b4d4b5fdaf3e6e2e70959c26c6c1b",
             "locator": {
               "kind": "symbol",
@@ -218,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:96fd7dc4c35fbfbaeb1bfe26b7e4ec208e866c50a9631e1ccd40592c566fefce",
             "locator": {
               "kind": "symbol",
@@ -234,7 +234,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
             "locator": {
               "kind": "symbol",
@@ -245,7 +245,7 @@
         },
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:f7d77a8738a90a099aa00291fb8580b2fbfacf644ee0f2fb404c3231ce201412",
             "locator": {
               "kind": "symbol",
@@ -261,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:24f36ad622d96c2c6ca9cbf907520f4a4c2ece7099445a02edf3061df53069b4",
             "locator": {
               "kind": "symbol",
@@ -272,12 +272,12 @@
         },
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
             "locator": {
-              "end": 439,
+              "end": 451,
               "kind": "line_range",
-              "start": 423
+              "start": 435
             }
           },
           "kind": "code"
@@ -289,7 +289,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:1bdb19058238b03d48aa42c095fd24c4ffeb55c5763179eb5f64fb80a62f32f5",
             "locator": {
               "kind": "symbol",
@@ -363,7 +363,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:7c4ce85d32131a492d6870ac3949862a3b096e7db9fe511e050bba929ec3de33",
             "locator": {
               "kind": "symbol",
@@ -478,7 +478,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
             "locator": {
               "kind": "symbol",
@@ -564,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:d13154c48e362b2880ba2d42570204a59feca465a9b3ae1a70e2abdbf284255b",
             "locator": {
               "kind": "symbol",
@@ -576,14 +576,14 @@
       ]
     },
     "4": {
-      "note": "**The module's own statement of why it exists (the file-size rail and the per-function rail), the rules it enforces (including L48's keyed answer and once-per-comparison rules), the carried-identity rule, and the explicit \"what it does not do\" — no timer, no retry ladder, no polling.**\n\nAnchor: \"THE THREE RULES THIS MODULE ENFORCES\"; \"AN ANSWER IS BOUND TO ITS QUESTION\"; \"A WHOLE SUBJECT IS READ ONCE PER COMPARISON\"",
+      "note": "The module states keyed question identity, newest-only display, exact family continuation, bounded whole-subject reuse and the whole-task unshown opening exception.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-            "content": "sha256:a585a952f6fb6a0e3b0a67691991116d307167f7e0393241fb566eeaa2d28fad",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:891fcfccdef113f42d0ef06dd7e3aea46bec74c3c4141c5bafdf1c2761256790",
             "locator": {
-              "end": 50,
+              "end": 57,
               "kind": "line_range",
               "start": 1
             }
@@ -597,12 +597,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:a17759f2630e0a4682067b497ca7f560f828f13b9a6a0ec2c89af849bcf6e44e",
             "locator": {
-              "end": 64,
+              "end": 70,
               "kind": "line_range",
-              "start": 52
+              "start": 58
             }
           },
           "kind": "code"
@@ -614,7 +614,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:ae45d4342fb28895e56a67f55d56ba63220f49dfd0cdd55329d50860d4d21323",
             "locator": {
               "kind": "symbol",
@@ -630,7 +630,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:17dc67a5ffdc81d86867e2e2a5b0086011e538d0c5b05c9ca465efbd66076325",
             "locator": {
               "kind": "symbol",
@@ -646,7 +646,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
             "content": "sha256:669fa8d6691b47b17a678e762209b9860924a6c1c4719a48a2b77f3b913cc0e5",
             "locator": {
               "kind": "symbol",
@@ -658,12 +658,12 @@
       ]
     },
     "9": {
-      "note": "**The one read path: the sequence number, the superseded flag, the drop of a payload read for another key, the two-part condition under which the carried identity may be sent, and (L48) the kept-answer short cut and the keep-or-observe decision.**\n\nAnchor: `keepReview`; `observe`",
+      "note": "The single read owner preserves newest-only display and refresh/continuation identity; an admitted superseded unpaged non-refresh whole-task answer alone may be kept unshown under a compatible generation.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
             "locator": {
               "kind": "symbol",
               "name": "startRead"

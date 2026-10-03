@@ -72,6 +72,13 @@ recorded below — so no importer had to learn a new home and no responsibility 
 collection and a comparison the shipped operation refused each produce a named field or a typed
 refusal — never a blank a reader could take for a measured zero, and never a favourable default.
 
+## Shared resolution at the dashboard operation
+
+`read_complete_knowledge_review` is the complete dashboard operation: resolve the candidate once, collect owner records through `review_records_of`, and compose over that same resolution. The existing publication currentness check still recaptures both live worktrees and refuses a moved candidate. Record-only and older composition entry points keep their owned operations; they do not become another capture implementation. No composed review answer is stored on the server.
+
+
+- The dashboard operation shares one resolution with records and composition. [47]
+
 ## Code Commentary
 
 ### Logic
@@ -476,7 +483,7 @@ from the capture, because a recorded base commit is a precondition and the add-a
 what the anchors are resolved against.
 
 - The adapter's own statement of what it selects (nothing), why the composition sits at this tier rather than in `serving/`, how the candidate is resolved from task context rather than from a path, that the endpoints are bound next door, and that **six** more responsibilities now live in their own modules — the last three the statement-side projection (ICR-R06), the head-selection policy (ICR-R07) and the subject catalogue (ICR-R09), each the one move (or replacement) that leaves no alias. [1]
-- **The published adapter surface: the three entry points, the two dataclasses, the request model and the record-kind constant — and, re-exported from the sibling modules, the resolution callable, the resolution value, `candidate_ref` and the three published path constants.** [2]
+- The public adapter surface includes the complete dashboard review operation alongside the existing review/catalogue/summary entry points, models and re-exported owner types. [2]
 - The re-export itself: the import block that makes the sibling modules' names this module's public surface and keeps the ingest CLI's existing import resolving — the resolution surface and `candidate_ref` from `review_candidate_resolution`, and `EMPTY_REVIEW_RECORDS`/`ReviewRecordInputs` from `review_record_rendering`. [3]
 - The record kinds the review matrix is asked for — an input to L20's view rather than a selection policy of this module's — and the authored kinds the knowledge pane separates from the mechanical signals, which the record owner now **declares** and this module imports back so the counted collection and the rendered one cannot drift. [4]
 - The record input set, its frozen shape and its single module-level empty value — now declared in the extracted record renderer and imported here, so `review_records_for` and the ingest CLI keep resolving. [5]

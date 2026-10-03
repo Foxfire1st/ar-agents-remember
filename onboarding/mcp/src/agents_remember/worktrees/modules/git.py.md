@@ -4,13 +4,21 @@
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
-The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
-
 ## Purpose
 
 Provides shared repository/ref, candidate-tree, cleanliness, staging, committing, and changed-path
 operations through the guarded kernel Git runner. Workflow admission remains with callers.
+
+## Git evidence and conversion-rule boundary
+
+Git hashes only files its recorded evidence cannot prove unchanged. A same-size rewrite in the second of an index write remains visible because the copy keeps that index's own time. The one-way HEAD merge drops ignored staged additions absent from HEAD and removes staged changes from the starting state; later working-file staging supplies actual content. Captures from a subdirectory clear flags over the entire worktree.
+
+An unchanged stat-matching file is not reconverted solely because attributes, filters or autocrlf changed after the index recorded it; this follows what the real index stages. A changed file is read and converted. Objects remain in the addressed repository because review pins need them. All gate/preview/closeout/review callers use this same capture owner.
+
+
+- One shared entry owns copied-index and existing full capture. [7]
+- The copied index is normalized without changing real-index state. [8]
+- Flag clearing uses the worktree top-level and one option per command. [9]
 
 ## Code Commentary
 

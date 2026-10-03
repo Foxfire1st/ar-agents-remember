@@ -6,6 +6,10 @@
 | onboardingRoute | `mcp/src/agents_remember/serving/projections/overview.md` |
 | parentOverview | [`serving/overview.md`](../overview.md) |
 
+## Honest final landing observation
+
+The landing refresher observes only open landing arcs and one eligible exact active-to-completed transition lacking a matching valid current final. Startup-completed/abandoned history stays remote-probe-free, and a missing/corrupt/failed final stays honestly missing rather than waiting for recurring repair. Existing valid finals/manual exact-current reads and open cadence/concurrency remain.
+
 ## What This Area Is
 
 ### 260731-EFA-L23 Route Delta
@@ -233,3 +237,5 @@ costs this route change does not claim.
 
 - The body read and its graph-only join table. [3]
 - The bounded canonical enumeration every always-on reader uses. [4]
+
+Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.

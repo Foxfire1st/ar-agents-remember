@@ -4,6 +4,11 @@
 | --- | --- |
 | sourceRoute | `mcp/tests/` |
 
+## Reviewer operation and shared capture proof cards
+
+- [test_review_read_latency.py](test_review_read_latency.py.md) drives the dashboard operation and protects exact supplied trees, canonical consumed task reads, bounded/failure-sensitive memo reuse and literal batched patches. It supplies operation proofs; installed performance and first-computation isolation retain their separate evidence owners.
+- [test_worktree_candidate_capture.py](test_worktree_candidate_capture.py.md) protects the shared capture's exact state matrix, copied index time, trust flags, derived exclusions, conversion-rule boundary and real-index isolation.
+
 ## 260928-MIK-L37 The Cutover And Reopen Cases In Two New Modules, And Fourteen Adapted Modules
 
 `260928-MIK-L37` (MIK-R37) adds two case modules and two lane rows, and extends fourteen modules:

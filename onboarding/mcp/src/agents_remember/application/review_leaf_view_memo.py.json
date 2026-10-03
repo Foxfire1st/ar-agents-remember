@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/application/review_leaf_view_memo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+        "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_view_key"
+        }
+      },
+      "id": "RLZ-3EFTEY",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Binds exact candidate/base trees, gate-key input identities and canonical task reads for this request.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+        "content": "sha256:bedaf59766b604e2c05a6308c9233b00862bc0e875f6eec3396937374a673b74",
+        "locator": {
+          "kind": "symbol",
+          "name": "moved_inputs"
+        }
+      },
+      "id": "RLZ-B1HDWP",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Compares both canonical task-consumption identities to request inputs and rechecks every observed external dependency.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The key binds exact tree/input identities and canonical task reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+            "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_view_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual reads are checked against task inputs and their current bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+            "content": "sha256:bedaf59766b604e2c05a6308c9233b00862bc0e875f6eec3396937374a673b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "moved_inputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse is bounded and requires unchanged recorded dependencies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+            "content": "sha256:10d56981b50d2f1701f6e2945ec0ecee90b2d6353e54d59932df1dfe504c73a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "remembered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Conflicting or moved reads never enter the parent memo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+            "content": "sha256:c5d97ec67c98151044731350a8f95500892b6f03b1f21e745a5683fec6c3b5cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

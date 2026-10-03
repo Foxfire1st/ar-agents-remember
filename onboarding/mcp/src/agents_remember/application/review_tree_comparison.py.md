@@ -21,6 +21,14 @@ Each memory side is then opened through the MIK-R23 derived index of its tree. T
 store's schema, so the landed review composition runs over it unchanged (rule 6) and **no database copy is
 created, retained or read** (ruling 22:22:37 Q1: the derived index is the permitted read path).
 
+## Confirmed converted-base reuse
+
+A live comparison inspects only its latest record for a held converted base. `_held_tree` requires exact memory commit, conversion version and paired code commit equality, then confirms the named object is a Git tree. A confirmed tree is reused without loading conversion files or writing new trees; a mismatch or absent object follows the existing conversion materialization. This changes cost, not the four tree identities, create-only pins, numbering or publication recheck.
+
+
+- Held conversion reuse requires all recorded inputs and an actual Git tree. [20]
+- The converted-base owner chooses confirmed reuse or existing materialization. [21]
+
 ## Code Commentary
 
 ### Logic
@@ -51,7 +59,7 @@ created, retained or read** (ruling 22:22:37 Q1: the derived index is the permit
   the ref (Failure and Recovery).
 - **The converted base (rule 4, MIK-R24 rule 7).** When K_B lacks the layout marker and K_C has it,
   `converted_base_side` converts K_B at its own paired code commit (else B) and the pinned conversion version,
-  through the worklist's converted-base cache, and `write_files_tree` writes the files as blobs and trees into the
+  through the worklist's converted-base cache when no matching held tree exists; `write_files_tree` then writes the files as blobs and trees into the
   memory repository's object store (`hash-object -w`, recursive `mktree`): objects only, no ref, no index and no
   working tree, and the same files always give the same tree id. The record names the conversion's inputs
   (`ReviewConvertedBase`); a reopen re-derives it and checks the id instead of pinning it.

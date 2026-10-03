@@ -295,6 +295,10 @@ same eight keys, no `capsuleDelivery` key appears, and diffing the two transcrip
 - The production-chain evidence: the consumer's own gate from the launch point's own cwd and env, the live system-block read, and the negative control. [19]
 - The two limitations, with their owner and the evidence that measures them. [20]
 
+## Completion-paced live background work
+
+The existing watcher explicitly registers native events on supported local roots. The existing live pacer applies completion-relative bounded rest while retaining domains through work/rest/failure; the projector reports real completed/drained ticks. Landing observation remains its own projection owner and excludes recurring terminal history. The rest cap is additional scheduler time, not total freshness. Publication/subscription, stable deltas, observer/session ownership and watcherless replay remain with their established owners.
+
 ## Purpose
 
 ### 260731-EFA-L23 Route Delta

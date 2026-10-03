@@ -19,6 +19,10 @@ recovery strings name the `author_execution_graph` bootstrap, and the public `co
 derives alias-commanded membership for the atomic-sequential default without re-resolving the
 sprint from disk.
 
+## Canonical consumed JSON bytes
+
+The one canonical task reader records the exact original JSON bytes it parses through generic read observation. Existing task readers need no opt-in; maintenance scope and declared effects can therefore be compared against request inputs even across an A-to-B-to-A edit. This source observation changes neither JSON-primary authority nor write/rollback/publishability ownership.
+
 ## Purpose
 
 `tasks/` owns the **JSON-primary task document**: the persisted `ar-task-document/v1`

@@ -16,6 +16,17 @@ safety), and the `ChangePacer` wake scheduler (debounce + max-delay + interval f
 heartbeat) fed by the `ProjectionInputWatcher` `watchfiles`/inotify task. The projector's tick body
 is byte-identical either way — only the pacemaker changed.
 
+## Native events and completion-paced live wakes
+
+The existing recursive watcher explicitly passes `force_polling=False` on supported local native POSIX/ext4 roots. Inherited WSL/environment polling selection cannot turn it into periodic recursive scans. Event/domain filtering, root refresh, nested atomic-write delivery, stop/drain and reported retry remain with this owner; no polling/mount fallback is added.
+
+After real live tick completion or cancellation drain, `projection_completed` imposes `max(interval, min(duration, 3 seconds))` rest. The default adds one to three seconds; larger configured intervals keep their larger floor. Completion, failure and health transitions never clear accumulated domains: work/rest notifications participate in the next eligible tick. Degraded watches request full refresh and retain the same rest; the quiet heartbeat's existing 15-second scheduling interval remains. Native batching, running/next tick computation and publication add to total lag; this is no three-second total-freshness promise.
+
+
+- Native registration is explicit and retains watcher lifecycle. [10]
+- The real completion floor preserves accumulated domains. [11]
+- Completion rest participates in change/degraded/heartbeat deadlines. [12]
+
 ## Code Commentary
 
 ### Logic
@@ -77,11 +88,9 @@ returns a `ProjectionWake` carrying reason (`"change"`/`"heartbeat"`/`"interval"
 all scheduling rules (monotonic clock): **floor** — never two projections closer than `interval`
 (`--interval` keeps its meaning as the fast-path cadence floor); **debounce** — a change projects
 `DEBOUNCE_SECONDS` (0.1, clamped to `interval`) after the *last* change of its burst; **max delay**
-— a sustained burst still projects within `max_delay = interval` of its *first* change (R2: a
-continuously-busy world keeps the former 1s cadence); **heartbeat** — with no changes, project
+— a sustained burst requests its deadline within `max_delay = interval` of its *first* change, subject to interval/completion floors; **heartbeat** — with no changes, project
 every `heartbeat` seconds (default `DEFAULT_HEARTBEAT_SECONDS` = 15.0, floored to never undercut
-`interval`); **degraded** — while the watcher is unhealthy, tick at the fixed `interval` exactly
-like the pre-adaptive loop. The pacer **starts degraded** so there is no detection blind spot
+`interval`); **degraded** — while the watcher is unhealthy, request interval-driven full refreshes, subject to the same completion rest. The pacer **starts degraded** so there is no detection blind spot
 between boot and the watcher establishing its watches. `wait()` consumes pending changes at wake;
 changes observed *during* a projection accumulate for the next cycle, so nothing is lost to a tick.
 
@@ -91,7 +100,7 @@ refresher: created by `create_app` for live serving only, started/cancelled by `
 that process. Otherwise the retry loop: derive roots **inside** the retry guard (review hardening —
 a transient stat/glob failure follows the same loud degrade-and-retry path as a watch failure
 instead of escaping `run()` and killing the task for good); zero roots is not an error (a
-fresh/empty tree paces at the fixed interval and re-checks every `WATCH_REFRESH_SECONDS` = 30);
+fresh/empty tree requests interval-driven full refreshes with completion rest and re-checks every `WATCH_REFRESH_SECONDS` = 30);
 `_watch_once` marks the pacer healthy, emits one reconciling `notify_change()` on every
 re-establish after the first (inotify has no replay — whatever happened while the watch was down
 gets one debounced projection), then feeds `watchfiles.awatch(*roots, recursive=True)` batches
@@ -103,9 +112,7 @@ retries.
 
 ### Conventions
 
-The R-numbered comments (R1 input list, R2 busy-world cadence, R3/R4 heartbeat bounds, R5
-freshness/SSE semantics, R7 failure posture) are this leaf's requirement labels, pinned one-for-one
-by `test_change_watcher.py`. `WakeTarget` and `ChangeWatch` are structural `Protocol`s — the
+The original input/filter/heartbeat/failure protections remain in `test_change_watcher.py`; completion-relative rest and retained-domain timelines are additionally pinned by the serving owner tests. `WakeTarget` and `ChangeWatch` are structural `Protocol`s — the
 projector's seam mirrors `LandingStateRefresh` (the projector owns the task lifecycle, tests inject
 fakes, this module ships the live implementation). Debounce/refresh constants are code defaults,
 not settings knobs; `--heartbeat` is the only operator-facing knob.
@@ -114,15 +121,8 @@ not settings knobs; `--heartbeat` is the only operator-facing knob.
 
 - **Only *when* the projector wakes changes, never *what* a tick does.** The tick body
   (prime, diff/broadcast, ETag revision) is untouched by this module.
-- **Failure degrades LOUDLY to the legacy fixed-interval ticking, never crashes and never goes
-  silent (R7, fail-open).** Missing wheels, derivation failures and crashed watches log loudly and mark the watcher unhealthy; recoverable failures retry after 30s. Zero watchable roots is explicitly not an error: it keeps interval pacing and retries discovery without logging an ERROR.
-- **The heartbeat is the staleness bound for everything a watcher cannot see (R3/R4).**
-  `/api/state` of a quiet world, the unwatched blind spots, and every time-*derived* field or state
-  flip (`ageSeconds`/`staleSeconds` recomputation, stale/overdue decays) advance at heartbeat
-  resolution (default 15s). This is a deliberate R4 policy: volatile ages were already stripped
-  from the SSE delta stream and advanced client-side (`dashboard/src/data/servedAges.ts`), and a
-  derived-state flip needs a full reducer run anyway — so heartbeat-cadence refresh does not change
-  what an SSE client displays between emissions.
+- **Failure reports LOUDLY and requests interval-driven full refreshes with completion rest.** Missing wheels, derivation failures and crashed watches log loudly and mark the watcher unhealthy; recoverable failures retry after 30s. Zero watchable roots is explicitly not an error: it keeps interval pacing and retries discovery without logging an ERROR.
+- **Quiet heartbeat is a scheduling interval.** With no pending domains the next heartbeat deadline is based on the existing 15-second interval and the completion floor. A running tick and its publication can extend the elapsed gap; the heartbeat is not an unconditional maximum publication lag. Unwatched sources retain their existing TTL/heartbeat ownership, and volatile ages still advance through the frontend's existing served-age owner.
 - **A tick never re-wakes itself.** The projection's own outputs live outside every watched
   subdirectory *and* are name-filtered; the workspace non-input churn is name-filtered; the
   control-plane lockfiles are suffix-filtered in every watched directory;
@@ -132,9 +132,7 @@ not settings knobs; `--heartbeat` is the only operator-facing knob.
   copy of the lock name is what silently stopped matching once the naming moved, and a basename list
   cannot reach the per-lifecycle `gates.jsonl.lock` at all. This module importing
   `kernel.file_lock` is the point of the rule, not an incidental dependency.
-- **A busy world keeps the former cadence.** `max_delay = interval` plus the floor mean sustained
-  writes produce exactly one projection per `--interval`, and change-driven deltas in a quiet
-  world land within debounce + projection time (measured ~0.2s on the reference tree).
+- **A busy world is completion-paced.** Change debounce and max-delay remain subject to the completed tick's bounded rest. Added rest, native batching, running/next tick time and publication are separate lag components; no exact interval-only throughput or total-freshness bound is claimed.
 - **Live serving only.** `create_app` wires the watcher iff `before_tick is None`; `--sim` replay
   stays time-driven because the sim feeder writes only *inside* a tick — a change-gated loop would
   never wake.

@@ -12,7 +12,6 @@
     "The repository has an index file to copy."
   ],
   "exclusions": [
-    "A capture that seeds a fresh index from a tree (worktree_candidate_tree): its entries carry no stat data, so every file is hashed.",
     "Staging through the repository's own index, where Git's own check applies."
   ],
   "id": "INV-656CYW",
@@ -27,7 +26,7 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A disposable capture taken through a copy of a repository's Git index copies the index together with its file's modification time, bytes and time read from one open file, so Git still compares by content a file that was rewritten in the second the index was written. The knowledge index's directory key and the closeout's staging snapshot therefore never answer such a rewrite from its old blob.",
   "status": "proposed",

@@ -1,0 +1,259 @@
+{
+  "path": "mcp/tests/test_review_read_latency.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+        }
+      },
+      "facet": "Matching held conversion inputs avoid mktree/hash-object and preserve the full body; each mismatched input and absent tree recomputes.",
+      "id": "PRF-45KFFF",
+      "invariant": "INV-2172NS",
+      "origin": {
+        "handoffEntry": "L40-held-converted-base",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_recheck_still_refuses_a_candidate_that_moved_while_the_review_was_composed"
+        }
+      },
+      "facet": "Code and memory changes between resolution and publication retain candidate_unresolved refusal.",
+      "id": "PRF-8NWSBZ",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+        }
+      },
+      "facet": "Count/age eviction and exact-key isolation are checked at two population sizes.",
+      "id": "PRF-BVAJTK",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:5fc238082d6f9c1817caf4d5b4b4fa4bee104c59ef337b3f2b41c14b158cf67f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+        }
+      },
+      "facet": "First aggregate failure followed by successful bounded recovery produces no kept view and the next read recomputes.",
+      "id": "PRF-E4BSR5",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:9cc2e868a37ffcfb41a000cad49c5507e90e465f5e74c0f1c1a702db6cb01911",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+        }
+      },
+      "facet": "Permission and absence failures in an unrelated canonical task JSON read remain observed even when the worklist completes; neither failure identity enters a kept view.",
+      "id": "PRF-GMC5WP",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:1372fb827d05f2e7ae116ce01e04a089e95361b448283f255853c4a322e63bfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_knowledge_diff_asks_git_three_questions_and_answers_what_the_per_file_diff_answered"
+        }
+      },
+      "facet": "Ordinary diff bodies, additions/deletions, rename/type change and truncation equal the unchanged-case per-file reference with bounded children.",
+      "id": "PRF-K0PSED",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+        }
+      },
+      "facet": "The actual dashboard port resolves once, captures each worktree for resolution and publication recheck, preserves index bytes and returns the comparison body.",
+      "id": "PRF-KH4W06",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:34825d7db607bcacc9488aac9df989ba6beb051eb63567f829b4811d7b6b0af3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+        }
+      },
+      "facet": "Held comparison trees feed the existing worklist without another capture and edits invalidate the shared computation.",
+      "id": "PRF-RWW8CB",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exact_filename_patches_keep_quoted_bytes_and_do_not_expand_to_siblings_at_two_sizes"
+        }
+      },
+      "facet": "At two file counts and both quotePath settings, unusual names select only their exact patch with fixed children and exact literal-reference bytes.",
+      "id": "PRF-T54N25",
+      "invariant": "INV-7MH0BR",
+      "origin": {
+        "handoffEntry": "L40-literal-batched-diff",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "content": "sha256:da403e3c97cb4447a7f4b0fa8f95cfc36b9e581ae5bbb1b05c6124c1e3c486e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+        }
+      },
+      "facet": "Both real task lookups consume observed JSON bytes; ABA edits and a temporarily appearing claiming doc refuse, keep no entry, and a stable next read equals fresh original input.",
+      "id": "PRF-YZPTEQ",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real-port resolution and publication rechecks are counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Consumed/restored task edits refuse and stable next reads match original input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "content": "sha256:da403e3c97cb4447a7f4b0fa8f95cfc36b9e581ae5bbb1b05c6124c1e3c486e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovered aggregate failures remain unkept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "content": "sha256:5fc238082d6f9c1817caf4d5b4b4fa4bee104c59ef337b3f2b41c14b158cf67f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Two-size literal filenames retain exact patch bytes with bounded children.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_filename_patches_keep_quoted_bytes_and_do_not_expand_to_siblings_at_two_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Canonical absence and permission failures remain observed and unkept even if the worklist completes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "content": "sha256:9cc2e868a37ffcfb41a000cad49c5507e90e465f5e74c0f1c1a702db6cb01911",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

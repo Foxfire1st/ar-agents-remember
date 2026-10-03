@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+        "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
         "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
         "locator": {
           "kind": "symbol",
@@ -18,6 +18,24 @@
       },
       "rationale": "Copies an index and sets the copy's modification time to the source's, reading bytes and time from one open file, so Git's racily-clean check works on the copy exactly as on the repository's own index.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+        "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_git_with_index"
+        }
+      },
+      "id": "RLZ-ZSYXFY",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-private-index-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Routes exact flag-command stdin through the existing sanitized runner using the caller-selected private index and optional locks disabled; it transports the private capture without touching the real index.",
+      "role": "support"
     }
   ],
   "references": {
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:c0bfeb6477d366be13eefe654f109043534ccb536dde53e5a5a7a0e028380ee2",
             "locator": {
               "kind": "symbol",
@@ -53,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
             "locator": {
               "kind": "symbol",
@@ -69,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:658a8aac1c8282e9444bfbfb030d2d882f09547a67fff567b005b4298e0c4049",
             "locator": {
               "kind": "symbol",
@@ -80,7 +98,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:3ef0e56fa49843ccee9bf854be40fad10113b9d18070eebf77b21021cebd43b9",
             "locator": {
               "kind": "symbol",
@@ -96,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:3aee3a9b79c53ead69240c12c5cb5011a1e0236cd1d306b82add9c70a38614e3",
             "locator": {
               "kind": "symbol",
@@ -107,7 +125,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:5349d96d730f0239944c334dbec501f587768feac8a0e5956501d5f668dad222",
             "locator": {
               "kind": "symbol",
@@ -123,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:d6e601a17bc185d0885495f12b41adf50b514f3c3885efde325a7937ddc83573",
             "locator": {
               "kind": "symbol",
@@ -134,7 +152,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:1fb664a2e85de537229a0b930dce79c1b177a9acd2cb8156253ea91a603a2aa6",
             "locator": {
               "kind": "symbol",
@@ -213,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:43ed6ab6158daa33cc92dec6b67707adfbad37d5efb8573be420e404089490d4",
             "locator": {
-              "end": 326,
+              "end": 330,
               "kind": "line_range",
-              "start": 306
+              "start": 310
             }
           },
           "kind": "code"
@@ -230,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:c8e601b2afcab622ae91ef823d293c4bb88c0940043fea6600a5d8b5d197ffb5",
             "locator": {
               "kind": "symbol",
@@ -246,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:9ab25475a4dcf2eeef8c4eb58429348e811cfef1d786c0da924d98f7fe2ec0ef",
             "locator": {
               "kind": "symbol",
@@ -262,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
             "locator": {
               "kind": "symbol",
@@ -273,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
             "locator": {
               "kind": "symbol",
@@ -306,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:d11da2e2aff7ba25c39c66c6ad120027f30dd38b13579752f00eb1fd4387cbd0",
             "locator": {
               "kind": "symbol",
@@ -322,7 +340,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:c20cd01c693d76c8e14f1ab8cd21af9b8b64e70c2607c98712b7d0ca4df671cd",
             "locator": {
               "kind": "symbol",
@@ -333,7 +351,7 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:5d6aa665636eb1550936699d4cfb0a3bc1ed69266481470ded0e5339e9fef9d6",
             "locator": {
               "kind": "symbol",
@@ -349,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
             "locator": {
               "kind": "symbol",
@@ -365,7 +383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -381,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:5349d96d730f0239944c334dbec501f587768feac8a0e5956501d5f668dad222",
             "locator": {
               "kind": "symbol",
@@ -397,7 +415,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:1ed7386b9a8cdf20ab4a237f96bea92b25fc32ecfb7c6351fcd2081257f18033",
             "locator": {
               "kind": "symbol",
@@ -413,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:991c67fb3bd789e589a0602ff557aa73e06c9398db473535f0cd77f3d3f5ec82",
             "locator": {
               "kind": "symbol",
@@ -429,7 +447,23 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
+            "locator": {
+              "kind": "symbol",
+              "name": "copy_git_index"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The index copy binds bytes and file time from one open file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:a6f31e7ed323bd8751898287365ed85d5e186e252dd9bc4359d3da9e6717ed06",
             "locator": {
               "kind": "symbol",
@@ -445,7 +479,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -456,11 +490,27 @@
         },
         {
           "anchor": {
-            "blob": "e2460e25ed6a4eafdc81bdb1d7b12d3d0c99c0eb",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
             "locator": {
               "kind": "symbol",
               "name": "GitRunnerOptions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Private-index commands can receive exact NUL-delimited input through the guarded runner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "content": "sha256:8c357bd749a5ff5e48b879374a25213bb7e06baff5e880fad1a0e306c2c9b94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git_with_index"
             }
           },
           "kind": "code"

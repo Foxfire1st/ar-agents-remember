@@ -1,13 +1,68 @@
 {
   "path": "mcp/src/agents_remember/serving/change_watcher.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+        "content": "sha256:23434087e371e7a63a15dcd767595e938f514b7d9c42f119f8f1d7fc1cd14126",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProjectionInputWatcher._watch_once"
+        }
+      },
+      "id": "RLZ-CJB7H2",
+      "invariant": "INV-AD1MRN",
+      "origin": {
+        "handoffEntry": "L40-native-watcher",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Calls the existing recursive backend with force_polling=False, overriding WSL/environment automatic polling without another watcher or backend branch.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+        "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangePacer.projection_completed"
+        }
+      },
+      "id": "RLZ-K81ZP2",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Sets the completion-relative monotonic floor without clearing pending domains.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+        "content": "sha256:9ac33691aca711cadf593eadd8370b87735d61cc821cc0361b4ca4ff959ad4ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChangePacer._next_deadline"
+        }
+      },
+      "id": "RLZ-V2VB2H",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Combines completion floor, change debounce/max-delay, degraded full refresh and quiet heartbeat deadlines.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:2cb87ad490ae8ef12ce5a6ea23b11e30b555646de177a59c71101e866b9bb4b6",
             "locator": {
               "kind": "symbol",
@@ -18,11 +73,62 @@
         },
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:093ec519bb2c7448dd78d9f760e5b1413ef37f1d3a321d305c7467274f479446",
             "locator": {
               "kind": "symbol",
               "name": "is_projection_input_event"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Native registration is explicit and retains watcher lifecycle.\n\nAnchor: `ProjectionInputWatcher._watch_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "content": "sha256:23434087e371e7a63a15dcd767595e938f514b7d9c42f119f8f1d7fc1cd14126",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The real completion floor preserves accumulated domains.\n\nAnchor: `ChangePacer.projection_completed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "content": "sha256:376bcd386c23618b831ec79dd796ca11b2b0bef137272a482ecca26bb5eeb2d2",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Completion rest participates in change/degraded/heartbeat deadlines.\n\nAnchor: `ChangePacer._next_deadline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
+            "content": "sha256:9ac33691aca711cadf593eadd8370b87735d61cc821cc0361b4ca4ff959ad4ec",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 350
             }
           },
           "kind": "code"
@@ -34,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:681a5dc2e0980891fca43c783fada3fa889ea4f6867b89d78e015f58aafd95b8",
             "locator": {
               "kind": "symbol",
@@ -50,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:85fe05c92dd07be9cd8d58f69cf2ea8783ece0628de00a86aff22066d9f25da3",
             "locator": {
               "kind": "symbol",
@@ -61,7 +167,7 @@
         },
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:0024aee435fd76231af9bd058b166566423b29f5561304c8e5ec7d2fda526a8c",
             "locator": {
               "kind": "symbol",
@@ -72,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:ec2f4be59f9072063b40142e7c35683d9f83379a399a5d8f86ff75d257d8aab6",
             "locator": {
               "kind": "symbol",
@@ -161,7 +267,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:4babe2064ad1955d4490d0dc029b8234dcd61c132957c66c0d0504cdba2b6b2b",
             "locator": {
               "kind": "symbol",
@@ -207,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
             "locator": {
               "kind": "symbol",
@@ -232,12 +338,12 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:c6235aa994819787a4ebcf4ff4d2adbdd884eda20a29fd41a4577ecc4d315ba5",
             "locator": {
-              "end": 338,
+              "end": 341,
               "kind": "line_range",
-              "start": 338
+              "start": 341
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

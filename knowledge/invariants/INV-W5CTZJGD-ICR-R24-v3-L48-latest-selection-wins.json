@@ -2,10 +2,13 @@
   "admission": "legacy-unassessed",
   "applicability": "Review reads started by successive selections, refreshes or page requests on one mounted surface.",
   "conditions": [
-    "Every read takes the next sequence number; only the newest may write the read state or the cache."
+    "Every read takes the next sequence number; only the newest may write displayed read/frame/retained state.",
+    "The unshown reuse exception is only an unpaged whole-task request with no refresh identity and an admitted reviewed answer, keyed by the same task/history/question identity.",
+    "A known incompatible code-tree/snapshot generation rejects unshown reuse; when no generation is known the answer establishes it and a later different generation clears the stores."
   ],
   "exclusions": [
-    "Cancelling the superseded network request; it is ignored, not aborted (O-R1-3)."
+    "Cancelling the superseded network request; it is ignored, not aborted (O-R1-3).",
+    "Superseded selected subjects, paged continuations, refresh answers, failures and refusals never use the unshown whole-task reuse exception."
   ],
   "id": "INV-W5CTZJGD",
   "origin": {
@@ -13,9 +16,9 @@
     "legacyId": "569da4b0-c03f-4ac9-85e4-7db3b0c155fa",
     "task": "260921-ICR"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Rapid selections A→B→C settle on C: an answer superseded by a later selection is neither displayed nor kept, so choosing B again asks for it again.",
+  "statement": "Rapid selected-subject reads A→B→C settle on C: superseded selected-subject answers neither display nor enter the cache, so returning to B asks again; an admitted superseded whole-task answer may be kept unshown for its compatible comparison generation without moving the displayed generation or writing the panes.",
   "status": "proposed",
   "supersedes": []
 }

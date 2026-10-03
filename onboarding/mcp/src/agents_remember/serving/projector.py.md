@@ -18,7 +18,14 @@ ordinary stable-form deltas resume; an identical later projection emits nothing.
 Two seams (`now`, `before_tick`) keep the loop generic across live and sim. Because the stable-form
 diff ignores volatile ages, the sequence advances only on real content changes and remains a
 truthful `/api/state` ETag component. Since **260712-PTS-L3** an injected `change_watcher` wakes the
-loop on debounced input changes or an idle heartbeat; without one, fixed-interval pacing remains.
+loop on debounced input changes or an idle heartbeat; without one, fixed-interval replay pacing remains.
+
+## Actual tick completion and drain pacing
+
+`_tick` measures the shielded real thread tick. Its finally hook reaches the same pacer completion owner after successful/failed prime, normal ticks and cancellation only after the worker drains. Notification accumulation and publication remain separate owners; the completion floor never clears domains. Watcherless replay retains `sleep(interval)` and no live pacer. A degraded watcher requests full refreshes subject to the completed tick's added rest, which is distinct from total event-to-publication lag.
+
+
+- All real tick outcomes reach completion only after actual work/drain. [4]
 
 ## Code Commentary
 
@@ -52,7 +59,7 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   watch task gets an `add_done_callback(self._on_watch_task_done)`: a watcher task that dies (or
   returns) must not leave the pacer believing changes are still detected — that would silently
   stretch every wake to the heartbeat — so the callback logs a loud ERROR and flips
-  `set_watcher_healthy(False)`, degrading to fixed-interval ticking (R7 fail-open).
+  `set_watcher_healthy(False)`, requesting interval-driven full refreshes with completion rest.
 - **Atomic publish** — `/api/state` runs in a FastAPI threadpool, so `(seq, projection)` live in
   a single `_published` tuple; two separate attributes could tear (a bumped seq read against the
   previous snapshot would hand a poller a stale body under a fresh ETag).
@@ -100,11 +107,7 @@ is passed into `project_and_write` after `before_tick`. All default to live beha
   injected-`now()` test) gets NO pacer — `change_watcher=None` keeps the exact legacy
   `sleep(interval)` pacemaker, because the sim feeder writes only *inside* a tick and a
   change-gated loop would never wake.
-- **Adaptive waking changes when a tick runs, never what it does (260712-PTS-L3).** Freshness
-  bounds: a change becomes an SSE delta within debounce + projection time (floored to one
-  projection per `interval` when busy); with no changes, `/api/state` staleness and time-derived
-  field resolution are bounded by the heartbeat (default 15s). A failed/absent watcher degrades
-  LOUDLY to the legacy fixed-interval ticking — fail-open, never fail-silent, never a crash.
+- **Live waking changes scheduling, not publication semantics.** A completed/failed/drained tick adds `max(interval, min(duration, 3 seconds))` rest; pending domains survive until the next eligible deadline. The quiet heartbeat keeps its 15-second scheduling interval; long ticks and publication contribute additional total lag. Failed watchers retain reported interval-driven full refreshes with this same floor. Watcherless replay retains fixed sleep cadence.
 - The diff lives in `delta.py` (pure); this module only orchestrates, caches, and broadcasts.
 
 ### Conventions
@@ -158,8 +161,7 @@ Watcherless execution and failed watcher fallback retain full-refresh behavior.
 concepts, all with module-level defaults:
 
 - **`ProjectionCadence`** (`DEFAULT_PROJECTION_CADENCE`, from the new stdlib-only
-  [cadence.py](cadence.py.md)) — `interval` (the floor between ticks) and `heartbeat` (the ceiling
-  on staleness in a quiet world). One pacing decision.
+  [cadence.py](cadence.py.md)) — `interval` (the floor between ticks) and `heartbeat` (the quiet idle scheduling interval). One pacing decision.
 - **`ProjectionReplay`** (`now`, `before_tick`; `LIVE_PROJECTION_CLOCK` = both `None` = live
   serving) — the sim/replay seam. **They are one substitution**: sim wires a replay clock together
   with the feeder that writes the world that clock is about, and a replay clock without its feeder
@@ -170,8 +172,8 @@ concepts, all with module-level defaults:
   *inside* a tick, so a change-gated loop would never wake). One choice — "is this projector
   attached to a moving world?" — not three independent hooks.
 
-Adaptive waking is unchanged: with a change watcher the run loop paces via the `ChangePacer`
-(change-driven + heartbeat, floored to one tick per `interval`); without one — sim replay and the
+Live waking is completion-paced: with a change watcher the run loop paces via the `ChangePacer`
+(change-driven + heartbeat, with interval and completion-rest floors); without one — sim replay and the
 injected-`now()` tests — it keeps the exact `sleep(interval)` pacemaker.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.

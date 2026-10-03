@@ -12,6 +12,10 @@ subject reviews and changed-file content — and the one generation rule that em
 surface owned by one mounted review surface, never a record: nothing here is persisted, published or
 shared between surfaces.
 
+## Unshown whole-task reuse
+
+`keepUnshown` reuses an admitted whole-task answer whose request was superseded by initial subject selection. It never writes panes or advances an already-known incompatible generation. With no known generation the answer establishes one; a later admitted different generation clears it with both bounded stores. The read cycle admits only unpaged, non-refresh successful whole-task answers to this path. Superseded subjects/pages/refreshes/refusals/failures stay excluded; returning to All source changes can reuse the already-paid request.
+
 ## Code Commentary
 
 ### Logic
@@ -92,7 +96,7 @@ renderer are its only callers.
 - The generation of a payload: code trees, and snapshots only when knowledge was compared. [4]
 - Two generations differ on code trees, or on snapshots when both compared knowledge. [5]
 - The content key is exactly the request's fields. [6]
-- The cache: observe empties both stores on another generation; only content answers with an expansion are kept. [7]
+- The bounded mounted-surface cache invalidates by displayed generation; keepUnshown rejects an incompatible answer without advancing that generation, and sources are kept only as content with an expansion. [7]
 - The context the content renderer reads it through; `null` outside a surface. [8]
 - The read cycle serves, keeps or only observes answers, and a refresh forgets its question. [9]
 - The surface owns one cache and provides it. [10]

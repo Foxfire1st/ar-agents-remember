@@ -16,6 +16,10 @@ archive-hook cases moved to `test_review_artifact_cleanup.py` (ruling 2026-09-30
 file is 1,022 lines after MIK-L31. It uses no shared support module, so there is no catalog change; it runs in the
 `unit-regression` lane (`test-evidence-lanes.toml:123`).
 
+## Current verification scope
+
+The latest-attempt history proof clears the bounded live leaf-view memo after scratch fixture history mutations before recomputing. The actual latest-attempt subject rule and source _governing bytes are unchanged; this adjustment keeps fixture requests independent.
+
 ## Code Commentary
 
 ### Logic

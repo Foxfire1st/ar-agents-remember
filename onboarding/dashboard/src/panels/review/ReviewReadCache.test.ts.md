@@ -10,6 +10,10 @@ Unit evidence for the reviewer's per-comparison cache (`ReviewReadCache.ts`, `26
 stores stay within their bounds and evict least-recently-used entries, a refusal is never kept, and any
 answer from another comparison generation empties both stores.
 
+## Current verification scope
+
+The unshown-answer case additionally checks same-generation retention, rejection of an incompatible answer without moving the displayed generation, and invalidation when the first displayed answer names another generation. The existing bounds/refusal/source keys remain the same.
+
 ## Code Commentary
 
 ### Logic

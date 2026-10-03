@@ -8,6 +8,13 @@
 
 Read and write one or more task documents: the JSON is the source, the markdown a render.
 
+## Canonical task bytes in actual-read evidence
+
+`read_task_doc` reads JSON bytes once, records their digest/path through the generic source-read observer, including explicit absence and unreadable failure identities, and parses those same bytes after strict UTF-8 decode and the prior universal-newline normalization. There is one task reader and no opt-in observer or compatibility loader. Both maintenance-scope and declared-effects reads therefore contribute their consumed data to leaf-view identity validation, including conflicting repeated reads. JSON remains authoritative; writers, rollback and publishability behavior stay with their existing owners.
+
+
+- The canonical task parser records the original bytes it consumes. [7]
+
 ## Code Commentary
 
 ### Logic

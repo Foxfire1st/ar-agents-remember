@@ -1,13 +1,86 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/landing_state.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+        "content": "sha256:67058c7cb85cbadda9b499e5b1de44bf8e6593f2c1d4799ffe64dc8989424a82",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._maybe_freeze"
+        }
+      },
+      "id": "RLZ-6JJFZY",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "After its successful atomic final replacement the writer invalidates that exact path's parsed-final cache, so an equal mtime cannot keep old contract-predating facts after the sole finishing attempt.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+        "content": "sha256:29bebf144efe7af0ec1d48e2954e139033cd5440b7c947e0d6c7fd6d35f64a76",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.refresh_once"
+        }
+      },
+      "id": "RLZ-AMDN7R",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Drops completed keys from the live observation set after the finishing attempt, preventing later history retries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+        "content": "sha256:090ed7c9dd23f1f2c08bf1c0847565b0c7a0cd6aa93e363a53ee0547a8183eb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher._needs_live_probe"
+        }
+      },
+      "id": "RLZ-BYHXFB",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Admits only active landing arcs or one eligible observed active-to-completed key with no valid current persisted final.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+        "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "LandingStateRefresher.current"
+        }
+      },
+      "id": "RLZ-DYM2N8",
+      "invariant": "INV-D0551J",
+      "origin": {
+        "handoffEntry": "L40-historical-landing-probes",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Serves valid persisted finals and labels absent terminal facts as no final observation recorded rather than pending repair.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Projector owns startup and cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:d272549f0863cfc269d7a5888beed02fb3e802f6e2b6feb847ac9d9b482fb285",
             "locator": {
               "kind": "symbol",
@@ -19,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "9052282afb9e1decb5beb3d672809141b15ba0ef",
+            "blob": "bf18576ae9eb971e8d755db5322569d479c55765",
             "content": "sha256:43477c9169a681ccd17a8e3afc59fe390c6f47fc5e5405be992c35edc5802a18",
             "locator": {
-              "end": 236,
+              "end": 238,
               "kind": "line_range",
-              "start": 193
+              "start": 195
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -58,6 +131,74 @@
               "start": 348
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Exact keys and final validity govern finishing eligibility.\n\nAnchor: `LandingStateRefresher._needs_live_probe`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+            "content": "sha256:090ed7c9dd23f1f2c08bf1c0847565b0c7a0cd6aa93e363a53ee0547a8183eb9",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 279
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Terminal keys leave the retained sweep after their single attempt.\n\nAnchor: `LandingStateRefresher.refresh_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+            "content": "sha256:29bebf144efe7af0ec1d48e2954e139033cd5440b7c947e0d6c7fd6d35f64a76",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Final facts are served or honestly reported missing.\n\nAnchor: `LandingStateRefresher.current`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+            "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps.\n\nAnchor: `LandingStateRefresher._maybe_freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b91a3c020d249b5f271594a0d5b36591fe3bd98f",
+            "content": "sha256:67058c7cb85cbadda9b499e5b1de44bf8e6593f2c1d4799ffe64dc8989424a82",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 292
+            }
           },
           "kind": "code"
         }

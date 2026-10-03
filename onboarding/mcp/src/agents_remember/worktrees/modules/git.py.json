@@ -3,7 +3,79 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "content": "sha256:e16b33af163ce3d8ea2b59b2e1c12273675780444629fba0199d0b0541a29802",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_head"
+        }
+      },
+      "id": "RLZ-98370Y",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-private-index-support-attribution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The existing full capture branch seeds and writes only its separate private index, preserving real-index isolation when the optimized copied-index path cannot answer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        }
+      },
+      "id": "RLZ-BW7QK2",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L40-index-copy-shared-capture",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The shared candidate capture now copies the real index through copy_git_index before HEAD restoration and working-tree materialization, preserving Git's same-second content recheck.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_candidate_tree"
+        }
+      },
+      "id": "RLZ-MTQB5G",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-shared-capture-isolation",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "All reviewer, gate, preview and closeout callers share this capture entry point; its per-observation temporary index prevents captures from writing the real index.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+        "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        }
+      },
+      "id": "RLZ-S5VV47",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-shared-capture-isolation",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Restores HEAD entries in a copied index, clears assume-unchanged and skip-worktree flags, excludes owned derived paths and adds working files through that private index.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
         "content": "sha256:466010a76618adb027af2f51ddb28edb6a5953d38e9d8077befd1184048fbae5",
         "locator": {
           "kind": "symbol",
@@ -26,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:1162f7cb58bc57825349497bdd5fe49d3e0115ebc67c0d61fd426292956fecc2",
             "locator": {
               "kind": "symbol",
@@ -37,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:5777bc0b0c3621a8045a8da3a987b5244a609c00b57b01cd3ceffa06cc74901a",
             "locator": {
               "kind": "symbol",
@@ -48,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:bb671106c4738c19abd0c46b0a440e8c5e9dbc3ca686d0fd05b9be1e262a02b9",
             "locator": {
               "kind": "symbol",
@@ -59,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:3c11f083a73cc878659abb8f050e8b9aa48af45b37069e5b337f0534d9059be9",
             "locator": {
               "kind": "symbol",
@@ -75,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
             "locator": {
               "kind": "symbol",
@@ -102,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:46db35bdabf960661b7f3f61825fc5d43590347bcdec94e1fc0bb9e79edde0ae",
             "locator": {
               "kind": "symbol",
@@ -113,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:f4ed54b78505149f52cf865e74608e5c0da609448f9dcebd7dff4a5ca31c3c04",
             "locator": {
               "kind": "symbol",
@@ -158,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:0e79ba415fc69c4911c449a0d32333a3dd33e0aa68e711b17568dba622df25cb",
             "locator": {
               "kind": "symbol",
@@ -169,7 +241,7 @@
         },
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
             "locator": {
               "kind": "symbol",
@@ -185,11 +257,59 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d42ed1e9bc0ca736f06b1ad77a7848a986b681a7",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:466010a76618adb027af2f51ddb28edb6a5953d38e9d8077befd1184048fbae5",
             "locator": {
               "kind": "symbol",
               "name": "stage_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One shared entry owns copied-index and existing full capture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The copied index is normalized without changing real-index state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:faaea09aee66799c4b7d0b93c7e2fcc0a7b2bd329f3e0474e8290e489ec10395",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Flag clearing uses the worktree top-level and one option per command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:871ced845e63cf0bf18fccb80718dc23b8d58fe694660bf8aa0c7e4abae3c42c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_trust_flags"
             }
           },
           "kind": "code"

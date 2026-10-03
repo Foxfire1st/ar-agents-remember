@@ -40,6 +40,13 @@ single-record reader rather than through an all-or-nothing enumerator.
 (`ICR-R15@v1` owns that measurement, and the currentness channel names it rather than guessing), and
 it never re-runs detection, executes a command or authors anything.
 
+## Collecting the supplied resolution
+
+`review_records_of` takes the already resolved pair and keeps unresolved-candidate channel handling at the record collection boundary. It delegates successful collection to the existing `review_records_for_resolution`; source ownership, per-channel availability, independent readable siblings, immutable curator generations and applicability/currentness owners remain unchanged. The complete dashboard operation uses this supplied resolution to avoid resolving again.
+
+
+- One supplied candidate resolution reaches the existing record owners. [30]
+
 ## Code Commentary
 
 ### Logic
@@ -172,7 +179,7 @@ composition deliberately leaves unmeasured.
 - **Every collection with the owner whose read answers for it — the pointer a reader of an absent collection follows — and the five collections plus the measurement, in the order they are read.** [4]
 - **The currentness owner the bundle names, and the measurement this module now delegates instead of stating.** [5]
 - The two matrix-sourced collections, declared as kinds so the channel and the pane cannot disagree, and the next action an unopened dataset earns. [6]
-- **The production entry point: same candidate resolution as the surface, and an unresolvable candidate reported per collection rather than as five empty tuples.** [7]
+- The record-only entry resolves its own request and delegates to the supplied-resolution collector; the dashboard complete-review operation supplies its one existing resolution. [7]
 - The assembly of one resolved candidate's bundle: four collections read, one measurement stated. [8]
 - **The two matrix-owned channels, added where the matrix's own answer is, with `not_selected` for a review that never asked and the view's declared row bound carried through.** [9]
 - Assessment collection availability comes from the durable curator bridge: captured records, measured empty, uncaptured, and unreadable expected inputs remain distinct. [10]

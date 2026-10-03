@@ -89,6 +89,10 @@ The count is re-derived from the file rather than carried: it stood at 43 when a
 this paragraph was written, measures **50 at this leaf's synced base `23cc7a72`**, and measures 51 with
 this leaf's one added row.
 
+## Current verification scope
+
+The exact Node package-lock fixture consumer list includes test_review_read_latency.py because its reused real world reaches that fixture. The capture matrix consumes no governed artifact. Contracts/artifacts and their refusal/delta rules remain unchanged.
+
 ## Code Commentary
 
 ### Logic

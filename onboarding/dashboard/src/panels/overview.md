@@ -638,6 +638,10 @@ also gained parts/styles modules (`sessionComposer*`, `terminalSession.ts`,
 (kebab-case folder, one canonical entry, short responsibility-based siblings) is
 now a repository guideline. Behavior is preserved.
 
+## Whole-task opening answer reuse
+
+The mounted reviewer keeps the existing bounded opening wait and subject-first navigation. If a late catalogue supersedes a successful whole-task read, the answer may be kept unshown under the compatible existing comparison generation; it never writes the current panes or advances an incompatible generation. Superseded selected subjects, refreshes/pages and failure/refusal answers stay excluded. Selected intent, family continuation, complete explorer and mounted inspection state retain their owners.
+
 ## Purpose
 
 ### 260731-EFA-L23 Route Delta

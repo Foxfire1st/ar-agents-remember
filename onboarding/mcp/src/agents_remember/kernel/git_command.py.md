@@ -11,6 +11,14 @@
 `env=` — so the copies were deleted and every caller now goes through `run_git`. It fixes command
 isolation, decoding, stdin, and the timeout class in one place.
 
+## Shared capture index-copy use
+
+The shared `worktree_candidate_tree` capture now also uses `copy_git_index`, alongside the knowledge-index and mutation-snapshot consumers. Bytes and mtime are read from one open source file, so a replaced index cannot mix another file's clock with its bytes. `run_git_with_index` accepts optional input text for the copied-index flag commands and retains `GIT_OPTIONAL_LOCKS=0`, explicit repository selection and the one guarded Git subprocess owner.
+
+
+- The index copy binds bytes and file time from one open file. [29]
+- Private-index commands can receive exact NUL-delimited input through the guarded runner. [30]
+
 ## Code Commentary
 
 ### Logic

@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/cli/dashboard.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
+        "content": "sha256:84cabef10ee3b567b3b5e96dffb5d75ff4898a6eee1fd79305c823fd1d8a9b3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "serving_collaborators"
+        }
+      },
+      "id": "RLZ-HM528R",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The production reviewer port calls the shared complete-review owner, so the request-count contract holds at the actual dashboard operation.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The deferred import of the reader.\n\nAnchor: \"from agents_remember.application.knowledge_reader import (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:d8f3843c819aeb3508a864f41bc9ab12121577bc13e52b2a7c5775f9a298e42a",
             "locator": {
               "end": 78,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
             "locator": {
               "kind": "symbol",
@@ -35,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
             "locator": {
               "kind": "symbol",
@@ -46,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
             "locator": {
               "kind": "symbol",
@@ -57,7 +76,7 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:f048302f292a0f174f3c83fec9285c5949b1faf99cdd9a793039c9577c7cce42",
             "locator": {
               "kind": "symbol",
@@ -68,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:0516bdc5a7c1844d736a1d0980167649c0375b30d6b597ec5728fd9c2e8b0908",
             "locator": {
               "kind": "symbol",
@@ -227,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
             "locator": {
               "kind": "symbol",
@@ -238,7 +257,7 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:f048302f292a0f174f3c83fec9285c5949b1faf99cdd9a793039c9577c7cce42",
             "locator": {
               "kind": "symbol",
@@ -295,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:6d89d0c517160f61df62ca6d3d9146f253072817f10588897b686987d0079cea",
             "locator": {
-              "end": 162,
+              "end": 165,
               "kind": "line_range",
-              "start": 149
+              "start": 152
             }
           },
           "kind": "code"
@@ -312,7 +331,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -335,12 +354,12 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:464968eee02a23928fd532073b511d68841b8b2278b68d8318bee85cf6ce4840",
             "locator": {
-              "end": 89,
+              "end": 88,
               "kind": "line_range",
-              "start": 87
+              "start": 86
             }
           },
           "kind": "code"
@@ -355,6 +374,22 @@
               "start": 483
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The actual serving collaborator calls the complete-review owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
+            "content": "sha256:84cabef10ee3b567b3b5e96dffb5d75ff4898a6eee1fd79305c823fd1d8a9b3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            }
           },
           "kind": "code"
         }
@@ -382,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:96c991dfaa1c32f98ba79ac8ce1f42d7c498716a5a153cca34fcf245d9ab4f6e",
             "locator": {
               "kind": "symbol",
@@ -398,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
+            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
             "content": "sha256:ebd17f93289f879070cf11a21c444e2aec77868ac3b97fd7764fcf9935af73a9",
             "locator": {
               "kind": "symbol",
@@ -465,7 +500,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:bc2f6f83c051f8766ffb2d0437e5768175a145895fe0044755f0faf249d6beb1",
             "locator": {
               "kind": "symbol",
@@ -489,12 +524,12 @@
         },
         {
           "anchor": {
-            "blob": "0e0d19ee2894dbefa2cc53c75f9fe82461c11be6",
+            "blob": "ba8c8dfc78abe98e24fa9eb205dc7770f0200a70",
             "content": "sha256:b17423f94f28eadbeda4b9fa05c85bbb5ef7b40a21adf9077ac7b3b97bde6fe4",
             "locator": {
-              "end": 109,
+              "end": 111,
               "kind": "line_range",
-              "start": 109
+              "start": 111
             },
             "path": "mcp/src/agents_remember/serving/change_watcher.py"
           },

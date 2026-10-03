@@ -15,6 +15,13 @@ command runs flag-free from anywhere under the workspace. It wires sim replay vi
 fronts the daemon supervisor: `--daemon` / `--status` / `--stop` dispatch to `serving/daemon.py`
 so the dashboard can outlive the terminal that started it.
 
+## Complete-review collaborator wiring
+
+The dashboard knowledge-review collaborator invokes read_complete_knowledge_review: one source/knowledge resolution is shared with record collection and composition. Tree reads retain their own port. This adapter introduces no cache or currentness policy.
+
+
+- The actual serving collaborator calls the complete-review owner. [21]
+
 ## Code Commentary
 
 `add_arguments(parser)` registers `--config` (default `None`; its help documents the discovery

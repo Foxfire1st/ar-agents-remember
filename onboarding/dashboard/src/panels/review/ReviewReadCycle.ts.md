@@ -39,11 +39,8 @@ inventory) and the page position. A comparison is only ever shown under the head
 so that key is what a retained generation is stored with and checked against, and changing any part
 of it re-asks the question.
 
-**The newest read wins, and a superseded one is dropped silently.** Every read takes the next
-sequence number out of a `useRef` counter and only the newest may write the read state. A slow answer
-for the subject or task selected *before* the current one therefore lands with a smaller number and is
-dropped — it cannot replace the comparison on screen, and the failure it might have reported is not
-reported either. The effect's own cleanup flag covers unmount; the sequence covers the case that flag
+**The newest read wins; superseded selected-subject answers are dropped silently.** Every read takes the next
+sequence number out of a `useRef` counter and only the newest may write the read state. A slow selected-subject answer lands with a smaller number and is dropped. A successful whole-task opening answer may instead be retained unshown by the bounded compatible-generation cache; neither case replaces the comparison on screen or reports its superseded failure. The effect's own cleanup flag covers unmount; the sequence covers the case that flag
 cannot see, which is the same mounted surface with two requests in flight.
 
 **A validated family continuation enriches one existing walk.** A cursor-free question key binds the repository, task, history and selected subject while the request key retains its page position. The read cycle keeps the coherent reading path mounted during a continuation, then merges only one compatible family-side-revision walk. It preserves earlier exact content, deduplicates sources by claim identity and does not reset another walk when the server repeats that walk's first page. The latest response remains authoritative for the primary statement, inventory, evidence and assessment.
@@ -68,6 +65,10 @@ question and back again restores the key, and the stale identity with it.
 changes (and has no kept answer) or when the reader asks. A read that fails leaves the last coherent payload retained and lets
 the outcome region state the failure beside it, which is the packet's "a failed refresh retains the
 labeled old generation with its error".
+
+## Superseded display and whole-task reuse
+
+Only the newest read may write displayed state, retained payload and frame. A superseded selected-subject answer is still dropped before display/cache. The sole reuse exception is a reviewed whole-task answer for an unpaged request with no previous refresh identity: `keepUnshown` may hold it under its exact task/history/question key when its generation is compatible. It returns without `admit` or `setAnswer`; no older family context, stale subject reading or failure notice can enter the current question.
 
 ## Code Commentary
 
@@ -210,8 +211,7 @@ defect-bearing decision names the leaf that closed it (`L17-F1`, `L17-R2-F1`, `L
   comparison is never the recorded comparison's shell.
 - **Only whole, identity-free answers are kept.** Paged and refresh answers are observed for their
   generation but never kept, so a refresh's staleness answer is shown once, for that refresh, and never
-  re-rendered as a later plain answer (the fix the worker's E1b event recorded). A superseded answer is
-  dropped before it reaches the read state or the cache.
+  re-rendered as a later plain answer (the fix the worker's E1b event recorded). A superseded selected-subject answer is dropped before it reaches displayed state or cache; the successful unpaged non-refresh whole-task exception may enter only keepUnshown and never display.
 - **Cached returns do not re-validate a moving live candidate** (review observation O-R1-1, by design):
   toggling between two already-read subjects makes no request and each view stays labelled with its own
   trees; the reader's refresh always re-asks, and any answer from another generation empties the cache.
@@ -252,12 +252,12 @@ rules it states, the public read-cycle types and private continuation owners, th
 `ReviewSurface.tsx`, the client argument the read threads, and the two test cases that measure the
 identity's single-read rule. Every anchor in a row occurs inside the range that row cites.
 
-- **The module's own statement of why it exists (the file-size rail and the per-function rail), the rules it enforces (including L48's keyed answer and once-per-comparison rules), the carried-identity rule, and the explicit "what it does not do" — no timer, no retry ladder, no polling.** [4]
+- The module states keyed question identity, newest-only display, exact family continuation, bounded whole-subject reuse and the whole-task unshown opening exception. [4]
 - The module's imports: the review wire types and the client, and the read state with its mapper. [5]
 - **The page request, exported from here rather than declared in the surface, with the collection, the cursor and the size axis the target key consumes.** [6]
 - **The question's identity: task, record, question and page position, with the page's own reason for participating.** [7]
 - **The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.** [8]
-- **The one read path: the sequence number, the superseded flag, the drop of a payload read for another key, the two-part condition under which the carried identity may be sent, and (L48) the kept-answer short cut and the keep-or-observe decision.** [9]
+- The single read owner preserves newest-only display and refresh/continuation identity; an admitted superseded unpaged non-refresh whole-task answer alone may be kept unshown under a compatible generation. [9]
 - **Admission writes the keyed read, the retained generation and the frame together.** [10]
 - **The read for the question on screen, derived per render.** [11]
 - **The frame: the last admitted payload of one task context.** [12]
