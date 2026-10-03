@@ -13,6 +13,19 @@ fresh for `cleanup in {abandoned, reopened}` (a reopened leaf keeps its exact le
 id), and after writing a leaf contract start restamps the leaf doc's `lifecycleId`
 via `tasks.leaf_doc` so the doc follows the enclosure's fresh lifecycle.
 
+## Same-request planned parent in public preview
+
+`start_result` consumes a `StartContractPlan`: the leaf contract plus the exact parent already validated by `ensure_master_series_contract`. Only dry-run construction carries that parent. The value passes through preflight, lineage recognition and enclosure planning to `require_parent_series`; a missing filename alone never establishes this special authority. An existing parent still goes through its normal reader/identity guard.
+
+Apply carries no preview-parent substitute and retains the existing locked bootstrap, source/activation reconciliation, persisted-parent checks and materialization. Preview is not a reservation: later apply recomputes current facts and keeps existing refusal/recovery/CAS behavior. Organizational direct-super and ordinary standalone routes retain their existing meanings.
+
+The moved plan/result records and memory/provider blocked projections have one home in [startup/start_plan.py](startup/start_plan.py.md). Their unchanged wire vocabulary, typed disabled-memory projection and reconciled-memory-base projection are preserved there. Startup-owned dry-run storage/ref/worktree/index state is unchanged; a generic completion event in an already existing ambient observer is a separate recorded limit, so this card makes no universal no-I/O claim.
+
+
+- The public result path carries the same owner-validated plan. [13]
+- Only an actual carried preview parent qualifies for planned-lineage recognition. [14]
+- Preview admission and memory preparation use that exact admitted parent. [15]
+
 ## Code Commentary
 
 Every entry point and helper takes the typed `WorktreeArgs` dataclass (imported
@@ -48,8 +61,8 @@ start preflight inside `_plan_start_enclosure` (code line 703) — now import an
 `require_parent_series` cit:([`require_parent_series`], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330)
 instead of `require_parent_series_accepting_leaves`. The helper still resolves and validates the
 leaf's exact parent series (organizational direct-super work under a sprint graph returns `None`;
-`_require_atomic_master` refuses a non-atomic master; a missing parent contract and a stale series
-identity still raise), but it no longer decides whether that series accepts leaves. The guard it
+`_require_atomic_master` refuses a non-atomic master; a missing parent contract in durable/default use and a stale series
+identity still raise; explicit first-leaf preview may carry the same owner-validated planned parent), but it no longer decides whether that series accepts leaves. The guard it
 used to call, `worktrees/atomic_series_seal.py::require_series_accepting_leaves`, is deleted with its
 module: it read the parent's `(closeout_status, integration_status, cleanup)` cells as a seal, which
 once `checkpointed` existed also sealed every master that took a checkpoint landing. A master is
@@ -60,7 +73,7 @@ meant to be paused and resumed, never locked by its own landing, so neither `wor
 leaf start → leaf closeout → leaf landing → checkpoint → pause → attach, then starts a leaf commanded
 *after* the landing.
 
-**`start_result()` is now four lines (260731-EFA-L2)** — resolve context, build the contract, then
+**`start_result` consumes the request-scoped `StartContractPlan`** — resolve context, build the contract/validated preview-parent value, then
 three stages, each of which owns one decision and can return early:
 
 1. `_existing_contract_result(context, contract, args) -> WorktreeCommandResult | None` — attach to
@@ -101,7 +114,7 @@ remain on the ordinary worktree status payload. Attach and start continue to del
 and source synchronization to the selecting transaction, so this facade does not publish, repair,
 or infer a live process from selector state.
 
-`_contract_after_memory_start`'s disabled-memory branch now writes `memory_mode` through the typed
+[start_plan.py](startup/start_plan.py.md)'s moved `_contract_after_memory_start` disabled-memory branch now writes `memory_mode` through the typed
 record: `amend_contract(replace(contract, memory_repo_path=None, …, memory_state="disabled"),
 ContractCells(memory_mode="disabled"))`. The two look alike in the front matter and are not alike in
 the type system — `memory_state` is free text, `memory_mode` is one of the six persisted
@@ -216,14 +229,7 @@ started worktree on the now-present mapping. `_missing_mapping_state` advertises
 executable choices (`custom`, wired nowhere, was removed). A dry-run reconciliation records
 nothing and just reports `compatible`.
 
-`_ensure_memory_source_branch` (issue #54) runs inside
-`prepare_memory_for_start` after the ledger mapping gate: a missing external
-memory source branch is auto-created at the validated official checkout tip
-(`memory_base_commit`) using the code source branch name as template,
-reported as `memorySourceBranch` (`existing` /
-`created-from-official-tip` / dry-run `would-create-from-official-tip`) —
-previously agents had to create that branch by hand or `ensure_worktree`
-raised.
+`_ensure_memory_source_branch` requires the exact task-derived named memory ref and never creates a protected source. In a dry-run carrying an admitted unpublished parent, `prepare_memory_for_start` reports `would-create` only when that exact named ref is absent; an already-created journal-owned ref reports `existing`. The ordinary apply/default helper still requires the real ref. No alternate source or automatic branch creation is implied.
 
 `prepare_memory_for_start` now also calls `_sync_worktree_memory_mtimes` after
 preparing the memory worktree. `git checkout` stamps every file with the current
@@ -260,7 +266,7 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - Attach activates and reconciles an atomic leaf's exact parent before returning the workbench. [1]
-- The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves. [2]
+- Start preview carries the same owner-validated parent into its exact identity guard; attach and default/durable callers keep persisted-parent admission and no deleted child seal is restored. [2]
 - The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. [3]
 - Series status carries a read-only activation observation while the facade leaves selection mutation to the transaction. [4]
 - The selecting transaction owns the per-contract reconciling-to-active transition rather than this public facade. [5]

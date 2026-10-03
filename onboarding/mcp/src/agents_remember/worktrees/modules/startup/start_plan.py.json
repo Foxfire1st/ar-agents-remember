@@ -1,0 +1,106 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/start_plan.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+        "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+        "locator": {
+          "kind": "symbol",
+          "name": "StartContractPlan"
+        }
+      },
+      "id": "RLZ-EPYEZA",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Carries the leaf and its same-request owner-validated parent as one immutable local value rather than rebuilding authority from the path.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One internal value carries the same request's validated preview-only parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartContractPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Moved memory-mode/base projection preserves its typed contract semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "content": "sha256:e633cff8c37cf743403613f9ea2b4522f206535d03b7376cec2c861e1603ce5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_after_memory_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preview uses the existing dry-run worktree owner and ordinary result shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "content": "sha256:e8b9b903e8fb118a5d1d1f1e08c1f9c498f9d3e2a947e601eaa26455a1640816",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preview_start_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Memory blocks retain their existing recovery action/fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "content": "sha256:be7bd8e9de162c0787bf485fbe05d7a8a59a729917670d5e21a4361c5775bd6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_memory_start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Provider blocks retain their existing recovery action/fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83cabcc50057849d9d034bacbb0058e33bd5eda3",
+            "content": "sha256:923d05be50358c41177a2624206f1e476a7370e45484e0d177584c3f2e56b1c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_provider_start_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

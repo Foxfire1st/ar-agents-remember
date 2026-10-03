@@ -93,6 +93,10 @@ this leaf's one added row.
 
 The exact Node package-lock fixture consumer list includes test_review_read_latency.py because its reused real world reaches that fixture. The capture matrix consumes no governed artifact. Contracts/artifacts and their refusal/delta rules remain unchanged.
 
+## Current preview-proof registration
+
+The current exact consumer union retains both landed L40 read/capture evidence and R47 public preview reaches. The public preview test consumes the existing Node fixture and diff-scope support; no new governed contract/artifact is added. Counts remain 16/80, source-derived exact consumers and older dated evidence stay intact.
+
 ## Code Commentary
 
 ### Logic

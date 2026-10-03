@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+        "content": "sha256:504da8dc317c5886905be21149c3bde6dc882a0e5321e2eed6ebf19a5c96d4b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_build_start_contract"
+        }
+      },
+      "id": "RLZ-S6D64F",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Retains the actual parent returned by the one canonical/bootstrap owner only for dry-run construction, returning no preview-parent substitute on apply.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:97610670b1b5964828417fa7a47fdc0116dc09500c70d46991909ee6db504649",
             "locator": {
               "kind": "symbol",
@@ -65,55 +84,15 @@
       ]
     },
     "12": {
-      "note": "`start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation.\n\nAnchor: \"contract = build_start_contract(context\"; \"existing_result = _existing_contract_result(context\"; \"preflighted = _preflighted_contract(context\"; \"return _create_start_enclosure(context\"",
+      "note": "start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:12b03ee72142a1b3f178b9bd252b6f773fff3de31bfee0b0319354d7b22cad5f",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:fe44acba9b6f8848def241a8b84e9a8d203cda148a657760fe4fff98a69f80e2",
             "locator": {
-              "end": 523,
-              "kind": "line_range",
-              "start": 523
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:d675f016ff245bd67eafa6a925f861a7a08e5661812f73177edaf3b16da1adea",
-            "locator": {
-              "end": 526,
-              "kind": "line_range",
-              "start": 526
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:4d7726491f1db97b08b855ebeca647e3f358313619f46e14e63c9b335056990b",
-            "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 529
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:176908bccab5e38b6a20d0e686c5aa95a845548686d3fb57b2608f2d5d2803c7",
-            "locator": {
-              "end": 532,
-              "kind": "line_range",
-              "start": 532
+              "kind": "symbol",
+              "name": "start_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -211,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:f5daf2397ff0b2a452c8306adfef34ccba84c8905b80a16950887a757c2b30be",
             "locator": {
               "kind": "symbol",
@@ -244,11 +223,43 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:54ada2250a6412b2f9e23b361e014590e1cbde4243bf4b8dec0abd58938936ed",
             "locator": {
               "kind": "symbol",
               "name": "MasterSeriesContractSpec"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The existing builder returns a leaf plus its same-request preview-only parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "content": "sha256:504da8dc317c5886905be21149c3bde6dc882a0e5321e2eed6ebf19a5c96d4b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_start_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The public start-side adapter preserves existing typed refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
+            "content": "sha256:a7984fc43652a959ef8d3c5c7fcb1a864cd03033c86b986dbb9a5b4340bbe7dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_start_contract"
             }
           },
           "kind": "code"
@@ -277,7 +288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:edef247f1c4423d3475b6727891e9a65260b9d6e3d2ee11613ba4299913c1e83",
             "locator": {
               "kind": "symbol",
@@ -309,7 +320,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:a8c83b67ae958d50c04482ef985bed5294d301dd564aeb63d95d67ed489e95b0",
             "locator": {
               "kind": "symbol",
@@ -325,12 +336,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
+            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
             "content": "sha256:f0ecfd0a31daeb79921da6fc95121fef13d96b5019555e6983cf75cfd94eeab8",
             "locator": {
-              "end": 220,
+              "end": 221,
               "kind": "line_range",
-              "start": 220
+              "start": 221
             }
           },
           "kind": "code"

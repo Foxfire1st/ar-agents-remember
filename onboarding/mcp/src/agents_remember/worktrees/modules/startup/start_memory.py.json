@@ -1,112 +1,69 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/startup/start_memory.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+        "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_memory_for_start"
+        }
+      },
+      "id": "RLZ-8MWX1W",
+      "invariant": "INV-THS1XT",
+      "origin": {
+        "handoffEntry": "L47-R1-F1",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Separates exact named-ref existence from unpublished contract state: only the absent admitted ref is would-create, while the same-journal already-created ref returns the original existing fact.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "Source state, named-branch admission, and informational Git-derived metadata.",
+    "5": {
+      "note": "Preview facts distinguish absent exact refs from existing journal-owned refs.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:e29bba6b38904884cca4f760d456859b8a16e1dad2a56bb29ea3888820aa5e30",
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
             "locator": {
               "kind": "symbol",
-              "name": "_memory_source_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:afe54630aff8b908592856079bf91429535302aabb46b9d79a76ba6aac68857d",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_branch_state"
+              "name": "prepare_memory_for_start"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Mtime reuse and divergence handling preserve the current indexing behavior.",
+    "6": {
+      "note": "Ordinary default/apply requires the exact named ref and writes none.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:d9733272930699325a547a00b644e907c95c1d7e054cab30c73a8dcab5bc9aef",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_memory_source_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Dry run skips mTime mutation; divergence remains explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
             "content": "sha256:502457006ef99f338ecc37910f8d85b818154bd1a9b3e581a421935f24f52505",
             "locator": {
               "kind": "symbol",
               "name": "_sync_worktree_memory_mtimes"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:55d416daf53bdd2ae16e8400f3137043fa5c77da1a4a2b1930df831f0af7afd9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_memory_divergence_paths"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:d09a341b7063cdd826658fcca618dec57f21b8f11bf6d5e77a8a76ef36e36d43",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 74
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Missing external repository and explicit disabled-memory outcomes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:7ed26db55831e99036542b8b1f902892cad3961403cee590dfdfffce6b5d0e75",
-            "locator": {
-              "kind": "symbol",
-              "name": "_disabled_memory_choice"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5d06066ac9930acefd4ca2851587efa7a39d9fb9",
-            "content": "sha256:382c2163f7861afd126bd14588da2780ed74cf79f9471f717beb579b1768ca3b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_missing_memory_repo_state"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The informational ledger is reconstructed from commit attribution without a cache read.\n\nAnchor: \"without consulting a cached file or a ledger commit\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8dfc34de1574ccc8f1f9296adf06b1fe7f199de3",
-            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
-            "locator": {
-              "kind": "symbol",
-              "name": "derive_memory_ledger"
-            },
-            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
           "kind": "code"
         }

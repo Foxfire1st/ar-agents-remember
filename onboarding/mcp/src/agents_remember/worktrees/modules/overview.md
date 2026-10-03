@@ -315,6 +315,10 @@ Selected closeout admission, original-reference readback and code-suffix executi
 
 The one candidate capture owner copies the real index with its file time, restores HEAD starting entries, clears trust flags on the private copy and stages actual working files with explicit derived exclusions. The same owner serves review, gate, preview and closeout. It preserves same-second rewrites, real-index isolation, addressed object retention and the approved unchanged conversion-rule boundary. An unusable copy retains the existing full private capture; no second API owns a competing candidate tree.
 
+## First-leaf planned authority through preview
+
+The existing start-contract owner returns the same validated planned parent through [startup/start_plan.py](startup/start_plan.py.md) to public preview admission. The local record/projection module preserves moved start values/results; it constructs no authority. Source/memory preview distinguishes actual absent versus journal-owned existing named refs. Apply retains durable bootstrap, source/activation and exact identity/CAS revalidation; a plan is never implementation authority. The generic ambient completion event is not startup-state publication or universal no-I/O evidence.
+
 ## Purpose
 
 Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.

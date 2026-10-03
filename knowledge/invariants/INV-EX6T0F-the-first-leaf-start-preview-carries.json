@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Dropping validated authority blocks the advertised first-leaf preview, while treating missing files as generic authorization could expose stale or foreign source authority. The same-request carrier, exact guard and unchanged durable owner jointly prevent both errors."
+  },
+  "applicability": "Registered first-leaf worktree_start dry-run for a canonical atomic master whose exact series contract is not yet published, and the durable/default admission boundaries that must reject that planning value.",
+  "conditions": [
+    "The existing ensure_master_series_contract owner validates canonical task/topology, repository/source/branch/memory identity and retained journal state before the same-request value is carried.",
+    "Only explicit dry run at a genuinely absent non-symlink canonical parent path may admit that value; any existing artifact is loaded and validated through the normal owner.",
+    "Preview materializes no startup-owned contract, activation, source ref, worktree/provider/start operation or real-index/content mutation and creates no reservation.",
+    "Actual apply re-resolves current facts through the existing lock/journal/source/activation/CAS transaction and requires persisted identity before implementation exposure."
+  ],
+  "exclusions": [
+    "Organizational direct-super and ordinary standalone routes, which keep their existing distinct authority shapes.",
+    "An unreadable, foreign, malformed, colliding or conflicting persisted parent: it never becomes absence or a synthetic valid plan.",
+    "Generic tool-completion telemetry in an already existing ambient observer lifecycle; startup no-materialization is not a universal zero-I/O claim."
+  ],
+  "id": "INV-EX6T0F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R47@v1 rules 1–5; notes/reports/260928-MIK-L47-post-sync-evidence/public-proof-adjudication.json; original reviewer R2 verifies F1; current 9 registered public operations and 32 post-sync focused controls pass"
+      ],
+      "path": "notes/reports/260928-MIK-L47-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R47@v1-preview-authority",
+    "leaf": "260928-MIK-L47",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The first-leaf start preview carries the planned parent returned by that owner within the same request to the existing parent-series admission boundary.",
+  "status": "proposed",
+  "supersedes": []
+}

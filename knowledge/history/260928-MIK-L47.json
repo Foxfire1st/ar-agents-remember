@@ -1,0 +1,24 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L47",
+  "rows": [
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 1
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QEMCK0",
+      "items": [],
+      "reason": "This new jointly justified guarantee is authored from both exact obligations and their scoped public proofs; directory placement does not infer membership. Startup-state preservation excludes the separately observed ambient completion event.",
+      "subject": "FAM-SZ4B70"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

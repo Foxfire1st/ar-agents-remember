@@ -9,8 +9,17 @@
 `start_contract.py` owns worktree-start contract construction after the HFX-L4 extraction from
 `start.py`. It builds or recovers root series contracts, selects and reconciles an atomic master in
 that contract's own activation record before leaf admission, derives leaf source/work branches and
-memory bases, validates the requested leaf ref, and returns a leaf contract whose persisted `leaf_id`
-is the canonical task document id.
+memory bases, validates the requested leaf ref, and returns a request-scoped `StartContractPlan` whose leaf contract persists the canonical task document id as `leaf_id`. The same owner-validated parent is carried only for preview.
+
+## Request-scoped preview authority
+
+`build_start_contract` now returns `StartContractPlan` or the existing refusal. `_build_start_contract` derives the leaf through the same canonical/task/source owner and retains that owner's actual parent object only for `args.dry_run`; apply stores `preview_parent=None`. The internal wrapper is not a new constructor, public request/result field, durable contract or activation.
+
+`ensure_master_series_contract` remains the one bootstrap/planning owner: planning observes canonical topology, source/ref and journal facts without publication, while actual apply keeps its per-master transaction and exact current activation/source revalidation. Only actual implementation exposure requires reconciled active authority; an admitted preview does not claim activity.
+
+
+- The existing builder returns a leaf plus its same-request preview-only parent. [18]
+- The public start-side adapter preserves existing typed refusals. [19]
 
 ## Code Commentary
 
@@ -170,8 +179,7 @@ observed evidence and contract-bound status action without rewriting the persist
   code and memory source branches. Each is selected in its own contract-keyed activation record;
   selecting one never rewrites, pauses, or names another's record, and a foreign master's state is
   never this contract's reason to wait.
-- A leaf under an atomic master is not admitted until its parent selection has reconciled and become
-  active; neither task prose nor closeout queue state supplies that authority.
+- Actual leaf materialization/implementation under an atomic master requires its parent selection to reconcile active; a read-only preview may carry the existing owner's validated plan without claiming activation. Neither task prose nor queue state supplies durable implementation authority.
 - **No serial-lifecycle cell refuses a leaf.** Closeout, integration and cleanup cells do not gate
   leaf admission. The `atomic_series_seal.py` predicate that read them as a seal is deleted, so a
   master that took a checkpoint landing (`integration_status="checkpointed"`) still admits the next
@@ -202,7 +210,7 @@ No Domain Documentation source is configured for this memory root.
 - Shared leaf-ref validation and candidate reporting. [9]
 - Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. [10]
 - The start operation returns through `start_result`. [11]
-- `start_result` calls `build_start_contract` before existing-contract handling, preflight, and enclosure creation. [12]
+- start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request. [12]
 - The start operation creates its enclosure through `_create_start_enclosure`. [13]
 - `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. [14]
 

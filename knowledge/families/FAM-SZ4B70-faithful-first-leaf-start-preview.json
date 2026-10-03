@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Exact carried parent authority alone cannot make an existing journal ref truthful, and correct memory facts cannot prevent a plan from bypassing durable apply. Together they make the existing public preview a faithful plan with unchanged materialization authority."
+  },
+  "guarantee": "An admitted first-leaf preview is a truthful, startup-state-nonmaterializing plan from the existing canonical parent authority: the same validated parent reaches exact preview admission, existing artifacts keep their refusals, planned/existing memory-source facts match the exact ref, and no preview value reserves or substitutes durable source/activation authority on later apply.",
+  "id": "FAM-SZ4B70",
+  "members": [
+    "INV-EX6T0F",
+    "INV-THS1XT"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L47-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L47-faithful-first-leaf-preview",
+    "leaf": "260928-MIK-L47",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees/modules",
+    "mcp/src/agents_remember/worktrees/integration"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Faithful first-leaf start preview"
+}

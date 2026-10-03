@@ -8,6 +8,16 @@
 
 Censuses repository-global protected code and external-memory refs and proves the exact owner permitted to use each lifecycle surface.
 
+## Exact preview admission and durable default
+
+`require_parent_series` reloads and validates any existing exact parent artifact. Only explicit `dry_run=True` with the owner-validated `preview_parent` and genuinely absent, non-symlink canonical parent path may admit the supplied value. It checks the exact path and passes the value through the same `_require_series_identity` task/root/repository/source/branch/memory guard.
+
+An unreadable, malformed, foreign or conflicting persisted artifact is never treated as absence. Default and durable callers carry neither this planning arm nor a substitute parent; organizational direct-super still returns no atomic parent. Missing actual authority retains its existing refusal. This restores the validated first-leaf preview handoff rather than weakening apply, attach, sync, closeout, integration or cleanup.
+
+
+- The parent-series guard admits exactly one explicit planning shape while preserving durable default. [10]
+- The same identity guard validates loaded and carried parent values. [11]
+
 ## Code Commentary
 
 The resolver derives repository default, sprint-super, and active atomic-series surfaces from configured repository identity plus canonical task topology. Exact Git branch/default/worktree facts are delegated to `integration_branch_repository.py`, while the shared immutable request, surface, target, scope, and master-authority records live in `integration_branch_types.py`; this module owns their task-derived policy, rejects owner collisions, binds series and leaf contracts to their exact source/target, and supplies narrow structural guards for start, attach, sync, closeout, integrate, terminal mutation, carryover, and topology publication. Queue-release admission remains owned by the higher closeout-queue lifecycle entrypoints, preventing this low-level resolver from importing the queue and re-entering the start-contract import path. Ordinary work branches cannot alias or occupy any protected surface.
@@ -61,9 +71,7 @@ The function formerly named `require_parent_series_accepting_leaves` is now
 an atomic leaf's exact parent series and validates its identity: it returns `None` for organizational
 direct-super work under a sprint graph
 cit:(["authority.sprint_ref is not None and authority.execution_nature == \"organizational\""], mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:317-317),
-refuses a non-atomic master through `_require_atomic_master`, raises
-`"{operation} requires its exact parent series contract"` when the parent contract file is missing,
-loads it, and proves the series identity against the leaf's task root and sprint branch. It no longer
+refuses a non-atomic master through `_require_atomic_master`, requires a persisted parent in default/durable use and raises `"{operation} requires its exact parent series contract"` when that authority is missing. Explicit start preview alone may carry the same owner-validated planned parent at a genuinely absent canonical path; loaded or carried values pass the same exact identity guard. It no longer
 decides whether that series accepts leaves, because the guard it used to call — the deleted
 `worktrees/atomic_series_seal.py::require_series_accepting_leaves` — is gone together with its import.
 
@@ -109,7 +117,7 @@ still starts.
 - Topology publication validates candidate ownership before task facts can create a protected collision. [2]
 - New-surface validation recognizes only the exact canonical atomic series contract and branch. [3]
 - Sync admits either an ordinary leaf workbench or exact task-owned series authority. [4]
-- The parent-series resolver renamed from `require_parent_series_accepting_leaves`: it resolves and validates the exact parent series (organizational direct-super returns `None`; a missing contract and a stale identity raise) and no longer consults a child-admission seal. [5]
+- The exact parent guard reloads existing artifacts, admits the owner-validated planned parent only in explicit dry run at a genuinely absent canonical path, and preserves organizational and durable default authority. [5]
 - The atomic-owner resolver that follows the rename at its call site, and the leaf target that follows it at integration. [6]
 - The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. [7]
 - The terminal-task guard refuses abandon once the integration cell records a landed line, in either landing state. [8]

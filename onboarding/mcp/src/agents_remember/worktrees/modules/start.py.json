@@ -1,13 +1,86 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/start.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+        "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+        "locator": {
+          "kind": "symbol",
+          "name": "_parent_lineage_start_block"
+        }
+      },
+      "id": "RLZ-4BP8FB",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Recognizes planned-parent lineage only when the request actually carries that validated value; missing file alone is not a bypass.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+        "content": "sha256:b8bf61c187eea3e2bf821b01d0a17d18fae121f9d2b1254bc147b5b9283ecf8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_materialize_start_enclosure"
+        }
+      },
+      "id": "RLZ-5F6FY8",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Durable materialization retains default persisted-parent/workbench/source rechecks under existing repository integration authority; preview data is not its authorization.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+        "content": "sha256:0ea7a8b0282f396b27d0055c00d4d798d4f0d1ce41aa374131fecbff43c2d225",
+        "locator": {
+          "kind": "symbol",
+          "name": "_plan_start_enclosure"
+        }
+      },
+      "id": "RLZ-HS8RJP",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Asks the exact parent-series guard and supplies its admitted unpublished parent to memory preview, preserving one authority handoff.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+        "content": "sha256:fe44acba9b6f8848def241a8b84e9a8d203cda148a657760fe4fff98a69f80e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_result"
+        }
+      },
+      "id": "RLZ-T7WGDA",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      },
+      "rationale": "Forwards the built preview-only parent through the registered operation's preflight/planning path with the same leaf contract.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Attach activates and reconciles an atomic leaf's exact parent before returning the workbench.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:40ead51e5130e405d692d3d222b39375b07f4b7314fa37280057829a10292557",
             "locator": {
               "kind": "symbol",
@@ -18,12 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:e86004e7b1d3bb2ce6f2fda8300c31400a77e93a7f751b02f3fac8f82606ebcb",
             "locator": {
-              "end": 208,
+              "end": 214,
               "kind": "line_range",
-              "start": 168
+              "start": 174
             }
           },
           "kind": "code"
@@ -156,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:28fd5041fe7752e741d8488964b033472c1e08ef070d5f26f076920aca2943b7",
             "locator": {
               "kind": "symbol",
@@ -167,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:c1c83640701904e09ab79d92ca6e296b5f51d9bef532c8f7062c1a061b82ff8b",
             "locator": {
               "kind": "symbol",
@@ -178,7 +251,7 @@
         },
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:3f19162064cca36ceb142ed7eacb4a2f674c69d01e1ac9de37b61b58469adbc3",
             "locator": {
               "kind": "symbol",
@@ -201,53 +274,64 @@
         }
       ]
     },
-    "2": {
-      "note": "The renamed parent-series resolver both start-side guards now call (attach at code line 177, the `_plan_start_enclosure` preflight at code line 703); it resolves and validates the exact parent series and no longer accepts or refuses leaves.\n\nAnchor: \"parent_series = require_parent_series(\"; \"require_parent_series(contract, operation=\\\"worktree_start\\\")\"",
+    "13": {
+      "note": "The public result path carries the same owner-validated plan.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:01947668f607627f0031a5183f503e94c4a4869a2ef2827c8ba99f646ecc248e",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:fe44acba9b6f8848def241a8b84e9a8d203cda148a657760fe4fff98a69f80e2",
             "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 177
+              "kind": "symbol",
+              "name": "start_result"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "14": {
+      "note": "Only an actual carried preview parent qualifies for planned-lineage recognition.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:4c789dde540ca88925e45ebce9fb7a70fd52c34944b73b26dfb7582fcc2d5dae",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
             "locator": {
-              "end": 703,
-              "kind": "line_range",
-              "start": 703
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Preview admission and memory preparation use that exact admitted parent.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:1a6bfe1305281b199fa50f1959599e7b5dbc0f97c6bf59041c01f61840ed933f",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:0ea7a8b0282f396b27d0055c00d4d798d4f0d1ce41aa374131fecbff43c2d225",
             "locator": {
-              "end": 205,
-              "kind": "line_range",
-              "start": 205
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "2": {
+      "note": "Start preview carries the same owner-validated parent into its exact identity guard; attach and default/durable callers keep persisted-parent admission and no deleted child seal is restored.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:00858493375cd09c83c38a77417c78b51957cc677a9aeb15298945db26494ee5",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
+            "content": "sha256:0ea7a8b0282f396b27d0055c00d4d798d4f0d1ce41aa374131fecbff43c2d225",
             "locator": {
-              "end": 758,
-              "kind": "line_range",
-              "start": 758
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
             }
           },
           "kind": "code"
@@ -276,7 +360,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:d192ee251b2b309342402534cafc75e81d007e372bc13fe5dd17c9b0f8f0a427",
             "locator": {
               "kind": "symbol",
@@ -287,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:15b424e8d9c68c39d4d1467aa3ac4b87bf1bc7689a0c0cf2b719c0212b7385b8",
             "locator": {
-              "end": 165,
+              "end": 171,
               "kind": "line_range",
-              "start": 138
+              "start": 144
             }
           },
           "kind": "code"

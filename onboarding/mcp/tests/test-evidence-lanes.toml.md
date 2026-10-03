@@ -2182,6 +2182,10 @@ acceptance evidence, and the verification stamps remain closeout-owned.
 
 The reviewer operation and copied-index capture modules have explicit unit-regression lane rows. The existing serving integration row remains unchanged; no runtime boundary test is relabelled by curation.
 
+## Current preview-proof registration
+
+The registered public preview module is an integration-lane operation, alongside the two preserved L40 unit-regression rows. Curation does not move the public boundary into a helper-only lane or infer certification from the declaration.
+
 ## Code Commentary
 
 ### Logic

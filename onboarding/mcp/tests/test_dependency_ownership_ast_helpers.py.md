@@ -14,6 +14,10 @@ evidence artifact, and leaves the catalog closed over the governed inventory.
 
 The current catalog pin tracks the added exact test_review_read_latency consumer. Contracts/artifacts stay sixteen/eighty. The source module documents the deliberate re-pin; this card treats historical digest entries as history rather than current source identity.
 
+## Current preview-proof registration
+
+The current catalog union pin is 6f50c9f4119e5cd480309c388c4bd1c9ecfafe9ea9a5cff6c1e32131b644c9e6 (2,099 lines), with 16 contracts/80 artifacts unchanged. Dated L40/R47 rationale and earlier history remain; the source-derived consumer proof checks the actual union rather than replacing historical digests.
+
 ## Code Commentary
 
 ### Logic
@@ -42,7 +46,7 @@ An explicitly supported input with no consumers remains complete with a verified
 **The module also carries the evidence catalog's pinned identity, and that pin is a deliberate one.** The three
 constants `LIFECYCLE_CONTRACT_COUNT`, `LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` state the
 catalog's declared shape and its exact bytes, so a change to `mcp/tests/evidence-lifecycle.toml` that nobody meant
-is a **hard failure** rather than a silent inventory drift. **The current constants are `LIFECYCLE_CONTRACT_COUNT = 16`, `LIFECYCLE_ARTIFACT_COUNT = 80` and `LIFECYCLE_CATALOG_SHA256 = 91a94e074d87e911ced13f7bf2976f61af38f54a50b92595b8222357b4e57c24`. The catalog has 2,097 lines. Its Forty-third deliberate re-pin accounts for the exact latency-test consumer; the source docstring owns that current explanation. Earlier re-pin descriptions below are historical** — **updated by
+is a **hard failure** rather than a silent inventory drift. **The current constants are `LIFECYCLE_CONTRACT_COUNT = 16`, `LIFECYCLE_ARTIFACT_COUNT = 80` and `LIFECYCLE_CATALOG_SHA256 = 6f50c9f4119e5cd480309c388c4bd1c9ecfafe9ea9a5cff6c1e32131b644c9e6`. The catalog has 2,099 lines and preserves the exact L40/R47 consumer union and dated source rationale. Earlier re-pin descriptions below remain historical** — **updated by
 `260928-MIK-L14`:** this sentence named L05's Forty-first value `f8b04814…` at 2095 lines. **Updated by
 `260928-MIK-L05`:** this sentence named L10's Fortieth value `449b69ef…` at 2091 lines. **Updated by
 `260928-MIK-L10`:** this sentence named L01's Thirty-ninth value `a571a70f…` at 2090 lines. **Updated by

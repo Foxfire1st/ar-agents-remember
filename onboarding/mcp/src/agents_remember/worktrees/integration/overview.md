@@ -20,6 +20,10 @@ Terminal lifecycle cleanup releases only an exact selected terminal pointer and 
 canonical contract identity can be destroyed. Lifecycle/commit evidence remains in the stable
 operation journal and Git proof owners; the disposable closeout projection observes readiness only.
 
+## Preview-only exact parent admission
+
+The existing parent-series guard admits an owner-validated same-request value only in explicit start dry run at a genuinely absent canonical parent path. It always reloads existing artifacts and applies the same task/root/repository/branch/memory identity predicate. Every default/durable caller and organizational route keeps its existing authority boundary; no fallback parent loader, constructor or broad missing-artifact bypass is introduced.
+
 ## Purpose
 
 The integration-authority package owns branch/ref authority, closeout-door publication and recovery,

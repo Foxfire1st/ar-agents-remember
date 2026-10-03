@@ -1,0 +1,207 @@
+{
+  "path": "mcp/tests/test_worktree_start_preview.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:8bf9242e6800792d02e9cbc6c99dc8170bcb0b0f53d24b883f0ed4e9f0872b7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+        }
+      },
+      "facet": "Repeated memory-disabled/external first-leaf public previews preserve the complete startup/Git/content/index state without prepublishing a parent.",
+      "id": "PRF-2W13PT",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:7f5ff150e2daa4698ed59bd7dbce99eb8444beba0cb2345c24ca19945185c417",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+        }
+      },
+      "facet": "Actual apply re-resolves changed current source; an existing valid parent is read-only in preview.",
+      "id": "PRF-31JXQC",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:6d69d1d59b0bf7e712b19055bd4ba589ebf939b34b943c9731d7c11cbc12da79",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+        }
+      },
+      "facet": "Canonical leaf/source/base/protected-ref invalidity preserves refusal and product-state equality.",
+      "id": "PRF-5Z9PGW",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:bac75766acaf872be86fc871b758b8f2b89307692035cae88fafaf123144f8e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+        }
+      },
+      "facet": "Foreign/unreadable persisted artifacts retain explicit refusal and are never replaced by a valid plan.",
+      "id": "PRF-63NF6V",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:e4cc6ad9f9c2ac953d9987979e8e2cbfcf206d78b43784929126c4cc043c0ad5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+        }
+      },
+      "facet": "Removing the exact plan handoff restores refusal; the preview value cannot authorize default/durable parent admission.",
+      "id": "PRF-AKPX5R",
+      "invariant": "INV-EX6T0F",
+      "origin": {
+        "handoffEntry": "MIK-R47@v1-preview-authority",
+        "leaf": "260928-MIK-L47"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+        "content": "sha256:2f3d007314e058275946a3f5fb8c4d451bbe5fb09ee13371941842886993b1fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+        }
+      },
+      "facet": "One real retained journal is previewed before/after the original helper creates its memory ref: repeated would-create/existing facts are truthful and actual apply recovers that same journal without manual authority.",
+      "id": "PRF-GC3WXC",
+      "invariant": "INV-THS1XT",
+      "origin": {
+        "handoffEntry": "L47-R1-F1",
+        "leaf": "260928-MIK-L47"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "First-leaf preview is repeatable without startup publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:8bf9242e6800792d02e9cbc6c99dc8170bcb0b0f53d24b883f0ed4e9f0872b7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual apply re-resolves current source; persisted-parent preview remains read-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:7f5ff150e2daa4698ed59bd7dbce99eb8444beba0cb2345c24ca19945185c417",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Losing the handoff fails and preview cannot supply durable authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:e4cc6ad9f9c2ac953d9987979e8e2cbfcf206d78b43784929126c4cc043c0ad5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Persisted artifact errors never select a synthetic valid parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:bac75766acaf872be86fc871b758b8f2b89307692035cae88fafaf123144f8e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Same journal/ref states and real apply/recovery remain truthful.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:2f3d007314e058275946a3f5fb8c4d451bbe5fb09ee13371941842886993b1fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ambient completion is the explicitly observed exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d337de6102ec305fcdaada91e7f75ec55114e7f",
+            "content": "sha256:5609981c70b4cac29e6f5a755a932d31df2a023016a70729dc991530e8c17309",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_ambient_request_observes_only_tool_completion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

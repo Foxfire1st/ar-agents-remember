@@ -2097,6 +2097,10 @@ loader stays complete: the new test module is its own row, and the extended modu
 one. The unit population moved 11 → 12 cases in `test_memory_quality_runs.py` and gained this leaf's
 one new module case — a net **+2** against the leaf's measured base.
 
+## Registered first-leaf preview proof
+
+[test_worktree_start_preview.py](test_worktree_start_preview.py.md) drives the existing registered public path on confined real Git/task worlds. It distinguishes repeated two-mode startup-state no-materialization, exact journal ref states and current durable apply, preserves concrete refusal/organizational controls, and states the generic ambient completion exception. Source-bound archived payloads are task evidence; canonical synthetic task/contract files are never extracted into live coordination. L40 proof rows and ownership budgets remain preserved.
+
 ## Purpose
 
 Terminal cleanup and abandonment exclude the computed root ledger cache from memory dirtiness and discard only that cache before ordinary Git worktree removal. Actual code/memory edits and branch ancestry remain protected. Abandon preview passes its preview state to result validation. The existing Git and public-terminal tests cover these boundaries.
