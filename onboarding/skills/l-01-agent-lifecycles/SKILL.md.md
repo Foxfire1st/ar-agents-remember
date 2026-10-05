@@ -6,38 +6,17 @@
 
 ## Purpose
 
-This is the canonical lifecycle router and shared doctrine for every agent role. It selects exactly
-one session path, defines the minimal frame every session may rely on, registers role-owned
-lifecycle files, and owns the common structural dispatch, authority, continuity, supervision, and
-three-party-loop contracts.
+This canonical thin router selects a native role capsule from an explicit supported role and one applicable operation. It does not define a shared lifecycle or inject shared core instructions. Canonical task/workspace facts travel in the separate AR handover; the composition manifest owns routing metadata.
 
 ## Logic
 
-The router has three ordered conditions: a bound spawn role loads that role lifecycle; a fresh role
-brief loads the named role lifecycle; otherwise the session is the free-chat launcher. For
-ordinary role-shaped work, that launcher compiles `templates/architect-brief.md` and calls
-`dispatch_agent` once on the canonical sprint document. An explicit developer-declared task-seat
-takeover instead dispatches the named role on that role's canonical task document. Role seats bind to canonical task documents at the
-appropriate altitude plus role. A plane-hosted dispatching role supplies the child document, role,
-and complete brief through the same public request. Caller kind is derived only from the presence
-or absence of plane identity; ambient target-document authority never substitutes for a failed
-plane authorization. The control plane privately resolves/creates the occupant, establishes
-readiness, and exact-pins only the initial brief. A stale/unavailable source-lineage refusal routes
-through ordered contract-addressed sync; retained conflicts remain resumable through the advertised
-continuation, with escalation reserved for semantic ambiguity. Repeating the same dispatch after
-that recovery converges on the existing viable occupant or durable queued brief; a developer
-takeover never means manually replacing a live incumbent.
+The native launcher supports Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Manual taskless Architect/System Specialist launches at Projects ask only for missing outcome/repository or concern/report scope and synthesize no sprint, master or task.
 
-Malformed hosted identity never falls into ambient/free-chat behavior: an unknown
-`AR_SPAWN_ROLE`, or a role environment without its plane-injected hosted-session identity, fails
-closed before any pasted brief is interpreted. Reviewer uses one role across leaf, master, and
-sprint documents; the dispatching manager, architect, or orchestrator stamps the exact structural
-parent on each generation so plan and super reviewers can share an address without sharing
-authority.
+Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. Developer decisions stay in the agent’s own chat, and dashboard-started roles need no parent. Small work may stay flat with distinct Worker, Reviewer and Curator roles.
 
-Continuity lives in task documents and durable artifacts rather than transcripts or a particular
-occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
-watchers or an escalation ladder. Role files own the detailed loops and authority limits.
+After reconnect or compaction, restore the same role, operation, canonical task, agent IDs and report from the durable handover and recorded approvals. Reconcile an uncertain start with the same request ID. A finished turn, review, curation, semantic acceptance and paired-Git publication remain separate owning facts.
+
+The following requirement/attempt constraints remain related standing preservation context, owned by the applicable approved packet, role/review and task records. Their retention here does not make them shared core blocks injected by this thin router.
 
 Requirement acceptance is upstream and revision-exact: approved requirements live in immutable,
 version-addressed canonical packets carrying their durable corpus ruling. Managers, workers, and
@@ -77,22 +56,17 @@ separate protocol events as delivery attempts.
   entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
   data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
   brief-schema, which is why the router names it on its own.
-- Roles communicate through structural parent/child operations and durable artifacts.
-- Exact runtime ids, readiness correlations, inbox ids, lifecycle ids, and gate ids remain
-  control-plane details.
+- Native starts and peer messages use bound role tools and durable handovers; developer decisions stay in the own chat.
+- Preserve actual returned agent IDs and canonical task/workspace bindings. Never invent a parent, recipient or delivery outcome.
 
 ## Invariants And Boundaries
 
-- Exactly one routing condition wins for a session.
-- `(canonical task document, role)` is the stable seat address; replacement changes the occupant.
-- Agents never poll readiness, retain another seat's runtime address, or duplicate an initial brief.
-- `dispatch_agent` is the sole public spawn choice. Ambient launcher and plane-hosted authority are
-  disjoint modes of that one transaction, with no caller-mode field or fallback.
-- Invalid role environment is a refusal, never a fourth routing entry or free-chat fallback.
-- Reviewer parentage is task-altitude- and generation-specific; runtime occupant ids are not parent
-  authority.
-- Role-table `dispatch` and `tools` rows describe structural authority/capability, not settings
-  keys; only the documented launch knobs participate in settings overrides.
+- One explicit supported role and applicable operation selects the native capsule; missing or conflicting bindings are reported.
+- Shared core blocks are not injected; canonical task/workspace facts are separate handover data.
+- Flat distinct-role coordination is valid and dashboard starts need no parent.
+- Native role starts/messages use the launching build’s task server and actual resolved identities.
+- Preserve the same task/role/request/report through uncertainty; no duplicate owner or alternate transport is created.
+
 - Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
 - The three-party loop separates builder work, independent review, curator coherence, and owner
   decision; verdicts are evidence rather than gate decisions.
@@ -104,7 +78,7 @@ separate protocol events as delivery attempts.
 
 ## CCR-R12@v5 Transaction Boundary
 
-Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
 ## Evidence
 
@@ -116,25 +90,25 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-- The router is exactly three ordered conditions. [1]
-- The registry assigns one canonical file to each role. [2]
-- The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. [3]
-- Shared continuity and authority invariants are explicit. [4]
-- Dispatch has two process-derived caller kinds and one shared transaction. [5]
-- Ambient bootstrap compiles and pins one complete architect brief. [6]
+- Explicit supported role and applicable operation select the native capsule. [1]
+- The native launcher exposes seven roles while the manifest retains its compiler registry. [2]
+- Canonical task/workspace facts arrive in the handover rather than being inferred from Projects. [3]
+- Same-task continuity restores durable role, operation, agent and report identities. [4]
+- Native role starts and messages use the bound task server and actual returned identities. [5]
+- Flat distinct-role coordination and valid parentless dashboard admission are explicit. [6]
 - Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
 - Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
 - Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]
-- The companion files now include the producers' curator hand-off shape beside the brief schemas. [10]
+- The producers' Curator hand-off shape remains a separate template contract, rather than an injected router rule. [10]
 
-## L23 Dispatch Admission
+## Historical L23 Dispatch Admission
 
 Canonical lifecycle dispatch now proves the task-derived ancestry applicable to
 the target role before process creation. Stale or unavailable edges create no
 child and carry ordered contract-addressed synchronization; agents do not retain
 commit ids, branch ids, or occupant ids to make routing work.
 
-## 260815-DAG-L2 Dependency-Aware Execution Plane
+## Historical 260815-DAG-L2 Dependency-Aware Execution Plane
 
 The shared lifecycle doctrine now separates tool-derived execution facts from role-owned
 judgment. Portfolio planning is an architect-owned loop: an approved strategist drafts the plan,

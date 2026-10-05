@@ -4,13 +4,10 @@
 
 [Nearest governing overview](overview.md)
 
-Working candidate verification: source inspected at 2026-09-18T04:35 +02:00 against the uncommitted KS-L14 candidate.
-The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
-
 ## Purpose
 
 Declares shared test-support/fixture ownership, fidelity, lifetime, replacement contracts, and
-exact consumers. **Current reading (`260928-MIK-L24`, the Thirty-third deliberate re-pin): 80 `[[artifact]]`
+exact consumers. **Historical reading (`260928-MIK-L24`, the Thirty-third deliberate re-pin): 80 `[[artifact]]`
 records and 16 `[[contract]]` blocks, 2080 lines, sha256
 `6fb4934d9120e1f593aaaa0e5534f49e01bf88a0f4dee04592f75063575fab65`** (see the section at the end of this
 card). The rest of this paragraph is an earlier reading, kept as history, and was corrected by L24 so that
@@ -91,11 +88,22 @@ this leaf's one added row.
 
 ## Current verification scope
 
-The exact Node package-lock fixture consumer list includes test_review_read_latency.py because its reused real world reaches that fixture. The capture matrix consumes no governed artifact. Contracts/artifacts and their refusal/delta rules remain unchanged.
+The composed catalog retains the exact landed read/capture and public-preview consumers,
+adds canonical-reader fixture reaches and serviceTier agentic-settings use of the Node
+lockfile, and registers three new shared supports. The declared totals are 19 contracts and
+83 artifacts; their SHA-256 pin is `dc24a320370a3181f9d59252562689b586b9b0c8fae76863d81536be19c944f7`.
+These are source declarations, not execution receipts.
 
 ## Current preview-proof registration
 
-The current exact consumer union retains both landed L40 read/capture evidence and R47 public preview reaches. The public preview test consumes the existing Node fixture and diff-scope support; no new governed contract/artifact is added. Counts remain 16/80, source-derived exact consumers and older dated evidence stay intact.
+The earlier read/capture/preview union remains present. The direct import also registers
+`paseo_runtime_test_support.py`, `paseo_launch_test_support.py` and
+`pnt_sandbox_test_support.py`, with their declared fidelity and exact consumers. Earlier
+16/80 and leaf-local digests below describe historical candidates.
+
+## Current source account
+
+The composed catalog binds 19 contracts and 83 artifacts, preserving the MIK-only rows and adding the three Paseo/sandbox shared-support contracts. Exact consumers include the canonical reader fixtures and R17's agentic-settings use of the Node lockfile. Registry declarations identify fixture ownership and fidelity; they are not records of executed evidence.
 
 ## Code Commentary
 

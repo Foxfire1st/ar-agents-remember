@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39c36517706a81dd27f7d890760645111f3d55b3",
+        "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+        "locator": {
+          "kind": "symbol",
+          "name": "connect"
+        }
+      },
+      "id": "RLZ-YH1Y0Z",
+      "invariant": "INV-VV0B2G",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Disables reconnect and refuses a connected daemon identity different from the selected home.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

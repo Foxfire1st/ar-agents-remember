@@ -8,6 +8,10 @@
 
 Checks paired source reading: exact ranges and full bytes, binary omission, traversal and symlink confinement, first-read overview attachment, unchanged-onboarding deduplication, changed/refresh reservation, compact-marker reset and committed-source payload reading. Since 260921-ICR-L19 the same module is also the suite for the route's **published-intent half** (ICR-R19@v1): the ordinary read resolves the repository's published knowledge dataset from its coordination context and reads the recorded intent about each requested path at that dataset's own snapshot — or names, by its exact binding, why it could not. Since MIK-R24 the ordinary read of unconverted memory is `legacy-format`, so these cases measure the database block beside the read rather than inside it (see Logic). It does not claim the removed broad served-ledger durability or facts-packet suites remain here.
 
+## Current source account
+
+The added equal-overview case constructs a second code/onboarding root with identical overview text. Each root receives its first repository/route overviews and then deduplicates its own repeat, proving served-overview state is isolated by roots rather than suppressing one root because another served equal bytes.
+
 ## Code Commentary
 
 ### Logic

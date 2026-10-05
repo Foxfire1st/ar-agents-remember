@@ -8,6 +8,8 @@
 
 Server, context, install, and skills payload builders.
 
+Builds server-info and orientation/install tool payloads through the shared token envelope.
+
 ## Code Commentary
 
 ### Logic
@@ -56,6 +58,10 @@ flat copy, so there is no layout argument). `context_packet_payload` forwards
 - `server_info_payload` requires an explicit `ServingBuildPayload`; package version alone cannot identify
   equal-version source or installed candidates.
 
+### Role Runtime and Scope
+
+server_info_payload adds toolServer and AgentBindingPayload only for readable bound identity; servingBuild remains the process/build owner fact. context_packet_payload derives optional call-local admitted config before invoking the existing context packet owner. No binding creates a second globally selected repository root.
+
 ## Series-Contract Notes
 
 `resolve_context_payload` still resolves a nested task root and a specific leaf enclosure — the
@@ -67,3 +73,12 @@ keyword arguments, through the same response-model validation path as the rest o
 Core tool adapters now import runtime installation from `application.runtime.install` and skill
 installation from `application.runtime.skills`. Payload validation and transport-thin forwarding
 remain unchanged; the move removes the former flat application-module ownership.
+
+## Evidence
+
+
+
+### Runtime Source References
+
+- Frozen implementation of server_info_payload supporting the stated file behavior. [1]
+- Frozen implementation of context_packet_payload supporting the stated file behavior. [2]

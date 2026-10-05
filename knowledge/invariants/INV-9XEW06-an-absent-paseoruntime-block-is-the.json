@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The optional authority and command refusal prevent starting or stopping an implicit developer daemon when no runtime was selected."
+  },
+  "applicability": "Paseo provision, status and stop CLI requests.",
+  "conditions": [],
+  "exclusions": [
+    "HTTP launch routes retain their own projected status codes."
+  ],
+  "id": "INV-9XEW06",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_runtime.py::PaseoRuntimeTests::test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment; mcp/tests/test_config.py::McpConfigTests::test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R01@v1 §2",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An absent `paseoRuntime` block is the named state \"no Paseo runtime configured\" (`None`), a present block requires all six facts with `providers` and `embed` allowed empty, and each of the three commands refuses the named state with code `paseo_runtime_not_configured` and exit status 2 before any process is started.",
+  "status": "proposed",
+  "supersedes": []
+}

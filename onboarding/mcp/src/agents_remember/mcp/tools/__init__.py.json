@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:438284fca14c63ad999773b951157d608051d57de6eb1e5d9958c6cf6edb2cc8",
             "locator": {
               "end": 28,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
             "locator": {
               "end": 45,
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:8f8e8dcfff2c6c1171451ad26878db4b4e152bd866a2ad6bd63f5b6bd6fcedd9",
             "locator": {
-              "end": 90,
+              "end": 91,
               "kind": "line_range",
-              "start": 90
+              "start": 91
             }
           },
           "kind": "code"
@@ -145,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:e6443b4cdf8964805deae5492964ae123dd9fbc349747b01c0f6dff498372ebe",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             }
           },
           "kind": "code"
@@ -169,17 +169,33 @@
         }
       ]
     },
+    "16": {
+      "note": "Frozen implementation of __all__ supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
+            "content": "sha256:5e17afd29cf36bdb833bbffddf496eef036e99811f482a7dfe17b6c9a21eafe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "`gate_response_wait_payload` is listed in `__all__`.\n\nAnchor: \"__all__ = [\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 116,
+              "end": 117,
               "kind": "line_range",
-              "start": 116
+              "start": 117
             }
           },
           "kind": "code"
@@ -259,7 +275,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:cecfae3cb4b0d4d8643cb5455ee04bc593fb17e2877d1071efacabde7220497b",
             "locator": {
               "end": 60,
@@ -293,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:6885abeb8ba145e8fca758ac8fb90e71ec45cb4f9d09202db5b04aa1af21de09",
             "locator": {
               "end": 66,

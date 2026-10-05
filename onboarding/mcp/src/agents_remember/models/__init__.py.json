@@ -17,6 +17,22 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Frozen implementation of __all__ supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb0feb690670efcdf79fbf70018a12d630f5367e",
+            "content": "sha256:13649b29fe7d88c3ffdae3b6df900e60ac120566fc62dd70484e7a269e3de281",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

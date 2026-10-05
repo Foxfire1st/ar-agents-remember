@@ -12,11 +12,21 @@ evidence artifact, and leaves the catalog closed over the governed inventory.
 
 ## Current verification scope
 
-The current catalog pin tracks the added exact test_review_read_latency consumer. Contracts/artifacts stay sixteen/eighty. The source module documents the deliberate re-pin; this card treats historical digest entries as history rather than current source identity.
+The current catalog binds 19 contracts and 83 artifacts, retaining the MIK-only rows and
+registering the three PNT supports. The exact consumer union includes canonical reader
+fixtures and the serviceTier agentic-settings module. Historical counts and digests remain
+history, rather than source identity for this composed tree.
 
 ## Current preview-proof registration
 
-The current catalog union pin is 6f50c9f4119e5cd480309c388c4bd1c9ecfafe9ea9a5cff6c1e32131b644c9e6 (2,099 lines), with 16 contracts/80 artifacts unchanged. Dated L40/R47 rationale and earlier history remain; the source-derived consumer proof checks the actual union rather than replacing historical digests.
+The deliberate composed catalog pin is
+`dc24a320370a3181f9d59252562689b586b9b0c8fae76863d81536be19c944f7`,
+with 19 contracts and 83 artifacts. Existing public-preview/read/capture consumers are
+preserved; source-derived consumer proofs still inspect the actual union.
+
+## Current source account
+
+The constants deliberately re-pin the composed evidence catalog to 19 contracts, 83 artifacts and dc24a320370a3181f9d59252562689b586b9b0c8fae76863d81536be19c944f7. Earlier PNT/MIK counts remain historical. AST-derived exact consumers are still the authority for fixture ownership; this import creates no new evidence artifact.
 
 ## Code Commentary
 
@@ -46,7 +56,9 @@ An explicitly supported input with no consumers remains complete with a verified
 **The module also carries the evidence catalog's pinned identity, and that pin is a deliberate one.** The three
 constants `LIFECYCLE_CONTRACT_COUNT`, `LIFECYCLE_ARTIFACT_COUNT` and `LIFECYCLE_CATALOG_SHA256` state the
 catalog's declared shape and its exact bytes, so a change to `mcp/tests/evidence-lifecycle.toml` that nobody meant
-is a **hard failure** rather than a silent inventory drift. **The current constants are `LIFECYCLE_CONTRACT_COUNT = 16`, `LIFECYCLE_ARTIFACT_COUNT = 80` and `LIFECYCLE_CATALOG_SHA256 = 6f50c9f4119e5cd480309c388c4bd1c9ecfafe9ea9a5cff6c1e32131b644c9e6`. The catalog has 2,099 lines and preserves the exact L40/R47 consumer union and dated source rationale. Earlier re-pin descriptions below remain historical** — **updated by
+is a **hard failure** rather than a silent inventory drift. **The current constants are `LIFECYCLE_CONTRACT_COUNT = 19`,
+`LIFECYCLE_ARTIFACT_COUNT = 83` and
+`LIFECYCLE_CATALOG_SHA256 = dc24a320370a3181f9d59252562689b586b9b0c8fae76863d81536be19c944f7`.** — **updated by
 `260928-MIK-L14`:** this sentence named L05's Forty-first value `f8b04814…` at 2095 lines. **Updated by
 `260928-MIK-L05`:** this sentence named L10's Fortieth value `449b69ef…` at 2091 lines. **Updated by
 `260928-MIK-L10`:** this sentence named L01's Thirty-ninth value `a571a70f…` at 2090 lines. **Updated by

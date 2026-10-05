@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/paseo_runtime_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4042d3962d1b461cef6abf7903ddf825c40b349c",
+            "content": "sha256:88bc30c055c617dc76706935a1eb9e7bba94fb4467bc0eef3a1a3d400336efd2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

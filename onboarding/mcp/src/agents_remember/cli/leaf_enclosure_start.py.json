@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
+            "content": "sha256:9f5497ecdff7d5c363de1051a64afaab20a2a27606341a573a5236e86340914a",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_leaf_enclosure_in_child"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of run supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
+            "content": "sha256:a52471135976be799e3bd24162113e1f689462e8e00c19a7b00465baad2484a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _differing_roots supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
+            "content": "sha256:edb66e23d572d6f46bc82fb9d6b03675951ed9434aee55704d067d63e8c5e231",
+            "locator": {
+              "kind": "symbol",
+              "name": "_differing_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

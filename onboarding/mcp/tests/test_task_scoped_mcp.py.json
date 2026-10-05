@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_task_scoped_mcp.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "005c5603ea3a724202a7ba8cd38a8a65f9bde02a",
+            "content": "sha256:f4c63d63726aab571bb900997c07b4fab18f22846a9f86ec75647ea291e2612f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

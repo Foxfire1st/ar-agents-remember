@@ -1,5 +1,14 @@
 # mcp/ — MCP Package Overview
 
+## Imported native host package boundary
+
+The package now contains strict Paseo configuration, bounded provision/status/stop, native bridge/catalog/frame integration, immutable role-launch intent and identity-bound task tools. Explicit-model and native-default creation use the same declared feature channel while retaining native permission/tool behavior. Converted MIK readers/writers, worklists and review/lifecycle owners remain intact. Transport, source qualification, authored knowledge and paired publication each require their own evidence.
+
+- Current imported source owns this scoped route boundary. [228]
+- Current imported source owns this scoped route boundary. [229]
+- Current imported source owns this scoped route boundary. [230]
+- Current imported source owns this scoped route boundary. [231]
+
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/`                                     |
@@ -2155,6 +2164,8 @@ shed counted, and one load-shed notice crosses with the count when the consumer 
 (including on consumer-side drain and before the close sentinel).
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 The kernel separates Git attribution, ledger formatting and cache materialization. Memory-domain snapshots retain actual Git head/tree facts while comparing content without root `memory.md`; the exclusion does not apply to the code repository. Baseline adoption and carryover produce real attributed content only when needed and report cache refresh separately.
 

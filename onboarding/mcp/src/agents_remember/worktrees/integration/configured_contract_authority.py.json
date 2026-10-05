@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2ff297d7099331cca36e6cba0a06d8b39ff6b1b",
+            "blob": "66edec78c1cc6b98be0aa733be6b213e8a814d05",
             "content": "sha256:b29f50f0ea9206704d3ad991e28f32514c3ab874012a6f8adb7533263bf0819d",
             "locator": {
               "kind": "symbol",
@@ -20,6 +20,22 @@
           "anchor": {
             "blob": "e2ff297d7099331cca36e6cba0a06d8b39ff6b1b",
             "content": "sha256:c750f1177cb94a877ecd8d62e7b63b4acc647d674b686519f5321ec22443411b",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_configured_contract_repositories"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of require_configured_contract_repositories supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66edec78c1cc6b98be0aa733be6b213e8a814d05",
+            "content": "sha256:a7c3fac11fd1a6927fea3f48f45135f10cca949353891297eb2454a9677caab8",
             "locator": {
               "kind": "symbol",
               "name": "require_configured_contract_repositories"

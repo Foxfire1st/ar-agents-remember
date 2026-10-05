@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/cockpit/PaseoChatFrame.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "938d34d0a3991aa37925eac157daada7619620aa",
+        "content": "sha256:33c547411a2a3ea1376570881d8886605b23acb0b3a0c1955526d511fb7697cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoChatFrame"
+        }
+      },
+      "id": "RLZ-7BAFW6",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Keeps one controller and iframe while conditionally rendering the outside-frame navigation rail.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "938d34d0a3991aa37925eac157daada7619620aa",
+        "content": "sha256:3d0315742077ce1fa8ea3a0161624d86dcab2ede154fe6522da9ea114fb541c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-MDFGTP",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Grants clipboard-read/write through the iframe allow attribute with only the resolved embedded origin.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,77 @@
+{
+  "path": "scripts/pnt_sandbox/builder.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
+        "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
+        "locator": {
+          "kind": "symbol",
+          "name": "build"
+        }
+      },
+      "id": "RLZ-4MZKRY",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Takes the same directory lock before repeatable build steps.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
+        "content": "sha256:700e09b37d07b78f6a2a7afae9e25492221d783897d9235da8b6cff3d0d72013",
+        "locator": {
+          "kind": "symbol",
+          "name": "RESETTING"
+        }
+      },
+      "id": "RLZ-AHH1JT",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Names the retained marker state that inhibits rebuilding after incomplete deletion.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
+        "content": "sha256:f9c167aabc96fb810cc3f669b8baf2cde2ce1f323a93ba3ae3070b093d85fe4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_sandbox_directory"
+        }
+      },
+      "id": "RLZ-DG45SP",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Rejects unowned populated directories and unfinished resetting state before reuse.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
+            "content": "sha256:d1419530d530ff0e9d0898a88952a17492a69b2f3f276e2aef91aba59c3f223d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

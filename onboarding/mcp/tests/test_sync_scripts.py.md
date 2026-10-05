@@ -14,6 +14,10 @@ eight stale means two agents in the same task hold different authority boundarie
 `scripts/sync-skills.py` is the mechanism that makes that impossible, and this module is the
 executable statement that it happened.
 
+## Current source account
+
+The projection guard quotes the current core acceptance sentence, manager deliverable inspection and worker lifecycle/parent-message wording. The tuple has four entries despite the nearby historical three-clause summary. Canonical and all nine generated targets must retain each marker; removing one from a packaged copy is detected. Copy/swap recovery and exact inventory guards remain.
+
 ## Code Commentary
 
 ### Logic

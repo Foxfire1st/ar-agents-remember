@@ -1,0 +1,79 @@
+{
+  "path": "dashboard/src/cockpit/paseoFrameControl.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "content": "sha256:fd931b00e1c2950a9f95673864b81d09f9b65a3ec4f5b5c4276d085a15aa5dce",
+        "locator": {
+          "kind": "symbol",
+          "name": "start"
+        }
+      },
+      "id": "RLZ-9XE68C",
+      "invariant": "INV-C71CTF",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Clears catalog and selected IDs for the next frame lifetime before accepting the new channel's trusted selection set.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+        "locator": {
+          "kind": "symbol",
+          "name": "display"
+        }
+      },
+      "id": "RLZ-AVC402",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Ignores the same target after transient options absence and uses the established ready channel to steer changed executions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "content": "sha256:39ddd04e63f089f607434a217dc1e241292c402c6cef1bf87f3c62c2388c7986",
+        "locator": {
+          "kind": "symbol",
+          "name": "onMessage"
+        }
+      },
+      "id": "RLZ-AY5KZV",
+      "invariant": "INV-0286SX",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / current Parent context",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Displays a Parent failure only when its source agent is still in the trusted selected set, including split panes without a pending launcher request.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "receive"
+        }
+      },
+      "id": "RLZ-D6KWM4",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires the configured frame origin and its current contentWindow before interpreting plugin protocol messages.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

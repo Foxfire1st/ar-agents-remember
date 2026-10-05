@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_config.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+        "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+        }
+      },
+      "facet": "Rejects non-exact, malformed and padded version selectors.",
+      "id": "PRF-B12XTP",
+      "invariant": "INV-2MWAYK",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §7",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+        "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+        }
+      },
+      "facet": "Exercises absent, valid empty providers/embed, missing and unknown runtime fields and rejects malformed block shapes.",
+      "id": "PRF-H1BJ8A",
+      "invariant": "INV-X5E9WH",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §1",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:daa371a7bb7719d9e8e9fdaf42f19b54a57adde5e593b325f79bd3663bd108c0",
             "locator": {
               "kind": "symbol",
@@ -23,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:bffca9508dbf7e6a58292a9ac05dacd1785465f5d5f38b6058a3d57277ac6623",
             "locator": {
               "kind": "symbol",
@@ -39,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:40cff312ca5859c0ceaa581152bc307b17c0c875d6334f7bd1732cd8796afa04",
             "locator": {
               "kind": "symbol",
@@ -55,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:4a066b62a3131e3ad3ef7164f19419770b73526a30baa7f6d16794647d92de9c",
             "locator": {
               "kind": "symbol",
@@ -71,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:0a41093f08212b5c6c91d970699c3379fae4d5046b369392be47cbf47f2f20e2",
             "locator": {
               "kind": "symbol",
@@ -87,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:e3b3b996c6a78c7a3531ae71b08a4c09a4a1910ba614ebe4b4520d29c89245cc",
             "locator": {
               "kind": "symbol",
@@ -103,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d9de1ada0180e3cacf0d15257d7dd29959fbba2",
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
             "content": "sha256:76a3c74f06a6b797c2b588747460f0b68af225482a6a70dd7b411e16d0d2a5b1",
             "locator": {
               "kind": "symbol",

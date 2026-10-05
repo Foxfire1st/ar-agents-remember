@@ -12,6 +12,10 @@ validates every tool payload against its registered response model inside
 performed its writes — so a producer key the model forbids costs the caller the payload that
 would have told it the work was done. This module moves that guarantee into the suite.
 
+## Current source account
+
+The deliberate population pins become 74 public tools, 21 adapter modules and 98 handler/call sites after native role tools replace the removed preparation route. Live registration equality and AST return-through-choke-point assertions still guard both directions. Older source/sidecar counts remain historical rather than current.
+
 ## Code Commentary
 
 ### Logic
@@ -55,7 +59,7 @@ early return fails instead of passing quietly. The deleted sweep was also
 - **A runtime dependency on source text.** `adapter_tool_ids`, `choke_point_handlers` and
   `literal_keyword_values` parse `mcp/src` and the lifecycle package, so this module is coupled to
   their shape, not only to their behaviour.
-- **15 cases over 84 registered response models; face coverage is structural, not executed.** The
+- **Model population is derived from the registry; surface coverage is structural, not executed.** The
   executed layer covers the seven defects this leaf repaired and their projections. Landing an
   executed payload for every registered model needs the fixture infrastructure the deleted sweep
   had, and that infrastructure is what rotted (11 rot sites; it does not collect verbatim).

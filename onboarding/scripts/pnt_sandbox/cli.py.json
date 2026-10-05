@@ -1,0 +1,22 @@
+{
+  "path": "scripts/pnt_sandbox/cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d858d3c162d58d119bc91d97e1c58fc5e7839dd",
+            "content": "sha256:6eb6d727b7451049611a2447a5725f567af96d8c507e48862b631ca7fb0db547",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

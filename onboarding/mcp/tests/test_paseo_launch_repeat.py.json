@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_paseo_launch_repeat.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
+        "content": "sha256:fc765b7069a6954570cdd53099dfdca7a3be8111c253303d155228577db405d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"
+        }
+      },
+      "facet": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.",
+      "id": "PRF-H6XEA4",
+      "invariant": "INV-ZD9BK1",
+      "origin": {
+        "handoffEntry": "PNT-R03@v1 §10.1 / F1",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
+            "content": "sha256:db623147109c8a0306d153a134bc997631cb44e4b256f0ca7fd11512cbdc86c3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_role_capsule_compiler.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+        "content": "sha256:3fd748ec64359ef4a82172912513ed082ea7ba4c79bf07c9b2ab9a744fe925c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_instruction_order_is_role_then_operation"
+        }
+      },
+      "facet": "The default role capsule contains exactly the role and operation blocks in that order even when the fixture declares shared core blocks.",
+      "id": "PRF-QD987X",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "072a70ffa0ef0a14d7fd51aa6e4d23ca16b00d91",
+        "content": "sha256:62c4c180c456dab8b2ff35749a5aa6c1b3bade743f7a577efe4a41942747ae72",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_shared_core_change_does_not_reach_a_role_capsule"
+        }
+      },
+      "facet": "Changing a genuinely admitted shared core source leaves the delivered role capsule instruction bytes and semantic digest unchanged.",
+      "id": "PRF-VRB9S1",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -221,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "blob": "80660867e23b6e5cc074969b0b75bb44035959bb",
             "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
             "locator": {
               "kind": "symbol",
@@ -233,7 +269,7 @@
         },
         {
           "anchor": {
-            "blob": "4ea77de07f6d7b752e1e4eaa236f74b89277fed1",
+            "blob": "80660867e23b6e5cc074969b0b75bb44035959bb",
             "content": "sha256:2c2967c88ee9f13f34c15c2a1f36231718875757913489e62894d4d551dd6035",
             "locator": {
               "kind": "symbol",

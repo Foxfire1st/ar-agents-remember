@@ -2822,7 +2822,7 @@
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
             "locator": {
               "kind": "symbol",
@@ -4913,7 +4913,7 @@
         },
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
             "locator": {
               "kind": "symbol",
@@ -4964,12 +4964,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 167,
+              "end": 168,
               "kind": "line_range",
-              "start": 167
+              "start": 168
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -5819,6 +5819,70 @@
         }
       ]
     },
+    "275": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15b123731e022aeed4425c0c39056c22d774e9fc",
+            "content": "sha256:8910645e3d0584088b7d3dea6b1eb82f661e09dea06a4e957097cf617b4e1493",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "276": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "content": "sha256:feae1413ff167f47cc7692c38cb7ad82e7bb9ba8d53ba19dfea4c097a1f027eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_launcher.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "277": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
+            "content": "sha256:dbaab40ef0bb6a33c20557df799720147cc6a2605de8f87b7e42944085fd3d4f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/task_document_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "278": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+            "content": "sha256:77ce39a36150c48e1b4f20886ec62ecf056fcbc2a3d626c873b0724b116da278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "28": {
       "note": "The content identity.",
       "targets": [
@@ -5875,7 +5939,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:201d42bd8ef81a981c642a3c51c90eb569dddd3c74df553f72e1601252af792d",
             "locator": {
               "kind": "symbol",
@@ -6767,7 +6831,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
             "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
             "locator": {
               "kind": "symbol",
@@ -6779,7 +6843,7 @@
         },
         {
           "anchor": {
-            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
             "content": "sha256:af180c3535f9f4200d19acd15505c1fdf56bce9c72608d8a1fbf329a5451fae8",
             "locator": {
               "kind": "symbol",
@@ -6791,12 +6855,12 @@
         },
         {
           "anchor": {
-            "blob": "455af2665c9619069121029e08150f5c23d205b4",
+            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
             "content": "sha256:49fa3cf0ac3027b47390ff3a8dd6006b3745bfb24894142e0dbbba33a01c5f5d",
             "locator": {
-              "end": 127,
+              "end": 128,
               "kind": "line_range",
-              "start": 127
+              "start": 128
             },
             "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
@@ -7032,7 +7096,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,
@@ -7123,7 +7187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -7205,21 +7269,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:bf129084d3ff4e9975d929310b81cc02d182849499d7facd2bc9ad6c5c81f742",
-            "locator": {
-              "end": 191,
-              "kind": "line_range",
-              "start": 191
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:ebae7914c341c0ea54ae6a95b87896f1e83a6d1a6b501b44ac57a1a3e1a7a8c8",
             "locator": {
               "end": 192,
               "kind": "line_range",
@@ -7231,12 +7282,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:6a84725e589ed877ccac50e10aec18ac8c8997b2b446025a3c99fcedf446928b",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:ebae7914c341c0ea54ae6a95b87896f1e83a6d1a6b501b44ac57a1a3e1a7a8c8",
             "locator": {
-              "end": 198,
+              "end": 193,
               "kind": "line_range",
-              "start": 198
+              "start": 193
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -7244,8 +7295,8 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:4b71d3bff3108b0030d796377e565c8d6099f4d8a3ba716a8abe479b51ffa522",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:6a84725e589ed877ccac50e10aec18ac8c8997b2b446025a3c99fcedf446928b",
             "locator": {
               "end": 199,
               "kind": "line_range",
@@ -7257,12 +7308,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:4b71d3bff3108b0030d796377e565c8d6099f4d8a3ba716a8abe479b51ffa522",
             "locator": {
-              "end": 205,
+              "end": 200,
               "kind": "line_range",
-              "start": 205
+              "start": 200
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -7270,12 +7321,25 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
             "locator": {
               "end": 206,
               "kind": "line_range",
               "start": 206
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:7d21c99cdaca5611c9049b18b91ae30bc67caeabf2dec8fbb21270de9835e406",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 207
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -7795,12 +7859,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:952e608226940aab89158663fc7f8b91dd95ed313512122bb541a27953e839fe",
             "locator": {
-              "end": 200,
+              "end": 201,
               "kind": "line_range",
-              "start": 200
+              "start": 201
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

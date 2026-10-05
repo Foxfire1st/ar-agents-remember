@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/application/agent_binding.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "content": "sha256:492312806b4fbd97f65fc45bedb46b47b1f63809dd40f73a7ce4748f8d3c24bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_references_of"
+        }
+      },
+      "id": "RLZ-88FEKT",
+      "invariant": "INV-RG14R7",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §2 / F2 / A13 (what is read)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines exact reference-presence pattern for each role class.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "content": "sha256:45d918b8c4e4e6c11e09f3958839d73706654d5a1294807896295b6bcb9908ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentBinding.environment"
+        }
+      },
+      "id": "RLZ-B5B9G7",
+      "invariant": "INV-W71C4N",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §2 / C5 / F2 (what is emitted)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Emits all seven binding variables and explicitly clears both hosted-seat identities.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-FP6B7T",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Supplies the canonical name shared by creation and identity presentation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "content": "sha256:aba37cbf70bae5f9c25178065272f10b4028601d941823c3ea0fd62e211c1dd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_agent_binding"
+        }
+      },
+      "id": "RLZ-WDJVB2",
+      "invariant": "INV-RG14R7",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §2 / F2 / A13 (what is read)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Accepts only a complete minted launch binding when agent identity is present.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of AgentBinding supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+            "content": "sha256:ae2629fcdf194228a1d43674dad6fdaf86f01e50173dab00bc7707235ab30347",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of read_agent_binding supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+            "content": "sha256:aba37cbf70bae5f9c25178065272f10b4028601d941823c3ea0fd62e211c1dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks interpreter, -P module invocation, source, selected settings and single canonical server definition.\n\nAnchor: `ToolServerDefinitionTests.test_the_definition_starts_this_builds_tool_server_with_its_source_and_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Starts generated stdio server and checks serving build package root and binding from selected source.\n\nAnchor: `ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+            "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/tests/test_paseo_tool_server_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.\n\nAnchor: `ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "blob": "92321d67e46d3cfe2f79967b5ddf7fb6adc748c8",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,
@@ -278,12 +278,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
             "content": "sha256:78458fde33a11a578539417b89ca696a3c1f1095d05a10e45fc7a5bf09cf4509",
             "locator": {
-              "end": 55,
+              "end": 58,
               "kind": "line_range",
-              "start": 55
+              "start": 58
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -362,6 +362,70 @@
               "start": 100
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21118170675b12fc1f4fcbc418a63db68c0c0ec1",
+            "content": "sha256:3d678b864adff1633a69b872a992f209fc54fffc64fa4314a5309862fd73f69b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
+            "content": "sha256:09f693c0ef0416e6604ec8a723bbe4ba229fff8da5ddf1cf7454cd4800cd418a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1992fb7acf8e245685369d397149006982245cfa",
+            "content": "sha256:f16c7a45a5f61702048d433e7d8e58f960a02f02abb97ff6084039c07823e5e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "content": "sha256:b6947c6580f7f838f71308852dbb1685bb0b80c43f2d7a5e01d86327bd3e5e02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
           },
           "kind": "code"
         }

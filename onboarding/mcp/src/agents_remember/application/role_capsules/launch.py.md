@@ -17,21 +17,23 @@ It is the `application`-rank (21) implementation behind `serving.launch_capsule`
 it adds **no second routing rule**: a task-attached seat goes through `compile_task_capsule` — the same
 operation the registered `role_capsule_compile` MCP tool answers — and a seat with no task document
 goes through `compile_admitted_capsule` with the routed source set built by the same manifest rule
-(`routed_admission_for`). The operation is `orientation`, the registered compile operation's own
-default.
+(`routed_admission_for`). The default operation remains `orientation`, the registered compile operation's own
+default; an explicit operation is narrowed before compilation and carried through admission.
+
+Compiles admitted role instruction capsules for existing launch paths.
 
 ## Code Commentary
 
 ### Logic
 
-**Two admittances, resolved together.** `_compile_admitted_task` resolves the five facts every carrier
-needs **at once** into `AdmittedTaskSeat` — role, document reference, enclosure selector, the
-repository root the document's own `repo` field resolves to, and the document's repository name —
-because resolving them apart is how two carriers end up binding to two different enclosures. The task
-document the launch already holds is resolved by the task layer (`TaskDocumentTopology.resolve`), and
-the enclosure that admits it by the control plane's own reader
-(`WorktreeContractReader().find_task_contract`): a leaf document by its leaf id, any other document by
-its task's own series contract. Nothing is taken from a caller's string.
+**Task admission, resolved together.** `_compile_admitted_task` resolves the launch's canonical
+task through `TaskDocumentTopology.resolve` and `_admit_task_document`. `AdmittedTaskSeat` carries
+role, narrowed operation, document reference, enclosure selector, contract path, the contract-declared
+canonical repository root, and the document's repository name together. A registered MCP entry proves
+repository authorization; its possibly scoped worktree path is not the canonical repository identity.
+The control-plane contract reader resolves leaf admission by leaf ID and other enclosed tasks through
+their series contract. Without an enclosure, only an explicitly admitted orchestrator/sprint or
+manager/master Projects launch can use `ProjectTaskSeatAdmission`; every leaf retains enclosure admission.
 
 Each unresolvable half is a **named** refusal, not a crash: `task-binding-unresolved`,
 `repository-not-registered`, `enclosure-not-found` (whose detail tells the operator to run
@@ -76,12 +78,12 @@ presented as done.**
 - An **eve free agent refuses by name** (`eve-carrier-requires-admitted-worktree`): the eve carrier
   binds a runtime to the admitted git worktree of a task enclosure and a taskless seat has none.
 
-**One authority for the repository root (D13's second half).** `_registered_repository_root` reads the
-root for the repository the document itself declares out of the server's configuration — and
-`application/skill_resources/capsule.py` carries the same resolved root onto `AdmittedEnclosure` so the
-task projection resolves against it instead of re-deriving (or failing to derive) one of its own. Both
-halves were required; the projection half refused with `projection-binding-unresolved` in any tree whose
-repository does not sit directly under the workspace.
+**Canonical repository root and scoped tool access.** `_registered_repository_root` checks that
+the task document's repository is registered. For an enclosed task, `_admit_task_document` then reads
+`contract.code_repo_path` as the canonical repository root; a scoped MCP worktree path remains the
+reader's code root. The same resolved canonical identity is carried onto `AdmittedEnclosure` so task
+projection does not derive another repository from workspace placement. The earlier D13 projection
+failure explains why that identity must remain explicit.
 
 **`_admitted_surfaces`** reads the enclosure's own `reports` directory and memory worktree out of the
 contract the enclosure lookup already resolved, so a carrier declares the surfaces that exist rather
@@ -100,7 +102,7 @@ than the surfaces this module would have liked.
 ### Invariants And Boundaries
 
 - **Nothing here re-implements selection.** One compiler, one routing rule
-  (`routed_admission_for`), one admission operation, one `orientation` default.
+  (`routed_admission_for`), a narrowed operation carried through admission, and the existing `orientation` default.
 - **`FreeAgentSeatAdmission` is the only producer of a taskless `CapsuleAdmittedFacts`.** No other site
   may mint that value, and no consumer may read `free-agent:<role>` as a task path.
 - **A role that is not in the frozen `CAPSULE_ROLES` vocabulary never reaches the compiler** — it is
@@ -111,9 +113,10 @@ than the surfaces this module would have liked.
   artifact the consumer re-verifies; `verify_capsule_binding`, `_require_admitted_git_worktree` and
   `launch_spec_binding` are untouched by this leaf, and no second enclosure or worktree lookup was
   added.
-- **No Codex launch's cwd moves.** The Codex carrier admits no workspace, so `session_workspace` is
-  `None` there and the rule returns the server's workspace. Free agents and every legacy launch keep
-  `config.workspace_root` unchanged.
+- **The retained terminal Codex carrier admits no workspace.** `session_workspace` is `None` for
+  that carrier, so the terminal workspace rule returns the server's workspace. Paseo role launch folder
+  placement is owned separately by `role_launch_preparation`. Free agents and legacy terminal launches
+  keep `config.workspace_root` unchanged.
 - **This module compiles; it does not decide modes.** The `capsule`/`legacy`/`refused` decision belongs
   to `serving/launch_capsule.py`; this module is only ever called for a seat that gate already admitted.
 
@@ -122,6 +125,10 @@ than the surfaces this module would have liked.
 The declared successor obligation **(A)** — a typed taskless admission in the frozen
 `CapsuleAdmittedFacts` with per-consumer cases — is carried by the owning seat into the master's
 obligation ledger for L11's verification. It is not this leaf's work.
+
+### Role Runtime and Scope
+
+Task-attached admission separates the contract-declared canonical repository identity from the scoped MCP code root. compile_launch_capsule accepts an explicitly narrowed operation; the role-aware launcher may admit real sprint/master tasks at the configured Projects workspace only through allow_project_task_binding. That path uses canonical task bytes and no invented taskless identity or worktree. Leaf admission keeps enclosure authority.
 
 ## Evidence
 
@@ -159,3 +166,9 @@ No configured live documentation source was available for this pass.
 No cross-repository implementation dependency governs this file.
 
 No meaningful cross-repo references found.
+
+### Runtime Source References
+
+- Frozen implementation of compile_launch_capsule supporting the stated file behavior. [21]
+- Frozen implementation of _admit_task_document supporting the stated file behavior. [22]
+- Frozen implementation of ProjectTaskSeatAdmission supporting the stated file behavior. [23]

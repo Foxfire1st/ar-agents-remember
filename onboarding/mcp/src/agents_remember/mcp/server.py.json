@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "blob": "1992fb7acf8e245685369d397149006982245cfa",
             "content": "sha256:dc2073ea4ae2f2e7197038a9a969ff15134dcb8da4095d3c87d7d2b70b1e8d94",
             "locator": {
               "kind": "symbol",
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "blob": "1992fb7acf8e245685369d397149006982245cfa",
             "content": "sha256:a6fb5d4d6f0448e097032a504c7c1bcf016c8928f9aa411b31b30d629970088b",
             "locator": {
               "end": 24,
@@ -60,7 +60,7 @@
         },
         {
           "anchor": {
-            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
+            "blob": "1992fb7acf8e245685369d397149006982245cfa",
             "content": "sha256:0775198a6b2b44ae40b4bbe07d846a142eb9c0face35570436d44859b17c6082",
             "locator": {
               "end": 25,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:68e08fd0af1d0f9e7709b3ebca2332ace9b888551b696607dcfca0fe46dae953",
             "locator": {
               "end": 6,
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:7e384b95c08958d4ebd2088a2e5a043c805551caa34f5710d6b607b4a8d3762e",
             "locator": {
-              "end": 96,
+              "end": 97,
               "kind": "line_range",
-              "start": 96
+              "start": 97
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -114,14 +114,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
+            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 116,
+              "end": 117,
               "kind": "line_range",
-              "start": 116
+              "start": 117
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Frozen implementation of launched_server_instructions supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
+            "locator": {
+              "kind": "symbol",
+              "name": "launched_server_instructions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Frozen implementation of create_server supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "content": "sha256:c3ed0814fd9aa904bcb2ed946c4c6539a1be63e48e73b1f6bfa05d67b04c6813",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            }
           },
           "kind": "code"
         }

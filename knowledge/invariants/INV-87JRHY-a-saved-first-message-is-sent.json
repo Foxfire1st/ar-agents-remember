@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Verifying reached artifact before replay prevents altered file or report link substituting another first assignment."
+  },
+  "applicability": "Unresolved saved launch with receipt and artifact reference.",
+  "conditions": [],
+  "exclusions": [
+    "New compilation or request is not an answer to this saved unresolved launch."
+  ],
+  "id": "INV-87JRHY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "HandoverArtifactOnTheRouteTests::test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through; HandoverArtifactOnTheRouteTests::test_the_handover_artifact_is_written_once_and_a_repeat_reuses_or_refuses_it; l5-verify3/evidence/05-f14-leaf-route.txt, 06-f14-taskless-route.txt, 17-worker1-retry-compare.txt; l5-run/evidence/r2/05-retry-texts-through-the-route.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §5 (retry) / A10 / F14",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A saved first message is sent only after its artifact was checked: an artifact that holds the message is left untouched, a lost one is written again from the saved message alone (read-only, and only at the place the reference's own path leads to), and a changed artifact, a saved message that does not match its reference, or a path that no longer leads to the recorded file refuses the retry with a text that says what to put right, with receipt and file untouched.",
+  "status": "proposed",
+  "supersedes": []
+}

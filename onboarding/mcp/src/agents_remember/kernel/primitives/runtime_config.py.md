@@ -11,6 +11,8 @@ centre of gravity: 39 of 46 outside imports of `mcp` reached this one module) lo
 the trusted MCP authority settings. Kernel owns the record so every package above it can read the
 same runtime configuration without importing the `mcp` package.
 
+Builds configured repository/provider authority and optional runtime settings.
+
 ## Code Commentary
 
 ### Logic
@@ -172,6 +174,10 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
   existing settings files with no `retirement` key keep auto-land ON, not off, unlike `dashboard`'s
   off-by-default posture.
 
+### Role Runtime and Scope
+
+McpRuntimeConfig includes optional typed paseo_runtime while config_from_mapping preserves MIK existing authority. load_paseo_runtime_settings reads only the named block for runtime commands, bypassing no coordination authority because those commands own no coordination state. The former host block has no execution field/parser and follows unknown top-level-key behavior. Preserve provider degradation and repository identity rules.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -197,6 +203,13 @@ per-process server-behavior toggles for THIS server's completion-edge hooks
 | Seat cleanup remains subordinate to successful completion. | `auto_complete_seats` | mcp/src/agents_remember/application/completion_cleanup.py:29-71 |
 
 As of the 260703-L8 seam ruling `parse_gate_delegation` CONSUMES requireReviewerVerdictAtSeams: after building the policy it applies `apply_seam_verdict_requirement`, so delegated seam-kind rules (master-handover-approval) demand reviewer-verdict evidence — the flag is no longer parse-only.
+
+### Runtime Source References
+
+- Frozen implementation of McpRuntimeConfig supporting the stated file behavior. [15]
+- Frozen implementation of config_from_mapping supporting the stated file behavior. [16]
+- Frozen implementation of load_paseo_runtime_settings supporting the stated file behavior. [17]
+- Runs all three commands without the block and checks named refusal, exit two and no process operation. [18]
 
 ## 260815-DAG-L4 Authority Boundary
 

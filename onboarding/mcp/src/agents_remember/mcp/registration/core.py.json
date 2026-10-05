@@ -58,12 +58,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5541a6ee024664b1451b8470c30bef0aef44e422",
+            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
             "content": "sha256:eddbb1e2487831ecfa88e69e4b23dabb0f61a94721d3e7c893286e83aa403205",
             "locator": {
-              "end": 165,
+              "end": 185,
               "kind": "line_range",
-              "start": 123
+              "start": 143
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Frozen implementation of _register_identity_tools supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
+            "content": "sha256:be4afd34f7e5fd22eb8dab45faefdb70380bbb570c111ba62b0fe12c43480078",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_identity_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Frozen implementation of _register_orientation_tools supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aac0d96fcafef4e9c0f3d9380f798d70a25b346a",
+            "content": "sha256:39672d586a2b6df1dbe31ea3021a549a5fa0ee6e64d244631115f50054ca0f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_orientation_tools"
             }
           },
           "kind": "code"

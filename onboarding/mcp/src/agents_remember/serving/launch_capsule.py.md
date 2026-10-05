@@ -24,6 +24,8 @@ It is `serving`-rank (17) and therefore **may not import `application`** (21): t
 injected port (`LaunchCapsuleResolver`), filled at the composition root. The *decision* stays here, so
 every launch point answers "capsule, legacy or refused" identically and only one place decides it.
 
+Defines the instruction-delivery decision and admitted workspace boundary at serving rank.
+
 ## Code Commentary
 
 ### Logic
@@ -107,6 +109,10 @@ None known for this module. The two open limitations around the paths it wires a
   `TerminalLaunchRequest.session_backend`, so the harness is checked as a PATH program). Pre-existing,
   measured by this leaf, owner **L17**.
 
+### Role Runtime and Scope
+
+LaunchCapsuleRequest adds allow_project_task_binding=false. Only the role-aware project launcher enables it for real sprint/master task binding at Projects when no task enclosure exists; leaf and other launch points leave it disabled. It remains an explicit admitted task, not a manufactured taskless identity or fallback worktree.
+
 ## Evidence
 
 ### Docs References
@@ -139,3 +145,8 @@ No cross-repository implementation dependency governs this file. The eve carrier
 are read from `models/eve_capsule_carrier.py`, which is in this repository.
 
 - The reader's own environment-name constants, which `eve_binding_env()` returns so writer and reader cannot drift. [16]
+
+### Runtime Source References
+
+- Frozen implementation of LaunchCapsuleRequest supporting the stated file behavior. [17]
+- Frozen implementation of resolve_launch_capsule supporting the stated file behavior. [18]

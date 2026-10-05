@@ -8,6 +8,10 @@
 
 Runtime authority settings, repository identity and path-containment tests.
 
+## Current source account
+
+The added Paseo settings case checks absent optional block, exact required keys, absolute roots, host:port, pinned version and canonical browser-origin spellings. Unknown keys, malformed provider/embed shapes, duplicate origins and version ranges refuse. These are parser checks rather than provision or provider startup.
+
 ## Code Commentary
 
 ### Logic
@@ -16,7 +20,7 @@ Real temporary Git aliases cannot give two repository IDs or external memory the
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The baseline cases retained from IAS `d3610903` are joined by the current source account above. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 

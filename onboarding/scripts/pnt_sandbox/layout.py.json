@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/layout.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+        "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DASHBOARD_PORT"
+        }
+      },
+      "id": "RLZ-HHBARP",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines the canonical dashboard port used by launch and ownership checks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+        "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "PASEO_PORT"
+        }
+      },
+      "id": "RLZ-JKTW8X",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines the canonical Paseo port used by generated settings and start.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+            "content": "sha256:8ac74887e11b596acf63238c2e36d562192ca7b81943dab7424080dca748f951",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

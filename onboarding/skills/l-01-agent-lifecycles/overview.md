@@ -378,34 +378,11 @@ to be written as prose.
 
 ## Purpose
 
-This route owns canonical lifecycle doctrine: the session router, the shared `core/` blocks, the role
-registry, the nine self-contained role lifecycles, the eight `operations/` procedure blocks, the
-reference-only rationale and rulings, the composition manifest, dispatch briefs, durable reports, review
-criteria, and authority templates. Generated package/harness trees mirror this route and never define
-independent behavior.
+This route owns the canonical instruction sources and routing metadata for native role capsules. `SKILL.md` is the thin selector; `roles/` owns role duties, `operations/` owns the selected procedure, and the handover carries canonical task/workspace facts separately. The native launcher exposes Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. The ten-role registry remains a compiler vocabulary; it is not evidence that every registry role is launched through this path.
 
-260915-CAPS-L1 restructured this route: `SKILL.md` is now a **thin router with no doctrine** (620 → 179
-lines), `core/` · `operations/` · `reference/` · `composition-manifest.json` are new, and all nine role
-files were rewritten into one readable order (purpose/authority → required inputs → normal workflow →
-permitted writes → stop/escalation → completion/handoff, then the knob block) with an `**Inherits:**`
-line naming their shared sources. A role file now names a sibling role file only to wear that hat or
-dispatch that seat.
+A native capsule selects one explicit supported role source followed by one applicable operation and injects no shared `core/` block. Projects is an execution workspace, not a registered repository. Manual taskless Architect/System Specialist launches ask only for missing outcome/repository or provider/system concern/report scope and do not synthesize tasks.
 
-**That restructure is a structural change, NOT a measured context reduction** (labelled by
-260915-CAPS-L10, which measured the capsule this corpus feeds). The `620 → 179` line count describes the
-**router**, and the doctrine it used to carry moved into the new sibling layers rather than disappearing:
-the corpus a session reads is now selected per role and per operation by the deterministic compiler, and
-nothing in that arrangement was measured to be smaller. The one measurement that exists points the other
-way — at the worker elevation the delivered capsule is **11,828** tokens against a **5,928** token legacy
-startup chain (**+5,900**; like-for-like `implementation` capsule 11,645, **+5,717**), the manager and
-architect elevations are **UNMEASURED** (`binding-unresolved`), and **adoption acceptance FAILED** with
-disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
-launcher routing), so the failure is on the reduction half alone. Full account, frozen artifacts and the
-residuals with their owners: `notes/reports/260915-CAPS-L10-worker-report.md`,
-`notes/reports/caps-l10-disposition.md` and the measurement method
-`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a6…`). **No card may describe this
-corpus, the compiler or the cutover as saving context**; the design intent was a single-source,
-role-addressed corpus, and that intent is what this route may claim.
+Paseo runs agents and delivers their messages. AR’s bound `agents-remember-task` tools retain canonical task, knowledge and paired-Git ownership. Flat coordination is valid, with distinct Worker/Reviewer/Curator agents; larger work may add Manager or Orchestrator. Existing dated corpus measurements remain facts of their frozen candidates and do not measure the current capsule or establish context savings.
 
 ## Hot Path Summary
 
@@ -508,28 +485,21 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 ## Conventions
 
-- Canonical role doctrine lives under `roles/`; templates feed complete role inputs.
-- Shared rules live in `SKILL.md` and are not restated as competing role-local variants.
-- Runtime package and harness copies are synchronized artifacts of the complete canonical tree.
-- Current intent stays in default bodies; semantic history records transitions without leaf diaries.
-- `dispatch_agent` is the sole public spawn verb; caller kind is derived from process context, never
-  selected in the request.
-- Role-table `dispatch` and `tools` rows are fixed authority/capability documentation rather than
-  settings knobs.
+- Edit doctrine in canonical `skills/`; `scripts/sync-skills.py` generates the package and eight harness trees.
+- Select role/operation from explicit handover bindings; do not infer tasks, repositories or owners from chat/workspace names.
+- Use exact task-read arguments, returned canonical document paths and the bound tool schemas; preserve durable prior approvals.
+- Use native `role_start`/`role_message` with actual returned IDs and same-request reconciliation, and keep developer decisions in the agent’s own chat.
+- Keep current role/operation contracts separate from retained reference/registry history. A retained core map does not inject shared instructions.
 
 ## Invariants And Boundaries
 
-- Runtime ids never become model-held work addresses.
-- Spawn ancestry is provenance, not responsibility topology.
-- Each role acts only at its assigned task altitude and authority boundary.
-- Initial briefs are exact-pinned; ordinary messages re-resolve current structural occupants.
-- Ambient bootstrap and plane-hosted child dispatch share one exact-brief transaction, while their
-  authority checks remain disjoint and never fall back into one another.
-- Curator completion requires zero curator-actionable findings from both required onboarding checks;
-  the structured coherence authority is published only after their repair-and-rerun loop.
-- Commit-derived memory verification follows the real code commit during governed closeout.
-- Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
-  stable requirement ID.
+- Each task-bound role preserves its exact canonical requirement, paired workspace, report and admitted write surface.
+- Worker implements code and leaves it uncommitted; Reviewer independently supplies verdict evidence; Curator owns admitted memory/knowledge. Task and paired-Git owners retain semantic acceptance and publication.
+- Normal curation preserves MIK’s converted entries/records/history writer, authored target rationale, exact family/sibling coverage, full contract-scoped MQC and required coherence. Explicit report-only admission claims none of that normal pass complete.
+- Unknown execution or refused capability does not authorize another owner, transport, runtime writer or workspace.
+- A finished turn, review, curation, semantic acceptance and paired-Git publication remain separate evidence-bound facts.
+- Commit-derived memory attribution follows the real source commit through the governed closeout owner.
+- Per-requirement worker/reviewer evidence is preserved; aggregate completion prose cannot replace it.
 
 
 ## CCR-R12@v5 Lifecycle Boundary
@@ -657,3 +627,72 @@ updated cards on the tracked generated copy under
 decision this section already asks for (govern or remove the mirror) also determines whether those cards
 should be refreshed or deleted, so resolving it now by hand would prejudge it. No fingerprint or
 verification stamp was advanced.
+
+## Current native instruction evidence
+
+- Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+- Role then operation, inert core and retained vocabulary distinction. [53]
+- Bound intake and preserved converted writer/family duties. [54]
+- Normal full curation and coherent handoff. [55]
+
+## Retained pre-import corpus account and measurements
+
+The following text is retained verbatim from the pre-import source account. Its dated measurements, source counts and old composition vocabulary describe those recorded candidates; the current native contract is stated above.
+
+### Former Purpose
+
+This route owns canonical lifecycle doctrine: the session router, the shared `core/` blocks, the role
+registry, the nine self-contained role lifecycles, the eight `operations/` procedure blocks, the
+reference-only rationale and rulings, the composition manifest, dispatch briefs, durable reports, review
+criteria, and authority templates. Generated package/harness trees mirror this route and never define
+independent behavior.
+
+260915-CAPS-L1 restructured this route: `SKILL.md` is now a **thin router with no doctrine** (620 → 179
+lines), `core/` · `operations/` · `reference/` · `composition-manifest.json` are new, and all nine role
+files were rewritten into one readable order (purpose/authority → required inputs → normal workflow →
+permitted writes → stop/escalation → completion/handoff, then the knob block) with an `**Inherits:**`
+line naming their shared sources. A role file now names a sibling role file only to wear that hat or
+dispatch that seat.
+
+**That restructure is a structural change, NOT a measured context reduction** (labelled by
+260915-CAPS-L10, which measured the capsule this corpus feeds). The `620 → 179` line count describes the
+**router**, and the doctrine it used to carry moved into the new sibling layers rather than disappearing:
+the corpus a session reads is now selected per role and per operation by the deterministic compiler, and
+nothing in that arrangement was measured to be smaller. The one measurement that exists points the other
+way — at the worker elevation the delivered capsule is **11,828** tokens against a **5,928** token legacy
+startup chain (**+5,900**; like-for-like `implementation` capsule 11,645, **+5,717**), the manager and
+architect elevations are **UNMEASURED** (`binding-unresolved`), and **adoption acceptance FAILED** with
+disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
+launcher routing), so the failure is on the reduction half alone. Full account, frozen artifacts and the
+residuals with their owners: `notes/reports/260915-CAPS-L10-worker-report.md`,
+`notes/reports/caps-l10-disposition.md` and the measurement method
+`notes/reports/caps-l10-measurement-method.md` (digest `sha256:902676a6…`). **No card may describe this
+corpus, the compiler or the cutover as saving context**; the design intent was a single-source,
+role-addressed corpus, and that intent is what this route may claim.
+
+
+### Former Conventions
+
+- Canonical role doctrine lives under `roles/`; templates feed complete role inputs.
+- Shared rules live in `SKILL.md` and are not restated as competing role-local variants.
+- Runtime package and harness copies are synchronized artifacts of the complete canonical tree.
+- Current intent stays in default bodies; semantic history records transitions without leaf diaries.
+- `dispatch_agent` is the sole public spawn verb; caller kind is derived from process context, never
+  selected in the request.
+- Role-table `dispatch` and `tools` rows are fixed authority/capability documentation rather than
+  settings knobs.
+
+
+### Former Invariants And Boundaries
+
+- Runtime ids never become model-held work addresses.
+- Spawn ancestry is provenance, not responsibility topology.
+- Each role acts only at its assigned task altitude and authority boundary.
+- Initial briefs are exact-pinned; ordinary messages re-resolve current structural occupants.
+- Ambient bootstrap and plane-hosted child dispatch share one exact-brief transaction, while their
+  authority checks remain disjoint and never fall back into one another.
+- Curator completion requires zero curator-actionable findings from both required onboarding checks;
+  the structured coherence authority is published only after their repair-and-rerun loop.
+- Commit-derived memory verification follows the real code commit during governed closeout.
+- Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
+  stable requirement ID.

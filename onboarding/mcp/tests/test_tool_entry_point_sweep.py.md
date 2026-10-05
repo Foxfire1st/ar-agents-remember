@@ -13,11 +13,15 @@ consumer's call actually receives. The assertion is about vocabulary, not about 
 must answer in a validated payload, a typed refusal carrying a machine-readable identity, or one
 of two **pinned** defect families, and a pin is the only place an exception is tolerated.
 
+## Current source account
+
+The benign invocation census adds role_start and role_message. Because the scratch server was started by no role launch, both exercise caller-has-no-binding refusal before any read/start/send. These rows expand the advertised population without weakening pinned envelope/error assertions or proving bound-agent success.
+
 ## Code Commentary
 
 ### Logic
 
-**One world, built once, for all 67 tools.** `EntryPointWorld` (`:325-866`) lays out a scratch
+**One world, built once, for every advertised tool.** `EntryPointWorld` (`:325-866`) lays out a scratch
 coordination root under `/tmp` with a code repository, an external memory repository, an authored
 master/leaf pair, and one real leaf enclosure opened through `worktree_start`; the lifecycle that
 start opened is then ended, so the sweep's own `lifecycle_start` case begins from `none`. Its
@@ -89,8 +93,8 @@ literals.
   `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` (`:171`) — the two scaffold files the product's own
   `memory_init` repair writes — and every tracked status line must be identical. Across the
   coordination root: nothing removed, nothing added or rewritten outside
-  `COORDINATION_WRITE_ZONES` (`:215-226`), which are measured rather than guessed (a full sweep of
-  all 67 tools adds 18 files and rewrites 2, every one inside these zones, and removes none).
+  `COORDINATION_WRITE_ZONES` (`:215-226`), which are measured rather than guessed (the historical 67-tool measurement added 18 files and rewrote 2 inside these zones;
+  current calls are measured against the same declared write boundary).
   `.git` is excluded deliberately: opening a linked worktree rewrites its administrative files,
   which is Git doing its job.
 - **The census controls exercise the boundary where it is blind.** `EntryPointCensusControlTests`

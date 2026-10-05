@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Checking immutable launch scope before resume prevents an old agent resuming into a different current enclosure."
+  },
+  "applicability": "Revive of leaf-bound worker, reviewer or curator.",
+  "conditions": [],
+  "exclusions": [
+    "Taskless and sprint/master contexts follow their separate rules."
+  ],
+  "id": "INV-MFVW1K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviveTests::test_revive_of_a_leaf_bound_role_refuses_a_changed_task_scope_with_both_values; l7-run/evidence/sbx-08-leaf-bound.txt; l7-review/evidence/rv-15-leaf-scope.txt; l7-verify/evidence/vf-15-revive-scope.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For a leaf-bound role Revive first compares the task reference and contract path the launch recorded in the receipt (`arMcpContext.taskContext`) with the pair computed now from the leaf document alone, and refuses with both values when they differ or when none was recorded; the comparison creates and starts nothing and no bridge call is made.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "dashboard/src/cockpit/Cockpit.tsx keeps the role pane mounted, RoleChats.tsx owns the navigation toggle, PaseoChatFrame.tsx retains the iframe, and paseoFrameControl.ts steers ready-channel changes, preventing view or sidebar changes from discarding the in-progress native chat document and interaction state."
+  },
+  "applicability": "Normal dashboard view switches, launcher navigation visibility toggles and execution changes while the embedded control channel is ready.",
+  "conditions": [
+    "The pane remains under the existing hidden persistent ViewLayer.",
+    "The frame descriptor and frame generation remain unchanged."
+  ],
+  "exclusions": [
+    "Explicit Retry and the existing documented 10-second unavailable-control URL path may create a new frame generation.",
+    "Preserved DOM identity does not certify every native application state or unrelated session/PTY path."
+  ],
+  "id": "INV-D0QATN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/Cockpit.test.tsx::directly shows one persistent Role chats pane without an old-chat selector; dashboard/src/cockpit/Cockpit.memo.test.tsx::keeps the visibility/aria contract and DOM identity across switches (keep-alive intact); dashboard/src/cockpit/PaseoChatFrame.test.tsx::steers the mounted frame and keeps it across the launcher's controlled navigation toggle; dashboard/src/cockpit/PaseoChatFrame.test.tsx::shows the displayed execution's agent by message, without reloading the frame",
+        "Unrecorded typed proof case: dashboard/src/cockpit/Cockpit.test.tsx::directly shows one persistent Role chats pane without an old-chat selector | exact facet: The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 76abf41ae07c7b89a71f1ad16b21b8a93570329c | source line: 768 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/Cockpit.memo.test.tsx::keeps the visibility/aria contract and DOM identity across switches (keep-alive intact) | exact facet: Dashboard route switches change layer display and aria-hidden while retaining the RoleChatsPane DOM identity. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: f3be112b2716ba3ea73ef63494ab564745ab9699 | source line: 238 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::steers the mounted frame and keeps it across the launcher's controlled navigation toggle | exact facet: The initially open launcher-owned Hide/Show control is first, remains accurate, retains the native iframe and sends no extra navigation request when toggled. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 717 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::shows the displayed execution's agent by message, without reloading the frame | exact facet: Execution changes are sent through the ready channel while the frame element and initial URL remain unchanged. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 405 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Chats directly hosts one persistent Role chats pane whose launcher-owned navigation toggle and ready-channel agent navigation retain the mounted native frame across chrome changes and dashboard view switches.",
+  "status": "proposed",
+  "supersedes": []
+}

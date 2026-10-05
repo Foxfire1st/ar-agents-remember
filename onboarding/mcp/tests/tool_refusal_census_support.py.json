@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:f1eb90822a966bdd841e236dec24900e7cd7421e786986fb1e713dba929c984f",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:1cc7b8f97e212b401dbe64d1b7e56596d209dd765fa0b8686ba0816d7f6a2e98",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:fd876166c512d2313ec477b70af2a1ecc1af16b1e32d80dee7deb96d6462d403",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:15cdcf76c3ad8b7f34bf60940aaf2cee4518108644336f667ff7cd6c90182cfd",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:f48477c8257375ef328a9ad0395846fab930014c76dc46eb1f1440510b9a12ae",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
+            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
             "content": "sha256:720cb39c673c62fe09714597851f0f996167f68207b600f8fdb51fd09eaf6b34",
             "locator": {
               "kind": "symbol",
@@ -168,12 +168,12 @@
         },
         {
           "anchor": {
-            "blob": "14b0d3930b00dea5d6a7fbcb58c5b0fa6bb1ee4d",
+            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
             "content": "sha256:0b33482fd31a91935714ca6ee74aa7a12571e7be93d06a23c1a4816f83a9cdcc",
             "locator": {
-              "end": 282,
+              "end": 290,
               "kind": "line_range",
-              "start": 191
+              "start": 199
             },
             "path": "mcp/tests/test_tool_refusal_conformance.py"
           },

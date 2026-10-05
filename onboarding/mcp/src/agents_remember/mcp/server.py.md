@@ -15,6 +15,8 @@ docstring — now lives in `agents_remember.mcp.registration`, one module per fa
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
 
+Starts the one configured MCP application and registrar loop.
+
 ## Code Commentary
 
 ### Logic
@@ -28,7 +30,9 @@ is the [registration route overview](registration/overview.md), not this file.
    per server process, with the store root resolved through the shared `observer.observer_root`.
    The `lifecycle_*` tools and the `_tool_payload` choke point read that singleton, so it must be
    installed before any tool runs.
-3. `AgentsRememberMCP("Agents Remember")`.
+3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
+   launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
+   supplies no instruction line.
 4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
    place that decides which families a server advertises.
 
@@ -101,6 +105,10 @@ that skips this line loses no records — it just stops being distinguishable fr
   breaks the handshake.
 - Do not add a raw shell or arbitrary-command tool to this server.
 
+### Role Runtime and Scope
+
+Readable launch binding supplies one canonical launched-server instruction line. Unbound or unreadable binding supplies no instructions; malformed binding still refuses at its actual server_info/bound-tool boundary rather than changing startup authority. create_server retains existing worktree services and application trust composition.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -116,6 +124,11 @@ that skips this line loses no records — it just stops being distinguishable fr
 No sibling repository defines this process wiring.
 
 No meaningful cross-repo references found.
+
+### Runtime Source References
+
+- Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
+- Frozen implementation of create_server supporting the stated file behavior. [7]
 
 ## L23 Runtime Package Review
 

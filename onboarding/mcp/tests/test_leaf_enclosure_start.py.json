@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_leaf_enclosure_start.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96ccbaa4d2080cdabb081ea3abde7b7f9d90520d",
+            "content": "sha256:962807cdf3ebb943c764b1f33f28592439276c9ea4c554505554e4496285c91e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

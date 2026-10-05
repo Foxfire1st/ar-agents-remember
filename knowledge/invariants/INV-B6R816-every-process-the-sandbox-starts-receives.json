@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Inherited AR roots, Git redirections or caller-session identity can make a disposable child operate on live state or join its parent chat; explicit environment scrub prevents these errors while retaining logins."
+  },
+  "applicability": "Processes launched through the PNT sandbox Operations seam.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "Harness logins and home selectors intentionally remain and can use files outside the sandbox.",
+    "A harness-created tool server receives these values only if the harness forwards them or the launch definition carries them."
+  ],
+  "id": "INV-B6R816",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::BuildInputTests::test_the_environment_loses_what_selects_another_runtime_and_keeps_logins; worker evidence 15-process-environment-and-files.txt, 31-g5-session-variables.txt; review R1 [05-env]; review R2 [02-env]; member table FAM-4 in section 3.3"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every process the sandbox starts receives the caller's environment without the variables that select another AR runtime, coordination root, repository or Paseo home (every name starting `PASEO_`, `AR_`, `AGENTS_REMEMBER_` or `ORCA_`; `PYTHONPATH`, `PYTHONHOME`, `VIRTUAL_ENV`, `UV_PROJECT_ENVIRONMENT`; seven `GIT_` redirections) and without the variables that tie a process to the harness session the command was run from (`TMUX`, `TMUX_PANE`, `OLDPWD`, `AI_AGENT`, fourteen `CLAUDE` names and two `CODEX` names, each by exact name), with `TMUX_TMPDIR`, `PYTHONPYCACHEPREFIX`, `GIT_OPTIONAL_LOCKS=0` and `AR_DAGGER_AUTHORITY_ROOT` set to the sandbox's own values and `PWD` set to the child's working directory; harness logins, credentials and home selectors are kept, and nothing is removed by the `CLAUDE_`, `CLAUDE_CODE_` or `CODEX_` prefix.",
+  "status": "proposed",
+  "supersedes": []
+}

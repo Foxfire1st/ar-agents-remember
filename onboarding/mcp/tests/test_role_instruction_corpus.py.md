@@ -6,18 +6,16 @@
 
 ## Purpose
 
-The shipped behavioral check for the canonical role-instruction corpus at
-`skills/l-01-agent-lifecycles/`. It protects the properties a consumer depends on: every role in the
-registry has exactly one readable role source; every role source carries the agreed six-section order and
-its machine-readable knob block; the composition manifest resolves to files that exist for every role and
-every operation; the role registry is exactly nine roles and the ambient launcher is a routing condition
-rather than a tenth role; the manifest is a metadata plane that copies no payload; **every** relative path
-the corpus cites resolves; a manifest that points at a missing source is reported rather than silently
-accepted; and a repo-relative anchor pointed at nothing is reported by the link check itself rather than
-passing silently.
+The shipped behavioral guard for the canonical lifecycle corpus: every role and operation
+resolves to a readable source, the role registry has no ambient-launcher seat, and the
+manifest carries routing metadata without copied payloads. Role sources are concise,
+parseable and self-contained; the retired fixed section order, inherited Core declaration
+and operator knob block are absent. Relative repository references resolve, while
+coordination-owned and symbolic names retain their stated resolution limits.
 
-**Six cases, not the four first landed.** The module was extended by the owning seat during this leaf's
-curation window; this card describes the current shipped module (`:598` lines, six `test_*` functions).
+## Current source account
+
+Compact native role and operation sources remain well-formed and manifest-resolved. Positive curation checks now address two policy surfaces through CURATION_POLICY_STATEMENTS while the exact retired-sentence census still reaches canonical and generated trees. Preserve the handoff template contract and mutation controls; remove descriptions of the retired all-surface positive helper.
 
 ## Code Commentary
 
@@ -25,9 +23,9 @@ curation window; this card describes the current shipped module (`:598` lines, s
 
 The module resolves its subject from the repository root (`REPOSITORY_ROOT` → `SKILLS_ROOT` →
 `LIFECYCLE_ROOT` → `MANIFEST_PATH`), so it always tests the worktree it runs from. Its declared
-vocabulary is the corpus contract in miniature: `ROLE_ORDER` (nine roles), `REQUIRED_SECTIONS` (the six
-readable sections every role file must carry in order), `OPERATION_KEYS` (the frozen eight operations),
-and `MACHINE_SECTION` (the knob block that must follow § 6).
+vocabulary is the corpus contract in miniature: `ROLE_ORDER` and `OPERATION_KEYS` bind the
+role and operation registries. `MACHINE_SECTION` identifies a retired knob block that
+concise role sources must not carry.
 
 The resolver is deliberately split into small cohesive helpers — `_check_core`, `_check_operations`,
 `_check_roles` (with `_check_role_order` and `_check_one_role`), and `_check_launcher_and_references` —
@@ -46,14 +44,11 @@ fails on copied payload content, so the manifest cannot quietly become a second 
 It is staged against a `tmp_path` copy so it can also prove the detector fires on a deliberately copied
 payload without failing the healthy tree.
 
-`test_every_role_source_carries_the_readable_order_and_knob_block` asserts each role file is longer than a
-stub, opens YAML frontmatter declaring `l-01-agent-lifecycles-role-<role>` plus a description, carries
-`**Inherits:**` naming every core block the manifest assigns it, presents the six required headings in
-order, places the knob block after them, and declares its `harness`/`model`/`effort`/`dispatch`/`tools`
-rows plus its `orchestration.rolesPerLevel` override keys. Its final loop is the corpus's independence
-rule made executable: a role may name a sibling role file **only** under
-`SANCTIONED_SIBLING_REFERENCES` (the architect's designer hat, the orchestrator's strategist and designer
-dispatches, the strategist's and reviewer's manager references); anything else fails.
+`test_every_role_source_is_concise_and_well_formed` checks canonical YAML name and
+description, readable headings, no inherited Core line, no machine/operator knob block
+or knob table rows, and no per-level override instructions in the role file. Sibling
+role references are allowed only for the architect designer hat; this does not restore
+retired orchestration/strategy/manager cross-references.
 
 `test_manifest_reports_a_missing_source_instead_of_accepting_it` stages a copy of the tree in `tmp_path`
 and breaks the manifest several ways — a renamed role file, a moved operation source, an unknown
@@ -75,29 +70,29 @@ paths that belong to the coordination tree (`system/`, `tasks/`, `notes/`, `runt
 stages a tree whose document cites a repo-relative path that exists nowhere and asserts
 `unresolved_references` reports it, so the link check cannot silently pass by resolving nothing.
 
-### The Complete-Curation Guard (CAPS-R18@v1)
+### The Compact-Curation Policy And Retired-Wording Guard
 
-Two cases were added for the master's own doctrine change: `CurationIsCompleteOnEveryLeafTests` sweeps the
-canonical tree **and** all nine generated copies for the eleven retired optional-curation sentences and
-asserts that every canonical source which must state the rule still does, and `CurationGuardTeethTests` is
-the falsifiability half — re-inserting one retired sentence on its own surface must be reported, the
-preserved developer-request doctrine (full code quality and full tests) must read clean, and a statement
-must be reported only on a surface that shipped it. Both read the registry and readers in the new support
-module `mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py`. The module grew from
-6 to 14 cases and stays in its existing `unit-regression` lane, so no lane row and no case budget key was
-touched. The guard's declared limit travels with it: it matches whole retired sentences restricted to the
-files that shipped them, so a restatement of the defect in fresh vocabulary is out of its reach.
+The exact retired-sentence census reaches the canonical tree and all nine generated
+copies, with seeded re-insertion controls and a preserved developer-request-doctrine
+control. `CURATION_POLICY_STATEMENTS` names the two compact curation sources. The
+canonical positive case checks every declared marker; the generated-copy helper accepts
+any one marker, so that case alone cannot prove both the complete-curation sentence and
+`prepare → publish → validate`. Exact canonical projection equality in
+`test_sync_scripts.py` provides the stronger copy-delivery facet. Whole retired
+sentences are matched only on surfaces that shipped them; fresh semantic contradiction
+wording remains outside this matcher.
 
 ### Conventions
 
-Six cases plus their module-level helpers, no fixtures beyond `tmp_path`, and no network or provider
-access: the module reads the canonical tree and the manifest directly. A new corpus invariant belongs
+Module-level helpers and disposable tree fixtures use no network or provider access.
+The manifest/role cases read the canonical tree; curation cases also inspect the declared
+generated trees. A new corpus invariant belongs
 here as a new assertion rather than in a separate ad-hoc script.
 
 ### Invariants And Boundaries
 
-- The check reads the canonical `skills/` tree only; generated copies are verified by
-  `scripts/sync-skills.py --check`, not here.
+- Corpus-shape cases read canonical sources; curation-wording cases also read generated
+  copies. `scripts/sync-skills.py --check` and the projection suite guard byte equality.
 - Each positive case has a paired negative (a broken manifest, a copied payload, a dangling anchor), so a
   check that resolves nothing cannot pass as green.
 - Assertions are property-based on the corpus, so they stay valid as role prose changes; only a change to

@@ -1,5 +1,15 @@
 # mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
 
+## Native API composition and persistent frame delivery
+
+Serving adds native role routes beside retained MIK review/read ports, with exact selected source/configuration authority. Frame/plugin delivery binds the permitted parent origin, bridge protocol and native selection. Requested launch intent, visible execution and independent acceptance remain separate. Imported source does not imply that a running installation has already been replaced.
+
+- Current imported source owns this scoped route boundary. [84]
+- Current imported source owns this scoped route boundary. [85]
+- Current imported source owns this scoped route boundary. [86]
+- Current imported source owns this scoped route boundary. [87]
+- Current imported source owns this scoped route boundary. [88]
+
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/serving/`               |
@@ -627,6 +637,8 @@ delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redeliver
 until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 Serving composes the dashboard application, hosted-session control, projections and notifier. Start at `app.py` for route/lifespan composition, `projector.py` for atomic snapshots and cancellation draining, and `change_watcher.py` for change-or-heartbeat pacing. Watcher lockfile exclusion derives from `kernel.file_lock.lock_path_for` and filters every watched directory; moving this import does not alter suffix, debounce or wake behavior. The host registry and coordinator retain separate policies above that shared kernel mechanism.
 

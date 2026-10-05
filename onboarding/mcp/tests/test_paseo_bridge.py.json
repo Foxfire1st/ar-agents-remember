@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_paseo_bridge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+        "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+        "locator": {
+          "kind": "symbol",
+          "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+        }
+      },
+      "facet": "Exercises different/missing connected server identity and named refusal with reconnect disabled.",
+      "id": "PRF-7PZS43",
+      "invariant": "INV-VV0B2G",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §3",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+        "content": "sha256:7d64fbca8bf9bb513e9233411e4cf04112ed51cad1b2f81b2251dd35f9e50b30",
+        "locator": {
+          "kind": "symbol",
+          "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+        }
+      },
+      "facet": "Checks absent settings or home server-id start no process.",
+      "id": "PRF-G01FCX",
+      "invariant": "INV-VV0B2G",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §3",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+        "content": "sha256:7d799e12e4909fe3c0a0881f77fae7d2aea996677264496266b86285d5a44fa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+        }
+      },
+      "facet": "Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values.",
+      "id": "PRF-MDJK7B",
+      "invariant": "INV-VV0B2G",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §3",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+            "content": "sha256:846e1bc9be8eadf3126ffcdaade8c57eab77ab126d48358135d5bce47418c23c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

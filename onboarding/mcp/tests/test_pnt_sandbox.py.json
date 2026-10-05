@@ -1,0 +1,143 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_directory_that_is_not_a_sandbox_is_neither_used_nor_deleted"
+        }
+      },
+      "facet": "Unmarked populated directories and refused locations survive build/start/reset refusal.",
+      "id": "PRF-1BAH81",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_that_cannot_be_resolved_fails_closed_and_is_named"
+        }
+      },
+      "facet": "Missing or unresolved roots, wrong build identity, absent repositories, wrong values and process disagreement fail by name.",
+      "id": "PRF-C6TQTD",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+        }
+      },
+      "facet": "Real listeners are found on IPv4 and IPv6 addresses by port number.",
+      "id": "PRF-M2RS7Q",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_reset_that_cannot_delete_everything_can_be_repeated"
+        }
+      },
+      "facet": "Undeletable entries, concurrent additions and a mocked failed rmdir retain the resetting marker and inhibit build/start.",
+      "id": "PRF-SGXMY2",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:bfa7d328770065611847fd1d09e8dea6b08819383adfca5bf59c6d1c41b646bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
+        }
+      },
+      "facet": "Exact selector/session names disappear, credentials remain, four sandbox values are installed and real children receive their own PWD.",
+      "id": "PRF-VVBCPB",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:1aec020aa2fb63e95e14b6da8ec18bb17e51b214137e2b8aff78f85099fc7aa7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_the_build_fills_in_by_default_is_caught"
+        }
+      },
+      "facet": "The real build loader exposes defaulted roots and values omitted from settings for outside-root rejection.",
+      "id": "PRF-YGY7TW",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+        "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_outside_the_sandbox_fails_and_is_named"
+        }
+      },
+      "facet": "Direct outside roots, symlink escapes, similarly prefixed siblings and additional reported roots fail by key.",
+      "id": "PRF-ZH6MF1",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:8f31497691707f845ae1e3e85b3f653f3eef3bff453a9fdb4f5d1bc8d9cb9ffe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

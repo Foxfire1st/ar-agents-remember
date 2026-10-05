@@ -10,6 +10,12 @@ each stable requirement ID from the same applicable set dispatched to the worker
 
 ## Code Commentary
 
+### Bound native review intake
+
+Review only the owner’s explicit assignment. Use exact handover task arguments, the returned canonical `docPath`, `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
+
+The baseline inspects every changed file in the complete candidate, including unattributed files. Knowledge before/after, family interactions and unchanged sibling realizations add a review dimension rather than reducing that population. Preserve producer Curator hand-off fields for co-resolution. Native peer clarification uses the actual parent/task role through bound `role_message`; a dashboard Reviewer needs no parent and starts no role. Developer decisions stay in the own chat.
+
 ### Logic
 
 The reviewer does not accept a worker assertion at face value. For every stable ID it independently
@@ -45,7 +51,7 @@ packet requires, with no effect missing and none invented — and a mismatch is 
 the role file, not in a criteria catalog, because the catalogs admit a standing criterion only with
 catching evidence. Who writes the declaration stays procedural; `task_doc` has no per-field role gate.
 
-Beside the verdict, the reviewer emits **its own curator hand-off list** (`:91-98`) — its verdicts and
+Beside the verdict, the reviewer emits **its own curator hand-off list** (`:103-113`) — its verdicts and
 findings in the shape `../templates/curator-handoff-list.md` owns, as data rather than as verdict prose
 for the curator to re-read. Each entry is one finding or one requirement adjudication, carrying the
 source it came from and the place it was found at, and a finding the reviewer minted carries its own
@@ -57,18 +63,7 @@ the reviewer's own statement and evidence verbatim rather than re-telling them.
 If the manifestation candidate moves before adjudication, the stale attempt is rejected and a
 successor is reviewed. An unrelated later candidate does not reopen an accepted attempt.
 
-The rewritten role file carries no role table: the seat's classification and `dispatch`/`tools` rows
-now live in `composition-manifest.json`, where they are structural documentation rather than settings
-keys. The role itself is polymorphic across the review
-contexts: a manager owns leaf and master-exit reviewers, the architect owns the sprint plan
-reviewer, and the orchestrator owns the sprint super-exit reviewer; the file's own seam table
-(`:20-27`) fixes five seam rows — standalone/organizational leaf route review, atomic-master
-integration review, master-exit, portfolio plan review and super-exit — and where each verdict goes.
-The plane stamps that exact
-parent document+role onto the reviewer generation. An identity-free launcher may target an
-altitude-valid reviewer for explicit takeover, but a sprint takeover cannot invent architect versus
-orchestrator parentage and parent operations fail closed. The reviewer cannot call `dispatch_agent`:
-its `## What you may do` surface (`:135-141`) omits that call.
+The role serves the assigned leaf/master/plan/super seams and the seam table still fixes the review candidate and verdict destination. Actual ownership comes from the explicit canonical assignment, rather than an inferred plane generation. For native clarification use the actual parent/task role through bound messaging; a dashboard Reviewer has no parent and needs none. The Reviewer starts no role.
 
 ### Invariants And Boundaries
 
@@ -76,13 +71,12 @@ Canonical lifecycle doctrine owns canonical skill content; generated copies are 
 outputs. Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed without one of the two
 authorized invalidation paths.
-One reviewer role serves leaf, master, plan, and super seams, but each generation reports only to
-its plane-stamped structural parent.
+One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer decisions stay in the own chat, and peer clarification uses the actual parent/task role when one exists.
 
 
 ## CCR-R12@v5 Transaction Boundary
 
-This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
 ## Evidence
 

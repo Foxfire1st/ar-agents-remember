@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_role_handover_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c01d84a493e5a427a40de967f7ad296f90b8a2a3",
+            "content": "sha256:553a24f113939a8607a1fef4eede4de6e9fdae04e574d08661419c9ca54e828c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

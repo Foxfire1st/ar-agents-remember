@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "c35f328865bb872f1b88b6fb9bed189e4e5fc52d",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b179a0024b43c400dad9107f2bc3acaf76743131",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:6157b2420e3e8ea571063520975efc61eb411d5bd407360bc6b6d77d28fd30e3",
             "locator": {
               "kind": "symbol",
@@ -64,12 +64,12 @@
         },
         {
           "anchor": {
-            "blob": "b179a0024b43c400dad9107f2bc3acaf76743131",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:c4a4bb6f2b0a7e1ffd4904f56fef1964293d4a9e69118fd0f172b3bcb90e300a",
             "locator": {
-              "end": 264,
+              "end": 275,
               "kind": "line_range",
-              "start": 235
+              "start": 246
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:201d42bd8ef81a981c642a3c51c90eb569dddd3c74df553f72e1601252af792d",
             "locator": {
               "kind": "symbol",
@@ -122,14 +122,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
             "locator": {
-              "end": 167,
+              "end": 168,
               "kind": "line_range",
-              "start": 167
+              "start": 168
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Frozen implementation of ReadArFilesResponse supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
+            "content": "sha256:81e1ce3ef251132a3a24e406a453c81e614a65de550f234ccb38925f491f0089",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
+            }
           },
           "kind": "code"
         }

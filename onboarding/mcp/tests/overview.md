@@ -1,5 +1,14 @@
 # mcp/tests
 
+## Native source and protocol qualification tests
+
+The changed population covers runtime/settings admission, bridge/catalog behavior, exact launch/replay/provenance, task tools, role messages/status, frames, old-host removal and bounded sandbox process ownership while retaining MIK assertion catalogs and converted readers/writers. Exact cases and recorded run scope remain distinct. Inline Vitest/Playwright titles stay source-bound evidence when the installed writer cannot create typed proves; no renamed symbol or file-level substitute proof is claimed. Metadata/fixtures imply no paid turn, universal containment or semantic acceptance.
+
+- Current imported source owns this scoped route boundary. [493]
+- Current imported source owns this scoped route boundary. [494]
+- Current imported source owns this scoped route boundary. [495]
+- Current imported source owns this scoped route boundary. [496]
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/tests/` |
@@ -2264,6 +2273,8 @@ than executed: this curation seat runs Python 3.10 and the repository requires `
 `import tomllib` fails and the loader could not be run here.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 For the ledger retirement, start with transaction-only delivery, direct landing, integration/checkpoint concurrency, memory ledger projection and backfill tests. Assertions distinguish cache-only conditions from actual content, ancestry, ref and ownership failures. The retained producer census checks every active attributed memory writer; no scenario expects a third ledger commit.
 

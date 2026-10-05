@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Receipt identity and explicit ambiguity prevent role messages reaching an unrelated or arbitrarily selected live agent."
+  },
+  "applicability": "role_message recipient lookup through current-line receipts.",
+  "conditions": [],
+  "exclusions": [
+    "Task-bound lookup uses current/newest earlier live receipt, not every historical native agent."
+  ],
+  "id": "INV-R9S24S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RoleMessageTests::test_a_role_resolves_through_the_receipts_to_its_live_agent; ::test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among; ::test_every_execution_of_a_taskless_role_that_is_not_stopped_is_asked_about; ::test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said; ::test_a_task_bound_selection_has_one_recipient_however_many_agents_are_live; ::test_only_an_agent_id_of_this_lines_receipts_is_a_recipient; l8-review/evidence/tool-04-ambiguous-and-worker-start.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`role_message` names its recipient either by an agent id that a receipt of this line records, or by a role plus task references, which resolves through the selection's receipts to its one live agent; several live agents are refused with their ids and never chosen among, and of a taskless role at most 24 executions that are not already stopped or rejected are asked about, a longer list being refused as ambiguous with the statement that it was cut.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -226,7 +226,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
             "locator": {
               "kind": "symbol",
@@ -238,7 +238,7 @@
         },
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
             "locator": {
               "kind": "symbol",
@@ -250,7 +250,7 @@
         },
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
             "locator": {
               "kind": "symbol",
@@ -438,7 +438,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:a71c2da852099ae3ec9c8d735c41ede3831e66d3eb6b7e12df8812dc3ce23b39",
             "locator": {
               "kind": "symbol",
@@ -462,7 +462,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -479,12 +479,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
+            "blob": "bf0e03efa8495a1263f99ad581f55f8e6d14eae5",
             "content": "sha256:0713252843a9e30acf97cdd02930bf7547af70d07c4afb6701466b36ad4545c8",
             "locator": {
-              "end": 146,
+              "end": 153,
               "kind": "line_range",
-              "start": 146
+              "start": 153
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -638,7 +638,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
             "content": "sha256:1138e99f975a47026d39bb5f4035af8e5380595ca5c8847db9e8076809209f2a",
             "locator": {
               "kind": "symbol",
@@ -724,7 +724,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
             "locator": {
               "kind": "symbol",
@@ -741,7 +741,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:9a66ab5751a0c5d87c4b10112ca4c4b5b15812649b5683f1fa5d265c3cb686c1",
             "locator": {
               "end": 73,
@@ -754,7 +754,7 @@
         },
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:97a4a7b12ba42df25201e2d6625a60786c393bdd160fb4540fb39f454fe53e60",
             "locator": {
               "end": 294,
@@ -4758,7 +4758,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
             "locator": {
               "kind": "symbol",
@@ -4770,7 +4770,7 @@
         },
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
             "locator": {
               "kind": "symbol",
@@ -4787,7 +4787,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
             "content": "sha256:b308d52b4802de13375700d8fc6d9bdab663bc534b365983b08ea9259f5df69d",
             "locator": {
               "kind": "symbol",
@@ -4799,7 +4799,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
             "content": "sha256:49850fffbf29a3d4bbda2f3cb864baa593cc0360da1601184951db73ae8175ca",
             "locator": {
               "kind": "symbol",
@@ -4811,7 +4811,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
             "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
             "locator": {
               "kind": "symbol",
@@ -5772,7 +5772,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
             "content": "sha256:e70224a236d01d2ea1af736d759b241d6eba717fa9b73aa02f1b26da17162fbf",
             "locator": {
               "kind": "symbol",
@@ -5784,7 +5784,7 @@
         },
         {
           "anchor": {
-            "blob": "4a21aa165bef8c474739108eb18c85115a3b3354",
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
             "content": "sha256:88ee98a2e116d21f76242e567dbf3a401eb1c177fc5d7de2018d276de82dd046",
             "locator": {
               "kind": "symbol",
@@ -7481,7 +7481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:1b9074eed8dc40a09a932f74fc30a81a93f2abf322f480e1548b3ac6b03cc8e4",
             "locator": {
               "kind": "symbol",
@@ -8709,6 +8709,86 @@
         }
       ]
     },
+    "385": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+            "content": "sha256:a0fb7305a4efae52b2be04d3ec7841e1f7431e29c167220fc58119f2ad3723af",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "386": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:efa68e8081960f183be7f5037244291a471decef1050c6c46d8d6af7e084ed83",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "387": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
+            "content": "sha256:0f72fc45a6516577d475df8f0627f5ea1c622b17847875d49496a87cda266863",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "388": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
+            "content": "sha256:0713137eebc3397835369f69b6d0651bd74df92d2bb18ff2a8c414fa23c00eb9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "389": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
+            "content": "sha256:5b6a0363134f6ee72c987ef8f1e3dac62baf940b3cfe64470ed6fe2e4474730b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "39": {
       "note": "**The three generation statements — current, superseded, unmeasured — each of which ends by saying the content beside it is the requested generation's, byte for byte.**",
       "targets": [
@@ -8929,7 +9009,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -8941,7 +9021,7 @@
         },
         {
           "anchor": {
-            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
+            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",

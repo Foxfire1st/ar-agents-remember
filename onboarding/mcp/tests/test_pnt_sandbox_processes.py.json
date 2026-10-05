@@ -1,0 +1,194 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox_processes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:f47af2c9655e6f36c2ccaad11ffb0b58ceb771da7662bf57d7ceb89882bfc714",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_dashboard_the_record_does_not_name_is_reported_and_keeps_the_directory"
+        }
+      },
+      "facet": "An unrecorded dashboard or runtime that cannot stop makes reset fail while preserving the marker and directory.",
+      "id": "PRF-4DZEWW",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:13ba62ad415a2e708aad399bca76d174670305925865ac355077bf926a2c0ba8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_one_directory_is_one_sandbox_however_it_is_spelled"
+        }
+      },
+      "facet": "Equivalent symlink and parent-component paths resolve to the same layout and lock.",
+      "id": "PRF-5PDVZS",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:f3ba2883a3bb93cf4fcfe6c854f07c9b14012462db3935846046f12eb1954d3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_refuses_a_reserved_port_held_by_a_foreign_process"
+        }
+      },
+      "facet": "A foreign holder of either reserved port refuses before provision or dashboard spawn and remains alive.",
+      "id": "PRF-6002K7",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:f8066da15c52c986a72f957395120e6d57378b8ed9f2ee4b2aa13a33c9b36f4a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_start_starts_nothing_when_the_safety_check_fails"
+        }
+      },
+      "facet": "Failed root admission results in no provision or dashboard spawn call.",
+      "id": "PRF-HCYHYE",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:45baf638a5839a7627b5d9a427ae3acac172da229f3540bf3f72351ca1a95a70",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_starts_at_once_leave_one_sandbox_that_stop_ends"
+        }
+      },
+      "facet": "Two concurrent starts leave one recorded dashboard and supervisor which normal stop ends.",
+      "id": "PRF-M8QCGX",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:dd1c2743fac4572aa4f955b54a9fb92137a03abd3af8d241bf3605c3bd81deee",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stop_signals_only_the_process_start_recorded"
+        }
+      },
+      "facet": "Wrong ticks, argv, settings, cwd and boot do not authorize foreign signalling; an older boot-id-free record is still proven before its owned dashboard stops.",
+      "id": "PRF-QN2S7E",
+      "invariant": "INV-T8F4HW",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:a318c3ce897485dd698530f2d61f77be9d7ed7b9b29442c6112ea1b933119c28",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_paseo_record_is_deleted_before_any_runtime_command"
+        }
+      },
+      "facet": "A live foreign child and another-home supervisor remain alive while their stale records disappear before provision.",
+      "id": "PRF-QN551K",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:4fd7a25c0696e01afc8283ca4fb6dc853aa0718a07812b4fbd2d0a19da4d5fc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_paseo_home_record_is_trusted_only_for_this_homes_supervisor"
+        }
+      },
+      "facet": "Wrong program/home is stale; unreadable environment preserves the record and prevents runtime calls; unusable IDs are discarded without signalling.",
+      "id": "PRF-QVRTQY",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:a17a87edcc9a6276fd487536b1f28c242d05b0c9fff3b8447f333983dd7d02db",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_lock_covers_a_build_and_a_provision_run_and_is_the_file_that_is_there"
+        }
+      },
+      "facet": "A held command excludes build, an extant-inode race is handled, delayed holders are named and a real provision child retains the descriptor.",
+      "id": "PRF-WX824F",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+        "content": "sha256:f47af2c9655e6f36c2ccaad11ffb0b58ceb771da7662bf57d7ceb89882bfc714",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_dashboard_the_record_does_not_name_is_reported_and_keeps_the_directory"
+        }
+      },
+      "facet": "Unrecorded dashboard and supervisor are found before listening; start refuses, stop reports failure, no child is signalled and reset preserves the directory.",
+      "id": "PRF-ZD7JRE",
+      "invariant": "INV-KYEMA8",
+      "origin": {
+        "handoffEntry": "F24 a, b (unrecorded processes)",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:58116bc6e1c17ca7b637be597e01ad819048ec9a7123a80c96eebaffaa72b1f5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

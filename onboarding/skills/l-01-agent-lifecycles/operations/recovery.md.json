@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/recovery.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d41235f2eb6d828de0ab062df5d1d7e4e6bbd13c",
+        "content": "sha256:7654e32665a2cd703bf52c13f91bb959ea3e6471a500b1e2f990c7e0bc8561e3",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-YTZ3Y1",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Recovery does not promote session completion to acceptance.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -8,6 +8,8 @@
 
 `__init__.py` re-exports the public Pydantic response-contract model surface.
 
+Exports strict/flexible response contracts for MCP payload consumers.
+
 ## Code Commentary
 
 ### Logic
@@ -59,11 +61,19 @@ and it owns no model of its own. Its behaviour is entirely in what it makes name
 
 None recorded.
 
+### Role Runtime and Scope
+
+Add AgentBindingPayload, RoleStartResponse and RoleMessageResponse to the existing export surface. Their definitions remain in core and role_agents; importing the facade does not allocate agents or define another response vocabulary.
+
 ## Evidence
 
 ### Repo-Internal References
 
 - This initializer declares the public model export list. [1]
+
+### Runtime Source References
+
+- Frozen implementation of __all__ supporting the stated file behavior. [2]
 
 ## 260731-EFA-L9 Change
 

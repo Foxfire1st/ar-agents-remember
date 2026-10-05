@@ -52,12 +52,28 @@
         }
       ]
     },
+    "12": {
+      "note": "Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
+            "content": "sha256:877d6e74d099c3a819745d5b2e54fa5026bfab0ab31f0e178f332301b695c88f",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLIC_TOOLS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple.\n\nAnchor: `worktree_pause`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
               "end": 59,
@@ -74,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:a3e47ab388213b4a1d29e82854bdf9947f0ce1be15289b541d5a0170ab3eb531",
             "locator": {
               "end": 90,
@@ -91,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:6253fb01c32eaa1450fa21fe205d11f89ad4a2fc2d68eb52ad0146069a5b3ba3",
             "locator": {
-              "end": 96,
+              "end": 99,
               "kind": "line_range",
-              "start": 91
+              "start": 94
             }
           },
           "kind": "code"
@@ -126,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
             "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
             "locator": {
               "kind": "symbol",
@@ -143,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -172,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4aee8c6c045ce408dab43279549bd5f57aacbb5f",
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
             "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
             "locator": {
               "kind": "symbol",
@@ -184,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "4aee8c6c045ce408dab43279549bd5f57aacbb5f",
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
             "content": "sha256:575ed3c42ea8c86b68817bff9913ad69f3a102441c4bf5442875186cab815d53",
             "locator": {
-              "end": 348,
+              "end": 350,
               "kind": "line_range",
-              "start": 227
+              "start": 229
             },
             "path": "mcp/tests/test_tools.py"
           },

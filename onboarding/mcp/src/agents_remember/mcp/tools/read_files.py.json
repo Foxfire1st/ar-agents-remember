@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/read_files.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
+        "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_ar_files_payload"
+        }
+      },
+      "id": "RLZ-BWZ6QQ",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Forwards the call-local admitted config to source/onboarding reader.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The application entry point that does the actual resolution.",
@@ -63,6 +82,40 @@
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of read_ar_files_payload supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
+            "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ar_files_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
+            "content": "sha256:f12d781b2c954e57fe68923263eba6ba6eea6fa09d545dcc75f84addabdce9e8",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "kind": "test"
         }
       ]
     }

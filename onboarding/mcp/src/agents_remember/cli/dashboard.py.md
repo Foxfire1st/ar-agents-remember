@@ -15,6 +15,8 @@ command runs flag-free from anywhere under the workspace. It wires sim replay vi
 fronts the daemon supervisor: `--daemon` / `--status` / `--stop` dispatch to `serving/daemon.py`
 so the dashboard can outlive the terminal that started it.
 
+Composes the dashboard process and its application/serving ports.
+
 ## Complete-review collaborator wiring
 
 The dashboard knowledge-review collaborator invokes read_complete_knowledge_review: one source/knowledge resolution is shared with record collection and composition. Tree reads retain their own port. This adapter introduces no cache or currentness policy.
@@ -137,6 +139,10 @@ letting an undeclared process count as owner — "a CLI or test run is nobody's 
 (`durable_store.StoreOwnership.is_compaction_owner`) — because a `--reload` dashboard can be running
 against the same coordination root as a live MCP server. Closing it means declaring the role inside
 `_dev_app()` as well; nothing else about this file would change.
+
+### Role Runtime and Scope
+
+serving_collaborators retains MIK reviewer/knowledge ports and adds extra_api_routes=partial(register_role_launch_routes, config=config). Ordinary and reload factories bind existing worktree services before composition. The serving app registers the injected launch routes before static mount; the reviewer resolution owner is unchanged. Local app variables only flatten the existing create_app return expressions.
 
 ## 260928-MIK-L29 The Knowledge Reader Port
 
@@ -314,6 +320,12 @@ see.
 - The `--config` → `McpRuntimeConfig` contract it mirrors. [14]
 - The durable-store contract whose process role `run` declares — what the role decides, and what the unconditional per-log lock decides instead. [15]
 - The MCP server's mirror of the same declaration, in `main` rather than `create_server`. [16]
+
+### Runtime Source References
+
+- Frozen implementation of serving_collaborators supporting the stated file behavior. [22]
+- Frozen implementation of _dev_app supporting the stated file behavior. [23]
+- Frozen implementation of run supporting the stated file behavior. [24]
 
 ## 260718-CHATS-L5I Current Delta
 

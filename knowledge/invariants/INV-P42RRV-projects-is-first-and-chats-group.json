@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "dashboard/src/cockpit/paseoNavigationModel.ts validates canonical repository/path grouping and dashboard/src/cockpit/PaseoNavigation.tsx renders its distinct keys, preventing duplicate mutable titles or legacy native memberships from placing a chat under the wrong AR master."
+  },
+  "applicability": "Non-archived native catalog chats grouped in the dashboard AR navigation.",
+  "conditions": [
+    "Canonical slash references are resolved against the current taskDocuments and series topology."
+  ],
+  "exclusions": [
+    "Native workspace membership and spawn ancestry do not establish AR scope.",
+    "Unknown, absent or contradictory task references remain in Unresolved AR scope."
+  ],
+  "id": "INV-P42RRV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Four-profile nine-actor matrix, two distinct sprint groups, duplicate M2/M3 master titles and canonical group tests.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoNavigationModel.test.ts::keeps Projects first and separates duplicate titles by canonical sprint/master/task despite legacy memberships | exact facet: Conflicting legacy native membership and duplicate display titles leave canonical sprint/master/leaf groups distinct, with Projects first. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: e183daf0119bac17f1081a31db62f49b16745d2e | source line: 70 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoNavigationModel.test.ts::does not invent scope for colon aliases, missing documents or conflicting canonical links | exact facet: Malformed aliases, missing documents and contradictory parent links produce Unresolved AR scope rather than invented grouping. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: e183daf0119bac17f1081a31db62f49b16745d2e | source line: 99 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoNavigationModel.test.ts::places sprint and master controllers at their exact scope, skips archived chats and updates canonical titles | exact facet: Controller rows stop at their declared canonical scope; archived chats are skipped and titles follow current task documents. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: e183daf0119bac17f1081a31db62f49b16745d2e | source line: 111 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 §6 / canonical grouping",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Projects is first and chats group by validated canonical sprint/master/task references and current task documents, independently of native workspace membership or parent ancestry.",
+  "status": "proposed",
+  "supersedes": []
+}

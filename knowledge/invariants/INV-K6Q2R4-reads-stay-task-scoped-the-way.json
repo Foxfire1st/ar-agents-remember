@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Call-local canonical admission prevents one reader operation contaminating another with wrong code or memory roots."
+  },
+  "applicability": "context_packet/read_ar_files optional per-call task_context.",
+  "conditions": [],
+  "exclusions": [
+    "Binding does not reject another valid admitted leaf context; launch instructions and reader enforcement remain distinct.",
+    "Absent task_context uses configured repository roots."
+  ],
+  "id": "INV-K6Q2R4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l5-review/evidence/11-direct-tool-server-calls.txt, 12-worker-turn3-reads.txt; l5-run/evidence/leaf-06-turn2-task-scoped-read.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §4 / F10",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reads stay task-scoped the way ONT does it: `context_packet` and `read_ar_files` take a per-call task context that the server admits against the canonical task, a caller cannot pass roots, and the admission code is unchanged by this leaf; the binding is not a second scope: a leaf agent that passes another leaf's valid context is admitted, and a read without a task context returns the repository checkout's file.",
+  "status": "proposed",
+  "supersedes": []
+}

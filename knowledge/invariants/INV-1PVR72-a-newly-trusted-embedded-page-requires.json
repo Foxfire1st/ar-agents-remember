@@ -1,0 +1,42 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts and client/bridge.ts enforce paired parent/frame origins and parent window identity, dashboard/src/cockpit/paseoFrameControl.ts checks the frame window/origin, and PaseoChatFrame.tsx scopes clipboard policy to that origin, preventing an unlisted parent or lookalike window from steering chat or receiving delegated browser policy."
+  },
+  "applicability": "Dashboard and canonical plugin web control traffic for the frame descriptor's configured http(s) serving origin.",
+  "conditions": [
+    "A new parent is trusted only after the current embed list confirms its exact dashboard/frame origin pair.",
+    "Same-page reevaluation may reuse that page's already verified parent while rechecking the list."
+  ],
+  "exclusions": [
+    "An unknown parent or failed first list read establishes no new trust.",
+    "Browser clipboard policy delegation is not proof of a clipboard operation or user permission grant.",
+    "Unsupported web framing/DOM behavior and a successful refreshed trust check remain version-sensitive."
+  ],
+  "id": "INV-1PVR72",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoPluginClient.test.ts::listed frame: the AR look and the channel, once the list has confirmed the parent; dashboard/src/cockpit/paseoPluginClient.test.ts::takes a message only from the parent's origin and the parent's own window; dashboard/src/cockpit/paseoPluginClient.test.ts::evaluated again in the same page: no gap in the channel, and the list has the last word; dashboard/src/cockpit/PaseoChatFrame.test.tsx::ignores messages from another origin or another window; dashboard/e2e/cockpit.spec.ts::Role chats receives clipboard Permissions Policy in its cross-origin frame",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginClient.test.ts::listed frame: the AR look and the channel, once the list has confirmed the parent | exact facet: A fresh page installs no bridge or write watcher before the exact embed-list pair confirms its parent, then installs a bridge only on the settled page. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 0287d9def51524d8142d5a54fffb5ffe10704b55 | source line: 775 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginClient.test.ts::takes a message only from the parent's origin and the parent's own window | exact facet: Matching origin alone is insufficient: the parent window identity must also match. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 0287d9def51524d8142d5a54fffb5ffe10704b55 | source line: 279 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoPluginClient.test.ts::evaluated again in the same page: no gap in the channel, and the list has the last word | exact facet: Same-page reevaluation can reuse the already verified parent, and an explicit refreshed list that removes it withdraws the channel. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 0287d9def51524d8142d5a54fffb5ffe10704b55 | source line: 874 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::ignores messages from another origin or another window | exact facet: Wrong origins, lookalike origins, wrong/null windows and messages without the plugin source tag do not ready or settle dashboard control. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 485 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/e2e/cockpit.spec.ts::Role chats receives clipboard Permissions Policy in its cross-origin frame | exact facet: The application's actual frame element delegates read/write policy to exactly its configured cross-origin frame; a same-URL control iframe without delegation receives neither permission. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: db7c1c0fb3dbf965711d95d2436adf991f27cdbe | source line: 85 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A newly trusted embedded page requires the exact dashboard/frame origin pair, control traffic requires the corresponding exact window and origin on both sides, and the dashboard delegates clipboard policy only to the embedded origin.",
+  "status": "proposed",
+  "supersedes": []
+}

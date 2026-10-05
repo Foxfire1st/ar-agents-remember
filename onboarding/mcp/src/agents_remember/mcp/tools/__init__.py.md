@@ -10,6 +10,8 @@ Facade that preserves the public import surface of the former `mcp/tools.py`.
 L11 re-exports `task_reopen_payload` from `.task_doc` — the task-domain payload
 module — not from `.worktree`.
 
+Preserves the stable payload-builder export facade.
+
 ## Code Commentary
 
 ### Logic
@@ -43,6 +45,10 @@ reachable from the same boundary as the publication's.
   _tool_payload` so the conformance test's `tools._tool_payload` attribute
   access resolves and Ruff/Pyright treat it as an intentional re-export.
 
+### Role Runtime and Scope
+
+Re-export role_start_payload and role_message_payload through the same package surface as existing builders. They remain domain implementations in role_agents, not separate transport or token-stamping owners. Preserve all existing facade exports and commentary.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -60,6 +66,10 @@ reachable from the same boundary as the publication's.
 - The lifecycle finalizer payload builder is re-exported by this facade. [11]
 - The terminal payload builders (`attach_terminal_session_to_task_payload`, `spawn_agent_session_payload`, `session_retire_payload`, `session_rename_payload`) are owned by the `terminal` submodule. [12]
 - The terminal payload builders are re-exported by this facade. [13]
+
+### Runtime Source References
+
+- Frozen implementation of __all__ supporting the stated file behavior. [16]
 
 ## 260712-TRH-L4 Final Candidate
 

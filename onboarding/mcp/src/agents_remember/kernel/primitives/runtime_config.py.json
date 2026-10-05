@@ -1,18 +1,37 @@
 {
   "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+        "content": "sha256:6ae16823f8b58cfc0d5d544f7d289f940dd1e018e4a6704c4e33f12ae0ad6962",
+        "locator": {
+          "kind": "symbol",
+          "name": "McpRuntimeConfig"
+        }
+      },
+      "id": "RLZ-JKN1AR",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Carries an optional typed authority rather than deriving one from host state.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "The process entry point owns `load_config`; `create_server` receives the resulting typed config and passes it to application initialization and every tool registrar.\n\nAnchor: \"def main(argv:\"; \"def create_server(config: McpRuntimeConfig) -> Any:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
             "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
             "locator": {
-              "end": 58,
+              "end": 82,
               "kind": "line_range",
-              "start": 58
+              "start": 82
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -20,12 +39,12 @@
         },
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
             "content": "sha256:5440abf4d376eb4e3ae1f3bd57caab9a1858be20c57e74f7f04a18d5528dff1c",
             "locator": {
-              "end": 77,
+              "end": 101,
               "kind": "line_range",
-              "start": 77
+              "start": 101
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -258,6 +277,72 @@
         }
       ]
     },
+    "15": {
+      "note": "Frozen implementation of McpRuntimeConfig supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:6ae16823f8b58cfc0d5d544f7d289f940dd1e018e4a6704c4e33f12ae0ad6962",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Frozen implementation of config_from_mapping supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:c15c70c3f035ebbd3b8428edbebfa4d379966c58e725008b96aab5fe0f4804b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "config_from_mapping"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Frozen implementation of load_paseo_runtime_settings supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:fd613520be3ad7a2f67153d4caed742b15ab2533abdeedc33caaaf3ae14df565",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_paseo_runtime_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Runs all three commands without the block and checks named refusal, exit two and no process operation.\n\nAnchor: `PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
+            "locator": {
+              "end": 1011,
+              "kind": "line_range",
+              "start": 937
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "Config tests cover authority rejection, harness-root inference, provider derivation, and include containment.\n\nAnchor: \"class McpConfigTests(unittest.TestCase):\"",
       "targets": [
@@ -281,7 +366,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:eb10f07ce1aa1cde2f6245b200c58c9a90a4a871b1fbfe3f74cbdee7665852ce",
             "locator": {
               "kind": "symbol",
@@ -316,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:312cf63064dcdb1b2231db05d5b6d5d8271d8601b4e3afc5bd6eb84a83a8b747",
             "locator": {
-              "end": 95,
+              "end": 100,
               "kind": "line_range",
-              "start": 90
+              "start": 95
             }
           },
           "kind": "code"
@@ -390,12 +475,12 @@
         },
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:04f913abdc305eab5d5166ec139a518d5c1f54ccd29b68b18596c8e8c3498c97",
             "locator": {
-              "end": 290,
+              "end": 297,
               "kind": "line_range",
-              "start": 241
+              "start": 248
             }
           },
           "kind": "code"
@@ -479,7 +564,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:1999c42b7585142fe47fd695d4d63a63d60b00f0615e3e502045a1248fd54ba6",
             "locator": {
               "kind": "symbol",
@@ -490,7 +575,7 @@
         },
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:7492668e7105712e78c760b0a7ea28cbe935436fbe691633f794b5ac4056c1eb",
             "locator": {
               "kind": "symbol",
@@ -501,24 +586,24 @@
         },
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:dd62d34994957471e6870945ca3392b6a2c5f4a5a758902fa8f525d04cd7ef55",
             "locator": {
-              "end": 571,
+              "end": 597,
               "kind": "line_range",
-              "start": 538
+              "start": 564
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:30de19261c247f2299bfe05591dd0643d7185a9c10750c4c4538d0cca864a28c",
             "locator": {
-              "end": 606,
+              "end": 632,
               "kind": "line_range",
-              "start": 574
+              "start": 600
             }
           },
           "kind": "code"

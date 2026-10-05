@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_provision.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b1474319e2120e0913c48143c6052a71278b7924",
+        "content": "sha256:e6811d4c5ca063231ce9652712a4648ca5be415a8fb90e84fd1d6d18095821ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_install"
+        }
+      },
+      "id": "RLZ-GA4ARW",
+      "invariant": "INV-2MWAYK",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §7",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Checks the observed installation version and requests the exact package pin before activation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of provision_runtime supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1474319e2120e0913c48143c6052a71278b7924",
+            "content": "sha256:32de0d78a1abc60d734f84e7230034a148a004ac9f9ab8992beb94a8d2e9bdaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "provision_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _ensure_install supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1474319e2120e0913c48143c6052a71278b7924",
+            "content": "sha256:e6811d4c5ca063231ce9652712a4648ca5be415a8fb90e84fd1d6d18095821ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _converge_daemon supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1474319e2120e0913c48143c6052a71278b7924",
+            "content": "sha256:bd85946a6b0b0744f2f4e4847fe45accca4976b0e489e16a846eb7f159e428ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converge_daemon"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rejects non-exact, malformed and padded version selectors.\n\nAnchor: `McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks a mismatched install is replaced and a failed staged installation preserves the preceding install and daemon.\n\nAnchor: `PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:cdf9fb8b0c8fa0f3747358332a220f1dfe5a2cefcee973bf798d77be93d3229a",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

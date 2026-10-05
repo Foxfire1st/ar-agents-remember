@@ -9,6 +9,8 @@
 Defines the one canonical, repository-qualified task-document reference used at sprint, master, and
 leaf altitude. Paired with a role, it is the stable structural seat identity.
 
+Defines immutable repository-qualified task identity and per-call leaf reader context.
+
 ## Code Commentary
 
 ### Logic
@@ -35,6 +37,10 @@ task-document topology rather than duplicated in this value model.
 
 None.
 
+### Role Runtime and Scope
+
+TaskScopedReaderContext is extra-forbid/frozen and carries task_document_ref plus contract_path. The path must be normalized absolute POSIX with no parent traversal; source roots are not fields. Preserve TaskDocumentRef equality/hash/length rules and its distinction from runtime occupant identity.
+
 ## Evidence
 
 ### Docs References
@@ -47,6 +53,10 @@ None.
 
 ### Cross-Repo References
 
+### Runtime Source References
+
+- Frozen implementation of TaskScopedReaderContext supporting the stated file behavior. [3]
+- Frozen implementation of TaskDocumentRef supporting the stated file behavior. [4]
 
 ## 260815-DAG-L3 Bounded Durable Identity
 

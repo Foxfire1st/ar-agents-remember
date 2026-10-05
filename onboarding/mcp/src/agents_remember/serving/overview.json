@@ -47,7 +47,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
             "locator": {
               "kind": "symbol",
@@ -59,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
             "locator": {
-              "end": 176,
+              "end": 183,
               "kind": "line_range",
-              "start": 166
+              "start": 173
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:8d181cd28ebd2913419f37d834ed2e5426acb300d9d6fb6bac05e6b62eb4eb8d",
             "locator": {
               "kind": "symbol",
@@ -820,7 +820,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
             "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
             "locator": {
               "end": 515,
@@ -833,7 +833,7 @@
         },
         {
           "anchor": {
-            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
             "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
             "locator": {
               "end": 307,
@@ -1774,7 +1774,7 @@
         },
         {
           "anchor": {
-            "blob": "7eea394cde7e3fef11c117c6bca0f201f60f7e58",
+            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -1851,7 +1851,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
             "content": "sha256:50dd0902d7e386a27104a0410ddb36ccb223390dca13ced0ddf067749c2d82f2",
             "locator": {
               "end": 303,
@@ -1869,7 +1869,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
+            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -1881,12 +1881,12 @@
         },
         {
           "anchor": {
-            "blob": "124553a2ffb90022fed5d31310b9f0eac2e652f0",
+            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
             "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
             "locator": {
-              "end": 84,
+              "end": 87,
               "kind": "line_range",
-              "start": 84
+              "start": 87
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1969,7 +1969,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
             "content": "sha256:b63f400ac5ad1cbf8de2893803b46f438b3b511273d26af1623465a0acf4b4f5",
             "locator": {
               "end": 306,
@@ -2086,12 +2086,92 @@
         }
       ]
     },
+    "84": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
+            "content": "sha256:231e4d908e086d34fb52210ac2e8782be9be806ea8534612a3982fbb255ca5be",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "content": "sha256:441ded2f0474a3226a3452b9785559b6df226d5e821fa4e2729fd70febb5f703",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
+            "content": "sha256:0ac58c7449874763cbc1d92b9ec71c49fe9d6acd25a3adc64c9dd46a4ee38253",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/static.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "content": "sha256:0caad24222339094afddca9fd6e2d1dd89677ca17fc248015b8a9fb93ebdb99b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea8baed550e58248b4b347a9853e30c294019db",
+            "content": "sha256:376d4f2ab952a05277b8d427b067e35840f71269d24a0f0621f4f9f717fc733c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_frame.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -2103,7 +2183,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:85feba1f481929b44d9a51ccaaddcbc12f7f0c2666b91df4179aa16288da9ffc",
             "locator": {
               "kind": "symbol",
@@ -2115,7 +2195,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b190e4936151386a15119132d254bbafcec9da1060dce8e578404695177166e0",
             "locator": {
               "kind": "symbol",
@@ -2127,7 +2207,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:3aee9ac1bb981e0d14d598c481bbeb2d7b4acdabe19ae4355955d21c1817385e",
             "locator": {
               "kind": "symbol",
@@ -2139,7 +2219,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:c0a4a0d99162a3a8042ca40907ba0472d242718d9d81535f389761e99b2d53c5",
             "locator": {
               "kind": "symbol",

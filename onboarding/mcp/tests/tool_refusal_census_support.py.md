@@ -19,6 +19,10 @@ the next action — or does it lose the envelope to a bare exception, or answer 
 operation it did not do? `T34` lived in the second answer for nine tools, and `T62`'s preview
 crashed on its own producer's output.
 
+## Current source account
+
+The failure invocation population adds role_start and role_message under a server with no launch binding. Both reach the explicit caller-has-no-binding refusal, including reason and next action, before reading, starting or sending. This support module supplies inputs and owns no acceptance assertion itself.
+
 ## Code Commentary
 
 ### Logic
@@ -54,7 +58,7 @@ A support module under `mcp/tests/`, imported by path name from the test module 
 `test_` prefix, no collected cases, **no lane row** in `mcp/tests/test-evidence-lanes.toml`
 (the manifest registers test modules, and this is not one). The constants at the top
 (`REPO` `:27`, `ADOPT_REPO` `:28`, `MASTER` `:29`, `LEAF_ID` `:30`, `WORKTREE_NAME` `:31`) name
-the fixture's entities once so the 67 invocations cannot spell them differently.
+the fixture's entities once so the roster-derived invocations cannot spell them differently.
 
 ### Invariants And Boundaries
 

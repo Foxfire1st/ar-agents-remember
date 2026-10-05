@@ -13,6 +13,10 @@ correctly in one file and contradicted in another, or asserted in the shared roo
 still promises a report checker that does not exist. Each file is individually plausible, so no
 per-file check can see it.
 
+## Current source account
+
+The native worker owes one parent-addressed report-written message only when a parent agent started it, and states that a finished turn is not AR acceptance. Manifest-selected architect/manager/orchestrator operation capsules must inspect candidate/evidence before acceptance; a removed manager inspection sentence must fail the guard. The retained contradiction machinery checks authored instruction wording, not runtime acceptance transactions.
+
 ## Code Commentary
 
 ### Logic
@@ -34,8 +38,8 @@ Four mechanisms defend four different readings, and they are deliberately **not*
   `DeclaredLimitsTests` pins the detectors' own documented limits.
 
 `classify_reading` returns three states — `STATE` / `ABSENT` / `CONTRADICTED` — and **silence is not
-contradiction**: architect, designer and orchestrator readings are declared `ABSENT` legitimately, and
-only a surface that owes a clause must state it. Conversely every canonical surface, owed or not, must
+contradiction**: a surface that owes no clause may legitimately be `ABSENT`, and only a surface that owes
+a clause must state it. Conversely every canonical surface, owed or not, must
 avoid `CONTRADICTED`.
 
 `AgreementAcrossTheRoleSetTests` holds the census the roster carries; `SilenceIsNotContradictionTests`
@@ -55,8 +59,9 @@ remains swept by the contradiction case like every other canonical surface.
   That is why several reconciled sites were repaired at punctuation level.
 - The roster's captured text is the guard's **declared data**, kept separate from the detectors: the
   census and owed sets move with the corpus, the detectors and their teeth cases do not.
-- Protected classes (`DetectorTeethTests`, `DeclaredLimitsTests`) and every detector constant are
-  byte-unchanged by this leaf; only data segments and one case target moved.
+- Detector teeth and declared-limit cases remain separate from changing corpus data.
+  The native Worker-parent and coordinator-capsule cases add explicit instruction-boundary
+  coverage; they do not execute an AR acceptance transaction.
 
 ### Invariants And Boundaries
 

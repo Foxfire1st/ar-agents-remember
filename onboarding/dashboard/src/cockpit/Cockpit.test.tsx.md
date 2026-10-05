@@ -6,11 +6,9 @@
 
 ## Purpose
 
-Vitest + Testing Library coverage for production cockpit composition, persistent layers, selection
-routing, takeovers, and store updates. The FEUI-L8 cases pin Operations as initial, one Chats item,
-no Sessions item or legacy Chats component, persistent same-node `SessionsView` behavior behind the
-Chats product label, shell-level reconciliation, and accepted-id-only highlight routing. The sole
-JSX mount in `Cockpit.tsx`, not this test's singular query, establishes exact-one source cardinality.
+The component suite checks production shell navigation, persistent layers, projections and accessibility against repository fixtures.
+
+The current Chats case pins Operations as initial, one Chats item, no Sessions route and a directly mounted persistent RoleChatsPane with no old-chat mode selector. Source cardinality comes from the sole JSX mount in Cockpit.tsx rather than a singular test query; accepted-session highlight routing retains its separate existing assertions.
 
 ## Code Commentary
 
@@ -22,6 +20,8 @@ no reload control for an exact fingerprint match. The test never exercises an au
 because the product contract requires operator timing.
 
 ### Logic
+
+The current canonical Chats test asserts one directly mounted Role chats pane, Operations initial state and no separate Sessions route. Chats has neither the old mode selector nor a SessionsView child. Hide/show uses the same pane; the export-shape check retains the other memoized layers without claiming SessionsView as a current Chats mount.
 
 L15 adds the servingBuild stamp assertions (renders commit + boot time when present; absent-field tolerance for old payloads).
 
@@ -46,11 +46,11 @@ dashboard store.
   asserts `data-fullbleed="true"`, both rails gone, and the room's `engine-room-header` +
   `engine-room-diagnostics` zones present.
 - "keeps the rails for Operations and Memory" — switching to Memory stays railed (`data-fullbleed="false"`).
-- "canonical Chats route: full-bleed keep-alive cockpit" (FEUI-L8 S5) — asserts there is no Sessions
-  route and finds a `[data-testid="sessions-view"]` implementation node. Its parent layer is hidden on
-  Operations, the same captured node is revealed full-bleed under the Chats product label, and
-  returning to Operations hides that same node without remounting the PTY owner. The test proves
-  existence and same-node persistence; the sole JSX mount/source census proves cardinality.
+- "directly shows one persistent Role chats pane without an old-chat selector" — finds the
+  `[data-testid="role-chats-pane"]` node in its hidden persistent layer. Chats reveals the same
+  node full-bleed, exposes no Chats-mode tablist and mounts no SessionsView child; returning to
+  Operations hides the same pane. This is role-pane existence/persistence coverage, not a PTY-owner
+  assertion; the sole current RoleChatsPane JSX mount establishes source cardinality.
 - "toggles the right rail between the Event River and the leaf chat" (slice L5) — on a railed view the
   default `rail--right` shows the Event River; clicking the `rail-toggle-chat` `role="radio"` segment
   swaps in the single-instance `RailChat` (`rail-chat` testid), and clicking `rail-toggle-river` swaps
@@ -135,12 +135,20 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
+The current source extents below record the reviewed UI contract. Inline test names/facets are source-bound evidence; the installed writer cannot create typed proves from those call titles, and these citations do not claim such a proof or a rerun.
+
+| Finding | Anchor | Source at frozen tree |
+| --- | --- | --- |
+| Current source owner or exact assertion described above. | `directly shows one persistent Role chats pane` | `dashboard/src/cockpit/Cockpit.test.tsx:768-798` |
+| Current source owner or exact assertion described above. | `exports every persistent layer` | `dashboard/src/cockpit/Cockpit.test.tsx:830-860` |
+| Directly places RoleChatsPane in the persistent ViewLayer and supplies taskDocuments and series with active visibility. | `MainLayers` | `dashboard/src/cockpit/Cockpit.tsx:757-819` |
+
 - `CockpitShell` under test, and the `fullBleed` derivation the rails-hide cases exercise. [1]
 - `GALLERY` fixtures + the `applySnapshot` hydration pattern. [2]
 - The shared jsdom stubs the render relies on. [3]
 - The L1 composition cases cover all four reader entry paths, unchanged-revision analytics churn, and late A-to-B response discard. [4]
-- The S5 cutover case proves existence of a `sessions-view` node, no Sessions route, and same-node hide/reveal persistence. [5]
-- The production source census, separately from the singular test query, establishes the sole `<SessionsView>` JSX mount. [6]
+- The current Chats case proves existence of a `role-chats-pane` node, no Sessions route or old-chat selector, and same-node hide/reveal persistence. [5]
+- The production source census, separately from the singular test query, establishes the sole current `<RoleChatsPane>` JSX mount. [6]
 - The `withStates` helper + the two `task-metrics` cases (`2 awaiting you`; nothing at zero). [7]
 - `railProjection` / `WARN_ROW` and the three rail cases: differing dot markup, `getByRole("img", { name: "Severity: warn" })` + `getByRole("option", …)`, and the scoped `axe.run`. [8]
 - The `role="img"` + `aria-label` wrapper (`severityMark`, `data-testid="attn-severity"`) the accessibility-tree assertion targets. [9]
@@ -162,7 +170,7 @@ Sessions item, and one persistent `SessionsView` layer survives route changes. H
 switches/focuses only the accepted exact session.
 
 This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
-`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
+`31f58834f86c0d98e26b0896e099a2403a8729ee`, which identifies the recorded historical FEUI-L8 review point.
 
 ## 260821-CLIVE Projection Fixture Alignment
 

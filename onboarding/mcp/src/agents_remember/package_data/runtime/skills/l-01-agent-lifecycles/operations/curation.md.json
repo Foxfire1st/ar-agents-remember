@@ -1,41 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md",
   "realizes": [],
-  "references": {
-    "1": {
-      "note": "Curation sequence including explicit retained-sibling authoring.\n\nAnchor: `## Normal workflow`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:513a274e48b55200481d8cc4cf5b70c8b0198c51c5d64c8ca57c1499d498a2d9",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Workflow step 3 requires an authored rationale on every hand-off target (generated copy).\n\nAnchor: \"Every target in it carries its own\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:220977b1e0fdada14a90e87343d6e4e981217148f3870aa58af61dafb43d451a",
-            "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

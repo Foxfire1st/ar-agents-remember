@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_paseo_role_tools.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+        "content": "sha256:e9cfaa71370c55d4c8ac3dc833a0bfc57a2fd5f81dd0e79295d58902012818b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "MayStartRuleTests.test_each_role_may_start_exactly_the_roles_the_rule_names"
+        }
+      },
+      "facet": "Checks all 49 caller/target pairs against exact table.",
+      "id": "PRF-6Z2ETD",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+        "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
+        "locator": {
+          "kind": "symbol",
+          "name": "MayStartRuleTests.test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master"
+        }
+      },
+      "facet": "Checks own orchestrator sprint and manager sprint/master binding containment.",
+      "id": "PRF-V8HQV0",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+            "content": "sha256:49db24470c9e13c1c433be8fbd0c0573a09d27841f232c3cb4a9f61aad777a06",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

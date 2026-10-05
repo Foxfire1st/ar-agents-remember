@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
             "locator": {
               "end": 65,
@@ -138,7 +138,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
               "end": 59,
@@ -569,6 +569,54 @@
         }
       ]
     },
+    "37": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94f0e1075edafc541fb6c8fd444d3028be95e7a9",
+            "content": "sha256:30475e204c345e2c284a5c2aa34e3427d83b4c3c34a86ced9fa4ec99e530bcae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf0e03efa8495a1263f99ad581f55f8e6d14eae5",
+            "content": "sha256:d5681c3b1cb6be8ac32b980ba5be0370ab0c1c674e1441f754bb9d0113f7f5fa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
+            "content": "sha256:0610f653bb29f728debc51970f5ebd2fed5a271dca0af4a6b64d0d5183607281",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "The seam that pages a converted tree's read, and the per-page extras.\n\nAnchor: `read_tree_page`",
       "targets": [
@@ -594,6 +642,22 @@
               "start": 449
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
+            "content": "sha256:b702ad77cc5ea86293cc43be41e9d5518b6a8aa43a397f8a08c76caa57419262",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/terminal_tools.py"
           },
           "kind": "code"
         }

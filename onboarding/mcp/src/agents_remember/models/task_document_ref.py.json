@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f280c226367b5ccab8b9e6a759ee1143c6e160c",
+            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
             "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "5f280c226367b5ccab8b9e6a759ee1143c6e160c",
+            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
             "content": "sha256:a4597f436dcf216add0c6ec4619551d556385d6169d6b5163a208cea5d204bf9",
             "locator": {
               "end": 57,
@@ -55,6 +55,38 @@
               "start": 26
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of TaskScopedReaderContext supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
+            "content": "sha256:ba1e28fcf2c3f1f981c9ad9b647e449f8fe0c653cab14e2f2dafd4fa5062b3cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskScopedReaderContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of TaskDocumentRef supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
+            "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentRef"
+            }
           },
           "kind": "code"
         }

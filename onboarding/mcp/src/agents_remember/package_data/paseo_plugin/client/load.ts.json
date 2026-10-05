@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9404cfc38eda87215f107b0a12318bf3e110ca1e",
+        "content": "sha256:d4ef84d84c3beb6f973bed6216e5c941b3bc424018574c20530beeb27e5c7683",
+        "locator": {
+          "kind": "symbol",
+          "name": "takeOwnLookBack"
+        }
+      },
+      "id": "RLZ-JVAAV2",
+      "invariant": "INV-CJ4VN0",
+      "origin": {
+        "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Separates the look a page started with from later shared-storage writes before it attributes future standalone app writes.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

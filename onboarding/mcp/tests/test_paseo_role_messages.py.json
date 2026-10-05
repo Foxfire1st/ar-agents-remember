@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_paseo_role_messages.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+        "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among"
+        }
+      },
+      "facet": "Checks live taskless-role ambiguity reports IDs and sends no message.",
+      "id": "PRF-0Y1E2J",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+        "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said"
+        }
+      },
+      "facet": "Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent.",
+      "id": "PRF-R2W0VG",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+        "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_only_an_agent_id_of_this_lines_receipts_is_a_recipient"
+        }
+      },
+      "facet": "Checks foreign IDs and self-addresses are refused.",
+      "id": "PRF-YAM9QW",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "content": "sha256:8481e18dadd4ce7a48150307abc7b280838f754c71f1425e5dd9f927b7d77676",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

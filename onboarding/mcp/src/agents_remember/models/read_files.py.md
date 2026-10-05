@@ -8,7 +8,9 @@
 
 `read_files.py` defines the AR-owned, strict response contract for the
 `read_ar_files` tool (slice 07): one batch of paired source+onboarding reads plus
-the auto-attached, session-deduplicated overview front-door.
+the auto-attached overview front-door deduplicated by lifecycle and code/onboarding root.
+
+Defines the strict paired source/onboarding read response.
 
 ## Code Commentary
 
@@ -45,7 +47,7 @@ cit:([`ReadArFilesResponse`], mcp/src/agents_remember/models/read_files.py:56-80
 (`"read_ar_files"`), `repoId`, the `files` list, the optional
 `repository_overview` / `route_overviews` dicts, and the optional `published_intent` dict. The two
 overview dicts are the
-session-deduplicated front door — each served once per lifecycle, or again when
+front door — each served once per lifecycle and resolved code/onboarding root pair, or again when
 its content changed, and omitted when already served unchanged (or when
 onboarding was suppressed for every file). Token fields are stamped by
 `finalize_payload_tokens` at the `_tool_payload` choke point — this module never
@@ -60,6 +62,10 @@ which such a tree converts. The model is unchanged by that, because it carries t
 `application.published_intent` — the route that selects, seeds and names the absences — so this model
 carries it as a dict rather than re-declaring a second contract for the same read, exactly as
 `repository_overview` and `route_overviews` are carried for the front door.
+
+### Role Runtime and Scope
+
+The documented front-door dedup extent is lifecycle plus code/onboarding root, matching the application change. The strict response fields, independent source/status relationship, published-intent block and shared token choke point remain unchanged. Preserve the existing field explanations; update only the former lifecycle-only dedup sentence.
 
 ## Invariants And Boundaries
 
@@ -87,3 +93,7 @@ carries it as a dict rather than re-declaring a second contract for the same rea
 - The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. [3]
 - The three optional format fields a file result gains, and the module that fills them. [4]
 - The registry mapping `read_ar_files` to this response model (L120). [5]
+
+### Runtime Source References
+
+- Frozen implementation of ReadArFilesResponse supporting the stated file behavior. [6]

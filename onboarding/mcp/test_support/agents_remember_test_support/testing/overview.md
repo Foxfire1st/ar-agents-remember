@@ -1,5 +1,12 @@
 # Python Test Evidence Infrastructure Overview
 
+## Merged curation doctrine assertion support
+
+curation_doctrine keeps selected curator/reviewer assertions aligned with native role language and converted writer semantics. Shared test helpers are not execution or knowledge-verdict owners. Canonical instruction/mirror consistency uses its synchronization owner, and test qualification, completed curation, semantic acceptance and Git publication retain separate authority.
+
+- Current imported source owns this scoped route boundary. [4]
+- Current imported source owns this scoped route boundary. [5]
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/testing` |
@@ -17,6 +24,8 @@ before preparing a certifying candidate process. Ordinary bootstrap does not gra
 external-service capability.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 `dependency_facts.py` and `consumer_inventory.py` derive import/plugin/consumer ownership from
 current source. `lane_manifest.py` and `evidence_lanes.py` validate the explicitly declared evidence

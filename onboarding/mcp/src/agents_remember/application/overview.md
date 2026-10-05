@@ -1,5 +1,15 @@
 # mcp/src/agents_remember/application/ - MCP Application Layer Overview
 
+## Native actor binding and converted reader composition
+
+agent_binding and task_scoped_mcp retain actor, role, canonical task, request and source/settings identity for the launched task server. role_launch_context chooses the work scope without deriving it from a native folder or display title. memory_tools/read_files compose these exact bindings with retained converted MIK card/citation/knowledge behavior; writes and lifecycle publication remain with their admitted owners.
+
+- Current imported source owns this scoped route boundary. [385]
+- Current imported source owns this scoped route boundary. [386]
+- Current imported source owns this scoped route boundary. [387]
+- Current imported source owns this scoped route boundary. [388]
+- Current imported source owns this scoped route boundary. [389]
+
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/application/`     |
@@ -1194,6 +1204,8 @@ reopens a task, while worktree_tools keeps only genuine worktree operations (its
 abandon now also ends the ambient lifecycle it anchors).
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 `worktree_tool_requests.py` carries only code/memory commit messages and landed commits. `worktree_tools.py` forwards that pair unchanged; `memory_tools.py` exposes baseline/carryover cache observations without a ledger commit argument. Adapters do not recreate retired guards or synthesize a third output.
 

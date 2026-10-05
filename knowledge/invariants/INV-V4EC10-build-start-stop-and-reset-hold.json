@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Concurrent commands can leave unrecorded processes or stop the winner runtime; a killed start can leave provision in progress, so canonical directory locking and descriptor inheritance prevent overlapping owners."
+  },
+  "applicability": "The PNT build, start, stop and reset command owner and its inherited provision-child descriptor.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "Check takes no lock.",
+    "Build tool-server and native stop children do not inherit the lock after an abruptly killed parent.",
+    "An orphaned provision that hangs keeps commands refused until it ends."
+  ],
+  "id": "INV-V4EC10",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox_processes.py::StartAndStopTests::test_two_starts_at_once_leave_one_sandbox_that_stop_ends; ::test_the_lock_covers_a_build_and_a_provision_run_and_is_the_file_that_is_there; review R2 [f1/summary.txt], [f1/combos.txt], [crash/k1..k5]"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "F1 / F23 (one lock per sandbox)",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`build`, `start`, `stop` and `reset` hold one exclusive lock per sandbox, on the file `<sandbox>.lock` beside the directory, for the whole command; a second command does not wait but refuses with exit 2 and names the holder; the provision run of a start inherits the locked file and is named in the holder record, so a start that is killed while it provisions leaves the sandbox locked until that run has ended; `check` takes no lock.",
+  "status": "proposed",
+  "supersedes": []
+}

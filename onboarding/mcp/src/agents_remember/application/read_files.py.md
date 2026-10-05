@@ -18,6 +18,8 @@ intent**: the payload carries a `published_intent` block beside `files`, resolve
 selection, the seeds and the named absences belong to `application/published_intent.py`; this module
 only carries the block.
 
+Reads paired source and onboarding and attaches the existing published-intent and front-door context.
+
 ## Code Commentary
 
 ### Logic
@@ -129,14 +131,15 @@ a direct `mirror_onboarding_path` file probe so a repo with sidecars but no buil
 index still resolves. A route index that says covered but whose sidecar is
 unreadable reports `missing` (don't probe further).
 
-`_attach_front_door` builds the session-deduplicated front-door: the repo overview
+`_attach_front_door` builds the front-door deduplicated by lifecycle and resolved code/onboarding roots: the repo overview
 (`overview.md` at the onboarding root via `_repo_overview`) plus the governing
 route-overview chain for each requested path (`_governing_route_overviews`, nearest
 folder first, excluding the repo root which is delivered as `repository_overview`).
 Each piece is hashed (`_content_hash`, `sha256:`) and run through `_should_serve`:
 with no active lifecycle there is no ledger so everything is served (best effort);
-otherwise a piece is served only when `amb.is_served` says it is new or
-content-changed, and `amb.record_served` records it. Each request path is
+otherwise `_overview_scope_key` hashes the resolved code and onboarding roots into the
+repo/route overview kind, and a piece is served only when `amb.is_served` says it is new or
+content-changed for that lifecycle and root pair; `amb.record_served` records that same identity. Each request path is
 re-`_confined_rel`'d here so the front-door's route derivation never depends on
 `_read_one` having confined it first.
 
@@ -204,6 +207,10 @@ ever appears it is honored once.
   every parsed request, so a path this entry point accepted is the path the intent read is asked about;
   path confinement and the intent seed are one spelling, not two.
 
+### Role Runtime and Scope
+
+Overview dedup now keys each lifecycle entry by both resolved code root and onboarding root through _overview_scope_key. Identical relative overview paths/content from different admitted leaves no longer suppress each other. The published-intent chain shortening and the MIK knowledge projection remain their existing separate logic.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -225,3 +232,8 @@ ever appears it is honored once.
 | `ROUTE_OVERVIEW_NAME` consumed read-only for the front-door route derivation. | `ROUTE_OVERVIEW_NAME` | mcp/src/agents_remember/kernel/route_index.py:17-17 |
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
+
+### Runtime Source References
+
+- Frozen implementation of _overview_scope_key supporting the stated file behavior. [7]
+- Frozen implementation of _attach_front_door supporting the stated file behavior. [8]

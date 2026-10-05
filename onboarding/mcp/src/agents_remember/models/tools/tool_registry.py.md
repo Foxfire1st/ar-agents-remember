@@ -9,6 +9,8 @@
 `tool_registry.py` maps every modeled payload operation to its response model and derives the
 advertised public subset by excluding internal compatibility and administration operations.
 
+Maps public tool operation names to their declared response contracts.
+
 ## Code Commentary
 
 L23 registers response envelopes for `citation_fix` and `worktree_operation_cancel`, keeping the public registry aligned with the newly exposed tools.
@@ -23,6 +25,10 @@ The public set now includes structural dispatch, message, child lifecycle, and g
 landing operation.
 Exact terminal session operations, operator inbox administration, legacy gate composition, and
 orchestration nudge builders remain modeled for trusted callers but are deliberately not public.
+
+### Role Runtime and Scope
+
+TOOL_RESPONSE_MODELS adds role_start=RoleStartResponse and role_message=RoleMessageResponse. This retains the strict owned-field response contract and common _tool_payload validation/token path; provider-native flexible response policy is unchanged.
 
 ## Invariants And Boundaries
 
@@ -57,6 +63,10 @@ No configured domain documentation was available.
 - The five rows the knowledge registrar needs, at the mapping's tail to match their appended roster position. [9]
 - The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names. [10]
 - The three strict contracts the capsule rows map to, including the shared success/refusal capsule envelope. [11]
+
+### Runtime Source References
+
+- Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior. [13]
 
 ## L23 Lifecycle Model Package Review
 

@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of _parse_service_tier supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
+            "content": "sha256:1f3717367e05643747bb649a0f1b85ab934558c626be9ffc1e1bf0d4674677d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_service_tier"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
+            "content": "sha256:9ab9869ec686c0617f4596206a008c79cb48cdeb929982e3e656c4d2b83bb75a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_roles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

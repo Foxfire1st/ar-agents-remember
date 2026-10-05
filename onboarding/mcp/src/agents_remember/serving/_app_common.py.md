@@ -9,6 +9,8 @@
 Defines shared serving request/composition models and helper seams used by the split FastAPI route
 modules.
 
+Declares shared serving request and collaborator seams without importing application-tier owners.
+
 ## Code Commentary
 
 ### Logic
@@ -78,6 +80,10 @@ a valid body.
 
 None.
 
+### Role Runtime and Scope
+
+ServingCollaborators adds optional extra_api_routes callable owned by the composition root, registered before final static mount. This permits CLI/application adapters above serving to install launch routes while retaining the existing capsule/knowledge/reviewer collaborator ports and layer boundary.
+
 ## Evidence
 
 ### Docs References
@@ -97,6 +103,10 @@ No Domain Documentation source is configured.
 ### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+### Runtime Source References
+
+- Frozen implementation of ServingCollaborators supporting the stated file behavior. [12]
 
 ## 260921-ICR-L3 The Third Review Port On The Collaborator Record
 

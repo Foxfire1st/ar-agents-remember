@@ -4,23 +4,18 @@
 
 [dashboard/src overview](../overview.md)
 
-## 260731-EFA-L8 Change
+## Historical 260731-EFA-L8 Change
 
 The frontend-rail split re-wired this file's imports to the new kebab-case
 component folders (`detail-panel/`, `lifecycle-list/`, `sessions-view/`) and the
 engine-room styles barrel, and the lint remediation touched memoization and hook
-dependencies. View-map behavior is unchanged: `SessionsView` stays mounted and its
-display toggles (`display: view === "chats" ? "flex" : "none"`).
+dependencies. At that historical point, `SessionsView` stayed mounted and its
+display toggled (`display: view === "chats" ? "flex" : "none"`). The current Chats owner is
+RoleChatsPane, as described below; the import/memoization note remains historical context.
 
 ## Purpose
 
-The production cockpit shell owns persistent chrome, route/takeover selection, live projection
-wiring, and keep-alive full-page layers. FEUI-L8 exposes Operations, Engine Room, Files, and exactly
-one Chats destination; Operations is initial, the former Sessions item is retired, and the canonical
-Chats layer is the persistently mounted session cockpit. The shell owns the one catalog poll plus
-eager/cross-tab reconciler, threads selected lifecycle/leaf/task context into `SessionsView` and
-`RailChat`, and moves highlight focus/view only after accepted delivery names an exact live session.
-Within the full-page cockpit, `ChatContextBar` owns launch and attach/move controls.
+The production shell owns dashboard chrome, view/takeover selection and shared projection consumers; full-page Chats directly hosts the Role chats launcher and embedded Paseo frame.
 
 RailChat remains the contextual right-rail surface beside Operations; Notes/Change-Set takeovers and
 the other existing routes retain their established ownership. The dev lifecycle-design canvas stays
@@ -90,6 +85,10 @@ optional fingerprint remains neutral rather than falsely stale.
 
 ### Logic
 
+MainLayers mounts RoleChatsPane in the existing keep-alive ViewLayer, passing current taskDocuments and series. active reflects Chats visibility and takeover coverage. A view switch hides the existing pane rather than replacing it. Shared session poll/reconciliation and contextual RailChat retain their separate consumers. Persistent layer identity is independent of task acceptance.
+The current Chats mount does not receive the old SessionsView lifecycle/leaf props; it receives
+canonical taskDocuments and series, while RailChat and HighlightComposer retain their own context.
+
 Since L15 the cockpit top bar renders the muted servingBuild stamp (commit short-hash + boot time from the state payload) — the ghost-process lesson made visible: a stale dashboard server is identifiable at a glance. **260707-HFX2-L2 (R5)** adds a second top-bar indicator right beside it: `AgentNotifierHeartbeatBadge` (renamed from `SupervisorHeartbeatBadge` in 260713-TES-L1) reads `s.agentNotifierHeartbeat` from the store (the store accepts the legacy `supervisorHeartbeat` wire key as a fallback during the rename window) and renders nothing when `lastTickAt` is `null` (the agent-notifier has never ticked in this workspace — `dashboard.autoStart` is opt-in, so "no row yet" is not itself an alarm); once a tick exists, it shows `"agent-notifier ok/stale <age>"` with a `title` tooltip naming the exact `lastTickAt`/`staleCutoffSeconds`. **260718-CHATS-L5P (R5/A4/B9):** the age is now HUMANIZED via `humanizeDuration(ageSeconds*1000)` (`6 d 2 h`, never the raw `9512.1m`), and a long-stale agent-notifier degrades to a QUIET-distinct amber `caution({sev:"warn"})` — NOT the pulsing cried-wolf red it used past the cutoff before (six-day staleness is expected for an idle workspace, not a fault to alarm on); a fresh heartbeat stays the muted `dim` class. **260707-HFX2-L8 (R6)** extends the same badge with `inbox redeliverable/pending` and latest sweep duration, so a growing operator-inbox storm is visible beside the heartbeat before staleness fires. This is issue #15's "the watcher must be code AND watched" made visible in the SAME top bar that already carries `servingBuild` — "the last turtle is the developer's glance."
 
 `Cockpit` wires the two SSE streams (`connectState`, `connectEvents`) then renders
@@ -104,21 +103,22 @@ pre-`ready` backlog replay (incl. the undecodable-cursor full-window replay) can
 live rows (L2 review finding 2). A third effect starts the refcounted 2500 ms catalog poll driver
 (`data/catalogPoll.startCatalogPollDriver`) unconditionally, so the session feed stays alive with
 ANY view — or none — in front. `CockpitShell` is the sole production owner of both the driver and
-the eager/cross-tab reconciler; `SessionsView` consumes the resulting shared store without starting
-a second timer. `CockpitShell`
+the eager/cross-tab reconciler. That shared session store still serves retained session consumers;
+the current RoleChatsPane uses its native frame/launcher channel and is not a second session-catalog
+timer owner. `CockpitShell`
 holds `view` + `selectedId` state and derives `fullBleed = view === "files" || view === "engine" ||
 view === "topology" || view === "chats"`. Both the **File Viewer** (slice L2) and **Chats** views are
 full-bleed AND kept mounted as persistent CSS-hidden layers in `CockpitShell` (a `filesLayer` / `chatsLayer`
 div toggled by `display`), not routed through `ViewBody`, so switching tabs never unmounts them: the File
-Viewer's repo/scope selection, open file, and expanded tree state survive a switch, as does the live xterm
-terminal + WebSocket.
+Viewer's repo/scope selection, open file, and expanded tree state survive a switch; the current
+Role chats pane retains its native iframe and launcher/navigation state. This is not an xterm/PTY mount.
 Task 29 wires the raw Event River readiness signal through this shell: `connectEvents` receives
 `markEventsHydrated` as its `ready` callback, so the right rail can show "Syncing event history." until
 the backend has emitted the retained backlog and the explicit ready marker.
 The body is the `bodyGrid` cva: the railed 3-column shell when `!fullBleed`, a single full-width column
 when `fullBleed`. The two `<aside>` rails (`rail--left` = attention queue + lifecycle list;
-`rail--right` = event river) render only when `!fullBleed`, so a machine-map view unmounts them for a
-clean expand; they fade back in via a `motion.aside` gated by `useShouldAnimate()` (instant under
+`rail--right` = event river) remain mounted and are hidden while full-bleed, retaining rail state;
+their transitions use a `motion.aside` gated by `useShouldAnimate()` (instant under
 `data-effects=off` / reduced-motion, keeping snapshots stable). `ViewBody` switches the centre by
 `view`; the mode bar is the `<ModeBar>` primitive. `open(id)` selects a node AND jumps to Operations.
 **Operations-integration L4** adds a `changeSet` TAKEOVER: `CockpitShell` holds a `changeSet:
@@ -157,49 +157,40 @@ copies are where this gap kept reappearing. **5g G6** adds an `EffectsToggle` to
 reads live, so the engine-room backdrop + all gated motion respond at once) and persists the choice to the
 `calm-cockpit` localStorage flag `main.tsx` reads on the next load. **Slice 6f** mounts the
 `HighlightComposer` once in `CockpitShell` (after the mode bar): a cockpit text selection raises it to
-send a context package to a chat session, and its `onSent` flips to the Chats view so the operator sees
-the injection land. **L8** narrows that flow when the target is obvious: `CockpitShell` now passes the
+send a context package to a chat session, and its `onSent` still flips to the Chats view after
+accepted delivery. That existing session-target flow does not by itself steer the native iframe;
+RoleChatsPane targets its own selected native execution receipt. **L8** narrows that flow when the target is obvious: `CockpitShell` now passes the
 current `selectedLifecycleId`, the lifted `viewedLeafKey`, and `leafChatActive={!fullBleed && railView ===
 "chat"}` into `HighlightComposer`; only that composer decides whether to bypass the generic target picker
 and draft-paste into the existing leaf chat. The shell still does not submit chat text or build the
 context package. **Slice 6g** threads `open` into `DetailPanel` as `onOpenLifecycle`, so a
 cross-master `→` row or a parent `↑` breadcrumb in the task reader switches the selected lifecycle
 through the same `open(id)` path.
-**Historical, superseded FEUI-L1 seam.** FEUI-L1 briefly registered a separate `"sessions"` route
-and mounted `SessionsView` there. FEUI-L8 retired that route and the legacy `Chats` component. The
-landed shell now has only the product-facing `"chats"` destination and mounts one
-`<SessionsView active={view === "chats"} ... />` inside `chatsLayer`; `display` and `aria-hidden`
-hide it without unmounting. The internal `[data-view="sessions"]`/`sessions-*` markers remain the
-WebTUI and keyboard implementation scope, not a second product route. `SessionsView` renders
-`ChatContextBar`, which owns its launch and attach/move controls.
+**Historical FEUI-L1/FEUI-L8 seam.** FEUI-L1 briefly registered a separate "sessions" route
+and mounted SessionsView there. FEUI-L8 retired that route and the legacy Chats component, then
+used one SessionsView inside chatsLayer. That historical mount is now replaced by RoleChatsPane;
+the existing display/aria-hidden keep-alive layer remains. The retained session-cockpit modules
+and their WebTUI/keyboard markers still describe their own legacy consumers. ChatContextBar owns
+those modules' launch/attach/move controls, not the current full-page Role chats launcher.
 **Task 17** keeps `selectedId` as the shared Operations selection key, but normalizes raw ids from
 older surfaces through `lifecycleSelectionKey(id)` so the list/detail path can use typed keys
 (`taskdoc:` / `series:` / `lifecycle:`). `selectedLifecycleId` is derived through
-`lifecycleIdForSelection`, so `SessionsView` and `HighlightComposer` still attach to the lifecycle behind a
-selected runtime row or task-document row. That is the attach seam: hosted chats created while a
-lifecycle-backed task document is selected inherit the lifecycle tag, and highlighted context targets
-can be filtered to that lifecycle's hosted chat.
-**Slice L5** adds the leaf-keyed rail chat. `CockpitShell` holds a `railView: "river" | "chat"` state
-and renders an inline `RailToggle` (a two-segment `role="radiogroup"` mirroring `EffectsToggle`'s cva
-look) above the rail content, replacing the hard `<EventRiver/>` in `rail--right` with a switch between
-`<EventRiver/>` and `<RailChat leafKey={viewedLeafKey} selectedLifecycleId={…}/>`. **L5 fix 1** changes
-the leaf-key source: instead of `leafKeyForSelection(selectedId, …)` (which keyed off the top-level
-selection = the master), the shell holds a `viewedLeafKey` state set from `DetailPanel`'s new `onViewLeaf`
-callback — threaded down through `ViewBody` (`setViewedLeafKey`) — so it is the leaf the panel is
-**actually showing** (a drilled sub-task / a directly-opened leaf doc; `undefined` for a master/series
-overview), its durable qualified id (`repo/master/leaf-id`, not the enclosure). The state is **lifted to
-the shell** so it survives a `DetailPanel` unmount (a full-bleed view switch) and reaches both the rail
-and the full-page session cockpit. `taskDocuments` is read from `analytics?.taskDocuments` (memoized
-through a stable `EMPTY_TASK_DOCS`) and, with `viewedLeafKey` as `selectedLeafKey`, passed into
-`SessionsView`; its `ChatContextBar` uses that context for attach/move and leaf labels. The rail chat
-and the full-page cockpit surface the **same**
-session because both consume the shared catalog-backed `data/sessions` store. Their transport owners
-remain separate: `RailChat` registers raw connections while `PtySurface` owns the full-page PTY.
-(`leafKeyForSelection` in
-`data/taskIdentity.ts` is now superseded/unused.) **L6** also reads `analytics?.engineProcesses` through a
-stable `EMPTY_ENGINE_PROCESSES` fallback and passes it into `<RailChat>` beside `taskDocuments`. The shell
-does not build or deliver the context package itself; it only supplies the process projection so the rail can
-include worktree-group/code-worktree/memory-worktree facts at the leaf bind point.
+`lifecycleIdForSelection`, so RailChat and HighlightComposer retain the lifecycle context behind a
+selected runtime row or task-document row. The old SessionsView attach seam belongs to the
+historical session surface; current RoleChatsPane launch selection comes from canonical task
+references rather than the Operations lifecycle selection.
+The leaf-keyed rail chat remains a separate surface. CockpitShell retains the River/Chat
+RailToggle and a viewedTask context supplied through DetailPanel's onViewTask callback; viewedLeafKey
+is derived from that context, so it names the leaf actually being read rather than the top-level
+master selection. This state survives hiding the persistent body. RailChat receives viewedLeafKey,
+selectedLifecycleId, taskDocuments and the projected engineProcesses for leaf/worktree context.
+
+The former full-page SessionsView received selectedLeafKey and composed ChatContextBar/PtySurface;
+that historical receiver is gone from MainLayers. Current RoleChatsPane receives taskDocuments
+and series for its canonical launcher and AR navigation, independently of rail-session selection.
+The shell supplies the process projection to RailChat rather than building or delivering its
+context package itself. The superseded leafKeyForSelection helper is not the current source of
+viewedLeafKey.
 
 
 **One comment, and it records a shape the dispatch already supported.** The `ChangeSetTakeover` component's review branch gained a comment stating that a review target may carry a subject's selector **or none at all** — the task-context entry opens the review on the task, and `ReviewSurface` asks the server for exactly what it was handed. The dispatch itself was not changed: it already forwarded an optional selector, which is why the task-context target reaches the surface without a code change here. Nothing else in the cockpit moved, and the two lines are the whole of this file's diff.
@@ -269,12 +260,21 @@ No relevant domain documentation was found for this file.
 
 ### Repo-Internal References
 
+The current source extents below record the reviewed UI contract. Inline test names/facets are source-bound evidence; the installed writer cannot create typed proves from those call titles, and these citations do not claim such a proof or a rerun.
+
+| Finding | Anchor | Source at frozen tree |
+| --- | --- | --- |
+| Current source owner or exact assertion described above. | `MainLayers` | `dashboard/src/cockpit/Cockpit.tsx:757-819` |
+| Current source owner or exact assertion described above. | `RoleChatsPane` | `dashboard/src/cockpit/Cockpit.tsx:811-816` |
+| Current source owner or exact assertion described above. | `ViewLayer` | `dashboard/src/cockpit/Cockpit.tsx:737-767` |
+| The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. | `directly shows one persistent Role chats pane without an old-chat selector` | `dashboard/src/cockpit/Cockpit.test.tsx:768-798` |
+
 - The body grid bleed variant switches between three railed columns and a single full-width column. [2]
 - Files, Engine Room, Topology, and Chats request the full-bleed layout. [3]
 - Rail fade properties are selected by the animation permission. [4]
 - The visible registry has exactly one Chats destination, no Sessions route and, since 260928-MIK-L29, a Knowledge destination; Engine Room, Topology, and Chats are full-bleed, and Knowledge is not. [5]
 - The `chatsLayer` keep-alive class used by the Chats layer. [6]
-- The canonical Chats session cockpit the shell mounts once; `SessionsViewImpl` composes `ChatContextBar` and `SessionRail`, and reaches `PtySurface` through `ChatsStageBody`, not directly. [7]
+- The retained legacy session-cockpit implementation composes ChatContextBar/SessionRail and reaches PtySurface through ChatsStageBody; it is not the current full-page Chats mount. [7]
 - `EffectsToggle` (✦ Effects / ❄ Calm) — flips `data-effects` + persists `calm-cockpit`. [8]
 - The boot-time effects flag it persists to. [9]
 - The honest-motion gate the rail transition + the toggle drive. [10]
@@ -284,11 +284,11 @@ No relevant domain documentation was found for this file.
 - The reader's hash parser. [14]
 - The seat-event application + per-connection backlog gate this shell holds (`applySeatEventLine`, `createGatedSeatEventApplier`). [15]
 - The refcounted catalog poll driver started unconditionally here (`startCatalogPollDriver`). [16]
-- Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from `DetailPanel.onViewLeaf`). [17]
-- The detail panel that reports the displayed leaf up via `onViewLeaf` (feeding `viewedLeafKey`). [18]
+- Typed task/lifecycle selection helpers used by `open` and `selectedLifecycleId` (`leafKeyForSelection` is now superseded — the leaf key comes from DetailPanel.onViewTask context). [17]
+- The detail panel reports current viewed-task context through onViewTask, from which the shell derives viewedLeafKey for the rail. [18]
 - The single-instance right-rail leaf chat the `RailToggle` swaps in for the Event River; `RailChatImpl` takes `engineProcesses` here for leaf-context worktree facts. [19]
-- The mounted Chats session view receives the selected leaf key from the cockpit. [20]
-- The full-page duty bar owns launch and server-first attach/move controls (`ChatContextBar`, `ChatSessionActions`). [21]
+- The old selected-leaf receiver belonged to the historical SessionsView mount; current MainLayers supplies taskDocuments and series to RoleChatsPane. [20]
+- Legacy ChatContextBar/ChatSessionActions retain attach/move ownership for their remaining session consumers; the current full-page launcher is RoleChatsPane. [21]
 - The highlight composer that filters targets by `selectedLifecycleId` and, for L8, receives `viewedLeafKey` + `leafChatActive` so obvious leaf selections can draft-paste into the adjacent rail chat. [22]
 - The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [23]
 - The cockpit passes the process-map prop into `RailChat`. [24]
@@ -312,7 +312,7 @@ No applicable cross-repository source was found.
 The shell now exposes `operations | engine | files | chats`; the former Sessions destination and legacy Chats layer are gone. It owns both catalog poll and eager/cross-tab reconciliation for its lifetime, keeps one persistent `SessionsView` as Chats, and moves highlight route/focus only after accepted delivery to an exact live id.
 
 This section records the FEUI-L8 review point. That candidate subsequently landed in code authority
-`31f58834f86c0d98e26b0896e099a2403a8729ee`, which this card now verifies.
+`31f58834f86c0d98e26b0896e099a2403a8729ee`, which identifies the recorded historical FEUI-L8 review point.
 
 ## 260921-ICR-L12 The Takeover Hands The Record To The Review Surface
 

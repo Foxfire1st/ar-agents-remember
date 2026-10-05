@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of server_info_payload supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf0e03efa8495a1263f99ad581f55f8e6d14eae5",
+            "content": "sha256:f1463d24b082b7e94cd482d973d596f1decad624b169388aab3e8ff48f5389b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "server_info_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of context_packet_payload supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf0e03efa8495a1263f99ad581f55f8e6d14eae5",
+            "content": "sha256:5e0c9dd2f3ba0cee4fc3d12009d9bf20ee0f37b014759ba45fd969394979b485",
+            "locator": {
+              "kind": "symbol",
+              "name": "context_packet_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

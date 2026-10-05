@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Runtime-scoped caching and pre-creation validation prevent a choice cached from another home creating an unintended workspace or role."
+  },
+  "applicability": "Dashboard launcher catalog and its handover preparation.",
+  "conditions": [],
+  "exclusions": [
+    "role_start intentionally refreshes its catalog per call.",
+    "Service-tier capability behavior has its separate R17 owner."
+  ],
+  "id": "INV-RQ2ZB8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_catalog.py::LauncherOptionsTests::test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers; mcp/tests/test_paseo_catalog.py::LaunchValidationTests::test_a_launch_is_validated_against_the_catalog_before_anything_is_created; l3-run/evidence/options-04-architect-refresh.json; l3-run/evidence/dispatch-01-unoffered-model.json"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R02@v1 §6",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The catalog is cached per Paseo runtime (install prefix, home, listen address, version) in the process, is loaded when the cache is empty and rediscovered only when the options request carries `refreshCatalog`; a role change, an `agentId` and a launch reuse it, and a launch's agent, model and effort are validated against it before the workspace is resolved, so a refused selection creates nothing.",
+  "status": "proposed",
+  "supersedes": []
+}

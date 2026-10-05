@@ -162,49 +162,11 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 
 ## Purpose
 
-This route owns the self-contained lifecycle for each role. Every file states what one seat is,
-which task-document altitude it occupies, the loop and artifacts it owns, its communication path,
-and the work it must refuse or escalate.
+This route owns one canonical file per role. The current native launcher exposes seven roles: Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Other registry files remain in the corpus without becoming launchable through this path. Each delivered native capsule contains its selected role followed by one applicable operation, while canonical task/workspace facts arrive separately in the handover; the retained shared core is not injected.
 
-260915-CAPS-L1 rewrote all nine files here into one readable order — purpose and authority → required
-inputs → normal workflow → permitted writes and actions → stop and escalation cases → completion and
-handoff, then the machine-readable knob block — and each declares the shared sources it composes
-with in an `**Inherits:**` line instead of restating them, because the shared rules moved into a new
-sibling `core/` and the procedures into `operations/`. A role file may name a sibling role file only to
-wear that hat or dispatch that seat (architect → designer; orchestrator → strategist, designer;
-strategist → manager; reviewer → manager); the shipped corpus check fails on any other reference. The
-route's files are 2,792 → 2,322 lines in total, and the router that selects between them is no longer a
-doctrine source.
+Architect owns the developer’s semantic conversation and may directly coordinate distinct Worker, Reviewer and Curator agents. Orchestrator is an optional selected-sprint coordinator and Manager an optional selected-master coordinator, both at Projects. Worker, Reviewer and Curator use the selected paired leaf scope. Architect and System Specialist may start manually without task references and ask only for missing scope; separate repository-foundation admissions keep their own contract.
 
-**That L1 paragraph records what L1 did; it is not the current shape.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling)
-rewrote all **ten** role files here — architect, orchestrator, strategist, designer, manager, worker,
-reviewer, curator, system-specialist and bootstrap — out of the L1 section shape and into one **function
-shape**: every file is now `# <Role>` followed by `## Inputs`, `## Process`, `## Outputs`,
-`## What you may do`, `## What you must not do`, and a closing `## Stop and …` section, plus a per-role
-extra only where a role genuinely has one (`### The checks you owe` in the worker, `## Seam scope, when
-your brief names one` in the reviewer, `## Terminal custody — rows whose whole owner chain is dead` and
-`## The one hat-collapse this lifecycle allows, and its limit` in the architect). The numbered
-`## 1 — Purpose And Authority` … `## 6 — Completion And Handoff` sections, the
-`## Knobs, Tool Surface, And Dispatch Authority` block, and the `**Inherits:**` declaration line are all
-**gone** from these files; the composed sources are named inside `## Inputs` instead. Any citation into
-this route that still names one of those headings is stale. The ten files now total **1,578** lines
-(L1 recorded 2,322 across nine), and the corpus test that enforced the old readable order and the knob
-block no longer exists under that name — `mcp/tests/test_role_instruction_corpus.py` keeps `ROLE_ORDER`
-and `SANCTIONED_SIBLING_REFERENCES`, but not
-`test_every_role_source_carries_the_readable_order_and_knob_block`. The `core/` and `operations/`
-siblings are unchanged by this pass.
-
-**The line-count change is a structural fact, not a measured context reduction** (labelled by
-260915-CAPS-L10, which measured the capsule this corpus feeds). Fewer lines in the role files does not
-mean a session reads less: the shared rules and procedures moved into the sibling `core/` and
-`operations/` blocks, and a role's capsule now composes them per role and per operation. The one
-measurement that exists reports the assembled **capsule larger** than the legacy startup chain at the
-worker elevation (**11,828** vs **5,928** tokens, **+5,900**; like-for-like 11,645, **+5,717**), with
-manager and architect **UNMEASURED** (`binding-unresolved`) and **adoption acceptance FAILED** —
-disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
-launcher routing). **No card may describe this route as saving context**; the claim this route may carry
-is the single-source, role-addressed structure itself — one canonical file per role, its composed
-sources named in `## Inputs`, and every other tree generated from it by `scripts/sync-skills.py`.
+Worker implements the approved leaf and leaves code uncommitted. Reviewer examines the complete requested candidate, exact requirement evidence and sealed findings independently. Curator preserves MIK’s converted writer, authored scope/rationale, exact families/siblings, full normal MQC/coherence and comparison evidence. Native host language changes no owner’s review, curation or paired-Git duty. Dated L1/L22 structure and L10 token measurements remain historical candidate facts, not descriptions or measurements of this current route.
 
 ## Hot Path Summary
 
@@ -289,25 +251,21 @@ remain read/search helpers and never become AR role seats.
 
 ## Conventions
 
-- A role file is complete enough to start from its brief without transcript history.
-- The source role files are canonical; packaged copies are exact synchronization outputs.
-- Each role writes its artifact of record and communicates structurally one rung at a time.
-- Shared dispatch/authority doctrine remains in the parent `SKILL.md`.
-- Every role table names whether that role is an ambient target, a plane-hosted caller, or
-  target-only; the request never carries a caller-mode selector.
+- Canonical role files own doctrine; package/harness role files are exact synchronization outputs.
+- Read selected canonical tasks/packets through supplied exact arguments and actual bound schemas; recover prior rulings and approvals across reconnects.
+- Preserve actual agent IDs, report and handover paths. Native starts/messages use `agents-remember-task`; a manually dashboard-started role needs no parent.
+- Keep distinct builder, independent reviewer, curator and semantic/publication owners. Add hierarchy only where coordination helps.
+- Use current source anchors for current claims; retain dated older structure and metrics as historical evidence rather than current section pointers.
 
 ## Invariants And Boundaries
 
-- Manager owns a real master; worker/reviewer/curator own real leaves.
-- Role replacement preserves the task-document/role address.
-- `dispatch_agent` is the only public spawn verb. Ambient and plane authority are disjoint even
-  though both use the same exact-brief transaction.
-- Builder, reviewer, curator, and owner duties remain separate.
-- Curator completion requires the required missing-onboarding and full-quality reruns to name no
-  curator-actionable work.
-- No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
-- Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
-- No role may collapse per-requirement evidence into an aggregate completion claim.
+- One leaf owns one approved primary requirement; inherited/adjacent requirements remain preservation constraints or dependencies.
+- Task/workspace/recipient/parent identity is supplied or resolved by the owning AR boundary, never invented from Projects or a chat title.
+- A rejected candidate returns finding-specific repair to the same Worker. Requested fix-verification preserves the sealed baseline and outstanding IDs.
+- Normal Curator authoring remains complete: full contract-scoped MQC, exact blocked findings and required coherence. A report-only admission is bounded and never reported as that normal pass.
+- No role absorbs another role’s write authority, creates duplicate uncertain work or treats turn status/tests as semantic acceptance or Git publication.
+- Commit-derived memory attribution follows the real source commit through the governed closeout owner.
+- Per-requirement worker/reviewer evidence is preserved; aggregate completion prose cannot replace it.
 
 
 ## CCR-R12@v5 Lifecycle Boundary
@@ -443,3 +401,87 @@ rule is about the completeness of curation, not about unscoped runs, so "complet
 operation at the leaf's contract scope. The ruling is forward-looking: the already-landed and finalized
 leaves are not re-curated, and whole-layer completeness is discharged by L11's full-scope run at the
 frozen tip.
+
+## Current native instruction evidence
+
+- Taskless subject and flat semantic-owner coordination. [19]
+- Optional master coordination and exact paired scope. [20]
+- Optional sprint coordination and separate evidence. [21]
+- Bound uncommitted Worker duty. [22]
+- Independent exact assigned review and sealed findings. [23]
+- Bound and preserved normal Curator duties. [24]
+- Taskless real concern and report-first remediation. [25]
+
+## Retained pre-import corpus account and measurements
+
+The following text is retained verbatim from the pre-import source account. Its dated measurements, source counts and old composition vocabulary describe those recorded candidates; the current native contract is stated above.
+
+### Former Purpose
+
+This route owns the self-contained lifecycle for each role. Every file states what one seat is,
+which task-document altitude it occupies, the loop and artifacts it owns, its communication path,
+and the work it must refuse or escalate.
+
+260915-CAPS-L1 rewrote all nine files here into one readable order — purpose and authority → required
+inputs → normal workflow → permitted writes and actions → stop and escalation cases → completion and
+handoff, then the machine-readable knob block — and each declares the shared sources it composes
+with in an `**Inherits:**` line instead of restating them, because the shared rules moved into a new
+sibling `core/` and the procedures into `operations/`. A role file may name a sibling role file only to
+wear that hat or dispatch that seat (architect → designer; orchestrator → strategist, designer;
+strategist → manager; reviewer → manager); the shipped corpus check fails on any other reference. The
+route's files are 2,792 → 2,322 lines in total, and the router that selects between them is no longer a
+doctrine source.
+
+**That L1 paragraph records what L1 did; it is not the current shape.** leaf `260915-CAPS-L22` (under the developer's 2026-09-17 ruling)
+rewrote all **ten** role files here — architect, orchestrator, strategist, designer, manager, worker,
+reviewer, curator, system-specialist and bootstrap — out of the L1 section shape and into one **function
+shape**: every file is now `# <Role>` followed by `## Inputs`, `## Process`, `## Outputs`,
+`## What you may do`, `## What you must not do`, and a closing `## Stop and …` section, plus a per-role
+extra only where a role genuinely has one (`### The checks you owe` in the worker, `## Seam scope, when
+your brief names one` in the reviewer, `## Terminal custody — rows whose whole owner chain is dead` and
+`## The one hat-collapse this lifecycle allows, and its limit` in the architect). The numbered
+`## 1 — Purpose And Authority` … `## 6 — Completion And Handoff` sections, the
+`## Knobs, Tool Surface, And Dispatch Authority` block, and the `**Inherits:**` declaration line are all
+**gone** from these files; the composed sources are named inside `## Inputs` instead. Any citation into
+this route that still names one of those headings is stale. The ten files now total **1,578** lines
+(L1 recorded 2,322 across nine), and the corpus test that enforced the old readable order and the knob
+block no longer exists under that name — `mcp/tests/test_role_instruction_corpus.py` keeps `ROLE_ORDER`
+and `SANCTIONED_SIBLING_REFERENCES`, but not
+`test_every_role_source_carries_the_readable_order_and_knob_block`. The `core/` and `operations/`
+siblings are unchanged by this pass.
+
+**The line-count change is a structural fact, not a measured context reduction** (labelled by
+260915-CAPS-L10, which measured the capsule this corpus feeds). Fewer lines in the role files does not
+mean a session reads less: the shared rules and procedures moved into the sibling `core/` and
+`operations/` blocks, and a role's capsule now composes them per role and per operation. The one
+measurement that exists reports the assembled **capsule larger** than the legacy startup chain at the
+worker elevation (**11,828** vs **5,928** tokens, **+5,900**; like-for-like 11,645, **+5,717**), with
+manager and architect **UNMEASURED** (`binding-unresolved`) and **adoption acceptance FAILED** —
+disposition **REVISE**. Obligation preservation is intact (**36/36** across ten declared roles plus
+launcher routing). **No card may describe this route as saving context**; the claim this route may carry
+is the single-source, role-addressed structure itself — one canonical file per role, its composed
+sources named in `## Inputs`, and every other tree generated from it by `scripts/sync-skills.py`.
+
+
+### Former Conventions
+
+- A role file is complete enough to start from its brief without transcript history.
+- The source role files are canonical; packaged copies are exact synchronization outputs.
+- Each role writes its artifact of record and communicates structurally one rung at a time.
+- Shared dispatch/authority doctrine remains in the parent `SKILL.md`.
+- Every role table names whether that role is an ambient target, a plane-hosted caller, or
+  target-only; the request never carries a caller-mode selector.
+
+
+### Former Invariants And Boundaries
+
+- Manager owns a real master; worker/reviewer/curator own real leaves.
+- Role replacement preserves the task-document/role address.
+- `dispatch_agent` is the only public spawn verb. Ambient and plane authority are disjoint even
+  though both use the same exact-brief transaction.
+- Builder, reviewer, curator, and owner duties remain separate.
+- Curator completion requires the required missing-onboarding and full-quality reruns to name no
+  curator-actionable work.
+- No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
+- Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
+- No role may collapse per-requirement evidence into an aggregate completion claim.

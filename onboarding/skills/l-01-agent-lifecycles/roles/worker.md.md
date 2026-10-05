@@ -6,18 +6,13 @@
 
 ## Purpose
 
-The worker is one short-lived implementation seat on one canonical leaf document. It reads its
-complete brief and leaf task document, changes code in the named worktree, runs prescribed
-leaf-scoped checks, and writes the mandatory builder turn report. Its terminal state is checks green
-plus report written.
+This canonical Worker implements one selected leaf’s approved primary requirement and explicit preservation constraints in its paired code worktree. The handover names the task/packet revision, code root, read-only memory root, contract and report. It leaves one truthful uncommitted candidate/report with failed and unrun checks visible; a finished turn is not AR acceptance.
 
 ## Logic
 
-The worker orients by pairing current worktree reads with onboarding and coding guidelines before
-the first edit. It implements the approved leaf, fills only small unambiguous gaps, and records
-changed paths, diff summary, tests, retrieval evidence, escalations, and onboarding observations in
-the turn report. Observations are evidence for a separate curator; the worker does not write
-accepted onboarding.
+Resolve apparent missing task facts through the named canonical task/packet with supplied exact arguments, extensionless slug and returned canonical path. Read selected assignment documents and target source before editing, confirm paired roots, and make the smallest complete change within approved scope. Do not infer another task or load the complete hierarchy by default. Run relevant brief/repository checks and report exact outcomes; source observations remain evidence for the separate Curator.
+
+The following producer/evidence/attempt constraints are preserved related task/review contracts; they do not expand the leaf’s single primary requirement or grant the Worker semantic acceptance.
 
 Beside the report the worker emits **the curator hand-off list** — every requirement-shaped item of
 the leaf in the shape `../templates/curator-handoff-list.md` owns, one entry per item with its own
@@ -51,33 +46,26 @@ Those records live in one physical leaf journal shared as an ordered append-only
 independent reviewer. The separate worker turn report links newly appended attempt anchors and
 does not duplicate their authority.
 
-Closeout, integration, finalization, gates, task-document status, and memory quality belong to the
-owning seat/curator chain. The worker communicates upward with structural `message_parent`; the
-control plane derives the current parent occupant. Completion follows the durable report plus
-terminal/finalizer truth, not a runtime-addressed model post.
+Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report. A parent-started Worker tells its actual handover parent once with bound role_message; a dashboard-started Worker has no parent and replies in its own chat. Questions for the developer stay there.
 
-The role table classifies worker as target-only. Only its manager is the ordinary plane-hosted
-dispatch caller; an orchestrator or architect plane seat cannot dispatch a worker directly. An
-identity-free developer launcher may target the leaf worker only for an explicit task-seat
-takeover. The worker has no `dispatch_agent` caller authority or ambient recovery path, and its
-dispatch/tools rows are structural documentation rather than settings keys.
+Architect or Orchestrator may directly start Workers through the native role tools within admitted scope; Manager is optional. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 
 ## Conventions
 
 - One leaf, one worker seat, one physical attempt journal, one link-only turn report, and one
   curator hand-off list.
 - Native reads in the actual worktree are the edit precondition.
-- Read/search fan-out may assist, but the main worker owns edits and the report.
+- Worker owns edits and the report; native role-start authority is not granted to this role.
 - Fix rounds resume the same worker when possible and append round evidence.
-- A plan delta beyond blank filling escalates one rung to the owning seat.
+- New scope or a missing decision returns to the actual task owner/developer through the admitted own-chat or bound-parent route.
 
 ## Invariants And Boundaries
 
 - Worker identity is the canonical leaf document plus `worker` role.
 - Worker never commits, closes out, integrates, decides gates, or mutates accepted memory.
 - Worker never absorbs manager, reviewer, curator, architect, orchestrator, or strategist work.
-- No seat-local watcher or polling loop substitutes for the agent-notifier fact relay.
-- Runtime session and lifecycle ids remain private control-plane correlation.
+- No duplicate owner or background poller substitutes for canonical task and bound host facts.
+- Use actual returned/handed-over agent IDs; do not invent a parent, recipient or delivery result.
 - An aggregate “requirements addressed” statement is never terminal evidence.
 - Internal pre-review candidate changes never consume attempt IDs. A reviewer-rejected handoff
   advances through an immutable successor; unrelated post-acceptance movement does not reopen
@@ -93,7 +81,7 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 ### Repo-Internal References
 
-- The worker is one leaf-scoped builder whose terminal state is checks plus report. [1]
+- Worker provides one truthful leaf report and uncommitted candidate; checks and turn ending are evidence, not AR acceptance. [1]
 - Intake binds writes to the named code worktree and report path. [2]
 - Orientation requires current worktree reads and coding guidelines before edits. [3]
 - Build produces implementation plus evidence for the separate curator. [4]
@@ -104,13 +92,13 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 - Checks have their own explicit reportable step. [9]
 - The worker builds one leaf in one session and delivers one scoped change set plus one report. [10]
 
-## R39 Generic Worker Doctrine
+## Historical R39 Generic Worker Doctrine
 
 The canonical worker role requires the brief to carry the repository-resolved acceptance
 environment and evidence. Workers do not select a host runner or compatibility fallback; leaf
 closeout and master integration own the only acceptance runs.
 
-## 260815-DAG-L2 Leaf Quality Altitude
+## Historical 260815-DAG-L2 Leaf Quality Altitude
 
 The worker brief now carries the leaf's execution nature and nature-appropriate source edge. A leaf
 receives one repository-defined change-set-scoped acceptance at closeout and no integration rerun.

@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:cab2ff8fd613e943210ccc87819562eec5f87eb2edbfac4a50b42bab964afcbd",
             "locator": {
-              "end": 442,
+              "end": 461,
               "kind": "line_range",
-              "start": 427
+              "start": 446
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -49,7 +49,7 @@
         },
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:a1668f40a36918e7d16511503f4cf7f4f1ab15b5a0e31f86dfe953bd40362f99",
             "locator": {
               "end": 36,
@@ -61,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:b843fc5d205e51414827e73a11fb76b3396c10d08b4458bee1fcbe7348819416",
             "locator": {
               "end": 155,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:074fc5111cf95faca8cad270b11cfafbfb7ce428f884ea288abb35e0290a20ec",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:2a3aaad2b9e669c90696d2ba2250dc2a3d75fe2d374f2d45f06204955d2a000e",
             "locator": {
               "end": 42,
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:1b9074eed8dc40a09a932f74fc30a81a93f2abf322f480e1548b3ac6b03cc8e4",
             "locator": {
               "kind": "symbol",
@@ -134,7 +134,7 @@
         },
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:feb5f6de23da5454d47cd564a4141169a21ca4afc32a34a8c9b38352ac17d1f0",
             "locator": {
               "kind": "symbol",
@@ -145,7 +145,7 @@
         },
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:05611a572bb11a6b6ca98f47b4d6d68595d82dc3355a4ff2b14ed2f5621af19f",
             "locator": {
               "end": 35,
@@ -162,13 +162,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
             "locator": {
               "kind": "symbol",
               "name": "FileReadStatus"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Frozen implementation of _overview_scope_key supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
+            "content": "sha256:ce51e5df51f054d6a1188ae3e0cff0ea2a004eb5d117d12710e6eadaa46caa75",
+            "locator": {
+              "kind": "symbol",
+              "name": "_overview_scope_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Frozen implementation of _attach_front_door supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
+            "content": "sha256:1a2c8b0653d371ff26564fb07e8615013e2fee14fd22dbb934bd38df4d57db83",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_front_door"
+            }
           },
           "kind": "code"
         }

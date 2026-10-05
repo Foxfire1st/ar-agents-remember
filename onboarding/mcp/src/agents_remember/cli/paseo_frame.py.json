@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_frame.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of frame_descriptor supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea8baed550e58248b4b347a9853e30c294019db",
+            "content": "sha256:446cd90929966fedddc54ef9d0775161e01b0752b96b6abd33095483405ef494",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_descriptor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of frame_base_url_for supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea8baed550e58248b4b347a9853e30c294019db",
+            "content": "sha256:0a5e86fd0af26e80df5a27df7b2121455e0c286967fb38a11fb4736cd4c7f898",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_base_url_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of host_frame_facts supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eea8baed550e58248b4b347a9853e30c294019db",
+            "content": "sha256:20c4574cb94241fce609a3add0b5ae252c176dd06effcd03572900c4844f9ad3",
+            "locator": {
+              "kind": "symbol",
+              "name": "host_frame_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

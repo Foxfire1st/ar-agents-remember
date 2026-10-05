@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Explicit empty values prevent stale task references or seat identities replacing absent values in a new launch."
+  },
+  "applicability": "Environment of the agent-bound stdio server.",
+  "conditions": [],
+  "exclusions": [
+    "Other inherited environment follows the definition carrier rules."
+  ],
+  "id": "INV-W71C4N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ToolServerDefinitionTests::test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it; l5-review/evidence/23-stray-binding-server-info.txt; l5-verify/evidence/19-f2-by-hand.txt, 24-f2-architect-strays.txt, 21-tool-server-processes.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §2 / C5 / F2 (what is emitted)",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The definition's environment always carries all seven binding variables (`AR_PASEO_AGENT_ID`, `AR_ROLE`, `AR_REQUEST_ID`, `AR_REPORT_PATH`, `AR_SPRINT_REF`, `AR_MASTER_REF`, `AR_TASK_REF`), a reference the selection does not have as an empty value, and the two seat-identity variables `AR_SPAWN_ROLE` and `AR_HOSTED_SESSION_ID` emptied, so that nothing the tool server inherits from the harness that starts it takes the place of what the launch gave.",
+  "status": "proposed",
+  "supersedes": []
+}

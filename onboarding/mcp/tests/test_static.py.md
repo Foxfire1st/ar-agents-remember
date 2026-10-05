@@ -8,6 +8,10 @@
 
 Serves controlled built-bundle and missing-bundle worlds. Entry HTML revalidates while assets retain their own cache policy; missing output returns 503 with the actual build command and no-store, while the API remains usable. A source checkout without a built bundle is an explicit supported state, not evidence of an installed UI.
 
+## Current source account
+
+New cases reserve unknown /api paths from static fallback for GET/HEAD/POST/PUT/DELETE both with and without a bundle. Registered API routes retain success or wrong-method 405; API-prefixed lookalikes and assets keep static behavior. A companion case keeps index/assets served and missing-bundle 503 notice intact; OPTIONS is not part of the matrix.
+
 ## Code Commentary
 
 ### Logic

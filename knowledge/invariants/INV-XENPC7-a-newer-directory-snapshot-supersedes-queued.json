@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts enforces per-directory snapshot and load-generation boundaries while client/bridge.ts stops associated DOM observation, preventing old queued or late loads from resurrecting removed actors or continuing stale selection publication."
+  },
+  "applicability": "Initial, replacement and update snapshots within one embedded SDK catalog lifetime.",
+  "conditions": [
+    "A replacement snapshot supersedes queued older changes only for its own directory kind.",
+    "Only the newest live load generation may publish."
+  ],
+  "exclusions": [
+    "Post-snapshot updates and updates from other directory kinds survive.",
+    "Catalog errors remain errors rather than successful empty catalogs.",
+    "A stopped bridge publishes no later SDK or DOM changes."
+  ],
+  "id": "INV-XENPC7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F4 actual-helper before/final reproduction and extended overlapping-directory regression; existing pagination/reconnect/teardown cases.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::replaces directory snapshots on reconnect and releases subscriptions and buttons on teardown | exact facet: Overlapping replacement snapshots suppress old queued/late actor results, preserve unrelated and newer updates, and release project listeners, SDK subscriptions and Parent pills. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 188 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::validates visible selections against current SDK IDs, recovering after catalog load and clearing removed or reconnected IDs | exact facet: After bridge teardown, a DOM selection mutation produces no further published selection. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 244 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 §6 / directory snapshot boundaries",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A newer directory snapshot supersedes queued older changes for that directory only; post-snapshot and unrelated updates survive, older async loads cannot resurrect removed chats, and teardown releases owned SDK/DOM/button resources.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/build_roots.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+        "content": "sha256:a88d27ac281f0e0a5cc1adae4e87de64c27458facd32fec86b43b17fdb2670d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_roots"
+        }
+      },
+      "id": "RLZ-SWJE71",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Loads the selected build settings and collects configured and derived roots.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+        "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_configuration_paths"
+        }
+      },
+      "id": "RLZ-V5V45M",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Walks every absolute Path held in the loaded configuration, including unknown field positions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+            "content": "sha256:4a0d79eb2032965ca0b4a40723db4e597f06e7e4b33236a7a05f57e9961f77a6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

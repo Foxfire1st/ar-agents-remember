@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ce4c933479dbe1f7d31b34450ff93cf46ec8b5fc",
+        "content": "sha256:afcd14ec7564354e5b34c3c31559845e5a891620147c104bc97b75b1f93369d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-XXYE2Y",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Owns the initially open navigation boolean and hands its controlled toggle to the launcher and its value to the existing frame.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

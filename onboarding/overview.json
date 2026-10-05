@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 76,
+              "end": 96,
               "kind": "line_range",
-              "start": 74
+              "start": 94
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -500,12 +500,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:170d5be35803f966e84b811e99d7508ca0182c79593b49d0fbd645257b65ab24",
             "locator": {
-              "end": 77,
+              "end": 101,
               "kind": "line_range",
-              "start": 77
+              "start": 101
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1276,7 +1276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
+            "blob": "bed4f6d8990db5cc102d9154e84d2dad0dfe20c7",
             "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
             "locator": {
               "end": 26,
@@ -1383,7 +1383,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "23851f0ea6dc3443f622dcea49cfd25c04137634",
+            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
             "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
             "locator": {
               "kind": "symbol",
@@ -1395,7 +1395,7 @@
         },
         {
           "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
+            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
             "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
             "locator": {
               "kind": "symbol",
@@ -1461,7 +1461,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
             "content": "sha256:65834d3f907eca8375c6601717d851557c5ff09ec2a380aec51e31208717bc87",
             "locator": {
               "kind": "symbol",
@@ -1473,7 +1473,7 @@
         },
         {
           "anchor": {
-            "blob": "bb94e80858d5081445a4b8394fbb17728c44a320",
+            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
             "content": "sha256:34d3d6d03ff45632c0188906245cb44d87c9545078f7e96e329bf5681a6abab6",
             "locator": {
               "kind": "symbol",
@@ -1542,14 +1542,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
-              "end": 101,
+              "end": 125,
               "kind": "line_range",
-              "start": 96
+              "start": 120
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+            "content": "sha256:2dcc98d7a34ea9ca6bf7e63d522ad604a8a6f711a36ec93ea4fbcfd3010192ee",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
           "kind": "code"
         }
@@ -1560,14 +1576,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 111,
+              "end": 135,
               "kind": "line_range",
-              "start": 108
+              "start": 132
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:efa68e8081960f183be7f5037244291a471decef1050c6c46d8d6af7e084ed83",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:3130ddb07b0eaef76c7b89799befa83a7971ac0b119546f5be141e2c23a03434",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
           "kind": "code"
         }

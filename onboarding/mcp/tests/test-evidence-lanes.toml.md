@@ -1,6 +1,6 @@
 # mcp/tests/test-evidence-lanes.toml
 
-## 260928-MIK-L37 Two Lane Rows — The Reopen And Cutover Cases — **the current account**
+## 260928-MIK-L37 Two Lane Rows — The Reopen And Cutover Cases — **historical source account**
 
 `mcp/tests/test_knowledge_reopen.py` (the L37 reopen ruling: a reopened leaf's next attempt through the writer, the
 gate, the validator's freeze, the index, the onboarding gate and record landing; attempt naming; closing the latest
@@ -18,7 +18,7 @@ integration lane, including the dependency-ownership census, passes: 458 passed 
 
 - The two L37 rows, after the gate-routes row and before the planned-effects row. [238]
 
-## 260928-MIK-L33 One Lane Row — The Change-Kind Cases — **the current account**
+## 260928-MIK-L33 One Lane Row — The Change-Kind Cases — **historical source account**
 
 `mcp/tests/test_review_change_kinds.py` (MIK-R33: every member occurrence's change kind from a store-authored four-tree
 comparison, the shared member, returned members only, unreadable sidecars, family records and trees, definition 8 on
@@ -36,7 +36,7 @@ gate and change-kind suites passed on the merged tree).
 
 - The MIK-R33 row, after the unexplained-lane row and before the artifact-cleanup row. [1]
 
-## 260928-MIK-L09 Two Lane Rows — The Mandatory Closeout Gate And Its Routes — **the current account**
+## 260928-MIK-L09 Two Lane Rows — The Mandatory Closeout Gate And Its Routes — **historical source account**
 
 `mcp/tests/test_knowledge_closeout_gate.py` (MIK-R09: the currentness rules and the packet's examples, the per-kind
 dispatch, incomplete runs, the validator's history-row rule, each route's gate, the insertion-only symmetry, the
@@ -57,7 +57,7 @@ including the census, passes: 457 passed).
 
 - The two MIK-R09 rows, after the onboarding-gate row and before the planned-effects row. [2]
 
-## 260928-MIK-L32 One Lane Row — The Unexplained-Changes Lane Cases — **the current account**
+## 260928-MIK-L32 One Lane Row — The Unexplained-Changes Lane Cases — **historical source account**
 
 `mcp/tests/test_review_unexplained_lane.py` (MIK-R32: file buckets, hunk classes at each side's recorded blob, the two
 destinations and their reconciliation, the per-file response with links, revisions and membership states, the entry
@@ -75,7 +75,7 @@ including the dependency-ownership test, passed without a re-pin).
 
 - The MIK-R32 row, after the git-trees row and before the artifact-cleanup row. [3]
 
-## 260928-MIK-L14 One Lane Row — The Reconsideration Cases — **the current account**
+## 260928-MIK-L14 One Lane Row — The Reconsideration Cases — **historical source account**
 
 `mcp/tests/test_reconsideration_surfacing.py` (MIK-R14: the manifest lookup, the five triggers, one hop, the
 `still_rejected` and `raise` rows with the task-document append, the reorder guard `R14.1`, route targets,
@@ -90,7 +90,7 @@ lanes themselves are unchanged; the leaf's one catalog consumer line and its For
 
 - The MIK-R14 row, after the unexplained-change row (`:126`). [4]
 
-## 260928-MIK-L29 One Lane Row — The Knowledge Reader Cases — **the current account**
+## 260928-MIK-L29 One Lane Row — The Knowledge Reader Cases — **historical source account**
 
 `mcp/tests/test_knowledge_reader.py` (MIK-R29: the path-based knowledge reader's explorer, path view, bounded
 directory and paged subtree, truth views, three-source timeline, census, selections, failures, route and
@@ -106,7 +106,7 @@ touched (the dependency-ownership integration test passed without a re-pin).
 
 - The MIK-R29 row, after the index-surfaces row (`:107`) and before the paging row. [5]
 
-## 260928-MIK-L05 One Lane Row — The Route-Chain Cases — **the current account**
+## 260928-MIK-L05 One Lane Row — The Route-Chain Cases — **historical source account**
 
 `mcp/tests/test_knowledge_route_chain.py` (MIK-R05: the chain over nested directories, compact entries after the
 leaf content, `memberAtSeed`, `no_governing_family`, the conforming example, expansion from a family seed, the
@@ -122,7 +122,7 @@ catalog consumer lines and its Forty-first re-pin are recorded on `evidence-life
 
 - The MIK-R05 row, after the leaf-read row (`:109`). [6]
 
-## 260928-MIK-L10 One Lane Row — The Unexplained-Change Cases — **the current account**
+## 260928-MIK-L10 One Lane Row — The Unexplained-Change Cases — **historical source account**
 
 `mcp/tests/test_unexplained_change_disposition.py` (MIK-R10: the two unexplained-change kinds, coverage by
 realization entries or a migrated route, the `no_invariant` row, attach and author by linkage, delete-only
@@ -137,7 +137,7 @@ line and its Fortieth re-pin are recorded on `evidence-lifecycle.toml.md` and
 
 - The MIK-R10 row, after the archive-hook row (`:123`). [7]
 
-## 260928-MIK-L25 Two Lane Rows — The Reviewer On Git Trees And The Archive Hook — **the current account**
+## 260928-MIK-L25 Two Lane Rows — The Reviewer On Git Trees And The Archive Hook — **historical source account**
 
 `mcp/tests/test_review_git_trees.py` (MIK-R25 rules 1–4 and 6: four trees and pins, idempotent re-reads, the tree
 view, reopen and `unavailable-history`, the converted base, the legacy comparison, the no-`.sqlite` check, the
@@ -151,7 +151,7 @@ those of their own time. The lanes themselves are unchanged; there is no catalog
 
 - The two MIK-R25 rows, after the decision-record row (`:121`). [8]
 
-## 260928-MIK-L13 One Lane Row — The Decision-Record Cases — **the current account**
+## 260928-MIK-L13 One Lane Row — The Decision-Record Cases — **historical source account**
 
 `mcp/tests/test_knowledge_decisions.py` (MIK-R13: the decision content rules in the validator, the derived
 `superseded` status and `reconsider_on` subjects, requirement endpoints resolved by their owner and never refused,
@@ -165,7 +165,7 @@ unchanged; there is no catalog change or re-pin.
 
 - The decision-record row, after the planned-effects row (`:120`). [9]
 
-## 260928-MIK-L01 One Lane Row — The Leaf-Read Cases — **the current account**
+## 260928-MIK-L01 One Lane Row — The Leaf-Read Cases — **historical source account**
 
 `mcp/tests/test_knowledge_leaf_read.py` (MIK-R01: the family-complete leaf read's selection and order, one
 selection on both surfaces, family names in the `invariant` view, the conforming example, the failure states,
@@ -178,7 +178,7 @@ The lanes themselves are unchanged.
 
 - The leaf-read row, after the paging row (`:108`). [10]
 
-## 260928-MIK-L06 One Lane Row — The Family Route Condition Cases — **the current account**
+## 260928-MIK-L06 One Lane Row — The Family Route Condition Cases — **historical source account**
 
 `mcp/tests/test_family_route_conditions.py` (MIK-R06: the four family route conditions as
 `family_route_condition` worklist items, the carried dead route, the dead-at-B exemption, the rename-mapped
@@ -191,7 +191,7 @@ those of their own time. The lanes themselves are unchanged; there is no catalog
 
 - The family route condition row, after the Eve protocol row (`:68`). [11]
 
-## 260928-MIK-L11 One Lane Row — The Planned-Effects Cases — **the current account**
+## 260928-MIK-L11 One Lane Row — The Planned-Effects Cases — **historical source account**
 
 `mcp/tests/test_planned_knowledge_effects.py` (MIK-R11: the `expectedKnowledgeEffects` field, matching and
 the `planned`/`unplanned` marks, the planned row answering its item, the writer's planned rows and the task
@@ -203,7 +203,7 @@ the earlier sections' prose are those of their own time. The lanes themselves ar
 
 - The planned-effects row, after the onboarding-trace row (`:117`). [12]
 
-## 260928-MIK-L02 One Lane Row — The Paging Cases — **the current account**
+## 260928-MIK-L02 One Lane Row — The Paging Cases — **historical source account**
 
 `mcp/tests/test_knowledge_paging.py` (MIK-R02: the cross-surface walk, threshold adherence over randomized
 families, the oversized row, binding refusals, the projection over the artifact limit, the whole-block bound,
@@ -216,7 +216,7 @@ The lanes themselves are unchanged.
 
 - The paging-cases row, after the index-surfaces row (`:106`). [13]
 
-## 260928-MIK-L30 One Lane Row — The Onboarding Trace Gate Cases — **the current account**
+## 260928-MIK-L30 One Lane Row — The Onboarding Trace Gate Cases — **historical source account**
 
 `mcp/tests/test_onboarding_trace_gate.py` (MIK-R30: the counted-change rule, the card and nearest-route
 items, rows and unnecessary rows, moved markers, the fail-closed cases for mixed formats and unreadable
@@ -229,7 +229,7 @@ lanes themselves are unchanged.
 
 - The onboarding-trace row, after the worklist-leaf row (`:115`). [14]
 
-## 260928-MIK-L03 One Lane Row — The Currentness Cases — **the current account**
+## 260928-MIK-L03 One Lane Row — The Currentness Cases — **historical source account**
 
 `mcp/tests/test_knowledge_currentness.py` (MIK-R03: each entry state, precedence, `unrealized`, stale proofs,
 the per-side computation, the cache key, Git failures, and the `knowledge_read` and published-intent
@@ -241,7 +241,7 @@ earlier sections' prose are those of their own time. The lanes themselves are un
 
 - The new row, after the anchor-content row (`:111`). [15]
 
-## 260928-MIK-L08 Two Lane Rows — The Change-To-Knowledge Worklist Cases — **the current account**
+## 260928-MIK-L08 Two Lane Rows — The Change-To-Knowledge Worklist Cases — **historical source account**
 
 `mcp/tests/test_knowledge_worklist.py` (MIK-R08 definitions 2 to 8 and rules 1 to 6 on real Git fixtures)
 and `mcp/tests/test_knowledge_worklist_leaf.py` (the leaf route: pairing, sync, persistence, the tool, the
@@ -252,7 +252,7 @@ leaf re-pointed the citations to those rows. The lanes themselves are unchanged.
 
 - The two new rows, after the proof-cases row (`:112`). [16]
 
-## 260928-MIK-L28 One Lane Row — The First-Class Test Proof Cases — **the current account**
+## 260928-MIK-L28 One Lane Row — The First-Class Test Proof Cases — **historical source account**
 
 `mcp/tests/test_knowledge_proofs.py` (MIK-R28 rules 2, 4, 5 and 6: both evidence forms and unresolvable
 evidence in the writer, the facet the curator authors, the `proofs` of the `invariant` and `family` views,
@@ -265,7 +265,7 @@ unchanged (MIK-R28's preservation boundary).
 
 - The new row, after the anchor-content row (`:111`). [17]
 
-## 260928-MIK-L24 Three Lane Rows — The Conversion And Crossing Cases — **the current account**
+## 260928-MIK-L24 Three Lane Rows — The Conversion And Crossing Cases — **historical source account**
 
 `mcp/tests/test_knowledge_conversion.py` (MIK-R24 rules 1–4 and 6: the conversion over fixture cards and a
 legacy database, determinism, the pinned version and its golden digest, the refusal that writes nothing,
@@ -283,7 +283,7 @@ citations.
 
 - The three new rows, between the writer row (`:107`) and the anchor-content row (`:111`). [18]
 
-## 260928-MIK-L12 Two Lane Rows — The Curator Writer Cases — **the current account**
+## 260928-MIK-L12 Two Lane Rows — The Curator Writer Cases — **historical source account**
 
 `mcp/tests/test_knowledge_writer.py` (MIK-R12: every knowledge kind written as validated files through the
 curator file writer and the `knowledge-ingest`/`knowledge-bootstrap` file route — the conforming example,
@@ -299,7 +299,7 @@ those citations.
 
 - The two new rows, the index row they follow and the ingest row after them. [19]
 
-## 260928-MIK-L20 Two Lane Rows — The Migration Census Cases — **the current account**
+## 260928-MIK-L20 Two Lane Rows — The Migration Census Cases — **historical source account**
 
 `mcp/tests/test_knowledge_census_files.py` (MIK-R20 rules 1–3 and 6: the `ar-census-*/v1` file formats, the
 route slugs, the mechanical inventory and its Git reading, the census writer, and the nine census rules in
@@ -314,7 +314,7 @@ re-pointed those citations.
 
 - The two new rows, the validator row they follow and the index row after them. [20]
 
-## 260928-MIK-L04 One Lane Row — The Family Route Cases — **the current account**
+## 260928-MIK-L04 One Lane Row — The Family Route Cases — **historical source account**
 
 `mcp/tests/test_knowledge_family_routes.py` (MIK-R04: the validator's family route rules, the reported
 states, the root route `.`, the mechanical route suggestion and the `knowledge-routes` command) is
@@ -326,7 +326,7 @@ one line lower than on the base `ffd043f1`, and this leaf re-pointed those citat
 
 - The new row between its alphabetical neighbours. [21]
 
-## 260928-MIK-L23 Three Lane Rows — The Derived Knowledge Index Cases — **the current account**
+## 260928-MIK-L23 Three Lane Rows — The Derived Knowledge Index Cases — **historical source account**
 
 `mcp/tests/test_knowledge_index.py` (MIK-R23 rules 1–5: the two tree sources, the key, the answers, the
 partial state, the cache and the `knowledge-index` command), `mcp/tests/test_knowledge_index_reuse.py`
@@ -341,7 +341,7 @@ re-pointed those citations.
 
 - The three rows and the census row they now follow. [22]
 
-## 260928-MIK-L22 Two Lane Rows — The Knowledge Validator Cases — **the current account**
+## 260928-MIK-L22 Two Lane Rows — The Knowledge Validator Cases — **historical source account**
 
 `mcp/tests/test_knowledge_validator.py` (MIK-R22's rules 1–9 over converted fixture trees) and
 `mcp/tests/test_knowledge_validator_routes.py` (rule 8's integration points: the Git tree readers, the
@@ -355,7 +355,7 @@ citations.
 
 - The two new rows and the row they follow. [23]
 
-## 260928-MIK-L07 One Lane Row — The History-File Cases — **the current account**
+## 260928-MIK-L07 One Lane Row — The History-File Cases — **historical source account**
 
 `mcp/tests/test_knowledge_history_files.py` (MIK-R07's per-leaf history-file cases) is registered as a
 `unit-regression` row directly after `mcp/tests/test_knowledge_file_formats.py`, at `:98`. The module is
@@ -366,7 +366,7 @@ citations.
 
 - The new row and the row it follows. [24]
 
-## 260928-MIK-L21 Two Lane Rows — The Text Knowledge Format Cases — **the current account**
+## 260928-MIK-L21 Two Lane Rows — The Text Knowledge Format Cases — **historical source account**
 
 `mcp/tests/test_knowledge_file_canonical.py` and `mcp/tests/test_knowledge_file_formats.py` (MIK-R21's
 formatter and format-model cases) are registered as `unit-regression` rows directly after
@@ -406,7 +406,7 @@ the exact-consumer `read_scope_test_support` module. Without the row the lane ga
 
 - The one new row in the unit-regression lane. [29]
 
-## 260921-ICR-L7 One Lane Row — The Explicit-Revision-Comparison Cases — **the current account**
+## 260921-ICR-L7 One Lane Row — The Explicit-Revision-Comparison Cases — **historical source account**
 
 This leaf registers **one** module, `mcp/tests/test_knowledge_review_revision_selection.py`, as a
 `unit-regression` row **inserted mid-list** in the knowledge run — at `:111`, immediately after
@@ -451,7 +451,7 @@ account:**
 citation-reprojection owner's, and any row below an insertion that this card or an earlier account cites
 has moved with it.
 
-## 260921-ICR-L21 One Lane Row — The Final-Output-Receipt Cases — **the current account**
+## 260921-ICR-L21 One Lane Row — The Final-Output-Receipt Cases — **historical source account**
 
 `260921-ICR-L21` (ICR-R21@v1) registers **one** module,
 `mcp/tests/test_review_final_output_receipt.py`, as a `unit-regression` row: it sits at
@@ -481,8 +481,8 @@ current lines.**
 - What the module measures: the real comparison over real snapshot pairs plus the adapter's own head-selection function. [34]
 - The catalog digest this leaf does not move, and the census that confirms it. [35]
 
-## 260921-ICR-L16 One Lane Row — The Review-Route Refusal Cases — **the current account**
-## 260921-ICR-L13 One Lane Row — The Master-Net Generation Cases — **the current account**
+## 260921-ICR-L16 One Lane Row — The Review-Route Refusal Cases — **historical source account**
+## 260921-ICR-L13 One Lane Row — The Master-Net Generation Cases — **historical source account**
 
 This leaf registers **one** module, `mcp/tests/test_master_net_generation.py`, as a `unit-regression`
 row **inserted mid-list** in the knowledge run — at `:114`, immediately after
@@ -829,7 +829,7 @@ it, and a cited line number is only true against one revision of this file.**
 card's earlier population paragraphs remain the as-of records of the leaves that wrote them and are
 not restated here as current.
 
-## 260921-ICR-L3 One Lane Row — The Source-Content Case Module — **the current account**
+## 260921-ICR-L3 One Lane Row — The Source-Content Case Module — **historical source account**
 
 This leaf registers **one** module, `mcp/tests/test_knowledge_review_source_content.py`, as a
 `unit-regression` row **inserted mid-list** in the alphabetical knowledge run — immediately after
@@ -883,7 +883,7 @@ row is the only content this leaf added to the file.
 - What the module measures, and why it needs a real repository rather than a stub: the real routes over the real owners, and the independent Git observation every text is asserted against. [41]
 - The two catalog consumer rows the same module joined, and the counts they do not move. [42]
 
-## 260921-ICR-L11 Lane Row — The Durable-Comparison-Generation Cases — **the current account**
+## 260921-ICR-L11 Lane Row — The Durable-Comparison-Generation Cases — **historical source account**
 ## 260921-ICR-L11 Lane Row — The Durable-Comparison-Generation Cases — **the previous account, superseded on the row and the populations above**
 
 This leaf registers **one** module, `mcp/tests/test_knowledge_review_comparison_generation.py`, as a
@@ -934,7 +934,7 @@ by a carried delta, and the one new row is the only content this leaf added.
 - The module's own lane declaration, which is what makes the classification its own rather than a budget convenience. [47]
 - What the module actually measures, and why it needs a real repository rather than a stub. [48]
 
-## 260921-ICR-L20 One Lane Row — The Ordinary Publication Route's Case Module — **the current account**
+## 260921-ICR-L20 One Lane Row — The Ordinary Publication Route's Case Module — **historical source account**
 
 This leaf registers **one** module, `mcp/tests/test_knowledge_ingest_publication_route.py`, as a single
 row appended to the existing **`unit-regression`** array at **`:89`** — immediately after the two rows
@@ -977,7 +977,7 @@ the merged bytes rather than shifted by a remembered delta.
 - The two consumer rows in the evidence catalog that the same module joined. [55]
 - **The manifest's own shape facts this account states: 333 lines, 203 unit-regression entries.** [56]
 
-## 260921-ICR-L18 Two Lane Rows — The Comparison-Generation And Failure-Window Modules — **the current account**
+## 260921-ICR-L18 Two Lane Rows — The Comparison-Generation And Failure-Window Modules — **historical source account**
 
 This leaf registers **two** modules, `mcp/tests/test_knowledge_ingest_comparison_generation.py` and
 `mcp/tests/test_knowledge_ingest_failure_windows.py`, as `unit-regression` rows **inserted mid-list** in
@@ -1021,7 +1021,7 @@ rows are the only content this leaf added.
 - The two insertions move no existing row of the lane above them, so earlier entries keep their lines. [60]
 - The two modules' own statement of what they measure, and the extraction that put the failure surface in a second module. [61]
 
-## 260915-KS-L21 Lane Row (Declared) — **the current account**
+## 260915-KS-L21 Lane Row (Declared) — **historical source account**
 
 This leaf registers **one** module, `mcp/tests/test_migration_census.py`, as a `unit-regression` row
 **inserted mid-list** in the alphabetical knowledge run — after `test_memory_scope_task_derivation.py` at
@@ -1299,7 +1299,7 @@ regression guards this leaf added.
 | `provider-conformance` | **13**, rows `242-255` |
 | `stress-durability` / `migration` | **0** / **0** |
 
-## 260915-KS-L16 Lane Rows (Declared) — **the current account**
+## 260915-KS-L16 Lane Rows (Declared) — **historical source account**
 This leaf registered **three** modules: two under `unit-regression`, inserted mid-list among the knowledge
 suites, and one appended to `integration`. The two mid-list insertions are what moved every later line of
 this file by two:
@@ -1343,8 +1343,8 @@ nothing.
 into this file from any route card — moved by two. That is the mechanical reason several other
 cards' ranges into this manifest were stale on this candidate and were re-cited during this leaf's
 curation.
-## 260915-KS-L14 Lane Rows (Declared) — **the current account**
-## 260915-KS-L12 Lane Rows (Declared) — **the current account**
+## 260915-KS-L14 Lane Rows (Declared) — **historical source account**
+## 260915-KS-L12 Lane Rows (Declared) — **historical source account**
 **Two new rows, and the line shifts they caused everywhere else.** `mcp/tests/test_knowledge_evidence_claims.py` and `mcp/tests/test_knowledge_evidence_observations.py` are registered in the `unit-regression` lane (rows 73 and 74), each carrying `pytestmark = pytest.mark.evidence_unit`. Every *other* file that cites a line of this manifest moved by the same insertion, and the citations in the cards that quote this file were repaired to the lines that now carry their anchors rather than left pointing at the row above. The lane membership is asserted by the gate rather than by this file alone: a module in the tree that no lane names fails the ownership check.
 ## 260915-KS-L14 Lane Rows (Declared) — **the previous account, superseded on the two rows above**
 
@@ -1479,7 +1479,7 @@ figure quoted in this card's history is stale.
 
 ## Purpose
 
-**Population measured in the 260915-KS change set (this branch).** Classifies 217 retained test-shaped modules into explicit evidence categories: **126 unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty** (measured in the 260915-KS-L4 change set, which is the account that supersedes every per-lane number recorded below). The 260915-KS-L1 change set registered `test_knowledge_store.py` in **unit-regression** (row 74 in the current manifest), the 260915-KS-L2 change set registered four further knowledge modules in that same lane (rows 69-73), and the 260915-KS-L3 change set registered `test_candidate_batch_commands.py` and `test_candidate_batch_transaction.py` (rows 18-19) plus `test_knowledge_label_operations.py` (row 70). The KS-L3 section below carries the measured current brackets; the KS-L2 and KS-L1 sections are those leaves' as-of records. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member.
+**Historical population measured in the 260915-KS change set.** Classifies 217 retained test-shaped modules into explicit evidence categories: **126 unit-regression, 2 public-contract, 60 integration, 16 architecture-fitness and 13 provider-conformance; stress-durability and migration are empty** (measured in the 260915-KS-L4 change set, which is the account that supersedes every per-lane number recorded below). The 260915-KS-L1 change set registered `test_knowledge_store.py` in **unit-regression** (row 74 in the current manifest), the 260915-KS-L2 change set registered four further knowledge modules in that same lane (rows 69-73), and the 260915-KS-L3 change set registered `test_candidate_batch_commands.py` and `test_candidate_batch_transaction.py` (rows 18-19) plus `test_knowledge_label_operations.py` (row 70). The KS-L3 section below carries the measured current brackets; the KS-L2 and KS-L1 sections are those leaves' as-of records. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member.
 
 **Population measured on the official line at the `260831-LOCR-L39` hardening tip (the incoming account).** Classifies the retained test-shaped modules into explicit evidence categories. **Current population measured at the `260831-LOCR-L39` hardening tip (code base `a5f5380b`): 224 modules on disk and 224 manifest entries — 130 unit-regression (key `:5`, rows 6-135, next key `:137`), 2 public-contract (key `:137`, rows 138-139), 62 integration (key `:141`, rows 142-203), 17 architecture-fitness (key `:205`, rows 206-222) and 13 provider-conformance (key `:224`, rows 225-237); stress-durability (`:239`) and migration (`:241`) are empty. The unit-regression bracket is `:5-135`, the integration bracket is `:141-203`.** The L05 measurement and its method are in the `## 260831-LOCR-L04 Lane Row (Declared)` and `## 260831-LOCR-L05 Lane Row (Declared)` sections below; the `## 260831-LOCR-L06 Lane Row (Declared)` section carries the immediately preceding 215-module measurement (pair code base `e9678c56`), the `## 260831-LOCR-L17 Lane Row (Declared)` section the 214-module one before that and the `## 260831-LOCR-L18 Lane Row (Declared)` section the 213-module one before that. Every count and bracket in the two paragraphs below is an earlier measurement — L23 measured 208 modules, and sibling unit-lane insertions from L01 (`:97`) and L10 then moved the later file lines down; L27's own integration row at `:183` accounts for the rest; those two declared sections are the as-of records that carry their own evidence. The focused terminal-evidence cursor suite `test_terminal_evidence_cursors.py` and the parked-external-await separation guard `test_parked_external_await_separation.py` are unit-regression members, and 260831-LOCR-L32 added `test_worktree_status_terminal_next_tool.py` to the **integration** lane (row 175; it drives real worktree services and a real repository under `tmp_path`), while 260831-LOCR-L34 added `test_checkpoint_landing_end_to_end.py` to that same lane (row 132; it drives the public checkpoint/closeout operations over real temporary Git repositories), and 260831-LOCR-L36 added `test_cross_master_concurrency.py` to that lane as well (row 143; it drives two sprint-commanded atomic masters and the public land/resume operations over one real temporary Git world), while 260831-LOCR-L37 added `test_pause_stop_only_end_to_end.py` to that same lane (row 159; it drives the public pause over one real temporary Git world holding two atomic masters and measures refs, object databases, coordination tree, worktrees and task documents before and after) **and** `test_pause_is_not_publication.py` to **architecture-fitness** (row 191; it is an AST-only import-closure guard that executes nothing), and the 260831-LOCR seal-removal change set added `test_lifecycle_playthrough_end_to_end.py` to **integration** (row 153; it plays the whole leaf-and-master lifecycle in order over one real temporary Git world and is the regression proof for the deleted child-admission seal). The 260913-LCA-L7 change set added one more integration member.
 
@@ -2180,11 +2180,19 @@ acceptance evidence, and the verification stamps remain closeout-owned.
 
 ## Current verification scope
 
-The reviewer operation and copied-index capture modules have explicit unit-regression lane rows. The existing serving integration row remains unchanged; no runtime boundary test is relabelled by curation.
+The existing reviewer-operation and copied-index capture rows remain unit-regression,
+and their serving/public-preview operations remain integration. Imported runtime, bridge,
+launch, message, status, sandbox and removal guards have explicit unit-regression rows.
+The real tool-server start, role-handover binding and registered canonical-reader protocol
+rows are integration. These lane declarations do not certify that a test ran.
 
 ## Current preview-proof registration
 
 The registered public preview module is an integration-lane operation, alongside the two preserved L40 unit-regression rows. Curation does not move the public boundary into a helper-only lane or infer certification from the declaration.
+
+## Current source account
+
+New Paseo runtime, bridge, launch, messaging, sandbox and previous-host cases are registered in unit-regression. The real child tool-server, role-handover binding and registered canonical-reader protocol cases are in integration. Shared support modules collect no cases and gain no lane row.
 
 ## Code Commentary
 

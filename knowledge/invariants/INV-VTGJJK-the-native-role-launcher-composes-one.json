@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The router and manifest independently carry the selection contract. The inspected compiler tests assert both the role/operation order and that changing an admitted shared core source leaves a role capsule byte-identical; these are source-level proof facets, not a new execution result."
+  },
+  "applicability": "Role capsules admitted by the native AR role launcher described by the current canonical lifecycle router.",
+  "conditions": [
+    "The launch supplies one supported role and one operation admitted for that role.",
+    "Canonical task facts and workspace bindings arrive through the handover as data."
+  ],
+  "exclusions": [
+    "The manifest vocabulary still retains ten registry roles; the launcher exposes only architect, system-specialist, orchestrator, manager, worker, reviewer and curator.",
+    "The separately selected legacy ambient launcher and explicitly admitted repository specializations are outside this native launcher contract.",
+    "Generated skill mirrors are synchronization outputs, not independently authored obligations."
+  ],
+  "id": "INV-VTGJJK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen Ctree 83aa7103dca3c104e58df155baead24f10be784f: SKILL.md:8-12; composition-manifest.json:18-27,593-601; inspected mcp/tests/test_role_capsule_compiler.py:393-412,498-516. Public source_context returned registration_absent/indexComplete=true at the router and manifest; it returned no own invariant for non-curator role sources. This is source inspection, with no current test rerun claimed."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The native role launcher composes one explicitly selected supported role source followed by one applicable operation source, keeps canonical task and workspace facts in the separate handover, and injects no shared core block; missing, unsupported, inapplicable or conflicting selection is reported instead of inferred.",
+  "status": "proposed",
+  "supersedes": []
+}

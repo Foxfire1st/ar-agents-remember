@@ -8,6 +8,10 @@
 
 Two-layer agentic settings merge and authority-boundary tests.
 
+## Current source account
+
+Three added serviceTier cases prove independent inheritance through flat/global/repository/per-level roles, rejection of invalid values and fast boolean, and explicit refusal when legacy terminal spawning cannot carry a tier. Retained model/effort merge and authority cases remain; this adds no paid-model qualification.
+
 ## Code Commentary
 
 ### Logic
@@ -26,7 +30,7 @@ Two harness-vocabulary contracts are pinned the same way the source states them:
 
 ### Conventions
 
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
+The baseline cases retained from IAS `d3610903` are joined by the current source account above. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
 
 ### Invariants And Boundaries
 

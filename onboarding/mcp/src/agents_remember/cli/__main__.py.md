@@ -7,13 +7,14 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **thirteen** of them — `dashboard`, `memory-citations`,
+that dispatches subcommands. It registers **fourteen** of them — `dashboard`, `memory-citations`,
 `memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census` and
-`review-record-comparison` — and
+`knowledge-census`, `review-record-comparison` and `paseo` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
+
+Owns the one Agents Remember command parser and subcommand dispatch.
 
 ## Code Commentary
 
@@ -28,8 +29,9 @@ each subparser through its adapter's own `add_arguments`, setting `func=<adapter
 `knowledge_validate.add_arguments`/`knowledge_validate.run`,
 `knowledge_index.add_arguments`/`knowledge_index.run`,
 `knowledge_routes.add_arguments`/`knowledge_routes.run`,
-`knowledge_census.add_arguments`/`knowledge_census.run` and
-`review_comparison_record.add_arguments`/`review_comparison_record.run`. `main(argv=None)` parses and
+`knowledge_census.add_arguments`/`knowledge_census.run`,
+`review_comparison_record.add_arguments`/`review_comparison_record.run` and
+`paseo_runtime.add_arguments`/`paseo_runtime.run`. `main(argv=None)` parses and
 dispatches to `args.func(args)`, returning its int exit code.
 
 **The two knowledge subcommands are two different admissions, and the help text says which.**
@@ -78,6 +80,10 @@ belong to the adapters; this module contributes only the subparser registration.
 The MCP server keeps its own separate `agents-remember-mcp` console script — harness MCP
 configs launch the server by that exact name, so it is never folded into this umbrella.
 
+### Role Runtime and Scope
+
+The paseo command group joins existing knowledge-ingest, taskless bootstrap and knowledge format/convert/validate/worklist routes. Preserve one parser owner: PNT runtime management and MIK converted writer/gate commands coexist rather than replacing or duplicating one another.
+
 ## Invariants And Boundaries
 
 - `agents-remember-mcp` is **not** a subcommand here; renaming or absorbing it would break
@@ -108,3 +114,8 @@ configs launch the server by that exact name, so it is never folded into this um
 - **The `knowledge-routes` subparser `260928-MIK-L04` adds: the read-only family route report with the mechanical suggestion.** [13]
 - **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** [14]
 - **The `review-record-comparison` subparser `260921-ICR-L34` adds: the review comparison's production caller.** [15]
+
+### Runtime Source References
+
+- Frozen implementation of build_parser supporting the stated file behavior. [16]
+- Frozen implementation of main supporting the stated file behavior. [17]

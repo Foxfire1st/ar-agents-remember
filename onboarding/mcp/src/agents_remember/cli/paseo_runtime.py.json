@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_runtime.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
+        "content": "sha256:7ddf3f68cc76ab8262a5adc7d7bffd1f31957f0da599567568b2beb50b190769",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-S9GB8C",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Returns exit two on the named unconfigured state before starting a runtime command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of add_arguments supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
+            "content": "sha256:ef704c0daf4731b4903b6c0f4526a4a4938d1983e093ad511120029136469b44",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of run supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
+            "content": "sha256:7ddf3f68cc76ab8262a5adc7d7bffd1f31957f0da599567568b2beb50b190769",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runs all three commands without the block and checks named refusal, exit two and no process operation.\n\nAnchor: `PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
+            "locator": {
+              "end": 1011,
+              "kind": "line_range",
+              "start": 937
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

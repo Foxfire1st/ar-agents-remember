@@ -1,18 +1,38 @@
 {
   "path": "skills/l-01-agent-lifecycles/roles/reviewer.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
+        "content": "sha256:568bf8136e4a7f6bf66bfff6a90eaa3633a484df834ef3758427f26a0f0007d1",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-PC6PG7",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reviewer intake preserves exact task-document and reader arguments.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Every exact requirement attempt and candidate receives a separate independent accepted/rejected record.\n\nAnchor: \"Adjudicate every requirement revision separately\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
-              "end": 73,
+              "end": 93,
               "kind": "line_range",
-              "start": 70
+              "start": 90
             }
           },
           "kind": "code"
@@ -42,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
             "locator": {
-              "end": 98,
+              "end": 118,
               "kind": "line_range",
-              "start": 91
+              "start": 111
             }
           },
           "kind": "code"
@@ -59,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 76,
+              "end": 96,
               "kind": "line_range",
-              "start": 74
+              "start": 94
             }
           },
           "kind": "code"
@@ -76,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:a7db8b41cf2e1ea5f1b3c7ba248e89b089a9a2f3008d1b38abc1a705612fbeee",
             "locator": {
-              "end": 27,
+              "end": 43,
               "kind": "line_range",
-              "start": 18
+              "start": 34
             }
           },
           "kind": "code"

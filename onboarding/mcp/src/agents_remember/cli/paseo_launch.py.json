@@ -1,0 +1,218 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_launch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+        "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+        "locator": {
+          "kind": "symbol",
+          "name": "agent_binding"
+        }
+      },
+      "id": "RLZ-G3VR0J",
+      "invariant": "INV-W71C4N",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §2 / C5 / F2 (what is emitted)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Derives UUID, request, role, report and selected references from the launch.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+        "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "tool_server_definition"
+        }
+      },
+      "id": "RLZ-K7Q360",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Builds stdio definition from the launching interpreter, source package and exact settings.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+        "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
+        "locator": {
+          "kind": "symbol",
+          "name": "mint_agent_id"
+        }
+      },
+      "id": "RLZ-MJ7G08",
+      "invariant": "INV-FMB2AG",
+      "origin": {
+        "handoffEntry": "PNT-R03@v1 §4 / D2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Mints the stable UUID shared by saved call and runtime creation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+        "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_launch_call"
+        }
+      },
+      "id": "RLZ-MKRHDV",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Persists the one definition under the canonical task-server name.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of tool_server_definition supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_server_definition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of build_launch_call supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+            "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of run_launch_call supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b2e28562d553b63d0fcffc66bd524b0a3f8506",
+            "content": "sha256:71525bc1ff3e43b3c2cfdc7f8b54760f3bf1418ddc08f49ef0da0ac99eaa897a",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_launch_call"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.\n\nAnchor: `RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+            "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 494
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Interrupts between receipt and call and checks retry retains one agent identity.\n\nAnchor: `RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "end": 1018,
+              "kind": "line_range",
+              "start": 978
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks interpreter, -P module invocation, source, selected settings and single canonical server definition.\n\nAnchor: `ToolServerDefinitionTests.test_the_definition_starts_this_builds_tool_server_with_its_source_and_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Starts generated stdio server and checks serving build package root and binding from selected source.\n\nAnchor: `ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+            "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/tests/test_paseo_tool_server_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks emitted binding and explicitly empty absent references and seat identities before round-trip.\n\nAnchor: `ToolServerDefinitionTests.test_the_tool_server_reads_the_binding_it_was_started_with_and_reports_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

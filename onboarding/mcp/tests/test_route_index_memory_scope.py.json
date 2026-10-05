@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_route_index_memory_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2501520917d87bea190b5510809b40772a25605e",
+            "content": "sha256:07e4aeb59f0e5bb9fa996c0de91121391f7f158651f3f0302603b099b4838be7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

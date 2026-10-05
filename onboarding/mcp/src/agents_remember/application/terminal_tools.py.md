@@ -10,6 +10,8 @@ Provides plane-internal hosted-occupant assignment, spawn, retire, and rename op
 agents reach these only through the structural application, which supplies authorized document+role
 targets and keeps runtime correlations private.
 
+Preserves plane-internal hosted terminal assignment/spawn operations.
+
 ## Code Commentary
 
 ### Logic
@@ -99,6 +101,10 @@ requests are the strict structural DTOs in `application/structural/`.
 
 None.
 
+### Role Runtime and Scope
+
+The legacy harness dispatch path now refuses any resolved service_tier before spawning, with launch-selection-invalid and an explanation that serviceTier requires the Paseo feature channel. It must not silently discard a configured tier. Keep all existing caller spend, provenance and structural dispatch explanations.
+
 ## Evidence
 
 ### Docs References
@@ -122,6 +128,10 @@ No Domain Documentation source is configured.
 ### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+### Runtime Source References
+
+- Frozen implementation of _resolve_harness_dispatch supporting the stated file behavior. [12]
 
 ## L23 Refusal Translation
 

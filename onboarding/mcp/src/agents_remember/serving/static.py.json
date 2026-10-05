@@ -1,18 +1,55 @@
 {
   "path": "mcp/src/agents_remember/serving/static.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
+        "content": "sha256:5bd6d1aa52007cf8619faf1e5cb85ab9475e9ddcf0c87d226cdcdaa6657e0ca0",
+        "locator": {
+          "kind": "symbol",
+          "name": "UnknownApiPathsAreNotFound"
+        }
+      },
+      "id": "RLZ-HM2DEB",
+      "invariant": "INV-SPKV1T",
+      "origin": {
+        "handoffEntry": "PNT-R08@v3 §7",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Returns 404 for an API path with no actual non-Mount route match before static handling.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
+        "content": "sha256:4576b1311e3a4320873d4841e33eabc35fd1309e1bd78760df811b7541192430",
+        "locator": {
+          "kind": "symbol",
+          "name": "mount_static"
+        }
+      },
+      "id": "RLZ-HWG2ZX",
+      "invariant": "INV-SPKV1T",
+      "origin": {
+        "handoffEntry": "PNT-R08@v3 §7",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Wraps both built and missing-bundle surfaces with the same API rule.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "`dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface.\n\nAnchor: \"def dashboard_static_dir\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
             "content": "sha256:fda9644e0f850fd90455586b9b2938d870308bb3409dc2f69b2bc942c9ab5979",
             "locator": {
-              "end": 104,
+              "end": 144,
               "kind": "line_range",
-              "start": 104
+              "start": 144
             }
           },
           "kind": "code"
@@ -24,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
+            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
             "content": "sha256:dfa272c80932c4649486a55deaea7b2b53dc517372884bc2c8903a3ef80e73e4",
             "locator": {
-              "end": 112,
+              "end": 152,
               "kind": "line_range",
-              "start": 112
+              "start": 152
             }
           },
           "kind": "code"
@@ -59,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
             "content": "sha256:dd34a9df779b9566b04ad2b9e6cdde3b1d5e6c1a8c8b97ab7c28a7b13a33bd6a",
             "locator": {
               "end": 324,
@@ -72,16 +109,84 @@
         },
         {
           "anchor": {
-            "blob": "cd4d11e62056150a02819f1e152dbd7615f2a738",
+            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
             "content": "sha256:0b518088925ef50559b9a014ab2d743430cf9d23c6507ec96c9c0fd23f10b750",
             "locator": {
-              "end": 328,
+              "end": 330,
               "kind": "line_range",
-              "start": 328
+              "start": 330
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Frozen implementation of UnknownApiPathsAreNotFound supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
+            "content": "sha256:5bd6d1aa52007cf8619faf1e5cb85ab9475e9ddcf0c87d226cdcdaa6657e0ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnknownApiPathsAreNotFound"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Frozen implementation of mount_static supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
+            "content": "sha256:4576b1311e3a4320873d4841e33eabc35fd1309e1bd78760df811b7541192430",
+            "locator": {
+              "kind": "symbol",
+              "name": "mount_static"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks unknown API roots/descendants return 404 for GET/HEAD/POST/PUT/DELETE with and without bundle; known route wrong method stays 405.\n\nAnchor: `MountedBundleTests.test_an_unknown_api_path_is_not_found_for_every_method_with_or_without_a_bundle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b01902bcc688a20935b19545211d42eb15ddfee1",
+            "content": "sha256:a37a5492fc6c4debec0464ec7e0c24bde0574796c6d2daaf506e8286869596ff",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/tests/test_static.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE.\n\nAnchor: `FormerRouteTests.test_no_route_of_the_dashboard_application_matches_a_former_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6208bb42514fd6584705205c47f578e29b72041",
+            "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 448
+            },
+            "path": "mcp/tests/test_previous_host_removed.py"
+          },
+          "kind": "test"
         }
       ]
     }

@@ -8,6 +8,8 @@
 
 Current configured-contract authority at a mutation boundary.
 
+Re-proves configured repository/contract authority at existing mutation boundaries.
+
 ## Code Commentary
 
 ### Logic
@@ -30,6 +32,10 @@ Pure classifiers return typed observations; mutation owners publish write-ahead 
 
 None recorded beyond the explicit terminal-archive boundary recorded by the governing overview.
 
+### Role Runtime and Scope
+
+require_configured_contract_repositories now returns the same RepositoryScope whose identity it checked, including after external memory/candidate verification. Consumers needing original authoritative roots avoid a second settings read. Repository and external-memory separation checks remain strict; the candidate-identity delegation option retains its existing exact-pair-owner purpose.
+
 ## Evidence
 
 ### Docs References
@@ -45,6 +51,10 @@ The source file is the direct evidence for this file-specific ownership boundary
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
+
+### Runtime Source References
+
+- Frozen implementation of require_configured_contract_repositories supporting the stated file behavior. [2]
 
 ## 260821-CLIVE Live Versus Terminal Authority
 

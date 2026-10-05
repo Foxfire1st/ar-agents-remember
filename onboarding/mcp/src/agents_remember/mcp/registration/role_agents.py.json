@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/role_agents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of register_role_agent_tools supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21118170675b12fc1f4fcbc418a63db68c0c0ec1",
+            "content": "sha256:a9225eecafc15837fe82b52d27d1a0e48487a9183e0a767a528112a1b9bd963a",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_agent_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

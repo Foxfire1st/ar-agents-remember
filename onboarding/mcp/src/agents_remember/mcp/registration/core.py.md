@@ -17,6 +17,8 @@ installers: `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_c
 `runtime_install`, `skills_install`. Its identity family binds the one process-scoped
 `ServingBuildPayload` used by `server_info`.
 
+Registers server identity and orientation/install tool signatures.
+
 ## Code Commentary
 
 ### Logic
@@ -33,7 +35,7 @@ The docstrings are the model-visible contract and carry the semantics that are n
 - `context_packet` — one orientation call. `include_providers` defaults true; `include_drift` and
   `include_freshness` default false because they cost a drift scan and a remote fetch respectively.
 - `read_ar_files` — the research-phase read: ≤5 repo-relative paths, each paired with its file-level
-  onboarding plus the auto-attached repo and governing route overviews (deduplicated per session,
+  onboarding plus the auto-attached repo and governing route overviews (deduplicated by lifecycle and code/onboarding root,
   `refresh=true` re-serves after a compaction). Native read is the edit precondition once building
   begins.
 - `resolve_context` — the one declaration here that packs: the five flat locators (`repo_id`,
@@ -54,11 +56,15 @@ The docstrings are the model-visible contract and carry the semantics that are n
 - `runtime_install` and `skills_install` register `dry_run=False` — act-by-default. The docstrings
   say to preview first; the default does not.
 - No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
-  and the per-session dedup all live in `application/read_files.py`.
+  and overview dedup by lifecycle and code/onboarding root all live in `application/read_files.py`.
 - `server_info` must receive the shared process build; constructing or re-resolving a new build in
   the handler would break correlation with the dashboard and harness acceptance evidence.
 - Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
   only the strict model payload.
+
+### Role Runtime and Scope
+
+server_info describes optional toolServer and agentBinding of a launched server. Registered context_packet/read_ar_files accept optional TaskScopedReaderContext with exact task and contract together; absent context keeps Projects scope. Core registration forwards typed requests without permitting caller-defined roots.
 
 ## Evidence
 
@@ -68,6 +74,11 @@ The docstrings are the model-visible contract and carry the semantics that are n
 - `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
 - `TaskRef` — the locator bundle `resolve_context` packs. [3]
 - The registration gained the keyword-only `experiment` parameter and builds the run's request itself. [4]
+
+### Runtime Source References
+
+- Frozen implementation of _register_identity_tools supporting the stated file behavior. [5]
+- Frozen implementation of _register_orientation_tools supporting the stated file behavior. [6]
 
 ## 260915-CAPS-L9 Experiment Parameter On `runtime_install`
 

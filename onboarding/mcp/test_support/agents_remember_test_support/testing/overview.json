@@ -52,6 +52,38 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "588e1abd5cd9c071fe481367299680d41f259e51",
+            "content": "sha256:c1311c6aeff87ed119b5e93ddb2dcc86e95de19b209ee9a924dc8ef9f275314f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:7aa1e7aebe61c2415404c8f009dc15541421cf03e537c8cef220ad921379809e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

@@ -1,0 +1,182 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "content": "sha256:8f388258dd27b4c67e47f903f6d0f19c2461e31ff5f7285f5c28ee8b6950c031",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonical"
+        }
+      },
+      "id": "RLZ-461FCZ",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Resolves folder only so links at artifact name are refused as nonregular.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_handover_artifact"
+        }
+      },
+      "id": "RLZ-70KS6M",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Builds bounded artifact reference beside report from exact compiled bytes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_handover_artifact"
+        }
+      },
+      "id": "RLZ-7Q796E",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (retry) / A10 / F14",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Checks reference line, digest and reached file; reconstructs only missing exact saved bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+        "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_write_once"
+        }
+      },
+      "id": "RLZ-CBVRYX",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Publishes finished mode-0444 bytes by hard link and refuses conflicting content.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of write_handover_artifact supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_handover_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of restore_handover_artifact supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_handover_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _write_once supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c655a48ebd97a198b42b91e25094adb8a14fb348",
+            "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_once"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 568
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks size limit and refuses links without changing their target.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "end": 742,
+              "kind": "line_range",
+              "start": 713
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.\n\nAnchor: `HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "content": "sha256:65ad1467aef8ea195a3ffcccddcd7da5bd76f7a14f4c6258b3614869b2a9a4f9",
+            "locator": {
+              "end": 874,
+              "kind": "line_range",
+              "start": 836
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,6 +1,83 @@
 {
   "path": "skills/l-01-agent-lifecycles/SKILL.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-2J32HP",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Launch intake requires the canonical server of this build before AR work.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "content": "sha256:9dfc4cb5cdd5f0df991472df890fff9e430830b783ea89c0548eef33e905c3b5",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-5F3K07",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The router distinguishes shared execution location from repository identity and names the two manually selected taskless role scope gates.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "content": "sha256:bc2a4613a3c8d2ec7a185f64f396cf0de36ce51056c4303264c097ddb30e3042",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-G7A9BM",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The router states the two instruction blocks, the seven roles this launcher supports and the refusal of an absent or inapplicable selection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+        "locator": {
+          "end": 35,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-X8MYE4",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Router reserves semantic and Git acceptance to owning roles.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The router is exactly three ordered conditions.\n\nAnchor: \"## Which Lifecycle Am I? (the router — exactly three conditions, in order)\"",

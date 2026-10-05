@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_role_instruction_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24054458ebc9bbc54e632b963494796e976f6053",
+            "content": "sha256:048ce00fdf8ae9048880ce14fe72ae6d7685e7466e815f0dd0df45be6d4c3938",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

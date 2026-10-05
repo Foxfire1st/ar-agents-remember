@@ -9,6 +9,8 @@
 ``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
 escalation, spawn, and the quality gate (260731-EFA-L17).
 
+Parses role/default and other agentic settings sections.
+
 ## Code Commentary
 
 `_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:260-285.
@@ -34,6 +36,10 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
   absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int
   `memoryCapBytes` when present; CCR-R22 removed the `executor` key)
 
+### Role Runtime and Scope
+
+_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing.
+
 ## 260731-EFA-L17/L24 Quality-Gate Parser
 
 `_parse_quality_gate` parses `orchestration.qualityGate` into
@@ -53,6 +59,11 @@ family key is refused by `_refuse_null_families` before this parser runs.
 ### Repo-Internal References
 
 The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
+
+### Runtime Source References
+
+- Frozen implementation of _parse_service_tier supporting the stated file behavior. [1]
+- Frozen implementation of _parse_roles supporting the stated file behavior. [2]
 
 ## L23 Final Candidate Disposition
 

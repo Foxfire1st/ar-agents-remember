@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_paseo_status.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
+        "locator": {
+          "kind": "symbol",
+          "name": "RefreshTests.test_a_launch_that_is_unresolved_or_rejected_has_no_agent_to_read"
+        }
+      },
+      "facet": "Checks unresolved/rejected receipts returned unchanged without host read.",
+      "id": "PRF-21JVYS",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviveTests.test_a_recorded_refusal_ends_once_the_session_is_seen_open"
+        }
+      },
+      "facet": "Observing the same session open clears prior resume refusal.",
+      "id": "PRF-2TTS0E",
+      "invariant": "INV-F6CAGC",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §6 / A11",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "StatusTableTests.test_row_10_idle_after_a_finished_turn_is_completed_with_the_final_text"
+        }
+      },
+      "facet": "Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation.",
+      "id": "PRF-5RH2HT",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviveTests.test_revive_of_a_leaf_bound_role_refuses_a_changed_task_scope_with_both_values"
+        }
+      },
+      "facet": "Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation.",
+      "id": "PRF-NB8094",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:3f7dc34505dafaecff39ce204c0b7489d8798808b6cc655159b3e99a8f0522c1",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable"
+        }
+      },
+      "facet": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.",
+      "id": "PRF-WXNWTK",
+      "invariant": "INV-F6CAGC",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §6 / A11",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+        "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
+        "locator": {
+          "kind": "symbol",
+          "name": "StatusTableTests.test_row_01_a_host_that_cannot_be_reached_leaves_the_receipt_as_it_is"
+        }
+      },
+      "facet": "Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason.",
+      "id": "PRF-XHA16X",
+      "invariant": "INV-QQEHVM",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §1 row 1 / A6 / F2",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:cba00df42506695abeb5af78d701adafa355cf8d8884a42772b7114ac88bcfe1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

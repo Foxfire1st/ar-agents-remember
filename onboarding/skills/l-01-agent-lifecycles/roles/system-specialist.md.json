@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/system-specialist.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8bc8007c1774c632255b7782140d4ff0d96c5591",
+        "content": "sha256:f6e433fca136bb569141f48c5271a82720bb911887da53134232437514adbac3",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-JJE91B",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The System Specialist opening requires an actual concern, provider/system and report scope rather than constructing a degradation event or task.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

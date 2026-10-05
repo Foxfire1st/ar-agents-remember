@@ -1,5 +1,14 @@
 # mcp/src/agents_remember/mcp/tools
 
+## Native role payloads and scoped reader adapters
+
+Native role payloads delegate starts/messages through the actual caller binding; core/read-file adapters preserve exact task context and converted knowledge contracts. Configured tier refuses on terminal spawning because that transport has no native feature channel. Paseo validates/transports the independent choice, and structured requested/observed/refusal provenance remains explicit.
+
+- Current imported source owns this scoped route boundary. [37]
+- Current imported source owns this scoped route boundary. [38]
+- Current imported source owns this scoped route boundary. [39]
+- Current imported source owns this scoped route boundary. [40]
+
 | Field                  | Value                                          |
 | ---------------------- | ---------------------------------------------- |
 | sourceRoute            | `mcp/src/agents_remember/mcp/tools`            |
@@ -237,6 +246,8 @@ Behaviour, refusal vocabularies and response shapes are unchanged throughout; on
 shape on the application-facing side moved.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 `worktree.py` forwards closeout and direct-landing code/memory messages to the application without a ledger-message parameter. This MCP adapter neither writes a cache commit nor adds a ledger-currentness gate.
 

@@ -1,0 +1,185 @@
+{
+  "path": "scripts/pnt_sandbox/record.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:c3e4105f6a9ea914b6156a488706f1a39fcffa2c58cacade08845e83c51d6d2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_sandbox_dashboard"
+        }
+      },
+      "id": "RLZ-7J8VWM",
+      "invariant": "INV-T8F4HW",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Proves dashboard argv, this sandbox settings file and sandbox cwd.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:7f4413da4252229410ea6c8fd45b82b5dfd363cbe986d773033d8d481005fb6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_is_home_supervisor"
+        }
+      },
+      "id": "RLZ-HJWVKK",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Proves supervisor argv and its own PASEO_HOME while preserving unreadable ownership as a separate state.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:aa821cdf6abd0b02452c3c864b2b85544f73cf15641228f43bc3062a88c2e419",
+        "locator": {
+          "kind": "symbol",
+          "name": "inspect_paseo_record"
+        }
+      },
+      "id": "RLZ-JPHBKH",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Classifies absent, unusable, owned, stale and unreadable records before runtime actions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:04bd15338fb93f4515ddb96bd8356aa3aa834a62cb11d577c97ba2c0d8f9bb7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "port_state"
+        }
+      },
+      "id": "RLZ-N0SCRC",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Classifies holders using the proven process owner and its descendants.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:948a607f3d3ac4667cc31127999bfd9e60a618570b84b2a41fd1e6f82e31a161",
+        "locator": {
+          "kind": "symbol",
+          "name": "unrecorded_supervisors"
+        }
+      },
+      "id": "RLZ-NGR3EA",
+      "invariant": "INV-KYEMA8",
+      "origin": {
+        "handoffEntry": "F24 a, b (unrecorded processes)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Finds readable supervisor environments naming this home outside the recorded identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:619e19c06c1b8408e9557378824d3e8dd61950b3366a00951ed683e01c3d525b",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_record"
+        }
+      },
+      "id": "RLZ-P5YBWH",
+      "invariant": "INV-T8F4HW",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Admits the correct record schema and current boot while retaining the documented older-record proof path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:99815e21fda94e1e8e6fdc283df8b366b289eb0b2b428782d2d73ca30dec0447",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_dashboard"
+        }
+      },
+      "id": "RLZ-PPWB7X",
+      "invariant": "INV-T8F4HW",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 FR-3 (dashboard record) / F7 / F20",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Combines the stored identity with fresh liveness and sandbox-dashboard proof.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:87856ed705e85baa1e3cee1951cb0e38528ba7b3bfee1a957a8f5b450c7a9dd1",
+        "locator": {
+          "kind": "symbol",
+          "name": "unrecorded_dashboards"
+        }
+      },
+      "id": "RLZ-VPV5HN",
+      "invariant": "INV-KYEMA8",
+      "origin": {
+        "handoffEntry": "F24 a, b (unrecorded processes)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Searches all processes for the sandbox dashboard even before a port is held.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+        "content": "sha256:1b84775192278ced5699c1298d659c1338f4d3b38b8185565892408ad6011265",
+        "locator": {
+          "kind": "symbol",
+          "name": "clear_stale_paseo_record"
+        }
+      },
+      "id": "RLZ-W1GRRV",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Deletes only stale/unusable records without signalling their named process.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59aaa266e788a31f536b012040d3e897a85f4f43",
+            "content": "sha256:4b5e54df098f189237227184ba4c6eac5963a48040f57c127ae576451862bf15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

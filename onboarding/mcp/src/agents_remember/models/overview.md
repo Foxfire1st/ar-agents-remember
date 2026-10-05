@@ -1,5 +1,14 @@
 # mcp/src/agents_remember/models/ - Response Contract Models Overview
 
+## Native identity and requested launch options
+
+role_agents/role_launcher describe native start/message and launcher wire contracts. TaskDocumentRef and TaskScopedReaderContext retain repository/path identity separately from provider actor/workspace IDs. Dynamic model/effort/tier validation respects explicit overrides. Immutable sessionOptions records requested native creation values; agent.serviceTier is observed only when the host reports it. The declared schema alone certifies no launch, acceptance or publication.
+
+- Current imported source owns this scoped route boundary. [275]
+- Current imported source owns this scoped route boundary. [276]
+- Current imported source owns this scoped route boundary. [277]
+- Current imported source owns this scoped route boundary. [278]
+
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/models/`          |
@@ -690,6 +699,8 @@ runtime and tested by schema. Model homes follow tool domains: `TaskReopenRespon
 the task_reopen payload carries the enclosure contract state.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 Closeout and landing models expose code/memory outputs; `DirectLandingResponse.ledgerCache` is an informational cache-refresh result. The lifecycle models distinguish actual Git heads from filtered memory content and retain no ledger commit alias.
 

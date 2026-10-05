@@ -1,0 +1,22 @@
+{
+  "path": "scripts/pnt_sandbox/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce615d34786eb7ccd27fb83b3cc7c4a6951ea007",
+            "content": "sha256:eb571e0c8c49d96d799939116d86e3ec103eba82d952f5843035bc4d90564247",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

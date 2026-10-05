@@ -132,6 +132,8 @@ renders taller than the viewport without its own scrollport has the same defect.
 
 ## Hot Path Summary
 
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
+
 The generated lifecycle schema/types and matching fixture carry only code and memory-content mutation phases. The contract test rejects retired ledger mutation vocabulary; consumer ledger display remains distinct from transaction authority.
 
 The cockpit composes projected task and lifecycle state, while `data/` owns server transport and stores and `panels/` owns task/artifact views. For CCR, start with `data/taskArtifacts.ts`, the notes/requirements reader discriminator, and the versioned lifecycle projection with its server-owned meaningful revision.
@@ -140,19 +142,14 @@ The cockpit composes projected task and lifecycle state, while `data/` owns serv
 
 [agents-remember root overview](../../overview.md)
 
-## Current Structural Chats Contract
+## Current native Role Chats route
 
-Operations and Chats project the same real sprint/master/leaf task hierarchy. Hosted seats bind by
-task-document reference plus role; runtime session ids identify only the current occupant. The rail
-keeps one stable row across replacement, while spawn ancestry is available only as a separate
-diagnostic projection. Long live labels remain single-line CSS ellipsis.
+Chats directly mounts one persistent RoleChats pane/Paseo iframe, with externally controlled AR navigation based on canonical sprint/master/task groups, actual provider identities and visible native selection/activity. View switches and the inline navigation toggle retain the frame. Parent follows the current native child and its SDK parent/workspace relation separately from AR grouping. Dynamic agent/model/effort/service-tier validation and default/override disclosure retain requested intent separately from observed host values. Historical hosted-session routes elsewhere keep their own scope.
 
-ARSPAWN-L2 adds optional `dispatchBriefEntryId` to the terminal-catalog row as private diagnostic
-evidence that the current generation completed its durable one-call dispatch transaction. The
-frontend does not use it as identity or addressing authority. `TaskDocumentRef` is declared locally
-in the dashboard contract (it is neither imported nor generated), and the producer/consumer
-conformance suite pins the final 66-field catalog projection in both directions.
-
+- Current imported source owns this scoped route boundary. [34]
+- Current imported source owns this scoped route boundary. [35]
+- Current imported source owns this scoped route boundary. [36]
+- Current imported source owns this scoped route boundary. [37]
 ## L23 Lifecycle Operation Projection
 
 Operations now receives a task-addressed lifecycle-operation projection for closeout and

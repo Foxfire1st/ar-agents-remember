@@ -40,6 +40,14 @@ Lifting is guidance only; nothing enforces it mechanically.
   `--publish-to` are refused there, and the history rows answer the leaf's worklist items. The rationale step that
   INV-0FBA8M52 anchors here is unchanged.
 
+### Bound native intake and admission
+
+For an AR-launched Paseo capsule, use the handover’s `taskDocReadArgs` exactly with an extensionless slug, then read canonical JSON at the returned `docPath`. Use `arMcpContext.readerArguments` and each tool’s actual schema; `task_context` carries both canonical task and enclosure contract. Resolve the named source/field before reporting it missing. Read immutable baseline/candidate knowledge before semantic changes, preserve the baseline, contain outputs in the selected memory root and read admitted records back.
+
+The existing MIK writer remains authoritative. Use only the source-bound command admitted for the selected runtime. If this compiled capsule exposes no writer and admits no such command, report the required records not written; that is a capsule capability limit, not a general absence of MIK’s writer. Another installation, unscoped call or internal writer cannot substitute.
+
+An explicitly report-only admission supplies only the requested report and bound upstream message and claims none of the normal authoring pass complete. The normal pass retains its complete contract-scoped MQC, exact blocked findings, reruns and required prepare → publish → validate coherence. Developer decisions stay in the own chat; native peer clarification uses the actual parent/task role, and dashboard launch needs no parent. Operator settings, including serviceTier, remain outside Curator authority.
+
 ### Conventions
 
 Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.

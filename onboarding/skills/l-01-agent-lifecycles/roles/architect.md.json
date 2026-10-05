@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/architect.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c39a5eda740f8e17cd0d53bef5f73ce3a492a0b",
+        "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-Y56QGT",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The Architect opening states that Projects supplies no sprint or repository and limits clarification to missing outcome or registered repository.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

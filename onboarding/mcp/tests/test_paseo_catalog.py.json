@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_paseo_catalog.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+        "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+        "locator": {
+          "kind": "symbol",
+          "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
+        }
+      },
+      "facet": "Checks reuse, explicit refresh and changed daemon home in the key.",
+      "id": "PRF-E268RN",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §6",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+        "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+        "locator": {
+          "kind": "symbol",
+          "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"
+        }
+      },
+      "facet": "Checks rejected choices create no receipt, workspace, agent or enclosure.",
+      "id": "PRF-Y64YC4",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §6",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "content": "sha256:7cbe139948887232ea35876d486f77d0e8652d356a9e224fa8d4af02fbf45bda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

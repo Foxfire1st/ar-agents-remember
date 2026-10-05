@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Parsed pins and observed installation checks prevent testing one host release while accidentally launching another tag or range."
+  },
+  "applicability": "Parsing and provisioning the configured Paseo release.",
+  "conditions": [],
+  "exclusions": [
+    "Historical F26 final activation/version-check limits are not certified as atomic."
+  ],
+  "id": "INV-2MWAYK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_config.py::McpConfigTests::test_optional_paseo_runtime_block_is_exact_and_fail_loud; mcp/tests/test_paseo_runtime.py::PaseoRuntimeTests::test_other_version_is_replaced_and_a_failed_install_changes_nothing; l1-run/evidence/supplementary/s1-boundary-0.10.2-running-to-pinned.json"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R01@v1 §7",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Paseo version is one exact release (MAJOR.MINOR.PATCH with an optional prerelease): a range, tag, partial version, build metadata, leading `v` or padded value is refused at parse time, the install is requested as `--save-exact @getpaseo/cli@<version>`, and a prefix reporting any other version is replaced.",
+  "status": "proposed",
+  "supersedes": []
+}

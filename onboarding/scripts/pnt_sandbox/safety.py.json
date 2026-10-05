@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/safety.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+        "content": "sha256:bf282cd1512d51ba095947d74e46f7c7b11956a5f833776c8cab410c30b1f82d",
+        "locator": {
+          "kind": "symbol",
+          "name": "evaluate"
+        }
+      },
+      "id": "RLZ-03H0K0",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Judges all reported and required roots after symlink resolution and checks build identity and sandbox values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+        "content": "sha256:895492d5636cf09c5c1c7936759b0103331c9685c1f2ee2e43087f14ab5defcb",
+        "locator": {
+          "kind": "symbol",
+          "name": "check"
+        }
+      },
+      "id": "RLZ-PR0NX2",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Runs both process resolutions and rejects their failures or disagreement.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+            "content": "sha256:fc516de3e1a05eb704bc8c9af20a3012b4d41cce89b6e324cedd0e3a0148655c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

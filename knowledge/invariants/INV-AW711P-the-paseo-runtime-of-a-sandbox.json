@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A stale Paseo PID can name another home's supervisor and native stop would signal it; home/environment verification and pre-command stale handling prevent that concrete costly error."
+  },
+  "applicability": "The sandbox home paseo.pid record admitted before native provision or stop.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "No port-based foreign-daemon discovery or signalling is authorized.",
+    "An unrecorded supervisor with unreadable environment cannot be attributed."
+  ],
+  "id": "INV-AW711P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox_processes.py::StartAndStopTests::test_a_stale_paseo_record_is_deleted_before_any_runtime_command; ::test_the_paseo_home_record_is_trusted_only_for_this_homes_supervisor; review R2 [50-f2-stale], [52-f2-second-home], [53-f2-unusable-record]; member table FAM-8 in section 3.3"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Paseo runtime of a sandbox is the daemon of the sandbox's own Paseo home: the process that `<home>/paseo.pid` names is trusted only when its first argument is `Paseo Supervisor` and its own environment names this home in `PASEO_HOME`; a record that names a process that is gone, another program, another home's supervisor or no process at all is deleted by `start` and `stop`, with a message, before any runtime command runs, and the process it named is not signalled; a record that names a live supervisor whose environment cannot be read is left, and nothing is deleted, signalled or started.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -29,6 +29,54 @@
           "kind": "code"
         }
       ]
+    },
+    "2": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77e116c68e12aff38e3c971e1d908a6bd214116f",
+            "content": "sha256:fd5f5b98eb8fce471d8f6362c2989ec74cbe90d25abc3254b09ceda2b31c7894",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca83c919de94eef25d5f43d0db1f9f8ee36d25d6",
+            "content": "sha256:ddb3a4554c426f86e2881acfc6e886f26a2d89c9c278fa23be766efaaafd5433",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
+            "content": "sha256:fec6ba6620fca7bd558dac583e22af34caaa21c4ae917f127e5a08762423d2e5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

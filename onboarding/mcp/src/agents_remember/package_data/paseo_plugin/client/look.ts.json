@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "content": "sha256:ac2b86c53fed17a5654d903a3a6c3bdbd146d33b0969d0c0077846252ee43133",
+        "locator": {
+          "kind": "symbol",
+          "name": "recordAppWrite"
+        }
+      },
+      "id": "RLZ-6BKP96",
+      "invariant": "INV-CJ4VN0",
+      "origin": {
+        "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Records the running page's writer identity and exact seen settings/sidebar values without learning frame writes as the standalone preference.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+        "locator": {
+          "kind": "symbol",
+          "name": "restoreStandaloneLook"
+        }
+      },
+      "id": "RLZ-8TH414",
+      "invariant": "INV-CJ4VN0",
+      "origin": {
+        "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Restores frame-owned values while retaining genuine standalone settings and open/closed sidebar choices.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "content": "sha256:2489c2655c8c9107fc7247e595db39ea255c75abdd98551c20dd39cd2236bfae",
+        "locator": {
+          "kind": "symbol",
+          "name": "applyEmbedLook"
+        }
+      },
+      "id": "RLZ-BHEBAZ",
+      "invariant": "INV-CJ4VN0",
+      "origin": {
+        "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Saves standalone look/sidebar values before storing the AR appearance, and keeps earlier saved values when the last recorded writer was a frame.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

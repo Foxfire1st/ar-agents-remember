@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_previous_host_removed.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e6208bb42514fd6584705205c47f578e29b72041",
+        "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "FormerRouteTests.test_no_route_of_the_dashboard_application_matches_a_former_path"
+        }
+      },
+      "facet": "Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE.",
+      "id": "PRF-XTH4RD",
+      "invariant": "INV-SPKV1T",
+      "origin": {
+        "handoffEntry": "PNT-R08@v3 §7",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6208bb42514fd6584705205c47f578e29b72041",
+            "content": "sha256:f8b3a5d10206c54d65d1db5bdb9bbb62b2c49a81d930da97b663c2865774ad1f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

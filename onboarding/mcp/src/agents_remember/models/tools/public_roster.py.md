@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **72** tool
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **74** tool
 names the MCP server advertises as its public surface (66 until 260915-KS-L20 appended the five
 `knowledge_*` operations; 63 until 260915-CAPS-L4 added `role_capsule_compile`, `skill_catalog_list`
 and `skill_catalog_read`; 62 until 260831-LOCR-L37 added `worktree_pause`). It is a
@@ -27,6 +27,8 @@ operation names go on at the tail, together with the fourteenth `TOOL_REGISTRARS
 (`registration/knowledge.py`) and five `TOOL_RESPONSE_MODELS` rows in the same change, so no earlier
 name's advertised position moved and there is no interleaving to verify.
 
+Owns the one cycle-free literal advertised MCP tool roster.
+
 ## Code Commentary
 
 ### Logic
@@ -41,6 +43,9 @@ PUBLIC_TOOLS = (
     "role_capsule_compile",
     "skill_catalog_list",
     "skill_catalog_read",
+    # Role start and role messaging by role agents.
+    "role_start",
+    "role_message",
     # The knowledge operation family: read, change, diff, integrity and projection.
     "knowledge_read",
     "knowledge_change",
@@ -50,7 +55,7 @@ PUBLIC_TOOLS = (
 )
 ```
 
-`PUBLIC_TOOLS` spans **L22-L97**; the file is 97 lines. The only other statement is
+`PUBLIC_TOOLS` spans **L22-L100**; the file is 100 lines. The only other statement is
 `from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
 
 ### Conventions
@@ -72,6 +77,10 @@ PUBLIC_TOOLS = (
   live example.
 - Do not add a second roster, a frozenset mirror, or a derived copy. `PUBLIC_TOOL_RESPONSE_MODELS`
   derives the response-model subset; nothing derives the tuple.
+
+### Role Runtime and Scope
+
+PUBLIC_TOOLS adds role_start and role_message at the existing literal owner. It stays import-free; downstream MCP/model consumers re-export/read this tuple instead of redefining role tools or introducing an upward import cycle.
 
 ## Why The Roster Lives In `models`
 
@@ -101,7 +110,7 @@ violations with no `models → mcp` edge and no new cycle.
 
 ### Repo-Internal References
 
-- The roster's single definition, 72 ordered names, in a module that imports nothing. [1]
+- The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
 - The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
 - The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. [3]
 - The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
@@ -116,3 +125,7 @@ violations with no `models → mcp` edge and no new cycle.
 ### Cross-Repo References
 
 No cross-repository implementation dependency governs this repository-local tuple.
+
+### Runtime Source References
+
+- Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior. [12]

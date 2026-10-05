@@ -1,5 +1,14 @@
 # mcp/src/agents_remember/mcp/registration
 
+## Native role operation registration
+
+role_agents mounts the native role_start/role_message family for the bound task server. Core registration retains exact reader context/canonical task references and advertises typed request/failure shapes. Existing broader registration and converted knowledge families retain their owners. Native actor identity comes from real bindings/responses; titles, folders and projections grant no additional authority.
+
+- Current imported source owns this scoped route boundary. [24]
+- Current imported source owns this scoped route boundary. [25]
+- Current imported source owns this scoped route boundary. [26]
+- Current imported source owns this scoped route boundary. [27]
+
 | Field                  | Value                                            |
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
@@ -270,6 +279,8 @@ the checkpoint's case from L36 and the pause's case from L37. Signature, family 
 `PUBLIC_TOOLS`/response-model rows were added together, so no advertised name is unanswerable.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 The closeout registrar publishes only code/memory commit-message arguments. Memory registration removes ledger commit-message controls from carryover. Cache status remains consumer output, while the typed lower-layer owners enforce actual Git authority.
 

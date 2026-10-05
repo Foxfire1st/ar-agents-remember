@@ -10,6 +10,8 @@
 route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
 scope, execution, and async control now belong to the dedicated typed controller.
 
+Provides the existing memory-facing application tool entry points and leaf-only card writer guard.
+
 ## Code Commentary
 
 ### Logic
@@ -92,6 +94,10 @@ filesystem checks.
 
 None known for the MX-FIX-4 application entry point boundary.
 
+### Role Runtime and Scope
+
+When a task-scoped config has replaced repo.memory_root with a leaf root, _refuse_official_memory gets the original configured repository only after require_configured_contract_repositories proves repository lineage and candidate worktree identity. The same returned authority supplies the official root; official-memory rewrites still refuse. Preserve the converted citation/foundation behavior inherited from MIK.
+
 ## Evidence
 
 ### Docs References
@@ -137,6 +143,11 @@ The application entry point can target configured sibling repositories, but no e
 this package-local dispatch contract.
 
 No meaningful cross-repo references found.
+
+### Runtime Source References
+
+- Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
+- Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
 
 ## 260815-DAG-L4 Authority Boundary
 

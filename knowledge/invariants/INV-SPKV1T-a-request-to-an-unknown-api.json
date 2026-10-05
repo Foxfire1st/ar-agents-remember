@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Guarding both static surfaces prevents removed APIs appearing alive as SPA pages or unrelated assets."
+  },
+  "applicability": "Exact /api root or descendants with no non-Mount route match.",
+  "conditions": [],
+  "exclusions": [
+    "Known path wrong method; outside /api; other Mount semantics.",
+    "OPTIONS is source-backed by method-independent code, not exercised by these cited tests."
+  ],
+  "id": "INV-SPKV1T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FormerRouteTests; MountedBundleTests; L9 reviewer composed-app and running-sandbox probes."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R08@v3 §7",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A request to an unknown /api path returns 404 for every method before either static surface, so the removed host routes have no aliases.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -64,6 +64,70 @@
           "kind": "code"
         }
       ]
+    },
+    "4": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "content": "sha256:4232421b89bbb18aa4f124e9c4f5106e1c6b435a6a524141e73180b65457f489",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:d3a50a8a93cd1556c70516f5a6c156fc53789686c1d09d7496abb354ecc85e3c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56a87eb79233f3f9fe313a9eeea6e2f9dfdae7d4",
+            "content": "sha256:a1e797bb62f620909dec70beea9719fe32a014f01e4c2ca237b878142e7ee809",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
+            "content": "sha256:505e89ccfdb6663753c79ebd5efaeeb6555082593ea871b50aa5513f17cb4691",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
+          },
+          "kind": "code"
+        }
+      ]
     }
   },
   "schema": "ar-onboarding-route/v1"

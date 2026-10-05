@@ -8,6 +8,8 @@
 
 Provides the stable FastAPI composition facade and curated public imports for the serving package.
 
+Composes the FastAPI app, existing route families and final static surface.
+
 ## Code Commentary
 
 ### Logic
@@ -22,6 +24,9 @@ cached process identity projected by MCP `server_info`.
 
 This facade re-exports tested patch/import seams but does not reimplement their behavior.
 
+### Role Runtime and Scope
+
+create_app invokes collaborators.extra_api_routes when supplied after built-in routes and before mount_static. Thus role launch routes coexist with MIK knowledge-reader/summary/tree routes and cannot be shadowed by the greedy asset mount. The factory adds no second launch route owner.
 
 ## 260928-MIK-L29 The Knowledge Reader Route Is Registered After The Tree View Route
 
@@ -143,6 +148,10 @@ No Domain Documentation source is configured.
 ### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
+
+### Runtime Source References
+
+- Frozen implementation of create_app supporting the stated file behavior. [12]
 
 ## 260821-CLIVE Serving Composition
 

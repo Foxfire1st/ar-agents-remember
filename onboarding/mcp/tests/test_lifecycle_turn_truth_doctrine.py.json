@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+        "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+        }
+      },
+      "facet": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
+      "id": "PRF-T9EV7V",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+        "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written"
+        }
+      },
+      "facet": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.",
+      "id": "PRF-Z4GYK7",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -36,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
             "locator": {
               "kind": "symbol",
@@ -103,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:ae874c7ac9d61bf0e511e34073776e69d79a8f2449c74178fc3352ec49b83297",
             "locator": {
-              "end": 610,
+              "end": 555,
               "kind": "line_range",
-              "start": 598
+              "start": 543
             }
           },
           "kind": "test"
@@ -120,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:37e187cb99bf9dac347b9cb19bbe30e1cce2a79ba47c819207ee96217137bd71",
             "locator": {
               "kind": "symbol",
@@ -131,7 +167,7 @@
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
             "locator": {
               "kind": "symbol",
@@ -142,24 +178,24 @@
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:62f5071540042843f8ad8008ff2889f8b8a793cf08532e478f1a4e24ee2176c4",
             "locator": {
-              "end": 1016,
+              "end": 1044,
               "kind": "line_range",
-              "start": 949
+              "start": 977
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
             "content": "sha256:37447236196b3896fafbee931d5fed8c667b57c22694b01a0abba362d93a46ed",
             "locator": {
-              "end": 1052,
+              "end": 1080,
               "kind": "line_range",
-              "start": 1017
+              "start": 1045
             }
           },
           "kind": "test"
@@ -183,7 +219,7 @@
         },
         {
           "anchor": {
-            "blob": "fa6b99bc359f684819c0a8df22f9ba1246bec976",
+            "blob": "296c5202362629e2900784fbba989389202d43bc",
             "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
             "locator": {
               "kind": "symbol",

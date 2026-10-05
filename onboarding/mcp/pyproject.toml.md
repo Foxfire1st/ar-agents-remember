@@ -10,6 +10,10 @@
 metadata, package version, runtime dependency boundary, optional development
 dependencies, console script, and setuptools package discovery root.
 
+## Current source account
+
+Package data explicitly includes cli/*.mjs in addition to package_data assets, so the installed wheel carries the native JavaScript bridge next to its Python caller. Development sandbox tooling under scripts remains outside this package.
+
 ## Code Commentary
 
 ### Logic
@@ -52,7 +56,9 @@ runtime scaffold — `package_data/**/*` (AGENTS.md templates, skills, provider
 assets, system defaults) plus the benchmark `package_data/benchmarks/.gitignore`
 — so `runtime_install` can reconcile those package-owned assets into a
 coordinator from a pip/uvx install with no source checkout. Dotfiles need their
-own explicit entry; `**/*` does not match them.
+own explicit entry; `**/*` does not match them. The separate `cli/*.mjs` declaration
+also carries the native JavaScript bridge beside its Python caller; it is not runtime scaffold
+content under `package_data`, and development sandbox tooling under `scripts` stays outside the wheel.
 
 ### Classifiers Declare The Supported Floor And Platforms (260731-EFA-L2)
 

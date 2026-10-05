@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_paseo_no_harness_name.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aec2879878a8e9a0c0655a59bd24dc5f276e11e7",
+            "content": "sha256:6c245115ddf6783fe0b35de5f7298d684be24f6c1ac9f8ff63187154d19ca44f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/models/role_agents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of RoleStartCall supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15b123731e022aeed4425c0c39056c22d774e9fc",
+            "content": "sha256:96651b526d7c4ff0e5a772db11fe0c13cde71c3007731332408d3fa916cbc6a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartCall"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of RoleMessageCall supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15b123731e022aeed4425c0c39056c22d774e9fc",
+            "content": "sha256:ed6afc080fca36133e5efaf0e9145faed0c6ef07bae11ed60f146295bfc32a3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageCall"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of RoleStartResponse supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15b123731e022aeed4425c0c39056c22d774e9fc",
+            "content": "sha256:0e7dba2aabd2e0c6e9dbd7e5bc0eef671f78988acf94ab7dfde3c34f0355ece5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleStartResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of RoleMessageResponse supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15b123731e022aeed4425c0c39056c22d774e9fc",
+            "content": "sha256:8cdd11100598bacf99aa859602d4962751830ec73d13fb7f7cc50f49e0a09464",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleMessageResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

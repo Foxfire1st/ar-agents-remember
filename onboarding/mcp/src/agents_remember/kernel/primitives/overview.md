@@ -1,5 +1,14 @@
 # kernel/primitives/ — Kernel Primitive Vocabulary Overview
 
+## Paseo runtime settings and launch authority
+
+paseo_runtime_settings supplies strict nested runtime fields and runtime_config carries the selected native host authority without inferring readiness, source ownership or model availability from a folder. Model, effort and service tier remain independent role settings, resolved by the existing settings chain and validated against the selected native catalog. Unconfigured runtime and unsupported configured capability retain explicit refusals.
+
+- Current imported source owns this scoped route boundary. [4]
+- Current imported source owns this scoped route boundary. [5]
+- Current imported source owns this scoped route boundary. [6]
+- Current imported source owns this scoped route boundary. [7]
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/kernel/primitives/` |
@@ -16,6 +25,8 @@ version identity. Every layer above kernel reads these without importing `mcp`, 
 `providers`, or `worktrees`.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 `runtime_config.py::McpRuntimeConfig` is the trusted authority settings record;
 `checkout_coordination.py` keeps unpublished linked-checkout coordination writes inside the

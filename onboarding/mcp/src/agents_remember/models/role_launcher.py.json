@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/models/role_launcher.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of RoleSelection supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "content": "sha256:abf01f76d235c4bb808dacabf391a59154b05a97a81183ed3c8896b0f63ee358",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of RoleAgentOverride supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "content": "sha256:b15eb32ce96c9c432a9cb55bb55b4982be594a2b37080e598c5e0bd77a595a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleAgentOverride"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of RoleDispatchRequest supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "content": "sha256:218e7e5028a98077fff6bf832bfd69e59c9845bdd67806bf9d20782104b59213",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleDispatchRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

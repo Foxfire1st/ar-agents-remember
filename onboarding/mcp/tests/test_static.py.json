@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_static.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b01902bcc688a20935b19545211d42eb15ddfee1",
+        "content": "sha256:a37a5492fc6c4debec0464ec7e0c24bde0574796c6d2daaf506e8286869596ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "MountedBundleTests.test_an_unknown_api_path_is_not_found_for_every_method_with_or_without_a_bundle"
+        }
+      },
+      "facet": "Checks unknown API roots/descendants return 404 for GET/HEAD/POST/PUT/DELETE with and without bundle; known route wrong method stays 405.",
+      "id": "PRF-W0CVZG",
+      "invariant": "INV-SPKV1T",
+      "origin": {
+        "handoffEntry": "PNT-R08@v3 §7",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "blob": "b01902bcc688a20935b19545211d42eb15ddfee1",
             "content": "sha256:feaea0b160a6ed2beca57a2e730d891c078795d157ef054212e25032f3291dd1",
             "locator": {
               "kind": "symbol",
@@ -23,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "blob": "b01902bcc688a20935b19545211d42eb15ddfee1",
             "content": "sha256:262c413a86edbcdfba8a9a798d2febcbaf34a4283460f321850447d70f1c67fd",
             "locator": {
               "kind": "symbol",
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9428ae1c582722b1426d13925d79cd5d40bcfa55",
+            "blob": "b01902bcc688a20935b19545211d42eb15ddfee1",
             "content": "sha256:efbe9a3382168880473017a7ffcea4e15c281430cad653062fe2d3ccab2e9df8",
             "locator": {
               "kind": "symbol",

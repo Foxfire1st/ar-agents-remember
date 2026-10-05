@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ff96a644b492b9b9b98f1abb6c40a635b87e50f0",
+        "content": "sha256:5f7a1176fa63ebbc73a5e2341da276983d376bc8cf7946f0f6e30fb36fd2cb08",
+        "locator": {
+          "kind": "symbol",
+          "name": "watchSelectedChats"
+        }
+      },
+      "id": "RLZ-EZBH44",
+      "invariant": "INV-C71CTF",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reads only visible positive-bounds aria-selected native agent tabs and returns the deduplicated plural DOM candidate set.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

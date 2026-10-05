@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_paseo_status_bridge.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87fd276bf682a8cbd93622e997d2969aac5c092",
+            "content": "sha256:369c00d78f7886bce8e475075e2e61105d4914289cd368cb7adad7cdc9a7d575",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

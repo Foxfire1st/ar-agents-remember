@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts transports native observations, dashboard/src/cockpit/paseoFrameModel.ts validates them, and PaseoNavigation.tsx presents their explicit precedence, preventing native Idle or finished attention from being falsely presented as AR task or review acceptance."
+  },
+  "applicability": "Non-archived catalog actor rows rendered by the external AR navigation sidebar.",
+  "conditions": [
+    "Provider/activity values pass the exact normalized hierarchy protocol.",
+    "The most recent usable catalog drives the row."
+  ],
+  "exclusions": [
+    "Native idle, reply-ready and Closed are host activity observations, not semantic task/review acceptance.",
+    "Busy/input/error/closed fixtures prove rendering branches, not production SDK transitions.",
+    "Catalog failure is an explicit unavailable condition rather than a fresh live status observation.",
+    "The provider glyph path does not claim SVG-provider support or motion/browser qualification."
+  ],
+  "id": "INV-E4TSZB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoHierarchy.test.ts::includes every SDK page, canonical labels and actual host membership, then applies live metadata changes; dashboard/src/cockpit/PaseoChatFrame.test.tsx::accepts only the exact normalized hierarchy and selection-set protocol; dashboard/src/cockpit/PaseoNavigation.test.tsx::keeps actual harness identities and the same selected clickable row through busy, attention and terminal updates",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::includes every SDK page, canonical labels and actual host membership, then applies live metadata changes | exact facet: Subscribed native metadata updates and attention clearing propagate provider, status, permission count, attention and availability through the hierarchy message. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 93 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::accepts only the exact normalized hierarchy and selection-set protocol | exact facet: Malformed native activity fields, impossible status values and duplicate agent IDs are rejected before the sidebar receives them. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 240 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoNavigation.test.tsx::keeps actual harness identities and the same selected clickable row through busy, attention and terminal updates | exact facet: Provider marks remain identifiable; Closed/unavailable/error/input/busy/attention/idle precedence and current-row identity are exercised, with no PASS/accepted/completed verdict rendered. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: c68d0f5f684e69dfd432cbf9f1a820cb14692461 | source line: 34 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Sidebar harness and activity cues derive from validated native provider, status, permission, attention and availability fields while preserving the selected clickable actor row; native idle carries no task-acceptance verdict.",
+  "status": "proposed",
+  "supersedes": []
+}

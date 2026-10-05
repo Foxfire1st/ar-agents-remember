@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A fail-loud field-set test prevents an operator believing an unconsumed runtime setting selected another daemon or install."
+  },
+  "applicability": "Parsing a present paseoRuntime authority block.",
+  "conditions": [],
+  "exclusions": [
+    "Unknown keys outside this nested block retain the outer parser rules."
+  ],
+  "id": "INV-X5E9WH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_config.py::McpConfigTests::test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R01@v1 §1",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The `paseoRuntime` settings block holds exactly six facts (installPrefix, home, listen, version, providers, embed), and a key outside that set is refused when the block is parsed.",
+  "status": "proposed",
+  "supersedes": []
+}

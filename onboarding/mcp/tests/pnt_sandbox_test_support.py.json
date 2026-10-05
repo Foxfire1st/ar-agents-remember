@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/pnt_sandbox_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a367c2765aef4d1c633de6bd1fd2f4d05c45d77c",
+            "content": "sha256:9f374407974cd1833f3a1ccd016f2dc3075771debf7512792814e9c17cd66dbd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

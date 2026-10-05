@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/closeout.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+        "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-ZHVQ2K",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Closeout reserves memory/code/publication judgments despite lifecycle result.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

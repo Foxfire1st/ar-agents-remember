@@ -1,6 +1,45 @@
 {
   "path": "skills/l-01-agent-lifecycles/roles/worker.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2939fc2a34df39177d8ac0d6fd0fa3f706005c4a",
+        "content": "sha256:1b0069228d8c7e00350d1cff8b6d630f1a5a2b46831b6b2397b2ceb1ca4d6f01",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-19NZ18",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Worker intake supplies its launch task reader context.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2939fc2a34df39177d8ac0d6fd0fa3f706005c4a",
+        "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-X136N6",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Worker completion retains report and owner acceptance obligations.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The worker is one leaf-scoped builder whose terminal state is checks plus report.\n\nAnchor: \"You build one leaf.\"; `# Worker`",

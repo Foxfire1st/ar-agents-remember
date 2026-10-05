@@ -1,0 +1,274 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_role_tools.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:877c034ea3911917071969bab87622de46f8c6e19b46d884a8fa0099feffe416",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recipient_by_selection"
+        }
+      },
+      "id": "RLZ-87W4MJ",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Refuses multiple live taskless agents or truncated candidate set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_agents"
+        }
+      },
+      "id": "RLZ-A9DFWX",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reads receipt-named agents, stopping at first live only for task-bound selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:bf38cc5de5f32c8d499a56253eed19f0ce758cc4f7f06dae8833bfcfefd23694",
+        "locator": {
+          "end": 92,
+          "kind": "line_range",
+          "start": 88
+        }
+      },
+      "id": "RLZ-ERFERN",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Defines exact caller-to-child role pairs.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:9ea52cfb37eeb2aae5eaf9ec68667906533418b48e968c924dc98b32df5c906f",
+        "locator": {
+          "end": 80,
+          "kind": "line_range",
+          "start": 80
+        }
+      },
+      "id": "RLZ-HJ854G",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Bounds native reads at 24 and forces explicit taskless cut ambiguity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recipient_by_id"
+        }
+      },
+      "id": "RLZ-PYXJN6",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires explicit ID to belong to this execution line receipt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:6918c0d0e18d89fe0ad75d145d0bb5ebfa42121345d87e493ac0ee44b147f53d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_recipient"
+        }
+      },
+      "id": "RLZ-VQW9WE",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires one address form and refuses self or unfinished launch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+        "content": "sha256:7ac37b73c2cf59d9a7c13c9f54e702591a90f16204d2ae028984e5a5c56c350e",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_rule_violation"
+        }
+      },
+      "id": "RLZ-WQXQC4",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Enforces caller binding and sprint/master containment before preparation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of start_rule_violation supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+            "content": "sha256:7ac37b73c2cf59d9a7c13c9f54e702591a90f16204d2ae028984e5a5c56c350e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_rule_violation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _start_role supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+            "content": "sha256:5e9f2c48437327f286469b2ceb26703f7cf5f19f90f6e45c218aa1e026dfa91a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _resolve_recipient supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08923b8faa8a62ab284249c71dd93b78517d3272",
+            "content": "sha256:6918c0d0e18d89fe0ad75d145d0bb5ebfa42121345d87e493ac0ee44b147f53d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_recipient"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks all 49 caller/target pairs against exact table.\n\nAnchor: `MayStartRuleTests.test_each_role_may_start_exactly_the_roles_the_rule_names`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+            "content": "sha256:e9cfaa71370c55d4c8ac3dc833a0bfc57a2fd5f81dd0e79295d58902012818b2",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": "mcp/tests/test_paseo_role_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks own orchestrator sprint and manager sprint/master binding containment.\n\nAnchor: `MayStartRuleTests.test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+            "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "mcp/tests/test_paseo_role_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks foreign IDs and self-addresses are refused.\n\nAnchor: `RoleMessageTests.test_only_an_agent_id_of_this_lines_receipts_is_a_recipient`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks live taskless-role ambiguity reports IDs and sends no message.\n\nAnchor: `RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent.\n\nAnchor: `RoleMessageTests.test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

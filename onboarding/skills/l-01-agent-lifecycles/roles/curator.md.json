@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-        "content": "sha256:df9b2dbcbe0c579d8ffba828a78137321ccb8c5e887f0cd435e51d4fdfd5c432",
+        "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+        "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-090539",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator verifies this build and launch intake before using any writer.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+        "content": "sha256:533ce94ebbc070aa9b03a1ffc66147f0a1546eb658fe5bdeeda29f280f510f4a",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +35,44 @@
       },
       "rationale": "Process step 3 tells the curator to ensure every target carries its authored rationale before ingest.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+        "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-PFT43W",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator intake preserves launch task-document and reader arguments.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+        "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+        "locator": {
+          "end": 225,
+          "kind": "line_range",
+          "start": 223
+        }
+      },
+      "id": "RLZ-V1AKR1",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Curator reserves semantic memory judgment and publication despite runtime completion.",
+      "role": "support"
     }
   ],
   "references": {
@@ -75,12 +132,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
             "locator": {
-              "end": 83,
+              "end": 107,
               "kind": "line_range",
-              "start": 77
+              "start": 101
             }
           },
           "kind": "code"
@@ -92,12 +149,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 111,
+              "end": 135,
               "kind": "line_range",
-              "start": 108
+              "start": 132
             }
           },
           "kind": "code"
@@ -126,12 +183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
-              "end": 101,
+              "end": 125,
               "kind": "line_range",
-              "start": 96
+              "start": 120
             }
           },
           "kind": "code"

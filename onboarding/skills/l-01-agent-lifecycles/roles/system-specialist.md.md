@@ -5,30 +5,23 @@
 [overview.md](overview.md)
 ## Purpose
 
-The optional sprint-bound, investigate-first provider-degradation seat.
+This canonical System Specialist investigates one explicit provider/system concern at Projects altitude and reports before authorized remediation. A manual launch may have no task or parent; absent concern, affected provider/system or report scope is asked for rather than invented.
 
 ## Code Commentary
 
 ### Logic
 
-The system specialist binds to `(sprint document, system-specialist)` and investigates one provider
-degradation event from durable event, state, metric, log, and runtime evidence. It writes the report
-before any fix. Only an explicit orchestrator order authorizes the bounded provider remediation;
-otherwise it recommends an action or provider stop. `message_parent` resolves the current sprint
-orchestrator without exposing occupant identity.
+Use the developer request or supplied assignment and read current provider status/diagnostics through the bound task server. Inspect only scoped metrics, logs and evidence, distinguish observed facts from root-cause hypotheses and state confidence. Write the report before changing provider/system state. Remediate only on an explicit authorized order from the developer or actual parent named in the assignment.
 
-The role table classifies system-specialist as target-only. Its orchestrator is the ordinary
-plane-hosted dispatch caller; an identity-free developer launcher may target the sprint specialist
-only for an explicit task-seat takeover. This seat has no `dispatch_agent` caller authority or
-ambient recovery route, and its dispatch/tools rows are structural documentation rather than
-settings keys.
+A provider-start alert still forbids starts/restarts while allowing valid read-only investigation. Return the report in the own chat and, when present, to the actual bound parent with `role_message`; dashboard launch needs no parent or fabricated task. System Specialist starts no role.
 
 ### Invariants And Boundaries
 
-- Provider-only scope: no task, memory, ledger, lifecycle, or product-code mutation.
+- Keep the explicit provider/system scope; no repository-wide redesign, code/onboarding/task-state/Git change or self-approval without a separate assignment granting that role.
 - Report before remediation; investigation alone never implies fix authority.
-- Completion is the report/fix artifact plus terminal/finalizer truth, not a parallel row.
-- Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs.
+- A provider-start alert still forbids starts/restarts while allowing valid read-only investigation.
+- A finished turn is execution evidence, not semantic acceptance.
+- This source is canonical; generated copies carry its exact text.
 
 ## Evidence
 
@@ -39,7 +32,7 @@ No relevant documentation was configured in the resolved source registry; task a
 ### Repo-Internal References
 
 `skills/l-01-agent-lifecycles/roles/system-specialist.md` is the canonical role contract; provider
-degradation state and the orchestrator brief supply the concrete event evidence.
+the supplied concern and current scoped provider/system observations supply the evidence.
 
 ### Cross-Repo References
 

@@ -1,5 +1,13 @@
 # agents-remember — Onboarding Overview
 
+## Imported Paseo-native execution and converted MIK memory
+
+The imported source resolves canonical task and paired-workspace authority in AR, while native actor/workspace identity comes from Paseo. Starts, exact retries, messages and visible chat navigation retain their owning protocol boundaries; execution completion, review, curation, semantic acceptance and paired publication remain separate facts. Converted MIK memory keeps its existing admitted file writer, worklist, anchor, quality and coherence owners. Task-local qualification and draft artifacts do not constitute a source-memory branch or installed/published result.
+
+- Current imported source owns this scoped route boundary. [69]
+- Current imported source owns this scoped route boundary. [70]
+- Current imported source owns this scoped route boundary. [71]
+
 | Field | Value |
 |---|---|
 | sourceRoute | . |
@@ -751,6 +759,8 @@ once for the successful bind. That context package is not addressing authority. 
 `observer/`, `serving/`, and `dashboard/src/` route overviews.
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 Git lifecycle operations carry code and memory-content outputs. Memory commits encode their code attribution; `memory.md` remains available as a computed cache for consumers. Root memory-cache changes are excluded from memory staging/candidate authority, and missing or malformed cache bytes cannot block closeout, synchronization, integration or cleanup.
 

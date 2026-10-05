@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/role_launch_context.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
+            "content": "sha256:8492047a232d893a845376ceb80e68eade3fb13e75e2f89484b46808ff29a2a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_role_launch_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of selection_binding supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
+            "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

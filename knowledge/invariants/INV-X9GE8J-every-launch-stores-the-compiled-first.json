@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Immutable atomic creation prevents a resumed role reading an assignment silently rewritten under the original launch identity."
+  },
+  "applicability": "Creating the first-assignment artifact for a role launch.",
+  "conditions": [],
+  "exclusions": [
+    "Lost-artifact reconstruction belongs to saved-message retry contract."
+  ],
+  "id": "INV-X9GE8J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "HandoverArtifactTests (three cases); l5-review/evidence/07-first-message-vs-artifact.txt; l5-verify/evidence/37-f9-f8-route.txt, 14-worker-receipt-summary.txt; l5-verify3/evidence/05-f14-leaf-route.txt, 06-f14-taskless-route.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every launch stores the compiled first message once as a plain-text handover artifact `<report path without its suffix>.handover.txt` of at most 1,048,576 bytes, created read-only (mode 0444) by a hard link of a finished temporary file: an existing file is reused only when it holds the same bytes, different content is refused and nothing changes, and a link at the artifact's own name is never followed.",
+  "status": "proposed",
+  "supersedes": []
+}

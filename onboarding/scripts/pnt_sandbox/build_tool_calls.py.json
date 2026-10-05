@@ -1,0 +1,41 @@
+{
+  "path": "scripts/pnt_sandbox/build_tool_calls.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c7f685e2839e5f34024bc5afa15818b35c4553d8",
+        "content": "sha256:9808dbae0e8d5d07678ed9f992ae12a6604bfa1a3a216f523500ff175720d729",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admission_error"
+        }
+      },
+      "id": "RLZ-B8EBRC",
+      "invariant": "INV-5NDKYQ",
+      "origin": {
+        "handoffEntry": "Corpus admission (the build's tool server)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Rejects server_info roots, repository allowlist and provider scope differing from exact disposable corpus authority.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7f685e2839e5f34024bc5afa15818b35c4553d8",
+            "content": "sha256:3c42ff1afaa753e7aca32da79de3bfefe488a4d2518d7f2952a23966a484d60f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

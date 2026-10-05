@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:31b789bdc5431d17293202c10fa7fada2d0809783764bf557d32326fc48975e4",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:57ff74d1f2da93a73a71925da757618190efff3bbb43cd6c95748a90f80bd6ce",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:52e70bf46706735506b415b2f2e3c3cefdeaa24126fe36f0c3275278c0352270",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:ebb5a2bf899466b229b1c7858ada9529e424d5ce0cb42feb7b075e1d264d2bf7",
             "locator": {
               "kind": "symbol",
@@ -251,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:8427bb5a62cc58b95f6ed349017f71fcb38010993826680f2e13a813e884fc94",
             "locator": {
               "kind": "symbol",
@@ -304,12 +304,60 @@
         }
       ]
     },
+    "21": {
+      "note": "Frozen implementation of compile_launch_capsule supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "content": "sha256:aeea579f8e93ad642dfb6888ab600fafe295dc6bd751cdc2bc4c97a0f349f37b",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_launch_capsule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Frozen implementation of _admit_task_document supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "content": "sha256:2317486020738c8b346a8973ec1a43600ac26b327592a6f905c5a737f9b52916",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_task_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Frozen implementation of ProjectTaskSeatAdmission supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "content": "sha256:a13df5ae7d510ebc398a7916cb31137119a50802a4110dcf349bfd7fbe7f897e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectTaskSeatAdmission"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Where a launch's eve carrier is written, and why it is outside every workspace.",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:cdb207449967c2269a38d02bb48e809187fe2903bed6c80108c28784bd50588a",
             "locator": {
               "kind": "symbol",
@@ -353,7 +401,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
             "locator": {
               "kind": "symbol",
@@ -369,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
             "locator": {
               "kind": "symbol",
@@ -385,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
             "locator": {
               "kind": "symbol",
@@ -396,7 +444,7 @@
         },
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
+            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
             "content": "sha256:9a87529e252dbd60fad23a41ae30cdd4759e98b285b8d448917107a842b31881",
             "locator": {
               "kind": "symbol",

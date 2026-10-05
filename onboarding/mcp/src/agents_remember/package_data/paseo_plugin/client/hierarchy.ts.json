@@ -1,0 +1,97 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
+        "locator": {
+          "kind": "symbol",
+          "name": "allEntries"
+        }
+      },
+      "id": "RLZ-1AXCW1",
+      "invariant": "INV-PF6J5D",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / pinned native page bound",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Follows every remaining directory page, rejecting absent/repeated cursors rather than claiming a complete partial catalog.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "startHierarchy"
+        }
+      },
+      "id": "RLZ-FZQP72",
+      "invariant": "INV-0286SX",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / current Parent context",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Owns agent/workspace-specific Parent composer pills, replaces changed native parent targets and removes obsolete, archived or root registrations.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "startHierarchy"
+        }
+      },
+      "id": "RLZ-T7JY0X",
+      "invariant": "INV-PF6J5D",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / pinned native page bound",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Passes the same PAGE_SIZE=200 to both initial and continuation agent/workspace list calls.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "startHierarchy"
+        }
+      },
+      "id": "RLZ-V6FJD9",
+      "invariant": "INV-XENPC7",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 §6 / directory snapshot boundaries",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Partitions queued updates by directory, replaces their snapshot boundaries, rejects older load generations, and releases SDK subscriptions and Parent registrations.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "startHierarchy"
+        }
+      },
+      "id": "RLZ-Y4N5D7",
+      "invariant": "INV-E4TSZB",
+      "origin": {
+        "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Projects the actual SDK provider/activity fields and subscribed updates into the existing hierarchy transport.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

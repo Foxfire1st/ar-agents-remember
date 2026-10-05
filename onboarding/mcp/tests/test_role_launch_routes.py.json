@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_role_launch_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "231cfe16d593baccda7b0f7d8bf0430d5c85c584",
+            "content": "sha256:ddc172abd42a6a8f6b89a443d4e6abf00230fdfd2a25638a0bec21b9930ca419",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_reader_task_context_protocol.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
+        "content": "sha256:f12d781b2c954e57fe68923263eba6ba6eea6fa09d545dcc75f84addabdce9e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+        }
+      },
+      "facet": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.",
+      "id": "PRF-W1HHQB",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
+            "content": "sha256:db0bc886852f670a156e2274465b4d819ad4d6a1c2d01f742e5ed6f5fec53583",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

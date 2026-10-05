@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "70f7deeb2a294500b2bc299a37e6204a6174017e",
+        "content": "sha256:21a9252700e1369c56ba2ab44e0a4665ff8ebe256f8b65eb87a07b0a352c01c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "startClientPart"
+        }
+      },
+      "id": "RLZ-T3XJ3N",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Waits for an exact embed-list match before trusting a new parent and drops a previously trusted bridge when the refreshed list excludes it.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

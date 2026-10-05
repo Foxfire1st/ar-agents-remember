@@ -6,13 +6,7 @@
 
 ## Purpose
 
-The routing metadata for the `l-01-agent-lifecycles` corpus: it maps a role and an operation to the
-source files that carry the instruction, and carries no instruction prose of its own. Its own
-`authority` key states the relationship — "skills/l-01-agent-lifecycles/SKILL.md (thin router) · this
-file is routing metadata only" — and the `notes` block repeats the rule the whole corpus is built on:
-"Exactly one source per instruction. core/ is authored once; a role file states its own seat's side of
-a shared rule and never restates the whole of it." The router's own table names it the "Routing
-metadata" layer holding "role → core + role + operation blocks; no prose."
+This authored manifest is the prose-free routing metadata for canonical role and operation sources. `SKILL.md` remains the thin selector and `skills/` the authoritative source tree. The native route composes the selected role followed by one applicable operation; task and workspace facts remain separate handover data. Retained core/launcher/registry metadata does not inject shared core prose or expand the seven roles this native launcher exposes.
 
 It is authored bytes, not generated output: the parser that consumes it is explicit that "the
 declared vocabulary is authoritative over the manifest, not the other way round", so a manifest edit
@@ -22,25 +16,9 @@ declared vocabulary is authoritative over the manifest, not the other way round"
 
 ### Logic
 
-**The identity keys say what the file is and where its authority sits.** `schema` fixes the document
-vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
-this file as metadata only; `entry_router` names the router file a session enters through;
-`authoritative_tree` is `skills/`, which is the canonical authored tree the packaged copies are
-generated from. `composition_order` is the three-step order a capsule is composed in — `role`,
-`operation`, `repository-specialization` — and the `notes` array states the four boundaries of the
-metadata plane, including "Task facts are a separate context channel and are not part of this
-manifest."
+**Identity and composition.** The schema is `ar-role-capsule-composition/v1`, the router is `SKILL.md` and the authoritative tree is `skills/`. Native `composition_order` is `role` then `operation`. Canonical task/workspace facts travel as separate handover data.
 
-**`role_order` is the role registry, and `routing_conditions` is the router, expressed as data.**
-`role_order` lists the ten roles in canonical order: architect, orchestrator, designer, strategist,
-manager, worker, curator, reviewer, system-specialist, bootstrap. The `notes` block fixes the
-consequence: "The launcher is a routing condition, not a role: the role registry is exactly the
-entries in `role_order`." `routing_conditions` holds the three conditions in order — `spawn-role-env`
-(selected from `AR_SPAWN_ROLE`, `never_selects: launcher`, failing closed when the value has no
-matching `roles/<value>.md` or arrives without its plane-injected hosted identity),
-`fresh-session-role-brief` (the first user message is a `templates/*-brief.md`-shaped dispatch or a
-first line of the form `ROLE BRIEF - <role>`), and `ambient-launcher` (no spawn-role env and no role
-brief), which carries `is_role: false` and points its `instruction_source` at `core/launcher.md`.
+**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/System Specialist without a synthetic task. `role_order` still retains ten registry roles; native launch support remains the seven current UI roles.
 
 **`operations` declares each operation's source and the roles that may run it.** Nine entries —
 orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
@@ -51,17 +29,12 @@ alone, and `bootstrap` to `bootstrap` alone, while `orientation` applies to all 
 direction; the parser refuses a manifest where the two disagree rather than letting the compiler
 resolve the conflict at selection time.
 
-**`core` declares the six shared blocks every role can be composed with.** Each entry pairs a `source`
-under `core/` with a `purpose`: `authority` (seat authority, the dispatch transaction, takeover, the
-escalation ladder), `invariants` (the shared invariants and the task-doc/branch/worktree spine),
-`lifecycle-frame` (the six signals and the trust checkpoint), `loop` (the three-party loop doctrine),
-`acceptance` (completion truth vs acceptance and the handoff artifact table), and `launcher` (the
-ambient launcher's own obligations, "authored here so the role registry holds only roles").
+**Retained core metadata.** The six `core` entries still name authority, invariants, lifecycle-frame, loop, acceptance and launcher sources. This frozen map is inert metadata for compiler compatibility: the current native route injects no shared core block.
 
 **`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
 may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
-seat is), `core` (which shared blocks compose into it), `operations` (the authoritative applicability
+seat is), `core` (retained core-selection metadata, not shared instruction injection), `operations` (the authoritative applicability
 list), `templates` (the field schemas and handoff artifacts that seat compiles or emits) and
 `criteria` (the reviewer criteria catalogs bound to it). The lists differ per seat rather than being
 uniform: `implementation` appears only in the worker's operations, the curator's operations are
@@ -70,7 +43,7 @@ lists — the orchestrator's, the worker's, the curator's and the reviewer's —
 wiring behind the producer/consumer hand-off contract. `altitude` is a plain string rather than an
 enum, and for the reviewer it is the composite `leaf | master | sprint, by seam`.
 
-**`skills`, `launcher` and `references` complete the declared surface.** `skills` declares the one
+**`skills`, retained `launcher` metadata and `references` complete the declared surface.** `skills` declares the one
 skill by origin, URI and root source (`agents-remember/skills`, `skill://agents-remember/skills/l-01-agent-lifecycles`,
 `SKILL.md`); the parser's own model notes a skill reference "is a *pointer to separately delivered
 content*, so its identity is server/repository origin plus skill URI — a bare name would collide
@@ -79,7 +52,7 @@ condition it belongs to, `core/launcher.md` as its instruction source, the `laun
 orientation and coordination as its operations, and `architect-brief.md` as its one template. The
 `references` block lists the five reference-only trees — `reference/rationale.md`,
 `reference/rulings.md`, `lenses.md`, `criteria/` and `templates/` — each with a `description` and,
-except `lenses`, `injected: false`, so a reader can see what is available without any of it entering
+all carry `injected: false`, so a reader can see what is available without any of it entering
 a composed capsule.
 
 ### Conventions
@@ -91,9 +64,7 @@ package paths, because the corpus root is supplied by the consumer. Every list t
 iterates is an array of strings or of objects with a `source`/`purpose` pair; nothing is keyed by a
 display name where an identity would do, and the one skill entry carries origin plus URI rather than
 a bare name. Duplicated knowledge is deliberate and testable: the operations' `applies_to_roles` and
-the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The
-`notes` array is where the file states what it is not — routing metadata, no prose, no task facts, and
-the launcher is not a role.
+the roles' `operations` are two views of one applicability, and the parser refuses disagreement. The `notes` array states role/operation-only native composition, the inert core map, separate handover facts, the retained ten/nine vocabulary versus seven launchable roles, and bound native role tools.
 
 ### Invariants And Boundaries
 
@@ -120,9 +91,7 @@ the launcher is not a role.
 
 ### Todos
 
-No task-independent follow-up is recorded in the file. One deliberate asymmetry is worth knowing
-rather than fixing: `references.lenses` carries no `injected` field while its four siblings do, and
-the value that field would carry is the same `false`.
+No task-independent follow-up is recorded. The current reference-only entries, including lenses, all explicitly carry injected=false.
 
 ## Evidence
 
@@ -140,13 +109,13 @@ manifest together, the source admission that gives the manifest its reserved met
 install-time corpus anchor, and the corpus test that pins the registry wiring.
 
 - The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
-- The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role. [2]
+- The retained role registry and the two explicit native routing conditions. [2]
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
-- The six shared core blocks a role may be composed with, including the launcher block authored here so the registry holds only roles. [4]
+- The retained six-block core map is metadata and is not injected into native role capsules. [4]
 - The role registry itself and the two role entries that show the per-seat shape. [5]
 - The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
-- The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [8]
+- The retained launcher metadata is separate from the current explicit native routing conditions. [8]
 - The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [10]
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]

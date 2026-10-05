@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Deleting an unowned directory or rebuilding into a partly deleted sandbox can destroy retained work; marker-last reset and resetting-state refusal prevent those errors."
+  },
+  "applicability": "The marked disposable directory acted on by PNT reset and build/start refusal of unfinished reset state.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "An unrecorded supervisor with an unreadable environment cannot be classified.",
+    "A kill between final marker deletion and directory removal can leave an empty unmarked directory."
+  ],
+  "id": "INV-EJY6DF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::BuildInputTests::test_a_reset_that_cannot_delete_everything_can_be_repeated; mcp/tests/test_pnt_sandbox.py::BuildInputTests::test_a_directory_that_is_not_a_sandbox_is_neither_used_nor_deleted"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`reset` stops the sandbox's processes and deletes the directory only when none remains; it refuses a directory without the sandbox marker; it marks the directory as being reset, tries every entry, and deletes the marker and the directory last, so a deletion that leaves something names what is left by its full path, returns 1, leaves it marked as this tool's so that nothing is built or started there, and can be run again.",
+  "status": "proposed",
+  "supersedes": []
+}

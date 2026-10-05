@@ -1,0 +1,64 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/orientation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
+        "content": "sha256:1306bb4da04c7853394b4400b768e81237508d5a7d9bc165b99ca34fc4cc039a",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-6CFA2A",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Orientation uses the supplied exact taskDocReadArgs rather than another task address.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
+        "content": "sha256:e8348442b43ab6312243b07923b91df671a8e15634f4b6fa6f1eae295dc7882b",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-BPMMTC",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Orientation identifies the launch-bound tool installation that must answer intake.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
+        "content": "sha256:dd4ec2005c23a3bf7969868574045585f713bf0328eaa57e6d5ed7495e9e2240",
+        "locator": {
+          "end": 3,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-PFED6V",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The Orientation operation preserves this same taskless entry without creating a task or trust packet.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,113 @@
+{
+  "path": "scripts/pnt_sandbox/environment.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "content": "sha256:4371835f2a56d3027e70b0859c2e13fb9fa12a0425bf5ec13419ab6e01440ad2",
+        "locator": {
+          "kind": "symbol",
+          "name": "child_environment"
+        }
+      },
+      "id": "RLZ-4ZF1FZ",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Sets PWD to the actual child working directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "content": "sha256:6fe91641b1114ecd81ca4627669a9d2cd5e0af928cbb2f5c7b183379a9915148",
+        "locator": {
+          "kind": "symbol",
+          "name": "REMOVED_VARIABLES"
+        }
+      },
+      "id": "RLZ-DTXRVS",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Lists exact Python, Git and caller-session names, preserving broad harness credential prefixes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_environment"
+        }
+      },
+      "id": "RLZ-MG0ZK5",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Removes selectors before installing the sandbox-owned values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "content": "sha256:b5de59a350db08e48d15df5681c6910e98d2f803dbd2d9a6f81e371d03936c0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "sandbox_variables"
+        }
+      },
+      "id": "RLZ-Q7Z93Y",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Installs sandbox-owned tmux, bytecode and Dagger locations and disables optional Git locking.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+        "content": "sha256:4a4effe0303356f5ba0c8b03c665de0f4315381a3ed86ce274b2dc7d2b089860",
+        "locator": {
+          "kind": "symbol",
+          "name": "REMOVED_PREFIXES"
+        }
+      },
+      "id": "RLZ-T7KGEV",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Names the AR, Paseo, source and former-host selector families removed from child environments.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:2ed3ea5932807e336fce6004117f2681f66185164cb2057eb7cde962fa8a0b10",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,5 +1,13 @@
 # docs/reference
 
+## Paseo-native tool and independent-tier reference
+
+The tool reference describes bound role_start/role_message alongside retained converted MIK owners. Settings now treat serviceTier independently of model/effort with the same role/per-level inheritance: fast deliberately maps to advertised priority, explicit default requests Normal, unsupported selected provider/model/tier refuses before creation, and exact saved calls are replayed unchanged. Current catalog availability is an observation rather than a permanent availability invariant.
+
+- Current imported source owns this scoped route boundary. [2]
+- Current imported source owns this scoped route boundary. [3]
+- Current imported source owns this scoped route boundary. [4]
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | docs/reference |
@@ -84,6 +92,8 @@ readiness, catalog-concurrency, and serving-cutover contracts.
 
 ## Hot Path Summary
 
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
+
 `mcp-tools.md`, `skills.md` and `worktrees-c09.md` expose code/memory commit messages and output refs. They describe the ledger as a computed consumer cache, not a commit leg, recovery intent or publication prerequisite. Reuse of unchanged content is a valid result without cache-only Git work.
 
 ## Detailed Route Context
@@ -102,7 +112,7 @@ and capability; they are not settings keys and cannot override that caller matri
 For native launch and control questions, read `harnesses.md` for the dynamic catalog,
 model-gated effort, duplicate-selector refusal, distinct Claude startup evidence sources, and the
 Claude/Codex/Pi launch/set matrix; read `settings-json.md` for the complete `roles.<role>` /
-`rolesPerLevel` model-and-effort authority. Exact harness versions and captured catalog rows are
+`rolesPerLevel` model/effort/service-tier authority on the native Paseo launch route. Exact harness versions and captured catalog rows are
 live/fixture evidence, not production pins; in particular, Claude Code 2.1.210 live-confirmed Fable
 switching supersedes the earlier launch-only assumption without creating a Fable-name policy.
 Structured hosted dispatch, complete serving reload, and the bounded R9 compatibility exception

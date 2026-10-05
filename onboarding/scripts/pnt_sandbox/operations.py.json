@@ -1,0 +1,59 @@
+{
+  "path": "scripts/pnt_sandbox/operations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b7d2015b0414223064462d46def39c075090f96c",
+        "content": "sha256:994a453d1e219b420d149f9162fc7db3c782409ed820d9b79e6e45c0af4cea9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations"
+        }
+      },
+      "id": "RLZ-9F0JC0",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Applies the scrubbed environment to run, detached dashboard spawn and provision child creation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7d2015b0414223064462d46def39c075090f96c",
+        "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._run_sharing_lock"
+        }
+      },
+      "id": "RLZ-YDW7SW",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Passes the locked descriptor into provision so abrupt parent death does not admit another command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d2015b0414223064462d46def39c075090f96c",
+            "content": "sha256:d597c649d688d7eddcfac156210681f29467bdb5425eb9af1dfb747ccfd090d6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

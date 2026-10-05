@@ -1,5 +1,12 @@
 # mcp/src/agents_remember/worktrees/integration
 
+## Native launch and paired-worktree authority
+
+Configured contract authority exposes the exact workbench roots required by native launches while retaining MIK branch/pair/locator/lifecycle guards. Native host import authorizes no replacement topology or protected-ref shortcut. Full source-bound curation uses the admitted converted pair; root-owned closeout/integration consumes actual evidence, respects a moved parent and preserves physical source/memory attribution.
+
+- Current imported source owns this scoped route boundary. [13]
+- Current imported source owns this scoped route boundary. [14]
+
 | Field | Value |
 | --- | --- |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration` |
@@ -37,6 +44,8 @@ Integration no longer owns a quality gate, a publication fence, an integration-c
 organizational-completion boundary; all four were deleted by the closeout-door cut (commit `fad9808e`).
 
 ## Hot Path Summary
+
+The imported native Paseo role route retains canonical task/workspace identity, exact launch/replay and independent model/effort/tier validation alongside the existing converted MIK memory and publication owners.
 
 Follow `integration_ref_transaction.py` for code/memory ref publication and source-ancestry checks, `direct_landing/` for journaled memory writes, and `closeout/preparation/` for retained private outputs. No route requires a ledger commit or validates cached rows to authorize Git work.
 

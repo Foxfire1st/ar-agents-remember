@@ -6,59 +6,32 @@
 
 ## Purpose
 
-Packaged runtime copy of the canonical skills/l-01-agent-lifecycles/operations/curation.md. It is synchronized by the existing skill propagation owner and introduces no independent doctrine.
+Reconcile current intent, ruled change intent and implemented reality, maintain affected onboarding, and author justified knowledge through the existing admitted writer.
 
-Carries the curation operation: reconcile the current and approved intent with implementation, author justified records through the existing writer, maintain affected onboarding, and retain the actual comparison and handoff evidence.
+## Current Contract
 
-## Code Commentary
+On a native Paseo admission, use the supplied `taskDocReadArgs`, returned `docPath`, `arMcpContext.readerArguments` and actual schemas. `task_context` carries the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
-### Logic
+MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 
-The canonical curation carrier states that normal comparison recording collects actual R14 records and retains exact immutable curator artifacts. Historical review reads those pins. Explicit recovery requires a named retained parent plus its original curator record digest; old judgments and old generations are preserved, and current source/pointers are never substitutes. This packaged copy remains generated from the canonical skill.
+Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation. An explicitly report-only admission supplies only its requested report/upstream message and claims none of this normal pass complete.
 
-The family step now requires an explicit unchanged sibling set on a justified successor declaration. Each `declares.retain_memberships` reference names a stored membership read from the exact predecessor family and includes the curator’s basis. Old invariant revisions and memberships remain unchanged; no predecessor roster or allocation journal is copied implicitly.
+Author semantic scope and each target’s rationale. Examine a family’s own guarantee, exact memberships and unchanged siblings; retain them explicitly only when a successor is justified. Declare inspected external sources and read each measured plane’s own state. Use the existing comparison producer with the admitted source-bound package and carry its actual immutable generation or refusal, including unchanged-knowledge work.
 
-Read the report’s `retainedFromMemberId` references, family/source states and published exact roster. Those are distinct from the guarantee’s semantic judgment and from tests. The operation retains the existing complete memory-quality loop, typed blockers and review-record-comparison producer, including its explicit unchanged-knowledge route when no knowledge change is authored.
+## Conventions
 
-Taskless repository-foundation work uses the existing bootstrap admission; leaf work uses the exact enclosure. Neither the operation nor a generated copy creates a second writer, publication destination or lifecycle authority.
+Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instruction. scripts/sync-skills.py regenerates this exact packaged copy and the eight harness copies; no generated file defines a separate obligation.
 
-Since leaf `260921-ICR-L45`, workflow step 3 states that every hand-off target carries its own authored
-`rationale` and optional `role` as the hand-off template states, that the writer never generates a
-rationale, and that an unexplained target refuses its entry (`realization_rationale_absent`).
-This package copy is generated from the canonical root file by `scripts/sync-skills.py`.
+## Invariants And Boundaries
 
-### Conventions
-
-Canonical skills own instructions. Generated copies are synchronized artifacts; curate the matching sidecar against its own source path. One output list preserves the producer’s nine fields and fills only curator-owned decisions.
-
-### Invariants And Boundaries
-
-- Ground every record in accepted scope and real source evidence; do not create records to inflate coverage.
-- Exact retained revisions are reused without rewriting old meaning or provenance.
-- New membership edges are not new invariant revisions or semantic acceptance.
-- A refusal or unexamined plane stays explicit; no favorable default substitutes for it.
-
-### Todos
-
-No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
+Do not edit source/task/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer decisions stay in the agent’s own chat.
 
 ## Evidence
 
-### Docs References
-
-No configured Domain Documentation source applies to this repository-owned contract.
-
-The operative contract is defined by the repository sources cited below.
-
 ### Repo-Internal References
 
-These references name the current owners and the behavior they establish.
-
-- Curation sequence including explicit retained-sibling authoring. [1]
-- Workflow step 3 requires an authored rationale on every hand-off target (generated copy). [2]
-
-### Cross-Repo References
-
-No sibling repository defines this file's contract.
-
-No meaningful cross-repository implementation dependency.
+| Finding | Anchor | References |
+| --- | --- | --- |
+| Bound native intake, report-only admission and converted MIK file writer. | lines 54-113 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-113 |
+| Exact family/sibling/source coverage and admitted comparison producer. | lines 114-179 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179 |
+| Complete normal curation guards, role/write prohibitions and handoff. | lines 181-320 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-320 |

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "An unrecorded process can still use a sandbox before binding a port; reporting it and refusing reset prevents deletion of its state or guessed signalling."
+  },
+  "applicability": "Detectable unrecorded PNT dashboards and sandbox-home supervisors during start, stop and reset.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "An unrecorded supervisor with unreadable environment cannot be detected.",
+    "Detected unrecorded processes remain running for explicit operator action."
+  ],
+  "id": "INV-KYEMA8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox_processes.py::StartAndStopTests::test_a_dashboard_the_record_does_not_name_is_reported_and_keeps_the_directory"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "F24 a, b (unrecorded processes)",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dashboard of this sandbox (by command line, settings file and working directory) or a Paseo supervisor of its home (by the home its environment names) that runs and that no record names is looked for over all processes, whether or not it holds a port; `start` refuses and names it, `stop` and `reset` report it as `NOT STOPPED` and return 1, `reset` keeps the directory, and it is never signalled: the developer ends it.",
+  "status": "proposed",
+  "supersedes": []
+}

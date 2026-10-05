@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/coordination.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7818a6c0241184ffcec443c7e00f74944cad14ef",
+        "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-P0ZH30",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Coordination treats finished host turn as result evidence.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

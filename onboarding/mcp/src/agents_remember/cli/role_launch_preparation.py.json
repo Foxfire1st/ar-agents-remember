@@ -1,0 +1,198 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_preparation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_role_handover"
+        }
+      },
+      "id": "RLZ-8N10TZ",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §6",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Validates before workspace resolution and leaf enclosure preparation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_verify_leaf_revival_scope"
+        }
+      },
+      "id": "RLZ-8V1V37",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Compares saved launch task-context pair with current leaf-derived pair before resume.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_leaf_scope"
+        }
+      },
+      "id": "RLZ-JWS27D",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reads exact taskContext from launch receipt.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "content": "sha256:7624490692ab58393fecf5cac0d904a303bdf7fbe49b9eba7fe6172bdfda5cc9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_contract_path"
+        }
+      },
+      "id": "RLZ-ZKGBXA",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Validates canonical enclosure from leaf document without creating it.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of prepare_role_handover supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_role_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _ar_mcp_context supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:ccc44177e1d12dd63e0f1295ddff48791c1fa44598ac39a5577e663d467bc6d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ar_mcp_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _resolve_workspace supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:52a57a706f3082e6f52f63bf2222cde5b0c29922ebbef5a94a3c76cd1a269451",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of _compile_handover supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "content": "sha256:32f38dc08dde5672ba31264621662a2a275a87f5e4c844a851597b4ba4053dbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks reuse, explicit refresh and changed daemon home in the key.\n\nAnchor: `LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.\n\nAnchor: `LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation.\n\nAnchor: `ReviveTests.test_revive_of_a_leaf_bound_role_refuses_a_changed_task_scope_with_both_values`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:065f2da2237b8d035a7eed918e1b3abbdc0f46b150f0d3b8b0b5d357cf8b6b37",
+            "locator": {
+              "end": 793,
+              "kind": "line_range",
+              "start": 763
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:dc654b987245db480a1b25591a96a4a7105016a00deafbd4722ba802429fa7c9",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,28 @@
         }
       ]
     },
+    "12": {
+      "note": "Frozen implementation of _resolve_harness_dispatch supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
+            "content": "sha256:8c73ca029f4718b34800b0e066f92bf26753cc3f6d4d39a6e54d85c172b9f166",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_harness_dispatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The low-level spawn primitive remains plane-owned composition, and since 260915-CAPS-L15 it resolves the capsule here before any host side effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
             "locator": {
               "kind": "symbol",
@@ -124,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:3390fd7937aa05a088830ff820377f441780a79833d4ace6b3bea612eafe8790",
             "locator": {
               "kind": "symbol",
@@ -135,7 +151,7 @@
         },
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:debd4cd8ee4e909107de9f9b72fd7d404d650a06e2233df97884693e871b8baf",
             "locator": {
               "kind": "symbol",
@@ -151,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:ef2730e281689dc42e06a58a526a2d8ceb6386ea503d036b73519d620214fe6d",
             "locator": {
               "kind": "symbol",
@@ -162,7 +178,7 @@
         },
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:67acf4d02a822f722cfca2d07a27d95582b4b799543b61b5039d65da2a45a64a",
             "locator": {
               "kind": "symbol",
@@ -178,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:a71c2da852099ae3ec9c8d735c41ede3831e66d3eb6b7e12df8812dc3ce23b39",
             "locator": {
               "kind": "symbol",
@@ -194,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:b45de8d8bfeadc94ca9d1212a5e253e2d3b1b6482a1890904203b71311bfdc53",
             "locator": {
               "kind": "symbol",
@@ -210,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:fd4ebebd47952c58ea171950ad9a37b72642f78fe817105a367bad996df1ed39",
             "locator": {
-              "end": 999,
+              "end": 1006,
               "kind": "line_range",
-              "start": 948
+              "start": 955
             }
           },
           "kind": "code"
@@ -240,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -252,7 +268,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
             "locator": {
               "kind": "symbol",
@@ -264,12 +280,12 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
             "locator": {
-              "end": 176,
+              "end": 183,
               "kind": "line_range",
-              "start": 166
+              "start": 173
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },

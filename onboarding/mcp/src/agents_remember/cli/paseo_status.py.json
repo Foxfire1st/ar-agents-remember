@@ -1,0 +1,290 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_status.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+        "locator": {
+          "end": 176,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-DAV61S",
+      "invariant": "INV-F6CAGC",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §6 / A11",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Keeps recorded refusal and canRevive=false for still-closed session.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "content": "sha256:90c7cc2782435d56e81d482cf7dbccd5efe77b81da445f48b7126510be9a181b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reading"
+        }
+      },
+      "id": "RLZ-FYBZQN",
+      "invariant": "INV-QQEHVM",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §1 row 1 / A6 / F2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Turns unreadable reply into named unreachable reading.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
+        "locator": {
+          "kind": "symbol",
+          "name": "resume_agent"
+        }
+      },
+      "id": "RLZ-KDPXVY",
+      "invariant": "INV-F6CAGC",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §6 / A11",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Projects answered still-closed resume separately from unreachable call.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_agent"
+        }
+      },
+      "id": "RLZ-PNNR2D",
+      "invariant": "INV-QQEHVM",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §1 row 1 / A6 / F2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Turns failed call into unreachable observation rather than lifecycle replacement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+        "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+        "locator": {
+          "end": 176,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-Q7ENH5",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Maps idle finished turn to completed lifecycle and bounded last reply.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of STATUS_TABLE supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_TABLE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+            "locator": {
+              "end": 686,
+              "kind": "line_range",
+              "start": 674
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+            "locator": {
+              "end": 755,
+              "kind": "line_range",
+              "start": 688
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of status_row supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:ad9437ac9b34bee309093119ba6a63944674aecfc09a1e80bfaf240f0671dfde",
+            "locator": {
+              "kind": "symbol",
+              "name": "status_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of read_agent supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:b8a6f36df497c84c5dddb9217c879ce788082fb24f87456cd58d2f30960bfe16",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Frozen implementation of resume_agent supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a1dc9e35d66a26cd833e513038a46f0b420223fa",
+            "content": "sha256:64ab323f96a9c824308f58016bf383d9fbe814c2a7c5338705a0509b84589eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason.\n\nAnchor: `StatusTableTests.test_row_01_a_host_that_cannot_be_reached_leaves_the_receipt_as_it_is`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:e4afb6d90874acffbb83852849e459d90170be3a4c5b4a7002c6f206915cc46e",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.\n\nAnchor: `ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:3f7dc34505dafaecff39ce204c0b7489d8798808b6cc655159b3e99a8f0522c1",
+            "locator": {
+              "end": 822,
+              "kind": "line_range",
+              "start": 795
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Observing the same session open clears prior resume refusal.\n\nAnchor: `ReviveTests.test_a_recorded_refusal_ends_once_the_session_is_seen_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:c5934a51fedfeab0a012fa793a1de9770fd08325837549d47589227e57912c9e",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 824
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks unresolved/rejected receipts returned unchanged without host read.\n\nAnchor: `RefreshTests.test_a_launch_that_is_unresolved_or_rejected_has_no_agent_to_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 550
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation.\n\nAnchor: `StatusTableTests.test_row_10_idle_after_a_finished_turn_is_completed_with_the_final_text`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
+            "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/tests/test_paseo_status.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

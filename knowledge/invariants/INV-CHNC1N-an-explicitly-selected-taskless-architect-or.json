@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The router, manifest, both taskless role openings and Orientation carry the same boundary. Mistaking the shared Projects execution workspace for a registered repository or inventing a provider incident would create or investigate work without a selected scope; these exact mistaken inferences are explicitly prohibited by the inspected current sources."
+  },
+  "applicability": "Manual native Projects launches explicitly selecting Architect or System Specialist without canonical task references.",
+  "conditions": [
+    "The developer request is the scope source.",
+    "Only actually missing outcome/repository or provider/system concern/report scope is asked for."
+  ],
+  "exclusions": [
+    "Task-bound selections, which retain their supplied canonical task and paired enclosure.",
+    "Other taskless foundation/bootstrap admissions described by their own contracts; this statement does not expand the native launcher role set.",
+    "Projects is an execution workspace and never, by itself, a registered repository identity.",
+    "Generated skill mirrors are synchronized outputs, not separate semantic declarations."
+  ],
+  "id": "INV-CHNC1N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen Ctree 83aa7103dca3c104e58df155baead24f10be784f: SKILL.md:14-16; composition-manifest.json:29-36; roles/architect.md:8; roles/system-specialist.md:8; operations/orientation.md:3. Public source_context at the two role files returned only FAM-KQQE74ZT@2 as an ancestor route chain and no own invariant; router, manifest and orientation returned scoped registration_absent with indexComplete=true. No live taskless run or fresh test result is claimed."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An explicitly selected taskless Architect or System Specialist at Projects uses the developer request, asks only for the missing outcome and registered repository or missing system concern and report scope, and creates no inferred repository, sprint, master or task identity.",
+  "status": "proposed",
+  "supersedes": []
+}

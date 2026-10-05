@@ -8,6 +8,8 @@
 
 Typed agentic settings models, constants, and validation primitives. The settings family (``orchestration.*``) is merged from a global and an optional repo-local settings file. This module owns the typed models, the fail-loud key vocabularies, the shared shape/type validators, and the seeded defaults; the parsers live in responsibility-split siblings and the loader in :mod:`agents_remember.kern...
 
+Defines typed role knobs and inherited agentic settings defaults.
+
 ## Code Commentary
 
 L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qualityGate.executor` to `local`. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor field entirely: `QualityExecutor` is deleted, `KNOWN_QUALITY_GATE_FIELDS` now contains only `memoryCapBytes`, and `QualityGateSettings` carries only `memory_cap_bytes` -- executor identity belongs to the repository certification profile, not to agentic settings.
@@ -36,6 +38,10 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 - `_require_string_list`
 - `_require_harness_id`
 
+### Role Runtime and Scope
+
+RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Preserve the existing spend/launch-arg/default explanations and add this independent native capability fact.
+
 ## 260731-EFA-L17/L24 Quality-Gate Settings
 
 The module owns the `orchestration.qualityGate` family:
@@ -55,6 +61,11 @@ family.
 ### Repo-Internal References
 
 The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
+
+### Runtime Source References
+
+- Frozen implementation of RoleKnobs supporting the stated file behavior. [1]
+- Frozen implementation of AgenticSettings supporting the stated file behavior. [2]
 
 ## L23 Final Candidate Disposition
 

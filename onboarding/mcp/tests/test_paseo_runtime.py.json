@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_paseo_runtime.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+        "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+        }
+      },
+      "facet": "Runs all three commands without the block and checks named refusal, exit two and no process operation.",
+      "id": "PRF-RS8GEW",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+        "content": "sha256:cdf9fb8b0c8fa0f3747358332a220f1dfe5a2cefcee973bf798d77be93d3229a",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing"
+        }
+      },
+      "facet": "Checks a mismatched install is replaced and a failed staged installation preserves the preceding install and daemon.",
+      "id": "PRF-ZJCHJP",
+      "invariant": "INV-2MWAYK",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §7",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:d39bb1fef9dce215313c524d958eb99029f50cc60d1ef5296cdccc7837a1b03f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/application/task_scoped_mcp.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+        "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_scoped_mcp_config_for_reader"
+        }
+      },
+      "id": "RLZ-3X9CJV",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Chooses original roots without context or the repository-matching admitted canonical leaf.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+        "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_task_scope"
+        }
+      },
+      "id": "RLZ-VWBJY8",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Derives roots only after canonical task/enclosure and configured-contract authority admission.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of task_scoped_mcp_config_for_reader supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_scoped_mcp_config_for_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _admit_task_scope supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_task_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _canonical_leaf_contract supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:ffdd5cba81058e609463807d63dafe9cac09c732e71cc47c6d35aa0ad0d24595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_leaf_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
+            "content": "sha256:f12d781b2c954e57fe68923263eba6ba6eea6fa09d545dcc75f84addabdce9e8",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

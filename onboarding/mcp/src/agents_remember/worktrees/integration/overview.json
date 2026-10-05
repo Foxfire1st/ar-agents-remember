@@ -107,6 +107,38 @@
         }
       ]
     },
+    "13": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66edec78c1cc6b98be0aa733be6b213e8a814d05",
+            "content": "sha256:617a91e6808046cbffe7c561ad37c24074ea0409e3b1d46ca15d80897ed55893",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/configured_contract_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
+            "content": "sha256:3948e4a9c1fa095ef12bf92e037bd43b91fe26e80fec2b3e3df9d72e5f7def57",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Completed organizational proof binds original selected references through the operation owner.",
       "targets": [

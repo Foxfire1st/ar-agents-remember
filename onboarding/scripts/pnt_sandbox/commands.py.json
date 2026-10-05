@@ -1,0 +1,185 @@
+{
+  "path": "scripts/pnt_sandbox/commands.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:0ff36f0263392da3b9016521a6ec3b778f102e2ec8177b7cb060d263c653fb66",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stop_paseo"
+        }
+      },
+      "id": "RLZ-1FCTEB",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Calls native stop only for the verified home supervisor, otherwise reports or clears the record.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:5ea3782c22b4d0afb58a6a728a86a15f38900541bb86e702fd0ae7cdf557f802",
+        "locator": {
+          "kind": "symbol",
+          "name": "start"
+        }
+      },
+      "id": "RLZ-2EBA71",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Takes the canonical layout start lock and supplies it to operations.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:2423981937c028f19f6f12e75a736559562d7e05b30b5b51da71b82b52a006fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_unrecorded_processes"
+        }
+      },
+      "id": "RLZ-BP2CV7",
+      "invariant": "INV-KYEMA8",
+      "origin": {
+        "handoffEntry": "F24 a, b (unrecorded processes)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Refuses a new start over detected unrecorded sandbox processes and reports their IDs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:8721148599740bb8624741af6f281c03cdeaf44f22b84dcc7c0932a1e0cbbb04",
+        "locator": {
+          "kind": "symbol",
+          "name": "_report_unrecorded"
+        }
+      },
+      "id": "RLZ-DTHFYN",
+      "invariant": "INV-KYEMA8",
+      "origin": {
+        "handoffEntry": "F24 a, b (unrecorded processes)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reports unresolved stop facts so reset preserves the directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:301b8d7d2c524d9e390f1f3da1f7341b68644009e47f9306a18dae19f6971dd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delete"
+        }
+      },
+      "id": "RLZ-KHANQT",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Marks resetting, tries every entry and removes the marker last, restoring it after failed final removal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:c47b35ddfb908ec4256c51abfcded8cf646b9d816e0166761b8bdda2efb1a8a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "reset"
+        }
+      },
+      "id": "RLZ-T4A2H5",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires this tooling marker and a successful owned-process stop before deletion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:657ca498e75a03c54b7ab9f571f12056c2a1f6ddf5fb265e51f2cf02ed5caa3a",
+        "locator": {
+          "kind": "symbol",
+          "name": "check"
+        }
+      },
+      "id": "RLZ-T9DAW9",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Supplies the failed-root admission used before process bring-up and prints the named findings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:8f1b2e75e502ef6b05bc0072657abcd07133b3e22bded661e1763940eb6d971c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_provision"
+        }
+      },
+      "id": "RLZ-VE7YCN",
+      "invariant": "INV-AW711P",
+      "origin": {
+        "handoffEntry": "F2 / F10 / F24 c, d (Paseo record)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Rechecks the home record before provision and refuses unreadable ownership.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+        "content": "sha256:efe6ae3a843384f1ed6c5301c04a4580ad58ca67a7ea64578a4978a01bee1058",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_foreign_ports"
+        }
+      },
+      "id": "RLZ-WBQT39",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §2a / Ports (no fallback)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Refuses reserved-port holders outside the proven sandbox ownership chain.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:a18734015fc0cb2e510dcc3ea95931974bc87265d92afaabcec35da58d0d6ab7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

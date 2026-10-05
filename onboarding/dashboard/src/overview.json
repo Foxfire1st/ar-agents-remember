@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:f455d122c0fbfe570f8869b243f55c385e9fd43e3e0be41f3a8c0f2e13b14216",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:3043a4d23f8eb3279688291d710879220b1bbec55cf40e99340abd4460953fe5",
             "locator": {
               "kind": "symbol",
@@ -258,12 +258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
-              "end": 395,
+              "end": 396,
               "kind": "line_range",
-              "start": 394
+              "start": 395
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -276,12 +276,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
-              "end": 419,
+              "end": 421,
               "kind": "line_range",
-              "start": 419
+              "start": 421
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -289,12 +289,12 @@
         },
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
-              "end": 583,
+              "end": 587,
               "kind": "line_range",
-              "start": 583
+              "start": 587
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -307,12 +307,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
-              "end": 35,
+              "end": 36,
               "kind": "line_range",
-              "start": 35
+              "start": 36
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -448,7 +448,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -535,12 +535,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:7d3b4086b9d10c7c5ef35c0405cd01c55dd4bfa37aa1e125a1d3fefd494e8df4",
             "locator": {
-              "end": 959,
+              "end": 951,
               "kind": "line_range",
-              "start": 958
+              "start": 950
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -653,6 +653,70 @@
         }
       ]
     },
+    "34": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "content": "sha256:c1533025701fb83c33590e76a9273821e0e60c0c3a50be92c2495602e8ddb9a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce4c933479dbe1f7d31b34450ff93cf46ec8b5fc",
+            "content": "sha256:4ce3c8c56a142ea582fba679519b1e4a87730c59ab7a7f1717826501b6c11c25",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "938d34d0a3991aa37925eac157daada7619620aa",
+            "content": "sha256:651751e8672fcbb6328110b1bc1c1633f2057cc3de6bae28a492e5b852afb110",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b97d6dab0d489d79176670d8103d5b1722f67f19",
+            "content": "sha256:531a26139eddde1c7dca9a243a7bb71f601e0f7bbf2df32390da7b2f3842fa07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/paseoNavigationModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts (\"task entries this list carries\"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as \"task entries\" on the strength of this card.\n\nAnchor: \"Tasks · {count}\"",
       "targets": [
@@ -694,7 +758,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
             "locator": {
               "kind": "symbol",

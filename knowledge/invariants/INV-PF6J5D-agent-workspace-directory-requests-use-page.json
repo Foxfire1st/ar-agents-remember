@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts carries PAGE_SIZE=200 on initial and continuation directory requests; the historical real 500-row refusal made the native catalog unavailable, so retaining the pinned native bound prevents losing every sidebar chat through that integration error."
+  },
+  "applicability": "Agent and workspace directory listing against the frozen package's pinned Paseo 0.11.0-beta.2 contract.",
+  "conditions": [
+    "Initial and continuation list requests carry page.limit=200.",
+    "A continuation that reports more data must name a new nonempty cursor."
+  ],
+  "exclusions": [
+    "The literal bound is version-specific and must be revalidated when the pinned native request contract changes.",
+    "Static typings are not proof of a native numeric request maximum."
+  ],
+  "id": "INV-PF6J5D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "B1-native-page-contract.json: read-only 9 agents/5 workspaces; F5 preserved live failure; final B1 five independent affected tests and 57 builder plugin checks.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::includes every SDK page, canonical labels and actual host membership, then applies live metadata changes | exact facet: The first and continuation agent requests are exercised against a mock that refuses limits above 200, and the published catalog contains the continuation-page sibling; both directory mocks enforce the native maximum. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 93 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 §6 / pinned native page bound",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Agent/workspace directory requests use page size 200 on every initial and continuation call, matching the pinned runtime’s actual maximum rather than the rejected 500.",
+  "status": "proposed",
+  "supersedes": []
+}
