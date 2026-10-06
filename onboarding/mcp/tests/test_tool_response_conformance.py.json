@@ -114,24 +114,6 @@
         }
       ]
     },
-    "16": {
-      "note": "The lane row that keeps this module in the default lane.\n\nAnchor: \"mcp/tests/test_tool_response_conformance.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1bdcb0905caf3223ebfebe07bc3a74962d081426",
-            "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
-            "locator": {
-              "end": 414,
-              "kind": "line_range",
-              "start": 414
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "17": {
       "note": "The choke point whose guarantee this module moves into the suite.",
       "targets": [
@@ -194,6 +176,24 @@
               "kind": "symbol",
               "name": "test_the_seventeen_internal_registrations_are_named_not_implied"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The lane row that keeps this module in the default lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 416
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

@@ -97,7 +97,7 @@ they make no acceptance claim.
 - A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`. [13]
 - `session_retire` reports the stranded row after the seat is already gone. [14]
 - The structural delivery projection is declared on the shared base every consumer inherits. [15]
-- The lane row that keeps this module in the default lane. [16]
+- The lane row that keeps this module in the default lane. [20]
 - The choke point whose guarantee this module moves into the suite. [17]
 - The registry whose models the structural layer sweeps. [18]
 - The advertised public roster the surface layer checks against. [19]

@@ -3,40 +3,77 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One function writes complete current lifecycle metadata.",
+      "note": "The builder refuses an empty mapping, writes the schema line, the one contract row and one artifact row per artifact in sorted order, and returns the catalog path.",
       "targets": [
         {
           "anchor": {
-            "blob": "38204d3fc74ab0886df9d064dbcd6ae228238fcb",
-            "content": "sha256:4d90fb00844186220653bec0e3c441f4010a3a35b12d989aad15c33229be4780",
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:454088df9dfb719c56c8d7bad86b66e88b1bc650a41be2fa928e98dcadcadf7e",
             "locator": {
               "kind": "symbol",
               "name": "write_synthetic_evidence_catalog"
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "3": {
+      "note": "Each consumers list is written one path per line, sorted and without duplicates.",
+      "targets": [
         {
           "anchor": {
-            "blob": "38204d3fc74ab0886df9d064dbcd6ae228238fcb",
-            "content": "sha256:fe86c4165c406ede8de8ba9e70d9bf51a25bf08d60b3115b10d643064702ee13",
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:c6eb8b0433568b707aa778a9fb413c6b452eacfb16d44719fd33b5cbead9c3ac",
             "locator": {
-              "end": 50,
+              "end": 60,
               "kind": "line_range",
-              "start": 1
+              "start": 58
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Production validation owns the accepted schema.",
+    "4": {
+      "note": "Each consumer module gets the literal tuple of the artifacts it reads, so the oracle observes it.",
       "targets": [
         {
           "anchor": {
-            "blob": "0dc482270a2a12e22ae3663e9d2951e7ce8a6698",
-            "content": "sha256:833ade30cfb4dbbc8ef13abf4e7816a932f9edb0b852e1c7f55c7735a27eb944",
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:d2c94a1bc174a858d23334ee5c01845fb2139d9a8669e5bea21ed6751a654564",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_observable_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The contract's evidence node is the first test function or test method found in the consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "78876383d0c7eed29dfddba7fd6978c87025eb7f",
+            "content": "sha256:5e286caaaaa138721b07c2572e03fcd4d4f10e0de180b942d1a415926bd53f4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_test_node"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The loader that decides what a valid, canonical catalog is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
             "locator": {
               "kind": "symbol",
               "name": "load_evidence_inventory"

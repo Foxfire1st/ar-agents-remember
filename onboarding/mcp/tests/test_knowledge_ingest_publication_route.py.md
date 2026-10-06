@@ -101,8 +101,7 @@ support module, which is why its catalog delta is a *consumer* change only (see 
   location was never created.
 - **No artifact and no contract of its own.** The module composes
   `mcp/tests/snapshot_lifecycle_test_support.py` (reached through the fixture module it imports) and
-  the existing ingest-list fixtures, so the evidence census population stays at **sixteen contracts /
-  sixty-six artifacts** and only the two `consumer_scope = "exact"` rows gained the path.
+  the existing ingest-list fixtures, so only the two `consumer_scope = "exact"` rows gained the path.
 
 ### Todos
 
@@ -126,11 +125,11 @@ the same operation at one enclosure's scale.
 - **The production-shaped enclosure and the contract that records it, including the leaf's own commit on its work branch.** [8]
 - **The four helpers that keep the fixture from agreeing with the implementation, and the shipped invocation the canonical instructions carry.** [9]
 - **The read route's owners the fixture resolves the declared location and the read-back through — the same owners the production route uses, which is what makes the fixture an independent side.** [10]
-- The shipped entry point every case drives, and the two real readers it measures through. [11]
 - **The existing fixture module this one composes instead of introducing a third support module — the reason its catalog delta is a consumer change only.** [12]
 - **The lane row this module occupies, and the two governed consumer rows it joined.** [13]
-- **The catalog digest the two consumer rows moved, and the counts they do not move.** [14]
 - The production route these cases are the regression surface for. [15]
+
+- The shipped entry point every case drives, and the two real readers it measures through. [21]
 
 ### Cross-Repo References
 
@@ -138,3 +137,4 @@ No meaningful cross-repo references found: the whole fixture world is built insi
 the enclosures it builds are this repository's own.
 
 No meaningful cross-repo references found.
+

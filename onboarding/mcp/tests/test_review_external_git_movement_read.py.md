@@ -74,8 +74,7 @@ siblings rather than rebuilding them (`:44-50`): `_closeout`, `_freeze_review`, 
 
 The module is registered as a member of the `integration` lane in `mcp/tests/test-evidence-lanes.toml`
 and as a consumer in `mcp/tests/evidence-lifecycle.toml`, so its cases are part of the population those
-manifests govern; `LIFECYCLE_CONTRACT_COUNT` and `LIFECYCLE_ARTIFACT_COUNT` are unchanged by the
-registration, while `LIFECYCLE_CATALOG_SHA256` is re-pinned deliberately because the catalog bytes moved.
+manifests govern.
 
 ### Invariants And Boundaries
 
@@ -139,7 +138,6 @@ cannot drift apart silently.
 - **The module-level case that pins the absence a leaf which published nothing reports.** [20]
 - **The lane registration that makes these cases part of the governed `integration` population.** [21]
 - **A lifecycle consumer row that names this module, so the artifact census still counts it.** [22]
-- The re-pinned catalog digest that owns the lifecycle manifest's exact bytes. [23]
 - **The documented section the matrix case asserts against, generated from the production table.** [24]
 - The sibling module that owns the managed-sync half of the same read, whose fixture this module shares. [25]
 

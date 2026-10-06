@@ -1398,7 +1398,8 @@ one leaf's curation pass.
 - The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
 - **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
 - The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. [52]
-- The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [53]
+
+- The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
 
 **The 260915-KS-L6 portable half**, cited in the same `Finding | Anchor | Source` shape.
 
@@ -1424,12 +1425,18 @@ one leaf's curation pass.
 - The node that proves the import's stage is closed before it is published, and the node that proves the freeze's closure on the published destination. [73]
 - The node that proves destination admission refuses before any staging work. [74]
 - The node that holds the round trip of a populated dataset to an equal logical dataset. [75]
-- The registry rows this leaf added: two integration lane rows. [76]
-- The registered support artifact the two integration lane rows land in, by its own artifact id. [77]
-- The second registered support artifact those rows land in, by its own artifact id. [78]
-- The third registered support artifact those rows land in, by its own artifact id. [79]
-- The second registered support artifact those rows land in, by its own artifact id. [80]
-- The third registered support artifact those rows land in, by its own artifact id. [81]
+
+- The registry rows this leaf added: two integration lane rows. [121]
+
+- The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
+
+- The second registered support artifact those rows land in, by its own artifact id. [123]
+
+- The third registered support artifact those rows land in, by its own artifact id. [124]
+
+- The second registered support artifact those rows land in, by its own artifact id. [125]
+
+- The third registered support artifact those rows land in, by its own artifact id. [126]
 
 **The pre-L6 rows below remain in the superseded two-column shape** and are recorded as a pre-existing repository-wide migration item in the Update History rather than converted from inside one leaf's curation pass.
 
@@ -1467,8 +1474,10 @@ worktree it was opened against, and the memory-repository lifecycle can address 
 checkout, but neither establishes a boundary contract here.
 
 No meaningful cross-repo references found.
-- The second registered support artifact those rows land in, by its own artifact id. [82]
-- The third registered support artifact those rows land in, by its own artifact id. [83]
+
+- The second registered support artifact those rows land in, by its own artifact id. [127]
+
+- The third registered support artifact those rows land in, by its own artifact id. [128]
 
 ## No Route Impact — 260915-KS-L15
 

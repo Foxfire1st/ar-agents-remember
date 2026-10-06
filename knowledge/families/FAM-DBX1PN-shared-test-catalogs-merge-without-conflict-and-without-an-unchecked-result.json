@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The union merge alone would let a duplicated or interleaved catalog through, the canonical-form refusal alone would bring back a hand repair at every sync, and the command alone stops nothing; only together do they give a merge that neither conflicts nor lands damage."
+  },
+  "guarantee": "Two changes that extend the two test catalogs independently are merged by Git without a conflict. A merge result that holds a line twice, a list out of order, the line of a deleted file or two interleaved rows is refused by the loaders before a test run or a delivery relies on it. One command that makes no decision repairs order, duplicate lines, derived consumer lists and the lines of deleted files.",
+  "id": "FAM-DBX1PN",
+  "members": [
+    "INV-RDQYV3",
+    "INV-6GVK07",
+    "INV-K0CS85"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L51-catalogs-merge-checked",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/test_support/agents_remember_test_support/testing",
+    ".",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Shared test catalogs merge without conflict and without an unchecked result"
+}

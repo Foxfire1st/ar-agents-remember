@@ -71,8 +71,7 @@ refused-not-empty wording.
 - R24 navigation is explicitly not claimed here; mounted-browser observation of the
   generation caption belongs to R24/R25 assembly (jsdom proves URLs + caption render).
 - The module registers no contract and no artifact and consumes no catalog-registered
-  support module, so `mcp/tests/evidence-lifecycle.toml` is untouched and
-  `LIFECYCLE_CATALOG_SHA256` is not re-pinned.
+  support module, so `mcp/tests/evidence-lifecycle.toml` is untouched.
 
 ## Evidence
 

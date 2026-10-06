@@ -100,7 +100,7 @@ No configured domain documentation could be checked.
 - The admitted destination and namespace initialization the harness drives. [7]
 - The operation the harness applies its batches through. [8]
 - The two declared consumers' own first nodes, which measure a refusal through this harness. [9]
-- The registry validator that derives real importers and refuses a differing declared consumer set. [10]
+- The registry validator that derives real importers and refuses a differing declared consumer set. [12]
 
 ### Cross-Repo References
 

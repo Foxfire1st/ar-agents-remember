@@ -163,8 +163,7 @@ assertions cannot drift.
   never refused with a status error, and never read as a range measured empty — and is an empty half
   only for memory (260921-ICR-L25, register B6).
 - **This module adds no catalog artifact.** It consumes the two existing shared-support fixtures, which
-  is why its evidence-catalog footprint is two consumer rows and a re-pinned digest with unchanged
-  counts.
+  is why its evidence-catalog footprint is two consumer rows.
 
 ## Evidence
 
@@ -183,13 +182,12 @@ comparison route, the leaf change-set view), the register of the module's own ca
 the packet requirement it evidences. Three details a reader should carry: the fixture's tracked paths
 reproduce the diff fixture's candidate bytes on purpose, so the recorded anchors resolve against the
 blobs they recorded; the moved-input case reads both identities out of the refusal rather than
-asserting a message; and the module registers no artifact, so the two consumer rows plus the re-pinned
-catalog digest are the whole memory-side footprint of adding a case module here.
+asserting a message; and the module registers no artifact, so the two consumer rows are the whole memory-side footprint
+of adding a case module here.
 
 - **The module's own statement of what it measures and why injection is excluded: a real enclosure, a real worktree, the real resolution and the real comparison.** [1]
 - The lane registration: one `unit-regression` row, which is the whole delivery-category footprint. [2]
 - **The catalog footprint: a consumer row on each existing shared-support fixture, so no artifact and no contract is added and the populations do not move.** [3]
-- The catalog byte pin the new consumer rows oblige, re-pinned deliberately beside the unchanged counts. [4]
 - The fixture's own vocabulary: the tracked paths that reproduce the diff fixture's bytes, the two ways a file is in the candidate and in no commit, the ignored boundary path, and the two committed/working contrast paths. [5]
 - **The live enclosure: the real contract, the real worktree, the real datasets and the real resolution, with `resolve()` asserted to return a resolution rather than a refusal — and the `memory_mode` shape that composes a real memory half for later leaves without changing the default.** [6]
 - The two contract states a case can produce: a recorded landed commit, and the code-recorded/memory-unrecorded leg. [7]

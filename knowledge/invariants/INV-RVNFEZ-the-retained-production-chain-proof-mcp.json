@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Registering a fixture, a support module or a contract for the proof would let the proof pass on inputs it owns itself instead of on module-local test source; the check is computed, so it holds without a pinned value that every catalog change would have to update."
+  },
+  "applicability": "The catalog mcp/tests/evidence-lifecycle.toml of this repository and the module mcp/tests/test_lifecycle_owned_completion_relay.py.",
+  "conditions": [
+    "The proof module may be one of several consumers of an artifact; only being the sole consumer counts as owning."
+  ],
+  "exclusions": [
+    "Other test modules, which may own governed support and contracts.",
+    "The descriptive fields of catalog rows, which this check does not judge."
+  ],
+  "id": "INV-RVNFEZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 1 and 2); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md",
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 1 and 2); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md; notes/reports/260928-MIK-L51-factcheck.md"
+      ],
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R51@v1-proof-owns-nothing",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The retained production-chain proof mcp/tests/test_lifecycle_owned_completion_relay.py owns nothing in the evidence-lifecycle catalog: no artifact row has it as path, as owner or as its only consumer, and no contract names it as owner or as the module of its evidence node; the property is computed from the catalog each time the test runs.",
+  "status": "proposed",
+  "supersedes": []
+}

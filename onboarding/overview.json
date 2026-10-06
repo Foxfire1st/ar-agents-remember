@@ -2,7 +2,7 @@
   "path": ".",
   "references": {
     "1": {
-      "note": "The skill's finalizer paragraph, mirrored into the package and starter copies.\n\nAnchor: \"master lists it, the finalizer always derives that\"; \"assertions are omitted. A sub-task naming none whose folder\"",
+      "note": "The worktree skill's paragraph on how the finalizer derives a leaf's master.",
       "targets": [
         {
           "anchor": {
@@ -19,80 +19,708 @@
         }
       ]
     },
-    "10": {
-      "note": "OM-4, mirrored likewise.\n\nAnchor: \"Admission justifications are plausible\"",
+    "100": {
+      "note": "The mutation classes that invalidate the closeout queue projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "3927385cc0dcab701a409a68c467d1ed113c5fcc",
-            "content": "sha256:c3b3b3acbc99753b8d0331cd075d38a2d210897fd3ccc34a0dee93d9877a6c86",
+            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
-              "end": 47,
-              "kind": "line_range",
-              "start": 36
+              "kind": "symbol",
+              "name": "TaskDocumentMutationClassification"
             },
-            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "c-14 step 3's admission paragraph, mirrored likewise.\n\nAnchor: \"A foundation is a small set of meaningful records\"",
+    "101": {
+      "note": "The observer's graph projection reads the resolved row statuses directly.",
       "targets": [
         {
           "anchor": {
-            "blob": "a125e75806a0c576fd68e0f23668b091ab32a395",
-            "content": "sha256:b668a09ddd791e81ff38e5ca2d24bcc0285724442cebbf82ba90357af8b4d982",
+            "blob": "940257b5145711ced84a3f298d7738457d15c9cc",
+            "content": "sha256:fd1c703a68b94ebeedb8ab979e4db17dd77105e98fec1da998c4f2bd4c7251d8",
             "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 161
+              "kind": "symbol",
+              "name": "_node_is_resolved"
             },
-            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "The template's planned-row bullet, mirrored into the package and starter copies.\n\nAnchor: \"A planned row (MIK-R11, converted memory only)\"",
+    "102": {
+      "note": "A review comparison on converted memory is four Git trees pinned by refs.",
       "targets": [
         {
           "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:6c149f9e6175f0e6d63518b77bbfd86c24c1f92468ee2d7f257e20648424b556",
+            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "content": "sha256:7e95715c92fb646c1261df6812eebea42a8b0f0f01a6f41e9c91e4451b5e2a97",
             "locator": {
-              "end": 626,
+              "end": 30,
               "kind": "line_range",
-              "start": 616
+              "start": 1
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "The reviewer's declaration check, mirrored likewise.\n\nAnchor: \"check that declaration against the\"",
+    "103": {
+      "note": "The route rules are reported inside the writer and refused by every commit route.",
       "targets": [
         {
           "anchor": {
-            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
-            "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
+            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
+            "content": "sha256:b7fc549151d3119e7e5d11e2b68b181ebf8425d8109e85ac69937d032f3d8da7",
             "locator": {
-              "end": 96,
+              "end": 15,
               "kind": "line_range",
-              "start": 94
+              "start": 1
             },
-            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "The file-writer route of the two commands and the crossing route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
+            "content": "sha256:a145c3e120f49e9be29eda8e342541bea079e67bc8ec63af712123cb3aa20634",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The worklist kind for an invariant that was already stale at the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "346dffb645bb8d25615cc126bc839e7629e53331",
+            "content": "sha256:602d624a4f96ea3eb3fb0d25e86b632c8067ab37a2aeeac9d0feafd0ae9a5423",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "The host-scoped provider setup lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:ea936089f21faf4a8748d82af548fa84c5d35333e4b7d5f373f78e53c0275e11",
+            "locator": {
+              "kind": "symbol",
+              "name": "fleet_setup_lock_path"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "108": {
+      "note": "The data roots of the two provider databases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:e3c72ae438028c9730b62b5f0f0c9dc9bbba52cfee90d1e749d6160af5fff97c",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8670aacc9070692522816494fd7703d079763d2a",
+            "content": "sha256:c41b044188e0f74c442582ca8551b77a6ced32e3d8f3275560afa03392596ac3",
+            "locator": {
+              "end": 312,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "The GrepAI clone has a stall watchdog and no total-time cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:3e13866b731f79488de6fc1864b3f95a0acb7c3fa3f27b8d96838581b16a1c34",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "The CodeGraphContext seed export is bounded by the provider-setup cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:57d07d2b4d565bdfd29a6abe5640e72b299b0ff8374068a570fc8a05b48260c2",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "The states of the CodeGraphContext graph probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:e96d62bde35059a957f9896085c5831526d9e18f654483b214341d51cba4ba71",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "The GrepAI indexing states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3705a82335c607a7bd8983ba30222bb4ae37c3",
+            "content": "sha256:0646a63a5de6646f311a6b512da8b76de5f9932179098647f0364557d10c7dd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_indexing_state"
+            },
+            "path": "mcp/src/agents_remember/providers/current_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "The submission authority is the only prompt queue.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:5aa61b3efd3956b5ab79fdde91357e478b884c8f550a4fcd55c1103293661cbc",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "115": {
+      "note": "A repeated request id is idempotent only with the same source and payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f36cbe006a25bbe9fcbb9f166f9ad87c02fb7b",
+            "content": "sha256:d89262afedab35704ec6795a173337bd0442b0058eefacf973762fad2b09ab99",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pre_admission_receipt_locked"
+            },
+            "path": "mcp/src/agents_remember/serving/harness_submission_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
+      "note": "The opener is the one spawn path of the dashboard and of internal dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2287aff3d611865eaacec237ad0978b14842cf33",
+            "content": "sha256:d212b056543d0e6d646ec0f6a691c36425ee8568c6dc025e1e08c51be534a17e",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/terminal_opener.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "The serving layer is transport over the observer projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3d3defdb4cf080e6022f767185d7447886a8b42",
+            "content": "sha256:f725e9d4cb8b83dffab582cd18922c337540380cc785b98a8550186933fffea5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "118": {
+      "note": "The dashboard records a lifecycle gate decision through the control plane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
+            "content": "sha256:c99d34a7ed890ce1ae0acb8858f2e938702aded920ad72384c685618e4fa7cb7",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "119": {
+      "note": "The gate responder posts a response to the inbox, except for an adapter interaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a6494b8ef0f5b9098c97f627fe20d2adbc67867",
+            "content": "sha256:5216cdfc08f54b46a46e6fcceeb24afa2d00f57ecca9b27ce25a0d99f968f918",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "dashboard/src/panels/GateResponder.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "120": {
+      "note": "The serialized model-and-effort change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041dfe2c0a9d72f948ca688a5e5423845009f58b",
+            "content": "sha256:2e346e325efb1dfbce0a414412ad7e5be86becc16553187265236cf875e6a68c",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/pairChange.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "The dashboard bundle placement, its freshness proof and its check mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:b6c6aeb3f720739e03b990c223bfd53d713153e615ff8f630f7631c60295d3eb",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "The hook gate's tiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "The fast tier parks unstaged and untracked content and restores it on every exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:7e9f1dc3267afa3d829234b9768060fabdd0a2e2bc3a16d07d5cec96307df0d8",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "The fast tier's checks, with the validator of the two test catalogs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a486f91a07d193d41b89d8871627f47ebfc2d324",
+            "content": "sha256:c3990657ce48bfc68ba7d342108feb8e693c0ae75c9a8f25654718abd5ba5dd2",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "The staged-quality preparation refuses a checkout that is not a task worktree, then resets and stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:9e444b5766680f6fd5f95f66dc6ba8553de7109a84a8a492a0497b7f6476e7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "A candidate tree is captured through a private index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
+            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_candidate_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "The pair identity of a memory candidate and what its digest covers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "The final full memory-coherence certification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7027ec9480d688e503a34adce80ba6194a5582d",
+            "content": "sha256:55d62711708c12afbc553c96932bee256fa7714690df803c6b5d8e81136b3736",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "129": {
+      "note": "The charters of the certification and control-plane packages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
+            "content": "sha256:83643cb422837d7eeb3c92d7316019bf2ae705f401886ccbccea93076ef02425",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "Ruff's complexity rules and the one per-file ignore.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "content": "sha256:22b47af4643ca57af5fc2b20ea693b15dc794169080cdd900465ea6c0361df12",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "The Git runner gives the child no standard input unless text is passed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "The vendored vocabulary is verified before tiktoken reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:ca6cefaa9df2a35bfd70801ecd52aefb39ce45e5ed8f96d22ba93a92f265089d",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "133": {
+      "note": "The task workflow creates the requirement corpus before the task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:be7fa585e4fbe50b71dd0752b31ed0c77d1310dd15b442703e9b4e0929346a2e",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/w-02-light-task-workflow/workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cfe51cedcda31c3725a38471a7504d4679f549fe",
+            "content": "sha256:eb2ce660992a84f49a0522cd117763f5ee1182fffc58e19ac7bd69c157008c79",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "skills/w-02-light-task-workflow/workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "134": {
+      "note": "Requirement revisions and delivery attempts are separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "content": "sha256:7038a04cb7fa89277eebc526c48cbc6d61b4704bc2b131d80acf38a5cab34dc7",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "The start-of-task onboarding trust gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11a527ca65b893c652e9bc068c1e93643bfb371d",
+            "content": "sha256:91ba36a6358b2eebf74a3d98bc6708c72b6d754f99de908a6a3ef2da9ccc5930",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "agents-md-files/system/AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "The templates that the runtime install places in the coordination root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da03b840f9e9b835810d2339c909cf0bb20efe68",
+            "content": "sha256:c49482e1392005a1d4105aa1077df95f426e690642b52eea93c95b90b3586a79",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+            "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "The reader config of a call that carries a task context comes from the leaf's admitted enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
+            "content": "sha256:c77efbfb050d869b9f27ef2d986531d94886b51cb75ed7194758cf016ae87393",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "The subcommands of the `agents-remember` command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "content": "sha256:46e272bf355d0f705f644b5d504c897e600ac448dc80df02844c214f439fca4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
           },
           "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "The skill's taught route through `knowledge_read`, mirrored into the package and starter copies.\n\nAnchor: \"Follow a bounded page through\"; \"The threshold bounds the whole block, not each path.\"",
+      "note": "The retrieval skill's route for continuing a bounded page through `knowledge_read`.",
       "targets": [
         {
           "anchor": {
@@ -122,26 +750,103 @@
         }
       ]
     },
-    "15": {
-      "note": "The hand-off template's onboarding-row bullet, mirrored into the starter copies.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
+    "140": {
+      "note": "The lane loader refuses a catalog that is not in canonical form.",
       "targets": [
         {
           "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:45648f762efd1f014b318ec5f46ac682697da0211fabf6faff2d7d25250b415d",
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
             "locator": {
-              "end": 615,
-              "kind": "line_range",
-              "start": 610
+              "kind": "symbol",
+              "name": "load_lane_manifest"
             },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "The lifecycle loader refuses a catalog that is not in canonical form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "Launch-capable provider operations re-read the providers map from disk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderAuthority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "143": {
+      "note": "The carryover target, its candidate kinds and its refusal of converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "content": "sha256:9e152e5080e29227747564659f2ff0538c94115a5eca9b5cbddfd77f0ed7d5d2",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "content": "sha256:407e3ebc0c802bdc5f3f7f35af9376551f0f0b350e768ddc0c1e3c878413c3cd",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
+            "content": "sha256:a195d8a188243f43aff9c2067a81f5eaf48fbebfd50d1b2bfc2d1363c0c51b1f",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 800
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
           },
           "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "The history-file gate's rule.",
+      "note": "A changed source file's card and its governing overview need a counted change or a history row.",
       "targets": [
         {
           "anchor": {
@@ -169,39 +874,8 @@
         }
       ]
     },
-    "17": {
-      "note": "The template's new proof guidance.\n\nAnchor: \"as a path plus symbol\"; \"Proofs are shown and counted (MIK-R28).\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:a937f60f51e72cd80ff44cb7b39363727e6d0f4503ebef9cf3da1679f5b29639",
-            "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 524
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
-            "locator": {
-              "end": 534,
-              "kind": "line_range",
-              "start": 530
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "18": {
-      "note": "The two readings of proofs.",
+      "note": "Proofs are read back for the invariant and family views, and the invariants without proof are listed.",
       "targets": [
         {
           "anchor": {
@@ -230,16 +904,16 @@
       ]
     },
     "19": {
-      "note": "The format declaration's own statement that text files become the source of truth.\n\nAnchor: \"Text files in the memory repository are the source of truth for knowledge\"",
+      "note": "Text files in the memory repository are the source of truth for knowledge.",
       "targets": [
         {
           "anchor": {
             "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
-            "content": "sha256:603d32db058964d03c9d8343f3e47b14ceebb6b7889b548c6592eaf08ea23b00",
+            "content": "sha256:2e29e388b3594920e9b7e4327d3998538a9c35ac76fa5d4980d4496a723b775e",
             "locator": {
-              "end": 3,
+              "end": 5,
               "kind": "line_range",
-              "start": 3
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/__init__.py"
           },
@@ -247,44 +921,8 @@
         }
       ]
     },
-    "2": {
-      "note": "The template's reconsideration-row bullet, mirrored into the package and starter copies.\n\nAnchor: \"A reconsideration row (MIK-R14, converted memory only)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:0fa9d0c6055c786caf0d543096aaaa4812db11acc9a366150fbc0b5b67b90b78",
-            "locator": {
-              "end": 659,
-              "kind": "line_range",
-              "start": 635
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The template's informational section and its no-change-before-MIK-R37 statement.\n\nAnchor: \"Nothing here changes what a producer emits today.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:d9bcb72f21c35eb0055f33cc4f420fa6f7c42da872369d523b0501f2f0c7a1e9",
-            "locator": {
-              "end": 427,
-              "kind": "line_range",
-              "start": 427
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "21": {
-      "note": "The template's file-writer section and its converted-memory condition.",
+      "note": "The hand-off template's file-writer section.",
       "targets": [
         {
           "anchor": {
@@ -302,7 +940,7 @@
       ]
     },
     "22": {
-      "note": "The writer refuses an unconverted memory tree.",
+      "note": "The curator file writer refuses a memory tree that is not converted.",
       "targets": [
         {
           "anchor": {
@@ -319,7 +957,7 @@
       ]
     },
     "23": {
-      "note": "The template's family-routes subsection.\n\nAnchor: `### Family routes (MIK-R04)`; \"as deep as makes sense\"",
+      "note": "The hand-off template's family-routes subsection.",
       "targets": [
         {
           "anchor": {
@@ -333,206 +971,28 @@
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:bbf65ad1bfe8a7cea3e241603dcfeb2e6cb3eaa103e4f0fecb29db9253cbf4b2",
-            "locator": {
-              "end": 468,
-              "kind": "line_range",
-              "start": 468
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The canonical template's per-target rationale section.\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:f932361a2ed2f73c92b6fca37fd667d395c4690e55490f136c8fdb88c37b301c",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 101
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "**The declaration both sides resolve, and the constant that names the file.**",
+      "note": "A converted memory tree is selected as a tree, and the database file inside it is not read.",
       "targets": [
         {
           "anchor": {
             "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "content": "sha256:0cccdea8d89bca5b692f65605bc2538882ccfedb4da657545b59a8b2937068ef",
             "locator": {
               "kind": "symbol",
-              "name": "published_dataset_path"
+              "name": "converted_memory_tree"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cd2dea47f4656356861ff6ee5742f8762eac9429df94c7868a7102ebc0de1930",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLISHED_DATASET_NAME"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "**The write side's route: the declared location, the admission derived from the run's own baseline, and the read-back.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:a26b10bf2b87b50893180b1b3246bbb2cb72f0062f8d956290b22857a1ca074e",
-            "locator": {
-              "kind": "symbol",
-              "name": "declared_publication_location"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:54711c8526ab83c479a899aac9c26fe5daf917b9bec4b3100cf4ec6f7b750cfa",
-            "locator": {
-              "kind": "symbol",
-              "name": "admitted_destination"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:c31f33b68a4b6f664642c7b4faeabd06521cbcf5c7dd474315183345555ba8e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_identity_read_back"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "27": {
-      "note": "The CLI selection that reaches it, its refusals, and the report line that completes the admission from the run's own report.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:5a8b40d6cfdbb85f2462f15650a63084c3ca9fc55dc43c4057a6cf4568d40503",
-            "locator": {
-              "kind": "symbol",
-              "name": "_destination_conflict"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:14f0f78f80edb47d0f1e69b71197976a549690acb164d74b03f240a6885e9814",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected_destination"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
-            "content": "sha256:315fd4b106cd55709863b2aceca54e8de4b741de8cd79b4d60e9f135dd3e63ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publication_route"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "The context rule that decides *which* memory root the location is, with no fallback between the two.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "84c8b44837cb851e0578480cf522994641d4fc27",
-            "content": "sha256:585c7c8ba7cf65cee74d8ae542756abb97a99cc854f8df7e6cd412bdbe696836",
-            "locator": {
-              "kind": "symbol",
-              "name": "contract_context"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/context.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "29": {
-      "note": "**The canonical carrier instructions that now tell the curator seat to invoke that route.**\n\nAnchor: \"Author and publish the durable knowledge through the real writer.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
-            "content": "sha256:170d5be35803f966e84b811e99d7508ca0182c79593b49d0fbd645257b65ab24",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 101
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The decision section's reorder refusal.\n\nAnchor: \"with a linked alternative moved to another index against the memory base\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
-            "locator": {
-              "end": 781,
-              "kind": "line_range",
-              "start": 778
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
           "kind": "code"
         }
       ]
     },
     "30": {
-      "note": "The mounted refusal that names it, and the operation document that carries it.",
+      "note": "The mounted `knowledge_change` tool refuses and names the write route.",
       "targets": [
         {
           "anchor": {
@@ -549,7 +1009,7 @@
       ]
     },
     "31": {
-      "note": "The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4.\n\nAnchor: \"order = [\"; \"[package.certification]\"; \"[package.controlplane]\"",
+      "note": "The order declares `certification` between `models` and `controlplane`.",
       "targets": [
         {
           "anchor": {
@@ -580,7 +1040,7 @@
       ]
     },
     "32": {
-      "note": "The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction.\n\nAnchor: `undeclared_dirs`",
+      "note": "The layering checker loads that one contract, rejects undeclared package directories and reports an invalid dependency direction.",
       "targets": [
         {
           "anchor": {
@@ -605,24 +1065,11 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
-            "content": "sha256:4683166de6f428f41e20246f9435f30b187e1890b916d4e136bed36d91fb4651",
-            "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 118
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "33": {
-      "note": "The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.\n\nAnchor: \"ar-coordination/AGENTS.md\"; \"Implementation approval is not commit approval\"",
+      "note": "The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.",
       "targets": [
         {
           "anchor": {
@@ -653,7 +1100,7 @@
       ]
     },
     "34": {
-      "note": "Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP.\n\nAnchor: `## Code Quality Instructions`",
+      "note": "Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP.",
       "targets": [
         {
           "anchor": {
@@ -671,81 +1118,16 @@
       ]
     },
     "35": {
-      "note": "The docs index owns the start-here, install, operational, and reference map.\n\nAnchor: \"Start Here\"; \"Install Guides\"; \"Getting Started\"; \"Onboard an Existing Repo\"; \"MCP Tool Reference\"; \"Release Checklist\"",
+      "note": "The docs index owns the start-here, install, operational and reference map.",
       "targets": [
         {
           "anchor": {
             "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:9cd8076559b45f051e1dd8924a0dfdca8fa5efdc55a8b4ae52223661e5507065",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 23
-            },
-            "path": "docs/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:f2729bee487c64090a5321bb091790ce5d5e6cd6ff6b716c387d8faed68cb054",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 25
-            },
-            "path": "docs/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:965f6e4813f6018c87dc7b74434325157a599217622a7242ef43e22402c95277",
-            "locator": {
-              "end": 33,
-              "kind": "line_range",
-              "start": 33
-            },
-            "path": "docs/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:2f6c3d86940362907d7c327e24b27a38ba04a160a38193ab6549b4037287c64f",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "docs/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:ce134b4139764d9093b9a766464be5131d6b8dd41e2e75b446d9307b36fa82b4",
-            "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "docs/README.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:328e8fb9402cf49334977486861e7bda99e35079b8e9380638e4de6fc82d6e22",
+            "content": "sha256:c64d7a4c0ae55a83101d8782855bb59bd6e76ee037662f13f5eac58853c83f90",
             "locator": {
               "end": 65,
               "kind": "line_range",
-              "start": 65
+              "start": 23
             },
             "path": "docs/README.md"
           },
@@ -754,7 +1136,7 @@
       ]
     },
     "36": {
-      "note": "Runtime asset sync treats root runtime folders as canonical and exposes a check form.",
+      "note": "Runtime asset sync treats the root runtime folders as canonical and has a check form.",
       "targets": [
         {
           "anchor": {
@@ -771,7 +1153,7 @@
       ]
     },
     "37": {
-      "note": "GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating.\n\nAnchor: \"pull_request:\"; \"Refuse a tag whose commit has not landed on main\"",
+      "note": "GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main.",
       "targets": [
         {
           "anchor": {
@@ -801,26 +1183,8 @@
         }
       ]
     },
-    "38": {
-      "note": "The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it.\n\nAnchor: \"def gate_staged_code(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
-            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
-            "locator": {
-              "end": 165,
-              "kind": "line_range",
-              "start": 139
-            },
-            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "39": {
-      "note": "The staged-quality owner enforces its exact-candidate delivery boundary.",
+      "note": "The staged-quality owner prepares the staged candidate, runs the targeted quality gate and requires published evidence for exactly that tree.",
       "targets": [
         {
           "anchor": {
@@ -837,7 +1201,7 @@
       ]
     },
     "4": {
-      "note": "The skill's route-chain paragraph, mirrored into the package and starter copies.\n\nAnchor: \"Route-chain families come last.\"",
+      "note": "The retrieval skill's paragraph on the families of the route chain.",
       "targets": [
         {
           "anchor": {
@@ -855,7 +1219,7 @@
       ]
     },
     "40": {
-      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence and defines the retained protection policy.\n\nAnchor: `## Quality gates`",
+      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
       "targets": [
         {
           "anchor": {
@@ -872,35 +1236,15 @@
         }
       ]
     },
-    "41": {
-      "note": "Provider guidance keeps provider runtime paths under configured provider roots.\n\nAnchor: \"providers/runners/grepai\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d7224e575bc48b3e360b724cc68c344a1a84bd27",
-            "content": "sha256:d38bcda675c4821e42e5e95a24e189f4af3a098398dbf258f49b192607dee5de",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 94
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/settings.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "42": {
-      "note": "The MCP settings example declares repository and coordination authority.\n\nAnchor: `coordinationRoot`",
+      "note": "The MCP settings example: coordination root, workspace root, transcript root, repositories, providers, timeout caps, and the dashboard, provider-degradation and retirement settings.",
       "targets": [
         {
           "anchor": {
             "blob": "eecb75c8790900391d8fe36ad0d979d5504e51a7",
-            "content": "sha256:bc276e95c75e84f9711dda3930c7b670c98ef668d19f7cd5f560782c47f80143",
+            "content": "sha256:bf04ae48712a739f6816aacc62c259bcaa3f2e481cd214c0f13df5a242a214c6",
             "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 3
+              "kind": "file"
             },
             "path": "examples/mcp/settings.example.json"
           },
@@ -908,26 +1252,8 @@
         }
       ]
     },
-    "43": {
-      "note": "The memory-repo tools example provides the `Code Quality` section.\n\nAnchor: \"Code Quality\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "483497baee86549a21ba1671e8846c9df81e9edf",
-            "content": "sha256:04b24504d900a13b6ef3b3fa233e2e437dc34734378b2cf235769e78fad3d00d",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 11
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/tools.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "44": {
-      "note": "Development commands, budgets, diagnostic metrics and isolation.\n\nAnchor: `# Python test policy and commands`",
+      "note": "Development commands, budgets, diagnostic metrics and isolation.",
       "targets": [
         {
           "anchor": {
@@ -945,7 +1271,7 @@
       ]
     },
     "45": {
-      "note": "Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
+      "note": "Certifying publication and accepting consumers.",
       "targets": [
         {
           "anchor": {
@@ -963,7 +1289,7 @@
       ]
     },
     "46": {
-      "note": "Exact contract scope, full check and curator worklist publication.",
+      "note": "Exact contract scope, the full check and the curator worklist publication.",
       "targets": [
         {
           "anchor": {
@@ -1004,7 +1330,7 @@
       ]
     },
     "47": {
-      "note": "Interactive catalog names missing authority without eligibility.",
+      "note": "The interactive catalog names missing authority without eligibility.",
       "targets": [
         {
           "anchor": {
@@ -1017,24 +1343,11 @@
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:de719909d2ca56bd7cd13740c859dfc3180242384d633ffbc4404218ac5bafb3",
-            "locator": {
-              "end": 696,
-              "kind": "line_range",
-              "start": 656
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "48": {
-      "note": "Final memory adapter requires the selected four-code-terminal prefix.",
+      "note": "The final memory adapter requires the selected four-code-terminal prefix.",
       "targets": [
         {
           "anchor": {
@@ -1050,43 +1363,8 @@
         }
       ]
     },
-    "49": {
-      "note": "Finalization consumes original selected fifth-certificate inputs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4fc36e65dd21de71100edb1587afb5484b9e9771",
-            "content": "sha256:40757eadc95735685c47d292e216082eb307fa75f2edc755bd5fbcbc7aa4c6f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "PreparedCloseoutContinuation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The template's no_invariant-row bullet, mirrored into the package and starter copies.\n\nAnchor: \"A no_invariant row (MIK-R10, converted memory only)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
-            "content": "sha256:8cc8b1015eb2d44c99787efc1cfcee332c3fb2c7cfdc3507b4c9e62a1ac14127",
-            "locator": {
-              "end": 634,
-              "kind": "line_range",
-              "start": 627
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "50": {
-      "note": "Git attribution is the source of the consumer ledger.\n\nAnchor: \"Read mappings from Git without consulting a cached file or a ledger commit.\"",
+      "note": "Git attribution is the source of the consumer ledger.",
       "targets": [
         {
           "anchor": {
@@ -1103,7 +1381,7 @@
       ]
     },
     "51": {
-      "note": "Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree).",
+      "note": "Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree.",
       "targets": [
         {
           "anchor": {
@@ -1148,167 +1426,8 @@
         }
       ]
     },
-    "53": {
-      "note": "Closed admission and one public projector.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:47c7281ec0415ef87b601a396b28a6754ba1dd72e5d02d18d71f503c2049fedb",
-            "locator": {
-              "kind": "symbol",
-              "name": "admit_configured_contract"
-            },
-            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:250eec668284568ed05052079e1cc5daeb029df3b5cd281a391e7d61007c1289",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_configured_contract_refusal"
-            },
-            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:1b7ec8474676bfc8dd29f2bd1ed6a21b9d37c662ab721f7a6ff93651de01bad2",
-            "locator": {
-              "end": 364,
-              "kind": "line_range",
-              "start": 326
-            },
-            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "54": {
-      "note": "Root manifest/journal location authority.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
-            "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "LifecycleOperationLocation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
-            "content": "sha256:f2194ea79b5d61f7c67b3760aa0578d2115a6aee860a9ce9f609a050a64e47fd",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_lifecycle_operation_location"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "55": {
-      "note": "Task-addressed lifecycle controls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
-            "content": "sha256:7d6b10243a410be1f58ffdf3eb807b2bef65985c6bd6a66bc0c1ace4139e184b",
-            "locator": {
-              "kind": "symbol",
-              "name": "control_operation"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "56": {
-      "note": "Retained-generation projection derives public legal controls and recovery surfaces without owning evidence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
-            "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
-            "locator": {
-              "kind": "symbol",
-              "name": "operation_projection"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "57": {
-      "note": "The charter paragraph that records the storage home and the one-way import direction, with no rank move.\n\nAnchor: \"[package.memory]\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
-            "content": "sha256:b5ce22a2976bf73fd6222714f81e28174f2c7891749a7920868bca582ddb0163",
-            "locator": {
-              "end": 222,
-              "kind": "line_range",
-              "start": 206
-            },
-            "path": "layers.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "58": {
-      "note": "The exact SQLite-binding pin and the in-file reason tying it to the session build option.\n\nAnchor: \"apsw==3.53.4.0\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
-            "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "59": {
-      "note": "The storage package's ownership boundary in its own words.\n\nAnchor: \"The package owns the schema, the row codecs and the insert-only revision operation.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c05f97f3b944fd2bdb7b9be6682048cfb4cc2042",
-            "content": "sha256:6a00b9c4d1223d6ca9a265d51d404779317f756bae5868b5ab125b6be0681d9c",
-            "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
-      "note": "The template's decision-record section, mirrored into the package and starter copies.\n\nAnchor: `## Decision records (MIK-R13)`",
+      "note": "The hand-off template's decision-record section.",
       "targets": [
         {
           "anchor": {
@@ -1325,61 +1444,8 @@
         }
       ]
     },
-    "60": {
-      "note": "**The selection the ordinary route gained, and the shipped read it delegates to rather than duplicating.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_intent_block"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_dataset_path"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
-            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_read_context"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_read.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
-            "content": "sha256:b63a68e41ef6db74862e53d25e91c96ee6b4250062950b7ff58d84dca362f25e",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_knowledge_scope"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_read.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "61": {
-      "note": "**The ordinary paired read is the mount point, and the response field the block travels on.**",
+      "note": "The ordinary paired read carries the published intent block.",
       "targets": [
         {
           "anchor": {
@@ -1392,135 +1458,11 @@
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_intent"
-            },
-            "path": "mcp/src/agents_remember/models/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "mcp/src/agents_remember/models/read_files.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "62": {
-      "note": "**The canonical retrieval carrier, whose new section directs a caller to the route.**\n\nAnchor: `## Published Intent Before Planning`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
-            "content": "sha256:da1e892df5d1bb4c04dd42cedaf741edf3d070a0f7c057e5efb8c0719d612d6b",
-            "locator": {
-              "end": 282,
-              "kind": "line_range",
-              "start": 173
-            },
-            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "63": {
-      "note": "**The generated copy of that carrier this package ships, regenerated from the authored source.**\n\nAnchor: `## Published Intent Before Planning`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
-            "content": "sha256:da1e892df5d1bb4c04dd42cedaf741edf3d070a0f7c057e5efb8c0719d612d6b",
-            "locator": {
-              "end": 282,
-              "kind": "line_range",
-              "start": 173
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "64": {
-      "note": "**The case that holds the carrier to the payload's real field spellings, and the constant that reaches the authored skill from the test file.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:65834d3f907eca8375c6601717d851557c5ff09ec2a380aec51e31208717bc87",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:34d3d6d03ff45632c0188906245cb44d87c9545078f7e96e329bf5681a6abab6",
-            "locator": {
-              "kind": "symbol",
-              "name": "CARRIER"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "65": {
-      "note": "Ordinary capture preserves the actual owner inputs at the resolved pair.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:8af63ac3907371a970009d53f7a3c2ce4f21cf1d39a38e92c6a862e3ea12aa64",
-            "locator": {
-              "kind": "symbol",
-              "name": "freeze_resolved_review"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "66": {
-      "note": "Explicit recovery preserves the named historical comparison and curator identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9c60b89562b446eecb17721e10f0e9b1e4370f2b",
-            "content": "sha256:bdf7d8d328ad08acc26a75f80585536019cf5090b73efcb940080a6b7da5a817",
-            "locator": {
-              "kind": "symbol",
-              "name": "recover_review_comparison"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_recovery.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "67": {
-      "note": "The converted-card workflow's opening, in the authored skill copy.\n\nAnchor: \"Use this workflow instead of\"",
+      "note": "The converted-card workflow of the `c-05` skill.",
       "targets": [
         {
           "anchor": {
@@ -1538,7 +1480,7 @@
       ]
     },
     "68": {
-      "note": "The curator role's converted-memory step, in the authored skill copy.\n\nAnchor: \"**On converted memory the same command is the file writer.**\"",
+      "note": "The curator role's step for converted memory.",
       "targets": [
         {
           "anchor": {
@@ -1556,73 +1498,179 @@
       ]
     },
     "69": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The three attribute entries and their reasons.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
-            "content": "sha256:2dcc98d7a34ea9ca6bf7e63d522ad604a8a6f711a36ec93ea4fbcfd3010192ee",
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:4cbb77b0e957d5709d6ff27b831c8c2cfdbf61c17faf73baa716a55a984e0fde",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The curator role's step-3 pointer to lifting decisions.\n\nAnchor: \"Lift the decisions that keep governing code.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
-            "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
-            "locator": {
-              "end": 135,
+              "end": 21,
               "kind": "line_range",
-              "start": 132
+              "start": 1
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+            "path": ".gitattributes"
           },
           "kind": "code"
         }
       ]
     },
     "70": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The rewrite that the `--write` command runs.",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:efa68e8081960f183be7f5037244291a471decef1050c6c46d8d6af7e084ed83",
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
             },
-            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
           },
           "kind": "code"
         }
       ]
     },
     "71": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The command entry: validation of both catalogs on one source graph, or the rewrite.",
       "targets": [
         {
           "anchor": {
-            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
-            "content": "sha256:3130ddb07b0eaef76c7b89799befa83a7971ac0b119546f5be141e2c23a03434",
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "main"
             },
-            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "The page threshold of a knowledge read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
+            "content": "sha256:cbc837fa4fb1bc5445b8c9d9803511a2c2f1b7443542a6478a6a515c3ec544d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_PAGE_THRESHOLD_TOKENS"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "The cutover lock refuses an unconverted memory line and names the crossing sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "837b3fa7bfc2472ba7cde9635ab32e16a6319a94",
+            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
+            "content": "sha256:e67608ef3e22a8d7ddd156e69730fec525609bd9bf146a7c42a250b1511007fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_preview_payload"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The two declared case budgets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "content": "sha256:eca452c277bed0a9b6a0ecf167d83cfe0cd07624844a0850e506764962e1bedd",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The scheduling mode of a sprint without an execution graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:5a7affa7cb290d9c42d24f3b951c9744ac8c48ba10a0b8ea08bfad82e0e75b6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_scheduling_mode"
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "The statuses that resolve a master's row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e0bbbd4fd1ac5e6936119af876566e9ae761e10",
+            "content": "sha256:fe87e6fea9857a89ef36bc6f68cc4872de6fe1dd130b9ebbe34085cd32c32d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLVED_MASTER_ROW_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/task_document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "The judgement of a terminal master that the task routes and the closeout queue read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_is_terminal"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The skill's paragraph naming the family-complete leaf read, mirrored into the package and starter copies.\n\nAnchor: \"A path on a converted memory tree is read family-complete.\"",
+      "note": "The retrieval skill's paragraph on the family-complete read of a path.",
       "targets": [
         {
           "anchor": {
@@ -1639,8 +1687,164 @@
         }
       ]
     },
+    "80": {
+      "note": "The runtime asset targets, with the eve application as a generated mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f2c84671b40fab724acb2f79268074c2f45e854",
+            "content": "sha256:932bb172d3f0bdc333a4d6bf5f8f5cbc97ec6251fdb20a345cedd1bce76ac585",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "The supported memory modes and the refusal of the removed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "content": "sha256:e0ce55acb23e65f8cc47b4c37afa279a095c1b2681ba38cc70dee2e35f2cfd87",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "The three retrieval substrates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
+            "content": "sha256:b00137ace6f6e8bdd51ccfbf5c6725fc9119b83b6c397cb79b5e1de5e3174d88",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/c-04-retrieval-strategy-router/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "The role-capsule router's selection rule and its unsupported-field refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+            "content": "sha256:443ba5b3dfc4037fb15544d7e9db74c1900fedb07681638db4518dd94437ad80",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "Dispatch is one transaction with two caller kinds, and a plane refusal never falls back to ambient.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "content": "sha256:0b78b88c587e579b0bd5cf3dad8acabfaa6f93c5d66dbb9748bdf2d0a1da2982",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Closeout is worktree-only, and the apply records its authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:9870afeebbc17ba8d42b43355df0733ba20f2e1b8edeab0ed21eb1f7855e449f",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:3b514cfb3c68949d1e6d0573e52c68270da03fccbab4b2cbd35a86d33c170f22",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "The branch-addressed landing of a leaf without its own enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "content": "sha256:f1d7c76f18585bdd0ab02483432b544cc5f7a196981531243ab3523caf075a77",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 244
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "The pause releases one master's activation selection and publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
+            "content": "sha256:c6adf85d1f03b1bea9d72524ce129e6ab7282226d1c7851bbb12d2f9fe60888b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
-      "note": "The template's admission section, mirrored into the package and starter copies.\n\nAnchor: `## The admission rule (MIK-R27)`",
+      "note": "The hand-off template's admission rule for new records.",
       "targets": [
         {
           "anchor": {
@@ -1652,6 +1856,191 @@
               "start": 690
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The activation record is one replace-in-place snapshot per canonical series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
+            "content": "sha256:39bfe87ee76b966b89c56559a309084c50575c93658ea6df389137d13b9c3556",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicSeriesActivationRecord"
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Where the record of a sync transaction lies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce68d87e207d8a83d53af48e5816c10f407dbfc8",
+            "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_operation_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "The locations of a master's contract and of a leaf's enclosure contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_contract_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
+            "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "An external-memory start requires the memory repository and its source branch and creates the worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bbd3f18df7be2241476f19cb8d8eaf23cf75fa",
+            "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_for_start"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "A moved source blocks `ff-only`, and `replay` asks for a resolution instead of creating a replay commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
+            "content": "sha256:486ac4704274ab0dc4c8466c607ce5e8f4b4e771a68afc2b4691c87fc62ea68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continue_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Gate enforcement: a model-decided approval does not satisfy it, and a lifecycle without a gate of the kind is gateless.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098584045028586661c04fda59d447990277db8a",
+            "content": "sha256:282beb736e265bdf8ceee7ea0275b3960d9922f272cf8f3ccfefd7c7ef6a1b44",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The retention of inbox rows and the approval kinds whose applied snapshot is an authority record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "761b1d373595ea6c51afcaf2f9ac26743d60ebd2",
+            "content": "sha256:9ae497499ec39b1be0a277598f16b05a31698f02513926813bada5fe67a1fd28",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "The roles of each task altitude; a reviewer sits on a leaf, master or sprint document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "content": "sha256:932e8de241768a1c6e826143d4c98e34f5d47cb148a8a9b50a52fd1c7cd65aee",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "The task tool refuses to author a light document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_doc"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Under a sprint without a graph every commanded master executes atomically whatever it declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2ac9e96196019e4ee2e1b2c29f00e136b3d582",
+            "content": "sha256:a6cb2f2495d516f8ed57f18d4c8ef5c7e22d45ff883adb7d05eb8046ecb09cb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "effective_execution_nature"
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
           },
           "kind": "code"
         }

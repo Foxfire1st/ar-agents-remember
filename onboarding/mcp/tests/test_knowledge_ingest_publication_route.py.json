@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
             "locator": {
               "kind": "symbol",
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:c60f667a7fa1ecad402219a3b5ed3930792b71b731af66204b793a35e582dd2e",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:5e7257fbaded41a3f9a3806bbb0777b27d4eff8c1ffba22e11a5235770befe75",
             "locator": {
               "end": 255,
@@ -84,7 +84,7 @@
         },
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:2419a092716424b95eb6739e700f25494b82b8ad2573f909ca16da0b74b302ec",
             "locator": {
               "end": 189,
@@ -97,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
             "content": "sha256:dde177591e5a8837cda354b1d78a88293fb8dc9117287220658e100427fb878a",
             "locator": {
               "end": 211,
@@ -105,84 +105,6 @@
               "start": 197
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The shipped entry point every case drives, and the two real readers it measures through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
-            "content": "sha256:90568bdc8bd602e0e941eb5c9baa73d267646ad22be69c80b38184c8280d660a",
-            "locator": {
-              "kind": "symbol",
-              "name": "main"
-            },
-            "path": "mcp/src/agents_remember/cli/__main__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
-            "content": "sha256:dca755dcad766a5a6aa379474ed32f96157f9de3c2c3d21c2bbdaff572e4c033",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
-            },
-            "path": "mcp/src/agents_remember/cli/__main__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_read_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:8e0bcb7ce74fa088c2a7d7881a119df416af77ff1af1929bbafe813973e4eae5",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReadToolRequest"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
-            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_read_only_database"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
-            "content": "sha256:14f9e464f8998e24b6b02bae2204e77b60b543e1931d88cb6f0eab79877d8fcb",
-            "locator": {
-              "end": 374,
-              "kind": "line_range",
-              "start": 369
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
           "kind": "code"
         }
@@ -294,55 +216,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:98911cc1ffca3ff61b7b6e40e64a8570df52bc4d317e837dd200f5c76025d1df",
             "locator": {
-              "end": 138,
+              "end": 135,
               "kind": "line_range",
-              "start": 138
+              "start": 135
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "**The catalog digest the two consumer rows moved, and the counts they do not move.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CONTRACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }
@@ -413,6 +294,76 @@
             }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The shipped entry point every case drives, and the two real readers it measures through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "content": "sha256:a649e278c48beac158b4c587a7846138dd5517a656836701ab739dae5178ec22",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
+            "content": "sha256:46e272bf355d0f705f644b5d504c897e600ac448dc80df02844c214f439fca4d",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
+            "content": "sha256:8e0bcb7ce74fa088c2a7d7881a119df416af77ff1af1929bbafe813973e4eae5",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c14937bd02459de274f4bb96b0f500f895dbd44a",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
         }
       ]
     },

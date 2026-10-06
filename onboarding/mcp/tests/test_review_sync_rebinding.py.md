@@ -110,9 +110,8 @@ absolute through the `MCP_SRC` path insert (`:28-29`); the owner under test is i
 `merge_case_test_support` (`:82`), `read_scope_test_support` (`:84`) and the endpoint fixture's own module
 (`:85`). Fixtures are plain classes and module-level helpers rather than pytest fixtures, because they
 build one enclosure value the cases address. The module is registered as one `integration` lane row
-(`mcp/tests/test-evidence-lanes.toml:302-305`) and as four `consumer_scope = "exact"` consumer rows in
-`mcp/tests/evidence-lifecycle.toml` (`:801-803`, `:1305-1309`, `:1431-1435`, `:1477-1481`), whose added
-rows move the catalog digest pinned in `test_dependency_ownership_ast_helpers.py:46`. It measures **942
+(`mcp/tests/test-evidence-lanes.toml:372-373`) and as four `consumer_scope = "exact"` consumer rows in
+`mcp/tests/evidence-lifecycle.toml` (`:801-803`, `:1305-1309`, `:1431-1435`, `:1477-1481`). It measures **942
 lines**, inside the 1200-line hard rail, and adds no `# noqa` and no timers.
 
 ### Invariants And Boundaries
@@ -204,7 +203,6 @@ because each of them pins one sentence a verifier could otherwise reproduce as f
 - The merge-case support whose authored identities and readers the module reuses. [42]
 - The read-scope support's authorship factory both halves of every dataset are authored with. [43]
 - **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** [44]
-- The catalog digest the added consumer rows move, pinned by the structural check. [45]
 - **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** [46]
 
 ### Cross-Repo References

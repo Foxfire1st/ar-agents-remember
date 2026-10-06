@@ -259,7 +259,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "306d2b250b2ba63fb580d16823357bfbc869fc38",
+            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
             "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
             "locator": {
               "kind": "symbol",
@@ -271,7 +271,7 @@
         },
         {
           "anchor": {
-            "blob": "08156caa47bcb0e5495d481eac020f2d7efb6cba",
+            "blob": "ee679e2f089eb160dd19292309619814bc037124",
             "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
             "locator": {
               "kind": "symbol",
@@ -346,12 +346,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 286,
+              "end": 314,
               "kind": "line_range",
-              "start": 286
+              "start": 314
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -408,34 +408,16 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 286,
+              "end": 314,
               "kind": "line_range",
-              "start": 286
+              "start": 314
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping.\n\nAnchor: \"REPOSITORY_TEST_INPUT_CONSUMERS: dict[Path, frozenset[Path]]\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:dfc7c84696960d94a934b2b3a712547177ba5e25eeed529e138e93e811149374",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -465,6 +447,24 @@
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:876a387f9a0d6904fef7bd7fadd03506ddedbafbb89433f4a19cc847e45a27a8",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
         }
       ]
     },

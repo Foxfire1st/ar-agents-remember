@@ -212,7 +212,8 @@ flag or report-only mode exists.
 
 - The history-row rule over every file's subjects and the leaf's own file. [6]
 
-- The two lane rows. [7]
+- The two lane rows. [233]
+
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
 
@@ -1408,9 +1409,7 @@ records the allocation journals and the manifest only for a run that writes some
 non-committing run cannot burn a family identity or report a digest for bytes no reader can find.
 
 **Catalog accounting.** The new test module took its existing lane row and two consumer rows in
-`evidence-lifecycle.toml`, so the population is unchanged at **16 contracts / 66 artifacts** and the
-`LIFECYCLE_CATALOG_SHA256` pin in `tests/test_dependency_ownership_ast_helpers.py` was re-pinned to the
-new bytes. Nothing else in the package's public surface moved: no tool name, response model or refusal
+`evidence-lifecycle.toml`; no byte or count of a catalog is pinned. Nothing else in the package's public surface moved: no tool name, response model or refusal
 code changed.
 
 ## 260921-ICR-L14 The Review's Record Collection Gets One Production Owner, And An Empty Tuple Stops Meaning Three Things
@@ -3811,8 +3810,7 @@ Two facts a reader of the mcp route should carry away. **A page with a remainder
 cursor** — the shape that produced the requirement's own non-conforming example is unrepresentable, not
 merely avoided. And **only the owners' binding-mismatch code is a moved generation**; every other refusal
 keeps the owner's own remedy and is reported as `comparison_page_unreadable`, so a reader is never told to
-open a new comparison when nothing moved. The manifest side is one lane row, three consumer rows and a
-re-pin with the population unchanged at sixteen contracts and sixty-six artifacts.
+open a new comparison when nothing moved. The manifest side is one lane row and three consumer rows.
 
 ## 260921-ICR-L26 Three Of This Route's Rows Re-Cited After The Review Adapter Moved
 
@@ -3898,3 +3896,4 @@ all.
 ## Normal comparison capture and explicit recovery
 
 The existing review-record-comparison command now records actual owner-produced assessment inputs through the normal resolved-pair freeze. Its paired recovery controls select an exact retained parent and original curator generation. The packaged curation operation documents both paths and remains synchronized from the canonical skill. No new knowledge writer, semantic store or automatic historical repair is introduced.
+

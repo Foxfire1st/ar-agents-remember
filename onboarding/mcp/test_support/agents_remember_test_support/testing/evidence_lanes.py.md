@@ -18,7 +18,10 @@ lifetime, and trigger set. `expression_for` maps affected, provider-bump, schedu
 release triggers to explicit pytest populations. During collection, `category_for_item` first
 requires the test file to have exactly one entry in the exhaustive lane manifest and then verifies
 that any marker agrees with that declaration. The resolved category is attached to every report
-item.
+item. When xdist workers collect, `pytest_collection` keeps a worker's `pytest.UsageError` in the
+worker output under `WORKER_REFUSAL`, and `pytest_testnodedown` ends the controller's run with it,
+so a refusal raised in a worker reaches the terminal as one usage error instead of an internal
+error.
 
 ### Conventions
 
@@ -34,6 +37,8 @@ are collection errors.
 - Affected execution excludes sustained stress, while release has no marker filter.
 - Diagnostic evidence uses exact-node selection and cannot be selected by this plugin.
 - Category assignment does not itself grant acceptance authority.
+- A worker's collection refusal is not swallowed by xdist: the controller ends the run
+  with the worker's message, exactly as a run without workers.
 
 ### Todos
 
@@ -49,8 +54,11 @@ No external documentation owns the repository cadence taxonomy.
 
 - The eight lanes define authority, fidelity, lifetime, and triggers. [1]
 - Registry validation and collection routing are fail-closed. [2]
-- The manifest loader proves complete, non-conflicting test-file coverage before collection. [3]
+
+- A worker's collection refusal reaches the controller once, as a usage error. [4]
+- The manifest loader proves complete, non-conflicting test-file coverage before collection. [5]
 
 ### Cross-Repo References
 
 No adjacent repository controls lane membership.
+

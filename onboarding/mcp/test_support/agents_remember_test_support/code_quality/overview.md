@@ -107,7 +107,7 @@ TypeScript cannot enforce structurally (a `minimum`/`maximum`, a length, a patte
 the affected property, and an undeclared keyword refuses generation instead of disappearing from
 either contract.
 
-`quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.
+`quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `catalog_selection.py` reads both catalog versions through the shared reader `parse_catalog`, and `dependency_ownership.py` treats its `EvidenceLifecycleError` as an unresolved selection reason rather than a bare parse error. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.
 
 ## Operating Model
 
@@ -142,7 +142,7 @@ about, which registered them in **both** registries without a single import crea
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 4,000 unit and 1,000 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -155,14 +155,16 @@ These current source and policy ranges establish the development/certification d
 
 - Development commands, budgets, diagnostic metrics and isolation. [1]
 - Certifying publication and accepting consumers. [2]
-- Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational "without proof" list. [3]
-- Interactive catalog names missing authority without eligibility. [4]
 - Final memory adapter requires the selected four-code-terminal prefix. [5]
 - Finalization consumes original selected fifth-certificate inputs. [6]
+
+- Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational "without proof" list. [10]
+- Interactive catalog names missing authority without eligibility. [11]
 
 | Exact profile scope and suite execution. | `_require_exact_scope`; `_paths`; `_run_python_suite`; L92-L214 | [Profile rails](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:92-214) |
 | Plan composition and typed command steps. | `CheckConfig`; `Step`; `quality_steps`; L100-L168 | [Quality plan](mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-168) |
 | Teardown proof from source applicability and exact result bytes. | `_verify_teardown`; `_verify_started_teardown`; `_write_teardown_proof`; L253-L359 | [Teardown owner](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:253-359) |
+| Both catalog versions are read through the shared reader, whose refusal is an unresolved selection reason. | `changed_catalog_consumers`; `parse_catalog` | [Catalog selection](mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py:20-22) |
 
 ### Docs And Cross-Repo References
 
@@ -175,10 +177,11 @@ terminal leaf's landing `5e4eb651` (`git diff 7b1db4e0..5e4eb651 -- mcp/test_sup
 is empty), so every technical claim in the body above still holds unchanged. What the terminal pass **did** change is
 this route's *consumers*, and three of those changes are things a reader of the quality machinery needs:
 
-- **The two gates are two.** The byte-pin guard and the consumer-completeness oracle were named as one thing in
-  places and are in fact separate derivations that must both be consulted; the terminal leaf's item 13 recorded them
-  as two gates in the oracle's own module docstring (`testing/evidence_lifecycle.py:1-19`) and added a case that
-  reddens the oracle while the pinned catalogue's bytes and populations stay provably untouched.
+- **The two gates are two.** The consumer oracle and the canonical form of the catalogs are separate
+  refusals that must both be consulted; the oracle's own module docstring
+  (`testing/evidence_lifecycle.py:1-19`) records them as two gates, and
+  `mcp/tests/test_evidence_catalog_gate_boundaries.py` holds the case in which the catalog stays
+  canonical and only the oracle objects.
 - **The collected-case budget is declared once, at the repository root.** The never-effective `default=1100` /
   `default=300` declarations in `mcp/tests/conftest.py` are removed (item 12); the enforced pair lives in the
   repository root `pyproject.toml` `[tool.pytest.ini_options]` at `:278-279` and is currently **4000 unit / 1000 integration**. A
@@ -189,3 +192,4 @@ this route's *consumers*, and three of those changes are things a reader of the 
   the file** moves every line below it by one — which is why the citation ranges this card carries were re-projected
   in the same pass and why the class is recorded as D-36. The durable cure is a citation form that does not need a
   line range; until then the convention is to add at the end of the file.
+

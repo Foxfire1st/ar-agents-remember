@@ -84,10 +84,7 @@ round corrected.
 anchor rather than as an identifier). `mcp/tests/evidence-lifecycle.toml` derives its three
 `consumer_scope = "exact"` consumer rows from the census's own finding — the two snapshot/tree fixtures
 and the read-scope fixture the R01 enclosure is built over — and no artifact, no contract and no
-artifact identity is added: the population stays at **sixteen contracts / sixty-six artifacts**, and
-`mcp/tests/test_dependency_ownership_ast_helpers.py` re-pins the catalog to
-`4ab067e360c7807c3051ad71058c09058225f1e9155e7111da6e95c73cac0258` (the Twenty-third deliberate
-re-pin). Helper names are private and single-purpose, the child source is one module-level constant so
+artifact identity is added. Helper names are private and single-purpose, the child source is one module-level constant so
 the child and the parent cannot drift, and no case constructs a record, a manifest or a resolution by
 hand.
 
@@ -148,7 +145,6 @@ state inside the case's own fixture repository, never the source checkout.
 - **The one state in which the intake defect's code is still the honest answer.** [17]
 - **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** [18]
 - **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** [19]
-- **The re-pin that keeps the catalog identity of the lifecycle TOML deliberate rather than incidental.** [20]
 
 ### Cross-Repo References
 

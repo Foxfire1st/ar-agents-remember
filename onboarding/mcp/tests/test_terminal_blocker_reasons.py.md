@@ -146,7 +146,7 @@ No external source is required for this repository-owned blocker contract.
 - The integration lane row the fail-closed manifest requires. [23]
 - The landing fixture and the public configuration the whole-tool cases build on. [24]
 - The integration lane row the fail-closed manifest requires. [25]
-- The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. [26]
+- The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. [28]
 
 ### Cross-Repo References
 

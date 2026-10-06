@@ -172,7 +172,7 @@
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
             "locator": {
               "kind": "symbol",
@@ -297,12 +297,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:396c0cc1fca4b32eba1dcb7ca5f37411a4c6bef2e8984dc06479ae136f87b8b2",
             "locator": {
-              "end": 162,
+              "end": 160,
               "kind": "line_range",
-              "start": 162
+              "start": 160
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -418,35 +418,6 @@
               "start": 1458
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The catalog byte pin the new consumer rows oblige, re-pinned deliberately beside the unchanged counts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }

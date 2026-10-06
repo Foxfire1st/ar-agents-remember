@@ -1,0 +1,146 @@
+{
+  "path": ".gitattributes",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+        "content": "sha256:74c8b7467bcffdf3efb4df26b5d3c675a470a6ab87ab7623ddf3393444e0b114",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-6C1960",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Declares merge=union for the lane manifest and for the lifecycle catalog, which makes Git keep both sides' added lines instead of reporting a conflict.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The whitespace exemption for generated dashboard chunks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:9d578a5da5e5a0523faa951d6ee5ee1e301c8ca9fd187a6e715e98200095fd29",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The binary mark for the vendored tiktoken vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:b95ec568b7336a0865167e81ea51eb4e460bcbff848daf6cdd8cc4337b392590",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The union merge of the two test catalogs and the comment that names the three results and the repair command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Git reports the union attribute for both catalogs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:a1e6b0368db7358f7cca8026c5f19a76f115794466043c9f55952d04c888f434",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_catalogs_merge_by_union"
+            },
+            "path": "mcp/tests/test_evidence_catalog_canonical_form.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sync reapplies parked work with `git stash apply`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "275847ecea525f425b8c6c5f28b5c3ed8c461439",
+            "content": "sha256:65b64237c4ae4e4e8d105904884db988ebba1a694004973367c6b84075b6ce73",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_parked_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Both loaders refuse a list that is out of order or holds a duplicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:7ceca6ac006547ecd9ced810db5c81acdf9c9832daca4fb5aa1e26a8ba10e9dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The refusal for a catalog that does not parse, given by both loaders and the start of a test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

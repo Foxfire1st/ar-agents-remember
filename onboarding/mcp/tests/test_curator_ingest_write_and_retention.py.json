@@ -154,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b0fcc60b8acee7974778bfcc562d3487e2d4322",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:b49f7d3210991b19cb96a21e8d47624681ed86e478e239632b4ab594d54aa15d",
             "locator": {
-              "end": 22,
+              "end": 61,
               "kind": "line_range",
-              "start": 22
+              "start": 61
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -201,47 +201,6 @@
               "start": 96
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "The catalog pin the split re-took from a fresh `sha256sum`, with its population unchanged.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c61f8a38d72e32567e6a845c278b401363ec4083",
-            "content": "sha256:0dee883d984d06a4b7b4f991a8270e2dcc83c8ec50e1901e9100862479f5b11c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c61f8a38d72e32567e6a845c278b401363ec4083",
-            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CONTRACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c61f8a38d72e32567e6a845c278b401363ec4083",
-            "content": "sha256:9a063f5ee39fb983276b847588ae23ae168263862e99d9fdc05836c5ae2ce68e",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }

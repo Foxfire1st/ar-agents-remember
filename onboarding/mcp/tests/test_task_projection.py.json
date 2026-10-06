@@ -81,13 +81,49 @@
         }
       ]
     },
-    "11": {
-      "note": "The fail-closed loader this module currently fails: it raises for any test file without an explicit lane.",
+    "13": {
+      "note": "The lane manifest of record; this module's row stands in the `unit-regression` list.",
       "targets": [
         {
           "anchor": {
-            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
-            "content": "sha256:9b6a76d1115a5e75a0942cd311c4835eb9b348576c744e8fe48d63cc541eb117",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The population setting that makes every module under `mcp/tests/` part of the expected set.\n\nAnchor: \"testpaths\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
+            "content": "sha256:2190a60352b4095e9f4ce96f02b3e1e1db6f520b056e958c782adade18cdf3d8",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The fail-closed loader: it raises for any test file without an explicit lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
             "locator": {
               "kind": "symbol",
               "name": "load_lane_manifest"
@@ -95,10 +131,15 @@
             "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "17": {
+      "note": "The error type the loader raises.",
+      "targets": [
         {
           "anchor": {
-            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
             "content": "sha256:a30551583ff064e537c72296e22e5ff68b0414649a67be7abb14a7109efc6c93",
             "locator": {
               "kind": "symbol",
@@ -110,17 +151,17 @@
         }
       ]
     },
-    "12": {
-      "note": "The missing-lane finding that names exactly this module.\n\nAnchor: \"test files without an explicit lane\"",
+    "18": {
+      "note": "The missing-lane finding.",
       "targets": [
         {
           "anchor": {
-            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
-            "content": "sha256:995b131e049619d62aa3635af042abec8d39207c962eed0ca526230e9b1b3607",
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:662ed3da9a867deb3f01e31521303122ad24cc51e44b85185505fd4008ae29c6",
             "locator": {
-              "end": 130,
+              "end": 141,
               "kind": "line_range",
-              "start": 120
+              "start": 137
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
           },
@@ -128,67 +169,18 @@
         }
       ]
     },
-    "13": {
-      "note": "The lane manifest of record, which has no row for this module yet. A row belongs in the `unit-regression` list, whose alphabetical neighbours are `test_task_intent_identity.py` (`:111`) and `test_telemetry_store.py` (`:112`).\n\nAnchor: \"unit-regression\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d833d65671cf09d0b1e1b9f3c02e7e3822e83e93",
-            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 5
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
+    "19": {
       "note": "The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
             "content": "sha256:3f51591bfdc5301926b452b47db4e3b8f0f4eb2a1aa42af08dad1992348c2c1d",
             "locator": {
               "kind": "symbol",
               "name": "pytest_collection_modifyitems"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
-            "content": "sha256:dd824674b6f19ed8945708cf1f205e6b3b13216849d0b810ce711c312c5ec58c",
-            "locator": {
-              "end": 225,
-              "kind": "line_range",
-              "start": 200
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The population setting that makes every module under `mcp/tests/` part of the expected set.\n\nAnchor: \"testpaths\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
-            "content": "sha256:2190a60352b4095e9f4ce96f02b3e1e1db6f520b056e958c782adade18cdf3d8",
-            "locator": {
-              "end": 284,
-              "kind": "line_range",
-              "start": 284
-            },
-            "path": "pyproject.toml"
           },
           "kind": "code"
         }

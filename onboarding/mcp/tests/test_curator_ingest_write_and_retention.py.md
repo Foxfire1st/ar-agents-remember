@@ -19,9 +19,8 @@ so the purpose-named sibling restores the standing condition without widening a 
 **818** lines, this module is **578**, and the census returns to **27** offenders under the rail's own
 `git ls-files '*.py'` file set and **26** under the narrower `mcp/`-only scope (each number quoted with the
 scope it was measured in, because the population is scope-dependent). The case population moved rather
-than shrank: **20 collected across the pair** (11 + 9), the evidence catalog still reports **16 contracts /
-66 artifacts**, and the two `consumer_scope="exact"` rows this module needed were derived from the shipped
-census's own failing-run output — it named `mcp/tests/fixtures/repository_profiles/node/package-lock.json`
+than shrank: **20 collected across the pair** (11 + 9), the evidence catalog carries the two
+`consumer_scope="exact"` rows this module needed, derived from the shipped census's own failing-run output — it named `mcp/tests/fixtures/repository_profiles/node/package-lock.json`
 and `mcp/tests/snapshot_lifecycle_test_support.py` as missing exactly this path. See
 `test_curator_family_authoring.py.md` for the parent's own record; the two cards share one story.
 
@@ -78,7 +77,6 @@ each case states its input and its measured output without re-implementing the h
 - The sibling fixtures imported rather than duplicated: the family plane's authored meaning. [4]
 - The list fixture and the contract pair the cases are built on. [5]
 - The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output. [6]
-- The catalog pin the split re-took from a fresh `sha256sum`, with its population unchanged. [7]
 - The parent this module was extracted from, whose own docstring points at this sibling's subject. [8]
 
 ### Cross-Repo References

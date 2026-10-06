@@ -12,7 +12,7 @@ Owns the source-derived test-consumer graph shared by targeted selection, retry 
 
 ### Logic
 
-DependencyOwnershipGraph builds repository dependency facts, observed imports/literal consumers and independently checked evidence-catalog declarations. resolve retains every unresolved input and returns complete=false instead of silently expanding an incomplete graph. Parse failures, ambiguous modules and invalid lifecycle catalogs produce explicit unresolved reasons.
+DependencyOwnershipGraph builds repository dependency facts, observed imports/literal consumers and independently checked evidence-catalog declarations. resolve retains every unresolved input and returns complete=false instead of silently expanding an incomplete graph. Parse failures, ambiguous modules and an invalid lifecycle catalog, caught as the shared catalog reader's `EvidenceLifecycleError`, produce explicit unresolved reasons.
 
 Changed tests own themselves; deleted tests leave the population. Repository-owned non-Python
 inputs declare exact consumers only when the independently observed set matches. The reduced
@@ -66,13 +66,16 @@ No configured external domain source.
 
 The source owners below establish these file-local behaviors; this read does not claim a test or certification pass.
 
-- Observed and declared ownership, exact-empty distinction and refusals [1]
 - Transitive importer closure [2]
 - Digest binds declarations and classification authority [3]
 - **The repository-owned declaration table, which now ends later than the L12 count because two citation-binding modules joined the ambient-role runner's exact consumers.** [4]
+
+- An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason. [5]
+- Observed and declared ownership, exact-empty distinction and refusals [6]
 
 ### Cross-Repo References
 
 No separate cross-repository protocol is established by this file. In-tree fixture languages and Dagger SDK doubles remain same-repository evidence.
 
 No cross-repository evidence is required.
+

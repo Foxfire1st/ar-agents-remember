@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations"
+    ],
+    "justification": "Without the refusal a union merge could leave a duplicated line or an unordered list in a catalog that still loads, and later merges of the same list would then conflict or diverge; the rule is realized in the shared module and in both loaders."
+  },
+  "applicability": "The two repository test catalogs, mcp/tests/evidence-lifecycle.toml and mcp/tests/test-evidence-lanes.toml, whenever load_evidence_inventory, load_lane_manifest or the validator command reads them.",
+  "conditions": [
+    "Order is plain ascending string comparison.",
+    "The lifecycle loader checks contract rows by id, artifact rows by path and each consumers list; the lane loader checks each list of the [files] table.",
+    "Two rows with the same key are not an order finding; the lifecycle loader reports them as duplicates through its own checks.",
+    "The layout of a list is compared with the lines the command writes for the same values: the key and an opening bracket, one quoted path per line, and the closing bracket on a line of its own."
+  ],
+  "exclusions": [
+    "A value that is not a list of strings yields no canonical-form finding; the loaders report that shape through their own checks.",
+    "A row whose every listed consumer is gone and whose source-derived set is empty is refused by name without the command, because the command does not repair it; a table header the command does not read is also reported without the command, with the way to write the header."
+  ],
+  "id": "INV-RDQYV3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 3 and 5); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md",
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 3 and 5); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md; notes/reports/260928-MIK-L51-factcheck.md"
+      ],
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Both test catalogs are kept in one canonical form and each loader refuses a catalog that is not in it. The lifecycle loader reports every contract row that sorts before the row above it by id, every artifact row that sorts before the row above it by path, and every consumers list that is out of ascending order, holds a duplicate or is not written with one path per line, in double quotes, with a comma after each path. The lane loader reports every lane list that is out of ascending order, holds a duplicate or is not written with one path per line. Each of the order, duplicate, layout and missing-file findings names the row, list or lane and the --write command. Two findings name no command: a table header the command does not read, whose finding says how to write the header; and a row whose every listed consumer is gone and whose source-derived set is empty, whose finding says the command does not repair the row. Both loaders also report a table header that the command's line scan does not read, and say how to write it.",
+  "status": "proposed",
+  "supersedes": []
+}

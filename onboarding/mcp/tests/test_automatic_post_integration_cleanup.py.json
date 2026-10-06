@@ -19,6 +19,149 @@
         }
       ]
     },
+    "10": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AMBIENT_ROLE_RUNNER_PATH"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AMBIENT_ROLE_RUNNER_PATH"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`.\n\nAnchor: \"cleanup_report(contract, result.payload)\"",
       "targets": [
@@ -71,7 +214,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b8cdcae84247dc64b5f5dc2cf019d9a6b7874a",
+            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
             "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
             "locator": {
               "kind": "symbol",
@@ -114,149 +257,6 @@
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"; \"mcp/tests/test_automatic_post_integration_cleanup.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
-            "locator": {
-              "kind": "symbol",
-              "name": "AMBIENT_ROLE_RUNNER_PATH"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
-            "content": "sha256:3452f46a4bef6d4dbce6f3bcd0826cde1ab1d00eccea0135709d66a2b523a1c4",
-            "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 286
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 62
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"; \"mcp/tests/test_automatic_post_integration_cleanup.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
-            "locator": {
-              "kind": "symbol",
-              "name": "AMBIENT_ROLE_RUNNER_PATH"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
-            "content": "sha256:3452f46a4bef6d4dbce6f3bcd0826cde1ab1d00eccea0135709d66a2b523a1c4",
-            "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 286
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 62
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 65
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.\n\nAnchor: \"integration = [\"; \"AMBIENT_ROLE_RUNNER_PATH: frozenset(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 62
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 286,
-              "kind": "line_range",
-              "start": 286
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
         }
       ]
     }

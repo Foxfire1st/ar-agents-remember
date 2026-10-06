@@ -57,29 +57,11 @@ resolution path.
 
 ### Invariants And Boundaries
 
-- **This module has no evidence-lane row, and that is an open defect, not a convention.** The
-  fail-closed loader `load_lane_manifest` independently derives the expected test population from the
-  tracked-and-untracked Python test modules under `pyproject.toml`'s `testpaths = ["mcp/tests"]` and
-  **raises `LaneManifestError`** for any test file "without an explicit lane". This module is not
-  listed in `mcp/tests/test-evidence-lanes.toml` (nor in `mcp/tests/evidence-lifecycle.toml`), so as
-  the candidate stands the manifest does not load and every consumer of it — the
-  `pytest_collection_modifyitems` hook that calls the loader, and `code_quality/check.py` — turns into
-  a `UsageError`/finding. **The lane row is the owning seat's to add; onboarding does not write code
-  and must not claim a registration that does not exist.** Three further modules carry the same gap
-  from the two preceding leaves of this master (`test_role_capsule_compiler.py` and
-  `test_role_capsule_admission.py` from `CAPS-R02@v1`, and `test_role_instruction_corpus.py` from
-  `CAPS-R01@v1`), so a correct repair is a four-row manifest change rather than a one-row one.
-  **Static finding, not executed**: it was derived from the loader's source, because this seat has
-  Python 3.10 and the repository requires `>=3.13,<3.14`, so `import tomllib` fails and the loader
-  could not be run here.
+- **This module has its evidence-lane row.** `mcp/tests/test_task_projection.py` is listed in the `unit-regression` lane of `mcp/tests/test-evidence-lanes.toml` (`:289`). The fail-closed loader `load_lane_manifest` derives the expected test population from the Python test modules under `testpaths = ["mcp/tests"]` and raises `LaneManifestError` for any test file without an explicit lane; the `pytest_collection_modifyitems` hook calls it on every collection.
 - **No case may compare the projection against itself.** The expected side comes from the fixture
   files on disk, a frozen vocabulary, or an independent parse — never from the projection's output.
 - The import-surface case walks every module in the package, so a new module is covered
   automatically. Do not narrow it to a hand-written module list.
-- `pyright` reports exactly one finding for this module, `Import "pytest" could not be resolved`,
-  which is this repository's **pre-existing** condition for every pytest-importing test module
-  (reproduced on the untouched `test_role_capsule_compiler.py`). It is not a defect introduced here
-  and no `# type: ignore` was added to hide it.
 - This module is a **shipped repository test**, not a task-local fixture. The leaf's mutation probe
   and live-evidence scripts are deliberately *not* promoted here; they are task-local artifacts in
   the coordination tree.
@@ -111,10 +93,13 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 - The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. [8]
 - The package the cases exercise, whose read plan they pin. [9]
 - The compiler seam these cases verify through, including its digest refusal. [10]
-- The fail-closed loader this module currently fails: it raises for any test file without an explicit lane. [11]
-- The missing-lane finding that names exactly this module. [12]
-- The lane manifest of record, which has no row for this module yet. A row belongs in the `unit-regression` list, whose alphabetical neighbours are `test_task_intent_identity.py` (`:111`) and `test_telemetry_store.py` (`:112`). [13]
-- The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure. [14]
+
+- The fail-closed loader: it raises for any test file without an explicit lane. [16]
+- The error type the loader raises. [17]
+- The missing-lane finding. [18]
+- The lane manifest of record; this module's row stands in the `unit-regression` list. [13]
+
+- The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure. [19]
 - The population setting that makes every module under `mcp/tests/` part of the expected set. [15]
 
 ### Cross-Repo References

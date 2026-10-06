@@ -239,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
             "locator": {
-              "end": 362,
+              "end": 371,
               "kind": "line_range",
-              "start": 362
+              "start": 371
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -309,23 +309,6 @@
         }
       ]
     },
-    "23": {
-      "note": "The re-pinned catalog digest that owns the lifecycle manifest's exact bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "24": {
       "note": "**The documented section the matrix case asserts against, generated from the production table.**\n\nAnchor: \"Raw Git Identity Boundary\"",
       "targets": [
@@ -366,7 +349,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:cad473d9553028ef6f4d80aafcf02c0cb51d04ce26812204b6d80788ed0fe751",
             "locator": {
               "kind": "symbol",

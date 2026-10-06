@@ -1,0 +1,815 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:e0fa05955579768b6e808a81c20abe0561b3b2a78c2daa246bd39df075f0ab58",
+        "locator": {
+          "kind": "symbol",
+          "name": "_rewrite_lists"
+        }
+      },
+      "id": "RLZ-05ATDG",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Rewrites one list sorted and without duplicates, one value per line, passes every other line of the block through unchanged, and refuses a list that holds a comment it could not keep.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:257873b553d26aa575a41036e2471a7b594965f082a02e6b94d4c49e0626ebb5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonicalize_consumers"
+        }
+      },
+      "id": "RLZ-06SPNP",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Sets the consumers list of an exact or exact-source row to the derived set, and keeps the list as written and says so when the source tree shows no consumer, so the command never empties a row.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:cdaa19d1a210ad090a6b9622fd2c147144ff6532d56550d7a11fc3c9fb1e2e35",
+        "locator": {
+          "kind": "symbol",
+          "name": "_values_of"
+        }
+      },
+      "id": "RLZ-195ZY1",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Refuses a list that is not closed by a bracket on a line of its own and a list that holds anything but strings, so the rewrite never takes the lines of the next list.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:869219b06cffaa61cfa6771f8202422f5f337e39c50fc92037ff9fc6e7fc7128",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_defect"
+        }
+      },
+      "id": "RLZ-2HC28E",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Decides what keeps one list from canonical form: a value greater than the value after it makes the list out of order, and a list longer than its set holds duplicates. Both loaders' list findings come from this one definition.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:2a55995bba8237b070f32f356fa671379fa5fb982812ab08baeca2adf9d11450",
+        "locator": {
+          "kind": "symbol",
+          "name": "INTERLEAVED_ROWS_HINT"
+        }
+      },
+      "id": "RLZ-2VJXVX",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The one sentence for a catalog that does not parse: two rows may have been interleaved by the merge; restore the file from the landed commit and add this leaf's row again.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_canonical_catalogs"
+        }
+      },
+      "id": "RLZ-5GTYJZ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Reads both catalogs, builds the dependency facts and computes both new texts before it writes either file, and raises CatalogWriteError for a directory whose files Git cannot list, for incomplete facts and for ambiguous modules, so a refusal leaves both catalogs untouched.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:569cd3cbc855ea30d6c17c643deba84c577a46e8cfe6b8cac0b9586eaa745d1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "canonical_lifecycle_text"
+        }
+      },
+      "id": "RLZ-639EXZ",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Orders the contract blocks by id and the artifact blocks by path, keeps every block, and refuses a row whose key is listed twice instead of removing one copy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:58f1fcff243c42ff9429867489772baa9d85500a4c06093a8e8b13b91345c4e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "canonical_lane_text"
+        }
+      },
+      "id": "RLZ-7Z9C3R",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Sorts and de-duplicates only the lists of the [files] table and removes the lines of missing files, so the command never adds a path to a lane and never moves one between lanes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:5b5de8244d9cdc943e5ab3963972d34b60d94372ac06fa00f1fe225b5070b584",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_catalog"
+        }
+      },
+      "id": "RLZ-9C5WBK",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "One read-and-parse path for a catalog file; each reader passes its own refusal type, so a bare parser error is never shown in its place.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:48e3f13c30969d234158fb9c551c87d511488c6985426d87b845d038f105937a",
+        "locator": {
+          "kind": "symbol",
+          "name": "lane_files"
+        }
+      },
+      "id": "RLZ-9ZY55W",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Refuses a lane manifest without a [files] table by name before any finding is collected.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:f4b2cd7651cbd8abe33773ab2dcc4853308de2e6f6e55f4df77503a655581b6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "layout_findings"
+        }
+      },
+      "id": "RLZ-AS1P56",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Compares each consumers list of an artifact row and each lane list of the [files] table with the lines the command would write for the same values, and returns one finding per list written otherwise, naming the row or lane and the write command. When the TOML parser sees a table whose header the line scan does not find, that is the one finding, with the command's own refusal text.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:c140533558701555b9be2f57784e5bbdd62930e245377d08a516b9449f499da2",
+        "locator": {
+          "kind": "symbol",
+          "name": "parse_catalog"
+        }
+      },
+      "id": "RLZ-BJCNTX",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The same refusal for text a reader already holds, such as test selection reading the catalog of the base revision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:0e9233ec627449f35de4ff33d6ada280461d77a16b56ab3da0b5a8c62d8d733e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_drop_gone"
+        }
+      },
+      "id": "RLZ-CT7YZR",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Removes each line of a rewritten list whose file does not exist and reports it; that the file is gone is a fact of the tree, not a decision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "unreadable_catalog"
+        }
+      },
+      "id": "RLZ-DECGJ0",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Builds the one refusal that both loaders and the start of a test run give for a catalog they cannot read or parse, and adds the sentence about interleaved rows when the error is a TOML parse error.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:1085c40c8747fd77de6b4356bca23f0913eea85fe6e0944d4838904e21c21f48",
+        "locator": {
+          "kind": "symbol",
+          "name": "_closing_line"
+        }
+      },
+      "id": "RLZ-FCSHCY",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The line scan's own closing-bracket check: a consumers list whose `]` stands on the line of its last path is refused before either file is written.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:403a90e484120786f1404b1ded66ec79ab68b5c8c5259cd944bdac134978aa83",
+        "locator": {
+          "kind": "symbol",
+          "name": "row_order_defects"
+        }
+      },
+      "id": "RLZ-G75PJ3",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Returns one finding for every row whose key sorts before the key of the row above it, naming the row, the field the rows are ordered by and the write command. The lifecycle loader calls it for contract ids and for artifact paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:e1d5d74d1a7ad102831e84fc7780718320fc41081b15b9f40b36ecd2a11934b0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read"
+        }
+      },
+      "id": "RLZ-HC7DEV",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Refuses a catalog that cannot be read or decoded and a catalog that holds a carriage return, before anything is computed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:462acacf2301ac8bf2ced44806a3417ee059af318b6e301e1a3f321b60a676a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_drop_gone_consumers"
+        }
+      },
+      "id": "RLZ-K58G55",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Names a row whose artifact file does not exist and leaves it in place, and removes the consumer lines of missing files only when at least one listed consumer exists, so no row is removed and no consumers list is emptied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:81792c0379c9dff5fc6027c668d6c6d01f7283da1754322c38419f94c13085fc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_lists_read"
+        }
+      },
+      "id": "RLZ-N12S74",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Refuses a list that the TOML parser sees and the line scan did not find, so a list written in another form is never skipped silently.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:9a3821fe27b760583dccafd335bfd3d7544e4189bb422a77a07ec2d3df8d65fe",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_parseable"
+        }
+      },
+      "id": "RLZ-P4BPV1",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The write command refuses a catalog that does not parse and repeats the sentence, so a broken merge result is never rewritten or guessed at.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:4ee6e26090a5ad42ded0628ace7ff3ea75f8a2565ff4f77ab98c154a8b929842",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_tables_read"
+        }
+      },
+      "id": "RLZ-SAXC3W",
+      "invariant": "INV-6GVK07",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Refuses a catalog in which the TOML parser sees a table whose header the line scan did not find, because a row under such a header would be neither ordered nor derived.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+        "content": "sha256:7ceca6ac006547ecd9ced810db5c81acdf9c9832daca4fb5aa1e26a8ba10e9dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_findings"
+        }
+      },
+      "id": "RLZ-WXKA16",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Turns the list defect into the single finding per list that names the list's owner, an artifact path or a lane, and the write command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module states the canonical form and that the command makes no decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:7ec39e14a03c379bdd68c74e15eac2818de0e4931aebf9dabfa50af8992fa3f2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A catalog that does not parse is refused and never guessed at.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:9a3821fe27b760583dccafd335bfd3d7544e4189bb422a77a07ec2d3df8d65fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_parseable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Comment lines directly above a table header belong to that table's block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:5d63c16a61ed9c6346edb83d7e9768af154796e6cadcb0d75e2561bdcb5b2f4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_split"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The consumers of an exact or exact-source row are set to the derived set; when the tree shows none, the list is kept as written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:257873b553d26aa575a41036e2471a7b594965f082a02e6b94d4c49e0626ebb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonicalize_consumers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "What a report line says about one changed list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:26cdff2257d5ffdbd1997f988eb3289348c0fda0983cbf6a183c35531ec76f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_list"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The real catalogs load through both loaders, which includes every canonical-form finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
+            "content": "sha256:c69540a522ef07dfd8e6bcd70518dac3cba512e23c0bf67a61f7264b2a196735",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_repository_catalogs_are_in_canonical_form"
+            },
+            "path": "mcp/tests/test_evidence_catalog_canonical_form.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The attribute that makes Git merge both catalogs by union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "One finding per list that is not written one path per line, or the header finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:f4b2cd7651cbd8abe33773ab2dcc4853308de2e6f6e55f4df77503a655581b6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "layout_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A table the parser sees and the line scan does not is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:4ee6e26090a5ad42ded0628ace7ff3ea75f8a2565ff4f77ab98c154a8b929842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_tables_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A list the parser sees and the line scan does not is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:81792c0379c9dff5fc6027c668d6c6d01f7283da1754322c38419f94c13085fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_lists_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A row whose artifact file is gone is named and kept; consumer lines of missing files are removed only while a listed consumer exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:462acacf2301ac8bf2ced44806a3417ee059af318b6e301e1a3f321b60a676a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_gone_consumers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Each list line whose file does not exist is removed and reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:0e9233ec627449f35de4ff33d6ada280461d77a16b56ab3da0b5a8c62d8d733e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_gone"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "A list that is not closed by `]` on its own line is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:cdaa19d1a210ad090a6b9622fd2c147144ff6532d56550d7a11fc3c9fb1e2e35",
+            "locator": {
+              "kind": "symbol",
+              "name": "_values_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`read_catalog` and `parse_catalog` read through one shared refusal, and `lane_files` refuses a manifest without a `[files]` table by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:5b5de8244d9cdc943e5ab3963972d34b60d94372ac06fa00f1fe225b5070b584",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_catalog"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:c140533558701555b9be2f57784e5bbdd62930e245377d08a516b9449f499da2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_catalog"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:48e3f13c30969d234158fb9c551c87d511488c6985426d87b845d038f105937a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lane_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The command text that every finding names, the sentence for an interleaved file and the text of the layout finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:fa3318b5ed0c85c45b21bc3d0b7596f4b6ed88329cce6f510ed65e31914109d1",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The lane manifest's `[files]` lists are sorted without duplicates and the lines of missing files are removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:58f1fcff243c42ff9429867489772baa9d85500a4c06093a8e8b13b91345c4e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_lane_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "A list is rewritten sorted and without duplicates, one value per line; a comment inside a list is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:e0fa05955579768b6e808a81c20abe0561b3b2a78c2daa246bd39df075f0ab58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rewrite_lists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The refusal both loaders, the start of a test run, the helper test and test selection give, with the interleaving sentence on a parse error; the command gives the same sentence in its own refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A list is out of order when a value is greater than the next one, and duplicated when its set is smaller than the list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:869219b06cffaa61cfa6771f8202422f5f337e39c50fc92037ff9fc6e7fc7128",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_defect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One finding per row that sorts before the row above it, naming the order field and the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:403a90e484120786f1404b1ded66ec79ab68b5c8c5259cd944bdac134978aa83",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_order_defects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "At most one finding per list, naming its owner, the defect and the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:7ceca6ac006547ecd9ced810db5c81acdf9c9832daca4fb5aa1e26a8ba10e9dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rewrite reads both catalogs, builds the dependency facts, computes both new texts and writes only afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The lifecycle catalog's rows are ordered by key, a row listed twice is refused with the advice for a side that was not canonical, and no row is added or removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:569cd3cbc855ea30d6c17c643deba84c577a46e8cfe6b8cac0b9586eaa745d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_lifecycle_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A file with CRLF line endings is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:e1d5d74d1a7ad102831e84fc7780718320fc41081b15b9f40b36ecd2a11934b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

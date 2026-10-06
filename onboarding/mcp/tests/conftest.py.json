@@ -1,13 +1,32 @@
 {
   "path": "mcp/tests/conftest.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+        "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_configure"
+        }
+      },
+      "id": "RLZ-RY44MX",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The first read of the lane manifest in a test run raises a pytest usage error with the text of unreadable_catalog when the manifest cannot be read or parsed, so a test run shows the sentence and not a bare parser error.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Candidate paths and disposable scrubbed environment",
+      "note": "The candidate's source and test-support roots come first on the import path.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:2729620b8d53ef465294050c5f2e38382ba11614eaa743e3243a0a4c5a399262",
             "locator": {
               "kind": "symbol",
@@ -18,12 +37,78 @@
         }
       ]
     },
-    "2": {
-      "note": "Budget config and explicit certification option",
+    "10": {
+      "note": "The two registered plugins and the comment on the Git checkout.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "content": "sha256:458811e944557d6b7ed40fe51845079d60b9412fc995e19d4c9c9978492c7307",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refusal text for a manifest that cannot be read or parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The start-up hook explains a lane manifest that does not parse, and refuses by name a manifest without a `[files]` table or without the two lanes it reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two budget names are registered without a default, beside the certify option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:b156dc6e6a844b2bef08609b65004b03cd8df71ad64f0f57aa27b4fbd77ba266",
             "locator": {
               "kind": "symbol",
@@ -34,28 +119,12 @@
         }
       ]
     },
-    "3": {
-      "note": "Single lane read and genuine certification admission",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
-            "content": "sha256:ccaac46542632793e73c3814a3ea0c78de5be69041a413b743c96feb58353020",
-            "locator": {
-              "kind": "symbol",
-              "name": "pytest_configure"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
-      "note": "Skip integration imports for default units",
+      "note": "Integration files are skipped before import in a run that excludes integration.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "kind": "symbol",
@@ -67,11 +136,11 @@
       ]
     },
     "5": {
-      "note": "Selected item budgets and explicit tradeoff refusal",
+      "note": "The collected items are counted against the two budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",
@@ -83,11 +152,11 @@
       ]
     },
     "6": {
-      "note": "Explicit bind/reset application composition",
+      "note": "The worktree services are bound and reset by a fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:481fdab23f82ab9d11b96075a52668351ba4183e9b0124f8b6983da051ee5460",
             "locator": {
               "kind": "symbol",
@@ -99,15 +168,49 @@
       ]
     },
     "7": {
-      "note": "Restore environment and remove temporary root",
+      "note": "The environment is restored and the temporary directory removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "7048479e9c94f71a75b11e451fcad03ecd257f07",
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
             "content": "sha256:7f41a8328323663c187c30e8c1b50baec67266d49c01dd89abc116ee2c89a4ed",
             "locator": {
               "kind": "symbol",
               "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The isolated home directories and the switched-off Git configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "content": "sha256:2e01c319b3a799f323ce00c51cee9e0b6b394985de9b5a83d04aec0a0c7937fa",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The removal of inherited opt-ins and credentials.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "content": "sha256:bbf319536a70a895811ae4183ef47df1fea44fba451e849d17967224b4d4b3f4",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "test"

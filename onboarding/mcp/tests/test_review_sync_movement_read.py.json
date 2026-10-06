@@ -157,36 +157,6 @@
         }
       ]
     },
-    "16": {
-      "note": "The read route that renders the movement and folds the staleness beside it.\n\nAnchor: `review_sync_movement`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:c6a9f84ecb3a9c505d5b38aff60b274bc0eba0c4c2ddddbfe1eeaf751b019422",
-            "locator": {
-              "kind": "symbol",
-              "name": "sync_movement"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:d62625929cd45ebd41510015aec1cb6481b1c94aac40efc3be86cba2038532ad",
-            "locator": {
-              "end": 519,
-              "kind": "line_range",
-              "start": 519
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "17": {
       "note": "**The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.**",
       "targets": [
@@ -450,7 +420,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
             "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
             "locator": {
               "kind": "symbol",
@@ -485,31 +455,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:29c537b964d3faf02fe803f2acfa8ce3c53a5b9467730b781a77ef4642daf4c4",
             "locator": {
-              "end": 361,
+              "end": 372,
               "kind": "line_range",
-              "start": 361
+              "start": 372
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "The catalog digest the added consumer rows move, pinned by the structural check.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }
@@ -558,6 +511,50 @@
             "path": "mcp/tests/test_review_sync_rebinding.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "The read route that renders the movement and folds the staleness beside it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "content": "sha256:c6a9f84ecb3a9c505d5b38aff60b274bc0eba0c4c2ddddbfe1eeaf751b019422",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 479
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "content": "sha256:c419173437328ee6eb933913b17a59c9b9ac78218525b6156ab955f7c09d5f30",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 488
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "content": "sha256:afcd3bd07f67a61e8fb486ff2e989e7efe371c3388abdf2da548e7591912372a",
+            "locator": {
+              "end": 584,
+              "kind": "line_range",
+              "start": 584
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
         }
       ]
     },

@@ -125,9 +125,12 @@ No external domain claim is required.
 - The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. [4]
 - The projection that names the finalization move. [5]
 - The terminal operation the first case calls. [6]
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [7]
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [8]
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [9]
+
+- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [10]
+
+- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [11]
+
+- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [12]
 
 ### Cross-Repo References
 

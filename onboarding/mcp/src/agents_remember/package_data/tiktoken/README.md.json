@@ -43,6 +43,86 @@
         }
       ]
     },
+    "10": {
+      "note": "The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and states that no test checks the entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:0bff9ec49ab3191ffb72ba723fc0c41fb342b85e356f5fcf7ee8f779d44b2551",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The corruption case of the test module: one flipped byte in a copy in a temporary directory, through the production `TiktokenTokenCounter()` entry point.\n\nAnchor: `CorruptVendoredVocabularyTests.test_a_counter_will_not_build_on_a_corrupt_copy`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef801deaa27e358ede61f4497e72165051c9c2d8",
+            "content": "sha256:a568378bd283e0008844ca021324ad96e16b4be9051c4e130282880c21ac4284",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/tests/test_cold_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
+            "content": "sha256:1c098f6a1d799c6b5a3aadcd6a4b190bf887d814111e7bd71223547eec22c802",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
+            "content": "sha256:aefd0fb5d8f022d0d0f617e785bcbe95d9db6895327e7bb08e1f9da5b83e411f",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
+            "content": "sha256:fbcc5eca4d066d160a2c5fde84e04b662c983dfb7c381168a4bc30b742c1d637",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The loader derives the hash-named path and verifies the file before loading.",
       "targets": [
@@ -123,92 +203,12 @@
         }
       ]
     },
-    "6": {
-      "note": "The `-text` attribute this README says must be renamed on refresh, with a comment that points back at this file and names the test that stays red until it is renamed.\n\nAnchor: \"-text\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e763507bac7d8fb9f1d43a06466ad60ae299f0e6",
-            "content": "sha256:0bff9ec49ab3191ffb72ba723fc0c41fb342b85e356f5fcf7ee8f779d44b2551",
-            "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": ".gitattributes"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The `package-data` glob is recursive, so whatever is present under `package_data` at build time ships — which is how this blob reaches an installed wheel or sdist; the same file pins the tiktoken range the vendored bytes must satisfy (`tiktoken>=0.12,<1`).\n\nAnchor: \"tiktoken>=0.12\"; \"package_data/**/*\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
-            "content": "sha256:1c098f6a1d799c6b5a3aadcd6a4b190bf887d814111e7bd71223547eec22c802",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 29
-            },
-            "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
-            "content": "sha256:aefd0fb5d8f022d0d0f617e785bcbe95d9db6895327e7bb08e1f9da5b83e411f",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 84
-            },
-            "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "20abfc44ada0f68b2710b283b40de392c025f666",
-            "content": "sha256:fbcc5eca4d066d160a2c5fde84e04b662c983dfb7c381168a4bc30b742c1d637",
-            "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 90
-            },
-            "path": "mcp/pyproject.toml"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The corruption cases this README describes, each applied to a *copy* in a temp directory and never to the blob here: CRLF-mangled, truncated to half its bytes, one flipped byte through the production `TiktokenTokenCounter()` entry point.\n\nAnchor: \"class CorruptVendoredVocabularyTests(unittest.TestCase):\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef801deaa27e358ede61f4497e72165051c9c2d8",
-            "content": "sha256:258846007e445ea917eee95d7ca81200604dc5920f6850623bcba8b557e55673",
-            "locator": {
-              "end": 281,
-              "kind": "line_range",
-              "start": 208
-            },
-            "path": "mcp/tests/test_cold_start.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "9": {
       "note": "The contrast the README draws: the cockpit bundle and its fingerprint sidecar are git-ignored, while this content-addressed blob is committed.\n\nAnchor: \"this file is committed\"; \"/mcp/src/agents_remember/package_data/dashboard/\"",
       "targets": [
         {
           "anchor": {
-            "blob": "afb87543ec96021dfba87dc7c116839404262b90",
+            "blob": "14138f5e07311df459db334ccecc0ab4ddb8388e",
             "content": "sha256:ab49d34b844693d16dde81fc22a2ce66fcf0ce7a04f0a8587f7989812874cb16",
             "locator": {
               "end": 26,
@@ -221,7 +221,7 @@
         },
         {
           "anchor": {
-            "blob": "2aac78785258416fcbb86b21ac6a285943449211",
+            "blob": "025f2433aa3939b8c55696c69c4a7cc384614dfc",
             "content": "sha256:56646739a4d05e696650b541b5ebf3fafe13b5f71598f97eff67d6c74ea108b8",
             "locator": {
               "end": 64,

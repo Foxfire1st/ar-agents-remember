@@ -1,13 +1,50 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+        "content": "sha256:60f4c388275892c1f21a70be5b877632a38bf9ea58da561431fb5332c0fbe90d",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_collection"
+        }
+      },
+      "id": "RLZ-60CS5T",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Keeps a worker's collection refusal in the worker output under WORKER_REFUSAL, so the controller can hand it to the terminal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+        "content": "sha256:462bfdb7b446ae9ae2a01c523d9d9a6bf436b5c8ec157d295f226477cc4de95f",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_testnodedown"
+        }
+      },
+      "id": "RLZ-XERRZH",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Raises the worker's refusal once, so a parallel run ends with the finding and the command exactly as a run without workers does.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The eight lanes define authority, fidelity, lifetime, and triggers.",
       "targets": [
         {
           "anchor": {
-            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
             "content": "sha256:22c917a6d0e270b678d739d034206e794b42c8cd5f2d4120a333fc6202078f5b",
             "locator": {
               "kind": "symbol",
@@ -23,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
             "content": "sha256:fe58e3c90aea05016831a124a3d1b5e7ff25964b43757f3bd0970f024820328d",
             "locator": {
               "kind": "symbol",
@@ -34,7 +71,7 @@
         },
         {
           "anchor": {
-            "blob": "d47c5ff65c55fe0c0f681d076f329a21ebbbc75f",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
             "content": "sha256:58b2233fc6a5ffc0de1b435857dcd6ac3de330706850b5cc9e36746ffe3c25c0",
             "locator": {
               "kind": "symbol",
@@ -45,29 +82,43 @@
         }
       ]
     },
-    "3": {
-      "note": "The manifest loader proves complete, non-conflicting test-file coverage before collection.",
+    "4": {
+      "note": "A worker's collection refusal reaches the controller once, as a usage error.",
       "targets": [
         {
           "anchor": {
-            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
-            "content": "sha256:9b6a76d1115a5e75a0942cd311c4835eb9b348576c744e8fe48d63cc541eb117",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+            "content": "sha256:60f4c388275892c1f21a70be5b877632a38bf9ea58da561431fb5332c0fbe90d",
             "locator": {
               "kind": "symbol",
-              "name": "load_lane_manifest"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+              "name": "pytest_collection"
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a94fc87626ee5065df9e2908d9d280aa4a9fc1ee",
-            "content": "sha256:7166190d8d0f0d5b960aa25e3a61d0068532091d8d1ae0d9a071ea4d9d6af43e",
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+            "content": "sha256:462bfdb7b446ae9ae2a01c523d9d9a6bf436b5c8ec157d295f226477cc4de95f",
             "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 58
+              "kind": "symbol",
+              "name": "pytest_testnodedown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The manifest loader proves complete, non-conflicting test-file coverage before collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
           },

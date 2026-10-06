@@ -161,113 +161,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "819c3a7a77b9b9d9bd0e10eea1d58fbc3bbd3782",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
             "locator": {
-              "end": 26,
+              "end": 19,
               "kind": "line_range",
-              "start": 26
+              "start": 19
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "16": {
-      "note": "The three governed-artifact consumer rows this module added, which re-derived the catalog's byte pin at this leaf's tip without changing the populations.\n\nAnchor: `consumers`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e19cee01311b80dc8a806840263da0697707efde",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 38
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e19cee01311b80dc8a806840263da0697707efde",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 58
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e19cee01311b80dc8a806840263da0697707efde",
-            "content": "sha256:b3a6b5da79b8051abfba35a5a40d6400c0a74b72193c0029c318befedb60d938",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 77
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e19cee01311b80dc8a806840263da0697707efde",
-            "content": "sha256:2e156d69bd8743f631d04cf0cc864e81162959227248a282270742be7cf28786",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 88
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e19cee01311b80dc8a806840263da0697707efde",
-            "content": "sha256:c3c59085d1d37b63d071e8cba451d96d639ad8a7595c1e0a4c1f2f6f5588cb9e",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 92
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The pin is a byte contract at one tip and re-derives again for whoever changes the catalog last.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "58f2dda33423171798ccb1bfdb03ce87d38b4202",
-            "content": "sha256:78b38d19c4813bf7d32d06d9323d30a65a37bf7ff643f378803e40eb0a688cf0",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "58f2dda33423171798ccb1bfdb03ce87d38b4202",
-            "content": "sha256:9a063f5ee39fb983276b847588ae23ae168263862e99d9fdc05836c5ae2ce68e",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }
@@ -278,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
             "locator": {
               "kind": "symbol",
@@ -302,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -397,6 +298,50 @@
             "path": "mcp/src/agents_remember/serving/capsule_delivery.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The three governed-artifact consumer rows this module added.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 740
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:4695b329b96163bd351824a2c951c1ce73612c7451dc3dc8f142ecb33d112c19",
+            "locator": {
+              "end": 993,
+              "kind": "line_range",
+              "start": 993
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
         }
       ]
     },

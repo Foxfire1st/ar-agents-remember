@@ -109,7 +109,7 @@ No relevant documentation found after checking live sources.
 - The taskless admission the second and fourth groups hold. [11]
 - The exclusion policy the third group pins. [12]
 - The staging helper the third group's failure mode lives in. [13]
-- The lane row that keeps the fail-closed evidence registry loading clean. [14]
+- The lane row that keeps the fail-closed evidence registry loading clean. [15]
 
 ### Cross-Repo References
 

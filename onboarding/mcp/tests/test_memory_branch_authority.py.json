@@ -136,17 +136,17 @@
         }
       ]
     },
-    "14": {
-      "note": "The lane row that keeps the fail-closed evidence registry loading clean.\n\nAnchor: \"test_memory_branch_authority.py\"",
+    "15": {
+      "note": "The lane row that keeps the fail-closed evidence registry loading clean.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bdcb0905caf3223ebfebe07bc3a74962d081426",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
             "locator": {
-              "end": 192,
+              "end": 183,
               "kind": "line_range",
-              "start": 192
+              "start": 183
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

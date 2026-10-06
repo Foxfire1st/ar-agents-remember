@@ -497,6 +497,168 @@
         }
       ]
     },
+    "120": {
+      "note": "The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "121": {
+      "note": "The registry rows this leaf added: two integration lane rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "122": {
+      "note": "The registered support artifact the two integration lane rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "123": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "124": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "125": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "126": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "127": {
+      "note": "The second registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "128": {
+      "note": "The third registered support artifact those rows land in, by its own artifact id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ea064e50beec941144e08261afee82de3e07292",
+            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "13": {
       "note": "The absence refusal, naming proof claims when the leaf read asks.\n\nAnchor: `with_proofs`",
       "targets": [
@@ -2052,24 +2214,6 @@
         }
       ]
     },
-    "53": {
-      "note": "The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "54": {
       "note": "**The `ar-knowledge-export/v1` format: the one encoder, the canonical-form guarantee, the two acceptance checks and the digest-coverage statement.**",
       "targets": [
@@ -2856,78 +3000,6 @@
         }
       ]
     },
-    "76": {
-      "note": "The registry rows this leaf added: two integration lane rows.\n\nAnchor: \"integration = [\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1bdcb0905caf3223ebfebe07bc3a74962d081426",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 313,
-              "kind": "line_range",
-              "start": 313
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "77": {
-      "note": "The registered support artifact the two integration lane rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-identity-branching-fixture\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
-            "locator": {
-              "end": 25,
-              "kind": "line_range",
-              "start": 25
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "78": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "79": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "8": {
       "note": "The store's own seal on each projected revision row.\n\nAnchor: `revision_payload_digest`; `family_revision_payload_digest`",
       "targets": [
@@ -2956,78 +3028,6 @@
             "path": "mcp/src/agents_remember/memory/knowledge_index/projection.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "80": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "81": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "82": {
-      "note": "The second registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"knowledge-snapshot-lifecycle-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "83": {
-      "note": "The third registered support artifact those rows land in, by its own artifact id.\n\nAnchor: \"id = \\\"common-base-merge-cases\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "db2ed2db5012b6d8e8d3361dfb237a2a7b2d54b5",
-            "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
         }
       ]
     },

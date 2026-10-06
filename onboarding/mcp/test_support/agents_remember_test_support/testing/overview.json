@@ -2,7 +2,7 @@
   "path": "mcp/test_support/agents_remember_test_support/testing",
   "references": {
     "1": {
-      "note": "Ordinary bootstrap owns local ordering/cache/state isolation without certification.\n\nAnchor: \"Reusable pytest bootstrap with no certifying or external-service capability.\"",
+      "note": "The ordinary bootstrap carries no certifying or external-service capability.",
       "targets": [
         {
           "anchor": {
@@ -19,8 +19,129 @@
         }
       ]
     },
+    "10": {
+      "note": "Seeded ordering uses its own random generator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e69cd7c5bdb5263e61e045e61fd8374abd2cc8cf",
+            "content": "sha256:5cb81759cd80d26f8e077fe007a734b989b9d5bce470f824ce45a8bcbe723821",
+            "locator": {
+              "kind": "symbol",
+              "name": "shuffle_items"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/random_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.\n\nAnchor: `curation_doctrine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
+            "content": "sha256:bf18859d054710963b18206394efa34c0df607cf8dd186c6293e3a8a98195330",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Canonical skill copies and their harness mirrors are the synchronization owner's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
+            "content": "sha256:fbba92b8a660284ad60d20f09931d327167a6af0a2ed32fe2f13676e8c2e79d6",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lifecycle loader starts with the canonical-form findings and then validates the catalog against the source tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane loader reports a lane list that is not canonical and compares the declared files with the test modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The registry of retired curation sentences and required statements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
+            "content": "sha256:5ffa0dd1dc322628cb2dc8489a2b305a81a7b6bd2a3a15a8e336d6341ea3d838",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The refusal that both loaders and the start of a test run give for a file that does not parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "Certifying setup admits Dagger before candidate preparation.",
+      "note": "Certifying setup admits Dagger before it resolves the candidate.",
       "targets": [
         {
           "anchor": {
@@ -37,7 +158,7 @@
       ]
     },
     "3": {
-      "note": "Retry execution retains exact explicit affected modules.",
+      "note": "Retry execution keeps only the dependency-owned files of the collected population.",
       "targets": [
         {
           "anchor": {
@@ -53,33 +174,70 @@
         }
       ]
     },
-    "4": {
-      "note": "Current imported source owns this scoped route boundary.",
+    "6": {
+      "note": "The rewrite computes both new catalogs before it writes either.",
       "targets": [
         {
           "anchor": {
-            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
-            "content": "sha256:6ff64d3533320826db0ba896fc337597c6d31991a33d3b346e017cb5111727ad",
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
             },
-            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Current imported source owns this scoped route boundary.",
+    "7": {
+      "note": "The command validates both catalogs on one cached source graph, or rewrites them with `--write`.",
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:7aa1e7aebe61c2415404c8f009dc15541421cf03e537c8cef220ad921379809e",
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "main"
             },
-            "path": "scripts/sync-skills.py"
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The union merge attribute for both catalogs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaked change of owned module-level state fails the test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
+            "locator": {
+              "kind": "symbol",
+              "name": "reject_owned_global_state_leaks"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
           },
           "kind": "code"
         }

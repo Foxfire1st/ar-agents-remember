@@ -2,14 +2,14 @@
   "path": "docs/design",
   "references": {
     "1": {
-      "note": "FEUI-L8's canonical scenario, accessibility, performance, and invariant evidence.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "note": "The scenario catalog of the cockpit dashboard.",
       "targets": [
         {
           "anchor": {
             "blob": "0198845c73c6b60a84e77cd589bd5a9615fda7e4",
-            "content": "sha256:300cd5ed4d8cc117d30dbc4b1ad94303da82b39c799705aa2fae9bd9c4ee5817",
+            "content": "sha256:a62bb8c45df35c9c6c30bbabd7c153b9e310625c037dae73cf42f5173db622d7",
             "locator": {
-              "end": 166,
+              "end": 18,
               "kind": "line_range",
               "start": 1
             },
@@ -19,15 +19,33 @@
         }
       ]
     },
+    "10": {
+      "note": "The design document's statement of the catalogs' canonical form, their union merge, the write command, and that no byte or count is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fcb0d507b8e07059199130a4e86daf56e6f83a5",
+            "content": "sha256:d75bfbe45562d17fb3ba027b891afb78d2d49f7593553634b82ddfe1cbda684c",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "docs/design/python-evidence-system.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
-      "note": "The explicit upstream gaps and one-Chats cutover ruling.\n\nAnchor: `# Session cockpit upstream register and Chats decision brief`",
+      "note": "The upstream register and the Chats decision brief.",
       "targets": [
         {
           "anchor": {
             "blob": "0cfca533a94142711746ba8bd0fbc4fc667dc8b2",
-            "content": "sha256:d8822a725cf0f9a3e03795ab696f432e89c43f65ff89a97f3a55fc02ba50ae65",
+            "content": "sha256:85ddf92ab7687b8d0201e4718e1d09dc804aea7e94b57935610f63c036a5b9b2",
             "locator": {
-              "end": 66,
+              "end": 8,
               "kind": "line_range",
               "start": 1
             },
@@ -38,14 +56,14 @@
       ]
     },
     "3": {
-      "note": "The bounded series closeout evidence pack.\n\nAnchor: `# Session cockpit closeout evidence`",
+      "note": "The closeout evidence index of the session cockpit series.",
       "targets": [
         {
           "anchor": {
             "blob": "01d8d34e8e7f7a1181906ecdab6487335ea132f4",
-            "content": "sha256:f2c0d544f65e5466a0514763dc2bfe205dd441fea246970378d8af4878096b9c",
+            "content": "sha256:0025ad6630adc352d4b3fa660ecd3ea8f3743fd107ee6c04f49ad73c47ef83d6",
             "locator": {
-              "end": 155,
+              "end": 12,
               "kind": "line_range",
               "start": 1
             },
@@ -55,30 +73,73 @@
         }
       ]
     },
-    "4": {
-      "note": "The implementation produces/reuses memory content before refreshing its cache (since MIK-R09 validating a converted leaf's exact tree first).",
+    "6": {
+      "note": "The observable lifecycle design states its scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
-            "content": "sha256:02ee6fd3dffc8c66d15039d6fbf1481d2fce179ba4b00f4817c8f55e717942b3",
+            "blob": "b44e3eee34f91c2acb39280530878ac403090e77",
+            "content": "sha256:5a2a5b48b1d00359ec4dc83cc134b9347ed22d763a4674ccee4c91f08c6e77c7",
             "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+            "path": "docs/design/observable-lifecycle.md"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "7": {
+      "note": "The harness capability matrix.",
+      "targets": [
         {
           "anchor": {
-            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
-            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "blob": "32f74ee585010a37a85e4de8717749b8eeff499b",
+            "content": "sha256:e8ec2cde28f83490f0fbc5dc1cd39c47329bd160cfa3ac4c09597cb675703b5a",
             "locator": {
-              "kind": "symbol",
-              "name": "_commit_memory_content"
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+            "path": "docs/design/harness-matrix.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The test commands and the need for a Git checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6321de43731f72b2d339bd70b4d96eab67a7217b",
+            "content": "sha256:b09ffb5d4dc406d5da95535a47409d0b7b687f973669afecb344fa6d195387bf",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one accepting authority for Python test evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27dd0858bebf6610971f6c4babbe6930da63fdf0",
+            "content": "sha256:b82258f995044a7624be5d79bea81b73098d0d0ef1a77f5689d49a4603acd109",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/design/python-test-evidence.md"
           },
           "kind": "code"
         }

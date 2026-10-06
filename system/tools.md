@@ -183,6 +183,28 @@ coverage artifacts as diagnostics. A direct host result cannot replace that auth
 
 ---
 
+### Test Catalogs
+
+The two test catalogs are `mcp/tests/test-evidence-lanes.toml` (the lane of every test file) and
+`mcp/tests/evidence-lifecycle.toml` (the governed test artifacts and their consumers). One module
+validates both and, with `--write`, rewrites both to canonical form. Run it from the source
+repository root with the Python of the MCP development environment (`mcp/.venv/bin/python`; in a
+linked worktree, the primary checkout's) and with `mcp/test_support` and `mcp/src` on `PYTHONPATH`,
+as the hook gate does:
+
+```text
+PYTHONPATH=mcp/test_support:mcp/src python -m agents_remember_test_support.testing.evidence_lifecycle --project-root .          # Validate both catalogs.
+PYTHONPATH=mcp/test_support:mcp/src python -m agents_remember_test_support.testing.evidence_lifecycle --project-root . --write  # Rewrite both catalogs to canonical form.
+```
+
+- Run the validator after any change to a catalog and before a commit; the fast hook tier runs it
+  too, and it prints each finding or `evidence-lifecycle: PASS`.
+- Run the command with `--write` after adding a test file's line to its lane, after deleting or
+  moving a test file, after a merge or sync that touched a catalog, and whenever a finding names
+  the command.
+
+---
+
 ### CRAP-Calculator
 
 CRAP-Calculator combines Radon function-level cyclomatic complexity with Coverage.py JSON statement-and-branch coverage. It reports function-level CRAP scores and derives a per-file rollup from those function scores.

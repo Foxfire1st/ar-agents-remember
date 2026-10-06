@@ -91,9 +91,8 @@ deliberately — the sibling's own `NEWLINE`, `ReviewSyncFixture`, `commit_file`
 are `unittest.TestCase` methods under `LiveReviewMovementTests` (`:38`), each driving real owners inside a
 `tempfile.TemporaryDirectory`, and the shared read assertion is one module-level helper (`:328-355`) rather
 than a duplicated block. The module is registered as one `integration` lane row
-(`mcp/tests/test-evidence-lanes.toml:302-305`) and as four `consumer_scope = "exact"` consumer rows in
-`mcp/tests/evidence-lifecycle.toml` (`:801-803`, `:1305-1309`, `:1431-1435`, `:1477-1481`), whose added
-rows move the catalog digest pinned in `test_dependency_ownership_ast_helpers.py:46`. It measures **356
+(`mcp/tests/test-evidence-lanes.toml:372-373`) and as four `consumer_scope = "exact"` consumer rows in
+`mcp/tests/evidence-lifecycle.toml` (`:801-803`, `:1305-1309`, `:1431-1435`, `:1477-1481`). It measures **356
 lines**.
 
 ### Invariants And Boundaries
@@ -152,7 +151,6 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 - One accepted record projected, with resolved identities carried exactly on the channel that moved. [13]
 - The unmeasured reason in the record's own words, and the one sentence each state publishes. [14]
 - **The fold that makes a measured movement outrank the reader's carried identity, which is what `F6` renders.** [15]
-- The read route that renders the movement and folds the staleness beside it. [16]
 - **The four-valued movement vocabulary, and the validator clause the `H1` forgeries are aimed at.** [17]
 - **The two fields the `H2` ambiguity turns on, and the reviewed/resolved identity fields `F6` asserts.** [18]
 - The submission vocabulary whose `disabled_stale` state ends the `F6` phase. [19]
@@ -165,8 +163,9 @@ facts; and `H2` is a recorded, bounded ambiguity rather than a silent one.
 - The remedy the successor action names, which no case here performs. [26]
 - The production sync tool whose payload the read-side block is attached to. [27]
 - **The module's lane row and its four exact-scope consumer rows in the evidence catalog.** [28]
-- The catalog digest the added consumer rows move, pinned by the structural check. [29]
 - The sibling module that owns the sync-side cases, the fixture and the shared helpers. [30]
+
+- The read route that renders the movement and folds the staleness beside it. [32]
 
 ### Cross-Repo References
 
@@ -175,3 +174,4 @@ an enclosure, a generation store and a published dataset inside one repository b
 record the same leaf's own managed syncs published at that repository's durable reports root.
 
 No meaningful cross-repo references found.
+

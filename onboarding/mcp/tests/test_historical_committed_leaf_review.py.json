@@ -253,12 +253,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74055a1f0b10c28a31331400849d3268f0ea09fe",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
-              "end": 82,
+              "end": 87,
               "kind": "line_range",
-              "start": 82
+              "start": 87
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -327,47 +327,6 @@
               "kind": "symbol",
               "name": "pytestmark"
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "**The re-pin that keeps the catalog identity of the lifecycle TOML deliberate rather than incidental.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
-            "content": "sha256:c66cc42f3fbeb76cabc16cba8fee5064737ad427cc9be31f6d7fd3b23d742599",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
-            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CONTRACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8fbd124e5510b62bd23790c62de89f122bdeb7de",
-            "content": "sha256:801c98578e99a5a56a8bbc89de638de00fa66bd0ee160ada7600d3ef2d789fd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }
@@ -505,7 +464,7 @@
         },
         {
           "anchor": {
-            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
             "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
             "locator": {
               "kind": "symbol",

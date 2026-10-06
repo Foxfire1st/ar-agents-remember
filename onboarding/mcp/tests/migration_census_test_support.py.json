@@ -306,60 +306,6 @@
         }
       ]
     },
-    "18": {
-      "note": "The catalog's pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest, and the case module this fixture serves is the `unit-regression` lane member carrying the leaf's 48 cases.\n\nAnchor: `unit-regression`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6dce504eb5ba9b11b225975a9d4e92348d051a97",
-            "content": "sha256:90619c4c380718760d97abb7ce32697fafc4c4ba9c1837094784f5f1f2b2b2c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CONTRACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6dce504eb5ba9b11b225975a9d4e92348d051a97",
-            "content": "sha256:9a063f5ee39fb983276b847588ae23ae168263862e99d9fdc05836c5ae2ce68e",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_ARTIFACT_COUNT"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6dce504eb5ba9b11b225975a9d4e92348d051a97",
-            "content": "sha256:c85f9395142184f108209b17b4f4cc9500e4b3bdab45b24d60b5337d719b4588",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d401bb6b98a51434b7904235bbc837e3ee8fff61",
-            "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 5
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "The four artifact paths and the addressed route are the fixture's shared vocabulary, so a case names the artifact it is asserting against rather than repeating a literal.",
       "targets": [

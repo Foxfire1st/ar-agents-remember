@@ -627,7 +627,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
             "content": "sha256:d23b88bfe5806982c241f16ab82833e81ee4eba54fe4c519aa5684e7530d096c",
             "locator": {
               "kind": "symbol",
@@ -639,7 +639,7 @@
         },
         {
           "anchor": {
-            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
+            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
             "content": "sha256:1a8ba2c5df7a581600dac122b98e8bbf092d78a69e8cc91bbddb12bb430223ae",
             "locator": {
               "kind": "symbol",
@@ -864,31 +864,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
             "content": "sha256:556708fec837dd0cfd02e06f0261ab832f78b7d83d989d00c26885cf694c136f",
             "locator": {
-              "end": 360,
+              "end": 373,
               "kind": "line_range",
-              "start": 360
+              "start": 373
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "45": {
-      "note": "The catalog digest the added consumer rows move, pinned by the structural check.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8fb06eba40205d64239ea7abcd2ca9727823eb6b",
-            "content": "sha256:c1c4f93379221301ef8821bdb053ba0c85b7eeebc0f1a48629388af7ee99f35c",
-            "locator": {
-              "kind": "symbol",
-              "name": "LIFECYCLE_CATALOG_SHA256"
-            },
-            "path": "mcp/tests/test_dependency_ownership_ast_helpers.py"
           },
           "kind": "test"
         }

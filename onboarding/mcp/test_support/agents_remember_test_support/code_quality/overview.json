@@ -19,6 +19,55 @@
         }
       ]
     },
+    "10": {
+      "note": "Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational \"without proof\" list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 425
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 592
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Interactive catalog names missing authority without eligibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
+            "content": "sha256:3ce49a20f19472550af8664ba24c6ef8fae1490721a9b3c86878794e3064af7b",
+            "locator": {
+              "end": 960,
+              "kind": "line_range",
+              "start": 925
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
       "targets": [
@@ -37,88 +86,17 @@
         }
       ]
     },
-    "3": {
-      "note": "Exact contract scope, the full check, and the curator worklist publication, which on a converted tree also carries the informational \"without proof\" list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9ae85a09b35b32891e6b9f7f2ae7bb634819eb25",
-            "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resolve_execution"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9ae85a09b35b32891e6b9f7f2ae7bb634819eb25",
-            "content": "sha256:cd3a7c8ed654a2dbc4194fcebaf73ed741fae0144c45242ee28eabfcbc1d4cb1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_execute_memory_quality"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9ae85a09b35b32891e6b9f7f2ae7bb634819eb25",
-            "content": "sha256:581784baea98b61593859bf51fac3a091a86393707e4e1841786bf2404ab12ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "_attach_curator_checklist"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Interactive catalog names missing authority without eligibility.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9ae85a09b35b32891e6b9f7f2ae7bb634819eb25",
-            "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_attach_final_full_catalog"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9ae85a09b35b32891e6b9f7f2ae7bb634819eb25",
-            "content": "sha256:7ccdf20d13afa6d3496df0bf6565a20646d13d90b7b326ccf997da0de4d39bff",
-            "locator": {
-              "end": 636,
-              "kind": "line_range",
-              "start": 600
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "Final memory adapter requires the selected four-code-terminal prefix.\n\nAnchor: \"class PreparedMemoryCertificationAdapter:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "24c340f78abcf1ec1afe62db203271274149d073",
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
             "content": "sha256:723971a0a9919c33ec895bb9893af3c5aa251d4fd92655e795a6c708358f3fa2",
             "locator": {
-              "end": 785,
+              "end": 808,
               "kind": "line_range",
-              "start": 721
+              "start": 744
             },
             "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },

@@ -2,40 +2,12 @@
   "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Observed and declared ownership, exact-empty distinction and refusals",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:88d5e3ac8289a6db3944a0d9fa719f0a39b101483aa168b6f54a6bb231157bc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "DependencyOwnershipGraph"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
-            "content": "sha256:043fd303ab307af76892034e83f2db7d33d065afa8ad2864c72a272e0e3cdb48",
-            "locator": {
-              "end": 519,
-              "kind": "line_range",
-              "start": 225
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Transitive importer closure",
       "targets": [
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:09c4ee4362647b98e1faa647e0adb1f25f18f7cc5edde728b02cc856a3607716",
             "locator": {
               "kind": "symbol",
@@ -46,12 +18,12 @@
         },
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:835ddb514dd318c90463438db0e335f2ecb64b63e8ea016f1638993a3e54163c",
             "locator": {
-              "end": 542,
+              "end": 541,
               "kind": "line_range",
-              "start": 522
+              "start": 521
             }
           },
           "kind": "code"
@@ -63,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:4980187d983779be294e87db53a9dd3d4f2ce6459a32b2d9b541b7b52912740e",
             "locator": {
               "kind": "symbol",
@@ -74,12 +46,12 @@
         },
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:65205ebf1c182e0116bf2dd3990560f7a0d725f24162e7d000348b069dfe450a",
             "locator": {
-              "end": 614,
+              "end": 613,
               "kind": "line_range",
-              "start": 593
+              "start": 592
             }
           },
           "kind": "code"
@@ -91,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:876a387f9a0d6904fef7bd7fadd03506ddedbafbb89433f4a19cc847e45a27a8",
             "locator": {
               "kind": "symbol",
@@ -102,11 +74,44 @@
         },
         {
           "anchor": {
-            "blob": "115c2e8e0e7f62e44bbed41ccbb8e5e155daed5a",
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
             "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
             "locator": {
               "kind": "symbol",
               "name": "AMBIENT_ROLE_RUNNER_PATH"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An invalid lifecycle catalog is caught as the shared catalog reader's error, not as a bare TOML error, and becomes an unresolved selection reason.\n\nAnchor: `changed_catalog_consumers`; `EvidenceLifecycleError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:3ed8dc3975f0c700c971b6ee532a73f6e6dc032981279b674466fa9534d6ccb2",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Observed and declared ownership, exact-empty distinction and refusals",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
+            "content": "sha256:20fad3c44b7d355b4ca354acac3801d7580599e9c82c345e9678a0fa1431ab94",
+            "locator": {
+              "kind": "symbol",
+              "name": "DependencyOwnershipGraph"
             }
           },
           "kind": "code"

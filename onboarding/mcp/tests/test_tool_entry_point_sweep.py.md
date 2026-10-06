@@ -140,7 +140,7 @@ they make no acceptance claim.
 - The sweep itself: one world, one run, and the equality assertions that bind every pin. [14]
 - The executed positive control over the choke point, and both break shapes at the entry point. [15]
 - The census controls: write, rewrite and delete in both repositories and outside every zone. [16]
-- The lane row that keeps this module in the default selection. [17]
+- The lane row that keeps this module in the default selection. [22]
 - The advertised roster the swept population is derived from and asserted equal to. [18]
 - The registry whose models classify a payload that does not validate. [19]
 - The choke point a bypassing handler skips, and the validation this module's control executes. [20]

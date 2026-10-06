@@ -100,9 +100,8 @@ failure to a property without reading the cases. Fixtures are `_`-prefixed modul
 pytest fixtures, because they build one shared enclosure value (`_ReviewCloseout`, `:219-232`) that the
 cases address through `_preview`/`_closeout`. The module registers its lane row in
 `mcp/tests/test-evidence-lanes.toml` and its three `consumer_scope = "exact"` rows in
-`mcp/tests/evidence-lifecycle.toml` (which re-pins `LIFECYCLE_CATALOG_SHA256` in
-`test_dependency_ownership_ast_helpers.py`) — the documented procedure for adding a test module, with the
-population unchanged at 16 contracts / 66 artifacts. It adds **no** new `# noqa` and no timers, and it
+`mcp/tests/evidence-lifecycle.toml` — the documented procedure for adding a test module. No byte or
+count of a catalog is pinned. It adds **no** new `# noqa` and no timers, and it
 measures 871 lines, inside the 900 soft rail.
 
 ### Invariants And Boundaries
@@ -158,7 +157,8 @@ narrowing, so each of them fails if that behaviour is reverted.
 - **The narrowing that was unprotected: a selected knowledge operand with nothing published is `unmeasured`, never `bound`.** [14]
 - **The tamper case: canonical bytes carrying a forged `bound` read back `unreadable`.** [15]
 - **The consumer case: the reopened generation reports what the task delivered, phase by phase.** [16]
-- The lane row and the three exact-scope consumer rows this module is registered in, with the digest re-pin. [17]
+
+- The lane row and the three exact-scope consumer rows this module is registered in. [18]
 
 ### Cross-Repo References
 

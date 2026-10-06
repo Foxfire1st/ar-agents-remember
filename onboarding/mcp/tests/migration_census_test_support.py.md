@@ -88,8 +88,7 @@ repeating a literal.
   `introduced_by = "260915-KS-L21"`, lifetime `permanent`, `consumer_scope = "exact"` with exactly its
   one consuming module named. Its executable evidence node is
   `mcp/tests/test_migration_census.py::test_the_seed_writes_every_census_record_kind_through_the_shipped_batch_operation`,
-  and the artifact row's own `introduced_by` names this leaf as its introducer while the catalogue's
-  pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest.
+  and the artifact row's own `introduced_by` names this leaf as its introducer.
 - **Imports come from the shipped surfaces.** The application seam, the route writer and store, the
   migration baseline factory, and the census payload, command and link models are imported by their
   public names; the fixture imports no private name of the production package.
@@ -151,7 +150,6 @@ No configured domain documentation could be checked.
 - `disposition_command_for` builds one `recorded` migration disposition, and `link_command_for` derives one whose `CensusDispositionLink` points at a record the caller names. [15]
 - `seed_census` is the fixture's contract in executable form, written as one batch: four inventory rows, five claims, four dispositions, and a refusal guard that raises with the batch's own refusal. [16]
 - **The registered rows that make this file governed evidence:** the `migration-census-cases` contract names this file as its owner and the seed case as its evidence node, and the artifact row names its kind, its authority, its category, its fidelity, its introducer, its lifetime, its exact consumer scope and its one consumer. [17]
-- The catalog's pinned populations stand at fifteen contracts and sixty-five artifacts against a pinned digest, and the case module this fixture serves is the `unit-regression` lane member carrying the leaf's 48 cases. [18]
 
 ### Cross-Repo References
 
