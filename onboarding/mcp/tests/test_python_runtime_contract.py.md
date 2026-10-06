@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Runs the Python builder installer against controlled command fixtures to prove a full clone is validated before atomic no-clobber publication, a valid existing builder is reused, and a foreign builder is refused without deleting its marker. This file no longer asserts every package/CI Python-version surface or the old publisher-race matrix.
+Runs the Python builder installer against controlled command fixtures to prove a full clone is validated before atomic no-clobber publication, a valid existing builder is reused, and a foreign builder is refused without deleting its marker. It also carries the negative runtime-admission witness: the checker must end in the named version refusal before it can import a standard-library module the interpreter lacks. This file no longer asserts every package/CI Python-version surface or the old publisher-race matrix.
 
 ## Code Commentary
 
@@ -15,6 +15,12 @@ Runs the Python builder installer against controlled command fixtures to prove a
 The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
 history describe prior populations and must not be used to recreate removed tests or claim they
 still run. The retained behavior and its fixture limits, described above, govern this card.
+
+The negative admission witness (`test_unsupported_version_is_named_before_importing_new_stdlib_modules`)
+runs the checker under a simulated 3.13.15 interpreter whose `compression` import fails, and asserts
+exit 1, empty stdout and the exact named refusal naming the expected and observed versions and the
+executable. The real older-interpreter matrix supplements it with actual 3.11, 3.12 and 3.13
+interpreters.
 
 ### Conventions
 
@@ -48,6 +54,8 @@ to removed methods are superseded by this current inventory.
 
 - Runtime builder is fully cloned atomically published and reused [1]
 - Existing foreign builder is refused and preserved [2]
+
+- The negative admission witness proves the named refusal precedes any newer standard-library import. [3]
 
 ### Cross-Repo References
 

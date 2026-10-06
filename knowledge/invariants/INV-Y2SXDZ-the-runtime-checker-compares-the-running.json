@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The new negative witness guards the refusal, and an import placed above the version test would replace the actionable named refusal with an import error on exactly the interpreters the check exists to refuse."
+  },
+  "applicability": "Every invocation of the runtime checker, including the installer and venv bootstrap probes and the quality workflows.",
+  "conditions": [
+    "The checker is invoked with the expected exact version.",
+    "The interpreter runs the checker before importing a standard-library module newer than itself."
+  ],
+  "exclusions": [
+    "The checker does not select or install an interpreter; it refuses one."
+  ],
+  "id": "INV-Y2SXDZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The real matrix accepts 3.14.8 and refuses 3.14.4, 3.13.15, 3.12.3 and 3.11.13 with the exact named expected/observed/executable refusal; the portable negative witness fails on captured 84f48 and passes on the frozen tree."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R91@v1-checker-names-unsupported-version",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The runtime checker compares the running interpreter against the expected exact release before anything that needs a newer standard library, and refuses any other version with the named refusal that states the expected version, the observed version and the executable.",
+  "status": "proposed",
+  "supersedes": []
+}

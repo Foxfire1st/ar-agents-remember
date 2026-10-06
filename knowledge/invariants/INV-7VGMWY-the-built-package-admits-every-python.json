@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The separation is realized in the package metadata and in both READMEs, and conflating the two ranges would either refuse a distribution's 3.14 release at install time or let development drift off the pinned managed runtime."
+  },
+  "applicability": "The installable agents-remember-mcp package and the documentation that states its supported range.",
+  "conditions": [
+    "The package metadata declares requires-python and the Python classifier.",
+    "The managed runtime contract pins the exact release for development and CI."
+  ],
+  "exclusions": [
+    "The managed runtime's exact 3.14.8 pin is not a package requirement.",
+    "A Python older than 3.14 remains unsupported."
+  ],
+  "id": "INV-7VGMWY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A real non-editable wheel (cd0fceb9) built from tree 161ea397 installs on CPython 3.14.4 with metadata >=3.14,<3.15; the stdio server initialized, listed 74 tools and answered server_info ok; the managed development and CI runtime stays pinned to 3.14.8 and no product start or install path refused the other 3.14 release."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R91@v1-package-admits-every-3-14",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The built package admits every Python 3.14 release while the managed development and CI runtime is pinned to the exact release 3.14.8 by the canonical runtime contract; the two statements are separate, and neither is allowed to become the other.",
+  "status": "proposed",
+  "supersedes": []
+}

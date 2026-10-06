@@ -24,7 +24,7 @@ The Dagger emission/export owners retain real files and exact output captures on
 
 ### Conventions
 
-Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The reduced test population changed selector configuration and the profile identity. Coverage and production CRAP observations are diagnostic under current repository policy; profile digests are not metric pass claims. The current declaration binds profile digest `5096c06a017e237a6a3f3cb6b9e1c703e2304d44831716cbfaf898699f9bfb1d`, selector configuration digest `e6fe17146ba4ac8ee68c3d94fc076f1de4d69c61f05080e405d12a2eef3fdc72`, and runtime digest `1ea0d21043dcc358b6f18de7a0eddaf27418122f95412b479bb066ae0bec299a`.
+Treat the JSON as canonical profile data. Refresh profile, runtime and selector digests from their actual owners after semantic source changes. The reduced test population changed selector configuration and the profile identity. Coverage and production CRAP observations are diagnostic under current repository policy; profile digests are not metric pass claims. Each rail's `lockDigest` is the content digest over both lock files (`dashboard/package-lock.json` and `mcp/uv.lock` together), each rail's `toolchainDigest` is an opaque declared identity that changes when the toolchain changes, and the outer `profileDigest` binds the canonical profile. No product code derives or checks `lockDigest` or `toolchainDigest`; a lock or toolchain change updates those two by hand from their owners. `profileDigest` is different: the canonical profile owner derives it with `repository_profile_digest` and admission refuses a declared value that differs from the canonical content.
 
 ### Invariants And Boundaries
 
@@ -51,8 +51,9 @@ External domain documentation is not configured.
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
 - Bounded dependency reconstruction environments [1]
+
 - Pinned Dagger execution adapter and actual runtime digest [2]
-- Current canonical profile digest [3]
+- The declaration carries its own canonical profile digest. [3]
 - 54 report paths including 32 rail-evidence captures [4]
 - Full/targeted/local selections and explicit applicability [5]
 - Current source-owned selector configuration digest [6]

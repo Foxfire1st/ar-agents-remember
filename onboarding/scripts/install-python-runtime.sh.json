@@ -1,14 +1,34 @@
 {
   "path": "scripts/install-python-runtime.sh",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+        "content": "sha256:8f102a3527f31b86aae97b2522e8f43e52c893643ecfe4667ab56e70ff603020",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-NY6TTR",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-managed-runtime-selection",
+        "leaf": "260928-MIK-L91"
+      },
+      "rationale": "This line builds the interpreter path from AR_PYTHON_MINOR; the existing-runtime probe at 58-71 and the post-build probe at 167-173 run that binary, so a literal here would silently select an interpreter the contract does not name.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Exact destination validation and full proof govern existing-runtime reuse.\n\nAnchor: \"refusing incomplete or foreign prefix\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ccef022198ae1b47627356a2ffdb52f98dc64faa",
-            "content": "sha256:2b1387bcdba0bf686a9fbd5609e8ed53f0ebf4e3c675de34d1032fbe7b6b4434",
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+            "content": "sha256:2b7e4c6d4c73415e29eb5e3932f6aa25ba8ce70eca428c91fab328a63477f768",
             "locator": {
               "end": 71,
               "kind": "line_range",
@@ -20,12 +40,12 @@
       ]
     },
     "2": {
-      "note": "The official archive is checksum-bound in the canonical contract, downloaded securely, and verified before and after caching.\n\nAnchor: \"https://www.python.org/ftp/python/3.13.15/Python-3.13.15.tar.xz\"; \"curl --fail --location --proto '=https' --tlsv1.2\"; \"cached source digest mismatch\"",
+      "note": "The official archive is checksum-bound in the canonical contract, downloaded securely, and verified before and after caching.\n\nAnchor: \"https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tar.xz\"; \"curl --fail --location --proto '=https' --tlsv1.2\"; \"cached source digest mismatch\"",
       "targets": [
         {
           "anchor": {
-            "blob": "5b1020cf9a9aebdb0ad7cb26b037d38cc9a514ba",
-            "content": "sha256:0454f52c39c944035e742e6a8fc979accadc71a44c38242caac70dbacb94cd51",
+            "blob": "026f2e61db2337596e9318ad03571dc2e78aab47",
+            "content": "sha256:5ae043b70c3c2604fdf844ca470e8baaf801ec03bcececc19c371d9752a42f8e",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -37,7 +57,7 @@
         },
         {
           "anchor": {
-            "blob": "ccef022198ae1b47627356a2ffdb52f98dc64faa",
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
             "content": "sha256:09753213003e08e5872d0dc2238a5213bf35dc98b25be2acfcbab42abf5835ce",
             "locator": {
               "end": 102,
@@ -54,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ccef022198ae1b47627356a2ffdb52f98dc64faa",
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
             "content": "sha256:f5dc6d2e7bee7b7bec13b449564d443414fd68dbaa54f0e39201b850df7cf714",
             "locator": {
               "end": 123,
@@ -71,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ccef022198ae1b47627356a2ffdb52f98dc64faa",
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
             "content": "sha256:86051703b0f21f2d4ba539fa560af1b8299f0abb911f7f91fafc51696a5cbffd",
             "locator": {
               "end": 161,
@@ -88,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ccef022198ae1b47627356a2ffdb52f98dc64faa",
+            "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
             "content": "sha256:f5dc6d2e7bee7b7bec13b449564d443414fd68dbaa54f0e39201b850df7cf714",
             "locator": {
               "end": 123,

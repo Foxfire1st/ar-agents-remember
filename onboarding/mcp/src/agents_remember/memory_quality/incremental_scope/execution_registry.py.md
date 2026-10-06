@@ -16,7 +16,7 @@ execution contract set and no incremental checker can execute with an unregister
 
 `_EXECUTION_POLICIES` (`execution_registry.py:11-18`) declares the sole execution policy for
 the range-resolution checker (`range_resolution.CHECK_NAME`, validator
-`citation-range-resolution/v1`, runtime `python-3.13-memory-quality/v1`, corrective owner
+`citation-range-resolution/v1`, runtime `python-3.14-memory-quality/v1`, corrective owner
 `memory-curator`). `checker_execution_registry` (`execution_registry.py:21-34`) returns the
 sorted policies after proving the declared checker set equals exactly the incremental checker set
 of `checker_scope_registry`, raising `ValueError` with the missing/stale names otherwise.
@@ -33,8 +33,9 @@ never exist for a checker the scope registry does not declare incremental, and v
 
 - The execution registry is exhaustive: incomplete or stale population raises instead of
   returning a partial contract set.
-- Runtime/validator identities are part of the content digest, so a runtime change invalidates
-  affected subresult reuse.
+- Runtime/validator identities are part of the content digest, so a changed runtime identity
+  invalidates affected subresult reuse rather than reusing results computed under another
+  identity.
 
 ### Todos
 
@@ -44,12 +45,14 @@ None recorded.
 
 ### Docs References
 
-No Domain Documentation source is configured for this memory root. The governing task artifact
-below closes the informational gap for execution identity.
+No Domain Documentation source is configured for this memory root. The recorded runtime identity and the
+digests that bind it are the direct evidence for execution identity; no task artifact is carried
+below.
 
-CCR-R07@v3 (requirements/CCR-R07-v3-incremental-affected-closure-validation.md,
-"Invalidation Boundaries") requires changed runtime identity to invalidate the dependent
-closure; the execution-registry digest makes that true.
+The execution-registry digest binds the runtime identity, so a change to that identity changes the
+registry version an affected plan records; the dependent closure follows the recorded invalidation
+boundaries, and stored results under the other identity are recomputed rather than reused (measured
+on fixtures: none of 3 reused).
 
 
 ### Repo-Internal References

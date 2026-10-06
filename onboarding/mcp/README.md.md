@@ -9,9 +9,9 @@
 `mcp/README.md` is the PyPI-facing README for the installable
 `agents-remember-mcp` package and the de-facto pre-MCP bootstrap doc. It opens
 with the package-first, one-restart Quickstart, then documents requirements,
-install/run (uvx-first for the server; since 260703 L3 also the umbrella CLI:
-unpinned `uv tool install agents-remember-mcp` + `agents-remember dashboard`
-with daemon mode and the rc-period pre-release note), a starter settings block,
+install/run (local-wheel first for this checkout's server; since 260703 L3 also the umbrella CLI:
+`uv tool install` of the locally built wheel + `agents-remember dashboard`
+with daemon mode and the historical published pin named as the Python 3.13 artifact), a starter settings block,
 harness registration, the post-restart MCP calls, and the high-level tool
 surface.
 
@@ -26,8 +26,9 @@ package from the source repo and render the copied package. The
 `render-starter` script is a convenience that infers the workspace root from
 the copied harness folder, accepts one explicit `--repo` list, and fills path,
 repository, and hook-command placeholders; the docs also allow manual
-placeholder replacement; (2) wire
-`agents-remember-mcp` with `uvx agents-remember-mcp@latest --config
+placeholder replacement; (2) build the checkout's wheel (`uv build --wheel mcp`
+at the repository root) and wire `agents-remember-mcp` with
+`uvx --python 3.14 --from <abs built-wheel.whl> agents-remember-mcp --config
 <abs settings.json>` using the copied package's settings file and restart the
 harness once; (3) invoke the copied `c-13-install-and-onboard` skill to run or
 verify `runtime_install()`, choose new vs existing memory, bootstrap onboarding,
@@ -40,15 +41,17 @@ and current starter packages use Python renderers and Python hook scripts.
 
 The Install And Run section (260703 L3) adds the mission-control CLI story after
 the server forms: the package ships the umbrella `agents-remember` CLI carrying
-the `dashboard` subcommand — install unpinned as a uv tool (latest stable,
-first-class; pinning `==X.Y.Z` / `uvx --from` is the debugging path), `dashboard`
+the `dashboard` subcommand — for this checkout build and sync the dashboard
+bundle, build the wheel, install that local artifact as a uv tool
+(`uv tool install --python 3.14 <wheel>`), and the `dashboard` subcommand
 discovers `--config` itself (nearest `.claude/mcp/agents-remember-settings.json`
 or the `.mcp.json`-recorded path), `--daemon` detaches it with `--status`/`--stop`
 management and state under `<coordinationRoot>/logs/dashboard/`, and the
 `"dashboard": {"autoStart": true}` settings key has every MCP boot ensure the
-daemon with restart-on-version-mismatch. One pre-release note covers the rc
-period: `3.0.0rcN` is skipped by default resolution — `--prerelease allow` for
-the tool install, an explicit pin for the registration instead of `@latest`.
+daemon with restart-on-version-mismatch. The published `3.0.0rc8` pin is named
+as the historical Python 3.13 artifact, not as an installation example for this
+Python 3.14 build; the source and published artifacts share the version string
+while an official release of the 3.14 build is pending.
 
 Beyond the Quickstart the README now carries the operational detail a first-run
 needs: a **Settings file location** table mapping each harness starter package
@@ -80,10 +83,10 @@ the workspace and never the user's home directory.
 - Keep the run command aligned with `agents_remember.mcp.server.main()`, which
   requires `--config`; both `uvx agents-remember-mcp` and the pip console command
   invoke it.
-- Keep requirements practical and package-level: Python `>=3.13,<3.14`, uv/pip, an
+- Keep requirements practical and package-level: Python `>=3.14,<3.15`, uv/pip, an
   MCP-capable harness, Git, and Docker (plus Ollama for the grepai embedder) only
   when provider tools are enabled.
-- Keep the Linux/WSL development-runtime section aligned with the canonical exact 3.13.15
+- Keep the Linux/WSL development-runtime section aligned with the canonical exact 3.14.8
   source-build contract. `scripts/bootstrap-mcp-venv.sh` is the supported project-venv path;
   system Python and uv-managed standalone interpreters are not substitutes.
 - Keep the Settings file location guidance accurate for package-first setup:
@@ -117,7 +120,8 @@ the workspace and never the user's home directory.
 - The tool surface the README summarizes is exposed by the server/payload layer and catalogued in the tool reference. [4]
 - The `providerSeconds` → `providerSetupSeconds` rename and the fail-loud `ConfigError` on the old key are enforced in MCP config. [5]
 - The `runtime_install` flags the README documents (`install_provider_deps`, `no_cache`) and the runner-integrity manifest behind `runnerIntegrityFailed` are owned by the install/runtime layer. [6]
-- Requirements and the development-runtime section state the bounded package line and canonical exact source build. [7]
+
+- Requirements and the development-runtime section state the bounded package line, the historical published range, and the canonical exact source build. [7]
 
 ## 260821-DAGQC-L2 Memory-Quality Call Grammar
 

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The single-authority rule is realized in the installer and in the venv bootstrap, and a literal in either script would let one consumer lag a contract bump and select an interpreter the contract does not name."
+  },
+  "applicability": "The two host scripts that start the managed CPython build from the canonical runtime contract, on every platform they support.",
+  "conditions": [
+    "The contract file is sourced before the interpreter path is built, and it defines the exact release, the minor line and the package range.",
+    "The runtime checker validates the exact release and the base prefix of the interpreter the scripts select."
+  ],
+  "exclusions": [
+    "The quality workflows and the Dagger image state the release separately, as literals; the checker's contract comparison is what ties those statements to the contract.",
+    "The package's supported range is a project-file declaration, not an interpreter selection."
+  ],
+  "id": "INV-XG226D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer route A questions 3 and 6 (mutation-summary.txt): the contract defines AR_PYTHON_MINOR before either script sources it, and putting python3.13 back into the installer makes the contract test fail."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R91@v1-managed-runtime-selection",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Both scripts that start the managed development and CI interpreter select its binary from the canonical runtime contract's minor value rather than a literal, and the runtime checker refuses an interpreter whose version or base prefix disagrees with that contract.",
+  "status": "proposed",
+  "supersedes": []
+}

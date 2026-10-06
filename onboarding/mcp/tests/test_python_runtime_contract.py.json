@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_python_runtime_contract.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
+        "content": "sha256:35e74be497130959d66b2e54c19662d18ac9122ea975a3e48be6afb515bec439",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+        }
+      },
+      "facet": "The checker ends in the exact named refusal, with empty stdout, before it can import a standard-library module the interpreter lacks.",
+      "id": "PRF-2Y3QFT",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-checker-names-unsupported-version",
+        "leaf": "260928-MIK-L91"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ddcd1ada70825db33a085db4980598c5a19c7c5",
+            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
             "content": "sha256:6113fc67bbd8947f6a8188eafbc25c401083dc984e717cc0452c7da81fb8a68b",
             "locator": {
               "kind": "symbol",
@@ -23,11 +42,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ddcd1ada70825db33a085db4980598c5a19c7c5",
+            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
             "content": "sha256:0cf273e554c9aa942ef912af9876e49b520b03bce8f6974a2bbcbb6a1b6ae3cb",
             "locator": {
               "kind": "symbol",
               "name": "test_existing_foreign_builder_is_refused_and_preserved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The negative admission witness proves the named refusal precedes any newer standard-library import.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
+            "content": "sha256:35e74be497130959d66b2e54c19662d18ac9122ea975a3e48be6afb515bec439",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
             }
           },
           "kind": "test"

@@ -88,16 +88,15 @@
       ]
     },
     "4": {
-      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context`",
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
-            "content": "sha256:f12d781b2c954e57fe68923263eba6ba6eea6fa09d545dcc75f84addabdce9e8",
+            "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
+            "content": "sha256:234b2d3df4a6761ec19cc6f3fdafc15461359c232e524d497ea649178ddacef4",
             "locator": {
-              "end": 245,
-              "kind": "line_range",
-              "start": 94
+              "kind": "symbol",
+              "name": "test_registered_readers_use_call_local_admitted_leaf_context"
             },
             "path": "mcp/tests/test_reader_task_context_protocol.py"
           },

@@ -1,13 +1,33 @@
 {
   "path": "README.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+        "content": "sha256:364f154e3ff1548eedda192215df5e5295ec7094e5b68f065c3ed32ecd6f3526",
+        "locator": {
+          "end": 101,
+          "kind": "line_range",
+          "start": 88
+        }
+      },
+      "id": "RLZ-P3Q7TF",
+      "invariant": "INV-7VGMWY",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-package-admits-every-3-14",
+        "leaf": "260928-MIK-L91"
+      },
+      "rationale": "The public requirements paragraph separates the current checkout's 3.14 range from the historical published 3.13 artifact, so a reader cannot read one range as the other.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`.\n\nAnchor: `## Core Features`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
             "content": "sha256:084adacfb6fa35356d75567a154270e09ac04ba0ecc4c526b993a6c3ebda9977",
             "locator": {
               "end": 62,
@@ -20,16 +40,16 @@
       ]
     },
     "10": {
-      "note": "The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` on line 326 and its body is now the single line 328, and the promised layout no longer names `ar-memory/` because the internal mode was removed.\n\nAnchor: `## Stability`",
+      "note": "The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed.\n\nAnchor: `## Stability`; `ar-coordination/`; `memory-repos/ar-<repo>/`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:3cb56faca149534285c76f06c3cbb9976dead79a0d726ca2d2aa2506c5f8a0f5",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:9952d1d0ed63d0a9a008a962196f8a449654b60428251f8791c785029c5a0ffd",
             "locator": {
-              "end": 329,
+              "end": 331,
               "kind": "line_range",
-              "start": 326
+              "start": 323
             }
           },
           "kind": "code"
@@ -41,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
             "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
             "locator": {
-              "end": 334,
+              "end": 331,
               "kind": "line_range",
-              "start": 330
+              "start": 327
             }
           },
           "kind": "code"
@@ -94,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
             "content": "sha256:303140747a515f3b23e7dc6ddca01d65b90f4dc0f39b285aecc6c4eabc098bb4",
             "locator": {
               "end": 80,
@@ -111,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
             "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
             "locator": {
               "end": 87,
@@ -124,14 +144,14 @@
       ]
     },
     "4": {
-      "note": "The Requirements section names Python 3.13, the bounded package range, and the canonical repository-development runtime documentation.\n\nAnchor: `## Requirements`",
+      "note": "The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation.\n\nAnchor: `## Requirements`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:9d632315d8cc2f39a0bc2655d77ac7c905c58f788347fda6c6a1bc1c5faf2a3d",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:364f154e3ff1548eedda192215df5e5295ec7094e5b68f065c3ed32ecd6f3526",
             "locator": {
-              "end": 100,
+              "end": 101,
               "kind": "line_range",
               "start": 88
             }
@@ -141,16 +161,16 @@
       ]
     },
     "5": {
-      "note": "The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files.\n\nAnchor: `## Quickstart`",
+      "note": "The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server from a locally built wheel with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files.\n\nAnchor: `## Quickstart`; `render-starter`; `uvx`; `c-13-install-and-onboard`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:a473f395d7af7387d06c06aa640edcd7bee0507c6dc0b5a66459d4bb796e752e",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:08e28288d6c11a4fde4e338fd904f506a0e47c5b8f5ea643d54106d8e3c3b55a",
             "locator": {
-              "end": 137,
+              "end": 138,
               "kind": "line_range",
-              "start": 101
+              "start": 103
             }
           },
           "kind": "code"
@@ -162,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:db214c710fa1fd7669c0ad364637fab363f22b9c60c469690d09b22da7ca5ecb",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:c6b5896537078fbcdde1d18b05ac9ea7fd2588da904239666153ad25f8864496",
             "locator": {
-              "end": 191,
+              "end": 192,
               "kind": "line_range",
-              "start": 178
+              "start": 175
             }
           },
           "kind": "code"
@@ -175,16 +195,16 @@
       ]
     },
     "7": {
-      "note": "The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note.\n\nAnchor: `## Run The Dashboard`; \"autoStart\"",
+      "note": "The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact.\n\nAnchor: `## Run The Dashboard`; `uv tool install`; `autoStart`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:87bdca314eefd1720fd4ebe65f6d90544601603798192df5b92eaf49e8839b6c",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:6ab0a1919d02053629494b0397501fa4747f19ed3b95da19f9539625bc0f9c2a",
             "locator": {
-              "end": 177,
+              "end": 178,
               "kind": "line_range",
-              "start": 138
+              "start": 140
             }
           },
           "kind": "code"
@@ -192,16 +212,16 @@
       ]
     },
     "8": {
-      "note": "The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default.\n\nAnchor: `## Repository Layout`",
+      "note": "The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default.\n\nAnchor: `## Repository Layout`; `skills/`; `scripts/sync-skills.py`; `agents-md-files/`; `scripts/sync-runtime.py`; `<workspace>/ar-coordination/`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:504242233cf5f534f83ceda9baf9999c205421af5aa966f282b8cc288af3118a",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:8e52a773f4982a224264eb1464f77c51c417d238de22fdeeaf1e71182d7c9ed2",
             "locator": {
-              "end": 319,
+              "end": 320,
               "kind": "line_range",
-              "start": 192
+              "start": 189
             }
           },
           "kind": "code"
@@ -209,16 +229,16 @@
       ]
     },
     "9": {
-      "note": "The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract.\n\nAnchor: \"## Status\"",
+      "note": "The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the source version, that the Python 3.14 candidate awaits an official release, the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract.\n\nAnchor: `## Status`; `agents-remember dashboard`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fadea9d05d35af035dae4596719fd233ad1946",
-            "content": "sha256:7192791d12701f60e59d0a970a2e6187c86e5bab11156f1ff57f1c236f1f2ebd",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
+            "content": "sha256:0970a65e338421915476b4ff49c4c2bfce0f2909b6adcef3dc894a77eb1b8832",
             "locator": {
-              "end": 325,
+              "end": 326,
               "kind": "line_range",
-              "start": 320
+              "start": 317
             }
           },
           "kind": "code"

@@ -14,7 +14,9 @@ interpreter with the locked uv dependency graph.
 ### Logic
 
 The script loads the canonical runtime contract, delegates source-build installation, and probes
-the base interpreter before touching the venv. It requires the pinned uv version. An explicit
+the base interpreter before touching the venv. It selects the interpreter binary from the
+contract's minor value (`python$AR_PYTHON_MINOR`, `bootstrap-mcp-venv.sh:34`), so the venv follows
+a contract bump. It requires the pinned uv version. An explicit
 `--replace` moves the old venv to a bounded rollback directory; any failed sync retains the failed
 candidate for diagnosis and restores the predecessor. The new environment is installed with
 `--python`, `--no-managed-python`, `--frozen`, and `--all-extras`, then capability-probed and checked
@@ -28,7 +30,7 @@ the venv and locked packages but cannot substitute a managed interpreter.
 ### Invariants And Boundaries
 
 - Replacement is explicit and rollback-safe; an existing venv is not silently overwritten.
-- The selected interpreter must be exact 3.13.15 and expose both native pidfd APIs on Linux.
+- The selected interpreter must be exact 3.14.8 and expose both native pidfd APIs on Linux.
 - uv may install packages but may not select `python-build-standalone` or system Python.
 - The runtime, venv, backups, and compiled artifacts remain outside Git.
 

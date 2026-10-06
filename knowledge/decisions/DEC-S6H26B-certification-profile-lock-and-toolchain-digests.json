@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The per-ecosystem plain file hash and a derived toolchain formula were both weighed against the combined digest and the declared identity, and every later lock or toolchain change has to update these values by hand."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the candidate scheme: lockDigest is the content digest over dashboard/package-lock.json and mcp/uv.lock together, and toolchainDigest stays an opaque declared identity whose only duty is to change when the toolchain changes.",
+      "reason": "Owner ruling OR-R020 (2026-10-06) keeps the combined formula and refuses to invent a derived formula for toolchainDigest. The combined digest is reproducible, is formed the way the repository's own test support forms it, and changes at least as often as the per-ecosystem file hash it replaces, whose Python value was stale from the lock change of 2026-09-11 (68dc690d) until this move.",
+      "status": "chosen"
+    },
+    {
+      "option": "Revert lockDigest to the base scheme: the plain SHA-256 of each ecosystem's own lock file.",
+      "reason": "The base Node value was the file hash of a file this move does not touch, and the base Python value was stale; nothing states how the value is formed, so the drift would repeat at the next lock change.",
+      "reconsider_when": "A consumer appears that computes or checks lockDigest and requires the per-ecosystem plain file hash.",
+      "status": "rejected"
+    },
+    {
+      "option": "Derive toolchainDigest from a documented formula over named tree inputs.",
+      "reason": "Neither the base nor the candidate value reproduces from the tree (about 5,093 forms tried for the base and 4,805 for the candidate), so a formula would claim a derivation the value does not have.",
+      "reconsider_when": "The toolchain definition becomes mechanically enumerable, or a consumer requires a reproducible toolchain digest.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A lock-file change or a toolchain change must update the profile's digests by hand; no product code fails when it does not.",
+    "The eight Node rails' lockDigest changes when the Python lock changes, because the value covers both lock files."
+  ],
+  "context": "Every rail of the certification profile carries runtimeInputs with a lockDigest and a toolchainDigest, and nothing in the product derives or checks either value. The move changed both in all 32 rails: lockDigest changed its scheme (a plain per-ecosystem file hash became a content digest over both lock files) and toolchainDigest changed to a value that reproduces from neither the base nor the candidate tree.",
+  "decider": "owner ruling OR-R020 (2026-10-06) on the reviewer's findings L91-F5 and L91-F6; the reviewer decided the lockDigest scheme stays and left the toolchainDigest open",
+  "id": "DEC-S6H26B",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "f50aa7735fe443d9d5dff8d56c3be3401acfd4b9",
+        "content": "sha256:701619a116201e91cea1fbdb59a3082ec084ae1d484103e52fbcaac1d74447c2",
+        "locator": {
+          "end": 768,
+          "kind": "line_range",
+          "start": 762
+        },
+        "path": "mcp/certification-profile-v1.json"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R91",
+        "packet": "requirements/MIK-R91-v1-the-product-runs-on-python-3-14.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer F5: the candidate lockDigest 38fbb377... equals content_digest of both lock files, reproduced by the reviewer and by routes B and C; the base Node value bb4f5b2d... was the plain SHA-256 of dashboard/package-lock.json, a file the change does not touch, and the base Python value 8fe391c5... was already stale. Reviewer F6: the base toolchainDigest 75398c78... and the candidate c244aa02... are uniform across all 32 rails, no form was found in 5,093 attempts for the base and 4,805 for the candidate, and no code derives or checks either value."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R91@v1-certification-profile-digests",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

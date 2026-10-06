@@ -6,7 +6,7 @@
 
 ## Purpose
 
-`README.md` is the public front door for Agents Remember. It gives a concise product-level explanation, a high-signal Core Features section, a short quickstart, a Run The Dashboard section (260703 L3 — the first-class CLI install/run story), links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. The concentrated feature tour now lives in `docs/features.md`; detailed setup, concepts, workflows, benchmark methodology, guides, and reference material live under `docs/`.
+`README.md` is the public front door for Agents Remember. It gives a concise product-level explanation, a high-signal Core Features section, a short quickstart, a Run The Dashboard section (260703 L3 — the CLI install/run story, now through a locally built wheel), links to harness-specific install pages, optional benchmark guidance, and a compact repository/runtime map. The concentrated feature tour now lives in `docs/features.md`; detailed setup, concepts, workflows, benchmark methodology, guides, and reference material live under `docs/`.
 
 ## Code Commentary
 
@@ -24,9 +24,9 @@ convenience that infers the workspace root from the copied harness folder, takes
 one explicit `--repo` list such as `--repo my-app shared-lib`, and fills path,
 repository, and hook-command placeholders; the docs also allow manual
 placeholder replacement. The package provides skills, hooks, rules,
-instructions, MCP settings templates, and rendered hook commands; (2) wire the
-published
-`agents-remember-mcp` package with `uvx agents-remember-mcp@latest --config
+instructions, MCP settings templates, and rendered hook commands; (2) build the
+checkout's wheel (`uv build --wheel mcp`) and wire that local artifact with
+`uvx --python 3.14 --from <abs>/built-wheel.whl agents-remember-mcp --config
 <abs>/agents-remember-settings.json`, then restart the harness once so it loads
 the MCP server and native package files; (3) invoke `c-13-install-and-onboard`,
 which runs or verifies `runtime_install()`, asks scaffold-new vs existing memory,
@@ -65,24 +65,22 @@ Status section's 3.0-arc paragraph likewise says "a system-managed agent lifecyc
 retired "session job lifecycle" phrase.
 
 A ToC-linked `## Run The Dashboard` section (260703 L3) sits between Quickstart and
-Documentation. It leads with the **unpinned** install as the first-class citizen —
-`uv tool install agents-remember-mcp` then `agents-remember dashboard` (no `--config`:
-L1's discovery walks up from the working directory) — then daemon mode
-(`--daemon`/`--status`/`--stop`, state under `<coordinationRoot>/logs/dashboard/`) and the
-`"dashboard": {"autoStart": true}` settings key (L2), presents version pinning
-(`==X.Y.Z`, `uvx --from`) as the debugging/repro path, and closes with one pre-release
-note: until 3.0.0 final the dashboard ships in `3.0.0rcN` pre-releases that default
-resolution skips — `uv tool install --prerelease allow` or an explicit pin, including for
-the MCP registration instead of `@latest`. The committed reproducibility examples and Status
-line now name `3.0.0rc7`, while the surrounding guidance stays version-generic so later release
-bumps remain mechanical. Every documented command was verified against
-real PyPI resolution (unpinned resolves the latest stable; `--prerelease allow` resolves
-the rc).
+Documentation. For this checkout it leads with the local artifact: build the dashboard bundle
+and sync it (`npm --prefix dashboard run build`, then `python3 scripts/sync-dashboard.py`),
+build the wheel, install it as a uv tool (`uv tool install --python 3.14 <wheel>`) and start
+`agents-remember dashboard` (no `--config`: L1's discovery walks up from the working
+directory). It keeps daemon mode (`--daemon`/`--status`/`--stop`, state under
+`<coordinationRoot>/logs/dashboard/`) and the `"dashboard": {"autoStart": true}` settings key
+(L2). The historical published `3.0.0rc8` pin is documented as the Python 3.13 artifact rather
+than as an installation example for this Python 3.14 build, and an official release of the
+3.14 build is stated as pending.
 
 A short `## Live Demo` section sits between Core Features and Requirements. It states that Agents Remember runs on itself and links the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable example of the by-path onboarding layer. It surfaces the dogfooding message higher on the page than the existing Contributing-section mention, which still owns the operational instruction to clone that memory and use it while contributing.
 
-The Requirements section now states the bounded Python 3.13 package line and points repository
-developers to the exact source-built 3.13.15 contract in the MCP README. The root README remains a
+The Requirements section states the current checkout's Python 3.14 package line
+(`>=3.14,<3.15`) with 3.14.8 pinned only for managed development and CI, separates that from the
+historical published `3.0.0rc8` artifact and its Python 3.13 range, and points repository
+developers to the exact source-built 3.14.8 contract in the MCP README. The root README remains a
 public orientation layer; the executable bootstrap and provenance contract stay under `scripts/`.
 
 ### Conventions
@@ -97,8 +95,9 @@ public orientation layer; the executable bootstrap and provenance contract stay 
 
 The README is explanatory, not the implementation source of truth. Runtime behavior belongs to MCP tools, package services, and skills. If README guidance disagrees with helper behavior, verify helper behavior before changing operational assumptions.
 
-The public prerequisite must remain aligned with `mcp/pyproject.toml` (`>=3.13,<3.14`) and must not
-imply that uv may silently select an arbitrary managed Python for repository development.
+The public prerequisite must remain aligned with `mcp/pyproject.toml` (`>=3.14,<3.15`) and must not
+imply that uv may silently select an arbitrary managed Python for repository development; the
+exact 3.14.8 pin belongs to managed development and CI, not to the package's admitted range.
 
 `docs/**` is currently excluded from file-level onboarding by this repository's path rules, so this README onboarding is the durable file-level companion for the public documentation front door. Repo-level overview onboarding should carry broad documentation-structure context when the docs tree changes.
 
@@ -121,13 +120,13 @@ The README routes readers into the split documentation tree and gives the curren
 - The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. [1]
 - The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. [2]
 - The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. [3]
-- The Requirements section names Python 3.13, the bounded package range, and the canonical repository-development runtime documentation. [4]
-- The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. [5]
+- The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation. [4]
+- The quickstart is a short, harness-agnostic three-step agent-driven flow: copy the harness starter package, render it either with the convenience `render-starter` script or manual placeholder replacement, wire the MCP server from a locally built wheel with `uvx`, restart once, then invoke `c-13-install-and-onboard`; `skills_install()` is maintenance/manual because the package already carries the initial skills and harness files. [5]
 - The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. [6]
-- The `## Run The Dashboard` section: unpinned `uv tool install` first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, pinning as the debugging path, and the rc-period pre-release note. [7]
+- The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
 - The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes generated skill copies, exposes root `agents-md-files/`, `benchmarks/`, `providers/`, and `system/` as canonical runtime assets, identifies `scripts/sync-runtime.py` as the package-data-only runtime asset helper, and notes the workspace-first `<workspace>/ar-coordination/` default. [8]
-- The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the current version (bumped every release), the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. [9]
-- The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` on line 326 and its body is now the single line 328, and the promised layout no longer names `ar-memory/` because the internal mode was removed. [10]
+- The README's Status section is a two-paragraph current-state + direction statement: paragraph one states the source version, that the Python 3.14 candidate awaits an official release, the core-path maturity, the Stability deferral, the GitHub Releases routing (the repository's canonical changelog — this repo keeps no `CHANGELOG.md`, and Status no longer narrates per-release summaries), and the harness-maturity note; paragraph two, since the L14 release, states the SHIPPED 3.0 arc (observable, steerable sessions — lifecycle entity, durable approval gates, projection layer — served as the mission-control browser cockpit from the MCP package via the `agents-remember dashboard` CLI, #2/#43) with the rc caveat that the cockpit surface is still settling toward the final 3.0.0 contract. [9]
+- The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed. [10]
 - The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). [11]
 - The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
 - `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-Installs the official CPython 3.13.15 source release under a dedicated Agents Remember data prefix
+Installs the official CPython 3.14.8 source release under a dedicated Agents Remember data prefix
 using an exact pinned python-build revision and checksum-bound source archive. Since the root-owned
 canonical bootstrap repair (commit eb05a8727801) it additionally does so through a staged,
 atomically published, fully validated builder checkout so concurrent publishers converge on one
@@ -17,9 +17,11 @@ canonical winner and a poisoned or foreign builder cache can never be silently r
 ### Logic
 
 The script validates absolute, version-suffixed installation and cache/tooling paths
-(`install-python-runtime.sh:41-56`). An existing runtime is reused only after the full
-capability/provenance probe (`install-python-runtime.sh:58-71`); any other existing prefix is
-refused. It downloads over HTTPS when needed, verifies the official archive digest both before and
+(`install-python-runtime.sh:41-56`). The interpreter path it probes is built from the contract's
+minor value (`python$AR_PYTHON_MINOR`, `install-python-runtime.sh:57`), so the reuse probe and the
+installed-runtime probe follow a contract bump together. An existing runtime is reused only after
+the full capability/provenance probe (`install-python-runtime.sh:58-71`); any other existing prefix
+is refused. It downloads over HTTPS when needed, verifies the official archive digest both before and
 after caching (`install-python-runtime.sh:82-102`).
 
 The builder handling (the repair delta) first defines `validate_builder` (`install-python-runtime.sh:107-123`):
@@ -50,8 +52,9 @@ published anywhere reachable.
 - The source archive must match the approved digest; a cached archive is not trusted implicitly.
 - Another uv-managed standalone Python or unverified prebuilt archive is not an admissible runtime.
 - A foreign or incomplete prefix is refused rather than overwritten.
-- The pinned builder commit and the exact Python 3.13.15 source URL/digest are validated before
+- The pinned builder commit and the exact Python 3.14.8 source URL/digest are validated before
   publication; a symlink or non-git builder path is refused.
+- The interpreter binary name comes from the contract's minor value, not a literal.
 - Publication is atomic and no-clobber; a losing concurrent publisher adopts only a validated
   winner and never overwrites, deletes, or silently trusts a target.
 - Interpreter, source cache, builder checkout, standard library, and compiled artifacts stay

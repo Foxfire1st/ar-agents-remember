@@ -1,14 +1,34 @@
 {
   "path": "scripts/bootstrap-mcp-venv.sh",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
+        "content": "sha256:44f74a8a9388e3fe0278ce9be7fa45c71fd738851df51b3fdd746bd141b82371",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-3QQKJD",
+      "invariant": "INV-XG226D",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-managed-runtime-selection",
+        "leaf": "260928-MIK-L91"
+      },
+      "rationale": "This line selects the interpreter every later venv command runs under; deriving it from AR_PYTHON_MINOR keeps the venv on the contract's runtime after a contract bump.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The source-built interpreter is installed and capability-probed before venv mutation.\n\nAnchor: \"install-python-runtime.sh\"",
       "targets": [
         {
           "anchor": {
-            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
-            "content": "sha256:6f7eddef91b73325da9b9ac9d44cf12961ee303ee9644feb312d49a6fcd37374",
+            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
+            "content": "sha256:e3bca03eab729bcf372f59c5d58adbfd6dced450a3ac2901f65502333be4b8eb",
             "locator": {
               "end": 41,
               "kind": "line_range",
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
+            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
             "content": "sha256:6ed3d84283105ec9922f12817c909f433c3464e9f16a8c96767fbf44fdc1fa7e",
             "locator": {
               "end": 81,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc452527d2c4e344ec5030f5ffc6fc4b44c5c7da",
+            "blob": "8b783c4396603539a29b4f8e531079aa2d064ee0",
             "content": "sha256:23236a76125bf83fb9c3196ee2d0fe3e90a8092bbee5741fb9458f9fdf997b7a",
             "locator": {
               "end": 103,

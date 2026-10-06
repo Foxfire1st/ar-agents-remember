@@ -25,9 +25,7 @@ uppercase minus I, L, O, U).
   — order *within* a lifecycle is the JSONL append order; the id is the
   cross-lifecycle merge / unique key.
 - Mint-and-compare only: ids are never parsed back, so no decode path exists.
-- A dependency-free local mint by design (stdlib `uuid.uuid7` would supersede it
-  once the Python floor reaches 3.14; keeping minting in one module makes that a
-  one-function swap).
+- A dependency-free local mint by design; the ULID format stays stable when the Python runtime is upgraded, and minting stays in one module.
 
 ## Evidence
 

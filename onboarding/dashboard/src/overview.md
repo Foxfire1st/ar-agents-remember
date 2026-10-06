@@ -657,7 +657,7 @@ the contract suite now forces parity with the producer's always-materialized inv
 This keeps the browser on the projection plane: file absence never becomes queue or lifecycle
 authority.
 
-## Python 3.13 Generated-Schema Representation
+## Python 3.14 Generated-Schema Representation
 
 The canonical schema now represents named attention and process `Literal` vocabularies as local
 `$defs` enums referenced by their model properties. Their values and the generated TypeScript

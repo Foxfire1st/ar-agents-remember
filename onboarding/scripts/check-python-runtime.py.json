@@ -1,6 +1,26 @@
 {
   "path": "scripts/check-python-runtime.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+        "content": "sha256:e4afc3af3be7b8fad1bd00b5fbea0032f3e562bc14b84372dfaf6df1ae321d05",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 44
+        }
+      },
+      "id": "RLZ-PYW0SC",
+      "invariant": "INV-Y2SXDZ",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-checker-names-unsupported-version",
+        "leaf": "260928-MIK-L91"
+      },
+      "rationale": "The version comparison and its refusal sit at the top of main, before the base-prefix, pidfd and archive checks and before any module that a newer interpreter provides; an import above this point would turn the refusal into an import error.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Exact version, prefix, and native pidfd capability mismatches are actionable refusals.",

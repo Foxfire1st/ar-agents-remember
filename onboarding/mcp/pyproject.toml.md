@@ -19,8 +19,8 @@ Package data explicitly includes cli/*.mjs in addition to package_data assets, s
 ### Logic
 
 The package builds with `setuptools`, publishes as `agents-remember-mcp`, uses
-`mcp/README.md` as its package README, and supports exactly the Python 3.13 minor line
-(`>=3.13,<3.14`).
+`mcp/README.md` as its package README, and supports exactly the Python 3.14 minor line
+(`>=3.14,<3.15`).
 Runtime dependencies stay intentionally narrow but now include `mcp`,
 `pydantic`, `tiktoken`, and — for the slice-04 dashboard serving layer —
 `fastapi` (built-in `fastapi.sse`), `uvicorn`, and — for the slice 6d-2 Mode B2
@@ -63,17 +63,19 @@ content under `package_data`, and development sandbox tooling under `scripts` st
 ### Classifiers Declare The Supported Floor And Platforms (260731-EFA-L2)
 
 `classifiers` is not decoration here — it is the one place a consumer can read the supported
-interpreter line and the supported platforms without cloning. It lists Python 3.13 only
-(matching `requires-python = ">=3.13,<3.14"`) and the two operating-system classifiers
+interpreter line and the supported platforms without cloning. It lists Python 3.14 only
+(matching `requires-python = ">=3.14,<3.15"`) and the two operating-system classifiers
 `POSIX :: Linux` and `MacOS`. Windows is supported **through WSL**, which presents as Linux to the
 interpreter and therefore deliberately carries no separate classifier — the absence is a decision,
 not an omission, and the inline comment in the file records it.
 
-The language line is an agreement between `requires-python` here and `[tool.ruff] target-version`
-in the repository-root `pyproject.toml` (pinned to `py313`). The managed development runtime,
-Dagger graph, GitHub packaging workflow, and GitHub deterministic quality workflow all select exact
-3.13.15. Dagger alone owns acceptance; the GitHub jobs prove deterministic lint/package behavior
-under the same runtime and are not a per-minor interpreter matrix.
+The language line agrees with `requires-python` here. The repository-root `[tool.ruff]
+target-version` stays `py313` as an explicitly reasoned **non-runtime syntax-rewrite policy**
+(one comment line states the reason), while Pyright and the workflows select 3.14. The managed
+development runtime, Dagger graph, GitHub packaging workflow, and GitHub deterministic quality
+workflow all select exact 3.14.8. Dagger alone owns acceptance; the GitHub jobs prove
+deterministic lint/package behavior under the same runtime and are not a per-minor interpreter
+matrix.
 
 ### The Dashboard Bundle Is Packaged But Not Committed (260731-EFA-L1)
 
@@ -101,6 +103,14 @@ the source rather than being repeated here; it is the same string
 `runtime_install` and `server_info` report, and it stays aligned with
 `agents_remember.mcp.SERVER_VERSION` (see invariant below).
 
+### The Parser Wheel Comment Names The Recorded Platforms
+
+The comment above the `tree-sitter` dependency pins states which platform wheels the lock records
+cover — manylinux x86_64 and aarch64, musllinux x86_64, and macOS x86_64 and arm64 — and
+explicitly records the two absent cells (`tree-sitter` and `tree-sitter-typescript` musllinux
+aarch64, which need a source build). The comment is a checked statement about the lock's records,
+not a coverage promise.
+
 ### The SQLite Binding Is A Binary Wheel With A Build-Time Capability (260915-KS-L1)
 
 `apsw==3.53.4.0` is the repository's first binary-wheel runtime dependency whose required capability is a
@@ -116,8 +126,9 @@ the source rather than being repeated here; it is the same string
    about whatever resolution picks next; a range would silently admit a build without it.
 3. **What was actually proven, and what was not.** The leaf's spike installed the pinned release from a prebuilt
    `cp313` manylinux x86_64 wheel (no compiler, no source build, no fallback) and exercised one-row
-   changeset attach/diff/apply, an aborting conflict, a consistent WAL-inclusive backup and the leaf's DDL. macOS
-   wheels for `cp313` exist in the lock (x86_64 and arm64) but **no macOS host executed the spike**, so the macOS
+   changeset attach/diff/apply, an aborting conflict, a consistent WAL-inclusive backup and the leaf's DDL; the
+   lock now resolves the pin to `cp314` wheels after the Python 3.14 move. macOS
+   wheels exist in the lock (x86_64 and arm64) but **no macOS host executed the spike**, so the macOS
    classifier's support claim remains an unresolved acceptance item for the owning seat — it is disclosed rather
    than narrowed silently.
 
@@ -149,10 +160,11 @@ later reader does not have to reconstruct it from a report.
   state whose documented remedy is `npm --prefix dashboard run build`.
 - The wheel and the sdist must both carry the bundle. The release workflow, not this file, is where
   that is enforced.
-- The supported minor line is stated by `requires-python` and the Python classifier here plus
-  `[tool.ruff] target-version` in the repository-root `pyproject.toml`. Raising or lowering only
-  one of those declarations is a defect; the Dagger acceptance image is separate execution
-  provenance, not a substitute for the exact runtime contract.
+- The supported minor line is stated by `requires-python` and the Python classifier here; the
+  repository-root `[tool.ruff] target-version` is an explicitly reasoned non-runtime
+  syntax-rewrite policy (`py313`) and is not a second runtime declaration. Raising or lowering
+  the runtime declarations without the policy comment is a defect; the Dagger acceptance image is
+  separate execution provenance, not a substitute for the exact runtime contract.
 - The absence of a Windows classifier is deliberate (Windows is supported through WSL). Do not add
   one to "fix" the list.
 
@@ -165,15 +177,20 @@ later reader does not have to reconstruct it from a report.
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
 - The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry. [4]
 - The same exact pin in the checkout requirements manifest, which must agree with this file. [5]
+
 - The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects. [6]
+
 - Production complexity scoring loads Radon and refuses when its development dependency is unavailable. [7]
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
-- The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers. [10]
+
+- The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block. [10]
+
 - `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. [11]
 - The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. [12]
 - The placement step whose output this recursive glob picks up at build time. [13]
 - Both generated dashboard paths are git-ignored, with the reason recorded inline. [14]
 - An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. [15]
-- The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file. [16]
+- The Ruff `target-version`, an explicitly reasoned non-runtime syntax-rewrite policy independent of the supported minor declared here, lives in the repository-root project file. [16]
+
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]

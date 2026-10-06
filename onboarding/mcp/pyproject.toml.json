@@ -1,6 +1,26 @@
 {
   "path": "mcp/pyproject.toml",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
+        "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-VNYJ8D",
+      "invariant": "INV-7VGMWY",
+      "origin": {
+        "handoffEntry": "MIK-R91@v1-package-admits-every-3-14",
+        "leaf": "260928-MIK-L91"
+      },
+      "rationale": "requires-python and the Python classifier are what a consumer's installer reads; they admit every 3.14 release, and the exact managed pin lives in the runtime contract, not in the package metadata.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic.",
@@ -20,12 +40,12 @@
       ]
     },
     "10": {
-      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers.\n\nAnchor: `## Quickstart`, `## Install And Run`",
+      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.\n\nAnchor: `## Quickstart`; `### Canonical Linux/WSL development runtime`; `## Install And Run`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fa4acedc86c1261ac0f3059f24d979a9ce28040",
-            "content": "sha256:d28186db32c2a9debc84471408c55eb91829b534c6e0fd9c9ad2952504f4b035",
+            "blob": "f6e6293545a981a2f79bb902c17c077de1d6a428",
+            "content": "sha256:0b6b8e980f7ead3f02cb675dd822a04dfc959416e22307f2e5c52309ab843881",
             "locator": {
               "end": 48,
               "kind": "line_range",
@@ -37,12 +57,12 @@
         },
         {
           "anchor": {
-            "blob": "1fa4acedc86c1261ac0f3059f24d979a9ce28040",
-            "content": "sha256:a33cd8748552a71090a8e0825a2705df75df0151daa597accd657c8932acf78f",
+            "blob": "f6e6293545a981a2f79bb902c17c077de1d6a428",
+            "content": "sha256:c71aebaf40b2f6d04e470ffdb64552df355e24ebe19563c0e5a09c42fb62dc2f",
             "locator": {
-              "end": 114,
+              "end": 117,
               "kind": "line_range",
-              "start": 66
+              "start": 67
             },
             "path": "mcp/README.md"
           },
@@ -73,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
             "content": "sha256:4920eeefec172c781f641bf698c96ecbc4cc083c06c0ba90470dbaefc0156848",
             "locator": {
               "end": 82,
@@ -86,7 +106,7 @@
         },
         {
           "anchor": {
-            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
             "content": "sha256:02b17d86eea5557151a03f46a2a1223273faf7e7b24055879fd73944b7195268",
             "locator": {
               "end": 91,
@@ -99,7 +119,7 @@
         },
         {
           "anchor": {
-            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
             "content": "sha256:4aa22987a42c834e37f7e85f16c3b8ec516a8b160f0ae81daeb7548c64d90b61",
             "locator": {
               "end": 95,
@@ -112,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "f317b6f98a957906e5147f6a91f0c1630340979d",
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
             "content": "sha256:f866829aeefe6f2997fc71f638530478cf6a06d36c811a457afdfff78f8a1f0d",
             "locator": {
               "end": 111,
@@ -249,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92321d67e46d3cfe2f79967b5ddf7fb6adc748c8",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
             "locator": {
               "end": 4,
@@ -263,14 +283,14 @@
       ]
     },
     "17": {
-      "note": "Package metadata directly bounds the interpreter line and declares its Python classifier.\n\nAnchor: \"requires-python = \\\">=3.13,<3.14\\\"\"; \"Programming Language :: Python :: 3.13\"",
+      "note": "Package metadata directly bounds the interpreter line and declares its Python classifier.\n\nAnchor: \"requires-python = \\\">=3.14,<3.15\\\"\"; \"Programming Language :: Python :: 3.14\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bed4f6d8990db5cc102d9154e84d2dad0dfe20c7",
-            "content": "sha256:3eb096cb5217e79f9cc0a130bccc64f134816969face2930f54e2f2b1beb97ac",
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
+            "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
-              "end": 18,
+              "end": 19,
               "kind": "line_range",
               "start": 10
             }
@@ -284,7 +304,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92321d67e46d3cfe2f79967b5ddf7fb6adc748c8",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
             "locator": {
               "end": 164,
@@ -297,7 +317,7 @@
         },
         {
           "anchor": {
-            "blob": "92321d67e46d3cfe2f79967b5ddf7fb6adc748c8",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
             "locator": {
               "end": 186,
@@ -315,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bed4f6d8990db5cc102d9154e84d2dad0dfe20c7",
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
             "content": "sha256:b1a2b61702e74b4bd237f0a9b3190faab80b5b73f1c048c570f979057e1014fb",
             "locator": {
               "end": 23,
@@ -327,7 +347,7 @@
         },
         {
           "anchor": {
-            "blob": "bed4f6d8990db5cc102d9154e84d2dad0dfe20c7",
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 29,
@@ -344,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bed4f6d8990db5cc102d9154e84d2dad0dfe20c7",
+            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
             "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
             "locator": {
               "end": 26,
@@ -379,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe705098ec154e1f02f9097da19929a24eed6ee",
+            "blob": "d07475d177eb4075c3a88809317f929aa4c070aa",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -392,8 +412,8 @@
         },
         {
           "anchor": {
-            "blob": "6fe705098ec154e1f02f9097da19929a24eed6ee",
-            "content": "sha256:7142fd68cef43eeb08e6226d3ee746655be17a130b7c5e2e10299ce6e267aa3c",
+            "blob": "d07475d177eb4075c3a88809317f929aa4c070aa",
+            "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 111,
               "kind": "line_range",

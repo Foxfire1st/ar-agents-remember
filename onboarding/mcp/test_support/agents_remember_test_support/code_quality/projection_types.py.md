@@ -21,7 +21,7 @@ Module-level surface (ranges re-derived against the current candidate):
 - `served_projection_schema` (function, lines 91-94) — The declared HTTP/SSE snapshot schema, including its serve-time tail.
 - `schema_json` (function, lines 96-100) — Stable bytes for the committed JSON Schema artifact.
 - `_object` (102-106) · `_objects` (108-112) · `_strings` (114-118) · `_definitions` (120-122) · `_properties` (124-126) · `_definition_ref_name` (128-133) · `_ref_name` (135-138) · `_nullable_variants` (140-143) · `_is_null` (145-147) · `_is_nullable` (149-152) · `_json_literal` (154-163) · `_enum_values` (165-168)
-- `_property_enum` (170-189) · `_named_vocabulary_definitions` (191-201) — the two canonical CPython 3.13 named-literal shapes and the one-definition-per-vocabulary pass.
+- `_property_enum` (170-189) · `_named_vocabulary_definitions` (191-201) — the two canonical CPython 3.14 named-literal shapes and the one-definition-per-vocabulary pass.
 - `_schema_allowed_keywords` (203-236) · `_refinement_schema` (238-258) · `_refinement_comment` (260-272) — the keyword allowlist per schema shape and the deterministic refinement rendering.
 - `_schema_children` (274-306) · `_validate_schema_node` (308-327) · `_validate_schema` (329-341) — the fail-closed walk over every node.
 - `_array_type` (343-349) · `_object_type` (351-361) · `_schema_type` (363-395) · `_without_null` (397-410) · `_property_line` (412-425) · `_model_interface` (427-444)
@@ -90,9 +90,9 @@ deterministically serialize it. Unknown or shape-inapplicable keywords still fai
 exact model/property path and remediation. The generator never silently drops schema truth, and this
 is not a compatibility reader or fallback around canonical schema validation.
 
-## Python 3.13 Named Literal Vocabularies
+## Python 3.14 Named Literal Vocabularies
 
-CPython 3.13 plus Pydantic emits PEP 695 named `Literal` aliases as local `$defs` references rather
+CPython 3.14 plus Pydantic emits PEP 695 named `Literal` aliases as local `$defs` references rather
 than repeating their enum values at every property. `_property_enum()` accepts exactly the two
 canonical shapes: an inline enum or one local definition reference whose target is itself an enum.
 `_named_vocabulary_definitions()` removes those already-rendered definitions from the interface

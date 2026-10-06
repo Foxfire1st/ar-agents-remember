@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The package's admitted range alone says nothing about what development and CI run; the contract pin alone says nothing about what a consumer may install; and neither refuses a wrong interpreter. Only together do they state and enforce one runtime."
+  },
+  "guarantee": "The product runs on Python 3.14 as one stated runtime: the built package admits every 3.14 release, the managed development and CI runtime follows one exact 3.14.8 contract, and the runtime checker refuses any other interpreter by name before it can import a newer standard-library module.",
+  "id": "FAM-Z69A94",
+  "members": [
+    "INV-XG226D",
+    "INV-7VGMWY",
+    "INV-Y2SXDZ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff-full.json"
+    },
+    "handoffEntry": "L91-one-python-runtime",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "scripts",
+    "mcp",
+    "."
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One Python runtime stated and enforced"
+}

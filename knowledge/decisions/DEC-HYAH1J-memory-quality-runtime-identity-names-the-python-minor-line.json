@@ -1,0 +1,85 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Orchestrator 71d18fce-4cb8-4a37-8dff-563bf4962b96 decided on 2026-10-06 (OR-R023) between retaining the reviewed 3.14 minor label and restoring the 3.13 label; the retained label names the runtime the frozen source runs, and every later runtime change has to decide how stored results are invalidated."
+  },
+  "alternatives": [
+    {
+      "option": "Retain the reviewed 3.14 minor label, python-3.14-memory-quality/v1, on the frozen source 161ea397.",
+      "reason": "Orchestrator 71d18fce-4cb8-4a37-8dff-563bf4962b96 decided on 2026-10-06 (OR-R023) that the reviewed label is retained under MIK-R91 rules 2 and 5: the label names the runtime the frozen source actually runs, and the digests that bind it are derived, not hand-copied.",
+      "status": "chosen"
+    },
+    {
+      "option": "Restore the 3.13 label.",
+      "reason": "It would misname the current runtime and would change the closed frozen source.",
+      "reconsider_when": "The frozen source is reopened for a runtime change that would make the 3.13 label true again.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The registry version derives from the policy JSON (checker_execution_registry_version is the canonical digest of the policies), and each affected unit's digest includes runtimeVersion and executionRegistryVersion (affected_planning._unit), so a changed identity changes the plan and unit digests.",
+    "The 0-of-3 reuse observed on the migration fixtures is an observation of that fixture set, not a production benchmark and not proof that the runtime identity alone caused every closure invalidation."
+  ],
+  "context": "The memory-quality execution registry declares runtimeVersion python-3.14-memory-quality/v1 for the range-resolution checker, and the affected planner binds that value into its digests: affected_planning._unit puts runtimeVersion and executionRegistryVersion into the unit payload and takes unitDigest = canonical_digest(payload), while checker_execution_registry_version derives from the policy JSON. The 3.14 move changed the string from python-3.13-memory-quality/v1.",
+  "decider": "Orchestrator 71d18fce-4cb8-4a37-8dff-563bf4962b96, 2026-10-06 (OR-R023), on the frozen source 161ea397 under MIK-R91 rules 2 and 5",
+  "id": "DEC-HYAH1J",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "feaea0c107052e79c6f8eec89ba1ea0a5b44aff8",
+        "content": "sha256:88973f147649e76af6c64ccd5bdf87f6d41f17e263c4cd16b52dba121c3add52",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 11
+        },
+        "path": "mcp/src/agents_remember/memory_quality/incremental_scope/execution_registry.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "953baa6443c3fb9600d9ed4122ebacf4f5246fc7",
+        "content": "sha256:05e255449a7dde4a49bdd79dadf0938e0ee0c55bb630af4cf93212d3bf8ef23a",
+        "locator": {
+          "end": 307,
+          "kind": "line_range",
+          "start": 300
+        },
+        "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_planning.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R91",
+        "packet": "requirements/MIK-R91-v1-the-product-runs-on-python-3-14.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The registry digest binds the runtime identity (824549ea at base, 49f2807b on the candidate); results produced under one identity are loaded without refusal under the other and none of 3 fixture units are reused; production passes no prior results.",
+        "The registry declares runtimeVersion python-3.14-memory-quality/v1 (execution_registry.py:15); checker_execution_registry_version derives from the policy JSON; affected_planning._unit puts runtimeVersion and executionRegistryVersion into the unit payload and takes unitDigest = canonical_digest(payload). The 0-of-3 fixture reuse is a migration-fixture observation, not a production benchmark."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R91@v1-runtime-identity",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
