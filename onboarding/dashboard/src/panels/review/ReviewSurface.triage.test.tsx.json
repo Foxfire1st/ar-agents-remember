@@ -2,15 +2,15 @@
   "path": "dashboard/src/panels/review/ReviewSurface.triage.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The suite's statement and its stubbed reads.\n\nAnchor: \"is the real component and only\"; \"is stubbed\"",
+    "3": {
+      "note": "The suite's statement, its bounds and its stubbed reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "08f5e14a4010eb94672d5a1d46f06cfb879fb029",
-            "content": "sha256:d3a72c925c8f2bb0cfb26974785a5c0a3faea80a5bd57df8e3a17b33b6f73204",
+            "blob": "f08c1dc1e1fbdf5c14e57bfacfce199129be3454",
+            "content": "sha256:0751fe732c2c6172f96f1a0dd8da62638308c3d578752566430bf7ebbe804639",
             "locator": {
-              "end": 58,
+              "end": 60,
               "kind": "line_range",
               "start": 1
             }
@@ -19,17 +19,17 @@
         }
       ]
     },
-    "2": {
-      "note": "The one case: the move, the kept context, focus and workspace, and the centre's order.\n\nAnchor: \"moves the selection to the next change and keeps family context, focus and workspace\"",
+    "4": {
+      "note": "The one case: the center's order in both orders with a wait after each click on the order control, the two moves, and the kept context, focus and workspace.",
       "targets": [
         {
           "anchor": {
-            "blob": "08f5e14a4010eb94672d5a1d46f06cfb879fb029",
-            "content": "sha256:86258fa074a4392cc8869b812d3d942a0b00099703a45261421569a549c3ebff",
+            "blob": "f08c1dc1e1fbdf5c14e57bfacfce199129be3454",
+            "content": "sha256:504ac750d6b37f4989b9d8a2b0f87a82edfa1980ecd974f41cfca0b2b38d5386",
             "locator": {
-              "end": 122,
+              "end": 139,
               "kind": "line_range",
-              "start": 64
+              "start": 67
             }
           },
           "kind": "test"

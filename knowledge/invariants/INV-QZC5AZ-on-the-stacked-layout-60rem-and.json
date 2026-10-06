@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "On the stacked layout the reading area sits below a tall family tree: this leaf's Worker's narrow probe of 2026-10-06 measured the selected subject's answer beginning 11,849 pixels below an 844-pixel viewport (notes/reports/role-launch/260928-MIK-L39-worker-f1a6fcad-303f-4dc4-9a24-12bc5b1a6a7e-evidence/post-sync-2026-10-06/narrow-geometry.json, cited by OR-R033). The reveal is realized in the workspace's focus path and pinned by mounted cases over the real captured bodies."
+  },
+  "applicability": "The mounted intent reviewer's reading area after a selection of a row the family tree shows, on the stacked layout (60rem and narrower), while the read is answered.",
+  "conditions": [
+    "The selection is in-tree: a family or member row of the tree, the visible previous-change and next-change controls, `j`, `k`, a member opened from the reading area's member list, or a kept family's continuation control.",
+    "The reveal focuses the selected row without scrolling to it and scrolls the start of the reading area into view, in the answer of that selection.",
+    "Every other selection and every wider layout keeps the scrolling behavior it had before the ruling; the explicit Jump control remains for the callers OR-R033 leaves unchanged."
+  ],
+  "exclusions": [
+    "A read that ends failed or refused; its status reveal is the subject of INV-BMFR2T.",
+    "A reader who moved focus while the read was on its way: no later answer scrolls or takes focus.",
+    "A refresh's scroll request and a lane or file destination's reveal, which keep their own rules."
+  ],
+  "id": "INV-QZC5AZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "browser/final-vs-pre.json (36 of 36 answered in-tree activations at 390 revealed; 62 of 62 steps at 1600 unchanged); mutations D1-a to D1-f"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-v2-evidence/ingest-list.json"
+    },
+    "handoffEntry": "OR-R033-D1",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On the stacked layout (60rem and narrower) the answer of an in-tree selection scrolls the start of the reading area into view and puts focus on the selected row without scrolling to it; every other selection and every wider layout scrolls as before.",
+  "status": "proposed",
+  "supersedes": []
+}

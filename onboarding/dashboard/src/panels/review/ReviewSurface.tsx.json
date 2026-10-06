@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
         "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
         "locator": {
           "kind": "symbol",
@@ -20,11 +20,65 @@
     },
     {
       "anchor": {
-        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-        "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
         "locator": {
           "kind": "symbol",
-          "name": "useSurface"
+          "name": "ReviewSurface"
+        }
+      },
+      "id": "RLZ-2A31AF",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Gives the header's refresh control `refreshReview` and the surface's failure block `retryReview` and `openTaskContext`, so no control of the surface reads again or opens the task context without the tree intent being set.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectSelection"
+        }
+      },
+      "id": "RLZ-32B5MZ",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `selectSubject` begins every selection with `beginSelection(options?.keepTree === true)`, so the walk is kept only for a selection that says it is the selection of a row of the tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectSelection"
+        }
+      },
+      "id": "RLZ-8XHR0Q",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `selectSubject` hands the page named in the selection's options to the read as the selection's page, so the kept family's review is asked with its cursor in the one request of the selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectSelection"
         }
       },
       "id": "RLZ-9ZV5SCXK",
@@ -32,12 +86,102 @@
       "origin": {
         "leaf": "260921-ICR-L48"
       },
-      "rationale": "Its selectSubject records the element that had focus when the reader made the selection.",
+      "rationale": "Its `selectSubject` records, in the focus request it leaves, the element that had focus when the reader made the selection.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRefreshReview"
+        }
+      },
+      "id": "RLZ-BDCHZ3",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `refreshReview` leaves a request that only scrolls and remembers the read on screen at the click. Its `settle` drops that request when the read on screen is failed or refused and is not the one remembered, and remembers that read as the refresh's failure. Its `retryReview` settles first and then is the refresh again when the read on screen is that failure; otherwise it only reads again. The cases \"forgets the scroll a refresh asked for when its read fails, so a later page of the subject leaves the rail alone\", \"brings the selected row into view after a refresh asked in the turn that shows a failed read\" and \"brings the selected row into view when the retry is made in the turn that shows the failed refresh\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` test these three paths.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRefreshReview"
+        }
+      },
+      "id": "RLZ-FRKWFP",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `refreshReview` begins a selection that does not keep before it asks the read cycle to read again, so a refresh shows the comparison as it reads now and not the tree walked before it. The case \"starts afresh at a refresh of the review\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` tests it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectSelection"
+        }
+      },
+      "id": "RLZ-KQQ22F",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `selectSubject` is the one handler of every subject selection and begins it with the tree intent `keep` only when the options say so; every other selection begins with `keep` false. Its `openTaskContext`, the offer after a refusal, begins a selection that does not keep. The cases \"starts afresh at \"All source changes\"\" and \"keeps every row when a selected subject is refused, and starts afresh at the offer of the task context\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` test two of these entry points.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+        "locator": {
+          "kind": "symbol",
+          "name": "subjectSelection"
+        }
+      },
+      "id": "RLZ-NENP96",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Its `selectSubject` leaves the request before it begins the selection, with the element that has focus and the number of the tree intent that is current, so only a render of this selection or a later one can take it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+        "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useSurface"
+        }
+      },
+      "id": "RLZ-PCQKA3",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Builds the selection handlers and the refresh and retry handlers over the one workspace state and the one read cycle, and hands the failure block the retry and the offer of the task context, so every entry point of the surface goes through the handlers that set the tree intent.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
         "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
         "locator": {
           "kind": "symbol",
@@ -54,165 +198,60 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The held first read and the snapshot observation.\n\nAnchor: `hold: navigation.settling`; `useObservedComparison`",
+    "32": {
+      "note": "The surface's hook: navigation, reader state, the cache, the read cycle, the coherent payload, the refresh and retry handlers and the reading status.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:f530a0a18cf444a2a7d6e9afaf0c4e338df6f3eda533e514a9ade2cc54d78852",
-            "locator": {
-              "end": 509,
-              "kind": "line_range",
-              "start": 484
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "**The disclosure track that lets the panes shrink: `minmax(0, 1fr)`, not the implicit `auto`.**\n\nAnchor: \"const TAKEOVER = 'changeset-viewer'\"; \"gridTemplateColumns: 'minmax(0, 1fr)'\"; `review-details`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
-            "content": "sha256:e8c79db37b257981f76785102148e1a3b18dc1d9f5cf407c1c2a87d71ebbb709",
-            "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 31
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
-            "content": "sha256:fc8e19119ad588f0cbdea8b15373ac22ff408b697cbf213ad72bf9cd62e09191",
-            "locator": {
-              "end": 483,
-              "kind": "line_range",
-              "start": 462
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The header wraps the task/subject controls while keeping their context and refresh action available.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:50a21e780fe614ab03503265a8b6b7a15862708244fbcd5b4ba83419f86af6f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewHeader"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The reviewer root owns its vertical scrollport while the shell retains its own layout responsibility.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:cbb1e4e74abf391bab0aae5cc5da8fd3937cb6a9736b088f205675658c549472",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewShell"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSurface"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The fixture builder and the mount this pin relies on, cited from their own declarations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e21a156e0562dfdc8b14d360b1ec2339938cd3de",
-            "content": "sha256:e5098754580075d9ac90d9661f08ae5062d64191645eeeae0e021744202482d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "payload"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The shell decision this file does **not** change, and which stays routed to the cockpit owner: the comment that states it sits on the declaration itself.\n\nAnchor: \"the viewport does not scroll\"; `overflow: \"hidden\"`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:b7f4e827f86735aa40e379004ac017b07e546ec2af840b663f42f428268e4553",
-            "locator": {
-              "end": 328,
-              "kind": "line_range",
-              "start": 328
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`useSurface` owns the behavior described above, including the cache, `selectSubject` and the `reading` status.\n\nAnchor: `ReviewReadCache`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:a3b0ce3c907a1810a578b36a713cc9a3dde87c5d9ee8f7d2ee95634a1716ab39",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:ed42abbe8b4b69f82670123053f5462afd7d5f4004110fe9e68e5e351b9f61e6",
             "locator": {
               "kind": "symbol",
               "name": "useSurface"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "33": {
+      "note": "A selection leaves its focus request, numbers the tree intent with or without `keepTree`, selects the subject, and sets or clears the page request; the offer of the task context starts the tree afresh.",
+      "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:0380fd9d1bf53c2b3d96c33f236e9aa292fae57cce0e2b8da6535154fdd04dd7",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
             "locator": {
               "kind": "symbol",
-              "name": "selectSubject"
+              "name": "subjectSelection"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
+    "34": {
+      "note": "A refresh starts the walked tree afresh and asks for a scroll once its answer is shown; the request is dropped when the refresh's own read fails or is refused; the retry of that failed read is the refresh again, and the retry of any other failed read only reads again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
       "note": "The unanswered subject's status, keyed and labelled with the requested subject.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
             "locator": {
               "kind": "symbol",
@@ -223,48 +262,29 @@
         }
       ]
     },
-    "4": {
-      "note": "`ReviewPanes` owns the behavior described above: the workspace over the answer or the frame, the records only for an answer, and the one lane read handed to both (MIK-L32).\n\nAnchor: \"function ReviewPanes({\"; \"const laneRead = useReviewLane(\"; \"<ReviewTechnicalDetails\"",
+    "36": {
+      "note": "The workspace over the answer or the frame, the records only for an answer, and the one lane read handed to both.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
             "locator": {
-              "end": 370,
-              "kind": "line_range",
-              "start": 302
+              "kind": "symbol",
+              "name": "ReviewPanes"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "One lane read per comparison through the real surface; none for a dataset review.\n\nAnchor: \"offers the two lane destinations after the families, with their file and hunk totals\"",
+    "37": {
+      "note": "The root: the reviewer zone, the identity and pending attributes, the scrollport, the engagement observer, the cache provider, and the refresh and retry handlers handed to the header and the outcome region.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ee406f656356367bddc65e943a9505227d72194",
-            "content": "sha256:b4208a1f7f309f648eeddb28c688fab9ca1605233bf8fed064411149f37e100c",
-            "locator": {
-              "end": 99,
-              "kind": "line_range",
-              "start": 85
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.lane.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "`ReviewSurface` owns the behavior described above, including the cache provider, the pending/unavailable root attributes and the engagement observer.\n\nAnchor: `ReviewReadCacheContext`; `useReaderEngagement`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"
@@ -274,12 +294,60 @@
         }
       ]
     },
-    "7": {
-      "note": "`PageControls` owns the behavior described above.",
+    "38": {
+      "note": "The header: back, leaf, identifiers, refresh and the history line.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:50a21e780fe614ab03503265a8b6b7a15862708244fbcd5b4ba83419f86af6f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewHeader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The offer of the task context exists only for an intent-only refusal with no earlier offer taken.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:7ba95a490e980028e422bf3066e029dd0428cc10865cf72070ea790564bf465c",
+            "locator": {
+              "kind": "symbol",
+              "name": "insteadFor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Retry exists only for a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:f2c30d47debec55b8b4d1fd43a24e7fe8efb6a6a1000ed13501721bdcfdb4f90",
+            "locator": {
+              "kind": "symbol",
+              "name": "retryFor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The page controls: picker, actions, bounds, refusal and reset.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:76c5dd85b8b9ae6c8c17d994c119e81752adaea4863959d8f62aa2516211d09d",
             "locator": {
               "kind": "symbol",
@@ -290,37 +358,117 @@
         }
       ]
     },
-    "8": {
-      "note": "The root is the keymap owner's reviewer zone (MIK-L33).\n\nAnchor: \"data-kbzone=\\\"review\\\"\"",
+    "42": {
+      "note": "The picker offers the walkable collections.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:58dbde1ded845fd81a69214ca4d3c3ec14e89657568feb0a917dc96f9a18ee12",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:91d401c4eb4926d520b2fea9ed917d256bbd09cfe588e9bcb66b5905895ead57",
             "locator": {
-              "end": 547,
-              "kind": "line_range",
-              "start": 547
+              "kind": "symbol",
+              "name": "PagePicker"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "**The pane helper's two load-bearing declarations (moved unchanged to `ReviewRecordPanes.tsx` by L48).**\n\nAnchor: \"minWidth: 0\"; \"overflowWrap\"; `data-pane`",
+    "43": {
+      "note": "A next page is offered only for a published cursor.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fbf726840dd4b6a9af88200a7606ff07c1d2247",
-            "content": "sha256:fdc345b4cca4071f4f476013b944e8b0f347609a5bc03ac18fe9376ef4986ba2",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:2a9d5b3550cb70ec5aba6fd5a8a019706a1d4a96e59cdb4c424ba627e44d877b",
             "locator": {
               "kind": "symbol",
-              "name": "pane"
-            },
-            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+              "name": "PageActions"
+            }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The refusal of a requested page, with a first page of that collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:2ac3593c79bf492bd67cbcf9f54f6d06f295da3959010408194f1709f081012c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageRefusalBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The workspace state the selections write: the focus request and the tree intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:797877edaa59090811c34dbf41cfe6ab0709837a6a4f8132cf243f0ed6c1d722",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkspaceState"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The selection options a caller may pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionOptions"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "The mounted cases of which selections keep the walked tree and which start it afresh, of the stacked reveal of an in-tree read, and of the scroll after a refresh and after the retry of a failed refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:cb3ab7f6a3481cdf42590b88328900ae680cb2276230230f333bacf62c83f784",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "The mounted cases of the mounted shell, the pending and problem states and the focus order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:f4ed76ab22acca829485da319fcac381edc45cf4f12f5744816283e6b36cb503",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

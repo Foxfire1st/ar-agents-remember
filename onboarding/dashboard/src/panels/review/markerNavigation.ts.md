@@ -24,9 +24,8 @@ target in the tree through the rail's own selection, and the return puts the rea
   `focusSelection`**, so focus goes to the originating marker and not to the tree's selection; then the lane (after the
   subject, because choosing a subject leaves the lane and the return may be into it), the opened path, the layout and
   the full-file choice.
-- **Back navigation (ruling 2026-09-30T16:19:34 Q1).** The reviewer has no in-reviewer back history, so "the
-  reviewer's back navigation where supported" is the visible `Back to <file>` control only; no browser-history
-  integration.
+- **Back navigation.** The reviewer has no in-reviewer back history, so the way back is the visible `Back to <file>`
+  control only; there is no browser-history integration.
 
 ### Conventions
 
@@ -37,6 +36,10 @@ target in the tree through the rail's own selection, and the return puts the rea
 
 - A target is reached only through the rail's own selection, so it is a tree position of the mounted workspace, never
   a family on its own (ICR-R34 rule 2).
+- **A follow and its return are outside selections.** Both call the navigation's `onSelect` with a subject and a
+  family context and no selection options. A selection without options starts the walked family tree afresh
+  (requirement MIK-R39 rule 9), so a follow shows the families of the marker's subject alone and the return brings no
+  kept family back.
 - **Part of the candidate invariant "Back returns focus to the originating marker with its hunk in view"** (recorded on
   `MarkerTargetState.tsx.md`): the restore leaves no pending selection focus to take focus from the marker.
 
@@ -61,6 +64,8 @@ No configured live documentation source was available for this pass.
 - The return: subject, then lane, opened path, layout and full file; the tree's focus request cleared. [5]
 - The workspace that passes them to its scope. [6]
 - The moves' cases. [7]
+- A follow and its return select with two arguments only, so both start the walked tree afresh. [8]
+- The options a selection would have to pass to keep the tree. [9]
 
 ### Cross-Repo References
 

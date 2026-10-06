@@ -225,12 +225,12 @@
         },
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
             "content": "sha256:6ae6ed71735f3babd607e3c23f0b97d0d47e5c05b396ec8ad4036ee2efb70d1f",
             "locator": {
-              "end": 554,
+              "end": 566,
               "kind": "line_range",
-              "start": 554
+              "start": 566
             },
             "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
@@ -238,12 +238,12 @@
         },
         {
           "anchor": {
-            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
             "content": "sha256:b1ac2be0d92757132171f6afa867c1f2cefd660c4e9869ce3756dd1cdc9f72af",
             "locator": {
-              "end": 602,
+              "end": 719,
               "kind": "line_range",
-              "start": 602
+              "start": 719
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -256,7 +256,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
             "content": "sha256:37ae6a0769e0069cf4a58d9a119a3cc69c29eda347e970ca0dcde345c749be05",
             "locator": {
               "kind": "symbol",

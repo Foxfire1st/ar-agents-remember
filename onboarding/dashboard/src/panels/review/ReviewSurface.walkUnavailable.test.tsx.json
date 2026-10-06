@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkUnavailable.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
+        "content": "sha256:6e829535c3056090b931c381d3ccde6cb817390ef173281135e23dd64c9bcb14",
+        "locator": {
+          "end": 148,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-F9DWNZ",
+      "invariant": "INV-BMFR2T",
+      "origin": {
+        "handoffEntry": "OR-R033-D1.a/fixed",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The ten mounted cases pin the reveal for failed and refused reads by click and by key to the stacked layout, and pin the moved-focus exception.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The genuine refused answer: the real route asked for an invariant selector absent from the comparison, HTTP 400.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f5fbd9110a7e67eab1ba0efa110478516fbaf9d",
+            "content": "sha256:a07bc47b4dd357992dae6580e4d3a1a70755554567118a3ae920c88cea38677b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkUnavailable.refused.captured.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt of that capture: route, parameters, status, hash and size, and that it is replayed, not authored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b37bd852277898ab399dd3dec436b52bacd01251",
+            "content": "sha256:3d10b851c1833bb8b819f1a93150576118dceb9bd2cd3f7386757ab4ad792671",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkUnavailable.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The eight reveal cases enumerate failed/refused × click/key × stacked/wide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
+            "content": "sha256:1218994265f07bf90ed6be59323a5b27450029c854167af8fd46b10bd101f810",
+            "locator": {
+              "kind": "symbol",
+              "name": "cases"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed or refused in-tree selection reveals the status only on the stacked layout, keeps the mark and both families, and makes one read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
+            "content": "sha256:e09e5293080bfabff7e90b0fdfec0066f22a65f28a9164c96ac96898036b522b",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A reader who moved focus while the read was on its way keeps it: no scroll, mark and families stay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bdfad9d86359e2946e349fae08ca889c1d603ab",
+            "content": "sha256:a42245e7c880d59cae7417440a1cc6cf5795c62e954d6f20bc158308942e7d37",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

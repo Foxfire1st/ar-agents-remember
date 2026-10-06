@@ -3,7 +3,187 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:ea5f55111683e71b9aba64ddb6036a94323b57ff2808082ffaaecbc35f483492",
+        "locator": {
+          "kind": "symbol",
+          "name": "rowsShown"
+        }
+      },
+      "id": "RLZ-19X0X1",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Names what the tree shows for the traversal status: the order, and each family shown under the filter with the number of its member rows. The filter, the order control and a roster continuation therefore each change it. The cases \"drops \"No later change\" when the filter that hid the later family is cleared\" and \"does not show \"No later change\" again when the filter is changed and changed back to the same rows\" of `dashboard/src/panels/review/ReviewSurface.walk.test.tsx`, and \"drops \"No earlier change\" when the order control lists the other family before the selection\" of `dashboard/src/panels/review/ReviewSurface.walkPartial.test.tsx`, test the filter and the order control.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:10347e662af003c0ea00321d0472c5ec5b7d578b27dd7ce62cce1751492453f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyTree"
+        }
+      },
+      "id": "RLZ-85HWGR",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Computes the families shown under the filter once and passes the traversal hook the name of exactly those rows in the order on screen, so the status is tied to what the reader sees.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:5e6d257e956b2bc3e3191eac803bc3740c99bafe6bd5189e7c4931e81415ec14",
+        "locator": {
+          "kind": "symbol",
+          "name": "WalkNotes"
+        }
+      },
+      "id": "RLZ-AF8APW",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Renders the walk's notice beside the tree with the role `status`, which says that the walk started again because the comparison changed, and the sentence about a selected subject without family context.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:9ed6a43496d5cae2bdd3fc5e3144e956c5aa677bb391585b1ade50978e29e3ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "filterScope"
+        }
+      },
+      "id": "RLZ-DJQ19Q",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Words the scope line with the kept families counted apart: \"N families · M kept\", and under a filter \"(N of this subject · M kept)\".",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:ca1cd5a911318fa3106e9748428c7b40d91f14c5dc97d40752522f6f3fcdc0df",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyList"
+        }
+      },
+      "id": "RLZ-EEQCXC",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Gives each family node the label of the subject it was last read for when the family is a kept one.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:b8b568b3bf73bb868cfdacce3e41f73d378f928aabde55056e73bf5f5e4a56c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyNode"
+        }
+      },
+      "id": "RLZ-J1B9ZZ",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Puts the kept marks on a family's item and on its row and renders the tag under the row. A kept family is otherwise drawn as any other family, whole, with its roster and its continuation control.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
+        "locator": {
+          "kind": "symbol",
+          "name": "WalkedTree"
+        }
+      },
+      "id": "RLZ-PV8M2E",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The shape in which the tree component receives the walk: the families to draw, the map from each kept family to the subject it was last read for, the notice, and the sentence about a selected subject without family context.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:10347e662af003c0ea00321d0472c5ec5b7d578b27dd7ce62cce1751492453f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FamilyTree"
+        }
+      },
+      "id": "RLZ-QS7G44",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Draws, counts and filters the walked families in place of the context's own, and keeps \"Family context details\" on the selected subject's context. The filter hides the families that do not match, kept or not, and shows them again when it is cleared; the case \"lets a filter hide kept families with the others and restores them when it is cleared\" of `dashboard/src/panels/review/ReviewSurface.walk.test.tsx` tests that.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:9696390232abc85cd8670a533cbd44ab2e1e63d54d8d8a1c8c4214b7332969c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "keptMarks"
+        }
+      },
+      "id": "RLZ-R94X47",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "For a kept family it returns the `data-family-kept` mark of the item, the visible tag \"kept · last read for …\" and the `aria-describedby` that makes the tag the row's accessible description. For any other family it returns nothing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+        "content": "sha256:afc69e4b825742ffcccd075aabd103eae6e4de372334bfacb117467bb599a56c",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeParts"
+        }
+      },
+      "id": "RLZ-X2PY5W",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Chooses the families to draw: the walked tree's when one is given, else the context's own, with no kept family.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
         "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
         "locator": {
           "kind": "symbol",
@@ -20,318 +200,188 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The family node: the family button with its guarantee badge (MIK-L33), the breakdown, the guarantees, the roster details, the ordered member roster and the continuation.\n\nAnchor: \"function FamilyNode({\"; \"<FamilyBreakdown triage={familyTriage(entry)} />\"",
+    "16": {
+      "note": "What the caller passes for the walked tree: its entries, the kept families with the subject each was last read for, a notice and the selected subject's state.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:9009c1df38fd45d536d48ccbd1928c1aafc695c12059acc57eec4130e64a904c",
-            "locator": {
-              "end": 668,
-              "kind": "line_range",
-              "start": 612
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Change facts order the tree and drive `j`/`k`; a dataset review keeps the landed tree (MIK-L33).\n\nAnchor: \"const triaged = hasChangeFacts(context.entries);\"; \"const traversal = useChangeTraversal(root, triaged);\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:dcbb5d2ba3e27a50583c35947234ef3bee054bd6ef636a9de70fa1b0a3df0c33",
-            "locator": {
-              "end": 771,
-              "kind": "line_range",
-              "start": 768
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Families and member rows in triage or authored order, siblings kept (MIK-L33).\n\nAnchor: \"const rows = orderMemberRows(entry, memberRows(entry), order);\"; \"{orderFamilies(shown, order).map((entry) => (\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:bcd4ef4a194d48fb65404d4fc440593d9c898f112d18cc8334bfeded371ab8fc",
-            "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 587
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:507911d61c4cd7b8b7b9dc41995192e3cc5e3e75331d5d3a8c813f907a422958",
-            "locator": {
-              "end": 731,
-              "kind": "line_range",
-              "start": 731
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The traversal's attributes on member and family nodes (MIK-L33).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:e5723d101aef8c653d132d5f0b5876ff13c76850a1158b066da59bfb88934049",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
             "locator": {
               "kind": "symbol",
-              "name": "memberChangeAttributes"
+              "name": "WalkedTree"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "17": {
+      "note": "The component: the filter, the walk's notes, the selected subject's context details, the triage bar when there are change facts, and the family list.",
+      "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:cc2c3d77396f2cb10d3fa0dfb38e2cfb31c33820c4f6fc5a4e1536a74a0f88ad",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:10347e662af003c0ea00321d0472c5ec5b7d578b27dd7ce62cce1751492453f8",
             "locator": {
               "kind": "symbol",
-              "name": "familyChangeAttributes"
+              "name": "FamilyTree"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "The member node's name is its subject and its description its facts (review R3-1).\n\nAnchor: \"aria-labelledby={ids.labelledBy}\"",
+    "18": {
+      "note": "The families drawn are the walked tree's when there is one, else the context's own.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:80da95261847dfe3dd9cacf68c1c089701a7be33c53610bb30ea6726d31eb731",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:afc69e4b825742ffcccd075aabd103eae6e4de372334bfacb117467bb599a56c",
             "locator": {
               "kind": "symbol",
-              "name": "useMemberNodeIds"
+              "name": "treeParts"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "19": {
+      "note": "A kept family's tag: a data attribute on the item, the button's accessible description, and the visible text.",
+      "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:f6d078fe8e2783cc772db50401374b262f05245fd268aff7eaf399b962bde293",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:9696390232abc85cd8670a533cbd44ab2e1e63d54d8d8a1c8c4214b7332969c3",
             "locator": {
               "kind": "symbol",
-              "name": "MemberSubject"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:870617f992b7bcbcf3ec9b795adb392bf22b4cae70c1ab73a5be5a97adcabfea",
-            "locator": {
-              "end": 536,
-              "kind": "line_range",
-              "start": 536
+              "name": "keptMarks"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "14": {
-      "note": "The guarantee block does not repeat the badge's \"guarantee unchanged\" (MIK-L33).\n\nAnchor: \"entry.change_kinds ? 'Joint guarantee' : 'Joint guarantee · unchanged',\"",
+    "20": {
+      "note": "The family node: the button with its guarantee badge, the kept tag, the breakdown, the guarantees, the roster details, the member roster and the continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:1764c9ccf30b2573c9227649d3aaa89a070bfd3cf1a1573be04acada402f0114",
-            "locator": {
-              "end": 369,
-              "kind": "line_range",
-              "start": 369
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The badge, the tagged membership line and the description order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:93d8eda1213a1de2402f1eb7638141ed0a062522d28efd376343a2c95da23871",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:b8b568b3bf73bb868cfdacce3e41f73d378f928aabde55056e73bf5f5e4a56c3",
             "locator": {
               "kind": "symbol",
-              "name": "MemberChangeBadge"
-            },
-            "path": "dashboard/src/panels/review/ChangeBadges.tsx"
+              "name": "FamilyNode"
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "21": {
+      "note": "The scope line counts the families of the selected subject and the kept ones apart, with and without a query.",
+      "targets": [
         {
           "anchor": {
-            "blob": "d63fca553096cd956ddff9b3b7f9762050a8d440",
-            "content": "sha256:46ff82ef10a3b8bd6e9f61d4ec11dcaa3339383a1784209d1fc549c54adf69f3",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:9ed6a43496d5cae2bdd3fc5e3144e956c5aa677bb391585b1ade50978e29e3ee",
             "locator": {
               "kind": "symbol",
-              "name": "useMemberChange"
-            },
-            "path": "dashboard/src/panels/review/ChangeBadges.tsx"
+              "name": "filterScope"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "`memberRows` unions both sides by exact revision and, for a revision on both sides, records whether the carried texts are the same, differ or are unknown (MIK-L35).\n\nAnchor: \"existing.wording = sidesWording(existing.member, member);\"",
+    "22": {
+      "note": "The list orders the shown families and hands each node its kept label.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:ca1cd5a911318fa3106e9748428c7b40d91f14c5dc97d40752522f6f3fcdc0df",
             "locator": {
               "kind": "symbol",
-              "name": "memberRows"
+              "name": "FamilyList"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "What the tree shows, for the traversal status: the order and each shown family with its member-row count.",
+      "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:c4b5ff5f1da38a148cb2c74061b3f9926848bcd880d6307501eabfa86807e0a9",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:ea5f55111683e71b9aba64ddb6036a94323b57ff2808082ffaaecbc35f483492",
             "locator": {
               "kind": "symbol",
-              "name": "sidesWording"
+              "name": "rowsShown"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The rail's joint guarantee: one revision once only when its texts are the same on a tree comparison; otherwise both texts, noted \"same revision, text differs\".\n\nAnchor: \"function sameGuaranteeText(\"; \"function guaranteesOf(\"; \"const note = oneRevision ? ' · same revision, text differs' : '';\"",
+    "24": {
+      "note": "The walk's notice as a status and the selected subject's state.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:9d2a230fd48fb3ad65dac87e3281c8791d3d342e07b650631e590d1bb8d7417d",
-            "locator": {
-              "end": 323,
-              "kind": "line_range",
-              "start": 323
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:fbc59385ba6ee40e118b48b246b6cb0e9f1a4872e4c219d025e03e8aaf7c2169",
-            "locator": {
-              "end": 335,
-              "kind": "line_range",
-              "start": 335
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:c79ec0a0fed4524107a1baade3d2d734e266ae6a3676a30ba06fae85697e89a2",
-            "locator": {
-              "end": 354,
-              "kind": "line_range",
-              "start": 354
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The member node's side tag: \"unchanged revision\" only for the same carried text on a tree comparison; with change facts the badge's note states a text difference instead (MIK-L33).\n\nAnchor: \"function memberSideTag(row: MemberRow, tree: boolean, noted = false): string {\"; \"{memberSideTag(row, tree, textNoted(facts, member.member_id))}\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:5d08e213c66a4624d876e1248ba5094de548192ad1845f452d54dfd81708244d",
-            "locator": {
-              "end": 431,
-              "kind": "line_range",
-              "start": 425
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:4c611abcf4f9a32ce9fa02992e2056ef1e9dc6c91c08d0deacd5db64ac0f3c26",
-            "locator": {
-              "end": 547,
-              "kind": "line_range",
-              "start": 547
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "After its side tag the member button draws the change badge when the row has facts, else a followed marker's unknown-membership note, which is then the row's description (MIK-L34; MIK-L33 merge round and R3-1).\n\nAnchor: \"{change ? (\"; \"<MemberTargetNote\"; \"id={ids.note}\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:214bfc7f206534ede5b0941bec9697926308ba5ff55b8094aa8b89994f261bde",
-            "locator": {
-              "end": 555,
-              "kind": "line_range",
-              "start": 551
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The note: only on the exact family and member revision of an unknown-membership target.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "73f4af0fd86d1545ba908ef7aec22ed1cfccb658",
-            "content": "sha256:52115f4989e98d3509cf06bba43115e4d2fddb2ea8f73c42f757e06988482f4a",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:5e6d257e956b2bc3e3191eac803bc3740c99bafe6bd5189e7c4931e81415ec14",
             "locator": {
               "kind": "symbol",
-              "name": "MemberTargetNote"
-            },
-            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+              "name": "WalkNotes"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "`familyMatches` owns the behavior described above.",
+    "25": {
+      "note": "The context details describe the context passed in: state, detail, counts and limitations.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:3c056b4f763d0e8e9eb919a53e945eb01e222bffc513eb2c1caef7d8aeda793d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyContextDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The search field and its scope line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:172bede848442ad9bd98fc0ba449ee5dac8f56e219cc6db08ea3b7f3fdbe92be",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyFilter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "What a query is matched against.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
             "content": "sha256:ac62146e1c9fd3aca4857b9dc3d3856dee3f16bf6aac6763f849602136d9e347",
             "locator": {
               "kind": "symbol",
@@ -342,48 +392,215 @@
         }
       ]
     },
-    "8": {
-      "note": "`filterScope` owns the behavior described above.",
+    "28": {
+      "note": "Member rows are the union of both sides by exact revision, with the wording comparison for a revision on both sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:1632df63c98454a9745df334cae8a977a238e6b57374ba56d8bdf4437098ff11",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:eefd1aa08a716e243c5687dfe8e3e6e36ad8ede0eec1a926f6e2a444b263890e",
             "locator": {
               "kind": "symbol",
-              "name": "filterScope"
+              "name": "memberRows"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "`FamilyTree` owns the column; its `tree` prop (MIK-L35) sets the tree-comparison scope around the family list.\n\nAnchor: \"export function FamilyTree({\"; \"<TreeComparisonScope tree={tree}>\"",
+    "29": {
+      "note": "One guarantee revision is shown once only when its texts are the same on a tree comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:8df9277834b15564f2014263ee0be56291be6f11e2ece844decdc354058f915e",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:ba89b949afbe2fdeb4eb5f25e3535fcd427f5a67f49bf0d6c8d8f8beca948166",
             "locator": {
-              "end": 745,
-              "kind": "line_range",
-              "start": 745
+              "kind": "symbol",
+              "name": "guaranteesOf"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "30": {
+      "note": "The member row's side tag.",
+      "targets": [
         {
           "anchor": {
-            "blob": "28c4e5075e551235d87b42b7935d39cb4ae4a988",
-            "content": "sha256:ad6b7c96ce6f8236f06318ebaa06d03b09ce3f357c16b5446dfc1aabc377266c",
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:5d08e213c66a4624d876e1248ba5094de548192ad1845f452d54dfd81708244d",
             "locator": {
-              "end": 807,
-              "kind": "line_range",
-              "start": 807
+              "kind": "symbol",
+              "name": "memberSideTag"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The member row: its subject, sides note, side tag, and the change badge or the marker note.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:517a6d03c3e60645bf9fe11b7a0f504f407ed38f0f654e9b4b0b6749d119805d",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The member node's name is its subject and its description its facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:80da95261847dfe3dd9cacf68c1c089701a7be33c53610bb30ea6726d31eb731",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMemberNodeIds"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The traversal's attributes on a member node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:e5723d101aef8c653d132d5f0b5876ff13c76850a1158b066da59bfb88934049",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberChangeAttributes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The family node's own stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:cc2c3d77396f2cb10d3fa0dfb38e2cfb31c33820c4f6fc5a4e1536a74a0f88ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyChangeAttributes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The roster line states returned, total and remaining counts beside the loaded membership rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:0333052dac0303645f8625277c45768f4163d55bcbb1f745c4e684cfde134955",
+            "locator": {
+              "kind": "symbol",
+              "name": "RosterLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The continuation control: one per side with an incomplete page and a published cursor, named with its family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:3c9efbf2d9d606a17118f92df45cc5b55fdd56629d40f53c6bbb3bca91621a2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RosterNext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Arrow keys move focus among the tree nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8135bda4f4dee8a955d2749f28f82df50cbaa0e",
+            "content": "sha256:50319d40ad93d146cb9c1589211684b18c23802f60f9cc17dc8d836c7425f5a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeArrow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The traversal the tree binds, with the rows it shows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "content": "sha256:6ebe7990d0b985364c72a68e8ef53fc9bb45844f2a1cb6eec60145914029335a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangeTraversal"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The family order the tree applies: in triage order by weight and then by position in the list given; in authored order the list as given.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83d6c30fd23ee6d4d9ce60765a46470f2b2362b1",
+            "content": "sha256:9436ab5f4df9a143bb65caef3be77dc6190f79d09c451e4781aadc5a1879b387",
+            "locator": {
+              "kind": "symbol",
+              "name": "orderFamilies"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The mounted cases of the kept tag, the scope line and the context details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:3e96308c145c2052a91d8856e82897243cd32753a4e33392e350ebb4a1c43b58",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

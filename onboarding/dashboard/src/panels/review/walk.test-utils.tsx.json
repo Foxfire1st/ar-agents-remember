@@ -1,0 +1,167 @@
+{
+  "path": "dashboard/src/panels/review/walk.test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `fetch` stub: routes by path, clones each answer, and logs requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:227b979c553e18491b648c175cf77cea37ccf29d8d5f6c3242ff3206a3432565",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The receipt of the real-data bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:f666af1ec604dd72d206ab5c0018a7e75462a7cd3c21f4f56cd849464cf017fd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real-data world: the changes in `j` order and the bodies by subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "CHANGES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mutable world of the test in progress.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:84477af6f975e96704150559056871c6c5bbac06e7b47f4cce54d4fd95500bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Serving the world to one test, with the triage order and a clean preference store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:487b8bef45e18975dcef63d04e3a65e26ec7f3e975f50ad067073f1aa09a916d",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveWorld"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Serving the world to every test of a file, with the 60 second bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:225d24753c5040eee724be1da1c4d2ce5013053c8ee610b0c1d49f6009847b08",
+            "locator": {
+              "kind": "symbol",
+              "name": "installWorld"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one selected node, as the reader sees it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:1c8780ae59c81648a13ade5d35f18f358420b4340a02893c6ef1119baa7736e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "selectedNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Settled: no pending read, a selected node, focus on it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:9951e05dcf9c0c2f2f393f4c8be2363b35bf07a11e39c0dfda9042d9421cb63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "settled"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One key press, its effect, and the review requests it made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:6be806fd968a7192cffac40bd14fe358a8d1c697c0c4137e5cf6e12d0d613b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The click on the second family's row after both families are shown in the expected order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:545320fc879b6cddf0a0ea8f206a3980bae44aee537c29d4990c8c3cceb9d6a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "clickedSecondFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

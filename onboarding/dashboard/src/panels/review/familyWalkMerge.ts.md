@@ -6,71 +6,48 @@
 
 ## Purpose
 
-The merge of one admitted family roster walk: **what** an admitted continuation page looks like once it is
-folded into the family context already on screen. The read cycle (`ReviewReadCycle.ts`) decides **when** a
-continuation is admitted; this module owns the merge. Moved verbatim out of the read cycle in
-`260921-ICR-L48` to bring `ReviewReadCycle.ts` under the file-size rail (539 → 471 lines); the behaviour was
-introduced by `260921-ICR-L38` and its history is on [ReviewReadCycle.ts](ReviewReadCycle.ts.md).
+The merge of one admitted family roster walk: **what** an admitted continuation page looks like once it is folded into the family context already on screen. The read cycle (`ReviewReadCycle.ts`) decides **when** a continuation is admitted; this module owns the merge. Its member merge is also used by the walked family tree.
 
 ## Code Commentary
 
-### Logic
+### The continuation merge
 
-`mergeFamilyContinuation(previous, next, cursor)` is the only export. It returns `null` unless
-`admittedFamilyContinuation` holds: the page is a `family_members` continuation continued from exactly
-`cursor`, carries no page refusal and is not stale, and the comparison, candidate and primary revision
-selection are identical and the family-context entry count matches. It then merges family by family:
-`mergeFamilySide` merges a side only when `sameFamilyWalk` holds (same family, side, state, family
-revision, guarantee digest and page scope) and otherwise refuses; `mergeMember` keeps the same invariant
-revision, refuses a changed recorded payload digest or a changed claim, adds new claims by `claim_id`, and
-never lets a sparse later page erase content already delivered. Any refusal returns `null`, which the read
-cycle turns into a failed read that keeps the coherent display.
+`mergeFamilyContinuation(previous, next, cursor)` is the merge the read cycle calls. It returns `null` unless `admittedFamilyContinuation` holds: the page is a `family_members` page in state `continued`, continued from exactly `cursor`, carries no page refusal and is not stale, and the comparison, the candidate and the primary revision selection are identical and the number of family entries matches.
 
-**Change facts across the walk (MIK-L33).** On a tree comparison each admitted page carries the change facts of the
-members it returned. `walkedChangeKinds` unions the displayed entry's `change_kinds` with the continuation's through
-`changeTriage.mergeChangeKinds`: every occurrence either delivery described is kept and the newer family-level facts
-apply, so the tree's badges and breakdown cover every member the walk has returned. A dataset review's entries carry
-no facts and gain none.
+It then merges family by family:
+
+- A family of the continuation must be a family on screen with the same selection; otherwise the merge is refused.
+- `mergeFamilySide` merges a side only when `sameFamilyWalk` holds (same family, side, state, family revision, guarantee digest and page scope). A side whose page is not a continuation is another walk resent at its first page and leaves the side on screen as it is. An exact replay of the same page is accepted without change.
+- `mergeMember` keeps the same invariant revision, refuses a changed recorded payload digest or a changed claim, adds new claims by `claim_id`, and keeps the member content already recorded, so a sparse later page never erases content already delivered.
+- Exactly one side must have continued from the cursor; otherwise the merge is refused.
+- A family is marked `recorded` only when every side is complete with all members recorded.
+
+Any refusal returns `null`, which the read cycle turns into a failed read that keeps the coherent display.
+
+`walkedChangeKinds` unions the change facts of the entry on screen with the continuation's through `mergeChangeKinds` of `changeTriage.ts`, so the tree's badges and breakdown cover every member the walk has returned. A dataset review's entries carry no change facts and gain none.
+
+### The member merge is shared
+
+`mergeMember` is exported. The walked tree (`walkedTree.ts`, `mergeSide`) calls it to merge two reads of one member of a family that two answers of one comparison both carry. The rule is the same there: the same invariant revision, no changed recorded payload digest, claims united by `claim_id`, and nothing already delivered erased. When `mergeMember` returns `null` there, the walked tree takes the newer member.
 
 ### Conventions
 
-Pure functions over the review wire types; no React, no state. Only `mergeFamilyContinuation` is exported;
-the five helpers are module-private (`walkedChangeKinds` since MIK-L33).
+Pure functions over the review wire types; no React, no state. `mergeFamilyContinuation` and `mergeMember` are exported; `mergeFamilySide`, `sameFamilyWalk`, `admittedFamilyContinuation` and `walkedChangeKinds` are module-private. The file is 170 lines.
 
-### Invariants And Boundaries
+### Boundaries
 
-- Presentation of one admitted walk, never another dataset or selection authority: the latest response
-  still owns the primary statements, source inventory, evidence and assessments.
+- The merge is presentation of one admitted walk, not another dataset or selection authority: the latest response still owns the primary statements, the source inventory, the evidence and the assessments.
 - A continuation that does not continue exactly the displayed walk is refused, never partially applied.
-- Earlier exact content is never erased by a later sparse page.
-
-### Todos
-
-None recorded.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The statements below are grounded in repository source only.
-
-No configured domain documentation could be checked.
-
-### Repo-Internal References
-
-- **The module's own statement of the split: the read cycle decides when, this module owns what.** [1]
-- Exact member merge: same revision, unchanged recorded content and claims, nothing erased. [2]
-- Side merge only within the same walk. [3]
-- The admission conditions on the whole payload. [4]
-- The exported merge, and its statement that it is presentation, not authority. [5]
-- The read cycle's one caller: a `null` merge becomes a failed read. [6]
-- The mounted continuation cases that pin it. [7]
-- The walk keeps the change facts of every returned member (MIK-L33). [8]
-- The union rule it applies. [9]
-
-### Cross-Repo References
-
-No cross-repository behavior is implemented in this file.
-
-No meaningful cross-repo references found.
+- The module's own statement of the split: the read cycle decides when, this module owns what. [11]
+- Exact member merge, exported: same revision, unchanged recorded content and claims, nothing erased. [12]
+- Side merge only within the same walk. [13]
+- The admission conditions on the whole payload. [14]
+- The exported merge, and its statement that it is presentation, not authority. [15]
+- The walk keeps the change facts of every returned member. [16]
+- The union rule it applies. [17]
+- The read cycle's caller: a `null` merge becomes a failed read. [18]
+- The walked tree's caller of the member merge. [19]
+- The mounted continuation case of a rejected continuation that keeps the coherent display. [20]

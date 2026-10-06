@@ -1,0 +1,57 @@
+{
+  "path": "dashboard/src/panels/review/walkStore.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "When, by what command, at which source tree and over which world the bodies were captured, and which two captures are not kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
+            "content": "sha256:85c1d6e4a689be2038f5f0a98653a3d10e4e402908e3c98d3fb7e80bc6511d4d",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One receipt row per body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
+            "content": "sha256:1c0de6654e3a7d578467e143699b5dfe9388a3319706970b35ea3c09b0d94bef",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The test file that serves these bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:d7d7171c84bea84dd62579d386f1ef248bffe814862bde56e3d87afaf926bd4f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

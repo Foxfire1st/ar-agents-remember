@@ -1,0 +1,182 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+        "content": "sha256:e709e207b865e9b0b0d335da23285f82474379a312cfd90f2251e9c80ae13344",
+        "locator": {
+          "kind": "symbol",
+          "name": "control"
+        }
+      },
+      "facet": "With a kept family whose members are not all returned, `j` from its last returned change focuses its continuation control, says that further members are not yet returned and reads nothing, and the next `j` moves on. The control then asks the family's review with its cursor in one read, the other family becomes the kept one, more members are returned, and they survive the next selection.",
+      "id": "PRF-BA80DP",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+        "content": "sha256:a9cdfbb04e490fe360252b1f5df5152a03653f864b088492d0daab98be6c90e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "opener"
+        }
+      },
+      "facet": "A member of the second family opened from the reading area's member list keeps the first family, tagged, with one review read, and `k` steps back to the family row.",
+      "id": "PRF-N88RVC",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+        "content": "sha256:9598b4139c4da57f9e1d01a7e6fa15ae637b1728bb7d6806ec10c7968c505ae6",
+        "locator": {
+          "end": 131,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-7ZPXMR",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "R4-F1",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "This case is where a failed read after an in-tree key step is asserted on the store-authored comparison: the selection mark, the displayed failure and the kept families.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+        "content": "sha256:830e954bcdafe601ee4deae05a13be784bd861f460171ce7f6946a98e310403d",
+        "locator": {
+          "end": 58,
+          "kind": "line_range",
+          "start": 48
+        }
+      },
+      "id": "RLZ-XADZP7",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "R4-F1",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The served world answers INV-GGGGGG with a deliberate network error here, so the request is an expected failure and no longer one that no body answers.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The file's statement of its data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:4b608fd1ae016c15de01a2598a5d970888201f94324b777cfbebe2fa0c534777",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answers served by subject and by continuation, including the deliberate failure of INV-GGGGGG's read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:3d4bd73377170349cf9ff41200357d6bac5cca8ba23a52dfb0ad225f1313bea7",
+            "locator": {
+              "kind": "symbol",
+              "name": "answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`j` onto a member of the second family only keeps the first family, `k` returns, and a further `k` selects a member of the kept family whose read deliberately fails: the row stays selected, the failure is shown and both families stay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:9598b4139c4da57f9e1d01a7e6fa15ae637b1728bb7d6806ec10c7968c505ae6",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`j` stops at a kept family's continuation control and reads nothing; the control continues the family by selecting it; the continued members survive a later selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:f28e99dcf84f437c35ed710a615f090b9447e2aa0a033db97f5deaa690e55058",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A member opened from the reading area keeps the first family, and `k` steps back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66cfe38ffa950ca558b3fb74d6ec1913e5f534b1",
+            "content": "sha256:6c6c6200b603a104ef6b665e654ec03d1ef6dff16fa7c4d16a1fc9927b64c173",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The receipt of the store-authored bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
+            "content": "sha256:b6f7905bc269cc94294b145c879313832ac25e8e602370bf6a7a67b381ce023c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

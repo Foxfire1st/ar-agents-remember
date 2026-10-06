@@ -67,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
             "locator": {
               "kind": "symbol",
@@ -391,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:adca9206f69580ac76715414d13bcff3f68a4002df6cdd9dcc7abbc99826d1aa",
             "locator": {
               "kind": "symbol",
@@ -403,8 +403,8 @@
         },
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
-            "content": "sha256:7342415671ee62133ef4236c5ec032c87ea9f3a11b49a8526fcd7ee907650017",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"
@@ -555,12 +555,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
-              "end": 601,
+              "end": 605,
               "kind": "line_range",
-              "start": 601
+              "start": 605
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

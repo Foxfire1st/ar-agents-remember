@@ -1,0 +1,38 @@
+{
+  "path": "dashboard/src/panels/review/walkUnavailable.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The receipt row: when, by what producer, over which route, status, hash, size, source commit, world and honesty condition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b37bd852277898ab399dd3dec436b52bacd01251",
+            "content": "sha256:3d10b851c1833bb8b819f1a93150576118dceb9bd2cd3f7386757ab4ad792671",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refused body it names, whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f5fbd9110a7e67eab1ba0efa110478516fbaf9d",
+            "content": "sha256:a07bc47b4dd357992dae6580e4d3a1a70755554567118a3ae920c88cea38677b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkUnavailable.refused.captured.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

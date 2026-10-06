@@ -1,0 +1,427 @@
+{
+  "path": "dashboard/src/panels/review/walkedTree.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:d052946373f3d7e50d396fb830b8c7186d6338b94575abd280b2c91a87365ac2",
+        "locator": {
+          "kind": "symbol",
+          "name": "advanceWalk"
+        }
+      },
+      "id": "RLZ-43XYAM",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The whole step of the walk: a pure function of the walk so far, the answer on screen, the scope and the tree intent. It reads only answers already shown, and it returns the same walk object when nothing is new.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:28c675df07345f4d274f0ecbd5e2491d55afe94b8a1dbc3f41b46a5c98f50b85",
+        "locator": {
+          "kind": "symbol",
+          "name": "keptFamilies"
+        }
+      },
+      "id": "RLZ-EDN9C6",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Names the kept families: those the walk holds that are not in the context of the latest answer. The tag, the separate count and the catalogue's rows are derived from this one list.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
+        "locator": {
+          "kind": "symbol",
+          "name": "absorb"
+        }
+      },
+      "id": "RLZ-G92QCK",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Folds one answer into the walk. An answer whose comparison is not the walk's, and the first answer after an outside selection, replace every family the walk held. The notice that the walk started again is set only when another comparison dropped kept families.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "rebase"
+        }
+      },
+      "id": "RLZ-HXT9YW",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "For a selection whose tree intent says keep, it returns the walk with every family it holds and only records the new intent number, so the selection's answer is folded into the rows already shown. The mounted case \"keeps the first family when j selects a member of the second family only, and k returns\" of `dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx` tests this on the store-authored bodies.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:66cab3c39e18f883c05fef12e192c20502ff925d17f267f085ce629679446e8a",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWalkedTree"
+        }
+      },
+      "id": "RLZ-QTTT3D",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Keeps the walk as state derived in the render that shows an answer, never in an effect and never from a request, so no frame draws a tree that lacks the answer on screen and no read is started for the tree.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:5c4647aa04bcd595ae27efa2204bcda1061b6bc0a65962538e7df9305d8cdfd8",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeFamilies"
+        }
+      },
+      "id": "RLZ-RKST9H",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Folds the families of one answer into the families the walk already holds. A family the walk holds and the answer carries is merged side by side, with the change facts united; a family the walk does not hold is added; none is removed. Each family the answer carries is stamped with the subject and the answer it was read for, and the result is sorted by family identifier, so the order of arrival plays no part.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:85a6e0153858338536f1bea0e76e9d50da338589ccf9100001c92b0b454a334a",
+        "locator": {
+          "kind": "symbol",
+          "name": "mergeSide"
+        }
+      },
+      "id": "RLZ-ZHACZ2",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Merges two reads of one family side that share the family revision: every member either read returned stays, merged through the roster walk's member merge, and the read that walked further (or, when equal, the newer) gives the page position. The continuation control therefore holds the furthest cursor, whichever read arrived first.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "035768698be6a583041c67e462c149c44d5ba459",
+        "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "rebase"
+        }
+      },
+      "id": "RLZ-ZPH7PP",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "For a selection whose tree intent does not say keep, it replaces the walk at once by one that holds only the families of the answer on screen, and marks it to be replaced by the answer the selection asks for. Another scope (another task context or history view) starts a new walk from the answer on screen. Each intent is applied once, by its number.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The state of one walk: scope, applied selection, generation, last answer, families, current context, replace flag and notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:333dd119dfb2580a0a958264b8ac34adbd8e840032520818c781cef61a84fa9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Walk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The kept families are the ones outside the latest answer's context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:28c675df07345f4d274f0ecbd5e2491d55afe94b8a1dbc3f41b46a5c98f50b85",
+            "locator": {
+              "kind": "symbol",
+              "name": "keptFamilies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A subject is named by its answer's label, else by its identifier read as words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:c88440dde53b5bb5a2f2b0200757b0048b3331633e15a78a9f1711dcc1a5c915",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectTitle"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A task-context answer leaves the walk's snapshot pair as it is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:ebd28737b3198a3ffd0e1bad9f2828bc8f335567a2c2086168a1f7bb30feaff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "carriedGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The hook advances the walk during render and stores a new result in the same render.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:66cab3c39e18f883c05fef12e192c20502ff925d17f267f085ce629679446e8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWalkedTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The comparison test the walk uses is the read cache's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The member merge the walk reuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeMember"
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The workspace is the hook's one caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:50c44396aad87f3e222c99046d41890d9279b892e6d01eed5f3b59d01a244f8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWalkedSelection"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The unit cases over served bodies: idempotence, order, the kept answer, names, an outside selection, another comparison, and a family read twice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:5869dca060d139415685eab35eeb2a20cc8e540293df52da4e376a0bf5c6f232",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One family of the walk: its merged entry, the subject it was last read for and that answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:5c8c12725f5881dd45f85591d4e18b5ae13d9e2778954865b55a97964b389cb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WalkedFamily"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The numbered selection and whether it keeps the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:184b1ef70d9f8fa30daaa4072e132a47c2acaa017b7a00c988986772e659ddfd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeIntent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One step applies the selection and folds the answer in; it returns the same walk when nothing is new.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:d052946373f3d7e50d396fb830b8c7186d6338b94575abd280b2c91a87365ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "advanceWalk"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A selection that keeps changes no family; any other selection leaves only the families of the answer on screen and marks the walk for replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:30b4f0708789a9a1253b71abac93875a9cfe1aa77dff295c872a69e4f82430cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebase"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An answer of another comparison, or the first answer after an outside selection, replaces the families; the notice is set only when kept rows were dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "absorb"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Families are merged by identifier and sorted by identifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:5c4647aa04bcd595ae27efa2204bcda1061b6bc0a65962538e7df9305d8cdfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeFamilies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A merged entry is `recorded` once both merged sides are complete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:e2439d54759ef89afa55aa44766340309df9780eb54f5cb8bd51fff2617639b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every member either read returned stays, and the side that walked further gives the page position.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:85a6e0153858338536f1bea0e76e9d50da338589ccf9100001c92b0b454a334a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeSide"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

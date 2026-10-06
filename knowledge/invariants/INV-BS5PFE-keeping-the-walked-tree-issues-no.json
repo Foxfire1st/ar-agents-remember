@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reading the kept families again at every step, or reading a subject the cache holds, would multiply the requests of a walk with the number of families passed and would make stepping back slow where it is immediate. The mounted walk case counts the review requests of every press."
+  },
+  "applicability": "The requests of the mounted intent reviewer while the reader walks the family tree.",
+  "conditions": [
+    "The walk is computed from the answers the workspace shows, in the render that shows them. It makes no request and stores nothing outside the mounted reviewer.",
+    "A kept family holds, whole, the answer it was last read from.",
+    "Folding the same answer again gives the same walk, so a render that finds nothing new stores nothing."
+  ],
+  "exclusions": [
+    "The one read a kept family's continuation control makes when the reader uses it: it is the read of the selection of that family.",
+    "Server-side state, routes and response fields: none exists for the walked tree."
+  ],
+  "id": "INV-BS5PFE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rule 12; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Keeping the walked tree issues no request: a selection issues one review read for a subject the read cache does not hold and none for one it holds, and nothing is read for a kept family.",
+  "status": "proposed",
+  "supersedes": []
+}

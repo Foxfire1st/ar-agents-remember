@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command, at which source tree and over which scratch leaf the bodies were captured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:867bc6cfae850650ec66320c5ffa8b535fe57725193460117c86ffd487f7ec15",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:6a771c594a267dd2e3dbaa2902510c4120eba91b60134173af573d10f0d4577e",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The note of the partial round.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:2a4d1d2652439fadd128ee79077d41b6290c04cb12e0a7cbd8167a9728bd46d3",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The kit that serves these bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:c4b2fe806b5dfa44ceccece741a727a370a3bab846224ceb2fef8acaf23c9569",
+            "locator": {
+              "kind": "symbol",
+              "name": "bodyOf"
+            },
+            "path": "dashboard/src/panels/review/walk.test-utils.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

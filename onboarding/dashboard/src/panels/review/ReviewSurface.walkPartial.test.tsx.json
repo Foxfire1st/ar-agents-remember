@@ -1,0 +1,112 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkPartial.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
+        "content": "sha256:30699e6f5fb3f15414629a199c30dd4dea887ffc9adb82f5ab3ecb6345ee55f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "control"
+        }
+      },
+      "facet": "On the served bodies of a real family with members not yet returned: `j` stops at the kept family's control with no request, and the control asks the family's review with that cursor and returns more members.",
+      "id": "PRF-R7064H",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "The file's statement of its data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
+            "content": "sha256:1f418dd1d23d508ba7494afd9d6b168ab60a5a713b665d5733e34cc4cd42e579",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The paged body and the continued page replace the world's answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
+            "content": "sha256:b7e92e537708a0317e678c0b4062786af5ae1cb2481c0928a6600722c18419b2",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`j` stops at the control of a kept real partial family and reads nothing; the control continues the family by selecting it; the end message is gone once the continuation returned members.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
+            "content": "sha256:e7c2afa1723b6f63cbb679f36928965aeca0febe9ede157c16cc1bb77ca0ce06",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "\"No earlier change\" is dropped when the order control lists the other family before the selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de806e6b3ebc6ae9b1b27774bf900b7bb3acc57b",
+            "content": "sha256:3e318590d8a900a71ae8ca7e1129b95aa6139e66fa6880694a1a8c91e95f2b10",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The receipt of the two partial bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:c709b3300cdfed5e098ec5b3b9f042f6bfe0bad4103b40a7a2bc412b3652a707",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

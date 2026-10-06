@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "No member alone lets the reader walk forth and back. Rows that only stay would mix comparisons and grow without bound without the rule on starting afresh. A kept family with unreturned members would be passed silently without the stop at its control. A step would start from the wrong row if focus followed an earlier answer, and the reader would be told that there is no later change beside a later change. On the stacked layout the same selection must also show what it selected, or the walk looks as if it did nothing. Together the members make `k` return to every change passed, visibly and truthfully, for the requests a selection made before."
+  },
+  "guarantee": "In the intent reviewer the family tree is the tree the reader has walked. Selecting a row the tree shows never removes a row, by `j`/`k` or by click, so `k` can step back to every change the reader passed, also past a kept family whose members are not all returned. Every row was read under one comparison, and every selection from outside the tree and every refresh shows the chosen subject's context alone. Focus lands on the row the latest selection chose, so the next step starts from it; on the stacked layout the selected subject's answer, and the failed or refused status that stands for it, is revealed in the view without an extra Jump; a message about the end of the tree is shown only beside the rows it was said for; and keeping the tree costs no request.",
+  "id": "FAM-68H10P",
+  "members": [
+    "INV-NSG0D4",
+    "INV-9ZKYWQ",
+    "INV-MWCCQM",
+    "INV-T1ZHP5",
+    "INV-BS5PFE",
+    "INV-CK3PTB",
+    "INV-QZC5AZ",
+    "INV-BMFR2T"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L39-walked-family-tree",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/review"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The walked family tree"
+}

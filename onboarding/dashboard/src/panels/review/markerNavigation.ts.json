@@ -1,6 +1,43 @@
 {
   "path": "dashboard/src/panels/review/markerNavigation.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+        "content": "sha256:3e38270051c480f867573ff94df63bce2a545217a016e4ee2fb1f4f104336441",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore"
+        }
+      },
+      "id": "RLZ-0N3G27",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The return from a followed marker selects the captured subject and family context with no options, so it starts the tree afresh and brings no kept family back.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cd0288dd34f9b6a7edf2a34ce42a87390dd6336c",
+        "content": "sha256:ed08b19995151ab81c016fbc65af12e630b097656ebe654cde43da6ffb3dc654",
+        "locator": {
+          "kind": "symbol",
+          "name": "openTarget"
+        }
+      },
+      "id": "RLZ-5VBQHW",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Following an intent marker selects the invariant with a family context and no options, so it starts the tree afresh.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The module's own statement: a tree position of the mounted workspace, selected the way the rail selects it.\n\nAnchor: \"selected the way the rail selects it\"",
@@ -88,12 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
             "content": "sha256:12c29394bf9144fcad060c75b0da85c518e704f7309ae20586709d3020563dd0",
             "locator": {
-              "end": 278,
+              "end": 314,
               "kind": "line_range",
-              "start": 278
+              "start": 314
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -106,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "288ae13b5dc22ee9a3d0688d132e774d4ae1cbda",
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
             "content": "sha256:0ac9f39ccff578f95be9dc0a82375b1654716c0407d22036343d174fb2b2e86b",
             "locator": {
               "end": 94,
@@ -116,6 +153,41 @@
             "path": "dashboard/src/panels/review/markerNavigation.test.ts"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A follow and its return select with two arguments only, so both start the walked tree afresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:b5ccd4686ca7936a5c603f4d77ee83ddfc072b3680e2ea480c26459ce5b6b878",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The options a selection would have to pass to keep the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionOptions"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
         }
       ]
     }

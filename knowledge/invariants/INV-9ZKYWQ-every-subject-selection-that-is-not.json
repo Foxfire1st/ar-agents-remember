@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without a rule for what drops kept families the tree grows with every subject the reader ever opened, or it shows rows of a comparison the surface has left beside rows of the new one. Making the outside selection the default means that an entry point written without knowledge of the tree cannot keep rows by accident. The rule is realized in the walk module, the surface, the navigation and the marker moves, and the start-afresh cases guard each entry point."
+  },
+  "applicability": "The family tree of the mounted intent reviewer and every way a subject is selected in it.",
+  "conditions": [
+    "The outside selections are: a row of the subject catalogue or of the list of all invariants, also when it names a subject the tree shows or the subject already selected; \"All source changes\"; the offer to open the task context after a refusal; an intent marker followed, and the return from it; and the subject the reviewer opens with, including the first family a late catalogue answer selects.",
+    "A selection is an outside selection unless its caller passes `keepTree`. Only the handlers of a tree row and of a kept family's continuation control pass it.",
+    "After an outside selection the tree shows only the families of the answer on screen until the selection's own answer replaces them.",
+    "Another comparison is recognised by the read cache's own test of the pair of code trees and of knowledge snapshots. When that drops kept rows, a polite status beside the tree says so.",
+    "While the tree holds a kept family, the catalogue lists a row for every family the tree shows, without badges. Choosing such a row starts the tree afresh with that family alone."
+  ],
+  "exclusions": [
+    "The search filter, the order control, a roster continuation of a family of the selected subject, a lane destination, a refresh of the subject catalogue, the page controls, opening a file, and a failed or refused read. They neither keep nor start afresh: the tree stays as it is.",
+    "What a refresh does to the scroll position of the rail. The invariant on the focus request states that rule."
+  ],
+  "id": "INV-9ZKYWQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rules 4, 9 and 10, and Failure And Recovery Behavior; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every subject selection that is not a selection of a row the family tree shows starts the walked tree afresh at the moment it is made, and so do a refresh of the review and an answer of another comparison: the kept families are dropped, and rows of two comparisons are never shown together.",
+  "status": "proposed",
+  "supersedes": []
+}

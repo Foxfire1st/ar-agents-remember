@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.INV-555EHWM8.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The served answer, whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11f237dd9c00a146ea9032fa8d698be32b53ffa1",
+            "content": "sha256:0245a689c8ece334a18786e46cde626b66bdb921cb48fe2191f2951c97689c61",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Its receipt row: route, parameters, status, hash and size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "902c0c0be258b087605bee85c2c82d10e8a5c7e8",
+            "content": "sha256:855db1029e01465b718f322e2713ce1f1114ad4a2edc622f64786f763840fb41",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "dashboard/src/panels/review/walkReal.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

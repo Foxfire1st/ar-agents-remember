@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A kept family's cursor was published for an earlier subject. Sent with the review on screen it is refused by the server, and skipped silently it hides the changes among the members not yet returned. The stop tells the reader that members are missing, and selecting the family is the one request the server answers. The rule is realized in the traversal, the walk module, the workspace and the surface, and cases on store-authored and on served bodies guard it."
+  },
+  "applicability": "A kept family of the walked tree whose roster the server returned in part.",
+  "conditions": [
+    "The stop is the same as for a family of the selected subject: focus moves to the control, a polite message names the family, and the next `j` moves on.",
+    "No selection and no key step loads a page of a kept family. Its breakdown counts the returned members only.",
+    "The control of a kept family selects the family as the subject and asks its review with the cursor as the page; the control of a family in the selected subject's context asks a page of the review on screen.",
+    "When two answers carry one family side, the tree keeps every member either returned and the position of the read that walked further, so the control holds the furthest cursor."
+  ],
+  "exclusions": [
+    "Continuing a kept family in place, without selecting it. The server continues a roster only for a subject whose context holds the family.",
+    "`k`: continuation controls are not backward stops."
+  ],
+  "id": "INV-MWCCQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rule 8; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`j` past the last returned member of a kept family whose members are not all returned stops at that family's continuation control, says so and issues no request; using the control selects that family, keeps the tree and continues its roster from the furthest cursor the tree holds for it.",
+  "status": "proposed",
+  "supersedes": []
+}

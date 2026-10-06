@@ -1,0 +1,572 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
+        "locator": {
+          "kind": "symbol",
+          "name": "atClick"
+        }
+      },
+      "facet": "A refresh asked before the effects of the previous answer have run scrolls nothing at the click and brings the selected row into view once its own answer is shown.",
+      "id": "PRF-2CF5YF",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:6c54104d56b8c46d98ae10197f512876b268b707a9fa0ecc8b71fa603499a0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "retry"
+        }
+      },
+      "facet": "After a refresh whose read failed, the retry is the refresh again: nothing scrolls at the click, the selected row is brought into view when the answer is shown, one review is read, and the tree is the selected subject's own.",
+      "id": "PRF-581Q8Y",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:5892fb80a23eb29d9d356982d6793f35b69281b7a3542444f19f1c9a9e3b378a",
+        "locator": {
+          "kind": "symbol",
+          "name": "offer"
+        }
+      },
+      "facet": "The offer to open the task context after a refusal drops the kept family at the click, and the tree holds no family once the task context is shown.",
+      "id": "PRF-914WVC",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
+        "locator": {
+          "kind": "symbol",
+          "name": "bare"
+        }
+      },
+      "facet": "When the answer of an in-tree selection composes no family context, both families stay, both tagged as kept, the state is stated above them for the selected subject, and the requested row keeps the mark.",
+      "id": "PRF-CNYVD3",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:19711165baf68f525bf6de693f7ad2c025d344d72bc1a2e4ad2a7d966ff419d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "other"
+        }
+      },
+      "facet": "An in-tree selection that is answered by another comparison starts the tree afresh with that answer's family alone, and a notice beside the tree says that the comparison changed.",
+      "id": "PRF-CYYXDH",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:ecf0ddf2b4f662e41c6e25694d0e91074aac979713a53f51d25d5d4e4e449921",
+        "locator": {
+          "kind": "symbol",
+          "name": "all"
+        }
+      },
+      "facet": "A row of the list of all invariants drops the kept family at the click, before the answer: the tree is then the family of the answer on screen alone, and after the answer the chosen subject's.",
+      "id": "PRF-E6WSQM",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:4d472fdad43aa409bf3fea7d10d63d5e5c32d9451a497db23a91a8a33719e229",
+        "locator": {
+          "kind": "symbol",
+          "name": "mark"
+        }
+      },
+      "facet": "A followed intent marker shows the family of the marker's subject without the kept one, and the return restores the earlier subject without bringing a kept family back.",
+      "id": "PRF-P372CY",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:ba9bff7f15ac08d1879ae9700e5079031561ba3cb9bc8f0010aae1f6b16707e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "initial"
+        }
+      },
+      "facet": "The order control, a refresh of the subject catalogue, opening a file and a lane destination leave the families and the kept tags as they are and read no review.",
+      "id": "PRF-RX5N2X",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:8704e60bf72cc159b310bdf55dbc6d27173df6e79824ab2e35eb4ce9323766ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "stubbed"
+        }
+      },
+      "facet": "The reviewer opens on the task context, and the first family that a late catalogue answer selects is shown alone, with no kept family.",
+      "id": "PRF-V5BWKQ",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "content": "sha256:88c96c49cbe43851c2fd267eb581dc5ec9b87f784316c877c81e293ec05a1656",
+        "locator": {
+          "end": 421,
+          "kind": "line_range",
+          "start": 350
+        }
+      },
+      "id": "RLZ-TRH263",
+      "invariant": "INV-QZC5AZ",
+      "origin": {
+        "handoffEntry": "OR-R033-D1",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The three mounted cases pin the reveal to the stacked layout and to in-tree selections, and pin the moved-focus exception.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "18": {
+      "note": "The kept state every case starts from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:c49012eb39a946361f4da49be14645c6e7d00804927010d501a9c64e2b049969",
+            "locator": {
+              "kind": "symbol",
+              "name": "keptState"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Afresh at a row of the list of all invariants, at the moment of the selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:fea725858546e592d7d7a1e7b367dc9c6725da78a7b2c4a80b1e9b7ddde29284",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Afresh at the catalogue row of the subject already selected, with focus on the selected row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:fc45d4b50956bc6d3915c0457dbb3933e0ecafacd9c202562abe077b88fa23ff",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Afresh at \"All source changes\".",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:52eb1487d074863fa02755fe8ce1ce05c74616df0c1279a2df06b8e56a6035be",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Afresh at a refresh of the review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:79512bd79355ef9acd83256a08a0fa89da5823c3001bb2429980ed1e1cc90130",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Afresh at an answer of another comparison, with the notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:47711e6273b893630d4bb0acdf2175566717155ade342f421fa62a21141c71db",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A refused read keeps every row and the mark; `k` works from it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:0be92e3cf36f7d8e9835d1c845c6189103fa08c3fab11e48b10052ae7c153cd6",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Afresh at the offer to open the task context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:9efcc15b39904199192b70d5a5f6b1af9ed0376bda42a9987fd398413bdf0cdf",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "A failed read keeps every row; the retry's answer leaves the tree whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:a7cf631c66b5879e6c742f078f20b01b3aa3ad0b0feb09335a406e5e4cbed433",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 172
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Afresh at a followed intent marker; its return brings no kept family back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:e4106cfcd8fcf95b3061cfde0a665b30f5254c37ad9fa128fd4cfeaaa2260fa0",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The opening subject and a late catalogue show their own families only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:5c105f36d9d866750af85fae4305c53de1e8ecf5a2452aa32de62e14c6eb9416",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 238
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "An answer without family context keeps the families and states the subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:7c25213d6e2b33fbde8503549404cfedc65f2fb6ce0d1b817801dc3dfe66d916",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The order control, a catalogue refresh, opening a file and a lane destination keep the tree and read nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:0fbdcb4106462d9deec811896d6850f929a00898ec2b950b53d72d52628afdc7",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "A refresh brings the selected row into view once its answer is shown, without moving focus.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:657cb89b91422d39cc7e9959c2f34561d55a471d421b3eb621cc0e0004206701",
+            "locator": {
+              "end": 434,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "Forced order: a refresh asked before the previous answer's effects have run waits for its own answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:64b3ae56164cdbb404c3253d7bc1024a04133f18ca8c594b311c27ad55885305",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A refresh whose read fails leaves no scroll request behind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:42bbd6a536fe976afc315db3313452443d09d596f4158c6955af686e65899bca",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 471
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The retry of a failed refresh is the refresh again: the row is brought into view when it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:aa71c81d56bd85a9f679781b123f47826733fa68227f94f6262842ad92658ef1",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 494
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "A refresh asked in the turn that shows a failed read keeps its request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:8e14aff4b7e3aab3133f5001af334c9d319f3f48de786e96b075805f3730b411",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 543
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "A retry made in the turn that shows the failed refresh is the refresh again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:82ac78be7681cc5fa79756b025639ac32356581696d26391352071bcd6ba01d6",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 556
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The refresh and retry handlers these cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The selection that decides keeping or starting afresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "subjectSelection"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "An in-tree read reveals the reading area only in the stacked layout, by click and by key; an outside selection scrolls nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:4c1bf9295d9c005fd30f2552d67af42e35819d2b45690a4ffeb7eb0daed86b96",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 350
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "A stacked in-tree answer does not reveal after the reader moved focus while it was pending.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "content": "sha256:4f3fbe74b68edb5ad2bbdd8585803299d07579acaae98d9d3c51611bd41ec1a8",
+            "locator": {
+              "end": 421,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

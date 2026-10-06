@@ -1,16 +1,239 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+        "content": "sha256:ea269e8db3327392747ef193461b4298bcea39a4795fe4845132c3688657f7ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "pressedAgain"
+        }
+      },
+      "facet": "A `j` pressed in the turn that shows the previous answer lands focus on the newly selected row, so the next `j` steps on from it to the following change.",
+      "id": "PRF-8296K7",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+        "content": "sha256:c6bf841289235e0836074cf621de34f88129fdddf61317fb8a828e2d00265f26",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariantLabel"
+        }
+      },
+      "facet": "After a family, then an invariant, then the first family again by its row, the other families of the invariant's review are still in the tree, each tagged as kept and last read for the invariant, and the selected family carries no tag.",
+      "id": "PRF-AAQWVQ",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+        "content": "sha256:11a4d36f79e91beeeb71664962b2017e8c85204267fc882725ab3ac7a500a8ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "selected"
+        }
+      },
+      "facet": "A family chosen in the turn that shows the previous answer, before that answer's effects have run, gets focus on its own row and not on the page body.",
+      "id": "PRF-QZA2TP",
+      "invariant": "INV-T1ZHP5",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of what it pins and why its replies are held.\n\nAnchor: \"The first two cases answer immediately\"; `ReviewSurface`",
+    "10": {
+      "note": "Mounted shell, subject-labelled pending area, zero-request return, and the families of the invariant's review kept and tagged after the first family is selected again.",
       "targets": [
         {
           "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:996d6152e6e48593adf3ef7283a4b76241d339e78c9d99ae43a471b875456b62",
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:dfb502377b7759c53e1bfe92eb54ecc30b17345319b3d9c0b7d5d9b23a9536c6",
             "locator": {
-              "end": 23,
+              "end": 445,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Latest selection wins; a superseded answer is not kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:68fe3ca015bcb743b9ce22614fccb16d6d97dee84b60853a56c2c5ef1a2d781f",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Late catalogue with and without reader engagement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:86fc4c29021af0ab94e583322c53b1f2236a18bb144470b03446d47f0503c465",
+            "locator": {
+              "end": 546,
+              "kind": "line_range",
+              "start": 495
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The released task-context answer is kept and reused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:a73bcfbbec685800871a45258fac07cc79b35293900c90a761f64e831befacea",
+            "locator": {
+              "end": 578,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Failed or refused selection stated in the reading area for the requested subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:c6281660c215a116277160112ee07276b37e525abfd324dff1f6f5299912d293",
+            "locator": {
+              "end": 668,
+              "kind": "line_range",
+              "start": 590
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Focus the reader moved while pending is kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:016acf3007bcd55517c447c74f8c8546ef014de60572eea586724d6e7561c283",
+            "locator": {
+              "end": 698,
+              "kind": "line_range",
+              "start": 670
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Forced order by pointer: focus lands on the family chosen before the previous answer's effects have run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:3b9376200d20e53d763b06048e7c2ef94522366e04bd3cf0456b53b4d9445cb1",
+            "locator": {
+              "end": 731,
+              "kind": "line_range",
+              "start": 703
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Forced order by key: every `j` pressed in that turn is kept and focus lands on each selected row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:f31b1d12667870b13899f50382bb27cb1756f93df79a3ee42e5117bed5a47b74",
+            "locator": {
+              "end": 779,
+              "kind": "line_range",
+              "start": 733
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The guard the forced-order cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:1bba0e66f72a21b8fd9796a272ffbb1dea4948a9c8f69433bf70b5268c6a7bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The real-data world the key case is served from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:487b8bef45e18975dcef63d04e3a65e26ec7f3e975f50ad067073f1aa09a916d",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveWorld"
+            },
+            "path": "dashboard/src/panels/review/walk.test-utils.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The module's own statement of what it pins, why its replies are held, and what the two forced-order cases force.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:54441ba0a852635769b383f5fd08dbf4b35afe40d37abbcb471571294f6ab331",
+            "locator": {
+              "end": 17,
               "kind": "line_range",
               "start": 1
             }
@@ -19,101 +242,16 @@
         }
       ]
     },
-    "2": {
-      "note": "The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted.\n\nAnchor: `heldFor`; `answer`",
+    "9": {
+      "note": "The held-reply server: every review reply can be answered, refused or lost; catalogue and content reads are counted.",
       "targets": [
         {
           "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
             "content": "sha256:6057f709786225700c886ba5419109a30ec80220bddea0d44af20a042b41695c",
             "locator": {
               "kind": "symbol",
               "name": "delayedServer"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Mounted shell, subject-labelled pending area and zero-request return.\n\nAnchor: \"keeps the reviewer mounted across family → invariant → family, pending only in the reading area, and reuses what it read\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:92937e5c37a06fb02c236c91a1bd6e36dd4e4ad307604bc48f4e1e538fbe3b2e",
-            "locator": {
-              "end": 410,
-              "kind": "line_range",
-              "start": 316
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Latest selection wins; a superseded answer is not kept.\n\nAnchor: \"settles on the latest of rapid selections and never shows a superseded answer\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:68fe3ca015bcb743b9ce22614fccb16d6d97dee84b60853a56c2c5ef1a2d781f",
-            "locator": {
-              "end": 458,
-              "kind": "line_range",
-              "start": 412
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Late catalogue with and without reader engagement.\n\nAnchor: \"does not move a reader who is working when the catalogue answers after the bounded wait\"; \"lands a reader who has not acted on the first family when the catalogue answers late, without remounting\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:86fc4c29021af0ab94e583322c53b1f2236a18bb144470b03446d47f0503c465",
-            "locator": {
-              "end": 511,
-              "kind": "line_range",
-              "start": 460
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Failed or refused selection stated in the reading area for the requested subject.\n\nAnchor: \"keeps the workspace and navigation when a newly selected subject is %s, stating it for that subject\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:c6281660c215a116277160112ee07276b37e525abfd324dff1f6f5299912d293",
-            "locator": {
-              "end": 633,
-              "kind": "line_range",
-              "start": 555
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Focus the reader moved while pending is kept.\n\nAnchor: \"leaves focus where the reader moved it while the selected subject was pending\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e632fbf78c3d75b495a20b4f3a1349dd8d9e5827",
-            "content": "sha256:016acf3007bcd55517c447c74f8c8546ef014de60572eea586724d6e7561c283",
-            "locator": {
-              "end": 663,
-              "kind": "line_range",
-              "start": 635
             }
           },
           "kind": "test"

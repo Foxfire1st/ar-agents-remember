@@ -4,102 +4,112 @@
 | ---------------------- | ------------------------------------------------ |
 | sourceRoute            | `dashboard/src/panels/`                          |
 
-## 260928-MIK-L33 Change-Kind Badges, Triage Order And `j`/`k` In The Family Tree Of A Tree Comparison
+## The Intent Reviewer (`review/`)
 
-**Route meaning extended (MIK-R33, adopting ICR-R32@v1 with the storage substitutions).** In the review workspace's
-family tree, on a tree comparison, every family occurrence and member occurrence shows what kind of recorded change
-brings it into review (`intent`, `implementation`, `membership`, `unknown` or `unchanged`, with secondary marks);
-the tree lists the most review-relevant changes first without hiding unchanged siblings, and `j`/`k` (and visible
-controls) move between the changes. Every fact is the server's, delivered with the roster
-(`application/review_change_kinds.py`); this route orders, counts and traverses by them and never recomputes one. A
-dataset review renders exactly the landed tree (no badges, breakdown or controls; landed order; `j`/`k` inert). The
-new modules under `review/`, governed here like L31's, L32's, L34's and L35's (no `panels/review/` overview):
-- [`review/changeTriage.ts`](review/changeTriage.ts.md): the pure rules (weights, labels and meanings; a family's
-  counts, returned, total, `partial` and `scoped` state and weight; the breakdown text; family and member order; the
-  union of two deliveries across a roster walk).
-- [`review/ChangeBadges.tsx`](review/ChangeBadges.tsx.md): the member badge and marks, the labelled reason lines
-  ("change kind unknown", "membership unknown", "guarantee unknown"), the family's guarantee badge, the breakdown, and
-  the sticky triage bar with the order control, previous/next and the polite status.
-- [`review/changeTraversal.ts`](review/changeTraversal.ts.md): the stops in displayed order, the partial family's
-  continuation stop, the ends, and the keymap owner's `j`/`k` bound on the reviewer's zone.
-- [`review/triageOrderPreference.ts`](review/triageOrderPreference.ts.md): the browser-local order preference
-  (`review.tree-order.v1`; triage when storage is unavailable).
-- Tests (36 cases): [`review/changeTriage.test.ts`](review/changeTriage.test.ts.md) (12),
-  [`review/FamilyTree.triage.test.tsx`](review/FamilyTree.triage.test.tsx.md) (18),
-  [`review/FamilyTree.triageReal.test.tsx`](review/FamilyTree.triageReal.test.tsx.md) (3, real data),
-  [`review/ReviewSurface.triage.test.tsx`](review/ReviewSurface.triage.test.tsx.md) (1) and
-  [`review/ReviewSurface.triageMarkers.test.tsx`](review/ReviewSurface.triageMarkers.test.tsx.md) (2, the merge with
-  MIK-L34 on real data); `session-cockpit/sessions-view/shell.test.tsx`'s `?` case is extended (the session-cockpit
-  overview's MIK-L33 section).
-- Fixtures, each set with its receipt: [`review/triage.capture-provenance.json`](review/triage.capture-provenance.json.md)
-  (the store-authored world of `mcp/tests/test_review_change_kinds.py`: [entries](review/triage.entries.captured.json.md),
-  [family](review/triage.family.captured.json.md), [familyPage](review/triage.familyPage.captured.json.md),
-  [familyContinued](review/triage.familyContinued.captured.json.md), [shared](review/triage.shared.captured.json.md),
-  [memberA](review/triage.memberA.captured.json.md), [memberH](review/triage.memberH.captured.json.md)),
-  [`review/triageReal.capture-provenance.json`](review/triageReal.capture-provenance.json.md) (the worker's real
-  scratch: [family](review/triageReal.family.captured.json.md), [shared](review/triageReal.shared.captured.json.md))
-  and [`review/triageMarker.capture-provenance.json`](review/triageMarker.capture-provenance.json.md) (comparison 3's
-  [cards](review/triageMarker.cards.captured.json.md)). MIK-L34's `markerReturn.*` and `markerUnknown.*` bodies were
-  re-captured in the merge round and now carry `change_kinds` (their cards say so). All 22 sha256 values and byte
-  counts match their receipts (checked by this curation).
+`review/` is the child route of the intent reviewer. The cockpit mounts its entry component, `ReviewSurface`, full-bleed when a change-set target carries a review. The target names the repository, the master and the leaf, optionally a subject (a family or an invariant), and optionally the recorded history view of a closed leaf. The files of this child route have their cards under `review/`; there is no `review/` overview, and this section is their route text. The unexplained-changes lane, the per-hunk intent markers, the word-level intent diff and the focused expression cards have their own sections below.
 
-**Hooks in the landed renderers.** [`review/FamilyTree.tsx`](review/FamilyTree.tsx.md): the orders, the badges and
-breakdown, the traversal's data attributes, the triage bar, and the member row's one statement per fact (the change
-badge or MIK-L34's note; the name the subject only, the facts described). [`review/familyWalkMerge.ts`](review/familyWalkMerge.ts.md)
-unions the facts of an admitted roster continuation. [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md):
-the family centre's member list follows the tree's order. [`review/ReviewSurface.tsx`](review/ReviewSurface.tsx.md):
-the root is the keymap owner's `review` zone. [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md): the
-stacked layout's one sticky offset while a marker's way back is open. [`review/MarkerTargetState.tsx`](review/MarkerTargetState.tsx.md):
-`useMemberTarget` shared with the badge, and the note's `id`. The data mirror (`data/reviewFamily.ts`) and the keymap
-(`data/keymap/`) have their own MIK-L33 sections.
+### One owner each
 
-**Rulings** (`33_review-triage-order-and-change-kind-badges.json`). 2026-09-30T15:11:20: start; the `implementation`
-fact (b) comes from L32's per-file classification, with no second hunk classifier; built beside L34. 16:22:22 (worker
-items 1–11): accepted as built 1 (tree comparisons only), 2 (catalogue rail rows carry no badges), 3 (a family row's
-badge is its guarantee fact; its weight includes its members), 4 (pre-curation unknowns follow MIK-R32's exact-blob
-rule), 6a (retired counts as removed), 6c (the impl mark beside an intent), 7 (authored order is the record's
-`members` list), 8 (unreturned means returned < total), 10 and 11; changed: 5 (one revision with changed text is
-`intent`, noted "same revision; text differs", never `unchanged`), 6b (a `file` entry on a changed non-text file
-establishes `implementation`), 4 and 9 (every unknown shows its reason; the end status is visible beside the selection
-in a sticky bar). 17:47:43 (review R1, changes-required): F1 only the writer's mechanical carry is exempt from
-re-anchoring; F2 a breakdown with no total says "(total unknown)" and weighs at least unknown; F3 tests for the eight
-surviving mutations; F4 the unresolved-range unknown mark is unconditional; notes: one statement per fact, the centre
-follows the tree, the total unknown only for the family's own records, reuse L32's lane helper; the landing order (L34
-first) and the merge plan. 18:57:45 (review R2): "re-anchored (stale at base)", the N5/N6 cases, reasons from entries
-that established nothing first. 21:41:02: the merge round accepted; a `j` move at 390 px reveals the centre through the
-existing `revealCenter`, as a tap does (kept). 21:55:02 (review R3): R3-1 fixed (a member row's name is its subject,
-its facts only in its description); R3-2 accepted as notes (two lines for two unknown facts with one cause; the bar
-sliding under Back for one step); R3-3 routed to this curation. **Resolved:** MIK-L34's merge Todos on
-`review/FamilyTree.tsx` and `review/MarkerTargetState.tsx` (the 17:39:21 merge order), as built.
+| Module | What it owns |
+| --- | --- |
+| [`ReviewSurface.tsx`](review/ReviewSurface.tsx.md) | The composition: which payload the workspace is mounted over, what every subject selection does, the refresh and retry handlers, the page controls, and the root (the reviewer's keyboard zone and its own vertical scrollport). |
+| [`ReviewNavigation.tsx`](review/ReviewNavigation.tsx.md) | The reviewer's own read of the subject catalogue, the selected subject, the bounded hold of the first read, and the catalogue rail in which the family tree stands. |
+| [`ReviewReadCycle.ts`](review/ReviewReadCycle.ts.md) | The read: one read per question, the newest read wins, a refresh replaces and does not patch, and an answer is bound to the question it answers. It also keeps `frame`, the task context's last admitted payload. |
+| [`familyWalkMerge.ts`](review/familyWalkMerge.ts.md) | What an admitted roster continuation looks like once it is merged into the family context on screen. |
+| [`ReviewReadCache.ts`](review/ReviewReadCache.ts.md) | What was already read for the comparison on screen: whole-subject reviews (24) and file contents (32), least recently used first out, emptied by an answer of another comparison generation. |
+| [`ReviewOutcome.tsx`](review/ReviewOutcome.tsx.md) | The outcomes that are not a payload: loading, known-empty, and the one refusal and failure block. Only a network failure offers a retry. |
+| [`ReviewRefresh.tsx`](review/ReviewRefresh.tsx.md) | The reader's refresh control and the notice that answers it. |
+| [`ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md), [`ReviewScopeHeader.tsx`](review/ReviewScopeHeader.tsx.md) | The layout (scope header, rail, reading area) and the transient inspection state held above the reads. |
+| [`walkedTree.ts`](review/walkedTree.ts.md) | The walked tree: the families the family tree shows across selections. |
+| [`FamilyTree.tsx`](review/FamilyTree.tsx.md) | The family tree: each family with its joint guarantee and the full statements of its members, unchanged siblings included. |
+| [`changeTriage.ts`](review/changeTriage.ts.md), [`ChangeBadges.tsx`](review/ChangeBadges.tsx.md), [`changeTraversal.ts`](review/changeTraversal.ts.md), [`triageOrderPreference.ts`](review/triageOrderPreference.ts.md) | Change kinds in the tree: order, counts and labels; badges, breakdown and the triage bar; the `j`/`k` traversal; the order preference. |
+| [`FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md), [`SubjectReview.tsx`](review/SubjectReview.tsx.md) | The central reading path: the family guarantee, the carried member context, the selected intent, the linked expressions and the evidence, with statements and evidence of the server-selected subject. |
+| [`SourceExplorer.tsx`](review/SourceExplorer.tsx.md), [`SourceContent.tsx`](review/SourceContent.tsx.md) | The complete list of changed files, independent of the selection, and what one listed file opens into: its content at the two bound code trees. |
+| [`ReviewRecordPanes.tsx`](review/ReviewRecordPanes.tsx.md), [`KnowledgeStatements.tsx`](review/KnowledgeStatements.tsx.md) | The record panes behind the "Technical details" disclosure: the knowledge, source, evidence and submission records of one admitted payload, and the statement area that draws each side by its declared state. |
 
-**Candidate invariants (not ingested; no speculative ingestion):**
-1. Change-kind facts are computed on the server, for returned members only, from recorded comparison facts; the hunk
-   intersection comes only from MIK-L32's classification, and the client never recomputes it (realized by
-   `with_change_kinds` and the entry validator; the client reads `primary`/`marks` and only counts and orders; proved
-   by the server tests, the lane reconciliation 2 of 2, and the mutation sets; recorded on
-   `application/review_change_kinds.py.md`).
-2. Unreadable or partial knowledge produces `unknown` with a stated reason, never `unchanged` or a complete-looking
-   total (realized on the server by `_unread`, `_record`, `_entries`, `_unresolved` and a `None` total, and here by
-   `occurrenceKind`'s undescribed member and `familyTriage`'s `scoped` "(total unknown)"; proved by the server's
-   failure cases, `changeTriage.test.ts` and `FamilyTree.triage.test.tsx`'s SYNTHETIC cases; recorded on
-   `application/review_change_kinds.py.md`).
-3. Changed intent text is never `unchanged`, even at the same revision (realized by `_intent`'s byte comparison and the
-   `text_differs` note; proved by INV-PPPPPP on the server and in the tree, and INV-2E8MG43K on real data; recorded on
-   `application/review_change_kinds.py.md`).
-4. Triage order never hides unchanged siblings, and traversal never forces unreturned pages to load (realized by
-   `orderFamilies`/`orderMemberRows` and `changeTraversal`'s continuation stop; recorded on `review/changeTriage.ts.md`).
-5. Each fact is stated once per node, both visually and to assistive technology (realized by `MemberChangeBadge`, the
-   replaced side-tag and guarantee labels, and `aria-labelledby`/`aria-describedby`; proved by the tree and surface
-   cases, the merge and R3 mutations and the CDP reads at 390 px; recorded on `review/ChangeBadges.tsx.md`).
+### The reviewer stays mounted across subject selection
 
-**Inert before MIK-R37:** only a converted leaf's tree comparison carries `change_kinds`; the worker's preservation
-rerun found 29 of 29 unconverted reads identical to base once the null `change_kinds` is dropped (the served body
-omits it).
+A read is shown only under the question it answers, and a selection changes only the reading area.
 
-- The rules over the delivered facts; nothing decides a fact. [1]
-- The member badge and the tagged membership line; the sticky controls. [2]
-- Stops in displayed order and the keymap binding on the reviewer's zone. [3]
-- The tree's hooks: facts order the tree and drive the traversal. [4]
+- `ReviewSurface` mounts the workspace over the answer for the subject on screen. While that subject is pending, failed or refused it mounts the workspace over the frame, with a reading status keyed to the requested question and labelled with the requested subject; a failure or refusal carries the owner's problem block. Record panes render only for an answer. Only the first read, which has no frame, is stated at the surface level.
+- `ReviewWorkspace` keeps one reading-area column and swaps only its content.
+- A subject already read for the comparison on screen is shown again from the read cache without a request, and a refresh always asks again.
+- After the bounded wait for the catalogue, a reader gesture makes the subject on screen the reader's own, so a catalogue that answers late only fills the navigation; a reader who has not acted is moved to the first family without a remount.
+- Rapid selections settle on the latest; the answer of a superseded subject selection is neither shown nor kept.
+
+### The family tree: change kinds, triage order and `j`/`k`
+
+On a tree comparison every family and every member occurrence shows what kind of recorded change brings it into review: `intent`, `implementation`, `membership`, `unknown` or `unchanged`, with secondary marks. Every fact is the server's, delivered with the roster as `change_kinds`; this route orders, counts and traverses by the facts and decides none.
+
+- The tree lists families and member rows in triage order (by weight: intent, implementation, membership, unknown, unchanged) or in authored order. The choice is a browser-local preference (`review.tree-order.v1`), with triage order as the default. Neither order hides an unchanged sibling.
+- `j` and `k` are the keymap owner's `review.nextChange` and `review.previousChange` chords. They are bound on the reviewer's zone (the surface root), so they act only while focus is inside the reviewer and are inert in text fields. A step focuses the next stop and clicks it, so a key step, the visible previous and next controls and a click on the row are one selection.
+- The stops are the tree's rendered nodes whose primary kind is not `unchanged`, in displayed order. Past the last returned member of a family with unreturned members, `j` stops at that family's continuation control and loads nothing.
+- At either end the selection stays and a polite message says so. The message belongs to the rows the tree showed when it was said: it is no longer shown once the tree has shown other rows, and it does not come back when the same rows are shown again.
+- A dataset review carries no change facts: its tree has no badge, breakdown or triage bar, is listed in authored order, and binds no `j`/`k`.
+
+### The walked tree
+
+The server composes a family context per selected subject: one family for a family subject, every containing family for an invariant subject. The family tree shows the walked tree: the family contexts of the answers read so far, folded into one list.
+
+- **A selection of a row the tree shows adds rows and removes none.** This holds for `j`/`k`, for the visible previous-change and next-change controls, for a pointer on a family row or a member row, for a member opened from the reading area's member list, and for the continuation control of a kept family.
+- **A kept family** is a family the tree shows that is not in the selected subject's own context. It is drawn whole, tagged "kept · last read for …" with the subject it was last read for (visibly and as the family row's accessible description), and counted apart in the tree's scope line. "Family context details" and the reading area describe the selected subject's own answer only.
+- **Every other selection starts the tree afresh** at the moment it is made: a row of the subject catalogue or of the list of all invariants (also one that names a subject the tree shows or the subject already selected), "All source changes", the offer to open the task context after a refusal, a followed intent marker and the return from it, and the subject the reviewer opens with. A refresh of the review and an answer of another comparison start it afresh as well. Rows of two comparisons are never shown together, and a polite status beside the tree says when kept rows were dropped for that reason.
+- **These neither remove a row nor start the tree afresh:** the search filter (which hides and restores kept families like the others), the order control, a roster continuation of a family of the selected subject, a lane destination, a refresh of the subject catalogue, the page controls, opening a file, a failed or refused read, and the retry of a failed selection.
+- **Back to one family.** While the tree holds a kept family, the catalogue lists a row for every family the tree shows, without badges; choosing one starts the tree afresh with that family alone.
+- **One displayed order.** The walk lists its families by family identifier, and the tree orders them by weight and then by that order (in authored order, by identifier alone), so the order in which answers arrive plays no part.
+- **Kept families with unreturned members.** Using the continuation control of such a family selects that family, keeps the tree, and continues its roster from the furthest cursor the tree holds.
+- **No added state and no added read.** The walk is derived from answers already read, inside the mounted reviewer. A selection issues one review read for a subject not yet read and none for one the read cache holds; nothing is read for a kept family.
+
+### Focus, refresh and retry
+
+- A selection leaves a focus request that records the number of the tree intent current when it was made. Only a render made after the selection answers the request, so an effect of an earlier render that runs late cannot spend it. Focus then lands on the selected tree node, unless the reader has moved focus elsewhere in the meantime.
+- On the stacked layout (60rem and narrower) an in-tree selection reveals the start of its reading area: the answer when it arrives, and the failed or refused status once the read ends unavailable. A status reveal moves no focus and leaves the selection's focus request for a retry. Every other selection and every wider layout keeps its previous scroll behavior.
+- A refresh starts the walked tree afresh and leaves a request that only brings the selected row into view, once an answer that arrived after the refresh is shown. The request is dropped when the refresh's own read fails or is refused.
+- The retry of a failed refresh is the refresh again and asks for the same scroll. The retry of any other failed read only reads again.
+
+### Pages, history view and record panes
+
+- The page controls offer the walkable collections and "whole review". A next page is offered only for a cursor the payload published, and a refused page is shown with its refusal and a first page of the requested collection.
+- The history view is part of the question: a closed leaf's entry asks for the leaf's recorded comparison, the header states "Historical task comparison", and the root publishes `data-review-history`.
+- The record panes are pure display of one payload's record fields. They are handed a payload only when it answers the subject on screen; while another subject is pending or unavailable the disclosure stays mounted and says that the records are being read.
+
+### Tests and fixtures
+
+All mounted cases mount the real `ReviewSurface` and stub only `fetch`.
+
+- Between a selection and its answer: [`review/ReviewSurface.navigation.test.tsx`](review/ReviewSurface.navigation.test.tsx.md) (the mounted shell, the pending and problem states, reuse, the latest selection, a late catalogue, and the order in which a focus request is answered). The family composition: [`review/ReviewWorkspace.family.test.tsx`](review/ReviewWorkspace.family.test.tsx.md). The cache's own rules: [`review/ReviewReadCache.test.ts`](review/ReviewReadCache.test.ts.md).
+- Change kinds and traversal: [`review/changeTriage.test.ts`](review/changeTriage.test.ts.md), [`review/FamilyTree.triage.test.tsx`](review/FamilyTree.triage.test.tsx.md), [`review/FamilyTree.triageReal.test.tsx`](review/FamilyTree.triageReal.test.tsx.md), [`review/ReviewSurface.triage.test.tsx`](review/ReviewSurface.triage.test.tsx.md), [`review/ReviewSurface.triageMarkers.test.tsx`](review/ReviewSurface.triageMarkers.test.tsx.md) and [`review/changeTraversal.test.tsx`](review/changeTraversal.test.tsx.md) (the traversal status on the hook alone).
+- The walked tree: [`review/walkedTree.test.ts`](review/walkedTree.test.ts.md) (7 unit cases over served bodies), [`review/ReviewSurface.walk.test.tsx`](review/ReviewSurface.walk.test.tsx.md) (10 cases: by key, by click, the tag and counts, the catalogue rows, the filter, and the end message), [`review/ReviewSurface.walkFresh.test.tsx`](review/ReviewSurface.walkFresh.test.tsx.md) (21 cases: which selections keep and which start afresh, the stacked reveal of an in-tree read, and the scroll after a refresh and after its retry), [`review/ReviewSurface.walkStore.test.tsx`](review/ReviewSurface.walkStore.test.tsx.md) (3 cases on the store-authored comparison, including a deliberate failed read), [`review/ReviewSurface.walkPartial.test.tsx`](review/ReviewSurface.walkPartial.test.tsx.md) (2 cases on a real partial answer), [`review/ReviewSurface.walkUnavailable.test.tsx`](review/ReviewSurface.walkUnavailable.test.tsx.md) (10 cases: the failed and refused status reveal on the stacked layout, by click and by key, and the moved-focus guard) and their shared kit [`review/walk.test-utils.tsx`](review/walk.test-utils.tsx.md). [`review/markerNavigation.test.ts`](review/markerNavigation.test.ts.md) pins that a marker's follow and return pass no selection options.
+- Fixtures are captured answers, each set with a receipt, and every body has its own card:
+  - [`review/triage.capture-provenance.json`](review/triage.capture-provenance.json.md), [`review/triageReal.capture-provenance.json`](review/triageReal.capture-provenance.json.md) and [`review/triageMarker.capture-provenance.json`](review/triageMarker.capture-provenance.json.md) for the change-kind tests;
+  - [`review/walkReal.capture-provenance.json`](review/walkReal.capture-provenance.json.md): 16 real served bodies of the scratch leaf 260928-MIK-L33. They are the catalogue ([entries](review/walkReal.entries.captured.json.md)), the task context ([task](review/walkReal.task.captured.json.md)), the two family reviews ([FAM-R6R095RW](review/walkReal.FAM-R6R095RW.captured.json.md), [FAM-2HBJREC2](review/walkReal.FAM-2HBJREC2.captured.json.md)), the seven changed members ([INV-2E8MG43K](review/walkReal.INV-2E8MG43K.captured.json.md), [INV-ZS9ZS878](review/walkReal.INV-ZS9ZS878.captured.json.md), [INV-555EHWM8](review/walkReal.INV-555EHWM8.captured.json.md), [INV-BR5MTSTY](review/walkReal.INV-BR5MTSTY.captured.json.md), [INV-H8EM1VJR](review/walkReal.INV-H8EM1VJR.captured.json.md), [INV-VPX81HXV](review/walkReal.INV-VPX81HXV.captured.json.md), [INV-2TQGXFAX](review/walkReal.INV-2TQGXFAX.captured.json.md)), the tree routes ([lane](review/walkReal.lane.captured.json.md), [file](review/walkReal.file.captured.json.md), [source](review/walkReal.source.captured.json.md)) and the partial pair ([INV-2TQGXFAX-page2](review/walkReal.INV-2TQGXFAX-page2.captured.json.md), [FAM-R6R095RW-continued](review/walkReal.FAM-R6R095RW-continued.captured.json.md));
+  - [`review/walkStore.capture-provenance.json`](review/walkStore.capture-provenance.json.md): 7 served bodies of the store-authored world of `mcp/tests/test_review_change_kinds.py`. They are [entries](review/walkStore.entries.captured.json.md), [shared](review/walkStore.shared.captured.json.md), [sharedPage](review/walkStore.sharedPage.captured.json.md), [FAM-F00001](review/walkStore.FAM-F00001.captured.json.md), [FAM-F00002](review/walkStore.FAM-F00002.captured.json.md), [FAM-F00001Continued](review/walkStore.FAM-F00001Continued.captured.json.md) and [INV-PPPPPP](review/walkStore.INV-PPPPPP.captured.json.md);
+  - [`review/walkUnavailable.capture-provenance.json`](review/walkUnavailable.capture-provenance.json.md): the one genuine refused body [`walkUnavailable.refused.captured.json`](review/walkUnavailable.refused.captured.json.md) that the status-reveal cases replay.
+
+- The cockpit mounts the reviewer for a change-set target that carries a review, with its optional subject and history view. [130]
+- The surface's hook composes navigation, read cycle, cache, selection, refresh and retry, and the reading status. [131]
+- The workspace is mounted over the answer or the frame, and the records only over an answer. [132]
+- The read cycle: the read state bound to its question, and the task-context frame. [133]
+- The bounded cache of one mounted surface and its generation test. [134]
+- The one failure and refusal block, with the retry control of a network failure. [135]
+- The record panes behind the "Technical details" disclosure. [136]
+- The reading-area column is one node whose content alone is swapped. [137]
+- The weights of the change kinds and the two orders, which only reorder. [138]
+- The order preference and its storage key. [139]
+- The stops in displayed order, the stop at a partial family's control, and the end messages. [140]
+- A step focuses and clicks the stop, and the chords are bound on the reviewer's zone only when the tree has change facts. [141]
+- The end message is given out only beside the rows it was said for and is dropped in the commit that shows other rows. [142]
+- The tree draws the walked families, hands the traversal the rows it shows, and mounts the triage bar only with change facts. [143]
+- One step of the walk: an in-tree selection keeps, any other selection and another comparison replace. [144]
+- The workspace advances the walk, marks the tree and the reading area apart, and selects rows of the walked tree. [145]
+- Every selection numbers the tree intent, keeping only with `keepTree`. [146]
+- A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again. [147]
+- The catalogue lists a row for every family the tree shows while one is kept. [148]
+- The kept tag and the scope line that counts kept families apart. [149]
+- The focus request is answered only by a render made after it; a pending or unavailable read is handled without spending it. [150]
+- The page controls: a next page only for a published cursor, and the refusal of a requested page. [151]
+- The mounted case of the key walk on real data. [152]
+- The mounted cases of the reviewer between a selection and its answer. [153]
 
 ## 260928-MIK-L34 Per-Hunk Intent Markers In Every Diff Of A Tree Comparison
 
@@ -170,7 +180,7 @@ marks below 40rem; F3 the focused `Attribution unknown` region; F4 the three esc
 rerun; F5 the partial-inventory note; notes N1 (the reason's owner named in a comment), N2 (off-screen marks outside
 CodeMirror's drawn area are not in the tab order) and N3 (a followed target's state stays until Back) accepted; landing
 order L34 before L33, and at L33's sync both member-row elements are kept, the change-kind fact first, both reasons in
-`aria-describedby` (built by MIK-L33's merge round: see its section above). 18:23:50 (review R2): Back refocuses and re-scrolls after CodeMirror's measure on every layout,
+`aria-describedby` (built by MIK-L33's merge round). 18:23:50 (review R2): Back refocuses and re-scrolls after CodeMirror's measure on every layout,
 including side by side at 390 px; three test gaps pinned. 19:27:57 (review R3): the hold also ends on wheel (passive);
 the hold's end conditions and cleanup pinned by frame-by-frame tests. A short R4 confirmation runs beside this curation.
 **Resolved:** the L32 F5 carry. Its Todos on `review/laneFocus.ts` and `review/LaneFileFocus.tsx` (and on the `mcp` and
@@ -442,30 +452,6 @@ section above); a comment-only follow-up refreshed the case headers to match.
 - The receipt's MIK-L31 re-capture, which replaced the not-re-captured section. [30]
 - The case header stating which bodies were re-captured (both captures since MIK-L31's follow-up). [31]
 
-## Current family-centered review ownership
-
-SubjectReview owns central statements and evidence from the exact server-selected subject. Member selection uses the ordinary invariant read while preserving family context; confirmed no-family and ambiguous revision states retain their own truthful rendering.
-
-ReviewSurface composes the reviewer's catalogue (read once on entry since `260921-ICR-L47`) and the existing comparison read cycle. ReviewWorkspace owns one family/subject/source rail and the unified center (its scope header is `ReviewScopeHeader`, and the technical records live in `ReviewRecordPanes` since `260921-ICR-L48`); ReviewExpressions opens actual bound diffs after intent, while familyExpressions owns the existing pure grouping. FamilyTree preserves full statements and unchanged siblings. The complete source inventory remains independent of attribution; diagnostics remain inspectable through disclosure.
-
-**The reviewer stays mounted across subject selection (`260921-ICR-L48`, `ICR-R24@v3`).** Four owners share one rule — *a read is shown only under the question it answers, and a selection changes only the reading area*:
-
-- `ReviewReadCycle` binds every answer to its target key (the surface is handed a read only for the question on screen) and keeps `frame`, the task context's last admitted payload, which a failure or refusal does not clear.
-- `ReviewSurface` mounts the workspace over the answer or, while the selected subject is pending, failed or refused, over the frame, with a `reading` status keyed to the requested question and labelled with the requested subject (a failure or refusal carries the owner's R16 block, with retry). Records (`ReviewRecordPanes`) render only for an answer, and `ReviewOutcomeRegion` stays silent when the workspace states the read (one statement per read). Only the first read, which has no frame, is stated at the surface level.
-- `ReviewWorkspace` keeps one reading-area column and swaps only its content; its scope header (`ReviewScopeHeader`) replaces the subject-bound comparison, currentness and family lines while unanswered; focus after an answer lands on the selected node only if the reader has not moved it.
-- `ReviewReadCache`, one bounded LRU cache per mounted surface (24 whole-subject reviews, 32 content answers), makes a return to a subject or a reopened file cost no request; it keeps only answers, is emptied by any answer from another comparison generation, and a refresh always re-asks. `SourceContent` reads through it by `sourceContentKey`. Cached returns are not a live check (by design).
-- `ReviewNavigation.engage`: after the bounded first-read wait, a reader gesture freezes the subject on screen, so a late catalogue only fills the navigation; an idle reader is still landed on the first family, without a remount.
-
-Rapid selections settle on the latest; a superseded answer is neither shown nor kept. `familyWalkMerge` holds the roster-walk merge the read cycle admits (moved unchanged). The mounted evidence is `ReviewSurface.navigation.test.tsx`; the cache's own rules are `ReviewReadCache.test.ts`.
-
-- `ReviewWorkspace` owns the behavior described above; since MIK-L34 it is a thin wrapper that provides the intent markers' scope around the landed body, `WorkspaceBody`. [32]
-- `WorkspaceRail` owns the behavior described above. [33]
-- The read bound to its question, and the task-context frame. [34]
-- The workspace mounted over the answer or the frame, with a subject-bound reading status. [35]
-- The reading-area column and its pending/problem statements. [36]
-- The bounded per-comparison cache and its generation rule. [37]
-- The mounted delayed-reply cases. [38]
-
 ## 260921-ICR-L32 The Change-Set Control Renders The Refusal It Receives
 
 `detail-panel/changeSetBar.tsx`'s `ChangeSetButton` for `mode: "committed"` used to clear its counters on a
@@ -517,10 +503,7 @@ lives there; what belongs here is the panel-level fact: both of the dashboard's 
 - The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`. [39]
 - The bar's request for the net's per-leaf attribution. [40]
 
-## 260921-ICR-L25 The Change-Set Bar Names An Unrecorded Range, And The Jump Sits Above The Tree
-
-Two panels on this route changed, and each change is the same shape: **a surface stopped describing a
-state it was not in.**
+## 260921-ICR-L25 The Change-Set Bar Names An Unrecorded Range
 
 **`detail-panel/changeSetBar.tsx` — an unrecorded change-set range is named, not printed as a zero
 (register B6).** A `committed` read of a live leaf has no landed commit to read yet. The route used to
@@ -531,63 +514,6 @@ and the two views that produce it), and the bar renders it as the control's **ow
 (`data-review-state="unrecorded"`, distinct from `known-empty`) while **withholding the `+0 −0`
 total**: a zero of nothing is not a measurement. The three genuinely distinct refusals are untouched —
 an unknown leaf is still a `404`, a bad or absent `mode` a `400`, an enclosure `scope` its own `404`.
-
-**`review/ReviewWorkspace.tsx` and `review/FamilyReviewCenter.tsx` — the narrow-screen route moved
-above the tree, and the empty column names its own plane (register B3).** The accepted design's finding
-P2-3 puts the "jump to the selected review" affordance **near the top** precisely because the family
-tree's height is why it exists; rendered immediately before the centre column instead, it sat at
-`y=1183` in a 900 px viewport — reachable only after the scroll it exists to avoid. It is now one
-`NarrowJump` mounted between the header and the tree, and the tree itself is unchanged. The centre's
-empty sentence used to read "No family or member is selected", which collided with the **server's** own
-"selected" on the same screen (the header's composed-context count, the tree's "this review selected
-<revision>", a roster line's "the page is the whole selection"), so a reader comparing them read a
-contradiction that was a collision of vocabularies; it now says a family or member has not been
-**chosen in this column** yet and states that the header's composition and the tree's revision selection
-are not choices made here. **The sentence was not false about its own state** — the measured
-`data-selection-kind` is `none`, with no `aria-current` in the tree, until the reader chooses — so this
-is a wording fix and the layout of the centre was deliberately not changed. **One caveat the round-2
-verifier measured, and round 3 then removed (its F2):** at 320 px the reviewer had supplied no scrollport
-of its own, so with `MAIN` at `overflow-y: hidden` its 7 620 px of content were reachable only by
-programmatic focus scroll — the narrow reader's route to the review was not one they could scroll. That
-is fixed on the reviewer's own side (`ReviewSurface.tsx`'s root is now the scrollport, `userScrollableCount`
-0 → 1); the composition requirement and the wording fix are unchanged by it.
-
-**Two further lines of the same accepted design were addressed on this route, and the second one is
-only half fixed — stated here as the independent verifier measured it.** `review/FamilyTree.tsx`
-carried the review surface's **only** raw colour literals (`oklch(0.82 0.16 75 / 0.08)` and
-`… / 0.16` — `--amber`'s channels copied by hand); both are now one `AMBER_WASH(percent)` helper
-stating `color-mix(in oklab, var(--amber) N%, transparent)`, because an `oklch` mix interpolates the
-**hue** and that is how the accepted page's own row first came out visibly teal (register B1).
-**The form of that claim which is true, and the form which is not:** the raw amber-wash literal is
-gone, the wash computes as `oklab` through `var(--amber)`, and hue 215 is absent — but "zero `oklch`
-users remain in the review surface" is **false as worded**, because `getComputedStyle` resolves
-`var(--token)` and this dashboard's tokens are themselves defined in `oklch`
-(`styles/tokens.css:8-23`), so token-resolved `oklch` values are everywhere in the surface by design.
-A reader scanning computed styles for the word `oklch` will conclude the fix failed unless this is
-said. `review/SourceExplorer.tsx`'s path button gained `overflow-wrap: anywhere` and
-`max-width: 100%`, which is what lets the column shrink: measured at 320 px, one
-`review-inventory-open` button was 556 px wide inside a 294 px column with its right 262 px neither
-visible nor reachable, and it now wraps inside its container (register B7).
-
-**B7 needed a second round, and the two readings of its residual are both worth keeping.** Round 2
-claimed the residual was *"the cockpit's own status bar, outside the review surface"*; that was
-**false as worded** — the count had been classified against the **inner**
-`[data-testid="review-workspace"]` root (`ReviewWorkspace.tsx:515`) while the Intent Reviewer's own
-root is `[data-testid="review-surface"]` (`ReviewSurface.tsx:906`, mounted by `Cockpit.tsx:585`).
-Against the reviewer's own root, **51 of the 64** elements past the right edge at 320 px were **inside**
-the reviewer (13 were cockpit chrome), the pane sections were **565 px wide in a 294 px column** with
-`pannableCount 0`, and the vertical half was worse: **nothing in the document was user-scrollable**,
-because `MAIN` is `overflow-y: hidden` carrying 7 620 px in a 706 px box. **Round 3 fixed both halves in
-the reviewer's own code** (`ReviewSurface.tsx`): the panes got `min-width: 0` +
-`overflow-wrap: anywhere`, the disclosure track became `minmax(0, 1fr)`, the header row wraps, and the
-surface root took `height: 100%` / `minHeight: 0` / `overflowY: auto`. Re-measured: descendants of
-`review-surface` past the edge **51 → 0**, total **64 → 13**, panes **565 → 294 px** in a 294 px column,
-the root's own **311/294 → 294/294**, `userScrollableCount` **0 → 1**, and a wheel over the review moves
-the surface **0 → 800 px**. **The number was not improved by changing the root** — the inner root's
-count was 0 in both rounds, which is precisely why F1 was a classification defect. **What remains
-routed, and it is the shell's rather than the reviewer's:** `MAIN`'s deliberate `overflow: hidden`
-(`cockpit/Cockpit.tsx:323`, *"the viewport does not scroll — its panel scrolls on its own"*, shared by
-every view) and the **13** cockpit-chrome elements, owned by R24's cockpit takeover.
 
 ## Hot Path Summary
 
@@ -754,6 +680,7 @@ the Chats refactor does not move those routes.
 | Review child route — the family tree and the central reading path | [FamilyTree.tsx](review/FamilyTree.tsx.md) · [FamilyReviewCenter.tsx](review/FamilyReviewCenter.tsx.md) |
 | Review child route — the workspace and the source explorer | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [SourceExplorer.tsx](review/SourceExplorer.tsx.md) |
 | Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
+| Review child route — the walked tree and the traversal between changes | [walkedTree.ts](review/walkedTree.ts.md) · [changeTraversal.ts](review/changeTraversal.ts.md) |
 | Review child route — the captured family bodies those cases are driven with | [familyReview.complete.captured.json](review/familyReview.complete.captured.json.md) · [familyReview.continued.captured.json](review/familyReview.continued.captured.json.md) · [familyReview.emptyRoster.captured.json](review/familyReview.emptyRoster.captured.json.md) · [familyReview.identical.captured.json](review/familyReview.identical.captured.json.md) · [familyReview.oneSided.captured.json](review/familyReview.oneSided.captured.json.md) · [familyReview.truncated.captured.json](review/familyReview.truncated.captured.json.md) · [familyReview.walkFinal.captured.json](review/familyReview.walkFinal.captured.json.md) · [familyReview.capture-provenance.json](review/familyReview.capture-provenance.json.md) |
 
 ## Evidence
@@ -916,8 +843,8 @@ viewer change; file-level detail lives in the panel sidecars.
 ## 260915-KS-L45 The Task-View Entry Into The Review Panel Is Reachable
 
 *(Historical. The gate and subject read below were superseded by `260921-ICR-L2`/`L12` — the entry is
-offered for every leaf — and the subject read left the entry entirely in `260921-ICR-L47`; see the L47
-section at the end of this overview.)*
+offered for every leaf — and the subject read left the entry entirely in `260921-ICR-L47`; see the
+section "The Task Entry Into The Intent Review" at the end of this overview.)*
 
 The review panel existed before this leaf; what did not exist was a **navigation** into it on a live
 leaf task. `detail-panel/changeSetBar.tsx` is where that is decided, and the decision is now made from
@@ -963,373 +890,6 @@ by this leaf.
 
 - **The entry threading the published generation into the viewer target.** [63]
 - **The generation state the button carries from a successful master read.** [64]
-
-## 260921-ICR-L3 The Source Pane's Entries Open Into The Content Of Both Bound Code Trees
-
-**Route meaning changed, narrowly: the Source pane stopped being display-only about *what* changed and
-became the way into *the bytes*.** A listed inventory entry is now openable, and opening it reads the
-file at the two code trees the inventory published and renders both endpoints' actual content in place.
-That is ICR-R03's rendering half, and it is the defect the route had been carrying: an inventory row
-labelled as an expansion showed a path, a status and a reproducing command, and **no bytes at all**, so
-a reader had to leave the surface and run the command to learn what had changed.
-
-`panels/review/SourceContent.tsx` is the new renderer (222 lines), a third component in the child route,
-and `panels/review/ReviewSurface.tsx` grew 462 → **549 lines** to reach it:
-
-- **`inventoryEntry` renders the published path as a button** — `data-testid="review-inventory-open"`,
-  `data-path` carrying the path exactly as the server published it, `aria-expanded` carrying the open
-  state — **only when the inventory named both of its code trees**; the same click closes the row. An
-  inventory that named no pair has nothing to open, so it renders the path as text and no control.
-- **`Inventory` holds the one piece of state this route's rendering now has** — `const [open, setOpen] =
-  useState<string | null>(null)`, addressed by the published path — and derives the generation pair from
-  its own `before_code_tree_id`/`after_code_tree_id`, which `inventoryEntry` then mounts `SourceContent`
-  with. The two ids are the listing's, so a row opened after the branch moved still shows the generation
-  the reader was looking at.
-- **`SourcePane` forwards the task context** (`repo`/`master`/`leaf`) into `Inventory`, which is how the
-  expansion request carries the same target the root's `data-review-target` stamps.
-- **`byteNamedEntry` gained the explicit non-addressability note** (`data-testid=
-  "review-byte-path-not-addressable"`): the byte-form row is listed by its exact bytes and carries **no**
-  expansion control, because no request this text-carrying vocabulary can spell would address it. The
-  pane states that rather than implying a click would open something.
-
-**What the new renderer decides, and what it deliberately does not.** Every branch is decided by each
-side's declared `state` and never by inspecting its text: both sides `present` → the shipped `DiffPane`
-in split mode over the two files' own bytes; one side textual (a regular file's text, or a symlink's
-recorded target) → that side drawn as content with the other side's own reason beside it, plus an
-explicit `review-source-no-diff-claimed` line, because a diff there would claim the opposite endpoint is
-a known-empty document; neither side textual → the two state lines alone. The state line carries the
-declared state, the measured object identity and the byte count, and adds the long detail only when the
-state is not a complete untruncated text. A bounded read is stated as a prefix of the object
-(`review-source-truncated`), `currentness` says whether the listed generation is still the leaf's, the
-leaf-change-set bound is stated only when that is what admitted the path, and a typed refusal renders
-with its code, detail, next action and offending input and **no content** — a refusal is a normal answer
-from this route, not a degraded success. `DiffPane` (from the change-set route) and `FilePane` (from the
-file-viewer route) are reused rather than a third viewer being grown, and the module's header records
-both, so the surface now names **two** reused renderers instead of one.
-
-**`data/review.ts` grew 320 → 414 lines** and gained the expansion's wire types
-(`ReviewSourceSideState`, `ReviewSourceSide`, `ReviewSourceExpansion`, `ReviewSourceContentResult`) and
-`reviewSourceContent(...)`, which reads the typed refusal body **whatever the HTTP status** and throws
-`FilesApiError` only for a body that is not this route's answer — the one function in that client that
-deliberately does not go through `getJson`, because on this route a typed refusal arrives with a 400/404
-status. `intentReview` and `intentReviewEntries` are unchanged.
-
-The panel inventory is otherwise unchanged: no new route, no new takeover, no change to the reviewer
-dispatch or its target shape, and no other panel touched. The server half of this contract — the
-source-content route and the model the expansion mirrors — is recorded by the `mcp/` route's onboarding,
-not here.
-
-- Inventory rows preserve path/status and control state; optional inline content expansion uses the listed tree pair. [65]
-- Byte-named paths remain listed and explicitly cannot be addressed by this text request vocabulary. [66]
-- Inventory rows receive their expansion state from the workspace and bind expansion to the inventory tree IDs. [67]
-- The source pane, which since `260921-ICR-L24` points at the explorer, and the explorer mount that forwards the task context an expansion request carries (the pane moved to `ReviewRecordPanes.tsx` in L48). [68]
-- The central statement applies the 13:40 wording rule through the subject renderer (MIK-L31), and a dataset review's source expressions delegate to bound source content. [69]
-- Source operands are rendered from their declared states; unavailable content does not become an invented diff operand. [70]
-- The expansion states bounded content and the admitted path relation alongside the actual source rendering. [71]
-- **The typed refusal rendered with its code, detail, next action and offending input, and with no content.** [72]
-- **The client's expansion wire types and the request that reads the typed body whatever the status.** [73]
-- **The cases that measure the whole route at the real surface over a stubbed transport: the addition, the two-sided modification, the binary/symlink/submodule sides, the superseded generation, the bounded prefix, the typed refusal, the exact request, the leaf-change-set bound, the byte-form row and the inventory with no pair.** [74]
-
-## 260921-ICR-L6 The Review Panel's Statement Area Gets Its Own Component
-
-The **review child route gained its second component**, and the route-level fact is that the Intent
-Reviewer's pane 1 no longer decides its own statement rendering inline.
-`dashboard/src/panels/review/KnowledgeStatements.tsx` owns the statement area — the two recorded
-operands and the state of each side — and `ReviewSurface.tsx` delegates it (476 → **462 lines**, with
-the `sideState` helper and the `DiffPane` import gone from that file).
-
-**The rule the component implements is ICR-R06's, and the defect it closes is worth stating at this
-altitude because no gate caught it.** The pane used to draw the shipped `DiffPane` only when *both*
-statement sides were `present`, while the side line returned `null` for the side that *was* present —
-so an added or a removed statement rendered as two muted state lines and **no statement text at all**.
-The four branches now decided from a side's declared `state`, never from its text:
-
-- both `present` → the shipped two-sided diff, unchanged (and, as before, naming no side);
-- one `present`, the other `absent` → a **one-sided diff** with the present operand on its own side and
-  the absent side named above it, so the empty half is a stated fact rather than a blank to interpret;
-- one `present`, the other `binary`/`unresolved` → the available text as content with the unavailable
-  side's own reason beside it, an explicit "no diff is drawn" line, and **no diff** — a diff there
-  would claim the opposite operand is a known-empty document;
-- neither `present` → both sides' own state lines and no diff and no content pane.
-
-**The route's other half of the same rule is a mechanical field row.** `ReviewSurface.tsx` gained
-`fieldValue`, which prints `(absent)` for a value the server did not send and `(recorded empty)` for a
-value that is present and empty, so no field row is silently blank and no reader has to decide which of
-the two a gap meant — the display counterpart of the data contract
-`application/review_statement_sides.py` owns. The panel inventory is otherwise unchanged: no new
-route, no takeover change, and the child's file cards are the authority for the rest.
-
-- **The child route's statement-area component: the four branches, the one-sided diff, and the available-content path that claims no addition or removal.** [75]
-- **The state line rendered for every non-two-sided area, carrying each side's own token in `data-side-state`.** [76]
-- The technical knowledge pane delegates statement rendering to KnowledgeStatements. [77]
-- **The field-row words this leaf added: absent and recorded-empty as two different facts.** [78]
-- The technical knowledge pane delegates statement rendering to KnowledgeStatements. [79]
-- **The renderer case that fails against the pre-fix pane: an added invariant's full after statement read out of the rendered diff DOM beside an absent-before label.** [80]
-- The cases for the removal, the unreadable opposite, and the three declared non-present states as their own tokens. [81]
-
-## 260915-KS-L22 The Review Panel Route And Its Three-Pane Surface
-
-The L22 section below records the panel itself — the three panes, their prohibitions and the
-display-only submission boundary — and remains current. What it did not record is a way to *reach* the
-panel on a live leaf; the section above supplies that, and supersedes nothing below it.
-
-`panels/review/` is this route's new child, and its entry component is `ReviewSurface.tsx`, mounted by
-the cockpit takeover when a change-set target carries the review variant. It renders the Intent
-Reviewer's three panes in one scrolling column — Knowledge, Source, Evidence and assessment — in the
-order the payload declares them, and it is display-only: the module has no control that writes
-anything, no submission button, and no place a conclusion of its own could be assembled. The one
-renderer it reuses is the change-set route's `DiffPane`, reached through the statement area
-`KnowledgeStatements.tsx` owns and fed the statements the comparison published: **both operands when
-both sides recorded one, and the available operand beside the named absence when one side did not**
-(the `260921-ICR-L6` section above records that rule and supersedes the "only when both sides are
-`present`" reading this section was written with); a side that is `absent`, `binary` or `unresolved`
-renders as its own named state rather than as an empty diff, and neither the statement area nor this
-file declares a second differ.
-
-The prohibitions are rendered, not merely intended. Authored effects, preservation claims and
-unresolved questions are listed under their own heading and detection signals under a second one,
-because the payload keeps those two collections apart by element type; a selected path with no
-registered attribution is reported outside any claim instead of being folded into one; a count the
-comparison could not measure prints as not measured with its stated reason rather than as a zero;
-and both lists that could show an assessment print `UNASSESSED — no assessment is recorded against
-this subject.` when the collection is empty, so no pane has a favourable default to fall into.
-
-Failure is a state on this surface too. A typed refusal is rendered with its code, its detail, the
-offending input and the next action, and a transport error is its own line; neither is a degraded
-success, because a refused review shows no panes at all. The submission block states the increment's
-own boundary in the same voice: submission is not offered (or disabled, for a stale comparison) with
-the reason and a next action naming the existing curator authority, and the three dispositions it
-prints are labelled as that authority's vocabulary — none of them publication approval. Every
-rendered state carries a `data-testid`, which is how the surface's cases read each pane back.
-
-- The child route entry component. [82]
-- Pane 1, and the two collections it keeps apart — **and, since `260921-ICR-L6`, the statement area it delegates.** [83]
-- Pane 2, the selected locations and what the selection did not reach — **and, since `260921-ICR-L3`, the pane whose listed entries open into their own content** (since MIK-L32 it also takes the lane read, for a tree comparison's attribution). [84]
-- Pane 3, evidence and assessment with both absence states stated. [85]
-- The technical panes print the owner assessment state rather than deriving a favorable judgment. [86]
-- The block that states the display-only submission boundary. [87]
-- The refusal rendering, which left the surface for the outcome owner: one block prints every field the owner published, and both the surface and the expansion pane render it. [88]
-- **The one renderer this child reuses, fed both operands when both sides recorded one and the available operand beside a named absence when one side did not — reached through the statement area `260921-ICR-L6` gave its own component.** [89]
-
-## 260921-ICR-L2 The Review Panel Renders The Whole-Task Inventory
-
-**Route meaning changed: the review panel can render a review that compared nothing, and its source pane
-now opens with the complete change inventory.** `panels/review/ReviewSurface.tsx`: `ReviewTarget`'s two
-selector fields became optional and the header prints `whole task (no subject selected)`; the Knowledge
-pane prints the comparison identity when there is one and `no knowledge comparison was made` with the
-server's own selection detail when there is not; and three render helpers were added — `Inventory` (all
-three inventory states, never an empty list, with the count, the byte-form count, the server's own reason
-and the reproducing command), `inventoryEntry` (the path exactly as published, with its status and its
-renderability) and `byteNamedEntry` (a name this surface cannot carry as text, printed by its exact byte
-form with the stated reason). `panels/detail-panel/changeSetBar.tsx` offers the entry for every live
-leaf, and `panels/detail-panel/test-utils.tsx` answers the entry read with whatever answer a case wants
-to exercise. `260921-ICR-L3` (recorded above) then changed what those three helpers do to a row: the
-listing now opens into each entry's content, `Inventory` holds which row is open, and `byteNamedEntry`
-states that its byte-form row cannot be opened — so the measurements below name this candidate's lines.
-
-- **The target whose selectors are optional, and the header line that names the whole task when there is none.** [90]
-- **The inventory rendering: all three states, the count, the byte-form rows and the reproducing command.** [91]
-- **The source pane that opens with the inventory, and the knowledge pane's selection line that survives an absent comparison identity — a pane that since `260921-ICR-L6` also delegates its statement area and since `260921-ICR-L3` opens each listed entry into its own content.** Ranges re-derived against this candidate. [92]
-- **The detail-panel entry that is offered for every live leaf, with the server's subject catalogue as a refinement.** [93]
-- The fixture that answers the entry read with a subject, an empty list or a refusal. [94]
-- The three cases those three answers are measured by. [95]
-
-## 260921-ICR-L16 The Review Surface Gets Its Outcome Owner, And The Entry Shows Its Own Answer
-
-This leaf gives the Intent Reviewer's **non-payload states** one owner and makes the refusal reach the
-reader on three surfaces.
-
-**The outcome owner is new.** `panels/review/ReviewOutcome.tsx` (251 lines) owns the read's four phases
-(`loading` | `reviewed` | `refused` | `failed`), the known-empty note, and **one** `ReviewProblemBlock`
-that prints every field the owner published — code, reason, the offending input it named and the
-next action it published, with an explicit sentence where the server published none. It renders a retry
-**only** for `network`, the one token with no owner-published recovery route, and offers the task's source
-change inventory only for a refusal that answers for the intent half alone. `ReviewSurface.tsx`'s inline
-`RefusalBlock` and its generic `review-error` paragraph were **removed, not duplicated** (549 → 632 lines);
-the surface is now the composition: it loads, keeps the last coherent payload, and renders the panes.
-
-**The retained generation is keyed to the question it was read for.** `targetKeyOf` is the one identity a
-read answers for — the task context **and** the question asked — and both the reset in `load` and the
-render-time check read it, so a payload is never shown under a header it was not read for. A **failed**
-read keeps the last coherent comparison on screen, labelled, and claims no empty review for it; a
-**typed refusal** replaces the panes, because it is the owner's answer about the leaf's current state.
-
-**The entry bar carries the entry read's own answer.** `changeSetBar.tsx` (186 → 280 lines) returns a
-`ReviewSubjectRead` — `loading`, the first recorded subject, a known-empty flag, or the read's own
-`ReviewFailure` — and `ReviewEntryState` prints it beside the entry in the owner's own words. The entry
-itself is offered for every live leaf and still opens the task-context review on `review: {}`, so a
-refusal here is a stated reason rather than a missing control.
-
-**R03's expansion pane renders transported failures through the same block.** `SourceContent.tsx`
-(222 → 241) keeps its own typed-refusal block untouched and routes everything else — an unwired process,
-an unadmitted query, a socket that never answered — through the shared `ReviewProblemBlock`, so the 503
-that used to read `503 unavailable` now carries the adapter's own instruction; the retry re-arms the read
-through an `attempt` counter.
-
-Two measured limits are recorded as **routed, not fixed**: an **in-flight** prop/question change can still
-let an earlier read settle under a newer header (pre-existing at HEAD and on the round-1 bytes —
-**R17**, with R24 for the interaction side; the retained-generation guarantee holds for every *settled*
-change), and the **browser-class A01/A13 journeys** over a served dashboard are not verified by this leaf
-(**R25**, with R24/R17).
-
-- **The one place the non-payload states are decided, where the known-empty statement and the retained-generation label are mutually exclusive.** [96]
-- **The one failure renderer, with the retry gated on `network` and the inventory offer gated on an intent-only refusal.** [97]
-- The read key names the actual question, and retention is shown only for that same question. [98]
-- **The entry's own read state on a control that never disappears — since `260921-ICR-L47` a brief word from the changed-intent summary read, with the owner's explanation in a disclosure (the catalogue-based `ReviewEntryState` recorded above is gone).** [99]
-- The source pane keeps shared transport failure rendering separate from the source owner typed refusal. [100]
-
-## 260921-ICR-L10 The Page Control, And The Captured Body That Proves The Refusal Actually Reaches It
-
-`260921-ICR-L10` (`ICR-R10@v1`) adds the reachable next page to this route's review surface. The surface
-used to render a remainder with no control that reached the rest of the collection — the packet's own
-non-conforming example — and it now renders the bounds, the scope and one action that advances the walk
-with the cursor **the server published**, plus a first-page action when a cursor was refused.
-
-The control is four small pieces over the page the client already carries (`PageControls`, `PagePicker`,
-`PageActions`, `PageBoundsLine`) and a refusal block (`PageRefusalBlock`) that states the code, the
-owner's two identities and a live first page of the collection that was asked for. The page is part of
-the read's target key, so a page change is its own read rather than a re-render over the wrong payload.
-No next action is offered for a body that published no cursor, whatever remainder it reported — a button
-that fetches nothing is the defect this control exists to prevent.
-
-**Two files on this route are new, and both are about proof rather than behavior.**
-`ReviewSurface.paging.test.tsx` drives the real component over the real client with only `fetch` stubbed,
-and `recordsPageRefusal.captured.ts` is the raw body of a real refused records page, exported verbatim
-with a provenance header. The capture exists because the route omits the `page` key rather than sending
-`null`: the mounted case asserts that absence before rendering the bytes, so the case cannot pass against
-a body the route would never send.
-
-Keyboard and focus traversal of the control, and the finished cockpit interaction, remain `ICR-R24@v1`'s;
-the assembled acceptance remains `ICR-R25@v1`'s. This leaf records the boundary rather than claiming
-either.
-
-## 260921-ICR-L26 The Review Surface Mounts The Attribution On Both Panes
-
-`260921-ICR-L26` (`ICR-R26@v1`) mounts the server's attribution facts on both review panes through three
-renderers and no new component state: `ReviewSurface.tsx` (879 → 946 lines) gained `applicabilityNote`
-(one record's treatment, the true subject its binding names, and the server's own detail — printed
-**nothing** when the payload carries no label), `contextList` (the labelled context rows with the
-relationship that reached each one, the record's kind and its references) and `applicabilityCounts` (the
-six-way partition beside the collections it filtered). All three read the fields the server sent and
-none derives a treatment, a relationship or a total.
-
-**One record, one treatment, two panes.** `applicabilityNote` is called on the knowledge pane's
-assessments, authored effects and signals **and** on the evidence pane's evidence links and
-observations, and the context list and the counts block are mounted on both panes, so the same record
-cannot read one way in one pane and another way in the other. A context row never renders the sibling's
-finding: the row carries the record's kind, and that is the whole point of the value.
-
-**The route gained one case module.** `ReviewSurface.applicability.test.tsx` (311 L, four mounted cases
-over the real component and the real client with only `fetch` stubbed) asserts the treatment and the
-true subject of a labelled context row, the absence of the sibling's finding from the document, the
-six-way counts rendered as arithmetic, the historical label with the tree it examined, and that a
-payload published **before** the vocabulary still renders. Browser and keyboard traversal remain
-`ICR-R24@v1`'s, and the assembled A14/A15 acceptance remains `ICR-R25@v1`'s.
-
-## 260921-ICR-L12 A Closed Leaf Keeps Its Intent Review, Bound To Its Record
-
-`260921-ICR-L12` (`ICR-R12@v1`) changes what liveness means to the change-set bar and what the
-review surface says about the record it is reading:
-
-- **the Intent review entry is offered for every leaf.** It used to be gated on the enclosure being
-  live, which is the intake defect's browser face — a cleaned leaf's worktree is gone and the review the
-  packet exists to make openable could not be reached. `live` now selects **which record** the entry is
-  addressed to (the live candidate, or the leaf's recorded comparison as `historical: true`, labelled
-  "Intent review (recorded)") and it is not a gate. The **working** change-set stays live-gated, because
-  "what is not committed yet" genuinely does not exist once the enclosure is closed, and the catalogue
-  read is no longer live-gated either — it remains a refinement and never a gate, so a refusal beside
-  the entry is a stated reason rather than a missing control.
-- **the mounted surface states which record the panes are read from.** `history` joined the review
-  target and the **target key** (`repo/master/leaf/<history ?? "live">/<question>/<position>`), so a
-  response read for one record is never applied to a surface that asked for another; `ReviewHeader`
-  mounts the provenance line and the root publishes `data-review-history`. The two extractions
-  (`ReviewHeader`, `ReviewPanes`) cleared the surface's `max-lines-per-function` rail with no ignore
-  added and no limit widened.
-- **the new client case module** `ReviewSurface.history.test.tsx` pins both directions of the pair over
-  the real component and the real client, stubbing only `fetch`: the recorded read asks for the record
-  it was handed and says so, and the live read asks for none and claims none.
-
-**Boundaries recorded, not closed.** `ICR-R24@v1` owns the leaf-history drill-down navigation — this
-leaf provides the addressable target and adds no navigation — and `ICR-R25@v1` owns the assembled
-browser acceptance; these cases are mounted components over the real client, not a real-browser run.
-
-## 260921-ICR-L17 The Read Cycle And The Refresh Control Leave The Review Surface
-
-`260921-ICR-L17` (`ICR-R17@v1`) adds **two components to the `panels/review/` child route** and rewrites
-one read at the detail-panel entry. No route, takeover dispatch or target shape changed.
-
-- [`panels/review/ReviewReadCycle.ts`](../panels/review/ReviewReadCycle.ts.md) owns the review surface's
-  read cycle: the question's identity (`targetKeyOf`), one in-flight read per question with the newest
-  read winning, the retained generation, and the reader's refresh as the single read that may carry the
-  identity on screen. It exists because `ReviewSurface.tsx` is over the file-size rail and the component
-  was over the per-function rail.
-- [`panels/review/ReviewRefresh.tsx`](../panels/review/ReviewRefresh.tsx.md) owns the explicit refresh
-  control and the one sentence that answers it. Its derivation renders **no claim** unless the read that
-  carried the identity has answered, and the `superseded` sentence names both digests and says which one
-  the panes below hold.
-- `panels/review/ReviewSurface.tsx` is **462 lines of read logic and rendering lighter** and now wires
-  the hook, the header's `refresh` node and the three regions.
-- `panels/detail-panel/changeSetBar.tsx` gains the store-projection invalidation signal
-  (`reviewDependencyFacts`), an always-offered refresh control (`ReviewCatalogueRefresh`) whose mark is
-  derived from the facts recorded with the last answer, and the pure `catalogueAnswer` mapping.
-  *(Superseded by `260921-ICR-L47`: the signal and the control are removed; see that section below.)*
-- `data/review.ts` gains the ninth `intentReview` argument, the `reviewQuery` assembler and the single
-  `PREVIOUS_BINDING_QUERY` spelling of the wire name.
-
-**What a route reader should carry away.** The carried identity is `{readNumber, key, digest}` and it is
-both **sent** and **described** only when the read number and the question key agree, so the identity a
-notice describes is exactly the identity the request carried — a different subject, a different leaf, a
-recorded read, and a later read of the same question all carry nothing.
-
-## 260921-ICR-L24 The Family Reading Path And The Source Explorer
-
-**Route meaning changed: the review child route gained the accepted family-centred composition, and the
-surface became a composition of owners rather than the owner of everything.** Five modules are new in
-`panels/review/`, and each one owns exactly what its neighbours must not:
-
-- [`FamilyTree.tsx`](review/FamilyTree.tsx.md) — a recorded family is the semantic parent of the review
-  population: the family label, then the family revision's own independently authored joint guarantee
-  printed whole, then the complete member statements of the roster the page carried **including the
-  unchanged siblings**. It is one roving-focus group with arrow-key traversal and `aria-current` on the
-  current node, and it carries the route's **one** family-roster walk control (`RosterNext`), which
-  continues the walk at the cursor the family's own roster page published.
-- [`FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) — the unified central reading path: for a
-  **member** selection the family guarantee and the selected intent first, then the linked expressions, then
-  the recorded execution evidence and the authored assessment; for a **family** selection the guarantee,
-  then the complete recorded member context, then the family's deduplicated changed expression excerpts
-  (**added by 260921-ICR-L36**, below) — in one column, so a reviewer never has to reconstruct the route by
-  switching tabs or opening a detached inspector. This bullet read as one route for the whole column until
-  L36; the two selection shapes are two different orders and both are complete.
-- [`ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) — which family or member is selected, the
-  reader's display preferences (diff layout, full-file disclosure, the expanded path) and the
-  narrow-screen route from the tree to the selected review. `useWorkspaceState()` is called once, by the
-  surface **above** `ReviewPanes`, because that switch returns `null` while a page read is in flight: a
-  page request can no longer reset the reader's selection or display choices.
-- [`SourceExplorer.tsx`](review/SourceExplorer.tsx.md) — the complete source change explorer, moved out
-  of `ReviewSurface.tsx` whole: every changed path of the comparison's bound pair, openable at the
-  generation the listing named, with the inventory's three states, the byte-form rows and the reproducing
-  command. The family navigation is an attribution lens over it and never an exclusion filter.
-- [`ReviewWorkspace.family.test.tsx`](review/ReviewWorkspace.family.test.tsx.md) — the case module that
-  drives the real surface over the real client with only `fetch` stubbed, against the seven
-  `familyReview.*.captured.json` bodies the server published.
-
-**`ReviewSurface.tsx` no longer owns the inventory.** It mounts the workspace and keeps the three
-diagnostic panes — knowledge, source, evidence and assessment — inside one `<details>` disclosure, so
-their content, controls, refusals and technical identities are unchanged and still in the DOM and the
-keyboard's reach, reached deliberately instead of being the first thing a reviewer reads past. Its
-`ReviewPanes` switch takes the workspace as a prop for the reason above, and the surface calls
-`useWorkspaceState()` itself. `ReviewReadCycle.ts`'s `ReviewPageRequest.of` is typed as the server's own
-`ReviewPagedCollection` rather than a narrowed copy, because a request naming `family_members` must be
-representable for a truncated family roster to be continued.
-
-- The family hierarchy shows authored guarantees and member statements with full sibling context and keyboard traversal; on a tree comparison it also badges, orders and traverses the changes without hiding a sibling (MIK-L33). [101]
-- **The one family-roster walk control, continuing at the cursor the roster page published; since MIK-L33 it names its family for the traversal's partial-family message.** [102]
-- **The unified central reading path, in one column and in the packet's order; since MIK-L31 the expressions slot holds the focused cards for a tree comparison.** [103]
-- **The workspace's selection, preferences and narrow-screen route, and the one hook owned above the pane switch.** [104]
-- **The complete source change explorer, and why it is its own module rather than part of the surface.** [105]
-- **The mounted family composition cases and the captured server bodies they are driven with.** [106]
-- The surface mounts the workspace and retains technical records/paging panes in a disclosure (rendered by `ReviewRecordPanes.tsx` since L48, only for an answer); state is held above the read cycle. [107]
-- **The page request whose `of` is the server's own collection union.** [108]
 
 ## 260921-ICR-L36 The Family Column's Third Part: The Deduplicated Changed Expression Excerpts
 
@@ -1429,14 +989,9 @@ data exercises the divergent path.
 
 ## Bounded family context across review pages
 
-The existing ReviewReadCycle retains exact member content and source claims only within an admitted same-comparison, same-subject family-side-revision continuation. Rejected continuations state failure beside the retained coherent display; refresh and subject/history changes remain replacement reads. FamilyTree, FamilyReviewCenter and ReviewExpressions distinguish loaded context from raw item counts and partial/unavailable source scope. Source inventory, primary statement and evidence remain their existing owners' facts. The captured-page regression fixture and mounted read-cycle cases document this boundary.
+The existing ReviewReadCycle retains exact member content and source claims only within an admitted same-comparison, same-subject family-side-revision continuation. Rejected continuations state failure beside the retained coherent display; refresh and subject/history changes remain replacement reads. FamilyTree, FamilyReviewCenter and ReviewExpressions distinguish loaded context from raw item counts and partial/unavailable source scope. Source inventory, primary statement and evidence remain their existing owners' facts. The captured-page regression fixture and mounted read-cycle cases document this boundary. This holds for an answer. The family tree of the rail is the walked tree (see "The Intent Reviewer" above): it keeps families and member rows read for earlier subjects of the same comparison beside the answer, tagged as kept, and writes them into no answer.
 
-## 260921-ICR-L47 The Task Entry Is One Compact Intent Review Control; The Reviewer Owns Its Catalogue
-
-`260921-ICR-L47` (`ICR-R24@v3`) changes both child routes that meet at the review entry. **It
-supersedes** the entry-side catalogue design recorded above in the KS-L45, L9, L16 and L17 sections.
-
-**`detail-panel/` — the entry.**
+## The Task Entry Into The Intent Review (`detail-panel/`)
 
 - The Intent review is one control, `⇄ Intent review +N −N` (`(recorded)` for a closed leaf), rendered
   by the new [`detail-panel/intentReviewEntry.tsx`](detail-panel/intentReviewEntry.tsx.md). Its
@@ -1456,26 +1011,6 @@ supersedes** the entry-side catalogue design recorded above in the KS-L45, L9, L
   refresh (Architect ruling 2026-09-28T16:27:28+02:00; no event system). Unrelated workspace
   publications cause no read. A live push while the same panel stays open is not delivered.
 
-**`review/` — the reviewer.**
-
-- The reviewer reads the catalogue **once when it opens**, keyed on the comparison
-  (`repo/master/leaf/history` plus a generation that moves only when the displayed snapshot pair
-  changes), not on the analytics document (`review/ReviewNavigation.tsx`, `data/useReviewCatalogue.ts`).
-- Its first review read is **held** until the catalogue chooses a subject, so a prompt catalogue costs
-  one subject read instead of a whole-task read and then a subject read. The hold is **bounded**
-  (`SUBJECT_HOLD_MS = 750`, L47-R1-F1): a slow or stalled catalogue releases into the task-context review
-  and source explorer, and the first subject is selected when the catalogue answers.
-- The reviewer's own "Refresh subjects"/refresh control is kept, and its refresh also re-validates the
-  entry's summary.
-
-**Known, routed, not delivered here.** A catalogue that answers after the bound moves the reader to the
-first family and drops keyboard focus (review R2 observation O-R2-1; the remount is owned by L48).
-`ReviewSurface.tsx` is 931 lines, over the 900-line soft rail (L47-R1-F5, routed to L48).
-**Both were delivered by `260921-ICR-L48`** (see *Current family-centered review ownership* above): a late
-catalogue no longer moves an engaged reader and never remounts, and `ReviewSurface.tsx` is 585 lines.
-
 - The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). [115]
 - The entry mounted in place of a change-set button. [116]
 - The leaf-scoped facts and re-validation generation. [117]
-- The reviewer's comparison-keyed catalogue, bounded hold and snapshot observation. [118]
-- The first read held while the navigation settles. [119]

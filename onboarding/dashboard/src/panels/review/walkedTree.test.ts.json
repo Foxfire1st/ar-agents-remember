@@ -1,0 +1,264 @@
+{
+  "path": "dashboard/src/panels/review/walkedTree.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:54fc5362cd976d68004b4287ddbf1159ea36d7025ae10fcd58cb4010993ad64f",
+        "locator": {
+          "kind": "symbol",
+          "name": "kept"
+        }
+      },
+      "facet": "A kept family holds, whole, the answer it was last read from, and the selected subject's family holds the answer it came with.",
+      "id": "PRF-5VRGT4",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:16f17c70cc0b64f83d98989d370aa39903138c10eeeaf5603c92b39ea98a3ce8",
+        "locator": {
+          "kind": "symbol",
+          "name": "outside"
+        }
+      },
+      "facet": "An outside selection leaves no kept family at once while the families of the answer on screen stay, and the selection's own answer then replaces them.",
+      "id": "PRF-6S5D8V",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:f4438944150a24684f0fc8049599c25997b4f394527f713a8ee1e1fef30b7e21",
+        "locator": {
+          "kind": "symbol",
+          "name": "second"
+        }
+      },
+      "facet": "The walk holds its families in identifier order whatever the order of arrival, and only the families outside the latest answer's context count as kept, each with the subject it was last read for.",
+      "id": "PRF-7YJS7G",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:c3ca60ae38f06d22e4a1b75ce59330474467da9f59a8e961880b1d4af3d21d9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "once"
+        }
+      },
+      "facet": "The same answer folded twice under one intent gives the very same walk object.",
+      "id": "PRF-J7B061",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:58b0b027ad0a2d4ad63ff4fe6ff50500574355309ae2ba47ca3b1d2ec0bccfb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "moved"
+        }
+      },
+      "facet": "An answer of another comparison replaces the walk, and the notice is set only when kept rows were dropped.",
+      "id": "PRF-P7CX1W",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+        "content": "sha256:dbdf55a6d1725bfcaf45c9c83460b372a9daa22da32859921f2f55febc37460f",
+        "locator": {
+          "kind": "symbol",
+          "name": "continued"
+        }
+      },
+      "facet": "Two reads of one family, in either order, keep every member either returned and the furthest cursor, with the change facts of all returned members.",
+      "id": "PRF-V250CY",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The loaders, the two kinds of selection and the starting walk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:4a85ed07e2fda05667432741e423e8aed348b416be3d8007c63c7a156f5fa3f2",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Folding the same answer twice changes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:abdb597d1ecee7b6b9bbe8eb11f20110d92843f17c382dd381a25d140e152703",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Families are ordered by identifier whatever the arrival order, and only families outside the current context are kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:e717d22f78601999ffbdcaf6efe7a3ec0d046c94d0c1f3c6957ba24c3afb94a2",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A kept family keeps the whole answer it came from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:08f150f14d7415d90d2db7223ad0dea8ead3ab03bd780f9fcd19bd67f38d7768",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A subject is named as its answer names it, else by its identifier read as words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:daabc6f94237e18bee59f19ae91e67d43c671dd4855a5266b084591e452ef314",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "An outside selection drops kept families at once and the next answer replaces the rest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:b283b6a872b5665613fcf341414304c3015de3fdb56a919b7f12a62887baeee1",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Another comparison starts the walk afresh and says so only when kept rows were dropped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:2664b3525f09b38666891dc5f2eb0003378dd6cc250c97fd08594afe2c3ddc53",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A family read twice keeps every member and the furthest cursor, in either order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e9c88934489027a4ce58effd19725b6dc59dc1a",
+            "content": "sha256:9467be4268684b001979ac72de131fe61d057e61c87951a1b83b5bfcc1e4854d",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The function under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:d052946373f3d7e50d396fb830b8c7186d6338b94575abd280b2c91a87365ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "advanceWalk"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

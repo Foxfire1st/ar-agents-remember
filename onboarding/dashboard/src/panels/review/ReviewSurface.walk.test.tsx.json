@@ -1,0 +1,281 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:7ec621df8b3a737555a4592b72ab1eb71914033cff209d9afcbce8d1c02fb5ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "tag"
+        }
+      },
+      "facet": "The kept family's tag is visible, is its row's accessible description and names the subject it was last read for; the selected subject's own family has none. The scope line counts \"1 families · 1 kept\", the context details describe one family, and the reading area shows nothing of the kept family.",
+      "id": "PRF-62MDSP",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:c2fa8247a50a3b8f2502df1971e0a9c6380fe40daa9117b7c0bb346897eee439",
+        "locator": {
+          "kind": "symbol",
+          "name": "held"
+        }
+      },
+      "facet": "With the answer that brings a later family held back, one, three and five further presses of `j` report that there is no later change. Once the answer is shown the message is gone, and the next `j` moves to that family.",
+      "id": "PRF-EK0SWK",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:a1cfaede49f8f4f820083d70a85b19b405ec3090ad8343524fe59c6299146148",
+        "locator": {
+          "kind": "symbol",
+          "name": "rows"
+        }
+      },
+      "facet": "While the tree holds a kept family the catalogue lists a row for every family the tree shows, without badges, and the tree stays a child of the navigation itself. Choosing such a row starts afresh with that family alone and reads nothing, because its review is already held.",
+      "id": "PRF-EWNQ4E",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace"
+        }
+      },
+      "facet": "Each `j` onto a subject not yet read makes one review request. The press at the end of the tree and every `k` back through the changes passed make none.",
+      "id": "PRF-NKDEG9",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:a2f7e93bb547e63527979dcaccd23a3bf8a0707406b280ae91909e8c67e1d9d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "sharedRow"
+        }
+      },
+      "facet": "A click on the second family's row opens its review and keeps the first family whole and tagged. The visible previous-change control then selects the shared member under the first family, as a key step does.",
+      "id": "PRF-XA7SCW",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+        "content": "sha256:fbe243212b4c2edd2a1a59768fc3a237a2a15d0d24c9be62e3601b8a2767da6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace"
+        }
+      },
+      "facet": "From the first family's own row seven presses of `j` select its seven changes. The seventh is a member of two families and brings the second family. An eighth press selects the second family's row, and the first family stays whole, with all 24 member rows, tagged as kept and last read for the shared member. `k` then returns through every change passed, and the workspace is the same node throughout.",
+      "id": "PRF-XA9YEH",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "By key: seven changes, the second family, the kept first family, the end messages, the way back, and the review requests of each press.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:eae23dcc141c64dbe04c3d92db987db0db096895b9d0abc864642b813906c835",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "By click: the first family is kept, and the previous-change control reaches the shared member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:41d141d6b3c9a39da5377cd4be5888796b692dcc494efbe9362be248e9ad1183",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The tag and its accessible description, the scope line, the context details and the reading area.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:3e96308c145c2052a91d8856e82897243cd32753a4e33392e350ebb4a1c43b58",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A catalogue row for every family the tree shows while one is kept, and the way back to one family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:8ff9ac5fddb428d2aed99911d0f76f955a3946a92fd0ef9af119fed91ef680d0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A filter hides kept families with the others and restores them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:75b76befaf5a4f725fec2e591d8085b0c9e90913421fb57347e31829b01f12fb",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "\"No later change\" is dropped when a held answer brings a later change, after one, three and five further presses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:ce66640c6d469cd74ef629bb75b35c9c0df0ca25d4730d94578df8a1d3c08a24",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "\"No later change\" is dropped when the filter that hid the later family is cleared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:f397af1a279fcc77acbf59c0d7d9707cf754afea371dcf9a852c4951ffd471bb",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 261
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The message does not come back when the tree shows the same rows again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:2859ce1e40ef5529582016129752c7cbb07928d1c291dd20bffdf10cd50fe42b",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The world and the step helper the cases use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "content": "sha256:6be806fd968a7192cffac40bd14fe358a8d1c697c0c4137e5cf6e12d0d613b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "step"
+            },
+            "path": "dashboard/src/panels/review/walk.test-utils.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The file's statement of its data and of what its cases pin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:5f59156124922fe8e79aca7a720577705bbb330ac8ddb4c5be40e58fb9c5dde9",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

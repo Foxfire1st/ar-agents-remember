@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
+        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+        "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "sameGeneration"
+        }
+      },
+      "id": "RLZ-AVHNJD",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The one test of whether two answers were read under one comparison: the same pair of code trees and, when both compared knowledge, the same pair of snapshots. The walked tree applies it to decide whether an answer may stand beside the rows it holds, so the tree and the read cache cannot disagree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+        "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparisonGenerationOf"
+        }
+      },
+      "id": "RLZ-DNK5ZP",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Gives the comparison an answer was read under. It is exported so that the walked tree derives it exactly as the cache does.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
         "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
         "locator": {
           "kind": "symbol",
@@ -20,12 +56,12 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "**The module's own statement of what is kept, under which key, when it is dropped, and its bounds.**\n\nAnchor: \"WHAT IS KEPT, AND UNDER WHICH KEY\"; \"WHEN IT IS DROPPED\"; \"BOUNDS\"",
+    "14": {
+      "note": "The module's own statement of what is kept, under which key, when it is dropped, and its bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
             "content": "sha256:96bd0a7a17bf5fbb8a3152261527288e88d45170316551fed5e4b44db4fa5781",
             "locator": {
               "end": 23,
@@ -37,17 +73,192 @@
         }
       ]
     },
-    "10": {
-      "note": "The surface owns one cache and provides it.\n\nAnchor: \"new ReviewReadCache()\"; \"ReviewReadCacheContext.Provider\"",
+    "15": {
+      "note": "The two bounds.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:e23c9fffb91786b70f478e9fa62606c2e97fe76f143d98031b2c8ca00575fb09",
+            "locator": {
+              "kind": "symbol",
+              "name": "REVIEW_CACHE_LIMIT"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:9548dc5972046f4df005ba1f846ab4b1be6a1786414de629f130307b51d85022",
+            "locator": {
+              "kind": "symbol",
+              "name": "SOURCE_CACHE_LIMIT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The least-recently-used store: recency refreshed on read, oldest evicted on write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
+            "locator": {
+              "kind": "symbol",
+              "name": "BoundedStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The generation of a payload, exported: code trees, and snapshots only when knowledge was compared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:388989d8785694a37b2aa397d12d7928455f755b6dd88ff7ab9b5c0ae143183b",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparisonGenerationOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Two generations differ on code trees, or on snapshots when both compared knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The content key is exactly the request's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceContentKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The cache: observe, keep, keep unshown, forget, and sources kept only as content with an expansion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The context the content renderer reads it through; `null` outside a surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
+            "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCacheContext"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The walked tree applies the same comparison test to its rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:625cb7a072f6849b771085ee0fe24bf3753284790e53ec61d2cb104e07c6d30c",
+            "locator": {
+              "kind": "symbol",
+              "name": "absorb"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The read cycle serves a kept answer, keeps a whole answer, keeps a superseded task-context answer unshown, or only observes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:d6f53a08c3f009d6ec1fab9421c91864471014e12a0b71c5b30904463fafd8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "startRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "A refresh forgets its question before it asks again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 435
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The surface owns one cache and provides it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:3b851b48f28251be0fccb422a491486d50dceed2348a047b151e513d79ffdac9",
             "locator": {
-              "end": 476,
+              "end": 508,
               "kind": "line_range",
-              "start": 475
+              "start": 507
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -55,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
             "content": "sha256:cb4084938560d0dbf70f470f707d28a0fcd6cfad905f2c25ebf8ee9bd3b29872",
             "locator": {
-              "end": 555,
+              "end": 634,
               "kind": "line_range",
-              "start": 555
+              "start": 634
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -68,8 +279,8 @@
         }
       ]
     },
-    "11": {
-      "note": "The content renderer reads through it under the request key.\n\nAnchor: `sourceContentKey`",
+    "26": {
+      "note": "The content renderer reads through it under the request key.",
       "targets": [
         {
           "anchor": {
@@ -85,174 +296,21 @@
         }
       ]
     },
-    "12": {
-      "note": "The bounds, refusal, generation and key cases.\n\nAnchor: \"keeps at most the bound of reviews and evicts the least recently used (%i inserted)\"; \"empties both stores when an answer belongs to another comparison generation\"",
+    "27": {
+      "note": "The bounds, refusal, generation and unshown-answer cases.",
       "targets": [
         {
           "anchor": {
             "blob": "ef438e7752b5dcd7b34bed8a8e8460ad69bac8bd",
-            "content": "sha256:b01198b909739699d667662ff6ac11a10d9398804dbcd409d2e3ef5113fb116b",
+            "content": "sha256:c3d5993322a711b5d29431fd9e3cac8023cb75afa0e1970e33535992d81b2613",
             "locator": {
-              "end": 110,
+              "end": 131,
               "kind": "line_range",
               "start": 47
             },
             "path": "dashboard/src/panels/review/ReviewReadCache.test.ts"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The two bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:e23c9fffb91786b70f478e9fa62606c2e97fe76f143d98031b2c8ca00575fb09",
-            "locator": {
-              "kind": "symbol",
-              "name": "REVIEW_CACHE_LIMIT"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:9548dc5972046f4df005ba1f846ab4b1be6a1786414de629f130307b51d85022",
-            "locator": {
-              "kind": "symbol",
-              "name": "SOURCE_CACHE_LIMIT"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The least-recently-used store: recency refreshed on read, oldest evicted on write.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:a53eec38fc524a718bad750a78a7a8d714567413349021b550b695ab51d4ceae",
-            "locator": {
-              "kind": "symbol",
-              "name": "BoundedStore"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The generation of a payload: code trees, and snapshots only when knowledge was compared.\n\nAnchor: `knowledge_compared`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:f1e77d298b4b7382b5d23f1b8591951d3160b203a709f835656a58e7a50ad1f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "comparisonGenerationOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Two generations differ on code trees, or on snapshots when both compared knowledge.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "sameGeneration"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The content key is exactly the request's fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
-            "locator": {
-              "kind": "symbol",
-              "name": "sourceContentKey"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The bounded mounted-surface cache invalidates by displayed generation; keepUnshown rejects an incompatible answer without advancing that generation, and sources are kept only as content with an expansion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:6ec2f353b3919af83d0df587c843cceff7ab8cf5c4b33272c60be6f4f497ad9b",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewReadCache"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The context the content renderer reads it through; `null` outside a surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1189f81c3077aee796f75d1d1cdc491ba9369dc0",
-            "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewReadCacheContext"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The read cycle serves, keeps or only observes answers, and a refresh forgets its question.\n\nAnchor: `keepReview`; `observe`; `forgetReview`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-            "content": "sha256:83520200e76b402be99abcba0a8d1b028caefa0e1809cbacafdd49efdb6d9452",
-            "locator": {
-              "kind": "symbol",
-              "name": "startRead"
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
-            "content": "sha256:66c6fb4afc210ebef8199ba3c541db6eef69f04b5104818b9eb879a966b7ebb8",
-            "locator": {
-              "end": 451,
-              "kind": "line_range",
-              "start": 435
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
-          },
-          "kind": "code"
         }
       ]
     }

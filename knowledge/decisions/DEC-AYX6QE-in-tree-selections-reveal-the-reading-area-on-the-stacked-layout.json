@@ -1,0 +1,86 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The Jump-only behavior and the answered-only reveal were weighed and rejected, and every later change to how a tree row or a kept family is selected has to decide what the stacked layout shows and what it leaves to the reader's next action."
+  },
+  "alternatives": [
+    {
+      "option": "An in-tree subject selection on the stacked layout reveals the start of its reading area: the answer when it arrives, and the failed or refused status once the read ends unavailable. Focus stays on the selected row, and a status reveal moves no focus and leaves the focus request for a retry.",
+      "reason": "OR-R033 required the reading area to be visible without an additional Jump, and OR-R042 ruled that the requirement reaches a failed or refused read as well as an answered one; the reveal follows the existing focus guard and the existing 60rem breakpoint.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the explicit Jump control as the only way to the reading area, as before the ruling.",
+      "reason": "An in-tree selection that appears to do nothing until the reader finds a second control is the measured defect the ruling exists to fix.",
+      "reconsider_when": "The stacked layout stops placing the reading area below a tall tree, so a selection already shows its answer without a reveal.",
+      "status": "rejected"
+    },
+    {
+      "option": "Reveal only when the read is answered; a failed or refused selection keeps the view where it was.",
+      "reason": "OR-R042 closed this alternative: the failed or refused status is what the reading area has to show for that selection, and the owner ruled there is no answered-only exception.",
+      "reconsider_when": "The status of a failed or refused read is shown somewhere the reader already sees, so the reading area need not be revealed for it.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "On the stacked layout an in-tree selection scrolls the reading-area column to its start and focuses the selected row with `preventScroll`, so one activation reads, reveals and keeps the tree.",
+    "A failed or refused read reveals its own status without moving focus and without using up the selection's focus request, so a successful retry still follows the answer path.",
+    "A reader who moved focus while the read was on its way keeps both focus and the viewport; a lane destination and an opened file, which OR-R033 leaves unchanged, still do not reveal at the stacked layout."
+  ],
+  "context": "On the stacked layout (60rem and narrower) the family tree stands above the reading area, and the reading area can begin thousands of pixels below the viewport. A selection of a row the tree shows read its subject, kept the tree and moved focus onto the row, but the answer (and, for a failed or refused read, the status that stands for it) stayed out of view until the reader found the explicit Jump control. This leaf's Worker's narrow probe of 2026-10-06 measured the answer 11,849 pixels below an 844-pixel viewport. OR-R033 asked for an ordinary-meaning correction; OR-R042 closed the answered-only reading of that ruling.",
+  "decider": "orchestrator (OR-R033, recorded 2026-10-06T16:22:47+02:00, and OR-R042, recorded 2026-10-06T17:19:10+02:00, in notes/run3/ORCHESTRATOR-RULINGS.md, under the developer's one-extra-round direction D82)",
+  "id": "DEC-AYX6QE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-QZC5AZ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-BMFR2T"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R39",
+        "packet": "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+        "content": "sha256:ed9bf2e2de784ca73f5faf27e048893cfdf47a7553484fc86c795a13f611cbbb",
+        "locator": {
+          "kind": "symbol",
+          "name": "revealUnavailableRead"
+        },
+        "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "browser/final/facts-unavailable.json, facts-retry.json and browser/new-vs-reviewed.json; mutations R-a, R-b, R-c, R-f in mutations/summary.json of this pass's evidence folder"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-v2-evidence/ingest-list.json"
+    },
+    "handoffEntry": "OR-R033-D1.a/fixed",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+        "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectionOptions"
+        }
+      },
+      "id": "RLZ-25K6A1",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The options of a selection. Without `keepTree` a selection starts the tree afresh, so every caller that passes no options is an outside selection.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+        "content": "sha256:0c33f4ff9cc589138ae44e6d02cf8d3b6f851239b6b87f359d3b3a0a9c62a0aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "CatalogueFamilies"
+        }
+      },
+      "id": "RLZ-534RCM",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Places the tree, as one keyed child, where the first family it shows stands in the catalogue. While the tree holds a kept family it also lists a catalogue row for every family the tree shows. A catalogue row selects without options, which starts the tree afresh with that family alone. The case \"starts afresh at the family row of the subject already selected\" of `dashboard/src/panels/review/ReviewSurface.walkFresh.test.tsx` tests a row that names the selected subject.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
         "locator": {
           "kind": "symbol",
@@ -20,7 +56,7 @@
     },
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
         "locator": {
           "kind": "symbol",
@@ -37,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
         "locator": {
           "kind": "symbol",
@@ -54,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
         "locator": {
           "kind": "symbol",
@@ -71,7 +107,7 @@
     },
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
         "locator": {
           "kind": "symbol",
@@ -88,7 +124,7 @@
     },
     {
       "anchor": {
-        "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+        "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
         "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
         "locator": {
           "kind": "symbol",
@@ -105,47 +141,93 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The navigation shape with the read-cycle signals and the engagement signal.\n\nAnchor: `ReviewNavigation`; `settling`; `observeComparison`; `engage`",
+    "11": {
+      "note": "How a selection treats the walked tree, and the page a selection may ask for.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:77f12176afd482648f4b647b6556e50dbbdf49b9223165ccfc6a312414e09a46",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
             "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 20
+              "kind": "symbol",
+              "name": "SelectionOptions"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The two delayed-catalogue cases: an engaged reader is not moved, an idle reader is landed on the first family without a remount.\n\nAnchor: \"does not move a reader who is working when the catalogue answers after the bounded wait\"; \"lands a reader who has not acted on the first family when the catalogue answers late, without remounting\"",
+    "12": {
+      "note": "What the workspace receives: the catalogue, the subject and the selection callback with its options.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc83da719f8285f665ad5ffc469062a76a783e26",
-            "content": "sha256:86fc4c29021af0ab94e583322c53b1f2236a18bb144470b03446d47f0503c465",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:8813a8858741137b603631d0bf6d52d3ba1c8a5a399362be070af9789715a658",
             "locator": {
-              "end": 511,
-              "kind": "line_range",
-              "start": 460
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+              "kind": "symbol",
+              "name": "ReviewNavigationState"
+            }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The hold bound and why it exists, including that a late catalogue selects only for a reader who has not engaged.\n\nAnchor: `engage`",
+    "13": {
+      "note": "A catalogue row selects its subject with no options.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:6bcbf369aefda464495c9f2c01d27bafc9483126f34b98dea6be4536de4e5a19",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubjectButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The rail: summary, family rows with the tree, all invariants, the statements and the two buttons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:0d2898874fbc86782d88e5f5bf55ba8dea807d155511991cb54dfbf627d4ae26",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The tree is one keyed child at the place of the first family it shows; with a kept family every family keeps its row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:0c33f4ff9cc589138ae44e6d02cf8d3b6f851239b6b87f359d3b3a0a9c62a0aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "CatalogueFamilies"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The hold bound and why it exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
             "content": "sha256:26cf22d37531dad22a1d29776e25369192889e02820270e33cc11aac1de5a895",
             "locator": {
               "kind": "symbol",
@@ -156,12 +238,12 @@
         }
       ]
     },
-    "3": {
-      "note": "Subject choice, the comparison-keyed catalogue, the expiring hold, the generation bump and the engagement freeze.\n\nAnchor: `useReviewCatalogue`; `engage`",
+    "17": {
+      "note": "Subject choice, the comparison-keyed catalogue, the expiring hold, the generation bump and the engagement freeze.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
             "content": "sha256:9413f7df828e707acd31a1c8799e2cd20451930fbd8dd55086d2ab09cef28501",
             "locator": {
               "kind": "symbol",
@@ -169,37 +251,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:54a242fd51e29448fd8e1468eeedb1c431896df01c456d120932a490fd96e622",
-            "locator": {
-              "kind": "symbol",
-              "name": "setExpired"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:225be264b668ca5870f74d5c2a64f61e4af5b280888543e4a890258be0f17b50",
-            "locator": {
-              "kind": "symbol",
-              "name": "setGeneration"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "The passive gesture observer the surface mounts on its root.\n\nAnchor: `passive: true`",
+    "18": {
+      "note": "The passive gesture observer the surface mounts on its root.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
             "content": "sha256:9ab07617d668d06418fea3d3b6c2381aaf882d9e8e0904d135fe0ea1fa723623",
             "locator": {
               "kind": "symbol",
@@ -207,26 +267,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:f3fc55d428e8909bac1bcc3a4ad3fe19020bee8736ca85f10b347248df23e7ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENGAGING_EVENTS"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "The surface-side snapshot report.\n\nAnchor: `knowledge_compared`",
+    "19": {
+      "note": "The surface-side snapshot report.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
             "content": "sha256:e8636b3d0a28a7c9116e3adbf593a8958258fc7b401ad606841d515e32bdce86",
             "locator": {
               "kind": "symbol",
@@ -237,12 +286,12 @@
         }
       ]
     },
-    "6": {
-      "note": "`initialSubject` owns the default subject choice.",
+    "20": {
+      "note": "The default subject: an explicit target, else the first family, else the first entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
             "content": "sha256:0a8dafc4b94db5879fb7ff1a13c4767f0ddf97348bed303722febc89d1347280",
             "locator": {
               "kind": "symbol",
@@ -253,67 +302,72 @@
         }
       ]
     },
-    "7": {
-      "note": "The rail component.\n\nAnchor: `ReviewNavigation`",
+    "21": {
+      "note": "The surface's selection reads the options: `keepTree` and `page`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:993cd9c30ef7f7efb6a82ab19d9bc0245152f3a8feaeb013767e19b392e0dd89",
-            "locator": {
-              "end": 145,
-              "kind": "line_range",
-              "start": 88
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "`CatalogueFamilies` owns the family rail.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ef3d6346c509dcca300b4bd18b1ad32408881e15",
-            "content": "sha256:b6dbc9e2cd395bc4b93ae247427800ebee3b0d3fc0e52c0f110f83cd982e2887",
+            "blob": "7c6601ddf7269a084e197eb6ae1f071a8c3acef6",
+            "content": "sha256:a4cb15f991923645d5bd6bd9654729ebd68da71c047ec096d8112ba5087c5a36",
             "locator": {
               "kind": "symbol",
-              "name": "CatalogueFamilies"
-            }
+              "name": "subjectSelection"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "The surface wires all three signals: the hold, the snapshot observation and the engagement observer on its root.\n\nAnchor: `hold: navigation.settling`; `useObservedComparison`; `useReaderEngagement`",
+    "22": {
+      "note": "The workspace passes the families the tree shows and the kept flag.",
       "targets": [
         {
           "anchor": {
-            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
-            "content": "sha256:f530a0a18cf444a2a7d6e9afaf0c4e338df6f3eda533e514a9ade2cc54d78852",
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:80951b78a9193578ebd71e056a8a9104518e94f052ab8e45313c657ca6b36e55",
             "locator": {
-              "end": 509,
+              "end": 617,
               "kind": "line_range",
-              "start": 484
+              "start": 610
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "23": {
+      "note": "The mounted case of the catalogue rows beside a kept family and of the tree's place among them.",
+      "targets": [
         {
           "anchor": {
-            "blob": "9092b00bfc271ae8c42fc42a899c837dd1652356",
-            "content": "sha256:4163e809f8be68cc66474980189cb63c61ae063ce42ad25d696a27aa1bf6c509",
+            "blob": "c03d822684615321e5d3468512cebb7ef546913c",
+            "content": "sha256:8ff9ac5fddb428d2aed99911d0f76f955a3946a92fd0ef9af119fed91ef680d0",
             "locator": {
-              "end": 540,
+              "end": 193,
               "kind": "line_range",
-              "start": 537
+              "start": 169
             },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+            "path": "dashboard/src/panels/review/ReviewSurface.walk.test.tsx"
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The two delayed-catalogue cases: an engaged reader is not moved, an idle reader is landed on the first family without a remount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e4ad8cc9c5e89f1b87520a00398292de27e1df8",
+            "content": "sha256:f4ed76ab22acca829485da319fcac381edc45cf4f12f5744816283e6b36cb503",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

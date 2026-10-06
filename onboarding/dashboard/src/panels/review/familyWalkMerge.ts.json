@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
         "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
         "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
         "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
         "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
-        "content": "sha256:a399fc4dae37acd91f631ba146760727a8ec176b45c5aeb61c0b5bbdfe837539",
+        "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+        "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
         "locator": {
           "kind": "symbol",
           "name": "mergeMember"
@@ -88,12 +88,12 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "**The module's own statement of the split: the read cycle decides when, this module owns what.**\n\nAnchor: \"decides WHEN a continuation is admitted\"",
+    "11": {
+      "note": "The module's own statement of the split: the read cycle decides when, this module owns what.",
       "targets": [
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:31f2e1b64650021770455c3f851f865be87359e98fdb3694f6c5ea5abf8584a9",
             "locator": {
               "end": 5,
@@ -105,13 +105,13 @@
         }
       ]
     },
-    "2": {
-      "note": "Exact member merge: same revision, unchanged recorded content and claims, nothing erased.",
+    "12": {
+      "note": "Exact member merge, exported: same revision, unchanged recorded content and claims, nothing erased.",
       "targets": [
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
-            "content": "sha256:a399fc4dae37acd91f631ba146760727a8ec176b45c5aeb61c0b5bbdfe837539",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:4a28ddd0e7ae1e3dbcfaded1bc342195082152ff9c719fe652da918f701ccf58",
             "locator": {
               "kind": "symbol",
               "name": "mergeMember"
@@ -121,12 +121,12 @@
         }
       ]
     },
-    "3": {
+    "13": {
       "note": "Side merge only within the same walk.",
       "targets": [
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:bd8ec16f3628047f94bedee252541a48096ef33d85216fa6b0987c86c838a786",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
         },
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:b307042c8e1648edb15063963dbe1e398b3202fd87b88077d72bc68bc67b73e3",
             "locator": {
               "kind": "symbol",
@@ -148,12 +148,12 @@
         }
       ]
     },
-    "4": {
+    "14": {
       "note": "The admission conditions on the whole payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:fc108054ab40c4650126fa4d22350f0011a142134b4a6397080dc2873a6087a9",
             "locator": {
               "kind": "symbol",
@@ -164,12 +164,12 @@
         }
       ]
     },
-    "5": {
+    "15": {
       "note": "The exported merge, and its statement that it is presentation, not authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:131860f27487fed3d48326b81a7bf59cfb0e6721b7e57501b8e15ea71ea9cf80",
             "locator": {
               "kind": "symbol",
@@ -180,47 +180,12 @@
         }
       ]
     },
-    "6": {
-      "note": "The read cycle's one caller: a `null` merge becomes a failed read.\n\nAnchor: `mergeFamilyContinuation`",
+    "16": {
+      "note": "The walk keeps the change facts of every returned member.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f083e965c563704d58f4018c2c803b051d082a6",
-            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
-            "locator": {
-              "kind": "symbol",
-              "name": "familyContinuationRead"
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The mounted continuation cases that pin it.\n\nAnchor: \"retains the coherent display and fails a rejected continuation, including a structured page refusal\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
-            "content": "sha256:364a235eda93f2966924ff4c46efaa6fdda0144833cf1a86c9d1e0318614d81d",
-            "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 145
-            },
-            "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The walk keeps the change facts of every returned member (MIK-L33).\n\nAnchor: \"...walkedChangeKinds(known, entry),\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
             "content": "sha256:f71ccd4b56224d335186738a021af8c7ea6e8e85cb28bd8a8aa1200e10d7e95b",
             "locator": {
               "kind": "symbol",
@@ -228,22 +193,10 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66aee9172b3a62f04e2556efc399e3c630baa11f",
-            "content": "sha256:b57e9342140eea8e15a1cf585756e8bf673945c7e3f5d1a3010298ca24592bcd",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 149
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "9": {
+    "17": {
       "note": "The union rule it applies.",
       "targets": [
         {
@@ -257,6 +210,58 @@
             "path": "dashboard/src/panels/review/changeTriage.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The read cycle's caller: a `null` merge becomes a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39f52a3070e7ea5ae990de1c13944060f41f81e",
+            "content": "sha256:904fba4680b2632a1c07d36675ccd1ac88cd8287fbce8c3c8257cb60508ae176",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyContinuationRead"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The walked tree's caller of the member merge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "035768698be6a583041c67e462c149c44d5ba459",
+            "content": "sha256:85a6e0153858338536f1bea0e76e9d50da338589ccf9100001c92b0b454a334a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mergeSide"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The mounted continuation case of a rejected continuation that keeps the coherent display.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8e13cbcf253f194c644b8556f976a90bc818f30",
+            "content": "sha256:364a235eda93f2966924ff4c46efaa6fdda0144833cf1a86c9d1e0318614d81d",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

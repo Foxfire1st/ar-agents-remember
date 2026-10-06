@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/review/walkStore.FAM-F00001.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The served answer, whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16271ea631ccb2fa001741c09cc427c003a9bc32",
+            "content": "sha256:4fcb32769e3f2022f787d437f410d4328a37fb0b8c80b34d19b16cb99eace722",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Its receipt row: route, parameters, status, hash and size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e2d5fc47c3059a144d38ab2cbd0adc1b5034111",
+            "content": "sha256:15bb22b31eef8c3f6fbbaee8880fc37d1e00f9a1a8ae849c9c40b3487c9db84d",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "dashboard/src/panels/review/walkStore.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

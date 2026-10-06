@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/panels/review/changeTraversal.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
+        "content": "sha256:e71d33b9260fe63079354753728124c26796b6799fc0ad017d7f45efe3a62d4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "beside"
+        }
+      },
+      "facet": "On the hook alone, with every render recorded: no render shows the status beside other rows, the first such render included; when the first rows are shown again the status does not come back; and a new move is answered again.",
+      "id": "PRF-MKDXY2",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file's statement of why the hook is tested alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
+            "content": "sha256:bff20c8e553185f7c69b1a3f8c0422857e5bdbeec6a219931577f0e0c74c32f7",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The probe that records the status of every render.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
+            "content": "sha256:20d837c67cf6f8c3b4114b634c927df7b79770ed55a639c0c626bf1f310247b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "Probe"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A status is rendered only beside the rows it was said for and never again once other rows were shown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba886606dfa46e0cf27220298e59db631cb8ee05",
+            "content": "sha256:cd563d65bc005c41f17c64263079ca73ed6ff05a99f877b9c80e096f1a60cfb4",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hook that keeps the status with its rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "049d819910de65c1a893439dc57ab92d95609e5c",
+            "content": "sha256:612c3cee6a94e2b191d9d42e6374fdebdfa07b595632f62d8458702779b318bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "useStatusFor"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

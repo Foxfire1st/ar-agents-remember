@@ -1,14 +1,15 @@
 {
   "admission": "legacy-unassessed",
-  "applicability": "Client continuation of a displayed comparison and primary subject along one exact family-side-revision roster walk.",
+  "applicability": "Client continuation of a displayed comparison and primary subject along one exact family-side-revision roster walk, as the read cycle admits it into the answer the reviewer reads.",
   "conditions": [
     "The admitted response agrees with comparison, candidate, selected subject/revisions, cursor, family selection, side/revision, guarantee and page scope.",
     "The request still owns the current read sequence and is not an ordinary refresh.",
     "A rejected continuation states failure and retains the coherent display; a whole-review refusal retains the existing suppression rule."
   ],
   "exclusions": [
-    "Merging across subjects, tasks, history selections, generations or immutable-content conflicts.",
-    "Replacement reads caused by refresh or a changed question."
+    "Merging into an answer across subjects, tasks, history selections, generations or immutable-content conflicts.",
+    "Replacement reads caused by refresh or a changed question.",
+    "The walked family tree of the rail. It shows families and member rows read for earlier subjects of the same comparison beside the answer, tagged as kept, and writes them into no answer; the invariants on the walked tree state its rules."
   ],
   "id": "INV-53F058MT",
   "origin": {
@@ -16,9 +17,9 @@
     "legacyId": "afbaeff2-b1e9-45c1-b8c4-57d57705dfe8",
     "task": "260921-ICR"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "Family accumulation admits only a successful continuation of the displayed comparison, primary subject and exact family-side-revision walk; refresh, subject/history changes, stale responses and late superseded reads cannot import earlier family context.",
+  "statement": "The family context of an answer accumulates only through a successful continuation of the displayed comparison, primary subject and exact family-side-revision walk; refresh, subject/history changes, stale responses and late superseded reads cannot import earlier family context into an answer.",
   "status": "proposed",
   "supersedes": []
 }

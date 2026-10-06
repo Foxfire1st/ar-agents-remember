@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A tree drawn from the latest answer alone loses the rows of the family the reader came from at every step onto another family, so `k` cannot return and `j` at the last row says there is no later change although the reader passed some. The rule is realized in the walk module, the workspace, the surface and the tree component, and the mounted walk cases guard it."
+  },
+  "applicability": "The family tree of the mounted intent reviewer, within one task context, one history view and one comparison.",
+  "conditions": [
+    "A row the tree shows is a family row or member row of any family in the tree, a kept family's included. A member opened from the reading area's member list names such a row, and so does the continuation control of a kept family.",
+    "A pending, failed or refused read of the selected subject removes no row, and the selection mark is on the requested row. An answer that composes no family context removes no row either; that state is then stated above the tree for the selected subject.",
+    "The walk holds its families in ascending order of family identifier, which is the server's order within one context, so the order in which families arrived plays no part in the displayed order and adding a family never reorders rows already shown.",
+    "Two reads of one family are merged side by side: where both recorded the same family revision, every member that either read returned stays.",
+    "The scope line counts kept families apart. The family context details and the reading area describe the selected subject's own answer only."
+  ],
+  "exclusions": [
+    "Selections made outside the tree, a refresh of the review and an answer of another comparison. They start the tree afresh; the invariant on starting afresh states that rule.",
+    "The search filter. It hides the families that do not match, kept or not, and shows them again when it is cleared.",
+    "Leaving the review, changing the leaf, the master or the recorded-history view, and a reload. Nothing is kept across them."
+  ],
+  "id": "INV-NSG0D4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rules 1 to 3 and 5 to 7, and Failure And Recovery Behavior; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md",
+        "mutations F1-a, F1-b, F1-c in mutations/summary.json of this report's evidence folder"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A selection of a row the reviewer's family tree shows adds the families of the selected subject and removes no family and no member row, whether it is made by `j`/`k`, by the visible previous-change and next-change controls or by pointer; a family that is not in the selected subject's own context stays in the tree whole and is tagged as kept with the subject it was last read for.",
+  "status": "proposed",
+  "supersedes": []
+}

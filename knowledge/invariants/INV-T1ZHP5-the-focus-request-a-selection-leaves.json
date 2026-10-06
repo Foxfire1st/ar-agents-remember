@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A passive effect of the previous answer's render can run after the reader's next selection. If it spends the new request, focus lands on the earlier row or on the page body, and the next `j` starts from the wrong row, so a key press is lost. A refresh that keeps its request after a failure moves the rail at some later, unrelated answer. The rule is realized in the workspace and the surface, and cases that force the order of effects guard it."
+  },
+  "applicability": "The focus request of the mounted review workspace: what a subject selection, a refresh of the review and a retry leave for the effect that runs when an answer is shown.",
+  "conditions": [
+    "A request records the number of the tree intent that was current when it was made. Only a render whose tree intent is later takes it, so the passive effect of a render from before the selection, which can run after the reader's next click or key press, leaves it alone.",
+    "A selection's request moves focus to the selected row when the subject is no longer pending; a selection that needs no new answer is answered by the first render after it.",
+    "A refresh's request moves no focus. It brings the selected row into view only after a render that is later than the refresh has seen a new answer, so the rail keeps its place until the refreshed answer is shown.",
+    "A refresh whose read fails or is refused drops its request, so a later answer for the subject on screen, such as a roster continuation or a page, does not move the rail. A failure that was on screen when the refresh was asked is not that refresh's own and drops nothing.",
+    "The reader's retry of a failed refresh is the refresh again and asks what it asked, also when the retry is made in the turn that shows the failure. The retry of any other failed read reads again and asks for nothing more."
+  ],
+  "exclusions": [
+    "Whether focus is moved at all when the reader has moved it elsewhere since the selection. The invariant on the focus move after a selected subject's answer states that rule.",
+    "Scroll position in a real browser beyond the one request to bring the selected row into view."
+  ],
+  "id": "INV-T1ZHP5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rule 9 (the refresh and its retry) and Preservation Boundaries (the focus rule); notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-focus-request-answered-by-its-selection",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The focus request a selection leaves is answered only by a render made after that selection, so focus lands on the row the latest selection chose; a refresh leaves a request that only brings the selected row into view, once an answer that arrived after the refresh is shown, and the retry of a failed refresh asks for the same.",
+  "status": "proposed",
+  "supersedes": []
+}

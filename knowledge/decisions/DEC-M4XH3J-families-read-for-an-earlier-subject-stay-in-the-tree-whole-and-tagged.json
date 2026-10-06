@@ -1,0 +1,79 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Showing only changed rows and keeping only a history of the walk were weighed and rejected, and every later change to what the tree draws has to keep whole, tagged families of earlier subjects apart from the selected subject's answer."
+  },
+  "alternatives": [
+    {
+      "option": "A family read for an earlier subject stays in the tree whole, tagged with the subject it was last read for; a selection never removes a row; kept families are dropped when the comparison changes.",
+      "reason": "The developer chose it (D36: \"Whole, tagged\"). Every change the reader passed stays a stop, unchanged siblings stay visible, and the tag keeps the reader from taking a kept family for context of the selected subject.",
+      "status": "chosen"
+    },
+    {
+      "option": "Show only the changed rows of a family read for an earlier subject.",
+      "reason": "It breaks \"unchanged siblings stay visible\" (ICR-R32 rule 4).",
+      "reconsider_when": "ICR-R32 rule 4 no longer requires that the unchanged siblings of a family stay visible in the tree.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep only a history of the walk.",
+      "reason": "Under it a selection still removes rows.",
+      "reconsider_when": "The requirement that selecting a row the tree shows never removes a row is withdrawn, and only a way back to earlier subjects is asked for.",
+      "status": "rejected"
+    },
+    {
+      "option": "Leave the tree as the selected subject's context and record the lost way back as a known limit.",
+      "reason": "The developer wanted the behaviour changed so that `k` can always return, as a leaf of its own (D35: \"I wouldn't mind that to be an extra leaf. Prefer that over baking another master.\").",
+      "reconsider_when": "The server composes one tree of all families of a comparison whatever the subject, so that the client has no rows of earlier subjects to keep.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The tree can hold families that are not in the selected subject's context. Each is tagged, counted apart in the scope line, and left out of the reading area and of the family context details.",
+    "A click on a family row no longer narrows the tree to that family (D36).",
+    "The statement that earlier family context is never imported holds for an answer, not for the tree: the tree shows rows read for earlier subjects as tagged presentation."
+  ],
+  "context": "The server composes a family context for each selected subject: one family for a family subject, every containing family for an invariant subject. The reviewer drew its family tree from the latest answer alone, and `j`/`k` are the same selection as a click. A step onto another family therefore redrew the tree, and `k` could not return to the family the reader came from. The acceptance run of MIK-R33 on the installed build found it. The question was what the tree shows of rows that were read for an earlier subject.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D36, 2026-10-01: \"Chosen from three alternatives each (packet draft, Open Truth Gaps G1 to G3): \"Whole, tagged\", \"Stop at its control\", \"Clicks in the tree keep too\"\")",
+  "id": "DEC-M4XH3J",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NSG0D4"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": "INV-53F058MT"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R39",
+        "packet": "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D36 (2026-10-01), point 1, and D35 (2026-10-01); requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md, Open Truth Gaps, MIK-R39 G1, and rules 4 to 6"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D36-G1",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

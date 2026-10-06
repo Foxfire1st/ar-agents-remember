@@ -1,42 +1,27 @@
 {
   "path": "dashboard/src/panels/review/markerNavigation.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+        "content": "sha256:e97fb472b667cd471b06ec6173e89065078bdb21c4b9ed38a6f63c5b330f1786",
+        "locator": {
+          "kind": "symbol",
+          "name": "nav"
+        }
+      },
+      "facet": "A follow and its return each call the navigation's `onSelect` once, with a subject and a family context and no options, so neither keeps the tree.",
+      "id": "PRF-4B1CFZ",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Following a marker.\n\nAnchor: \"selects the invariant's own review at its member row of the named family\"; \"selects the invariant alone when no family records it\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "288ae13b5dc22ee9a3d0688d132e774d4ae1cbda",
-            "content": "sha256:5d3f4398309e1028951870e60b4be4171dac7599cff47058a653ca51ec8b2d92",
-            "locator": {
-              "end": 68,
-              "kind": "line_range",
-              "start": 43
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The return.\n\nAnchor: \"restores the subject, then the lane, the opened file, the layout and the full-file choice\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "288ae13b5dc22ee9a3d0688d132e774d4ae1cbda",
-            "content": "sha256:a4634e0f998e3510ec00203d4108a6fcc91fbcaeda1720d8c3dc6ba2907fc7f5",
-            "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 70
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
+    "10": {
       "note": "The moves under test.",
       "targets": [
         {
@@ -50,6 +35,101 @@
             "path": "dashboard/src/panels/review/markerNavigation.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The options a selection would have to pass to keep the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b6a54df559165d59f5c46c8a1ab31d6701367a",
+            "content": "sha256:68997ff7d2cf0414b3c209e1f50fa32b2716ce3a54d5f5064231efaa6ff66f27",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionOptions"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The recording stand-ins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:7aa4d90c35df9edbb78243e2ba60bbac4d1e4cd101e96035f013a9ff8595b7f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:1a3a7a1d153fc29d51291c7aac449b5718d4469374cb796d49d63eae27c1883f",
+            "locator": {
+              "kind": "symbol",
+              "name": "navigation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Following a marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:5d3f4398309e1028951870e60b4be4171dac7599cff47058a653ca51ec8b2d92",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The return.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:a4634e0f998e3510ec00203d4108a6fcc91fbcaeda1720d8c3dc6ba2907fc7f5",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A follow and its return select with two arguments only, so both start the walked tree afresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3dc2ed5ddb048f95f6a1c25aec1587f44b57ef3",
+            "content": "sha256:b5ccd4686ca7936a5c603f4d77ee83ddfc072b3680e2ea480c26459ce5b6b878",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
         }
       ]
     }

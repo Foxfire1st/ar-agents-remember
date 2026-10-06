@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A held `j` can outrun the answer that brings the next family. \"No later change in this tree\" then stands beside a later change and tells the reader the walk is over when it is not. A status cleared by an update made while rendering comes back, because React can apply a queued status after that render. The rule is realized in the traversal hook and in the tree component, and a case on the hook alone and mounted cases guard it."
+  },
+  "applicability": "The polite status of `j`/`k` and of the visible previous-change and next-change controls in the reviewer's family tree: the end messages and the message of the stop at a continuation control.",
+  "conditions": [
+    "What the tree shows is named by the order it lists in and, for each family shown under the filter, the family and the number of its member rows returned. A filter, the order control, a roster continuation and a selection's answer that brings or drops a family each change it.",
+    "No render shows the message beside other rows, the first such render included, and no state is updated while rendering.",
+    "Saying the same message again for the same rows changes no state, so a key held at an end renders nothing.",
+    "A new move gets its own message."
+  ],
+  "exclusions": [
+    "The wording of the messages and which rows are stops."
+  ],
+  "id": "INV-CK3PTB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rule 11; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The message of the last traversal move is shown only beside the rows the tree showed when it was said: once the tree has shown other rows the message is dropped and does not return when the tree shows the same rows again.",
+  "status": "proposed",
+  "supersedes": []
+}
