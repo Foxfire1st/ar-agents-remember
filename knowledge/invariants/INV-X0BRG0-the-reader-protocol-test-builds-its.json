@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The coupling is realized in the reader fixture and in both halves of the extension in skills_extension.py; a server composed outside the factory receives only one half, which silently drops `tools/list` and hangs the call rather than failing it."
+  },
+  "applicability": "Every MCP server the product composes in a process that may also run another server or test, and the reader protocol test's server in particular.",
+  "conditions": [
+    "The server is built through the product factory `create_server`, whose registrar chain installs the skills extension.",
+    "Another server in the same interpreter may already have installed the process-wide request union."
+  ],
+  "exclusions": [
+    "A server built directly from a bare `FastMCP` without the product registrars is outside the obligation; the reader fixture no longer does that.",
+    "The extension's two handlers and the skills catalog behavior are unchanged by this obligation."
+  ],
+  "id": "INV-X0BRG0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V1a-reader-alone.txt (1 passed) and V2-whole-preview-then-reader.txt (10 passed, one process); the base reproductions and the causal isolation of review R1 stand as recorded in the R1 archive"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rules 1 and 3",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reader protocol test builds its server through the product factory `create_server`, so the process-wide request union that any product server installs always meets its per-server dispatcher and `tools/list` is answered whatever ran earlier in the process.",
+  "status": "proposed",
+  "supersedes": []
+}

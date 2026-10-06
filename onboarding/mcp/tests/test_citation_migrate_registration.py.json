@@ -1,5 +1,41 @@
 {
   "path": "mcp/tests/test_citation_migrate_registration.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
+        "content": "sha256:bcbac1c556eea291d079d8e13e34aeb8e45f1c4949d770f0f125b2f2b49303e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors"
+        }
+      },
+      "facet": "Requires an unrelated `AuthorityError` to leave both builders as the same exception object.",
+      "id": "PRF-DD2R01",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
+        "content": "sha256:47c21fb887a24232541272af1ed142c408e233db3afbe6443e137ec8a3e4dc57",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal"
+        }
+      },
+      "facet": "Requires both payload builders to answer the mismatch with the named status, the failing side and name, and the sibling next action.",
+      "id": "PRF-E5H183",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
             "content": "sha256:d12084a98d779f4b69ab321b1a361cf4cd4c6d183775a0396da895b04935ae88",
             "locator": {
               "kind": "symbol",
@@ -41,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e9c28afd258902e5a70363b3da18f86952e096c",
-            "content": "sha256:743e5d3362f851cda417df3309b8aef2db3dac1ff0a21b246902035bcf3503b5",
+            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+            "content": "sha256:8bdbcc1a5173fc81c836c77d63bb25eed569aea6d1554c06ce25304e4b333f4d",
             "locator": {
               "kind": "symbol",
               "name": "citation_migrate_payload"
@@ -58,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf5d4bd962bb0138e26a43fc4836aadec32de998",
+            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
             "content": "sha256:0822b243970bd428eb7342e198c11877e43e2cccb85c4309125e8917ebd6a9cf",
             "locator": {
               "kind": "symbol",
@@ -92,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -118,6 +154,22 @@
             "path": "mcp/src/agents_remember/models/memory.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two new cases pin the configured-authority refusal and the unchanged propagation of every other authority error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
+            "content": "sha256:e5601d662f041249bf1dd94d47820bbefe569f09d7841dd90a659335cf8f812e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationMigrateRegistrationTests"
+            }
+          },
+          "kind": "test"
         }
       ]
     }

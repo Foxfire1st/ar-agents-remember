@@ -15,7 +15,7 @@ per-file check can see it.
 
 ## Current source account
 
-The native worker owes one parent-addressed report-written message only when a parent agent started it, and states that a finished turn is not AR acceptance. Manifest-selected architect/manager/orchestrator operation capsules must inspect candidate/evidence before acceptance; a removed manager inspection sentence must fail the guard. The retained contradiction machinery checks authored instruction wording, not runtime acceptance transactions.
+The native worker owes one parent-addressed report-written message only when a parent agent started it, and states that a finished turn is not AR acceptance. Manifest-selected architect/manager/orchestrator operation capsules must inspect candidate/evidence before acceptance; a removed manager inspection sentence must fail the guard. The retained contradiction machinery checks authored instruction wording, not runtime acceptance transactions. The roster holds every canonical surface that speaks the completion vocabulary, including the composed curation operation and the curator and reviewer role documents, whose retained sentence states the mechanical reading.
 
 ## Code Commentary
 
@@ -29,7 +29,9 @@ Four mechanisms defend four different readings, and they are deliberately **not*
 - **Every surface that speaks the vocabulary states the mechanical reading.** `COMPLETION_TRUTH_ROSTER`
   is a census, not a list of favoured files: the declared roster must **equal** the files that use
   `COMPLETION_TRUTH_VOCABULARY`, in both directions. A surface that newly speaks the vocabulary and is
-  not declared fails just as a declared surface that went silent does.
+  not declared fails just as a declared surface that went silent does. The composed curation operation
+  and the curator and reviewer role documents stand on the roster because each retains the sentence that
+  terminal/finalizer truth attests only that the turn ended and wakes the owner who validates.
 - **Each declared surface states its own owed clauses and does not deny them.** `OWED_STATEMENTS` is
   per-surface and contradiction-aware: a surface that states *and* denies fails `_assert_owed` and
   reads `CONTRADICTED`.

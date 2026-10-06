@@ -19,6 +19,25 @@
       },
       "rationale": "Reviewer intake preserves exact task-document and reader arguments.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
+        "content": "sha256:913b092e7b70dbce1ba4810d78e8df865f31a9ba581878e23434b879d41dafe7",
+        "locator": {
+          "end": 128,
+          "kind": "line_range",
+          "start": 126
+        }
+      },
+      "id": "RLZ-QBXQTV",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The sentence that makes the reviewer role a participant: terminal/finalizer truth attests only that this turn ended and wakes the decider, who validates the verdict independently.",
+      "role": "primary-authority"
     }
   ],
   "references": {

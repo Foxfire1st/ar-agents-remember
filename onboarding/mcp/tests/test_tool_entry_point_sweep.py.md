@@ -34,25 +34,37 @@ the module believes is advertised.
 the sweep and its controls share, so a control proves the sweep rather than a second
 implementation of it. Seven arms: `payload`, `refusal`, `bare-not-ok`, `unvalidatable`,
 `boundary-validation`, `argument-validation`, `error`. A raise is split by **which model
-refused**: `REFUSED_MODEL` (`:208`) extracts `1 validation error for <Model>` and `_raised_arm` (`:245-263`) compares that name with the tool's own registered model, so a `T7`-class break — a
+refused**: `REFUSED_MODEL` extracts `1 validation error for <Model>` and `_raised_arm` compares that name with the tool's own registered model, so a `T7`-class break — a
 tool's own response model refusing the payload its producer built — is diagnosed apart from the
 caller's invalid arguments, which are the generated `<tool>Arguments` input model. Both arms are
 asserted **empty by name**, so such a break is diagnosed instead of arriving as an anonymous
 raiser.
 
-**Two pins, one update rule.** `ENVELOPE_LOSING_RAISERS` (`:98`) **was** `T34`'s nine tools that raise where they should
+**Every sweep call is bounded, and the sweep's own deadline is not a product raiser.**
+`EntryPointWorld._call` runs under three 60-second phase limits — session initialization, the tool
+response and session cleanup — and a passed limit raises `_ToolCallTimeout` naming the tool and the
+phase. `call` lets that exception through instead of counting it as a product raiser, so the sweep
+stops at the first tool that does not answer rather than recording the hang as an envelope loss.
+`ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler` holds a
+tool answer back, patches the response limit to three seconds, and requires the named failure, the
+closed handler and a working next call. The world's cleanup is registered with `addClassCleanup`
+before `build()` can fail, so a class setup that fails still closes the world. The fixture's own
+`_git` calls (setup and the census) pass no timeout and are outside the bounded protocol
+operations.
+
+**Two pins, one update rule.** `ENVELOPE_LOSING_RAISERS` **was** `T34`'s nine tools that raise where they should
 refuse, so the caller loses `ok`/`status`/`nextAction`; every entry named an ordinary precondition
 (an absent provider, an unrecorded default-branch authority), and `provider_status` and
 `memory_baseline_status` meet the same conditions with a typed payload, which is why it was a
 defect rather than a contract. **Superseded by `260918-TSIP-L6`, below: the nine are repaired and
 this constant is now `frozenset()`** — emptied in the change that repaired them, which is this
-module's own update rule. `STATE_DEPENDENT_RAISERS` (`:128-134`) is
+module's own update rule. `STATE_DEPENDENT_RAISERS` is
 the same defect on the lifecycle family's *state* precondition: five tools, each with the states
-in which it loses the envelope, measured as a four-state matrix (`AMBIENT_STATES`, `:136`) over
-`LIFECYCLE_STATE_POPULATION` (`:144-152`), which is **derived by rule from the roster** and
-asserted equal to the written-out `EXPECTED_LIFECYCLE_STATE_POPULATION` (`:154-169`) — the rule
+in which it loses the envelope, measured as a four-state matrix (`AMBIENT_STATES`) over
+`LIFECYCLE_STATE_POPULATION`, which is **derived by rule from the roster** and
+asserted equal to the written-out `EXPECTED_LIFECYCLE_STATE_POPULATION` — the rule
 alone cannot be checked by a subset assertion, so weakening it takes a second visible edit.
-`UNMARKED_NOT_OK` (`:189`) **was** the same shape for the third defect (`T64`): a validated
+`UNMARKED_NOT_OK` **was** the same shape for the third defect (`T64`): a validated
 payload reporting `ok:false` while carrying neither a refusal identity (`REFUSAL_IDENTITY_KEYS`,
 `:191`) nor a next action (`NAVIGATION_KEYS`, `:192`). One entry, `citation_migrate`, whose preview
 answered `ok:false` where its sibling `citation_fix` answers `ok:true` for the equivalent shape.
@@ -78,11 +90,9 @@ real invalid argument (`citation_fix` without its `contract_path`) to its own ar
 ### Conventions
 
 `unittest.TestCase` throughout; no `pytest` marks and no `-m` override, so the cases are in the
-default selection and their lane is **`unit-regression`**
-(`mcp/tests/test-evidence-lanes.toml:154`). Four classes, 15 cases: coverage 1
-(`EntryPointCoverageTests`, `:867-886`), the sweep 7 (`EntryPointProbeTests`, `:887-1181`), the
-choke-point controls 5 (`ChokePointControlTests`, `:1182-1280`), the census controls 2
-(`EntryPointCensusControlTests`, `:1281-1353`). Every number it needs is derived at run time —
+default selection and their lane is **`unit-regression`**. Four classes: coverage (`EntryPointCoverageTests`), the
+sweep (`EntryPointProbeTests`), the choke-point controls (`ChokePointControlTests`), the census
+controls (`EntryPointCensusControlTests`). Every number it needs is derived at run time —
 the roster, the response-model registry and the live advertisement are all read, never written as
 literals.
 
@@ -90,7 +100,7 @@ literals.
 
 - **Hermeticity is a measured boundary, not a claim.** Per repository the case asserts `HEAD`,
   the Git status, and every file outside `.git` by digest. The memory repository may gain exactly
-  `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` (`:171`) — the two scaffold files the product's own
+  `KNOWN_MEMORY_SCAFFOLD_ADDITIONS` — the two scaffold files the product's own
   `memory_init` repair writes — and every tracked status line must be identical. Across the
   coordination root: nothing removed, nothing added or rewritten outside
   `COORDINATION_WRITE_ZONES` (`:215-226`), which are measured rather than guessed (the historical 67-tool measurement added 18 files and rewrote 2 inside these zones;
@@ -125,6 +135,7 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 - The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [1]
+
 - The classifier both the sweep and the controls use, so a control proves the sweep. [2]
 - The refused model's identity, which separates a response-model break from the caller's invalid arguments. [3]
 - `T34`'s nine tools that lose the whole envelope, each with the ordinary precondition that loses it. **Now empty** — repaired by `260918-TSIP-L6`. [4]
@@ -138,13 +149,18 @@ they make no acceptance claim.
 - The coordination-root zones inside which the product may legitimately write. [12]
 - The swept population is derived and equals the live server's advertisement. [13]
 - The sweep itself: one world, one run, and the equality assertions that bind every pin. [14]
+
 - The executed positive control over the choke point, and both break shapes at the entry point. [15]
+
 - The census controls: write, rewrite and delete in both repositories and outside every zone. [16]
 - The lane row that keeps this module in the default selection. [22]
 - The advertised roster the swept population is derived from and asserted equal to. [18]
 - The registry whose models classify a payload that does not validate. [19]
 - The choke point a bypassing handler skips, and the validation this module's control executes. [20]
 - The validation the positive control drives directly. [21]
+
+- The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [23]
+- The control that holds an answer back and requires the named failure, the closed handler and a working next call. [24]
 
 ### Cross-Repo References
 
@@ -163,7 +179,7 @@ Both constants remain declared and asserted **equal** to what the sweep observed
 directions, so a tool that starts raising again fails the case rather than silently re-entering a
 pin nobody widened.
 
-`T34_REPAIRED_TOOLS` (`:103-117`) is new here, beside the pin it belongs to, and is the **single
+`T34_REPAIRED_TOOLS` is new here, beside the pin it belongs to, and is the **single
 source of truth** for the repaired nine: `mcp/tests/test_tool_refusal_conformance.py` imports it
 rather than keeping a second inline copy that could drift. A new case,
 `test_the_t34_family_answers_with_a_named_refusal_instead_of_raising` (`:963-1008`, with its

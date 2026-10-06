@@ -1,6 +1,43 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+        "content": "sha256:e9d6402689ffe51c82f16133a711cdcf602f61a35a0d7f4116588c001207d3f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_install_dispatcher"
+        }
+      },
+      "id": "RLZ-REXRPE",
+      "invariant": "INV-X0BRG0",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "This is the per-server half of the extension that only a server built by the product factory receives; a server without it silently drops each request once the process-wide half is installed.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+        "content": "sha256:99f480fb78ae99318a23a1acf888da8aab05b61fe7022ba72d39b2795f303842",
+        "locator": {
+          "kind": "symbol",
+          "name": "_install_request_union"
+        }
+      },
+      "id": "RLZ-VTTMBC",
+      "invariant": "INV-X0BRG0",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "This is the process-wide half: it replaces `ServerSession.__init__` for the rest of the interpreter, which is the state the reader test met.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes.\n\nAnchor: \"This extension introduces three protocol methods.\"; \"The extension introduces no other methods, message types, or schema changes.\"",

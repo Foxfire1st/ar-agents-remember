@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The packet names the participant-or-drop choice, the drop alternative is real for a document that no longer needs the sentence, and the choice binds how the doctrine corpus may change."
+  },
+  "alternatives": [
+    {
+      "option": "Keep each document's terminal/finalizer completion sentence and put the three on `COMPLETION_TRUTH_ROSTER` as participants, rewording the comment to state the membership rule.",
+      "reason": "Each document states both halves of the reading - terminal/finalizer truth attests only that the turn ended, and it wakes the owner who validates - and the roster's mechanical-reading case holds the declared surfaces to the first half; keeping the sentences required no document edit.",
+      "status": "chosen"
+    },
+    {
+      "option": "Remove the completion vocabulary from the three documents so they need no roster row.",
+      "reason": "The sentence is the role's own statement of the boundary and its owner-validation half; removing it would drop doctrine the roles rely on.",
+      "reconsider_when": "A document stops telling its role the mechanical reading, or the roster census is replaced by another guard.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The roster census passes with the three documents on it; a later surface that speaks the vocabulary without a row still fails the census.",
+    "The comment above the roster now states the membership rule the rows follow."
+  ],
+  "context": "MIK-R70@v1 rule 4 requires each of the three composed documents - the curation operation and the curator and reviewer role documents - to be either a completion-truth participant on `COMPLETION_TRUTH_ROSTER` that states the mechanical reading, or a document whose text stops using that vocabulary. Review R1 found the roster's comment contradicted the three rows beneath it.",
+  "decider": "Worker 8c97f702 under MIK-R70@v1 rule 4; review R1 found rule 4 met and fix verification R2 confirmed it; orchestrator ruling OR-R013 retained the original per-document choices.",
+  "id": "DEC-KFCRXN",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-5TKYXM"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R70",
+        "packet": "requirements/MIK-R70-v1-the-master-tip-passes-its-own-suite.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V1b-roster-alone.txt (1 passed) and W-F1-roster-rows-removed.txt (1 failed, the three documents)"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 4",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

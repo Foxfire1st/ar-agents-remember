@@ -44,10 +44,11 @@ a 28-file apply response cost 7.7k tokens (GitHub #52).
 
 - Transport-thin: quality behavior lives in `application.memory_quality.controller`; other
   memory/drift behavior lives in `application.memory_tools` and the memory/onboarding-drift
-  packages. Wire-shape compaction is the one
-  exception that belongs here (mirroring `tools/providers.py` and
-  `tools/core.py`): the application entry point keeps returning the full result, and the
-  report is written BEFORE compaction so forensic detail is never lost.
+  packages. Two exceptions belong here: wire-shape compaction (mirroring `tools/providers.py`
+  and `tools/core.py`), where the application entry point keeps returning the full result and
+  the report is written BEFORE compaction so forensic detail is never lost; and the one
+  configured-authority refusal, where the two citation builders answer a
+  `ConfiguredContractAuthorityError` instead of letting it reach the choke point.
 - Decision facts stay inline (per-decision path lists, commits, intent note);
   only derivable per-record verbosity (onboarding paths, repeated
   evidence/reason strings) moves to the report.
@@ -83,3 +84,21 @@ result is passed through unchanged, because its complete repair list is that fix
 - A converted tree's citation-fix result is bounded for transport; a legacy result passes through. [1]
 - Each named list capped, with its full count. [2]
 - The response caps every list, says so, and keeps the full counts. [3]
+
+## The Citation Tools Answer A Configured-Authority Mismatch
+
+`citation_fix_payload` and `citation_migrate_payload` call their application entry point inside a `try`
+that catches exactly `ConfiguredContractAuthorityError`. The catch returns `_citation_authority_refusal`:
+`ok: false`, `status: configured-contract-authority-invalid`, the `repoId` and `contractPath` it was called
+with, a `detail` naming the failing side and name, and `nextAction: developer-decision` — the remedy every
+sibling answer to the same condition carries. Every other error, an `AuthorityError` among them,
+propagates unchanged: the two entry points answer only the one condition the product knows how to
+name, and any other failure still raises and loses the envelope. `ENVELOPE_LOSING_RAISERS` stays
+empty because the sweep's probe meets only that condition. The refusal is built once, so the two
+tools cannot answer the same condition differently; `citation_fix`'s answer still passes through
+`bounded_citation_fix`.
+
+- The two citation tools answer a configured-contract authority mismatch with the product's named refusal and next action. [4]
+- The refusal carries the failing side and name in its detail, for both tools. [5]
+
+- Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged. [6]

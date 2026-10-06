@@ -39,6 +39,25 @@
     {
       "anchor": {
         "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+        "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+        "locator": {
+          "end": 225,
+          "kind": "line_range",
+          "start": 223
+        }
+      },
+      "id": "RLZ-PDP66S",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The sentence that makes the curator role a participant, and the place realization RLZ-V1AKR1 of INV-4E130M already anchors.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
         "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
         "locator": {
           "end": 21,

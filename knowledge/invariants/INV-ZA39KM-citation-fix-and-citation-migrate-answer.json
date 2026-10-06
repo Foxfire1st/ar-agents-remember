@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A caller that cannot see the refusal loses `ok`, `status` and `nextAction` for a condition the product already knows how to name; the two cases pin both the refusal's identity and the unchanged propagation that keeps the catch narrow."
+  },
+  "applicability": "The `citation_fix` and `citation_migrate` public entry points when the configured repository authority contradicts the contract they were called with.",
+  "conditions": [
+    "The application call raises `ConfiguredContractAuthorityError`.",
+    "The answer passes through `_tool_payload`, and `citation_fix`'s through `bounded_citation_fix`."
+  ],
+  "exclusions": [
+    "Every other error, an `AuthorityError` among them, propagates unchanged: the two entry points answer only the one condition the product knows how to name, and any other failure still raises and loses the envelope.",
+    "A missing contract path and the other writer-guard failures keep their existing behavior."
+  ],
+  "id": "INV-ZA39KM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V1c-sweep1-alone.txt and V1d-sweep2-alone.txt (1 passed each), W-F3-old-remedy.txt and W-F4-catch-widened.txt (both fail)"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 5",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`citation_fix` and `citation_migrate` answer a contract that contradicts configured repository authority with `ok: false`, the status `configured-contract-authority-invalid`, the failing side and name, and the next action `developer-decision`, instead of raising; no other error is translated and `ENVELOPE_LOSING_RAISERS` stays empty.",
+  "status": "proposed",
+  "supersedes": []
+}

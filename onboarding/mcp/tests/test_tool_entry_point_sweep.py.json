@@ -1,14 +1,106 @@
 {
   "path": "mcp/tests/test_tool_entry_point_sweep.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+        "content": "sha256:8ee21f1da7dd7cb209c7b5e1b82c799f714274b9543db3f7e13ccde602f37fe2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+        }
+      },
+      "facet": "Holds a tool answer back, patches the response limit to three seconds, and requires the named failure, the closed handler and a working next call.",
+      "id": "PRF-M9WD7C",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "L70-R1-F5",
+        "leaf": "260928-MIK-L70"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+        "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld._call"
+        }
+      },
+      "id": "RLZ-1VB4BZ",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "L70-R1-F5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The local driver arms and refreshes the per-tool phase deadline around the existing SDK session.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+        "content": "sha256:cc8e0cf4671f9675c640b45252204bf69c4c6e91c6c8d50d46ad826ed9a6111d",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointWorld.call"
+        }
+      },
+      "id": "RLZ-J5GA9Z",
+      "invariant": "INV-W4XGR4",
+      "origin": {
+        "handoffEntry": "L70-R1-F5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The classifier's entry; it keeps the sweep's own named timeout out of the product-raiser classification instead of counting it as an envelope loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+        "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
+        "locator": {
+          "kind": "symbol",
+          "name": "EntryPointProbeTests.setUpClass"
+        }
+      },
+      "id": "RLZ-M3VKEF",
+      "invariant": "INV-M9SY9Y",
+      "origin": {
+        "handoffEntry": "L70-R1-F5 owned fixture cleanup",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "Class cleanup registers the existing world close before any deadline can fail fixture setup.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+        "content": "sha256:64bec662b6db676d25ec29247cc6bcc0460648e5fe0b3815298fdfaffa592a54",
+        "locator": {
+          "kind": "symbol",
+          "name": "ChokePointControlTests.setUpClass"
+        }
+      },
+      "id": "RLZ-R8DKDS",
+      "invariant": "INV-M9SY9Y",
+      "origin": {
+        "handoffEntry": "L70-R1-F5 owned fixture cleanup",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The control world registers the same existing close before its initial ping.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended.",
       "targets": [
         {
           "anchor": {
-            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
-            "content": "sha256:5c64f8e3c9cb8d30991cc0d9e0799de7d4585b70f68302fcfae99a461555202b",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+            "content": "sha256:82e5e8412757cc1aab7971fea43f71d6acb56c3902aa5c038c3658111ea89f52",
             "locator": {
               "kind": "symbol",
               "name": "EntryPointWorld"
@@ -23,7 +115,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
             "locator": {
               "kind": "symbol",
@@ -39,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:45f51aced2c7283a60cf8b5c5697df4cc9a00bbee3393481209618d19a26bf67",
             "locator": {
               "kind": "symbol",
@@ -55,7 +147,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:44100f1a6d5a720f1e607189ff8b81859a2e782b84895087152af79f27792881",
             "locator": {
               "kind": "symbol",
@@ -71,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:e6541f83ab393d4ca2381200670325da4fd3de1a6b1b2a32abe9548fecfa8896",
             "locator": {
               "kind": "symbol",
@@ -87,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
-            "content": "sha256:cc469a2f9b47af78c37f35ea49bda52c22276bacc143c493e77c635d2473882f",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+            "content": "sha256:6f6f1aea6f5d5af44c1ed195cb6f431a468f0f71b31c8ff9c15dc2d0ae6d50aa",
             "locator": {
               "kind": "symbol",
               "name": "EntryPointProbeTests"
@@ -103,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
-            "content": "sha256:7e3bae6f94f96c7927a8c34e2bc7c0c66f235ecad4683cfb4068c23bd0012f26",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+            "content": "sha256:79bdc8948822715431486d1e5dfe75315f46d48b5247b791bd90179dcf04cf5d",
             "locator": {
               "kind": "symbol",
               "name": "ChokePointControlTests"
@@ -119,7 +211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:22a11f367e54291ae27b8b07bc21b8ba0b55f48071782901bdea64f09a00b608",
             "locator": {
               "kind": "symbol",
@@ -169,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:26bfab83d0548342d180d30119c4eedbcb029c39d15753716ba73fd28af68518",
             "locator": {
               "kind": "symbol",
@@ -232,12 +324,46 @@
         }
       ]
     },
+    "23": {
+      "note": "The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.\n\nAnchor: `EntryPointWorld._call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+            "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The control that holds an answer back and requires the named failure, the closed handler and a working next call.\n\nAnchor: `ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
+            "content": "sha256:8ee21f1da7dd7cb209c7b5e1b82c799f714274b9543db3f7e13ccde602f37fe2",
+            "locator": {
+              "end": 1320,
+              "kind": "line_range",
+              "start": 1299
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "The refused model's identity, which separates a response-model break from the caller's invalid arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:995a2e5792acde634a2f8609a360561be5b5fb9942e5d80573a5a6fcb7e7c852",
             "locator": {
               "kind": "symbol",
@@ -253,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:9cbed5b01f0cff1332dd4da507f21c4eda604ef294aa2928b27b4f92e9e8a986",
             "locator": {
               "kind": "symbol",
@@ -269,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:dcc341043a58c926bdda03daf4d6074872b266be668079e2f2eac3a12647e44d",
             "locator": {
               "kind": "symbol",
@@ -285,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:08b68c8ec979c3177eef42c9de790526f48c82b46a14df3505368a1e3208f260",
             "locator": {
               "kind": "symbol",
@@ -301,7 +427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:5278813f9a00cdd539b826929deaf36aeb1b158d51925d0fae584fcddd6e1901",
             "locator": {
               "kind": "symbol",
@@ -317,7 +443,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:4716ba36ce90f112c8e69731334ff59b7162feec73b7b9b8848ed9879f177e53",
             "locator": {
               "kind": "symbol",
@@ -333,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6078941a6c53a9bd3ac6a09a7ce9f2306cf26fe6",
+            "blob": "ccd569f0586c5c9916b5039873ae7bd69ba007de",
             "content": "sha256:f18c14781ddeecc0fca17b58d2b4d8d3f97930328f9c497895ac89df4713fc79",
             "locator": {
               "kind": "symbol",

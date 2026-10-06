@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The census rule is realized in the doctrine test and in the three composed documents' retained sentences, and it keeps a surface that newly speaks the vocabulary from silently dropping off the roster."
+  },
+  "applicability": "Every canonical surface under `skills/l-01-agent-lifecycles` that composes completion from terminal or finalizer truth.",
+  "conditions": [
+    "Each of the three documents states both halves of the reading: terminal/finalizer truth attests only that the turn ended, and it wakes the owner who validates.",
+    "The roster's mechanical-reading case (`test_every_roster_surface_carries_the_mechanical_reading`) holds every declared surface to the first half of that reading; the owed-clause statements do not cover these three documents."
+  ],
+  "exclusions": [
+    "A surface that merely names the relay, such as the notifier, is not a participant.",
+    "The role documents' duties beyond their completion sentence are unchanged."
+  ],
+  "id": "INV-5TKYXM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V1b-roster-alone.txt (1 passed) and W-F1-roster-rows-removed.txt (1 failed, the three documents)"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 4",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`operations/curation.md`, `roles/curator.md` and `roles/reviewer.md` each tell their role that terminal/finalizer truth attests only that the turn ended and wakes the owner who validates, so each is a completion-truth participant and stands on `COMPLETION_TRUTH_ROSTER`.",
+  "status": "proposed",
+  "supersedes": []
+}

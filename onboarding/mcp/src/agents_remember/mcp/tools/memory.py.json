@@ -1,13 +1,68 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/memory.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+        "content": "sha256:8bdbcc1a5173fc81c836c77d63bb25eed569aea6d1554c06ce25304e4b333f4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_migrate_payload"
+        }
+      },
+      "id": "RLZ-F2HR3Q",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The public entry point of `citation_migrate`, repaired the same way so the two tools cannot answer the same condition differently.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+        "content": "sha256:b5f86e3740df1827d88595d128202919c6cc2e879d1096b7b80d34cd8adfdd5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_payload"
+        }
+      },
+      "id": "RLZ-HPM03Q",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The public entry point of `citation_fix`: the one place its application call can be turned into an answer before the response model sees it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+        "content": "sha256:c75638d3fba46f829216fa1fe0d84a571e51166c8edd7cf85a680b7c49e81423",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_authority_refusal"
+        }
+      },
+      "id": "RLZ-VVT227",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The single builder of the refusal both entry points return, so its status, detail and next action are stated once.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "A converted tree's citation-fix result is bounded for transport; a legacy result passes through.",
       "targets": [
         {
           "anchor": {
-            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
+            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
             "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
             "locator": {
               "kind": "symbol",
@@ -23,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d4d7af6abc9dac7fd77c5ce7fa01da6c727703ed",
+            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -46,6 +101,58 @@
               "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded"
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The two citation tools answer a configured-contract authority mismatch with the product's named refusal and next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "229c8d54bf92f71204f5239ad062fe7861b9e5ae",
+            "content": "sha256:c75638d3fba46f829216fa1fe0d84a571e51166c8edd7cf85a680b7c49e81423",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_authority_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The refusal carries the failing side and name in its detail, for both tools.\n\nAnchor: `CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
+            "content": "sha256:47c21fb887a24232541272af1ed142c408e233db3afbe6443e137ec8a3e4dc57",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged.\n\nAnchor: `CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
+            "content": "sha256:bcbac1c556eea291d079d8e13e34aeb8e45f1c4949d770f0f125b2f2b49303e5",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/tests/test_citation_migrate_registration.py"
           },
           "kind": "test"
         }

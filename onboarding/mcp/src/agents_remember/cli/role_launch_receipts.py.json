@@ -168,12 +168,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
             "locator": {
-              "end": 686,
+              "end": 689,
               "kind": "line_range",
-              "start": 674
+              "start": 677
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -186,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
             "locator": {
-              "end": 755,
+              "end": 758,
               "kind": "line_range",
-              "start": 688
+              "start": 691
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },

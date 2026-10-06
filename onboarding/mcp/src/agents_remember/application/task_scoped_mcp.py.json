@@ -92,8 +92,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
-            "content": "sha256:234b2d3df4a6761ec19cc6f3fdafc15461359c232e524d497ea649178ddacef4",
+            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+            "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_readers_use_call_local_admitted_leaf_context"

@@ -4,6 +4,25 @@
     {
       "anchor": {
         "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
+        "content": "sha256:1f3bc493e0414099459ded808ed16e3ff639805dafe7a51b4694d79afcdf25a3",
+        "locator": {
+          "end": 320,
+          "kind": "line_range",
+          "start": 318
+        }
+      },
+      "id": "RLZ-EEEG4W",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
           "end": 69,

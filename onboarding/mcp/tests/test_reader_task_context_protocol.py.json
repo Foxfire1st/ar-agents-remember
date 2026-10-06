@@ -3,8 +3,25 @@
   "proves": [
     {
       "anchor": {
-        "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
-        "content": "sha256:234b2d3df4a6761ec19cc6f3fdafc15461359c232e524d497ea649178ddacef4",
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:f6349a5640d353aade56e3a4c400e736d4ba19370b2d9d1c31a0dfb541d77663",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_late_tool_list_response_times_out_and_closes_the_handler"
+        }
+      },
+      "facet": "Holds a `tools/list` handler until it is cancelled, requires the named failure from a three-second response deadline, and re-runs the primary case so the server with its patched handler is proven usable.",
+      "id": "PRF-E8CQJR",
+      "invariant": "INV-2S0FEY",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 2",
+        "leaf": "260928-MIK-L70"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
         "locator": {
           "kind": "symbol",
           "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
@@ -17,19 +34,158 @@
         "handoffEntry": "PNT-R04@v1 §4 / F10",
         "leaf": "260928-MIK-L90"
       }
+    },
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+        }
+      },
+      "facet": "Builds its server through the product factory and completes the protocol exchange in a process where the extended request union is installed, where the bare-FastMCP fixture dropped the request.",
+      "id": "PRF-X4GZX5",
+      "invariant": "INV-X0BRG0",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
+        "leaf": "260928-MIK-L70"
+      }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:25e9092c51836cd05c3df7b3f082bf90aaf680346b1647c2eea0a5d0f4fdedd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_git_status"
+        }
+      },
+      "id": "RLZ-M9TE1D",
+      "invariant": "INV-2S0FEY",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 2",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The two Git observations around the protocol exercise are the test's only other waits, and this helper gives them their limit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:0f12e34c0afbba96924c11edc11e02c82224dda336af787e44848d7f9c7d5412",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_protocol"
+        }
+      },
+      "id": "RLZ-X8ANCJ",
+      "invariant": "INV-2S0FEY",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 2",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The driver the primary test calls; it runs the whole exchange under the default limit of the helper.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:8738ac3e5a80d294022c619428b4c74edb0b5d55a9101e12458c4b7ac10d9e80",
+        "locator": {
+          "kind": "symbol",
+          "name": "_await_protocol"
+        }
+      },
+      "id": "RLZ-Y48H2Y",
+      "invariant": "INV-2S0FEY",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 2",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The one helper that puts a limit on the reader's protocol waits and turns a passed limit into the named assertion; the 60-second driver and the 3-second late-response check both go through it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+        "content": "sha256:b859d5e06df0486918ec772f13566456e23d0712b3228329f6026430225fd222",
+        "locator": {
+          "kind": "symbol",
+          "name": "RegisteredTaskReaderContextProtocolTests.setUp"
+        }
+      },
+      "id": "RLZ-Z4WCTE",
+      "invariant": "INV-X0BRG0",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rules 1 and 3",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The fixture is where the server under test is composed; a bare FastMCP built here is what dropped every request after another test had installed the extended request union.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The scoped current source carries the module/document behavior described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
-            "content": "sha256:39fa4994a0b37caac0d61744c4705e7e1b505534299e9156a052b59a04709eae",
+            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+            "content": "sha256:6abb22c7ed2ac668aab18cd3e1fce0a0a0c5edc64439aede6563bd6dc67357e5",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The factory that pairs the process-wide request union with its per-server dispatcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "content": "sha256:c3ed0814fd9aa904bcb2ed946c4c6539a1be63e48e73b1f6bfa05d67b04c6813",
+            "locator": {
+              "kind": "symbol",
+              "name": "create_server"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded driver and the 60-second Git observation limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+            "content": "sha256:8738ac3e5a80d294022c619428b4c74edb0b5d55a9101e12458c4b7ac10d9e80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_await_protocol"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The late-response case that holds its handler and starts its deadline after session initialization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+            "content": "sha256:f6349a5640d353aade56e3a4c400e736d4ba19370b2d9d1c31a0dfb541d77663",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_late_tool_list_response_times_out_and_closes_the_handler"
             }
           },
           "kind": "test"

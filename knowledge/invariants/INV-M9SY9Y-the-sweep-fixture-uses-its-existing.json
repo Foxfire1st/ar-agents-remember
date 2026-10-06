@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A class setup that fails after the world is built would otherwise leave a scratch coordination root, two repositories and their worktrees behind for the rest of the session; registering the existing close first removes that scratch tree when the setup fails."
+  },
+  "applicability": "The two sweep classes that build an `EntryPointWorld` in their class setup.",
+  "conditions": [
+    "The existing `close` operation is registered with `addClassCleanup` before `build()` can fail."
+  ],
+  "exclusions": [
+    "The world's own build, sweep and close behavior is unchanged."
+  ],
+  "id": "INV-M9SY9Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "host-sweep-module: 16 passed; no ambient reset or product shutdown change."
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L70-R1-F5 owned fixture cleanup",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The sweep fixture uses its existing close operation even when class setup fails.",
+  "status": "proposed",
+  "supersedes": []
+}

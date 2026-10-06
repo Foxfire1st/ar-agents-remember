@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+        "blob": "34933a774836231c708d69217e5532d386d0c240",
         "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+        }
+      },
+      "facet": "Requires the declared roster to equal the canonical surfaces that use the completion vocabulary, in both directions.",
+      "id": "PRF-TX0CVG",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "34933a774836231c708d69217e5532d386d0c240",
         "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
         "locator": {
           "kind": "symbol",
@@ -34,9 +51,45 @@
         "handoffEntry": "Preservation (flags and acceptance)",
         "leaf": "260928-MIK-L90"
       }
+    },
+    {
+      "anchor": {
+        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+        }
+      },
+      "facet": "Requires every surface on the roster to state the first half of the mechanical reading: that the terminal outcome only ends the turn.",
+      "id": "PRF-Z5EB64",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      }
     }
   ],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
+        "locator": {
+          "kind": "symbol",
+          "name": "COMPLETION_TRUTH_ROSTER"
+        }
+      },
+      "id": "RLZ-4KH0W1",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 4",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The roster is the declaration the census case and the mechanical-reading case both read; a document off it is neither counted as a speaker nor held to the reading.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The doctrine's one home, which the census and the shared-root case follow.\n\nAnchor: `# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)`",
@@ -57,12 +110,12 @@
       ]
     },
     "2": {
-      "note": "The declared roster and the vocabulary whose speakers it must equal, in both directions.",
+      "note": "The declared roster and the vocabulary whose speakers it must equal, in both directions.\n\nAnchor: `COMPLETION_TRUTH_ROSTER`, `COMPLETION_TRUTH_VOCABULARY`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:ad356ce7e3ba8637bbf6916860893578e64abc9ae3b384cda14dee01009f6bd3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
             "locator": {
               "kind": "symbol",
               "name": "COMPLETION_TRUTH_ROSTER"
@@ -72,7 +125,7 @@
         },
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
             "locator": {
               "kind": "symbol",
@@ -84,12 +137,12 @@
       ]
     },
     "3": {
-      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.",
+      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.\n\nAnchor: `OWED_STATEMENTS`, `RELAY_MECHANICS_SURFACES`",
       "targets": [
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:26d677fe34c9d7b0acd9de9a6105b629392574287d657218f94f6dd9319946a2",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:df6409f55f169bb98d26d104ce854ad89419febcb01f1dd6253cbbd9e29aa59d",
             "locator": {
               "kind": "symbol",
               "name": "OWED_STATEMENTS"
@@ -99,23 +152,11 @@
         },
         {
           "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:03f5fd58a45b5f32de73acc98d24558425cd274dd0182a7a5ccf9fbc783589df",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:9bbbb0e799c59d6f98178260cfd077b24c68e7f807b90e9aa65b8c79eebc35d5",
             "locator": {
               "kind": "symbol",
               "name": "RELAY_MECHANICS_SURFACES"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4f85d91eb77f3dc111509db1246ff77083c43293",
-            "content": "sha256:10c8e62a31ee488281bc15e6028805ebe2d964778dab27a2b483e7d78e464316",
-            "locator": {
-              "end": 529,
-              "kind": "line_range",
-              "start": 478
             }
           },
           "kind": "test"
@@ -139,12 +180,12 @@
         },
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:ae874c7ac9d61bf0e511e34073776e69d79a8f2449c74178fc3352ec49b83297",
             "locator": {
-              "end": 555,
+              "end": 558,
               "kind": "line_range",
-              "start": 543
+              "start": 546
             }
           },
           "kind": "test"
@@ -156,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:37e187cb99bf9dac347b9cb19bbe30e1cce2a79ba47c819207ee96217137bd71",
             "locator": {
               "kind": "symbol",
@@ -167,7 +208,7 @@
         },
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
             "locator": {
               "kind": "symbol",
@@ -178,24 +219,24 @@
         },
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:62f5071540042843f8ad8008ff2889f8b8a793cf08532e478f1a4e24ee2176c4",
             "locator": {
-              "end": 1044,
+              "end": 1047,
               "kind": "line_range",
-              "start": 977
+              "start": 980
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "d20a155802e01626a45cd05620a8f6743821c5a3",
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
             "content": "sha256:37447236196b3896fafbee931d5fed8c667b57c22694b01a0abba362d93a46ed",
             "locator": {
-              "end": 1080,
+              "end": 1083,
               "kind": "line_range",
-              "start": 1045
+              "start": 1048
             }
           },
           "kind": "test"

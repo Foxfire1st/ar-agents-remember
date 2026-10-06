@@ -1,0 +1,79 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The packet's second sentence admitted two real readings, the blocking-test-only reading was carried as a live alternative by review R1, and the choice binds every later change to these four tests."
+  },
+  "alternatives": [
+    {
+      "option": "Give every one of the four named tests a bounded wait: the reader's exchange gets one named limit and the sweep a named limit per tool and phase.",
+      "reason": "The sentence names the four tests, and a sweep that waits on an unanswered tool blocks a combined run exactly as the reader did; the limits live in the tests, with assertions and pins unchanged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Read sentence 2 as the blocking test only and carry the two sweep cases to MIK-R87 as environment cases.",
+      "reason": "The ruling chose the literal reading; R87 keeps the general guard against a blocked run and the environment question, not these two tests' own waits.",
+      "reconsider_when": "MIK-R87 lands a general guard against a blocked run whose rule on waits covers the two raiser-pin sweep tests.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The sweep's own deadline is a test failure, not a product raiser: `_ToolCallTimeout` escapes the classifier and the raiser pins stay empty.",
+    "Inside the Worker's command sandbox the sweep's named limit fires at `role_start`, and the asyncio runner's default-executor shutdown still does not complete there; that environment boundary stays with MIK-R87 carry item 17 and is recorded as a limitation, not as this decision's cause."
+  ],
+  "context": "MIK-R70@v1's second normative sentence says that a test of the four that waits for something has an end to its wait, while its rule 2 speaks of the blocking reader test's wait. Review R1 read sentence 2 as the blocking test only and offered to carry the two raiser-pin sweep cases to MIK-R87; the orchestrator's ruling OR-R013 (notes/run3/ORCHESTRATOR-RULINGS.md, 2026-10-06) decided the literal reading instead.",
+  "decider": "Orchestrator 71d18fce-4cb8-4a37-8dff-563bf4962b96, ruling OR-R013 (2026-10-06), on MIK-R70@v1; delivered to the retained Worker and Reviewer and accepted during their turns.",
+  "id": "DEC-JP304Y",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-2S0FEY"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-W4XGR4"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R70",
+        "packet": "requirements/MIK-R70-v1-the-master-tip-passes-its-own-suite.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R87",
+        "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V3-focused-touched-modules.txt (the late-response case passes); W-F2c-reader-deadline-removed.txt (with the limit removed the case does not pass)",
+        "notes/run3/ORCHESTRATOR-RULINGS.md, ruling OR-R013 (2026-10-06); the leaf task document's decision of 2026-10-06T10:41:58"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 2",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}
