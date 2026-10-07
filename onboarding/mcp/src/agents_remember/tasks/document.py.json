@@ -157,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
             "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
             "locator": {
-              "end": 160,
+              "end": 164,
               "kind": "line_range",
-              "start": 151
+              "start": 155
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },

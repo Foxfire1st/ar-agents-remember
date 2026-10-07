@@ -6,103 +6,69 @@
 
 ## Purpose
 
-Canonical normative task-intent projection and identity for one leaf task document (CCR-R02@v2).
-The module turns an already-resolved task document into a strict `task-intent/v1` projection
-containing only explicitly allowlisted normative slots, hashes that canonical JSON into the
-SHA-256 intent digest, and provides the single currentness assertion
-(`require_current_task_intent`) that closeout, door, and lifecycle consumers call before any
-evidence reuse.
+The normative task-intent projection of one leaf task document and its identity. The module turns a
+resolved task document into the strict `task-intent/v1` projection of allowlisted normative fields, hashes
+its canonical JSON into the intent digest, and offers the one currentness assertion that owners call
+before they reuse evidence. It is also the owner that confines, reads and checks an approved requirement
+packet.
 
 ## Code Commentary
 
-### Logic
+### Projection and identity
 
-The projection operates on `ResolvedTaskDocument` (never on raw paths or prose) and reads the
-shared exhaustive field taxonomy from `document_field_effects.py`:
+- `TaskIntentV1` holds the leaf identity, objective, requirements, design, steps with substeps, code
+  examples with their note, acceptance obligations and the optional `expectedKnowledgeEffects`. Every model
+  is frozen and forbids extra fields. `canonical_value` drops `expectedKnowledgeEffects` when it is `None`,
+  so a document that declares none projects without the key.
+- `_ROOT_FIELDS` and `_NESTED_FIELDS` name the fields the projection consumes.
+  `_validate_allowlisted_classifications` compares them with the shared field taxonomy
+  (`document_field_effects`) in both directions and raises `task-intent-schema-unclassified` for a slot
+  that is not classified normative and for a normative field outside the projection.
+- `task_intent_projection` refuses a master (`task-intent-leaf-required`) and an unsupported schema
+  version. `task_intent_identity` is the SHA-256 of the projection's canonical JSON with sorted keys and
+  compact separators. `task_intent_master_projection` projects a master's own normative fields as a plain
+  mapping and refuses a leaf.
+- `require_current_task_intent(observed, current, owner=..., next_action=...)` raises
+  `<owner>-task-intent-stale` when the observed identity differs from the current one.
+- `_requirements` refuses blank requirement text, and refuses packet references without any exact text
+  (`task-intent/v2-cutover-required`).
 
-- `TaskIntentV1` (line 94) is the strict frozen projection: `schema: task-intent/v1`, the leaf
-  identity, objective, requirement texts or approved packet refs, design, allowed step/substep
-  obligation text, normative code examples, `codeExamplesNote`, and typed acceptance obligations.
-  Generic freeform sections, comments, notes, decisions, progress, lifecycle, and audit fields are
-  never projected; `canonical_value` (line 112) emits the by-alias JSON for hashing.
-- `_ROOT_FIELDS` (line 119) / `_NESTED_FIELDS` (line 137) enumerate exactly which
-  `TaskDocument`/nested-model fields task-intent/v1 consumes; `_validate_allowlisted_classifications`
-  (line 287) refuses both a slot missing its normative taxonomy membership and a taxonomy-normative
-  slot outside the projection, so projecting can never silently drop a newly classified field.
-- `task_intent_projection` (line 148) refuses a master (`task-intent-leaf-required`), requires
-  the supported schema version, and translates taxonomy failures into
-  `task-intent-schema-unclassified`.
-- `task_intent_identity` (line 197) hashes the canonical projection with
-  `json.dumps(sort_keys=True, separators=(",", ":"))` into a 64-hex digest, producing
-  `TaskIntentIdentity`.
-- `require_current_task_intent` (line 244) reuses the model-layer rejection seam and raises
-  `{owner}-task-intent-stale` when the observed identity differs from the current one, with the
-  owner-chosen `next_action`.
-- `_requirements` (line 307): exact text must be non-blank, and `task-intent/v1` refuses a
-  packet-ref replacement of exact task text (`task-intent/v2-cutover-required`). An approved
-  packet ref resolves task-root-relative, must be a Markdown file inside the task root, must be
-  readable, and its structured `Stable ID`/`Version` metadata must match exactly
-  (`_approved_packet_ref` line 331, `_packet_metadata` line 364); duplicate metadata fields
-  refuse as ambiguous.
-- `_acceptance_obligations` (line 396) projects only questions typed as
-  `AcceptanceObligationQuestion`.
-- **`expectedKnowledgeEffects` (MIK-R11), an optional slot.** `TaskIntentV1.expectedKnowledgeEffects` is a
-  tuple of `TaskIntentExpectedKnowledgeEffect` (`subject`, `effect`, `requirementRef`) or `None`;
-  `_expected_effects` (line 384) projects the leaf's declaration. `canonical_value` **drops the key when it
-  is `None`**, and `task_intent_master_projection` drops it for a master, so a document that declares
-  nothing projects exactly as before. The field is in `_ROOT_FIELDS`, and `ExpectedKnowledgeEffect`'s three
-  fields are in `_NESTED_FIELDS`, matching their `NORMATIVE` classification. A declaration therefore changes
-  the leaf's intent digest, and clearing it (`null`) restores the former digest.
+### The requirement packet owner
 
-### Conventions
+`_approved_packet_ref(task_root, reference)` is called for a packet reference of the projection and, through
+`memory/knowledge/requirement_owner.consume_owner_resolution`, for every requirement endpoint of a
+knowledge record.
 
-The projection is never a whole-document hash and never a digest of decision prose. New normative
-slots require both a schema revision and a taxonomy classification; the pair is enforced at
-projection time.
+1. It resolves the task root and then `<root>/<reference path>`, both through `observed_resolve`.
+2. An absolute reference path, a resolved path outside the task root, or a suffix other than `.md` raises
+   `task-intent-requirement-packet-outside-task`. This happens before any byte of the packet is read.
+3. It reads the packet's bytes once. A missing or unreadable file raises
+   `task-intent-requirement-packet-missing`.
+4. The text is decoded as UTF-8 with `\r\n` and `\r` turned into `\n`. `_packet_metadata` reads the
+   two-column table before the first `## ` heading; a repeated field raises
+   `task-intent-requirement-packet-metadata-ambiguous`. `Stable ID` or `Requirement ID` must equal the
+   reference's ID and `Version` its version, else `task-intent-requirement-packet-version-mismatch`.
+5. The result names the packet by its resolved path relative to the task root.
 
-### Invariants And Boundaries
-
-- Only allowlisted normative slots change the digest; step status, decisions, timestamps, audit
-  prose, lifecycle id, enclosures, evidence, and status notes are excluded by construction.
-- An approved requirement packet ref is authoritative only after confined path/readability,
-  unambiguous metadata, and exact id/version checks; approval-like prose alone cannot create a
-  typed reference.
-- Integration generations do not carry leaf task intent; this module is leaf-only.
-- **An absent `expectedKnowledgeEffects` leaves every existing task-intent digest unchanged** (MIK-R11).
-  Candidate invariant; realized by the key-dropping `canonical_value` and the master projection's `pop`;
-  proved by `test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations` and
-  by the worker's and reviewer's byte-identical preservation runs over every real task document (597 and
-  889 documents).
-
-### Todos
-
-None recorded.
+Inside a recording block the call leaves these rows: one `resolve:` row for the task root, one `resolve:`
+row for `<resolved task root>/<reference path>` with the reference path's own links unresolved, and one
+byte row under that same path with the SHA-256 of the bytes read, `absent`, or `unreadable (...)`. The byte row is keyed by the caller's locator,
+not by the file the locator pointed at. A symbolic link that is retargeted afterwards therefore changes the
+`resolve:` row, even when the other target holds the same bytes, and a packet that resolves outside the
+task root leaves the `resolve:` row and no byte row. Outside a recording block the function records nothing
+and its answers and errors are the same.
 
 ## Evidence
 
-### Docs References
-
-The configured Domain Documentation registry is empty; no external documentation claim is made.
-
-### Repo-Internal References
-
-- Strict allowlisted v1 projection model. [1]
-- Normative slot allowlists for the document and nested models, since MIK-R11 including `expectedKnowledgeEffects` and its three nested fields. [2]
-- The optional declared-effects slot; absent is absent, so digests are unchanged. [3]
-- The declaration projected into the leaf intent, and dropped from a master's. [4]
-- Projection entry point refusing masters and translating taxonomy failures. [5]
-- Canonical digest production from the projection. [6]
-- Currentness/staleness assertion for owners. [7]
-- Allowlist/taxonomy symmetry enforcement. [8]
-- Requirement text/packet handling and the v2-cutover refusal. [9]
-- The shared exhaustive field-effect taxonomy consumed here. [10]
-- The typed slot/identity models imported from the sibling model module. [11]
-
-## CCR-R02@v2 Normative Task-Intent Identity
-
-This module is the projection/identity half of CCR-R02@v2. Its canonical packet
-(`requirements/CCR-R02-v2-normative-task-intent-identity.md`) requires closeout evidence to bind
-a separate versioned normative task-intent identity that changes only for obligation/plan changes.
-The allowlist + shared-taxonomy rule and the "decision prose is audit-only" rule are implemented
-here. The L25 delivery verified at `99dc249b` carries the sealed L02 Attempt-10 candidate per
-`notes/reports/260831-CCR-L25-worker-delivery.md`.
+- The strict projection and the dropped key for an absent declaration. [12]
+- The fields the projection consumes. [13]
+- The projection entry point refuses a master. [14]
+- The digest of the canonical projection. [15]
+- The currentness assertion. [16]
+- The allowlist and the taxonomy must agree in both directions. [17]
+- Requirement text and packet references. [18]
+- The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check. [19]
+- The metadata table of a packet. [20]
+- The requirement owner calls the packet owner and carries its refusal back. [21]
+- A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded. [22]
+- A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. [23]

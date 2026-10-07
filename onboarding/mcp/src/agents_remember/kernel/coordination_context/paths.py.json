@@ -2,81 +2,163 @@
   "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Resolver selection uses these path primitives for topology and settings discovery.\n\nAnchor: `resolve_coordination_context`, `_selection_roots`, `_selection_from_settings`",
+    "10": {
+      "note": "An absent memory root, a retargeted root link and an equal-bytes retarget each recompute a kept view.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
             "locator": {
               "kind": "symbol",
-              "name": "resolve_coordination_context"
+              "name": "_root_selections"
             },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A higher-priority settings file that appears is a change of the recorded set.",
+      "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:b32c60af0859592dfe4425df0f7ba7bbb048901372b075788f02de7b284ca549",
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
             "locator": {
               "kind": "symbol",
-              "name": "_selection_roots"
+              "name": "_settings_selection"
             },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
-          "kind": "code"
-        },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The coordination root from a hint, the installed root or the sibling default.",
+      "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:f0562b4ab845ee8912222ba4a7d75131a5c104002e8f6b36a631f12158f198a9",
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:f4a6ac6575b40d71c3506dc509a09c34a8b03dcc72c075c531f9dff1d2c9c1f8",
             "locator": {
               "kind": "symbol",
-              "name": "_selection_from_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+              "name": "resolve_coordination_root_hint"
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "3": {
+      "note": "The external memory root is a recorded resolution.",
+      "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:b01964883e1933c59f3656f7e4cb16b118fbf436f8782f33c29fee7598bad412",
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:7e2b1c8b3bd411e2a1c6ab1347851e345769b8f1aaedfe6a439d6abd65fcd6c5",
             "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+              "kind": "symbol",
+              "name": "external_memory_root"
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "4": {
+      "note": "The settings file priority, with each probe recorded.",
+      "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:915b157c1065e560af49425ddc001e2a5c91d9f09ea9ee314e6613e660b7427a",
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:645284fe51bd370f6a7d80e184fc9ca89ea251ba10a40b4f76a6a72c6e6d3d06",
             "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+              "kind": "symbol",
+              "name": "settings_path_for_roots"
+            }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "5": {
+      "note": "The two admitted settings locations and the refusal of the removed layout.",
+      "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:d9708c7f68d91ce5266a986e865c1bfaae54687d4f75ff536137dcd1d52ae5c7",
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:97ad5ea24fedd4f300d2b70f2eabef7e1817cbf94c353dae72a29212b3884feb",
             "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 148
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+              "kind": "symbol",
+              "name": "memory_roots_from_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The memory worktree shape, matched segment by segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:8aba5a03c1d88142bbd5a0853d9e4812c668e55510a45cd8e7ac9a0c4fb499e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_worktree_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The settings path of an onboarding root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:c7c0026f4522141ef3a124151a30e606d2ecc3b929d2d55e4d4f80b06bd91df9",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_settings_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The supported onboarding roots and the refusal that names both shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:592e72ebf9c585e4c03e2dbe1cac6cb4e2c90d0db9d22ee6a796e997a211f6ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_topology_from_onboarding_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one-to-one card path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:8f09e6eb513ec1e3b96652de09519b0d96ef811cbc36202bf17ca56fc631bb35",
+            "locator": {
+              "kind": "symbol",
+              "name": "mirror_onboarding_path"
+            }
           },
           "kind": "code"
         }

@@ -2,55 +2,196 @@
   "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Data models and missing-memory errors are defined separately.",
+    "10": {
+      "note": "The coordination root of a selected contract, with the path probe and resolution recorded.",
       "targets": [
         {
           "anchor": {
-            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
-            "content": "sha256:1ede5b8c40f21eda12c20adeb0437808689e88988b53a8977ba89a9a7cd74691",
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:e71fc697cdd06b7fd9098300a4a9f188b88bd10532b3030a3b27cfa1a40e95af",
             "locator": {
               "kind": "symbol",
-              "name": "CoordinationHints"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e24ec61861ff6fc1a5b120522127a7c8034a9710",
-            "content": "sha256:05c5a4d110599230ad222139fd4240846978f945928fd4ef1e2bcd0382dcdb8f",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 93
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+              "name": "_contract_coordination_root"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules.\n\nAnchor: `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131"
-        }
-      ]
-    },
-    "3": {
-      "note": "Context construction owns resolved task/worktree/memory roots and ledger selection.",
+    "11": {
+      "note": "The context is filled from roots, settings and the optional contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
             "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
             "locator": {
               "kind": "symbol",
               "name": "build_coordination_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Root absence, appearance, retargeting and removal each recompute a kept view; a present removed root is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_selections"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A root probe that raises is recorded as unreadable and nothing is kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:3bf7b12c1f3082937f37f7520c12c1a725d905a9747082a3fee52c9c35fda60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_errors"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The fallback context reads the contract and records the bytes consumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fallback_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
+            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The selection order: request, explicit settings, removed layout, external root, missing memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:d1402594faf11a8a67261bc434c0c1dafe213d59a6f19ecb0b4552c1ea3316c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_coordination_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An existing repository-sidecar root is refused by its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:771f59366c7551772aeb1e73865929e124bc1c1b4ea65aa5a86aab84a11ed0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_legacy_repository_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The four roots a selection starts from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:b32c60af0859592dfe4425df0f7ba7bbb048901372b075788f02de7b284ca549",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Explicit settings must imply an existing memory root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:41c28d25069604480dea511b8d54fa04434bde78a3a2a769590e0eb118c2e96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_from_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The public entry requires a contract reader and branches on the onboarding-root hint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The selection path of the context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:968118d1c4be9dc1c159f9d3dfe6fb8c9d5bcb07b671936bad8bd12c29969ca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context_from_selection"
             }
           },
           "kind": "code"

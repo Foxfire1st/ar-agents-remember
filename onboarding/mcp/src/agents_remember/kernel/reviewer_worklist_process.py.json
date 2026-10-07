@@ -1,0 +1,749 @@
+{
+  "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:2e3708fe2db796a3f646a0bda8af74cdec8000e530a968b5afda2ddb8e3d2eb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stop"
+        }
+      },
+      "id": "RLZ-3PWN47",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Sends SIGTERM to the child's process group, waits half a second and sends SIGKILL, so the child's Git children end with it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:bc55cb71db3cb5a0c0700a2e33bdd1b0ddb61804ca39d7c227beb379b42ba0a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorklistOverloaded"
+        }
+      },
+      "id": "RLZ-8NM43B",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Carries the code reviewer_busy and the action text that the tree view publishes as its refusal.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:1ad06e7f20e4fbdc84b6fe8e84ce1f2b7beba27e1901f6a6e7e5271933be7746",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch"
+        }
+      },
+      "id": "RLZ-C4SPD9",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Starts the one command line of a child: the running interpreter with -P -m and the package's child module, with pipes and a session of its own. No shell, script path or other module can be started through it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:a4a07a9d87965025a498d8152fc330a2cace89abdb37b9a5a44119bab1ec96eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_validate_document"
+        }
+      },
+      "id": "RLZ-CV3DFZ",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Accepts an error only without a document, and a document only as a knowledge-worklist/v1 object in state complete or incomplete with a pairing and with items and incomplete as lists; a complete document without a recorded read is refused.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:422f0b59b8acf13375096e7771c02b1cc885ead57a9537fa3a9c4daa08c77ec6",
+        "locator": {
+          "kind": "symbol",
+          "name": "arm_child_lifetime"
+        }
+      },
+      "id": "RLZ-DJG5W4",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Runs in the child before it reads its request: routes SIGTERM and SIGALRM to the group kill, arms the child's own alarm, asks the kernel for SIGTERM when the parent dies, and ends the child at once when its recorded parent is not its parent any more.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:9aa13084228fdc01b1e96f727e6484154ed6335bf01ef7ef82514cf18c7ff8c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fly"
+        }
+      },
+      "id": "RLZ-GDZS6J",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Runs one computation on its own thread and, after the reply and after every failure, stops the child's process group, closes the pipes, removes the child from the active set and wakes the queue.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:0bacdcc3b18f8dd4d92ebf525ed51f585285b27b7bf5dd362d3fd0acd56ed890",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leave"
+        }
+      },
+      "id": "RLZ-HN0RB2",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Counts a requester out and cancels the computation when the last requester leaves it unfinished; a requester that leaves while others wait changes nothing for them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:ff9c89567a848f1ff530ebe59c5e190eadb3acde3c89e75f66a0704e3fa1128d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit"
+        }
+      },
+      "id": "RLZ-K5K7PH",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Lets a flight start its child only at the head of the first-in-first-out queue and while fewer than MAX_ACTIVE_CHILDREN children run, and refuses with WorklistOverloaded a flight that still waits when less than a second of its deadline is left.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:9c9c55583729ea74114f5ca3bd7a65be1d91f81dc1ea67724bdc73072dfa20cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "shutdown"
+        }
+      },
+      "id": "RLZ-MPMKFZ",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Marks the owner as stopped, wakes every waiter and stops every active child; requests that arrive afterwards are refused.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:4f17c44be6b9f806a9455bf0a3653d5fdf3ac72a1ad03a00e9eb6029e0fe2a97",
+        "locator": {
+          "kind": "symbol",
+          "name": "_reply"
+        }
+      },
+      "id": "RLZ-R3AY12",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Refuses a reply that is not JSON, holds a non-finite number, has other keys, another operation, request digest, source identity, module path or process, an impossible computation time or an invalid read row; a source or module mismatch is the failure that asks for a dashboard restart.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+        "content": "sha256:d7c0c61d9c3b8425baf45d30bb9e72f3896ab173f576516b827871f8b954fded",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deadline"
+        }
+      },
+      "id": "RLZ-SA51K0",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Names a passed deadline as overload while the flight never got a child and as a deadline failure once a child ran.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:36f77d4f7816178c6101b5c14aaf917a62926c6748d2b97fc8f1c78f5645e096",
+        "locator": {
+          "kind": "symbol",
+          "name": "compute"
+        }
+      },
+      "id": "RLZ-TMSBQQ",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Builds the request digest, joins or creates the flight, waits for it and gives each requester of a shared flight its own deep copy of the reply.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+        "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+        "locator": {
+          "kind": "symbol",
+          "name": "_join"
+        }
+      },
+      "id": "RLZ-Y2MRG8",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Joins a request to the flight of its digest unless that flight is cancelled, and refuses with WorklistOverloaded only a request that would create a flight while MAX_WAITING_COMPUTATIONS flights exist.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:2e308c59d8e7987516edeeeaffb4b022c5d974e027e335abdf5d4dc65163b0ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_kill_group"
+        }
+      },
+      "id": "RLZ-YXW0H5",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Kills the child's whole process group when the child leads it, which ends the child and its Git children together.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The limits: two children, eight computations, sixty seconds, and the child's own deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:bb38938879adc20eb80af2bc13efac5867307f2e3fd8ca1620a810afa0a9a9fa",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The checks of the returned document and error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:a4a07a9d87965025a498d8152fc330a2cace89abdb37b9a5a44119bab1ec96eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "One request: digest, join, wait, leave, and a copy for a sharer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:36f77d4f7816178c6101b5c14aaf917a62926c6748d2b97fc8f1c78f5645e096",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Joining: a cancelled flight is absent, and the bound applies only to a new flight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+            "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_join"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Leaving: the last requester of an unfinished flight cancels it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:0bacdcc3b18f8dd4d92ebf525ed51f585285b27b7bf5dd362d3fd0acd56ed890",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leave"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Waiting: cancellation, the request's deadline and the flight's error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:5c157771081ce68744e36d2443aea6ae52587f8d33cf35224f8b8cb2bc3b71d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_await"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "One thread per flight admits, runs, validates and always reaps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:9aa13084228fdc01b1e96f727e6484154ed6335bf01ef7ef82514cf18c7ff8c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fly"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The first-in-first-out wait for one of the two child slots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:ff9c89567a848f1ff530ebe59c5e190eadb3acde3c89e75f66a0704e3fa1128d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The one command line of a child, in its own session.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:1ad06e7f20e4fbdc84b6fe8e84ce1f2b7beba27e1901f6a6e7e5271933be7746",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Draining the pipes in slices, the deadline, and the exit statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:7c02c0d50728d9d10d32edcfd8051e12cff4c99b451e5111edecf054f53225ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_collect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Shutdown stops every active child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:9c9c55583729ea74114f5ca3bd7a65be1d91f81dc1ea67724bdc73072dfa20cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "shutdown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The base failure with its code and action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:b8e87eee39490be87f96b7dc49b3d5fe2fd1e6c417af280f919b18fe9bd82906",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistProcessError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The deadline is overload while waiting and a failure once a child ran.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+            "content": "sha256:d7c0c61d9c3b8425baf45d30bb9e72f3896ab173f576516b827871f8b954fded",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deadline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The child ends its whole group, or itself alone when it leads none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:2e308c59d8e7987516edeeeaffb4b022c5d974e027e335abdf5d4dc65163b0ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_kill_group"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The child's handlers, alarm, parent-death signal and parent check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:422f0b59b8acf13375096e7771c02b1cc885ead57a9537fa3a9c4daa08c77ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm_child_lifetime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Four identical requests get one child; three other computations get one each, and at most two children run at once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A ninth computation is refused while nine more requests share one of the eight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Overload is raised at once past the bound and at the deadline for a flight without a child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "A leaving requester does not stop a shared child; the last one reaps it before returning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "A request that arrives while a cancelled flight is reaped starts its own computation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "A killed parent takes the child and its Git process with it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The child's own alarm ends it and its Git process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The overload failure with its own code and action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:bc55cb71db3cb5a0c0700a2e33bdd1b0ddb61804ca39d7c227beb379b42ba0a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistOverloaded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Malformed, truncated, misidentified and non-finite replies are refused and nothing is kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_transport_failures_are_explicit_uncached_and_recoverable"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The build-mismatch failure asks for a dashboard restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:b8566ffeec8caaa0c6f6c8161b39cab293f8bb0aac86afa902ad17e3ed4d3bb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorklistBuildMismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The request context binds cancellation and arrival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:497b53cf506c8f181078c791d408561da395109611094c9eb17923cda1308713",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The build identity and its four required fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:8f6cddb49c8e81ecefdb056dc5af9facee0e75bda1f74e00bfe7928b914291e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The child's environment: the parent's own package root and interpreter, or a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:e9c2aecc9dcd743e76c81a82ec65ec2473ff3af1e6ae6980132b71623b4560bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_environment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Stopping a child signals its whole process group.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:2e3708fe2db796a3f646a0bda8af74cdec8000e530a968b5afda2ddb8e3d2eb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stop"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The reply's protocol, identity, process, time and read checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:4f17c44be6b9f806a9455bf0a3653d5fdf3ac72a1ad03a00e9eb6029e0fe2a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reply"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

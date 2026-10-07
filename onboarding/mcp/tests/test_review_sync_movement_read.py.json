@@ -455,12 +455,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
+            "blob": "75887d061238efdfa429b627183b9f486b055846",
             "content": "sha256:29c537b964d3faf02fe803f2acfa8ce3c53a5b9467730b781a77ef4642daf4c4",
             "locator": {
-              "end": 374,
+              "end": 375,
               "kind": "line_range",
-              "start": 374
+              "start": 375
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -519,12 +519,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:c6a9f84ecb3a9c505d5b38aff60b274bc0eba0c4c2ddddbfe1eeaf751b019422",
             "locator": {
-              "end": 479,
+              "end": 481,
               "kind": "line_range",
-              "start": 479
+              "start": 481
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -532,12 +532,12 @@
         },
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:c419173437328ee6eb933913b17a59c9b9ac78218525b6156ab955f7c09d5f30",
             "locator": {
-              "end": 492,
+              "end": 494,
               "kind": "line_range",
-              "start": 488
+              "start": 490
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -545,12 +545,12 @@
         },
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:afcd3bd07f67a61e8fb486ff2e989e7efe371c3388abdf2da548e7591912372a",
             "locator": {
-              "end": 584,
+              "end": 586,
               "kind": "line_range",
-              "start": 584
+              "start": 586
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

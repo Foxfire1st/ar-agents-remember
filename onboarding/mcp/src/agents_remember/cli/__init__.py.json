@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
             "content": "sha256:de2d22455c9b0a532e7879f2bc22dcb6bb375b8b975b2f49a0967da209b3575f",
             "locator": {
-              "end": 287,
+              "end": 291,
               "kind": "line_range",
-              "start": 252
+              "start": 256
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

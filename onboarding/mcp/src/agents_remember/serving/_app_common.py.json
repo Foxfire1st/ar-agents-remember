@@ -2,56 +2,6 @@
   "path": "mcp/src/agents_remember/serving/_app_common.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The optional summary port on the collaborator record.\n\nAnchor: `ReviewIntentSummaryPort`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:cbf1034558b18983a498fffe5a7123fd770b5f7e0809cdc4289fc9938606e09d",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_intent_summary"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The composition root that fills the port with the real compiler.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:7d7c7b2717bc82f7a76bfb072223dfdb3713afb902384f32655118cbd247386b",
-            "locator": {
-              "kind": "symbol",
-              "name": "serving_collaborators"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The refusals the port's presence decides, in the one gate every launch point calls.\n\nAnchor: `capsule-resolver-unavailable`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "Frozen implementation of ServingCollaborators supporting the stated file behavior.",
       "targets": [
@@ -68,32 +18,15 @@
         }
       ]
     },
-    "2": {
-      "note": "The optional tree-view port on the collaborator record.\n\nAnchor: \"review_trees: ReviewTreesPort\"",
+    "13": {
+      "note": "The shutdown callable of the tree route's child computations on the collaborator record.",
       "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:9fef8b1c7b600935c5482da7fdf35ed11e7144bf6a28494d86942c4be1414bb6",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
             "locator": {
-              "end": 508,
-              "kind": "line_range",
-              "start": 503
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The optional reader port on the collaborator record, and why it is its own port.\n\nAnchor: \"knowledge_reader: KnowledgeReaderPort\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
-            "locator": {
-              "end": 515,
+              "end": 511,
               "kind": "line_range",
               "start": 510
             }
@@ -102,46 +35,13 @@
         }
       ]
     },
-    "4": {
-      "note": "The port type, imported from the route module.\n\nAnchor: \"from agents_remember.serving.knowledge_reader import KnowledgeReaderPort\"",
+    "14": {
+      "note": "The runtime bundle the routes and the loops share.",
       "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:18b5a2c3ba4eafd47ea3c721756a388b2f695f01d37e9dc2bc930b92b6108441",
-            "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 31
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Terminal assignment parses canonical document and role.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:aec0a918c2151a85b61fc623b5e0c1f657f43f58c9911ab08428d882e589af76",
-            "locator": {
-              "kind": "symbol",
-              "name": "TerminalAttachTaskRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The one collaborator bundle the lifespan and the routes share, including the observer-health owner added by `LOCR-R17@v1`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:a9096748bd458f9894464b8d4270e88ad7f2075535da13eb7003778473bb3d45",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:9a5e8ea3f5277fcd7c35c9b03120a139cb373e79443fbb51831baa9a92e50dc6",
             "locator": {
               "kind": "symbol",
               "name": "_ServingRuntime"
@@ -151,12 +51,44 @@
         }
       ]
     },
-    "7": {
-      "note": "The SSE event sequence: one additive, omissive tail on the `snapshot` and none on a `delta`.",
+    "15": {
+      "note": "The live inputs and their resolution against the replay seam.",
       "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:3a08851ee543ee9789179be4031f95e49748c0c359eaea0788a8b22a426a4209",
+            "locator": {
+              "kind": "symbol",
+              "name": "LiveProjectionInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "One dump of the projection per published instance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:a3db4fab3ff054db1691862a0e5b6a1dcd594890cc7e971db199c7ac44270684",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ProjectionBodyCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The event sequence of one subscription.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
             "content": "sha256:8c67a0d5ac466e779b93acb764c053e3d40c297bdb7f3b09e33f33fa596177c5",
             "locator": {
               "kind": "symbol",
@@ -167,95 +99,66 @@
         }
       ]
     },
-    "8": {
-      "note": "The application-rank capsule compiler as an injected port, absent means a named refusal rather than a capsule-less launch.\n\nAnchor: `capsule_launch`",
+    "18": {
+      "note": "The body that opens a terminal by kind and harness ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
-            "content": "sha256:0dd05ce9bf0e3c1a372e6edfe3be719e30d2a8be653af23d219824f78b171783",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:4ce03376dbf0034130cfde6bba4b73dc9654cb5567a926074fa13d87ade614b3",
             "locator": {
               "kind": "symbol",
-              "name": "LaunchCapsuleResolver"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:cf0ead0cbd3ff9c9fc00cfa3b7b203d54d9b8941ff9ad1753f8b72ed85ae1a66",
-            "locator": {
-              "end": 517,
-              "kind": "line_range",
-              "start": 517
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:6f3661d1ca66214f03ae9a8f1d68baeed154b677664fefd705e2e4689f195941",
-            "locator": {
-              "end": 557,
-              "kind": "line_range",
-              "start": 557
+              "name": "TerminalOpenRequest"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "9": {
-      "note": "**The third review port: one inventory entry's content at the two code trees the listing published, imported beside the other two reviewer ports and refused by name when a process omits it.**",
+    "19": {
+      "note": "The pump between a terminal and a WebSocket.",
       "targets": [
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e6dd46938e97bb07522b36aa981492ccfc4b6e800692db4d5721c1872240007f",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:5a7de850de8e1e2de9807229f0fc638efbc8ff556f72d48eaddc80ae00c12de9",
             "locator": {
               "kind": "symbol",
-              "name": "ReviewSourceContentPort"
-            },
-            "path": "mcp/src/agents_remember/serving/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_source_content"
+              "name": "_bridge_terminal"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "20": {
+      "note": "The lifespan calls the shutdown callable when serving ends.",
+      "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
-            "content": "sha256:4caf25c4747905c825013884a365a21b3cffa33663af3df6601230854109aed2",
+            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
             "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 37
-            }
+              "kind": "symbol",
+              "name": "_serving_lifespan"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "21": {
+      "note": "The collaborator record and its optional fields.",
+      "targets": [
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:e671733c44bd3d1dd59e8c55b31c8e03bc93ffb30f504c7c187e2b90949f6a57",
+            "blob": "917c1836824cf79f6cc01822b823375560243b9d",
+            "content": "sha256:cf36647ce2fe5b6aea9fa408500bb066fe885bb317e6d8057e49516bd808c136",
             "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "mcp/src/agents_remember/serving/review.py"
+              "kind": "symbol",
+              "name": "ServingCollaborators"
+            }
           },
           "kind": "code"
         }

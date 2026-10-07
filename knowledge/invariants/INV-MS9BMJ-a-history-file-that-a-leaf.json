@@ -30,9 +30,9 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A history file that a leaf's recorded closeout closed is frozen, also while the parent line does not hold it yet: the leaf's later rows go to its next attempt file, knowledge/history/<leaf>-attempt-<n>.json, which the writer starts once the latest attempt is closed in its base, the leaf's memory HEAD. All of a leaf's attempt files are read as its history, and the latest row about a subject governs for the writer, the gate, the validator and the reviewer's worklist view, which shows of one owner's rows about a subject only those of that owner's latest attempt file that answers it. For the gate and the validator a file closed in a comparison base is frozen whatever the contract records; a file that no comparison base holds closed is frozen only by a closeout the contract records as completed, and one closed by any other commit is read whatever its flag.",
+  "statement": "A history file that a leaf's recorded closeout closed is frozen, also while the parent line does not hold it yet: the leaf's later rows go to its next attempt file.",
   "status": "proposed",
   "supersedes": []
 }

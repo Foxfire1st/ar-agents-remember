@@ -1873,6 +1873,57 @@
         }
       ]
     },
+    "72": {
+      "note": "The contract is probed and read once through the read recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:dfa776e8c904c68a07307656bf919d2e921a20cdbe101c1ecec2079130988058",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "A read is recorded with the identity of its exact bytes, or as absent or unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_text"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "A missing file is recorded at the probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
+            "content": "sha256:0a6a1c14f41ef429801797f7c4bfd3a059306128cdd08652afb8d61e6b13cef8",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field.",
       "targets": [

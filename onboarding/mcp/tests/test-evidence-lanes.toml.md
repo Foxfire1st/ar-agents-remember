@@ -25,6 +25,13 @@ TOML lists, one module path per row, kept sorted within the lane.
 Both test catalogs stay in one canonical form; every loader refuses a duplicate or malformed entry.
 A new test module that belongs to a lane is added here in the same pass.
 
+
+### Registering a test module
+
+A new test module is added to the list of its lane. `mcp/tests/test_reviewer_worklist_process.py` and
+`mcp/tests/test_reviewer_worklist_reads.py` are in the `integration` list: they start real child
+processes and Git repositories, and a default run with `not integration` skips them.
+
 ### Todos
 
 No additional work is asserted by this card.
@@ -43,6 +50,8 @@ No configured live documentation source was available for this pass.
 
 - The new module joins this lane. [19]
 - The module the lane names. [20]
+
+- The integration list includes the two reviewer worklist test modules. [240]
 
 ### Cross-Repo References
 

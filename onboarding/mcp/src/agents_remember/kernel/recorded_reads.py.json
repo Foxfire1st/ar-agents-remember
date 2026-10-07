@@ -1,16 +1,366 @@
 {
   "path": "mcp/src/agents_remember/kernel/recorded_reads.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
+        "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_observations"
+        }
+      },
+      "id": "RLZ-67HY7K",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Repeats the recorded path resolutions and existence probes first and reports only those when one moved, so a retargeted locator is a change even when the bytes behind the new target are identical, and those bytes are not read for the check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_observations"
+        }
+      },
+      "id": "RLZ-P66WSC",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Rechecks a recorded set: every recorded path resolution and existence probe first, and the recorded files only when all of those still give their recorded answers.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "observed_resolve"
+        }
+      },
+      "id": "RLZ-SN23S7",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Records a path resolution as a resolve: row keyed by the unresolved absolute path, which is the row a retargeted link changes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+        "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "has_failed_observation"
+        }
+      },
+      "id": "RLZ-YRJNST",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-failed-read-never-kept",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Names a row that is a conflict of two identities or an unreadable read as a failed observation; the view memo and the gate memo refuse to keep a result that has one.",
+      "role": "support"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The module docstring: why plain-file reads are recorded, and the three identities.\n\nAnchor: \"A path recorded twice with different identities in one computation\"",
+    "10": {
+      "note": "One read is recorded with the passed identity or the file's identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
-            "content": "sha256:4a5b95140bac6546636ab9a6091d64294d50a260e31d657ab57c232329592276",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:2386444c174f88811d5e65a03ef802dfa71d7f77f5165fff52b227adb7da3897",
             "locator": {
-              "end": 16,
+              "kind": "symbol",
+              "name": "record_read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Two different identities for one key become a conflict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:7dfa227508e4be0f1137aed1a08ba77e43f752625279ba3111b076d13c0d3b18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Rows of another block or process are recorded through the same conflict rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:0c18356448cc30876afdea357f1a3357f3b308ff4bc7d301c520c61ee2b3d9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "replay_reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The validation of a row that arrives from another process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
+            "content": "sha256:932513d253a2175d0ae05064f6617d94b40f20172040bbcda21bde4c0e91593e",
+            "locator": {
+              "kind": "symbol",
+              "name": "valid_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The recheck repeats the recorded operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:4d577415c8af3d961097b05c07c6b00663e34f4b4eb306d24196d72761cf63a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observation_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Selections are rechecked before bytes, and bytes only when no selection moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:f203fbf19bf92f2d70df908f282767b722a1619b2889873eac53c0a17084ffe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_observations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A conflict or an unreadable row marks the set as failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:5067986102da40975eb1326239556e72461cb71ebc7a10ed07aa3029d4f9a5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_failed_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The recorded resolution keeps the absolute logical path as its key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The recorded existence probe of a path, also for a directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:dabd96664201b6cf646625fc8ea3f6ed0b0c97b8830e928319f3f2f6a01aaa52",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_path_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A false existence probe records `exists:<absolute logical path>` = absent, distinct from a failed byte read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:7f62b031768c3439106d46110e3a664a0a6fc84e1d085beb6626a63fdcb57395",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One read of the bytes, recorded, then decoded with newline translation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_selection"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "A retargeted packet locator is seen through its resolve row, and no byte outside the task is read for the recheck.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "A failed root probe is recorded as unreadable and the view is not kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:3bf7b12c1f3082937f37f7520c12c1a725d905a9747082a3fee52c9c35fda60e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_errors"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A malformed row from the child is refused by the parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_transport_failures_are_explicit_uncached_and_recoverable"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Every file the gate reads is in its read set, and a conflicting read is never kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
+            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:a4efcf6cd61b31017d9fad5d27b488f8acb9e61a9f8307f6df1d6d70c5677b15",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_json_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The module docstring: the three byte identities, the two selection namespaces and the conflict rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:86eab7353b094837175ccb15436698ac9e992dfb4d637ffb5c0609c66a8ab203",
+            "locator": {
+              "end": 19,
               "kind": "line_range",
               "start": 1
             }
@@ -19,45 +369,12 @@
         }
       ]
     },
-    "2": {
-      "note": "The identities.",
+    "8": {
+      "note": "The identity of a file at this moment.",
       "targets": [
         {
           "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
-            "content": "sha256:9077d447474f450be0aa4c8e2b0067fcb9ce6d0c1654d6b221922c3b14949d1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ABSENT"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
-            "content": "sha256:d2ddfa45b4a5120fde15a4f4ef24154da1fa3b53f80e4b3d23ed89d5b3f16925",
-            "locator": {
-              "kind": "symbol",
-              "name": "CONFLICTING"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
-            "content": "sha256:6b5c932af29a6943959a3e9c5fb4dcae43f79f9e39af40a0c9ee184095ad72ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "bytes_identity"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
             "content": "sha256:fe1e9891355ad52b088934e5bd85db7d6ec77b5813f5e09be14a85d7b0d8ad51",
             "locator": {
               "kind": "symbol",
@@ -68,12 +385,12 @@
         }
       ]
     },
-    "3": {
-      "note": "The recording block and one read.",
+    "9": {
+      "note": "The recording block sets and restores the context variable.",
       "targets": [
         {
           "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
             "content": "sha256:808519e75b00af64073d3a9736f796e1d5051a0e6f917b58f3f2a361c27d125e",
             "locator": {
               "kind": "symbol",
@@ -81,70 +398,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639b0f0fec7ab49ec02d7d3a41d90f9b8916feb",
-            "content": "sha256:af3542badebf1b0540fbd678540833be14dbc8ae849ac5011bb0a5fe11a8bec5",
-            "locator": {
-              "kind": "symbol",
-              "name": "record_read"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The manifest read records exactly the bytes it read.\n\nAnchor: \"record_read(path, bytes_identity(data))\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:76765fdee6795ffabfa43f6766b90e2a483ed83f4a9de4a057e0b98b54ae6c50",
-            "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 172
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The gate records every evaluation's reads.\n\nAnchor: \"with recorded_reads() as reads:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6bc883864e480a07e62be62412c5cf49909f016a",
-            "content": "sha256:19a889d0a121a2039636d5424ea92ec4fc88c4cab22a556b66784453f6669614",
-            "locator": {
-              "end": 258,
-              "kind": "line_range",
-              "start": 257
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The read set and the conflicting read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:e8a1d0c81e3c4179f86a89d58730783a9e3efa0dad07e390b82ce57f8e558032",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
-            },
-            "path": "mcp/tests/test_knowledge_gate_routes.py"
-          },
-          "kind": "test"
         }
       ]
     }

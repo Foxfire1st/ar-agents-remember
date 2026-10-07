@@ -1,0 +1,229 @@
+{
+  "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+        "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
+        "locator": {
+          "kind": "symbol",
+          "name": "isolated_leaf_worklist"
+        }
+      },
+      "id": "RLZ-52ACVE",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The serving process's only route to the worklist: builds the request from the contract, the captured trees and the serving build's identity, sends it to the process owner, and raises a process error for a reply that carries an error. It holds no worklist computation of its own.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+        "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
+        "locator": {
+          "kind": "symbol",
+          "name": "isolated_leaf_worklist"
+        }
+      },
+      "id": "RLZ-60HKWA",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Replays the reply's read rows into the caller's recording before anything else, also when the computation failed, so the serving process judges the view by every row the child recorded.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+        "content": "sha256:2b4a78121c1ffd1e1d0b4a5d0cc1faa80d47ad5f45ad91e62b9d828cca185cc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-S1ZTCF",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The child's side: checks the operation name and the request digest, refuses a build other than the one the request names, and runs leaf_worklist without persisting over the candidate and base it was given, returning the document, or the error text, with the rows recorded so far.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+        "content": "sha256:b1f85f1dde4c3a8064c2576050d490fb8ce31d166ddcf2846481105c5ff807a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-YEGY04",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Arms the child's lifetime as its first step, before it loads the request.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The default owner for callers without one, stopped at interpreter exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "content": "sha256:fc2a42e33c1e116949be41c5510142cd9aa0ada27065e820e30c42ad7bedae78",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The parent side: payload, build identity, one compute call, replayed reads, error or document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "content": "sha256:b857f1efa288e4562e3b83c9e50d247f93c10c6035d93a06bc2bba88c33a0ed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "isolated_leaf_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The contract is rebuilt from exactly its own fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "content": "sha256:9be4e7d32d4935c6b1ef66f13f591e381748f3c8457d65b4f65b79512b16b4c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The child side: request and build checks, the one worklist call under both recorders, the reply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "content": "sha256:2b4a78121c1ffd1e1d0b4a5d0cc1faa80d47ad5f45ad91e62b9d828cca185cc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The entry point: lifetime, collector, request, reply, and exit status 75 on a build mismatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "212acbd24fc8a00da8ec01809285a8d7744f01a9",
+            "content": "sha256:b1f85f1dde4c3a8064c2576050d490fb8ce31d166ddcf2846481105c5ff807a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The process owner's compute call and its reply validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:36f77d4f7816178c6101b5c14aaf917a62926c6748d2b97fc8f1c78f5645e096",
+            "locator": {
+              "kind": "symbol",
+              "name": "compute"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The child's document, reads and body equal the in-process computation at two sizes; the child does no second capture, pairing or conversion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The bytes the child consumed reach the parent for a changed-and-restored, a twice-read, an absent and an unreadable task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A child that exits with the build-mismatch status, or answers with another source, asks for a dashboard restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_build_mismatch_asks_for_a_dashboard_restart"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

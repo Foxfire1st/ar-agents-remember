@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A worklist computed in the serving interpreter holds its lock against subject reads, and a fallback or a reply from another build would serve an answer that the comparison's own build and trees did not produce; the process boundary and the reply checks prevent both."
+  },
+  "applicability": "The leaf-wide tree view of a live review comparison on converted memory, on a miss of the view memo.",
+  "conditions": [
+    "The child is started by the kernel's process owner as the package's module agents_remember.application.reviewer_worklist_child with the serving process's own interpreter; request and reply travel through pipes.",
+    "The request carries the comparison's candidate trees, its base commits, the tree the before side is read as, and the serving build's identity; the child captures no worktree, pairs no memory commit and converts no base.",
+    "The parent accepts a reply only for its own request digest, from its own build and module path and from the process it started, with every read row valid."
+  ],
+  "exclusions": [
+    "A hit of the view memo, which starts no child.",
+    "A recorded comparison, whose persisted worklist is read.",
+    "Answers of the worklist itself: an incomplete worklist and a leaf to which no worklist applies are answers of the view, not failures of the child.",
+    "The focused reads of the tree view (entries, lane, one file) and the subject reads, which start no child."
+  ],
+  "id": "INV-19P897",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rules 1, 2 and 4; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-child-computation",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The intent reviewer's leaf-wide worklist of a live comparison is computed in a child process that runs the one worklist implementation on the trees the comparison already captured; the serving process never computes it, and a child that cannot start, runs another build, fails, or returns an invalid or misidentified reply is answered with an explicit refusal, of which nothing is kept.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -222,12 +222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01530e8d2b0e3d054175cc801767206e6dad8fe3",
+            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
             "content": "sha256:adea779c07461380ea74319b60280e96ff45253eaf6dacaa189f135dcac1eee8",
             "locator": {
-              "end": 276,
+              "end": 277,
               "kind": "line_range",
-              "start": 248
+              "start": 249
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },
@@ -240,12 +240,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01530e8d2b0e3d054175cc801767206e6dad8fe3",
+            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
             "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
             "locator": {
-              "end": 625,
+              "end": 626,
               "kind": "line_range",
-              "start": 613
+              "start": 614
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
           },
@@ -258,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
             "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
             "locator": {
               "kind": "symbol",

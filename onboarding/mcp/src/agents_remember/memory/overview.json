@@ -1,24 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory",
   "references": {
-    "1": {
-      "note": "The manifest read records exactly the bytes it read.\n\nAnchor: \"record_read(path, bytes_identity(data))\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:76765fdee6795ffabfa43f6766b90e2a483ed83f4a9de4a057e0b98b54ae6c50",
-            "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 172
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it.",
       "targets": [
@@ -268,23 +250,6 @@
         }
       ]
     },
-    "11": {
-      "note": "The resolver: no root, a root outside tasks, or the owner's answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:437d44f2f034901cb81e2b68216f57e37ba30a4eac45f2652fbc11c0646438d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_requirement_endpoint"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "110": {
       "note": "Rule 7 for any comparison consumer.",
       "targets": [
@@ -479,30 +444,12 @@
         }
       ]
     },
-    "12": {
-      "note": "The owner the packet question is handed to.\n\nAnchor: `consume_owner_resolution`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:2751385b3c044e364a93cdf48964a29dd99153616a44433a9e34d5b4ce7fe263",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 115
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "120": {
       "note": "The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules.",
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
             "locator": {
               "end": 15,
@@ -520,12 +467,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
+            "blob": "75887d061238efdfa429b627183b9f486b055846",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 316,
+              "end": 317,
               "kind": "line_range",
-              "start": 316
+              "start": 317
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -538,7 +485,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:e3dcb550aa48a2eadb5856507ceee47fed75ccdabdce0ab3733ba900c9f495df",
             "locator": {
               "end": 50,
@@ -556,7 +503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
             "locator": {
               "end": 60,
@@ -574,7 +521,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
             "locator": {
               "end": 15,
@@ -592,7 +539,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
             "locator": {
               "end": 60,
@@ -610,7 +557,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
             "locator": {
               "end": 15,
@@ -628,7 +575,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:458d39cc5acda9cb7dc9306d855bef6f43eb610d4fbef4db5bf07c02b90cf5ee",
             "locator": {
               "end": 60,
@@ -646,7 +593,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:0647c5864996360958cdbb7e808a3c4f91795acba7059e995342e3f51b62f57e",
             "locator": {
               "end": 15,
@@ -656,6 +603,23 @@
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "129": {
+      "note": "The reconsideration step resolves the endpoint and asks for the approval.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
+            "content": "sha256:75bbb68c6c6872c0d60514d701340ccb48bcf950a8ef4bbabead546eb3ef0dfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirement_trigger"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/reconsideration.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -671,6 +635,176 @@
               "name": "registration_absent_refusal"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "A kept gate verdict is served only when no recorded observation changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
+            "content": "sha256:30ee54a0949b5d8e434add6a188d8fab6cb75d013e454a2c954de9067bf3383d",
+            "locator": {
+              "kind": "symbol",
+              "name": "remembered"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/memo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "The manifest lookup returns the highest approved version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:df053197906d07b2388c5dac23e09dedb0592a931742ca48c4a64f9c3d13e43e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_manifest_lookup_returns_the_highest_approved_version"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "132": {
+      "note": "A requirement endpoint triggers only on a newer approved version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
+            "content": "sha256:86f465fce8223dc54488f65db50c374df8c351a04a6b0445b0787976f7ae15e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "133": {
+      "note": "The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "134": {
+      "note": "The endpoint's state, code, detail, task root and key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:805dc487f22dc6d5f6b4e4d19d03a302ba1ed800b23aebec8daaa99930593b62",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementEndpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "The task root, or none for a repository that is not one directory name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e193e06d27f5ca3e36c1b6df94c5acef94331f99885129b8262b73955086cbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_task_root"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_endpoint"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "The approval answer and the comparison with a version.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementApproval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "The manifest read records the bytes, an absent manifest or a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:e81e65f5dea0a7f4ae9f71e1333de6e84e0a046b9d8c79f7522e98adb596c91d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "The approval lookup with its three states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "requirement_approval"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
           },
           "kind": "code"
         }
@@ -701,6 +835,57 @@
               "start": 39
             },
             "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "The latest approved version of one ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:76bccd97ea476a30b2b304a433be400825a89876b7fccc9c4633f3bb30ddb046",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_approved_requirement_version"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "The owner the packet question is handed to.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2563879ec3c7eefa67e9ae58a9a04569b3fbe9e8",
+            "content": "sha256:eea2675f32c7316986dd711c17ed9da97bf95ecc3bbdbac2f94a0ac39ade500b",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_owner_resolution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_owner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "The owner records the two resolutions and the packet's bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
           },
           "kind": "code"
         }
@@ -958,7 +1143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
             "content": "sha256:618780a5ec8c9c2ea4d11d6780c5d4b42dff46395026c720b55d645bfc8a09cf",
             "locator": {
               "kind": "symbol",
@@ -970,7 +1155,7 @@
         },
         {
           "anchor": {
-            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
             "content": "sha256:346c75d87b09c9a0a8675faa71b003c8a48084a7a47db0efdb57d401191d87cf",
             "locator": {
               "kind": "symbol",
@@ -982,7 +1167,7 @@
         },
         {
           "anchor": {
-            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
             "content": "sha256:4442cc696e17fc4d9de3df7c445015c378fb0d98885254848a58d7b3c71bbdf9",
             "locator": {
               "kind": "symbol",
@@ -1208,48 +1393,6 @@
               "name": "CLAIM_IDS_OF_REPOSITORY"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/evidence_records.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The approval states and what the manifest says about one ID.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:4c280fa2ae56c3f3c52ee0c05b23a1c132d3abd9af6e0f71eb14e2667cf385c7",
-            "locator": {
-              "kind": "symbol",
-              "name": "ApprovalState"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:5fb08aad422a944a4e84cf80f7cb468b0b9e10196bdb886ba627267a3ff12fd9",
-            "locator": {
-              "kind": "symbol",
-              "name": "RequirementApproval"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:8a99f9cc18165d619b09d810f586cadf5e5d031066165dcf3c806148424b1328",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 46
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
           },
           "kind": "code"
         }
@@ -1738,35 +1881,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The lookup with its reasons (since MIK-R09 recording the manifest bytes it read), and the packet's named function.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:3da4a039b41e690cfdc147dff1a290d7c9f6cc1bae61b1dd9a23430300a4ddf2",
-            "locator": {
-              "kind": "symbol",
-              "name": "requirement_approval"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:76bccd97ea476a30b2b304a433be400825a89876b7fccc9c4633f3bb30ddb046",
-            "locator": {
-              "kind": "symbol",
-              "name": "latest_approved_requirement_version"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "40": {
       "note": "The measurement the merge reports, and the merge's own third composition seam.",
       "targets": [
@@ -2023,7 +2137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
             "locator": {
               "kind": "symbol",
@@ -2675,7 +2789,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:be0962955b303788b7ad2f1f232027d69f1ce2535e7b7346b7733eee87f74aa0",
             "locator": {
               "kind": "symbol",
@@ -2687,7 +2801,7 @@
         },
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:e572612b668cb26a557ded82fea93009981537b92e2568b1e7f648914dee21f2",
             "locator": {
               "kind": "symbol",
@@ -3184,7 +3298,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
             "locator": {
               "kind": "symbol",
@@ -3401,7 +3515,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d64ab8a3e87962646cd64828a2df3a6b56655e0",
+            "blob": "7c5bb27dcfa2144259ccf6cadbcedffe61d5f24d",
             "content": "sha256:2c879aabb35c70ccc7d48f79ff320ed667716ee59e0f55e1b2e819bf266bc132",
             "locator": {
               "kind": "symbol",
@@ -3430,7 +3544,7 @@
         },
         {
           "anchor": {
-            "blob": "41c8765bc238409b99fcfc07c18d0cfa4e35beda",
+            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
             "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
             "locator": {
               "kind": "symbol",

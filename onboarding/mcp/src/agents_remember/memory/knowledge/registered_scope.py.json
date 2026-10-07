@@ -401,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:44d9e43210207c0771413e909d29e4fbfd70ec6cbaa1f40688138de4c172407e",
             "locator": {
-              "end": 176,
+              "end": 181,
               "kind": "line_range",
-              "start": 153
+              "start": 158
             },
             "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
           },

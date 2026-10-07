@@ -43,130 +43,6 @@
         }
       ]
     },
-    "10": {
-      "note": "The entry types.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:9f7f18a60fc47136f90b96e501acec13a975b6685055a2ae5df99c27d96b0336",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeEntrySide"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:97721e68d0054cb2f2d703ac6d3af03d65725ddf332a62068b147090e630c36c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreeEntry"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The comparison a payload names, and one selection's entries.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
-            "locator": {
-              "kind": "symbol",
-              "name": "treeComparisonNumber"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:8377fc9fda79e7eb6f2c44b4f645f38dca90780b3a0ce94d92c774ce6f0f0c0d",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewTreeEntries"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "No camelCase key in the real body.\n\nAnchor: \"one wire convention (MIK-L25 review F9)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
-            "content": "sha256:167b9316679262cfafaf49872c5d76cba7f31bcd5a0d59a9ddefb68c89929417",
-            "locator": {
-              "end": 145,
-              "kind": "line_range",
-              "start": 120
-            },
-            "path": "dashboard/src/data/reviewTrees.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The tree view's answer and the request, addressed by number, `recorded` or (since L31) a selection's invariants, never by path.\n\nAnchor: \"export interface ReviewTreesResult\"; \"export const reviewTrees\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:cb1d6a3d437f5c0f0a68f283288c1a28c3fe5eb636486b94c9696e8f7f83a59e",
-            "locator": {
-              "end": 238,
-              "kind": "line_range",
-              "start": 224
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:feb9893c5dbdb3eadf6179acb53372d4a3df6de49ce9ec99c4b180916d301f49",
-            "locator": {
-              "end": 262,
-              "kind": "line_range",
-              "start": 250
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "Three answers kept apart.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d138f4ad0971896b97dbb7622a5bb9320898279b",
-            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewTreesRead"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "15": {
       "note": "The three locator declarations.",
       "targets": [
@@ -1170,147 +1046,6 @@
         }
       ]
     },
-    "50": {
-      "note": "**The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
-            "content": "sha256:a7bc0043eb876ab57a01745946b74e720cf5875e15f479a41be9803d4677c9f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "getReviewJson"
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "51": {
-      "note": "**The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
-            "content": "sha256:e89ee7730cdd03752838c8f8fa161723447f37e17e83208332c8cdccf04843b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOKEN_BY_CODE"
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
-            "content": "sha256:271d6b7623337a09551756c4d7ab7ae9e32ec8f92f20d40bf9ff29ed2769205b",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewFailureToken"
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "52": {
-      "note": "The comparison, catalogue and source-expansion clients delegate to the shared decoder.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "99a657e901a3a274e7393532701866730903f313",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
-            "locator": {
-              "kind": "symbol",
-              "name": "intentReview"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "99a657e901a3a274e7393532701866730903f313",
-            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
-            "locator": {
-              "kind": "symbol",
-              "name": "intentReviewEntries"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "99a657e901a3a274e7393532701866730903f313",
-            "content": "sha256:69b212b772094007f73dd9c44e490c832c9950fa7c29b63da605cc6bcafd0155",
-            "locator": {
-              "kind": "symbol",
-              "name": "reviewSourceContent"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "53": {
-      "note": "**The shared client whose semantics are unchanged, and the change-set client that still inherits them.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
-            "locator": {
-              "kind": "symbol",
-              "name": "getJson"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilesApiError"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:1dcb4647a3482f40cec7811c78b44366aed7b8b57ccb5972aaa898f4f5dee70c",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafChangeset"
-            },
-            "path": "dashboard/src/data/changeset.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:603a37b5e3d839d4790a1dd07bf5e50a117dd977ae3fddb3b218dcdddeaf21da",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 144
-            },
-            "path": "dashboard/src/data/changeset.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "54": {
       "note": "**The generation pins, the published generation identity, and the pins threaded through both master reads.**",
       "targets": [
@@ -1482,6 +1217,178 @@
         }
       ]
     },
+    "60": {
+      "note": "The module comment: what the adapter carries and the three answers it keeps apart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:eae8de670d47cbd25f9bd8947592a3b56f543feb97558b3857d9e1d58b252933",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "The answer of the route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:cb1d6a3d437f5c0f0a68f283288c1a28c3fe5eb636486b94c9696e8f7f83a59e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesResult"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "One entry on both code sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:97721e68d0054cb2f2d703ac6d3af03d65725ddf332a62068b147090e630c36c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreeEntry"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "The request, addressed by number, recorded or invariants, with the optional signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:978feec7230dd633853c6e090a9ce5f9be60deb92c96b5e2f446663990e4ab4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewTrees"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The transient codes and the retry delays.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The bounded retry of a transient refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:403bc04ae33422eee2d0d909e482f909678c61c9aa8f5697cb96549893b3740b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewTreesRetryingBusy"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "One answer as a read state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:55e99e194c1c1409679f0f227721a4a9f8adc7a41423e7d67dd71b7d5779532b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewTreesRead"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "The comparison a payload names; without it no tree read is made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeComparisonNumber"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The entries hook aborts a superseded read and returns null without a comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:a4f5fdb7032e410d21d177f20618f471832c1e58a8e6aa56a4ee3b630e392b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTreeEntries"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTrees"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "7": {
       "note": "The shareable hash, read and written.",
       "targets": [
@@ -1511,6 +1418,182 @@
         }
       ]
     },
+    "70": {
+      "note": "The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:557dc88f46e239387e8aca3daefee9d3a8b823adb7089c337a0b07b38066677c",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "A superseded request is aborted and only the newer answer is shown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:3ec032bfc52bc8e27501546c3684360c5cea29502f98037f73e10dd8d50cf24b",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "72": {
+      "note": "Loading stays shown during the retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
+            "content": "sha256:411d05d18f06c35a44fb4bae12566019d4441e6c5899aaaac3ea7005027f592a",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "73": {
+      "note": "Unavailable is shown only after the bounded number of retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
+            "content": "sha256:a164e7330cc42a01c80d1400078bfc890e3b074fe2ca910280b3a83a273717e0",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "74": {
+      "note": "No camelCase key in the real body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dc09adce51f1234914f591afc712dc9db6a92ae",
+            "content": "sha256:a35ba85e062c62ddd6d186bf3ea64d5e33e70720369b544e0efde3693b197709",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "dashboard/src/data/reviewTrees.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "75": {
+      "note": "The module comment: one decode per read, nothing selected or substituted, and getJson unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:7b9fe6175f1d844ad530843fa9ed0f9d23c69e1763a7f719181b8dc227269084",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The tokens a reader can be shown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:7e50f05031835d108310e3392553c5e2cda7fd4ac8ddcd687c34dc04726cd7a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewFailureToken"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:0629df989dcc8c29ec8f443b780af0a6f666210482b5b2f9c393cb2e5a6336fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOKEN_BY_CODE"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "An unknown code is carried as domain-refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:271d6b7623337a09551756c4d7ab7ae9e32ec8f92f20d40bf9ff29ed2769205b",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewFailureToken"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "The one GET: the optional abort signal, the body read whatever the status, and the two failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
+            "content": "sha256:6e85817cf7adc12d0e32445415755453f931e8ce8e584541b8cedd7c69732b0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "getReviewJson"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "8": {
       "note": "A typed answer returned whatever its status; only transport failures throw.",
       "targets": [
@@ -1525,6 +1608,60 @@
             "path": "dashboard/src/data/knowledgeReader.ts"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "The review client imports and re-exports the transport surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99a657e901a3a274e7393532701866730903f313",
+            "content": "sha256:3981bba7b9db0b4a64dad6464f34b35f14cf140a5d8dcdd763af043b42728498",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "A 404 typed refusal resolves through the review client with the refusal intact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:7ce922dacb14d14136004d944fed2be6bdf9e9966ad2e480139ce8eba245f6b5",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "82": {
+      "note": "The same body is dropped by getJson: the shared client's semantics are unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45d7df2ebd225f5645b2d6a10524d48f237852f1",
+            "content": "sha256:be605aa7ebd5f50727d335966a1906dca4eebae03ff9764b638d32fa98614200",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "dashboard/src/data/reviewTransport.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },

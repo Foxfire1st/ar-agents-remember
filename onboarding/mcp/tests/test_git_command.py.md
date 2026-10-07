@@ -6,50 +6,39 @@
 
 ## Purpose
 
-Safe Git execution and exact private-commit preparation contracts.
+Tests of the one Git runner in `kernel/git_command.py`: that an exported repository selector cannot
+redirect a command, that a timeout bounds a stalled command, that the shared blob-read block reads a blob
+from a repository once, that concurrent candidate captures are isolated, and that the private preparation
+of a commit keeps exact state and refuses forged or stale authority.
 
 ## Code Commentary
 
-### Logic
-
-A decoy selected through Git environment variables never receives the real commit. Timeout and concurrent candidate-index cases remain bounded and isolated. Private preparation preserves logical HEAD/index, normal hook execution, exact tree/parent and raw CRLF/signature commit bytes. Forged/cancelled authority, hidden index flags, physical drift and stale bindings refuse; a failed hook returns its original failure once.
-
-### Conventions
-
-This card describes the retained source at IAS `d3610903`. Historical entries below record earlier test populations; they do not require restoring removed cases. Source inspection is memory preparation and does not claim a test run or acceptance.
-
-### Invariants And Boundaries
-
-Repository selectors are deliberately reset inside the test so fixture cleanup cannot mask the runner guard. Private commit creation does not itself publish protected refs or confer lifecycle authority.
-
-### Todos
-
-No file-local implementation change is requested by this reconciliation.
+- The module's helpers create real repositories in temporary directories (`_init`, `_commit`).
+  `_selectors(decoy)` points all eight selector variables at a decoy repository. The redirection test sets
+  them inside its own scope, because `conftest.py` removes them from the environment at import; the test
+  therefore passes only when the production runner strips them.
+- `DecoyRepositoryTests`: with every selector pointing at the decoy, `commit_if_dirty` on the real
+  repository advances the real branch and leaves the decoy's head and files unchanged.
+- `SharedBlobReadTests`: `subprocess.run` of the runner module is counted. Outside a
+  `shared_blob_reads()` block two reads of one blob start two Git processes. Inside a block a batch of two
+  blobs starts one process, a second batch of the same blobs and a single read start none, and the answers
+  are equal and keyed in sorted order. The same blob ID asked of a second repository that lacks the object
+  raises `GitPreparationError`. After the block a read starts a process again.
+- `RunnerContractTests`: an explicit timeout still bounds a stalled command.
+- `CandidateTreeConcurrencyTests`: concurrent `worktree_candidate_tree` observers are isolated from each
+  other.
+- `PrivateGitPreparationTests`: an exact private commit keeps the logical head and index and runs the
+  normal hook policy; raw commit bytes keep CRLF and an opaque signature header; a cancelled owner and a
+  forged capability start no commit; hidden index flags and changed physical bytes refuse; a stale logical
+  tip and rebound private metadata refuse before any mutation; a failed hook returns its own failure and
+  is not retried.
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
-
-No configured domain evidence applies to the file-local claims above.
-
-### Repo-Internal References
-
-The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
-
-- A commit lands in the real repository not the decoy. [1]
-- An explicit timeout still bounds a stalled command. [2]
-- Candidate tree isolates concurrent observers with one scratch namespace. [3]
-- Exact private commit preserves logical state and normal hook policy. [4]
-- Raw commit readback preserves crlf and opaque signature header. [5]
-- Cancelled owner and forged capability start no commit. [6]
-- Hidden index flags and changed physical bytes refuse commit. [7]
-- Stale logical tip and rebound private metadata refuse before mutation. [8]
-- Failed hook returns original failure and does not retry. [9]
-
-### Cross-Repo References
-
-No cross-repository implementation evidence is required for these local test and fixture claims.
-
-Fixture repositories and protocol doubles do not establish a live external integration.
+- The module docstring: why the redirection tests set the selectors themselves. [10]
+- A commit lands in the real repository and not in the decoy. [11]
+- A repeated blob read inside the block starts no Git process and never crosses repositories. [12]
+- An explicit timeout bounds a stalled command. [13]
+- Concurrent candidate captures are isolated. [14]
+- The private preparation cases. [15]
+- The block under test. [16]

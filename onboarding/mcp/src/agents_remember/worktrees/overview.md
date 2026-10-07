@@ -286,6 +286,21 @@ memory-carryover vehicle.
   child-admission seal is gone, so a master that took a checkpoint landing
   (`integration_status="checkpointed"`) still admits the next leaf.
 
+## The Contract Read Is Recorded
+
+`load_contract` ([worktree_contract.py](worktree_contract.py.md)) is the one read entry of a series contract and of a leaf
+enclosure contract for every worktree tool. It probes and reads the file through the kernel's read recorder
+(`observed_exists`, `observed_text`), so inside a recording block the read leaves one row under the path it was given:
+the SHA-256 of the exact bytes read, `absent` for a missing file, or `unreadable (...)` for a failed read. A caller that
+keeps a result together with its recorded rows, such as the reviewer's leaf-wide view and the invariant gate, depends on
+the contract's bytes as they were consumed. Outside a recording block nothing is recorded, and for every caller the
+refusals of the read are the same: a missing file raises `ContractError`, and an error of the read itself is raised
+unchanged.
+
+- The contract is probed and read once through the read recorder. [72]
+- A read is recorded with the identity of its exact bytes, or as absent or unreadable. [73]
+- A missing file is recorded at the probe. [74]
+
 ## Evidence
 
 ### Repo-Internal References

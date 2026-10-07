@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
+            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
             "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
             "locator": {
-              "end": 213,
+              "end": 223,
               "kind": "line_range",
-              "start": 149
+              "start": 159
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:cb9ceb6c2d9479fe707737d5efd7026e024da04971b3fba200c963ee5c526fdc",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:5ee2f0a9bae68c4ea79f251c6603a9d67967d25df3d84b06198cc29376df54b3",
             "locator": {
               "kind": "symbol",
@@ -90,12 +90,12 @@
         },
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:5fe9f7329f21f7507be08f1dc33f17547a2385a24eeabad8d6519852fc40249a",
             "locator": {
-              "end": 63,
+              "end": 64,
               "kind": "line_range",
-              "start": 58
+              "start": 59
             },
             "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
           },
@@ -103,12 +103,12 @@
         },
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:ccb9e64842859db4d4129412d7e3ba5b44e96f719472bc066e3b11dbd8a36a21",
             "locator": {
-              "end": 153,
+              "end": 154,
               "kind": "line_range",
-              "start": 144
+              "start": 145
             },
             "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
           },

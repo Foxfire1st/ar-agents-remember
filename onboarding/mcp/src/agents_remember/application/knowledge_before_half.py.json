@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
             "locator": {
               "kind": "symbol",
@@ -160,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
             "locator": {
               "kind": "symbol",
@@ -172,12 +172,12 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:38de40ad37b224c19e974e2527893d02dd5d9687bc0f46003dc274dbcc50c254",
             "locator": {
-              "end": 960,
+              "end": 965,
               "kind": "line_range",
-              "start": 948
+              "start": 953
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },

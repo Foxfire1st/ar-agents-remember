@@ -2,12 +2,29 @@
   "path": "mcp/tests/test_knowledge_file_canonical.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Idempotence and content preservation.",
+    "10": {
+      "note": "The hook under test.",
       "targets": [
         {
           "anchor": {
-            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:f7b751d6cc01fe3dbbf1b934a0f8be23e4430a1cc59e91893dc28312752895ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_duplicate_keys"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Idempotence and content preservation on the untidy document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
             "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
             "locator": {
               "kind": "symbol",
@@ -18,12 +35,12 @@
         }
       ]
     },
-    "2": {
+    "7": {
       "note": "Only declared positions are sorted.",
       "targets": [
         {
           "anchor": {
-            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
             "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
             "locator": {
               "kind": "symbol",
@@ -34,13 +51,13 @@
         }
       ]
     },
-    "3": {
-      "note": "Content-changing input is refused.",
+    "8": {
+      "note": "The seven refused inputs, three of them repeated keys.",
       "targets": [
         {
           "anchor": {
-            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
-            "content": "sha256:87dff9cb4f1399046daf23fe290b58492d6997cca1844c6c353f5ef2c15e2379",
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:831e34a9dc6775dea664bc8d3f172ba9987a5d15bda92b18b2de19d646fc48fc",
             "locator": {
               "kind": "symbol",
               "name": "test_formatter_refuses_input_it_cannot_reformat_without_changing_content"
@@ -50,35 +67,17 @@
         }
       ]
     },
-    "4": {
-      "note": "The command's exit codes and skip rules.",
+    "9": {
+      "note": "The command's exit codes and skipped files.",
       "targets": [
         {
           "anchor": {
-            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
             "content": "sha256:218d5b1303ee29ab8c8f199c4965e801ccad2985a0d147ce67a32543ee9c4701",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_format_command_checks_rewrites_and_skips_caches"
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_file_canonical.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
-            "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
-            "locator": {
-              "end": 124,
-              "kind": "line_range",
-              "start": 124
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

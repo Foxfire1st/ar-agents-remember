@@ -1,0 +1,177 @@
+{
+  "path": "dashboard/src/data/reviewTrees.supersede.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module comment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:84e0fba5ff8fdf8068d0d9e983dd4fea5c16f92de9df130350c4f92a36afb3b8",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The hook under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:61f17ead19e8fde64b33e30580d5de5192d3e5b7779072ba82195e12c5e793a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewTrees"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three stub answers: busy, changing and not converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:454b629f6327a48960a9c6a5af59bf2ee9c88053a57639db18d2121a66d9903f",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A superseded request is aborted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:3ec032bfc52bc8e27501546c3684360c5cea29502f98037f73e10dd8d50cf24b",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unmounting aborts the request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:cd6a7ebf2ebfef06a891eb2da138c699ede7880b0c209c8f244b854f0e62693a",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A refusal that a retry answers is never shown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:6b061305f6f7b8341d249e86b4afcfb894750077ab1b2d12da0338da1e805667",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Loading stays shown during retries; the literal seven delays, seven retries and eight requests are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:bdf7780ab17942af5e63568d2656baa15a44444ab4102748b181f0fd001ba34d",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The inputs_changing refusal is retried too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:aef0c0b7c31061a0322524bc2a36334273dd07dfa41db8f1e1f0ae15e1fbdf30",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 130
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Unavailable only after the bounded retries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:062da19aa05c9b8a32b955af633740bb9a3a008553c52b80793d66276fd5a443",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A moved selection aborts the old request, keeps one timer and stops the retries; unmount clears the timer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:2b2c893b442b12ab2fb9bc51b80dfcf84dcdbfb26efb4542763fb9d8b238c617",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

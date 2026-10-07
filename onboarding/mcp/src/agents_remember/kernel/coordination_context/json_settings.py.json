@@ -2,54 +2,84 @@
   "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Settings selection prefers this JSON parser before Markdown fallback.",
+    "4": {
+      "note": "One recorded read, the JSON error, and the onboarding wrapper with its root fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c615fd86728b62479486cf8394ee6b5096d7fe6",
-            "content": "sha256:330333cc5d9a2188c727fe55eca874888474d9a0cdbfe441c276e68dd9faf8c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_coordination_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The example settings file demonstrates the JSON coordination-root storage shape.\n\nAnchor: \"coordinationRoot\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eecb75c8790900391d8fe36ad0d979d5504e51a7",
-            "content": "sha256:bc276e95c75e84f9711dda3930c7b670c98ef668d19f7cd5f560782c47f80143",
-            "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 3
-            },
-            "path": "examples/mcp/settings.example.json"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "JSON settings parsing composes current typed storage, path-rule and cross-repository settings.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "03194c9cd44ad38387e9232b636feaddc3fa72fc",
-            "content": "sha256:f3179fcf5e4c3df872acd5359edf267c1cf0353330e69fbbc47655b828eeec20",
+            "blob": "f238046d66464e9a140c95f968fc8a625b2ce682",
+            "content": "sha256:f8d668721fa265f11404a32060f9ce2935b5be43ae4c937a25399c23eed3654c",
             "locator": {
               "kind": "symbol",
               "name": "parse_json_settings"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Storage mode and default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f238046d66464e9a140c95f968fc8a625b2ce682",
+            "content": "sha256:84b18ea4cc79a858bd9adf2298fa671e2702392018ba08c66d19e0ba760b9f8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_json_storage_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One path rule with its include and exclude lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f238046d66464e9a140c95f968fc8a625b2ce682",
+            "content": "sha256:65fa816ab5ff14521d08133c27ca3e1ab92ef277065db6d693e52e2cf4d7ecd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_path_rule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cross-repository allow list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f238046d66464e9a140c95f968fc8a625b2ce682",
+            "content": "sha256:8c19a0d5cf19c354cdd53e4978c3ed002114ec0a4085415763e4ee6e91cb06f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_cross_repo_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A JSON settings file is recorded with its bytes, also when it is not valid JSON.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_selection"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
         }
       ]
     }

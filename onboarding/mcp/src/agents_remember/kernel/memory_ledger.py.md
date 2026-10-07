@@ -4,81 +4,46 @@
 
 [Nearest governing overview](../../../overview.md)
 
-Working candidate verification: source inspected at 2026-09-15T01:02 UTC against the uncommitted L9 candidate.
-The commit fields identify the latest real commit touching this source; they do not identify a future commit for the working changes.
-
 ## Purpose
 
-Defines the consumer memory-ledger representation: schema and row types, structural parsing,
-validation, canonical serialization, and current-versus-historical row lookup. It does not derive
-Git authority from those serialized rows.
+The representation of a memory ledger: its schema and row types, the structural parse, the validation, the
+canonical text, the two loaders and the lookups of a mapping between a code commit and a memory commit. The
+module reads and writes the file it is given and starts no Git command. Apart from the package's error
+base class and the kernel's read recorder it uses only the standard library.
 
 ## Code Commentary
 
-### Logic
-
-The format is a fenced JSON metadata block followed by a two-column `Code commit` / `Memory commit`
-table. `parse_ledger_text_unvalidated` checks structure, schema, repository name, and sort-order
-metadata without enforcing current-header agreement. Nonempty tables still require all revision
-metadata. `parse_ledger_text` additionally calls `validate_ledger`.
-
-An empty derived ledger is valid. It has no mapping rows and may leave revision metadata empty;
-validation refuses an empty ledger that nevertheless claims a current code or memory mapping.
-For nonempty rows, the first pair must agree with the current header and ordering remains
-`newest-first`.
-
-`prepend_mapping` returns a representation with the new pair and updated current header.
-`find_mapping` selects the first matching code row; `contains_mapping` asks whether an exact pair
-occurs anywhere in the data. Repeated code commits can therefore represent ordered memory states
-without collapsing their history.
-
-`write_ledger` serializes only the explicitly supplied representation. It creates no commit and
-performs no staging or ref move. Runtime refresh uses `memory_cache.refresh_memory_cache` to derive
-and materialize current data. `LEDGER_RELATIVE_PATH` owns the filename; `MEMORY_CACHE_EXCLUDE` is the
-exact root-cache exclusion consumed by Git staging/status helpers, including ignored or unreadable
-legacy cache files. The former projection-module reexport is no longer a reader contract.
-
-### Conventions
-
-The parser uses a narrow standard-library grammar. Representation helpers and lookup ordering are
-data semantics; callers must not treat a successful parse or matching row as permission for Git
-work. Runtime derivation and best-effort cache writing have their separate kernel owner.
-
-### Invariants And Boundaries
-
-- Empty data must not claim a current mapping; nonempty data must retain its required metadata.
-- The current header matches the first row when validated.
-- Current lookup and historical containment are distinct and do not impose global code-key uniqueness.
-- Writing a representation does not stage or commit it.
-- A cached table is disposable; only committed attribution supplies runtime mappings.
-
-### Todos
-
-No new implementation or live-state operation is authorized by this documentation pass.
+- **Format.** A ledger is a fenced `json ar-memory-ledger` metadata block followed by the first Markdown
+  table whose header is `Code commit | Memory commit`. `LEDGER_RELATIVE_PATH` is `memory.md`.
+  `MEMORY_CACHE_EXCLUDE` is the Git pathspec that excludes exactly that root file.
+- **Structural parse.** `parse_ledger_text_unvalidated` requires the fence, a JSON object, the fields
+  `schema`, `repoName` and `sortOrder`, one of the two accepted schema names, the table header followed by
+  a separator row, and two cells in every row. A ledger with rows must carry all four commit fields. It does not compare the header with the
+  first row.
+- **Validation.** `validate_ledger` requires `sortOrder` `newest-first`. An empty ledger must not name a
+  current code or memory commit. With rows, the first row must equal `lastVerifiedCodeCommit` and
+  `lastMemoryContentCommit`. `parse_ledger_text` is the structural parse followed by this validation.
+- **Loading.** `load_ledger(path)` raises `LedgerError` when the file does not exist and otherwise parses
+  and validates its text. `load_ledger_unvalidated(path)` does the same with the structural parse only.
+  Both probe and read through `observed_exists` and `observed_text`: inside a recording block a missing
+  ledger is recorded as `absent`, a read ledger with the SHA-256 of the bytes read, and a failed read as
+  `unreadable (...)`. The text is decoded as UTF-8 with `\r\n` and `\r` turned into `\n`. Outside a
+  recording block the loaders record nothing. This holds for every caller, among them the context packet,
+  the dashboard's analytics snapshots and the cross-repository context
+  (`kernel/coordination_context/cross_repo.py`).
+- **Writing and lookups.** `ledger_to_text` validates and renders the canonical text; `write_ledger` writes
+  it and neither stages nor commits. `prepend_mapping` returns a ledger with a new first row and the header
+  set to it. `find_mapping` returns the first row of a code commit; `contains_mapping` tests one exact pair
+  anywhere in the rows. `create_initial_ledger` builds a one-row ledger.
 
 ## Evidence
 
-### Docs References
-
-No Domain Documentation source is configured for this repository. No external domain documents
-were available through the configured registry to consult; the current claims are grounded in the
-working source and package-local evidence below. The registry is discovery input, not a citation.
-
-No configured external domain-documentation evidence.
-
-### Repo-Internal References
-
-These repository-relative targets and exact ranges were checked against the L9 working source.
-Source declarations and test assertions are distinguished from execution and acceptance evidence.
-
-- Format constants, row types, and the exact cache-exclusion expression. [1]
-- Structural parsing and validation distinguish empty and nonempty representations. [2]
-- Serialization and data lookup stay independent from Git publication. [3]
-- The runtime cache owner derives data rather than trusting a serialized table. [4]
-
-### Cross-Repo References
-
-The code/memory or fixture-repository boundaries above are established by package-local source.
-No additional configured external or sibling-repository evidence is claimed.
-
-No additional configured cross-repository evidence.
+- Schema names, the fence pattern, the file name and the exclusion pathspec. [5]
+- The structural parse and its required fields. [6]
+- The validation of order, empty ledgers and the first row. [7]
+- The validating loader probes and reads through the recorder. [8]
+- The structural loader probes and reads through the recorder. [9]
+- Writing serializes the given ledger and touches no Git state. [10]
+- The first-row lookup of a code commit. [11]
+- The exact-pair lookup. [12]
+- A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure. [13]

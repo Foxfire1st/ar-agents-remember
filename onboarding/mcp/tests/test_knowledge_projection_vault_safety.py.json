@@ -93,12 +93,12 @@
         },
         {
           "anchor": {
-            "blob": "f34d6936f919773ea5c7b1f6a11f83139ae06535",
+            "blob": "44ff650727251b3cc91dabc145df00cae16057dc",
             "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
             "locator": {
-              "end": 175,
+              "end": 180,
               "kind": "line_range",
-              "start": 153
+              "start": 158
             },
             "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
           },
@@ -336,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "blob": "25f12876abbe765e7e9e1d7fb1120d3b33c32b23",
             "content": "sha256:52eead19a24e0bfac5edb39b0e4be82bcf7078bc093e68e160649d75ebe84008",
             "locator": {
               "end": 193,

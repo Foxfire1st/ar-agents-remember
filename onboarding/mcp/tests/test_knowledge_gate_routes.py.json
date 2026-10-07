@@ -2,15 +2,15 @@
   "path": "mcp/tests/test_knowledge_gate_routes.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module docstring: each route test enters through its own entry point.\n\nAnchor: \"Each route test enters through the route's own entry point\"",
+    "13": {
+      "note": "The module docstring: every route test enters through the route's own entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:d6fb67f70c4e04794d7e692f77af197a083d0729f20d3ef96c196e51bc4b04aa",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "content": "sha256:d9198e7b784a3a1b6b9b301dcbbcac02bbbce9d59e91307d3a5b0b8616bb95d8",
             "locator": {
-              "end": 7,
+              "end": 6,
               "kind": "line_range",
               "start": 1
             }
@@ -19,71 +19,12 @@
         }
       ]
     },
-    "10": {
-      "note": "A Git failure asking for a recorded blob is named by the trees and the lane.",
+    "14": {
+      "note": "The closeout refuses, restores the file and commits it closed once valid.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:a25b751e9d479ca19125a3a78923132a144e33c0f5764437384502721a45cb39",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_git_failure_asking_for_a_recorded_blob_is_named_by_the_trees_and_the_lane"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "An unwritable closing receipt restores the file and admits nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:0f8785c3f4fe3d78f23bdb550f9df0e26ddca9c8eaa89c96199c7001aeca4e23",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "A hand-closed file is refused also one commit later and through a merge.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "F1 and the worktree closeout, record, master and checkpoint route entries.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
             "content": "sha256:5cec50c0ff86e0bb20293318db0b652a4605a39d0bd073ff51ce0854816faa6d",
             "locator": {
               "kind": "symbol",
@@ -91,26 +32,31 @@
             }
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "15": {
+      "note": "Record landing refuses through its route entry.",
+      "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:c9d752a195a2143590d0cfea321d9c76fa08bdb2a8d56d0f260b2aaf08a2eb02",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "content": "sha256:7689a7b234b0cb254bfd2a2f633fecf07c9a1af3f4a220ec95e707c9e0f67bd6",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_master_and_checkpoint_landings_refuse_through_the_integration_route"
+              "name": "test_record_landing_refuses_through_its_route_entry"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Direct landing's route entries and its closing across calls.",
+    "16": {
+      "note": "Direct landing preview and apply refuse through their entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
             "content": "sha256:3f7bc6557a05b8446e9b602174c01b492ca4d4de59eedc0e6710036e6b2e0530",
             "locator": {
               "kind": "symbol",
@@ -118,163 +64,16 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:aa6c999fe54bc1bf45e745d80c568b1ce30c8c90c8c7499f56278b7c22eb521e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_another_generation_s_request_never_replaces_a_kept_closing"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:080bad9648a12c9f646648c25f211b141ed37d9524291cf8284549a7469b8311",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unreadable_closing_receipt_is_a_named_refusal_at_apply_and_at_cancel"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "Master landing refuses anything not current; ghost subjects; the scoping.",
+    "17": {
+      "note": "The recorded rows of the settings resolution, and a conflicting read that is never kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:b7ad398354e6f1764d857019f4f20eb3e49e115884af7b5da1d6d02edf2ea2a1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:ef8538598b8aee42a9457276d2d54cc12edf8860af6a1b50d66b4b8cbef5863d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_hand_committed_closed_history_file_with_a_ghost_subject_is_refused_at_master_landing"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:c317f2ce261ca96d4596c22ebde0d4d56abe39b1c9f8f09e9fc06cff28162f78",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_sibling_s_file_closed_in_the_base_is_not_re_anchor_checked_at_a_leaf_route"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The exact trees re-anchor-check the file they just closed; an unavailable object.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:54de1dac89ad347c8ae2498b208934d2776c03e88a17c7952543f4fe46901552",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:3921ee1dfeb3811cae2d781207a9e743816b822c41ad781a011fa55d94223a1a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_code_object_that_is_unavailable_is_named_and_keeps_the_item_findings"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The admission base, the memo key and record landing on unconverted memory.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:2a62640ab5dbbd8e5edda02a6774f9d4b2e552f5959cfec5dbd2a0d5efb10d0b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_routes_judge_a_leaf_s_earlier_record_new_against_the_parent_line"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_memo_key_holds_the_parent_tip"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:21d1394783ba803dc1f1d408424e2e3d8f3f903b678762218027cb859a0b9e56",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_record_landing_on_unconverted_memory_never_reads_the_landed_commit"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Git failures, probes and the read set.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:a6d492cbdf333c3436560e75f8ba097883b53930ec2316a32794aed9dfdfbe23",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:e8a1d0c81e3c4179f86a89d58730783a9e3efa0dad07e390b82ce57f8e558032",
+            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
+            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
             "locator": {
               "kind": "symbol",
               "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
@@ -284,59 +83,68 @@
         }
       ]
     },
-    "8": {
-      "note": "R3-1 and R3-2.",
+    "18": {
+      "note": "Another parent tip is another evaluation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:327d78ae2f713edb03a385621d5b91cd798af89ec0b81257a3a7048655982dbe",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_closing_the_memory_line_already_holds_is_never_restored"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:45017b8040da3b973c5be19fe61ff77bd40f80729b2a0458225893c383224c8f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_recorded_blob_the_store_lacks_is_named_at_its_real_raise_site"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "c9551e6a5da30a861ccc54078abd3c6d893717ae",
-            "content": "sha256:701e09d2c235964b53f035d7da8a4d1f95ea151ef6bd7f994292bdb1703812a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_git_failure_asking_for_a_recorded_blob_is_incomplete_and_never_kept"
+              "name": "test_the_memo_key_holds_the_parent_tip"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "9": {
-      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_knowledge_gate_routes.py\"",
+    "19": {
+      "note": "A failed Git read inside the gate is never a verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
-            "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
             "locator": {
-              "end": 126,
-              "kind": "line_range",
-              "start": 126
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
+              "kind": "symbol",
+              "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
+            }
           },
           "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A marker probe Git cannot answer is never unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6de998c9451213b8db656a2271d6de25ae7c4b20",
+            "content": "sha256:a6d492cbdf333c3436560e75f8ba097883b53930ec2316a32794aed9dfdfbe23",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_marker_probe_git_cannot_answer_is_never_unconverted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The settings resolution whose rows the read-set test checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
+            "content": "sha256:a7ea456376914a23b14d158ee6841fc85d6b10f7b38cd8559caf2b1882a82706",
+            "locator": {
+              "kind": "symbol",
+              "name": "trace_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py"
+          },
+          "kind": "code"
         }
       ]
     }

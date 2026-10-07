@@ -6,77 +6,67 @@
 
 ## Purpose
 
-**The task owner's answers about a leaf's task document for MIK-R11: its declaration and its decisions.**
-Both go through one strict lookup, `strict_leaf_doc`, which fails closed on identity doubt instead of
-skipping what it cannot read. The worklist reads the leaf's `expectedKnowledgeEffects` through it
-(`knowledge_worklist/leaf.leaf_expected_effects`), and the knowledge writer asks `leaf_decision_refusal`
-whether a planned `dropped` row's cited decision resolves (bound by `cli/knowledge_write_route.leaf_decisions`).
+The strict lookup of a leaf's task document, and the answer whether a decision entry of that document
+resolves. `strict_leaf_doc` fails closed on identity doubt: it never treats a document it cannot read as
+"no document". It also decides which of the files it opened count as read for a caller that keeps a
+result.
 
 ## Code Commentary
 
-### Logic
+### The lookup
 
-- **`strict_leaf_doc(task_root, leaf_id)`** returns the leaf's one `(path, TaskDocument)`, `None` when the
-  leaf has no document, or raises `LeafDocumentUnresolved` (a `ValueError`):
-  - it is `leaf_doc.resolve_terminal_leaf_doc` first: two documents claiming the leaf are ambiguous, and an
-    unreadable document whose file stem is the leaf's is refused (`TerminalLeafResolutionError` is re-raised
-    as `LeafDocumentUnresolved`);
-  - beyond it, `_unreadable_claims` reads every `*.json` in the task root and refuses any document that
-    fails to read while its raw JSON still names the leaf (`_names_leaf`: its `id`, or an
-    `enclosures[].leafId`; a master never counts). The message names each file and its first error line.
-  - An unreadable JSON file that names no leaf (a preview or other sibling artifact) is ignored, as the
-    terminal resolver ignores it.
-- **`leaf_decision_refusal(task_root, leaf_id, at)`** is `None` when the leaf's document holds exactly one
-  decision entry whose `at` equals the citation. Otherwise it returns why not: the strict lookup's doubt, no
-  task document, no entry at `at`, or several entries at `at` (ambiguous). Task-document decisions carry no
-  ID, so the `at` is the citation (ruling Q5).
+`strict_leaf_doc(task_root, leaf_id)` returns the leaf's one `(path, TaskDocument)`, `None` when the leaf
+has no document, or raises `LeafDocumentUnresolved` (a `ValueError`).
 
-### Conventions
+- It asks `resolve_terminal_leaf_doc` first. Two documents that claim the leaf, and an unreadable document
+  whose file stem is the leaf's, raise `TerminalLeafResolutionError`, which is raised again as
+  `LeafDocumentUnresolved`.
+- `_unreadable_claims` then reads every `*.json` directly in the task folder with `read_task_doc`. A file
+  that fails to read while its raw JSON still names the leaf (`_names_leaf`: its `id`, or the `leafId` of
+  an entry in `enclosures`; a document of kind `master` never counts) is the leaf's document in a broken
+  state, and the lookup raises naming each such file with the first line of its error.
+- A file that is not JSON, or that names no leaf, is ignored.
 
-- The module answers as the task owner; the knowledge writer takes its answer through an injected
-  `DecisionResolver`, so the writer never imports the task plane (layering).
-- `leaf_doc.find_leaf_doc` (fail-soft) is unchanged; `leaf_maintenance_scope` still reads through it, a
-  pattern carried to L09 (ruling F2).
+Every caller gets this behaviour: the worklist's maintenance scope and declared effects
+(`application/knowledge_worklist/leaf.py`), the gate memo's key (`application/knowledge_gate/memo.py`), the
+direct-landing gate (`application/knowledge_gate/direct.py`), the knowledge writer's open questions
+(`application/knowledge_writer/open_questions.py`) and `leaf_decision_refusal`.
 
-### Invariants And Boundaries
+### What counts as read
 
-- **An unreadable leaf document never reads as "nothing declared"** (ruling F2, 2026-09-29T22:35:34+02:00).
-  Candidate invariant; realized by `strict_leaf_doc` raising `LeafDocumentUnresolved`, which the worklist turns
-  into an `incomplete` run naming the input `leaf task document`; proved by the unreadable-document block of
-  `test_a_leaf_reads_its_declaration_and_the_checklist_and_tool_show_the_marks`.
-- **Ambiguity refuses** (ruling F1): two documents claiming the leaf, an unreadable claiming document, or two
-  decision entries at the same `at` are refusals, never a first-match answer.
+The lookup opens every JSON file of the folder to rule out other claimants. It runs inside its own nested
+recording block, and afterwards replays into the caller's recording only part of what it recorded:
 
-### Todos
+- when the document is established: the rows of the leaf's own document, and every row whose identity is
+  not a plain `sha256:` value, that is, a file that was absent, unreadable or read at two identities. A
+  sibling that was read in full and ruled out leaves no row;
+- when the leaf has no claimant: every row it opened — each sibling read in full and the exact direct
+  JSON listing. The terminal task-root resolution is one of the admitted unrecorded B5 selectors, so no
+  resolution row exists. A performed lookup that finds no claimant is evidence of absence: those
+  files are inputs of the result, and a write to another leaf's document or a new sibling moves them;
+- when the lookup raises: every row it recorded.
 
-- `leaf_maintenance_scope` keeps the fail-soft lookup; making it strict is carried to L09 (ruling F2).
+A caller that keeps a result with its recorded rows therefore depends on the leaf's own document. When the
+lookup established a claimant it depends on no sibling it merely ruled out; when the lookup found no
+claimant, every opened document and the exact listing are inputs. A sibling that starts to claim the leaf
+changes the answer of the next lookup, which a keyed caller makes again before it uses what it kept.
+Outside any recording block the lookup records nothing and its answers are the same. A caller that only
+rechecks recorded rows — the moved-input check of the leaf-wide computation — performs no lookup and
+records no such rows.
+
+### Decisions
+
+`leaf_decision_refusal(task_root, leaf_id, at)` returns `None` when the leaf's document holds exactly one
+decision entry whose `at` equals the citation. Otherwise it returns the reason: the lookup's own doubt, no
+task document, no entry at `at`, or several entries at `at`.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is the requirement packet `MIK-R11@v2` of task
-`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
-`11_planned-invariant-effects-reconciliation.json`); it lives outside the code and memory repositories, so it
-is named here and not cited as a row.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The module docstring: one strict lookup for both answers. [1]
-- The doubt, as one exception type. [2]
-- The strict lookup: the terminal resolver plus unreadable claims. [3]
-- Unreadable documents that still name the leaf. [4]
-- The decision citation: exactly one entry at `at`. [5]
-- The terminal resolver it builds on. [6]
-- The answers: resolved, none, ambiguous, no document, and the four doubt cases. [7]
-- An unreadable leaf document makes the worklist incomplete. [8]
-
-### Cross-Repo References
-
-The task root is in the coordination root, outside the code repository; the module reads it through the
-task plane's own store (`tasks/store.read_task_doc`).
-
-No cross-repo boundary is crossed by this file.
+- The module docstring: the strict lookup and what it records as read. [9]
+- The lookup inside a nested recording, and the rows it replays to the caller. [10]
+- Every JSON file of the folder is read; a broken file that names the leaf is collected. [11]
+- A raw document names the leaf by its id or an enclosure's leafId; a master never does. [12]
+- Exactly one decision entry at the cited time resolves. [13]
+- The recorded reads hold the leaf's document and not the master's; sibling writes leave a kept view in place. [14]
+- A second claimant makes the next lookup ambiguous. [15]
+- A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused. [16]

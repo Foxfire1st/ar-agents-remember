@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the turn-taking and the idempotent creation, three of four simultaneous first reads of a comparison were refused with a ref-lock error, and two readers racing past each other would record the same trees twice under two numbers and two pins."
+  },
+  "applicability": "The recording and pinning of a live leaf's review comparison: its refs refs/ar/review/<task directory>/<leaf>/<n> and its record file.",
+  "conditions": [
+    "The latest record with the same four trees is reused, and a pin of it that has gone is created again.",
+    "A pin is created with update-ref and the zero old value, which only creates; Git's answers \"cannot lock ref\" and \"already exists\" lead to a re-read of the ref and to at most _PIN_ATTEMPTS attempts.",
+    "A candidate that is committed needs no ref."
+  ],
+  "exclusions": [
+    "Readers in different dashboard processes, which do not share the lock: for them the create-only ref and the retry decide.",
+    "A reopened recorded comparison, which pins and records nothing."
+  ],
+  "id": "INV-Z2HVKA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rule 12; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Readers that open the same new review comparison at the same moment record it once: recording takes turns inside one dashboard process, a pin ref that already names the comparison's tree is success, a ref that names another tree is refused and never moved, a held ref lock is retried, and a refused pin removes only the pins that the refused call created.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
+        "locator": {
+          "kind": "symbol",
+          "name": "moved_inputs"
+        }
+      },
+      "id": "RLZ-28NDMN",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Reports as moved a task document the computation read whose bytes differ from the key's or that the key does not name, and every recorded row whose recheck gives another identity. A document the key names that the computation never opened is not reported.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
+        "locator": {
+          "kind": "symbol",
+          "name": "remembered"
+        }
+      },
+      "id": "RLZ-3BXC5B",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Serves a kept view only when it is young enough and its recorded rows report no change, and replays the kept rows into the caller's recording.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
         "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
-        "content": "sha256:bedaf59766b604e2c05a6308c9233b00862bc0e875f6eec3396937374a673b74",
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
           "name": "moved_inputs"
@@ -34,17 +70,220 @@
         "handoffEntry": "L40-actual-read-memo",
         "leaf": "260928-MIK-L40"
       },
-      "rationale": "Compares both canonical task-consumption identities to request inputs and rechecks every observed external dependency.",
+      "rationale": "Reports as moved every task document the computation read whose bytes differ from the key's or that the key does not name, and every recorded row whose recheck gives another identity, so a failed, conflicting or changed read never passes as unchanged. A document the key names that the computation did not open is not reported.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+        "locator": {
+          "kind": "symbol",
+          "name": "remember"
+        }
+      },
+      "id": "RLZ-JT0DJ4",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-failed-read-never-kept",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Refuses to keep parts whose rows hold a conflict or an unreadable row, or record a task document as absent, or for which moved_inputs reports anything.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+        "content": "sha256:6798b8709c203b1597e511d4bd7157d8a2dccfb7bc3bc241286a11d07b98424a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Kept"
+        }
+      },
+      "id": "RLZ-PR915R",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Holds the kept parts with the rows recorded for them and answers whether they still read the same through changed_observations over exactly those rows.",
+      "role": "support"
     }
   ],
   "references": {
-    "1": {
-      "note": "The key binds exact tree/input identities and canonical task reads.",
+    "10": {
+      "note": "Task reads are the JSON files directly in the task folder.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:ac71b894fbfa7e24f72510bc047d8f61524a44ef94b66366ff5c5a28b0dc56b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_reads"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Failed, absent or moved inputs keep the parts out of the memo.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "remember"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The recheck repeats selections before it reads bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
+            "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+            "locator": {
+              "kind": "symbol",
+              "name": "changed_observations"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Another leaf's document appearing, changing or vanishing, and a newline in task.json, leave the kept view in place; the leaf's own document recomputes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A second document that claims the leaf is computed again and answers incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Not read, same bytes, other bytes, a conflict and an unnamed document, each judged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Count and age bounds, and no answer for another key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A view behind which a read failed is not kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:2455132d7632567651a05d122b9f7a7074d6d69310a413f686ea042a0f25c331",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The key's fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:9e266c70363803ee282c5a5b8109f245643c5952b4fdcbd86e1ed93428de29ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafViewKey"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The key is built with the task lookup's reads recorded; several conditions give no key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
             "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
             "locator": {
               "kind": "symbol",
@@ -55,29 +294,13 @@
         }
       ]
     },
-    "2": {
-      "note": "Actual reads are checked against task inputs and their current bytes.",
+    "8": {
+      "note": "A kept view is served only when young enough and unchanged, and its rows are replayed.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
-            "content": "sha256:bedaf59766b604e2c05a6308c9233b00862bc0e875f6eec3396937374a673b74",
-            "locator": {
-              "kind": "symbol",
-              "name": "moved_inputs"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Reuse is bounded and requires unchanged recorded dependencies.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
-            "content": "sha256:10d56981b50d2f1701f6e2945ec0ecee90b2d6353e54d59932df1dfe504c73a0",
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
             "locator": {
               "kind": "symbol",
               "name": "remembered"
@@ -87,16 +310,16 @@
         }
       ]
     },
-    "4": {
-      "note": "Conflicting or moved reads never enter the parent memo.",
+    "9": {
+      "note": "A read with other bytes or an unnamed read is a move; a named document that was not read is not.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce8c49b6c211092db99e4dc095deb6c40a0da928",
-            "content": "sha256:c5d97ec67c98151044731350a8f95500892b6f03b1f21e745a5683fec6c3b5cb",
+            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
+            "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
             "locator": {
               "kind": "symbol",
-              "name": "remember"
+              "name": "moved_inputs"
             }
           },
           "kind": "code"

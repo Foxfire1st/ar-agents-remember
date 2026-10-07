@@ -12,7 +12,7 @@
   ],
   "exclusions": [
     "Other test modules, which may own governed support and contracts.",
-    "The descriptive fields of catalog rows, which this check does not judge."
+    "The descriptive fields of catalog rows, which this guard does not judge."
   ],
   "id": "INV-RVNFEZ",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L51",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The retained production-chain proof mcp/tests/test_lifecycle_owned_completion_relay.py owns nothing in the evidence-lifecycle catalog: no artifact row has it as path, as owner or as its only consumer, and no contract names it as owner or as the module of its evidence node; the property is computed from the catalog each time the test runs.",
+  "statement": "The retained production-chain proof mcp/tests/test_lifecycle_owned_completion_relay.py owns nothing in the evidence-lifecycle catalog.",
   "status": "proposed",
   "supersedes": []
 }

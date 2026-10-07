@@ -5,7 +5,7 @@
     ],
     "justification": "The gate at the closeout, the commit built from the judged tree, the index copy that lets the judged-tree check see a rewrite made in the second the index was written, the frozen attempt files, the governing changed row and the honest preview each close one way in which a closeout could publish a leaf's memory unjudged or let its judgment be replaced; none of them gives the guarantee alone."
   },
-  "guarantee": "On converted memory a leaf's worktree closeout commits or records the leaf's memory only as a tree that the knowledge validator and the mandatory invariant gate judged with every worklist item answered, also when it resumes with recovered commits and when nothing is left to commit: it commits exactly the tree it judged and refuses a tree that changed while the gate ran, also when a file was rewritten in the second the index was written; its preview never promises a closeout the gate refuses; the judgments a closeout published stay frozen while later answers go to the leaf's next attempt file; and a later row can never replace the judgment of a record the leaf changed. The guarantee covers the worktree closeout, its recovery paths and the commit it records, which the leaf's integration lands without judging it again. Two other routes by which a leaf's memory reaches its parent line are outside it. A recorded landing runs the knowledge validator and checks that the leaf's history file is closed; it does not recompute the worklist, so an open worklist item does not refuse it. Direct landing has its own gate, and its commit is bound to its admission snapshot, not to the tree that gate judged.",
+  "guarantee": "On converted memory a leaf's worktree closeout commits or records the leaf's memory only as a tree that the knowledge validator and the mandatory invariant gate judged with every worklist item answered, also when it resumes with recovered commits and when nothing is left to commit: it commits exactly the tree it judged and refuses a tree that changed while the gate ran, also when a file was rewritten in the second the index was written; a gate verdict kept from an earlier evaluation is used only while every input it recorded outside the trees still reads the same, also when a requirement packet's locator is retargeted to a file with identical bytes; its preview never promises a closeout the gate refuses; the judgments a closeout published stay frozen while later answers go to the leaf's next attempt file; and a later row can never replace the judgment of a record the leaf changed. The guarantee covers the worktree closeout, its recovery paths and the commit it records, which the leaf's integration lands without judging it again. Two other routes by which a leaf's memory reaches its parent line are outside it. A recorded landing runs the knowledge validator and checks that the leaf's history file is closed; it does not recompute the worklist, so an open worklist item does not refuse it. Direct landing has its own gate, and its commit is bound to its admission snapshot, not to the tree that gate judged.",
   "id": "FAM-61DY2V",
   "members": [
     "INV-HWAWFT",
@@ -13,7 +13,8 @@
     "INV-MS9BMJ",
     "INV-XN0FG8",
     "INV-WV1YQE",
-    "INV-656CYW"
+    "INV-656CYW",
+    "INV-D2HZQ8"
   ],
   "origin": {
     "handoff": {
@@ -23,14 +24,15 @@
     "leaf": "260928-MIK-L37",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/application",
     "mcp/src/agents_remember/kernel",
     "mcp/src/agents_remember/memory/knowledge_index",
     "mcp/src/agents_remember/memory_quality/knowledge_validator",
     "mcp/src/agents_remember/models/knowledge_files",
-    "mcp/src/agents_remember/worktrees"
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/tasks"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

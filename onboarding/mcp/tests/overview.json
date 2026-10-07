@@ -321,6 +321,57 @@
         }
       ]
     },
+    "497": {
+      "note": "The gate's warm pass becomes the refusal when a packet locator is retargeted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "498": {
+      "note": "The leaf-wide view captures nothing itself and is computed once per comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "499": {
+      "note": "The child's document, reads and body equal the computation in the calling process at two sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "5": {
       "note": "Integration files are not imported in a run that excludes integration.",
       "targets": [
@@ -333,6 +384,40 @@
               "name": "pytest_ignore_collect"
             },
             "path": "mcp/tests/conftest.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "500": {
+      "note": "The waiting bound counts computations, not the requests sharing them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "501": {
+      "note": "A kept view ignores every task document it did not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
           "kind": "test"
         }

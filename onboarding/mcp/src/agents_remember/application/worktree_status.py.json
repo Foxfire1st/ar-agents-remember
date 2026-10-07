@@ -350,12 +350,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:9fc5cd7abe1bde6138311905062e05d2f01a26647cd56f9b76cd4fe128f3bacb",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 108
+              "start": 109
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -363,12 +363,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:86f40d6022d435701c0882ab6ea9f84ceaf84255a043e17cd8f28156f8c25c3a",
             "locator": {
-              "end": 281,
+              "end": 282,
               "kind": "line_range",
-              "start": 281
+              "start": 282
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -376,12 +376,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:7fbaa91d19ffea608fb4ccf815275e196f52c127dbbcbd9f3cfb2b9fa1740907",
             "locator": {
-              "end": 283,
+              "end": 284,
               "kind": "line_range",
-              "start": 283
+              "start": 284
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -389,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:67b759a40eb2497ceed6af672c71093c9a0b661a1ddc67ae2baad19dba9d266e",
             "locator": {
-              "end": 286,
+              "end": 287,
               "kind": "line_range",
-              "start": 286
+              "start": 287
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

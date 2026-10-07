@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A child that survives its request or a killed dashboard keeps reading Git and holding memory and pipes with nobody left to collect its answer; the group stop, the shutdown call and the child's own parent-death signal and alarm each close one way it could be left behind."
+  },
+  "applicability": "Every child process that the reviewer's worklist owner starts, on Linux and WSL.",
+  "conditions": [
+    "The child is the leader of its own session and process group, so one signal to the group reaches its Git children.",
+    "A request's cancellation event is set when the client disconnects or the request is cancelled; a requester that leaves while others still wait does not stop the child.",
+    "The serving lifespan calls the owner's shutdown when serving ends.",
+    "The child arms its handlers, an alarm of CHILD_DEADLINE_SECONDS and the parent-death signal before it reads its request."
+  ],
+  "exclusions": [
+    "A platform without prctl, where a thread polls the parent's process ID once a second instead of the parent-death signal.",
+    "A child started by hand that leads no process group, which exits alone.",
+    "Git processes of other dashboard work, which this owner does not start."
+  ],
+  "id": "INV-HHZP57",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rules 5 and 10; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-child-lifetime",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A worklist child never outlives the requests that need it or the dashboard: the owner stops the child's process group, closes its pipes and reaps its direct worklist child when the last requester of its computation leaves, at the deadline, after every failure and at serving shutdown, and the child ends itself and its process group when its parent dies or its own deadline passes.",
+  "status": "proposed",
+  "supersedes": []
+}

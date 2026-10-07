@@ -81,48 +81,53 @@ about, which the truth view links to, because a row has no page of its own (MIK-
 
 - An incoming link may carry the record its history-row source is about. [59]
 
-## 260928-MIK-L31 The Tree View Adapter Reads A Selection's Entries, And One Wire Casing
+## The Tree View Adapter
 
-[`reviewTrees.ts`](reviewTrees.ts.md) now carries what the reviewer's focused expression cards need (MIK-R31):
-`ReviewTreeEntry` and `ReviewTreeEntrySide` (each realization and proof entry located on both code sides, with the
-range state, the bounded excerpt, the authored role and rationale or facet, and the MIK-R03 state), `invariants=`
-on the request (ruling 2026-09-30T05:36:19 Q2), `treeComparisonNumber` (the payload's own `review:trees:<n>`, whose
-absence marks a dataset review), `useReviewTreeEntries` (one selection's entries, kept with the question they
-answer) and an `enabled` flag on `useReviewTrees`, which the workspace passes only for a tree comparison and pins to
-the payload's comparison number (review F11). **Every key is snake_case** (MIK-L25 review F9, settled by L31: the
-server re-keys the owners' camelCase documents), and the worklist's items and history rows are named types with
-MIK-R11's `planning` mark. The panel and the cards now render this view (`panels/review/LeafKnowledgeChanges.tsx`,
-`ExpressionCards.tsx`). **Candidate invariant (not ingested): dataset reviews make no tree read.**
+[`reviewTrees.ts`](reviewTrees.ts.md) is the client of `GET /api/review/trees`, the reviewer's tree view of a leaf whose
+memory is converted.
 
-The real body ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) was re-captured from L31's scratch leaf
-(comparison 1, the planned marks and `planned_untouched` items of its two declared effects), and
-[`reviewTrees.test.ts`](reviewTrees.test.ts.md) asserts no camelCase key anywhere in it. The transport test's
-expansion refusal ([`reviewTransport.test.ts`](reviewTransport.test.ts.md)) was re-measured on the real route
-(MIK-R31 rule 6, ICR-L43 review R2 O2).
+- **What the answer carries.** The four Git trees and their pinning refs, each knowledge side's state (`available`,
+  `unavailable-history`, `legacy-unavailable`) and index state, the code sides of a reopened comparison, the Git diff of
+  the memory trees grouped by record and by source path, the currentness of each side, the worklist view with its items
+  and history rows as named types, and, when invariants are named, their realization and proof entries located on both
+  code sides (`ReviewTreeEntry`, `ReviewTreeEntrySide`). Every key is snake_case.
+- **The request.** `reviewTrees` addresses a comparison by number, by `history=recorded` or not at all (the live one),
+  and names invariants for their entries. It never sends a path or a tree ID. It passes an optional abort signal to the
+  transport.
+- **Read states.** `reviewTreesRead` keeps `trees`, `not-converted` and a refusal apart and reports any other body as
+  unreadable in the shared review vocabulary. `loading` is set only by the hooks.
+- **Dataset reviews make no tree read.** `treeComparisonNumber` reads the comparison number from the payload's
+  limitation token `review:trees:<n>`. The workspace enables `useReviewTrees` only when the payload names one and pins
+  the read to that number; `useReviewTreeEntries` returns `null` without one.
+- **A superseded read is aborted.** Each run of a hook's effect has its own `AbortController`, aborted when the task
+  context or the address changes and when the component unmounts. The abort cancels the request in flight, which the
+  server sees as a disconnect, so it stops computing a view nobody shows. `useReviewTrees` also drops an answer whose
+  sequence number is not the latest.
+- **A transient refusal is retried.** `reviewTreesRetryingBusy` asks again while the answer is a refusal with the code
+  `reviewer_busy` or `inputs_changing` (`TRANSIENT_CODES`), waiting the delays of `BUSY_DELAYS_MS` (1500, 2000, 3000,
+  4000, 5000, 6000 and 8000 milliseconds) between the reads, at most `BUSY_RETRIES` (7) times. The hook keeps
+  returning `loading` during the retries and shows `unavailable` only with the last answer. An abort ends the wait and
+  starts no further request.
+- **Tests.** [`reviewTrees.test.ts`](reviewTrees.test.ts.md) runs over the real captured body
+  ([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) and asserts that it holds no camelCase key.
+  [`reviewTrees.supersede.test.ts`](reviewTrees.supersede.test.ts.md) proves the abort of a superseded read and the
+  bounded retry.
 
-- The entry types. [10]
-- The comparison a payload names, and one selection's entries. [11]
-- No camelCase key in the real body. [12]
-
-## 260928-MIK-L25 The Tree View Adapter, And The Landed Review Over Trees
-
-[`reviewTrees.ts`](reviewTrees.ts.md) (new, carded and governed here) is the client of `GET /api/review/trees`
-(MIK-R25): the four Git trees and their pinning refs, each knowledge side's state (`available`,
-`unavailable-history`, `legacy-unavailable`) and index state, the reopened code sides (review F4), the Git diff of
-the memory trees grouped by record and by source path, MIK-R03 currentness per side, and the MIK-R08 worklist view.
-`reviewTreesRead` keeps `trees`, `not-converted` and a refusal apart and reports anything else as unreadable in the
-shared review vocabulary; `useReviewTrees` drops a superseded answer. The landed adapters (`review.ts`,
-`reviewFamily.ts`) are unchanged: for a converted leaf only their data source changed (rule 6).
-
-At L25 no component rendered this view — the panel for rules 2 and 3 was carried to L31/L32 (ruling
-2026-09-29T22:22:37 Q2), and the mixed key casing the types mirrored was carried to L31 (review F9); both are
-settled by L31 (above). Its cases
-([`reviewTrees.test.ts`](reviewTrees.test.ts.md)) run over the real captured body
-([`reviewTrees.captured.json`](reviewTrees.captured.json.md)) of the worker's converted scratch leaf, recaptured
-under the directory-name refs (ruling 2026-09-30T02:32:42 (a)).
-
-- The tree view's answer and the request, addressed by number, `recorded` or (since L31) a selection's invariants, never by path. [13]
-- Three answers kept apart. [14]
+- The module comment: what the adapter carries and the three answers it keeps apart. [60]
+- The answer of the route. [61]
+- One entry on both code sides. [62]
+- The request, addressed by number, recorded or invariants, with the optional signal. [63]
+- The transient codes and the retry delays. [64]
+- The bounded retry of a transient refusal. [65]
+- One answer as a read state. [66]
+- The comparison a payload names; without it no tree read is made. [67]
+- The entries hook aborts a superseded read and returns null without a comparison. [68]
+- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
+- The workspace enables the leaf-wide read only for a tree comparison and pins it to the payload's number. [70]
+- A superseded request is aborted and only the newer answer is shown. [71]
+- Loading stays shown during the retries. [72]
+- Unavailable is shown only after the bounded number of retries. [73]
+- No camelCase key in the real body. [74]
 
 ## 260921-ICR-L44 The Family Mirror Carries Each Source's Locator, Ranges And State
 
@@ -621,43 +626,33 @@ inventory row; the file's own card carries the type-by-type detail.
 - Central expression cards and optional inline inventory expansion mount source content at the inventory exact tree IDs. [48]
 - The renderer the expansion's fields feed, and its three state-decided branches. [49]
 
-## 260921-ICR-L16 The Review Route Gets Its Own Transport Owner
+## The Review Reads' Transport Owner
 
-The review reads' transport now has **one owner on this route**: `data/reviewTransport.ts` (196 lines,
-new in this leaf). The review routes answer with their typed result and map a refusal onto the
-change-set routes' `400`/`404`/`503` idiom, so a refusal arrives as a **non-2xx response whose body is
-still this route's typed answer** — and the shared `getJson`, which reads only `body.status` and throws,
-dropped every one of them before a reader could see it. A reader saw `404 Not Found` where the route had
-published a missing dataset, its reason and the initialization action. `getReviewJson(url)` is the fix:
-one GET, the body read whatever the status, and **a body carrying this route's `state` IS the answer**
-(payload, subject list or typed refusal); anything else is a named failure.
+[`reviewTransport.ts`](reviewTransport.ts.md) is the one transport decode of the review reads. The review routes answer
+with their typed result and map a refusal onto a non-2xx status, so a refusal arrives as a non-2xx response whose body
+is still the route's typed answer.
 
-`data/review.ts` stays this client's public entry and becomes a thin delegator: its three read functions
-(`intentReview`, `intentReviewEntries`, `reviewSourceContent`) call `getReviewJson`, and the module
-**re-exports** the moved surface, so `panels/review/*` and `panels/detail-panel/changeSetBar.tsx` keep
-importing one public entry and no existing importer changed its path. The decode that used to be inline in
-`reviewSourceContent` is now that one implementation, so `grep -rn "api/review/intent" dashboard/src`
-finds the route URL only in the two review client modules. Line counts: `review.ts` 414 → 428.
+- `getReviewJson(url, signal?)` makes one GET and reads the body whatever the status. A body that carries the route's
+  `state` is the answer (a payload, a subject list or a typed refusal); anything else is a named failure. A caller
+  whose answer may be superseded passes an abort signal, and aborting it cancels the request itself.
+- The clients of the review routes call it: [`review.ts`](review.ts.md), which stays the review client's public entry
+  and re-exports the transport surface, `reviewTrees.ts`, `reviewLane.ts` and `reviewIntentSummary.ts`.
+- The failure vocabulary is closed: `not-initialized`, `unavailable-history`, `validation`, `authority`, `not-found`,
+  `domain-refused`, `network` and `unreadable`. `unreadable` names an HTTP response the route did not produce and
+  `network` names no HTTP response at all. `loading` and `known-empty` are not failures and are not members.
+- `TOKEN_BY_CODE` maps the routes' status strings and refusal codes to a token, and `reviewFailureToken` carries a
+  code the table does not know as `domain-refused` with the code unchanged. `reviewer_busy` and `inputs_changing`,
+  the two transient refusals of the leaf-wide tree view, are `unavailable-history`.
+- The shared `getJson` of `files.ts` keeps throwing on a non-2xx status for the routes that use it.
 
-The failure vocabulary is closed and deliberately wider than the six states the requirement names:
-`not-initialized`, `unavailable-history`, `validation`, `authority` and `network` are the route's own
-words, `not-found` and `domain-refused` carry the remaining codes verbatim rather than guessing them into
-a state, and `unreadable` names "an HTTP response this route did not produce" while `network` names "no
-HTTP response at all". `TOKEN_BY_CODE` is the **only** code→state table in `dashboard/src`, and
-`reviewFailureToken` carries an unknown code as `domain-refused` instead of inventing a state for it — so
-the entry bar and the surface cannot come to disagree about what a code means. `loading` and `known-empty`
-are deliberately **not** failure members: they are not failures and are rendered as themselves.
-
-Unrelated clients' semantics are untouched, and that is asserted rather than asserted-about: `getJson`
-still throws on a non-2xx and still drops the body for the routes that use it, which the case module pins
-against the **identical** response. The change-set client (`data/changeset.ts` → `getJson` →
-`/api/changeset/task`) therefore still swallows its own refusal detail; that is a different route, client
-and owner, and it is **routed to R12/R24**, recorded here rather than fixed.
-
-- **The one GET whose body is the answer whatever the status, and which returns a typed result only for a body carrying this route's `state`.** [50]
-- **The only code→state table in this route, with an unknown code carried verbatim rather than guessed into a state.** [51]
-- The comparison, catalogue and source-expansion clients delegate to the shared decoder. [52]
-- **The shared client whose semantics are unchanged, and the change-set client that still inherits them.** [53]
+- The module comment: one decode per read, nothing selected or substituted, and getJson unchanged. [75]
+- The tokens a reader can be shown. [76]
+- The codes and their tokens, with the two transient codes of the leaf-wide view. [77]
+- An unknown code is carried as domain-refused. [78]
+- The one GET: the optional abort signal, the body read whatever the status, and the two failures. [79]
+- The review client imports and re-exports the transport surface. [80]
+- A 404 typed refusal resolves through the review client with the refusal intact. [81]
+- The same body is dropped by getJson: the shared client's semantics are unchanged. [82]
 
 ## 260921-ICR-L13 The Master Client Is Generation-Bound
 

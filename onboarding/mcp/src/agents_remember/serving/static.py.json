@@ -109,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:0b518088925ef50559b9a014ab2d743430cf9d23c6507ec96c9c0fd23f10b750",
             "locator": {
-              "end": 330,
+              "end": 331,
               "kind": "line_range",
-              "start": 330
+              "start": 331
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

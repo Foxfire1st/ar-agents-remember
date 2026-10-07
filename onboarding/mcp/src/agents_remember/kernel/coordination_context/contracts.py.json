@@ -2,67 +2,53 @@
   "path": "mcp/src/agents_remember/kernel/coordination_context/contracts.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Worktree contract parsing and task-root candidate logic live in the worktrees package.",
+    "4": {
+      "note": "The candidate order, the recorded resolution and existence probe, and the three empty answers.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "blob": "b717ebab81e9aa6e19dc527f82886403eb38bc7d",
+            "content": "sha256:8d88b0769315f5fd470b1f14b7fef07fc82bca093e9345ce980201f9add0f420",
             "locator": {
               "kind": "symbol",
-              "name": "load_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:195708fc2e79a89f16962f6725f4c37731cf52c3d148490da825ffb677f34faf",
-            "locator": {
-              "end": 462,
-              "kind": "line_range",
-              "start": 432
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+              "name": "resolve_contract"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Alias-aware leaf enclosure lookup for explicit leaf ids lives in the dedicated leaf-ref resolver.",
+    "5": {
+      "note": "The recorded resolution keeps the absolute, unresolved path as its key.",
       "targets": [
         {
           "anchor": {
-            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
-            "content": "sha256:c9941155b1d99610c0f55c6c769aec56ffd6ebe30cde986d0c48ef6fe84aed7d",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
             "locator": {
               "kind": "symbol",
-              "name": "resolve_leaf_enclosure_contract_for_ref"
+              "name": "observed_resolve"
             },
-            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "Resolver assembly consumes the optional contract payload.",
+    "6": {
+      "note": "A contract link retargeted during a computation is recorded as a conflict and the result is not kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
-            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:a1e3fa2b551adc162e2fd68fefb257aa90da657357de682e7c6d74ec9ad02817",
             "locator": {
               "kind": "symbol",
-              "name": "resolve_coordination_context"
+              "name": "_contract_alias"
             },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

@@ -2,368 +2,78 @@
   "path": "mcp/src/agents_remember/worktrees/worktree_contract.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "`WorktreeContract` persists real code/memory outputs and the informational cache location.",
+    "21": {
+      "note": "The schema name and the schema version constant.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:ed45868362775fcfccfe9df5b711e9201af68e89ed9b4bf77a2375a083e73235",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "`heal_contract_leaf_ids` sweeps the active leaf-enclosure population once, cheap-skips canonical ids via a per-root doc-id index, rewrites only changed contracts, and reports every rewrite and error.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
-            "locator": {
-              "kind": "symbol",
-              "name": "heal_contract_leaf_ids"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Dedicated leaf-ref resolver supplies canonical doc ids, legacy alias policy, and the heal's bounded per-task-root doc-id index (`canonical_leaf_doc_ids`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0cf0dd9c497c0b345a5f2b31323b75e9f84de4a3",
-            "content": "sha256:b50e5decfa7b7cf034dc203dd491ed9821660535bf139519c9e0b41170ea7e4b",
-            "locator": {
-              "kind": "symbol",
-              "name": "canonical_leaf_doc_ids"
-            },
-            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The `heal-leaf-ids` CLI subcommand (`--coordination-root`, `--dry-run`) is the deliberate invocation seam for the heal.\n\nAnchor: \"heal-leaf-ids\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aeb881366a583b9a9d9eaddb1f6e45d8b7a5893c",
-            "content": "sha256:97ef09fe2f21c10b110f4bf175a557547a0a7820bdd188aca3e76cf708756bbf",
-            "locator": {
-              "kind": "symbol",
-              "name": "heal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "Load/write/render helpers: `load_contract` (which logs the quarantined cells and passes `path=` to validation), `write_contract`, the heal, and the section renderers through `contract_to_text`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The write gate and the read path: `_contract_vocabularies`, `validate_contract(contract, *, path)`, the path-naming `_extract_front_matter` / `_path`, limited YAML parsing, and `_contract_from_data` reading all six cells through `_vocabulary_cell` into `unknown_cells`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:2ff03e8eca7e5f0482f14405f47333fd245bd281a915531bf459c4723c285a22",
-            "locator": {
-              "kind": "symbol",
-              "name": "_contract_vocabularies"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:f6bdd9d8c2dbc88a486c5e5b3cf5b4345d532a6bddc25b40c722d95f3e904c7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_path"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "`WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:7e68ce6c60facbee0b61149927f3e19b683d139b356250c928a32804a5d54338",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeSummary"
-            },
-            "path": "mcp/src/agents_remember/models/worktree.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "`WorktreeSummary` consumes the shared vocabulary aliases owned by `models/worktree.py` for its response fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:7e68ce6c60facbee0b61149927f3e19b683d139b356250c928a32804a5d54338",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeSummary"
-            },
-            "path": "mcp/src/agents_remember/models/worktree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:dc06e5bba3595de965695d14f1c4b4b8501493f7af78bf93006e37a07a06555f",
-            "locator": {
-              "end": 317,
+              "end": 50,
               "kind": "line_range",
-              "start": 263
-            },
-            "path": "mcp/src/agents_remember/models/worktree.py"
+              "start": 49
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "17": {
-      "note": "The current `WorktreeStatusFacts` shape imports the same six contract vocabularies, reports `unknown_cells` as `unknown_contract_cells`, and exposes derived source lineage without adding a persisted contract cell.",
+    "22": {
+      "note": "The six vocabularies as frozen sets, the kinds and the defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:9ed51d4514fdc384e55b9df427f2c3d7526727d4a6adc150e0563788aedd7973",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:e3635026e0b75911b8fc87f5d5dba0920bf1b81bd9032cf1d5e7cb169ce80182",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeStatusFacts"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:db4590f6b06d799be71ad79635475bbf2092f5b240bcc76abf03272cfba7fab2",
-            "locator": {
-              "end": 121,
+              "end": 91,
               "kind": "line_range",
-              "start": 83
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "`build_start_contract` converts `_task_vocabulary`'s `ContractError` into a blocked start result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
-            "content": "sha256:9e69e27071001caeb167f23ef3f07e17e174686965f530071c4521f5a431469c",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_start_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Vocabulary exhaustiveness, the `ContractCells` write path, and the no-`replace`-keyword rule are pinned here. (`ContractBoundaryTests`)",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dd608424ecf5b386e5a27070b5f2cb2d10721205",
-            "content": "sha256:fc7abea641f7024b329948a1558b7071d496144f6ee1af9a86f900b4656e4266",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContractBoundaryTests"
-            },
-            "path": "mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "`_closeout_lines` serializes code and memory-content closeout output cells only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:b8e3df6ae2959ddc630cec5f8646412d2cdda5521fe57aad67b69b49a843aaa1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_closeout_lines"
+              "start": 75
             }
           },
           "kind": "code"
         }
       ]
     },
-    "20": {
-      "note": "The current module exposes `ContractError`, `ContractCells`, `amend_contract` at this ownership boundary.",
+    "23": {
+      "note": "A cell outside its vocabulary is read as its default and quarantined.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:1ed52e5598077da9eb58bccd0643d659bd015da151631217a770a70f8a05989a",
             "locator": {
               "kind": "symbol",
-              "name": "ContractError"
+              "name": "_vocabulary_cell"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "`_integration_lines` serializes strategy and code/memory landed outputs only.",
+    "24": {
+      "note": "The fallback of an unreadable memory mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:e69e3bcfd5e64f71a50250af0ac3b8e5f728f2a867ceec7e803dae23ad8189e5",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:7aba48d7b18251d73e81b06a0047c3460a187493aaf5532b194963be837d6875",
             "locator": {
               "kind": "symbol",
-              "name": "_integration_lines"
+              "name": "_memory_mode_fallback"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "`_contract_from_data` loads real output cells without reading retired ledger commit keys.",
+    "25": {
+      "note": "A requested workflow kind and memory mode are narrowed strictly.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:e1392da4b532c0cb9adb26021c4668b623c27f16ae5abeb4dfd4ee4f24f8557e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_contract_from_data"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The front matter's `schemaVersion`: the constant reused from the durable-store contract, the line `contract_to_text` emits, and the read-side refusal `_contract_from_data` calls right after the `schema` check. (`CONTRACT_SCHEMA_VERSION = SCHEMA_VERSION`; `_require_supported_schema_version`)",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "contract_to_text"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The single version policy both this file and the six control-plane JSONL stores read through — unknown major rejected, unknown minor accepted, an unparseable version rejected. (`SCHEMA_VERSION`; `SUPPORTED_SCHEMA_MAJOR`; `schema_version_supported`)",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
-            "locator": {
-              "kind": "symbol",
-              "name": "schema_version_supported"
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
-            "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
-            "locator": {
-              "kind": "symbol",
-              "name": "SCHEMA_VERSION"
-            },
-            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The module defines the contract schema, the six vocabulary `Literal`s and their derived `VALID_*` / `DEFAULT_*` constants, the `ContractError` type (subclassing `AgentsRememberError` from `agents_remember.errors`), the total reader `_vocabulary_cell` with `_scalar` / `_memory_mode_fallback` / `_task_vocabulary`, the `ContractCells` record with `amend_contract`, and the full `WorktreeContract` state record ending in `unknown_cells`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContractError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3a24e16472b883b5f0fb4ecdfbe1a9f9e7227dc9f31f1a171c0ca01cdaf43b1f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_scalar"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Folder naming and default contract helpers derive task roots, worktree groups, and external-memory ledger paths; both constructors narrow the request through `_task_vocabulary`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
               "kind": "symbol",
@@ -374,16 +84,210 @@
         }
       ]
     },
-    "9": {
-      "note": "Contract WRITE paths normalize legacy leaf ids to canonical doc ids when the leaf-ref resolver can prove the mapping; `load_contract` performs no normalization at all.",
+    "26": {
+      "note": "The six cells as one typed amendment.",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:6233fd7a927ec9708dcd82a543270f16b9d64d74115ad83af7efcb864a6c3ab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCells"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The contract model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeContract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The leaf enclosure contract factory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:c956f9652dbde67351a3e4a5481427fcb8aace159af490266ac95561c9ae6642",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The one read entry: recorded probe, one recorded read, parse, warning.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:dfa776e8c904c68a07307656bf919d2e921a20cdbe101c1ecec2079130988058",
             "locator": {
               "kind": "symbol",
               "name": "load_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Parsing the retained text: front matter, limited YAML, model, validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:8a42883742de5bb67811b56bd75ca2056b7f40e55427162b5f9bb007effca913",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_contract_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The text a write publishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:78334e01841f3edf7966468e2fc130757a77aa97da9d16493a05166347a87698",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_publication_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The one-time leaf ID sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
+            "locator": {
+              "kind": "symbol",
+              "name": "heal_contract_leaf_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The write gate and its refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:012a22ccbe63ed3307e1bdefe846cab438eabf4a9e703535799003d9f3e1c886",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "A file without a closed front-matter block is refused naming the file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:cfefdaaedd2870e4ab6cdf464c20ad52fb50cefec8d40ea1268d6d46140b14cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_extract_front_matter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "An unknown major schema version is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:15dfe4f3ac94826b1cc32c6766bf36b70df311a4a5f50c035f8cef68223cce4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_supported_schema_version"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "A contract changed and restored while it is read is recorded with the bytes that were parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fallback_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "A contract read that fails is recorded as unreadable under the contract's path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_failed_selector"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "A removed memory mode is refused by name with the contract's path before the cells are read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
+            "content": "sha256:e988b32168c29cb42089e7861f8178e80f89031a995ceb959c3b938ebd7257c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parsed_vocabulary"
             }
           },
           "kind": "code"

@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:4b81dce1ffe23b560df4d6b969cbceee7210a18302fc57a2096645f66819e782",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:e3471e65b0ce0e4ce628d9197af00f1677f97c464839ede36eef006736e5a0ac",
             "locator": {
-              "end": 640,
+              "end": 642,
               "kind": "line_range",
-              "start": 398
+              "start": 400
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/tasks/task_intent.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+        "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_approved_packet_ref"
+        }
+      },
+      "id": "RLZ-58G7G9",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Resolves the task root and the packet locator through observed_resolve and records the packet's bytes under the caller's locator, which gives the gate the selection rows that a retargeted packet link changes.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "Strict allowlisted v1 projection model.",
+    "12": {
+      "note": "The strict projection and the dropped key for an absent declaration.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:0b76c5e934d54f4353235bb43f6a18d76cf6609e16036edbfe84770b874e2e5a",
             "locator": {
               "kind": "symbol",
@@ -18,152 +37,29 @@
         }
       ]
     },
-    "10": {
-      "note": "The shared exhaustive field-effect taxonomy consumed here.",
+    "13": {
+      "note": "The fields the projection consumes.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
-            "content": "sha256:27b6925fffcbb1c070d384ed78c6ad0e20a383277b7537c948bf94f5709ba6ab",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:9c41842d946376af6e088b51349731d2a07fd9b9abd129625b25c92f0f1bbb98",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentFieldEffect"
-            },
-            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
-            "content": "sha256:1422c75990a99f4fc641e49e5429bef61620f96fb69d57614fbba3586a70d3e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "fields_with_effect"
-            },
-            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The typed slot/identity models imported from the sibling model module.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
-            "content": "sha256:bc56b3a6d16cf9b6df35621d6006d2dbd53b41003e7a249705032ab237385c0c",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskIntentIdentity"
-            },
-            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "83c611ae1be32d2da37ec1e383dc09c96ae195b8",
-            "content": "sha256:3de9da4fba259cdd7ede9f6ff9f23f7b778afcf6671a6ad3c93b3ffe8abe81da",
-            "locator": {
-              "kind": "symbol",
-              "name": "ApprovedRequirementPacketRef"
-            },
-            "path": "mcp/src/agents_remember/models/task_intent/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Normative slot allowlists for the document and nested models, since MIK-R11 including `expectedKnowledgeEffects` and its three nested fields.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:edb2390489c7ca9fe82f8424ba029c590592f2b3f5394b7d8ebf4b1f8891f7e8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_ROOT_FIELDS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:046df6e3bf247757338d0b4e77c7fd1ba997539099d2aa482222ccbced2d1897",
-            "locator": {
-              "kind": "symbol",
-              "name": "_NESTED_FIELDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The optional declared-effects slot; absent is absent, so digests are unchanged.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:bc0008dcfb0552d79d1272539868bf5412443e2c659cb097e1734fe3c3736bab",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskIntentExpectedKnowledgeEffect"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:d598aff2361d7e1ad20de5798e5efc4950e914037e19af29c96ea9052c1aeef0",
-            "locator": {
-              "kind": "symbol",
-              "name": "canonical_value"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The declaration projected into the leaf intent, and dropped from a master's.\n\nAnchor: \"leaf-only; masters project as before\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:392b195a2581ac6a911bd44423db11abb690c299e165832aaf1982269e505357",
-            "locator": {
-              "kind": "symbol",
-              "name": "_expected_effects"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:8ffefc13ce5f722ba7fe13c1d7bf58d30cf482d397cc146b4a8e20819cb96c38",
-            "locator": {
-              "end": 236,
+              "end": 150,
               "kind": "line_range",
-              "start": 235
+              "start": 125
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Projection entry point refusing masters and translating taxonomy failures.",
+    "14": {
+      "note": "The projection entry point refuses a master.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:b6c57b3c112cf07eea9f0be46ca5f0fb7d94e36200a72abaf34a5ba2adeabb2c",
             "locator": {
               "kind": "symbol",
@@ -174,12 +70,12 @@
         }
       ]
     },
-    "6": {
-      "note": "Canonical digest production from the projection.",
+    "15": {
+      "note": "The digest of the canonical projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
             "locator": {
               "kind": "symbol",
@@ -190,12 +86,12 @@
         }
       ]
     },
-    "7": {
-      "note": "Currentness/staleness assertion for owners.",
+    "16": {
+      "note": "The currentness assertion.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:ea3980c42105e1d218003016208a3a85fd50428adb3f555b921a9b2d7d25fed0",
             "locator": {
               "kind": "symbol",
@@ -206,12 +102,12 @@
         }
       ]
     },
-    "8": {
-      "note": "Allowlist/taxonomy symmetry enforcement.",
+    "17": {
+      "note": "The allowlist and the taxonomy must agree in both directions.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:6eae6a754590ffe8be0ff968d8637d0aa25df24272c66dbd915697bc158f668e",
             "locator": {
               "kind": "symbol",
@@ -222,12 +118,12 @@
         }
       ]
     },
-    "9": {
-      "note": "Requirement text/packet handling and the v2-cutover refusal.",
+    "18": {
+      "note": "Requirement text and packet references.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
             "locator": {
               "kind": "symbol",
@@ -235,17 +131,89 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "19": {
+      "note": "The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check.",
+      "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
-            "content": "sha256:69b131672777bed89a4245c7b0466c40715b813f8f614edeb6bdd88080efd2e2",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
             "locator": {
               "kind": "symbol",
               "name": "_approved_packet_ref"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The metadata table of a packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:acdb3914cfd938ab271b758c82005f53fbaa51c5e714f9b8fcc33f1486f809e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The requirement owner calls the packet owner and carries its refusal back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2563879ec3c7eefa67e9ae58a9a04569b3fbe9e8",
+            "content": "sha256:eea2675f32c7316986dd711c17ed9da97bf95ecc3bbdbac2f94a0ac39ade500b",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_owner_resolution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_owner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
         }
       ]
     }

@@ -173,7 +173,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:ded0ececa681b97be07a9edc7127ef6fe71498bd84fa89e7cfe01e575d892624",
             "locator": {
               "kind": "symbol",
@@ -185,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:7a5fbb0ba955c031a54745841891d9ff9f5bcb970536bed9d05b3489da4621ec",
             "locator": {
               "kind": "symbol",
@@ -197,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:76b4855ea420035e7e9aab5f310ee5329d05a1b7b94b2822793e5c191704fb8b",
             "locator": {
               "end": 127,
@@ -210,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:64332db1ccc84d56f20f220ccf1c6aa43801636da9f0296c925152b3a444030a",
             "locator": {
               "end": 51,
@@ -223,12 +223,12 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:fa2ed29eb75a750b9dabdb26a2cee4f86c4d015befb0fea4b96bdb5d673e1db1",
             "locator": {
-              "end": 958,
+              "end": 963,
               "kind": "line_range",
-              "start": 918
+              "start": 923
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -236,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:bcebe01f92d4a74985d50e70efd7605ebfd6c5c599b39233e69c573c8fba9efe",
             "locator": {
               "end": 52,

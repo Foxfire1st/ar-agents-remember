@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A parser that trusts Git's default header format raises, or binds patch sections to the wrong files, as soon as a user sets diff.noprefix, other prefixes, an external driver or forced colour; naming the format on every parsed command prevents that."
+  },
+  "applicability": "The Git diff commands of the reviewer's read path whose output is parsed: the knowledge diff's listing and patch, the source change inventory, the rename inference, and the worklist's blob diff.",
+  "conditions": [
+    "The options are PARSED_DIFF_OPTIONS of kernel/git_command.py; the blob diff pins the same four among its own fixed options.",
+    "An option on the command line wins over the configuration setting it names."
+  ],
+  "exclusions": [
+    "Git commands whose output is not a diff, and diffs whose output nobody parses.",
+    "The published command text of the rename inference and the source inventory, which is a reproduction aid rather than a command this leaf runs; it names the same options the measurement passes, the four of PARSED_DIFF_OPTIONS included.",
+    "core.quotePath, which the knowledge diff handles by accepting both header spellings (INV-7MH0BR)."
+  ],
+  "id": "INV-HVGENX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rule 11; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-parsed-diffs-ignore-user-config",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every git diff whose output the reviewer's read path parses names its own a/ and b/ prefixes and switches colour and external diff drivers off on the command line, so the user's Git configuration for prefixes, mnemonic prefixes, an external diff driver or forced colour cannot change a reviewer answer.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A key over every task document of the master discards the view on unrelated writes and refuses readers for a change that did not concern them, while a view that is not bound to what was read is served from bytes that are gone; binding the view to exactly its recorded reads prevents both."
+  },
+  "applicability": "The serving process's memo of the leaf-wide view's knowledge diff and worklist for a live comparison, and the computation that fills it.",
+  "conditions": [
+    "The rows are those of the kernel's read recorder: the child's rows, replayed into the serving process's recording, together with the serving process's own.",
+    "The strict leaf-document lookup passes on the rows of the leaf's own document and of files that were absent, unreadable or read at two identities, and no row of a sibling document it read and ruled out when it established the claimant; when the leaf has no claimant it passes on every row it opened, each sibling read in full and the exact direct JSON listing included, so a negative lookup keeps depending on what it read.",
+    "A task document the computation read whose bytes differ from the key's, or that the key does not name, counts as moved.",
+    "At most two computations are made for one request."
+  ],
+  "exclusions": [
+    "A second document that starts to claim the leaf: the lookup is then ambiguous, the view has no key, and it is computed and not kept.",
+    "Edits of the code or memory worktree, which give other trees and another key.",
+    "The memo's capacity and age limit, and the rule that a view behind a failed read is never kept, which INV-5M9WY3 states."
+  ],
+  "id": "INV-BBPPS5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rules 3 and 9; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A kept leaf-wide view depends only on what its computation read: it is served again only while every row the computation recorded still holds, a recorded input that moved forces a recomputation, and a task document the computation did not open is not an input. When a recorded input moves while the view is computed, the view is computed once more; when an input moves again in that computation, the answer is the refusal inputs_changing and nothing is kept.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -6,83 +6,72 @@
 
 ## Purpose
 
-**The client adapter of the reviewer's tree view (MIK-R25): `GET /api/review/trees`, typed after
-`models/knowledge/review_trees.py` and served by `serving/review_trees.py`.** For a leaf whose memory is converted,
-a review comparison is four Git trees and each memory side is read through the derived index of its tree. The
-landed review adapter (`data/review.ts`) keeps its shape and behaviour — only its data source changed (rule 6).
-This adapter carries what that payload does not: the comparison (four trees and the pinning refs), each knowledge
-side's state and index state, the reopened code sides, the Git diff of the memory trees grouped by record and by
-source path, each invariant's MIK-R03 currentness per side, and the MIK-R08 worklist view. Since MIK-L31 it also
-carries every realization and proof entry of a selection, located on both code sides (`ReviewTreeEntry`), for the
-focused expression cards, and the leaf-wide read the knowledge panel and the cards' planning marks use.
+The client adapter of the reviewer's tree view, `GET /api/review/trees`. It declares the types of the
+answer, builds the request, turns an answer into a read state, and provides the two React hooks that read
+the leaf-wide view and the entries of one selection. Every key of the wire types is snake_case.
 
 ## Code Commentary
 
-### Logic
+### Types
 
-- `reviewTrees(repo, master, leaf, address)` builds the query: `comparison=<n>` for a recorded comparison,
-  `history=recorded` for the latest record, `invariants=<a,b,…>` for one selection's entries (MIK-L31, ruling
-  2026-09-30T05:36:19 Q2), never a path or a tree id; the request goes through the shared `getReviewJson`.
-- `treeComparisonNumber(limitations)` reads the recorded tree comparison a landed review payload was composed over
-  from its `review:trees:<n>` limitation token; a payload without it is a dataset review, for which no tree read is
-  made at all.
-- `useReviewTreeEntries(repo, master, leaf, comparison, invariants)` reads one selection's entries from the
-  comparison the payload names, keeps the answer with the question it answers (so a superseded selection never
-  draws its cards), and returns `null` when there is no comparison number or no invariant (the dataset path).
-- `reviewTreesRead` keeps three answers apart: `trees` (only with its comparison), `not-converted` (the dataset
-  review applies; nothing here does) and `unavailable` with the owner's refusal; any other body is
-  `unreadableAnswer`, in the shared review vocabulary.
-- `degradedKnowledgeSides` returns a side that is not `available`, and also an `available` side read from a
-  `partial` index, so neither is presented as complete. `invariantCurrentness` reads one invariant's state on each
-  side. `unexplainedHunks` lists the hunks the gate linked to no recorded knowledge.
-- `useReviewTrees` keys the read by task context and address and drops a superseded answer by sequence number. Its
-  `enabled` flag (MIK-L31) makes no request and returns `null` when false; the workspace passes
-  `{ comparison }` with the payload's own number and enables it only for a tree comparison (review F11).
-- `ReviewTreesResult.code_sides` is present on a reopened comparison (review F4).
+- `ReviewTreesResult` has the state `trees`, `not-converted` or `refused`, with the comparison
+  (`ReviewTreeComparison`: four tree sides, the pinning refs, an optional converted base), the knowledge
+  sides with their index state, the code sides of a reopened comparison, the knowledge diff grouped by
+  record and by source path, the currentness of each side, the worklist view, the entries of named
+  invariants, or the refusal.
+- `ReviewWorklistView` has the source `computed`, `persisted` or `absent`, the `bound` flag, the items, the
+  history rows, the changes with their linkage, and the incomplete entries.
+- `ReviewTreeEntry` locates one realization or proof entry on both code sides (`ReviewTreeEntrySide`).
 
-### Conventions
+### Request and read state
 
-- The types mirror the Python model faithfully. Every key is snake_case (MIK-L25 review F9, settled by MIK-L31: the
-  server re-keys the owners' camelCase documents), so `code_tree.tree_id`, `stale_members`, `index_state`,
-  `unverifiable_reason` and `file_level` replace the old camelCase fields. `ReviewWorklistItem` (with MIK-R11's
-  `planning` and `satisfied_by`) and `ReviewWorklistHistoryRow` (with `owner_kind`) are named types now.
+- `reviewTrees(repo, master, leaf, address, base, signal)` builds the query from the task context and the
+  address: `comparison=<n>`, `history=recorded`, `invariants=<a,b,...>`. It never sends a path or a tree ID.
+  The optional `signal` is passed to `getReviewJson`.
+- `reviewTreesRead` turns an answer into one of three phases of `ReviewTreesRead`: `trees` (only with its
+  comparison), `not-converted`, and `unavailable`, which carries the owner's refusal or, for any other
+  body, an unreadable-answer failure. The fourth phase, `loading`, is set only by the hooks.
+- `degradedKnowledgeSides` returns every side that is not `available` or was read from a `partial` index.
+  `invariantCurrentness` reads one invariant's state on each side. `unexplainedHunks` lists the hunks the
+  gate linked to no knowledge. `treeComparisonNumber` reads the comparison number from the limitation
+  token `review:trees:<n>`; a payload without it is a dataset review.
 
-### Invariants And Boundaries
+### Retrying a transient refusal
 
-- Rendered since MIK-L31: `panels/review/LeafKnowledgeChanges.tsx` renders rules 2 and 3 and
-  `panels/review/ExpressionCards.tsx` renders the entries (ruling 22:22:37 Q2 carried to L31).
-- **Candidate invariant (not ingested): dataset reviews make no tree read.** Realized by `treeComparisonNumber`
-  returning `undefined` without the token, `useReviewTrees`'s `enabled` flag and `useReviewTreeEntries` returning
-  `null`. Proved by `ReviewSurface.gitTrees.test.tsx` ("leaves a dataset review exactly as it was: no tree read") and
-  the reviewer's mutation (the flag forced true fails 15 tests).
+- `TRANSIENT_CODES` is `reviewer_busy` and `inputs_changing`. `BUSY_DELAYS_MS` is 1500, 2000, 3000, 4000,
+  5000, 6000 and 8000 milliseconds, and `BUSY_RETRIES` is its length, 7.
+- `reviewTreesRetryingBusy` reads the view and, while the answer is a refusal with a transient code, waits
+  the next delay and reads again. After the seventh retry it returns whatever the answer is, so a view is
+  read at most eight times. Any other answer is returned at once.
+- `pause(ms, signal)` waits and rejects with an `AbortError` when the signal is aborted, clearing its
+  timer. A wait that is aborted starts no further request.
 
-### Todos
+### Hooks
 
-- **Resolved by MIK-L31 (ruling 22:22:37 Q2; review F9):** the panel and the cards render this view, and the key
-  casing is one convention.
+- `useReviewTrees(repo, master, leaf, address, enabled)` reads the leaf-wide view through
+  `reviewTreesRetryingBusy`. Each run of its effect creates an `AbortController` and aborts it in the
+  cleanup, that is, when the task context or the address changes and when the component unmounts. The
+  abort cancels the request in flight and any retry wait, so the server stops computing a view nobody
+  shows. An answer is applied only when its controller is not aborted and its sequence number is the
+  latest. While retries run, the hook keeps returning `loading`; it returns `unavailable` only with the
+  final answer. With `enabled` false it makes no request and returns `null`.
+- `useReviewTreeEntries(repo, master, leaf, comparison, invariants)` reads the entries of one selection
+  from the comparison the review payload names, with the same abort on cleanup. It returns `null` without
+  a comparison number or without invariants, and keeps an answer together with the question it answers.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured; the requirement packet `MIK-R25@v1` and its rulings
-(`25_reviewer-on-git-trees.json`) live outside the code and memory repositories, so they are named here and not
-cited as rows.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The side states and the comparison record's client type. [1]
-- A knowledge side and a reopened code side. [2]
-- The tree view's answer, with a selection's entries on the cards read. [3]
-- The worklist's items, history rows and view, snake_case. [4]
-- One entry on both code sides, and one side's state, range, excerpt, authored fields and MIK-R03 state. [5]
-- The request, addressed by number, `recorded` or a selection's invariants, never by path. [6]
-- Three answers kept apart; anything else is unreadable. [7]
-- Degraded sides, per-side currentness, unexplained hunks. [8]
-- The comparison a payload names; a selection's entries kept with their question; the leaf-wide hook with its `enabled` flag. [9]
-
-### Cross-Repo References
-
-No cross-repo boundary is crossed by this file.
+- The module comment: what the adapter carries and the three answers it keeps apart. [10]
+- The answer of the route. [11]
+- The worklist view. [12]
+- The request, addressed by number, recorded or invariants, with the optional signal. [13]
+- The transient codes and the retry delays. [14]
+- A wait that an abort ends. [15]
+- The bounded retry of a transient refusal. [16]
+- One answer as a read state. [17]
+- The comparison a payload names. [18]
+- The entries hook aborts a superseded read. [19]
+- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [20]
+- A superseded read is aborted and only the newer answer is shown. [21]
+- The reader keeps showing loading while it retries, and its delays add up to at least 25 seconds. [22]
+- Unavailable is shown only after the bounded number of retries. [23]

@@ -1,47 +1,33 @@
 {
   "path": "mcp/src/agents_remember/tasks/leaf_decisions.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+        "content": "sha256:2107be22699c9b2bb5d0e5aef9f744fb1aa50150636360ee5c4ee484ccb5d2de",
+        "locator": {
+          "kind": "symbol",
+          "name": "strict_leaf_doc"
+        }
+      },
+      "id": "RLZ-K3TRTH",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Records its lookup in a nested block; with an established claimant it replays to the caller only the rows of the leaf's own document and the rows that are not a plain byte identity, so a sibling document that was read and ruled out is no input of the caller's result. When the leaf has no claimant it replays every row it opened — each sibling read in full and the exact direct JSON listing — so a performed negative lookup keeps depending on those files; the terminal task-root resolution is one of the admitted unrecorded B5 selectors and records no row; when the lookup raises it replays every row.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The module docstring: one strict lookup for both answers.\n\nAnchor: \"identity doubt instead of skipping what it cannot read\"",
+    "10": {
+      "note": "The lookup inside a nested recording, and the rows it replays to the caller.",
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:ade450a8204355fef2da4c8830c07223b9c1d43bc8d5e75cb2a2f7af722003ae",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The doubt, as one exception type.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:1f8243ac8f5fb016e6c5cd870ee146bbf291e8ccb5db729ddbe42ac199e33754",
-            "locator": {
-              "kind": "symbol",
-              "name": "LeafDocumentUnresolved"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The strict lookup: the terminal resolver plus unreadable claims.\n\nAnchor: `resolve_terminal_leaf_doc`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:ba00d32e44dd1fa790aa0be86d08a64c069ab896a62f3feff3010ea2290f3aec",
+            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
+            "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
             "locator": {
               "kind": "symbol",
               "name": "strict_leaf_doc"
@@ -51,12 +37,12 @@
         }
       ]
     },
-    "4": {
-      "note": "Unreadable documents that still name the leaf.",
+    "11": {
+      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.",
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
+            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
             "content": "sha256:c36e48bd1fe9c7d9aea24246714c447bece5c2296e5f693c01a7453b53d54657",
             "locator": {
               "kind": "symbol",
@@ -64,11 +50,16 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "12": {
+      "note": "A raw document names the leaf by its id or an enclosure's leafId; a master never does.",
+      "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:c9332d81d7ab55f09920f4899bbd089fff6c9ac398d7b2644d880ff2c5b780b1",
+            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+            "content": "sha256:329403bb2284b09fd60023f9ac15b24f680ea165054166fcbb67930a1edc513d",
             "locator": {
               "kind": "symbol",
               "name": "_names_leaf"
@@ -78,12 +69,12 @@
         }
       ]
     },
-    "5": {
-      "note": "The decision citation: exactly one entry at `at`.",
+    "13": {
+      "note": "Exactly one decision entry at the cited time resolves.",
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
+            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
             "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
             "locator": {
               "kind": "symbol",
@@ -94,56 +85,71 @@
         }
       ]
     },
-    "6": {
-      "note": "The terminal resolver it builds on.",
+    "14": {
+      "note": "The recorded reads hold the leaf's document and not the master's; sibling writes leave a kept view in place.",
       "targets": [
         {
           "anchor": {
-            "blob": "b62764d58773b7137b2e0509d759e6df21fc8461",
-            "content": "sha256:a77c556c4e654ba288320ba6d8625d7cea93f2e7f2a224f7bd72ea3757a299aa",
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
-              "name": "resolve_terminal_leaf_doc"
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
             },
-            "path": "mcp/src/agents_remember/tasks/leaf_doc.py"
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A second claimant makes the next lookup ambiguous.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fallback_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The module docstring: the strict lookup and what it records as read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
+            "content": "sha256:1096fe60bf974f4e2c4ff08101b364c44a8a45713a618ae47da61b369b9f9e64",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The answers: resolved, none, ambiguous, no document, and the four doubt cases.\n\nAnchor: `leaf_decision_refusal`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
-            "content": "sha256:d567b9cc20be8b585f80289d118ede9dcc2a5363dae5b8d30ccaad79d463e77a",
-            "locator": {
-              "end": 452,
-              "kind": "line_range",
-              "start": 431
-            },
-            "path": "mcp/tests/test_planned_knowledge_effects.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "An unreadable leaf document makes the worklist incomplete.\n\nAnchor: \"leaf task document\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
-            "content": "sha256:bdcd67f659e58240eb3280a4dba0ccc80df80f16d518c73be301aef33efc7157",
-            "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 579
-            },
-            "path": "mcp/tests/test_planned_knowledge_effects.py"
-          },
-          "kind": "test"
         }
       ]
     }

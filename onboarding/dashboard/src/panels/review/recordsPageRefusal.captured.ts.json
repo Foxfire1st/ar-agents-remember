@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
             "locator": {
               "kind": "symbol",
@@ -128,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:492cdcadfa200f10935273b475926123be2537b1f436e9d981fcd5a71158397e",
             "locator": {
-              "end": 488,
+              "end": 493,
               "kind": "line_range",
-              "start": 412
+              "start": 417
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },

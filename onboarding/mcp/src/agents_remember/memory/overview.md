@@ -40,55 +40,63 @@ memory tree that holds `knowledge/layout.json`.
 - The capture copies the index with its time. [119]
 
 
-## 260928-MIK-L09 The Approval Reads Are Recorded, And A Missing Object Is Told From A Git Failure
+## Requirement Endpoints, Approval State And Their Recorded Reads
 
-**Route impact (MIK-R09@v2, leaf 260928-MIK-L09), two modules touched.**
+[`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md) resolves a requirement endpoint of a
+knowledge record, `{task: {repository, path}, packet, id, version}`, and answers which version of a requirement its
+owning task approves.
 
-- [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md) records every file it reads for
-  approval state through `kernel/recorded_reads.record_read` (ruling 2026-09-30T15:09:25): `_manifest` reads the
-  bytes once and records the SHA-256 of exactly those bytes (or `absent`, or the identity now for an unreadable file),
-  and `resolve_requirement_endpoint` records the linked packet before the owner reads it. Answers are unchanged. The
-  mandatory gate evaluates inside a recording block and keeps its verdict with that read set, re-hashing each file
-  before reuse, so a newly approved version (or a manifest that appears) forces a recompute that raises the
-  reconsideration item. Outside a recording block nothing changes.
-- [`conversion/code_objects.py`](conversion/code_objects.py.md): `CodeObjects.has_blob` tells Git's documented
-  not-found answer (`cat-file -e` exits 1: `False`) from a Git failure (`CodeObjectError`, naming Git's stderr; a
-  timeout still raises `TimeoutExpired`), where before any non-zero exit read as "absent" (review R3-2, ruling
-  19:16:07). This is **not** behind the gate's marker probe: the conversion's `legacy_db` now refuses on such a failure
-  (`knowledge-convert` already catches `CodeObjectError`), the worklist and currentness report it as an unreadable
-  input, and the reviewer's cards read names it `unavailable`. It changes only what a Git failure reads as.
-- **Candidate invariant (not ingested):** an unreadable input is never read as absent: a Git failure asking for a blob
-  is named, never "the store does not hold it". Proved by
-  `test_a_recorded_blob_the_store_lacks_is_named_at_its_real_raise_site` and
-  `test_a_git_failure_asking_for_a_recorded_blob_is_incomplete_and_never_kept`.
+- **Resolution.** `resolve_requirement_endpoint` locates the owning task root
+  `<coordination root>/tasks/<repository>/<path>` and hands `{packet, id, version}` to
+  [`knowledge/requirement_owner.py`](knowledge/requirement_owner.py.md)'s `consume_owner_resolution`, whose answer
+  it carries back unchanged. The requirement owner is the resolver. The module's own answers are about the root only:
+  `requirement-task-plane-unavailable` without a coordination root, and `requirement-task-outside-tasks` for a
+  repository that is not one directory name. An endpoint that does not resolve is reported as `unresolved`; the
+  function does not raise for it. `task_root` is set whenever the root could be located.
+- **Approval.** `requirement_approval(task_root, stable_id)` reads the owning task's `requirements/manifest.json`
+  (format `approved-requirement-corpus`, the `packets` list only) and answers `approved` with the highest approved
+  version of the ID and its packet path, `not_approved` when the manifest approves no entry of the ID, or `unknown`
+  with the reason when there is no manifest it can read. Versions compare by the integer after `v`, and `newer_than`
+  is true only for a higher approved version, so a task without a readable manifest never counts as approving a newer
+  one. `latest_approved_requirement_version` returns the same lookup's latest version.
+- **Callers.** The knowledge writer (`application/knowledge_writer/requirement_links.py`) resolves endpoints. The
+  worklist's reconsideration step (`application/knowledge_worklist/reconsideration.py`) resolves an endpoint and asks
+  for the approval from the resolved `task_root`; an unresolved endpoint triggers nothing.
+- **Recorded reads.** The approval state and the packets live outside every Git tree. `_manifest` reads the
+  manifest's bytes once and records, through `kernel/recorded_reads.record_read`, the SHA-256 of exactly those bytes,
+  `absent` for a missing manifest, or `unreadable (<error type>)` for a failed read. The module does not record the
+  linked packet. The owner it hands the packet to (`_approved_packet_ref` in `tasks/task_intent.py`) records the
+  resolution of the task root and of the packet locator and the bytes it reads. Outside a recording block nothing is
+  recorded.
+- **The gate's kept verdict.** The mandatory gate evaluates inside a recording block and keeps its verdict with that
+  read set. Before it serves a kept verdict it repeats every recorded path resolution and existence probe, and hashes
+  the recorded files again only when those still give the recorded answers. A newly approved version, a manifest that
+  appears and a packet link that is retargeted, also to a file with identical bytes, therefore force a recomputation.
 
-- The manifest read records exactly the bytes it read. [1]
+- The endpoint's state, code, detail, task root and key. [134]
+- The task root, or none for a repository that is not one directory name. [135]
+- The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here. [136]
+- The approval answer and the comparison with a version. [137]
+- The manifest read records the bytes, an absent manifest or a failed read. [138]
+- The approval lookup with its three states. [139]
+- The latest approved version of one ID. [140]
+- The owner the packet question is handed to. [141]
+- The owner records the two resolutions and the packet's bytes. [142]
+- The reconsideration step resolves the endpoint and asks for the approval. [129]
+- A kept gate verdict is served only when no recorded observation changed. [130]
+- The manifest lookup returns the highest approved version. [131]
+- A requirement endpoint triggers only on a newer approved version. [132]
+- The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
+
+## A Missing Object Is Told From A Git Failure
+
+`CodeObjects.has_blob` ([`conversion/code_objects.py`](conversion/code_objects.py.md)) answers `False` for Git's
+documented not-found answer (`cat-file -e` exits 1) and for an object that is not a blob. Any other failure of Git
+raises `CodeObjectError` with Git's message, and a timeout raises `subprocess.TimeoutExpired`. A caller therefore reports an unreadable input and never an
+absent one; the worklist's code reader (`application/knowledge_worklist/code.py`) turns the failure into a
+`CodeReadError`.
+
 - A missing object against a Git failure. [2]
-
-## 260928-MIK-L14 The Owning Task's Manifest Answers Whether A Newer Version Is Approved
-
-**Route impact (MIK-R14@v2 rule 2), one module extended.** [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md)
-gains the manifest lookup MIK-R14's reconsideration surfacing needs. `latest_approved_requirement_version(task_root,
-stable_id)`, the packet's named function, reads the owning task's `requirements/manifest.json` (format
-`approved-requirement-corpus`) and returns the highest version among the `packets` entries with that stable ID and
-`state: approved`, comparing the integer after `v`. `requirement_approval` is the same lookup with its reason:
-`approved` (with `latest` and the entry's `packet`, `requirements/<file>`), `not_approved` (the manifest approves no
-version of the ID; accepted as a third state by ruling 2026-09-30T04:37:56 Q6), or `unknown` (no manifest this lookup
-can read, with the reason), and `newer_than` compares versions. A task without a readable manifest never triggers a
-reconsideration. The worklist's step 8 calls it after `resolve_requirement_endpoint` resolved the endpoint, from the
-resolved `task_root`, so L13's carry (Q5, reuse the resolver) is met; the writer never reads the manifest (review F4:
-the re-point takes the item's facts). Only `packets` is read. The root is only read, never written. Nothing else on
-this route changed.
-
-- **Candidate invariant (not ingested):** a `reconsider_on` requirement link fires only when its endpoint resolves
-  and the owning task's manifest approves a newer version; an unresolved endpoint or a task without a manifest never
-  fires. Proved by `test_the_manifest_lookup_returns_the_highest_approved_version` and
-  `test_a_requirement_endpoint_triggers_only_on_a_newer_approved_version`, and on real data by the worker's scratch
-  leaf (`MIK-R13@v1` against the copied real manifest, which approves v2, fires; `MIK-R04@v1`, unresolved, does
-  not).
-
-- The approval states and what the manifest says about one ID. [3]
-- The lookup with its reasons (since MIK-R09 recording the manifest bytes it read), and the packet's named function. [4]
 
 ## 260928-MIK-L29 Five Index Lookups For The Knowledge Reader
 
@@ -136,25 +144,6 @@ the permitted read path (Q1).
 - The store's own seal on each projected revision row. [8]
 - The format bump that rebuilds v1 caches. [9]
 - Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. [10]
-
-## 260928-MIK-L13 A Requirement Endpoint Is Resolved By Its Owner, And Reported
-
-**Route impact (MIK-R13@v2), one new module.** [`knowledge/requirement_endpoint.py`](knowledge/requirement_endpoint.py.md)
-resolves a requirement endpoint of the text knowledge format (MIK-R21 rule 6's
-`{task: {repository, path}, packet, id, version}`): it locates the owning task root
-`<coordination root>/tasks/<repository>/<path>` and hands `{packet, id, version}` to
-[`knowledge/requirement_owner.py`](knowledge/requirement_owner.py.md)'s `consume_owner_resolution`, whose answer it
-carries back verbatim. **The requirement owner remains the resolver.** The module's only own answers are about the
-root: `requirement-task-plane-unavailable` (no root) and `requirement-task-outside-tasks` (a repository that is not
-one directory). An unresolved endpoint is reported, never refused; `task_root` is kept so MIK-R14 can look for a
-newer approved version in the same task. It sits next to `requirement_owner.py`, and moves with it if MIK-R26
-retires the `memory/knowledge` package (ruling 2026-09-30T01:45:56 Q8, carried to L26); L14 and L29 reuse it (Q5;
-L14's reuse is recorded in its section above).
-The writer (`application/knowledge_writer/requirement_links.py`) is its only caller today. Nothing else on this
-route changed.
-
-- The resolver: no root, a root outside tasks, or the owner's answer. [11]
-- The owner the packet question is handed to. [12]
 
 ## 260928-MIK-L01 The Path-Absence Refusal Can Name Proof Claims
 

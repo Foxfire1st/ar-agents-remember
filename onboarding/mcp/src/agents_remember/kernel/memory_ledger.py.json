@@ -2,88 +2,12 @@
   "path": "mcp/src/agents_remember/kernel/memory_ledger.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Format constants, row types, and the exact cache-exclusion expression.",
+    "10": {
+      "note": "Writing serializes the given ledger and touches no Git state.",
       "targets": [
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:f90721c6c96b66b3f4f906dcd8182a771fbae7ce6214fdb9c65618c0f13d68bd",
-            "locator": {
-              "kind": "symbol",
-              "name": "LEDGER_RELATIVE_PATH"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:fe8c801c1101f2ea09438c141664d03f55189cd2474a9e9ffd57d075d423f5bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "MEMORY_CACHE_EXCLUDE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:39c4606c6c59f464f5af6df060d771e885ad4dd636c105723da15f75fdad018f",
-            "locator": {
-              "kind": "symbol",
-              "name": "LedgerRow"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Structural parsing and validation distinguish empty and nonempty representations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:2ffae031547d10fa25cf4062ed5fd2c05853f1757d8b62ed1ca4d1d426ee729f",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_ledger_text_unvalidated"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_ledger"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Serialization and data lookup stay independent from Git publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
-            "content": "sha256:4a20f066e65b66c755bd37a3db90c06ba69c6c82f07d3d7503c2e4b9e1b707fd",
-            "locator": {
-              "kind": "symbol",
-              "name": "ledger_to_text"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:ecfd0cd317379fb8dc33104e4c4a70a91aaaa024de632a70eb1ff0d109046cb5",
             "locator": {
               "kind": "symbol",
@@ -91,10 +15,15 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "11": {
+      "note": "The first-row lookup of a code commit.",
+      "targets": [
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:b99d809bc570f4a3ca2c8afab4e4cadfb62796e07efe774b2db42c4d74d75c4a",
             "locator": {
               "kind": "symbol",
@@ -102,10 +31,15 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "12": {
+      "note": "The exact-pair lookup.",
+      "targets": [
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:c83b663cc9ab339d9226951e909509aa17363cc5a712595c3547e419f96fb6c1",
             "locator": {
               "kind": "symbol",
@@ -116,18 +50,99 @@
         }
       ]
     },
-    "4": {
-      "note": "The runtime cache owner derives data rather than trusting a serialized table.",
+    "13": {
+      "note": "A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:181ee030afc2c2100350828b0c49a3719196e815d185db95bcb911071b7d2758",
             "locator": {
               "kind": "symbol",
-              "name": "derive_memory_ledger"
+              "name": "_external_ledger"
             },
-            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Schema names, the fence pattern, the file name and the exclusion pathspec.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:e42dad3f83182fb07f4108016602ab30ed1953b035df6b6be32f80e209a144d6",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The structural parse and its required fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:2ffae031547d10fa25cf4062ed5fd2c05853f1757d8b62ed1ca4d1d426ee729f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_ledger_text_unvalidated"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The validation of order, empty ledgers and the first row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The validating loader probes and reads through the recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:6a66a2e68b22a7f1d00965a7882f56b3ca4d29383a7d5ed963a45b57e81cd620",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The structural loader probes and reads through the recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:e77137fc1dd700771dea92fe92649acb9f5f88612392cd0a3a0b28a4d9323da2",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_ledger_unvalidated"
+            }
           },
           "kind": "code"
         }

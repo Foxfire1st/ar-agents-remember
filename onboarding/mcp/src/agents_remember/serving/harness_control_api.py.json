@@ -127,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:0314eb46d2dc98754d884260154a08d1d8d1a913968e563616077695abef3c00",
             "locator": {
-              "end": 301,
+              "end": 302,
               "kind": "line_range",
-              "start": 301
+              "start": 302
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -140,12 +140,12 @@
         },
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:f6aee0befde8f102013de1f2b12b3d00fcbedc184b2e7d2e5348e69d58cd0ca8",
             "locator": {
-              "end": 308,
+              "end": 309,
               "kind": "line_range",
-              "start": 308
+              "start": 309
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

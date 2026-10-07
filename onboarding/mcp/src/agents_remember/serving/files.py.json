@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:07522a90260bdb0ea2933792c872f0766427c32c177f22badf066d95f17402e9",
             "locator": {
-              "end": 289,
+              "end": 290,
               "kind": "line_range",
-              "start": 289
+              "start": 290
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -154,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:147f3a13ca15b4b7a46682cb3829e94f974866ff9c13b54854be3f643a9e67d4",
             "locator": {
-              "end": 1031,
+              "end": 1032,
               "kind": "line_range",
-              "start": 1031
+              "start": 1032
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

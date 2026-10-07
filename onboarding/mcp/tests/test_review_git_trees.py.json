@@ -3,30 +3,47 @@
   "proves": [
     {
       "anchor": {
-        "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-        "content": "sha256:83c9e4eae5d603aed19b97cb13d05db83b659dcd396a527a18f2fcccfdc90f28",
+        "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+        "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
         "locator": {
           "kind": "symbol",
           "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
         }
       },
       "facet": "Once a leaf answers a subject again in its attempt-2 file, the reviewer's worklist view shows that row and not the first attempt's row of the same leaf, and still shows another owner's row about the subject.",
-      "id": "PRF-Z7R50C",
+      "id": "PRF-ZRZPGX",
       "invariant": "INV-MS9BMJ",
       "origin": {
-        "handoffEntry": "L37-frozen-attempts",
-        "leaf": "260928-MIK-L37"
+        "handoffEntry": "L42-restore-PRF-Z7R50C",
+        "leaf": "260928-MIK-L42"
       }
     }
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The converted-memory fixture world with its live leaf.",
+    "15": {
+      "note": "The module docstring: the fixture world.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "content": "sha256:d6f658159659f18d230e49afa34e632a06a277a069212ab7c97c8cd826bd2720",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The fixture's state and helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:f36b92dce1cde15639da4d93671607157715f52c16f3eed23ba347624c380928",
             "locator": {
               "kind": "symbol",
@@ -34,152 +51,15 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:24bddf6a8abf486bb1daea7679ef1979ac6d1e5c3e340309b31b6b3770f21366",
-            "locator": {
-              "kind": "symbol",
-              "name": "world"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "Unavailable against absent, and the history row found through `facts.row`.",
+    "17": {
+      "note": "Four trees, pinned candidates, and reuse.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:7d7524bfd1142ccac5de49c6d57c956dbddbcb7bc7808eaf8cbc174636f12c01",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_names_an_unreadable_side_unavailable_and_a_missing_file_absent"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
-            "content": "sha256:a46765aa3911e4d3754acec5ba4c818728ea7bd1b533e15c438407be7fd5ddc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The excerpt bound and the placement cache (review F3).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:6c438613fe822afdc0d1abdbe58da9ed7a90f205d93e3dd7a8f0f4b682ddee4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_excerpt_longer_than_its_bound_is_a_stated_prefix"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:7e76473459efb330853781c401a93152ba582d3e72786a367d9e7fe87686a8b6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_placement_cache_remembers_answers_only_and_stays_within_its_bound"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "The proof admission at the route (review F12), with the asserted payload and tree IDs (R2-1).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:12934b8c9a1a099a396f42af54de987fa5495b22158c18452ab4243daf7bba25",
-            "locator": {
-              "kind": "symbol",
-              "name": "_inventory"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:e25bdf9473cd97982ba31e812bb2752cc337c9361787c57afd3d480acdb7d338",
-            "locator": {
-              "kind": "symbol",
-              "name": "_named"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:fcb7164803a03ddef8f525daca1ea7839ee704354a2dea175af4f7345d92ff66",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unchanged_path_only_a_proof_names_opens_in_a_tree_review"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_review_git_trees.py\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
-            "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
-            "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 249
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Only an owner's latest attempt's row is shown; another owner's row stays.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6c5ec61724dfad3055fe54b23d8e8afbef34d1b8",
-            "content": "sha256:a46765aa3911e4d3754acec5ba4c818728ea7bd1b533e15c438407be7fd5ddc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Pins and reuse.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
             "locator": {
               "kind": "symbol",
@@ -190,23 +70,12 @@
         }
       ]
     },
-    "3": {
+    "18": {
       "note": "A repeat read writes nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:7ad6bdea0282009a01317cbd041ffccc5d33a2fcc31408d69918a34c446301c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_state"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
             "locator": {
               "kind": "symbol",
@@ -217,28 +86,12 @@
         }
       ]
     },
-    "4": {
-      "note": "Committed candidates and the refused pin.",
+    "19": {
+      "note": "The tree view on the fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:6d8bfb8d90830fb5c244b1f838a806cfda4712e16d44f0dac95ef0ff2c4a4ceb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_committed_candidates_need_no_ref_and_a_failed_pin_refuses_naming_repository_and_ref"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The tree view (every key snake_case, no entries leaf-wide, the history row's `owner_kind`) and the partial index.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:5e335ba532c7a2b2bdfeb0230be82352af288a6c40cb260c0dccfecfb72cfb9d",
             "locator": {
               "kind": "symbol",
@@ -246,26 +99,15 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:b42233eeb685b30dd64a631eff7207de5d770d3406d1ead941ec4244ff39f949",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_partial_index_shows_its_state_on_the_affected_side"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "6": {
-      "note": "Reopen, the converted base, and the legacy comparison.",
+    "20": {
+      "note": "Reopening names a tree Git cannot produce.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:9e5e14c9db727ece48c63fae3e9ab731262f5c97c5c90a5e7426997bab614d9f",
             "locator": {
               "kind": "symbol",
@@ -273,86 +115,15 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:d442b73219ea44bf1a56382d28d17b41cecfb120a54a2b4b378395398fb41fbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_before_side_is_compared_as_its_conversion"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:9b55eadf29a65ce646de736ae75334f73985ab66938875624c03b699950950a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_comparison_recorded_before_the_conversion_keeps_its_code_sides_only"
-            }
-          },
-          "kind": "test"
         }
       ]
     },
-    "7": {
-      "note": "No database but the index; unconverted unchanged; never frozen.",
+    "21": {
+      "note": "The route serves the port and refuses without one.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:9e50c83bb33d5d0206d2fcd5078e536bf7c5471b2d11edfa30f151bc51983cb2",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_no_review_path_opens_a_database_other_than_the_derived_index"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:171127469c1d1516ee985d9f7a16948f0980922bf2d07f8704b321da54876fbc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_leaf_keeps_the_dataset_review"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:0b9eea56a3e4b6bb7441f324d477760641a1d953d9a41e745f217ea748e71ef5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_tree_comparison_is_never_frozen_into_a_dataset_generation"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "Directory-name pins, and the route with the pinned numbered read, the cards read and the key bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:e51cebf9f8897db2a061d6a4c49002aee80833078e9406863d5c3004abb7d235",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_pins_are_named_by_the_task_directory_and_archival_removes_them"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
             "locator": {
               "kind": "symbol",
@@ -363,71 +134,16 @@
         }
       ]
     },
-    "9": {
-      "note": "The cards read: four entries located on both sides, each helper's per-entry facts.",
+    "22": {
+      "note": "Rows are found by the row subject an item names, through the real isolated computation.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:e67de2ca654168891139aff5e999ee6b8dd73db66c09f28c226d66bc0e33c988",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
+            "content": "sha256:79582a1947c85408de626e1c5eaa801a3e1a75433e409af9ee3f6185e5d25bdb",
             "locator": {
               "kind": "symbol",
-              "name": "_with_proof_and_unresolved"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:8b69520899d5d6334e2b2c3297cf085f335d4ab5a94f72029832b3acb575a12f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_cards_read_locates_each_entry_of_the_named_invariants_on_both_code_sides"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:a156248f1f8d4b3ef814f8ccd72e4123d85333a65ca5bced4f4556e2903922e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_changed_range"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:a0fa56c54b80dead71330e61b1b715e5984aca94b06d4edf789c98276cbb725f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_retired_entry"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:2bb2c654b0588d96aaf56c59e9a5f7bd53631ec2e6c6438ee02ae1d1ce31f1cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_proof_entry"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:97038bf8da1c1dfa2186ee05a3e9f24aa2eda2b6faeeb58606c858b68e85f425",
-            "locator": {
-              "kind": "symbol",
-              "name": "_unresolved_entry"
+              "name": "test_history_rows_are_found_by_the_row_subject_an_item_names"
             }
           },
           "kind": "test"

@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
             "locator": {
               "kind": "symbol",
@@ -126,12 +126,12 @@
         },
         {
           "anchor": {
-            "blob": "74b78d7cb81633b6b7955a597d18abb58f42357c",
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
             "content": "sha256:3e6a39d79a5889b07049a719cf3d76706f766a74d393226b497a33314f53074a",
             "locator": {
-              "end": 45,
+              "end": 46,
               "kind": "line_range",
-              "start": 36
+              "start": 37
             },
             "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
           },

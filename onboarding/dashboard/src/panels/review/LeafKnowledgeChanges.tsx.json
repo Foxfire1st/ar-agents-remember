@@ -2,12 +2,12 @@
   "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement: what the panel shows, and that history rows answer the unexplained changes while neither the panel nor the lane decides them.\n\nAnchor: \"history rows (MIK-R10) answer them, and neither this panel nor the lane decides them.\"",
+    "11": {
+      "note": "The module comment: what the panel shows, and that history rows answer the unexplained changes.",
       "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:e01d99875f65a018a8dd2a553f291f9d0d52c5b4b0e40b0ecb50c2407106c3f9",
             "locator": {
               "end": 5,
@@ -19,61 +19,12 @@
         }
       ]
     },
-    "10": {
-      "note": "On real data: the `planned_untouched` item, and the mismatch sentence for another comparison.\n\nAnchor: \"planned_untouched\"; \"this view reads comparison 2, the review shows comparison 1\"",
+    "12": {
+      "note": "The panel: status line, degraded sides, diff, currentness, worklist.",
       "targets": [
         {
           "anchor": {
-            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
-            "content": "sha256:ae0c31b51653385f24eca9c528244486d97b5f3f6576606b5d8a038e4c965d78",
-            "locator": {
-              "end": 226,
-              "kind": "line_range",
-              "start": 201
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "759941452a2460ed7294adec1f7b2bbef9d83b42",
-            "content": "sha256:63c1823b9a920037c555464cb828342c172c73317a8adda44515431ea0baa00c",
-            "locator": {
-              "end": 308,
-              "kind": "line_range",
-              "start": 306
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The lane's focused file renders its gate items through this structure (MIK-L32).\n\nAnchor: \"return <UnexplainedGroups groups={groups} />;\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d9298b315a6d1c8cdaaf2a0da0f6e38f0ef0d21",
-            "content": "sha256:ce457daa36989d2d09a3e42094a2c43eb68a5c70a72c0c3618dbcd473fa3c887",
-            "locator": {
-              "end": 480,
-              "kind": "line_range",
-              "start": 480
-            },
-            "path": "dashboard/src/panels/review/LaneFileFocus.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The panel: status line with the comparison mismatch, degraded sides, diff, currentness, worklist.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:41debf79b17d88da25ae6a31c8cfb362d94ad74be53c6e1499d081cd85d1d361",
             "locator": {
               "kind": "symbol",
@@ -81,10 +32,31 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "13": {
+      "note": "The notice for a loading and for an unavailable read; nothing for any other phase.",
+      "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
+            "content": "sha256:0ff6472b06d36482969fb5162321282ff6aca9fd7e10eeebe4bdb4d5712cccc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafKnowledgeNotice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The worklist's status text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:baaa7d1ebdb14ea15e4e12f59c3d295df04d1e4c0d358e26ab00146c4ea1ea92",
             "locator": {
               "kind": "symbol",
@@ -95,23 +67,12 @@
         }
       ]
     },
-    "4": {
+    "15": {
       "note": "The diff by record, by source path, and history and other files.",
       "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
-            "content": "sha256:f95a746724b0e8245f761a98fde88218c5fc027c6831d62412dfb48658780c50",
-            "locator": {
-              "kind": "symbol",
-              "name": "FileChange"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:cc2d22358fd80d0a239002dcb0666203eeb2c64b7709f371180402f5696eab9e",
             "locator": {
               "kind": "symbol",
@@ -122,23 +83,12 @@
         }
       ]
     },
-    "5": {
+    "16": {
       "note": "Currentness per side.",
       "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
-            "content": "sha256:2d13fe519ff7ecc223901a8cfec67a5cecd785ce1b44f8654bc63b09ee589421",
-            "locator": {
-              "kind": "symbol",
-              "name": "sideCounts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:a82051420bf55f6060470fa6308f317c4d299f3053c953f12976dde3346f3d19",
             "locator": {
               "kind": "symbol",
@@ -149,39 +99,12 @@
         }
       ]
     },
-    "6": {
-      "note": "Each item with its planning mark and its history rows.",
+    "17": {
+      "note": "The unexplained groups by file and coverage state.",
       "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
-            "content": "sha256:d116bb539b0a1eb4d9813a1bb2d6ddeb9907c594088b95ba85527dd5cf64ed40",
-            "locator": {
-              "kind": "symbol",
-              "name": "Rows"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
-            "content": "sha256:ebac81a033127a7b4f6da08a3963d8e640dc5437991d7a7923b9217bfef4b053",
-            "locator": {
-              "kind": "symbol",
-              "name": "ItemLine"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The unexplained groups the lane plugs into.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:79e8beee27f97cad64893bea43b2cea7fbe1db6a667007f77facffbf5f6ff88b",
             "locator": {
               "kind": "symbol",
@@ -192,12 +115,12 @@
         }
       ]
     },
-    "8": {
+    "18": {
       "note": "Knowledge items, planned effects, other kinds, unexplained groups and the gate linkage.",
       "targets": [
         {
           "anchor": {
-            "blob": "151e0e488996d6be99fd22154a20a52b8d142ce7",
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
             "content": "sha256:ca66d7dec53a4a134c3a9c8835de497b111d459c1b0954cdf20702d7a4636eb6",
             "locator": {
               "kind": "symbol",
@@ -208,20 +131,57 @@
         }
       ]
     },
-    "9": {
-      "note": "Where the centre mounts it, only from a tree read.",
+    "19": {
+      "note": "The notice says that it is computing, as a status region.",
       "targets": [
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
-            "content": "sha256:a9d5dccefd0526085a46ab405aac74fa1c3034aa92a2a40df9c62e937ae37bc6",
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:706697df5eae0b852f7920d2b3077882845d83bd56dc61ddb1173e5b4b2735cf",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledgePanel"
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
             },
-            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The notice names the failure and its action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:2875f02851ff5947ce0978133ad7b6ed696fde02bf5f900667cb54826b2bb9c4",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The notice draws nothing for a dataset review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:0077891b52a65df0d56c592875455e61049c2c421b8b0b43a776def49e586c17",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

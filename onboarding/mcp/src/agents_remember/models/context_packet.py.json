@@ -124,12 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "489de7b5354c1f0e318b20273a214b7f53714e30",
+            "blob": "b6b133cae0db6ffbc8a0836cab3470d60443af6b",
             "content": "sha256:2214062a9c907213972ed20d76cd59d4c710d9a819be88a4a08774949f96f0e3",
             "locator": {
-              "end": 35,
+              "end": 36,
               "kind": "line_range",
-              "start": 35
+              "start": 36
             },
             "path": "mcp/src/agents_remember/kernel/memory_mode.py"
           },

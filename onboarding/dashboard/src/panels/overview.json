@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:1c03c04dd6c7f73bf43e9f2e85d317f5784ced76c7217239b3a2982f55a732e4",
             "locator": {
               "kind": "symbol",
@@ -47,7 +47,7 @@
         },
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:a7e72b33b5cb9df4eca702f5997c953dbb6e5ee5e37f6eb35e7857d7e211cb99",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:cc8f119cfe770909fc9c8ae05f28ff757d8082502aecde2e38fb18b1aa6a8ad4",
             "locator": {
               "kind": "symbol",
@@ -187,7 +187,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:4e6b085b8907f1dad4c41fe96756d5630383ad4f796a96b42e368910ebf062ac",
             "locator": {
               "end": 294,
@@ -200,7 +200,7 @@
         },
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:5ab7719aafb594b04b832b8e8dc74c4a7dad4eadf4548dc21bc3fc005fa58bd6",
             "locator": {
               "end": 501,
@@ -425,6 +425,145 @@
             "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "The panel, the notice, or nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8a125a74b9d7014d7b984a5bf3da22343fdba2f",
+            "content": "sha256:18f55d6fbfab265117bafa7d2ba64ca5f86a622e35ae8f08f36aed7b811f0d54",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledgePanel"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "Planning marks only from a leaf-wide read of the same comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
+            "locator": {
+              "kind": "symbol",
+              "name": "pinnedWorklist"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "The body passes the knowledge panel to the family, member and unselected centres.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
+            "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCenterBody"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "The panel: status line, degraded sides, diff, currentness, worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
+            "content": "sha256:41debf79b17d88da25ae6a31c8cfb362d94ad74be53c6e1499d081cd85d1d361",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafKnowledgeChanges"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "The notice for a loading and for an unavailable read; nothing for any other phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f16781581eb55f9e8d493dc367bec7e8635a91c",
+            "content": "sha256:197d1ebe341f8aca752e72d4c5a5ea50a35c2f37349c94feeac6716e34f13b71",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafKnowledgeNotice"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "The workspace makes the leaf-wide read only for a tree comparison, pinned to the payload's number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ff876f9b2c2f34b58783e9658a88bb4d5cec25c",
+            "content": "sha256:557dc88f46e239387e8aca3daefee9d3a8b823adb7089c337a0b07b38066677c",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "The notice says that it is computing, as a status region.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:706697df5eae0b852f7920d2b3077882845d83bd56dc61ddb1173e5b4b2735cf",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "129": {
+      "note": "The notice names the failure and its action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:2875f02851ff5947ce0978133ad7b6ed696fde02bf5f900667cb54826b2bb9c4",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -974,6 +1113,24 @@
         }
       ]
     },
+    "154": {
+      "note": "The notice draws nothing for a dataset review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:0077891b52a65df0d56c592875455e61049c2c421b8b0b43a776def49e586c17",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "16": {
       "note": "The tree-comparison scope, the statement area and the changed guarantee.\n\nAnchor: \"export function IntentWordDiffScope({\"; \"export function IntentStatementBody({\"; \"export function guaranteeTextChange(\"",
       "targets": [
@@ -1169,7 +1326,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:038b3d1c9c429981856a618e8043946b542358f6000ba46ec351e0cf7a19912c",
             "locator": {
               "kind": "symbol",
@@ -1181,7 +1338,7 @@
         },
         {
           "anchor": {
-            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "blob": "90570046945a8192a9dd675068fa67bc5432efb2",
             "content": "sha256:bdbf7e9caade4cd25b816d3f74dc0aebf37c73cd1a9455cb7c8e924ecb725ea8",
             "locator": {
               "kind": "symbol",

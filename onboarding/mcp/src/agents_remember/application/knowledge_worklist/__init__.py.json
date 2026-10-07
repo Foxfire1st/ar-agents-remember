@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01530e8d2b0e3d054175cc801767206e6dad8fe3",
+            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
             "content": "sha256:fb3b20aa8774fb1145395bfad3294a0c90c036c27d964036c37807365e3e9bae",
             "locator": {
               "end": 205,
@@ -104,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
+            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
             "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
             "locator": {
-              "end": 694,
+              "end": 734,
               "kind": "line_range",
-              "start": 659
+              "start": 699
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },

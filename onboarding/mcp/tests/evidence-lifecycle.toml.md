@@ -80,6 +80,15 @@ list that is not written with one path per line.
 - No test compares the bytes of this file, the number of its rows or the number of test files with
   a constant.
 
+### Registering a test module
+
+A new test module that reaches a governed artifact, directly or through a support module it imports, is
+added to the `consumers` list of each such `exact` row. The two modules
+`mcp/tests/test_reviewer_worklist_process.py` and `mcp/tests/test_reviewer_worklist_reads.py` are listed
+on the row of the Node lockfile fixture
+`mcp/tests/fixtures/repository_profiles/node/package-lock.json`, because the dashboard fixture they use
+reaches it.
+
 ### Merging
 
 `.gitattributes` declares `merge=union` for this file. When two changes add lines to the same list,
@@ -119,3 +128,6 @@ directly above a table header, with that row. It refuses a comment inside a list
 - A line that the union brings back for a deleted file is refused and then removed by the command. [12]
 
 - The loader that validates the file and refuses a catalog that is not canonical. [13]
+
+- The Node lockfile fixture's row: an exact consumer scope and the start of its consumer list. [94]
+- The two reviewer worklist test modules on that row's consumer list. [95]

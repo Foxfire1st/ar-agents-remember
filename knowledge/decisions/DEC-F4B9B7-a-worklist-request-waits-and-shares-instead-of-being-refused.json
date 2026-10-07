@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Refusing at the child limit was the approved design of version 1 and was built before a review showed that it refuses one user; later changes to the queue or the bound have to keep a single user's reads answered."
+  },
+  "alternatives": [
+    {
+      "option": "Identical requests in flight share one computation, a request beyond the two-child limit waits in a bounded queue, and a request is refused for overload only past the queue bound or its deadline, with the code reviewer_busy.",
+      "reason": "One user must never get a busy refusal (ruling 3 of run 2, recorded as rule 8 of version 2 of the requirement).",
+      "status": "chosen"
+    },
+    {
+      "option": "Refuse every request beyond two active children at once, without sharing identical requests (version 1 of the requirement).",
+      "reason": "It refused a single user: two of four identical reads, and the third of three leaves opened in quick succession.",
+      "reconsider_when": "Waiting requests themselves become the load, for example when the tree route's threads are regularly all held by reads that wait for a child.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The bound counts computations in flight, not the requests that share them.",
+    "The overload answer has its own code and a true action text, and the dashboard's reader asks again before it shows the view as unavailable.",
+    "The constants (two children, eight computations, the client's retry schedule) are pinned by tests and may be tuned without a new version of the requirement."
+  ],
+  "context": "Version 1 of the requirement allowed two children and refused every further request at once; identical requests were not shared. On that candidate four identical concurrent reads gave two answers and two busy refusals, where the landed code gave four answers, and opening three changed leaves in quick succession showed the view as unavailable.",
+  "decider": "the architect under DEVELOPER-DIRECTION D47 (ruling 3 of run 2 in notes/ARCHITECT-RUN-2.md, recorded as MIK-R42@v2 rule 8)",
+  "id": "DEC-F4B9B7",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-PKBCZ0"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+        "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+        "locator": {
+          "kind": "symbol",
+          "name": "_join"
+        },
+        "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R42",
+        "packet": "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/ARCHITECT-RUN-2.md ruling 3 of run 2 under DEVELOPER-DIRECTION D47; requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md Problem, rule 8 and Revision History"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-R42v2-wait-and-share",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

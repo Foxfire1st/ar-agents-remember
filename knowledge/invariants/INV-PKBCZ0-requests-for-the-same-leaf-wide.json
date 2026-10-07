@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Refusing at the child limit without sharing told a single user who opened a second leaf, or whose browser asked twice, that the reviewer was busy; counting waiting requests instead of computations would bring that refusal back under one user's repeated reads."
+  },
+  "applicability": "The kernel's owner of the reviewer's worklist child processes in one dashboard process, and the refusal the tree view gives for its overload.",
+  "conditions": [
+    "Two requests are the same computation when their request digests are equal: the SHA-256 of the operation, the build identity and the payload.",
+    "MAX_ACTIVE_CHILDREN is 2, MAX_WAITING_COMPUTATIONS is 8 and DEADLINE_SECONDS is 60; the deadline of a computation runs from the arrival of the request that created it.",
+    "A computation whose last requester left is cancelled and is not joined by a request that arrives while it is reaped; that request starts its own computation.",
+    "The overload refusal carries the code reviewer_busy and the action \"the reviewer is computing other worklists; retry\"."
+  ],
+  "exclusions": [
+    "A computation that got a child and then passes the deadline: that is a deadline failure with the code candidate_unresolved, not an overload.",
+    "The dashboard client's retry of a reviewer_busy answer.",
+    "Requests in another dashboard process: each process has its own owner."
+  ],
+  "id": "INV-PKBCZ0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R42-v2-isolated-reviewer-worklist-computation.md rules 5 and 8; notes/reports/260928-MIK-L42-worker-R3.md; notes/reports/260928-MIK-L42-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Requests for the same leaf-wide worklist computation that are in flight share one child, and each gets its own copy of the answer; at most MAX_ACTIVE_CHILDREN children run and further computations wait in arrival order. A request is refused as reviewer_busy only when it would start a computation while MAX_WAITING_COMPUTATIONS are running or waiting, or when its computation still waits for a child at the request's deadline; a request that joins a computation in flight is never refused by the bound.",
+  "status": "proposed",
+  "supersedes": []
+}

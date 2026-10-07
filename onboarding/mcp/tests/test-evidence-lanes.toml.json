@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
+        "blob": "75887d061238efdfa429b627183b9f486b055846",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 263,
+          "end": 264,
           "kind": "line_range",
-          "start": 263
+          "start": 264
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -48,6 +48,23 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_reader_tree_coverage.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "240": {
+      "note": "The integration list includes the two reviewer worklist test modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f454f52b3d40d1f24688f54a2221fc9526d5db77",
+            "content": "sha256:8bfed1329d2a374c715747e406ea8bc36a05518b426235da050172fe77a3d986",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 290
+            }
           },
           "kind": "test"
         }

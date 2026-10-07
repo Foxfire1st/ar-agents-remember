@@ -2,63 +2,12 @@
   "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module docstring: registration, sides and the one list.\n\nAnchor: \"its registration, its sides and its worklist items.\"",
+    "12": {
+      "note": "The registered kind, its subjects, facts and satisfying rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:f56dbddfc06b5b6cc03adda683cb0cbd6cc63a7a5973734dabf1df2baac144bf",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The persisted worklist carries the gate's items in order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
-            "content": "sha256:53cf52623c7054cf0bf953b325408656f4ed8b651b17cbad4f2c3df22b19168b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list"
-            },
-            "path": "mcp/tests/test_onboarding_trace_gate.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "Mixed formats are an incomplete side and the persisted worklist is `incomplete`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d2f1948f145246baa4b6f177eb8b28a39c86f655",
-            "content": "sha256:5b9fbe74258752d2aff8fc96fc3f18410be512420057e5bfbd955b040cc18661",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_mixed_formats_are_an_incomplete_side_never_a_vacuous_pass"
-            },
-            "path": "mcp/tests/test_onboarding_trace_gate.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The kind's four registry fields, registered on import.\n\nAnchor: `register_item_kind`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
             "content": "sha256:8a4c19a5f416c9df44916428c48caff7bce3ba53bc128c7902df37ca4da3a967",
             "locator": {
               "kind": "symbol",
@@ -69,13 +18,13 @@
         }
       ]
     },
-    "3": {
-      "note": "The explicit inputs of the side resolution.",
+    "13": {
+      "note": "The request, with the held converted base tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:77c0f5dd6b74f37bc7c07dfd2ab92e2a86732f93b9839313a6299adc67a90b17",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
+            "content": "sha256:311215e2225a860827338525fc2fa5a8efaa2568fdd647c86cb1c6868a47fed5",
             "locator": {
               "kind": "symbol",
               "name": "TraceSideRequest"
@@ -85,13 +34,13 @@
         }
       ]
     },
-    "4": {
-      "note": "The sides: `None`, the two mixed-format refusals, and the converted base.",
+    "14": {
+      "note": "The sides: not converted, the two incomplete cases, and the held tree or the cache for an unconverted K_B.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:f2cafb6c0039ad2f87571f81a79a4dde7059d784c680947c99a17740ab0cae69",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
+            "content": "sha256:8a8dcaa0835bf4bbd184cab61a09ff440e7d786653dcdeadfd85cc461da421de",
             "locator": {
               "kind": "symbol",
               "name": "onboarding_trace_sides"
@@ -101,30 +50,13 @@
         }
       ]
     },
-    "5": {
-      "note": "K_C may be a Git tree, the gate's exact candidate (MIK-R09).\n\nAnchor: \"K_C: the memory working tree, or a Git tree of\"",
+    "15": {
+      "note": "The settings: the memory worktree's own, the resolved context, or the default.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:3f42a00f12566467f80cb3747db0158f3b760e886d3c1e6b554cdd5ea11d873d",
-            "locator": {
-              "end": 102,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The storage settings the gate reads; since MIK-R09 each settings file read is recorded.\n\nAnchor: \"absent: the fallback below is taken because of it\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:3f782705956265b8ab6b1578f2daa375e69eed90f338af5e1ef842a41eac37ad",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
+            "content": "sha256:a7ea456376914a23b14d158ee6841fc85d6b10f7b38cd8559caf2b1882a82706",
             "locator": {
               "kind": "symbol",
               "name": "trace_context"
@@ -134,12 +66,12 @@
         }
       ]
     },
-    "7": {
-      "note": "The gate's items merged, sorted and digested into the one list.",
+    "16": {
+      "note": "The merge into one sorted list with its digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
             "content": "sha256:091d1a408b7b46c6c9736fde7a04dedc9603e6383ded0bf4cb33dd0fbc4182ac",
             "locator": {
               "kind": "symbol",
@@ -150,12 +82,12 @@
         }
       ]
     },
-    "8": {
-      "note": "The worklist step, which names any side failure.",
+    "17": {
+      "note": "The gate over the worklist's own changed paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
+            "blob": "6e09b39eb095eaec57d4b31532d61f23e70e35a7",
             "content": "sha256:dba07c627f0253f04971b24734415ae35dbcea64bc81a5acba1446ca640bd9dd",
             "locator": {
               "kind": "symbol",
@@ -166,20 +98,37 @@
         }
       ]
     },
-    "9": {
-      "note": "The worklist run that calls it after a complete run, since MIK-R09 inside `worklist_over`.\n\nAnchor: `worklist_onboarding`",
+    "18": {
+      "note": "The call records the absent memory settings and the contract it read, and not the coordination settings it never opened.",
       "targets": [
         {
           "anchor": {
-            "blob": "2088d0157e4f12e88cea147a7d1d46c11b4a2302",
-            "content": "sha256:18c02cb724e1fcc61b271b22034fb01ac2bc7f550c187734304b29c7b6463199",
+            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
+            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
             "locator": {
               "kind": "symbol",
-              "name": "worklist_over"
+              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
-          "kind": "code"
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Settings that are changed and restored while they are parsed are recorded with the bytes parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
         }
       ]
     }

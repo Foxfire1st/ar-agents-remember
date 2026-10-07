@@ -4,23 +4,6 @@
     {
       "anchor": {
         "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
-        "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_catalog_that_does_not_parse_fails_these_checks_with_the_recovery_sentence"
-        }
-      },
-      "facet": "A catalog that does not parse gives the production-proof checks the shared recovery sentence, not a bare parser error.",
-      "id": "PRF-113HT2",
-      "invariant": "INV-K0CS85",
-      "origin": {
-        "handoffEntry": "MIK-R51@v1-union-merge-checked",
-        "leaf": "260928-MIK-L51"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
         "content": "sha256:8ba853a102135708be4998cfee3a097d68ca28b7b299cd90d09fce951745332c",
         "locator": {
           "kind": "symbol",
@@ -28,11 +11,28 @@
         }
       },
       "facet": "On a synthetic catalog each way of owning (path, owner, sole consumer, contract owner, contract evidence node) is reported, and a clean catalog and a proof among several consumers are not.",
-      "id": "PRF-PYKPVP",
+      "id": "PRF-GMKAMT",
       "invariant": "INV-RVNFEZ",
       "origin": {
-        "handoffEntry": "MIK-R51@v1-proof-owns-nothing",
-        "leaf": "260928-MIK-L51"
+        "handoffEntry": "L42-restore-PRF-PYKPVP-YE3FZ1",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "9da8563d8c8ebed194bc8de4eb27d292075930d0",
+        "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_catalog_that_does_not_parse_fails_these_checks_with_the_recovery_sentence"
+        }
+      },
+      "facet": "A catalog that does not parse gives the production-proof checks the shared recovery sentence, not a bare parser error.",
+      "id": "PRF-QADP85",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "L42-restore-PRF-113HT2",
+        "leaf": "260928-MIK-L42"
       }
     },
     {
@@ -45,11 +45,11 @@
         }
       },
       "facet": "On the real catalog the proof module is ordinary test source in exactly one lane, the governed files equal the cataloged paths, and proof_ownership returns nothing.",
-      "id": "PRF-YE3FZ1",
+      "id": "PRF-XQ0RY9",
       "invariant": "INV-RVNFEZ",
       "origin": {
-        "handoffEntry": "MIK-R51@v1-proof-owns-nothing",
-        "leaf": "260928-MIK-L51"
+        "handoffEntry": "L42-restore-PRF-PYKPVP-YE3FZ1",
+        "leaf": "260928-MIK-L42"
       }
     }
   ],

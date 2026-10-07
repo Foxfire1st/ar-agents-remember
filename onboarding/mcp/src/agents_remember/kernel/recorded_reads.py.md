@@ -6,64 +6,107 @@
 
 ## Purpose
 
-**Record the files a computation read outside any Git tree, with their exact identities (MIK-R09, L09).** A result
-computed from Git trees is a function of their content-addressed IDs, so a caller may reuse it for the same IDs; a
-computation that also reads plain files (a task's requirement manifest, coordination settings) can be reused only
-while those files are unchanged. The mandatory gate's memo keeps every verdict with the read set this module recorded
-and hashes each file again before reuse. The recorder was first written inside `requirement_endpoint.py` (ruling
-2026-09-30T15:09:25) and moved to the kernel in the review R1 fix round, so other readers (the onboarding gate's
-settings resolution) can record too.
+Records what a computation read outside any Git tree, so that a result computed from Git trees and plain
+files can be reused only while those files and path selections are unchanged. A recording block collects
+`{key: identity}` rows. The module also re-checks a recorded set against the file system, validates rows that
+arrive from another process, and gives readers four helpers that perform a path operation and record it in
+one step. The gate's memo and the reviewer's leaf-view memo keep every result together with the rows recorded
+for it.
 
 ## Code Commentary
 
-### Logic
+### The rows
 
-- **Identities.** `bytes_identity(data)` is `sha256:<hex>`; `file_identity(path)` is the identity of a file now: its
-  bytes' SHA-256, `absent` (`ABSENT`) when it does not exist, or `unreadable (<error type>)`.
-- **`recorded_reads()`** is a context manager: inside it, a `ContextVar` (`_READS`) holds one `{path: identity}`
-  dictionary, yielded to the caller and reset on exit, so recording is per thread and per evaluation.
-- **`record_read(path, identity=None)`** does nothing outside a recording block. Inside one, it records the identity
-  the reader passes (the bytes it actually read), or the file's identity now. A path recorded twice with different
-  identities becomes `CONFLICTING` ("conflicting reads"): the file changed while it was being read, and the caller must
-  not reuse the result.
+- A **byte row** has the file's POSIX path as key. Its identity is `sha256:<hex>` of the exact bytes read,
+  `absent` (`ABSENT`) when the file does not exist, or `unreadable (<error type>)` when the read failed.
+- A **selection row** records a path operation, not bytes. `resolve:<absolute logical path>` holds
+  `resolved:<target>`, and `exists:<absolute logical path>` holds `present` or `absent`. Either can hold
+  `unreadable (<error type>)`.
+- A **listing row** `json-files:<absolute root>` records the exact direct `*.json` listing a task lookup
+  consumed: the byte identity of the NUL-separated sorted direct paths, including an empty listing, or
+  `unreadable (<error type>)` when the listing failed.
+- A key recorded twice with two different identities inside one block becomes `conflicting reads`
+  (`CONFLICTING`). The file or the selection changed while the computation ran.
 
-### Conventions
+### Recording
 
-- The readers pass the identity of exactly the bytes they read where they have them (`requirement_endpoint._manifest`),
-  and record a linked packet before its owner reads it, so a race can only cause a miss.
+- `recorded_reads()` is a context manager. It puts a fresh dictionary into the context variable `_READS`,
+  yields it and restores the previous value on exit. A nested block therefore collects its own rows, and the
+  outer block sees only what is replayed into it afterwards.
+- `record_read(path, identity=None)` records one byte row: the identity the reader passes, or the file's
+  identity at this moment (`file_identity`). `_record` applies the conflict rule.
+- Outside a recording block every recording call does nothing.
+- `replay_reads(reads)` records a mapping of rows through the same conflict rule. It carries rows from a
+  nested block, from a kept memo entry and from the reviewer's worklist child process into the caller's
+  block.
 
-### Invariants And Boundaries
+### Readers that record
 
-- **A reused verdict saw the same outside files.** With the memo's re-hash (`memo._Kept.still_read_the_same`), a file
-  that changed since is a miss, and a file read inconsistently makes the verdict unkeepable. Proved by
-  `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept` and the approval-state test
-  (`test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes`).
-- Outside a recording block the module has no effect, so every other caller of the readers is unchanged.
+Each helper performs the operation once and records what that one operation saw. Outside a recording block
+each returns what the plain call returns and raises what it raises.
 
-### Todos
+- `observed_text(path)` reads the bytes once, records their SHA-256 and returns them decoded as UTF-8 with
+  `\r\n` and `\r` turned into `\n`. A missing file records `absent`, another `OSError` records
+  `unreadable (...)`; both are raised again.
+- `observed_exists(path)` returns `path.exists()`. A false probe records `exists:<absolute logical path>`
+  = `absent` — the existence predicate that was actually used, not a failed byte read (a parent that is a
+  file gives the same answer). A probe that raises records `unreadable (...)` under the file's byte key. A
+  present file gets no row from the probe; its row comes from the read, when one follows.
+- `observed_json_files(root)` returns the sorted direct `*.json` files of a folder and records
+  `json-files:<absolute root>` with the listing's exact digest — the byte identity of the NUL-separated
+  sorted direct paths, empty listing included; a failed listing records `unreadable (...)`.
+- `observed_path_exists(path)` returns `path.exists()` and records an `exists:` row in every case. It is the
+  probe for a directory, which has no bytes to hash.
+- `observed_resolve(path)` returns `path.resolve()` (non-strict) and records a `resolve:` row keyed by the
+  absolute unresolved path.
 
-- None.
+### Checking a recorded set
+
+- `observation_identity(key)` repeats the recorded operation: it resolves the path for a `resolve:` key, tests
+  existence for an `exists:` key, re-lists the direct `*.json` files for a `json-files:` key and hashes the
+  file for a byte key.
+- `changed_observations(reads)` returns the keys whose identity differs from the recorded one. It checks the
+  selection rows first — `resolve:`, `exists:` and `json-files:` keys — and returns only them when one
+  moved. Byte rows are read only when every selection still gives its recorded answer, so a locator that
+  was retargeted never causes a read of its new target.
+- `has_failed_observation(reads)` is true when a row is `conflicting reads` or starts with `unreadable (`.
+  Both memos refuse to keep a result with such a row.
+- `valid_observation(key, identity)` checks one row from another process: no NUL byte, an absolute logical
+  path for a selection key, an identity of the kind that belongs to the key — `present`/`absent` for
+  `exists:`, `resolved:<absolute>` for `resolve:`, a non-`absent` `sha256:` listing identity for
+  `json-files:` — and for a byte key a non-empty key with a `sha256:` identity of 64 hexadecimal digits,
+  `absent`, or a failure identity.
+
+### Who records and who checks
+
+- Recording blocks are opened by the gate's evaluation (`application/knowledge_gate/gate.py`), by the
+  leaf-view key lookup and the leaf-wide computation of the reviewer (`application/review_leaf_view_memo.py`,
+  `application/review_tree_knowledge.py`), by the worklist child (`application/reviewer_worklist_child.py`)
+  and by the strict task lookup (`tasks/leaf_decisions.py`).
+- Rows come from the task document reader (`tasks/store.py`), the requirement manifest and packet readers
+  (`memory/knowledge/requirement_endpoint.py`, `tasks/task_intent.py`), the contract loader
+  (`worktrees/worktree_contract.py`), the ledger loader (`kernel/memory_ledger.py`), the settings parsers and
+  the root selection of `kernel/coordination_context/`, and `kernel/memory_mode.py`.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries).
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The module docstring: why plain-file reads are recorded, and the three identities. [1]
-- The identities. [2]
-- The recording block and one read. [3]
-- The manifest read records exactly the bytes it read. [4]
-- The gate records every evaluation's reads. [5]
-- The read set and the conflicting read. [6]
-
-### Cross-Repo References
-
-No meaningful cross-repo references found: the recorded files are plain paths the caller names.
-
-No cross-repo boundary is crossed by this file.
+- The module docstring: the three byte identities, the two selection namespaces and the conflict rule. [7]
+- The identity of a file at this moment. [8]
+- The recording block sets and restores the context variable. [9]
+- One read is recorded with the passed identity or the file's identity. [10]
+- Two different identities for one key become a conflict. [11]
+- Rows of another block or process are recorded through the same conflict rule. [12]
+- The validation of a row that arrives from another process. [13]
+- The recheck repeats the recorded operation. [14]
+- Selections are rechecked before bytes, and bytes only when no selection moved. [15]
+- A conflict or an unreadable row marks the set as failed. [16]
+- The recorded resolution keeps the absolute logical path as its key. [17]
+- The recorded existence probe of a path, also for a directory. [18]
+- A false existence probe records `exists:<absolute logical path>` = absent, distinct from a failed byte read. [19]
+- One read of the bytes, recorded, then decoded with newline translation. [20]
+- The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording. [21]
+- A retargeted packet locator is seen through its resolve row, and no byte outside the task is read for the recheck. [22]
+- A failed root probe is recorded as unreadable and the view is not kept. [23]
+- A malformed row from the child is refused by the parent. [24]
+- Every file the gate reads is in its read set, and a conflicting read is never kept. [25]
+- The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included. [26]

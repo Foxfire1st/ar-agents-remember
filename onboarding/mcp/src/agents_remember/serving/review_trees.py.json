@@ -1,24 +1,32 @@
 {
   "path": "mcp/src/agents_remember/serving/review_trees.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+        "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_request_result"
+        }
+      },
+      "id": "RLZ-BFPX3W",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Binds a cancellation event to the request, sets it when the client disconnects or the request is cancelled, and waits for the worker before the cancellation propagates, so the child is reaped before the request ends.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The route path, the query with the named invariants (MIK-R31) and the lane or file question with `focused` (MIK-R32), and the port type.\n\nAnchor: \"def focused(self) -> bool:\"",
+    "10": {
+      "note": "The query handed to the port.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:4e04896190ec4ee3ddee5f2918736f8a53c103eb001c8d0f721c475a7824c586",
-            "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_REVIEW_TREES_ROUTE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
             "content": "sha256:6d36bd9e40b722ac8501d72d82061f75870c8f1e8346d29e69b4367ca76ac281",
             "locator": {
               "kind": "symbol",
@@ -26,86 +34,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:3c6d24805f12f813df7ed500592322835783b9ae85c99bb0cc6590bc62c03b69",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesPort"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The unwired answer: no comparison rather than an empty one.",
+    "11": {
+      "note": "The selection and the reasons it is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:77f65808904552929971a031b838268910c7b32ff56cabc1001442c92156a838",
-            "locator": {
-              "kind": "symbol",
-              "name": "_UNWIRED"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The bounds and the one selection value: at most 500 invariants, each key at most 64 characters; `lane=files` only, a path of at most 4,096 characters, one question at a time.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:2b503815a29318a562d9b6c64e121c7f5c79e8dffae6ba23ee9f5ee3c040273c",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_ENTRY_INVARIANTS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:d7a5d56f2d202be893d93cef61700664133b90160bfd77525d2726e55b778334",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_INVARIANT_KEY_LENGTH"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:aa33d6e3090ca80055c5077dc5ba3ffe7a70f3b4411468220c79365846f74bc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_FILE_PATH_LENGTH"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:1bab7290e66458241f2d6b0ed4638fe02b50af9b518e7b1cebe0140663227b70",
-            "locator": {
-              "kind": "symbol",
-              "name": "LANE_FILES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
             "content": "sha256:7d23597cdb1340f4d27c8a79530c19eb558d1fcb54338382541e99d75926cd2e",
             "locator": {
               "kind": "symbol",
@@ -113,38 +50,32 @@
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "12": {
+      "note": "The port runs on the route's executor inside the request's context; disconnect and cancellation set the event.",
+      "targets": [
         {
           "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:bde0fa72c47f03a8258f6c9fea01551fdc9b04b4836390b7815e09e28779787b",
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
             "locator": {
               "kind": "symbol",
-              "name": "_focus_problem"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:636c6c55d8c4909355085d4e11aee1a3c0a5e141834c4067075afe346c53d02a",
-            "locator": {
-              "kind": "symbol",
-              "name": "NO_SELECTION"
+              "name": "_request_result"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "The route: 503 unwired, 400 with the selection's own problem, otherwise the typed result; `lane` and `file` passed to the query.\n\nAnchor: \"lane=selection.lane == LANE_FILES,\"",
+    "13": {
+      "note": "The route: own executor, 503 without a port, 400 for a refused selection, one serialized result.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:d9a7bee7279dae78816c8ffff918d60d0c09d83266f884155c99d16f5d502dbc",
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:d239eb495d1abf807028753628f2814238afd971d5fcf95160e066b7fc2fb52e",
             "locator": {
               "kind": "symbol",
               "name": "register_review_trees_route"
@@ -154,59 +85,80 @@
         }
       ]
     },
-    "5": {
-      "note": "One focused question at a time at the route; long paths answered with the typed 200 refusal (review F2).",
+    "14": {
+      "note": "The request context that binds cancellation and arrival.",
       "targets": [
         {
           "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
-            "content": "sha256:db66bf51b92bc44c8d2a9cbd1af37e8cd334952e209d3ab2fe380227f286ecb4",
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:497b53cf506c8f181078c791d408561da395109611094c9eb17923cda1308713",
             "locator": {
               "kind": "symbol",
-              "name": "test_the_route_asks_one_focused_question_at_a_time"
+              "name": "worklist_request"
             },
-            "path": "mcp/tests/test_review_unexplained_lane.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "378aa0f26f857bdb1593d1772ee9afd1ce8ccb12",
-            "content": "sha256:b7ba64ec2358030e3d527b9f74eabc43a20c839bcd467eb8bfb602a29ec545bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "_long_paths_are_typed_refusals"
-            },
-            "path": "mcp/tests/test_review_unexplained_lane.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The registration beside the other reviewer routes.\n\nAnchor: `register_review_trees_route`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
-            "content": "sha256:b63f400ac5ad1cbf8de2893803b46f438b3b511273d26af1623465a0acf4b4f5",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 306
-            },
-            "path": "mcp/src/agents_remember/serving/app.py"
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "The route served over the port, the cards read passing its invariants, 400 for a 65-character key and for 501 keys, and refused when unwired.",
+    "15": {
+      "note": "A tree read answers in under a second while the default executor is full.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:20dc6b3df66ec1d9e7ac98996c7191cd23684b8942a209bcd98ebf4ca8ae51f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A client disconnect and a shutdown each stop the child and its Git process through the real route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:87651b0c5d54d6b6d81b42262cb5c8a0b29dc82b97f9a9d2ec90bfba7eeeb25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_stop"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The deadline runs from the request's arrival, so work before the child spends it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:1a535b3acb3d59ec92e0b87b2f9c66f51d1bf1287975fea0c00060269972a0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The route serves the port and refuses when it is not wired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
             "locator": {
               "kind": "symbol",
@@ -215,6 +167,40 @@
             "path": "mcp/tests/test_review_git_trees.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The module docstring: transport only, the query's meaning and the status codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:cdda17b30683bb6f72303a361aeabde6eb90efd61187a7df1f9ed4cfcffdc8f8",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The route path, the bounds of a selection and the size of the route's thread pool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:a27dc3d844bb99bb456ec955405c7b46850ccc1509b9e0df63475facba6bd839",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
         }
       ]
     }

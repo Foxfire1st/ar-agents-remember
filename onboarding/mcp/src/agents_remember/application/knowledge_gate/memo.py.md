@@ -2,96 +2,66 @@
 
 ## Governing Overview
 
-[application route overview](../overview.md)
+[Nearest governing overview](../overview.md)
 
 ## Purpose
 
-**A bounded in-process memo of the gate's verdicts over exact inputs (MIK-R09; ruling 2026-09-30T14:38:47 gap 4,
-refined at 15:09:25).** One contract-scoped memory-quality run evaluates the gate up to three times over the same
-candidate (the count, then twice through the closeout validator), and closeout admission evaluates it again; each
-evaluation recomputes the worklist from its four sides (7–17 s on the real converted scratch). A repeated evaluation
-over identical inputs reproduces the identical verdict, so the memo keeps it, keyed by everything the evaluation
-reads. It does not weaken the always-recompute rule: a changed input is a different key, and a new candidate is
-always recomputed.
+The bounded in-process memo of the invariant gate's verdicts. `evaluate_leaf_gate` asks it before it
+computes and offers every computed verdict to it. A verdict is kept under a key of exact identities and
+together with every row the evaluation recorded outside the Git trees, and it is served again only while
+all of those rows still hold. The worktree layer's gate port (`KnowledgeGate.leaf_refusal` in
+`adapter.py`) and the memory-quality controller both call `evaluate_leaf_gate`, so they share these
+verdicts.
 
 ## Code Commentary
 
-### Logic
+### The key
 
-- **`GateMemoKey`**: the exact code tree C and memory tree K_C; the contract's path plus the SHA-256 of its bytes
-  (which carry B, the branches and `memory_base_commit`); the parent line's memory tip (the validator base and the line
-  K_B pairs on; review R1 F6); the leaf's own memory `HEAD` (L37: a history file closed there is frozen, so two leaf
-  heads over one candidate tree are two keys); the SHA-256 of the leaf task document read through `strict_leaf_doc` (maintenance scope
-  and declared effects); and the build (`measuring_build_stamp`). `memo_key` returns `None` (no memo) when any of
-  these cannot be identified.
-- **`_Kept`** holds when the verdict was computed, the verdict, and **the read set**: every file outside the trees
-  that the evaluation read, as `(path, identity)` (the requirement manifests and packets MIK-R14's reconsideration
-  links read through `requirement_endpoint`, and the settings files `trace_context` reads, including the coordination
-  fallback; review R1 notes). `still_read_the_same` hashes each again with `file_identity`.
-- **`remembered(key)`** returns the kept verdict only when it is younger than `MAX_AGE_SECONDS` (900) and every
-  recorded file still has the recorded identity: a newly approved requirement version, a manifest that appeared or
-  vanished, or edited settings is a miss, and the gate recomputes.
-- **`remember(key, result, reads)`** keeps the verdict only when `result.memoisable` (no `incomplete` finding, no
-  unreadable validator input, a `complete` worklist) and no recorded path is `CONFLICTING` (a file read twice with
-  different identities in one evaluation). `GATE_MEMO` is the kernel's LRU `BoundedMemo` of `CAPACITY` (16).
+`memo_key(contract, candidate, parent_memory_tip, leaf_memory_head)` returns a `GateMemoKey`, or `None`
+when an input cannot be identified; the gate then computes without the memo. The key holds:
 
-### Conventions
+- the candidate's code tree and memory tree;
+- the contract's path and the SHA-256 of its bytes;
+- the parent line's memory tip and the leaf's own memory `HEAD`;
+- the SHA-256 of the leaf's task document, found through the strict lookup `strict_leaf_doc` (an empty
+  digest input when the leaf has no document);
+- the build stamp (`measuring_build_stamp`) as sorted JSON.
 
-- A refused verdict over complete inputs is deterministic and is kept like a pass (ruling 15:09:25: "only failed runs
-  and incomplete results are never kept"). A run that involved a failed or timed-out Git call is incomplete and
-  never kept (review R1 F9; R3-2 for `has_blob`).
-- The approval state never depends on the age limit (15:09:25); the capacity and age bounds are belt and braces.
+An unreadable contract, a leaf document that cannot be established, or a build stamp that cannot be
+produced gives no key.
 
-### Invariants And Boundaries
+### Serving and keeping
 
-- **A kept verdict is reused only for identical trees, contract, parent tip, task document, build and recorded
-  requirement-file reads; incomplete runs and Git failures are never kept.** Candidate invariant (not ingested).
-  Realized by `GateMemoKey`, `_Kept.still_read_the_same`, `remembered` and `remember`; proved by
-  `test_the_gate_memo_reuses_a_verdict_only_for_the_identical_inputs` (one `_evaluate` for three reads; a changed
-  memory tree and a changed contract miss; incomplete and failed runs are never kept; the age limit),
-  `test_a_kept_pass_is_recomputed_once_an_endpoint_s_approval_state_changes` (both "v1 approved" and "manifest
-  missing" recompute and raise `reconsideration_candidate` once v2 is approved; with the re-hash mutated to `True`
-  both fail), `test_the_memo_key_holds_the_parent_tip`, and
-  `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`.
-- **Timing (evidence `memo-timing.txt`):** on the real converted scratch, one run of four evaluations went from about
-  67.5 s to 17.1 s for the maintenance-scope leaf and 30.7 s to 8.0 s for the answered leaf.
+- `remembered(key)` returns the kept verdict only when it is at most `MAX_AGE_SECONDS` old and
+  `_Kept.still_read_the_same()` holds. That check is `changed_observations` over the kept rows: every
+  recorded path resolution and existence probe is repeated first, and recorded files are hashed again
+  only when all of those still give the recorded answer. A requirement packet whose locator resolves to
+  another file at the time of the check is therefore a miss even when the other file has the same bytes,
+  and the bytes behind the other target are not read for the check. A manifest that appeared or vanished, a newly approved
+  version and edited settings are misses as well.
+- `remember(key, result, reads)` keeps a verdict only when `result.memoisable` is true and the rows hold
+  no failed observation (`has_failed_observation`: a conflict, or an unreadable row). A verdict behind
+  which an input could not be read, or was read at two identities, is returned to the caller and computed
+  again at the next evaluation. A refused verdict over complete inputs is kept like a pass.
 
-### Todos
+### Bounds
 
-- None.
+`GATE_MEMO` is a `BoundedMemo` of `CAPACITY` 16 verdicts, least recently used first out, and
+`MAX_AGE_SECONDS` is 900.
 
 ## Evidence
 
-### Docs References
-
-No domain documentation source is configured for this repository (`system/sources.md` carries no
-`Domain Documentation` entries). The design authority is `MIK-R09@v2` and `09_mandatory-invariant-closeout-gate.json`,
-outside the repositories.
-
-No configured live documentation source was available for this pass.
-
-### Repo-Internal References
-
-- The module docstring: the key, inputs outside the trees, the bounds, what is never kept. [1]
-
-- The bounds and the key. [2]
-
-- A kept verdict with its read set, hashed again before reuse. [3]
-
-- The key of one evaluation, or no memo. [4]
-
-- Reuse and keep. [5]
-
-- Only identical inputs reuse a verdict. [6]
-
-- A changed approval state recomputes a kept pass. [7]
-
-- The key names the leaf's memory HEAD beside the parent line's tip. [8]
-- The memo tells two leaf heads apart. [9]
-
-### Cross-Repo References
-
-The read set may name files of another task's folder under the coordination root (a `reconsider_on` link's
-requirement manifest and packet), outside both repositories.
-
-No cross-repo code boundary is crossed by this file.
+- The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept. [10]
+- The two bounds. [11]
+- The key's fields. [12]
+- A kept verdict is current when no recorded observation changed. [13]
+- The key from contract bytes, the strict task lookup and the build stamp. [14]
+- A kept verdict is served only when young enough and unchanged. [15]
+- Only a memoisable verdict without a failed observation is kept. [16]
+- The gate asks the memo, records its reads and offers the verdict. [17]
+- A warm pass becomes the refusal when the packet locator is retargeted to a file with the same bytes. [18]
+- The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict. [19]
+- A verdict behind an unreadable contract read keeps its answer and occupies no memo slot. [20]
+- Every file read is in the read set and a conflicting read is never kept. [21]
+- The same trees against another parent tip are another key and another evaluation. [22]
+- The worktree layer's gate port calls the gate. [23]

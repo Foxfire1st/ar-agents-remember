@@ -21,7 +21,31 @@ sprint from disk.
 
 ## Canonical consumed JSON bytes
 
-The one canonical task reader records the exact original JSON bytes it parses through generic read observation. Existing task readers need no opt-in; maintenance scope and declared effects can therefore be compared against request inputs even across an A-to-B-to-A edit. This source observation changes neither JSON-primary authority nor write/rollback/publishability ownership.
+The one canonical task reader, `read_task_doc` in `store.py`, records the exact original JSON bytes it parses through the
+kernel's read recorder: the SHA-256 of the bytes, `absent` for a missing file, or `unreadable (...)` for a failed read.
+Existing task readers need no opt-in; maintenance scope and declared effects can therefore be compared against request
+inputs even across an A-to-B-to-A edit. This source observation changes neither JSON-primary authority nor
+write/rollback/publishability ownership.
+
+`strict_leaf_doc` ([leaf_decisions.py](leaf_decisions.py.md)) opens every JSON file of the task folder to rule out a second
+claimant of the leaf. It runs inside its own recording block and passes on to a recording caller only the rows of the
+leaf's own document and the rows of files that were absent, unreadable or read at two identities when it established
+the claimant; when the leaf has no claimant it passes on every row it opened, including each sibling read in full and
+the exact direct JSON listing, and when the lookup raises it passes on every row. A caller that keeps a result together
+with its recorded rows, such as the reviewer's leaf-wide view and the invariant gate, therefore depends on the leaf's
+own document and — when the lookup established a claimant — on no sibling document that was read and ruled out; a
+lookup that found no claimant is evidence of absence and keeps depending on what it read.
+
+The requirement-packet owner `_approved_packet_ref` ([task_intent.py](task_intent.py.md)) records the resolution of the task
+root and of the packet locator as `resolve:` rows and the packet's bytes under the caller's locator. It confines the resolved
+path to the task root before it reads a byte. A packet link that is retargeted changes a recorded row, also when the new
+target holds identical bytes.
+
+- The task reader records the bytes it parses, an absent file and a failed read. [26]
+- The strict lookup replays the leaf's own document and every row that is not a plain byte identity. [27]
+- The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator. [28]
+- A kept view ignores every task document it did not read. [29]
+- A document that begins to claim the leaf is not hidden by a kept view. [30]
 
 ## Purpose
 
@@ -365,41 +389,41 @@ a `**Knowledge maintenance scope:**` header line when it is true. Every existing
 - Its classification. [16]
 - Its header line. [17]
 
-## 260928-MIK-L11 The `expectedKnowledgeEffects` Declaration And The Task Owner's Answers
+## The `expectedKnowledgeEffects` Declaration And The Task Owner's Answers
 
-MIK-R11 lets a leaf's task document declare, before implementation, the invariant and family effects it
-expects; the worklist then marks every invariant and family item `planned` or `unplanned` and raises a
-`planned_untouched` item for each declaration no history row delivers. The task plane's part:
+A leaf's task document can declare, before implementation, the invariant and family effects it expects; the
+worklist then marks every invariant and family item `planned` or `unplanned` and raises a `planned_untouched`
+item for each declaration no history row delivers. The task plane's part:
 
 - [`document.py`](document.py.md): `TaskDocument.expectedKnowledgeEffects: list[ExpectedKnowledgeEffect] |
   None` (`subject`, `effect`, `requirementRef`). The model refuses a malformed entry, the field on a master,
   an empty list, and two declarations with the same subject and effect. The task plane checks shape only and
   never reads knowledge; the patterns come from `models/knowledge_files/planned.py`.
 - [`document_field_effects.py`](document_field_effects.py.md) classifies the field and its three nested
-  fields `NORMATIVE` (the packet's `NORMATIVE_INTENT`), unlike L08's `LIFECYCLE` flag, and
+  fields `NORMATIVE`, unlike the `knowledgeMaintenanceScope` flag, which is `LIFECYCLE`, and
   [`task_intent.py`](task_intent.py.md) carries it as an optional `task-intent/v1` slot whose key is dropped
-  when absent (and from a master's projection). **An absent field leaves every existing task-intent digest
-  unchanged**: the worker (597 documents) and the reviewer (889 documents) found every real digest, render
-  and stored JSON byte-identical. A declaration changes the leaf's intent digest; clearing it restores it.
+  when absent, in a leaf's projection and in a master's. A document without the field therefore has the
+  task-intent digest it has without the slot. A declaration changes the leaf's intent digest; clearing it
+  restores it.
 - [`render.py`](render.py.md) draws an `**Expected knowledge effects:**` header block when declared.
-- [`leaf_decisions.py`](leaf_decisions.py.md) (new) is the task owner's answer for MIK-R11, through one strict
-  leaf lookup (`strict_leaf_doc`: `resolve_terminal_leaf_doc` plus a refusal of any unreadable document that
-  still names the leaf). The worklist reads the declaration through it, so **an unreadable leaf document
-  never reads as "nothing declared"** — it makes the run `incomplete` (ruling F2); and
-  `leaf_decision_refusal` answers whether a planned `dropped` row's cited decision (`at`) resolves to exactly
-  one decision entry — ambiguity refuses (ruling F1, 2026-09-29T22:35:34+02:00).
-- **Transition (ruling Q2, 2026-09-29T21:56:18+02:00).** The installed runtime's `TaskDocument` forbids
-  unknown fields, so no real task document may declare `expectedKnowledgeEffects` before the L37 install.
-  Who writes the field is procedural (`task_doc` has no per-field role gate); the reviewer checks the
-  declaration against the packet (ruling Q3). `leaf_maintenance_scope` keeps the fail-soft `find_leaf_doc`,
-  carried to L09 (ruling F2).
+- [`leaf_decisions.py`](leaf_decisions.py.md) is the task owner's answer about a leaf's document, through one
+  strict leaf lookup (`strict_leaf_doc`: `resolve_terminal_leaf_doc` plus a refusal of any unreadable document
+  that still names the leaf). The worklist reads the declaration and the maintenance scope through it
+  (`application/knowledge_worklist/leaf.py`), so an unreadable leaf document never reads as "nothing declared" or
+  as the default scope: it makes the run `incomplete`. `leaf_decision_refusal` answers whether a planned
+  `dropped` row's cited decision (`at`) resolves to exactly one decision entry; no entry and several entries
+  both refuse.
+- Who writes the field is procedural (`task_doc` has no per-field role gate); the reviewer checks the
+  declaration against the packet.
 
 - The declaration model and its refusals. [18]
 - The field on the task document. [19]
 - Its normative classification. [20]
 - The optional intent slot, absent when undeclared. [21]
 - The header block. [22]
+
 - The strict lookup and the decision answer. [23]
+
 
 ## 260928-MIK-L38 The Master Sync's Fallback Becomes The One Rule, And A Placement Guard
 

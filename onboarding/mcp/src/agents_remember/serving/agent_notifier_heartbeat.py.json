@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
             "content": "sha256:fca314889fe88eb19d3eaa74c2a6b6b5b7a9021e7918b24a57a01939d90167b2",
             "locator": {
-              "end": 354,
+              "end": 356,
               "kind": "line_range",
-              "start": 354
+              "start": 356
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

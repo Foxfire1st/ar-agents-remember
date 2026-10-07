@@ -1,0 +1,121 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/request_digests.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fresh per-request scope, its nesting and its thread guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:267a84224e948124858d0371b6e90f5441d6a7517343a7118fb8d2965df7cc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "same_request_digests"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The full witness key over the origin, the serialized image and the generation declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:a93b052b4104a9d4ac77ae1fac7c9f7d8185ac019bb118ed90e79662dd93d733",
+            "locator": {
+              "kind": "symbol",
+              "name": "_generation_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:15cdb97cf8e43d2e66f3b9eceb174f81d71e9971995586901998d1a01601b011",
+            "locator": {
+              "kind": "symbol",
+              "name": "digest_in_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The same-handle commit counter read before and after the image.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:9b6771a001c085de897f257cd5881973e0cffdf911d33819f202d057abf2dbf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_version"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:39f1496af4ff35a21eb0f7c5b05736e30f37fa21cbc9312618e7b082d2124a19",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:15cdb97cf8e43d2e66f3b9eceb174f81d71e9971995586901998d1a01601b011",
+            "locator": {
+              "kind": "symbol",
+              "name": "digest_in_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Eligibility: read-only main, no traces, exactly the main database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:15cdb97cf8e43d2e66f3b9eceb174f81d71e9971995586901998d1a01601b011",
+            "locator": {
+              "kind": "symbol",
+              "name": "digest_in_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A failed witness read is not cached; the original computation and its refusal stand.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a88b8a9231e51e0299bc5a12fc11e435f75e9cf0",
+            "content": "sha256:15cdb97cf8e43d2e66f3b9eceb174f81d71e9971995586901998d1a01601b011",
+            "locator": {
+              "kind": "symbol",
+              "name": "digest_in_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

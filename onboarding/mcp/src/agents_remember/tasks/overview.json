@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
             "locator": {
               "kind": "symbol",
@@ -244,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
             "locator": {
               "kind": "symbol",
@@ -292,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:bc0008dcfb0552d79d1272539868bf5412443e2c659cb097e1734fe3c3736bab",
             "locator": {
               "kind": "symbol",
@@ -304,7 +304,7 @@
         },
         {
           "anchor": {
-            "blob": "3d343bc9a6cc77364aab08d0db49074ae0273e6a",
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
             "content": "sha256:d598aff2361d7e1ad20de5798e5efc4950e914037e19af29c96ea9052c1aeef0",
             "locator": {
               "kind": "symbol",
@@ -338,8 +338,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:ba00d32e44dd1fa790aa0be86d08a64c069ab896a62f3feff3010ea2290f3aec",
+            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
+            "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
             "locator": {
               "kind": "symbol",
               "name": "strict_leaf_doc"
@@ -350,7 +350,7 @@
         },
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
+            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
             "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
             "locator": {
               "kind": "symbol",
@@ -411,6 +411,74 @@
         }
       ]
     },
+    "26": {
+      "note": "The task reader records the bytes it parses, an absent file and a failed read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7594b74ca357e630326dc07bacf00771d8aabf25",
+            "content": "sha256:dd81f4dfc6836a097145db08b8d47c8c9a77ae4bc2b77d3b41a49123ae1d99db",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
+            "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
+            "locator": {
+              "kind": "symbol",
+              "name": "strict_leaf_doc"
+            },
+            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "417b5073b82d13e1b1e574ebcf22c11bdb81469c",
+            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_approved_packet_ref"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "A kept view ignores every task document it did not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "Task-document publication rejects a route review missing intent identity.",
       "targets": [
@@ -425,6 +493,23 @@
             "path": "mcp/src/agents_remember/tasks/store.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "A document that begins to claim the leaf is not hidden by a kept view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -501,7 +586,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
+            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
             "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
             "locator": {
               "kind": "symbol",

@@ -17,8 +17,6 @@ role_agents/role_launcher describe native start/message and launcher wire contra
 
 [mcp/overview.md](../../../../overview.md)
 
-| lastUpdated | 2026-09-21T23:45+02:00 |
-- **The union that gained this leaf's member, with the new code inserted between the comparison refusal and the adapter refusal.** [1]
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
 - The surface version that stays `/1`, with the reasoning recorded beside the constant. [3]
 - **The availability vocabulary, its five states and the validator that refuses a favourable default.** [4]
@@ -184,7 +182,9 @@ substance and now totalled: a refused entry read still offers **no** entry, an e
 beside it.
 
 - **The presence union on the vocabulary, beside the subject-kind union it parallels.** [16]
+
 - **The entry value with `presence`, and the entry list with the totals and their agreement validator.** [17]
+
 - The catalogue owner that fills these values, and the adapter that delegates to it. [18]
 
 ## 260921-ICR-L7 The Review Wire Carries The Explicit Revision Selection, Declared Next Door
@@ -555,22 +555,39 @@ evaluates; its Q6 carry (index stability) is met by the validator rule `R14.1-li
 - The one spelling of a link target, and the gate's predicate. [65]
 - The sixth row kind. [66]
 
-## 260921-ICR-L3 The Review Refusal Vocabulary Gains The Source-Content Code
-This route's impact is **one member of one closed union**, and the reason it is worth naming is that a
-closed vocabulary a client reads is a contract change even when the addition is strictly additive.
-`models/knowledge/review.py`'s `ReviewRefusalCode` — the closed union a `ReviewRefusal` carries as its
-`code` — gained `source_content_unresolved`, inserted between `comparison_refused` and
-`review_adapter_unavailable`. It is the answer the new **entry-content** route gives when the generation
-a listing published no longer resolves to the two code objects that listing bound: there are no bytes to
-serve for that entry, and that is a different fact from "this process cannot read the entry" (an
-unwired port) and from "this entry has no content" (an empty rendering). The union is the module's own
-statement of which refusals exist, declared once here so the transport's admission path and the
-browser's rendering of a refusal cannot come to disagree about the vocabulary.
-**It is additive in the strict sense, and that is a fact about the transport rather than a promise.**
-The union is a vocabulary, not control flow: a code the transport does not recognise already answers
-`400`, so a client written against the previous six keeps working and an unknown code is refused rather
-than quietly mapped onto an existing answer. `KNOWLEDGE_REVIEW_SURFACE_VERSION` therefore stays
-`knowledge-review-surface/1`, exactly as it did for the R02 inventory and the L45 entry half.
+## The Review Refusal Vocabulary
+
+`ReviewRefusalCode` in [`models/knowledge/review.py`](knowledge/review.py.md) is the closed union a `ReviewRefusal`
+carries as its `code`. It is the module's own statement of which refusals exist, declared once so that the transport and
+the browser's rendering of a refusal cannot come to disagree about the vocabulary. A refusal also carries its `detail`,
+its `next_action` and, optionally, the offending input, the expected value and the observed value.
+
+The members are `candidate_unresolved`, `candidate_not_live`, `candidate_dataset_absent`, `subject_unresolved`,
+`comparison_refused`, `comparison_page_reset`, `comparison_page_unreadable`, `source_content_unresolved`,
+`review_adapter_unavailable`, `reviewer_busy` and `inputs_changing`.
+
+- `source_content_unresolved` is the answer of the entry-content route when the generation a listing published does not
+  resolve to the two code objects that listing bound: there are no bytes to serve for that entry. That is a different
+  fact from an unwired port and from an entry without content.
+- `reviewer_busy` and `inputs_changing` are answered only by the leaf-wide tree view (`GET /api/review/trees`).
+  `reviewer_busy` says that the view's worklist computation could not start, because the bound on computations was
+  reached or the request's deadline passed while it waited. `inputs_changing` says that the two computation attempts do
+  not match — a recorded input's identity differed between them, or the second attempt differs from the first; a
+  physical rewrite is not required, and the first attempt may be shared from a computation that began before this
+  request. Both are transient, and the dashboard's reader of that view asks again before it shows them.
+- The dashboard maps every code to a token for the reader and keeps a code it does not know as `domain-refused` with
+  the code unchanged (`dashboard/src/data/reviewTransport.ts`).
+
+`KNOWLEDGE_REVIEW_SURFACE_VERSION` is `knowledge-review-surface/1`.
+
+- The closed union of refusal codes. [282]
+- The typed refusal with its code, detail and next action. [283]
+- The surface version. [284]
+- The overload failure carries the code reviewer_busy. [285]
+- Two mismatching computation attempts are refused as inputs_changing, a shared older first attempt included; a process failure keeps its own code. [279]
+- The dashboard's tokens for the codes. [280]
+- Overload is its own refusal code with a true action. [281]
+
 ## 260921-ICR-L14 The Record-Availability Vocabulary Gets Its Own Module, And The Evidence Pane Carries It
 `ICR-R14@v1` adds one module to this route and one field to an existing model.
 [`models/knowledge/review_records.py`](knowledge/review_records.py.md) declares the vocabulary a

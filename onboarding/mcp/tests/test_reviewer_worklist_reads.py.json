@@ -1,0 +1,400 @@
+{
+  "path": "mcp/tests/test_reviewer_worklist_reads.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+        }
+      },
+      "facet": "The gate passes and the pass is kept while a packet link points outside the task; after the link is retargeted to the packet, which has the same bytes, the next evaluation refuses with knowledge-item-open.",
+      "id": "PRF-3RZEFE",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+        }
+      },
+      "facet": "A second document with the leaf's ID makes the next read compute again and answer an incomplete worklist, while the memo holds only the first view.",
+      "id": "PRF-4XJBZJ",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_document_changing_while_the_view_is_computed_is_computed_again"
+        }
+      },
+      "facet": "A document written once before the child computes leads to two computations and a kept answer; a document rewritten on every computation leads to exactly two computations and the refusal inputs_changing that names the document, with nothing kept and a normal answer afterwards.",
+      "id": "PRF-5DT1WT",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+        }
+      },
+      "facet": "With a key that names one document, no read and a read of the same bytes report nothing; other bytes, a conflict and a document the key does not name are each reported.",
+      "id": "PRF-8RG2QP",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:9111c00ba27feb4f70548e74804ee5f8568ddbb1c24001c4dcf7e87e02498307",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_worklist_that_reads_no_task_document_is_not_refused_as_changed"
+        }
+      },
+      "facet": "A computation whose worklist does not apply and that read no task document answers the view with the worklist source absent instead of a refusal.",
+      "id": "PRF-F04GDR",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+        }
+      },
+      "facet": "Another leaf's document that appears, is edited and is removed, and a newline added to the master's task.json, leave the body unchanged and start no child; an edit of the leaf's own document computes again.",
+      "id": "PRF-R1W9GV",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+        "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+        }
+      },
+      "facet": "In the child the leaf's task document is changed and restored, read at two identities, changed and removed, or unreadable; each such read is refused naming the document, the row reaches the parent, and nothing is kept, while a stable document then answers and is kept. The same holds for settings files, a contract, a requirement packet and a ledger that fail or change during the read.",
+      "id": "PRF-RGMJDD",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-failed-read-never-kept",
+        "leaf": "260928-MIK-L42"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The long case: the leaf's document, then settings, contract, packet, root, ledger and gate parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:476d36f11d9d5960f0cde08bca7ec29433ee2dab175cddc3aab9d3f33efa4bad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_child_consumed_task_bytes_survive_aba_conflict_absence_and_read_errors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The external ledger's bytes, change, absence and failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:181ee030afc2c2100350828b0c49a3719196e815d185db95bcb911071b7d2758",
+            "locator": {
+              "kind": "symbol",
+              "name": "_external_ledger"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A failed contract read behind the gate keeps nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_failed_selector"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Documents the view did not read do not invalidate it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_kept_view_ignores_every_task_document_it_did_not_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A second claimant is computed again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_document_that_begins_to_claim_the_leaf_is_not_hidden_by_a_kept_view"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "One recomputation, then inputs_changing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:f44f7f2eed3ef68a58aa6edb2d5a6f01d19e411bd2b4e81e40745acbcc4a161a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_document_changing_while_the_view_is_computed_is_computed_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "No task document read is not a change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:9111c00ba27feb4f70548e74804ee5f8568ddbb1c24001c4dcf7e87e02498307",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_worklist_that_reads_no_task_document_is_not_refused_as_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The judgments of moved_inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_moved_inputs_tells_not_read_from_changed_and_unidentified"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The gate's warm pass becomes the refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gates_warm_pass_becomes_the_refusal_when_a_packet_locator_is_retargeted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The launch replacement for faulty children.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:83a88eee0fd0b8c5f7c90bc804274cd5ecf7b512d776e2688af7a3a504e6369a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_child_script"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settings changed, restored and unreadable during the child's read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The rows of the settings selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_selection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fallback contract read and a sibling read at two identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fallback_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Packet bytes, a link retargeted during the read, and a failed manifest read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The packet link outside, inside and outside again, for the view and the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A contract link retargeted during the read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:a1e3fa2b551adc162e2fd68fefb257aa90da657357de682e7c6d74ec9ad02817",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_alias"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Root absence, retargeting, the removed sidecar root, and probe errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_selections"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

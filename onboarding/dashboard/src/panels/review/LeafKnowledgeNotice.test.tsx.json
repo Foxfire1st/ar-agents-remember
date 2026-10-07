@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The loading notice and its status role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:706697df5eae0b852f7920d2b3077882845d83bd56dc61ddb1173e5b4b2735cf",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unavailable notice with detail and action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:2875f02851ff5947ce0978133ad7b6ed696fde02bf5f900667cb54826b2bb9c4",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Nothing for a dataset review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:0077891b52a65df0d56c592875455e61049c2c421b8b0b43a776def49e586c17",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The component under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
+            "content": "sha256:0ff6472b06d36482969fb5162321282ff6aca9fd7e10eeebe4bdb4d5712cccc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafKnowledgeNotice"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The held read and its final failure through the mounted surface, for both selections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
+            "content": "sha256:619791d0f4ee9a5474bc9352755c11cc16aa17cbb9644f90d3df36c63d976ed3",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

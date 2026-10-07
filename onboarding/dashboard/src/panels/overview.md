@@ -410,7 +410,8 @@ the bounded-roster scope ("These cards cover the loaded n of m members", review 
 unexplained groups, PS-1 rows) that [`review/LeafKnowledgeChanges.tsx`](review/LeafKnowledgeChanges.tsx.md) renders
 (MIK-R25 rules 2-3, carried from L25 Q2). [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md) mounts
 the cards (`CenterExpressions`), takes planning marks only from a leaf-wide read of the same comparison
-(`pinnedWorklist`, review F11, R2-3), and places the knowledge panel after the evidence;
+(`pinnedWorklist`), and places the knowledge panel, or the notice that stands in its place while the leaf-wide
+read is computed or unavailable, after the evidence;
 [`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md) makes that leaf-wide read once per comparison, only for
 a tree comparison. A dataset review makes no tree read and renders the landed
 [`review/ReviewExpressions.tsx`](review/ReviewExpressions.tsx.md) (whose `ExpressionControls` the cards reuse).
@@ -473,6 +474,37 @@ section above); a comment-only follow-up refreshed the case headers to match.
 
 - The receipt's MIK-L31 re-capture, which replaced the not-re-captured section. [30]
 - The case header stating which bodies were re-captured (both captures since MIK-L31's follow-up). [31]
+
+## The Leaf's Knowledge Panel And Its Notice
+
+On a tree comparison the review centre shows the panel "Knowledge changes in this leaf"
+([`review/LeafKnowledgeChanges.tsx`](review/LeafKnowledgeChanges.tsx.md)): the Git diff of the two memory trees, the
+currentness of each side, and the worklist with the history rows about its items. The workspace makes the leaf-wide
+tree read once per comparison ([`review/ReviewWorkspace.tsx`](review/ReviewWorkspace.tsx.md), `useReviewTrees`) and
+hands it to [`review/FamilyReviewCenter.tsx`](review/FamilyReviewCenter.tsx.md), whose `knowledgePanel` decides what
+stands in the panel's place:
+
+- no leaf-wide read, which is the case of a dataset review: nothing;
+- a read that answered with trees: the panel `LeafKnowledgeChanges`;
+- a read that is loading: `LeafKnowledgeNotice` with the status line "Computing the knowledge changes of this leaf.
+  The first read of a large leaf takes several seconds; the review stays usable.";
+- a read that is unavailable: the notice with the failure's detail and its next action;
+- a read that answered `not-converted`: nothing.
+
+The place of the panel is therefore not empty while a tree read is expected; an absent panel would read as "this leaf
+changed no knowledge". The family, member and unselected centres receive the panel from this one function, the
+unselected centre opened. The cards' planning marks come only from a leaf-wide read that answered for the comparison
+the payload was composed over (`pinnedWorklist`).
+
+- The panel, the notice, or nothing. [122]
+- Planning marks only from a leaf-wide read of the same comparison. [123]
+- The body passes the knowledge panel to the family, member and unselected centres. [124]
+- The panel: status line, degraded sides, diff, currentness, worklist. [125]
+- The notice for a loading and for an unavailable read; nothing for any other phase. [126]
+- The workspace makes the leaf-wide read only for a tree comparison, pinned to the payload's number. [127]
+- The notice says that it is computing, as a status region. [128]
+- The notice names the failure and its action. [129]
+- The notice draws nothing for a dataset review. [154]
 
 ## 260921-ICR-L32 The Change-Set Control Renders The Refusal It Receives
 
@@ -703,6 +735,7 @@ Chats inspector is supplementary, default closed, and toggleable.
 | --- | --- |
 | Review child route — the family tree and the central reading path | [FamilyTree.tsx](review/FamilyTree.tsx.md) · [FamilyReviewCenter.tsx](review/FamilyReviewCenter.tsx.md) |
 | Review child route — the workspace and the source explorer | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [SourceExplorer.tsx](review/SourceExplorer.tsx.md) |
+| Review child route — the leaf's knowledge panel and its notice | [LeafKnowledgeChanges.tsx](review/LeafKnowledgeChanges.tsx.md) · [LeafKnowledgeNotice.test.tsx](review/LeafKnowledgeNotice.test.tsx.md) |
 | Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
 | Review child route — the walked tree and the traversal between changes | [walkedTree.ts](review/walkedTree.ts.md) · [changeTraversal.ts](review/changeTraversal.ts.md) |
 | Review child route — the captured family bodies those cases are driven with | [familyReview.complete.captured.json](review/familyReview.complete.captured.json.md) · [familyReview.continued.captured.json](review/familyReview.continued.captured.json.md) · [familyReview.emptyRoster.captured.json](review/familyReview.emptyRoster.captured.json.md) · [familyReview.identical.captured.json](review/familyReview.identical.captured.json.md) · [familyReview.oneSided.captured.json](review/familyReview.oneSided.captured.json.md) · [familyReview.truncated.captured.json](review/familyReview.truncated.captured.json.md) · [familyReview.walkFinal.captured.json](review/familyReview.walkFinal.captured.json.md) · [familyReview.capture-provenance.json](review/familyReview.capture-provenance.json.md) |

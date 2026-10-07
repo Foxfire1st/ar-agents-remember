@@ -72,6 +72,8 @@ recorded below — so no importer had to learn a new home and no responsibility 
 collection and a comparison the shipped operation refused each produce a named field or a typed
 refusal — never a blank a reader could take for a measured zero, and never a favourable default.
 
+The complete review runs its whole resolution inside one `same_request_digests()` request scope, so the logical digests the review reads are reused only within this one synchronous request and a copied context keeps no answer.
+
 ## Shared resolution at the dashboard operation
 
 `read_complete_knowledge_review` is the complete dashboard operation: resolve the candidate once, collect owner records through `review_records_of`, and compose over that same resolution. The existing publication currentness check still recaptures both live worktrees and refuses a moved candidate. Record-only and older composition entry points keep their owned operations; they do not become another capture implementation. No composed review answer is stored on the server.

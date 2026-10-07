@@ -1,47 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving",
   "references": {
-    "1": {
-      "note": "The lane's bounds and the one-question rule.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:aa33d6e3090ca80055c5077dc5ba3ffe7a70f3b4411468220c79365846f74bc0",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_FILE_PATH_LENGTH"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:1bab7290e66458241f2d6b0ed4638fe02b50af9b518e7b1cebe0140663227b70",
-            "locator": {
-              "kind": "symbol",
-              "name": "LANE_FILES"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:bde0fa72c47f03a8258f6c9fea01551fdc9b04b4836390b7815e09e28779787b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_focus_problem"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "The one workspace rule and the selection that follows it.\n\nAnchor: `session_workspace`",
       "targets": [
@@ -67,6 +26,92 @@
               "start": 173
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "100": {
+      "note": "The bounds of a selection and the size of the route's thread pool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:355dca75535fa17395c7ec399f12dd4dde61de19ad0f00c6255ecca406d306a3",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "The value handed to the port, and whether it asks a focused question.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:6d36bd9e40b722ac8501d72d82061f75870c8f1e8346d29e69b4367ca76ac281",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesQuery"
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "The one selection value and its refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:7d23597cdb1340f4d27c8a79530c19eb558d1fcb54338382541e99d75926cd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewTreesSelection"
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_request_result"
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "The route: its own executor, the unwired 503, the selection's 400 and the typed 200.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
+            "content": "sha256:d239eb495d1abf807028753628f2814238afd971d5fcf95160e066b7fc2fb52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_review_trees_route"
+            },
+            "path": "mcp/src/agents_remember/serving/review_trees.py"
           },
           "kind": "code"
         }
@@ -317,37 +362,6 @@
               "name": "verify_capsule_binding"
             },
             "path": "mcp/src/agents_remember/serving/eve_runtime_launch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The query's two new questions and `focused`.\n\nAnchor: \"def focused(self) -> bool:\"; \"lane=selection.lane == LANE_FILES,\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:3e395810caa39e8c9281cbcc9aad20fe64670f26a206ed8071a5182a23f64162",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 57
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:b40ec76a228a7ed8e8355a3731edb3ae0f893033f94df32b93802817e7130171",
-            "locator": {
-              "end": 162,
-              "kind": "line_range",
-              "start": 153
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
           },
           "kind": "code"
         }
@@ -820,12 +834,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
             "content": "sha256:2d14c228990d641ea4ff1b198e5e8aee848f5b34057ae51a1fe790f2949c8a10",
             "locator": {
-              "end": 515,
+              "end": 518,
               "kind": "line_range",
-              "start": 510
+              "start": 513
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -833,12 +847,12 @@
         },
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
             "locator": {
-              "end": 307,
+              "end": 308,
               "kind": "line_range",
-              "start": 307
+              "start": 308
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1029,47 +1043,6 @@
               "start": 530
             },
             "path": "mcp/src/agents_remember/serving/review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The bounds and the one selection value the route checks.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:2b503815a29318a562d9b6c64e121c7f5c79e8dffae6ba23ee9f5ee3c040273c",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_ENTRY_INVARIANTS"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:d7a5d56f2d202be893d93cef61700664133b90160bfd77525d2726e55b778334",
-            "locator": {
-              "kind": "symbol",
-              "name": "MAX_INVARIANT_KEY_LENGTH"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:7d23597cdb1340f4d27c8a79530c19eb558d1fcb54338382541e99d75926cd2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesSelection"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
           },
           "kind": "code"
         }
@@ -1358,23 +1331,6 @@
         }
       ]
     },
-    "6": {
-      "note": "The query carries the named invariants to the port.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:6d36bd9e40b722ac8501d72d82061f75870c8f1e8346d29e69b4367ca76ac281",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesQuery"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "60": {
       "note": "**The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.**",
       "targets": [
@@ -1503,7 +1459,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:309800d1e476be02617431a5b949573576643852804a690979848579f42e621b",
             "locator": {
               "kind": "symbol",
@@ -1578,7 +1534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
             "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
             "locator": {
               "kind": "symbol",
@@ -1677,23 +1633,6 @@
         }
       ]
     },
-    "7": {
-      "note": "The route and its three answer classes, with the selection's own 400 since MIK-L31.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d33077436fc607ab7161e9e135316a98b69ddf7",
-            "content": "sha256:d9a7bee7279dae78816c8ffff918d60d0c09d83266f884155c99d16f5d502dbc",
-            "locator": {
-              "kind": "symbol",
-              "name": "register_review_trees_route"
-            },
-            "path": "mcp/src/agents_remember/serving/review_trees.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "70": {
       "note": "**The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.**",
       "targets": [
@@ -1774,7 +1713,7 @@
         },
         {
           "anchor": {
-            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -1816,7 +1755,7 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
+            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
             "content": "sha256:34b105f9d3ba8507204767efe7f0f7b36c6916ed2dc0f0eef4a74d0377356928",
             "locator": {
               "end": 160,
@@ -1851,12 +1790,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
             "content": "sha256:50dd0902d7e386a27104a0410ddb36ccb223390dca13ced0ddf067749c2d82f2",
             "locator": {
-              "end": 303,
+              "end": 304,
               "kind": "line_range",
-              "start": 297
+              "start": 298
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -1869,7 +1808,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
             "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
             "locator": {
               "kind": "symbol",
@@ -1881,12 +1820,12 @@
         },
         {
           "anchor": {
-            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
             "content": "sha256:2f634c82a1409cd47c15e30de2763b76c3b6f9f80f9149d81294376981d7d2f0",
             "locator": {
-              "end": 87,
+              "end": 88,
               "kind": "line_range",
-              "start": 87
+              "start": 88
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1961,24 +1900,6 @@
             "path": "mcp/tests/test_knowledge_review_source_content.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "8": {
-      "note": "The registration after the summary route.\n\nAnchor: `register_review_trees_route`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2d3cec5ba32e04a19a0c0b848a7390cba1c3f931",
-            "content": "sha256:b63f400ac5ad1cbf8de2893803b46f438b3b511273d26af1623465a0acf4b4f5",
-            "locator": {
-              "end": 306,
-              "kind": "line_range",
-              "start": 306
-            },
-            "path": "mcp/src/agents_remember/serving/app.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -2166,6 +2087,24 @@
         }
       ]
     },
+    "89": {
+      "note": "The collaborator that stops the route's child computations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db908909f50f4cbe0f31c507bb7476db7d90e6ef",
+            "content": "sha256:8d6e77bb4fda4c5987361be9ddd701b2dedf303a912722dd2047b97d174e2491",
+            "locator": {
+              "end": 511,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "9": {
       "note": "The one decision point: three modes, the legacy-by-declaration reasons, the named refusals, and the no-resolver refusal.",
       "targets": [
@@ -2228,6 +2167,182 @@
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "The runtime receives the shutdown callable from the collaborators.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb8e66cec1d7d893d10dd198cc0b06fa0d9a00b",
+            "content": "sha256:83024a036949ee5b6e1818f3d0ef269bf21f7f9cce819b5cbd9605fc7120bec9",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Serving shutdown calls it on a worker thread before the background tasks are cancelled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "content": "sha256:3d2f9e05a1937b981cb06170fb6bf772f132579fc2724a4c75e8bbce3c75dcba",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 341
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "The composition root composes one worklist process owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "content": "sha256:fdb5da4fc7af1e5539b9c6605cb56d514cc702763bec151b051b87e84cf34daf",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "It supplies that owner's shutdown to the app.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The tree port passes the process owner to the application.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "content": "sha256:71c4afa2f545f86c4ecffec8ef4f8db48a37b82d2d190cf7a6fd0691442a1102",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "A live read reuses the record of the same trees, and pins before it writes a new record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:f81efb5898ed46aef7da4725cd3907767ca242323a14514e2d4598e87eeb3bde",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "A payload without a tree comparison number is a dataset review, for which no tree read is made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90fd0cb26461e3586539f26266c3725839e62518",
+            "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeComparisonNumber"
+            },
+            "path": "dashboard/src/data/reviewTrees.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "A busy default executor cannot delay a tree read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:20dc6b3df66ec1d9e7ac98996c7191cd23684b8942a209bcd98ebf4ca8ae51f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "98": {
+      "note": "A disconnect, the deadline, shutdown and a queued request each end with the children reaped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "99": {
+      "note": "The lifespan fixture asserts one shutdown call per serving lifetime, off the main thread.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83c70b5dfe825d26cf186634f0ba658370bcf4a9",
+            "content": "sha256:cf670465fb42521c2ceafc405605dc5331eaba586d55e58e64f2a19c2a8d14c3",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/tests/test_serving_observation_loop.py"
+          },
+          "kind": "test"
         }
       ]
     }

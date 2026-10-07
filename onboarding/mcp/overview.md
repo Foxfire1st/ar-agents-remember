@@ -17,6 +17,61 @@ The package now contains strict Paseo configuration, bounded provision/status/st
 
 [overview.md](../overview.md)
 
+## Recorded Reads, Parsed Diffs And The Reviewer's Worklist Processes
+
+Three kernel modules and the dashboard's composition root carry the reviewer's leaf-wide worklist and the two memos
+that keep results computed from Git trees and plain files.
+
+- **The read recorder.** [`kernel/recorded_reads.py`](src/agents_remember/kernel/recorded_reads.py.md) collects, inside
+  a recording block, one row for every file that a recording reader reads outside a Git tree (the SHA-256 of the bytes
+  read, `absent`, or `unreadable (...)`) and one row for every path resolution and existence probe made through it
+  (`resolve:` and `exists:` rows). A key recorded with two identities becomes `conflicting reads`.
+  `changed_observations` checks a kept set against the file system, the selection rows first; byte rows are read only
+  when every selection still gives its recorded answer.
+- **Who records.** The shared readers record through it for every caller: the contract loader
+  (`worktrees/worktree_contract.load_contract`), the ledger loaders (`kernel/memory_ledger.py`), the settings parsers
+  and the root selection of `kernel/coordination_context/`, `kernel/memory_mode.legacy_internal_memory_root`, the task
+  document reader (`tasks/store.read_task_doc`), and the requirement manifest and packet readers
+  (`memory/knowledge/requirement_endpoint.py`, `tasks/task_intent.py`). Outside a recording block each of them records
+  nothing and answers and raises as a plain read does.
+- **Who keeps results with their rows.** The invariant gate's memo (`application/knowledge_gate/memo.py`) and the
+  reviewer's leaf-view memo (`application/review_leaf_view_memo.py`). Neither keeps a result whose rows hold a
+  conflict or an unreadable row.
+- **The worklist processes.**
+  [`kernel/reviewer_worklist_process.py`](src/agents_remember/kernel/reviewer_worklist_process.py.md) starts, shares,
+  bounds, stops and reaps the child processes that compute the reviewer's leaf-wide worklist, and validates what a
+  child returns. A child is `python -P -m agents_remember.application.reviewer_worklist_child` in its own session;
+  request and reply travel through pipes, and the module keeps no cache. `MAX_ACTIVE_CHILDREN` is 2,
+  `MAX_WAITING_COMPUTATIONS` is 8, `DEADLINE_SECONDS` is 60 and `CHILD_DEADLINE_SECONDS` is 65. Identical requests
+  share one child, and the bound counts computations, not the requests that share them. A child whose build identity
+  differs from the parent's is refused, and the refusal asks for a restart of the dashboard.
+- **Parsed diffs.** [`kernel/git_command.py`](src/agents_remember/kernel/git_command.py.md) remains the only module
+  that starts `git`. It declares `PARSED_DIFF_OPTIONS` (`--no-color`, `--no-ext-diff`, `--src-prefix=a/`,
+  `--dst-prefix=b/`), which every caller that parses `git diff` output passes, and `shared_blob_reads()`, a block
+  inside which a blob read from one repository is not read from Git again.
+- **Composition.** `cli/dashboard.py`'s `serving_collaborators` creates one `ReviewerWorklistProcesses` per composed
+  app, passes it to the tree view port and supplies its `shutdown` as `review_trees_shutdown`, which the app's lifespan
+  calls when serving ends.
+
+- A recording block collects the rows of one computation. [246]
+- A kept set is checked with its path selections first. [247]
+- A conflict or an unreadable row is a failed observation. [248]
+- The contract loader reads through the recorder. [249]
+- The ledger loader reads through the recorder. [232]
+- The removed repository memory root is resolved through the recorder. [250]
+- The limits of the worklist processes. [234]
+- One request: digest, join or start, wait, leave. [235]
+- The one command line of a child, in its own session. [236]
+- The build-mismatch failure asks for a dashboard restart. [237]
+- The options every parsed diff passes. [238]
+- The shared-read block of the batched blob reader. [239]
+- The composition root creates the process owner. [240]
+- It supplies the owner's shutdown to the app. [241]
+- The waiting bound counts computations, not the requests sharing them. [242]
+- A build mismatch asks for a dashboard restart. [243]
+- Every parsed diff names its own prefix, colour and driver options. [244]
+- Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
+
 ## 260928-MIK-L37 The Cutover To Text Storage: The Installed Build Governs Converted Memory
 
 `260928-MIK-L37` (MIK-R37). What earlier sections of this overview call "inert until the cutover" is what the code does on converted memory: a
@@ -118,8 +173,8 @@ flag or report-only mode exists.
   - `application/knowledge_gate/` (new, six modules, carded under the application overview): `predicates` (each
     kind's own predicate; rule 2's invariant and family currentness), `gate` (`evaluate_leaf_gate`: probe, tip, memo,
     recompute over the exact trees, decide, validate as a leaf publication against the parent line's memory tip),
-    `memo` (the bounded memo keyed by the exact trees, contract, parent tip, task document, build and the recorded
-    requirement-file reads), `direct` (direct landing's sides and leaf), `landing` (record landing's closed history
+    `memo` (the bounded memo keyed by the exact trees, contract, parent tip, task document and build, and kept with
+    every row the evaluation recorded outside the trees), `direct` (direct landing's sides and leaf), `landing` (record landing's closed history
     and the master's net staleness), `adapter` (`KnowledgeGate`, the port implementation).
   - `worktrees/knowledge_gate.py` (new): the marker probes, `GATE_UNBOUND`, `close_owner_history` (the closeout's own
     `closed: true`, MIK-R07 rule 7), the direct landing's per-generation closing receipts, and the prepared path's
@@ -135,8 +190,8 @@ flag or report-only mode exists.
   - `memory_quality/knowledge_validator/rules_history.py` (new): `R09-history-rows` (every history file's subjects
     resolve; open files, and at leaf publications every file not closed in a base, re-anchor-checked) and the
     report-only `R09-history-rows-merged`; `ValidationContext.leaf_publication` and `GitKnowledgeValidation.leaf_refusal`.
-  - `kernel/recorded_reads.py` (new): the read-set recorder; `requirement_endpoint` and `trace_context` record the
-    files outside any tree.
+  - `kernel/recorded_reads.py`: the read-set recorder. The shared readers of files outside any tree record
+    through it (see "Recorded Reads, Parsed Diffs And The Reviewer's Worklist Processes" above).
   - The worklist: `leaf.py` (`CandidateTrees`, `worklist_over`, the strict maintenance scope, fail-closed probes),
     `compute.py` (`_linked`, the symmetric definition 8; `git_failure`), `observe.py` (`read_failed`,
     `CodeObjectUnavailable`), `code.py` and `memory/conversion/code_objects.py` (`has_blob`), `onboarding_trace.py`,
@@ -711,7 +766,9 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 
 - The content rules and derived reads. [38]
 - The five registered decision rules. [39]
+
 - The owner resolves each requirement endpoint; unresolved is reported. [40]
+
 - The writer reports each endpoint of the records the run touched. [41]
 - A decision is never an export. [42]
 
@@ -875,7 +932,9 @@ no history row delivers as declared, and the curator answers each with a planned
 - The reconciliation module statement. [52]
 - The declaration on the task document. [53]
 - The planned row. [54]
+
 - The task owner's strict lookup and decision answer. [55]
+
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
 

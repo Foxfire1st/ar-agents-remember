@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
         "locator": {
           "kind": "symbol",
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-        "content": "sha256:5fc238082d6f9c1817caf4d5b4b4fa4bee104c59ef337b3f2b41c14b158cf67f",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+        "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
         "locator": {
           "kind": "symbol",
           "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-        "content": "sha256:9cc2e868a37ffcfb41a000cad49c5507e90e465f5e74c0f1c1a702db6cb01911",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+        "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
         "locator": {
           "kind": "symbol",
           "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:1372fb827d05f2e7ae116ce01e04a089e95361b448283f255853c4a322e63bfb",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
         "locator": {
           "kind": "symbol",
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-        "content": "sha256:34825d7db607bcacc9488aac9df989ba6beb051eb63567f829b4811d7b6b0af3",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+        "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
         "locator": {
           "kind": "symbol",
           "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
         "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
         "locator": {
           "kind": "symbol",
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-        "content": "sha256:da403e3c97cb4447a7f4b0fa8f95cfc36b9e581ae5bbb1b05c6124c1e3c486e8",
+        "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+        "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
         "locator": {
           "kind": "symbol",
           "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
@@ -174,45 +174,45 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Real-port resolution and publication rechecks are counted.",
+    "10": {
+      "note": "A held converted base tree is not written again.",
       "targets": [
         {
           "anchor": {
-            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-            "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "Consumed/restored task edits refuse and stable next reads match original input.",
+    "11": {
+      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.",
       "targets": [
         {
           "anchor": {
-            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-            "content": "sha256:da403e3c97cb4447a7f4b0fa8f95cfc36b9e581ae5bbb1b05c6124c1e3c486e8",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "Recovered aggregate failures remain unkept.",
+    "12": {
+      "note": "An incomplete worklist and a diff behind a failed read are not kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-            "content": "sha256:5fc238082d6f9c1817caf4d5b4b4fa4bee104c59ef337b3f2b41c14b158cf67f",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
             "locator": {
               "kind": "symbol",
               "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
@@ -222,12 +222,76 @@
         }
       ]
     },
-    "4": {
-      "note": "Two-size literal filenames retain exact patch bytes with bounded children.",
+    "13": {
+      "note": "An unreadable or absent task input is observed and nothing is kept.",
       "targets": [
         {
           "anchor": {
-            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:9b68592881d68647cf2c066f5a7cdf0871cded3077ac462e1a5d7108e78d26c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An edit restored during the computation is computed twice and answered as inputs_changing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The memo's bounds and keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Three Git questions and the per-file reference answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:1372fb827d05f2e7ae116ce01e04a089e95361b448283f255853c4a322e63bfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_knowledge_diff_asks_git_three_questions_and_answers_what_the_per_file_diff_answered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Literal file names keep exact patches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
             "content": "sha256:b7a65f76462b0b41d6b2c51d49f0851886d05801217ede7711f4051e79cea2e4",
             "locator": {
               "kind": "symbol",
@@ -238,16 +302,81 @@
         }
       ]
     },
-    "5": {
-      "note": "Canonical absence and permission failures remain observed and unkept even if the worklist completes.",
+    "18": {
+      "note": "A read after an edit shows the new content.",
       "targets": [
         {
           "anchor": {
-            "blob": "008d153a297a15bd01f97bebe86337824dfd390a",
-            "content": "sha256:9cc2e868a37ffcfb41a000cad49c5507e90e465f5e74c0f1c1a702db6cb01911",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:91517d08c00e12afdc83030493e8be109661b988f88c2e0c8a7cdfb38aa9c4c0",
             "locator": {
               "kind": "symbol",
-              "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+              "name": "test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module docstring: the port every case enters through and the machine-independent counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:2341181197fb031b5f2fbad9095fb567798d4a69ff05aed42eeb74ef1a7e8cef",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four review ports as the routes call them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:48f9ee9256011b8a8b0332bf8612e863c8141989b64b25128b98eee398b4382e",
+            "locator": {
+              "kind": "symbol",
+              "name": "Ports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "One resolution and the captures of one subject read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:dee8372d4236881bf68aa738ad8acbe6b7eb7eff94d5efd391ab8f75a4522b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The recheck refuses a moved candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:940c00d4ee17489dfe6c436f4085b4200b37bb91538425adcc468fc0927cebb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recheck_still_refuses_a_candidate_that_moved_while_the_review_was_composed"
             }
           },
           "kind": "test"

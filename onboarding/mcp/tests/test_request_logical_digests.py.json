@@ -1,0 +1,119 @@
+{
+  "path": "mcp/tests/test_request_logical_digests.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Equal endpoints share two scans and never cross a request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:ba079e71901918df027b4f62dcbe8a3d7b58400d426c29ec4f97591f2d56a1e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_equal_endpoint_groups_share_two_scans_and_never_cross_request"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:0d1fd2b9cf4e9437cbd98d0a4621a507b23e5066b6e0219986d330c84d2e94d2",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A WAL commit changes the visible inputs even when the main file does not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:71424af744baa03c5b6e86c36f42de3c2fe4a2bb1a579ecf04a573a9671b6279",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wal_commit_changes_visible_inputs_even_when_main_file_does_not"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:140430377dd2a7a346cd892dbdbf90061753ac7d5a072ccfed6a35bc110bb6d6",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Identical endpoint bytes still do not share a scan.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:fb108ef47c4eca6d67770673ba0a772782a91a4d4fe1ddf005b5967dbcca4259",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_endpoint_bytes_still_do_not_share_a_scan"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:675c23e94d22522b86e02d9fbd05d6e611d8807571fd5c13f119baa0224ef793",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A change-and-restore during the scan never stores the old inputs' result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:2633127bd37fd89d92fbd509678d4fd35d6a0435a094396afe176241e6bcb626",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_change_and_restore_during_scan_never_stores_result_for_old_inputs"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db68a52a51d2144dc9907ed09061845a1c07871f",
+            "content": "sha256:ebbb1f1671b001a9272ee9bc9f0ae90757984bab21f609ec20c105ca16f8517a",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

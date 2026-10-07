@@ -7,23 +7,14 @@
     ],
     "justification": "A union merge that was trusted unchecked could land a catalog that holds a line twice, the line of a deleted file or two interleaved rows; without the union, every sync of an open leaf stops on the same lists and is resolved by hand."
   },
-  "applicability": "Merges and stash applications of mcp/tests/test-evidence-lanes.toml and mcp/tests/evidence-lifecycle.toml in a worktree whose .gitattributes holds the two merge=union lines, including the reapply step of worktree_sync.",
+  "applicability": "Merges and stash applications of mcp/tests/test-evidence-lanes.toml and mcp/tests/evidence-lifecycle.toml in a worktree whose .gitattributes declares merge=union for both.",
   "conditions": [
     "Git reads the attribute from the worktree in which the merge or the stash application runs.",
-    "The sentence about interleaved rows is added only when the file fails to parse as TOML, not when it is missing or unreadable.",
-    "A duplicated line and an unordered list are refused by the canonical-form findings of the loaders.",
-    "A manifest without a [files] table is refused by lane_files in the lane loader, at the start of a test run and in the command; a [files] table that omits integration or stress-durability is refused by the lane loader and at the start of a test run, and the command leaves it to the validator.",
-    "A line deleted on one side can return when the other side changed the lines next to it. The loaders refuse it when its file or its consumer is gone: the lane loader reports a lane member whose file does not exist, and the lifecycle loader reports a missing consumer; both name the write command, which removes the line. One case names no command: a row whose every listed consumer is gone and for which the source tree shows no consumer; its finding says that the command does not repair the row.",
-    "A row that a union brings back for a retired artifact is refused by the lifecycle loader as a cataloged artifact that does not exist; the command removes no row, so the row is deleted by hand.",
-    "The readers are one shared reader (read_catalog, parse_catalog and lane_files in catalog_canonical.py); the command reads the files itself because it also refuses CRLF.",
-    "The lane loader runs at every test collection. The lifecycle loader runs in the validator command, in the selection graph and in the test of the real catalogs that a default unit run includes.",
-    "A worker's collection refusal is kept under the WORKER_REFUSAL key in the worker's output by pytest_collection and raised once by pytest_testnodedown, so a parallel run ends with the worker's message and exit code 4."
+    "The sentence about interleaved rows is the recovery the loaders give a file that does not parse."
   ],
   "exclusions": [
     "A merge in a worktree whose .gitattributes does not hold the two lines; the attribute does not apply there.",
-    "Every other file of the repository, which Git merges with its default driver.",
-    "A returned line that is valid for the loaders, such as a removed [[override]] row, is not refused.",
-    "A side whose catalogs are not in canonical order: the union keeps both orders and doubles the rows, which the lifecycle loader refuses as duplicate entries and the command refuses to repair."
+    "Every other merge Git performs for this repository."
   ],
   "id": "INV-K0CS85",
   "origin": {
@@ -38,9 +29,9 @@
     "leaf": "260928-MIK-L51",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Git merges the two test catalogs by union, so two changes that add lines to the same list merge and reapply without an unmerged path, and the result is checked by both loaders before it is used. A line that both sides added can remain twice and is then refused as a duplicate. The line of a deleted file that the union brings back is refused by both loaders, with the write command. A result that no longer parses is refused by both loaders, by the write command, by the start of a test run, by the helper test and by test selection, each with the sentence that two rows may have been interleaved and that the file is restored from the landed commit; a lane manifest without a [files] table is refused by name by the lane loader, the write command and the start of a test run, never with an internal error. One whose [files] table omits the lanes integration and stress-durability is refused by name by the lane loader and at the start of a test run; the command refuses only the missing [files] table and leaves a table that lacks lanes to the validator. A refusal raised while a worker of a parallel run collects is handed to the controller and ends the run once with the worker's message and exit code 4, as a run without workers does.",
+  "statement": "Git merges the two test catalogs by union, so two changes that add lines to the same list merge and reapply without a conflict, and a merge that interleaves rows is refused with the recovery sentence.",
   "status": "proposed",
   "supersedes": []
 }

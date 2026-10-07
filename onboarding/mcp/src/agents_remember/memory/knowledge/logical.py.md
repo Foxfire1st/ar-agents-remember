@@ -32,7 +32,7 @@ published database and a captured memory tree.
 - `logical_body` returns the exact structure the digest seals:
   `{body_version, schema, user_version, schema_fingerprint, tables}`, where `tables` maps **every** table of the
   selected generation's manifest to its rows — an empty table is present as an empty list, so a table that appears
-  or disappears is a difference. `logical_digest` hashes that body through the kernel canonical encoder.
+  or disappears is a difference. `logical_digest` hashes that body through the kernel canonical encoder. Within one synchronous review request the digest is computed through `digest_in_request`, which reuses a stored answer only for the same connection-visible image and generation and never retains a failed or unreadable read.
 - **The body has one constructor, and the portable export uses it rather than re-assembling the structure.**
   `logical_body` scans the database and delegates the structure itself to `logical_body_from_tables`, which
   wraps an **already-encoded** table mapping in `body_version`/`schema`/`user_version`/`schema_fingerprint` — all

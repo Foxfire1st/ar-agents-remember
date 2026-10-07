@@ -10,16 +10,17 @@
   "applicability": "The parent process's bounded memo of live leaf-wide knowledge-diff/worklist parts and their successful return.",
   "conditions": [
     "Both knowledge sides are readable, the worklist is complete, and all aggregate/blob operations succeeded on their first read.",
-    "Every external consumed file is recorded; repeated inconsistent reads, missing required task reads and changed-and-restored task inputs invalidate successful return/storage.",
-    "Memo keys include both candidates, contract digest, parent memory tip, leaf memory HEAD, task input identities, build and comparison base/conversion trees; kept dependencies are reread before reuse.",
+    "The files the computation reads outside the Git trees through the recording readers (task documents, the contract, settings files, requirement manifests and packets, ledgers) are recorded, in the worklist's child process as in the parent process, and the child's rows reach the parent with its reply. The path resolutions and existence probes recorded are those the request already binds; the pre-request context selections named in the exclusion below are not recorded rows. A row read at two identities, an unreadable row, a task document recorded as absent, and a task input that was changed and restored while it was read each prevent the view from being kept.",
+    "Memo keys include both candidates, contract digest, parent memory tip, leaf memory HEAD, task input identities, build and comparison base/conversion trees; kept dependencies are rechecked before reuse, path selections before file bytes.",
     "The memo holds at most four views for at most 900 seconds, in process only.",
     "Canonical task absence and unreadable observations retain failure identities and remain ineligible for memo reuse until a stable readable input is observed."
   ],
   "exclusions": [
     "No composed subject/default response is cached on the server; every live request still captures the worktrees.",
     "Recorded/closed comparisons do not enter this live parent memo.",
-    "Heavy first-miss execution and original <=1.6 s small / <=2.0 s L37-sized concurrent-click budgets are R42 obligations; this invariant supplies no performance acceptance.",
-    "A degraded honest recovery response may be returned after failed Git reads, but it is never a complete memo entry."
+    "A task document that the computation did not open is not an input of the view: its absence from the recorded rows prevents nothing. This invariant supplies no performance acceptance.",
+    "A degraded honest recovery response may be returned after failed Git reads, but it is never a complete memo entry.",
+    "The three pre-request context selections -- settings presence (`contract_context`), the code root (`_resolve_code_repository`) and the task root (`resolve_terminal_leaf_doc`) -- are not recorded rows and are not inputs of the memo key: a change to one of them without a change of an observed tree is noticed only when a tree changes or the dashboard restarts, and two of the three are older than the leaf. This is the accepted B-5 limitation (architect ruling of 2026-10-07, item 3; no equivalence proof and no caller edit outside this leaf)."
   ],
   "id": "INV-5M9WY3",
   "origin": {
@@ -34,7 +35,7 @@
     "leaf": "260928-MIK-L40",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A result that involved any failed or timed-out read is never kept, including an aggregate read that failed before later recovery reads succeeded.",
   "status": "proposed",

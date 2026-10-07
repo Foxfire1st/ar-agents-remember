@@ -456,7 +456,9 @@ Mounting the collection in the browser pane is `ICR-R24`'s and the A06/A07/A24 j
 - **The display's tested search value, the two-sided and one-sided movements, and the basis sentences that reserve "head" for a row that is one.** [20]
 - **The reach: the head rule called from ICR-R07, the whole-line read, and the owner chosen by the kind of revision.** [21]
 - The route association, with the existence question asked before the route question. [22]
+
 - **The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.** [23]
+
 - **The adapter's one call, and the pane that composes the traversal's own address view.** [24]
 
 ## 260921-ICR-L9 The Subject Catalogue Is Enumerated From Both Snapshots, And Compare-To-Earn-A-Row Is Deleted
@@ -1190,9 +1192,76 @@ which the checklist consults only after the raw status reaches `ready-for-closeo
 this master has ever reached it. Both statements are true; stating only the first would overstate
 today's reach and stating only the second would understate the fix.
 
-## Live reviewer reuse and exact actual inputs
+## The Reviewer's Leaf-Wide View: Child Computation, Memo And Recorded Inputs
 
-The complete reviewer operation shares one candidate resolution with owner records/composition. The comparison confirms exact held converted bases before reuse. The leaf-wide worklist consumes held trees and is governed by [review_leaf_view_memo.py](review_leaf_view_memo.py.md), the one bounded parent-process memo whose actual task/dependency reads and failed-read completeness control successful return/storage. Canonical JSON-byte observation belongs to tasks/store, and exact source capture remains the shared worktree owner. Batched knowledge patch sections bind literal indexed paths; no second worklist, per-file patch owner, composed answer cache or review copy is introduced. Heavy first computation/process isolation and concurrent-click proof remain R42 obligations.
+The leaf-wide view of a live comparison holds the knowledge diff, the currentness of each side and the worklist view
+([review_tree_knowledge.py](review_tree_knowledge.py.md)).
+
+- **One worklist implementation, run in a child process.** `_worklist_view` hands the comparison's captured trees to
+  `isolated_leaf_worklist` ([reviewer_worklist_child.py](reviewer_worklist_child.py.md)), which sends one request to
+  the kernel's process owner (`kernel/reviewer_worklist_process.py`). The child runs `leaf_worklist`
+  ([knowledge_worklist/leaf.py](knowledge_worklist/leaf.py.md)) over the trees it is given: it captures no worktree,
+  pairs no memory commit, reads an unconverted before memory from the converted tree the comparison holds, and persists
+  nothing. The serving process never computes the worklist itself. A failure of the child, of its transport or of its
+  reply is a refusal that names the failure; no kept answer and no computation in the serving process stands in for it.
+- **Sharing and bounds.** Requests with the same request digest share one child while it runs, and each gets its own
+  copy of the reply. At most `MAX_ACTIVE_CHILDREN` (2) children run; other computations wait first in, first out. A
+  request that would start a computation while `MAX_WAITING_COMPUTATIONS` (8) are running or waiting, and a computation
+  that still waits for a child at the request's deadline (`DEADLINE_SECONDS`, 60), are refused with `reviewer_busy`. A
+  request that joins a computation in flight is not counted by the bound.
+- **Lifetime of a child.** The child leads its own process group. The serving process stops and reaps it when its last
+  requester leaves, at the deadline and at serving shutdown. The child ends itself, with its Git children, when the
+  serving process dies or its own alarm (`CHILD_DEADLINE_SECONDS`) fires.
+- **Recorded inputs.** The computation records the files it reads outside the Git trees through the kernel's recording
+  readers (task documents, the contract, settings files, requirement manifests and packets, ledgers), and the path
+  resolutions and existence probes that select them (`kernel/recorded_reads.py`). The child returns these rows with its
+  reply, and `isolated_leaf_worklist` replays them into the caller's recording.
+- **The memo.** [review_leaf_view_memo.py](review_leaf_view_memo.py.md) keeps the knowledge diff and the worklist view
+  of a live comparison, at most 4 entries for at most 900 seconds, under a key of exact identities and together with
+  the recorded rows. A kept view is served only while every recorded row still holds: path resolutions and existence
+  probes are repeated first, and files are hashed again only when those hold. A view depends on what its computation
+  read. A task document that the computation did not open is not an input, so a write to another leaf's document does
+  not discard the view. The memo keeps no composed answer and nothing on disk.
+- **Inputs that move while the view is computed.** `_leaf_wide_parts` computes once more when a recorded input moved
+  (`_COMPUTE_ATTEMPTS` is 2). The refusal `inputs_changing`, which names the inputs, is answered when the two
+  computations' attempts do not match — a physical rewrite is not required, and the first attempt may be shared from
+  a computation that began before this request. Nothing is kept from a computation whose inputs moved, whose rows hold a
+  failed observation, or that ended in a process failure.
+- **Concurrent first reads.** [review_tree_comparison.py](review_tree_comparison.py.md) records a new comparison under
+  one lock per process, and its pin creation takes a ref that already names the same tree as success. Readers of one
+  dashboard that open the same new comparison at the same moment therefore record it once, under one number, and get
+  equal answers.
+- **Git configuration.** Every `git diff` whose output the reviewer parses names its own prefixes and switches colour
+  and external diff drivers off (`PARSED_DIFF_OPTIONS` in `kernel/git_command.py`; the blob diff of
+  [knowledge_worklist/code.py](knowledge_worklist/code.py.md) pins the same). A user's Git settings for prefixes,
+  mnemonic prefixes, an external diff driver and forced colour change no answer.
+- **The knowledge diff.** It asks Git three questions whatever the number of changed files: the raw listing, one patch
+  of the two trees and one batch of blobs. Each section of the patch is bound to its listed path.
+
+- The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept. [409]
+- A live comparison's worklist comes from the isolated computation over the captured trees. [410]
+- The parent side: one request to the process owner, the reply's rows replayed, an error raised. [411]
+- The child side: the one worklist implementation over the given trees, inside a recording block, nothing persisted. [412]
+- The limits: two children, eight computations, sixty seconds, and the child's own deadline. [413]
+- Joining a computation in flight; the bound applies only to a new one. [390]
+- The child's handlers, alarm, parent-death signal and parent check. [391]
+- The memo's key of exact identities. [392]
+- A kept view is served only while its recorded rows hold. [393]
+- Which inputs moved: a read task document that differs or is unnamed, and every recorded row that changed. [394]
+- Recorded rows are rechecked with path selections first. [395]
+- Recording a new comparison takes turns inside one process. [396]
+- One pin: the same tree is success, another tree is refused, a held lock is retried. [397]
+- The options every parsed diff passes. [398]
+- Three Git questions for the knowledge diff. [399]
+- The child's answer equals the in-process worklist, with its source reads, at two result sizes. [400]
+- Transport failures are explicit, not kept, and the next read recovers. [401]
+- Identical requests share one child and others wait for one of two slots. [402]
+- The waiting bound counts computations, not the requests sharing them. [403]
+- A killed dashboard takes the child and its Git process with it. [404]
+- Four concurrent first reads answer alike from one child. [405]
+- The reviewer's diff reads do not depend on the user's Git configuration. [406]
+- A kept view ignores every task document it did not read. [407]
+- A task document that changes while the view is computed makes it compute again. [408]
 
 ## Purpose
 
@@ -2765,14 +2834,18 @@ one measurement through one delimiter-safe interface (NUL-delimited `--raw -z`/`
 than two implementations that could disagree about which paths changed.
 
 - **The route's new owner of the source half: the inventory's own statement of why it is measured from the pair, why the Git interface is delimiter-safe, and why a failed measurement is a state rather than an empty list.** [244]
+
 - **The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.** [245]
+
 - **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
 - **The source pane: the inventory first and unconditionally, then the comparison's own attribution facts carried verbatim or stated as not measured.** [247]
 - **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [248]
 - **The task-context entry: no comparison faked, the inventory rendered in all three states, the candidate re-checked before publication, and the reason it states — including an absent dataset half.** [249]
 - **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.** [250]
 - **The declaration of the inventory's own limit at the top level of the response.** [251]
-- **The comparison's expansion seam is now a delegation, so this route has one implementation of "what did these two trees change".** [252]
+
+- **The comparison's expansion seam is a delegation, so this route has one implementation of "what did these two trees change".** [252]
+
 - **The cases that measure the route's new entry and the source half through the real composition and the real route.** [253]
 
 
@@ -3300,7 +3373,9 @@ onboarding refresh gate on history files for converted memory trees (the rule it
 - **Inert before MIK-R37:** every unconverted leaf keeps today's gate unchanged.
 
 - The kind's registration and its four fields. [286]
+
 - The sides, refusing mixed formats. [287]
+
 - The curator run's dispatch between the history-file gate and today's gate. [288]
 - The closeout validator's dispatch. [289]
 - The cache path shared by the worklist and the gate. [290]
@@ -3616,14 +3691,15 @@ memory is unconverted — every production leaf before MIK-R37 — take exactly 
 Four new modules, each carded and governed by this overview:
 
 - [`review_tree_comparison.py`](review_tree_comparison.py.md): capture, pin (`refs/ar/review/<task-directory>/<leaf>/<n>`,
-  create-only, before publication) and record (`notes/reports/review-comparisons/<leaf>/<n>.json`) the four
-  trees; reuse a record whose trees match, so a repeat read writes nothing (Q5, review F6); the converted base
-  written as a Git tree (R24 rule 7); reopen from tree ids with `unavailable-history` for memory **and** code trees
-  (review F4); `tree_resolution` for the landed composition.
+  create-only, before the record is written) and record (`notes/reports/review-comparisons/<leaf>/<n>.json`) the four
+  trees; reuse a record whose trees match, so a repeat read writes nothing; a pin that already names the same tree is
+  success, and recording takes turns inside one process; the converted base written as a Git tree; reopen from tree
+  ids with `unavailable-history` for memory **and** code trees; `tree_resolution` for the landed composition.
 - [`review_legacy_comparison.py`](review_legacy_comparison.py.md): a closed leaf of a converted repository with no
   tree record: `legacy-unavailable` knowledge sides with the code sides kept, or a committed four-tree comparison.
 - [`review_tree_knowledge.py`](review_tree_knowledge.py.md): `GET /api/review/trees`'s port — the Git diff of the
-  memory trees grouped by record and by source path, MIK-R03 currentness per side, and the MIK-R08 worklist view.
+  memory trees grouped by record and by source path, currentness per side, and the worklist view, which for a live
+  comparison is computed in a child process and kept in a bounded memo (see "The Reviewer's Leaf-Wide View" above).
 - [`review_artifact_cleanup.py`](review_artifact_cleanup.py.md): the archive hook (rule 5, D17), bound as the
   worktree layer's `ReviewArtifactCleanupPort` by [`worktree_services.py`](worktree_services.py.md).
 
@@ -3651,10 +3727,14 @@ helpers) and [`review_comparison_freeze.py`](review_comparison_freeze.py.md) (a 
   (4) a tree Git can no longer produce is reported `unavailable-history`, never substituted; (5) unconverted memory
   reads are unchanged. All five are realized on this route.
 
+
 - Capture, pin and record a live leaf's four trees; none for an unconverted leaf. [320]
+
 - The review-ref namespace is the task directory name. [321]
 - Reopen from tree ids, naming every tree Git can no longer produce. [322]
-- The tree view: diff, currentness, worklist; since MIK-L31 also the focused cards' entries when invariants are named. [323]
+
+- The tree view: diff, currentness, worklist, and the focused cards' entries when invariants are named. [323]
+
 - The archive hook, confined to the task. [324]
 - The live pair dispatches a converted leaf to trees. [325]
 
@@ -4061,8 +4141,11 @@ following the `knowledge_worklist/`, `knowledge_currentness/` and `knowledge_rea
   parent tip, memo, recorded evaluation), `judge` and `validation_findings` (as a leaf publication, against the parent
   line's memory tip).
 - [`knowledge_gate/memo.py`](knowledge_gate/memo.py.md): the bounded memo (16 verdicts, 900 s) keyed by the exact
-  trees, contract bytes, parent tip, task document and build, reusing a verdict only while every recorded requirement
-  and settings file hashes the same; incomplete runs and Git failures are never kept.
+  trees, contract bytes, parent tip, leaf memory `HEAD`, task document and build. A verdict is reused only while every
+  recorded row still holds: each recorded path resolution and existence probe is repeated first, and the recorded
+  files are hashed again only when those give the recorded answers, so a requirement packet whose locator is
+  retargeted is a miss also when the new target holds identical bytes. Incomplete runs, Git failures and verdicts
+  behind an unreadable or conflicting read are never kept.
 - [`knowledge_gate/direct.py`](knowledge_gate/direct.py.md): direct landing's sides (K_B the series head, B its
   trailer) and its leaf (the one open history file).
 - [`knowledge_gate/landing.py`](knowledge_gate/landing.py.md): record landing's closed history file and the master's
@@ -4084,7 +4167,7 @@ Touched modules:
   `EntryObservation.read_failed` marks a Git failure, while `CodeObjectUnavailable` and an unavailable grammar stay
   simply unverifiable (review R2-3, R3-2);
 - [`knowledge_worklist/onboarding_trace.py`](knowledge_worklist/onboarding_trace.py.md): K_C may be a Git tree;
-  `trace_context` records its settings reads;
+  the settings reads of `trace_context` are recorded by the probe, the settings parsers and the resolver it calls;
 - [`prepared_certification.py`](prepared_certification.py.md): the prepared path refuses on converted memory (gap 3);
 - [`review_lane_classification.py`](review_lane_classification.py.md) (docstring, F8) and
   [`review_tree_entries.py`](review_tree_entries.py.md) (a `has_blob` Git failure is `unavailable`).
@@ -4117,7 +4200,9 @@ Touched modules:
 - The memo's key and reuse. [366]
 
 - The curator publication counts each gate finding once. [367]
+
 - The worklist over the exact candidate, shared with direct landing. [368]
+
 - The symmetric linkage. [369]
 
 ## 260928-MIK-L33 Change-Kind Facts For The Reviewer's Family Tree, Computed Here Over The Lane

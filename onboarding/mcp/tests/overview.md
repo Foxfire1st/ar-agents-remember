@@ -107,6 +107,19 @@ the line of a file that no longer exists and a file that does not parse. The lan
 every collection, and the validator command (the same command without `--write`) loads both
 catalogs.
 
+## Reviewer operation and shared capture proof cards
+
+- [test_review_read_latency.py](test_review_read_latency.py.md) drives the dashboard operation and protects exact supplied trees, canonical consumed task reads, bounded/failure-sensitive memo reuse and literal batched patches. Its counts of resolutions, captures and Git children do not depend on the machine.
+- [test_reviewer_worklist_process.py](test_reviewer_worklist_process.py.md) (integration lane) proves the isolated worklist computation with real child processes: the child's answer equals the computation in the calling process, every transport failure is an explicit refusal that is not kept, identical requests share one child and the bound counts computations, a child and its Git processes do not outlive their requests or the dashboard, reviewer diffs do not depend on the user's Git configuration, tree reads run on their own threads, and creating a comparison pin is idempotent.
+- [test_reviewer_worklist_reads.py](test_reviewer_worklist_reads.py.md) (integration lane) proves what the leaf-wide view and the invariant gate record as read and how a kept result follows those reads: task documents, settings, contracts, requirement packets, root directories and a ledger are changed under real child processes, and a kept view depends only on the task documents it read.
+
+- The leaf-wide view captures nothing itself and is computed once per comparison. [498]
+- The child's document, reads and body equal the computation in the calling process at two sizes. [499]
+- The waiting bound counts computations, not the requests sharing them. [500]
+- A kept view ignores every task document it did not read. [501]
+- The gate's warm pass becomes the refusal when a packet locator is retargeted. [497]
+- [test_worktree_candidate_capture.py](test_worktree_candidate_capture.py.md) protects the shared capture's exact state matrix, copied index time, trust flags, derived exclusions, conversion-rule boundary and real-index isolation.
+
 ## Where To Start
 
 Module names begin with the area they test. The table names a starting module for concerns that

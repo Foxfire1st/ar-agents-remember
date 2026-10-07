@@ -18,21 +18,59 @@ Serving adds native role routes beside retained MIK review/read ports, with exac
 
 [mcp/overview.md](../../../overview.md)
 
-## 260928-MIK-L32 The Tree View Route Answers The Unexplained-Changes Lane
+## The Tree View Route
 
-**Route meaning extended (MIK-R32).** [`review_trees.py`](review_trees.py.md) gains two focused questions: `lane=files`
-(the lane's two destinations, `Unexplained changes` and `Unknown attribution`, with every measured path's bucket) and
-`file=<path>` (one changed path's per-file classification). Each is one question, so at most one of `invariants`,
-`lane` and `file` is given; `lane` other than `files`, an empty `file`, a `file` longer than `MAX_FILE_PATH_LENGTH`
-(4,096 characters), or two questions at once is a 400 whose `nextAction` names the three. `ReviewTreesQuery.focused`
-tells the application to reopen the comparison for every focused read. Every admitted `file=` value answers a typed
-200: a path the comparison did not change is `refused` with `source_content_unresolved`, its `offending_input` clipped
-to the refusal's 1,024-character field by the application (review R1 F2, ruling 2026-09-30T13:07:38). No route was
-added; the entry's count travels on the landed changed-intent summary route (`attribution`), and a dataset review
-never calls this route.
+[`review_trees.py`](review_trees.py.md) is the transport of the reviewer's tree view,
+`GET /api/review/trees?repo&master&leaf[&comparison=<n>][&history=recorded]`. It holds no review logic: it checks the
+query, calls the port and serializes the typed result once.
 
-- The lane's bounds and the one-question rule. [1]
-- The query's two new questions and `focused`. [2]
+- **The question.** The task context is `repo`, `master` and `leaf`, never a path. `comparison=<n>` names a recorded
+  comparison and `history=recorded` the leaf's latest record. At most one focused question is allowed:
+  `invariants=<id,id,...>` for the realization and proof entries of those invariants, `lane=files` for the
+  unexplained-changes lane, or `file=<path>` for one changed path's classification. Without one the answer is the
+  leaf-wide view. The parameters arrive as one `ReviewTreesSelection`, whose `problem()` refuses a history other than
+  `recorded`, a negative comparison number, more than `MAX_ENTRY_INVARIANTS` (500) names, a name longer than
+  `MAX_INVARIANT_KEY_LENGTH` (64), a lane other than `files`, an empty file path or one longer than
+  `MAX_FILE_PATH_LENGTH` (4096), and more than one focused question.
+- **The answers.** Every typed answer of the port is a 200: `trees`, `not-converted` and `refused`, with the owner's
+  refusal in the body. A refused selection is a 400 with `status: invalid-request`. A process composed without the port
+  answers 503 with `status: unavailable`.
+- **The wiring.** [`_app_common.py`](_app_common.py.md) declares `ServingCollaborators.review_trees` and
+  `review_trees_shutdown`. [`app.py`](app.py.md) registers the route after the review summary route and before the
+  knowledge reader route, and copies `review_trees_shutdown` into the runtime. `cli/dashboard.py` binds the port to
+  `application/review_tree_knowledge.read_review_trees` with the worklist process owner it composes, and supplies
+  that owner's `shutdown`.
+- **The route's own threads.** `register_review_trees_route` creates one `ThreadPoolExecutor` of
+  `REVIEW_READ_THREADS` (16) threads for the route. The handler is a coroutine; the blocking port runs on those
+  threads, never on the event loop and never on the loop's shared default executor, so background work that fills the
+  default executor cannot delay a tree read.
+- **Cancellation and arrival.** `_request_result` binds a cancellation event and the request's arrival time to the
+  call (`worklist_request`), so the deadline of a worklist computation runs from the arrival. While the port runs,
+  the coroutine checks every 0.1 seconds whether the client has disconnected and sets the event when it has. When the
+  coroutine itself is cancelled it sets the event, waits for the worker and raises the cancellation again. A worklist
+  computation that no request needs any more is thereby stopped and its child process reaped before the request ends.
+- **Shutdown.** [`_app_lifespan.py`](_app_lifespan.py.md) calls the runtime's `review_trees_shutdown` first when
+  serving ends, on a worker thread, before it cancels its background tasks. This stops and reaps every worklist child.
+- The route is GET-only. A read of a live comparison may create the Git refs that pin the comparison's uncommitted
+  candidates and its record under the task's reports; a repeated read of the same trees writes nothing. A dataset
+  review never calls this route.
+
+- The bounds of a selection and the size of the route's thread pool. [100]
+- The value handed to the port, and whether it asks a focused question. [101]
+- The one selection value and its refusals. [102]
+- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event. [103]
+- The route: its own executor, the unwired 503, the selection's 400 and the typed 200. [104]
+- The collaborator that stops the route's child computations. [89]
+- The runtime receives the shutdown callable from the collaborators. [90]
+- Serving shutdown calls it on a worker thread before the background tasks are cancelled. [91]
+- The composition root composes one worklist process owner. [92]
+- It supplies that owner's shutdown to the app. [93]
+- The tree port passes the process owner to the application. [94]
+- A live read reuses the record of the same trees, and pins before it writes a new record. [95]
+- A payload without a tree comparison number is a dataset review, for which no tree read is made. [96]
+- A busy default executor cannot delay a tree read. [97]
+- A disconnect, the deadline, shutdown and a queued request each end with the children reaped. [98]
+- The lifespan fixture asserts one shutdown call per serving lifetime, off the main thread. [99]
 
 ## 260928-MIK-L29 The Knowledge Reader Route, A Port Of Its Own
 
@@ -51,37 +89,6 @@ their bodies byte for byte (the unconverted comparison, base against worktree).
 
 - The query, the port and the GET handler with its three answer classes. [3]
 - The collaborator port and the registration before the static mount. [4]
-
-## 260928-MIK-L31 The Tree View Route Answers The Focused Cards
-
-**Route meaning extended (MIK-R31).** [`review_trees.py`](review_trees.py.md) gains `invariants=<ids>`
-(comma-separated identities, as the landed review payload addresses invariants): a query that names invariants is
-answered with only those invariants' realization and proof entries, on both code sides with their bounded excerpts,
-for the reviewer's focused expression cards (ruling 2026-09-30T05:36:19 Q2, the on-demand read; the leaf-wide view
-carries no entries, because every excerpt leaf-wide measured 637 KB). The three query parameters now arrive as one
-`ReviewTreesSelection` value whose `problem()` answers the 400: `history` other than `recorded`, a negative
-`comparison`, more than 500 named invariants, or any key longer than 64 characters (review F10, 2026-09-30T06:10:21).
-The client pins every read to the payload's own comparison number (review F11). The mixed key casing carried from L25
-(review F9) is settled: the application re-keys the embedded documents, so the body is snake_case throughout. No
-route was added, and a dataset review never calls this route.
-
-- The bounds and the one selection value the route checks. [5]
-- The query carries the named invariants to the port. [6]
-
-## 260928-MIK-L25 The Tree View Route, A Fifth Reviewer Port
-
-**Route meaning extended (MIK-R25).** One new route module, [`review_trees.py`](review_trees.py.md) (carded, governed
-here): `GET /api/review/trees?repo&master&leaf[&comparison=<n>][&history=recorded]`, transport only. Every typed
-answer is a 200 (`trees`, `not-converted`, `refused`); a process composed without the port answers a named 503; a
-bad `history` or negative `comparison` is a 400. [`_app_common.py`](_app_common.py.md) declares
-`ServingCollaborators.review_trees`, [`app.py`](app.py.md) registers the route right after the summary route and
-before the static mount, and `cli/dashboard.py` binds the port to `application/review_tree_knowledge.read_review_trees`.
-The landed reviewer routes keep their shapes: for a converted leaf only their data source changed, to the derived
-indexes of the memory trees (rule 6). A read may pin a live candidate (rule 1), idempotently (ruling 2026-09-29T22:22:37
-Q5, review F6). The body's mixed key casing is carried to L31 (review F9).
-
-- The route and its three answer classes, with the selection's own 400 since MIK-L31. [7]
-- The registration after the summary route. [8]
 
 ## 260921-ICR-L32 The Taskless Seat Set Gains The Curator
 

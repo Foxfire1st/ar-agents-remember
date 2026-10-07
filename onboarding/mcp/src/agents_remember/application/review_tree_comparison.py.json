@@ -3,7 +3,43 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+        "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+        "content": "sha256:5384e73d313bfb8f932bdf80aa8e5434ae98d617fe5f69c7633e6b70da734f89",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pin"
+        }
+      },
+      "id": "RLZ-34NP4B",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Pins each candidate that has a ref and, when one is refused, deletes only the pins this call created and returns a refusal that names the repository and the ref.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+        "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record"
+        }
+      },
+      "id": "RLZ-9ZHMCX",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Serializes recording with one lock per process, so readers of one dashboard that open the same new comparison take turns and the second finds the first's record.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
         "content": "sha256:833b6c7b9b5ee36958092bf2b6641cbdce36cd96a044cee7a044edbe68fa33df",
         "locator": {
           "kind": "symbol",
@@ -21,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+        "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
         "content": "sha256:52cbaeb321e77131eed486043cb704cee4ed27fce14ecc6d859a5b6b60d0d988",
         "locator": {
           "kind": "symbol",
@@ -36,26 +72,51 @@
       },
       "rationale": "Admits a recorded converted tree only when memory commit, conversion version and code commit match and Git confirms that exact object is a tree.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a6be25fd8ae64b86004f4bdf43cb0b23b50d6e4c",
+        "content": "sha256:edebee0b02d373e6fb29160dd1f042c38f31ad35f027af6a106eade5c15801b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_pin"
+        }
+      },
+      "id": "RLZ-W2H9EX",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Creates one ref without moving anything: a ref that already names the tree is success and is not counted as created, a ref that names another tree is a refusal, and a held lock or a concurrent creation is retried a bounded number of times.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+        "content": "sha256:f81efb5898ed46aef7da4725cd3907767ca242323a14514e2d4598e87eeb3bde",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded"
+        }
+      },
+      "id": "RLZ-W6SNEZ",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Reuses the latest record of the same four trees; otherwise numbers the comparison, pins its candidates and only then writes the record, and returns a record that exists under that number with the same trees instead of writing.",
+      "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "The comparison and each memory side's index, with the live flag and the reopened code sides.",
+    "22": {
+      "note": "The comparison, each memory side's index, the live flag and the code sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:3e81a6d220d71abaf1eec9b1c8b62084967a2c3cfd40ddab7c166cc73196eb71",
-            "locator": {
-              "kind": "symbol",
-              "name": "TreeKnowledge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
             "content": "sha256:02ab858c320c99e56cbd04766b9e944ead5ccc42ed0d56ef895873386681d6ce",
             "locator": {
               "kind": "symbol",
@@ -66,23 +127,140 @@
         }
       ]
     },
-    "10": {
-      "note": "An unconverted memory base read as its conversion, written as a Git tree.",
+    "23": {
+      "note": "A tree comparison applies when the worktree or the official line holds the layout marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "8afd1e5b7a434f08af24b89d5c8657e633af31a2",
-            "content": "sha256:06eead582cdd9bce73b3ac9f555bb947b1d177a4fc49577c46ab99ab32fba5be",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:dcf2ea39d4be931bdd3da6b41c9466f0e1ce435180bbe3962152899a4c948d01",
             "locator": {
               "kind": "symbol",
-              "name": "converted_base_side"
+              "name": "memory_converted"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "24": {
+      "note": "The task segment of a review ref is the task directory's name.",
+      "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:7913348d998fe98645a4557b35b36af6ba4e4d22d6a6207e93a1c70c971f8829",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_task_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The ref name and the refused segments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:000924f5a661c42063bf03bb7301caf72e3b5dc35a919994c94b6a643a5bf11d",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Capture, pin, record and open a live leaf's comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:e0dd90e9fda341d2ed3d92c30d6326582d149cf1f7dcb6a574c925c77f49fa4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_review_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The four sides of a live draft, K_B through the worklist's pairing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:9e4dc617a25b6e183a6dd6a6b44d56ad524ffd8f4550dc0ed2f7f6c0000b0084",
+            "locator": {
+              "kind": "symbol",
+              "name": "_live_draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "A moved memory candidate is refused before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:32656555dc201dca3fc69b8320910a99daedb2d92c2a8e4dcbbe9ee99bacda3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "recheck_memory_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Committed only when the durable line's tip holds exactly this tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:4b756f59b868f2162df453ab0376a0313eb8de13f5bab7745430f90dff4755f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The held converted tree is used only for the same inputs and while Git holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:52cbaeb321e77131eed486043cb704cee4ed27fce14ecc6d859a5b6b60d0d988",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Converted files are written as objects only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
             "content": "sha256:580bc63c98a579ae9e83564e932cacabec8095938aceaafb63fae3d8b178869f",
             "locator": {
               "kind": "symbol",
@@ -93,13 +271,30 @@
         }
       ]
     },
-    "11": {
-      "note": "Reuse on the same trees, else number, pin, then write the record.",
+    "32": {
+      "note": "The recording lock and the pin retry constants.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:abcaf313d3098adef9b446766801d9879bc157dd80d21c15034a621bed4724bf",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:354931b96520160b43de98ac48a1a77ab76b8e95902efaa0905d9df310dfc19a",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Recording takes turns inside one process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
             "locator": {
               "kind": "symbol",
               "name": "_record"
@@ -109,50 +304,60 @@
         }
       ]
     },
-    "12": {
-      "note": "Create-only pins, rolled back and refused naming repository and ref.",
+    "34": {
+      "note": "Reuse on the same trees, else number, pin, write; a record another reader wrote first is returned.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:357f536dd51e7e3b04da9ad05adb39a49c166404d338baed067a055dc8d0335f",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:f81efb5898ed46aef7da4725cd3907767ca242323a14514e2d4598e87eeb3bde",
             "locator": {
               "kind": "symbol",
-              "name": "_pin"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:efb02c17fba0bfd135d9cd75330ef3b07a27038bc509b03548bdaf9d2d12a4c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_pin_refusal"
+              "name": "_recorded"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "Each memory side opened through its tree's index; an index failure is `unavailable-history`.",
+    "35": {
+      "note": "Each candidate with a ref is pinned; a refusal removes only the pins this call created.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:99e4ee5010308bed6042488b3c642a2dc341fb67d71db74ae57b33e1550ee47d",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:5384e73d313bfb8f932bdf80aa8e5434ae98d617fe5f69c7633e6b70da734f89",
             "locator": {
               "kind": "symbol",
-              "name": "_open_sides"
+              "name": "_pin"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "36": {
+      "note": "One pin: same tree is success, another tree is refused, a held lock is retried.",
+      "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "blob": "a6be25fd8ae64b86004f4bdf43cb0b23b50d6e4c",
+            "content": "sha256:edebee0b02d373e6fb29160dd1f042c38f31ad35f027af6a106eade5c15801b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Each memory side is opened through its tree's index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
             "content": "sha256:295d1a066155cc4bc6f021e759d20aeb03d81d1eed3962f481c2624731a39959",
             "locator": {
               "kind": "symbol",
@@ -163,23 +368,12 @@
         }
       ]
     },
-    "14": {
-      "note": "Reopen from the recorded tree ids, marking every tree Git can no longer produce, code trees included.",
+    "38": {
+      "note": "Reopening marks every tree Git cannot produce.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:194b4aa1c40c8ee3647cbfb023d6299f4fb9fd144b73255f2c6a9d176576204c",
-            "locator": {
-              "kind": "symbol",
-              "name": "reopen_review_trees"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
             "content": "sha256:0775a3adfb2086247f3c50d5bfe4c2b070b9b516519dc2b186f3a3a3802bdee3",
             "locator": {
               "kind": "symbol",
@@ -187,26 +381,15 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:a91f76394218b2571e524c7fd3b7a1766a4be8816de72018cea12565513d626b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_code_sides"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "15": {
-      "note": "A missing converted base is re-derived and its id checked; a missing tree is named.",
+    "39": {
+      "note": "A missing converted base is derived again and its ID compared.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
             "content": "sha256:81411d92254dc4a4591dd95775d0c4711d9f32317b26c0378298363960fe338d",
             "locator": {
               "kind": "symbol",
@@ -214,80 +397,49 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:6ec2694f6dce98475ff6ea3b5e22987aa961b94e03eef78e6d8d211dab6b0cb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_missing_tree"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
-    "16": {
-      "note": "The refusal and the declared facts of a tree comparison.",
+    "40": {
+      "note": "A pin another reader made is kept and not rolled back; a ref naming another tree is refused; a held lock is waited out.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:1f224762df897e7f8c9b407a2ba4411cfc36532e012f7d275abea7ba6814f6be",
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:e3860010325e9ec39be013a421cb292f80bcaeaa14d068e6784140b992fe5349",
             "locator": {
               "kind": "symbol",
-              "name": "tree_sides_refusal"
-            }
+              "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:8423c4d644715a3f5c23cb8e7f1033c4d513ec33fd794adb9046a9cba5b31b96",
-            "locator": {
-              "kind": "symbol",
-              "name": "tree_limitations"
-            }
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "17": {
-      "note": "The landed resolution over two index files; an unavailable side names no file.",
+    "41": {
+      "note": "Four concurrent first reads of a new comparison give four equal answers.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:1e1d4a8a1df739140262bcdae494d75c416f291d819d093fc188ceabf65bb8e0",
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
             "locator": {
               "kind": "symbol",
-              "name": "tree_resolution"
-            }
+              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:74f79e8f041ac4314f8b6a150e0a45d968b8b1588a959a3a3e911ba1e1c34b88",
-            "locator": {
-              "kind": "symbol",
-              "name": "_absent"
-            }
-          },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
-    "18": {
-      "note": "Pins, reuse and the refused pin.",
+    "42": {
+      "note": "A live review is four trees with its uncommitted candidates pinned and reused.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
             "locator": {
               "kind": "symbol",
@@ -296,10 +448,15 @@
             "path": "mcp/tests/test_review_git_trees.py"
           },
           "kind": "test"
-        },
+        }
+      ]
+    },
+    "43": {
+      "note": "Committed candidates need no ref, and a failed pin refuses naming repository and ref.",
+      "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
+            "blob": "023d1f462e7b1839dc594a930d879ba94398d92b",
             "content": "sha256:6d8bfb8d90830fb5c244b1f838a806cfda4712e16d44f0dac95ef0ff2c4a4ceb",
             "locator": {
               "kind": "symbol",
@@ -311,202 +468,20 @@
         }
       ]
     },
-    "19": {
-      "note": "A repeat read writes nothing.",
+    "44": {
+      "note": "A converted base tree that Git holds is not written again.",
       "targets": [
         {
           "anchor": {
-            "blob": "810d8283edc10ef4ae8c785a55fb36315c3f7565",
-            "content": "sha256:086e2e8453fd3ccfa57b63922e43e4732f3b400b556ff9e87233f659118ac2ec",
+            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "content": "sha256:9844fc1d2387b435f56b5611556eafa68e6d997fca353bd6e560e2dc418b9b40",
             "locator": {
               "kind": "symbol",
-              "name": "test_a_read_writes_only_review_refs_and_comparison_objects_and_a_repeat_writes_nothing"
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
             },
-            "path": "mcp/tests/test_review_git_trees.py"
+            "path": "mcp/tests/test_review_read_latency.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "A leaf's review is a tree review when its memory worktree or its official line holds the layout marker.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:c13bae123fd100047953b8e1437898c320a883dc56d37e09faa0f0ed765d76c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "official_line_converted"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:dcf2ea39d4be931bdd3da6b41c9466f0e1ce435180bbe3962152899a4c948d01",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_converted"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "Held conversion reuse requires all recorded inputs and an actual Git tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:52cbaeb321e77131eed486043cb704cee4ed27fce14ecc6d859a5b6b60d0d988",
-            "locator": {
-              "kind": "symbol",
-              "name": "_held_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The converted-base owner chooses confirmed reuse or existing materialization.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:833b6c7b9b5ee36958092bf2b6641cbdce36cd96a044cee7a044edbe68fa33df",
-            "locator": {
-              "kind": "symbol",
-              "name": "_converted_base"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The review-ref task segment is the task directory name, and nothing read from the folder.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:7913348d998fe98645a4557b35b36af6ba4e4d22d6a6207e93a1c70c971f8829",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_task_id"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The ref name, refusing a segment that could leave its place.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:000924f5a661c42063bf03bb7301caf72e3b5dc35a919994c94b6a643a5bf11d",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_ref"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Where a leaf's records live, and every readable record by number.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:968fd038cd785c6b99fa988b547599f49c179636dbe3d469b7dfea5593d5f5b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "comparison_directory"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:cab2aac62fccf80fa902903640eaab2110efdede8046773b95dace54c81859fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "comparison_records"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Capture, pin and record a live leaf's four trees; none for an unconverted leaf.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:e0dd90e9fda341d2ed3d92c30d6326582d149cf1f7dcb6a574c925c77f49fa4a",
-            "locator": {
-              "kind": "symbol",
-              "name": "live_review_trees"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The four sides of a live draft, K_B through the worklist's pairing.\n\nAnchor: `paired_memory_commit`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8afd1e5b7a434f08af24b89d5c8657e633af31a2",
-            "content": "sha256:97598578e7b95532f054444eea4143a77b7458b399b2dbd8c84954e462ea4b33",
-            "locator": {
-              "kind": "symbol",
-              "name": "_live_draft"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "A live memory candidate that moved during composition is refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:32656555dc201dca3fc69b8320910a99daedb2d92c2a8e4dcbbe9ee99bacda3e",
-            "locator": {
-              "kind": "symbol",
-              "name": "recheck_memory_candidate"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Committed only when the durable line's tip holds exactly this tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c3f508e45607791a9362eadc07d7b3cdcee1de83",
-            "content": "sha256:4b756f59b868f2162df453ab0376a0313eb8de13f5bab7745430f90dff4755f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_candidate_side"
-            }
-          },
-          "kind": "code"
         }
       ]
     }

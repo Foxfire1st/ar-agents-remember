@@ -1,0 +1,668 @@
+{
+  "path": "mcp/tests/test_reviewer_worklist_process.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_parsed_diff_names_its_own_prefix_colour_and_driver"
+        }
+      },
+      "facet": "The two argument tuples of the source inventory hold PARSED_DIFF_OPTIONS, and the worklist's blob diff holds the prefix options, --no-color and --no-ext-diff.",
+      "id": "PRF-14R2KC",
+      "invariant": "INV-HVGENX",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-parsed-diffs-ignore-user-config",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+        }
+      },
+      "facet": "After the parent process that runs the real owner is killed with SIGKILL, the child blocked in Git and its Git process are gone within five seconds.",
+      "id": "PRF-3ACHSD",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+        }
+      },
+      "facet": "Through the real route a client disconnect and an owner shutdown each end a child that is blocked in git cat-file, and its Git process; a child that sleeps past the deadline leaves no active process; with two computations running and a third waiting, a shutdown ends all three requests and both children.",
+      "id": "PRF-5ZX9J7",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+        "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+        }
+      },
+      "facet": "Four identical and three different requests start four children, never more than two at once, and the four identical ones get equal answers that are four distinct objects.",
+      "id": "PRF-8DK3FJ",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:5b03fe63549e3eedcc584efa6c275d69a040e66dbd62d1c07562b55a8317b65c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration"
+        }
+      },
+      "facet": "The leaf-wide view and the review are byte-identical under an empty global Git configuration and under one that sets diff.noprefix, diff.mnemonicPrefix, diff.srcPrefix, diff.dstPrefix, diff.external, diff.renames, diff.colorMoved, color.ui and core.quotePath, and every patch starts with diff --git a/.",
+      "id": "PRF-BXPCKV",
+      "invariant": "INV-HVGENX",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-parsed-diffs-ignore-user-config",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+        "content": "sha256:0a429e445cde8b4e67c4f3c25a50fd8feb01665b6f2715e95df6e040705b0f24",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_twelve_identical_concurrent_reads_share_one_child_without_a_refusal"
+        }
+      },
+      "facet": "Twelve identical concurrent requests are answered by one child without an error.",
+      "id": "PRF-CGHHCK",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+        }
+      },
+      "facet": "One of two requesters cancels and the other still gets the answer from the one child; a sole requester that cancels returns only after its child has ended.",
+      "id": "PRF-DN5X16",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+        "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+        }
+      },
+      "facet": "With the bound lowered to four and a short deadline, a fifth computation is refused at once with the overload's code and action; at the deadline the two computations that held children fail on the deadline and the two that never got a child are overloaded.",
+      "id": "PRF-FBXNKC",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+        }
+      },
+      "facet": "At two result sizes the child's document and recorded reads equal those of leaf_worklist run in the calling process and the response body equals the body computed without a child; the child is another process that runs the caller's interpreter and package, receives the comparison's candidate trees and held base tree, and still gives the same body when capture, pairing and conversion are made to raise in it.",
+      "id": "PRF-FK9NKE",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+        }
+      },
+      "facet": "A child armed with a short deadline of its own and blocked in Git is killed together with its Git process.",
+      "id": "PRF-FRAR97",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+        "content": "sha256:e3860010325e9ec39be013a421cb292f80bcaeaa14d068e6784140b992fe5349",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+        }
+      },
+      "facet": "When the creation of a pin fails because another reader created the same pin, pinning succeeds and the ref is kept; a ref that names another tree is refused and not moved; a ref lock that is held briefly is waited out.",
+      "id": "PRF-FT4K6F",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_build_mismatch_asks_for_a_dashboard_restart"
+        }
+      },
+      "facet": "A child that exits with the build-mismatch status, and a reply with another source digest, both give a refusal whose action says to restart the dashboard, and nothing is kept.",
+      "id": "PRF-PP21RF",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+        }
+      },
+      "facet": "Four threads that read a new comparison at the same moment all answer trees with one identical body.",
+      "id": "PRF-S0GME8",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+        }
+      },
+      "facet": "While the reaping of a cancelled computation is held open, a new identical request is answered by a second child.",
+      "id": "PRF-SW2WCZ",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:bda75d42d8a82b6ada53d81ad530f56c75cec124e7b1d5f320f0c25d5275fd65",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_three_changed_leaves_opened_in_quick_succession_all_answer"
+        }
+      },
+      "facet": "Three different comparisons read one after another while each child is slow all answer, from three children of which at most two run at once.",
+      "id": "PRF-TNYM9P",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_child_transport_failures_are_explicit_uncached_and_recoverable"
+        }
+      },
+      "facet": "Fourteen faulty children (truncated output, a non-zero exit, another request or source digest, another module path, invalid read rows, a complete document without reads, a non-finite number) each give a refused answer that names the worklist, leave the view memo empty and no child running; a failed launch is refused and the next read succeeds.",
+      "id": "PRF-TPP627",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+        }
+      },
+      "facet": "Twelve sharers of one request and seven further distinct requests are all answered from eight computations, and one further distinct computation is refused as overloaded.",
+      "id": "PRF-TTJXV7",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_overload_is_its_own_refusal_code_with_a_true_action"
+        }
+      },
+      "facet": "An overload raised by the computation becomes a refusal of the tree view with the code reviewer_busy and the action that says to retry, and nothing is kept.",
+      "id": "PRF-W7CVG0",
+      "invariant": "INV-PKBCZ0",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
+        "leaf": "260928-MIK-L42"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The child's document, reads and body equal the in-process computation at two sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Four concurrent first reads answer alike from one child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Three changed leaves in quick succession all answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:bda75d42d8a82b6ada53d81ad530f56c75cec124e7b1d5f320f0c25d5275fd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_changed_leaves_opened_in_quick_succession_all_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The child's own deadline ends it and its Git process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A killed parent takes the child and its Git process with it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The hostile Git configuration changes no answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:5b03fe63549e3eedcc584efa6c275d69a040e66dbd62d1c07562b55a8317b65c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_reviewers_diff_reads_do_not_depend_on_the_users_git_configuration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The pinned argument lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_parsed_diff_names_its_own_prefix_colour_and_driver"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A busy default executor does not delay a tree read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:20dc6b3df66ec1d9e7ac98996c7191cd23684b8942a209bcd98ebf4ca8ae51f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A pin another reader made is success; another tree is refused; a held lock is waited out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:e3860010325e9ec39be013a421cb292f80bcaeaa14d068e6784140b992fe5349",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "A request arriving during the reaping of a cancelled flight starts its own computation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Twelve identical reads share one child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:0a429e445cde8b4e67c4f3c25a50fd8feb01665b6f2715e95df6e040705b0f24",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_twelve_identical_concurrent_reads_share_one_child_without_a_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Fourteen faulty children, the numeric cases through the route, and a failed launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_child_transport_failures_are_explicit_uncached_and_recoverable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The deadline runs from the request's arrival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:1a535b3acb3d59ec92e0b87b2f9c66f51d1bf1287975fea0c00060269972a0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The bound counts computations, not requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The process owner under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
+            "content": "sha256:b3b789d36947b0fd8cc6568a63d8f8f228689ad6b21244a9b7c3fc67ed0fb9fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewerWorklistProcesses"
+            },
+            "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Disconnect, deadline, shutdown and a queued computation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "One route request stopped by a disconnect or a shutdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:87651b0c5d54d6b6d81b42262cb5c8a0b29dc82b97f9a9d2ec90bfba7eeeb25f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_route_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Identical requests share one child and others wait for one of two slots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Overload only past the bound or the deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
+            "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A cancelled requester leaves the shared child to the others.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A build mismatch asks for a restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_build_mismatch_asks_for_a_dashboard_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The overload's code and action at the view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_overload_is_its_own_refusal_code_with_a_true_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

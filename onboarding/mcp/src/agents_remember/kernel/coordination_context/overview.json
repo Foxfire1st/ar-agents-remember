@@ -1,17 +1,220 @@
 {
   "path": "mcp/src/agents_remember/kernel/coordination_context",
   "references": {
-    "1": {
-      "note": "The package-local facade keeps existing callers pointed at the split implementation.\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+    "10": {
+      "note": "The memory-worktree shape, decoded segment by segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:8aba5a03c1d88142bbd5a0853d9e4812c668e55510a45cd8e7ac9a0c4fb499e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_worktree_enclosure"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two supported onboarding roots and the refusal that names both.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2ef0233d91074311073916f160f2cf88c129579",
+            "content": "sha256:592e72ebf9c585e4c03e2dbe1cac6cb4e2c90d0db9d22ee6a796e997a211f6ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "infer_topology_from_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "JSON sibling first, then the Markdown blocks, with every probe and read recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86702aa0d4bd6b3a45a377ca08d3802ecbe0ddc6",
+            "content": "sha256:d31874c74805bc1d66b8665beecce86e564558de60825ab7357194f2806a0e60",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_coordination_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Storage of one source file under the path rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
+            "content": "sha256:e3c374c37685c6130e19bbfc02a485a82c677d0e3173846042589330f34414eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_storage_for_source"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Storage from one rule: not matched, excluded, or the rule's storage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
+            "content": "sha256:50f5b3a390c6de198f9ee8a28515158c9c91191e100d0a6fbaccb7eb2c88ddfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_storage_from_rule"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The states of an adjacent repository's code side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:06f7182d0b0eef985ed6b4d5184c9bb87f4399497531046632851e07c936eefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_cross_repo_entry"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The states of its memory side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:4fdccc3326b6a1898a67cc65729f2a2c9dc9345d9595610c610cc1f3613512b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_cross_repo_memory"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The ledger state of an included memory repository.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:77e73e26320c115c87ae22ebe5400a6e6094d34f82958880f6046735e76697df",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_memory_ledger_state"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The contract candidate is resolved and probed through the recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b717ebab81e9aa6e19dc527f82886403eb38bc7d",
+            "content": "sha256:8d88b0769315f5fd470b1f14b7fef07fc82bca093e9345ce980201f9add0f420",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_contract"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/contracts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A path resolution as a recorded selection row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:6da8d9496b8ae2e495bf6563dc29b7f421a9d4a5bebb08b51b9087461dc45d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_resolve"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "A path's existence as a recorded selection row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:dabd96664201b6cf646625fc8ea3f6ed0b0c97b8830e928319f3f2f6a01aaa52",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_path_exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "A skipped settings file of higher priority and a JSON-only settings file are recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_selection"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The facade passes one request to the resolver.",
       "targets": [
         {
           "anchor": {
             "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
-            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "content": "sha256:074d23ad3c16087dd09d888a493616eaec483e5581927e53efa05850bfff8449",
             "locator": {
-              "end": 146,
-              "kind": "line_range",
-              "start": 131
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
           },
@@ -19,16 +222,101 @@
         }
       ]
     },
-    "2": {
-      "note": "The current resolver constructs the context; retired parity suites provide no current pass.",
+    "4": {
+      "note": "The request: hints, selector and contract reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e4144a14be1b2ea1d9336f59e77a30a02eb520f",
+            "blob": "ed5abbf1f52aec9176c7a7bd78f555a0628257ff",
+            "content": "sha256:a4ec6a4020fc4eab6d9abd75d379c4e14e55871d7fdb74e90defcd799ecb1733",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoordinationRequest"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The contract-file surface the resolver may use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed5abbf1f52aec9176c7a7bd78f555a0628257ff",
+            "content": "sha256:51b34a9383278d48dea1f3fd53658bfe17ed93cf8730528df2ba0244e0ae1d4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractReaderPort"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A request without a contract reader is refused; an onboarding-root hint selects its own path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Root selection: explicit settings, the removed repository root, the external root, the missing-memory error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:d1402594faf11a8a67261bc434c0c1dafe213d59a6f19ecb0b4552c1ea3316c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_coordination_selection"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The context takes task root, worktree group, memory mode, worktrees and ledger path from the contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
             "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
             "locator": {
               "kind": "symbol",
               "name": "build_coordination_context"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The memory mode a topology implies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a4c244d9e980e3d26bd2fa80a02cebeb69c9965",
+            "content": "sha256:d767a2cde9054e6be196a3909e1435db4e9190a4beb83ba19209fa7c61aecff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode"
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
           },

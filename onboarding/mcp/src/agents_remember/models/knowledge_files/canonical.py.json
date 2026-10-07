@@ -2,60 +2,12 @@
   "path": "mcp/src/agents_remember/models/knowledge_files/canonical.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Only the declared positions are sorted, history `covers` and `examined` included.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b82b96dc4f8ed4c76eac612ec76df8c68cbe95e",
-            "content": "sha256:a7f384d199b3d046f945735e3fdcdaeae22e12f92618ce31c5a6884c49effaf9",
-            "locator": {
-              "kind": "symbol",
-              "name": "IDENTIFIED_ENTRY_KEYS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Strict parsing refuses content-changing input.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b82b96dc4f8ed4c76eac612ec76df8c68cbe95e",
-            "content": "sha256:2f4884e962e1fdea2cc34d15c69f7ee251a699029628cce5253fd73ad609427c",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_json"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The sort rule.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b82b96dc4f8ed4c76eac612ec76df8c68cbe95e",
-            "content": "sha256:ff1d528d39591eece3c1047e30bfb8307eabdea259f9d0cb92858fbc7b68cf98",
-            "locator": {
-              "kind": "symbol",
-              "name": "canonical_value"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
+    "10": {
       "note": "The serialization.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b82b96dc4f8ed4c76eac612ec76df8c68cbe95e",
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
             "content": "sha256:9cdcb991607c9b2b8038f34fb0c0143f75f75825d694592e90cf53bfd4669aa4",
             "locator": {
               "kind": "symbol",
@@ -66,12 +18,45 @@
         }
       ]
     },
-    "5": {
-      "note": "Idempotence and content preservation are tested.",
+    "11": {
+      "note": "Bytes that are not UTF-8 are refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "566baf0ccd17a9eaa14d462ec3483e8997c8ab17",
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:129f117f7513d4f8a525d75a21feeb138f98c4a5dac4196dc9b7d936d59ce7c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "format_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Repeated keys are refused, with every repeated key named and also inside a nested object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:831e34a9dc6775dea664bc8d3f172ba9987a5d15bda92b18b2de19d646fc48fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_formatter_refuses_input_it_cannot_reformat_without_changing_content"
+            },
+            "path": "mcp/tests/test_knowledge_file_canonical.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Formatting is idempotent and keeps the parsed value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
             "content": "sha256:a1338079a9ad7b07014e6231cb17a13f3b612bf23432e87eaa3012c263f1499e",
             "locator": {
               "kind": "symbol",
@@ -80,6 +65,87 @@
             "path": "mcp/tests/test_knowledge_file_canonical.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Only the declared positions are sorted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d8c1480b31c6606fd6a2e4ba661fcd296cf202a",
+            "content": "sha256:8541b33337e09e7893cfebe2f435692d357238c8c9ac4eec5066bfc39961bdff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_identified_entry_positions_are_sorted"
+            },
+            "path": "mcp/tests/test_knowledge_file_canonical.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The positions whose arrays are sorted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:a7f384d199b3d046f945735e3fdcdaeae22e12f92618ce31c5a6884c49effaf9",
+            "locator": {
+              "kind": "symbol",
+              "name": "IDENTIFIED_ENTRY_KEYS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The duplicate-key hook builds the dictionary first and counts only on a collapse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:f7b751d6cc01fe3dbbf1b934a0f8be23e4430a1cc59e91893dc28312752895ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_duplicate_keys"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The strict parse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:2f4884e962e1fdea2cc34d15c69f7ee251a699029628cce5253fd73ad609427c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The sort rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "32e96fd370740ab267acd227d0f8b0678534ab46",
+            "content": "sha256:ff1d528d39591eece3c1047e30bfb8307eabdea259f9d0cb92858fbc7b68cf98",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_value"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

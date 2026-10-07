@@ -2,78 +2,53 @@
   "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "JSON parsing owns the preferred settings format.",
+    "4": {
+      "note": "The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder.",
       "targets": [
         {
           "anchor": {
-            "blob": "03194c9cd44ad38387e9232b636feaddc3fa72fc",
-            "content": "sha256:f3179fcf5e4c3df872acd5359edf267c1cf0353330e69fbbc47655b828eeec20",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_json_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Markdown parsing owns the legacy fenced-settings fallback and invokes the parser body.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
-            "content": "sha256:415cca928037997c30a75bf07dcc5f41389823c8b31ab0939d2c819715de6aa0",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_settings_block"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
-            "content": "sha256:d6a6503abac144caad1b2a3eff4495a314b3c22fc77570364ceda3c66f70c369",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse"
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
-            "content": "sha256:b02fbcae91fb2bfbe3037fe56bd54695aa0c42e0af06eefb2d6674eefb9983c2",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The settings facade prefers sibling JSON and otherwise scans fenced Markdown through `parse_coordination_settings`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c615fd86728b62479486cf8394ee6b5096d7fe6",
-            "content": "sha256:330333cc5d9a2188c727fe55eca874888474d9a0cdbfe441c276e68dd9faf8c2",
+            "blob": "86702aa0d4bd6b3a45a377ca08d3802ecbe0ddc6",
+            "content": "sha256:d31874c74805bc1d66b8665beecce86e564558de60825ab7357194f2806a0e60",
             "locator": {
               "kind": "symbol",
               "name": "parse_coordination_settings"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
+            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_selection"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "badb1f072d8ac23acfd48cfd0400e7db7e2f5c30",
+            "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_reads"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
         }
       ]
     }
