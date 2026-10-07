@@ -74,6 +74,8 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - The surface passes a shared discriminated artifact target: notes carry a path, while requirements also carry the selected document. [2]
 - TaskNotes imports the shared target under its existing local NotesReaderTarget name. [3]
 - The shared markdown renderer (inline reference rendering). [4]
+
+
 - The task reader + master overview that mount this component and thread `onOpenNotes`. [5]
 - The serving endpoints behind the client. [6]
 - The component test suite. [7]

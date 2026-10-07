@@ -121,12 +121,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
             "content": "sha256:902f0767b6abf83f5b1e68168cc93585d397f95feb476983899295c2cbe3002d",
             "locator": {
-              "end": 618,
+              "end": 642,
               "kind": "line_range",
-              "start": 592
+              "start": 616
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

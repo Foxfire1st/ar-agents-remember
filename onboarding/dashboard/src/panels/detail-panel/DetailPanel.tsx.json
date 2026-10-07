@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:38d14af02dfe93dcee52dd30777946b9750f8fafec29818d124f21cdf1e5aef8",
             "locator": {
-              "end": 521,
+              "end": 525,
               "kind": "line_range",
-              "start": 512
+              "start": 516
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -2014,12 +2014,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
             "content": "sha256:0883e83a63671e28c95ffeff0650781735539790e558155a95dfbc2eb04e4659",
             "locator": {
-              "end": 755,
+              "end": 623,
               "kind": "line_range",
-              "start": 755
+              "start": 623
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -2068,12 +2068,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7376d66defd6f56c73b745f460945a3c0a73e785",
+            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
             "content": "sha256:0d9cccf54989fb228356b6992ad152b02b2db69021ffbd60e29c17825c438921",
             "locator": {
-              "end": 1012,
+              "end": 864,
               "kind": "line_range",
-              "start": 1007
+              "start": 859
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },

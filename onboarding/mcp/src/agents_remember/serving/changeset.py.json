@@ -353,7 +353,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:e624c577a6a46da2a9dcc5305a454f893acaedde7b3be3e81951754ececf4337",
             "locator": {
               "kind": "symbol",
@@ -365,7 +365,7 @@
         },
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:93f45cc0ccbb9df978b7873846be582ad2735f01b912194107c89447ce06ac3a",
             "locator": {
               "kind": "symbol",
@@ -377,7 +377,7 @@
         },
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:a6eb0310bceeffe9f2c38f11f7c2cb8ec958d4b5611af197b85a2360fdf6e4cf",
             "locator": {
               "kind": "symbol",
@@ -389,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:5ca058fd21cdf3ffc9e7563dc3879ef8bab31e70928037f5e75ff29de67e2b3c",
             "locator": {
-              "end": 348,
+              "end": 481,
               "kind": "line_range",
-              "start": 309
+              "start": 442
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },

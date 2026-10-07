@@ -51,12 +51,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9ee5650f85ae6b8e66ad16825ccc52318dcab7",
+            "blob": "201331d7021babefefab01d779a09ee997b8003d",
             "content": "sha256:c237511560e387cc87d598689c421601efb41d5d0218a74a1340f8a296b14e1d",
             "locator": {
-              "end": 373,
+              "end": 381,
               "kind": "line_range",
-              "start": 316
+              "start": 324
             },
             "path": "dashboard/src/panels/review/ReviewSurface.paging.test.tsx"
           },
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "blob": "99a657e901a3a274e7393532701866730903f313",
             "content": "sha256:3b55093c66702463240622b5e86748f1459b59915c203077e5575d872049441f",
             "locator": {
               "kind": "symbol",
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "7d8894e228aa7934d4a7508e2536e63a3bfa6410",
+            "blob": "99a657e901a3a274e7393532701866730903f313",
             "content": "sha256:9cf06397e4777a4c439a50a8e5d11e5a1b8336193954501b0cc20c9c1c0605f7",
             "locator": {
-              "end": 614,
+              "end": 639,
               "kind": "line_range",
-              "start": 545
+              "start": 570
             },
             "path": "dashboard/src/data/review.ts"
           },

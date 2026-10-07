@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
             "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
             "locator": {
               "kind": "symbol",
@@ -156,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "283b276da53e0d260762d42b9aec7756c5ff1db4",
+            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
             "content": "sha256:0a0bf5a1061cb229b0f71dccbfcf35974c07782402caff8ac3e61f7631682bca",
             "locator": {
               "kind": "symbol",
@@ -190,7 +190,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:29c6ca7208dd0891b999f8e9522d1f4f31eeae66a761b3c5df8c1eb8c511e913",
             "locator": {
               "kind": "symbol",
@@ -202,7 +202,7 @@
         },
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:a5755c08457fba7204c121392c83d69fd73f97df800cd5796fa7e5fdf429b35f",
             "locator": {
               "kind": "symbol",
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:304c5787e940f53c2429b91d3dd0b83d21c85bdbcff0631a4a95d9e58500a472",
             "locator": {
-              "end": 350,
+              "end": 428,
               "kind": "line_range",
-              "start": 338
+              "start": 416
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
@@ -227,12 +227,12 @@
         },
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:e7edcf7323a8ffca4197f73999e078abe56628d966e106ddf919b3a438eb07f6",
             "locator": {
-              "end": 653,
+              "end": 742,
               "kind": "line_range",
-              "start": 641
+              "start": 730
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

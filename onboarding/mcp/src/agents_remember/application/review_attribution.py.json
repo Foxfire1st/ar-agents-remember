@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87a790a20dccd68d2513f8560187b443dd3a297a",
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
             "content": "sha256:f706614b8af095e2ebff7acdcc2443f496aececfd041f61daa684bf4db9ce52d",
             "locator": {
               "kind": "symbol",
@@ -52,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "87a790a20dccd68d2513f8560187b443dd3a297a",
+            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
             "content": "sha256:c7ab1af5303c5dfe6abbd241954db1ebb118e91a5ca42a1a74a67cb6efcea970",
             "locator": {
-              "end": 285,
+              "end": 334,
               "kind": "line_range",
-              "start": 227
+              "start": 276
             },
             "path": "mcp/src/agents_remember/application/review_task_context.py"
           },

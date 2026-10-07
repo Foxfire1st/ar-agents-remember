@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
             "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
+            "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
             "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
             "locator": {
               "kind": "symbol",
@@ -94,12 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ee9bd6fd62848e54b9ca45db90d0826d4933cc8",
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
             "content": "sha256:5632dd982f1758da5b27af1f1d9ceaf0d37cec772bc3101501a482f87789020f",
             "locator": {
-              "end": 456,
+              "end": 433,
               "kind": "line_range",
-              "start": 434
+              "start": 411
             },
             "path": "mcp/src/agents_remember/certification/models.py"
           },
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d82206df65a4d165e76fd1edb7adec29c8a328cb",
+            "blob": "25ba236f61eba957ca185a802b3e74140a390ac3",
             "content": "sha256:fe5cc6780811476e8324e74090cf0be095f86929c3a5c69d675cfbb54d8f17e6",
             "locator": {
               "kind": "symbol",

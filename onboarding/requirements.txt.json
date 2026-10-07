@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931494bd0ba3d72541213830e5ff2773058929d9",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:4db9424314fa43b50eb134fde0f65a5e665ef67880a9bc568f6189a8b5e2007e",
             "locator": {
-              "end": 164,
+              "end": 183,
               "kind": "line_range",
-              "start": 164
+              "start": 183
             },
             "path": "pyproject.toml"
           },
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "931494bd0ba3d72541213830e5ff2773058929d9",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
             "locator": {
-              "end": 186,
+              "end": 289,
               "kind": "line_range",
-              "start": 186
+              "start": 289
             },
             "path": "pyproject.toml"
           },

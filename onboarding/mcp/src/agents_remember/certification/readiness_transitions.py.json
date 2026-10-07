@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
             "content": "sha256:677e0a9ebc1e24aa0caebbed93f189cefd362f3b17854dc78dbf5296d4a23c42",
             "locator": {
               "kind": "symbol",
@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "389ba6c651fb5023baa08c53db2be4886375fbd1",
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
             "content": "sha256:1f1ce15351268f4e439368061e4bb3c365d1f897bfeef6e8495649da613f9f05",
             "locator": {
-              "end": 98,
+              "end": 331,
               "kind": "line_range",
-              "start": 98
+              "start": 331
             },
             "path": "mcp/src/agents_remember/certification/__init__.py"
           },

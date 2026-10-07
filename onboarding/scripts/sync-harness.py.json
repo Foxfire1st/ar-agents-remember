@@ -90,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0377d4f717b152989552b3cdd7adeb9d57cebc5e",
+            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
             "content": "sha256:932ecfb6de5eb944491881bceacb9f148bc06c2a7032a15f5f3eaad604b79419",
             "locator": {
               "kind": "symbol",
@@ -132,12 +132,12 @@
         },
         {
           "anchor": {
-            "blob": "f146f145805754bb2e7a760c6ad950ca21ed1c36",
+            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
             "content": "sha256:34d27dce1622b9a4a3e948e5c2fd4afc4281d478a19195810acb43d74f07daf4",
             "locator": {
-              "end": 275,
+              "end": 272,
               "kind": "line_range",
-              "start": 192
+              "start": 189
             },
             "path": "README.md"
           },

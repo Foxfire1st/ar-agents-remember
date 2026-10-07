@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "6c22434b876834849d0e27f57e5d832666ba1ec8",
+            "blob": "56a87eb79233f3f9fe313a9eeea6e2f9dfdae7d4",
             "content": "sha256:fe1555957576906cd1d370509efb03d3cb0a30f63a21cb41c7d3120378206506",
             "locator": {
-              "end": 311,
+              "end": 312,
               "kind": "line_range",
-              "start": 290
+              "start": 291
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:d5e1a44e10e307d60f55ef47fe221c547c2b2eb7367163153bac142c654132fb",
             "locator": {
               "kind": "symbol",
@@ -117,7 +117,7 @@
         },
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:a15cb05c65a9a27845e0aa98f9bc734b42c472e8fc5bb1a1344560748a486c96",
             "locator": {
               "kind": "symbol",
@@ -129,12 +129,12 @@
         },
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:b0d94b4b2d1f2f14962a227ce3b1ff5432e57b7407639ba79422330083653e95",
             "locator": {
-              "end": 619,
+              "end": 626,
               "kind": "line_range",
-              "start": 583
+              "start": 590
             },
             "path": "mcp/src/agents_remember/application/terminal_tools.py"
           },
@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "d53b92cc097ed3a595e390e8799bd6ee2d64a1f6",
+            "blob": "8dcad5a617fad043cede9e3c097d32e2ce07096c",
             "content": "sha256:b563c001e54a741f1b53d0b74eb4781fa75e457969718652666c30e7e98ed447",
             "locator": {
-              "end": 873,
+              "end": 880,
               "kind": "line_range",
-              "start": 764
+              "start": 771
             },
             "path": "mcp/src/agents_remember/application/terminal_tools.py"
           },

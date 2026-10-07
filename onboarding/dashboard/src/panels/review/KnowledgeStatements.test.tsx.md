@@ -147,7 +147,10 @@ single identifiers. The suite itself is unchanged by that repair; only this card
 - The jsdom answers that let the shipped CodeMirror primitives render in these cases. [14]
 - The component under test and the rule it implements. [15]
 - The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element. [16]
+
+
 - The shipped renderers whose DOM these cases read back. [17]
+
 - **The server-side half these cases mirror: the same statements and details measured through the real composition.** [18]
 
 ### Cross-Repo References

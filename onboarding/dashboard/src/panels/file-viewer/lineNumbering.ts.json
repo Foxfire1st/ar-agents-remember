@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
             "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
             "locator": {
-              "end": 53,
+              "end": 55,
               "kind": "line_range",
-              "start": 53
+              "start": 55
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },

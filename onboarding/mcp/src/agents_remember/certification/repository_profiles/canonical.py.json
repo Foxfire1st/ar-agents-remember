@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5cd69e73dc45c2b52979eadf3356d450e5438fa8",
+            "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
             "content": "sha256:bc03d81261d1b09a6c9ff4a245be14302817f6e7557ff4686c3075f1461863cf",
             "locator": {
               "kind": "symbol",
@@ -35,12 +35,12 @@
         },
         {
           "anchor": {
-            "blob": "5cd69e73dc45c2b52979eadf3356d450e5438fa8",
+            "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
             "content": "sha256:fe3b19bd4da42f831fca1146b8d4e08a0154a695018ea34b65e6172f296d4803",
             "locator": {
-              "end": 403,
+              "end": 502,
               "kind": "line_range",
-              "start": 401
+              "start": 500
             },
             "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
           },

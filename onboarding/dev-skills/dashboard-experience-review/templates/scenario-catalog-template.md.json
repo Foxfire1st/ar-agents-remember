@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The live catalog instantiated from this template.\n\nAnchor: `# Cockpit Dashboard — Workflow Scenario Catalog`",
+      "note": "The live catalog instantiated from this template.",
       "targets": [
         {
           "anchor": {
-            "blob": "0198845c73c6b60a84e77cd589bd5a9615fda7e4",
-            "content": "sha256:300cd5ed4d8cc117d30dbc4b1ad94303da82b39c799705aa2fae9bd9c4ee5817",
+            "blob": "d304d73fdd1ca13471565cfe4b23e74252dc2afc",
+            "content": "sha256:71cbf8ae43bbda4602f92f05b81e39501839f90fc332aa1b413b0c83c83717c5",
             "locator": {
               "end": 166,
               "kind": "line_range",

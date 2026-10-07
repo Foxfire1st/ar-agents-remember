@@ -10,63 +10,70 @@
 ordered `sections`, the objective/design blocks, and the folded sub-task content — is GFM markdown
 (tables, blockquotes, `**bold**`, `code`, lists, links); before 6g the dashboard had no renderer, so the
 task reader showed it raw. `Markdown` renders it (react-markdown + remark-gfm), making `DetailPanel`'s
-task reader readable instead of literal.
+task reader readable instead of literal. MIK-R79 rule 8 uses the same primitive for the Knowledge
+reader's document text through two opt-in extensions rather than a second renderer.
 
 ## Code Commentary
 
 ### Logic
 
-`Markdown({ children, inline })` wraps `<ReactMarkdown remarkPlugins={[remarkGfm]}>`. **Block mode**
-(default) renders into a `box` styled via Panda **descendant selectors** (`& p`, `& table`, `& code`,
-`& blockquote`, `& h1…h4`, …) so every rendered node is themed without hand-wrapping each; a custom
-`table` component keeps a real `<table>` but wraps it in a horizontal **scroll box** (`tableScroll`) so a
-wide table can't blow out the detail panel (the react-markdown `node` AST prop is stripped before the
-props are spread onto the DOM element). **Inline mode** (`inline`) renders into a `<span>` with an
-`inlineComponents` map that unwraps the paragraph (`p → fragment`) for one-line list items / decision
-cells — no block margins, no `<p>` inside a `<span>`. The component is wrapped in **`React.memo`**:
-`children` is a primitive string, so the default shallow compare skips a re-render (and the expensive
-remark re-parse) when the body is unchanged.
+`Markdown({ children, inline, referenceMarkers, headingIds, components })` wraps
+`<ReactMarkdown remarkPlugins={plugins}>`. **Block mode** (default) renders into a `box` styled via
+Panda **descendant selectors** (`& p`, `& table`, `& code`, `& blockquote`, `& h1…h4`, …) so every
+rendered node is themed without hand-wrapping each; a custom `table` component keeps a real `<table>`
+but wraps it in a horizontal **scroll box** (`tableScroll`) so a wide table can't blow out the detail
+panel. **Inline mode** renders into a `<span>` with an `inlineComponents` map that unwraps the
+paragraph (`p → fragment`) for one-line list items and decision cells. The component is wrapped in
+**`React.memo`**: `children` is a primitive string, so the default shallow compare skips a re-render
+(and the expensive remark re-parse) when the body is unchanged.
+
+**MIK-R79 opt-ins.** `referenceMarkers` adds `remarkReferenceMarkers` so the prose's `[n]` markers
+link to the document's reference list. `headingIds` adds `remarkHeadingIds` and switches the box to
+`data-document-headings=true`, which gives h1..h6 document typography (a chapter and a sub-chapter
+look different) instead of the task-doc heading scale. `components` lets a caller (the Knowledge
+reader) extend the component map. The requirement-link `a` component is the **no-override default**:
+it wraps every anchor only while the caller supplies no `a` override, because a caller's components are
+spread last. The Knowledge reader supplies its own `a` handler, so requirement handling is not composed
+there.
 
 ### Conventions
 
-Panda `css()` from `../../styled-system/css` (relative import, no path alias), like the other grammar
-primitives. Theming is descendant-selector-based rather than per-element component overrides, except the
-`table` (scroll-box) and inline `p` (unwrap) cases that need structural control.
+Panda `css()` from `../../styled-system/css` (relative import), like the other grammar primitives.
+Theming is descendant-selector-based rather than per-element component overrides, except the `table`
+(scroll-box), inline `p` (unwrap) and the opt-in document-heading block cases that need structural
+control.
 
 ### Invariants And Boundaries
 
-Presentational + pure: it renders its `children` string with no data fetching and no state. **No raw
+Presentational and pure: it renders its `children` string with no data fetching and no state. **No raw
 HTML** — react-markdown does not render embedded HTML by default, so arbitrary task-doc content is
 XSS-safe. The `React.memo` is load-bearing for performance: the projection SSE re-renders `DetailPanel`
-~every second, and without memo every section body would re-parse on each tick (scroll jank). A wide
-table scrolls **inside** its box; the panel layout is never widened by content.
+about every second, and without memo every section body would re-parse on each tick. A wide table
+scrolls **inside** its box; the panel layout is never widened by content. The MIK-R79 extensions are
+opt-in and text-only: with both flags off, rendering (including requirement anchors) is unchanged.
 
+### Todos
 
-## 260831-CCR-L23 Requirement-Address Anchors
-
-L23 made `Markdown` requirement-aware. Both the block and inline renderers now
-mount a custom `a` component (`requirementAnchor`) that consults
-`useTaskRequirementLinks()`:
-
-- an `href` that resolves against the registered requirement listing renders as
-  a styled button (`requirement-link`, `title` names the packet path) whose
-  click calls the context `open(path)`, so the packet opens in the internal
-  artifact reader;
-- a `requirements/...` address that is NOT registered renders as a refused
-  span (`requirement-link-refused`) — no dead hyperlink;
-- every other link (external URLs, section anchors) keeps its normal anchor element.
-
-The renderer stays presentational and memoized: the listing is read from the provider
-context mounted by the task reader, never fetched here, and non-requirement links are
-untouched.
+No additional work is asserted by this card.
 
 ## Evidence
 
+### Docs References
+
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R79@v1` (rule 8); it lives outside the code and memory repositories, so it
+is named here and not cited as a row.
+
+No configured live documentation source was available for this pass.
+
 ### Repo-Internal References
 
-- The detail-panel entry delegates the reader surface to its implementation. [1]
-- MasterOverview renders the objective through Markdown and composes the section readers. [2]
-- MasterSection renders authored body text through Markdown and delegates shared decisions. [3]
-- Bullets renders each item through inline Markdown. [4]
-- DecisionList renders both decision and rationale through inline Markdown. [5]
-- The leaf TaskReader composes TaskReaderSections inside the requirement-link boundary. [6]
+- The renderer mounts its plugins only when the caller asks for markers or heading ids. [7]
+- The requirement anchor resolves registered packets and refuses unregistered addresses. [8]
+- The document typing used by the Knowledge reader is one opt-in block. [9]
+- The marker and heading plugins the Knowledge reader opts into. [10]
+- The reader's document text renders through this primitive. [11]
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.

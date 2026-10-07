@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation's realizations in more than one file are what its statement binds together."
+  },
+  "applicability": "The Knowledge page's own tree, Markdown renderer and code view.",
+  "conditions": [
+    "They are removed in favour of the dashboard's shared `ExplorerTree`, `Markdown` and `FilePane`.",
+    "No second copy of any of them is left behind."
+  ],
+  "exclusions": [
+    "A shared primitive the page cannot use without changing its other consumers."
+  ],
+  "id": "INV-X1ADJP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 15",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge has one shared tree, Markdown renderer and code primitive instead of its former private renderers.",
+  "status": "proposed",
+  "supersedes": []
+}

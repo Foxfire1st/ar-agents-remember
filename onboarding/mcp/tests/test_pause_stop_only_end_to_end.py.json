@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 332,
+              "end": 366,
               "kind": "line_range",
-              "start": 332
+              "start": 366
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3be7d88a62ee88474f0127591bba80aa806b745c",
+            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
             "content": "sha256:732f1903a69af76a07aa2cbdff538529f00d9eecb4145aa164f538dc6a461b59",
             "locator": {
-              "end": 332,
+              "end": 366,
               "kind": "line_range",
-              "start": 332
+              "start": 366
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -195,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
             "content": "sha256:10222c726850775c8f75bd3f68ece30f43b7d64e5d73211cecaefe6a5eeeb9ed",
             "locator": {
-              "end": 390,
+              "end": 378,
               "kind": "line_range",
-              "start": 390
+              "start": 378
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -230,7 +230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f3bd41068ad5495a640a6683e9bdc8a57904799",
+            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
             "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
             "locator": {
               "end": 279,

@@ -57,6 +57,7 @@ reused by L4 by swapping the code side for a diff view.
 ### Repo-Internal References
 
 - The read-only CodeMirror pane it hosts on the code side. [1]
+
 - The markdown renderer the sidecar pane reuses. [2]
 - The effects-gated boomerang backdrop the `empty` state fills the pane with. [3]
 - The page that supplies `code` + the derived `SidecarView`. [4]

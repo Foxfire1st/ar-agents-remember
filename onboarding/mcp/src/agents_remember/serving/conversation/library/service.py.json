@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc8c52321e707be4dade3c4e0a584ba8a63c6b10",
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
             "content": "sha256:034820523ac7e44c47205512cdc772dbdf0c333f31ff59fd223370ebb278d546",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f7159dfb4d9bbd9f1821243e1345f466b7e7e367",
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
             "content": "sha256:e575f05fde9ad58802210f353bfed6cce2f2dacadc89af8c435f6d0c94e7a48a",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "f7159dfb4d9bbd9f1821243e1345f466b7e7e367",
+            "blob": "4bdc6c6685ee70aa997f344125ff0d96fd4ed756",
             "content": "sha256:d30775f42d6795bfa3d4d69e185d09bc9d9d7e1e65e1ad9488a912c76b53905b",
             "locator": {
-              "end": 358,
+              "end": 356,
               "kind": "line_range",
-              "start": 345
+              "start": 343
             },
             "path": "mcp/tests/test_conversation_library_api.py"
           },

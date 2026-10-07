@@ -1,285 +1,149 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+        "content": "sha256:742b961c2627856b947d888db1109b6f5de62b948f133f94fa4b964325399375",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordFields"
+        }
+      },
+      "id": "RLZ-84PEC7",
+      "invariant": "INV-94DCJ5",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 12",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "RecordFields owns the rendering or source-selection boundary that implements this obligation: Record pages lead with meaning, present other fields in kind order, then relationships and timeline, and end with labelled origin rather than JSON.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+        "content": "sha256:ecda97c1eb73e8fee2a67e2bf4b08dacb1d2233ca09c11462ebe7cefae59f257",
+        "locator": {
+          "kind": "symbol",
+          "name": "TruthView"
+        }
+      },
+      "id": "RLZ-KFQ1K1",
+      "invariant": "INV-94DCJ5",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 12",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "TruthView owns the rendering or source-selection boundary that implements this obligation: Record pages lead with meaning, present other fields in kind order, then relationships and timeline, and end with labelled origin rather than JSON.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+        "content": "sha256:a3e174e0dc69e7e3d004205e36adbacd5cf1a1dfe006655b1816bccd625eea4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordOrigin"
+        }
+      },
+      "id": "RLZ-ZWBFS8",
+      "invariant": "INV-94DCJ5",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 12",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "RecordOrigin owns the rendering or source-selection boundary that implements this obligation: Record pages lead with meaning, present other fields in kind order, then relationships and timeline, and end with labelled origin rather than JSON.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The component's own statement of the truth view and its timeline.\n\nAnchor: \"The reader's truth view (MIK-R29 rules 3 and 4)\"",
+    "14": {
+      "note": "The record page in its fixed order.\n\nAnchor: `TruthView`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:4144846126afad3398384ea3db831fe354ad4eb67628c4f7703102fb5a0e08b4",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The superseded header, and unreadable links named.\n\nAnchor: \"heads a superseded decision with its derived status\"; \"names record links that could not be read instead of claiming there are none\"",
+    "15": {
+      "note": "The header with kind, id, state, derived status and revision.\n\nAnchor: `TruthHeader`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:885ddff0e6b51ca8aa0130d8769d6d67af7c54f2fd1b494868708ddbf0434954",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "end": 537,
-              "kind": "line_range",
-              "start": 533
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:44333b1ec62142777e647c3c6c449d15c2bbea84ab243fee8488ccad1e79b92e",
-            "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 575
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "A history row's line: its effect, and its because targets as links.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:8daa7e6741491afb69e246d736f3d7d034e693ea6c20f852dbba8586c6c9a267",
-            "locator": {
-              "kind": "symbol",
-              "name": "HistoryLine"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "A row's because: a record ID navigates, a requirement is named.",
+    "16": {
+      "note": "The field order and the per-kind lead.\n\nAnchor: `ORDER`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:3fb3d9e71dd5474e612eeeef43471a7b904e986f27ece0c130a2c4a44182fad7",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "kind": "symbol",
-              "name": "becauseTargets"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "An incoming link from a history row names the record the row is about.",
+    "17": {
+      "note": "A history-row source leads to the record it is about.\n\nAnchor: `IncomingSource`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "kind": "symbol",
-              "name": "IncomingSource"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "Every field except those the kind's sections show.",
+    "18": {
+      "note": "The combined newest-first timeline.\n\nAnchor: `TimelineSection`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:89f5bd395b9e225ef9b09a34ddfbd59214be2f5fcd613227e26bae62f3c233af",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "kind": "symbol",
-              "name": "SHOWN_ELSEWHERE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:be97d2a7c4185d1a9d5251a3923e9857adef370266b44e10eb81e134bc79ae9a",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordFields"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "The header with the derived decision status (F9).",
+    "19": {
+      "note": "The labelled file, admission and origin close.\n\nAnchor: `RecordOrigin`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:e40b40b41f51c0c33bb8d92a433fb713261fe7fbfc6b3d885c3c37a85edb29f6",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
+            "content": "sha256:65cbdb3ee48255f44047db285c7b409756465e920faa12a2eff220d21c7c2e72",
             "locator": {
-              "kind": "symbol",
-              "name": "TruthHeader"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Outgoing links, or why they could not be read; incoming links.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:46d784763cabcbdcde6eb174b5de7121d2a610dc14c243577530090f3cecba16",
-            "locator": {
-              "kind": "symbol",
-              "name": "OutgoingSection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:5b88f5cca61bb3379a7067b0db7e6cc58c187d9798d2dc57ea85d1938e52e8d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "IncomingSection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The truth view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:5474d9dfdc5533741c33fbac6342206d918f7f02ae6d6cd9cbefd5726afbc773",
-            "locator": {
-              "kind": "symbol",
-              "name": "TruthView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The invariant and family parts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:eae8184812fc89e3260bfc12a0263def2c23e2c7fd8145756c800831b683dff9",
-            "locator": {
-              "kind": "symbol",
-              "name": "InvariantPart"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:40f18d52fb7ff38bfe2c7981daf4a3105246b8d3daca5b96f4a207fa8b804442",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyPart"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "History rows, entry events and record events with meaning diffs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:8daa7e6741491afb69e246d736f3d7d034e693ea6c20f852dbba8586c6c9a267",
-            "locator": {
-              "kind": "symbol",
-              "name": "HistoryLine"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:1e2ab439c3f99d9acd6bfb423765e425d1f6ef2138b0f6ed92d78b24e086675e",
-            "locator": {
-              "kind": "symbol",
-              "name": "EntryLine"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:d59daaf14b02372625d230873502ca54859c0b08a10cb5fba20f87f70c803a3d",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordLine"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The timeline, each source's state named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:ed3f9ee44f1edcb451c8ef9d66cb74d302d81f9df2dbb5fd524403b082af2b90",
-            "locator": {
-              "kind": "symbol",
-              "name": "TimelineSection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The invariant, and family, decision and incident cases.\n\nAnchor: \"opens an invariant truth view with its states, links and a three-source timeline\"; \"opens a family, a decision and an incident with every field and their links\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:40129bc7076a5aca4d64cd5cca7da7131e87b512c1ad86238fbc3366e1e9d6cd",
-            "locator": {
-              "end": 290,
-              "kind": "line_range",
-              "start": 235
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
         }
       ]
     }

@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc8f866afc212d6035d8c6e321f10aaf6e6ab72f",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:8909ea19186c7dadd146f94df56cc37f6d86845361fe5a2f380f9acbf0c633d1",
             "locator": {
               "kind": "symbol",
@@ -52,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "dc8f866afc212d6035d8c6e321f10aaf6e6ab72f",
+            "blob": "be18a11c17428887debf698d158f209fef4b1ef8",
             "content": "sha256:a688c1224f2be9ecb85828129bc30a1f5dcae4f101d4f05642bb3f770bbe43d3",
             "locator": {
-              "end": 127,
+              "end": 158,
               "kind": "line_range",
-              "start": 122
+              "start": 153
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },

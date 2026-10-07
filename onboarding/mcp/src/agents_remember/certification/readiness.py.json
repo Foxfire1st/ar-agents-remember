@@ -147,12 +147,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "389ba6c651fb5023baa08c53db2be4886375fbd1",
+            "blob": "2bead68e2906f8e10ab67be20f500d480a2dbe81",
             "content": "sha256:1dbb91adf69115b6d87e53b5ff482171f434e8004f2f1258ca2c19597ba42b46",
             "locator": {
-              "end": 82,
+              "end": 269,
               "kind": "line_range",
-              "start": 82
+              "start": 269
             },
             "path": "mcp/src/agents_remember/certification/__init__.py"
           },
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
             "content": "sha256:2ced7be92666c223587298a1b087e60ca6a52e87410cab86144320e277b447be",
             "locator": {
               "kind": "symbol",
@@ -177,7 +177,7 @@
         },
         {
           "anchor": {
-            "blob": "6acfc185342be3a34564d96252e15ab57f43a15d",
+            "blob": "4a49cd1b6582ef824b6ef2b78a133f208532a045",
             "content": "sha256:1cf54b8277e8112bfb2cef21e18d10463fb1bf665a0dad9670d2a52c61aac9c7",
             "locator": {
               "kind": "symbol",

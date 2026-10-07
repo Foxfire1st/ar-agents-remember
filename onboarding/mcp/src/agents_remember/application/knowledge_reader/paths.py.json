@@ -2,333 +2,95 @@
   "path": "mcp/src/agents_remember/application/knowledge_reader/paths.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of the explorer, the path view and the without-proof list.\n\nAnchor: \"**The explorer** lists one directory level\"",
+    "13": {
+      "note": "The explorer level delegates to the one tree-coverage owner.\n\nAnchor: `tree_listing`",
       "targets": [
         {
           "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:5732001e2b1f6ea0d50877377112f1c9186d042438c8506f5ae059271f6e7227",
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
+            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
             "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "Linking records, a decision shown whole.",
+    "14": {
+      "note": "The one pathname inventory, presence marks and coverage owner.\n\nAnchor: `read_tree_listing`",
       "targets": [
         {
           "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:29993f39aecd5f2237e874f8fd31f20078af6c912c8f366e086926f698296067",
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
             "locator": {
-              "kind": "symbol",
-              "name": "_linked_records"
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The path view, bounded for a directory.\n\nAnchor: `path_view`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
+            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "Invariants without proof, by path.",
+    "16": {
+      "note": "The one currentness call, and its failure named.\n\nAnchor: `states_at`",
       "targets": [
         {
           "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:ac28934a6a4adf2b78f41bda4433e474852f3a3c09ff2c67db96d45a0ced265d",
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
+            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
             "locator": {
-              "kind": "symbol",
-              "name": "without_proof"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "The file, directory, test-file, explorer and without-proof cases.",
+    "17": {
+      "note": "The without-proof list, filtered by path.\n\nAnchor: `without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:f45cf783a9b0526374a9d3a1f8b2c99702471bea89d68a2bf7f37cafd5e73b8e",
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
+            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_file_path_view_shows_prose_references_entries_families_and_linked_records"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The file, directory, test-file, explorer and without-proof cases.\n\nAnchor: `test_the_explorer_lists_code_and_onboarding_children_with_entry_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:a5c8b0f2ecd42df2805cc5bd15f36edf8030a5e146dfa1365b256354d4c35824",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_reader.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:3f762896f00475c395ab162843bff4dd6ee398be97f22a28d1a104d260c1ffaa",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_directory_view_is_bounded_to_its_own_level_children_and_route"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:5d570159fdbe0e76b5580b931350b78dcf67bcacf30d32aac73514f477d2bbc1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_test_file_shows_its_proofs_by_invariant_with_their_facets"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:d57a52994f2e6f24efe9d9fcbb12e8db1ecb80bf02d338f20467ab1a9734550b",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_explorer_lists_code_and_onboarding_children_with_entry_counts"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:8e74b1ea82e47a31a8eca736a3726fb8e8664ea1e1020917106b0e01728c7733",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_without_proof_list_is_filterable_by_path"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "One explorer level: code and onboarding children, with live entry counts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:21737d9142caf07c3c376181244807ae193566e4a1993ea6c2d6a52be35c4e65",
-            "locator": {
-              "kind": "symbol",
-              "name": "tree_listing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:b8db1936f0564c3aac5a3703529cd521f9d3888ab1dc47d6eba2bbb44755ccd9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_entry_counts"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The path view, bounded for a directory (F2).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:a9c6acd3a8cab129b7e4357c5bc30f7c6086deffb179f823d33e13dd139fdf2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "path_view"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Live entries only; the links naming the path or its invariants.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:b9fa6c9b168d6c62b7febf4b7b74bc9c526d3d62f33f39214e74560d6f31a687",
-            "locator": {
-              "kind": "symbol",
-              "name": "_live_entries"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:ac1a584b944060db865321026cbb3fddd26cd12da8b200f7607fdc3d3a3ef7c8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_links_to"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A directory's children with their counts, and its subtree's size.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:5d70c323d846d4a94d7fdaf72624001dcd693c1c8b02c4965b41822b8367632e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_directory_summary"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Prose and sidecar paths; the kind of a path; the resolved references.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:df158b4ba17595caf37a808b13d557d2959c726ff33bf7c83821768d9fd24b42",
-            "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_paths"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:18746b392370dc1c4c6a9f60abd92c3c9fdfdc8e7886e7b9497589add28f915c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_path_kind"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:e91bd3c9bf647ccf9af6f8a403383be93a8678db2f0f1acb57bbf929cef3aa10",
-            "locator": {
-              "kind": "symbol",
-              "name": "_references"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The one currentness call, and its failure named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:0b4f0a63e931a83d1c21f03ea4a7be8f46081ba7119141ba61bddf3464d225cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "states_at"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:984c50d84702d837be4ae4e33b61096522f28d150d5c4e34043234d505cda6a7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_currentness_block"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "One entry with its state; entries grouped by invariant.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:5d4bae9b1215d7549594fc81d2beaf4e45a680e5074e684f1944a46ecdc9430b",
-            "locator": {
-              "kind": "symbol",
-              "name": "entry_document"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:56c0ffe1c91087a8b4366e588c9a4ecbbbef74b4b31db315895e1acd0c211592",
-            "locator": {
-              "kind": "symbol",
-              "name": "_invariant_groups"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Member and routed families, each with its other locations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:f90b62ff08528e794a9561a05ea24fba20010851ebaa9e45b009befea82d8968",
-            "locator": {
-              "kind": "symbol",
-              "name": "_families"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:21c0e10e9de1b8bc20819c944a383ba8c7c48253f3ad1a5a8bfdbec9d6231f7b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_with_locations"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
-            "content": "sha256:0d77c965bb7abd868e6f5d6f6f952d40434f05685c032fe5bf6127993860de93",
-            "locator": {
-              "kind": "symbol",
-              "name": "_elsewhere"
-            }
-          },
-          "kind": "code"
         }
       ]
     }

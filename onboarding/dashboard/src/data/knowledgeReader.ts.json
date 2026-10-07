@@ -2,306 +2,77 @@
   "path": "dashboard/src/data/knowledgeReader.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of the address and the typed answers.\n\nAnchor: \"Answers are typed by\"",
+    "15": {
+      "note": "The optional knowledge-presence and coverage fields of a tree row.\n\nAnchor: `TreeChild`",
       "targets": [
         {
           "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:63bcf9c3c00bc32046aa730fb3611afdc5f44d4a59bf90182453ad99a3922560",
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "A typed answer returned whatever its status; only transport failures throw.",
+    "16": {
+      "note": "The shareable address, read and written.\n\nAnchor: `parseReaderHash`",
       "targets": [
         {
           "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:795710980c21c130a1dfad361aac22d109013b6d2e2acf8e176904d777605858",
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
             "locator": {
-              "kind": "symbol",
-              "name": "ReaderTransportError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:401af838b2b066012b5e87e515034b4ab0dbfc47e5e7cd4c083f380638672d2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "readerGet"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "An address's own read, and one subtree page.",
+    "17": {
+      "note": "A typed answer returned whatever its status; only transport failures throw.\n\nAnchor: `readerGet`",
       "targets": [
         {
           "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:bc5a23c276263532115e2094c70cd952cb78dab80a35dc5a048a4aef617f63c3",
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
             "locator": {
-              "kind": "symbol",
-              "name": "readAddress"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:2db48ab76838f94ab0557334ec98192d4bfe2b0d9cb9191a8f74a632a35ea0c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "readSubtree"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "12": {
-      "note": "The code address of an anchor, and its label.",
+    "18": {
+      "note": "The address a code citation opens.\n\nAnchor: `codeAddress`",
       "targets": [
         {
           "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:f0f38f18aa959464b4e27610810b1766c9603f98bf57c8e5b5c0a42ab47755ea",
+            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
+            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
             "locator": {
-              "kind": "symbol",
-              "name": "codeAddress"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:ae024cb81858f5c4fe869a1b1ebc22ef8926a3c212479f337782b5298b09de52",
-            "locator": {
-              "kind": "symbol",
-              "name": "locatorLabel"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "13": {
-      "note": "The navigation case: links change the shareable hash, and the hash round-trips.\n\nAnchor: \"navigates by URL: explorer and links change the shareable hash, and the hash round-trips\"",
+    "19": {
+      "note": "The tree that renders the optional fields without claiming an unknown.\n\nAnchor: `KnowledgeTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:cb0e7b0a6840a1fe8ab82cf12e3a4aa88c095ec6bad8e2226516fa3d61ccb6b9",
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
             "locator": {
-              "end": 340,
-              "kind": "line_range",
-              "start": 340
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "An incoming link may carry the record its history-row source is about.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:66cb63de23c042cf0174db4b81d76f32c98e9bd39c3c51a84e4d85a82997e4f8",
-            "locator": {
-              "end": 245,
-              "kind": "line_range",
-              "start": 233
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The hash prefix and the read timeout.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:b231fecf3cb514e4bb076111f154577990cf4bf977a882d1a28554103cf26bd4",
-            "locator": {
-              "kind": "symbol",
-              "name": "KNOWLEDGE_HASH"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:e94f9b4881c12cf3d964a457ab168df7ab079866e8d64b91589bac3b59541b46",
-            "locator": {
-              "kind": "symbol",
-              "name": "READER_TIMEOUT_MS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The address a view is named by.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:4fb37f5527ef1e73cb4325a57ebaf8f284425e913781853d0dac22ef861e0950",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReaderAddress"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The selection block: code tree, its source and note, and the pin.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:7bc8633a1ba277589e8b7476efd0234a310b96c8e6c431070b4cdf98e734c94d",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReaderSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A decision as the reader shows it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:67a5b9c8698d99684605fa80abf8271937378b3ed6782225462966138954393f",
-            "locator": {
-              "kind": "symbol",
-              "name": "DecisionView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The path view, bounded for a directory; a subtree page.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:920f38e657d2a4c1ec9fff50d9273de283f6d43bbcc642e6c021a211dff0d6ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "PathViewAnswer"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:fa1a3ad1e40540f5ea0f92c3ed8c9a52f2a719ae7b1c10c1082eaec4538c5824",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubtreeAnswer"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The timeline with per-source states; the truth view with `outgoingState`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:fa7c86b3ea50563b6626c48f5190a2c797c579d43c721e2275b3fee177fef601",
-            "locator": {
-              "kind": "symbol",
-              "name": "Timeline"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:1886a2a45e693b1f2a42f8313912adf47f4afce84fa4f4338e88d4840fd5d9cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordViewAnswer"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The selector's choices with `commitsState`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:3980f223b1a9f543b772acdd0c452c69106055e9468c7b7917cb5afc50ead4fe",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectionOptions"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The shareable hash, read and written.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:eda6257fecd133947c26ef85ac6ee28147c69d3f84870f1fc64117e4b907ba15",
-            "locator": {
-              "kind": "symbol",
-              "name": "parseReaderHash"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a77f1159be24385c58701da3482b2edf227c8f21",
-            "content": "sha256:15f70b6870a24452a148a06dfa75248f9a6c960d88c355baa91e2ed88cc975c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "readerHash"
-            }
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
           },
           "kind": "code"
         }

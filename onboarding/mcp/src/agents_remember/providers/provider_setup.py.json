@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:1ca400fa9df2a72c617014a06da2fcf194c730ac1569fe0da55950fced99e05c",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:c64f94720c8a9fa70ceef7b88e85f99052a935904c0f068c0571075ba33d5efa",
             "locator": {
-              "end": 1020,
+              "end": 951,
               "kind": "line_range",
-              "start": 983
+              "start": 914
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -44,12 +44,12 @@
         },
         {
           "anchor": {
-            "blob": "aa6deecf2d3543ce1c5756c527660e90e6b9f0fa",
+            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
             "content": "sha256:be3682059146c7644753ba074c442eab8e7d5e5d89da58075fc2ee61e70bf76f",
             "locator": {
-              "end": 1165,
+              "end": 1099,
               "kind": "line_range",
-              "start": 1133
+              "start": 1067
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

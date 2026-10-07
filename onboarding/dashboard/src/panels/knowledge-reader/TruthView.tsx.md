@@ -6,54 +6,43 @@
 
 ## Purpose
 
-**The knowledge reader's truth view (MIK-R29 rules 3 and 4): one record with every field, its states, its links
-both ways and its timeline, newest first.** It renders an invariant, a family, a decision, an incident or any
-other facet record from the backend's `record` answer.
+The reader's truth view (MIK-R29 rules 3 and 4, ordered by MIK-R79 rule 12): one record with its
+kind, identifier, states and revision on one line, its meaning as the lead, the remaining meaning
+fields as labelled paragraphs in a fixed order per kind, its realizations and proofs, members and
+locations, links in both directions, the timeline, and last the file, admission and origin as
+labelled lines. The lead is the invariant's statement, the family's guarantee, the decision's
+context, and so on per kind.
 
 ## Code Commentary
 
 ### Logic
 
-- **The header (ruling 2026-09-30T09:42:58, F9).** `TruthHeader` shows the kind, ID, the invariant's MIK-R03
-  state, the status and the revision. A decision's status is its **derived** one (`superseded` is never
-  stored), so a superseded decision is headed "superseded".
-- **Every field.** `RecordFields` lists every recorded field except those the kind's own sections show
-  (`SHOWN_ELSEWHERE`: schema, links, alternatives, members, routes, supersedes); `show` renders strings, string
-  lists and JSON. The record's explanation prose is shown when present.
-- **Kind parts.** `InvariantPart`: realizations (with the code tree the states were measured at, and the reason
-  when unverifiable), proofs, families, and linked records with a decision in full. `FamilyPart`: members with
-  their states and statements, the stale-member count, routes, and every member location with its entries.
-  A decision is shown by `DecisionCard`.
-- **Links both ways.** `OutgoingSection` lists each outgoing relation with its target (and the alternative for
-  a decision's `reconsider_on`); when the record's links could not be read it says so
-  (`record-outgoing-unavailable`) instead of "no outgoing link" (F11). `IncomingSection` lists every relationship
-  towards the record with its source kind and origin path.
-- **The timeline.** `TimelineSection` names each source's state: a read source with its event count, a source
-  that could not be read with its reason (`timeline-source-unavailable`), never as no history. Each event shows
-  its commit (or "uncommitted"), date, subject and source: a record event with its meaning diff
-  (`RecordLine`), a history row with its leaf and disposition (`HistoryLine`), and an entry event with its
-  change and its from/to paths and locators (`EntryLine`, which shows `moved` and `re-anchored` as the backend
-  labels them).
-- **History rows and decisions, both ways (L37, MIK-R29 rules 4 and 5).** `HistoryLine` shows a row's `effect`
-  after its disposition ("changed · replace") and, under `because`, each target of the row's `because`
-  (`becauseTargets`): a record ID is a navigation link, a requirement is named as elsewhere in the reader. A row
-  with neither renders as before. `IncomingSource` shows a link whose source is a history row as the record the
-  row is about (`sourceSubject`, a navigation link) followed by "row <ROW-ID>"; a row served without its subject
-  stays the plain row ID.
+- `TruthHeader` shows kind, id, the invariant's state badge, the derived decision status
+  (`superseded` is never stored) and the revision. The lead field comes from `LEAD`; `RecordFields`
+  renders the remaining fields in `ORDER[kind]` first and the rest sorted, framed fields excluded.
+- `InvariantPart` renders realizations (with the states-at-code-tree line), proofs, families and
+  linked records; `FamilyPart` renders members with their statements and states, routes and member
+  locations. Empty lists are not drawn.
+- `OutgoingSection` names an unreadable link list instead of showing none; `IncomingSection` maps a
+  history-row source to the record the row is about, since a row has no page of its own.
+- `TimelineSection` combines the record file's own log, the history rows about it and the
+  realization/proof entries, newest first; `RecordOrigin` closes with the file path, admission and
+  origin as labelled lines.
 
 ### Conventions
 
-- Every record, path and code target is a navigation link from `readerParts.tsx`.
+- Values render through `Value`: arrays as lists, objects as labelled pairs, empty arrays as
+  "(none)", null as an em dash.
+- Every reference to another record is a navigation; the reader never fabricates a missing record.
 
 ### Invariants And Boundaries
 
-- **A failed source is shown as partial or unavailable, never as empty:** unreadable links and unreadable
-  timeline sources are each named.
-- **A decision's alternatives and derived superseded status are shown whole** (the rule carried from L13), in
-  the decision's own view and in an invariant's linked records.
-- Proved by `KnowledgeReader.test.tsx`: the invariant case (three sources newest first, a meaning diff, a moved
-  entry event), the family, decision and incident case, the superseded-header case, the failed-source case and
-  the unreadable-links case.
+- **A record reads top to bottom** in the fixed order above; realizations and proofs follow the
+  meaning fields, links follow those, and the timeline is near-last (rule 12).
+- **A direction with no links is one plain line**, and an unreadable direction is named as
+  unavailable rather than shown as empty.
+- **A decision's status is the derived one**; a superseded decision renders as superseded without
+  storing that status.
 
 ### Todos
 
@@ -63,30 +52,20 @@ No additional work is asserted by this card.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The design authority is the requirement
-packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R79@v1` (rule 12); it lives outside the code and memory repositories, so it
+is named here and not cited as a row.
 
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The component's own statement of the truth view and its timeline. [1]
-- Every field except those the kind's sections show. [2]
-- The header with the derived decision status (F9). [3]
-- Outgoing links, or why they could not be read; incoming links. [4]
-- The truth view. [5]
-- The invariant and family parts. [6]
-
-- History rows, entry events and record events with meaning diffs. [7]
-
-- The timeline, each source's state named. [8]
-- The invariant, and family, decision and incident cases. [9]
-- The superseded header, and unreadable links named. [10]
-
-- A history row's line: its effect, and its because targets as links. [11]
-- A row's because: a record ID navigates, a requirement is named. [12]
-- An incoming link from a history row names the record the row is about. [13]
+- The record page in its fixed order. [14]
+- The header with kind, id, state, derived status and revision. [15]
+- The field order and the per-kind lead. [16]
+- A history-row source leads to the record it is about. [17]
+- The combined newest-first timeline. [18]
+- The labelled file, admission and origin close. [19]
 
 ### Cross-Repo References
 

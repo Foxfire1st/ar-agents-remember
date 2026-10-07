@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -160,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:626cb8ce86a5c55156c089a7386bf7750b1db1634a24711c0d812fd44a77c9f5",
             "locator": {
-              "end": 148,
+              "end": 149,
               "kind": "line_range",
-              "start": 121
+              "start": 122
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -173,12 +173,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:902780d87cba7c2e2274861c13c0e77ad173c858c9a29d8516e815348e91d9b9",
             "locator": {
-              "end": 237,
+              "end": 238,
               "kind": "line_range",
-              "start": 233
+              "start": 234
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -186,12 +186,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:d15582a5d03ee792ad27974dd925ce5f6db31330ecafbc774d4a2ad416c589b5",
             "locator": {
-              "end": 247,
+              "end": 248,
               "kind": "line_range",
-              "start": 243
+              "start": 244
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

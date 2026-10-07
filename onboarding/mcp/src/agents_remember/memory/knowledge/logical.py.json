@@ -220,12 +220,12 @@
         },
         {
           "anchor": {
-            "blob": "69bd49503b7daa1db164d0f12d39b2d8a92ad0d1",
+            "blob": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
             "content": "sha256:f73f13aee98170b5b2737b7ebea27c9516b12ba6891394ce3714eb65dc93db9b",
             "locator": {
-              "end": 249,
+              "end": 277,
               "kind": "line_range",
-              "start": 215
+              "start": 243
             },
             "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
           },

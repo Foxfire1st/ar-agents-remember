@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
             "content": "sha256:ca786e08e8f89f95c23884338c758424ddb831e9b0dad129ae7fc9f663173cc6",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
             "content": "sha256:3f762896f00475c395ab162843bff4dd6ee398be97f22a28d1a104d260c1ffaa",
             "locator": {
               "kind": "symbol",
@@ -47,8 +47,8 @@
         },
         {
           "anchor": {
-            "blob": "09ae78c2190288417cadf4a7a0d9846009b6ed3f",
-            "content": "sha256:d57a52994f2e6f24efe9d9fcbb12e8db1ecb80bf02d338f20467ab1a9734550b",
+            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
+            "content": "sha256:025e876db38634c33926f6390b633cae583bbae913329c60c05f23f3bb5d2a62",
             "locator": {
               "kind": "symbol",
               "name": "test_the_explorer_lists_code_and_onboarding_children_with_entry_counts"

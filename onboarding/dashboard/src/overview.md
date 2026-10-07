@@ -6,18 +6,23 @@
 
 ## 260928-MIK-L29 The Cockpit Gains A Knowledge Mode
 
-The path-based knowledge reader (MIK-R29) is one more Cockpit destination. [`cockpit/Cockpit.tsx`](cockpit/Cockpit.tsx.md)
-adds `knowledge` to `CockpitView` and "Knowledge" to the mode bar, renders it transiently in `ViewBody` like Memory,
-Topology and Hangar (mounted only while selected; unlike Topology it is not full-bleed, so the rails stay), and passes
-`initialView="knowledge"` to `CockpitShell` when the URL hash is a reader address (`#knowledge?…`), so a shared reader
-link opens on its view. The reader owns its state in that hash; the shell holds none of it. The panel lives in
-`panels/knowledge-reader/` and its adapter in `data/knowledgeReader.ts` (both recorded in their route overviews). No
-other shell behaviour changed: takeovers, rails, polls and streams are as before, and the existing panels are
-unchanged. The hash persists across a tab switch, so a reload returns to Knowledge (review R1 note N4, harmless).
+The path-based knowledge reader (MIK-R29) is one of the Cockpit destinations. [`cockpit/Cockpit.tsx`](cockpit/Cockpit.tsx.md)
+adds `knowledge` to `CockpitView` and "Knowledge" to the mode bar, and passes `initialView="knowledge"` to
+`CockpitShell` when the URL hash is a reader address (`#knowledge?…`), so a shared reader link opens on its view.
+The reader owns its state in that hash; the shell holds none of it. The panel lives in
+`panels/knowledge-reader/` and its adapter in `data/knowledgeReader.ts` (both recorded in their route overviews).
+
+**Since 260928-MIK-L79 the mode is a full-width retained layer, not a transient railed view.** The product bar is
+Chats, Operations, Knowledge and File Viewer (in that order); the dashboard opens on Chats; and the four pages that
+left the bar (Engine Room, Memory, Topology, Hangar) have no dashboard entry and are not built or fetching at page
+load. Knowledge is `fullBleed` and kept mounted (hidden, never unmounted) like the File Viewer, so a document and its
+reading position survive a tab switch. The retained pages' layouts are still exercised through injected `initialView`
+values. The hash persists across a tab switch, so a reload returns to Knowledge.
 
 - The Knowledge destination in the registry. [1]
+
 - A reader URL opens the shell on the Knowledge view. [2]
-- The transient Knowledge view renders the reader. [3]
+- The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone. [3]
 
 ## 260921-ICR-L32 The Change-Set Read Carries Its Refusal Instead Of Discarding It
 
@@ -465,7 +470,8 @@ project them, but is not a replacement conversation-history database.
 
 ### Operations
 
-Operations remains the initial destination. Its task list, detail reader, attention, diagnostics,
+Chats is the shell's initial destination (260928-MIK-L79). Operations remains a product destination
+selected from the four-entry bar; its task list, detail reader, attention, diagnostics,
 and contextual RailChat retain their existing contracts. RailChat is useful task-local context, not
 a second full-page chat destination.
 
@@ -527,7 +533,7 @@ must not recreate that coupling.
 
 ## Invariants And Boundaries
 
-- Operations is the default and there is exactly one full-page Chats destination.
+- Chats is the opening view and there is exactly one full-page Chats destination; Operations is a product destination (260928-MIK-L79).
 - The shell owns one catalog poll/reconciler for its lifetime. Views do not create competing feeds.
 - Focus/inspection may name a landed row; only a live row owns action routing and reload preference.
 - Reliable submit and withdrawal preserve request/epoch identity and never blind-resend or locally
@@ -571,7 +577,7 @@ No applicable cross-repository implementation source governs this route.
 
 ### Repo-Internal References
 
-- Shell navigation, default, persistent layers, and shared drivers. [6]
+- Shell navigation, persistent layers and shared drivers. [6]
 - State and authority architecture. [7]
 - Panel composition. [8]
 - Sole Chats route, deletion map, and future boundary. [9]

@@ -1,0 +1,155 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/ReaderToolbar.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+        "content": "sha256:1d29bea3e026868efea24994fc2d8b6e6ca9f55a293252109bc08dcca21f3e4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderToolbar"
+        }
+      },
+      "id": "RLZ-17XRS5",
+      "invariant": "INV-7XYFX3",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 13",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderToolbar owns the rendering or source-selection boundary that implements this obligation: At forty rem and narrower Browse shows a full-screen tree and selecting a row returns to the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+        "content": "sha256:6c5d20df6acc17948a3dc39b3b539bf8ef12d758718070d5ba569700c00acf4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectionNotes"
+        }
+      },
+      "id": "RLZ-HSR3JD",
+      "invariant": "INV-64M4A6",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 2",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "SelectionNotes owns the partial-index and code-note lines after the R1 repair; the producer's PartialIndex name was the pre-repair construct.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+        "content": "sha256:1d29bea3e026868efea24994fc2d8b6e6ca9f55a293252109bc08dcca21f3e4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderToolbar"
+        }
+      },
+      "id": "RLZ-KZMD8R",
+      "invariant": "INV-64M4A6",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 2",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderToolbar owns the rendering or source-selection boundary that implements this obligation: Repository, memory selection and record lookup stay in one header line, while index problems remain fully visible in the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+        "content": "sha256:fc51a911345377ed4d5a442c219f72094d48157533070543a7a81aa59379cc1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRead"
+        }
+      },
+      "id": "RLZ-N0YWKV",
+      "invariant": "INV-QE6278",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useRead owns the current view/parameters promise and tags visible answer/failure state with its selection key; the memoized loader returns the same acquisition to both consumers.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One memoized promise per view and selection; late answers never published.\n\nAnchor: `useRead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The failures of the toolbar's own reads are named beside it.\n\nAnchor: `SideFailures`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The memory-tree selector with live leaves and unconverted commits disabled.\n\nAnchor: `CommitSelect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The selection banner and its pin.\n\nAnchor: `SelectionBanner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The partial index and code note lines.\n\nAnchor: `SelectionNotes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -31,7 +31,7 @@ the separate spawn tree remains diagnostic-only.
 This route is the one full-page **Chats** destination. FEUI-L8 retires the former `Chats.tsx` /
 `SessionList.tsx` product path and promotes the already-built session cockpit under the Chats label;
 the internal `SessionsView` filename and `[data-view="sessions"]` marker remain stable implementation
-identities. `CockpitShell` defaults to Operations, keeps this route mounted, and exposes no second
+identities. `CockpitShell` keeps this route mounted and exposes no second
 Sessions destination.
 
 The route composes a role/spawn rail, persistent stage, default-closed toggleable inspector,
@@ -116,7 +116,7 @@ who asks, and a seat blocked solely on a sub-agent approval still reads awaiting
 
 - `SessionsView.tsx` is the composition seam for the canonical Chats route. The inspector starts
   closed, is explicitly toggleable, and remembers deliberate opt-in separately from temporary
-  narrow-width collapse. Operations remains the initial shell destination.
+  narrow-width collapse. Chats is the shell's opening destination (260928-MIK-L79).
 - `ChatContextBar.tsx` carries the useful duties moved from the retired Chats page: launch hosted
   Chat/raw Terminal, show task/leaf context, explicitly local lifecycle routing for old rows, and
   server-first leaf attach/move with cross-tab invalidation.
@@ -237,7 +237,7 @@ from Toad `main.tcss` + the Claude Code / Codex TUIs — a reference derivation,
 - Exactly one full-page Chats destination; no second Sessions tab or legacy Chats layer.
 - Exactly one browser open authority; rejected raw or harness creates produce no registry row,
   focus change, readiness transition, or dependent delivery.
-- Operations is the default destination; the Chats inspector is closed by default and always
+- This Chats route is the opening destination (260928-MIK-L79); the inspector is closed by default and always
   toggleable/reopenable. Responsive collapse cannot erase deliberate operator intent.
 - Cockpit focus and the live action route are separate: a landed row may remain focused while a live
   row owns launch/gate/composer actions and reload preference.

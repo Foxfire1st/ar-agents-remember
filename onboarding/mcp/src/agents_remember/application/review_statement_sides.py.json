@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:9337a3581568d42aa4282acac4402465004c414e60fa2afbe608703069755e16",
             "locator": {
-              "end": 1046,
+              "end": 1072,
               "kind": "line_range",
-              "start": 1023
+              "start": 1049
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -109,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:f5d24e10c00f510d8db7ea2e70fd0f46b8125fa4b120cb0f2f27460e7cc14194",
             "locator": {
-              "end": 1006,
+              "end": 1032,
               "kind": "line_range",
-              "start": 1003
+              "start": 1029
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

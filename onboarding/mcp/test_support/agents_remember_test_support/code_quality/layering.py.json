@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
             "content": "sha256:d8567095454d3719c73cef2c7f50dbc0d6e7b9da657cdb5f961600618a6e9046",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
             "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
             "locator": {
               "end": 168,
@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de9913b5a9c86bf44cd10bb46c4c23309f025767",
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
             "content": "sha256:d2cb73e1863b5f2ceda96f451d8e21b1cafe178d3d57377696517c5c5c8ab88d",
             "locator": {
               "kind": "symbol",
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "de9913b5a9c86bf44cd10bb46c4c23309f025767",
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
             "content": "sha256:d33705f3f4eeef09f04ceb0316d67dc7fbb3f005859ae2a206a81aa82b0ecf79",
             "locator": {
-              "end": 64,
+              "end": 61,
               "kind": "line_range",
-              "start": 45
+              "start": 42
             },
             "path": "mcp/tests/test_layering.py"
           },

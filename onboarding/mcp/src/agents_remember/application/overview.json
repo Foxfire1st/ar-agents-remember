@@ -7737,12 +7737,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24247f7167d7cb355d8195ea8359f5c32cedd4b8",
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
             "content": "sha256:a9c6acd3a8cab129b7e4357c5bc30f7c6086deffb179f823d33e13dd139fdf2f",
             "locator": {
-              "end": 175,
+              "end": 138,
               "kind": "line_range",
-              "start": 142
+              "start": 105
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/paths.py"
           },

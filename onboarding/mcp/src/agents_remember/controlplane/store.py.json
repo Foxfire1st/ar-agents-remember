@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
             "locator": {
               "kind": "symbol",
@@ -232,12 +232,12 @@
         },
         {
           "anchor": {
-            "blob": "31937edec6b26decdd3b12604c62ba7a7a534252",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:16f4f5a341af61fbe46985ec477056a2017e65c0078aa3f0192d12ee8c92d182",
             "locator": {
-              "end": 425,
+              "end": 503,
               "kind": "line_range",
-              "start": 374
+              "start": 452
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

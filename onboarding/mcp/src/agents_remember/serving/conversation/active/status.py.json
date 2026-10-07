@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9804bec86ebbbc6de51f939c6cbe7755ffa680ac",
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
             "content": "sha256:e265bf436f1abf79877cc993325207d6249536836963b4d37b0004aae2c958d5",
             "locator": {
               "kind": "symbol",
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "9804bec86ebbbc6de51f939c6cbe7755ffa680ac",
+            "blob": "2236e5ba76316e971b5c98c014e6232513f0dcf5",
             "content": "sha256:f9265ae7e8f071a4a3d8a8e8005f3ce9c7f633e9f2c5d595cc769061a7d5ae71",
             "locator": {
-              "end": 101,
+              "end": 108,
               "kind": "line_range",
-              "start": 78
+              "start": 85
             },
             "path": "mcp/src/agents_remember/serving/hosted_control_projection.py"
           },
@@ -116,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "247ef5664d083bec5219606d829a442885d8794e",
+            "blob": "c93392a765050bc541f969d16632d9084a5d6bdd",
             "content": "sha256:ca375219a3bae58857a46cd8b75a1be22862153a7e2429066da020c2439d4cb0",
             "locator": {
               "kind": "symbol",

@@ -82,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1b6a9c04d61213a3ae710b4c7979eca305e661f",
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
             "content": "sha256:bc3e7d99b92081ccb191e3b3af26168576b775a1c1e8060b0a8a62a28e803a72",
             "locator": {
-              "end": 532,
+              "end": 539,
               "kind": "line_range",
-              "start": 437
+              "start": 444
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
           },

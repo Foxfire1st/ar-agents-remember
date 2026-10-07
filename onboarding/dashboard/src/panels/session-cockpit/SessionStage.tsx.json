@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:cbd7fdc1054c49ca8637b4fda77e0dc64b67714c94bfbb289b80b5f1715d7adf",
             "locator": {
               "end": 291,
@@ -124,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:75865871b0bafff967987009f8c7f3dc2dafc4d6b0a520598cd106e9d0396c7b",
             "locator": {
               "end": 260,
@@ -142,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
             "locator": {
               "end": 194,
@@ -155,12 +155,12 @@
         },
         {
           "anchor": {
-            "blob": "a807afd1b2c1db7d9df1b668d1eaa699b79b182d",
+            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
             "content": "sha256:d1d8cb167cd5fc9c522c29adb8a63229fa6d631c03fa9962971a531c47e204e5",
             "locator": {
-              "end": 93,
+              "end": 124,
               "kind": "line_range",
-              "start": 93
+              "start": 124
             },
             "path": "skills/w-02-light-task-workflow/master-template.md"
           },
@@ -168,7 +168,7 @@
         },
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:79f15591aac13e045ecba7485affb19568de2a17a37875e08a7503ea5d3e6c58",
             "locator": {
               "end": 195,
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
             "locator": {
               "end": 194,
@@ -199,7 +199,7 @@
         },
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:d46b9042f2ddd082323ff73e99ec65e52c007b7ad8655c2b5c6b4c0689712cab",
             "locator": {
               "end": 286,
@@ -217,7 +217,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:a8bdf281b0c1230b260a7e270f9eb77a2caa4570c1b0d673f3db6319a05c72ce",
             "locator": {
               "end": 190,
@@ -230,7 +230,7 @@
         },
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:3d956f1e2604a89c42bf719729a7a28bdc53556d8f506c4ced88e312916a606b",
             "locator": {
               "end": 194,
@@ -243,7 +243,7 @@
         },
         {
           "anchor": {
-            "blob": "175c4141c37c4c880b5b345e55663a369bb16857",
+            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
             "content": "sha256:144a8c48a1b10e50d23068b4145fb1e2776f98f712c895549754ccc3d41d565a",
             "locator": {
               "end": 215,

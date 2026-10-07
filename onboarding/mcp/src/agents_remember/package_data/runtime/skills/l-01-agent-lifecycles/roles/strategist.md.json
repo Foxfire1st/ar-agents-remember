@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
             "content": "sha256:7884929095c6b0359249c65b25ec6fc2a4dbab3d60e7e873fdd576e97a238e35",
             "locator": {
               "kind": "symbol",
@@ -95,12 +95,12 @@
         },
         {
           "anchor": {
-            "blob": "dbcbef71601c1e5df3015c2de8419ccbbd084f98",
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
             "content": "sha256:569040dfe8418f94347d814a3e3f8ba6ebbbb22505a18de1c225b29bdbac276a",
             "locator": {
-              "end": 114,
+              "end": 101,
               "kind": "line_range",
-              "start": 110
+              "start": 97
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },

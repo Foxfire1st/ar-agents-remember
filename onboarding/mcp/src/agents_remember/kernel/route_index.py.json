@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "43f903cf7da51fcd08f69e3a39d1e4ce34c49776",
+            "blob": "b36efb156d598b47ef93547574de276270670bb7",
             "content": "sha256:2df10f7cd339c643d1e1bb99e82361d930b4d5c5960c646d06ca426a7b14e5a1",
             "locator": {
-              "end": 316,
+              "end": 367,
               "kind": "line_range",
-              "start": 316
+              "start": 367
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },

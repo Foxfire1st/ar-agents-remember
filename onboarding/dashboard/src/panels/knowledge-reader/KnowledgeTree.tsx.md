@@ -6,39 +6,48 @@
 
 ## Purpose
 
-**The knowledge reader's explorer (MIK-R29 rule 1): the repository's directories and files at the selected
-memory tree, one level per read, each child with its knowledge entry count.** A path known only to the
-onboarding mirror (a card whose code is gone) is listed and marked "(onboarding only)"; a code tree that cannot
-be listed is named, and the onboarding mirror is still shown.
+The Knowledge reader's tree (MIK-R79 rules 3, 4 and 5), built on the dashboard's shared
+`ExplorerTree` rather than a private one. It shows the path hierarchy by default (or every path with
+"Show every path"), plus the two count rows and the Records branch: families, decisions and the
+other record kinds, one line each, so a reader can find a record without knowing its identifier.
+Invariants stay out of the tree and are reached through their files and families.
 
 ## Code Commentary
 
 ### Logic
 
-- **Lazy levels.** `useTreeLevels` asks one `tree` read per opened directory (the root `''` and the ancestors of
-  the current path are open from the start) and keeps each level's answer, loading state or failure.
-- **Stale answers dropped (ruling 2026-09-30T09:42:58, F13).** Each read remembers the (repository, memory
-  tree) it was asked for; an answer that lands after either changed is another tree's listing and is dropped,
-  and the levels are reset on a switch.
-- **Rows.** `TreeNode` shows the toggle for a directory, the name (the current path highlighted), the entry
-  count, and "(onboarding only)" when `inCode` is false. It only descends into a child that lies below its
-  directory, so a listing that says otherwise is never followed.
-- **Failures named.** `TreeLevel` shows a failed level's detail (`tree-unavailable`) and, above a listed level,
-  the code side's state when it is not `listed` (`tree-code-unavailable`), for example a commit with no
-  `Code-Commit` trailer.
-- **Navigation.** Clicking a name calls `onOpen`, which the panel turns into a path address (a URL change); the
-  repository row opens the root summary.
+- `rootRows` is the tree's root: the two count rows ("Invariants without proof", "Census"), the
+  repository's path root, and the Records branch. `useRootCounts` reads the without-proof total and
+  the census count independently and shows `reading…` until each answers.
+- `useKnowledgeLoader` resolves rows per directory: root rows; the Records kinds (excluding
+  invariants) and their records from the shared `loadRecords` answer; and `pathRows` for a path
+  directory, which asks one `tree` read for that directory.
+- `RowSuffix` shows a directory's `hasOverview` mark, a file's `onboarding` card mark, the entry
+  count, and the directory's coverage (`cards/files`, or `coverage unavailable`). The optional
+  `hasKnowledge`/`hasOverview` fields mean "unknown" when absent, so a row is never dropped or
+  marked absent because a memory enumeration failed.
+- `showPath` keeps a row when every-path is on, when it has knowledge, or when it is the current
+  path or an ancestor of it; the revision prop makes the shared tree re-read loaded branches once
+  when the switch flips.
+- `ancestors` opens the path's ancestors (or the record's kind branch) so the selected row is
+  visible, and `currentRow` marks it.
 
 ### Conventions
 
-- Panda CSS owns the looks; the tree is a `nav` labelled "Repository paths".
+- Row identity is `path:<path>`, `kind:<kind>` or `record:<id>`; the address is what a row opens.
+- The tree is the shared `ExplorerTree`; this module owns only loading, suffixes and the filter.
+- `currentPath` keeps the open path visible even when a cited code file has no card.
 
 ### Invariants And Boundaries
 
-- An unlisted code tree is named, never shown as an empty directory.
-- Proved by the dashboard's navigation case (explorer counts, clicks change the hash) and the stale-answer case
-  (the pinned commit's listings held, the selector switched back, then released: nothing lands); removing the
-  guard fails it.
+- **The tree is built on the shared component** (rule 3); no second tree component exists for the
+  Records branch or paths.
+- **Invariants never appear as tree rows** (rule 5); they are reached through their files and
+  families.
+- **An unknown is not a false:** absent `hasKnowledge`/`hasOverview` must not be rendered as "no
+  card"; an unavailable memory enumeration is named as unavailable coverage.
+- **A records failure is the shared acquisition's failure:** the tree names it and keeps the path
+  tree usable; it does not start a second request.
 
 ### Todos
 
@@ -48,20 +57,20 @@ No additional work is asserted by this card.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The design authority is the requirement
-packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R79@v1` (rules 3, 4, 5 and 6); it lives outside the code and memory
+repositories, so it is named here and not cited as a row.
 
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The component's own statement of the explorer. [1]
-- One read per opened level; an answer after a switch is dropped (F13). [2]
-- A row: toggle, name, count, "(onboarding only)"; descends only below its directory. [3]
-- A level, with a failed read and an unlisted code tree named. [4]
-- The explorer, with the current path's ancestors open. [5]
-- The stale-answer case. [6]
+- The root rows, the Records branch and the two count rows. [7]
+- The record kinds come from the shared acquisition, invariants excluded. [8]
+- The loader routes a directory to root, records or one tree read. [9]
+- A row's marks, entry count and truthful coverage suffix. [10]
+- The filter keeps the open path and knowledge rows visible. [11]
+- The shared tree that owns loading and traversal. [12]
 
 ### Cross-Repo References
 

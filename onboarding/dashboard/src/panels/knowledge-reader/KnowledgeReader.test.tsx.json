@@ -2,141 +2,66 @@
   "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement: real served answers, SCRATCH-AUTHORED curation, only `fetch` stubbed.\n\nAnchor: \"MIK-R29 on real data\"",
+    "10": {
+      "note": "The stale-answer and late-selection cases.\n\nAnchor: `clears old record answers on commit and repository changes and ignores late selections`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:44773d1744b919cb1d102d8481622ee740bcfd639c5f1a7ff88a4517cda8cfe7",
+            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "content": "sha256:1f2e83d84f3ae6736a7761b66d5bcadc83bcc95b6ded24f49f84257179de38b2",
             "locator": {
-              "end": 6,
+              "end": 915,
               "kind": "line_range",
-              "start": 1
+              "start": 895
             }
           },
           "kind": "test"
         }
       ]
     },
-    "2": {
-      "note": "The captured bodies and the request-to-body map.",
+    "11": {
+      "note": "The captured bodies the cases serve.\n\nAnchor: `captured`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
+            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "content": "sha256:5d88729a9216ba53c4d9d53134ba84fa03bf7d74577718a125689ce34d85fe83",
             "locator": {
-              "kind": "symbol",
-              "name": "captured"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:b3a9376f1127391a6c9857ff7de50c8e72591e806d5926eda7ecc89bf5ad4b30",
-            "locator": {
-              "kind": "symbol",
-              "name": "bodyFor"
+              "kind": "file"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "3": {
-      "note": "The file, directory, root-summary and test-file cases.\n\nAnchor: \"opens a file with its prose, resolved references, entries, families and linked records\"; \"opens a directory with its overview, routed families elsewhere and the route decisions\"; \"lands on the bounded root summary and follows a subtree page to the next\"; \"shows a test file its proofs by invariant with their facets\"",
+    "8": {
+      "note": "The document order, top/Back and citation-pane cases.\n\nAnchor: `opens links at the top and restores the visit on browser Back`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:40d92a8790c4ce3559fcdccef75d9bbb59e50e307a93abd9fcf7ee581089c3d0",
+            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "content": "sha256:5ca2177478aba04c992023db59393b37861f4ed8c4249e1603396f3987966a7d",
             "locator": {
-              "end": 233,
+              "end": 674,
               "kind": "line_range",
-              "start": 118
+              "start": 661
             }
           },
           "kind": "test"
         }
       ]
     },
-    "4": {
-      "note": "The invariant, family, decision and incident, and census cases.\n\nAnchor: \"opens an invariant truth view with its states, links and a three-source timeline\"; \"opens a family, a decision and an incident with every field and their links\"; \"shows the census, the without-proof list and code opened at its symbol\"",
+    "9": {
+      "note": "The O1 shared-acquisition cases.\n\nAnchor: `shares one record-list acquisition through delay, known branches, rerenders and Back`",
       "targets": [
         {
           "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:c24887d1ef5aea565b06c2656fba7a8b0e2e318dae62072f66eabea7af202c97",
+            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "content": "sha256:a77ab29d2da48cd3889c8183a67bd84b176c5769638e54b460b3a8e48ae9dc2a",
             "locator": {
-              "end": 338,
+              "end": 894,
               "kind": "line_range",
-              "start": 235
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Navigation, and failures named.\n\nAnchor: \"navigates by URL: explorer and links change the shareable hash, and the hash round-trips\"; \"names a partial index, unavailable prose, unverifiable states and an unconverted tree\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:c4de5cce9298e505cc8d7382ff48f5127105d3b02bc080c779e8c0fe39c43ba1",
-            "locator": {
-              "end": 398,
-              "kind": "line_range",
-              "start": 340
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:a2977312a5a1b0ea9064aac0b518ca4fffdd7885b81d6647e626e7ec3269d1ce",
-            "locator": {
-              "end": 447,
-              "kind": "line_range",
-              "start": 400
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:3cc29231aaa959d9893524f22f70237fc34e91018300287957544554944160f4",
-            "locator": {
-              "end": 587,
-              "kind": "line_range",
-              "start": 533
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "A history row shows its effect and decision, and a decision the rows it caused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "21982051298c8970a5d981ba88798e9c3ac86a4a",
-            "content": "sha256:1a0e9e6fb4e63bae664b441eda961d67c9793621bc0fc6d533616213f959fe9e",
-            "locator": {
-              "end": 531,
-              "kind": "line_range",
-              "start": 449
+              "start": 830
             }
           },
           "kind": "test"

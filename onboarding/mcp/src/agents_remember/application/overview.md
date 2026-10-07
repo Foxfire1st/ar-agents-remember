@@ -3845,7 +3845,7 @@ incomplete) accepted as a note.
 **New sub-package (MIK-R29): [`knowledge_reader/`](knowledge_reader/__init__.py.md).** The dashboard's Knowledge area
 asks one read-only question per call, addressed by repository, memory tree and path or record ID, and needs no
 task. The package has no route overview of its own, following the `knowledge_leaf/`, `knowledge_paging/` and
-`knowledge_worklist/` precedent: this section governs its eight cards.
+`knowledge_worklist/` precedent: this section governs its nine cards.
 
 - [`__init__.py`](knowledge_reader/__init__.py.md): `read_knowledge_reader` and its nine views; the envelope
   (`view`, `state`, `selection`), `invalid-request` for a bad request, `unavailable` for a named read failure. An
@@ -3855,13 +3855,19 @@ task. The package has no route overview of its own, following the `knowledge_lea
   hexadecimal name (a Git-tree index), or `leaf:<scope>`; `not-converted` before any index is built; the code tree (a
   commit's `Code-Commit` pairing, or `HEAD` of the scope's checkout), `codeSource`, `codeNote` and the clean-tree
   `pinnedCommit`; the selector's choices with `commitsState`.
-- [`files.py`](knowledge_reader/files.py.md): memory prose and sidecars, code listings and text; present, absent and
+- [`files.py`](knowledge_reader/files.py.md): memory prose and sidecars and code text; present, absent and
   unavailable kept apart; control characters refused before any Git call (F15); the blob size asked before its bytes,
-  `binary` and `too-large` notices (F14); a directory given to the code view is `absent` (F18).
+  `binary` and `too-large` notices (F14); a directory given to the code view is `absent` (F18). Since MIK-R79 the
+  directory-listing helpers live in `tree_coverage.py`.
 - [`paths.py`](knowledge_reader/paths.py.md): the explorer with live entry counts; the path view (prose with resolved
   references, entries by invariant with MIK-R03 states, member and routed families with their other locations,
   linking records with a decision in full); a directory bounded to its own level with its children and subtree size
-  (F2); the without-proof list; `states_at`, the reader's one currentness call.
+  (F2); the without-proof list; `states_at`, the reader's one currentness call. Since MIK-R79 `tree_listing`
+  delegates to `tree_coverage.read_tree_listing`.
+- [`tree_coverage.py`](knowledge_reader/tree_coverage.py.md) (new, MIK-R79): one code pass and one memory enumeration
+  per directory supply the tree's rows and their knowledge presence, and immediate-child coverage counts the
+  in-scope files with a card or names the failure unavailable; only the selected scope settings are read besides
+  names.
 - [`subtree.py`](knowledge_reader/subtree.py.md): every live entry under a directory, paged by L02's pager and
   continuation under policy `knowledge-reader-subtree/1`, the envelope counted inside the bound; a resumed page
   measures at the walk's code tree (F16), and a tree the repository no longer holds is refused by name (R3-2).

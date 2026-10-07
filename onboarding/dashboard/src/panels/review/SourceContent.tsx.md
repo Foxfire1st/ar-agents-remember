@@ -238,6 +238,7 @@ surface over the real client.
 - Text renderability is determined by the supplied text value, rather than inferred from a present-state label. [3]
 - **One side's state line, carrying its declared state, its measured object identity and size, and the detail only when the state is not a complete untruncated text.** [4]
 - The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only. [5]
+
 - **The branch itself: both sides present draw the shipped two-sided diff, neither textual stops at the state lines, and the one-sided case states that no diff is claimed before drawing each readable side; each branch places the view's intent-marker note, marks and list around the panes it draws (MIK-L34).** [6]
 - **The bounded read stated as a prefix of the object, naming which sides are truncated.** [7]
 - **The typed refusal rendered with its code, detail, next action and offending input, and with no content beside it.** [8]

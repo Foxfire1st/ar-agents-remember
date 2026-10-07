@@ -1,231 +1,181 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "content": "sha256:fbfbec7051648113ae5a516c8e0b132a99a2687235da3e1f33be3c5f97d67737",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentSections"
+        }
+      },
+      "id": "RLZ-7BXZJR",
+      "invariant": "INV-544QCB",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 7",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "DocumentSections owns the rendering or source-selection boundary that implements this obligation: A path document presents breadcrumbs, its own title, facts, uninterrupted prose, invariants, families, other records and references, without empty sections.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "content": "sha256:1dc05bec81f5b5135fb5c1d177617b03f528128d6435d8b47e044bed814085d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "WithoutProofView"
+        }
+      },
+      "id": "RLZ-8FJEGM",
+      "invariant": "INV-T2QSVZ",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 14",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "WithoutProofView owns the rendering or source-selection boundary that implements this obligation: Without-proof and subtree lists use compact single rows.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "content": "sha256:69aaf9352ebff4f3170c773e50445c5a96396add7ec3991e617450fb9bc74fc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubtreeView"
+        }
+      },
+      "id": "RLZ-8QEYBG",
+      "invariant": "INV-T2QSVZ",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 14",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "SubtreeView owns the rendering or source-selection boundary that implements this obligation: Without-proof and subtree lists use compact single rows.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+        "content": "sha256:e001aa59de381c711dce31f247fe34c05e41890fa9a5ad7b5082881d97099278",
+        "locator": {
+          "kind": "symbol",
+          "name": "PathView"
+        }
+      },
+      "id": "RLZ-D0CXC2",
+      "invariant": "INV-544QCB",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 7",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "PathView owns the rendering or source-selection boundary that implements this obligation: A path document presents breadcrumbs, its own title, facts, uninterrupted prose, invariants, families, other records and references, without empty sections.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The component's own statement of the path-side views.\n\nAnchor: \"The reader's path-side views (MIK-R29 rule 2)\"",
+    "11": {
+      "note": "The path view's title, facts, prose and fixed section order.\n\nAnchor: `PathView`",
       "targets": [
         {
           "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:2d7dca6d4bbd41506cfa18028214d671e2f40dee158dccf952c1fa93e777d8ec",
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
             "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The directory, root-summary and double-click cases.\n\nAnchor: \"opens a directory with its overview, routed families elsewhere and the route decisions\"; \"lands on the bounded root summary and follows a subtree page to the next\"",
+    "12": {
+      "note": "The sections and their order after the text.\n\nAnchor: `DocumentSections`",
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
-            "content": "sha256:67b77d094960191d3652ba6159f7c5d387504a66b9825df75839004553c46a10",
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 157
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The facts line where a zero is plain text and a count jumps to its section.\n\nAnchor: `DocumentFacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The compact without-proof list.\n\nAnchor: `WithoutProofView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The census view with measures, counts and route histories.\n\nAnchor: `CensusView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The paged subtree that reads one page at a time.\n\nAnchor: `useSubtreePages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
+            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The probe that reads a document's prose and references.\n\nAnchor: `ProseWithReferences`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
+            "locator": {
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Invariants with their states; unverifiable states named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:5529b2c4f48084c5172cdea43ec9120839ec4d87fade76b8d23a8378a3453c60",
-            "locator": {
-              "kind": "symbol",
-              "name": "InvariantItem"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:b293ca2fa1aff2638a48ac9714654d70e66600b4a50ac484cd9ae0771446c0b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "InvariantsSection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A family here or routed over the path, with its locations elsewhere; a linked record, a decision in full.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:61b8ca3cd52d618c7147c5f024f0eac4d086eee757836d58a0658d5160b383f3",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyItem"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:6eaab7f4cb8b61e4b518072980b09effa77fbdb73aa947af678ae383b48906f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "LinkedRecordItem"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A directory's children and the way to its subtree (F2).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:28d34c4d4d63cd067d668d2d8af9dbca9043e0d4a0c6ec947b0e926fdad2f54a",
-            "locator": {
-              "kind": "symbol",
-              "name": "DirectorySummary"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The path view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:19d6cfa9d2222f4fec65c8de77bc520548bc46a9e5b3311ce720f29380b6db64",
-            "locator": {
-              "kind": "symbol",
-              "name": "PathView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The without-proof list and the census view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:f0880bc4eca44df00e21aa94d7d31e2c7b280da36cc7b82e7ef33fbc7aaf75f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "WithoutProofView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:ae94baad6f36909ccec1640209bf023fe98f1ea4cf66f8353039c438bb39d4ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "CensusView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The located lines marked; a code answer that is not text named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:492d4bb5ba12b258ceb98d39be7cc851a98d6e1125301526bcc2f85ba8fd019e",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeLines"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:06db2ff1ca97e12e21003af382d7a23ba4d51c2343dbd997ed9d5eab75940b60",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeView"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The pages read so far, one next page in flight at a time.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:de3084cbe71e105504530ff60d6a1830774b57461d5614454fa4415be126c8a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "useSubtreePages"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The subtree view, its refusal and a failed next page named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:f798639b6ef11d51ecb26175a6a87ad3071eeb0f5ab8d79e29bf61be3e3dd577",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubtreeRefused"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:1774f4a0b17926d6abdb3587bc2facd2a4dea1de6c241433e62d76865bc01ddb",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubtreeNextPageFailure"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:69aaf9352ebff4f3170c773e50445c5a96396add7ec3991e617450fb9bc74fc1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubtreeView"
-            }
+            "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
           },
           "kind": "code"
         }

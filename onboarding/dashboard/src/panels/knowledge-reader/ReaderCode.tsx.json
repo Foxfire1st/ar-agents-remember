@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+        "content": "sha256:5e600a0dd6062185bff83c84680e205c57d5a105baa0434650f89347997cbab3",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeView"
+        }
+      },
+      "id": "RLZ-Y7W0NG",
+      "invariant": "INV-P362H1",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 9",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "CodeView owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The cited code opens in the File Viewer's code pane at its lines.\n\nAnchor: `CodeView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shared pane that marks the cited lines.\n\nAnchor: `FilePane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The unresolved locator is named, not guessed.\n\nAnchor: `CodeHeader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

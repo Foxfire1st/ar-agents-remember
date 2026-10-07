@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:1df99edde2511cd78537b5decf0e374993fa90fb5d3f3625185363d8fcee2c91",
             "locator": {
-              "end": 225,
+              "end": 226,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -101,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:1df99edde2511cd78537b5decf0e374993fa90fb5d3f3625185363d8fcee2c91",
             "locator": {
-              "end": 225,
+              "end": 226,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

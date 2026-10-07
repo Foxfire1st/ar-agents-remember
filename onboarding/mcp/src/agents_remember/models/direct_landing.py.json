@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 214,
+              "end": 215,
               "kind": "line_range",
-              "start": 214
+              "start": 215
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -52,12 +52,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:1641816b6a4575ba85a44de0381a900e5b7226c8992474c4fd447ceaf9d4d56c",
             "locator": {
-              "end": 226,
+              "end": 227,
               "kind": "line_range",
-              "start": 216
+              "start": 217
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:b073771cdf30495fb5f193ff5a8e947aa61b532aea79c2fd105fbfd77246b442",
             "locator": {
               "end": 31,
@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:7a898b51a6ce8d0eadace4bed8976d3ac0b282d9385d94ff9e4d4fd3ad5583cc",
             "locator": {
-              "end": 228,
+              "end": 229,
               "kind": "line_range",
-              "start": 228
+              "start": 229
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -96,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8baa15ca43be010159ae15f6b0e744949e6d33a",
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
             "content": "sha256:529d85e7a74529c0b44905603b846d31dfb24b4369be52d6bd0d11adb71efcb3",
             "locator": {
               "kind": "symbol",
@@ -181,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d8baa15ca43be010159ae15f6b0e744949e6d33a",
+            "blob": "4c12320737a261f83da37ee21e7897a5739d4d4e",
             "content": "sha256:529d85e7a74529c0b44905603b846d31dfb24b4369be52d6bd0d11adb71efcb3",
             "locator": {
               "kind": "symbol",

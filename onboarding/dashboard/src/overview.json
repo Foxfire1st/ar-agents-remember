@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:f455d122c0fbfe570f8869b243f55c385e9fd43e3e0be41f3a8c0f2e13b14216",
             "locator": {
               "kind": "symbol",
@@ -18,11 +18,22 @@
         },
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:3043a4d23f8eb3279688291d710879220b1bbec55cf40e99340abd4460953fe5",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
               "kind": "symbol",
               "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -258,12 +269,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
-              "end": 396,
+              "end": 389,
               "kind": "line_range",
-              "start": 395
+              "start": 388
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -276,12 +287,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
-              "end": 421,
+              "end": 414,
               "kind": "line_range",
-              "start": 421
+              "start": 414
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -289,12 +300,12 @@
         },
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
-              "end": 587,
+              "end": 581,
               "kind": "line_range",
-              "start": 587
+              "start": 581
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -307,7 +318,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
               "end": 36,
@@ -448,7 +459,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -531,16 +542,16 @@
       ]
     },
     "3": {
-      "note": "The transient Knowledge view renders the reader.\n\nAnchor: \"return <KnowledgeReader />;\"",
+      "note": "The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:7d3b4086b9d10c7c5ef35c0405cd01c55dd4bfa37aa1e125a1d3fefd494e8df4",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 951,
+              "end": 795,
               "kind": "line_range",
-              "start": 950
+              "start": 794
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -658,8 +669,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:c1533025701fb83c33590e76a9273821e0e60c0c3a50be92c2495602e8ddb9a3",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
             "locator": {
               "kind": "file"
             },
@@ -738,12 +749,12 @@
       ]
     },
     "6": {
-      "note": "Shell navigation, default, persistent layers, and shared drivers.",
+      "note": "Shell navigation, persistent layers and shared drivers.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"

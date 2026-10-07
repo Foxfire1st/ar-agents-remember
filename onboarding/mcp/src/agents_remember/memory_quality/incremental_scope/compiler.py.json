@@ -34,7 +34,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da21c066c951187f82fa0153e1d9b9be0f4751ee",
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
             "content": "sha256:c597cacdf7f178bd6729d5bf6d63a6d9e74f45f434afeeeeaf34a09982c42b0e",
             "locator": {
               "kind": "symbol",
@@ -46,7 +46,7 @@
         },
         {
           "anchor": {
-            "blob": "da21c066c951187f82fa0153e1d9b9be0f4751ee",
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
             "content": "sha256:d9e8e16a7d7ad9ad6795f569885df100d83499e596b381f93190c6304d7cbe0a",
             "locator": {
               "kind": "symbol",
@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "da21c066c951187f82fa0153e1d9b9be0f4751ee",
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
             "content": "sha256:b9a64a3af6b1a955f936104d03c09be5f6d06f76f0d01e9b04967a6161488681",
             "locator": {
-              "end": 211,
+              "end": 184,
               "kind": "line_range",
-              "start": 205
+              "start": 178
             },
             "path": "mcp/src/agents_remember/memory_quality/incremental_scope/models.py"
           },
@@ -71,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "da21c066c951187f82fa0153e1d9b9be0f4751ee",
+            "blob": "2812fa87215aa9c8da059c6d6ea5a30b871e30a3",
             "content": "sha256:b5ed538fbcd91ed7f97869a49b035105ff90a29e5b209e9a06ae92fcdc7b90d1",
             "locator": {
-              "end": 271,
+              "end": 244,
               "kind": "line_range",
-              "start": 258
+              "start": 231
             },
             "path": "mcp/src/agents_remember/memory_quality/incremental_scope/models.py"
           },

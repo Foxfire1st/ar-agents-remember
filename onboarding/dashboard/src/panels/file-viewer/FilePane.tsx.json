@@ -1,251 +1,101 @@
 {
   "path": "dashboard/src/panels/file-viewer/FilePane.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+        "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+        "locator": {
+          "kind": "symbol",
+          "name": "FilePane"
+        }
+      },
+      "id": "RLZ-FD40K6",
+      "invariant": "INV-P362H1",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 9",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "FilePane owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+        "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+        "locator": {
+          "kind": "symbol",
+          "name": "FilePane"
+        }
+      },
+      "id": "RLZ-HNS98Y",
+      "invariant": "INV-X1ADJP",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 15",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "FilePane owns the rendering or source-selection boundary that implements this obligation: Knowledge has one shared tree, Markdown renderer and code primitive instead of its former private renderers.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The sibling theme module defines the CodeMirror chrome plus syntax `HighlightStyle` bundle.\n\nAnchor: `\"HighlightStyle.define\"`",
+    "12": {
+      "note": "The pane marks the cited lines and scrolls the first into view.\n\nAnchor: `citationHighlight`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:6a21dc2544a6b64407258861c6dfcf652b4a525e6af86e1fbf76d7853283466c",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
             "locator": {
-              "kind": "symbol",
-              "name": "chrome"
-            },
-            "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:41490c7641b928a6a14d94412fce86bf797a1d18cc9a6f53a0d560d1f049f1c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "codeTheme"
-            },
-            "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
-            "content": "sha256:79d632bacd572fd1e7699313f9989ece2a1d02761bfa19222b8ab0c724625e47",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 29
-            },
-            "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The dual pane that mounts it on the code side.",
+    "13": {
+      "note": "The Knowledge reader's code view passes the resolved cited range here.\n\nAnchor: `CodeView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The optional range joins the editor's dependencies and rebuilds the view.\n\nAnchor: `FilePane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The dual pane that mounts the same primitive on the code side.\n\nAnchor: `DualPane`",
       "targets": [
         {
           "anchor": {
             "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:8af2610d9b0beaac2c9d84068625246f535827be42ec5f9677c96dd819d5e7ad",
+            "content": "sha256:84c6e93b59974db67804d8146d4e273943edbd3782cfa093773e5531c150cb24",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeSide"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
-            "locator": {
-              "kind": "symbol",
-              "name": "DualPane"
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The route overview that governs this component.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-137"
-        }
-      ]
-    },
-    "2": {
-      "note": "The `FilePane` module imports the sibling `codeTheme`.\n\nAnchor: \"import { codeTheme }\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f15ec25f1435f9e0b8574cf303a30eaeb52552b8319292f9f10936b41da567fb",
-            "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 10
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "`FilePane` installs `codeTheme` in the `EditorState` extension list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The sibling language module defines the lazy language-by-extension map.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1478b3eb824544d49fc8276496f61aaf257f0641",
-            "content": "sha256:cec276075ea12bb587409a65c951298b3de8202f320a9312327f38bd58008711",
-            "locator": {
-              "kind": "symbol",
-              "name": "langExtension"
-            },
-            "path": "dashboard/src/panels/file-viewer/langByExtension.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The `FilePane` module imports the sibling `langExtension`.\n\nAnchor: \"import { langExtension }\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:40f91be713d3575c6d8c0d875aeb6894c4e9c47322f752b46eb94b38fdb7b35d",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 12
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "`FilePane` awaits `langExtension` for the requested language, appends a returned extension, and then creates the `EditorView`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The optional first line and the content-sized host an expression card uses (MIK-L31).\n\nAnchor: \"numberedFrom(firstLine),\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:c9e32361cf60eb0b551c53b41d01e7c593dded2d497861e48c62f9cfc5c6a5a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "fitHost"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
-            "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 53
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The focused card excerpts that pass them (and, since MIK-L34, their drawn sides' intent marks).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:94abb5546613cfa48160480e97a2e8826ff072a0151a3a151def522c5f1dfbce",
-            "locator": {
-              "kind": "symbol",
-              "name": "UnchangedExcerpt"
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:e49f2fc66cec16c1ae37fd625fab27fcecb8ee20fbafe29e2af157f84155e564",
-            "locator": {
-              "kind": "symbol",
-              "name": "SeparateSides"
-            },
-            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The optional `marks`, the marked pane, the marks gutter first in the extensions, and `drawn` after the build and at teardown (MIK-L34).\n\nAnchor: \"marks?: PaneMarks;\"; \"useMarkedPane(marks);\"; \"drawn({ after: { view, first: firstLine } });\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:81865b76aee336d315518bb7a276c2f3fb4bc6f4d3937d823381f923e76641f2",
-            "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 35
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:d41af5edf9cdbaaea5207c8d33acde5469bc517928ea041b88267d0aec69f500",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 49
-            }
           },
           "kind": "code"
         }

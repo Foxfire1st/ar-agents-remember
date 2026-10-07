@@ -1,0 +1,135 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+        "content": "sha256:e30411e974f4928ed61a0842df97860d39fb56f38660c9e6656b7846281c1a06",
+        "locator": {
+          "kind": "symbol",
+          "name": "_coverage"
+        }
+      },
+      "id": "RLZ-FCTH32",
+      "invariant": "INV-7AGFVH",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 6",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "_coverage owns the rendering or source-selection boundary that implements this obligation: Directory coverage counts actual scoped code files and matching Markdown cards at the selected memory tree, with unavailable scope never treated as zero.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+        "content": "sha256:d0f1509ea5458109bc4dfbe88da026017a5d42e988949d4716f931635ebe5301",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_tree_listing"
+        }
+      },
+      "id": "RLZ-GCXH61",
+      "invariant": "INV-7AGFVH",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 6",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "read_tree_listing owns the rendering or source-selection boundary that implements this obligation: Directory coverage counts actual scoped code files and matching Markdown cards at the selected memory tree, with unavailable scope never treated as zero.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The one listing entry point and its truthful failure states.\n\nAnchor: `read_tree_listing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One recursive code pass supplies names, kinds and source files.\n\nAnchor: `_git_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One memory enumeration, with excluded paths dropped.\n\nAnchor: `_memory_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Presence fields are omitted when the memory enumeration failed.\n\nAnchor: `_presence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Directory coverage counts cards against in-scope files or says unavailable.\n\nAnchor: `_coverage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The route entry that delegates its listing here.\n\nAnchor: `tree_listing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
+            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

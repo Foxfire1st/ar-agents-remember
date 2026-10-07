@@ -6,45 +6,51 @@
 
 ## Purpose
 
-The vitest + Testing-Library test for the File Viewer center tab. It pins three behaviors: mode-bar
-tab registration (full-bleed), the empty-state backdrop prompt before any file is selected, and the
-keep-mounted-on-switch behavior that lets the viewer's state survive a view change.
+`FileViewer.test.tsx` proves the File Viewer's center-tab behavior: its registration as a full-bleed
+view selectable from the mode bar, keep-alive mounting across view switches, and its repository
+listing calls.
 
 ## Code Commentary
 
 ### Logic
 
-`beforeEach` stubs global `fetch` (the viewer fetches the repo catalog on mount) so jsdom never hits
-the network; `afterEach` runs `cleanup` and unstubs. Test 1 applies the `engine-fleet` GALLERY
-snapshot, renders `CockpitShell`, clicks the "File Viewer" radio, then asserts the `file-viewer` testid
-is present, the shell body carries `data-fullbleed="true"`, and `.rail--left` is gone (full-bleed, like
-Engine Room / Topology). Test 2 renders `FileViewer` directly and asserts the empty-state backdrop
-prompt — it checks `container.textContent` contains "Select a code file" (the siege-tank backdrop fills
-the pane; there are no per-side placeholders to query). Test 3 (keep-mounted) checks the viewer node exists
-from the default Operations view but its parent is `display:none`; switching to File Viewer reveals the
-SAME node (`display:flex`, never remounted); leaving hides it again (still the same node) — proving
-state is preserved.
+The suite mounts `CockpitShell` and drives the mode bar. MIK-R79 moved the dashboard's opening view
+from Operations to Chats, so the three tests that assert the File Viewer's hidden-not-unmounted
+behavior on another view now mount `CockpitShell initialView="operations"` explicitly. The assertions
+themselves are unchanged: the File Viewer is mounted from the start when another view is open, stays
+the same DOM node across switches, and issues one repository listing.
+
+### Conventions
+
+Vitest + Testing Library, as the rest of the dashboard suites; views are selected by their radio name.
 
 ### Invariants And Boundaries
 
-The test must stay hermetic — `fetch` is always stubbed, so no real `/api/files/*` calls fire. The
-keep-mounted assertions encode the Cockpit contract: the File Viewer is toggled via CSS `display`,
-never unmounted, so the DOM node's identity must persist across switches. Assertions key off stable
-hooks (`data-testid` `file-viewer`, the "File Viewer" radio role, the `data-fullbleed` attribute) plus the
-empty-state prompt copy ("Select a code file") matched against `container.textContent`, so renaming those
-is a breaking change.
+The tests mount the shell on an **injected** `initialView="operations"` and bind the File Viewer's
+registration, hidden-not-unmounted keep-alive and deferred catalog behavior. They do not assert the
+shell's Chats default (the separate shell default-view suite owns that) and do not re-test the
+Knowledge reader or the hidden pages.
+
+### Todos
+
+No additional work is asserted by this card.
 
 ## Evidence
 
+### Docs References
+
+No domain documentation source is configured for this repository. The requirement packet
+`MIK-R79@v1` (rule 16) fixes the opening view and the product bar; it lives outside the code and
+memory repositories, so it is named here and not cited as a row.
+
+No configured live documentation source was available for this pass.
+
 ### Repo-Internal References
 
-- The component under test. [1]
-- `CockpitShell` registers the "File Viewer" mode and keeps it mounted via `display`. [2]
-- The empty-state backdrop prompt copy ("Select a code file") asserted here. [3]
-- `applySnapshot` loads the projection under test. [4]
-- The `engine-fleet` GALLERY fixture. [5]
+- The suite mounts the shell on Operations for its keep-alive assertions. [6]
+- The mode-bar entry the tests click. [7]
+- The File Viewer the tests keep mounted. [8]
 
-## Current L5I Maintenance
+### Cross-Repo References
 
-The focused viewer suite now proves that a hidden mounted viewer makes no files API request, first
-selection makes exactly one catalog read, and later hide/show cycles retain the settled catalog.
+No cross-repo boundary is crossed by this file.

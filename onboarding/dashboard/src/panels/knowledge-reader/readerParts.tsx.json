@@ -1,281 +1,110 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+        "content": "sha256:47d02ce4c83243c402d501789605db2db56c8ce56ac0aac9f75f6aa8c64ce20f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ProseWithReferences"
+        }
+      },
+      "id": "RLZ-P2XBAV",
+      "invariant": "INV-4A68A2",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 8",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ProseWithReferences owns the rendering or source-selection boundary that implements this obligation: The shared Markdown renderer supports opt-in heading hierarchy, heading identifiers, text-only numbered references and caller-owned card links.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The module's own statement: every link is a navigation.\n\nAnchor: \"Every link is a navigation: it changes the reader's address\"",
+    "12": {
+      "note": "The prose renderer, its marker buttons and its link mapping.\n\nAnchor: `ProseWithReferences`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:dce63227364217c9a7d4b2ce3c695deb9af3c810e8c791a82c4e281c472d0267",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The reference list and the prose with its markers.",
+    "13": {
+      "note": "A `[n]` marker becomes a reference button only when the reference resolves.\n\nAnchor: `ReferenceList`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:80a4763440bdda9bfea0106887f31373195f92c2c5d1222c8cf2d2ae2b03f875",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "kind": "symbol",
-              "name": "ReferenceList"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:39e860c5bc8f379b4e87597c6bc972f358fc8886142f101fb2a359458d863b49",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProseWithReferences"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "11": {
-      "note": "The file case and the code-span case.\n\nAnchor: \"opens a file with its prose, resolved references, entries, families and linked records\"; \"links [n] markers in prose text only, never inside code spans or fences\"",
+    "14": {
+      "note": "The authored-link to memory-path mapping.\n\nAnchor: `proseLinkPath`",
       "targets": [
         {
           "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
-            "content": "sha256:7f1d3c3e518791eb3d6b3a8588fbba4ae1b3664ab9d1b6cff4d22b7fc24a5d69",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "end": 155,
-              "kind": "line_range",
-              "start": 118
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
-            "content": "sha256:01768337f8846a38a231494d15c2fdbcd0f1eb2159c8fa27a19264eb3fd36afb",
-            "locator": {
-              "end": 416,
-              "kind": "line_range",
-              "start": 400
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The navigation context.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:01f453488b0a217048659934773b6c6e9c0cfdff90ccfcad8bbef60942ba3c9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReaderNav"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:64baa950396acad37d84a332d4679507c6aea28c8d0afd2ddc78b6641f751518",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReaderNavContext"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:956cacf671da827c57cef9ffdd609d14c46c9bf443c265c403459db9943c41cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReaderNav"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "A part that could not be read, named.",
+    "15": {
+      "note": "An unsupported link stays readable as text.\n\nAnchor: `ProseLink`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:d3eebd83fbb2ef89356a8844d22aff806968875904d7c13ecd99dc24f74791e7",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "kind": "symbol",
-              "name": "Unavailable"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "Record, path and code links.",
+    "16": {
+      "note": "The one navigation context every link uses.\n\nAnchor: `ReaderNavContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:58099f9d4612f9c641a76c29371dc6f7298875654ebae94ba28189202baf11c6",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordLink"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:bc7bee9122e0517493be5846e606341beb25104af27c3195a75c9a5a88e5b29a",
-            "locator": {
-              "kind": "symbol",
-              "name": "PathLink"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:13a3a85a7498d4dece5c65504b30d0d28779e9aa1e90c58984fe0b9418f20da3",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeLink"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "Any link or reference end, as a navigation.",
+    "17": {
+      "note": "The decision card with its alternatives.\n\nAnchor: `DecisionCard`",
       "targets": [
         {
           "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:add3af14a2a0b318be87f5b10192e4d3400631ba8ab689b613a09b10bc5699ee",
+            "blob": "f10d3af559ce1dcc1fea8e6f543f672a0f92bba3",
+            "content": "sha256:7e6e6c0909af224760f9ef06df8a877a6fa57889269df463445ec039c6271490",
             "locator": {
-              "kind": "symbol",
-              "name": "TargetLink"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "One entry with its state and code link.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:d61f416c43fc929ee3383cc9443c2c9f2c023d0435926531c81b0047eb035852",
-            "locator": {
-              "kind": "symbol",
-              "name": "EntryRow"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "An alternative with its reason and `reconsider when`; the decision header with the derived status.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:0e48ed2367bfaafbcb055273e17582799919240351cd2ae42243cf73109c7642",
-            "locator": {
-              "kind": "symbol",
-              "name": "AlternativeItem"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:6e4f6186638071e2983c67099d0fe422511cd779a42ba1b09fe384253710944a",
-            "locator": {
-              "kind": "symbol",
-              "name": "DecisionHeader"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "A decision in full, wherever it appears.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:d05d6860064c087aaaefdc9f76c4d22a9418c8d0acbd93e95afde1a24f065f1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "DecisionCard"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Markers linked in text nodes only (F4).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:4dad5ffc5cd87fa3440859b5ca216a2562f6668ff5cdb333adfc949a67091a6b",
-            "locator": {
-              "kind": "symbol",
-              "name": "splitMarkers"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:5a5772e9a90dbee6d3b736822bdb919370b30c37f4f61a8c5ed2da37419506a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "linkMarkers"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:46d8278496739fa54a36ce32e23a135f4e2f0bed64a44181dcf389077c8f9859",
-            "locator": {
-              "kind": "symbol",
-              "name": "remarkReferenceMarkers"
+              "kind": "file"
             }
           },
           "kind": "code"

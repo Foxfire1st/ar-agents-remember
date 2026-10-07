@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
             "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
             "locator": {
               "kind": "symbol",
@@ -163,12 +163,12 @@
         },
         {
           "anchor": {
-            "blob": "5fc035bd9f512ea7d23d167e173b00bb8819667b",
+            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
             "content": "sha256:5bef02b88f40480994b3be2db5654f2bf179222e9d44360e934648a629d4163e",
             "locator": {
-              "end": 137,
+              "end": 138,
               "kind": "line_range",
-              "start": 119
+              "start": 120
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },

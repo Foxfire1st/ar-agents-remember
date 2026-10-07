@@ -1,103 +1,168 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "content": "sha256:25c9e306dd970c149e6586cf95313277c9495436f65764d0cec0604a903f114f",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeTree"
+        }
+      },
+      "id": "RLZ-2SX1ZD",
+      "invariant": "INV-JJCTRA",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 3",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeTree owns the rendering or source-selection boundary that implements this obligation: Knowledge uses the shared keyboard tree in a resizable scrolling pane, filtering to knowledge and marking the open path including code.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "content": "sha256:850b3a42cabc9276dbe59a2665989300ba30bcdc5b47b22202fc95d93568e94d",
+        "locator": {
+          "kind": "symbol",
+          "name": "useKnowledgeLoader"
+        }
+      },
+      "id": "RLZ-917TGT",
+      "invariant": "INV-QE6278",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useKnowledgeLoader consumes the parent loadRecords promise for record kinds and rows; the former private records acquisition/ref is removed.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "content": "sha256:708feff445a22e0529fff26cc868d1c5267461e1582bf3ccaff6b30f84a4ac80",
+        "locator": {
+          "kind": "symbol",
+          "name": "rootRows"
+        }
+      },
+      "id": "RLZ-PR8KAX",
+      "invariant": "INV-3MD629",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 4",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "rootRows owns the rendering or source-selection boundary that implements this obligation: Invariants without proof and Census are tree rows carrying their recorded counts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+        "content": "sha256:e100f28516f46c13ac878b7f3b923d8624bd960653f1170fcf0505650ec4b130",
+        "locator": {
+          "kind": "symbol",
+          "name": "recordRows"
+        }
+      },
+      "id": "RLZ-T6A024",
+      "invariant": "INV-X73M0J",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 5",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "recordRows owns the rendering or source-selection boundary that implements this obligation: Families, decisions, assumptions and other pathless records appear by title under Records, while invariants remain outside that branch.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The component's own statement of the explorer.\n\nAnchor: \"The reader's explorer (MIK-R29 rule 1)\"",
+    "10": {
+      "note": "A row's marks, entry count and truthful coverage suffix.\n\nAnchor: `RowSuffix`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
-            "content": "sha256:2f7b5c4bca66d903b350c0c41a5b2d04b774e6935fcb5179734e4a4e9f3d3cce",
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
             "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "One read per opened level; an answer after a switch is dropped (F13).",
+    "11": {
+      "note": "The filter keeps the open path and knowledge rows visible.\n\nAnchor: `showPath`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
-            "content": "sha256:fa5ab5f2f8a25024ccc123a21f9b6b263286674c1afb899ff0805fec1a98102a",
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
             "locator": {
-              "kind": "symbol",
-              "name": "useTreeLevels"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "3": {
-      "note": "A row: toggle, name, count, \"(onboarding only)\"; descends only below its directory.",
+    "12": {
+      "note": "The shared tree that owns loading and traversal.\n\nAnchor: `ExplorerTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
-            "content": "sha256:da01cbc155e656111d31b96d1dd6aa8963a5975ba98aef2601f479d4fbe06019",
+            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
             "locator": {
-              "kind": "symbol",
-              "name": "TreeNode"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A level, with a failed read and an unlisted code tree named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
-            "content": "sha256:144f2cede34a120a2fc427dd3acebb4acdb3fae601956072ef072ad3feeb0386",
-            "locator": {
-              "kind": "symbol",
-              "name": "TreeLevel"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The explorer, with the current path's ancestors open.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ba61d45667ad030e1c21382c3959ca7735069079",
-            "content": "sha256:a11ecef76850872a763d36cf02868bef1495d00c8559c518ab66a8ec5f003028",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeTree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The stale-answer case.\n\nAnchor: \"names side reads that failed, pins a clean published view, and drops stale explorer answers\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "311e538e873dc5a5fd5bc6a2127c811886557cf1",
-            "content": "sha256:bff1e04776aca10f7ca010fdf65e5a0e50af9e53bf265ab2a78ad3e9adb4649b",
-            "locator": {
-              "end": 455,
-              "kind": "line_range",
-              "start": 455
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+            "path": "dashboard/src/grammar/ExplorerTree.tsx"
           },
-          "kind": "test"
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The root rows, the Records branch and the two count rows.\n\nAnchor: `rootRows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The record kinds come from the shared acquisition, invariants excluded.\n\nAnchor: `recordRows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The loader routes a directory to root, records or one tree read.\n\nAnchor: `useKnowledgeLoader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     }

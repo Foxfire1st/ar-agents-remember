@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The obligation binds several files together, and it is one member of the reading-place family's joint guarantee."
+  },
+  "applicability": "The 'On this page' aside on a wide screen.",
+  "conditions": [
+    "It lists the text's chapters and the record sections with their counts and marks the current chapter.",
+    "Cited code takes its place while it is open."
+  ],
+  "exclusions": [
+    "Citation display, which rule 9 owns."
+  ],
+  "id": "INV-KXT50F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 10",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On this page lists rendered chapters and record sections, marks the current chapter and yields its pane to cited code.",
+  "status": "proposed",
+  "supersedes": []
+}

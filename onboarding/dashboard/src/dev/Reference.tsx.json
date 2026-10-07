@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05fb9135e3ee54c650a57eeb04a093bb85c694c4",
+            "blob": "cf7f4bd3885bdab232af0f680b217afa7430295b",
             "content": "sha256:ccad9aa3d3ec328aa06160eb815450cc6075f24e916ac3d8b48bc5fe60ee2720",
             "locator": {
-              "end": 15,
+              "end": 31,
               "kind": "line_range",
-              "start": 15
+              "start": 31
             },
             "path": "dashboard/src/dev/DevApp.tsx"
           },

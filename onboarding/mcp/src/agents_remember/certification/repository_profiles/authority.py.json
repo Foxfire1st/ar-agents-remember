@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad8f0a94409416e1078ae42743f6f803aa8aa31",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:374dd6906e27adc8c4a7f1c5ff0dd73fffa1f7faa558a02bae2df7bc751ce8e2",
             "locator": {
               "kind": "symbol",
@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "0ad8f0a94409416e1078ae42743f6f803aa8aa31",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:b02dd9def066cebe22558f3731f0f1e09767396a5f481804b34c80d0b650caf2",
             "locator": {
-              "end": 368,
+              "end": 398,
               "kind": "line_range",
-              "start": 341
+              "start": 371
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ec49d651300c2798cf0c67e83cf88ff4e82c7fb",
+            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
             "content": "sha256:1ff9bce01dddda1c3f38b2917221ab9dea479b2b31b75488b80d75d47b593eab",
             "locator": {
-              "end": 562,
+              "end": 646,
               "kind": "line_range",
-              "start": 548
+              "start": 632
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },

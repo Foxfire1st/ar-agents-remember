@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "61f49b29db66cdab371abede2b1fe39ecd09325c",
+            "blob": "188f9b929aa304df597d52e21416c311032288da",
             "content": "sha256:e089db2dfd12f416070a5182ec8c086597073d6f1d8a8e7d22bf2b2aee34b02b",
             "locator": {
-              "end": 92,
+              "end": 95,
               "kind": "line_range",
-              "start": 66
+              "start": 69
             },
             "path": "docs/reference/execution-topology-migration.md"
           },

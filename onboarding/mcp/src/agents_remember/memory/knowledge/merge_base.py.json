@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e46930cfe3bde8f5b90197f4282049299967293",
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
             "content": "sha256:4ee655295f2196868937cef1037a52a272ded7e9202f883c62a43f8fe0ac11a1",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "1e46930cfe3bde8f5b90197f4282049299967293",
+            "blob": "2c2dcba184d6050e5f4c0d243e814d695ea0047d",
             "content": "sha256:bf9f65bf9cf73c11e29ecec51c166779b30083212f7adcf924e676e0a4a80d3b",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9296f87ac0c681bdaf29b4ac456ec77d94d6097",
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
             "content": "sha256:8aa0cb093158f15096398064c9dd38d5a000178b0f32343d4bdad093f8f5d383",
             "locator": {
-              "end": 379,
+              "end": 384,
               "kind": "line_range",
-              "start": 307
+              "start": 312
             },
             "path": "mcp/tests/test_knowledge_guarded_merge.py"
           },

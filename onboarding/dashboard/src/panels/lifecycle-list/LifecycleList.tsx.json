@@ -762,12 +762,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca48c59c2120f4c41b68ac4062838662fabf84ef",
+            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
             "content": "sha256:9f37622c422a4d718eb844c8b24deea23a0c95e9248873f74a408670def4a983",
             "locator": {
-              "end": 35,
+              "end": 41,
               "kind": "line_range",
-              "start": 34
+              "start": 40
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

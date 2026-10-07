@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:bb50d078bccaacd1686fe49b419a3dce8f8dc7f278d038916b015ed91152b77c",
             "locator": {
-              "end": 19,
+              "end": 20,
               "kind": "line_range",
-              "start": 19
+              "start": 20
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:ed8ea5e99c87135f8f2bd8425504645b5cb200ad9d2bcdfc5b7c67295a77cb08",
             "locator": {
-              "end": 34,
+              "end": 35,
               "kind": "line_range",
-              "start": 34
+              "start": 35
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -49,12 +49,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:af803519d48d730ae8acbbbb0c1b94a053b51346512b222a2b89d7898ac69b4e",
             "locator": {
-              "end": 37,
+              "end": 38,
               "kind": "line_range",
-              "start": 37
+              "start": 38
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -62,12 +62,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:562c7588b445717c4314dd9fb044d48d073653203fe9bb3ca02e4ca9121d0194",
             "locator": {
-              "end": 40,
+              "end": 41,
               "kind": "line_range",
-              "start": 40
+              "start": 41
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -109,12 +109,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:e28c592b8a2fcbbac5a8f3438c49a4076e075b04365f166d5984f8f6ef753464",
             "locator": {
-              "end": 28,
+              "end": 29,
               "kind": "line_range",
-              "start": 28
+              "start": 29
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -139,12 +139,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:4beea48b7f752cbd777ca2a1d668b50dc7f70a100bb0d28a8c4257e9bac9537e",
             "locator": {
-              "end": 31,
+              "end": 32,
               "kind": "line_range",
-              "start": 31
+              "start": 32
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },
@@ -169,12 +169,12 @@
         },
         {
           "anchor": {
-            "blob": "5e832c08b5d6b52f8335f32f6c78dfa51ac2f709",
+            "blob": "38c5838cd97b7e8e17f4860563ab66c4f543ebae",
             "content": "sha256:bfe534ad8976f20b23872f51fa7bd2448ba80562d1591816c0fcc7563255966b",
             "locator": {
-              "end": 26,
+              "end": 27,
               "kind": "line_range",
-              "start": 24
+              "start": 25
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/validator.py"
           },

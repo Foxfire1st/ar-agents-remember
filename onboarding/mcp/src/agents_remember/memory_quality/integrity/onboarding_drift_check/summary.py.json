@@ -37,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "081f643fabc8dc1c57edc4e281633945994d9ef9",
+            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
             "content": "sha256:f9aaf71a8011891b9997f5c2a1d6b3551d4d51cad441c6a0d3b3c894c14d9862",
             "locator": {
               "kind": "symbol",
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
             "content": "sha256:dd8acbe5d3f8b1196081bb4d5941b664743da0ecb58d66008d23fdfa5d6a6f9d",
             "locator": {
               "kind": "symbol",
@@ -126,12 +126,12 @@
         },
         {
           "anchor": {
-            "blob": "857617fe31047a43ad150bdf66b424546e1db047",
+            "blob": "7830f6643d98c4da734d2630c523e1eb2f1bf7ce",
             "content": "sha256:eae68a099e750bd7082ee4781091aad96ef7d6ad5141ca8319a227b2adb7a9dd",
             "locator": {
-              "end": 27,
+              "end": 28,
               "kind": "line_range",
-              "start": 13
+              "start": 14
             },
             "path": "mcp/src/agents_remember/models/memory.py"
           },

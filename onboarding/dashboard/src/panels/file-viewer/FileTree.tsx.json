@@ -2,75 +2,66 @@
   "path": "dashboard/src/panels/file-viewer/FileTree.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The Headless Tree adapter it renders (async loading, selection, hotkeys).",
+    "5": {
+      "note": "The File Viewer's tree is the shared explorer with a File API loader.\n\nAnchor: `FileTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "78ed5b387ae1a6126a534c85b611bd6bc9b49102",
-            "content": "sha256:751ead725ab51e362885ec2f0bdc0c35d1d660942f2b87acfd25477223c55acf",
+            "blob": "63a0c9f959b5d518514d2935e8158a25a295ad83",
+            "content": "sha256:a21e7ebe9f5ab3fd4ecd5f82d6872766adbe991d1244861cfa7932e8ae29fa86",
             "locator": {
-              "kind": "symbol",
-              "name": "useFilesTree"
-            },
-            "path": "dashboard/src/panels/file-viewer/useFilesTree.ts"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The page that mounts it twice (code + onboarding sides) and supplies `onOpen`.",
+    "6": {
+      "note": "The loader reads one directory listing and returns the requested side.\n\nAnchor: `listDir`",
       "targets": [
         {
           "anchor": {
-            "blob": "ad00e5a8bb467987b5ae12156184a4b6597bb301",
-            "content": "sha256:7824b7ab8f5172332b7c8faa01e4cdfad14c5aaefbbc63a4c25b9efb3681327c",
+            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
+            "content": "sha256:21e301544d49be010f51003d31bb08864cd9278339a44c6bc79625fca5a851cb",
             "locator": {
-              "kind": "symbol",
-              "name": "FileViewerImpl"
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared explorer that owns loading, traversal and selection.\n\nAnchor: `ExplorerTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ExplorerTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The page that mounts the tree twice (code and onboarding sides).\n\nAnchor: `FileViewer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
+            "content": "sha256:b912e8f586f56ef02b1f4e575d5fed1667b5e4da2c797cb5e2bdc9ad946490fc",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The `DirEntry`/`Scope` types it renders.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f2483fc1ff117c7493520a2612b011566d4fd35",
-            "content": "sha256:72deaec26ec058b3ced2313164c651d942d0732c98fd7613c50df7ce4c2e6e43",
-            "locator": {
-              "kind": "symbol",
-              "name": "DirEntry"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2f2483fc1ff117c7493520a2612b011566d4fd35",
-            "content": "sha256:7b65e5648133fd6a38c3a3275ee3bd79e5e73caf59032f130151a2f70adf97a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "Scope"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The route overview that governs this component.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-107"
         }
       ]
     }

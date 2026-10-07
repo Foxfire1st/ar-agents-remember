@@ -160,58 +160,56 @@
       ]
     },
     "16": {
-      "note": "The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element.",
+      "note": "The shipped renderers whose DOM these cases read back: the diff engine and the viewer, each asserted through its own host element.\n\nAnchor: `DiffPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
             "locator": {
               "kind": "symbol",
               "name": "FilePane"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:e633572c3830d620746d5d7f9aed0bb6b254bc79eaef76875bcebe609ba7ddcf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "The shipped renderers whose DOM these cases read back.",
+      "note": "The shipped renderers whose DOM these cases read back.\n\nAnchor: `DiffPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            },
-            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
             "locator": {
               "kind": "symbol",
               "name": "FilePane"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
+            "content": "sha256:e633572c3830d620746d5d7f9aed0bb6b254bc79eaef76875bcebe609ba7ddcf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
           },
           "kind": "code"
         }

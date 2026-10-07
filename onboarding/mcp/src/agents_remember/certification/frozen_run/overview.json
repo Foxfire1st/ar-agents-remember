@@ -64,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a0e27c85cc1145fef22eaac8e76b040d30117cc",
+            "blob": "89043a5e28ba717250523696bba193d211591458",
             "content": "sha256:c17a03574fbe306a7ad0d15274068b70e5329d7b95e0ca404326d21add4d374a",
             "locator": {
               "kind": "symbol",
@@ -76,12 +76,12 @@
         },
         {
           "anchor": {
-            "blob": "4a0e27c85cc1145fef22eaac8e76b040d30117cc",
+            "blob": "89043a5e28ba717250523696bba193d211591458",
             "content": "sha256:9ed9efd9cefba14a231f8a50f694ca0e4fe25c9426eb7f138d2480c5f20812b3",
             "locator": {
-              "end": 142,
+              "end": 145,
               "kind": "line_range",
-              "start": 75
+              "start": 78
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/admission.py"
           },

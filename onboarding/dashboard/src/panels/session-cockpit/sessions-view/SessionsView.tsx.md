@@ -22,7 +22,7 @@ remediation (260731-EFA-L8 R4/R5).
 The canonical full-page Chats composition seam (internal filename and data-view=sessions marker
 retained for implementation/test stability). It renders the role/spawn rail, persistent stage,
 reliable composer, interaction/lifecycle surfaces, source-selected working feedback, and optional
-Evidence/Capabilities/Bus inspector. Operations is the shell default; this route replaces both the
+Evidence/Capabilities/Bus inspector. This route is the shell's opening view (260928-MIK-L79); it replaces both the
 legacy Chats page and the separate Sessions navigation concept.
 
 The route makes inspector intent default closed and toggleable, separate from responsive geometry;

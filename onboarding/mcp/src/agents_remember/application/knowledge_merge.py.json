@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:a0235a2922b79213f88c1e5be423f11cf0de80d13d6a32f2c10bb98983ec4cf0",
             "locator": {
               "kind": "symbol",
@@ -163,12 +163,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e4c50618b37e31b8f4bcb6f6ec95c535d905a3",
+            "blob": "ff073dcd6884e86bfda0d682259a88056d0e5211",
             "content": "sha256:d8f229d9b48dbc487876101bf509cd182b06738a753355321d11fa019558abe1",
             "locator": {
-              "end": 256,
+              "end": 268,
               "kind": "line_range",
-              "start": 240
+              "start": 252
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_conflict.py"
           },
@@ -212,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:35cdf35cb9d332ababf21f508eadc3cbec1e5489997036531d131e143442ff43",
             "locator": {
               "kind": "symbol",
@@ -224,12 +224,12 @@
         },
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:bea7b774d78b7e41d4e806a5fa37e48c7c6d0a5d3911637a34f8fbbb6e0c5565",
             "locator": {
-              "end": 338,
+              "end": 339,
               "kind": "line_range",
-              "start": 250
+              "start": 251
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },

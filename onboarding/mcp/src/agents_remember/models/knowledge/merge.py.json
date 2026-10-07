@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
+            "blob": "35ecea44dbfaecb653e472a75a0a0b88d6a8d12a",
             "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
         },
         {
           "anchor": {
-            "blob": "00765d6a77aa5281c032f6dce2885bd2d4cc5e3a",
+            "blob": "ff126f9b30915781edf6095804550e121abbc7cf",
             "content": "sha256:66f50ff8deef3ab5e2b49bafeb8b26cd24384c028816b07aa19d7fa7e60ff1b2",
             "locator": {
-              "end": 418,
+              "end": 419,
               "kind": "line_range",
-              "start": 250
+              "start": 251
             },
             "path": "mcp/tests/test_worktree_sync.py"
           },

@@ -660,12 +660,12 @@
         },
         {
           "anchor": {
-            "blob": "961e4246e89d001b40b515bfad31592db413b92b",
+            "blob": "759b266b78baabc467b0367b6d4f70dda3b357e7",
             "content": "sha256:0aa6be019f9b95a86294770bf557d74e7fce4b535b38a7586378807a2dee420a",
             "locator": {
-              "end": 90,
+              "end": 108,
               "kind": "line_range",
-              "start": 90
+              "start": 108
             },
             "path": "mcp/src/agents_remember/application/knowledge_projection.py"
           },
@@ -673,12 +673,12 @@
         },
         {
           "anchor": {
-            "blob": "961e4246e89d001b40b515bfad31592db413b92b",
+            "blob": "759b266b78baabc467b0367b6d4f70dda3b357e7",
             "content": "sha256:5ac3e17778298a75d9eec6b14f6f25f43cfffcd03d9538ea238e774444041d50",
             "locator": {
-              "end": 105,
+              "end": 123,
               "kind": "line_range",
-              "start": 105
+              "start": 123
             },
             "path": "mcp/src/agents_remember/application/knowledge_projection.py"
           },
@@ -686,12 +686,12 @@
         },
         {
           "anchor": {
-            "blob": "961e4246e89d001b40b515bfad31592db413b92b",
+            "blob": "759b266b78baabc467b0367b6d4f70dda3b357e7",
             "content": "sha256:4b6de5ee9e83f8fe15aafe1695a65c024c71a7e5ec5e46688aade494ff98cd27",
             "locator": {
-              "end": 187,
+              "end": 205,
               "kind": "line_range",
-              "start": 187
+              "start": 205
             },
             "path": "mcp/src/agents_remember/application/knowledge_projection.py"
           },
@@ -864,12 +864,12 @@
         },
         {
           "anchor": {
-            "blob": "961e4246e89d001b40b515bfad31592db413b92b",
+            "blob": "759b266b78baabc467b0367b6d4f70dda3b357e7",
             "content": "sha256:dd77aaee813e823839ce7b0cfa552f81e2fc93fd80fe0f377b48084427c6c6da",
             "locator": {
-              "end": 208,
+              "end": 226,
               "kind": "line_range",
-              "start": 208
+              "start": 226
             },
             "path": "mcp/src/agents_remember/application/knowledge_projection.py"
           },
@@ -917,7 +917,7 @@
         },
         {
           "anchor": {
-            "blob": "f853e091caae37c24bebd4a0340a0bfce329744c",
+            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
             "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
             "locator": {
               "kind": "symbol",

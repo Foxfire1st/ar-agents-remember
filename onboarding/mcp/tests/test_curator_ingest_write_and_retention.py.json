@@ -150,16 +150,16 @@
       ]
     },
     "6": {
-      "note": "The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output.\n\nAnchor: `unit-regression`; \"consumer_scope = \\\"exact\\\"\"",
+      "note": "The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output.",
       "targets": [
         {
           "anchor": {
-            "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
-            "content": "sha256:b49f7d3210991b19cb96a21e8d47624681ed86e478e239632b4ab594d54aa15d",
+            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
+            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
             "locator": {
-              "end": 61,
+              "end": 62,
               "kind": "line_range",
-              "start": 61
+              "start": 62
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -167,12 +167,12 @@
         },
         {
           "anchor": {
-            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
             "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
             "locator": {
-              "end": 700,
+              "end": 1019,
               "kind": "line_range",
-              "start": 700
+              "start": 1019
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -180,25 +180,12 @@
         },
         {
           "anchor": {
-            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
-            "content": "sha256:d708203ad4693151e9809d84f6b6a45341d7574fb9c604324e48643bf7aa623e",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
             "locator": {
-              "end": 1299,
+              "end": 1764,
               "kind": "line_range",
-              "start": 1299
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ab5046846d86c6c782f36f7ce215f4e9e39f2e61",
-            "content": "sha256:ef7c4521e349fcc4ed0f2a833d5de737f85410df0b9a20292e331262aa2fbe59",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 96
+              "start": 1764
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

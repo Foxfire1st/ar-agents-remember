@@ -2,115 +2,48 @@
   "path": "dashboard/src/panels/file-viewer/FileViewer.test.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The component under test.",
+    "6": {
+      "note": "The suite mounts the shell on Operations for its keep-alive assertions.\n\nAnchor: `CockpitShell`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6323f80a69d0d140b643fa63af30504f7ccaa6ed",
+            "content": "sha256:11bad086ad7ce952d2398053374917d752bbc4f1df6e13b987d5ce5bad184fd1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The mode-bar entry the tests click.\n\nAnchor: `ModeBar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
+            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The File Viewer the tests keep mounted.\n\nAnchor: `FileViewer`",
       "targets": [
         {
           "anchor": {
             "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:68d49b2072bcefb2802fcc2ca39f4e52a689f68bece4654b9454b8327801ceda",
+            "content": "sha256:b912e8f586f56ef02b1f4e575d5fed1667b5e4da2c797cb5e2bdc9ad946490fc",
             "locator": {
-              "kind": "symbol",
-              "name": "FileViewer"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FileViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "`CockpitShell` registers the \"File Viewer\" mode and keeps it mounted via `display`.\n\nAnchor: \"export function CockpitShell({ initialView = \"operations\" }: { initialView?: CockpitView } = {}) {\"; `File Viewer`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
-            "content": "sha256:1d0bc09667f1531904e8b51c909bf3252556f5752ef2ebaca55a7d13931006d4",
-            "locator": {
-              "end": 887,
-              "kind": "line_range",
-              "start": 887
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ca6c2da0c47d3cbe007c43ec57730180b37706b4",
-            "content": "sha256:ff99fd049383a2116fc0a13fb08c8365c44f19cc15a936e1c41adca9be3b54d1",
-            "locator": {
-              "end": 4,
-              "kind": "line_range",
-              "start": 4
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.test.tsx"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:412ca345ccf75bf9c0806bce695be8de808b79984251a7a54d202cf6101dd451",
-            "locator": {
-              "end": 102,
-              "kind": "line_range",
-              "start": 102
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The empty-state backdrop prompt copy (\"Select a code file\") asserted here.\n\nAnchor: \"Select a code file\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:8d7c4330f3d73b9ca14dc17084f7d74d166abf8fa2b1065c3bac538d4c25a839",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 99
-            },
-            "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`applySnapshot` loads the projection under test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
-            "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
-            "locator": {
-              "kind": "symbol",
-              "name": "applySnapshot"
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The `engine-fleet` GALLERY fixture.\n\nAnchor: \"engine-fleet\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "26976beab443429be148efbc9ed27a1dc8507fa0",
-            "content": "sha256:315d57cd1d5c3f07f9312d6dfbaa059287deff13fe47b1cd97a2f17bf21e9a9b",
-            "locator": {
-              "end": 723,
-              "kind": "line_range",
-              "start": 723
-            },
-            "path": "dashboard/src/panels/engine-room/fixtures.ts"
           },
           "kind": "code"
         }

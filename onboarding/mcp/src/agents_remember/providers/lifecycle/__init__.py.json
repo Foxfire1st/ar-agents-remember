@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7909ea45d5913b700d1357f71b602c218b8287d",
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
             "content": "sha256:3fadbad578f0beacc4fac9c6b307901c31e91cd8227cf60d04cfcc3ae547e5f6",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "b7909ea45d5913b700d1357f71b602c218b8287d",
+            "blob": "1cd331e5eaa941cc632b3a6f1a2a673f8b7055d1",
             "content": "sha256:c9e87fa58074ed79b1f795a0be8de14a29b2ec5765258d8ee318d4ec2a18573b",
             "locator": {
-              "end": 267,
+              "end": 275,
               "kind": "line_range",
-              "start": 172
+              "start": 180
             },
             "path": "mcp/src/agents_remember/providers/lifecycle/cli.py"
           },

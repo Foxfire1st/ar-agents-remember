@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
               "kind": "symbol",
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:44c479df08f64f889b58153fa17569bf0b269ede2f80a9fdab3ebc5906a41d87",
             "locator": {
-              "end": 134,
+              "end": 135,
               "kind": "line_range",
-              "start": 113
+              "start": 114
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

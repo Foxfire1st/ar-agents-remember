@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a230881e40e3e3dac5030b1457ea399427ab1f66",
+            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
             "content": "sha256:283e211cd140dd1a0cb36af39c19b20f76633c72372385349b002f924d56b43d",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2b064a36e33d50f392a9db3a5acb82e794c832c",
+            "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
             "content": "sha256:10b854095f14037d602dab0dc7210a0441a03380b931c9552ade0e61e5dc2ebf",
             "locator": {
               "end": 168,
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9189def72115200c742e92fc3a673555c0028161",
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
             "content": "sha256:3c5c8e5775478849bd07668f2834da5c64435317d38cc4b2bc6dd23dc75fffa8",
             "locator": {
-              "end": 317,
+              "end": 316,
               "kind": "line_range",
-              "start": 289
+              "start": 288
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
           },

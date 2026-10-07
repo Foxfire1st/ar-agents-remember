@@ -284,12 +284,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:7ae935e29050f5f7f886d27b0ffe1b833167f4d5286c20a8d8683cc7a2725f63",
             "locator": {
-              "end": 139,
+              "end": 261,
               "kind": "line_range",
-              "start": 139
+              "start": 261
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -302,12 +302,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49338d0fb462f801e999885eece5859df1a7ec52",
+            "blob": "7594b74ca357e630326dc07bacf00771d8aabf25",
             "content": "sha256:dfafbc520cb954b6258d2bf8dc8f11b751a7fe68de832884ba929b220075060e",
             "locator": {
-              "end": 108,
+              "end": 120,
               "kind": "line_range",
-              "start": 108
+              "start": 120
             },
             "path": "mcp/src/agents_remember/tasks/store.py"
           },

@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
             "content": "sha256:258cc647bf202adc5dc0da0e4a7e69cf2a8e39f965230237d5a5f9e4feacec2b",
             "locator": {
               "kind": "symbol",
@@ -198,7 +198,7 @@
         },
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
             "content": "sha256:a740d3052df748d7f531ad89c2097e4bf54ad7b3bfcc26a384449d1f69c59f4a",
             "locator": {
               "kind": "symbol",
@@ -210,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "1cbb97244cdbeaa601ca0fc47445ad9828bef3f3",
+            "blob": "28f6044cf9b2ac4f04bd050f54dc1a360b9f7505",
             "content": "sha256:874ec9bcb067a10e432e2cd1ff53305de4c70fefebbe03e4f3a9f5244d2d2f29",
             "locator": {
               "kind": "symbol",
@@ -871,28 +871,27 @@
       ]
     },
     "5": {
-      "note": "The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only.",
+      "note": "The single readable operand drawn in the shipped viewer, in its own testid host, for a textual side only.\n\nAnchor: `contentBlock`",
       "targets": [
         {
           "anchor": {
-            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
-            "content": "sha256:d1ec3349d49aef33830b013037d5a9a6665b7aa80500c57888e28ec81c0f988f",
-            "locator": {
-              "kind": "symbol",
-              "name": "contentBlock"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
             "locator": {
               "kind": "symbol",
               "name": "FilePane"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605a94e6165911a70c8720cc9da1642652343d76",
+            "content": "sha256:1d8296b1490612891473faa8036b266d9586ec8f1d52d4f2b1ffba75c8ec0300",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

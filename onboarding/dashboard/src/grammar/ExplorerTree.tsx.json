@@ -1,0 +1,121 @@
+{
+  "path": "dashboard/src/grammar/ExplorerTree.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplorerTree"
+        }
+      },
+      "id": "RLZ-1Z886T",
+      "invariant": "INV-X1ADJP",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 15",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ExplorerTree owns the rendering or source-selection boundary that implements this obligation: Knowledge has one shared tree, Markdown renderer and code primitive instead of its former private renderers.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+        "content": "sha256:554e52dcd3fa3ab6650860a0807a2b88198dc837156840a4c4a8657b868a5d78",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExplorerTree"
+        }
+      },
+      "id": "RLZ-YXGQAV",
+      "invariant": "INV-JJCTRA",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 3",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ExplorerTree owns the rendering or source-selection boundary that implements this obligation: Knowledge uses the shared keyboard tree in a resizable scrolling pane, filtering to knowledge and marking the open path including code.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared tree composes the headless library with one caller-supplied loader and open behavior.\n\nAnchor: `useExplorerTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A failed load is shown as an alert with the loader's error text instead of an empty result; no directory name is guaranteed and a successful reload clears it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A new address can re-read one loaded parent, once, when the filter had hidden the row.\n\nAnchor: `useRevealItem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcf0163353aa753e3985ca03bebd9323116a5a56",
+            "content": "sha256:22f74377d6feb31b6c266659ec71e398753609598b9443b23877d5749629d70d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The File Viewer consumes the shared tree through its own row adapter.\n\nAnchor: `FileTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a0c9f959b5d518514d2935e8158a25a295ad83",
+            "content": "sha256:a21e7ebe9f5ab3fd4ecd5f82d6872766adbe991d1244861cfa7932e8ae29fa86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FileTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Knowledge reader consumes the same tree for paths and the Records branch.\n\nAnchor: `KnowledgeTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

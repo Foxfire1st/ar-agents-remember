@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cd9863c77590ab26ca71daab7ddb057e54e130b",
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
             "content": "sha256:11ff62b99ddf7f2dac49299d76f2d88db75c85912491a16a7c1264d48740e738",
             "locator": {
               "end": 265,
@@ -101,12 +101,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cd9863c77590ab26ca71daab7ddb057e54e130b",
+            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
             "content": "sha256:4733caa588e319da0b4226708af6d450a123a45b2f4725585bb811a13594d41b",
             "locator": {
-              "end": 1107,
+              "end": 1121,
               "kind": "line_range",
-              "start": 1031
+              "start": 1045
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },

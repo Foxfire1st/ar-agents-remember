@@ -6,7 +6,7 @@
 
 ## Hot Path Summary
 
-`Markdown.tsx` and `TaskRequirementLinks.tsx` resolve only registered task-local requirement addresses into internal reader actions; external links retain normal anchor behavior. Read the provider before changing requirement-link refusal or task-context selection.
+`Markdown.tsx` and `TaskRequirementLinks.tsx` resolve only registered task-local requirement addresses into internal reader actions; external links retain normal anchor behavior. Requirement handling is the no-override default: a caller's own `components.a` (the Knowledge reader supplies one) replaces it, because caller overrides are spread last. Read the provider before changing requirement-link refusal or task-context selection.
 
 ## Governing Overview
 
@@ -30,7 +30,13 @@ Material).
   Engine Room uses it to hold a fixed height while its inner columns scroll on their own.
 - `ModeBar.tsx` — the viewport switcher: a **React Aria `ToggleButtonGroup`** (single-select
   radiogroup) styled by Panda `_selected` / `_focusVisible` conditions; roving focus + arrow-key
-  nav, look unchanged from the old `.modebar`.
+  nav, look unchanged from the old `.modebar`. Since 260928-MIK-L79 it also narrows its spacing below
+  40rem so the four product entries fit a phone.
+- `ExplorerTree.tsx` — the one shared async tree (260928-MIK-L79): the headless-tree adapter with the
+  caller-supplied loader, row type, open behavior and suffix, a failed load shown as an alert with the
+  loader's error text (no guaranteed directory name), a revision-driven re-read of every loaded branch
+  and a one-shot reveal of a row the filter had hidden.
+  The File Viewer and the Knowledge reader both build on it; no page keeps a second tree.
 - `Dot.tsx` — the state/severity **mark**: one monospace cell (`width: 1ch`, centred, `flexShrink: 0`)
   whose Panda `cva` sets **`color`** — not `background`, and no `border-radius` — plus a
   distinguishing **glyph** per variant. Nine variants: the six `LIFECYCLE_STATES` (including
@@ -58,7 +64,12 @@ Material).
   tick from re-parsing stable section strings (the source of the scroll-jank it fixed). No raw HTML.
   Since 260831-CCR-L23 both render modes mount a custom anchor component that renders registered
   `requirements/...` links as opening buttons and refuses unregistered requirement addresses (the
-  listing comes from the `TaskRequirementLinks` provider context, never a local fetch).
+  listing comes from the `TaskRequirementLinks` provider context, never a local fetch). It is the
+  no-override default: a caller's own `components.a` replaces it (the Knowledge reader supplies its
+  own handler), because caller overrides are spread last. Since
+  260928-MIK-L79 the Knowledge reader opts into `referenceMarkers` (prose `[n]` links) and
+  `headingIds` (text-derived heading ids with per-slug suffixes and document typography) through
+  [`referenceMarkers.ts`](referenceMarkers.ts.md); both stay off for every other consumer.
 - `TaskRequirementLinks.tsx` — the requirement-link provider/context (260831-CCR-L23): fetches the
   registered task-local requirement listing for the viewed task document and exposes `open(path)`
   lifting a `{ kind: "requirements", repo, master, document, path }` target; consumed by `Markdown`
@@ -112,6 +123,15 @@ Material).
   reference under `grammar/`) — they are two independent tables held to the same two rules,
   totality and a default that does not borrow a live state's answer. A new lifecycle state has to be
   answered in both, and `Dot.test.tsx` is the one that catches it here.
+
+## 260928-MIK-L79 Two Shared Primitives Gain Opt-In Extensions
+
+**Route meaning extended (MIK-R79).** The Knowledge reader is built on this route's primitives instead of
+page-private copies: [`ExplorerTree.tsx`](ExplorerTree.tsx.md) is the one async tree for the File Viewer and
+the Knowledge reader, and [`referenceMarkers.ts`](referenceMarkers.ts.md) adds the opt-in
+`remarkReferenceMarkers` / `remarkHeadingIds` plugins the shared [`Markdown.tsx`](Markdown.tsx.md) exposes for
+a document's prose. With both options off, every existing consumer renders exactly as before; the page-private
+tree, Markdown renderer and code view are gone (the code view is `file-viewer/FilePane.tsx`).
 
 ## Evidence
 

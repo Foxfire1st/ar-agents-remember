@@ -135,12 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c5e9dc847fb3e28e87709e1b8e9849d484f561",
+            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
             "content": "sha256:f0fc39c848021c17128b9162a968b9260ec644e3e1cee3b433c263b22785570f",
             "locator": {
-              "end": 109,
+              "end": 112,
               "kind": "line_range",
-              "start": 109
+              "start": 112
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

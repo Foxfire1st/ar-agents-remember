@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d1857a57c467a4753eba362622c41f739f85696",
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
             "content": "sha256:dcda4323d9cfb52b5202bee29219fb95d7c5c9b0cafe72af05fcdd4ad13ada56",
             "locator": {
-              "end": 79,
+              "end": 78,
               "kind": "line_range",
-              "start": 79
+              "start": 78
             },
             "path": "dashboard/scripts/check-diff-coverage.mjs"
           },

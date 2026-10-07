@@ -128,7 +128,9 @@ No external domain claim is required.
 
 - The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [10]
 
+
 - The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [11]
+
 
 - The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [12]
 

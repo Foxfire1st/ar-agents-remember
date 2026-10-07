@@ -117,7 +117,7 @@ span several modules; the card of a module, where it has one, states what its ca
 | Knowledge as text files: formats, the curator writer, the validator, history files | `test_knowledge_file_formats.py`, `test_knowledge_writer.py`, `test_knowledge_validator.py`, `test_knowledge_history_files.py` |
 | The change-to-knowledge worklist and the mandatory closeout gate | `test_knowledge_worklist.py`, `test_knowledge_closeout_gate.py`, `test_knowledge_gate_routes.py` |
 | The onboarding refresh gate, unexplained changes, planned effects, reconsideration | `test_onboarding_trace_gate.py`, `test_unexplained_change_disposition.py`, `test_planned_knowledge_effects.py`, `test_reconsideration_surfacing.py` |
-| The derived knowledge index and the knowledge readers | `test_knowledge_index.py`, `test_knowledge_reader.py`, `test_knowledge_leaf_read.py` |
+| The derived knowledge index and the knowledge readers | `test_knowledge_index.py`, `test_knowledge_reader.py`, `test_knowledge_reader_tree_coverage.py`, `test_knowledge_leaf_read.py` |
 | The reviewer on Git trees | `test_review_git_trees.py` |
 | Curation through the real writer | `test_curator_scope.py`, `test_curator_realization_authoring.py`, `test_curator_family_authoring.py` |
 | Memory quality runs and citation repair | `test_memory_quality_runs.py`, `test_citation_document_transaction.py`, `test_memory_citation_fix.py` |

@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
             "content": "sha256:085eabea3ae7300f760c1b8a23d0cc69c2fd6d7991e8ccb2338ec0a5819196bb",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
             "content": "sha256:8ab5981b7884639a2347750e4529b903696642bdf0f6c7510679a4c4c1f3881c",
             "locator": {
               "kind": "symbol",
@@ -64,12 +64,12 @@
         },
         {
           "anchor": {
-            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
             "content": "sha256:188b8d04eaf049ad1360fdecd4dba4d43de5157c5f881429d1d998ee748d3a09",
             "locator": {
-              "end": 126,
+              "end": 128,
               "kind": "line_range",
-              "start": 113
+              "start": 115
             },
             "path": "dashboard/src/data/sessions.ts"
           },

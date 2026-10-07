@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
             "content": "sha256:dbb171b64e93bd92eb353a3e12447ec1d3ec2e1cc93aa3478561f64fed68b934",
             "locator": {
               "kind": "symbol",
@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
             "content": "sha256:b0ff23c3bfd0ca1227dc700b342da34c0dbc3e1a3490e0da9e15e2b6f1f40135",
             "locator": {
-              "end": 588,
+              "end": 590,
               "kind": "line_range",
-              "start": 515
+              "start": 517
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -61,12 +61,12 @@
         },
         {
           "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
+            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
             "content": "sha256:1fdd50e89fcead826f85983c89052ff1896f62a2c651fd8ad2fbb59fde73fb00",
             "locator": {
-              "end": 598,
+              "end": 600,
               "kind": "line_range",
-              "start": 524
+              "start": 526
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },

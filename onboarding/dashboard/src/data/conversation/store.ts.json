@@ -189,7 +189,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
             "content": "sha256:9602fc0e16a54e9abfa886989bad9ae36441a433887e3d709d53151de2c7d842",
             "locator": {
               "end": 20,
@@ -202,12 +202,12 @@
         },
         {
           "anchor": {
-            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
             "content": "sha256:1bb9e9d654f2d8fc4ff2888fc844be069e47d0d7f1dc65240e6a2a9631da2dd6",
             "locator": {
-              "end": 276,
+              "end": 277,
               "kind": "line_range",
-              "start": 265
+              "start": 266
             },
             "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
           },
@@ -220,7 +220,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57309d5a93d391cbd3dab6479a020231b74adc65",
+            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
             "content": "sha256:3cdd252df802359df5133d491ad3d40242b8556cfcd13866dfa068ec07cba3c8",
             "locator": {
               "end": 2,

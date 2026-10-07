@@ -249,11 +249,11 @@
       ]
     },
     "19": {
-      "note": "**The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.**\n\nAnchor: \"mcp/tests/test_historical_committed_leaf_review.py\"",
+      "note": "**The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.**",
       "targets": [
         {
           "anchor": {
-            "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
+            "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
             "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
               "end": 87,
@@ -266,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
             "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
-              "end": 739,
+              "end": 470,
               "kind": "line_range",
-              "start": 739
+              "start": 470
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -279,12 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
-            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
-              "end": 1459,
+              "end": 1036,
               "kind": "line_range",
-              "start": 1459
+              "start": 1036
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -292,12 +292,12 @@
         },
         {
           "anchor": {
-            "blob": "1645304df02f5faac3039ae5a23a3046666de9f4",
-            "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
+            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
+            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
-              "end": 1507,
+              "end": 1639,
               "kind": "line_range",
-              "start": 1507
+              "start": 1639
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

@@ -75,12 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
             "content": "sha256:164ecf99bd75a5633a9b15e331121f002c19be09c09eaaa9a7088fe2015dfc58",
             "locator": {
-              "end": 40,
+              "end": 42,
               "kind": "line_range",
-              "start": 40
+              "start": 42
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },

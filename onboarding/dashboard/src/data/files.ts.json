@@ -337,29 +337,28 @@
       ]
     },
     "7": {
-      "note": "`useFilesTree` calls `listDir` per directory level to lazy-load each tree side.\n\nAnchor: `listDir`",
+      "note": "The File Viewer's tree loader calls `listDir` per directory level from the shared adapter.\n\nAnchor: `FileTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "78ed5b387ae1a6126a534c85b611bd6bc9b49102",
-            "content": "sha256:751ead725ab51e362885ec2f0bdc0c35d1d660942f2b87acfd25477223c55acf",
+            "blob": "63a0c9f959b5d518514d2935e8158a25a295ad83",
+            "content": "sha256:a21e7ebe9f5ab3fd4ecd5f82d6872766adbe991d1244861cfa7932e8ae29fa86",
             "locator": {
-              "kind": "symbol",
-              "name": "useFilesTree"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/file-viewer/useFilesTree.ts"
+            "path": "dashboard/src/panels/file-viewer/FileTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "`FileTree` consumes the `DirEntry` and `Scope` types.\n\nAnchor: `DirEntry`; `Scope`",
+      "note": "`FileTree` consumes the `DirEntry` and `Scope` types.",
       "targets": [
         {
           "anchor": {
-            "blob": "78a4be0915cb59c7be0894392a69d719bdaf8c12",
-            "content": "sha256:7bebff0aed6ad548d5a4a65da9e2b0c7961c26af3bdf66372e888e34b2c20222",
+            "blob": "63a0c9f959b5d518514d2935e8158a25a295ad83",
+            "content": "sha256:793e48199930cb92ac0394e12c285f23f422e8228691b723318bb7ea2ba33a55",
             "locator": {
               "kind": "symbol",
               "name": "FileTree"

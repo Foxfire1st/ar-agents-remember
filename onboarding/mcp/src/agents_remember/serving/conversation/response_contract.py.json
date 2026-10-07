@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:a4bcb679d68c3d1c4dc9fd5649ff784c9ecbef260b7d09d7f8883bfa0ed0d870",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:2bf590bf08f993b15fb27b55f2eb291791eddf2baa5f442bd2e35d828460b7d2",
             "locator": {
               "kind": "symbol",
@@ -31,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:e042aa9d10db5e34f39e90168d5f27ef76ed9e66a1470022a18b2b29b3d8431a",
             "locator": {
               "kind": "symbol",
@@ -43,7 +43,7 @@
         },
         {
           "anchor": {
-            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:b0fd2af6f7e68cb0479c08c2cd944fde970381a355073b4852e759dd3f221e0c",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "6338149ae493cda07e9f88e948b7f8c83311ed92",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:c9612c8e82307f99061d910b713ead4de811a6b725f67f5cfbee1edf6abfe6ef",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "13a94d8cc001c2b04f820e38ff8048aefdb4a66c",
+            "blob": "d75a9e32532b64e44414452d83b703244377c292",
             "content": "sha256:8f8026506f87565f9337026d17ff7207868683ffbf043f773b60a7961c321acb",
             "locator": {
               "end": 43,
@@ -124,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "13a94d8cc001c2b04f820e38ff8048aefdb4a66c",
+            "blob": "d75a9e32532b64e44414452d83b703244377c292",
             "content": "sha256:909fa5778010665fd01f70bcc8970ff6c072bc0881b6e642801c32f3d2ebb9bd",
             "locator": {
               "end": 53,
@@ -252,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
             "content": "sha256:28ff67446223e6de6dc400e9144a1734983c656c3ec6a264666f3ef424c3641c",
             "locator": {
               "kind": "symbol",
@@ -264,7 +264,7 @@
         },
         {
           "anchor": {
-            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
             "content": "sha256:ee6e17e334bac6f9dcb1cb421d9cb45c0c8cb7015d4b98d0f5cad3fe1de3947a",
             "locator": {
               "kind": "symbol",
@@ -276,12 +276,12 @@
         },
         {
           "anchor": {
-            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
             "content": "sha256:213db13ed5badff3893f6f0c7b32c3e9e04f0aa2ced65a35cb8dbe2b3728aa0f",
             "locator": {
-              "end": 84,
+              "end": 85,
               "kind": "line_range",
-              "start": 75
+              "start": 76
             },
             "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
           },
@@ -289,12 +289,12 @@
         },
         {
           "anchor": {
-            "blob": "d704862502ea34b8f7f7ba86340a3c82ae4594db",
+            "blob": "0c3c2f05b4c1f1c513bc7ece3b002cd755129b40",
             "content": "sha256:da47f28a1f8ca5d68776f7bd1dacd142ec439e3f33cb8c52f3aa103ebfce9268",
             "locator": {
-              "end": 286,
+              "end": 287,
               "kind": "line_range",
-              "start": 271
+              "start": 272
             },
             "path": "mcp/src/agents_remember/serving/conversation/library/api.py"
           },

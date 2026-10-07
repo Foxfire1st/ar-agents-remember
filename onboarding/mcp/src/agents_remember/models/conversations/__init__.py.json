@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea473ad3fdb2b4326c50dcc3ffb1f83fea184ecc",
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
             "content": "sha256:b578393eee940e6ab1a3e5c67260d124bab82a2f7bd92a46851c48fb455efdcd",
             "locator": {
               "kind": "symbol",
@@ -35,12 +35,12 @@
         },
         {
           "anchor": {
-            "blob": "ea473ad3fdb2b4326c50dcc3ffb1f83fea184ecc",
+            "blob": "056576c6bd94d53f956f5ae179b87d0abc833114",
             "content": "sha256:c51d631b92b967c018129a499581c2cc0559a5bbf0ed3d8b53fdb11127b570d4",
             "locator": {
-              "end": 269,
+              "end": 270,
               "kind": "line_range",
-              "start": 189
+              "start": 190
             },
             "path": "mcp/src/agents_remember/serving/ports.py"
           },
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c20b9d7fc443b18eb1c69d3d9adcbb62a6f51c33",
+            "blob": "1bec9a2be1fb844796c8d2378a7d50b8ad2cf94d",
             "content": "sha256:a4bcb679d68c3d1c4dc9fd5649ff784c9ecbef260b7d09d7f8883bfa0ed0d870",
             "locator": {
               "kind": "symbol",

@@ -93,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
             "content": "sha256:fc756622645df67829b00a773f078c8aceec9b715d9a837eba8042fe28cbd1a8",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
             "content": "sha256:0dc4a70253c0912883c06213897f17b2bd99fd3b949317c9dc30f9343b652ba6",
             "locator": {
               "kind": "symbol",
@@ -135,12 +135,12 @@
         },
         {
           "anchor": {
-            "blob": "7d9a1a58a900c3326508bea785ce962d72b6293b",
+            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
             "content": "sha256:d326e4523d6a2be43e2fb437325bf05139a9b1cfe0fbcd1907ebadb1c205ceec",
             "locator": {
-              "end": 120,
+              "end": 127,
               "kind": "line_range",
-              "start": 114
+              "start": 121
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },

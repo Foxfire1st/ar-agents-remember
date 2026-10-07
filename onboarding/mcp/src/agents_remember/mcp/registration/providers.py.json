@@ -48,7 +48,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a4e34350db81dd6b23e6e5cc25e9a1efaf35fa5",
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
             "content": "sha256:dacaa2467f3c54b789747a5f7f70ecdd5f5669876e3c74593da589d937d7b696",
             "locator": {
               "kind": "symbol",
@@ -60,12 +60,12 @@
         },
         {
           "anchor": {
-            "blob": "5a4e34350db81dd6b23e6e5cc25e9a1efaf35fa5",
+            "blob": "5c9e4dbb3f0a769bd878cfbe6adb82044398eb21",
             "content": "sha256:16bf92f2e1f2e81ac065e1c97c3395b6f270e9b28ae436cb52a09bb0147d3319",
             "locator": {
-              "end": 87,
+              "end": 88,
               "kind": "line_range",
-              "start": 48
+              "start": 49
             },
             "path": "mcp/src/agents_remember/application/provider_tools.py"
           },

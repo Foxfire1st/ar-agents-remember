@@ -1,0 +1,89 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/readerNavigation.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "72ab77f3a6f0330fd01821e6fb39a56dad6923d4",
+        "content": "sha256:dceedff6d6ced7df22ef53af2db0c63028e3df8f3326409c9e07ea868aa2088b",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReaderNavigation"
+        }
+      },
+      "id": "RLZ-ENZDKK",
+      "invariant": "INV-TWW2EJ",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 11",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useReaderNavigation owns the rendering or source-selection boundary that implements this obligation: New reader navigation starts at the top and browser Back restores the position stored in the visited history entry.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "72ab77f3a6f0330fd01821e6fb39a56dad6923d4",
+        "content": "sha256:2593954aba2b5c4a77897f9351d2aca5fdb7250c09f1dd24930a3d61394ef9e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRestoreReaderScroll"
+        }
+      },
+      "id": "RLZ-GRSRXC",
+      "invariant": "INV-TWW2EJ",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 11",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useRestoreReaderScroll owns the rendering or source-selection boundary that implements this obligation: New reader navigation starts at the top and browser Back restores the position stored in the visited history entry.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The address, history entry and scroll place of the reader.\n\nAnchor: `useReaderNavigation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ab77f3a6f0330fd01821e6fb39a56dad6923d4",
+            "content": "sha256:25a792ee0760d9c98d49f1dca28845ccdd8611eaabcfac84cbab6bfa6ff9b46d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The place is restored when the document is ready and visible.\n\nAnchor: `useRestoreReaderScroll`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ab77f3a6f0330fd01821e6fb39a56dad6923d4",
+            "content": "sha256:25a792ee0760d9c98d49f1dca28845ccdd8611eaabcfac84cbab6bfa6ff9b46d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A CSS-hidden pane's reported zero is refused as the reader's place.\n\nAnchor: `hiddenDocument`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72ab77f3a6f0330fd01821e6fb39a56dad6923d4",
+            "content": "sha256:25a792ee0760d9c98d49f1dca28845ccdd8611eaabcfac84cbab6bfa6ff9b46d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

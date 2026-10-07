@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/grammar/referenceMarkers.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "df99298926b52f4a9c1f0a4de7d1fbc38f5aa2cb",
+        "content": "sha256:46d8278496739fa54a36ce32e23a135f4e2f0bed64a44181dcf389077c8f9859",
+        "locator": {
+          "kind": "symbol",
+          "name": "remarkReferenceMarkers"
+        }
+      },
+      "id": "RLZ-EXNFBV",
+      "invariant": "INV-4A68A2",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 8",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "remarkReferenceMarkers owns the rendering or source-selection boundary that implements this obligation: The shared Markdown renderer supports opt-in heading hierarchy, heading identifiers, text-only numbered references and caller-owned card links.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Prose `[n]` markers become links to the reference list, in text nodes only.\n\nAnchor: `remarkReferenceMarkers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df99298926b52f4a9c1f0a4de7d1fbc38f5aa2cb",
+            "content": "sha256:42fa7b3b82cedb20244cec1b46a3442f4c5628c2650009ce14cc410c558a4529",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repeated headings receive distinct stable ids for the outline and fragment links.\n\nAnchor: `remarkHeadingIds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df99298926b52f4a9c1f0a4de7d1fbc38f5aa2cb",
+            "content": "sha256:42fa7b3b82cedb20244cec1b46a3442f4c5628c2650009ce14cc410c558a4529",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared renderer includes the plugins only when its caller asks for them.\n\nAnchor: `Markdown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "content": "sha256:bc43508e5e9614897d5cc5c61ee66424045ef4aeb4dbdb3e53be476b95279558",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

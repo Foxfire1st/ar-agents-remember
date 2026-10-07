@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
+        "blob": "daa6f46d8747f6ac61b61d6fd1646554c106aa60",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 262,
+          "end": 263,
           "kind": "line_range",
-          "start": 262
+          "start": 263
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -22,192 +22,34 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The schema version, the one comment and the head of the `[files]` table.",
+    "19": {
+      "note": "The new module joins this lane.\n\nAnchor: `unit-regression`",
       "targets": [
         {
           "anchor": {
-            "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
-            "content": "sha256:730f9959b326bdb219398c79ea05da0cd0003966ffeb3a37d298adc7af24d5f4",
+            "blob": "1b49c940bdf62820d63cc18acb5757398b1e5e9b",
+            "content": "sha256:40e1095164a0b24a975c8edfafcd1998f1fe689a31d0c76f43cb834ffc511646",
             "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "test"
         }
       ]
     },
-    "10": {
-      "note": "The union merge attribute for this file.",
+    "20": {
+      "note": "The module the lane names.\n\nAnchor: `mcp/tests/test_knowledge_reader_tree_coverage.py`",
       "targets": [
         {
           "anchor": {
-            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
-            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "blob": "a306e6c17747dcb7de5c2287af5e111db4c020d7",
+            "content": "sha256:878a18b29990b14d6c6250e5f5ce32e5195dd294a176447263d559b1bdc606ad",
             "locator": {
-              "end": 21,
-              "kind": "line_range",
-              "start": 15
+              "kind": "file"
             },
-            "path": ".gitattributes"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The manifest is a global test input of the selection graph.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
-            "content": "sha256:d3f8744c5601ba31a5d35647a3692bd6657fa82dea8d7e925fb1d845d8a2a70c",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 27
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The lane loader names an unordered lane and a duplicated path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4932eb280652fcb97ec2520ad96dc009cb7b4a83",
-            "content": "sha256:e2a3355eb661424137372c8e306519b9b1f41dbd200050a20b62efad25476991",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_lane_loader_names_an_unordered_lane_and_a_duplicated_path"
-            },
-            "path": "mcp/tests/test_evidence_catalog_canonical_form.py"
+            "path": "mcp/tests/test_knowledge_reader_tree_coverage.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The layout check that refuses a lane list not written one path per line.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
-            "content": "sha256:f4b2cd7651cbd8abe33773ab2dcc4853308de2e6f6e55f4df77503a655581b6b",
-            "locator": {
-              "kind": "symbol",
-              "name": "layout_findings"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "The configuration hook reads the integration and stress-durability lists and explains a manifest it cannot read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
-            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
-            "locator": {
-              "kind": "symbol",
-              "name": "pytest_configure"
-            },
-            "path": "mcp/tests/conftest.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "17": {
-      "note": "The rewrite sorts the `[files]` lists without duplicates and removes the lines of missing files.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
-            "content": "sha256:58f1fcff243c42ff9429867489772baa9d85500a4c06093a8e8b13b91345c4e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "canonical_lane_text"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "The loader that validates the file against the test modules of the source tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
-            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_lane_manifest"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A lane list that is out of order or holds a duplicate is one finding that names the lane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
-            "content": "sha256:15503a9b1c3f9c346a4f81c38009adb200dc0f5c6a5a91e21a2eccb53ac0239e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_load_file_category"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "A path twice in one lane is not a conflict between lanes, and a path whose file is gone names the command.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
-            "content": "sha256:48f38fec23a8eb55ee8f82077f0ade26edd34a0981b5c319a870a344c3c6fbd6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_load_file_lane"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The collection hook loads the manifest, refuses with a usage error and marks each item with its lane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
-            "content": "sha256:3f51591bfdc5301926b452b47db4e3b8f0f4eb2a1aa42af08dad1992348c2c1d",
-            "locator": {
-              "kind": "symbol",
-              "name": "pytest_collection_modifyitems"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
-          },
-          "kind": "code"
         }
       ]
     }

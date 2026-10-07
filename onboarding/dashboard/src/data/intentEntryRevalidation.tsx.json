@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:3b1060d0170a08b61f3de9e57ac024c13dca376d36b7ff59e983dd7df1aea522",
             "locator": {
-              "end": 912,
+              "end": 892,
               "kind": "line_range",
-              "start": 912
+              "start": 892
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -149,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ad8b7dbba12669bb29ea86225adead13c8cf30b",
-            "content": "sha256:18e52c8ea7080517e5924aa9a365bbc219e209827ee0bf564b4ff7b20120c341",
+            "blob": "6613fcd7c2cc3dc31757ff00d3c3fd2969b97b6b",
+            "content": "sha256:1bbaa01b175b461b75f8c4942efe2486ed61fb4eb30680da7c91a0595a86fab8",
             "locator": {
               "end": 232,
               "kind": "line_range",
@@ -162,8 +162,8 @@
         },
         {
           "anchor": {
-            "blob": "1ad8b7dbba12669bb29ea86225adead13c8cf30b",
-            "content": "sha256:e0483e17bb4ff9560c444e661fcea7f3b109416d33f6d6eb9f980f3b0720742c",
+            "blob": "6613fcd7c2cc3dc31757ff00d3c3fd2969b97b6b",
+            "content": "sha256:4f189161e25f3be38756814300eb985d0f506f45f49616a0316642bc8cbf1ca0",
             "locator": {
               "end": 280,
               "kind": "line_range",

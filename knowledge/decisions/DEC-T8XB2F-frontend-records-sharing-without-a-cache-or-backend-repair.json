@@ -1,0 +1,64 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The dated disposition chose one frontend-only repair against a backend/API route and a persistent cache and kept the latency adequacy question open; the choice constrains the reader's data ownership."
+  },
+  "alternatives": [
+    {
+      "option": "One selection-local records acquisition inside the existing read owner, shared by the toolbar and the Records branch, with old answers cleared on selection changes and no request on rerender, hide/show or Back.",
+      "reason": "The disposition admits exactly this frontend-only repair and removes the demonstrated duplicate acquisition without new state that can go stale.",
+      "status": "chosen"
+    },
+    {
+      "option": "Repair the backend route or add a new API for the first-view cost.",
+      "reason": "The disposition admits no backend/API repair; the remaining cost is an owner adequacy question, not a demonstrated backend defect.",
+      "reconsider_when": "The owner judges the remaining first-view cost unacceptable and admits a new backend or API scope.",
+      "status": "rejected"
+    },
+    {
+      "option": "Add a persistent or global cache of records answers.",
+      "reason": "The disposition excludes a persistent cache; it would introduce cross-selection state with its own staleness and eviction rules for a saving the selection-local promise already makes.",
+      "reconsider_when": "A measured, owner-admitted need for cross-selection reuse appears.",
+      "status": "rejected"
+    },
+    {
+      "option": "Treat about 28 seconds to the first live-leaf document as adequate and close the concern.",
+      "reason": "The samples do not establish adequate speed or a cause; no numeric limit is in the packet, so the adequacy decision stays with the owner.",
+      "reconsider_when": "The owner records an adequacy judgment on the current samples, with or without a numeric limit.",
+      "status": "deferred"
+    }
+  ],
+  "consequences": [
+    "The toolbar's lookup and the Records branch consume one promise per current selection; expansion adds no request.",
+    "A delayed or failed list is named and leaves the document, header and path tree usable.",
+    "The first-root latency observation stays with the owner as an adequacy and landing boundary."
+  ],
+  "context": "The exempt takeover returned owner concern L79-TK-O1: the live-leaf reader took tens of seconds to show its first document, and the toolbar and the Records branch independently fetched the same selection's record list. Orchestrator OR-R012 (2026-10-06) had provisionally accepted the material same-source tree-feature cost and set non-gating constraints (header/prose and Back must not wait; no rescan per render; no cache or framework project; material slowdown returns to the Orchestrator). The dated owner disposition L79-TK-O1-OWNER-DISPOSITION-20261007.json (2026-10-07T08:15:37+02:00) then admitted ONE frontend same-selection record-list acquisition repair: existing frontend owners/hooks only, no persistent cache, no new API and no backend repair, with before/after controlled evidence.",
+  "decider": "Owner disposition of 2026-10-07 (notes/run3/L79-TK-O1-OWNER-DISPOSITION-20261007.json), which admits the frontend repair; OR-R012 (2026-10-06) is retained separately as the background cost/constraint ruling.",
+  "id": "DEC-T8XB2F",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-QE6278"
+    },
+    {
+      "relation": "constrains",
+      "target": "LIM-HWZZ6V"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L79-o1-frontend-acquisition",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

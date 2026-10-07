@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Each member protects one way a reader loses the document: block order alone can still lose the place, Back alone cannot restore a document whose text failed to render, and the outline and the citation pane only navigate a document the shared renderer drew; only together do they make one continuous reading place."
+  },
+  "guarantee": "The Knowledge reader renders a document complete and in order through the shared renderer, opens a cited code beside the text without moving it, outlines the same document, opens every navigation at the top and returns Back to the place the reader left, so one continuous reading place survives following any link.",
+  "id": "FAM-KYDGK6",
+  "members": [
+    "INV-544QCB",
+    "INV-4A68A2",
+    "INV-P362H1",
+    "INV-KXT50F",
+    "INV-TWW2EJ"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L79-reading-place",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/grammar",
+    "dashboard/src/panels/file-viewer",
+    "dashboard/src/panels/knowledge-reader"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The knowledge document reads in one place"
+}

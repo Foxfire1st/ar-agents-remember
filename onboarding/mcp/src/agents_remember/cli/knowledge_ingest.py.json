@@ -632,7 +632,7 @@
         },
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
+            "blob": "407f131273b04314396cd6fa417e9c5dd488cd32",
             "content": "sha256:546fb2b259d7449f7844ea8cac4ee97feaeebd8a048448a3290e39d09aa152bd",
             "locator": {
               "end": 78,
@@ -783,12 +783,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
             "content": "sha256:78458fde33a11a578539417b89ca696a3c1f1095d05a10e45fc7a5bf09cf4509",
             "locator": {
-              "end": 55,
+              "end": 58,
               "kind": "line_range",
-              "start": 55
+              "start": 58
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

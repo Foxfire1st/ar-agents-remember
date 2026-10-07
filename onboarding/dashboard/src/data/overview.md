@@ -67,7 +67,10 @@ reads it (any other hash is `null`) and `readerHash` writes it with commit and p
 link is a navigation and a view can be shared (rule 5). `readerGet` returns every typed answer whatever its HTTP
 status, including a 400 `invalid-request`, and throws only on a transport failure or a body with no state (a 503
 from a process without the reader), so a refusal is shown as what it is and never as an empty view. The keys are the
-backend's camelCase document keys; the adapter issues GETs only.
+backend's camelCase document keys; the adapter issues GETs only. Since 260928-MIK-L79 `TreeChild` also carries
+the optional `hasKnowledge`, `hasOverview` and `coverage` fields the Knowledge tree renders. A failed memory
+enumeration omits the two presence fields (an unknown presence is not `false`) and gives each directory an
+explicit `coverage.unavailable` with its detail, never a counted zero.
 
 - The shareable hash, read and written. [7]
 - A typed answer returned whatever its status; only transport failures throw. [8]

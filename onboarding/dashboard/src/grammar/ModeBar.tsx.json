@@ -2,37 +2,47 @@
   "path": "dashboard/src/grammar/ModeBar.tsx",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The cockpit shell consumes `ModeBar` for the view switcher.\n\nAnchor: \"Views\"",
+    "3": {
+      "note": "The mode bar renders the caller's single-select item list.\n\nAnchor: `ModeBar`",
       "targets": [
         {
           "anchor": {
-            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
-            "content": "sha256:c774a3d936e0fd3af138728dc3a7a664a5aca344764534d0de5bb93456cfeb8f",
+            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
+            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
             "locator": {
-              "end": 930,
-              "kind": "line_range",
-              "start": 930
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+              "kind": "file"
+            }
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The React Aria condition reconciliation it relies on.\n\nAnchor: `_selected`",
+    "4": {
+      "note": "The phone widths keep the four product entries fitting.\n\nAnchor: `bar`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
-            "content": "sha256:983eabe39c621bb55ca02058a20718fee322386217d3821ae3c6b9efa19a6ea8",
+            "blob": "a925093c75fc1c8ca373c37b48dbd315028e2d33",
+            "content": "sha256:dad9c6baca72127fe4b12f31eca7bb7c057e146ba03cee8ae6e156a0363c523f",
             "locator": {
-              "end": 18,
-              "kind": "line_range",
-              "start": 18
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cockpit supplies the four product entries and the opening view.\n\nAnchor: `VIEWS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "locator": {
+              "kind": "file"
             },
-            "path": "dashboard/panda.config.ts"
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
         }

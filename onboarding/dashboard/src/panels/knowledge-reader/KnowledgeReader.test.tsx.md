@@ -6,52 +6,39 @@
 
 ## Purpose
 
-**MIK-R29 on real data: the Knowledge reader's views over the real served answers of `/api/knowledge/reader`
-for a converted scratch copy of the real repositories.** 15 component tests. `KnowledgeReader` is the real
-component; only `fetch` is stubbed, and it answers from `knowledgeReader.captured.json` (the bodies' provenance is
-its `_provenance` key). The memory was converted by L24's `knowledge-convert`; the decisions, incident, family
-routes, history rows, proof and census on top of it are SCRATCH-AUTHORED, because converted memory holds none yet.
+The Knowledge reader's suite: real served answers with `fetch` stubbed and controlled test inputs — a
+`matchMedia` stub, synthesized tree presence/coverage values and constructed hidden-pane zero
+conditions. It renders no real browser and claims none. It pins the MIK-R29
+views (path, root summary, subtree paging, test proofs, truth views, census, without-proof, code)
+and, since MIK-R79, the document order, top/Back navigation, the citation pane, the phone layout and
+the O1 shared records acquisition.
 
 ## Code Commentary
 
 ### Logic
 
-- **The stub.** `bodyFor` maps each request (view plus path or ID) to a captured body; `overrides` replace a body
-  for one case (a failed source, a trimmed page, a `next` subtree page); `heldTree` holds tree listings of one
-  commit until the case releases them.
-- **The cases:**
-  1. a file (`integrate.py`): six `[n]` markers, reference 2 lists 3 targets, entries with states, the family via
-     its route with locations elsewhere, the decision in full, the linked records;
-  2. a directory (the packet's conforming example, `worktrees/`): the overview, `FAM-QWVGDSYX` via its route,
-     `DEC-R29AAA` superseded and `DEC-R29DEC` active, the bounded children, and "list all" into the subtree (F2);
-  3. the root summary as the landing, and "more" following the continuation, where a double click sends one
-     request (F2, the R2 note);
-  4. a test file: proofs by invariant with their facet;
-  5. an invariant: states, links, and a timeline from all three sources, newest first, with a meaning diff and a
-     moved entry event;
-  6. a family, a decision (alternatives in order, `reconsider_when`) and an incident (cause,
-     `cause_uncertainty`, recovery, corrective actions, typed links);
-  7. the census, the without-proof list and code opened at its symbol;
-  8. navigation by URL: explorer counts, links change the hash, the hash round-trips;
-  9. a partial index, unavailable prose, unverifiable states and an unconverted tree, each named;
-  10. `[n]` markers linked in text only, never in code spans or fences (F4);
-  11. the located code lines (193 to 213) and a timeline source that could not be read (F6);
-  12. a superseded decision headed with its derived status (F9);
-  13. side reads that failed named, a clean published view pinned, and stale explorer answers dropped (F11, N2,
-      F13);
-  14. record links that could not be read named instead of "no outgoing link" (F17);
-  15. a history row with its effect and its `because` (a requirement named, a decision as a link that
-      navigates), a row with neither rendered as before, and a decision's incoming link from a row naming the
-      row's subject and leading to its page, while a row served without its subject stays the plain row ID.
+- The MIK-R29 cases open a file/directory/root/test file/invariant/family/decision/incident/census,
+  check the shareable hash, the partial index and unavailable states, the `[n]` marker rendering,
+  the located code lines, the history rows and the side-read failures.
+- The MIK-R79 additions prove: prose before records and references with empty sections skipped and a
+  record leading with its meaning; a followed link opening at the top and Back restoring the visit;
+  a wide citation opening beside unchanged prose and a phone citation as its own page with Browse;
+  a hidden pane's zero not overwriting the place; an unreadable reference list named instead of zero;
+  unsupported links kept as text, external links separate and mapped cards navigating; an Anchor note
+  preserved; the leaf code note and empty record lists named; paths and Records usable when a side
+  count is unavailable; a newly filtered branch refreshed once; and the O1 acquisition cases — one
+  shared list through delay, branches, rerenders and Back, a failed list named without retry or
+  gating, and old answers cleared on commit/repository change with late selections ignored.
 
 ### Conventions
 
-- Real captured bodies, not hand-written ones, except where a case overrides one field and says so.
+- Vitest + Testing Library; the served answers are scratch-authored. `fetch` is stubbed, and the suite also sets a `matchMedia` stub, synthesized tree presence/coverage values and constructed hidden-pane zero conditions; it renders no real browser.
+- Cases select by test id and by the reader's own address/hash.
 
 ### Invariants And Boundaries
 
-- The captured bodies must stay the served bodies of the backend: the reviewer diffed the fixture's key sets
-  against the backend's output for all captured views and found them identical.
+The suite binds the reader's document order, navigation and truthful failure display; it does not
+claim a browser rendering or test the File Viewer.
 
 ### Todos
 
@@ -61,23 +48,18 @@ No additional work is asserted by this card.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The design authority is the requirement
-packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+No domain documentation source is configured for this repository. The design authority is the
+requirement packets `MIK-R29@v1` and `MIK-R79@v1`; they live outside the code and memory
+repositories, so they are named here and not cited as rows.
 
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module's own statement: real served answers, SCRATCH-AUTHORED curation, only `fetch` stubbed. [1]
-- The captured bodies and the request-to-body map. [2]
-- The file, directory, root-summary and test-file cases. [3]
-- The invariant, family, decision and incident, and census cases. [4]
-- Navigation, and failures named. [5]
-
-- The review-fix cases: code spans, located lines and a failed source, the derived header, side failures and stale answers, unreadable links. [6]
-
-- A history row shows its effect and decision, and a decision the rows it caused. [7]
+- The document order, top/Back and citation-pane cases. [8]
+- The O1 shared-acquisition cases. [9]
+- The stale-answer and late-selection cases. [10]
+- The captured bodies the cases serve. [11]
 
 ### Cross-Repo References
 

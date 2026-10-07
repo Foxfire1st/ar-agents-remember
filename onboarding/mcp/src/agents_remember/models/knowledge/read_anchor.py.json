@@ -168,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25dc2d7dd7d4079c8ad8e7725b427edf1c4f7e6f",
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
             "content": "sha256:c95d19eff9d7489f447fd18dbe4dab8051a72d1cb06723f49e0b3ed04daf9595",
             "locator": {
               "kind": "symbol",
@@ -192,12 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "25dc2d7dd7d4079c8ad8e7725b427edf1c4f7e6f",
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
             "content": "sha256:19a50cc472fa39446856ab193ce3cc8b7567e9b24c0f1143ac8cbcbdb1b19b79",
             "locator": {
-              "end": 214,
+              "end": 238,
               "kind": "line_range",
-              "start": 203
+              "start": 227
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },

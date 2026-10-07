@@ -282,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
             "content": "sha256:7ec991601ba2bddb4c403e4fb2139b18997c75b01a749382788ee0d8f3e0397b",
             "locator": {
               "kind": "symbol",
@@ -294,12 +294,12 @@
         },
         {
           "anchor": {
-            "blob": "447d4cc906e77679e15514daa94d05894257dd02",
+            "blob": "6a2ebca0eeac080200eaa95ab69515a940f5f4d5",
             "content": "sha256:825416e23d719b450bae4f8808bbba46b08f02286c249239f173e4e3991a4dc7",
             "locator": {
-              "end": 176,
+              "end": 180,
               "kind": "line_range",
-              "start": 159
+              "start": 163
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_refusals.py"
           },

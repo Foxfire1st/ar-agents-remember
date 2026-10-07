@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e226f8c0bc4c2f337f4c7db1aa935646590f2277",
+            "blob": "4dcd80d6b2d8614e84dbca39e55d2b691fe39295",
             "content": "sha256:661892f3d7a2d62624c31a0343c98ab8ab3e0ee51f1016c49782285c4689dae6",
             "locator": {
-              "end": 130,
+              "end": 132,
               "kind": "line_range",
-              "start": 82
+              "start": 84
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-04-retrieval-strategy-router/SKILL.md"
           },

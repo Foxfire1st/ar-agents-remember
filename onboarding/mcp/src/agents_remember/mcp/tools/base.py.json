@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
             "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
             "locator": {
               "kind": "symbol",
@@ -53,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "5fef1f425c51b6301f92d4992ef459f0ba20bb23",
+            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
             "content": "sha256:8ff5679e907d7c783697590bddca168b76d2d8d0ee7926088784a9b9cd17f011",
             "locator": {
               "end": 283,
@@ -99,12 +99,12 @@
         },
         {
           "anchor": {
-            "blob": "9ade787685940a8e8c127d3c75b23c32e05acb9d",
+            "blob": "1992fb7acf8e245685369d397149006982245cfa",
             "content": "sha256:3f0d4213495fcd5354b75164a9e2fe189f73a9a689516ccea835d2476d982981",
             "locator": {
-              "end": 49,
+              "end": 51,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
@@ -134,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
+            "blob": "8ac4a3f3473b2fe58b63f722b05835dd7bd6713b",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,

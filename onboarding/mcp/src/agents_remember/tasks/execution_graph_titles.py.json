@@ -50,7 +50,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "511d3fb407f169e95fbb59b201b9bdde757f27b8",
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
             "content": "sha256:4b2bcadfd37bab97438a7a3b4c5ac867eeb4a3548f42b7560eeb3e3f0d5ee053",
             "locator": {
               "kind": "symbol",
@@ -62,12 +62,12 @@
         },
         {
           "anchor": {
-            "blob": "511d3fb407f169e95fbb59b201b9bdde757f27b8",
+            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
             "content": "sha256:d3ed1fd1b4034f855c326c15f7a8ff6f29617901586708de76818d24305a39fa",
             "locator": {
-              "end": 345,
+              "end": 353,
               "kind": "line_range",
-              "start": 331
+              "start": 339
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },

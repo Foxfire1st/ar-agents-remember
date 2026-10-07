@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:2dfcdbf1f9ebdd29096ce07b263c4f6b8f1646a58baa22574093430dba611e92",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
             "locator": {
               "kind": "symbol",
@@ -77,12 +77,12 @@
         },
         {
           "anchor": {
-            "blob": "42f47e6b7b7b0ccbf6dbb2e9614ad434665e5064",
+            "blob": "26ae19313dadce07e9f83c63872f56e21e849125",
             "content": "sha256:0c44ff68863f622c632c6350ac0c94f91f5a7ee931690bc955210efe485fb972",
             "locator": {
-              "end": 393,
+              "end": 449,
               "kind": "line_range",
-              "start": 370
+              "start": 426
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

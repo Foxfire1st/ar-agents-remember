@@ -127,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a537399c25285e872d269f3434803ff0177d70d",
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
             "content": "sha256:dac0ecc519e991904bd5e1f29f99f0a0b58e7977f1b8f6b18685ab8abe527bfb",
             "locator": {
-              "end": 237,
+              "end": 233,
               "kind": "line_range",
-              "start": 199
+              "start": 195
             },
             "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py"
           },

@@ -1,0 +1,182 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L79",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "content": "sha256:859f604f8c6783a61e2c86a90ac5e67173c2c4b5b52236459f0cf84496804015",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-1Q53AD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1EP0C7",
+      "items": [
+        "sha256:27ca28473ad3c6fe08953d13097567b02b3cfc6099d36bf64b568f89a741f501"
+      ],
+      "reason": "The shell's view list changed and the Knowledge layer joined the keep-alive pattern, but the chats layer, RoleChatsPane identity and the hidden-not-unmounted contract the invariant states are untouched; the invariant and its realization at MainLayers keep their meaning and are recorded at the candidate. Restated after the paired sync advanced the invariant to its K_C revision.",
+      "revision": 2,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1JEB67",
+      "items": [
+        "sha256:510b75106469192e761e9a84eeedc82069eb73f10e608e6a9832757448cb0e8c"
+      ],
+      "reason": "Code narration: the Engine Room layer's comment now says it has no dashboard entry and is not mounted at load. The layout behavior it comments on is unchanged and no invariant is realized at the comment's lines.",
+      "subject": "hunk:sha256:510b75106469192e761e9a84eeedc82069eb73f10e608e6a9832757448cb0e8c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2QTR1E",
+      "items": [],
+      "reason": "The actual pathRules exclude docs/**, so no eligible file-level card is required. The catalog's product-view rows and its new MIK-R79 paragraph carry the change; this row claims only the storage exclusion and the design route update.",
+      "subject": "onboarding:docs/design/dashboard/scenario-catalog.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2SAPEW",
+      "items": [
+        "sha256:72bc14e469d8792c37fd8d0814cf3096c6800f16fb7614d65be9ab8b87915766"
+      ],
+      "reason": "The notes-reader route's meaning is unchanged: the only change in its scope is the test file mounting the shell on an injected Operations view. The route overview's account of the takeover and keep-alive behavior still holds; the card carries the mount detail.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3MVVZ3",
+      "items": [
+        "sha256:fed505384d09652999f08e386ad6ab61d66a668f760c358c6e6d27033865d624"
+      ],
+      "reason": "The full-bleed flag gains the knowledge view. The obligation the flag serves is recorded by INV-6QQ5FE at MainLayers on the same file (the retained full-width layer); no separate invariant is authored for the flag line.",
+      "subject": "hunk:sha256:fed505384d09652999f08e386ad6ab61d66a668f760c358c6e6d27033865d624"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4YC29E",
+      "items": [
+        "sha256:9bb1911385940cc0805f1e8e0583bffe6006b036ddb8a163456118c17e3495b0"
+      ],
+      "reason": "The design route's own account of the dashboard scenarios still holds; the two changed design documents are storage-excluded and their meaning is carried by the code cards and the panels route overview.",
+      "subject": "onboarding:docs/design/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6WNB3C",
+      "items": [
+        "sha256:2c99ac2ff10e1bba4202f5e452f282ae993773718877446d20e51327fc8ac911"
+      ],
+      "reason": "Code narration: the keep-alive comment names the files/knowledge/chats layers. No behavior changes at the comment's lines.",
+      "subject": "hunk:sha256:2c99ac2ff10e1bba4202f5e452f282ae993773718877446d20e51327fc8ac911"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7175SA",
+      "items": [
+        "sha256:e04361ea3ca62df5a99ce71c5ce75b32e19eaceae8378167c8c68869138ea7e7"
+      ],
+      "reason": "The Knowledge view leaves the transient ViewBody switch to become a retained layer. The layer obligation is recorded by INV-6QQ5FE at MainLayers and the bar by INV-XB45X4; no separate invariant is authored for the removed dispatch case.",
+      "subject": "hunk:sha256:e04361ea3ca62df5a99ce71c5ce75b32e19eaceae8378167c8c68869138ea7e7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NYHPXV",
+      "items": [
+        "sha256:a1f5e3dcd7f9970923781da89d9a2b32147548f8e9785986cd7776e92c1f042b"
+      ],
+      "reason": "The new test module is registered in the unit-regression lane. The obligation it serves is recorded by INV-7AGFVH's proof in mcp/tests/test_knowledge_reader_tree_coverage.py and by the test-evidence-lanes card; the catalog line itself realizes no separate invariant.",
+      "subject": "hunk:sha256:a1f5e3dcd7f9970923781da89d9a2b32147548f8e9785986cd7776e92c1f042b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T8EYBB",
+      "items": [
+        "sha256:e359562885366e461ba6cd4ad4ddabb715811610e9804affbf5e515f4335ae5a"
+      ],
+      "reason": "The four machine-map entries leave the product view list. The resulting four-entry bar and opening view are recorded by INV-XB45X4 at VIEWS/CockpitShell; this delete-only hunk is that change's own edit and no separate invariant is authored.",
+      "subject": "hunk:sha256:e359562885366e461ba6cd4ad4ddabb715811610e9804affbf5e515f4335ae5a"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-VBN9H5",
+      "items": [],
+      "reason": "The compact-list rule's meaning is unchanged and stays as onboarding prose in PathViews.tsx.md; only its unsupported invariant admission was retired after the independent memory review L79-MR1-20, so the record no longer claims prevents_costly_mistake.",
+      "revision": 1,
+      "subject": "INV-T2QSVZ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VC91FF",
+      "items": [
+        "sha256:097ea74ebf617c2c70f7a7109fc6b1685e00f284e38a6f250216898d6dd59a31"
+      ],
+      "reason": "The change-set route's meaning is unchanged: the only change in its scope is the test file mounting the shell on an injected Operations view. The route overview's account of the viewer and the takeover still holds; the card carries the mount detail.",
+      "subject": "onboarding:dashboard/src/panels/changeset/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VGWNJG",
+      "items": [
+        "sha256:fd276d55307fd39c08fff1cf540f6bae63619a87324b96a953976eedee36282c"
+      ],
+      "reason": "Code narration: the shell's header comment names the four product views. No behavior changes at the comment's lines.",
+      "subject": "hunk:sha256:fd276d55307fd39c08fff1cf540f6bae63619a87324b96a953976eedee36282c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WPB12G",
+      "items": [],
+      "reason": "The actual pathRules exclude docs/**, so no eligible file-level card is required. Its row now names Chats as the application default; the design route carries the change.",
+      "subject": "onboarding:docs/design/dashboard/session-cockpit-upstream-register.md"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-4A68A2",
+          "revision": 1
+        },
+        {
+          "id": "INV-544QCB",
+          "revision": 1
+        },
+        {
+          "id": "INV-KXT50F",
+          "revision": 1
+        },
+        {
+          "id": "INV-P362H1",
+          "revision": 1
+        },
+        {
+          "id": "INV-TWW2EJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-Z9VSBP",
+      "items": [],
+      "reason": "New family authored from five obligations that only hold together: the document's block order, the shared renderer with its marker and heading extensions, the citation pane that does not move the text, the outline, and the top/Back place. Each was read against its source and the accepted evidence; no existing family route reaches these files.",
+      "subject": "FAM-KYDGK6"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

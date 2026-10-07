@@ -66,7 +66,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
             "locator": {
               "kind": "symbol",
@@ -90,12 +90,12 @@
         },
         {
           "anchor": {
-            "blob": "173da56888a90ace7636f2bae02e0d8796e89163",
+            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
             "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
             "locator": {
-              "end": 176,
+              "end": 183,
               "kind": "line_range",
-              "start": 166
+              "start": 173
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -120,12 +120,12 @@
         },
         {
           "anchor": {
-            "blob": "a987ff56d53db0d3fcca47b7d2aa0210104558ec",
+            "blob": "bbbb838d51cfedbf392dcac95f64ce0ebd6ff7a9",
             "content": "sha256:c1dad9d8dc89b68f736cc49e5569ccb22f5b1ed3a053f83ec8883ced0dd1b18b",
             "locator": {
-              "end": 464,
+              "end": 466,
               "kind": "line_range",
-              "start": 457
+              "start": 459
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },

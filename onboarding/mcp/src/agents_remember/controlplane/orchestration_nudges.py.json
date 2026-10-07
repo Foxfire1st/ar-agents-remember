@@ -57,7 +57,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b63866a03f776042f245d2e3e1542d182dd4503",
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
             "content": "sha256:0ece4b0f3fecff1f2ec52527fe2a61b0d048a45b60772ac00640ed69538b6a21",
             "locator": {
               "kind": "symbol",
@@ -69,12 +69,12 @@
         },
         {
           "anchor": {
-            "blob": "5b63866a03f776042f245d2e3e1542d182dd4503",
+            "blob": "0ed5c1cbe0f613e46179d6661e364602677f9935",
             "content": "sha256:135c9a07af177c546c52dc19f47c15a989d079fb120f99a8fd3bdf6a3e64c3a3",
             "locator": {
-              "end": 216,
+              "end": 222,
               "kind": "line_range",
-              "start": 206
+              "start": 212
             },
             "path": "mcp/src/agents_remember/controlplane/durable_store.py"
           },

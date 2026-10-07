@@ -63,6 +63,8 @@ No relevant domain documentation was found.
 - The listing client that feeds the context. [1]
 - The artifact target the `open` callback lifts. [2]
 - The markdown consumer that renders registered addresses as buttons. [3]
+
+
 - The reader that mounts the provider around task prose. [4]
 
 ### Cross-Repo References

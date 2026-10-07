@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b60f2b26e9abe66ca975bdbdfa2a0a916f9c573",
+            "blob": "6e8c764268f2f49b4fc5558c39f46505a7006f92",
             "content": "sha256:a1fbe3549bb93baf6a20461338527d92e5a929f4802a78527e7fa080df7f4f5a",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "5b60f2b26e9abe66ca975bdbdfa2a0a916f9c573",
+            "blob": "6e8c764268f2f49b4fc5558c39f46505a7006f92",
             "content": "sha256:cb6792aacff9716886a9e78ac53a306f84401006115f7e77fdcec03a519db0a9",
             "locator": {
-              "end": 24,
+              "end": 26,
               "kind": "line_range",
-              "start": 19
+              "start": 21
             },
             "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py"
           },

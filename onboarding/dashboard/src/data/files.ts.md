@@ -75,7 +75,7 @@ No configured Domain Documentation source exists for this file.
 - The serving layer registers the four `/api/files/*` endpoints this client calls. [4]
 - `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). [5]
 - `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. [6]
-- `useFilesTree` calls `listDir` per directory level to lazy-load each tree side. [7]
+- The File Viewer's tree loader calls `listDir` per directory level from the shared adapter. [7]
 - `FileTree` consumes the `DirEntry` and `Scope` types. [8]
 - `DualPane` consumes the `FileContent` type for its code side. [9]
 - The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. [10]

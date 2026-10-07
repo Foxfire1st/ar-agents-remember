@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
             "content": "sha256:df0c19d1fd5ddd253894d22a981f54b5c543c3233ae34f57f12465e76cf21cae",
             "locator": {
               "kind": "symbol",
@@ -147,7 +147,7 @@
         },
         {
           "anchor": {
-            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
             "content": "sha256:76d21913572e4db2aa4bbf253b1ef465f8e13914d9e121cefca0fa19a2660fe1",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
             "content": "sha256:cd97a64dc1b9b7ee7a84b776bd75c657e02a4f1b896d9745402a21d609738b03",
             "locator": {
               "kind": "symbol",
@@ -171,12 +171,12 @@
         },
         {
           "anchor": {
-            "blob": "a48436d5903024f2eff3dd642ce4d9915a7b3762",
+            "blob": "9d9c238d0825f8748113522611db88f5faef5651",
             "content": "sha256:7029f4983f1110e75d91ce9191292579034b1700855403c4b1e442f6b27bc00e",
             "locator": {
-              "end": 235,
+              "end": 236,
               "kind": "line_range",
-              "start": 155
+              "start": 156
             },
             "path": "dashboard/src/panels/session-cockpit/SessionRail.tsx"
           },
@@ -241,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
             "content": "sha256:1dc03bd74bcb6e3062849f9dd580335243842ca1bcf23dc69adce14cbc8429f3",
             "locator": {
               "kind": "symbol",
@@ -253,12 +253,12 @@
         },
         {
           "anchor": {
-            "blob": "76b4d9ccbe13bc073f85b741b253905856381cde",
+            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
             "content": "sha256:030f5526e16656181571b028a76b888097a8079e500d6bf2c83a86c83c050666",
             "locator": {
-              "end": 138,
+              "end": 140,
               "kind": "line_range",
-              "start": 128
+              "start": 130
             },
             "path": "dashboard/src/data/sessions.ts"
           },

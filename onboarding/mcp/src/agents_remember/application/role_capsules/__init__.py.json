@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aaee4b8c32a28769990b218d044bec323387fda5",
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
             "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
             "locator": {
               "kind": "symbol",
@@ -103,12 +103,12 @@
         },
         {
           "anchor": {
-            "blob": "aaee4b8c32a28769990b218d044bec323387fda5",
+            "blob": "e0c363f53732c65054fa825f478956800f102db7",
             "content": "sha256:40e34ffd4e456f90c078e20a0cb2511078ac5d9f00c4b001142ea4965a8b5020",
             "locator": {
-              "end": 140,
+              "end": 139,
               "kind": "line_range",
-              "start": 84
+              "start": 83
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },

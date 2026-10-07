@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5788089149dbe3b1dd7e9463d21a73c2fc79af6ecbbd722dab3d4ee64e3db799",
             "locator": {
-              "end": 239,
+              "end": 240,
               "kind": "line_range",
-              "start": 155
+              "start": 156
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

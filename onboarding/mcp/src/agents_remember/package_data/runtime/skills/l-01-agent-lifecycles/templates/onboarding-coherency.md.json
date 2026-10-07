@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:24cc837d3d3839346fd454a75f924f9e13328ed64dad27f63c88d8b41b335e93",
             "locator": {
               "end": 6,
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:0425ca3544a1fc543962227d31944e1cbeba335a169207b110d654c535643dfb",
             "locator": {
-              "end": 99,
+              "end": 119,
               "kind": "line_range",
-              "start": 99
+              "start": 119
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -100,12 +100,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
             "locator": {
-              "end": 58,
+              "end": 78,
               "kind": "line_range",
-              "start": 56
+              "start": 76
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

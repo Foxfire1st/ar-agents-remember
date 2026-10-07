@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A tree that lists invariants as rows or omits the record kinds would make a record unfindable without its identifier; the Records branch prevents that."
+  },
+  "applicability": "The Records branch of the Knowledge tree.",
+  "conditions": [
+    "Families, decisions, assumptions and the other record kinds are listed one line each.",
+    "Invariants stay out of the tree; they are reached through their files and families."
+  ],
+  "exclusions": [
+    "The 'without proof' list, which lists invariants on request."
+  ],
+  "id": "INV-X73M0J",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 5",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Families, decisions, assumptions and other pathless records appear by title under Records, while invariants remain outside that branch.",
+  "status": "proposed",
+  "supersedes": []
+}

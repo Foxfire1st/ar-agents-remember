@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
             "content": "sha256:d4ba658fb99a26f2b42f88b317c8d798fa6226494e751b3004754c71fec356dc",
             "locator": {
               "kind": "symbol",
@@ -117,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "4c5cf312b532d1a85030220f92b1d901c54ba9d2",
+            "blob": "61c1ea144912eb59c2153861d49486e9c10d784f",
             "content": "sha256:153565c91193af197938d2fea67be95ceef79a2f186b754f82b7849a4e34895f",
             "locator": {
-              "end": 489,
+              "end": 490,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "dashboard/src/panels/session-cockpit/ChatsStageBody.tsx"
           },

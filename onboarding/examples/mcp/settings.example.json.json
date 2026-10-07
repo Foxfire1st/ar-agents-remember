@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
             "content": "sha256:ecc3c3c8f78a3ede9ad1e547359d16fd6cec6adb344ad3557c5576b198e5f830",
             "locator": {
-              "end": 129,
+              "end": 134,
               "kind": "line_range",
-              "start": 129
+              "start": 134
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

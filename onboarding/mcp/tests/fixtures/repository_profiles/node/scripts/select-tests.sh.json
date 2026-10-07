@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a537399c25285e872d269f3434803ff0177d70d",
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
             "content": "sha256:2d06d6321b45fa2ea3e0e7b5d046a7aa72be01cae2c4b6083cacb3b809d8fa67",
             "locator": {
               "kind": "symbol",
@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "5a537399c25285e872d269f3434803ff0177d70d",
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
             "content": "sha256:5a43ded626cb7768ea1f8135f0ae948deb3febcd2b2ba1645dd27b00cea7031e",
             "locator": {
-              "end": 126,
+              "end": 122,
               "kind": "line_range",
-              "start": 85
+              "start": 81
             },
             "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py"
           },

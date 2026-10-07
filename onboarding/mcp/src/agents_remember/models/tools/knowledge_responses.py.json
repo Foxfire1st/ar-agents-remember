@@ -456,12 +456,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:41b30584f1e6ab48b0ba5196af39144b20a777a24d5a07337d4b11fe99d5d04b",
             "locator": {
-              "end": 117,
+              "end": 118,
               "kind": "line_range",
-              "start": 111
+              "start": 112
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -469,12 +469,12 @@
         },
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:a30808185d7b0f10991bd70239f2fc0622317c9a1c2c6e5efd5e2c41f7651818",
             "locator": {
-              "end": 252,
+              "end": 255,
               "kind": "line_range",
-              "start": 248
+              "start": 251
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -504,7 +504,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
             "locator": {
               "kind": "symbol",
@@ -555,7 +555,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:745552c6972af802278ac3a046f03f8cc91e1405796f4b0e7e8c71be1a554ee2",
             "locator": {
               "kind": "symbol",
@@ -567,7 +567,7 @@
         },
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:5e7ac33228ee17a8c18324c58ba3477dad6354690b167215019bcab03a324902",
             "locator": {
               "kind": "symbol",
@@ -579,12 +579,12 @@
         },
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:c9c6a8827999d5eaa233cc83594ce1a899530d44db70f524cf3b20c55b9a6544",
             "locator": {
-              "end": 371,
+              "end": 372,
               "kind": "line_range",
-              "start": 359
+              "start": 360
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -597,7 +597,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:9897369e3c1df81891550834f7dae67a43a274bc85df9b03f5d36c2878b0a99e",
             "locator": {
               "kind": "symbol",
@@ -609,7 +609,7 @@
         },
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:cb3d1d273cf7165d753f0acf2654191033cc463af7459b176065666852e31102",
             "locator": {
               "kind": "symbol",
@@ -643,7 +643,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:7642601a79c9f289b32abf9f03a277b0ca40e204e8a7ddb100c7d84765ade3e0",
             "locator": {
               "kind": "symbol",
@@ -655,7 +655,7 @@
         },
         {
           "anchor": {
-            "blob": "88b51250adf8ed53060e63f6aa8b7ae58d1e14db",
+            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
             "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
             "locator": {
               "kind": "symbol",

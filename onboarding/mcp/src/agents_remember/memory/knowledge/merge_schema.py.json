@@ -23,12 +23,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9296f87ac0c681bdaf29b4ac456ec77d94d6097",
+            "blob": "2fb68f2bf42aa19b1259676d89fb0a376678d05a",
             "content": "sha256:62b7122663b3ab60b0061599ec901bc1c9de59c6adfdcc00d527372b3d29f412",
             "locator": {
-              "end": 215,
+              "end": 220,
               "kind": "line_range",
-              "start": 122
+              "start": 127
             },
             "path": "mcp/tests/test_knowledge_guarded_merge.py"
           },

@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:304ac0d32c6355f45ffbf37617989ccc54ac1fe91aab4820b61deaf508d136d3",
             "locator": {
-              "end": 242,
+              "end": 243,
               "kind": "line_range",
-              "start": 242
+              "start": 243
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

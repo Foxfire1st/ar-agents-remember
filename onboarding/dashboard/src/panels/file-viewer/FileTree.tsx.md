@@ -6,44 +6,56 @@
 
 ## Purpose
 
-`FileTree` renders **one** Headless Tree (from `useFilesTree`) as indented buttons. `FileViewer` mounts it
-twice — once for the **code** side and once for the **onboarding** side. The library owns async loading,
-keyboard navigation, and selection state; this component is purely the renderer: it maps `getItems()` to
-buttons and fully controls the mouse click (select + folder toggle + file open). A code file that has a
-paired sidecar shows a marker so a reader can see at a glance which files are documented.
+`FileTree` is the File Viewer's adapter over the dashboard's shared async explorer (MIK-R79 rules 3
+and 15). `FileViewer` mounts it once for the code side and once for the onboarding side; the shared
+`ExplorerTree` owns loading, keyboard traversal, selection and expansion, and this module supplies
+only the File API loader, the row identity and what a row opens. Before MIK-R79 this file carried its
+own render loop and `useFilesTree`; both are gone, so the File Viewer and the Knowledge reader draw
+one tree, not two.
 
 ## Code Commentary
 
 ### Logic
 
-Props are `{ repo, scope, side, onOpen }`; it calls `useFilesTree(repo, scope, side, onOpen)` and renders
-into a container built from **`tree.getContainerProps()`** (the library's a11y/keyboard wiring). Each row
-spreads **`item.getProps()`** for accessibility, then layers on its own behaviour: `cx` merges the Panda
-`itemBtn({ selected })` with the library's `className`, and `paddingLeft` indents by
-`level * 0.85 + 0.3` rem. The explicit **`onClick` overrides the library's spread `onClick`**: it
-single-selects (`setSelectedItems([id])`), then for a folder toggles `expand()`/`collapse()`, and for a
-file calls `onOpen(data)`. The leading glyph is `▾`/`▸` for an open/closed folder (blank for a file); a
-`◖` dot (cyan, `title="has onboarding"`) renders **only** when `side === "code"` and `data?.hasSidecar`.
+Props are `{ repo, scope, side, onOpen }`. The tree is keyed by `repo\0scope\0side`, so a repository,
+scope or side change remounts with a fresh cache. `loadChildren` calls `listDir(repo, scope, path)`
+and returns the listing's `code` or `onboarding` children for the requested side; an absent repository
+returns no rows. `renderSuffix` marks a code row with `◖` when the entry has a sidecar (the
+"has onboarding" marker) and says nothing for onboarding rows.
 
 ### Conventions
 
-Panda `css`/`cva`/`cx` from `../../../styled-system/css` (relative import). Rows are mono-font buttons;
-`data-testid="tree-${side}"`. The library's `getContainerProps`/`getProps` are spread first for a11y and
-keyboard, with the local class and click handler applied on top.
+Rows are the shared `ExplorerRow` shape; `DirEntry`'s own fields ride along untouched. The test id
+stays `tree-${side}`, so existing File Viewer tests keep their handle.
 
 ### Invariants And Boundaries
 
-Presentational over the Headless Tree state — **no data fetching here** (`useFilesTree` owns loading and
-caching). The explicit `onClick` is load-bearing: it must override the spread library `onClick`, otherwise
-a folder click would **double-toggle**. Mouse click is the single source of truth for select + toggle +
-open; keyboard **Enter** opens a file via `useFilesTree`'s `onPrimaryAction`, not here. Selection is
-single-select. The sidecar marker is code-side only (onboarding entries carry no `hasSidecar`).
+The side selection and the loader live here: `loadChildren` awaits `listDir(repo, scope, path)` and
+returns the requested side's children, while caching, traversal and rendering belong to the shared
+`ExplorerTree`. No second tree implementation may be added for the File Viewer. The sidecar marker is
+code-side only; a failed load is the shared tree's visible alert.
+
+### Todos
+
+No additional work is asserted by this card.
 
 ## Evidence
 
+### Docs References
+
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R79@v1` (rules 3 and 15); it lives outside the code and memory repositories,
+so it is named here and not cited as a row.
+
+No configured live documentation source was available for this pass.
+
 ### Repo-Internal References
 
-- The Headless Tree adapter it renders (async loading, selection, hotkeys). [1]
-- The page that mounts it twice (code + onboarding sides) and supplies `onOpen`. [2]
-- The `DirEntry`/`Scope` types it renders. [3]
-- The route overview that governs this component. [4]
+- The File Viewer's tree is the shared explorer with a File API loader. [5]
+- The loader reads one directory listing and returns the requested side. [6]
+- The shared explorer that owns loading, traversal and selection. [7]
+- The page that mounts the tree twice (code and onboarding sides). [8]
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.

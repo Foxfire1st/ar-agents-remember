@@ -54,12 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:660b2f7b698dab73721bd0a1f4d5a93100254a483c2073430bf081e0d9c3243b",
             "locator": {
-              "end": 42,
+              "end": 58,
               "kind": "line_range",
-              "start": 35
+              "start": 51
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

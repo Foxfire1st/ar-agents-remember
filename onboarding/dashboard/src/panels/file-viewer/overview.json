@@ -48,12 +48,12 @@
       ]
     },
     "3": {
-      "note": "The code pane's optional marks.\n\nAnchor: \"marks?: PaneMarks;\"; \"drawn({ after: { view, first: firstLine } });\"",
+      "note": "The code pane's optional marks.",
       "targets": [
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:79ea6287fa0d1dd9d87cd13184665b4cd20baf6b8564441d31a1668f91714db7",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:cd433a00be120e723d2d87d91a2fa26f258a63bd5dea0aa1ba18599cb3f8655a",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -87,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
             "content": "sha256:c9e32361cf60eb0b551c53b41d01e7c593dded2d497861e48c62f9cfc5c6a5a8",
             "locator": {
               "kind": "symbol",
@@ -99,12 +99,12 @@
         },
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
             "content": "sha256:f5ecba83b753dfb9318732d0817adf55b044dc333a1e8bd0919ee19f03ed21a6",
             "locator": {
-              "end": 53,
+              "end": 55,
               "kind": "line_range",
-              "start": 53
+              "start": 55
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -147,16 +147,16 @@
       ]
     },
     "8": {
-      "note": "The shell that registers + keeps this view mounted.\n\nAnchor: \"const filesLayer = chatsLayer;\"",
+      "note": "The shell that registers + keeps this view mounted.",
       "targets": [
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:0548ab7c1c04671f6ac0b811aae35096da47e9cf3a373c98cd5675b53dc20299",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
             "locator": {
-              "end": 343,
+              "end": 341,
               "kind": "line_range",
-              "start": 340
+              "start": 338
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -164,25 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:7405d2adab5e180e97cabb86568e6a048f8cbb50d1ba9f97dc9d73bffe91b603",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:50428516903eec63a3ed6a9996ef06fd70e1df5b7cd059c57070c5bc89aa409b",
             "locator": {
-              "end": 782,
+              "end": 792,
               "kind": "line_range",
-              "start": 780
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
-            "locator": {
-              "end": 344,
-              "kind": "line_range",
-              "start": 344
+              "start": 788
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -195,8 +182,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
-            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"

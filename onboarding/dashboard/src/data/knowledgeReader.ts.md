@@ -10,33 +10,31 @@
 shareable `#knowledge?…` address, and the reads of `/api/knowledge/reader/<view>`.** The reader browses one
 repository's knowledge at one memory tree (`published` by default, any memory commit, or `leaf:<scope>`) and
 needs no task. Every view is addressed by the same values its URL carries, so a view can be shared and every
-link is a navigation (rule 5).
+link is a navigation (rule 5). MIK-R79 rule 3/6 adds the tree row's `hasKnowledge`, `hasOverview` and
+`coverage` fields, which mark a row without presenting an unknown as false.
 
 ## Code Commentary
 
 ### Logic
 
 - **Answer types.** One interface per view mirrors the backend's documents: `ReaderSelection` (with
-  `codeTree`, `codeSource`, `codeNote` and `pinnedCommit`), `PathViewAnswer` (with the bounded directory's
-  `children` and `subtree`), `SubtreeAnswer` (rows, per-page states, the page block and `continuation`),
-  `TreeAnswer`, `RecordViewAnswer` (with `outgoingState`, the invariant, family, decision and facet parts, and
-  the `Timeline` with per-source states), `DecisionView` (stored and derived status, alternatives with
-  `reconsiderWhen` and `reconsiderOn`), `CensusAnswer`, `WithoutProofAnswer`, `CodeAnswer` and
-  `SelectionOptions` (with `commitsState`).
-- **The address.** `parseReaderHash` reads a `#knowledge?repo&commit&view&path|id|census|locator|blob` hash
-  (anything else is `null`); the view defaults to `record` when an ID is named, else `path`, and the commit
-  to `published`. `readerHash` writes it back with commit and path or ID always spelled out, and `view` only
-  when it is not implied. The address lives in the hash because production serves only `/`.
-- **Reads.** `readerGet` returns any JSON body with a string `state` whatever its HTTP status (a 400
-  `invalid-request` is a typed answer too); only a transport failure or a body without a state (a 503 from a
-  process composed without the reader) throws `ReaderTransportError`. The timeout is 120 s.
-  `readAddress` sends an address's own view; `readSubtree` asks one subtree page, passing the previous page's
+  `codeTree`, `codeSource`, `codeNote` and `pinnedCommit`), `PathViewAnswer`, `SubtreeAnswer`,
+  `TreeAnswer`, `RecordViewAnswer`, `DecisionView`, `CensusAnswer`, `WithoutProofAnswer`, `CodeAnswer`
+  and `SelectionOptions`.
+- **The tree row.** `TreeChild` carries the name, kind, `inCode`, `onboarding` and entry count. The
+  MIK-R79 fields are optional because an unavailable memory enumeration has no answer:
+  `hasKnowledge` and `hasOverview` are present only when the enumeration succeeded (a missing value
+  is unknown, never `false`), and `coverage` is either `{state: 'counted', files, cards}` for a
+  directory or `{state: 'unavailable', detail}` naming why the counts cannot be given.
+- **The address.** `parseReaderHash` reads a `#knowledge?repo&commit&view&path|id|census|locator|blob`
+  hash (anything else is `null`); the view defaults to `record` when an ID is named, else `path`, and
+  the commit to `published`. `readerHash` writes it back.
+- **Reads.** `readerGet` returns any JSON body with a string `state` whatever its HTTP status; only a
+  transport failure or a body without a state throws `ReaderTransportError` (120 s timeout).
+  `readAddress` sends an address's own view; `readSubtree` asks one page with the previous page's
   `continuation`.
-- **Code links.** `codeAddress` builds the code view's address for an anchor (its locator as JSON, and its
-  recorded blob); `locatorLabel` names a symbol, a line range or the whole file.
-- **A link from a history row (L37, MIK-R29 rule 5).** `IncomingLink.sourceSubject` is the summary of the record
-  a `history_row` source is about: a row has no page of its own, so the reader navigates to that record.
-  `sourceRecord` stays the summary of a record source.
+- **Code links.** `codeAddress` builds the code view's address for an anchor (its locator and recorded
+  blob); `locatorLabel` names a symbol, a line range or the whole file.
 
 ### Conventions
 
@@ -45,11 +43,11 @@ link is a navigation (rule 5).
 
 ### Invariants And Boundaries
 
-- **Rule 5: the URL encodes commit and path or ID.** Proved by the dashboard's navigation case
-  (`KnowledgeReader.test.tsx`: the family link changes the hash to `id=FAM-QWVGDSYX`, the hash round-trips, a
-  non-reader hash is `null`); the reviewer's hash-drops-commit mutation was killed.
-- **A failed source is shown, never an empty result:** a typed refusal is returned as an answer, and a transport
-  failure throws so the panel can name it.
+- **The URL encodes commit and path or ID** (MIK-R29 rule 5).
+- **A failed source is shown, never an empty result:** a typed refusal is returned as an answer, and a
+  transport failure throws so the panel can name it.
+- **An unknown knowledge presence is not `false`:** the optional tree fields exist so the tree can drop
+  their claim instead of asserting a file has no card when the memory enumeration failed.
 
 ### Todos
 
@@ -59,29 +57,20 @@ No additional work is asserted by this card.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The design authority is the requirement
-packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`, and
+MIK-R79@v1 for the tree fields; they live outside the code and memory repositories, so they are named
+here and not cited as rows.
 
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module's own statement of the address and the typed answers. [1]
-- The hash prefix and the read timeout. [2]
-- The address a view is named by. [3]
-- The selection block: code tree, its source and note, and the pin. [4]
-- A decision as the reader shows it. [5]
-- The path view, bounded for a directory; a subtree page. [6]
-- The timeline with per-source states; the truth view with `outgoingState`. [7]
-- The selector's choices with `commitsState`. [8]
-- The shareable hash, read and written. [9]
-- A typed answer returned whatever its status; only transport failures throw. [10]
-- An address's own read, and one subtree page. [11]
-- The code address of an anchor, and its label. [12]
-- The navigation case: links change the shareable hash, and the hash round-trips. [13]
-
-- An incoming link may carry the record its history-row source is about. [14]
+- The optional knowledge-presence and coverage fields of a tree row. [15]
+- The shareable address, read and written. [16]
+- A typed answer returned whatever its status; only transport failures throw. [17]
+- The address a code citation opens. [18]
+- The tree that renders the optional fields without claiming an unknown. [19]
 
 ### Cross-Repo References
 

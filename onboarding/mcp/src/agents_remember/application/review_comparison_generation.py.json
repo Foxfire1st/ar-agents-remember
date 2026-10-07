@@ -497,12 +497,12 @@
         },
         {
           "anchor": {
-            "blob": "c3d217a4d6d609112d499be391c3c5b81ef3af88",
+            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
             "content": "sha256:f9b66208fa812fdc9115b7c31d5947089e36fa8c583792f11228b941d7837f2d",
             "locator": {
-              "end": 135,
+              "end": 144,
               "kind": "line_range",
-              "start": 106
+              "start": 115
             },
             "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
           },

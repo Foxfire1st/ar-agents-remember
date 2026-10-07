@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
             "content": "sha256:762812716e285178d264651a69e28486ad0b6e6d4a0f68eb263103b7aa5172b9",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
             "content": "sha256:cdaca13e56fbbb2fe7e8557faac117f97df49034edbf0c3df89907f36ed6c449",
             "locator": {
               "kind": "symbol",
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "1812c8196f94387f7a56e134cb3c2b4e60060b5c",
+            "blob": "1e65db8babedd21b96f997fe04d5185678af557f",
             "content": "sha256:454272021ad451a0236ab6674c7968f9abf27799311b3cb29a39ce4366743032",
             "locator": {
-              "end": 256,
+              "end": 258,
               "kind": "line_range",
-              "start": 256
+              "start": 258
             },
             "path": "dashboard/src/data/sessionCockpitStore.ts"
           },

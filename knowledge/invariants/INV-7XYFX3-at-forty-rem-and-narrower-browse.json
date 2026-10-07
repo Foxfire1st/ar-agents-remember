@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation's realizations in more than one file are what its statement binds together."
+  },
+  "applicability": "Widths of 40rem and narrower.",
+  "conditions": [
+    "The page shows the document; 'Browse' opens the tree as a full screen of rows.",
+    "Choosing a row returns to the document; the tree is never stacked above the text."
+  ],
+  "exclusions": [
+    "The wide layout's resizable panes."
+  ],
+  "id": "INV-7XYFX3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 13",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "At forty rem and narrower Browse shows a full-screen tree and selecting a row returns to the document.",
+  "status": "proposed",
+  "supersedes": []
+}

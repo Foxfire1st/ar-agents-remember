@@ -141,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
             "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
             "locator": {
               "kind": "symbol",
@@ -153,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
+            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
             "content": "sha256:1c236712c2b5944da27bb61e8e0ff024e63fca6bba84f667a8a334f1298a6f8a",
             "locator": {
-              "end": 180,
+              "end": 200,
               "kind": "line_range",
-              "start": 100
+              "start": 120
             },
             "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
           },
@@ -171,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "19d42468aa35059c044e19bb7a5a7201520a3ed4",
+            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
             "content": "sha256:6bc78e56308ef2fb4e40fbb4671a88f484f11f2bf63754dcc73242a7e8211666",
             "locator": {
               "kind": "symbol",

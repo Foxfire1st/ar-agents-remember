@@ -67,8 +67,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:c5b9f02930597474797f123f212f6ad444d90e8f20aebfbfea8f8e35d6165076",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -101,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fbf2fa896d5cb24d6aa2c85318946143368552c1",
-            "content": "sha256:f3ef637eb7a6b08e5db498624fbfcb55377f03bb50f7dcc546617891e3098f0a",
+            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
+            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
             "locator": {
               "kind": "symbol",
               "name": "FilePane"
@@ -118,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
-            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"
@@ -555,12 +555,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
-              "end": 605,
+              "end": 599,
               "kind": "line_range",
-              "start": 605
+              "start": 599
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

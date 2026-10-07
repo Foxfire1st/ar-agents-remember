@@ -146,6 +146,7 @@ state inside the case's own fixture repository, never the source checkout.
 - **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** [18]
 - **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** [19]
 
+
 ### Cross-Repo References
 
 No cross-repository behavior is exercised by this module. Its enclosure is one repository's own leaf

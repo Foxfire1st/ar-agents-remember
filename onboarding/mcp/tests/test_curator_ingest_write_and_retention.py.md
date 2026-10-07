@@ -77,6 +77,7 @@ each case states its input and its measured output without re-implementing the h
 - The sibling fixtures imported rather than duplicated: the family plane's authored meaning. [4]
 - The list fixture and the contract pair the cases are built on. [5]
 - The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output. [6]
+
 - The parent this module was extracted from, whose own docstring points at this sibling's subject. [8]
 
 ### Cross-Repo References

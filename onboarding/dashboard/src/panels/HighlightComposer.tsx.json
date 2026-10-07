@@ -123,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:87471d8c0241b2dae61d70218babc70c729dcd9b30e168c8dad510491472c91e",
             "locator": {
-              "end": 716,
+              "end": 719,
               "kind": "line_range",
-              "start": 716
+              "start": 719
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

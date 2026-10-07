@@ -119,12 +119,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:70415866ef3eaf11b112a4d3a1e096c4a6dd6672bc1652987b78dd2e85ee207e",
             "locator": {
-              "end": 544,
+              "end": 538,
               "kind": "line_range",
-              "start": 540
+              "start": 534
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -137,12 +137,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:477c90a87261c3bd02c91e291b73d783272a382dfeb16e8fa309dc55970b545c",
             "locator": {
-              "end": 550,
+              "end": 544,
               "kind": "line_range",
-              "start": 547
+              "start": 541
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -155,12 +155,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:5e7324eb16d1a1120e25ff0485617aa4e555dad57373f64a2c8235296b853979",
             "locator": {
-              "end": 634,
+              "end": 628,
               "kind": "line_range",
-              "start": 634
+              "start": 628
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

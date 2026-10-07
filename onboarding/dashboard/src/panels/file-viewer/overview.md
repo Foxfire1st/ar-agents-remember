@@ -58,13 +58,10 @@ selection, open file, and expanded tree state survive a switch instead of resett
   that doc's **own markdown full-pane** so the prose is readable (falling back to an overview placeholder
   only when its body is unreadable). View-mode (split/single) persists across file switches via
   `usePersistedFlag`.
-- `FileTree.tsx` — renders one Headless Tree (code or onboarding) as indented buttons. The library owns
-  async loading, keyboard nav, and selection; the click handler selects, toggles folders, and opens files
-  (its own `onClick` overrides the library's so a folder never double-toggles).
-- `useFilesTree.ts` — the `@headless-tree/react` `asyncDataLoaderFeature` adapter: one tree per side,
-  rooted at `{repo, scope}` (changing `rootItemId` re-roots it). `getChildren` calls `/api/files/list`
-  (one call returns both `code[]` and `onboarding[]`) and caches each entry for `getItem`. Features:
-  `asyncDataLoaderFeature` + `selectionFeature` + `hotkeysCoreFeature`.
+- `FileTree.tsx` — the File API adapter over the dashboard's shared `grammar/ExplorerTree` (since
+  260928-MIK-L79): it supplies only the `/api/files/list` loader for the requested side, the row identity
+  and `onOpen`, and the code side's "has onboarding" marker. Loading, keyboard nav, selection and
+  expansion are the shared tree's.
 - `DualPane.tsx` — single | split (code **left**, sidecar **right**) via `react-resizable-panels`
   (persisted sizes). The markdown sidecar reuses `grammar/Markdown`. Before anything is opened it fills the
   whole pane with a faint, effects-gated **siege-tank boomerang backdrop** (`EmptyStateBackdrop`,
@@ -73,7 +70,9 @@ selection, open file, and expanded tree state survive a switch instead of resett
   overview-without-body still renders a **stable-size** placeholder (no flip-flop).
 - `FilePane.tsx` — the reusable read-only CodeMirror 6 pane (read-only + non-editable, line numbers,
   language lazily imported by extension, the podracer theme). L4 reuses it via `@codemirror/merge`. Since MIK-L31
-  it takes an optional `firstLine` and `fit` for an excerpt (the reviewer's cards).
+  it takes an optional `firstLine` and `fit` for an excerpt (the reviewer's cards). Since 260928-MIK-L79 it also
+  takes an optional `highlightedLines`, which marks the cited lines (`cm-citedLine`) and scrolls the first into
+  view - how the Knowledge reader opens a citation at its lines.
 - `lineNumbering.ts` — `numberedFrom(first)`, the gutter `FilePane` and `changeset/DiffPane` share, so an excerpt
   keeps its file's line numbers (MIK-L31).
 - `codemirrorTheme.ts` — maps the podracer OKLCH tokens (`styles/tokens.css` vars) onto CodeMirror via
@@ -93,6 +92,14 @@ selection, open file, and expanded tree state survive a switch instead of resett
 - Kept mounted (hidden) across tab switches so state survives; full-bleed (drops the rails) like the
   Engine Room / Topology / Chats views.
 
+## 260928-MIK-L79 The Shared Tree And A Citation Highlight
+
+**Route meaning extended (MIK-R79).** The File Viewer's own tree adapter `useFilesTree.ts` is deleted;
+[`FileTree.tsx`](FileTree.tsx.md) now adapts [`grammar/ExplorerTree.tsx`](../../grammar/ExplorerTree.tsx.md), so
+the File Viewer and the Knowledge reader draw one tree. [`FilePane.tsx`](FilePane.tsx.md) gains the optional
+`highlightedLines` range the Knowledge reader's cited-code view passes; the File Viewer itself passes neither
+and renders exactly as before.
+
 ## Hot Path Summary
 
 The File Viewer tab: repo/scope selectors → two Headless Tree explorers (code + onboarding) over the L1
@@ -107,6 +114,9 @@ a file is selected; kept mounted so state survives a tab switch.
 - The L1 read-only files API this view consumes. [6]
 - The same-origin client wrapping that API. [7]
 - The shell that registers + keeps this view mounted. [8]
+
+
+
 - The markdown renderer the sidecar pane reuses. [9]
 
 ## Current L5I Route State

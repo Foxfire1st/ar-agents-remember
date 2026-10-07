@@ -2,243 +2,94 @@
   "path": "mcp/src/agents_remember/application/knowledge_reader/files.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The module's own statement of present, absent and unavailable.\n\nAnchor: \"Three answers are kept apart everywhere\"",
+    "11": {
+      "note": "The three file states and the bounded code text.\n\nAnchor: `FileRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:86a97653a11b974aafcf23d4d8256ffa62c95281c1c3b76179ac2b9cb0d5859b",
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
             "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The route case: a directory is absent, a binary blob and a blob above the bound are named and never read.",
+    "12": {
+      "note": "Control characters are refused before any Git call; after whitespace/slash stripping and PurePosixPath normalization only a `..` part is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:e8ea9332fe0e0c03897947e1c5c9208971ac1a1602879d89777d1536932d0709",
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A memory file comes from disk or a commit; a missing file or a failed/not-blob type probe is absent, a later blob-read or decode failure is unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The size asked before the bytes; a tree is not a file; binary detection.\n\nAnchor: `code_text`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The census files of the selected tree.\n\nAnchor: `census_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The one pathname inventory that now answers directory listings.\n\nAnchor: `read_tree_listing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
             },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The file states and the 2 MiB code bound.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:757e542c981c11fa1bfdbf8fd8690186c7584ebd57d2dc26ef47b8a4d69278e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "FileState"
-            }
+            "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:f5b7648fa262e6b0dcfb1d35294adb19582f3fdfc98c4201588d398a9b3da613",
-            "locator": {
-              "kind": "symbol",
-              "name": "CODE_TEXT_LIMIT"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A request error, and one file's answer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:13fd020ecdf2bf70a45040d9f5782c126cd744e6122212c46059ca5f57553cb8",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReaderRequestError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:8de9a067142b31df2623985eab11b612b312e021ddd1fb0c4fa977a5ed97aa19",
-            "locator": {
-              "kind": "symbol",
-              "name": "FileRead"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Control characters, `..` and absolute paths refused before any Git call (F15).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:82f83036b1742e80dde1eacae2c8afc04682f6a764b325ff09bcc7a91135b7a4",
-            "locator": {
-              "kind": "symbol",
-              "name": "normal_path"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A memory file from disk or from a commit, absent kept apart from unavailable.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:9f3a3f575d662bbc3b4bc8e25af85d299889f1d13e74dda0b99e00360fe8c86b",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_memory_file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The onboarding mirror's and the code tree's children; a missing code tree named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:3880fef74ac926b872d6b8d7bcef35426b095f4cdd651d88ad9905d577fa9b10",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_onboarding_directory"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:e5cc7c8bfd8db09b2fab2ed0fe36de9c32c7fac9d3b4a275aae766bb85c4b336",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_code_directory"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:215ee7150c995632aa45e44a8ec5f99b7ade73118efbb5396bf00b388cc2b1da",
-            "locator": {
-              "kind": "symbol",
-              "name": "code_kind"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The size asked before the bytes; a tree is not a file; binary detection (F14, F18).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:08af7a7a283d5bf483a282645558c13d30880541ec29bafd120d004c4df3e3b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "code_text"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:33f5dde5c6ad6b62c7b01ea20e3217c103c250768fe56338ec4bee37a5be2e04",
-            "locator": {
-              "kind": "symbol",
-              "name": "_code_blob"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:4bc2a402cc126dc0eded3a1ffdd1720bf331e5d4c6bfc384ba5f28b504ae823e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_text"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:c56487d96375fedece84f58b0416ea7fe06321fd7be875778223e452e0a41e7c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_blob_size"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The census files of the selected tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "22e8bfbd99d1169b204c87aa9e929bf031d20cff",
-            "content": "sha256:144b9b7242cb489bfe8657aeae44fca85f28f78f7a266e8e40753642ac3600a3",
-            "locator": {
-              "kind": "symbol",
-              "name": "census_files"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The route case: control characters answer 400 on every path view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d87715367e2ff0b7b83ab4d6c416ed0c569861c3",
-            "content": "sha256:5acda61fb82c84db98fe44356a3d8e83df56da75da42b5df526ac7abf2aa2739",
-            "locator": {
-              "kind": "symbol",
-              "name": "_assert_control_characters_refused"
-            },
-            "path": "mcp/tests/test_knowledge_reader.py"
-          },
-          "kind": "test"
         }
       ]
     }

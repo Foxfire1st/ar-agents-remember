@@ -399,7 +399,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
             "content": "sha256:8daa7e6741491afb69e246d736f3d7d034e693ea6c20f852dbba8586c6c9a267",
             "locator": {
               "kind": "symbol",
@@ -416,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
+            "blob": "aa6b3ccd1a3772b0d61f008f017596912dbd0df0",
             "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
             "locator": {
               "kind": "symbol",
@@ -450,7 +450,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -1106,98 +1106,6 @@
         }
       ]
     },
-    "20": {
-      "note": "The panel.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:decd0881a773e8a706f3c4d6466f9a61eaa81b0c62b655b7a315c672758a576c",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReader"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The bounded directory summary and the paged subtree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:28d34c4d4d63cd067d668d2d8af9dbca9043e0d4a0c6ec947b0e926fdad2f54a",
-            "locator": {
-              "kind": "symbol",
-              "name": "DirectorySummary"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1c190f7c8566bacbf89a44d674c214511dadb06a",
-            "content": "sha256:69aaf9352ebff4f3170c773e50445c5a96396add7ec3991e617450fb9bc74fc1",
-            "locator": {
-              "kind": "symbol",
-              "name": "SubtreeView"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "22": {
-      "note": "The truth view.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3c34de40f72739dd19d58f83076b4427468147b0",
-            "content": "sha256:5474d9dfdc5533741c33fbac6342206d918f7f02ae6d6cd9cbefd5726afbc773",
-            "locator": {
-              "kind": "symbol",
-              "name": "TruthView"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "23": {
-      "note": "A decision in full; markers linked in text nodes only.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:d05d6860064c087aaaefdc9f76c4d22a9418c8d0acbd93e95afde1a24f065f1e",
-            "locator": {
-              "kind": "symbol",
-              "name": "DecisionCard"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b1a10e93fc0b75b7162a9968852f6a0c7f074b0b",
-            "content": "sha256:46d8278496739fa54a36ce32e23a135f4e2f0bed64a44181dcf389077c8f9859",
-            "locator": {
-              "kind": "symbol",
-              "name": "remarkReferenceMarkers"
-            },
-            "path": "dashboard/src/panels/knowledge-reader/readerParts.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "24": {
       "note": "The card component.",
       "targets": [
@@ -1416,8 +1324,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:3043a4d23f8eb3279688291d710879220b1bbec55cf40e99340abd4460953fe5",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
               "kind": "symbol",
               "name": "VIEWS"
@@ -1477,12 +1385,12 @@
         },
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:321dfb2796157b97cccb9a0074dd3d4c41ce87bff8defc8119177d8b736f3ea9",
             "locator": {
-              "end": 812,
+              "end": 800,
               "kind": "line_range",
-              "start": 812
+              "start": 800
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1579,12 +1487,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
             "content": "sha256:de1870f69844d1500cf0f7506495e2dec4d8dad69010a24365f62f4e8a0b3251",
             "locator": {
-              "end": 397,
+              "end": 390,
               "kind": "line_range",
-              "start": 372
+              "start": 365
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1593,16 +1501,15 @@
       ]
     },
     "47": {
-      "note": "`CockpitShell` defaults `initialView=\"operations\"`.\n\nAnchor: \"export function CockpitShell({ initialView = \\\"operations\\\"\"",
+      "note": "`CockpitShell` defaults `initialView=\"chats\"`; `VIEWS` is the four-entry product bar.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:bbf342af6bd121f2071967121f4525812eb1d9309731c84b3ebe6def4995a9f2",
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
             "locator": {
-              "end": 937,
-              "kind": "line_range",
-              "start": 883
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

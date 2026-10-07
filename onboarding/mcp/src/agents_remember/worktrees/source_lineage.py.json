@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78a5c99df5946e2c97159f380bac7226e5a1ea88",
+            "blob": "d1f69d8d3c1559f18bf2e2f5467b9184b4e79f74",
             "content": "sha256:d9e1505e59923a6db21fa1b9a73e860704510f6df2bca5a06292a8042eebe001",
             "locator": {
-              "end": 100,
+              "end": 222,
               "kind": "line_range",
-              "start": 100
+              "start": 222
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },

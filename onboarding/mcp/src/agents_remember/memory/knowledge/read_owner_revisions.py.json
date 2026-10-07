@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d4d51e701f1e0933db9aef47287a33d7c6b6c24",
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
             "content": "sha256:78f51cadba3736693dc26c7dd8de2b34bb8d1fe0814bef12295b72b2e648ee5a",
             "locator": {
               "kind": "symbol",
@@ -35,12 +35,12 @@
         },
         {
           "anchor": {
-            "blob": "8d4d51e701f1e0933db9aef47287a33d7c6b6c24",
+            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
             "content": "sha256:8ef1607cf879ec0532f6fc27412e1c438f933a1bbb57a8131b732e8bcfe96e97",
             "locator": {
-              "end": 139,
+              "end": 166,
               "kind": "line_range",
-              "start": 101
+              "start": 128
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
           },
@@ -218,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "317c0fda1702916c94e7939b828e3094a88282cd",
+            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
             "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
             "locator": {
               "kind": "symbol",

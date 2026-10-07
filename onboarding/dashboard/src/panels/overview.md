@@ -331,40 +331,62 @@ side's own row, or from its pane or filtered field rows; dataset reviews get no 
 
 **New panel folder (MIK-R29): `knowledge-reader/`,** governed by this overview. Following the `review/` precedent it
 has no route overview of its own. It is the dashboard's **Knowledge** area: a read-only reader of one repository's
-knowledge at any memory tree, browsed like a file explorer, needing no task, and opened by the Cockpit as a transient
-mode (not full-bleed; a `#knowledge?…` URL opens the Cockpit on it).
+knowledge at any memory tree, browsed like a file explorer, needing no task. Since MIK-R79 (below) it is the
+**Knowledge product view**: a full-width, retained layer on the File Viewer shell, so leaving the tab and coming back
+shows the same document at the same place.
 
-- [`knowledge-reader/KnowledgeReader.tsx`](knowledge-reader/KnowledgeReader.tsx.md): the panel. The address is the URL
-  hash (`useReaderAddress`), so reload and back keep the view; the toolbar (repository, the memory-tree selector with
-  unconverted commits disabled, a record lookup, "without proof [under path]", "census"); the selection banner naming
-  the tree, memory revision, code tree and its note, a partial index's problems, and "pin this view to memory …" for a
-  clean `published` or leaf tree (ruling N2); refusals named (`not-converted` and the rest); failed side reads named
-  beside the toolbar (F11). With no address it lands on the first repository's root summary (F2).
-- [`knowledge-reader/KnowledgeTree.tsx`](knowledge-reader/KnowledgeTree.tsx.md): the lazy explorer, one read per opened
-  level, entry counts, "(onboarding only)" paths, an unlisted code tree named; an answer after a tree switch is
-  dropped (F13).
-- [`knowledge-reader/PathViews.tsx`](knowledge-reader/PathViews.tsx.md): the path view (prose, invariants with states,
-  families here or routed, linked records with a decision in full), a directory's bounded summary with "list all N
-  entries" (F2), the paged subtree with one "more" in flight at a time (the R2 note), the without-proof list, the
-  census view and the code view with the resolved lines marked.
-- [`knowledge-reader/TruthView.tsx`](knowledge-reader/TruthView.tsx.md): every field, the invariant and family parts,
-  a decision in full with the **derived** status in the header (F9), links both ways (unreadable links named, F11/F17),
-  and the timeline with each source's state (a source that could not be read named, never "no history").
-- [`knowledge-reader/readerParts.tsx`](knowledge-reader/readerParts.tsx.md): every link a navigation (rule 5), state
-  badges, `DecisionCard` (the rule carried from L13), and the prose whose `[n]` markers are linked in text nodes only,
-  never inside code spans or fences (F4).
-- [`knowledge-reader/KnowledgeReader.test.tsx`](knowledge-reader/KnowledgeReader.test.tsx.md) (15 cases) over
-  [`knowledge-reader/knowledgeReader.captured.json`](knowledge-reader/knowledgeReader.captured.json.md), 17 real served
-  bodies from a converted scratch copy with SCRATCH-AUTHORED routes, decisions, incident, proof, history rows and census.
-  A debugging `console.log` that curation found left in one case was removed by a staged, test-only follow-up.
+- [`knowledge-reader/KnowledgeReader.tsx`](knowledge-reader/KnowledgeReader.tsx.md): the panel composition: the
+  single-line toolbar, the resizable tree/document/aside group, the address's own read, the citation pane and the
+  outline. The address is the URL hash, so every document link is a navigation and a view can be shared;
+  citations and fragments stay local; with no address it
+  lands on the first repository's root summary (F2).
+- [`knowledge-reader/ReaderToolbar.tsx`](knowledge-reader/ReaderToolbar.tsx.md): the repository and memory-tree
+  selectors, the record lookup, the selection banner and pin, and the named side-read failures; `useRead` keeps one
+  promise per selection so the lookup and the Records branch share an acquisition.
+- [`knowledge-reader/KnowledgeTree.tsx`](knowledge-reader/KnowledgeTree.tsx.md): the explorer on the shared
+  `ExplorerTree`: path rows, the entry counts, the "Show every path" filter, the two count rows and the Records
+  branch (families, decisions and other records; invariants stay out).
+- [`knowledge-reader/PathViews.tsx`](knowledge-reader/PathViews.tsx.md): the path view (prose, invariants with
+  states, families here or routed, linked records, references last), a directory's bounded summary and paged
+  subtree, the without-proof list and the census view. The cited code view is
+  [`knowledge-reader/ReaderCode.tsx`](knowledge-reader/ReaderCode.tsx.md).
+- [`knowledge-reader/TruthView.tsx`](knowledge-reader/TruthView.tsx.md): every field in its fixed order, the
+  invariant and family parts, a decision in full with the **derived** status (F9), links both ways (unreadable links
+  named, F11/F17), and the timeline with each source's state.
+- [`knowledge-reader/readerParts.tsx`](knowledge-reader/readerParts.tsx.md), [`ReaderOutline.tsx`](knowledge-reader/ReaderOutline.tsx.md),
+  [`ReaderCode.tsx`](knowledge-reader/ReaderCode.tsx.md) and [`readerNavigation.ts`](knowledge-reader/readerNavigation.ts.md):
+  the shared links/badges/entry rows and the prose whose `[n]` markers are linked in text nodes only (F4); the "On
+  this page" outline; the cited code in the File Viewer's pane; and the top/Back place of the reader.
+- [`knowledge-reader/KnowledgeReader.test.tsx`](knowledge-reader/KnowledgeReader.test.tsx.md) (28 cases) over
+  [`knowledge-reader/knowledgeReader.captured.json`](knowledge-reader/knowledgeReader.captured.json.md), the real
+  served bodies; MIK-R79 added the order/top/Back, citation-pane, phone and shared-acquisition cases.
 
-The existing panels are unchanged (the packet's preservation boundary); the Cockpit gained one mode and one hash check.
-The data adapter is `data/knowledgeReader.ts`.
+The existing panels are unchanged (the packet's preservation boundary). The data adapter is
+`data/knowledgeReader.ts`; the shared primitives are `grammar/Markdown.tsx`, `grammar/ExplorerTree.tsx` and
+`file-viewer/FilePane.tsx`.
 
-- The panel. [20]
-- The bounded directory summary and the paged subtree. [21]
-- The truth view. [22]
-- A decision in full; markers linked in text nodes only. [23]
+## 260928-MIK-L79 The Knowledge Page Is Full Width And Reads From The Top
+
+**Route meaning changed (MIK-R79).** The Knowledge panel is no longer a transient, railed view: it is one of the four
+product destinations (Chats, Operations, Knowledge, File Viewer) and a full-width retained layer on the File Viewer
+shell. The tree and the document scroll on their own; a document reads from its title through its text, its record
+sections and its references last, with no empty section drawn; a followed link opens at the top and Back returns to
+the place left; a citation opens the cited code beside the text on a wide screen and as its own page at 70rem and
+below; and the phone layout shows the document with "Browse" opening the tree as a full screen of rows.
+
+- [`knowledge-reader/KnowledgeReader.tsx`](knowledge-reader/KnowledgeReader.tsx.md) is the composition and the one
+  records acquisition shared by the toolbar and the Records branch; [`KnowledgeTree.tsx`](knowledge-reader/KnowledgeTree.tsx.md)
+  is the shared-tree adapter with the optional `hasKnowledge`/`hasOverview`/`coverage` fields consumed from
+  `data/knowledgeReader.ts`.
+- New modules: [`ReaderToolbar.tsx`](knowledge-reader/ReaderToolbar.tsx.md), [`ReaderOutline.tsx`](knowledge-reader/ReaderOutline.tsx.md),
+  [`ReaderCode.tsx`](knowledge-reader/ReaderCode.tsx.md) and [`readerNavigation.ts`](knowledge-reader/readerNavigation.ts.md).
+- Shared grammar: [`grammar/ExplorerTree.tsx`](../grammar/ExplorerTree.tsx.md) (the one tree for the File Viewer and
+  Knowledge) and [`grammar/referenceMarkers.ts`](../grammar/referenceMarkers.ts.md) (opt-in `[n]` markers and heading
+  ids for the shared [`grammar/Markdown.tsx`](../grammar/Markdown.tsx.md)); the File Viewer's `FileTree.tsx` now
+  adapts the shared tree and `file-viewer/useFilesTree.ts` is deleted.
+- Backend: [`application/knowledge_reader/tree_coverage.py`](../../../../mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py.md)
+  answers the tree from one code pass and one memory enumeration; `paths.py`'s `tree_listing` delegates to it and
+  `files.py` no longer lists directories.
 
 Since `260928-MIK-L37` the truth view shows a history row with its `effect` and its `because` targets (a record ID
 as a navigation link, a requirement named), and a link whose source is a history row as the record the row is about
@@ -613,7 +635,8 @@ from the data route; neither writes a private row, focuses a requested id, or re
 ### Canonical Chats
 
 FEUI-L8 retires the legacy Chats.tsx and SessionList.tsx path. CockpitShell now exposes one
-Chats destination backed by the persistent session-cockpit layer; Operations remains the default.
+Chats destination backed by the persistent session-cockpit layer; the shell now opens on this
+Chats destination (260928-MIK-L79).
 The right inspector is closed by default and toggleable. The replacement duty and deletion map lives
 in the [session-cockpit overview](session-cockpit/overview.md).
 
@@ -649,7 +672,8 @@ the Chats refactor does not move those routes.
 ## Invariants And Boundaries
 
 - Exactly one full-page Chats destination; no legacy Chats layer and no Sessions navigation item.
-- Operations is initial. The Chats inspector is supplementary, default closed, and toggleable.
+- Chats is initial (260928-MIK-L79); Operations is a product destination selected from the bar. The
+Chats inspector is supplementary, default closed, and toggleable.
 - Shared panels consume canonical data stores and authority clients; they do not create private
   session catalogs, conversation indexes, or submission ledgers. The 260718-CHATS-L4 structured
   surface holds only a reconstructable projection — no durable browser conversation index.
@@ -707,7 +731,7 @@ No applicable cross-repository source was found.
 - Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. [44]
 - The production application route is owned by `App`. [45]
 - The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
-- `CockpitShell` defaults `initialView="operations"`. [47]
+- `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
 - The terminal panel owns the shared terminal surface. [48]
 - The shared composer surface is implemented by `SessionComposer`. [49]
 - Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. [50]

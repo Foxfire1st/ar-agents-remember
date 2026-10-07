@@ -71,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
-            "content": "sha256:46e6b914756bebae0699a0997ff3d22903e92a1910c7c2228fe012b30e5116d1",
+            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"
@@ -83,12 +83,12 @@
         },
         {
           "anchor": {
-            "blob": "8d44295a4b530a35c4320fd31a93957d4c8dab07",
-            "content": "sha256:0a8d33a73c8ecdf1987fb17731553a984396d985ddb7fc6c3e5f222b81eadf22",
+            "blob": "b4c74c37212e432009df876b3276beea828250fa",
+            "content": "sha256:64b656a9984283197cc301fc4a52b12707baca3cd7e424a7640c2301382c86d1",
             "locator": {
-              "end": 121,
+              "end": 119,
               "kind": "line_range",
-              "start": 98
+              "start": 116
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

@@ -1,258 +1,217 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:454046ee2d597b8ccf04cd88710c809f465646ecb1a0ecf28d092b8d681426d8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderDocument"
+        }
+      },
+      "id": "RLZ-NT7NVY",
+      "invariant": "INV-KXT50F",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 10",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderDocument owns the rendering or source-selection boundary that implements this obligation: On this page lists rendered chapters and record sections, marks the current chapter and yields its pane to cited code.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:d18713ade55909472b2c303833d774305a4bffe8b61c447dce90dfd4b9c5657b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-R31WN7",
+      "invariant": "INV-QE6278",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader places the records read above toolbar and tree, passes the answer to lookup and the same loader to Records, while document and counts retain separate read ownership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:d18713ade55909472b2c303833d774305a4bffe8b61c447dce90dfd4b9c5657b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-SQPNXD",
+      "invariant": "INV-7XYFX3",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 13",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader owns the rendering or source-selection boundary that implements this obligation: At forty rem and narrower Browse shows a full-screen tree and selecting a row returns to the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:d18713ade55909472b2c303833d774305a4bffe8b61c447dce90dfd4b9c5657b",
+        "locator": {
+          "kind": "symbol",
+          "name": "KnowledgeReader"
+        }
+      },
+      "id": "RLZ-VKH7CD",
+      "invariant": "INV-6QQ5FE",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 1",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "KnowledgeReader owns the rendering or source-selection boundary that implements this obligation: Knowledge occupies the full dashboard width and retains its document and reading position across tab switches.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+        "content": "sha256:6ef28c9497c306ba623dd0e7cdfe531615b35ccb6b3ab92c009fa77f2f136125",
+        "locator": {
+          "kind": "symbol",
+          "name": "useCitationNavigation"
+        }
+      },
+      "id": "RLZ-XBQAZZ",
+      "invariant": "INV-P362H1",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 9",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useCitationNavigation owns the rendering or source-selection boundary that implements this obligation: Wide citations open in the existing code pane without moving prose; multiple targets are listed first and narrow code navigation retains Back.",
+      "role": "presentation"
+    }
+  ],
   "references": {
-    "1": {
-      "note": "The component's own statement: no task, the address in the hash.\n\nAnchor: \"The Knowledge area (MIK-R29)\"",
+    "12": {
+      "note": "The full-width shell with a resizable tree, document and aside.\n\nAnchor: `KnowledgeReader`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:eeea18fce31670594773285748382ab80ebef29fa8f873cca3cf1bb425162e15",
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
             "locator": {
-              "end": 7,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "10": {
-      "note": "The panel.",
+    "13": {
+      "note": "One selection-local records acquisition is created here and shared with the tree and toolbar.\n\nAnchor: `useRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:decd0881a773e8a706f3c4d6466f9a61eaa81b0c62b655b7a315c672758a576c",
+            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
+            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReader"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The Cockpit's Knowledge view.\n\nAnchor: \"return <KnowledgeReader />;\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "78825c71161d532711168b2c16c78e34c1339ffd",
-            "content": "sha256:5775d763ef7fd86d6c60073fa081818ec04e458e059af2e327e8c2fd081bbc17",
-            "locator": {
-              "end": 959,
-              "kind": "line_range",
-              "start": 959
+              "kind": "file"
             },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+            "path": "dashboard/src/panels/knowledge-reader/ReaderToolbar.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "2": {
-      "note": "The address in the hash, followed on `hashchange`.",
+    "14": {
+      "note": "The address's own view is read and a late answer is hidden.\n\nAnchor: `useAddressAnswer`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:80a53e1442e549f1d829eeb844221e5c8838988089eda801c9121de1bf60765e",
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
             "locator": {
-              "kind": "symbol",
-              "name": "useReaderAddress"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The pin offered for a clean tree (N2), and the partial index named.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:ab0ec89fa7fc887596ba4b243a2870639be2f30c1ac36706899749dc4a1d15d2",
-            "locator": {
-              "kind": "symbol",
-              "name": "PinButton"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:76a6420f0f809e61cf8bda1cc57bf501cfca08713502945912730d3f1fa85060",
-            "locator": {
-              "kind": "symbol",
-              "name": "PartialIndex"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "4": {
-      "note": "The banner: tree, memory revision, code tree and its note.",
+    "15": {
+      "note": "A single cited target opens beside the text, or as its own page at 70rem and below.\n\nAnchor: `useCitationNavigation`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:049e5748b44e3738027db7e4f5442c63be81e31f6a521aea202f6d736ec65a45",
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
             "locator": {
-              "kind": "symbol",
-              "name": "selectionLine"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:bf0d8c31629dc61d0cbbeeb692ffc59da6386e9a3b2d2c44a3dcb18ff8a399d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "SelectionBanner"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "5": {
-      "note": "The view per answer, and refusals named.",
+    "16": {
+      "note": "The outline and cited code share the aside.\n\nAnchor: `ReaderDocument`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:e6e4e7106526f0cc83f2bc98bee732bbc575886a71acc4e2b45580d3782a7323",
+            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
+            "content": "sha256:478a5f127654df76a9f2ef34d7dc7163712a4c296fa5591e268e14f5589f05dd",
             "locator": {
-              "kind": "symbol",
-              "name": "NotServed"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:e3a7f2e0201ae2d70c0270e3a7a50a6407b299ac7296ea14f3a8986d823ddf89",
-            "locator": {
-              "kind": "symbol",
-              "name": "AnswerView"
+              "kind": "file"
             }
           },
           "kind": "code"
         }
       ]
     },
-    "6": {
-      "note": "The memory-tree selector, unconverted commits disabled.",
+    "17": {
+      "note": "The tree receives the shared records loader.\n\nAnchor: `KnowledgeTree`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:bce642042c0018c457f92d4607a9b13ccf54e9f3f02bee02fb5ee761c374edd2",
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:18b76f62cd63b8e28d425c57a04f3ae86c37c25bc9552187150f795ba4708dc3",
             "locator": {
-              "kind": "symbol",
-              "name": "CommitOptions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:44d1194a836d335b8ffda62f297b50b6cbb0511787c5ac4c24933ac74056d4ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "CommitSelect"
-            }
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "7": {
-      "note": "Side reads kept as named failures (F11).",
+    "18": {
+      "note": "The outline that navigates the document's chapters.\n\nAnchor: `ReaderOutline`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:a10a31bac9a657f1f29c642f5d49e9813e09f30513a30f453779ab55d99432b3",
+            "blob": "cbd4e1e033b1822b9c6cdf0d8c0879f0b51cfb0b",
+            "content": "sha256:0e1d5d5a96b53143060b6b1a7c0f144fb32f9b9f7bfb705ae8042b6dfa646c51",
             "locator": {
-              "kind": "symbol",
-              "name": "useRead"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:846ebb9d089004adb02297d97f7e25585b287c111eebb834a2a8843278d96dbf",
-            "locator": {
-              "kind": "symbol",
-              "name": "SideFailures"
-            }
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderOutline.tsx"
           },
           "kind": "code"
         }
       ]
     },
-    "8": {
-      "note": "The address's answer, and the root summary as the landing.",
+    "19": {
+      "note": "The cited code pane that renders the File Viewer's code primitive.\n\nAnchor: `CodeView`",
       "targets": [
         {
           "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:928939cd3dc8334d00a1399ac9f12c1edac297243bfd942d35b481aaa274fc74",
+            "blob": "3a158f3f7810149facd26a0a18eaa8ca7c98cbbf",
+            "content": "sha256:64359838b86f76f52089a57778b9d4a5af9930c78909d0722aea2259955bcecd",
             "locator": {
-              "kind": "symbol",
-              "name": "useAddressAnswer"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:ea5314d9878290b9abaa6444fa842d97c12950c4547341a90071169af1d266b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "useRepositories"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The toolbar and the view pane.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:790b153a24969162eaaac68e90fc27ae7e6fbf36f717f7000b438e432abe384b",
-            "locator": {
-              "kind": "symbol",
-              "name": "Toolbar"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "024417593d983af0b33e424c768cc70dc0d33ed2",
-            "content": "sha256:17bb012a4952a201b03a02fe2e537275f84d0fe47044dd4ebf7a16c2f0ab4ecb",
-            "locator": {
-              "kind": "symbol",
-              "name": "ViewPane"
-            }
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/ReaderCode.tsx"
           },
           "kind": "code"
         }

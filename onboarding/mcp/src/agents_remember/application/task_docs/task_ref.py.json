@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
             "locator": {
               "kind": "symbol",
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:afd17866954a761f397079dd714dc328424795bdf6404f44f5646e24f7dae0d9",
             "locator": {
               "kind": "symbol",
@@ -53,12 +53,12 @@
         },
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:41d1a0d19d1fc6db989454dbc9031ec7af08259c928437154ec7d3957abeddc4",
             "locator": {
-              "end": 316,
+              "end": 325,
               "kind": "line_range",
-              "start": 303
+              "start": 312
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -118,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
             "locator": {
               "kind": "symbol",
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1314fc7324cb85a88b2ad6f91740870c8c621eb",
+            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
             "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
             "locator": {
               "kind": "symbol",

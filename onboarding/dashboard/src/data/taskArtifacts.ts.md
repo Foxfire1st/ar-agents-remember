@@ -57,8 +57,10 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The cockpit takeover renders the reader with this target spread. [1]
+
 - The task reader wraps its prose with the requirements provider that produces these targets. [2]
 - The reader itself consumes the union (notes vs requirements listing/content). [3]
+
 
 ### Cross-Repo References
 

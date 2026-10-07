@@ -164,6 +164,7 @@ until a file is picked; the back link restores the railed Operations view.
 - The shell that hosts the takeover + restores the rails. [11]
 - The detail panel button + counters that open this screen. [12]
 - The reused read-only CodeMirror pane + theme + lang map. [13]
+
 - The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
 - The siege-tank empty-state backdrop shown until a file is picked. [15]
 

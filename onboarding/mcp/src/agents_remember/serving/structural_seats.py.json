@@ -102,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "4aa4341d296a8f2ec26e360c47bcc927938c26be",
+            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
             "content": "sha256:035610e1862eb56812cc6a45a76036120846851cf6c89d5efa601a7b9109eece",
             "locator": {
-              "end": 252,
+              "end": 253,
               "kind": "line_range",
-              "start": 35
+              "start": 36
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },

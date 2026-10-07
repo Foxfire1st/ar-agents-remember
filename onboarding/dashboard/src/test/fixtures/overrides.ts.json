@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
             "content": "sha256:925a3664c4031608dd0ee5f13515498697685e319ea523dc680512f4f95fff32",
             "locator": {
               "end": 62,
@@ -140,12 +140,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
             "content": "sha256:db252c0fae8ad5bc90e596829d614d60d3f0d9606d977f2a7afa960f7dd6a9d8",
             "locator": {
-              "end": 243,
+              "end": 245,
               "kind": "line_range",
-              "start": 241
+              "start": 243
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -153,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "92f058179d613d1dec68c4ce71902c4eba602a56",
+            "blob": "b62606eb0e3e424924b06492ab05f4f23ab400bd",
             "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
             "locator": {
-              "end": 331,
+              "end": 333,
               "kind": "line_range",
-              "start": 329
+              "start": 331
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },

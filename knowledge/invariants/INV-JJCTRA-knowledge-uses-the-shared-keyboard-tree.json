@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation's realizations in more than one file are what its statement binds together."
+  },
+  "applicability": "The Knowledge tree pane on a wide layout.",
+  "conditions": [
+    "The tree is the dashboard's shared `ExplorerTree`; arrow keys and Enter work as in the File Viewer.",
+    "By default it shows the rows that hold knowledge; one switch shows every path.",
+    "A row's failure to load is named in the pane."
+  ],
+  "exclusions": [
+    "The reviewer's sidebar tree (MIK-R86).",
+    "Drift marks, which MIK-R44 adds to this page when its numbers are truthful."
+  ],
+  "id": "INV-JJCTRA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 3",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Knowledge uses the shared keyboard tree in a resizable scrolling pane, filtering to knowledge and marking the open path including code.",
+  "status": "proposed",
+  "supersedes": []
+}

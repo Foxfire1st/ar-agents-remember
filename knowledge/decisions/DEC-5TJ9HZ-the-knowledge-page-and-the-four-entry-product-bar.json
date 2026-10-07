@@ -1,0 +1,70 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The direction had the real alternative of keeping the eight-tab squished page, its choice constrains every later change to the shell and the page, and the amendment is a recorded packet decision."
+  },
+  "alternatives": [
+    {
+      "option": "Give Knowledge the File Viewer's full-width shell, order the bar Chats, Operations, Knowledge, File Viewer, open the dashboard on Chats, and keep the four hidden pages' code and data while not building a page nobody can open at load.",
+      "reason": "The page becomes readable at every width and the bar shows only the working surfaces; the hidden pages stay reachable to their own development and layout tests through an injected view.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the eight-entry bar and the squished Knowledge page.",
+      "reason": "The developer rejected this: the hidden four have not been worked on for a long time and the page was unreadable at 1600 and off-screen at 390.",
+      "reconsider_when": "One of the hidden pages is repaired and the developer asks for its return to the bar.",
+      "status": "rejected"
+    },
+    {
+      "option": "Remove the four hidden pages' code and data entirely.",
+      "reason": "The packet's exclusions keep their code and behavior; only the page-load mounting changed, and other pages still use parts of the Engine Room's folder.",
+      "reconsider_when": "The developer asks for a page's removal rather than its return to the bar.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Knowledge is a full-width retained layer: its document and reading place survive a tab switch.",
+    "The dashboard opens on Chats, and a shared `#knowledge?…` address opens on Knowledge.",
+    "The four hidden pages fetch nothing at page load; their layouts remain tested through injected initial views."
+  ],
+  "context": "The developer's direction D58 of 2026-10-05 said the Knowledge page 'will need some work too. One like the file viewer it should be a full page. Not squished like it is right now', and that Chats, Operations, Knowledge and File Viewer should stay in the tab bar while Engine Room, Memory, Topology and Hangar are hidden. The requirement packet MIK-R79@v1 carried the direction and was amended before any build after the developer looked at the Engine Room: a page that left the bar is not built at page load.",
+  "decider": "Developer direction D58 (2026-10-05) and MIK-R79@v1, as amended before build; carried by the architect of run 3.",
+  "id": "DEC-5TJ9HZ",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R79",
+        "packet": "requirements/MIK-R79-v1-the-knowledge-page-is-a-full-page-that-reads-from-the-top.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-6QQ5FE"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XB45X4"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L79-d58-product-bar-and-page",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

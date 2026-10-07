@@ -7,51 +7,55 @@
 ## Purpose
 
 **The files behind a reader selection: memory prose and sidecars, code paths and code text, and the
-census files.** A selection's memory files are read from Git objects (a commit) or from the scope's working
-directory (`published`, a leaf); code is always read from the selection's code tree in the code repository's
-object store. Every read is confined and nothing is written.
+census files.** A selection's memory files are read from Git objects (a commit) or from the scope's
+working directory (`published`, a leaf); code is always read from the selection's code tree in the
+code repository's object store. Every read is confined and nothing is written.
 
-Three answers are kept apart everywhere: **present** (with the text), **absent** (the tree holds nothing
-there, a normal fact) and **unavailable** (the tree or object could not be read, with the reason). The code
-view adds two bounded notices, **binary** and **too-large**. An unavailable read is never rendered as absent,
-and none of them is rendered as an empty result.
+Three answers are kept apart everywhere: **present** (with the text), **absent** (the tree holds
+nothing there, a normal fact) and **unavailable** (the tree or object could not be read, with the
+reason). The code view adds two bounded notices, **binary** and **too-large**. An unavailable read is
+never rendered as absent, and none of them is rendered as an empty result. Since MIK-R79 the
+directory-listing helpers live with the tree-coverage module, so this module is the single-file read
+boundary again.
 
 ## Code Commentary
 
 ### Logic
 
-- **Path validation.** `normal_path` returns a repository-relative POSIX path (`.` for the root). It refuses
-  any control character (below 0x20, or 0x7f) with `ReaderRequestError` before any Git call, so a NUL in a
-  path answers 400 on every view that takes one (ruling 2026-09-30T10:44:14, F15). It also refuses `..`, `.`
-  segments, empty segments and absolute paths.
-- **Memory files.** `read_memory_file` reads a working-tree file under `confine_rel` of the memory root, or
-  a commit's blob with `cat-file -t` then `cat-file blob`. A missing file is `absent`; a failed read or a
-  decode error is `unavailable` with its reason.
-- **Listings.** `list_onboarding_directory` lists `onboarding/<directory>` of the memory tree (skipping dot
-  files); `list_code_directory` lists the code tree with `ls-tree`, or answers `unavailable` with the
-  selection's code note when there is no code tree. `code_kind` tells a file from a directory of the code
-  tree (`cat-file -t`).
-- **Code text (F14, F18).** `code_text` first locates the blob (`_code_blob`): a path the tree does not hold
-  is `absent`; a path that is a tree (or a submodule) is `absent` with "is a tree, not a file" (F18, which was
-  `unavailable` before). It then asks the blob's **size** (`cat-file -s`) before reading any bytes: above
-  `CODE_TEXT_LIMIT` (2 MiB) the answer is `too-large` with the size; otherwise the bytes are read and a NUL in
-  the first 8 KiB, or a failed strict UTF-8 decode, answers `binary` with the size. The bytes are never
-  served in either case (the real 8.7 MB mp4 answers 673 bytes, `too-large`).
-- **Census files.** `census_files` returns every file under `knowledge/census/` of the selected tree, from
-  disk or from `ls-tree -r` plus one batched blob read, for MIK-R20's report (the index does not read them).
+- **Path validation.** `normal_path` refuses any control character (below 0x20, or 0x7f) with
+  `ReaderRequestError` before any Git call, so a NUL in a path answers 400 on every view that takes
+  one. It then strips surrounding whitespace and slashes (an empty value or `.` is the root) and
+  normalizes with `PurePosixPath`; after that normalization only a `..` part is refused — a `.` or an
+  empty segment is normalized away and a leading slash has already been stripped, so an absolute form
+  is treated as the relative path it normalizes to.
+- **Memory files.** `read_memory_file` reads a working-tree file under `confine_rel` of the memory
+  root, or a commit's blob with `cat-file -t` then `cat-file blob`. A working-tree file that is not
+  there, and a Git path whose initial type probe fails or is not a blob, are `absent`; a later failed
+  blob read, or a read/decode exception, is `unavailable` with its reason.
+- **Code text.** `code_text` first locates the blob (`_code_blob`): a path the tree does not hold is
+  `absent`; a path that is a tree (or a submodule) is `absent` with "is a tree, not a file". It then
+  asks the blob's **size** (`cat-file -s`) before reading any bytes: above `CODE_TEXT_LIMIT` (2 MiB)
+  the answer is `too-large` with the size; otherwise the bytes are read and a NUL in the first 8 KiB,
+  or a failed strict UTF-8 decode, answers `binary` with the size. The bytes are never served in
+  either case.
+- **Code kind.** `code_kind` tells a file from a directory of the code tree (`cat-file -t`).
+- **Census files.** `census_files` returns every file under `knowledge/census/` of the selected tree,
+  from disk or from `ls-tree -r` plus one batched blob read.
 
 ### Conventions
 
-- Code paths are handed to `ls-tree`, `cat-file` and `rev-parse` as `<tree>:<path>` object names, never to the
-  file system. Memory paths on disk go through `confine_rel`.
+- Code paths are handed to `ls-tree`, `cat-file` and `rev-parse` as `<tree>:<path>` object names,
+  never to the file system. Memory paths on disk go through `confine_rel`.
 - `ReaderRequestError` is a `ValueError` subclass; the entry point turns it into `invalid-request`.
 
 ### Invariants And Boundaries
 
-- **A failed source is shown as partial or unavailable, never as empty** (a candidate invariant recorded on
-  the package entry card): `FileRead` keeps `absent` and `unavailable` apart everywhere.
-- **Every read is bounded:** the code view never loads a blob above the bound (the size is asked first, and
-  a test proves the bytes are never read for a `too-large` blob, F17).
+- **A failed source is shown as partial or unavailable, never as empty:** `FileRead` keeps `absent`
+  and `unavailable` apart everywhere.
+- **Every read is bounded:** the code view never loads a blob above the bound (the size is asked
+  first, and a test proves the bytes are never read for a `too-large` blob).
+- **One enumeration owner per side:** directory listings are answered by
+  `application/knowledge_reader/tree_coverage.py`; this module does not list directories.
 - Nothing here writes.
 
 ### Todos
@@ -62,24 +66,21 @@ No additional work is asserted by this card.
 
 ### Docs References
 
-No domain documentation source is configured for this repository. The design authority is the requirement
-packet `MIK-R29@v1` with its rulings in `29_path-based-knowledge-reader.json`; they live outside the code and
-memory repositories, so they are named here and not cited as rows.
+No domain documentation source is configured for this repository. The design authority is the
+requirement packet `MIK-R29@v1` with its rulings, and MIK-R79@v1 for the moved listing owner; they
+live outside the code and memory repositories, so they are named here and not cited as rows.
 
 No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The module's own statement of present, absent and unavailable. [1]
-- The file states and the 2 MiB code bound. [2]
-- A request error, and one file's answer. [3]
-- Control characters, `..` and absolute paths refused before any Git call (F15). [4]
-- A memory file from disk or from a commit, absent kept apart from unavailable. [5]
-- The onboarding mirror's and the code tree's children; a missing code tree named. [6]
-- The size asked before the bytes; a tree is not a file; binary detection (F14, F18). [7]
-- The census files of the selected tree. [8]
-- The route case: control characters answer 400 on every path view. [9]
-- The route case: a directory is absent, a binary blob and a blob above the bound are named and never read. [10]
+- The three file states and the bounded code text. [11]
+- Control characters are refused before any Git call; after whitespace/slash stripping and PurePosixPath normalization only a `..` part is refused. [12]
+
+- A memory file comes from disk or a commit; a missing file or a failed/not-blob type probe is absent, a later blob-read or decode failure is unavailable. [13]
+- The size asked before the bytes; a tree is not a file; binary detection. [14]
+- The census files of the selected tree. [15]
+- The one pathname inventory that now answers directory listings. [16]
 
 ### Cross-Repo References
 

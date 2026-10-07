@@ -62,6 +62,8 @@ No relevant domain documentation was found.
 - stubNotes responds to task-document, notes-list/read and requirements-list requests. [3]
 - taskDoc supplies the required generated task-document fields before caller overrides. [4]
 - The requirement anchor rendering exercised through Markdown. [5]
+
+
 - The reference resolution rules under test. [6]
 
 ### Cross-Repo References

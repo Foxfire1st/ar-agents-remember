@@ -39,12 +39,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d405cc1bc6fb854de3447c196ea4840cf8663212",
+            "blob": "3356b11c175bbe3fc6df953777623951d9b57dbe",
             "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
             "locator": {
-              "end": 83,
+              "end": 86,
               "kind": "line_range",
-              "start": 78
+              "start": 81
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

@@ -164,12 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:630d661f56caa155c60c87d057f0633beb087b7abd94262641d2d0503662b038",
             "locator": {
-              "end": 132,
+              "end": 152,
               "kind": "line_range",
-              "start": 131
+              "start": 151
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -182,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:bdde864e193387263731cdd066f3fceac9c073557afb12f618b8e90a8b51b9d1",
             "locator": {
-              "end": 112,
+              "end": 132,
               "kind": "line_range",
-              "start": 112
+              "start": 132
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:ca04194485304fe905d26b1663078884c16d5d36f479d9d3e1179a77fdf24011",
             "locator": {
-              "end": 124,
+              "end": 144,
               "kind": "line_range",
-              "start": 124
+              "start": 144
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -208,12 +208,12 @@
         },
         {
           "anchor": {
-            "blob": "9204281552db1c3af2f365aac0b3c5177d133783",
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
             "content": "sha256:afe4d46254ffa875b8d24856a06bb4a4e94f143f5108cc8ee5c24d537a56354a",
             "locator": {
-              "end": 130,
+              "end": 150,
               "kind": "line_range",
-              "start": 130
+              "start": 150
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
