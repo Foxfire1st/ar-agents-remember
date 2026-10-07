@@ -1,5 +1,177 @@
 {
   "path": "mcp/tests/test_role_instruction_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The Manager and Orchestrator decision lists, the three durable files and the four developer-needed categories with the once-only final report are present at the candidate.",
+      "id": "PRF-0DCHVF",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+        }
+      },
+      "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
+      "id": "PRF-0E0V75",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The coordination leaf-repair sentence and the Architect's delegated-versus-direct repair and evidence sentences are present at the candidate.",
+      "id": "PRF-0TFF0B",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "Each Architect, Manager, Orchestrator, planning, coordination and router sentence that states the one-agent default and the two developer choices is present at the candidate.",
+      "id": "PRF-0YJ58R",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:86a8bdcd7834fb37523f821a9519720bd55f6027682eae8d6efe91d753974b57",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+        }
+      },
+      "facet": "The parented Manager/Orchestrator gets the parent-routed sentence while every other role, parentless coordinator and dashboard start gets the byte-identical base sentence.",
+      "id": "PRF-1E5Z70",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:ce5d181963adfec2b59a2e4ab45373dd9519022a021e0e4c8919f3fe6507441b",
+        "locator": {
+          "kind": "symbol",
+          "name": "HandoverTextWordingTests.test_owner_relation_changes_only_for_parented_coordinators"
+        }
+      },
+      "facet": "Only a parented Manager or Orchestrator gets the rule-4 ownerRelation; every other role and parent class gets the byte-identical base value.",
+      "id": "PRF-1PSRH1",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The second-master instruction, the existing-Manager reuse, the durable reporting-recipient record and the developer-answer relay are present at the candidate.",
+      "id": "PRF-4FX9HW",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:afa8632a9d7e5fdcc3d4e7dba83aba4ddf56f213fc81b2576dba47c452bc811d",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_direct_closeout_keeps_the_architect_and_its_existing_gates"
+        }
+      },
+      "facet": "The kept Architect closeout sentence, its developer-exception wording and the unchanged closeout operation's actor are all present, and the sentence is not in the retired register.",
+      "id": "PRF-H64HF6",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The Architect's answer-first sentence and the role-agent message reading are present at the candidate.",
+      "id": "PRF-RFP8Q1",
+      "invariant": "INV-PEVJ6G",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+        "content": "sha256:06fcfb834e1ca8489f96834b7a28da568fe67ca139477bbad3301e3b8ed1abaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "InstructionFileWordingTests.test_curator_fanout_wording_distinguishes_99_and_100"
+        }
+      },
+      "facet": "Below 100 actionable entries fan-out is allowed but not required; at 100 or more it is required where the harness supports sub-agents.",
+      "id": "PRF-TZR4TX",
+      "invariant": "INV-208SQT",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
+        "leaf": "260928-MIK-L72"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24054458ebc9bbc54e632b963494796e976f6053",
-            "content": "sha256:048ce00fdf8ae9048880ce14fe72ae6d7685e7466e815f0dd0df45be6d4c3938",
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:547f59c4f0f41d43e5e8924502925cea2403572701b7a9ae9fba2ae906f00347",
             "locator": {
               "kind": "file"
             }

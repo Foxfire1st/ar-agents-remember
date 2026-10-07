@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
         "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
         "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,43 @@
     },
     {
       "anchor": {
-        "blob": "6908a69021093990301358443f807d6cf2e10e40",
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+        "content": "sha256:569207831ed29601ae715c9ef121457a9d77fceb96510cf1d1203ca305e1d325",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compile_handover"
+        }
+      },
+      "id": "RLZ-S6FS3C",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This production caller passes the selected role and writes the developerQuestions value beside the unchanged ownership data and digest seals.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+        "content": "sha256:7719e93fa3f65b9e6c5075b7269dd6de45bdaf34da4f3dfdbdec8870dc7ef89b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_owner_relation"
+        }
+      },
+      "id": "RLZ-SY5SK8",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This narrow role-sensitive function returns the approved parent-reporting sentence or the byte-identical base value for every other case.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
         "content": "sha256:7624490692ab58393fecf5cac0d904a303bdf7fbe49b9eba7fe6172bdfda5cc9",
         "locator": {
           "kind": "symbol",
@@ -80,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
             "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
             "locator": {
               "kind": "symbol",
@@ -96,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
             "content": "sha256:ccc44177e1d12dd63e0f1295ddff48791c1fa44598ac39a5577e663d467bc6d9",
             "locator": {
               "kind": "symbol",
@@ -112,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6908a69021093990301358443f807d6cf2e10e40",
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
             "content": "sha256:52a57a706f3082e6f52f63bf2222cde5b0c29922ebbef5a94a3c76cd1a269451",
             "locator": {
               "kind": "symbol",
@@ -124,15 +160,16 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of _compile_handover supporting the stated file behavior.",
+      "note": "Frozen implementation of the narrow parented-coordinator handover values.\n\nAnchor: `developerQuestions`",
       "targets": [
         {
           "anchor": {
-            "blob": "6908a69021093990301358443f807d6cf2e10e40",
-            "content": "sha256:32f38dc08dde5672ba31264621662a2a275a87f5e4c844a851597b4ba4053dbf",
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:c874fdeea61d9c979f199e237bf4a072c7b0238f813f72e3b250270e2195a7d4",
             "locator": {
-              "kind": "symbol",
-              "name": "_compile_handover"
+              "end": 590,
+              "kind": "line_range",
+              "start": 580
             }
           },
           "kind": "code"

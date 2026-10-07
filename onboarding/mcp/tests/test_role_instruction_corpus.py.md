@@ -15,7 +15,7 @@ coordination-owned and symbolic names retain their stated resolution limits.
 
 ## Current source account
 
-Compact native role and operation sources remain well-formed and manifest-resolved. Positive curation checks now address two policy surfaces through CURATION_POLICY_STATEMENTS while the exact retired-sentence census still reaches canonical and generated trees. Preserve the handoff template contract and mutation controls; remove descriptions of the retired all-surface positive helper.
+Compact native role and operation sources remain well-formed and manifest-resolved. Positive curation checks now address two policy surfaces through CURATION_POLICY_STATEMENTS while the exact retired-sentence census still reaches canonical and generated trees. The guard teeth now re-insert every registered retired sentence on each surface that shipped it and assert the finding names it, plus a real removal witness, so a guard that resolves nothing cannot pass. Preserve the handoff template contract and mutation controls; remove descriptions of the retired all-surface positive helper.
 
 ## Code Commentary
 

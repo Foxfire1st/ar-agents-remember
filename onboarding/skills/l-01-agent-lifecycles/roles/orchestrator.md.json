@@ -1,6 +1,102 @@
 {
   "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-ATVKJ4",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Orchestrator's opening states that it is selected for concurrent masters or by the developer's explicit single-master request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-D5ZTR6",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph keeps the Manager as the owner of the inner loop and limits the Orchestrator to verifying deliveries and inspecting supplied diffs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "content": "sha256:28673177e9fabb723ba2142e77c0c624fe67f11570d7c1f4f6e7dd70646f4a67",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 16
+        }
+      },
+      "id": "RLZ-HB7AP1",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph makes the Orchestrator reuse each existing Manager named by the Architect instead of starting a duplicate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-YF74AS",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Orchestrator's own-decisions paragraph keeps ordinary readings and rulings with the role and names the same three durable files.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "content": "sha256:82fa80737068ff74fce8b2627c4284b2a74a57cdcc0c9e157a52291d91e4316f",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-ZP7734",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph bounds what reaches the Architect for a sprint coordinating agent.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The seat's self-definition is an event loop over durable task state that never converses with the developer.\n\nAnchor: \"You run one sprint's backend as an event loop over durable task state, not a conversation.\"",

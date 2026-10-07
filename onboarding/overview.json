@@ -1484,7 +1484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
               "end": 125,
@@ -1741,16 +1741,16 @@
       ]
     },
     "85": {
-      "note": "The role-capsule router's selection rule and its unsupported-field refusal.",
+      "note": "The role-capsule router's selection rule and its unsupported-field refusal.\n\nAnchor: `Select the supplied role and operation`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
-            "content": "sha256:443ba5b3dfc4037fb15544d7e9db74c1900fedb07681638db4518dd94437ad80",
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:8f7b0e1f8c2e1d4aec53eca5cde40fc9334b4211ef82b192b5723a851bc627c9",
             "locator": {
-              "end": 35,
+              "end": 16,
               "kind": "line_range",
-              "start": 11
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },

@@ -1,14 +1,33 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+        "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-886S55",
+      "invariant": "INV-K5SFG7",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This registry is the shipped-sentence census: each row carries the exact statement, the files that shipped it, its probe and its current reason, and the sweep is the canonical tree plus the generated copies.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment.",
       "targets": [
         {
           "anchor": {
-            "blob": "c09d75cdb452d0855092938278691db7146f646d",
-            "content": "sha256:aa626ea645cea8d719f586c941fda749af19dfb7331364339fa6ffac0221448f",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
             "locator": {
               "kind": "symbol",
               "name": "RETIRED_CURATION_STATEMENTS"
@@ -23,11 +42,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c09d75cdb452d0855092938278691db7146f646d",
-            "content": "sha256:cfdfa61570894c7affb510db3b1ccef180082fba891eae8b68258a893e3176b5",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:6a46b5df1a4b60e3b4c28ce3710aca8d060de9ca94d1c00872e5a1b8e6cf3839",
             "locator": {
               "kind": "symbol",
-              "name": "CURATION_COMPLETENESS_STATEMENTS"
+              "name": "CURATION_POLICY_STATEMENTS"
             }
           },
           "kind": "code"
@@ -39,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
             "content": "sha256:34a0fc2576100ebe900f1dd81204517ee42baa8b703e9c1de07da1cc00793042",
             "locator": {
               "kind": "symbol",
@@ -55,11 +74,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c09d75cdb452d0855092938278691db7146f646d",
-            "content": "sha256:cfdfa61570894c7affb510db3b1ccef180082fba891eae8b68258a893e3176b5",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",
-              "name": "CURATION_COMPLETENESS_STATEMENTS"
+              "name": "missing_curation_policy_statements"
             }
           },
           "kind": "code"
@@ -71,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e367db7e8d8f3fe6241c5fc02c2e28fb36e83a4b",
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
             "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
             "locator": {
               "kind": "symbol",

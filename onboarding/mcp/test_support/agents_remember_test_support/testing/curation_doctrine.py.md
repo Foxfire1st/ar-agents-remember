@@ -14,7 +14,7 @@ pytest and repository constants so its callers can inspect staged or synthetic t
 
 ## Current source account
 
-The positive policy table now names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners, and adds the prototype's developer-request-only curation sentence to the retired set. This is an exact wording guard; novel semantic contradictions are outside that scan.
+The positive policy table now names only operations/curation.md and roles/curator.md and is read through missing_curation_policy_statements. It retains the normalized exact retired-wording and loop-gate scanners. MIK-R72@v2 rebuilt the retired set on the shipped-sentence contract: rows whose statement shipped on a named base surface are kept with that surface in `sources`, each with a distinctive probe that matches no kept live wording and a v2 reason naming the sentence’s specific obsolete duty; rows built only from this leaf’s unlanded drafts were removed, and the four adopted manifest descriptions are registered. This is an exact wording guard; novel semantic contradictions are outside that scan.
 
 ## Code Commentary
 
@@ -83,9 +83,13 @@ case, generated-copy marker reader and seeded retired-wording controls live in
 described above.
 
 - The retired-sentence registry carries the exact statement, its shipped sources, its probe and its packet fragment. [1]
+
 - The required-rule table names the exact form each canonical surface must state, keyed by shipped path. [2]
+
 - The nine generated copies are the sweep targets, and the canonical tree is sweep target zero. [3]
+
 - The readers answer the per-surface and per-tree questions separately, and the completeness reader is the required-rule half. [4]
+
 - The consuming cases and the seeded re-insertion that proves the guard can fail. [5]
 - The nine copies are produced from the canonical tree by the generator whose `--check` proves currency. [6]
 

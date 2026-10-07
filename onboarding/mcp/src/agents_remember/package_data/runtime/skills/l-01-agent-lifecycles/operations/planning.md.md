@@ -12,7 +12,7 @@ Turn the developer outcome and current relevant knowledge into approved, bounded
 
 Give independently falsifiable obligations stable IDs/versions and canonical packets, cold-read new packets, and obtain developer approval before projecting task topology. Each executable leaf has one primary requirement; adjacent obligations are dependencies or preservation constraints. Preserve existing approvals.
 
-Choose the smallest graph with independent evidence. Architect may directly coordinate distinct Worker, Reviewer and Curator agents; larger coordination may add Orchestrator or Manager. Name deliverables, paired/report roots, dependencies, evidence class, requested review, curation and publication authority.
+The Architect’s first delegation is one Manager on the master, or one Orchestrator on the sprint for concurrent masters with one Manager per master; direct coordination is only the developer’s exception. Name deliverables, paired/report roots, dependencies, evidence class, requested review, curation and publication authority.
 
 ## Conventions
 
@@ -28,4 +28,4 @@ Tasks project approved scope and do not replace requirements. New scope, require
 
 | Finding | Anchor | References |
 | --- | --- | --- |
-| Canonical approved requirements, optional flat graph and ruled scope changes. | lines 3-7 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/planning.md:3-7 |
+| Canonical approved requirements, first delegation to one coordinating agent and ruled scope changes. | lines 3-7 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/planning.md:3-7 |

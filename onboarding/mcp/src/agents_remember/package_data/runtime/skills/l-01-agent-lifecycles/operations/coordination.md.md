@@ -10,7 +10,7 @@ Start and reach native role agents for exact canonical AR assignments while keep
 
 ## Current Contract
 
-Small work may be flat under Architect with distinct Worker, Reviewer and Curator agents. Orchestrator and Manager are added when their coordination helps. A bound start supplies the role, required canonical references and request ID, resolves the AR paired enclosure, writes the handover and returns the actual agent/report/artifact identities.
+The Architect delegates coordination first to one Manager for one master or one Orchestrator for concurrent masters; direct coordination is only the developer’s choice. A bound start supplies the role, required canonical references and request ID, resolves the AR paired enclosure, writes the handover and returns the actual agent/report/artifact identities.
 
 Architect may start every role except Architect; Orchestrator may start Manager, Worker, Reviewer and Curator under its sprint; Manager may start Worker, Reviewer and Curator under its master. Other roles start none. An unknown start is reconciled by the same request ID. A rejected candidate returns finding-specific repair to the same Worker.
 
@@ -30,4 +30,4 @@ Use only `role_start`/`role_message` on `agents-remember-task`. Preserve canonic
 
 | Finding | Anchor | References |
 | --- | --- | --- |
-| Flat owner graph, bound start/messaging, same-request recovery and execution metadata boundary. | lines 3-15 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md:3-15 |
+| One coordinating agent under the Architect, bound start/messaging, same-request recovery and execution metadata boundary. | lines 3-15 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md:3-15 |

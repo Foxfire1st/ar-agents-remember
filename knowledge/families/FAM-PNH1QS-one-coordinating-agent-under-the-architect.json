@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Each member protects one way the single-coordinator handover can fail: the role texts alone could disagree with the router and the operation, the manifest could still describe the old default, the host handover could tell a parented Manager to relay, the developer's answer-first duty is what keeps the developer in charge, and the closeout exception is the one execution step the retained Architect keeps; only together do they make one coherent default."
+  },
+  "guarantee": "Across the role texts, the planning and coordination operations, the router, the host handover values and the composition manifest, a delegating Architect hands coordination to exactly one agent -- one Manager for a single master, one Orchestrator above two or more concurrently worked masters (one Manager per master) -- that agent decides everything not needing the developer and reaches the Architect only for the four developer-needed categories and one final report, the developer's direct-coordination and single-master-Orchestrator choices remain available, and the Architect keeps the developer conversation, answers first and runs no execution except the developer-chosen direct-coordination paired closeout.",
+  "id": "FAM-PNH1QS",
+  "members": [
+    "INV-A6GAKX",
+    "INV-NFV5VJ",
+    "INV-8AMSGV",
+    "INV-P2WRNQ",
+    "INV-PEVJ6G"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72-one-coordinating-agent",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One coordinating agent under the architect"
+}

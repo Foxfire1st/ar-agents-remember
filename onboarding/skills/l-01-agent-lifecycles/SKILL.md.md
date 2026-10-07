@@ -12,7 +12,7 @@ This canonical thin router selects a native role capsule from an explicit suppor
 
 The native launcher supports Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Manual taskless Architect/System Specialist launches at Projects ask only for missing outcome/repository or concern/report scope and synthesize no sprint, master or task.
 
-Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. Developer decisions stay in the agent’s own chat, and dashboard-started roles need no parent. Small work may stay flat with distinct Worker, Reviewer and Curator roles.
+Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. Developer decisions stay in the agent’s own chat, and dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
 After reconnect or compaction, restore the same role, operation, canonical task, agent IDs and report from the durable handover and recorded approvals. Reconcile an uncertain start with the same request ID. A finished turn, review, curation, semantic acceptance and paired-Git publication remain separate owning facts.
 
@@ -63,7 +63,7 @@ separate protocol events as delivery attempts.
 
 - One explicit supported role and applicable operation selects the native capsule; missing or conflicting bindings are reported.
 - Shared core blocks are not injected; canonical task/workspace facts are separate handover data.
-- Flat distinct-role coordination is valid and dashboard starts need no parent.
+- A first delegation to one coordinating agent is the default; direct coordination is the developer’s choice, and dashboard starts need no parent.
 - Native role starts/messages use the launching build’s task server and actual resolved identities.
 - Preserve the same task/role/request/report through uncertainty; no duplicate owner or alternate transport is created.
 
@@ -95,7 +95,9 @@ No configured domain documentation was available.
 - Canonical task/workspace facts arrive in the handover rather than being inferred from Projects. [3]
 - Same-task continuity restores durable role, operation, agent and report identities. [4]
 - Native role starts and messages use the bound task server and actual returned identities. [5]
-- Flat distinct-role coordination and valid parentless dashboard admission are explicit. [6]
+
+- Developer-chosen direct coordination and valid parentless dashboard admission are explicit. [6]
+
 - Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
 - Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
 - Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]

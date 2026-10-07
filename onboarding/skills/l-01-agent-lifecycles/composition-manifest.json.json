@@ -3,7 +3,45 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
+        "locator": {
+          "end": 226,
+          "kind": "line_range",
+          "start": 226
+        }
+      },
+      "id": "RLZ-031YY4",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The orchestrator seat description names concurrent-master coordination plus the explicit single-master request.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
+        "locator": {
+          "end": 333,
+          "kind": "line_range",
+          "start": 333
+        }
+      },
+      "id": "RLZ-5G6AGC",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The manager seat description places the Manager under the Architect for one master or the Orchestrator for concurrent masters.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 27,
@@ -22,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
         "content": "sha256:dd3b85811eb26c0f87eed4157bfcbfa55993d7952ced12ee25058616ad833e9a",
         "locator": {
           "end": 36,
@@ -41,7 +79,26 @@
     },
     {
       "anchor": {
-        "blob": "9436575c717cd243830e065f9fc75cb5b6fbbdee",
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
+        "locator": {
+          "end": 180,
+          "kind": "line_range",
+          "start": 180
+        }
+      },
+      "id": "RLZ-HGSMDT",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The architect seat description states one Manager for one master and one Orchestrator for concurrent masters unless the developer chooses otherwise.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
         "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
         "locator": {
           "end": 601,
@@ -57,6 +114,25 @@
       },
       "rationale": "The declared composition order and notes preserve role then operation and identify the retained core map as inert metadata rather than injected instruction prose.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-WTKS9R",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The planning purpose string names the default and the developer's choice as the manifest description.",
+      "role": "presentation"
     }
   ],
   "references": {

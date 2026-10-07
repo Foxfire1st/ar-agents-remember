@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The wording test pins both sides of the 99/100 boundary so the instruction cannot silently change its threshold."
+  },
+  "applicability": "Every normal Curator authoring pass on a converted memory tree.",
+  "conditions": [
+    "The worklist counts distinct outstanding memory actions once, excluding already answered, report-only and duplicate counts."
+  ],
+  "exclusions": [
+    "A harness without sub-agents, which works alone and reports the limit.",
+    "Every durable write and semantic decision, which never leaves the main session."
+  ],
+  "id": "INV-208SQT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Curator enumerates one deduplicated full-intake worklist of distinct outstanding memory actions and, at 100 or more actionable entries, fans out read/search/reference checks one level deep to sub-agents where the harness supports them; each sub-agent returns path and evidence and writes nothing durable, while invariant and family placement, admission, changes of meaning, the single knowledge-ingest write, the full memory-quality operation and the handoff stay with the main session; below 100 items fan-out is optional and an unsupported harness works alone and reports that limit.",
+  "status": "proposed",
+  "supersedes": []
+}

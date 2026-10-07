@@ -37,16 +37,14 @@
       ]
     },
     "13": {
-      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.\n\nAnchor: `curation_doctrine`",
+      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.",
       "targets": [
         {
           "anchor": {
-            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
-            "content": "sha256:bf18859d054710963b18206394efa34c0df607cf8dd186c6293e3a8a98195330",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:6897c85efb5eabcb6bae2f751fb4645f8096541b68669e70b00916cc00e48430",
             "locator": {
-              "end": 40,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
           },
@@ -111,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77aa6833d3d3c2fd3ab36df9d5868e40a9909904",
-            "content": "sha256:5ffa0dd1dc322628cb2dc8489a2b305a81a7b6bd2a3a15a8e336d6341ea3d838",
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
             "locator": {
               "kind": "symbol",
               "name": "RETIRED_CURATION_STATEMENTS"

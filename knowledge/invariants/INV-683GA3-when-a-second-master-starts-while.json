@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The transition is realized in the Architect, Manager and Orchestrator role texts, and the wording tests pin each exact sentence so no part of it can silently disappear."
+  },
+  "applicability": "A sprint in which a second master starts while a Manager already works directly under the Architect.",
+  "conditions": [
+    "The Architect names the new Orchestrator's agent id and the existing Manager's exact identity, master and state.",
+    "Family examination: no joint obligation is supported. Basis: The transition rule applies the delegation default to a running master and is entailed by the default recorded in FAM-PNH1QS rather than an independent joint promise; it binds at the transition alone."
+  ],
+  "exclusions": [
+    "Native parentage, which never changes for a running agent.",
+    "A dashboard-started Manager, which has no parent and needs none."
+  ],
+  "id": "INV-683GA3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md V2-14/V2-17; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md",
+        "L72-MR1-M1: the authored deliberate no-family basis is carried as the revision's own condition so the dataset distinguishes a family-free obligation from an unexamined one; the statement and scope are unchanged."
+      ],
+      "path": "handoff-stage1c.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When a second master starts while a Manager works directly under the Architect, the Architect starts one Orchestrator on the sprint, gives it the existing Manager's exact agent id, canonical master reference and current state, names the Orchestrator's id to that Manager in one message, and the Manager records the instructed reporting recipient and sends developer-needed matters there from then on without changing its fixed launch parent; when the developer answers or gives a ruling, the Architect sends that actual answer or ruling to the requesting Manager or Orchestrator, and a wait result that only repeats the question is not the developer's decision.",
+  "status": "proposed",
+  "supersedes": []
+}

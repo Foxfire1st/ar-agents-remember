@@ -3,7 +3,178 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2c39a5eda740f8e17cd0d53bef5f73ce3a492a0b",
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:e9117d669ea44ba474b9895a42dfca932a125603b985f6315682f739d965ba64",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 48
+        }
+      },
+      "id": "RLZ-1GCP9C",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph forbids the Architect its own execution and sends checks and investigations to role agents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-2T4Z9R",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph requires relaying the developer's actual answer or ruling and rejects a repeated wait question as a decision.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:64b014bf72a3ddf76a265ac494a328b3a6dd7cefdbc2e4057605d5664f140527",
+        "locator": {
+          "end": 50,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-418WGG",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph keeps the flat-mode paired closeout sentence, names the developer's exception and starts no Manager for the step alone.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-8W0HVX",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph states the second-master transition: one Orchestrator, the existing Manager's exact identity and state, no duplicate start, and the one reporting-recipient message.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
+        "locator": {
+          "end": 10,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-MJ0SZ8",
+      "invariant": "INV-PEVJ6G",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This opening paragraph states the answer-first duty and the role-agent sender line that is not a developer decision.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-QVQ9HA",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph sends a finding-specific repair to the coordinating agent under delegation and to the same Worker only under direct coordination.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-SV2W4A",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph owns the Architect's first-delegation choice and names both developer-chosen exceptions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+        "locator": {
+          "end": 40,
+          "kind": "line_range",
+          "start": 40
+        }
+      },
+      "id": "RLZ-XSMK0N",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph gives the leaf-diff and repair loop to the Manager under delegation while the Architect reviews the full diff only under direct coordination.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
+        "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 30
+        }
+      },
+      "id": "RLZ-Y1FRYJ",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph makes the Architect read the coordinating agent's files itself and align requirement texts within the promise.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "42e0257c993e01d712413564957c027560e34557",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,

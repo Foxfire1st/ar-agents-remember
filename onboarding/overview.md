@@ -558,7 +558,9 @@ not a recorded test execution.
 - The judgement of a terminal master that the task routes and the closeout queue read. [79]
 - The supported memory modes and the refusal of the removed one. [83]
 - The three retrieval substrates. [84]
+
 - The role-capsule router's selection rule and its unsupported-field refusal. [85]
+
 - Dispatch is one transaction with two caller kinds, and a plane refusal never falls back to ambient. [86]
 - Closeout is worktree-only, and the apply records its authority. [87]
 - The branch-addressed landing of a leaf without its own enclosure. [88]

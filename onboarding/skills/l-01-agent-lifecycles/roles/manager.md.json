@@ -1,6 +1,102 @@
 {
   "path": "skills/l-01-agent-lifecycles/roles/manager.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:26c4980deac5a6d5d934a8c81110a21cbbc045bdbac1cecc948ae2e2367957d3",
+        "locator": {
+          "end": 22,
+          "kind": "line_range",
+          "start": 22
+        }
+      },
+      "id": "RLZ-09EQRE",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph lists what the Manager decides itself and that it answers its own role agents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-85MKD0",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Manager's opening states that one master's coordination is one Manager under the Architect.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-JY5TEM",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph places the rulings record, requirement-change list and status file under the master's notes for the Architect to read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:afbb9de316de4881b4fa793eac59921ab18366cdaa011d6b56860ae41d51b825",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 26
+        }
+      },
+      "id": "RLZ-M2NFTB",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph bounds the upward messages to the four developer-needed categories and the once-only final report.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
+        "locator": {
+          "end": 28,
+          "kind": "line_range",
+          "start": 28
+        }
+      },
+      "id": "RLZ-S372ZT",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "One manager owns one canonical master and the complete leaf closeout chain.\n\nAnchor: `# Manager`; \"**You drive exactly one master's leaf sequence from dispatch to handover.**\"",

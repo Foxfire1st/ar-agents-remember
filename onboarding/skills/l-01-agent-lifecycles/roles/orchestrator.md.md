@@ -15,6 +15,10 @@ every developer-worthy item leaves as one decision item to the architect. The ar
 creates this seat, while an identity-free developer launcher may target it only for an explicit
 task-seat takeover.
 
+## 260928-MIK-R72@v2 Current Coordination Default And Reporting Duty
+
+MIK-R72@v2 changed the sentences this page's opening account describes. The current role text (candidate tree `598526ac`) selects the Orchestrator when two or more masters are worked on at the same time, or when the developer explicitly asks for one above a single master; it reuses each existing Manager the Architect names and starts one Manager for each other master. The Orchestrator decides ordinary requirement readings and operational rulings itself, keeps its rulings record, requirement-change list and status file under the selected task's notes for the Architect to read, and messages the Architect only for the four developer-needed categories plus one final report-path notice. The older event-loop account below and the sections that repeat it are retained historical evidence for their own dated files, not the current contract.
+
 ## Code Commentary
 
 ### The Function Shape

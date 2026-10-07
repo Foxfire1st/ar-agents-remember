@@ -20,6 +20,8 @@ The writer is the shipped knowledge-ingest route for leaves and the admitted kno
 
 The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
 
+Since MIK-R72@v2 the Curator’s large-worklist duty is stated in the role text: enumerate one deduplicated full-intake worklist of distinct outstanding memory actions, count each underlying action once, exclude already answered and report-only observations, and at 100 or more actionable entries fan out read/search/reference checks one level deep to sub-agents where the harness supports them. Sub-agents return path and evidence and write nothing durable; invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the main session. Below 100 fan-out is optional, and an unsupported harness works alone and reports that limit.
+
 Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure every hand-off target carries
 its own authored `rationale` (why that place carries the obligation, specific to the construct it names,
 optional `role`) before ingest, writing it from the evidence where the producer gave none; the writer

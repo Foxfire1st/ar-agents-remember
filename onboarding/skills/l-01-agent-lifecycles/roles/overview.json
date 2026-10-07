@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
               "end": 135,
@@ -258,7 +258,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
               "end": 125,
@@ -272,16 +272,16 @@
       ]
     },
     "19": {
-      "note": "Taskless subject and flat semantic-owner coordination.",
+      "note": "Taskless subject and one coordinating agent under the Architect.\n\nAnchor: `For work inside one master, first start one Manager`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c39a5eda740f8e17cd0d53bef5f73ce3a492a0b",
-            "content": "sha256:22a3b198b33d60635e8c4705e657a1c08221e20ef1c10062eb09b9cced3b8cec",
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
-              "end": 32,
+              "end": 18,
               "kind": "line_range",
-              "start": 8
+              "start": 18
             },
             "path": "skills/l-01-agent-lifecycles/roles/architect.md"
           },
@@ -308,14 +308,14 @@
       ]
     },
     "20": {
-      "note": "Optional master coordination and exact paired scope.",
+      "note": "Master coordination under the Architect and exact paired scope.\n\nAnchor: `You coordinate one selected master`",
       "targets": [
         {
           "anchor": {
-            "blob": "4178026be6c61d9e06f6a899434ce9b11f7979cf",
-            "content": "sha256:c62817d40f39d8ab703bb6e8a8499bb2dbae48e2caec4ba50fad5ead8456cb4c",
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
             "locator": {
-              "end": 24,
+              "end": 8,
               "kind": "line_range",
               "start": 8
             },
@@ -326,14 +326,14 @@
       ]
     },
     "21": {
-      "note": "Optional sprint coordination and separate evidence.",
+      "note": "Sprint coordination above one Manager per master and separate evidence.\n\nAnchor: `You coordinate one selected sprint`",
       "targets": [
         {
           "anchor": {
-            "blob": "2cb510d2456d038029d69a607a2f6a1eec536015",
-            "content": "sha256:62cd8f878081ed724f91a7a67f3c34015acc1849bd0bda05067d6f6e0fab3b9b",
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
             "locator": {
-              "end": 24,
+              "end": 8,
               "kind": "line_range",
               "start": 8
             },
@@ -384,7 +384,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:9e3ea557d6a7e52c8437139c6cf6e64cc6f2779cd63af80ab272667a1dfb1f8c",
             "locator": {
               "end": 188,
@@ -415,6 +415,24 @@
         }
       ]
     },
+    "26": {
+      "note": "The prohibition that keeps the dataset out of its hands.\n\nAnchor: `Never write the knowledge dataset yourself.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:209878d33f20182cded30d0a613eef1a9a227bad71f9d716c149d9147d3d84c1",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "The curator process carries exact retained-sibling authoring and readback.\n\nAnchor: `## Process`",
       "targets": [
@@ -438,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
             "locator": {
               "end": 107,
@@ -456,7 +474,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:170d5be35803f966e84b811e99d7508ca0182c79593b49d0fbd645257b65ab24",
             "locator": {
               "end": 101,
@@ -469,7 +487,7 @@
         },
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:39153476410d8509cec01ecf0dca6a70b4d85b731ad4d6d14a16cef757a8eb14",
             "locator": {
               "end": 112,
@@ -483,29 +501,16 @@
       ]
     },
     "6": {
-      "note": "The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands.\n\nAnchor: \"ordinary knowledge authoring route\"; \"Never write the knowledge dataset yourself.\"",
+      "note": "The permitted-action line that makes the subcommand this seat's route.\n\nAnchor: `ordinary knowledge authoring route`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
               "end": 232,
               "kind": "line_range",
               "start": 232
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
-            "content": "sha256:209878d33f20182cded30d0a613eef1a9a227bad71f9d716c149d9147d3d84c1",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 252
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -518,7 +523,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f5c78c2dd6b93f10bcfd9d9f614a08614a83d44",
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
             "content": "sha256:0f5137c2be2cbbd9602a109fc587a8bbe5db320bbb6bfd0be2bc8d0ae539cdf8",
             "locator": {
               "end": 210,

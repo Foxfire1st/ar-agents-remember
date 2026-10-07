@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The seeded reinsertion tests prove each registered sentence fails the guard on its own surface, and the wording tests pin the current sentences, so a regression cannot pass unnoticed."
+  },
+  "applicability": "The canonical lifecycle instruction tree and its nine generated copies.",
+  "conditions": [
+    "A row is a sentence that shipped on a named base surface with a distinctive probe that matches no kept live wording."
+  ],
+  "exclusions": [
+    "Unlanded drafts, which are not registered.",
+    "Novel semantic contradictions in fresh vocabulary, which this exact-wording guard does not claim to catch."
+  ],
+  "id": "INV-K5SFG7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The retired-wording register holds only sentences that shipped on named base surfaces, each with its exact carrier files, a distinctive probe that matches no kept live text and a reason naming that sentence's specific obsolete duty; the wording tests assert each current coordination and curator sentence, and the corpus guard reinserts each registered sentence on the surfaces that shipped it to prove the guard fails.",
+  "status": "proposed",
+  "supersedes": []
+}

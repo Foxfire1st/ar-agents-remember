@@ -156,7 +156,8 @@ route (the second shipped by `ICR-R29@v1` after this section was written), compl
 deleted, and now pinned by a case that reads the refusal's own detail.
 
 - **The authoring step this route's curator file now carries, with the invocation and the report fields to consume.** [5]
-- The permitted-action line that makes the subcommand this seat's route, and the prohibition that keeps the dataset out of its hands. [6]
+- The permitted-action line that makes the subcommand this seat's route. [6]
+- The prohibition that keeps the dataset out of its hands. [26]
 - The report sentence that carries the published identity into the handoff. [7]
 - The operation block the same obligation landed in, which is the procedure this role file composes. [8]
 
@@ -164,7 +165,7 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 
 This route owns one canonical file per role. The current native launcher exposes seven roles: Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Other registry files remain in the corpus without becoming launchable through this path. Each delivered native capsule contains its selected role followed by one applicable operation, while canonical task/workspace facts arrive separately in the handover; the retained shared core is not injected.
 
-Architect owns the developer’s semantic conversation and may directly coordinate distinct Worker, Reviewer and Curator agents. Orchestrator is an optional selected-sprint coordinator and Manager an optional selected-master coordinator, both at Projects. Worker, Reviewer and Curator use the selected paired leaf scope. Architect and System Specialist may start manually without task references and ask only for missing scope; separate repository-foundation admissions keep their own contract.
+Architect owns the developer’s semantic conversation and, for work inside one master, first hands coordination to one Manager on that master; when two or more masters are worked on at the same time one Orchestrator on the sprint starts one Manager per master. Direct coordination by the Architect and an Orchestrator above a single master are the developer’s explicit choices. Worker, Reviewer and Curator use the selected paired leaf scope. Architect and System Specialist may start manually without task references and ask only for missing scope; separate repository-foundation admissions keep their own contract.
 
 Worker implements the approved leaf and leaves code uncommitted. Reviewer examines the complete requested candidate, exact requirement evidence and sealed findings independently. Curator preserves MIK’s converted writer, authored scope/rationale, exact families/siblings, full normal MQC/coherence and comparison evidence. Native host language changes no owner’s review, curation or paired-Git duty. Dated L1/L22 structure and L10 token measurements remain historical candidate facts, not descriptions or measurements of this current route.
 
@@ -254,7 +255,7 @@ remain read/search helpers and never become AR role seats.
 - Canonical role files own doctrine; package/harness role files are exact synchronization outputs.
 - Read selected canonical tasks/packets through supplied exact arguments and actual bound schemas; recover prior rulings and approvals across reconnects.
 - Preserve actual agent IDs, report and handover paths. Native starts/messages use `agents-remember-task`; a manually dashboard-started role needs no parent.
-- Keep distinct builder, independent reviewer, curator and semantic/publication owners. Add hierarchy only where coordination helps.
+- Keep distinct builder, independent reviewer, curator and semantic/publication owners. The Architect’s first delegation is one Manager for one master or one Orchestrator for concurrent masters, unless the developer chooses direct coordination.
 - Use current source anchors for current claims; retain dated older structure and metrics as historical evidence rather than current section pointers.
 
 ## Invariants And Boundaries
@@ -404,9 +405,12 @@ frozen tip.
 
 ## Current native instruction evidence
 
-- Taskless subject and flat semantic-owner coordination. [19]
-- Optional master coordination and exact paired scope. [20]
-- Optional sprint coordination and separate evidence. [21]
+- Taskless subject and one coordinating agent under the Architect. [19]
+
+- Master coordination under the Architect and exact paired scope. [20]
+
+- Sprint coordination above one Manager per master and separate evidence. [21]
+
 - Bound uncommitted Worker duty. [22]
 - Independent exact assigned review and sealed findings. [23]
 - Bound and preserved normal Curator duties. [24]

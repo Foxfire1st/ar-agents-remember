@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The decision boundary and the four-category reporting duty are realized in the Manager, Orchestrator, Architect and router texts, and the wording tests assert the exact sentences."
+  },
+  "applicability": "A Manager or Orchestrator started under the Architect or an Orchestrator, including one whose reporting recipient changed with a second master.",
+  "conditions": [
+    "A matter is one of the four developer-needed categories, or the whole assignment is finished or cannot be finished."
+  ],
+  "exclusions": [
+    "A dashboard-started coordinator, which puts a developer decision in its own chat and invents no parent.",
+    "The Architect's retained developer conversation, plan order and requirement texts."
+  ],
+  "id": "INV-NFV5VJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The agent directly under the Architect, Manager or Orchestrator, decides everything that does not need the developer (its leaf order and starts, operational problems, requirement readings inside the intended promise, repair rounds, landing checks and delegated closeout and integration), answers its own role agents instead of forwarding them, keeps a durable rulings record, requirement-change list and status file under the task's notes for the Architect to read, and reaches the Architect or its reporting recipient only for the four developer-needed categories and one final report-path notice.",
+  "status": "proposed",
+  "supersedes": []
+}

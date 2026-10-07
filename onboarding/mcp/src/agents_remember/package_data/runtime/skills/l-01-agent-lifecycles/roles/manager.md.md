@@ -6,7 +6,7 @@
 
 ## Purpose
 
-An optional Manager coordinates one selected master’s leaf owners and evidence at Projects altitude.
+A Manager coordinates one selected master’s leaf owners and evidence at Projects altitude; the Architect’s first delegation for one master is one Manager on that master.
 
 ## Current Contract
 
@@ -14,7 +14,7 @@ Use the supplied sprint/master/requirement/candidate/report references and exact
 
 Start Worker, Reviewer and Curator only under the selected master, retain their actual IDs and send finding-specific repair to the same Worker. Independent review runs when required by task/plan; fix verification preserves its sealed baseline.
 
-Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. A real parent is addressed from the handover; dashboard launch needs none.
+Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the four developer-needed categories plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
 
 ## Conventions
 

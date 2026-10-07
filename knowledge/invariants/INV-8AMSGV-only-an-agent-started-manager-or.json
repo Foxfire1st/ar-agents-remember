@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The real preparation seam and the compiled handover tests prove the narrow condition and every protected role, parent and dashboard case, so no runtime behavior of another role is claimed."
+  },
+  "applicability": "Handover preparation for a role started by another agent through the native role launcher.",
+  "conditions": [
+    "The selected role is Manager or Orchestrator and a starting agent is present."
+  ],
+  "exclusions": [
+    "Every other role, every parentless launch and every dashboard launch, whose two values remain byte-identical.",
+    "Native parent identity, other ownership data, tool grants and capsule digest seals, which are not part of this obligation."
+  ],
+  "id": "INV-8AMSGV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only an agent-started Manager or Orchestrator receives the parent-reporting handover values, developerQuestions routing a developer decision to the parent's agent id with role_message and not ending the turn on it, and ownerRelation naming the parent, the four developer-needed categories and the once-only final report, while every other role, every parentless coordinator and every dashboard start keeps the base sentence byte-for-byte with the actual parent identity, other ownership data and all tool grants unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

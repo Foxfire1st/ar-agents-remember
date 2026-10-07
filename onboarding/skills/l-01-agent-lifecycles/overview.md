@@ -371,7 +371,10 @@ to be written as prose.
 - **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** [35]
 - **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** [36]
 - The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. [37]
-- The prohibition that makes the mounted tool's refusal the carrier's own rule, and the permitted-action line naming the subcommand. [38]
+
+- The permitted-action line naming the subcommand. [38]
+- The prohibition that makes the mounted tool's refusal the carrier's own rule. [56]
+
 - The handoff paragraph both carriers gained, which is what makes the published identity travel with the report. [39]
 - The read route whose declaration the write side now publishes to, restated as current truth in the retrieval carrier. [40]
 - The write plane the carrier invokes, and the publication owner whose result it reads back. [41]
@@ -382,7 +385,7 @@ This route owns the canonical instruction sources and routing metadata for nativ
 
 A native capsule selects one explicit supported role source followed by one applicable operation and injects no shared `core/` block. Projects is an execution workspace, not a registered repository. Manual taskless Architect/System Specialist launches ask only for missing outcome/repository or provider/system concern/report scope and do not synthesize tasks.
 
-Paseo runs agents and delivers their messages. AR’s bound `agents-remember-task` tools retain canonical task, knowledge and paired-Git ownership. Flat coordination is valid, with distinct Worker/Reviewer/Curator agents; larger work may add Manager or Orchestrator. Existing dated corpus measurements remain facts of their frozen candidates and do not measure the current capsule or establish context savings.
+Paseo runs agents and delivers their messages. AR’s bound `agents-remember-task` tools retain canonical task, knowledge and paired-Git ownership. A delegating Architect hands coordination first to one Manager for one master, or to one Orchestrator on the sprint for two or more concurrently worked masters (one Manager per master); direct coordination and a single-master Orchestrator are the developer’s choices. Existing dated corpus measurements remain facts of their frozen candidates and do not measure the current capsule or establish context savings.
 
 ## Hot Path Summary
 
@@ -631,6 +634,7 @@ verification stamp was advanced.
 ## Current native instruction evidence
 
 - Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+
 - Role then operation, inert core and retained vocabulary distinction. [53]
 - Bound intake and preserved converted writer/family duties. [54]
 - Normal full curation and coherent handoff. [55]

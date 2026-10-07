@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-1FAAAK",
+      "invariant": "INV-PEVJ6G",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The router repeats the sender-line reading and the reply-in-own-chat rule for every capsule.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
         "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
         "locator": {
           "end": 20,
@@ -22,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
         "content": "sha256:9dfc4cb5cdd5f0df991472df890fff9e430830b783ea89c0548eef33e905c3b5",
         "locator": {
           "end": 16,
@@ -41,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
         "content": "sha256:bc2a4613a3c8d2ec7a185f64f396cf0de36ce51056c4303264c097ddb30e3042",
         "locator": {
           "end": 12,
@@ -60,7 +79,45 @@
     },
     {
       "anchor": {
-        "blob": "ba41d23fee4e284d324ace6d3df5ec06371d5095",
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 31
+        }
+      },
+      "id": "RLZ-R0YSNZ",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The thin router states the default and both exceptions for any capsule it selects.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-T4ZSC9",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The router carries the narrow parented-coordinator exception that matches the role texts.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "609aadf24387be095287e98658d6230ecadd6143",
         "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
         "locator": {
           "end": 35,
@@ -235,18 +292,17 @@
       ]
     },
     "6": {
-      "note": "Ambient bootstrap compiles and pins one complete architect brief.\n\nAnchor: \"# Template — Architect Brief\"; \"Compiler notes for the launcher\"",
+      "note": "Developer-chosen direct coordination and valid parentless dashboard admission are explicit.\n\nAnchor: `An Architect first delegates coordination to one Manager`",
       "targets": [
         {
           "anchor": {
-            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
-            "content": "sha256:2318204e974451168a633445ec35a71e87abe6655fbf99cd7a0fe28a738af352",
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
             "locator": {
-              "end": 84,
+              "end": 31,
               "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md"
+              "start": 31
+            }
           },
           "kind": "code"
         }

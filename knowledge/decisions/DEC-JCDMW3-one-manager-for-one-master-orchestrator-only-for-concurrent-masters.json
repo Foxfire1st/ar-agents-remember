@@ -1,0 +1,84 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The direction weighed the v1 Orchestrator default and direct Architect coordination as real alternatives, and the choice constrains every later change to the role texts, the router and the manifest."
+  },
+  "alternatives": [
+    {
+      "option": "One Manager is the Architect's coordinator for a single master; an Orchestrator sits above the Managers only when two or more masters are worked on at the same time and starts one Manager per master; the developer may still choose direct coordination or a single-master Orchestrator.",
+      "reason": "A Manager that decides its own master removes the relay that left the Architect unresponsive, while the Orchestrator remains for genuinely concurrent masters.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep MIK-R72@v1's default: the Architect's first delegation is one Orchestrator directly under it for every delegated master.",
+      "reason": "The developer withdrew it after the Orchestrator relayed extensively and the Architect became unresponsive (D57).",
+      "reconsider_when": "A Manager under one master repeatedly cannot keep the work moving without an Orchestrator above it.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep the master line's default: the Architect coordinates directly and inserts no coordinating agent.",
+      "reason": "The Architect coordinated a Manager itself and did not answer the developer (D52); direct coordination stays only as the developer's explicit choice.",
+      "reconsider_when": "The developer chooses direct coordination for a single small leaf and the Architect stays responsive.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Architect, Manager, Orchestrator, planning and coordination texts and the four manifest descriptions state the same default and the same two developer choices.",
+    "A plan delta no longer returns to the agent that started the Manager by default; only the four developer-needed categories and the final report do.",
+    "The default is advice, not a start-permission change; no tool refuses an Orchestrator above a single master."
+  ],
+  "context": "MIK-R72@v1 made an Orchestrator the default for every delegation after the developer's direction D52. In the same run the Orchestrator sent the Architect a dozen ruling requests and notices in two hours (D57), and on 2026-10-05 the Architect coordinated directly and did not answer the developer. On 2026-10-06 the developer named the cause (D66): the Manager passed everything up instead of managing, so an Orchestrator is only needed when two or more masters run at a time.",
+  "decider": "The developer (D52, D57, D66) and the architect's approved MIK-R72@v2 packet; D66 supersedes v1.",
+  "id": "DEC-JCDMW3",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R72",
+        "packet": "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-A6GAKX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-NFV5VJ"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "content": "sha256:f7bdcf594b28fb6ed2bebb3dc0e53d110008bb52ec6537c001d1b941e1f7cc59",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 22
+        },
+        "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72-d66-manager-default",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

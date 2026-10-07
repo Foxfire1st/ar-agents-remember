@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The role text and the closeout operation name the same single actor for the flat paired transaction, and the dedicated wording test proves the kept sentence is present and is not registered as retired wording."
+  },
+  "applicability": "Every Architect run, task-bound or taskless.",
+  "conditions": [
+    "Under delegation the coordinating agent owns the checks and investigations; under developer-chosen direct coordination the Architect assigns them to a leaf's Worker or Reviewer.",
+    "The paired-closeout exception applies only when the developer chose direct coordination and neither a Manager nor an Orchestrator exists, and the existing delegated c-09/c-12 authority permits it."
+  ],
+  "exclusions": [
+    "The paired-closeout exception does not apply to a coordinated run, where the Manager or Orchestrator owns closeout.",
+    "Any other execution step, which the Architect never performs in its own chat."
+  ],
+  "id": "INV-P2WRNQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md SHA256 ec0f8d07443044b6d71c024a314f6771136bb60ed31e7e70a654dc5e13301455; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md; focused wording evidence 164 tests/244 subtests at candidate 598526ac",
+        "L72-MR1-K5: the no-execution rule is universal in the statement, so the scope now holds it for every Architect run and bounds only the paired-closeout exception to the developer-chosen direct-coordination case.",
+        "L72-MR1-K5 R2 final: the stored exclusion 'Every coordinated run, where the Manager or Orchestrator owns closeout.' re-narrowed the whole record; it now names what the paired-closeout exception does not reach."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An Architect runs no test suite, build, failure investigation or landing step in its own chat; its single exception is the developer-chosen direct-coordination case with neither Manager nor Orchestrator, where it calls the existing c-09/c-12 paired closeout itself under already-delegated authority and after independent review and required curation evidence, and starts no Manager for that step alone.",
+  "status": "proposed",
+  "supersedes": []
+}

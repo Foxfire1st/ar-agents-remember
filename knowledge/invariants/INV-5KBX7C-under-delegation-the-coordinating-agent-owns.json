@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The condition is realized in the coordination operation and the Architect role text, and the wording tests pin the exact sentences that assign the loop."
+  },
+  "applicability": "A rejection or a landed-work check inside one master or sprint whose leaf loop is coordinated.",
+  "conditions": [
+    "Under delegation the Manager owns the inner leaf loop; under developer-chosen direct coordination the Architect does.",
+    "The Orchestrator's ladder is aggregate: it verifies Manager deliveries and may inspect supplied diffs for acceptance without taking over the inner loop.",
+    "Family examination: no joint obligation is supported. Basis: The condition assigns the inner leaf loop between the same actors the delegation default already names; it is entailed by the default recorded in FAM-PNH1QS rather than an independent joint promise, so it binds alone at the repair seam."
+  ],
+  "exclusions": [
+    "Independent review and curation seats, which stay distinct agents.",
+    "The paired-Git owners, whose authority the condition does not change."
+  ],
+  "id": "INV-5KBX7C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md SHA256 eb04f14b04f1a4ae5ff255d069300321674351e5d9b3474798fe13edc0d14c68; root adjudication notes/run3/L72-V2-ROUND2-ADJUDICATION.md V2-18; final independent reviewer verdict notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.md",
+        "L72-MR1-K6: the statement and conditions now name the Manager as the inner-loop owner under delegation, the Architect's direct exception, the Orchestrator's aggregate verification and the general follow-through separately. L72-MR1-M1: the authored deliberate no-family basis is carried as the revision's own condition so the dataset distinguishes a family-free obligation from an unexamined one."
+      ],
+      "path": "handoff-stage1b.json"
+    },
+    "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Under delegation the Manager owns one master's inner leaf loop and gives aggregate evidence to its supervisor: it owns the leaf-diff, repair and evidence loop, while the Architect's direct Worker repair and full-diff duties apply only to the developer-chosen direct-coordination case, the Orchestrator verifies Manager deliveries and may inspect supplied actual diffs for its acceptance duty without taking over the loop, and every coordinating agent follows assignments until the work is complete, blocked or a true developer decision is needed instead of stopping after starting a role.",
+  "status": "proposed",
+  "supersedes": []
+}

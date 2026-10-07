@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "OR-R035's recorded worklist basis carries the real alternatives it decided: leaving the size unnamed, the pre-ruling state the packet's Problem describes, and requiring fan-out at every size, against a threshold drawn from the actual worklists."
+  },
+  "alternatives": [
+    {
+      "option": "One deduplicated full-intake list of distinct outstanding memory actions; at 100 or more actionable entries fan out read/search/reference checks one level where the harness supports it, below 100 it is optional, and an unsupported harness works alone and reports the limit; every durable write, semantic judgment, full memory-quality run and the handoff stay with the main Curator.",
+      "reason": "The large passes gain bounded read help without moving any judgment or write, and short passes stay solo.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave the size unnamed and let the Curator judge when to use the helpers.",
+      "reason": "That was the pre-ruling state: the packet's Problem records that no sentence told the Curator when to use them, so a large worklist could be read alone.",
+      "reconsider_when": "The role texts surface a large worklist to the Curator by another means.",
+      "status": "rejected"
+    },
+    {
+      "option": "Require the helpers for every pass regardless of size.",
+      "reason": "The master's own worklists include small passes (49=14, 70=40, 76=71, 75=88) where the solo path is complete; OR-R035 allows fan-out below 100 and requires it at 100 or more.",
+      "reconsider_when": "Real passes below the threshold show hidden read-heavy work that the solo path misses.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Curator role text names the deduplicated list, the 100 threshold, what is handed out and what stays with the main session.",
+    "This very pass reports its own list size and its harness support against that rule."
+  ],
+  "context": "The Curator role already allowed one-level read/search/reference sub-agents but named no size at which to use them. MIK-R72@v2's rule 13 left the number as an Open Truth Gap; the leaf proposed a number from the master's own worklists and the architect ruled it under OR-R035 (recorded 2026-10-06T17:13:11+02:00). OR-R035's basis is the actual full-intake worklists: 51=409, 72=219, 91=127, 39=102, 40=97, 75=88, 76=71, 70=40, 47=31, 49=14.",
+  "decider": "Orchestrator ruling OR-R035 (2026-10-06), carried as MIK-R72@v2 rule 13.",
+  "id": "DEC-MTYDB4",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R72",
+        "packet": "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-208SQT"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/ORCHESTRATOR-RULINGS.md section OR-R035; notes/reports/role-launch/260928-MIK-L72-reviewer-21dd4a07-9cd4-4afd-aba5-ec17a6b4b38a.memory-r1.evidence/sealed-memory-findings.json (L72-MR1-K3); the ruling's own worklist basis is the deliberation record"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72-or-r035-curator-fanout",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

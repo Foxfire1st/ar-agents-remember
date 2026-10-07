@@ -12,9 +12,9 @@ The native Architect owns the developer conversation, semantic requirements and 
 
 Ask only for missing outcome/registered repository and recover current task decisions, approvals, exact requirements and reports before acting on existing work. New requirements are canonical stable-ID/version packets approved before task topology, with one primary revision per leaf.
 
-Coordinate distinct Worker, Reviewer and Curator agents directly for small work; add backend coordinators when scope benefits. Native `role_start` and `role_message` preserve actual agent/report/handover IDs, exact canonical task selection and same-request recovery. Finding-specific repair returns to the same Worker.
+For one master the Architect first starts one Manager on that master; concurrent masters start one Orchestrator that starts one Manager per master; direct coordination and a single-master Orchestrator are the developer’s choices. Native `role_start` and `role_message` preserve actual agent/report/handover IDs, exact canonical task selection and same-request recovery. Finding-specific repair returns to the same Worker.
 
-Briefs/readbacks preserve canonical requirements, relevant invariant families, paired/report roots and evidence class. Read selected task documents with exact supplied arguments. Review the complete candidate, including unattributed files, and rule developer decisions in the own chat.
+Briefs/readbacks preserve canonical requirements, relevant invariant families, paired/report roots and evidence class. Read selected task documents with exact supplied arguments. Under developer-chosen direct coordination, review the complete candidate, including unattributed files; under delegation the Manager owns the leaf-diff and repair loop, and the Architect reads the coordinating agent's rulings record and status file. Rule developer decisions in the own chat.
 
 ## Conventions
 
@@ -30,4 +30,4 @@ No inferred task/repository/parent, self-approval, hidden proxy or duplicate own
 
 | Finding | Anchor | References |
 | --- | --- | --- |
-| Explicit taskless subject, canonical requirements, flat distinct roles, bound identities and authority boundaries. | lines 8-32 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:8-32 |
+| Explicit taskless subject, canonical requirements, one coordinating agent under the Architect, bound identities and authority boundaries. | lines 8-32 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:8-32 |

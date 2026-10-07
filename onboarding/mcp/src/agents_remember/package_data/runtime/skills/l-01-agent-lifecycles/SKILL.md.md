@@ -14,7 +14,7 @@ A capsule contains the explicitly selected `roles/<role>.md` followed by one app
 
 The launcher supports Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Missing or unsupported role/operation or conflicting bindings are reported, not inferred. Projects is an execution location, not a repository identity. Manual taskless Architect and System Specialist launches ask only for missing outcome/repository or concern/report scope.
 
-Paseo runs the agents. AR tools come from the launching build’s `agents-remember-task` server; agent starts and peer messages use `role_start` and `role_message` with actual returned identities. Developer decisions stay in the agent’s own chat. Dashboard starts need no parent. Flat distinct-role ownership is valid; prior approvals survive reconnects and compaction.
+Paseo runs the agents. AR tools come from the launching build’s `agents-remember-task` server; agent starts and peer messages use `role_start` and `role_message` with actual returned identities. Developer decisions stay in the agent’s own chat. Dashboard starts need no parent. An Architect first delegates coordination to one Manager for one master, or one Orchestrator for concurrently worked masters; direct coordination is the developer’s choice. Prior approvals survive reconnects and compaction.
 
 ## Conventions
 
@@ -31,4 +31,4 @@ Restore the same role, operation, task, agent IDs and report from the durable ha
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Explicit role/operation composition and taskless Projects scope. | lines 8-16 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:8-16 |
-| Bound server, actual role identities, flat ownership and recovery/acceptance distinction. | lines 20-35 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:20-35 |
+| Bound server, actual role identities, one coordinating agent under the Architect and recovery/acceptance distinction. | lines 20-35 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md:20-35 |

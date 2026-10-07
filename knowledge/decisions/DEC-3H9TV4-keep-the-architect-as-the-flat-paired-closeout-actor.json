@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The amendment rejected two materially different designs, a terminal-only Manager and an absolute prohibition, before keeping the Architect under existing authority."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the Architect as the actor of the flat paired closeout: under the developer-chosen direct-coordination case with neither Manager nor Orchestrator it calls the existing c-09/c-12 transaction itself, under already-delegated authority and after independent review and required curation evidence, and starts no Manager for that step alone.",
+      "reason": "The unchanged closeout operation names the owning Architect in a flat run, so this is the only actor that leaves the flat path able to land reviewed work.",
+      "status": "chosen"
+    },
+    {
+      "option": "Start a terminal-only Manager for the closeout step even under direct coordination.",
+      "reason": "It contradicts the unchanged closeout operation and the Manager role, and adds a coordinator the developer did not choose.",
+      "reconsider_when": "The developer chooses coordinated closeout, or the closeout operation changes who may run the paired transaction.",
+      "status": "rejected"
+    },
+    {
+      "option": "Forbid the Architect every landing step absolutely, with no exception.",
+      "reason": "The flat path would have no way to land reviewed work and the packet would name no actor for that case.",
+      "reconsider_when": "A later requirement gives the flat paired closeout to another actor.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Architect keeps one execution step and one only; every check and investigation still goes to a role agent.",
+    "The closeout operation stays unchanged and both files name the same actor.",
+    "The sentence is a kept clause and is not registered as retired wording."
+  ],
+  "context": "MIK-R72@v2 as first written kept the sentence that lets a directly coordinating Architect coordinate the paired closeout but forbade the Architect every step of a landing. The independent reviewer's second round (V2-1 with V2-2) showed that no actor remained for the flat paired closeout, because the unchanged closeout operation still names the owning Architect. The architect amended the packet before building.",
+  "decider": "The architect's approved amendment to MIK-R72@v2 (packet SHA eb04f14b), resolving the reviewer's V2-1/V2-2 contradiction.",
+  "id": "DEC-3H9TV4",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R72",
+        "packet": "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-P2WRNQ"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72-amended-direct-closeout-actor",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

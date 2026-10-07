@@ -4,6 +4,25 @@
     {
       "anchor": {
         "blob": "797c78c090a39734d316d12fab86fd41820ab528",
+        "content": "sha256:b6c519a318ad0d8dc83be28af50e49d54421306a428b6ed696a09c0ba98a6736",
+        "locator": {
+          "end": 3,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-DHZW33",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-direct-closeout-exception",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The unchanged closeout operation independently names the owning Architect as the actor of the flat-run paired transaction under existing authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "797c78c090a39734d316d12fab86fd41820ab528",
         "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
         "locator": {
           "end": 7,

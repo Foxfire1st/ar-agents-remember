@@ -132,9 +132,12 @@ The generated route index lists the source files of this route and their cards.
 - Seeded ordering uses its own random generator. [10]
 
 - The curation-doctrine registry and the statements a canonical instruction source must make. [13]
+
 - Canonical skill copies and their harness mirrors are the synchronization owner's. [14]
 
 - The lifecycle loader starts with the canonical-form findings and then validates the catalog against the source tree. [15]
 - The lane loader reports a lane list that is not canonical and compares the declared files with the test modules. [16]
+
 - The registry of retired curation sentences and required statements. [17]
+
 - The refusal that both loaders and the start of a test run give for a file that does not parse. [18]

@@ -12,7 +12,7 @@ This canonical Architect owns the developer conversation, semantic requirements 
 
 ### Logic
 
-For small work, Architect may directly coordinate distinct Worker, Reviewer and Curator agents. Add Orchestrator or Manager when their coordination helps rather than requiring every rung. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
+For work inside one master, the Architect first starts one Manager on that canonical master and hands it the coordination; when two or more masters are worked on at the same time, it first starts one Orchestrator on the selected canonical sprint, which starts one Manager for each master. Direct coordination is the developer-chosen exception, and the developer may also ask for an Orchestrator above a single master. Native starts and peer messages use `role_start`/`role_message` on the bound task server, preserving actual agent, report and handover identities and exact canonical selections. An unknown start is reconciled with its original request ID; finding-specific repair returns to the same Worker.
 
 Briefs and task reads preserve exact requirement revisions, relevant families, paired/report roots and evidence class. Use supplied task-read arguments and the returned canonical document path rather than loading the full hierarchy. Developer decisions remain in the Architect’s own chat. A dashboard-started role needs no parent, and a finished turn is neither independent review, curation, semantic acceptance nor paired-Git publication.
 

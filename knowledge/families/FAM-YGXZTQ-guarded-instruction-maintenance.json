@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Composition preservation alone cannot stop a retired sentence returning, the register alone cannot pin the new sentences, and the wording tests alone cannot show that protected payloads and permissions stayed fixed; only together do they promise that this instruction change cannot silently regress."
+  },
+  "guarantee": "The lifecycle instruction corpus changes only through guarded surfaces: protected composed role and operation text and every tool permission stay byte-identical, the retired-wording register holds only sentences that shipped on named base surfaces with their exact carriers, unique probes and specific current reasons, current coordination and curator sentences are pinned by wording tests, each registered retired sentence reinsertion is proven caught on its own surface, and the Curator's own large-worklist duty is stated in its role text.",
+  "id": "FAM-YGXZTQ",
+  "members": [
+    "INV-CXEEF4",
+    "INV-208SQT",
+    "INV-K5SFG7"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L72-guarded-instruction-maintenance",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles",
+    "mcp/test_support/agents_remember_test_support/testing"
+  ],
+  "schema": "ar-family/v1",
+  "status": "retired",
+  "title": "Guarded instruction maintenance"
+}
