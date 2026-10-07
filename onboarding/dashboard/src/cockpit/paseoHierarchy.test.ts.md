@@ -10,7 +10,7 @@ The suite exercises canonical hierarchy/bridge helpers with injected public SDK 
 
 ## Code Commentary
 
-Host mocks refuse limits above 200 and exercise continuation data, native activity and allowlisted labels. Async Parent tests reject switched callers/relations, preserve split panes and handle roots/missing/archived targets. Replacement snapshots preserve newer/unrelated deltas, reject older loads and release owned resources. Visible DOM candidates are intersected with current SDK IDs.
+Host mocks refuse limits above 200 and exercise continuation data, native activity and allowlisted labels. Async Parent tests reject switched callers/relations, preserve split panes and handle roots/missing/archived targets. Replacement snapshots preserve newer/unrelated deltas, reject older loads and release owned resources. Visible DOM candidates are intersected with current SDK IDs. The D86 cases give the pill gate an unknown live source (no pill) and a known wide selection (pill returns), and the negative pack removes the gate to observe the dead button.
 
 ## Invariants And Boundaries
 

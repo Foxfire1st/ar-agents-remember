@@ -1,0 +1,203 @@
+{
+  "path": "mcp/tests/test_role_report.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:e217e3fb62ff334ccd71eb217da704b3567d0e652fd9a0f841475a35fdc7c5cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_report_of_every_launchable_role_is_read_only"
+        }
+      },
+      "facet": "Reads the deterministic report of every launchable role, task-bound and taskless, and leaves the receipt, report bytes and mtimes unchanged.",
+      "id": "PRF-1THM3M",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+        }
+      },
+      "facet": "An absent report-access alias still serves the canonical recorded file; a retargeted alias receives its distinct refusal.",
+      "id": "PRF-A5F1FJ",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+        }
+      },
+      "facet": "A receipt rewritten to name a sibling, handover or nested file is refused because the served name is launch-derived.",
+      "id": "PRF-E87PQE",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:0ad84a4204797bd64c5299e7f577fb9b29d3dea07b8060d1bdfc062acc346abd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_damaged_receipts_have_a_receipt_specific_refusal"
+        }
+      },
+      "facet": "Malformed, directory, symlink and unreadable receipts answer the report-specific refusal rather than the selection's.",
+      "id": "PRF-MNQQGN",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_report_refusals_are_named"
+        }
+      },
+      "facet": "A missing report, an unreadable one and a recorded path outside the product root each answer their own named refusal.",
+      "id": "PRF-MWJ1GP",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+        "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_signature_and_attempted_path_cannot_select_another_file"
+        }
+      },
+      "facet": "The request model has no path field; a request that tries to carry one cannot select a sibling file.",
+      "id": "PRF-RYPSQ8",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reads the deterministic report of every launchable role, task-bound and taskless, and leaves the receipt, report bytes and mtimes unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:e217e3fb62ff334ccd71eb217da704b3567d0e652fd9a0f841475a35fdc7c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_of_every_launchable_role_is_read_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The request model has no path field; a request that tries to carry one cannot select a sibling file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:35728d3758397ad1426f3b14fcabb076b8cae8d93b80dabbbffe726f703e1bbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_signature_and_attempted_path_cannot_select_another_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing report, an unreadable one and a recorded path outside the product root each answer their own named refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:f702a95c4e5f41c61210ce59a16f86cbbfafe8921dc107e42ecb58650c53c865",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_refusals_are_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A receipt rewritten to name a sibling, handover or nested file is refused because the served name is launch-derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:539d846c6fc7418b2eb0138441eee33b77761fe20c6b2e4eb118102723b3b521",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_receipt_cannot_replace_the_deterministic_report_file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:4d701ed06dd2d974c40b7d2d441a04109483852f05dd0482974d5f2ee7db46d9",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An absent report-access alias still serves the canonical recorded file; a retargeted alias receives its distinct refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c2f4c2c83c4185aa809dbbc332a127fdedf760f",
+            "content": "sha256:6c41b1f0f3c548341041f80e22343c9f309480d1fff1bf9ece05dccff8e9d0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_canonical_report_survives_absent_alias_and_names_a_retarget"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

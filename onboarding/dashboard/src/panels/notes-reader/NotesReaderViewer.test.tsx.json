@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The component under test.\n\nAnchor: \"export const NotesReaderViewer = memo(NotesReaderViewerImpl)\"",
+      "note": "The component under test.\n\nAnchor: \"export const NotesReaderViewer = memo(Reader);\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
-            "content": "sha256:76965dce1b56e8941a748e0e2aeb18312aec47f90b51622b87ef9489d09273c4",
+            "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+            "content": "sha256:bfb17be65e8b1a6843d4bd96e6535360bca70b17e394407885bc8bee06c47933",
             "locator": {
-              "end": 309,
+              "end": 319,
               "kind": "line_range",
-              "start": 309
+              "start": 319
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },
@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09cd9bc85199e65e5fd724752e1447a8508abf81",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:1d0bc09667f1531904e8b51c909bf3252556f5752ef2ebaca55a7d13931006d4",
             "locator": {
-              "end": 887,
+              "end": 884,
               "kind": "line_range",
-              "start": 887
+              "start": 884
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e501409efeb6cd92559d312b46f440503133ecde",
+            "blob": "1a0ecbf477787920aacc7c96e5e3e0c6bfa2fc95",
             "content": "sha256:36be73f4e65fee9885d875e2b2b8fa1edb7912c7e3a3e6bec73cfc3966806e9b",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "e501409efeb6cd92559d312b46f440503133ecde",
+            "blob": "1a0ecbf477787920aacc7c96e5e3e0c6bfa2fc95",
             "content": "sha256:6fd5ea81b89ee002d9c75bb18e71fb89937efd0c13d2deee7bd3da958e3ede07",
             "locator": {
               "kind": "symbol",

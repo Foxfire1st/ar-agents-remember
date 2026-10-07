@@ -33,6 +33,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "Projects is first and chats group by validated canonical sprint/master/task references and current task documents, independently of native workspace membership or parent ancestry.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

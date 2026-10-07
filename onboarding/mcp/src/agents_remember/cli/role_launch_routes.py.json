@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
         "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
         "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
         "content": "sha256:d467bdf575325d5addc3f6502fa3aa2d3506129e5b2f8e4f4fb833869672785f",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+        "content": "sha256:ec908983843fd8147d73603fe8b6fbc340c8ed518bdcc25e0684c32705f0fece",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_role_launch_routes"
+        }
+      },
+      "id": "RLZ-D8B07W",
+      "invariant": "INV-TA2JW5",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4a",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Registers the one new route beside the existing role-launch routes, so the launcher's route set and its tests stay one place.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
         "content": "sha256:5bf0d2e702aad9bcd78ee1f627e0399d00b00bae4f959caebfa4dca4bf5a2d86",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+        "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
         "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
         "locator": {
           "kind": "symbol",
@@ -94,15 +112,14 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of register_role_launch_routes supporting the stated file behavior.",
+      "note": "Frozen implementation of register_role_launch_routes supporting the stated file behavior.\n\nAnchor: `register_role_launch_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
-            "content": "sha256:6b404e94c6a35f97b75a17ffe3a8ba4c844a0109282ea5ee2665be2af70da3b8",
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+            "content": "sha256:ce3aebe35e50398beb8ad777591f28f958327056fb4948907261c2d88861dc4e",
             "locator": {
-              "kind": "symbol",
-              "name": "register_role_launch_routes"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -150,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
             "content": "sha256:d467bdf575325d5addc3f6502fa3aa2d3506129e5b2f8e4f4fb833869672785f",
             "locator": {
               "kind": "symbol",
@@ -166,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
             "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
             "locator": {
               "kind": "symbol",
@@ -182,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4ba1027f59c61a53bbf4d873c7cd4ff712a209e5",
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
             "content": "sha256:5bf0d2e702aad9bcd78ee1f627e0399d00b00bae4f959caebfa4dca4bf5a2d86",
             "locator": {
               "kind": "symbol",

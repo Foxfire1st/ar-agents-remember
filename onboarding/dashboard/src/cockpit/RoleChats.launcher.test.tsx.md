@@ -10,7 +10,7 @@ The suite checks catalog-supported launcher selection, explicit options states a
 
 ## Code Commentary
 
-Unavailable defaults disable Start until an offered override is selected; model-list failure remains visible without inventing a model. A launch lock shows launch-in-progress and rereads, while other refusals stay errors. Fast remains on the role agent across supported model overrides; an unsupported tier/model disables Start, and another agent displays provider default.
+Unavailable defaults disable Start until an offered override is selected; model-list failure remains visible without inventing a model. A launch lock rereads by itself without an ordinary status line — the case asserts no status or alert before and after the reread — while other refusals stay errors until an explicit successful action clears them (MIK-R75 rule 3). Fast remains on the role agent across supported model overrides; an unsupported tier/model disables Start, and another agent displays provider default.
 
 ## Invariants And Boundaries
 

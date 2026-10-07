@@ -21,6 +21,11 @@ L23 re-tagged every existing render with `kind="notes"` and added a
 open-path `requirements/<path>`) and renders the exact selected packet's markdown
 over the real `/api/requirements/read` URL.
 
+## Role-Report Kind Case
+
+The suite also renders the `role-report` kind and pins that the supplied report's body, file name and
+truncation notice appear in the shared pane with no rail (MIK-R75 rule 4).
+
 ## Code Commentary
 
 ### 260707-HFX2-L13 Fetch-Fixture Compatibility

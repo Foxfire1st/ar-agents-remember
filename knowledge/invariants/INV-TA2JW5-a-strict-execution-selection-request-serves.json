@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Today's readers refuse a role's report: the file routes read code roots only and the notes reader admits a task's notes, not the report of a role without a task. The one route keeps the report reachable without opening a caller-selected path, and its focused tests prove the deterministic name, the confinement, the named refusals and the bounded read-only answer."
+  },
+  "applicability": "A role execution the launcher has selected: every role the launcher can start, task-bound or taskless.",
+  "conditions": [
+    "The request is addressed by the execution/selection and its recorded request ID; the route has no path parameter.",
+    "Only the report file the launch recorded for that exact execution is served, read only, from the product's own report root.",
+    "A missing report, an unreadable report and a recorded path outside the root are each refused by name, and a retargeted access alias keeps its own refusal."
+  ],
+  "exclusions": [
+    "No other file of the reports folder and no directory listing is served.",
+    "The route does not author, move or delete a report, and it does not decide acceptance.",
+    "A caller-fabricated path cannot reach the route; the attempt is one of the review's refusal cases."
+  ],
+  "id": "INV-TA2JW5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/python-focused-current.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/sealed-evidence-inspection.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 4a",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A strict execution/selection request serves only its deterministic recorded report within the product root, read only and bounded, with named refusals.",
+  "status": "proposed",
+  "supersedes": []
+}

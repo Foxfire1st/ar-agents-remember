@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "At width 390 the host offers no live front-agent value, so the old pill was a control that could not act — the developer's own report. Gating the pill on the same value the bridge checks removes every dead button while keeping the wide-layout navigation; the worker's witnesses at both widths stand behind it."
+  },
+  "applicability": "The 'Back to parent' composer pill the plugin draws in the host's message box.",
+  "conditions": [
+    "The pill is offered only while the plugin knows which agent is in front by the same live value the unchanged bridge check uses.",
+    "When the value becomes known at the wide layout the pill comes back; when it is unknown at any width the pill is removed."
+  ],
+  "exclusions": [
+    "The title, a value remembered from an earlier moment and opening the picker are never sources for the agent in front.",
+    "At the narrow layout the host's own list is the navigation; no command, second route or dashboard element is added for it.",
+    "The bridge's check and the messages between plugin and dashboard are unchanged."
+  ],
+  "id": "INV-XQMXT2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/negative-present-before.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/native-and-reuse-qualification.json; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/browser.json",
+        "notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/ (D86 final witness and negative tests)"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 9a",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Parent is offered only for the same live known-source value used by the unchanged bridge; unknown source removes it at every width and known wide selection restores it.",
+  "status": "proposed",
+  "supersedes": []
+}

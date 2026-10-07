@@ -4,6 +4,24 @@
     {
       "anchor": {
         "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
+        "content": "sha256:755f3acacad3a8d7c322e64f295b45bea03ac9770e49576024b74fa5eefc1fda",
+        "locator": {
+          "kind": "symbol",
+          "name": "_public_execution"
+        }
+      },
+      "id": "RLZ-DDBBDE",
+      "invariant": "INV-72PQ2M",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 6",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The projection the result route returns keeps the last reply, the report record and the capability fields, so other readers of the route see exactly what they saw before.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",

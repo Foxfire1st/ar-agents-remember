@@ -3,8 +3,170 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ce4c933479dbe1f7d31b34450ff93cf46ec8b5fc",
-        "content": "sha256:afcd14ec7564354e5b34c3c31559845e5a891620147c104bc97b75b1f93369d5",
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:a0dac7182f6d4f1f2a1b5f1f308fb65d3106ab9c08a9d7ec73eba3736a0ea26d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-2RCSQR",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 1",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's own grid is where the strip is composed: it held the state line, the capability summary, the reply block and the report path under the controls, and it is the element whose content rule 1 constrains.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
+        "locator": {
+          "kind": "symbol",
+          "name": "openExecutionReport"
+        }
+      },
+      "id": "RLZ-6P22KG",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Turns a report that cannot be opened into the same one line instead of a silent failure or raw runtime text.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-A0VKEA",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Owns the failure sources the one line combines — a refused start, an unreachable host, an unresolved launch, the launch lock, a failed options read and a failed report read — and clears the line when the condition ends or the next explicit action succeeds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:1f966b049e973dd3aef9da65a221739f8cdebae4b0624f10f24ff59615bd34d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "refreshResult"
+        }
+      },
+      "id": "RLZ-DAE56R",
+      "invariant": "INV-DH5NRM",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Result is the one action: it re-reads the selected execution and then opens the report, so the report path is no longer a printed line of its own.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:788685a38a6293920b5237ca3823825f4f6c90d039b3238a80767b46aadb5905",
+        "locator": {
+          "kind": "symbol",
+          "name": "dispatch"
+        }
+      },
+      "id": "RLZ-GMD7W4",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Turns a refused dispatch into the sticky one-line message naming the HTTP refusal, beside the receipt the launcher keeps for that scope.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:a0dac7182f6d4f1f2a1b5f1f308fb65d3106ab9c08a9d7ec73eba3736a0ea26d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-MKCYCH",
+      "invariant": "INV-WEZ24E",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 7",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's row no longer begins with the Hide/Show-navigation button; its first control is the role selector.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
+        "locator": {
+          "kind": "symbol",
+          "name": "openExecutionReport"
+        }
+      },
+      "id": "RLZ-N2R22B",
+      "invariant": "INV-DH5NRM",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Fetches the recorded report through the selection-addressed call and hands it to the shared reader; a report that is not written or cannot be read lands in rule 3's line.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:9efe1a22068647d8cc9c4db6fa9076ff5720c3efadb37ad3fecccbec069f5a72",
+        "locator": {
+          "kind": "symbol",
+          "name": "refreshOptions"
+        }
+      },
+      "id": "RLZ-N8EDE3",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "A successful explicit options retry clears the held report error, so the line ends with the condition it named.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+        "locator": {
+          "kind": "symbol",
+          "name": "roleLauncherGrid"
+        }
+      },
+      "id": "RLZ-TNTSC0",
+      "invariant": "INV-43CXH6",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 2",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The grid carries the row of controls and, after the change, only the failure line: its height no longer follows the length of an answer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -16,8 +178,62 @@
         "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Owns the initially open navigation boolean and hands its controlled toggle to the launcher and its value to the existing frame.",
+      "rationale": "Owns the persistent pane and its frame generation: the report takeover hides the pane instead of replacing the frame, so the same native chat document survives opening and closing a report; the removed launcher navigation toggle is no longer part of this claim.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:3f4d0444427aa3c7115cf85b5b81ab66eb1bf32a6916d07eb3182e39fe1c19cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "fetchExecutionResult"
+        }
+      },
+      "id": "RLZ-Y3GC40",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Keeps the last scoped failure receipt so the line survives the automatic rereads and is cleared only by an explicit successful action, not by a background read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-YGH2ER",
+      "invariant": "INV-EFDE52",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 5",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The chat pane stays mounted under the report takeover, so closing the reader returns to the same frame element with its content.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+        "content": "sha256:1f966b049e973dd3aef9da65a221739f8cdebae4b0624f10f24ff59615bd34d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "refreshResult"
+        }
+      },
+      "id": "RLZ-YZHZKV",
+      "invariant": "INV-EFDE52",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 5",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The same handler keeps its base behavior — re-read the selected execution, refresh capability data and steer the mounted frame — and only then opens the shared reader.",
+      "role": "presentation"
     }
   ],
   "references": {},

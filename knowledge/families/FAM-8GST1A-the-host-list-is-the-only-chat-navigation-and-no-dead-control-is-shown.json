@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Removing the dashboard's sidebar without ending the plugin's load-time collapse would leave the host's list closed; ending the collapse without a one-time migration would keep old stored 'closed' state forever; and keeping the Parent pill where the host gives no live value would leave a control that cannot act. The members together promise one navigation that behaves and one that never lies."
+  },
+  "guarantee": "The dashboard draws no chat navigation of its own; the host's list owns opening, closing and remembering its state on the Chats page, and the only navigation the plugin still offers is the Parent control for a chat whose live front value the unchanged bridge can check, so no control is shown that cannot act.",
+  "id": "FAM-8GST1A",
+  "members": [
+    "INV-WEZ24E",
+    "INV-7QV5CQ",
+    "INV-STRQX4",
+    "INV-XQMXT2",
+    "INV-QS9SRX"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L75-the-host-list-is-the-only-chat-navigation",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "mcp/src/agents_remember/package_data/paseo_plugin/client"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The host's list is the only chat navigation and no dead control is shown"
+}

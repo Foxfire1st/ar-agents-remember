@@ -4,15 +4,16 @@
       "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "dashboard/src/cockpit/Cockpit.tsx keeps the role pane mounted, RoleChats.tsx owns the navigation toggle, PaseoChatFrame.tsx retains the iframe, and paseoFrameControl.ts steers ready-channel changes, preventing view or sidebar changes from discarding the in-progress native chat document and interaction state."
+    "justification": "dashboard/src/cockpit/Cockpit.tsx keeps the role pane mounted, PaseoChatFrame.tsx retains the iframe, and paseoFrameControl.ts steers ready-channel changes, preventing view switches and result reads from discarding the in-progress native chat document and interaction state. The launcher-owned navigation toggle this justification used to name is removed by rule 7 and is no longer part of the claim."
   },
-  "applicability": "Normal dashboard view switches, launcher navigation visibility toggles and execution changes while the embedded control channel is ready.",
+  "applicability": "Normal dashboard view switches, result reads and ready-channel execution changes while the embedded control channel is ready.",
   "conditions": [
     "The pane remains under the existing hidden persistent ViewLayer.",
     "The frame descriptor and frame generation remain unchanged."
   ],
   "exclusions": [
     "Explicit Retry and the existing documented 10-second unavailable-control URL path may create a new frame generation.",
+    "The dashboard's removed sidebar and its launcher button are not navigation of this obligation (rules 7 to 10); the host's list and the frame's ready channel are.",
     "Preserved DOM identity does not certify every native application state or unrelated session/PTY path."
   ],
   "id": "INV-D0QATN",
@@ -32,9 +33,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Chats directly hosts one persistent Role chats pane whose launcher-owned navigation toggle and ready-channel agent navigation retain the mounted native frame across chrome changes and dashboard view switches.",
+  "statement": "Chats directly hosts one persistent Role chats pane whose mounted native frame and ready-channel agent-display steering keep their DOM identity and interaction state across dashboard view switches and result reads.",
   "status": "proposed",
   "supersedes": []
 }

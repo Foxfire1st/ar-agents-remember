@@ -1,21 +1,19 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts transports native observations, dashboard/src/cockpit/paseoFrameModel.ts validates them, and PaseoNavigation.tsx presents their explicit precedence, preventing native Idle or finished attention from being falsely presented as AR task or review acceptance."
+    "justification": "The snapshot is the input the unchanged bridge checks a Parent target against and the consumer MIK-R95 plans; if the plugin stopped publishing it while live, or published a different shape, the Parent control would dead-end or mis-navigate and a consumer would build on something no live embed updates."
   },
-  "applicability": "Non-archived catalog actor rows rendered by the external AR navigation sidebar.",
+  "applicability": "The hierarchy snapshot the embedded plugin publishes for its consumers: the Parent composer check today, and the document-frame consumer MIK-R95 plans.",
   "conditions": [
-    "Provider/activity values pass the exact normalized hierarchy protocol.",
-    "The most recent usable catalog drives the row."
+    "The snapshot is published only while the embed is live; a catalog failure is posted as the snapshot's own unavailable message.",
+    "Subscribed project, agent and workspace updates are folded into the latest usable snapshot."
   ],
   "exclusions": [
+    "The dashboard renders no sidebar or activity cues after rules 7 to 10 and no longer parses this snapshot.",
     "Native idle, reply-ready and Closed are host activity observations, not semantic task/review acceptance.",
-    "Busy/input/error/closed fixtures prove rendering branches, not production SDK transitions.",
-    "Catalog failure is an explicit unavailable condition rather than a fresh live status observation.",
-    "The provider glyph path does not claim SVG-provider support or motion/browser qualification."
+    "Whether the plugin goes on posting the snapshot is settled by MIK-R95, not here."
   ],
   "id": "INV-E4TSZB",
   "origin": {
@@ -33,9 +31,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Sidebar harness and activity cues derive from validated native provider, status, permission, attention and availability fields while preserving the selected clickable actor row; native idle carries no task-acceptance verdict.",
+  "statement": "The plugin projects live native project, workspace and agent fields (provider, status, pending permissions, attention, availability) into one hierarchy snapshot that a live embed publishes, and the snapshot's native activity is an observation rather than a task or review acceptance verdict.",
   "status": "proposed",
   "supersedes": []
 }

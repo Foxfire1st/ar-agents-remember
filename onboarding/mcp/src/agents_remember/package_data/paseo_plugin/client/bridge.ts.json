@@ -22,6 +22,24 @@
     {
       "anchor": {
         "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+        "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-9G4ASB",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The bridge keeps checking the Parent button's target against the posted snapshot; rule 7 changed no byte of it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",

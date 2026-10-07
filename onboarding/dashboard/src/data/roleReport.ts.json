@@ -1,0 +1,72 @@
+{
+  "path": "dashboard/src/data/roleReport.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+        "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
+        "locator": {
+          "kind": "symbol",
+          "name": "readRoleReport"
+        }
+      },
+      "id": "RLZ-6H1GF1",
+      "invariant": "INV-DH5NRM",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 4",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The one dashboard call to the report route; its readable operation-prefixed errors keep raw parser or network text off the failure line.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The one dashboard call to the report route; readable operation-prefixed errors keep raw parser or network text off the launcher's failure line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+            "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
+            "locator": {
+              "kind": "symbol",
+              "name": "readRoleReport"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+            "content": "sha256:636b023e26d13b3da34f834a5e869bfccfb80d27231a0c3bcbb534c1582b3827",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A report read failure reaches the launcher as a readable line instead of `[object Object]`, a JSON parse error or `Failed to fetch`.\n\nAnchor: `the report could not be opened`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3c4c7e42530bb97b60c51c944da3b72b4e7394b",
+            "content": "sha256:11a9083f74e6b3e3b1140c1a89aa23dfbc93529150531817604726c5f73b918b",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

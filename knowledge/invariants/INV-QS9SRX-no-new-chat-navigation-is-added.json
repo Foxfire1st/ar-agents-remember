@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Rule 7 removes navigation code; without rule 10 a later change could rebuild a parallel route to a chat 'for convenience' and recreate the duplication the developer rejected. The rule is a member of the host-list navigation family."
+  },
+  "applicability": "Every dashboard surface that could link to a certain agent's chat or build navigation of its own.",
+  "conditions": [
+    "The launcher's execution steering (show the displayed execution's agent) keeps working.",
+    "A link that works without the removed code stays untouched; one that needed it goes with it."
+  ],
+  "exclusions": [
+    "No new link, list, route or command is built so that an agent can be reached from another page.",
+    "The highlight composer's switch to the Chats view after a selection is not such a link and stays."
+  ],
+  "id": "INV-QS9SRX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-task-notes.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/route-D-current.md"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 10",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No new chat navigation is added; existing execution steering and the Cockpit highlight transition remain.",
+  "status": "proposed",
+  "supersedes": []
+}

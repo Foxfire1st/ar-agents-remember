@@ -1,13 +1,33 @@
 {
   "path": "mcp/tests/test-evidence-lanes.toml",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
+        "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+        "locator": {
+          "end": 262,
+          "kind": "line_range",
+          "start": 262
+        }
+      },
+      "id": "RLZ-ZTDYFT",
+      "invariant": "INV-0H8WBQ",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1-R1-03-root-repin",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The unit-regression lane row that puts the new module in the population the governance checks run over.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The schema version, the one comment and the head of the `[files]` table.",
       "targets": [
         {
           "anchor": {
-            "blob": "22f40096b6e5ed12895210b80d29ea239a9488d3",
+            "blob": "963055bc10427dbe3f3eb74af19f044f3872d2ce",
             "content": "sha256:730f9959b326bdb219398c79ea05da0cd0003966ffeb3a37d298adc7af24d5f4",
             "locator": {
               "end": 5,

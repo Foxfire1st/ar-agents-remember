@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9404cfc38eda87215f107b0a12318bf3e110ca1e",
+        "blob": "d93ddb1f6f385bcc76a5bf6685670089219de695",
         "content": "sha256:d4ef84d84c3beb6f973bed6216e5c941b3bc424018574c20530beeb27e5c7683",
         "locator": {
           "kind": "symbol",
@@ -17,6 +17,24 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "Separates the look a page started with from later shared-storage writes before it attributes future standalone app writes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d93ddb1f6f385bcc76a5bf6685670089219de695",
+        "content": "sha256:441fa51c8cd9a63f96ad3c9bed8c0d6520fa4991b50ad016fdd4a9839c9e700f",
+        "locator": {
+          "kind": "symbol",
+          "name": "bootstrapEmbed"
+        }
+      },
+      "id": "RLZ-TZ0Y3A",
+      "invariant": "INV-7QV5CQ",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 8",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "A frame load calls the migration instead of closing the list; the host's own stored state decides what the user sees.",
       "role": "enforcement"
     }
   ],

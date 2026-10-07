@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Restoring the old pin, dropping the consumer and recomputing the digest were all live; the choice fixes how the catalog's measured ownership may be changed."
+  },
+  "alternatives": [
+    {
+      "option": "Add the consumer row to the lifecycle catalog and to its lane population, and recompute the measured catalog digest from the R51 source-derived ownership, keeping 19 contracts and 83 artifacts and every ownership assertion.",
+      "reason": "The catalog is consumer-registered, so the new module must declare itself; the digest is a measured artifact of that registration and must be computed again, not copied.",
+      "status": "chosen"
+    },
+    {
+      "option": "Drop the new module from the catalog instead, since the report test is new.",
+      "reason": "An unregistered consumer makes the ownership checks blind to the leaf's own new test and was exactly the first governance failure.",
+      "reconsider_when": "The module stops existing.",
+      "status": "rejected"
+    },
+    {
+      "option": "Restore the old digest value or edit the catalog row's position to keep the pin.",
+      "reason": "The old digest names a superseded catalog; forcing it back would keep the checks green on a lie. The R51 owner computes ownership, not an obsolete static pin.",
+      "reconsider_when": "MIK-R51's computed ownership is replaced by another catalog owner.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The unit-regression lane and the lifecycle catalog both list the new module.",
+    "The measured digest equals the source-derived ownership of 19 contracts and 83 artifacts at the repin; those figures are the census of that moment, and later catalog changes are reconciled by the R51 computed owner, not by a stored static pin.",
+    "The superseded digest and the old line position remain historical observations only."
+  ],
+  "context": "Registering the new report-test module in the governed evidence lifecycle catalog changed the catalog's bytes, and the leaf's own static digest pin in the ownership helper no longer matched. The review found the governance tests red on both counts; the owner ruled a scoped correction.",
+  "decider": "Root owner ruling OR-R038 (2026-10-06), delivered in the retained worker's chat and verified by the current reviewer's governance run.",
+  "id": "DEC-4E3DCA",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-0H8WBQ"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R75",
+        "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R51",
+        "packet": "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l75-ar/task-reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/repin-and-sandbox-20261006/consumer-row-mutation.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1-R1-03-root-repin",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

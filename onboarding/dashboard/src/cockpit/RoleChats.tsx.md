@@ -10,11 +10,11 @@ RoleChatsPane owns canonical launcher intent, current role/document/request stat
 
 ## Code Commentary
 
-One initially-open navigation boolean controls the first launcher button and outside-frame rail. Canonical scope and request identity gate async options/results. Taskless active request and saved retry selection survive in tab storage; result/dispatch receipts drive frame targets and backend status/report/reply fields. Retry reuses the saved request; Revive uses the selected backend capability. Fast/provider-default disclosure keeps tier separate from effort.
+The launcher is its row of controls: no execution, reply or report-path prose is rendered under them, and one failure line (a refused or unresolved start, an unreachable host, a failed options/catalog/report action, the launch lock) is the only text there. Canonical scope and request identity gate async options/results. Taskless active request and saved retry selection survive in tab storage; receipts drive frame targets and backend status/report fields. Result re-reads the execution, refreshes capabilities, steers the frame and opens the recorded report in the shared reader; the pane is hidden under the report takeover so the frame survives. Retry reuses the saved request; Revive uses the selected backend capability. Fast/provider-default disclosure keeps tier separate from effort.
 
 ## Invariants And Boundaries
 
-Native tabs and launch intent are separate authorities. Unknown request state retains identity, and refused dispatch remains visible through refresh. Completed host status and report existence are not semantic acceptance.
+Native tabs and launch intent are separate authorities. Unknown request state retains its actionable line, and a refused dispatch stays visible through automatic reads until an explicit successful action. Completed host status and report existence are not semantic acceptance. The dashboard draws no chat navigation of its own (MIK-R75 rules 7 to 10); the Parent pill gate belongs to the plugin, not this pane.
 
 ## Evidence
 
@@ -22,7 +22,7 @@ The current source and test assertions below establish the documented ownership;
 
 | Finding | Anchor | Source at frozen tree |
 | --- | --- | --- |
-| Current source owner or exact assertion described above. | `RoleChatsPane` | `dashboard/src/cockpit/RoleChats.tsx:546-1077` |
+| Current source owner or exact assertion described above. | `RoleChatsPane` | `dashboard/src/cockpit/RoleChats.tsx:513-1071` |
 | Current source owner or exact assertion described above. | `fetchExecutionResult` | `dashboard/src/cockpit/RoleChats.tsx:773-803` |
 | Current source owner or exact assertion described above. | `dispatch` | `dashboard/src/cockpit/RoleChats.tsx:890-920` |
 | The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. | `directly shows one persistent Role chats pane without an old-chat selector` | `dashboard/src/cockpit/Cockpit.test.tsx:768-798` |

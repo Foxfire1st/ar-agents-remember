@@ -670,12 +670,12 @@
       ]
     },
     "35": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The route's Role-chats pane owner.\n\nAnchor: `RoleChatsPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "ce4c933479dbe1f7d31b34450ff93cf46ec8b5fc",
-            "content": "sha256:4ce3c8c56a142ea582fba679519b1e4a87730c59ab7a7f1717826501b6c11c25",
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:b84cd18d60e211a928de06d9e470ce0e89264133005810cbb637fc8d260e2229",
             "locator": {
               "kind": "file"
             },
@@ -686,32 +686,16 @@
       ]
     },
     "36": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The route's embedded chat frame.\n\nAnchor: `PaseoChatFrame`",
       "targets": [
         {
           "anchor": {
-            "blob": "938d34d0a3991aa37925eac157daada7619620aa",
-            "content": "sha256:651751e8672fcbb6328110b1bc1c1633f2057cc3de6bae28a492e5b852afb110",
+            "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+            "content": "sha256:2e9a16349a3b29dad9b87266f44347f4dc07d7d1ec218600ad5d6d13b7e42638",
             "locator": {
               "kind": "file"
             },
             "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b97d6dab0d489d79176670d8103d5b1722f67f19",
-            "content": "sha256:531a26139eddde1c7dca9a243a7bb71f601e0f7bbf2df32390da7b2f3842fa07",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "dashboard/src/cockpit/paseoNavigationModel.ts"
           },
           "kind": "code"
         }

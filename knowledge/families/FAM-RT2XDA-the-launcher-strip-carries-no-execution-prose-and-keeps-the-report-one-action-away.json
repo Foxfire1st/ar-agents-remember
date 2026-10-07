@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Removing the prose alone would hide failures and print no path to the report; keeping a failure line alone still leaves the report unreachable; opening the report alone does not keep the strip free of reply text or its height constant. Only together do they keep the developer-visible defect gone while the report and the failures remain reachable."
+  },
+  "guarantee": "The role launcher is its row of controls: it keeps one height whatever an agent answers, any failure still appears as one line that ends when the condition does, and the report of the selected execution stays one action away through Result in the dashboard's existing reader.",
+  "id": "FAM-RT2XDA",
+  "members": [
+    "INV-6SGHBB",
+    "INV-43CXH6",
+    "INV-C7AT8R",
+    "INV-DH5NRM",
+    "INV-TA2JW5",
+    "INV-EFDE52"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L75-launcher-strip-carries-no-execution-prose",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/cockpit",
+    "dashboard/src/panels/notes-reader",
+    "dashboard/src/data",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The launcher strip carries no execution prose and keeps the report one action away"
+}

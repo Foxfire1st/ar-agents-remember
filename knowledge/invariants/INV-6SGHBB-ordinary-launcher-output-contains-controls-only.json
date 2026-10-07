@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The strip and the failure-line component together realize the rule. The worker reported the duplicated prose as the cause of the developer's report — the same answer rendered in the strip and in the chat directly below it, with the strip's scroll block taken for a rendering fault — so removing the text removes both the duplication and the false fault."
+  },
+  "applicability": "The ordinary role launcher bar above the chat in the dashboard's Role chats pane.",
+  "conditions": [
+    "The bar keeps its row of controls: role, agent, model, effort, Start, Result, Refresh and, where the backend allows it, Revive.",
+    "The one failure line of rule 3 and the Result-opened report of rule 4 are the only text and the only report access the strip offers."
+  ],
+  "exclusions": [
+    "The chat frame and the messages it shows are outside this obligation.",
+    "A host-side rendering fault inside the embedded frame is not text under the launcher's controls.",
+    "The removed reply text is not re-offered as a shortened line, a tooltip, an aria-description or a collapsed panel."
+  ],
+  "id": "INV-6SGHBB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/navigation-extension-20261006/browser-final/browser.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 1",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Ordinary launcher output contains controls only, without execution, reply, capability-summary or report-path prose.",
+  "status": "proposed",
+  "supersedes": []
+}

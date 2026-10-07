@@ -144,12 +144,13 @@ The cockpit composes projected task and lifecycle state, while `data/` owns serv
 
 ## Current native Role Chats route
 
-Chats directly mounts one persistent RoleChats pane/Paseo iframe, with externally controlled AR navigation based on canonical sprint/master/task groups, actual provider identities and visible native selection/activity. View switches and the inline navigation toggle retain the frame. Parent follows the current native child and its SDK parent/workspace relation separately from AR grouping. Dynamic agent/model/effort/service-tier validation and default/override disclosure retain requested intent separately from observed host values. Historical hosted-session routes elsewhere keep their own scope.
+Chats directly mounts one persistent RoleChats pane/Paseo iframe. The dashboard draws no chat navigation of its own (MIK-R75 rules 7 to 10): the host's own list is the navigation, view switches and result reads retain the mounted frame, and the launcher's strip shows only its controls plus one failure line. The plugin's Parent control follows the current native child and its SDK parent/workspace relation, offered only while the live front value is known. Dynamic agent/model/effort/service-tier validation and default/override disclosure retain requested intent separately from observed host values. Historical hosted-session routes elsewhere keep their own scope.
 
 - Current imported source owns this scoped route boundary. [34]
-- Current imported source owns this scoped route boundary. [35]
-- Current imported source owns this scoped route boundary. [36]
-- Current imported source owns this scoped route boundary. [37]
+
+- The route's Role-chats pane owner. [35]
+- The route's embedded chat frame. [36]
+
 ## L23 Lifecycle Operation Projection
 
 Operations now receives a task-addressed lifecycle-operation projection for closeout and

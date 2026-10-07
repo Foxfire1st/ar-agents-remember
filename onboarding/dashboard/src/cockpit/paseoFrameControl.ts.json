@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
-        "content": "sha256:fd931b00e1c2950a9f95673864b81d09f9b65a3ec4f5b5c4276d085a15aa5dce",
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "content": "sha256:3aba7b6e888d4c3d1e2d8306354b7d5660c5090fef0b269b44abd2fdb09133cd",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
         "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
-        "content": "sha256:39ddd04e63f089f607434a217dc1e241292c402c6cef1bf87f3c62c2388c7986",
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
         "locator": {
           "kind": "symbol",
           "name": "onMessage"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -71,6 +71,42 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "Requires the configured frame origin and its current contentWindow before interpreting plugin protocol messages.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+        "locator": {
+          "kind": "symbol",
+          "name": "display"
+        }
+      },
+      "id": "RLZ-KJHW38",
+      "invariant": "INV-QS9SRX",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 10",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's own steering stays: the frame is shown the execution the launcher displays, and no new navigation is built around it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+        "locator": {
+          "kind": "symbol",
+          "name": "onMessage"
+        }
+      },
+      "id": "RLZ-N3QWTS",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The message switch keeps the selection and navigation-error kinds and drops the hierarchy/hierarchy-error handling that only fed the removed sidebar.",
       "role": "enforcement"
     }
   ],

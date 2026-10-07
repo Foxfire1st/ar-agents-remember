@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "deeb695a7236219a48483dd0784ee75b1cd92585",
+            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
             "content": "sha256:6709cd8234c9870160cefe5a0795be12a51f973c508540ef9856dabe3a143c7c",
             "locator": {
               "kind": "symbol",
@@ -41,24 +41,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
-            "content": "sha256:cefcb52f18bd2b4b756bc47352a5ef1045a542cf63d80cdb01510c40dd2e87ea",
+            "blob": "da6b1dad40f634e0d0a7ab66ecf966af32e721e7",
+            "content": "sha256:6e1beca71f4ce111722d7e1e62f302c9fe2757b9bc6fa7964cf943357c36e472",
             "locator": {
               "kind": "symbol",
               "name": "NotesReaderViewerImpl"
-            },
-            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6fe0caf57f7ac45f1e37530a4f8f90edfa30b4eb",
-            "content": "sha256:3cbb4a445b04641d68b0d35216db6afda01bb7638827c74a76ab45c88485e574",
-            "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 234
             },
             "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
           },

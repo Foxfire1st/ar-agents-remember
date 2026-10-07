@@ -177,12 +177,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6208bb42514fd6584705205c47f578e29b72041",
+            "blob": "f3dc3eebd9399f47e6859148c150e98949387766",
             "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
             "locator": {
-              "end": 479,
+              "end": 480,
               "kind": "line_range",
-              "start": 448
+              "start": 449
             },
             "path": "mcp/tests/test_previous_host_removed.py"
           },

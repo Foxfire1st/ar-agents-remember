@@ -1,25 +1,6 @@
 {
   "path": "dashboard/src/cockpit/paseoFrameModel.ts",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "09027e7ade2617895d7b02242d58df1ab73ec68e",
-        "content": "sha256:03fa1f89d2defba23f4037c12e903644c058e75189bc9ea16aa0ee08bc5ce4cd",
-        "locator": {
-          "kind": "symbol",
-          "name": "agentActivity"
-        }
-      },
-      "id": "RLZ-TEM1TT",
-      "invariant": "INV-E4TSZB",
-      "origin": {
-        "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Rejects unknown or malformed native activity values rather than passing them as usable live status.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {},
   "schema": "ar-onboarding-file/v1"
 }

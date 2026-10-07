@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "938d34d0a3991aa37925eac157daada7619620aa",
-        "content": "sha256:33c547411a2a3ea1376570881d8886605b23acb0b3a0c1955526d511fb7697cb",
+        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+        "content": "sha256:a7e703b60ba6542cb670431a28e85291b3d655a63fcbd3c3df680370921430f2",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "938d34d0a3991aa37925eac157daada7619620aa",
-        "content": "sha256:3d0315742077ce1fa8ea3a0161624d86dcab2ede154fe6522da9ea114fb541c2",
+        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+        "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
         "locator": {
           "kind": "symbol",
           "name": "EmbeddedFrame"
@@ -35,6 +35,24 @@
         "leaf": "260928-MIK-L90"
       },
       "rationale": "Grants clipboard-read/write through the iframe allow attribute with only the resolved embedded origin.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+        "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-Y4PJ59",
+      "invariant": "INV-WEZ24E",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 7",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The frame body no longer mounts or reserves space for a dashboard sidebar; the embedded frame is the whole body again.",
       "role": "presentation"
     }
   ],

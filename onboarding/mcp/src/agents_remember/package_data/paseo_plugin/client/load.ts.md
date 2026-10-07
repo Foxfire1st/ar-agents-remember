@@ -10,7 +10,7 @@ The load helper owns one-page bootstrap, bounded replacement and running-look wr
 
 ## Code Commentary
 
-A page-global record and consumed session reload flag prevent replacement loops. Embed bootstrap stores appearance and repairs only pinned first-visit bounce paths, then performs one sidebar collapse after the reload decision. Standalone restoration distinguishes what the page started running from later shared-store writes before attributing app writes.
+A page-global record and consumed session reload flag prevent replacement loops. Embed bootstrap stores appearance and repairs only pinned first-visit bounce paths, then runs the one opening migration for an old stored-closed host sidebar (MIK-R75 rule 8). Standalone restoration distinguishes what the page started running from later shared-store writes before attributing app writes.
 
 ## Invariants And Boundaries
 

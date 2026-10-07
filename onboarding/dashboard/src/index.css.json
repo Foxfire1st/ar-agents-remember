@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2c66c88f36e501a93d504c3490800a96932d767a",
+            "blob": "bd74702f1b4598051baa688e9823eda3c7605407",
             "content": "sha256:3d181388701d1e86b6aac1ecd1c6dec738e993d220ce377eb623ea364a904b1b",
             "locator": {
-              "end": 133,
+              "end": 127,
               "kind": "line_range",
-              "start": 123
+              "start": 117
             }
           },
           "kind": "code"

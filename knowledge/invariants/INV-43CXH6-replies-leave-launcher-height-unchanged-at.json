@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A reply that grows the bar is the developer-visible defect this leaf removes: the reviewer's browser run measured the candidate at 80.09 px at width 1600 and 195.203125 px at width 390 for all three states, against three different values on the base. The rule spans the grid and the failure-line component."
+  },
+  "applicability": "The launcher bar's measured height at the dashboard's ordinary and narrow widths.",
+  "conditions": [
+    "The bar renders its controls, before a reply, after a short reply and after a long reply.",
+    "The failure line of rule 3 is the only text it may add, and that line is present or absent independently of the reply."
+  ],
+  "exclusions": [
+    "A failed state's one line may change the bar's height; rule 3 requires it to be seen.",
+    "The exact pixel height is not part of the obligation; the invariance across reply lengths is."
+  ],
+  "id": "INV-43CXH6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/navigation-extension-20261006/browser-final/browser.json: before/short/long; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/native-and-reuse-qualification.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 2",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Replies leave launcher height unchanged at both requested widths.",
+  "status": "proposed",
+  "supersedes": []
+}

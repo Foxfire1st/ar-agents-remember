@@ -26,9 +26,9 @@ flash used by blocked/alarm dots, signal-lost, `caution--alarm`, and the cockpit
 ease-in-out opacity dip to 0.45 at 50%, driven at 2.4 s by `data/stateGrammar.ts`'s
 `PULSE_ANIMATION` and rendered only by `panels/session-cockpit/StateDot.tsx` — NEVER
 steps()/on-off blinking; frozen by the unlayered effects-off rule below and steady under
-`_motionReduce` at the consumer. The fourth, paseoAgentSpin, supplies the native sidebar
-Busy/Starting glyph's full rotation; PaseoNavigation selects a 2.4-second cycle and reduced-motion
-suppression, and the existing effects-off rule freezes it. **Slice
+`_motionReduce` at the consumer. **MIK-R75 rule 7 removed the fourth keyframe,
+`paseoAgentSpin`**, with the dashboard's own sidebar: it supplied the native sidebar Busy/Starting
+glyph's full rotation, and that sidebar and its glyph no longer exist in this product. **Slice
 05k deleted the nine Engine Room canvas `@keyframes`** — `chargeSweep`, `conduitDraw`, `pktRun`, `attnBreath`,
 `stopFlash`, `closeoutSweep`, `warpSurgeUp`, `warpSurgeDown`, and `landingIn` — because the canvas motion now
 lives in GSAP (`useEngineTimeline`) + Motion (`EnclosureCanvas`), never CSS (`05f` §8). A header comment
@@ -76,11 +76,10 @@ The `webtui` slot must stay in the FIRST `@layer` statement, between `effects` a
 the `data-effects=off` freeze must stay UNLAYERED and top-level — both are asserted by
 `test/webtuiSpike.test.ts` (for `!important` declarations, layered beats unlayered, so the freeze
 stays sovereign only while WebTUI ships no `!important` animation/transition — also asserted). Canvas animation is GSAP/Motion,
-not CSS keyframes (`05f` §8): `flicker` + `pulse` + (260715-FEUI-L2) `pulseSlow` +
-`paseoAgentSpin` are the global keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
+not CSS keyframes (`05f` §8): `flicker` + `pulse` + (260715-FEUI-L2) `pulseSlow` are the global keyframes — `pulse` is still live (the rail / cockpit / topology + the engine-room `cva`s drive
 `animation: pulse …`), and `pulseSlow` is the RULED cockpit state pulse whose only sanctioned
 driver is the grammar/StateDot pair (2.4 s ease-in-out, never steps()). The native busy glyph
-uses paseoAgentSpin as presentation only; the glyph's activity is derived by its native-row consumer. *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
+and its `paseoAgentSpin` keyframe went with the dashboard sidebar (MIK-R75 rule 7). *(Correcting the prior 5i note: `chargeSweep` was never an orphan — through 5i it backed
 `engineReindexCharge`, the amber reindex pulse, so only `conduitDraw` was truly orphaned after the conduit
 draw-on moved to GSAP. 05k makes the point moot by deleting all nine canvas keyframes and re-driving the
 reindex pulse from GSAP `data-fx='reindex'`.)*
@@ -99,8 +98,7 @@ The current source extents below record the reviewed UI contract. Inline test na
 
 | Finding | Anchor | Source at frozen tree |
 | --- | --- | --- |
-| Current source owner or exact assertion described above. | `paseoAgentSpin` | `dashboard/src/index.css:103-107` |
-| Current source owner or exact assertion described above. | `html[data-effects="off"]` | `dashboard/src/index.css:144-149` |
+| Current source owner or exact assertion described above. | `html[data-effects="off"]` | `dashboard/src/index.css:138-143` |
 
 - The `:root` vars referenced by the base layer. [1]
 - The Panda PostCSS plugin that fills the layers. [2]

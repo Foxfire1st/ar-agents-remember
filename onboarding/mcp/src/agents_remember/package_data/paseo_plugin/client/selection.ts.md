@@ -10,11 +10,11 @@ The pinned web DOM adapter emits the plural candidate set of visible selected na
 
 ## Code Commentary
 
-workspace-tab-agent_<id> plus aria-selected, positive bounds and checkVisibility determine candidates. IDs are sorted/deduplicated, DOM/resize updates publish only changed sets and teardown releases observation. The bridge intersects them with current SDK IDs before public use.
+workspace-tab-agent_<id> plus aria-selected, positive bounds and checkVisibility determine candidates. IDs are sorted/deduplicated, DOM/resize updates publish only changed sets and teardown releases observation. The same changed set is fanned out to module listeners (`onSelectedChats`), the one live value the hierarchy's Parent-pill gate and the bridge's check read (MIK-R75 rule 9a); the bridge still intersects the set with current SDK IDs before public use.
 
 ## Invariants And Boundaries
 
-This is one explicitly unsupported pinned DOM dependency; hidden caches, focus, color and URL cannot establish native selection.
+This is one explicitly unsupported pinned DOM dependency; hidden caches, focus, color and URL cannot establish native selection. The fan-out adds no second identity parser and retains no earlier selection.
 
 ## Evidence
 

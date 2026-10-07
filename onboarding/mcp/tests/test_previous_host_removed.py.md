@@ -6,7 +6,7 @@
 
 ## Purpose and current source account
 
-The removal census allows only named historical exceptions and plants forbidden host strings to prove detection. Former API routes answer 404 in the real composed app, ignored former settings and receipts remain unchanged, and a former schema at the new address refuses. The tested methods are GET/POST/PUT/DELETE; unknown-API HEAD coverage is in test_static.
+The removal census allows only named historical exceptions and plants forbidden host strings to prove detection. Former API routes answer 404 in the real composed app, ignored former settings and receipts remain unchanged, and a former schema at the new address refuses. The launcher's pinned route set is now the five routes (options, dispatch, result, frame and the read-only report route), and the composed app answers the former host paths with 404. The tested methods are GET/POST/PUT/DELETE; unknown-API HEAD coverage is in test_static.
 
 ## Evidence
 

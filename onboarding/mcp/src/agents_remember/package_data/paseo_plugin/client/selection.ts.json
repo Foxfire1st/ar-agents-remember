@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ff96a644b492b9b9b98f1abb6c40a635b87e50f0",
-        "content": "sha256:5f7a1176fa63ebbc73a5e2341da276983d376bc8cf7946f0f6e30fb36fd2cb08",
+        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "watchSelectedChats"
+        }
+      },
+      "id": "RLZ-6G1VXD",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The visible native tab scan remains the one authority for the selected candidate set; it now also fans the same value out to the hierarchy's listener.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
         "locator": {
           "kind": "symbol",
           "name": "watchSelectedChats"
@@ -18,6 +36,42 @@
       },
       "rationale": "Reads only visible positive-bounds aria-selected native agent tabs and returns the deduplicated plural DOM candidate set.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+        "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "watchSelectedChats"
+        }
+      },
+      "id": "RLZ-J93MBC",
+      "invariant": "INV-XQMXT2",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9a",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The live selection publisher is the value the gate and the bridge share; a change to it re-evaluates the pills without a retained earlier selection or a second DOM read.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+        "content": "sha256:8d90f4e43207d461b1078a42ffdcaf1911200cb7c57c5fc08527c020d587ee52",
+        "locator": {
+          "kind": "symbol",
+          "name": "onSelectedChats"
+        }
+      },
+      "id": "RLZ-M4FHMG",
+      "invariant": "INV-XQMXT2",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9a selection helper",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The fan-out is the place rule 9a's shared value becomes available to the hierarchy: it registers the listener the pill's gate re-evaluates on and returns its removal, so one live publisher feeds both the gate and the bridge's check.",
+      "role": "support"
     }
   ],
   "references": {},

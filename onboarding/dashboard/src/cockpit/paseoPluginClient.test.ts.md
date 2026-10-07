@@ -10,7 +10,7 @@ The helper suite protects web page lifetime, exact framing trust, checked naviga
 
 ## Code Commentary
 
-Cases bound reloads, retain first-visit deep links and perform one startup native-sidebar collapse that yields to early menu clicks. Fresh trust waits for exact pair confirmation; window/origin lookalikes fail. Same-page verified trust is rechecked for explicit revocation, and stopped async completion does nothing. Shared-storage cases distinguish running-look writers.
+Cases bound reloads, retain first-visit deep links and exercise the one opening migration for an old stored-closed host sidebar: with the state open, closed and absent the plugin does not click the toggle on an ordinary load and writes nothing to the host's stored panel state, while a stored closed list is opened once and marked. Fresh trust waits for exact pair confirmation; window/origin lookalikes fail. Same-page verified trust is rechecked for explicit revocation, and stopped async completion does nothing. Shared-storage cases distinguish running-look writers.
 
 ## Invariants And Boundaries
 

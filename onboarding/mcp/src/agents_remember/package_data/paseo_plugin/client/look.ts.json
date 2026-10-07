@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
         "content": "sha256:ac2b86c53fed17a5654d903a3a6c3bdbd146d33b0969d0c0077846252ee43133",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
         "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "e49371150b7acafbaec763c23de0e8d5e58aa089",
+        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "content": "sha256:99b566bd250bc1597eef7158e494a7e31df6280a8b4281071e763dba4823d390",
+        "locator": {
+          "kind": "symbol",
+          "name": "openNativeSidebarOnce"
+        }
+      },
+      "id": "RLZ-9Q1AQP",
+      "invariant": "INV-7QV5CQ",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 8",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The one opening migration: reads the host's stored open/closed state, opens a stored-closed list once with the host's own toggle and records a durable per-browser marker, after which it never touches the list.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
         "content": "sha256:2489c2655c8c9107fc7247e595db39ea255c75abdd98551c20dd39cd2236bfae",
         "locator": {
           "kind": "symbol",
@@ -54,6 +72,24 @@
       },
       "rationale": "Saves standalone look/sidebar values before storing the AR appearance, and keeps earlier saved values when the last recorded writer was a frame.",
       "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+        "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+        "locator": {
+          "kind": "symbol",
+          "name": "restoreStandaloneLook"
+        }
+      },
+      "id": "RLZ-PVXBE8",
+      "invariant": "INV-STRQX4",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The standalone look/sidebar restoration is untouched by the removed sidebar: it protects the user's own tab, not the dashboard's navigation.",
+      "role": "enforcement"
     }
   ],
   "references": {},

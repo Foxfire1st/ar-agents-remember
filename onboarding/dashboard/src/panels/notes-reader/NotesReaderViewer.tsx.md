@@ -75,6 +75,13 @@ all stay server-side). No store mutation. There is **no second bespoke reader** 
 File Viewer's `DualPane`, and the only file-viewer leaf stubbed in tests is `FilePane` (the CodeMirror
 editor), the same jsdom accommodation the Change-Set Viewer tests make for `ChangeSetPane`.
 
+## Role-report kind
+
+The viewer also accepts a **role report** as one more artifact kind (`kind: "role-report"` with a
+`RoleReportContent`): the header shows `Report` and the recorded path, the pane reuses `DualPane`
+through the same `noteAsFileContent` mapping, and no rail is rendered. `RoleChatsPane` opens it from
+Result through `readRoleReport`, so the launcher needs no second viewer (MIK-R75 rule 4).
+
 ## Evidence
 
 ### Cross-Repo References

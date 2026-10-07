@@ -10,11 +10,11 @@ The helper owns one public SDK catalog lifetime and agent/workspace-specific Par
 
 ## Code Commentary
 
-Initial/continuation directories use PAGE_SIZE=200 and unique nonempty cursors. Subscriptions publish allowed canonical/native-parent labels and normalized native activity. Replacement snapshots clear older queued deltas only for their directory; generation checks suppress older loads. Parent pills track native relation/workspace and disappear for root/missing/archived rows.
+Initial/continuation directories use PAGE_SIZE=200 and unique nonempty cursors. Subscriptions publish allowed canonical/native-parent labels and the native project/workspace/agent fields. Replacement snapshots clear older queued deltas only for their directory; generation checks suppress older loads. Parent pills track native relation/workspace and disappear for root/missing/archived rows, and they are offered only while the agent is in the live selected-candidate set published by `selection.ts` (MIK-R75 rule 9a): the module subscribes to `onSelectedChats`, so an unknown source removes the pill at every width and a known wide selection restores it without a second DOM read or a retained earlier selection.
 
 ## Invariants And Boundaries
 
-Errors remain explicit; native membership is transported without inventing AR grouping. Pinned request bounds require revalidation on upstream changes. Teardown releases listeners/subscriptions/pills.
+Errors remain explicit; native membership is transported without inventing AR grouping. The pill gate uses the same live value the bridge checks; at the host's narrow layout no pill is drawn and the host's list is the navigation. Teardown releases listeners/subscriptions/pills.
 
 ## Evidence
 

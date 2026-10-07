@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The dashboard's second navigation duplicated the host's list, and the developer found the host's list sufficient; leaving either the sidebar or a dead button would keep the duplication. The rule spans the frame body and the launcher row, and its removal is proved by a mounted test that fails when either returns."
+  },
+  "applicability": "The Chats page of the dashboard and every component it mounts.",
+  "conditions": [
+    "The dashboard draws no element with the label 'AR chat navigation' and no Show/Hide chat-navigation button.",
+    "The removed sidebar's modules and their tests are gone from the tracked tree."
+  ],
+  "exclusions": [
+    "The host's own list and its toggle are the host's, outside the dashboard's DOM.",
+    "The plugin's own Parent control inside the host's message box is rule 9's, not dashboard-drawn navigation.",
+    "No setting keeps the removed sidebar or button behind it."
+  ],
+  "id": "INV-WEZ24E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/changed-file-coverage.json; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/browser.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 7",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard sidebar, its grouping code/tests and Show/Hide navigation control are removed.",
+  "status": "proposed",
+  "supersedes": []
+}

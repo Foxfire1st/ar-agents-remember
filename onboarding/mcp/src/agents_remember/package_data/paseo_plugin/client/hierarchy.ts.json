@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
         "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
-        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "startHierarchy"
+        }
+      },
+      "id": "RLZ-CEW3NM",
+      "invariant": "INV-XQMXT2",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 9a",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The Parent composer pill is drawn only for an agent the same live selected-candidate set contains, so at the host's narrow layout, where that set is empty, no pill is offered.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
-        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
-        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -75,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
-        "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+        "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+        "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
         "locator": {
           "kind": "symbol",
           "name": "startHierarchy"
@@ -88,7 +106,7 @@
         "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Projects the actual SDK provider/activity fields and subscribed updates into the existing hierarchy transport.",
+      "rationale": "Projects the live SDK project, workspace and agent fields, including provider, status, permissions and attention, into the one published hierarchy snapshot whose only current consumer is the Parent composer check; the dashboard no longer presents it.",
       "role": "propagation-persistence"
     }
   ],

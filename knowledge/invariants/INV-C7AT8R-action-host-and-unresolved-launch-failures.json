@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the line a refused Start looks as if nothing happened — the first sealed finding of the review round. The obligation is realized across the pane's state machine, the failure-line component and the four failure paths, and the review verified each path against its pre-change byte behavior."
+  },
+  "applicability": "Every ordinary failure of a control in the launcher bar: a refused or unresolved start, an unreachable host, a failed options or catalog read and a report that cannot be opened.",
+  "conditions": [
+    "The line is the only text under the controls and is gone when the condition has ended or the next action of the bar has succeeded.",
+    "An unresolved launch is an actionable uncertainty, not a false agent failure; the line says what is unknown and what to do.",
+    "A refused dispatch stays visible through automatic reads; only an explicit successful action clears it.",
+    "A failed task-bound dispatch followed by a failed options read restores the base control behavior: the selectors and Start stay enabled and no Retry is offered by that path, while the one line still names the failure."
+  ],
+  "exclusions": [
+    "The state line and reply text removed by rule 1 never return as a 'status' of the normal case.",
+    "Host-side frame notices (workspace, agent, availability) keep their own existing surfaces inside the frame.",
+    "A launch lock is a wait, not a refusal: it may show the actionable line and then clear when the reread answers."
+  ],
+  "id": "INV-C7AT8R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/navigation-extension-20261006/browser-final/browser.json: refused/unknown/recovered",
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac.md (L75-R1-09 fixed; sealed OR-R014 interpretation 09; code/evidence PASS ae6fb87b on candidate tree 71970fb6)"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 3",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Action, host and unresolved-launch failures share one actionable line and explicit successful recovery clears it.",
+  "status": "proposed",
+  "supersedes": []
+}

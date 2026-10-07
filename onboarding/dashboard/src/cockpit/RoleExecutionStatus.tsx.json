@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleExecutionStatus"
+        }
+      },
+      "id": "RLZ-59C2R6",
+      "invariant": "INV-43CXH6",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 2",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The only text this component can add under the controls is independent of any reply, so the bar measures the same before a reply, after a short one and after a long one.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleExecutionStatus"
+        }
+      },
+      "id": "RLZ-FDMVYM",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 1",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The component that used to render the execution state, the last reply and the report path under the controls now renders only the one failure line, so an ordinary answer adds nothing to the strip.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+        "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleExecutionStatus"
+        }
+      },
+      "id": "RLZ-PVSA13",
+      "invariant": "INV-C7AT8R",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 3",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "Renders the combined line, including the unresolved-launch sentence and the host reason, and returns nothing when no failure holds — so the alert is the only text under the controls.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}
