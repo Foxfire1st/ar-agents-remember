@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The old panel honestly printed that no chat existed while the host ran a manager for the same document, which is the defect the developer saw; the obligation spans the dashboard state hook, the shared frame controller and the backend record read, and both the focused component tests and the real sandbox witness guard it."
+  },
+  "applicability": "The Operations right rail's Chat side for any selected task document, at every rail width.",
+  "conditions": [
+    "The selected task's agents come from canonical launch records, each checked against the host's read-only agent state before it is shown.",
+    "A ready frame moves to another selection by the trusted control message and is not loaded again for that move.",
+    "The host's message box and tabs remain the only chat content; the panel adds no list of documents or agents of its own.",
+    "An unreadable host is shown as the shared unavailable notice with Retry, not as a start or an empty state."
+  ],
+  "exclusions": [
+    "The Chats page's own frame and navigation are MIK-R75's.",
+    "Agents this product never started are not invented as records; the launch-record source deliberately excludes them."
+  ],
+  "id": "INV-7D9QDG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule2",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The rail resolves its selected task from launch records and steers the shared native frame while ready without a reload.",
+  "status": "proposed",
+  "supersedes": []
+}

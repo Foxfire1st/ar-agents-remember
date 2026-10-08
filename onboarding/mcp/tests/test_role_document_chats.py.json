@@ -1,0 +1,241 @@
+{
+  "path": "mcp/tests/test_role_document_chats.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:80cebe1cc125556322378b0a8f82ed548f28d40b11d92d6da31ebf7d0ed89dcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatReadTests.test_exact_started_projects_request_is_read_without_substituting_an_architect"
+        }
+      },
+      "facet": "A bound Projects request is read as itself rather than substituted with a different Architect.",
+      "id": "PRF-4CGR8N",
+      "invariant": "INV-A3AK6R",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule3",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:12b1ed7249253ccece3728ce02e93d835eb462ad9223f0ce9b5623ab00bb0ce0",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstStartPreparationTests.test_progress_has_one_request_and_is_reclaimed_when_dispatch_ends"
+        }
+      },
+      "facet": "The one progress notice serves its exact request and is cleared through begin/starting/finish; the shared dispatcher's finally-path reclamation is separately source-observed, not exercised by this test.",
+      "id": "PRF-5G1B6A",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "L95-M1-KNOW-02-proof-zvq7e3",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatReadTests.test_projects_uses_last_started_live_architect_and_pages_old_archived_records"
+        }
+      },
+      "facet": "The taskless read walks old archived records in pages and answers with the last started live Architect.",
+      "id": "PRF-9T2853",
+      "invariant": "INV-A3AK6R",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule3",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstStartPreparationTests.test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
+        }
+      },
+      "facet": "The start reads the master contract's recorded parent and a repeat with the same request reuses the enclosure.",
+      "id": "PRF-BMYRFF",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:12c796553dfb723f3201fd2fae8148a13077b0ebf4244b7fc93794436ee91b47",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstStartPreparationTests.test_preparation_refusals_keep_exact_status_reason_and_repair_on_role_start"
+        }
+      },
+      "facet": "The role_start answer keeps the exact refusal status, reason and owner repair.",
+      "id": "PRF-EYGYY8",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:6c237aa80e38ce8ccec58d703a0fa8d2f910976e643c4ad1746c6b9ce9a9aff4",
+        "locator": {
+          "kind": "symbol",
+          "name": "FirstStartPreparationTests.test_masterless_starts_report_opened_without_a_creation_guess"
+        }
+      },
+      "facet": "A masterless start answers opened and states that the host reports no creation outcome.",
+      "id": "PRF-GJDPQD",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+        }
+      },
+      "facet": "The record read returns only live agents with their document workspace and skips archived or missing records.",
+      "id": "PRF-TEWFNK",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The exact started Projects request is read without substituting an Architect; archived targets disappear.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:80cebe1cc125556322378b0a8f82ed548f28d40b11d92d6da31ebf7d0ed89dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exact_started_projects_request_is_read_without_substituting_an_architect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Archival and missing-agent filtering keeps only live document agents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The taskless walk uses the last started live Architect and pages older records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_projects_uses_last_started_live_architect_and_pages_old_archived_records"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The recorded master parent drives preparation and a repeated request reuses the enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_reads_recorded_master_parent_and_same_request_reuses_the_enclosure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Refusals preserve the native status, reason and owner repair on the role_start answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:12c796553dfb723f3201fd2fae8148a13077b0ebf4244b7fc93794436ee91b47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preparation_refusals_keep_exact_status_reason_and_repair_on_role_start"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A masterless start reports the opened Projects workspace without a creation guess.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:6c237aa80e38ce8ccec58d703a0fa8d2f910976e643c4ad1746c6b9ce9a9aff4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_masterless_starts_report_opened_without_a_creation_guess"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The progress notice is single-request and cleared through begin/starting/finish by the cited test; the dispatcher's finally-path reclamation is separate source wiring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+            "content": "sha256:12b1ed7249253ccece3728ce02e93d835eb462ad9223f0ce9b5623ab00bb0ce0",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 142
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -18,3 +18,7 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 - Frozen implementation of RoleMessageCall supporting the stated file behavior. [2]
 - Frozen implementation of RoleStartResponse supporting the stated file behavior. [3]
 - Frozen implementation of RoleMessageResponse supporting the stated file behavior. [4]
+
+## MIK-R95 Preparation Answer Model
+
+`RoleEnvironmentPreparation` declares the shared start's observed outcome: `enclosure` is `created`, `found` or `not-applicable`, and `workspace` is optional `created`, `found` or `opened` — `opened` deliberately names no host-reported creation outcome. `RoleStartResponse` carries the `preparation` block and an optional `preparationStatus`.

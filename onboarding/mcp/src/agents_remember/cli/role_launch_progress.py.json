@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_progress.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The notice is claimed for one exact request and advanced only in place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d2571939f14031da97f79fffbe13d35feb3f481",
+            "content": "sha256:7d4abe4021900ce072d07ae782b753c5d8b94e58473b1989997084d3f2032b81",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The notice is reclaimed when the dispatch owner finishes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d2571939f14031da97f79fffbe13d35feb3f481",
+            "content": "sha256:484c1b89a0a3b5c7a883391969f3ebf95cfe4cb0f382001f053abab31c0118ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "finish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A read returns a phase only for its exact request id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0d2571939f14031da97f79fffbe13d35feb3f481",
+            "content": "sha256:43066576a39580ce3c8236e28166d00fbe99f5e672dfddbb4efa4ce06c8ffc41",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

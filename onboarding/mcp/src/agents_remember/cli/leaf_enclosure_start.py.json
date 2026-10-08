@@ -1,14 +1,51 @@
 {
   "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
+        "content": "sha256:93198a14e5db4c6384bb2ff9fc366dff31507d0a7599159f1858b3c4f70e53b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_leaf_enclosure_in_child"
+        }
+      },
+      "id": "RLZ-P004CS",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The child transports the native owner's recovery fields back, which is what makes the first-start refusal actionable without a second preparation route.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
+        "content": "sha256:93198a14e5db4c6384bb2ff9fc366dff31507d0a7599159f1858b3c4f70e53b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_leaf_enclosure_in_child"
+        }
+      },
+      "id": "RLZ-YCE0E7",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The child keeps nextOperation/nextArgs and the required stale choice so the refusal is the owner's, not a reduced substitute.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of start_leaf_enclosure_in_child supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
-            "content": "sha256:9f5497ecdff7d5c363de1051a64afaab20a2a27606341a573a5236e86340914a",
+            "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
+            "content": "sha256:93198a14e5db4c6384bb2ff9fc366dff31507d0a7599159f1858b3c4f70e53b4",
             "locator": {
               "kind": "symbol",
               "name": "start_leaf_enclosure_in_child"
@@ -23,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
-            "content": "sha256:a52471135976be799e3bd24162113e1f689462e8e00c19a7b00465baad2484a8",
+            "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
+            "content": "sha256:65aa5ec687357b73ae2e8fd105c6ac076dcb0a39f1d3032e23201ae7fa59b781",
             "locator": {
               "kind": "symbol",
               "name": "run"
@@ -39,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8b113264a7080482fcae100cc4a228c11db86c9",
+            "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
             "content": "sha256:edb66e23d572d6f46bc82fb9d6b03675951ed9434aee55704d067d63e8c5e231",
             "locator": {
               "kind": "symbol",

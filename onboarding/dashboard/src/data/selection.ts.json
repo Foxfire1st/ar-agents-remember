@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
+            "blob": "c7a1314caf2e8d8c90443415ff08066baaf34253",
             "content": "sha256:a1de84cf690853f183c6565764021c1e112b10be13ae54053aff8d04fcee308c",
             "locator": {
-              "end": 1140,
+              "end": 1076,
               "kind": "line_range",
-              "start": 1140
+              "start": 1076
             },
             "path": "dashboard/src/panels/HighlightComposer.tsx"
           },

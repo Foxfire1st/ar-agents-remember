@@ -1,0 +1,158 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+        "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentSidebar"
+        }
+      },
+      "id": "RLZ-6M98MR",
+      "invariant": "INV-4S93MX",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule1",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This function installs the frame-local DOM observer and hidden-toggle style, re-collapses native controls when the host changes the displayed workspace, and removes its observer/style on teardown. It is the presentation enforcement point for the document frame rather than a change to the shared Chats preference.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+        "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "preserveSidebarChoice"
+        }
+      },
+      "id": "RLZ-P0SXSZ",
+      "invariant": "INV-4S93MX",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule1",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This write wrapper keeps the actually stored desktop sidebar choice while the document rail's own state closes, so the rail cannot become another frame's or a standalone tab's remembered choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+        "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "preserveSidebarChoice"
+        }
+      },
+      "id": "RLZ-XE74GD",
+      "invariant": "INV-YJ2H50",
+      "origin": {
+        "handoffEntry": "L95-R1-PLG-02",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This policy is the wrapper's only installed transform; it restores the actually stored sidebar choice, so the wrapper's native semantics are observable here as well.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A document-mode write keeps the actual shared stored sidebar choice instead of the rail's local closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The document page hides the toggle, re-collapses on native changes, and cleans all effects on teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Page mode is explicit, clearable and survives a plugin reevaluation through the page's own state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:f1632a2b5a618236ec61350e7099322c4d3068fdaa94f12e884d8b57de25828d",
+            "locator": {
+              "kind": "symbol",
+              "name": "setEmbedPageMode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The trusted Chats transition changes the persistent mode and runs `documentSidebar`'s cleanup, which removes the observer, style and active marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The mode is also recoverable from the frame address for the plugin's own reload path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:8530c5ebe641e6a42dabc837655b3c66223041afb0344da34b58058a012893b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "isDocumentPage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The standalone look path clears the persistent mode flag without touching the isolation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:ab72cd0bf4b6acf456ee0cbf000339f84def2ba5deeaa6c3fa78743eeefc74fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "clearEmbedPageMode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

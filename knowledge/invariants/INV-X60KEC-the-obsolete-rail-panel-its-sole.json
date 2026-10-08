@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The old panel presented pre-Paseo terminals as the chat beside a document and would otherwise be repaired by a later change; the surviving rail, the removed modules and the highlight composer span the obligation, and the dated certificate exclusion keeps the tracked-tree search honest."
+  },
+  "applicability": "The dashboard's older contextual session panel and the modules, styles, tests and highlight branch that existed only for it.",
+  "conditions": [
+    "RailChat.tsx, RailChat.test.tsx and railChatSelection.ts are gone from the tracked tree, and no current tracked file names them except the one preserved dated certificate docs/design/dashboard/session-cockpit-closeout-evidence.md line 146, kept byte-for-byte by the owner's RV01 decision (whole file SHA256 f2c0d544f65e5466a0514763dc2bfe205dd441fea246970378d8af4878096b9c).",
+    "The highlight composer keeps its ordinary reliable path; only the direct leaf-chat target branch was removed.",
+    "Shared sessions, LeafAttachPicker, SessionComposer, Terminal, the Event River and the rail switch remain."
+  ],
+  "exclusions": [
+    "The older session cockpit under panels/session-cockpit/ is not removed by this leaf.",
+    "Sending a text selection into a host chat remains outside the packet.",
+    "The dated certificate exception above is neither edited nor reopened; it is the only tracked file that may still name the removed panel."
+  ],
+  "id": "INV-X60KEC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule8",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The obsolete rail panel, its sole selection helper, its tests and its exclusive direct-highlight target are removed while shared sessions and Event River remain.",
+  "status": "proposed",
+  "supersedes": []
+}

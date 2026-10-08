@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The first start of a role on a leaf without an enclosure was refused under this master because the start passed the sprint folder name against a contract that records the master's own name, and a preparation that ran in the caller's lifecycle could entangle an unrelated agent; the obligation spans the preparation owner, its child and both entry points, and the focused child-process and first-start tests guard it."
+  },
+  "applicability": "Every role start whose admitted environment is a leaf enclosure: the launcher's button and an agent's role_start, and the seat-set call that prepares a leaf's three seats.",
+  "conditions": [
+    "The start resolves the folder, creates the enclosure when the leaf has none, opens the host workspace and writes the handover and receipt in one operation.",
+    "Where the master has a series contract the start passes the parent name that contract records; only a master with no contract yet uses the commanding sprint's folder name, and later starts read what the first created.",
+    "A repeat with the same request id finds the first attempt's enclosure and creates no second one.",
+    "No person and no agent calls worktree_start or another preparation tool before the start."
+  ],
+  "exclusions": [
+    "worktree_start keeps its own parameters, answers and admission checks for every other caller.",
+    "A direct leaf with a grant has no enclosure and is prepared as MIK-R94 rule 12 says.",
+    "The sandbox fixtures and the seat set's own composition are MIK-R100's."
+  ],
+  "id": "INV-5ATS9T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule5",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A shared role start prepares its leaf enclosure using the existing master contract parent and repeats the same request without a second enclosure.",
+  "status": "proposed",
+  "supersedes": []
+}

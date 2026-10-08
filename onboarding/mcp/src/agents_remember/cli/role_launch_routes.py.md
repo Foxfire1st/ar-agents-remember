@@ -25,3 +25,7 @@ _start_execution reconciles matching receipt before recompiling and rejects reus
 - Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [9]
 - Checks size limit and refuses links without changing their target. [10]
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [11]
+
+## MIK-R95 Progress And Document Reads
+
+The route registration adds the one-request progress read (`/api/role-launch/progress/{request_id}`) and the document-chat record read (`register_document_chat_route`), and the dispatch endpoint claims the progress notice at the beginning and reclaims it in its finally path. The dispatch answer carries the enclosure preparation (`created`/`found`/`not-applicable`).

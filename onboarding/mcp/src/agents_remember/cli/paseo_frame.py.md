@@ -17,3 +17,7 @@ frame_descriptor derives dashboard origin and exact embed mapping, then obtains 
 - Frozen implementation of frame_descriptor supporting the stated file behavior. [1]
 - Frozen implementation of frame_base_url_for supporting the stated file behavior. [2]
 - Frozen implementation of host_frame_facts supporting the stated file behavior. [3]
+
+## MIK-R95 Workspace Owner Import
+
+The frame route now takes `workspace_folder` from its extracted owner `role_launch_workspace` instead of the preparation module; the route behavior is unchanged.

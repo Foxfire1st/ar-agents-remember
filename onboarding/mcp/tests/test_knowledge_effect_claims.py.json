@@ -517,7 +517,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:40618787b90b6660e49e60b0aece39680d29c1aca37d4de0da3ce2ed70505ded",
             "locator": {
               "end": 115,
@@ -535,12 +535,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:e24f70420656566def9a2d5319b4835ca6395bc92adaf76b941ca03f72e27a7c",
             "locator": {
-              "end": 2124,
+              "end": 2126,
               "kind": "line_range",
-              "start": 2119
+              "start": 2121
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -587,12 +587,12 @@
         },
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:0ec79f6fe1e6087ba4d813a8cdbc0b09016d856f5796e33db01f0fe94d149d43",
             "locator": {
-              "end": 1393,
+              "end": 1394,
               "kind": "line_range",
-              "start": 1385
+              "start": 1386
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -634,12 +634,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:e24f70420656566def9a2d5319b4835ca6395bc92adaf76b941ca03f72e27a7c",
             "locator": {
-              "end": 2124,
+              "end": 2126,
               "kind": "line_range",
-              "start": 2119
+              "start": 2121
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -686,12 +686,12 @@
         },
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:0ec79f6fe1e6087ba4d813a8cdbc0b09016d856f5796e33db01f0fe94d149d43",
             "locator": {
-              "end": 1393,
+              "end": 1394,
               "kind": "line_range",
-              "start": 1385
+              "start": 1386
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -713,81 +713,16 @@
       ]
     },
     "41": {
-      "note": "The registration listing this module among the exact consumers of the shared earlier-generation case support.\n\nAnchor: \"knowledge-generation-cases\"; `\"mcp/tests/test_knowledge_effect_claims.py\"`",
+      "note": "The `generation_test_support.py` registration listing this module among the exact consumers of the shared earlier-generation case support.",
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:814d228492b0e12003e7bc30871b3181ff82c8515c264e59405afc58e78bd80a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "content": "sha256:29fccff737b0a5cfc878305761d175394de55b5571b5fec1b8b05f589c29c968",
             "locator": {
-              "end": 1189,
+              "end": 1266,
               "kind": "line_range",
-              "start": 1184
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
-            "content": "sha256:362375c7e4097edf595dde2e80d056f3cc19fb58c14508b9f962db12a0de31f9",
-            "locator": {
-              "end": 1217,
-              "kind": "line_range",
-              "start": 1217
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:8efd56fb8cab49defe6e932ad350d25c449a3b10a065079b2526d687ddfe094b",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 43
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:70db0b5b2a449a9bdf4dc216c2c7c77b3b4b2e7a6fb5166e57c5452738184af7",
-            "locator": {
-              "end": 1261,
-              "kind": "line_range",
-              "start": 1261
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:0ec79f6fe1e6087ba4d813a8cdbc0b09016d856f5796e33db01f0fe94d149d43",
-            "locator": {
-              "end": 1393,
-              "kind": "line_range",
-              "start": 1385
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
-            "locator": {
-              "end": 1347,
-              "kind": "line_range",
-              "start": 1347
+              "start": 1233
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -796,81 +731,16 @@
       ]
     },
     "42": {
-      "note": "The registration listing this module among the exact consumers of the shared earlier-generation case support.\n\nAnchor: \"knowledge-generation-cases\"; `\"mcp/tests/test_knowledge_effect_claims.py\"`",
+      "note": "The `generation_test_support.py` registration listing this module among the exact consumers of the shared earlier-generation case support.",
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:814d228492b0e12003e7bc30871b3181ff82c8515c264e59405afc58e78bd80a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "content": "sha256:29fccff737b0a5cfc878305761d175394de55b5571b5fec1b8b05f589c29c968",
             "locator": {
-              "end": 1189,
+              "end": 1266,
               "kind": "line_range",
-              "start": 1184
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
-            "content": "sha256:362375c7e4097edf595dde2e80d056f3cc19fb58c14508b9f962db12a0de31f9",
-            "locator": {
-              "end": 1217,
-              "kind": "line_range",
-              "start": 1217
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:8efd56fb8cab49defe6e932ad350d25c449a3b10a065079b2526d687ddfe094b",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 43
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
-            "locator": {
-              "end": 1256,
-              "kind": "line_range",
-              "start": 1256
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:0ec79f6fe1e6087ba4d813a8cdbc0b09016d856f5796e33db01f0fe94d149d43",
-            "locator": {
-              "end": 1393,
-              "kind": "line_range",
-              "start": 1385
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "279522e1fcd42ad108dccc359dbead75117ad59b",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
-            "locator": {
-              "end": 1347,
-              "kind": "line_range",
-              "start": 1347
+              "start": 1233
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

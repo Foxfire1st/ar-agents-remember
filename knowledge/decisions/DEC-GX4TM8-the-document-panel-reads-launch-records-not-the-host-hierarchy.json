@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The launch-record source was weighed against the plugin hierarchy snapshot and against a new backend host-list route, with the attribution and readiness costs named."
+  },
+  "alternatives": [
+    {
+      "option": "Read canonical launch records and verify each recorded agent's host state.",
+      "reason": "It needs no plugin readiness, carries the document labels directly and excludes native agents this product never started.",
+      "status": "chosen"
+    },
+    {
+      "option": "Use the plugin's hierarchy snapshot, as the dashboard did before L75.",
+      "reason": "It makes URL navigation depend on plugin readiness and shows actors this product did not start as if the document owned them.",
+      "reconsider_when": "The product requires native actors it never started to appear in a task's chat panel.",
+      "status": "rejected"
+    },
+    {
+      "option": "Read the host's whole list through a new backend route.",
+      "reason": "It rebuilds the plugin's catalog authority in the backend and keeps the same attribution problem.",
+      "reconsider_when": "The host exposes an authoritative per-document actor query the product must use.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "role_document_chats becomes the panel's single discovery source, bounded at three host reads per page and paged for old Projects actors; the plugin snapshot stays unused by the dashboard."
+  ],
+  "context": "The panel must learn which agents a selected task has. The plugin already posts the host's whole hierarchy snapshot, while the launch records know exactly which agents this product started.",
+  "decider": "packet MIK-R95@v1 rule 2 and its open truth gap (the source for a task's agents)",
+  "id": "DEC-GX4TM8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-7D9QDG"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-QS9SRX"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R95",
+        "packet": "requirements/MIK-R95-v1-the-chat-panel-follows-the-selected-document.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "agents-read-from-launch-records",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

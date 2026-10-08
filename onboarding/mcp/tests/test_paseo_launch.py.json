@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,24 @@
     },
     {
       "anchor": {
-        "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
+        "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RolePreparationChildTests.test_both_entry_points_prepare_in_the_existing_child"
+        }
+      },
+      "facet": "The launcher route and role_start both prepare through the same checked child.",
+      "id": "PRF-9QSPDZ",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
         "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
         "locator": {
           "kind": "symbol",
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
         "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
         "locator": {
           "kind": "symbol",
@@ -54,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
         "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
         "locator": {
           "kind": "symbol",
@@ -68,6 +85,23 @@
         "handoffEntry": "PNT-R03@v1 §12 / G6 / A9 / A18",
         "leaf": "260928-MIK-L90"
       }
+    },
+    {
+      "anchor": {
+        "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
+        "content": "sha256:c22d39abcd0ca89b2038cc515eba85e3ac507957499dfca37e62e1f082595a4c",
+        "locator": {
+          "kind": "symbol",
+          "name": "RolePreparationChildTests.test_sequential_fresh_leaves_preserve_the_callers_persistent_lifecycle"
+        }
+      },
+      "facet": "Sequential fresh-leaf preparations neither consult nor change the calling agent's persistent lifecycle.",
+      "id": "PRF-W3F9CA",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      }
     }
   ],
   "realizes": [],
@@ -77,8 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b249f571c1b6184a78ef12ba97c7f9191523b1d2",
-            "content": "sha256:016dc32b18b0b25ade85bffad3a28d2f2a9e72faed4e75903c83a83992623a05",
+            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
+            "content": "sha256:813a5f0b8478480e7e647cffb80ec951dd57e4318c3f785ccb0dae6e9204e59c",
             "locator": {
               "kind": "file"
             }

@@ -589,7 +589,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -1445,7 +1445,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
               "end": 574,
@@ -1481,7 +1481,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
             "locator": {
               "kind": "symbol",
@@ -1542,12 +1542,12 @@
         },
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:321dfb2796157b97cccb9a0074dd3d4c41ce87bff8defc8119177d8b736f3ea9",
             "locator": {
-              "end": 800,
+              "end": 792,
               "kind": "line_range",
-              "start": 800
+              "start": 792
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -1644,7 +1644,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:de1870f69844d1500cf0f7506495e2dec4d8dad69010a24365f62f4e8a0b3251",
             "locator": {
               "end": 390,
@@ -1662,8 +1662,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -1742,78 +1742,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
-            "content": "sha256:13953eb0f70df43741ec3d99b69c4709c324de4cf1195e14140c29aad19a7a15",
+            "blob": "c7a1314caf2e8d8c90443415ff08066baaf34253",
+            "content": "sha256:3451d9d3bb68ddd3a20fd46f8538a5a7e5ae71b58f9839efcbd090fd01b039d0",
             "locator": {
               "kind": "symbol",
               "name": "HighlightComposerImpl"
             },
             "path": "dashboard/src/panels/HighlightComposer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
-            "content": "sha256:467353c8f2438e92b0871879d7a3edafdc2a0762ccaee459e6abcd8f3b42e52a",
-            "locator": {
-              "kind": "symbol",
-              "name": "submitTo"
-            },
-            "path": "dashboard/src/panels/HighlightComposer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fa80cd235860d5cf52dd34f48e44fb6882c5c312",
-            "content": "sha256:c612a276106b6e2d341072652d719afe5233719efe065c5814a7c433b39cca58",
-            "locator": {
-              "kind": "symbol",
-              "name": "successful"
-            },
-            "path": "dashboard/src/panels/HighlightComposer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "51": {
-      "note": "Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "82aa5e83906c6ea1e576904e0834396d2edf447b",
-            "content": "sha256:f6dd7587f9019178ccdbb2d21b44cf4ca2b8cd30163103a3662e30d5a00ebc19",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildLeafContextPackage"
-            },
-            "path": "dashboard/src/panels/RailChat.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82aa5e83906c6ea1e576904e0834396d2edf447b",
-            "content": "sha256:933f86ac01305d25314f48bfc182b21307f3ee52d8353a4c653b6a15721a02f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "RailChatImpl"
-            },
-            "path": "dashboard/src/panels/RailChat.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d86bb1a5022fbf265e4eb575f8e94c64aed81786",
-            "content": "sha256:a31ca3211936e22d353e2de91602346ce0de118718b217c678b345d6ea0dbb14",
-            "locator": {
-              "kind": "symbol",
-              "name": "findSessionForTask"
-            },
-            "path": "dashboard/src/data/sessions.ts"
           },
           "kind": "code"
         }
@@ -1824,7 +1759,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
             "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
             "locator": {
               "end": 259,
@@ -1925,7 +1860,7 @@
         },
         {
           "anchor": {
-            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
               "end": 357,

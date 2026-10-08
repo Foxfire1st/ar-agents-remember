@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "39c36517706a81dd27f7d890760645111f3d55b3",
+        "blob": "cd9e521bca220ddd1f413eca6385dff7c74a5d67",
+        "content": "sha256:20cd3eac1b53dfc4ba83bbde509ce1126af97244cf6eaddeb2cf453ea722281c",
+        "locator": {
+          "kind": "symbol",
+          "name": "openWorkspace"
+        }
+      },
+      "id": "RLZ-EAQ0QW",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This native bridge operation obtains task-placement created/found from the initial public create snapshot. Its unchanged masterless Projects open returns opened without pretending that the host supplied a creation result.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "cd9e521bca220ddd1f413eca6385dff7c74a5d67",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",

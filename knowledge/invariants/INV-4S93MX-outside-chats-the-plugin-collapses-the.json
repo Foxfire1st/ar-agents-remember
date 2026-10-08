@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A visible toggle in a 300-pixel rail is the space defect the developer named, and a collapse that wrote the shared stored state would close the host's list on the Chats page and in standalone tabs; the obligation spans the sidebar module, the storage wrapper and the bridge, and is guarded by the real-bridge regression. Its only proofs were the sidebar test's setup declarations; the assertion evidence is retained as the card's test references, and the file writer binds proof anchors to symbols, which a vitest callback does not provide."
+  },
+  "applicability": "Every frame the dashboard embeds on a page other than Chats, at each of its rail widths.",
+  "conditions": [
+    "The plugin is told the page mode over the trusted parent channel or the frame address, and trusts only the listed parent.",
+    "The host's list is collapsed when the frame has loaded and again after each change of what the frame shows.",
+    "The host's own toggle is not visible in that frame and cannot be reached with the keyboard.",
+    "Leaving document mode removes the isolation and restores the host's own controls and storage behavior."
+  ],
+  "exclusions": [
+    "The Chats page keeps the host's own stored list state and its own toggle (MIK-R75 rule 8).",
+    "A standalone tab of the host and the host's own keyboard gestures are outside the plugin's reach."
+  ],
+  "id": "INV-4S93MX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule1",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Outside Chats the plugin collapses the native sidebar and hides its toggle without storing the rail choice.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
             "locator": {
-              "end": 342,
+              "end": 343,
               "kind": "line_range",
-              "start": 342
+              "start": 343
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 320,
+              "end": 321,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -38,12 +38,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:aabc5c086debafa2c1702a7567f12a34758356ba64e6e6ebcbedbfb78a2604b2",
             "locator": {
-              "end": 342,
+              "end": 343,
               "kind": "line_range",
-              "start": 342
+              "start": 343
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -51,12 +51,12 @@
         },
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 320,
+              "end": 321,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -69,12 +69,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:102df1dd793dece048d133c0f7b3db51bf4215db6c7b3e273a03cae72ab1c9d0",
             "locator": {
-              "end": 371,
+              "end": 372,
               "kind": "line_range",
-              "start": 371
+              "start": 372
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -95,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:cbcba193c288fff6c7f8fdd6ab253eada8e4fdcff7b2f7187f392378be0814cf",
             "locator": {
               "end": 398,
@@ -108,7 +108,7 @@
         },
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:5c7f8ed196c6ece73f58d03dceaeb70b3ba8c289fa8c62d93f62f7c248eb3930",
             "locator": {
               "end": 409,

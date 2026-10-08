@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
-        "content": "sha256:3aba7b6e888d4c3d1e2d8306354b7d5660c5090fef0b269b44abd2fdb09133cd",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+        "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
         "locator": {
           "kind": "symbol",
           "name": "start"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
         "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
         "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
         "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
         "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
         "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
         "locator": {
           "kind": "symbol",
@@ -107,6 +107,24 @@
         "leaf": "260928-MIK-L75"
       },
       "rationale": "The message switch keeps the selection and navigation-error kinds and drops the hierarchy/hierarchy-error handling that only fed the removed sidebar.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+        "content": "sha256:5eb098c3fe9e89e26d7a6319efa13a9d3eeffe2c2aabcf41b941219bfe419600",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoFrameControl"
+        }
+      },
+      "id": "RLZ-SFPH0W",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The controller posts ar.open with the exact agent and workspace and the page mode, so a ready document frame follows the selection without a reload.",
       "role": "enforcement"
     }
   ],

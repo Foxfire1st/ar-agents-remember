@@ -33,12 +33,12 @@
       ]
     },
     "5": {
-      "note": "The cockpit supplies the four product entries and the opening view.\n\nAnchor: `VIEWS`",
+      "note": "The cockpit supplies the four product entries and the opening view.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             },

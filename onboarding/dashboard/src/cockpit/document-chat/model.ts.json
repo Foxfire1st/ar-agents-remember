@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/model.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+        "content": "sha256:5230d3a4ffa90de94985145c87c5412c15daaa851934b87b5d6eea996c286caa",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentChatAgent"
+        }
+      },
+      "id": "RLZ-6FBZ98",
+      "invariant": "INV-A3AK6R",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule3",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The pick matches the record labels to the exact document, skips archived records without a workspace and takes the newest with a stable tiebreak.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+        "content": "sha256:60e3b14f1452174cee2d299e58ccf15b75ff8848b6b345cf53bf49dd08641963",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentChatBinding"
+        }
+      },
+      "id": "RLZ-S0YF0Z",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This pure binding decides which roles and which canonical selection one document admits, so the panel never asks for references it already knows.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The binding returns exactly the roles the selection admits, or none with the missing-relationship reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+            "content": "sha256:60e3b14f1452174cee2d299e58ccf15b75ff8848b6b345cf53bf49dd08641963",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The agent pick matches the document key, skips archived records and picks the newest stable record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+            "content": "sha256:5230d3a4ffa90de94985145c87c5412c15daaa851934b87b5d6eea996c286caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatAgent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reader validates the declared record fields instead of trusting an untyped answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+            "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

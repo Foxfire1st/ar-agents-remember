@@ -66,31 +66,17 @@
       ]
     },
     "2": {
-      "note": "Full-route composition and shell ownership.\n\nAnchor: \"import { SessionsView } from \\\"../panels/session-cockpit/sessions-view/SessionsView\\\";\"; \"data-testid=\\\"sessions-stage\\\"\"",
+      "note": "Full-route composition and shell ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:f7d9bb3a6f01b172decbe6e85a9e9c53cc120bf95cd236f2208f597c41f16af4",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
-              "end": 52,
-              "kind": "line_range",
-              "start": 52
+              "kind": "symbol",
+              "name": "CockpitShell"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b67137a860798d08ebe74ddcf11ab7e9651ed234",
-            "content": "sha256:d46b9042f2ddd082323ff73e99ec65e52c007b7ad8655c2b5c6b4c0689712cab",
-            "locator": {
-              "end": 286,
-              "kind": "line_range",
-              "start": 286
-            },
-            "path": "dashboard/src/panels/session-cockpit/sessions-view/sessionsViewBody.tsx"
           },
           "kind": "code"
         }

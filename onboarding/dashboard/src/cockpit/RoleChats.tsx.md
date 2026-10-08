@@ -26,3 +26,7 @@ The current source and test assertions below establish the documented ownership;
 | Current source owner or exact assertion described above. | `fetchExecutionResult` | `dashboard/src/cockpit/RoleChats.tsx:773-803` |
 | Current source owner or exact assertion described above. | `dispatch` | `dashboard/src/cockpit/RoleChats.tsx:890-920` |
 | The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. | `directly shows one persistent Role chats pane without an old-chat selector` | `dashboard/src/cockpit/Cockpit.test.tsx:768-798` |
+
+## MIK-R95 Extracted Launcher And Bound Row
+
+The launcher row is no longer defined here: `RoleLauncher` and `useRoleLaunchProgress` moved to `./role-launcher/`, and `RoleChatsPane` renders that shared component for the Chats page and for the document rail's bound selection. The pane keeps launch intent, exact request identity, options/result reads and one failure line. Its bound mode suppresses the reference pickers it already knows, marks an open execution running and offers no second start, and adopts an existing saved Projects open request through `boundTasklessRequest` while an uncertain request keeps its exact identity. The document-scope effects stay keyed to the canonical scope and request.

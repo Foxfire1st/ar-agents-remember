@@ -1,0 +1,26 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/page.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "253baa5c3ea7cc8860c75ab19e6b049a42771265",
+        "content": "sha256:dd2b981e91374b779835432ab1d7aa90061eb1b3c0683812e183426b718aa68b",
+        "locator": {
+          "end": 100,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-HTJSAS",
+      "invariant": "INV-YJ2H50",
+      "origin": {
+        "handoffEntry": "L95-R1-PLG-02",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The wrapper keeps receiver and argument count intact, transforms only string pairs and avoids a second object coercion during observation; quiet plugin writes bypass the interception.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

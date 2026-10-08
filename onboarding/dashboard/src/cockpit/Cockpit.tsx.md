@@ -40,8 +40,10 @@ position survive a tab switch.
   nothing).
 - **Selection and chat.** `selectedId` is a typed selection key normalized through
   `lifecycleSelectionKey`; `selectedLifecycleId` derives the lifecycle context. The right rail's
-  River/Chat toggle keeps `RailChat` with `viewedLeafKey` from `DetailPanel`'s viewed-task context.
-  The highlight composer is mounted once and filters targets by the current selection.
+  River/Chat toggle keeps the Event River on one side and mounts `DocumentChat` on the canonical
+  viewed task on the other (MIK-R95); the removed `RailChat` and its `viewedLeafKey` plumbing are
+  gone. The highlight composer is mounted once and filters targets by the current selection; its
+  former direct leaf-chat target was removed with the old panel.
 
 ### Conventions
 
@@ -78,10 +80,15 @@ No relevant domain documentation was found for this file.
 ### Repo-Internal References
 
 - The product bar and its order are one list. [32]
+
 - The shell opens on Chats and renders the retained layers. [33]
+
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
+
 - Full-bleed is derived for the product and retained machine-map views. [35]
+
 - A page outside the bar mounts only through an injected view. [36]
+
 - The layer wrapper that hides without unmounting. [37]
 - The mode-bar primitive that renders the product entries. [38]
 - The Knowledge reader the retained layer mounts. [39]
@@ -89,3 +96,7 @@ No relevant domain documentation was found for this file.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+## MIK-R95 Document Rail
+
+The Chat side of the right rail now mounts `DocumentChat` on the canonical viewed task plus the shared task series; the `RailChat` module, its `viewedLeafKey` plumbing and the leaf-chat context it consumed were removed (rule 8). `RightRail` receives `series` and `active={!fullBleed}` instead of engine/context values, so the retained rail keeps one frame while a full-bleed page hides it. The highlight composer no longer receives a direct leaf-chat target.

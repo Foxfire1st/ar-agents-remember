@@ -27,3 +27,7 @@ Receipt creation is exclusive and complete before native launch; unknown outcome
 - Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation. [11]
 - Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [12]
 - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]
+
+## MIK-R95 Preparation Receipt
+
+A successful launch receipt records the public open outcome it observed: `receipt.preparation.workspace` is `created`, `found` or `opened` when the outcome names one, and the enclosure's own `created`/`found`/`not-applicable` value is carried beside it. `_public_execution` exposes the `preparation` block to the role-start answer.

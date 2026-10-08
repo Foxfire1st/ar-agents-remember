@@ -67,8 +67,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -555,7 +555,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
               "end": 599,

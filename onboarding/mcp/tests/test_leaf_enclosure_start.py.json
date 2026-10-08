@@ -1,5 +1,24 @@
 {
   "path": "mcp/tests/test_leaf_enclosure_start.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b123c35bd8cb7b66e9cbbdb8e781df6c5249a3ee",
+        "content": "sha256:763408475793189ff24d73cac94282b372a64e82c7f13d1e766ebf675e3d3b20",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEnclosureStartCommandTests.test_native_stale_recovery_survives_the_child_and_both_entry_points"
+        }
+      },
+      "facet": "Native producer shape, child recovery transport, parent projection and the common refusal translator are asserted; the shared public entry wiring is separately source-observed and not exercised by this test.",
+      "id": "PRF-AHFF9T",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "L95-M1-KNOW-02-proof-8j056t",
+        "leaf": "260928-MIK-L95"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96ccbaa4d2080cdabb081ea3abde7b7f9d90520d",
-            "content": "sha256:962807cdf3ebb943c764b1f33f28592439276c9ea4c554505554e4496285c91e",
+            "blob": "b123c35bd8cb7b66e9cbbdb8e781df6c5249a3ee",
+            "content": "sha256:c47ee55cf084b682bb7610edf15e541d68b0ccb7f0dc0592701b848675c162cb",
             "locator": {
               "kind": "file"
             }

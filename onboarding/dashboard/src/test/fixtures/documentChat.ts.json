@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/test/fixtures/documentChat.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sprint fixture commands the master used by the other fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a668a8c2f5f7a0882fa767cbd92b0d40911fd1a7",
+            "content": "sha256:6e4c6f6ae632cacb5ad513adc5fab3babac4b2024ca017683f13a8a057908ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatSprint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The master and leaf fixtures model a commanded master and its leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a668a8c2f5f7a0882fa767cbd92b0d40911fd1a7",
+            "content": "sha256:efc8e8998e996ae84e924934cdc4be8d4249168171bc913a475f75d0d7547fb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatMaster"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The series projection carries the leaf row the binding needs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a668a8c2f5f7a0882fa767cbd92b0d40911fd1a7",
+            "content": "sha256:2bfd775715247c48a0a6becd025d4449b8ed7263596dee52387bab27e1ad9e64",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatSeries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

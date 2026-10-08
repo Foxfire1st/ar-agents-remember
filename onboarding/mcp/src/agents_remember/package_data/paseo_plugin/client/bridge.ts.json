@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
-        "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
-        "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -39,7 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-C3ZC91",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The bridge's open generation suppresses a superseded awaited open, acknowledgement or error so only the latest current open may navigate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
         "content": "sha256:3675faa5b02f7fffe24de8f89ffd0b72d0a388f953ce1288dd1c735677af2bb4",
         "locator": {
           "kind": "symbol",
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
-        "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -75,8 +93,26 @@
     },
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
-        "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+        "locator": {
+          "kind": "symbol",
+          "name": "installBridge"
+        }
+      },
+      "id": "RLZ-TWYV9Y",
+      "invariant": "INV-4S93MX",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule1",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The bridge accepts the trusted ar.page message and turns the document isolation on or off, so the policy has an enforcement place outside the sidebar module.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+        "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
         "locator": {
           "kind": "symbol",
           "name": "installBridge"
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+        "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
         "content": "sha256:3f61656bb07a906a7620eb85454f8c4871076c905c10ab0f3ceceaf1a74fdb0a",
         "locator": {
           "kind": "symbol",

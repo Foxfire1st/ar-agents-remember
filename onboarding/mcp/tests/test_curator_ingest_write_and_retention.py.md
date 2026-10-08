@@ -76,7 +76,7 @@ each case states its input and its measured output without re-implementing the h
 - The CLI entry point the ninth case drives, and the adapter that owns its arguments. [3]
 - The sibling fixtures imported rather than duplicated: the family plane's authored meaning. [4]
 - The list fixture and the contract pair the cases are built on. [5]
-- The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output. [6]
+- The consumer row in the shared snapshot-lifecycle case support on which this module's extraction depends. [6]
 
 - The parent this module was extracted from, whose own docstring points at this sibling's subject. [8]
 

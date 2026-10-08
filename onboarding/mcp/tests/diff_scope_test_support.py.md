@@ -148,9 +148,9 @@ No configured domain documentation could be checked.
 - The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). [26]
 - The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). [27]
 - The artifact row on which the boundary module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_boundaries.py`). [28]
-- The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [29]
+- The `diff_scope_test_support.py` artifact on which the scope module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [29]
 - The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [30]
-- The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [31]
+- The `read_scope_test_support.py` artifact on which the scope module is declared as a consumer (its consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [31]
 - The artifact rows on which the scope module is declared as a consumer (each row's consumer list names `mcp/tests/test_knowledge_diff_scope.py`). [32]
 - **The evidence node the contract names: the removed realization keeps its baseline source in the union.** [33]
 

@@ -42,10 +42,14 @@ None.
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
 - Defines the function `backtick_runs` (lines 20-37) — Every maximal run of backticks, as ``(start, length)``.. [1]
-- Defines the function `code_span_ranges` (lines 40-63) — Half-open ``(start, end)`` ranges covering each code span, delimiters included.. [2]
+- Defines the function `code_span_ranges` (lines 59-82) — Half-open ``(start, end)`` ranges covering each code span, delimiters included.. [2]
 - Defines the function `cell_boundaries` (lines 66-83) — Indexes of the pipes that divide this line into table cells.. [3]
 - Defines the function `enclosing_span_end` (lines 86-90). [4]
 - Defines the function `cell_spans` (lines 93-116) — Where each cell of a table row sits, with GFM's optional outer pipes removed.. [5]
 - Defines the function `split_row` (lines 119-121) — The cells of a table row, stripped.. [6]
 - Re-exports the kernel `fence_delimiter` helper used for fenced scanning. [7]
 - Re-exports the kernel `unfenced_lines` helper used for fence-aware scanning. [8]
+
+## MIK-R95 Illustrative Example Corrected
+
+The docstring's multi-backtick example no longer claims a card location: it keeps the `ariaLabel` illustration and says only that equal-length runs make it one span, after the referenced card was removed by the same leaf. Parser logic and the historical fixture bytes are unchanged.

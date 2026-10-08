@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_document_chats.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+        "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_chats"
+        }
+      },
+      "id": "RLZ-36C8KP",
+      "invariant": "INV-A3AK6R",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule3",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This reader selects only canonical launch records for the requested scope and checks actual host existence/archive state before returning agent/workspace identities. It owns the choice of the newest eligible taskless Architect rather than inferring one from a host tab.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The route resolves the admitted context and serves the read endpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "content": "sha256:9baff1b7818fb03326857a2cff558f5216e7393f8e915436d48f2933c8c2fc54",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_document_chat_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "content": "sha256:743cbf27875eaadebe377311b43d9061a5b47413544295eb5ee1011c16d1d8f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The launched request's agent is projected with its document labels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "content": "sha256:dc3d146082f43bf738a68d3d705944a244dbd8adc4b86bf01b3d931025e54cc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_document_agent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Host reads are bounded and paged, existence is verified, and an unreachable host is distinct from an empty answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
+            "locator": {
+              "kind": "symbol",
+              "name": "document_chats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

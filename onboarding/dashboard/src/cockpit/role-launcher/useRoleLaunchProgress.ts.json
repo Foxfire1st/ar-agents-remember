@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/useRoleLaunchProgress.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The hook polls the exact request's notice and falls back to the preparing label when unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98bd528850df1941991437cf71852394f11a8c33",
+            "content": "sha256:fb94c6bbffc5c20fe77b0e4e00614f2a86188f777784c7bdce3a29fe0e2fe29f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRoleLaunchProgress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

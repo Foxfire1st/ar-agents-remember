@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
-        "content": "sha256:a7e703b60ba6542cb670431a28e85291b3d655a63fcbd3c3df680370921430f2",
+        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+        "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoChatFrame"
+        }
+      },
+      "id": "RLZ-6CV9KK",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The shared frame keeps one native element while a ready target switch moves it by message and carries the document page mode; it stops being a Chats-only mount.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+        "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
         "locator": {
           "kind": "symbol",
           "name": "PaseoChatFrame"
@@ -16,12 +34,12 @@
         "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Keeps one controller and iframe while conditionally rendering the outside-frame navigation rail.",
+      "rationale": "The shared frame keeps one native element across a ready target switch and carries the document page mode through the trusted channel; INV-D0QATN revision 2 excludes the removed dashboard navigation, so no conditional outside-frame navigation is claimed.",
       "role": "propagation-persistence"
     },
     {
       "anchor": {
-        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
         "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+        "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
         "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
         "locator": {
           "kind": "symbol",

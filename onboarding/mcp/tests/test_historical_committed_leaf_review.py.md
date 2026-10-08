@@ -144,7 +144,7 @@ state inside the case's own fixture repository, never the source checkout.
 - **The per-channel failure case: the affected channel unavailable with the record's own deletion statement, and nothing substituted.** [16]
 - **The one state in which the intake defect's code is still the honest answer.** [17]
 - **The declared history tokens the cases assert, read from the resolution module's own vocabulary.** [18]
-- **The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.** [19]
+- The exact-scope consumer row for this module in the shared diff-scope case support. [19]
 
 
 ### Cross-Repo References

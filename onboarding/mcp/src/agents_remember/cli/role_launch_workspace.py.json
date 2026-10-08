@@ -1,0 +1,230 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_workspace.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-1NPDDX",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "Both entry points prepare through this one checked child, so the caller's persistent lifecycle is neither consulted nor changed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_parent"
+        }
+      },
+      "id": "RLZ-934BED",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This resolver takes the existing master contract parent_task_name as the materializer input; only an absent master contract uses the commanding sprint hint for the first bootstrap. The start owner still validates that edge, so the role path cannot replace its recorded parent with a guessed name.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-EN3DAR",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The terminal-generation check refuses before runnable-root use or materialization and supplies the reopen remedy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-VD54R0",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "It refuses a terminal generation before any root use, creates a missing enclosure through the child and reports created versus found.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preparation_refusal"
+        }
+      },
+      "id": "RLZ-XQ6503",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This translator carries the materializer status and reason into the typed preparation failure and names the appropriate owner recovery action. Native stale recovery fields take precedence over an incomplete generic retry, so the caller is not instructed to inspect a nonexistent enclosure.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:cc03ce5de4729e22af1abeb11fc8ff8c17b4eea33b01180fdceaa87b6588750f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-Y79026",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The common resolver creates or finds the enclosure, validates its roots and returns the group plus the preparation outcome for both entry points.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+        "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_contract_path"
+        }
+      },
+      "id": "RLZ-ZKGBXA",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Validates canonical enclosure from leaf document without creating it.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The recorded master contract supplies the parent hint; an absent contract falls back to the sprint only to bootstrap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_parent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A refusal keeps the native status and reason and names an owner-derived next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preparation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical enclosure path is derived from the leaf document and conflicting bindings are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:cc03ce5de4729e22af1abeb11fc8ff8c17b4eea33b01180fdceaa87b6588750f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_workspace"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal generations refuse before any root use or materialization, and a missing enclosure is created through the child.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_leaf_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Both entry points prepare through the one checked child without touching the caller lifecycle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:16b8206380a8f6c2cf8e474b1b8a569816b1237e30754d8aaecd3e3cd17d0c4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

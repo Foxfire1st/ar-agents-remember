@@ -14,7 +14,7 @@ editor per keystroke; behavior is unchanged.
 
 ## Purpose
 
-The shared FEUI-L5 reliable composer for Chats, RailChat, and the sessions cockpit. It is a
+The shared FEUI-L5 reliable composer for Chats and the sessions cockpit (the removed contextual `RailChat` also used it before MIK-R95). It is a
 CodeMirror 6 Markdown editor backed by the per-session draft/revision store, not a PTY paste box.
 Ctrl+Enter submits one epoch-bound whole message through `submitClient`; Enter remains a newline,
 IME composition is respected, slash commands open the command palette, and Alt+Up performs the

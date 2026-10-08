@@ -249,55 +249,16 @@
       ]
     },
     "19": {
-      "note": "**The lane row that registers this module, and the three exact-scope consumer rows its cases are derived for.**",
+      "note": "The exact-scope consumer row for this module in the shared diff-scope case support.",
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
-            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "content": "sha256:c5b7256d0a5d2bb82fda0e172067ed1777c0b3c254be61afc5d7461adc07f070",
             "locator": {
-              "end": 87,
+              "end": 500,
               "kind": "line_range",
-              "start": 87
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
-            "locator": {
-              "end": 470,
-              "kind": "line_range",
-              "start": 470
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
-            "locator": {
-              "end": 1036,
-              "kind": "line_range",
-              "start": 1036
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
-            "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
-            "locator": {
-              "end": 1639,
-              "kind": "line_range",
-              "start": 1639
+              "start": 454
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

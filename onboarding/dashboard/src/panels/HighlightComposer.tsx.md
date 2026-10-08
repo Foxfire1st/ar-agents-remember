@@ -9,10 +9,9 @@
 The slice-6f **"send a context package by highlighting"** composer, migrated by FEUI-L5 to the
 reliable whole-message submission path. Every selection raises the same
 small **Add to chat** pill — a selection alone never sends anything (the L8-r1 correction: the earlier
-auto-paste-on-selection was invisible and fired on unintended highlights). What differs is what the
-pill CLICK does. When the captured selection came from the displayed task leaf and the right rail is
-actively showing that leaf's live chat, the click submits the context through the same reliable
-session-text client rather than PTY paste. Otherwise the click opens the generic composer stage, and
+auto-paste-on-selection was invisible and fired on unintended highlights). The pill click now always
+opens the generic composer stage (the older direct leaf-chat target was removed with the rail panel
+by MIK-R95 rule 8), and
 Send delivers to a chosen/open/new chat, waiting for a newly created bridge to become ready when
 necessary. The composer lives on a snapshot from
 `useSelectionCapture`, so clicking into the message box never dismisses it. Mounted once in
@@ -31,22 +30,11 @@ row reaches `waitForSubmissionReady` and the reliable submit path.
 
 ### Stable Pre-Projection Store Snapshot
 
-The dashboard mounts this composer before the first analytics projection can arrive. Its
-`useDashboard` task-document selector therefore falls back to the module-level
-`EMPTY_TASK_DOCUMENTS` array, whose identity stays stable while the store is unchanged. Returning a
-fresh `[]` from the selector violates React's external-store snapshot contract and causes an empty
-dashboard to loop through forced store rerenders until React raises maximum-update-depth error 185.
+The direct leaf-chat branch and its pre-projection task-document fallback (`EMPTY_TASK_DOCUMENTS`) were removed with the old rail panel (MIK-R95 rule 8). The surviving composer is still always mounted, and its state is snapshot-driven; it keeps no module-level task-document selector and cannot force React into an external-store update loop.
 
 ### Logic
 
-Driven by `useSelectionCapture()` (`data/selection`) — renders `null` with no snapshot. If
-`selection.leafKey` equals the `viewedLeafKey` supplied by `CockpitShell`, `leafChatActive` is true, and
-`findSessionForLeaf(viewedLeafKey, "chat")` finds a live chat, that session becomes `directLeafChat`:
-the pill's `onPress` then calls `directSubmit(id)` behind a `sendingRef` in-flight guard. It submits
-the context with `source: "highlight"` through the shared reliable client; accepted/queued commits
-finish, while rejection, route error, or unresolved endgame keeps the selection and opens/retains the
-generic composer with honest recovery copy. Without a `directLeafChat`, the pill click opens the
-composer stage as before.
+Driven by `useSelectionCapture()` (`data/selection`) — renders `null` with no snapshot. The pill click opens the composer stage; `send` resolves the chosen target and delivers the context with `source: "highlight"` through the shared reliable client. Accepted/queued commits finish, while rejection, route error or unresolved endgame keeps the selection and retains the generic composer with honest recovery copy. The removed direct path (`directLeafChat`/`directSubmit`) acted on a rail leaf chat that no longer exists.
 
 The fallback path uses a fixed-position 0-area `<span>` at the snapshot rect as the React Aria
 `Popover` trigger. The `Popover` is controlled (`isOpen` while a snapshot exists) and
@@ -80,9 +68,8 @@ so it never tracks the selection's width) with the amber active border. The mess
 
 ### Invariants And Boundaries
 
-Both paths keep the no-silent-action invariant: a selection only raises the pill, and nothing is
-submitted before an explicit click. The direct path acts on the pill click alone only when the
-selected DOM was tagged with the same leaf the visible rail chat is serving, and keeps one consistent
+The surviving path keeps the no-silent-action invariant: a selection only raises the pill, and nothing is
+submitted before an explicit click, with one consistent
 "Add to chat" label. The composer persists until
 outside-click/Escape or Send in fallback mode (snapshot-driven, not live-selection-driven). Delivery
 uses the reliable native-control submission client, never PTY paste. With a selected lifecycle,
@@ -108,9 +95,8 @@ No configured live domain-documentation source was available.
 - Session creation supplies only accepted server ids; task-document lookup supplies structurally routed targets. [2]
 - Reliable highlight submission, readiness, same-id retry, and endgame reconciliation. [3]
 - Harness discovery supplies detected create options. [4]
-- Cockpit supplies `viewedLeafKey` and whether the right rail is actively showing chat. [5]
-- The behavior tests cover direct leaf paste and fallback routing. [6]
-- The pre-projection task-document selector uses one stable empty snapshot, and its focused regression rejects React's uncached-snapshot warning. [7]
+
+- The behavior tests cover fallback routing through the generic composer. [6]
 
 ### Cross-Repo References
 
@@ -136,3 +122,7 @@ leaf base; closeout owns commit stamping.
 
 The persistent highlight composer is now memoized. Unchanged shell props on a cockpit view switch
 skip its subtree while its own local and store-backed state still updates normally.
+
+## MIK-R95 Direct Leaf-Chat Target Removed
+
+Rule 8 removed the old rail panel, and the composer's direct-target branch went with it: `directLeafChatFor`, `runningHarnessSession`, the `leafChatActive`/`viewedLeafKey`/`taskDocuments` inputs and the direct-submit plumbing are gone, so the pill click always opens the composer stage and delivery uses the same reliable client and target list as before. No selection is sent without the explicit click.

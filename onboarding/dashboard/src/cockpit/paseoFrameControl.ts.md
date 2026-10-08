@@ -27,3 +27,7 @@ The current source and test assertions below establish the documented ownership;
 | Current source owner or exact assertion described above. | `sync` | `dashboard/src/cockpit/paseoFrameControl.ts:163-175` |
 | Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown. | `validates visible selections against current SDK IDs, recovering after catalog load and clearing removed or reconnected IDs` | `dashboard/src/cockpit/paseoHierarchy.test.ts:244-274` |
 | Deferred lookup is ignored after tab/relation changes; a still-visible split-pane caller can open its current parent, and missing/archived parents or root transitions do not replace the child. | `checks current visible caller and parent relation, including deferred navigation, unavailable parents and root transitions` | `dashboard/src/cockpit/paseoHierarchy.test.ts:134-164` |
+
+## MIK-R95 Document Steering
+
+The pane descriptor carries `page`. In document mode a ready target switch posts `ar.open` with the exact agent and workspace (not a bare agent), the frame URL carries the page mode, and the pane re-announces `ar.page`; the initial document load is forced through the wanted target so a fresh frame opens on the selection. Ready navigation still retains the frame element and never reloads for a same-generation move.

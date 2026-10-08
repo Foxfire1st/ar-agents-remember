@@ -20,10 +20,14 @@ prepare_role_handover validates selection before workspace/enclosure changes. _a
 
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
-- Frozen implementation of _resolve_workspace supporting the stated file behavior. [3]
+- The `_resolve_workspace` implementation now lives in its extracted owner. [3]
 
 - Frozen implementation of the narrow parented-coordinator handover values. [4]
 
 - Checks reuse, explicit refresh and changed daemon home in the key. [5]
 - Checks rejected choices create no receipt, workspace, agent or enclosure. [6]
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
+
+## MIK-R95 Workspace Owner Extracted
+
+The enclosure preparation owner moved to `role_launch_workspace.py`: `_leaf_contract_path`, `_resolve_workspace`, `_ensure_leaf_enclosure` and the new `_recorded_parent`/`_preparation_refusal`/`_start_leaf_enclosure` live there, and this module imports `_leaf_contract_path`/`_resolve_workspace` from it. `prepare_role_handover` keeps the capsule/handover compilation and owner-relation values unchanged.

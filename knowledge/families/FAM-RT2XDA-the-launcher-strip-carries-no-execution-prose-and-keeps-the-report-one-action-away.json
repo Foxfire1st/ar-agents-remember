@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "Removing the prose alone would hide failures and print no path to the report; keeping a failure line alone still leaves the report unreachable; opening the report alone does not keep the strip free of reply text or its height constant. Only together do they keep the developer-visible defect gone while the report and the failures remain reachable."
+    "justification": "Removing the prose alone would hide failures and print no path to the report; keeping a failure line alone still leaves the report unreachable; opening the report alone does not keep the strip free of reply text or its height constant; and a bound row that started a second agent or guessed a preparation outcome would break the same one-row truth. Only together do they keep the developer-visible defect gone while the report, the failures and the start's own outcome remain reachable."
   },
-  "guarantee": "The role launcher is its row of controls: it keeps one height whatever an agent answers, any failure still appears as one line that ends when the condition does, and the report of the selected execution stays one action away through Result in the dashboard's existing reader.",
+  "guarantee": "The role launcher is its row of controls: it keeps one height whatever an agent answers, a bound row starts exactly its admitted selection and shows what the shared start prepared, and any failure still appears as one line that ends when the condition does and names the owner's next action; the report of the selected execution stays one action away through Result in the dashboard's existing reader.",
   "id": "FAM-RT2XDA",
   "members": [
     "INV-6SGHBB",
@@ -13,7 +13,10 @@
     "INV-C7AT8R",
     "INV-DH5NRM",
     "INV-TA2JW5",
-    "INV-EFDE52"
+    "INV-EFDE52",
+    "INV-5MP23G",
+    "INV-ZVQ7E3",
+    "INV-8J056T"
   ],
   "origin": {
     "handoff": {
@@ -23,12 +26,14 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "dashboard/src/cockpit",
-    "dashboard/src/panels/notes-reader",
     "dashboard/src/data",
-    "mcp/src/agents_remember/cli"
+    "dashboard/src/panels/notes-reader",
+    "mcp/src/agents_remember",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/models"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

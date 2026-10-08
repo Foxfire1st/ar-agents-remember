@@ -89,3 +89,7 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+## MIK-R95 Shared Start Preparation
+
+This template now sends each leaf role through `role_start` as the operation that prepares its admitted task environment; no separate `worktree_status`/`worktree_start` call precedes it. A start that reports moved source names the contract-addressed `worktree_sync` recovery to follow instead, and the brief still forbids inferring a source branch from the checkout or carrying a prior super tip forward. The bundled runtime copy is byte-identical to this source template.

@@ -277,42 +277,16 @@
       ]
     },
     "16": {
-      "note": "The cockpit re-target that keeps a leaf opened from the net in the same takeover.\n\nAnchor: `onOpenLeaf`; `onOpenChangeSet`",
+      "note": "The cockpit re-target that keeps a leaf opened from the net in the same takeover.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:1df0e6755b92c3200a30da14548c3070ca748d0074704eb611d637a054669aad",
-            "locator": {
-              "end": 575,
-              "kind": "line_range",
-              "start": 565
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
               "end": 599,
               "kind": "line_range",
               "start": 599
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:c268cebf367c9570b1e04ac751fc41e24902bb1e222182c35638e9664eaa1417",
-            "locator": {
-              "end": 924,
-              "kind": "line_range",
-              "start": 892
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -610,7 +584,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
             "locator": {
               "end": 599,

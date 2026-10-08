@@ -27,3 +27,7 @@ The current source and test assertions below establish the documented ownership;
 | Current source owner or exact assertion described above. | `EmbeddedFrame` | `dashboard/src/cockpit/PaseoChatFrame.tsx:251-281` |
 | A fresh page installs no bridge or write watcher before the exact embed-list pair confirms its parent, then installs a bridge only on the settled page. | `listed frame: the AR look and the channel, once the list has confirmed the parent` | `dashboard/src/cockpit/paseoPluginClient.test.ts:775-805` |
 | The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. | `directly shows one persistent Role chats pane without an old-chat selector` | `dashboard/src/cockpit/Cockpit.test.tsx:768-798` |
+
+## MIK-R95 Document Page Mode
+
+The frame takes `page` and reports availability to its host. In document mode the controller announces `ar.page`, carries `arPage=document` in the frame URL, moves a ready frame by `ar.open` with the exact agent and workspace (so the same element and `performance.timeOrigin` survive a ready target switch) and does not reload for a selection change; the unavailable path and explicit Retry still replace a generation. `FrameUnavailable` is exported so the document panel shows the same Retry notice. The wide embedded frame keeps the working Parent control; the narrow document frame shows none (D86).

@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/cockpit/roleLaunchModel.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3e06d1083f1baefa7db0ac222302b8fc1bd56b8",
+        "content": "sha256:25507d41b7cde2cfbae354b014197c7e56afdb3b5ba26ee485af7fabe44fe022",
+        "locator": {
+          "kind": "symbol",
+          "name": "boundTasklessRequest"
+        }
+      },
+      "id": "RLZ-PWESKX",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "It lets a bound Projects row adopt a saved open request while returning an uncertain request unchanged so its exact identity survives reconciliation.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

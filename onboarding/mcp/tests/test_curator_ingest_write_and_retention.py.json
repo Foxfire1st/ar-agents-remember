@@ -150,42 +150,16 @@
       ]
     },
     "6": {
-      "note": "The lane row and the two consumer rows this module's extraction needed, both derived from the census's own failing-run output.",
+      "note": "The consumer row in the shared snapshot-lifecycle case support on which this module's extraction depends.",
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
-            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
+            "content": "sha256:b5a8fafa106214e3a4a0885cb8225a41675e6973527dc0ec71b25796033885b3",
             "locator": {
-              "end": 62,
+              "end": 1780,
               "kind": "line_range",
-              "start": 62
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
-            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
-            "locator": {
-              "end": 1019,
-              "kind": "line_range",
-              "start": 1019
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6be10e01bb024d9737f684a6c82bc3aaab1e35b2",
-            "content": "sha256:806303bcbdf2d42c8214f64b24f9948d32047de4767d87df82d0e73291268e6d",
-            "locator": {
-              "end": 1764,
-              "kind": "line_range",
-              "start": 1764
+              "start": 1752
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

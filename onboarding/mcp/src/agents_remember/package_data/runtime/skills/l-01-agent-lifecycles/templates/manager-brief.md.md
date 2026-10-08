@@ -119,3 +119,7 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## CCR-L42 current candidate
 
 The manager brief now carries review mode, the sealed baseline, the preceding result, and exact outstanding IDs. Fix-verification checks only those IDs, uses the begin/record review task-document operations, and does not add routes or rediscover the scope.
+
+## MIK-R95 Shared Start Preparation
+
+The dispatched Manager briefing now sends each leaf role through `role_start` as the operation that prepares its admitted environment: no separate `worktree_status`/`worktree_start` call precedes it. If a start reports moved source, the manager follows the contract-addressed `worktree_sync` recovery the start names and re-reads status, without inferring a source branch or carrying a prior super tip forward. The bundled runtime copy and the source skill template are byte-identical.

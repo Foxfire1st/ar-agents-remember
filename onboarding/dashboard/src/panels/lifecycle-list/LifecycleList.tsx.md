@@ -280,8 +280,9 @@ role of its own for the same reason.
 
 ### Repo-Internal References
 
-- `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document; `isRootTaskDoc`/`enclosureForDoc` are the joins. [1]
-- `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11), and doc-less runtime rows are re-parented onto their master (`masterParentKeyForEnclosure`/`lifecycleRow`) so neither floats as a standalone node. [2]
+- `operationRows` admits root/master task documents, active-enclosure-matched leaves, series fallback rows, and active-enclosure-backed runtime fallbacks rather than every projected task document. [1]
+
+- `enclosureForDoc` admits leaf docs by exact case-insensitive stem/`id` joins only (reopen reuses the same leaf id since L11). [2]
 - Regressions assert a reopened (cleanup=reopened, no worktrees) enclosure is hidden until restart then re-admitted, an abandoned enclosure leaves the active rows, a doc-less orphan lifecycle nests under the master, and a lifecycle bound to a doc's enclosure annotates the single row instead of duplicating it. [3]
 - `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. [4]
 - Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. [5]
@@ -313,3 +314,7 @@ keep-alive boundaries remain unchanged.
 The lifecycle rail accepts an `active` signal. Its locally advancing staleness clock stops while a
 kept-alive rail is hidden, while the render-heavy row/group derivation lives in a memoized child so
 clock and parent renders do not reconstruct the React Aria list unnecessarily.
+
+## MIK-R95 Comment-Only Delta
+
+The enclosure comment no longer names the removed rail panel; no admission, join, tier, collapse, accessibility or rendering behavior changed.

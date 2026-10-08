@@ -1,0 +1,162 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-2RCSQR",
+      "invariant": "INV-6SGHBB",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 1",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's own grid is where the strip is composed: it held the state line, the capability summary, the reply block and the report path under the controls, and it is the element whose content rule 1 constrains.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+        "locator": {
+          "kind": "symbol",
+          "name": "boundCanStart"
+        }
+      },
+      "id": "RLZ-CSKAPQ",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This predicate decides startability for a bound row from the bound role, the live occupant and the canStart answer, so a duplicate start is not offered.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-MKCYCH",
+      "invariant": "INV-WEZ24E",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 7",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The launcher's row no longer begins with the Hide/Show-navigation button; its first control is the role selector.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-MKJATY",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The shared row renders role and native agent/model/effort controls from the admitted selection and options. Bound-role gating suppresses reference pickers, marks an existing occupant running and disallows a second bound-row start while keeping the unbound Chats controls.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+        "locator": {
+          "kind": "symbol",
+          "name": "roleLauncherGrid"
+        }
+      },
+      "id": "RLZ-TNTSC0",
+      "invariant": "INV-43CXH6",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 2",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The grid carries the row of controls and, after the change, only the failure line: its height no longer follows the length of an answer.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A bound row decides startability from the bound role, the live occupant and the canStart answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundCanStart"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bound mode omits the reference fields the selection already determines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
+            "locator": {
+              "kind": "symbol",
+              "name": "referenceFields"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row is one control strip that can carry the preparation line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:1e6d5148e9e49d5b53b9d510ed2314664cf4a977a6bebe6975df543d2fd13c3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcherRow"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exported launcher renders controls, progress and the single failure line for both hosts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

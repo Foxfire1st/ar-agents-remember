@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "13": {
-      "note": "The suite mounts the shell and switches views through the mode bar.\n\nAnchor: `CockpitShell`",
+      "note": "The suite mounts the shell and switches views through the mode bar.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dfb3b3d65a96ee27ac3bf5ec9aac98eb30c0edf",
-            "content": "sha256:8e784cc60a2429095032e8502df7480ffe14ba650c16d1ffc5a1a091e26fdc4a",
+            "blob": "687739f2806360ba86237450d193083b5d7265bf",
+            "content": "sha256:354df045ac61caedcbb43161ca9ef110b281fec0e848a8682abb0331a7a78e01",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "14": {
-      "note": "The layout matrix sources the retained pages only through their injected views.\n\nAnchor: `it.each`",
+      "note": "The layout matrix sources the retained pages only through their injected views.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dfb3b3d65a96ee27ac3bf5ec9aac98eb30c0edf",
-            "content": "sha256:8e784cc60a2429095032e8502df7480ffe14ba650c16d1ffc5a1a091e26fdc4a",
+            "blob": "687739f2806360ba86237450d193083b5d7265bf",
+            "content": "sha256:354df045ac61caedcbb43161ca9ef110b281fec0e848a8682abb0331a7a78e01",
             "locator": {
               "kind": "file"
             }
@@ -33,12 +33,12 @@
       ]
     },
     "15": {
-      "note": "The view list the bar renders.\n\nAnchor: `VIEWS`",
+      "note": "The view list the bar renders.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             },

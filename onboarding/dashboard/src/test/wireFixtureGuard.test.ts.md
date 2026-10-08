@@ -68,7 +68,7 @@ line moves, in four groups:
   `types/terminalOpen.ts`;
 - every `.ts` file under `src/types/` must declare itself a mirror on its first line;
 - `isFixtureSurface` is pinned on eight representative paths, including two that must be `false`
-  (`src/data/store.ts`, `src/panels/RailChat.tsx`).
+  (`src/data/store.ts`; the removed `src/panels/RailChat.tsx` was the other before MIK-R95).
 
 **`no dashboard test asserts against a payload the server cannot produce`** — the
 reconciliation: `unregistered` must be empty (with a failure message telling the author to build the

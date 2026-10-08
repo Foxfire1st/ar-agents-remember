@@ -153,8 +153,10 @@ No configured domain documentation could be checked.
 - The lane row placing this module in the unit population. [38]
 - The registration listing this module among the exact consumers of the shared candidate-batch case harness. [39]
 - The registration listing this module among the exact consumers of the shared candidate-batch case harness. [40]
-- The registration listing this module among the exact consumers of the shared earlier-generation case support. [41]
-- The registration listing this module among the exact consumers of the shared earlier-generation case support. [42]
+
+- The `generation_test_support.py` registration listing this module among the exact consumers of the shared earlier-generation case support. [41]
+
+- The `generation_test_support.py` registration listing this module among the exact consumers of the shared earlier-generation case support. [42]
 
 ### Cross-Repo References
 

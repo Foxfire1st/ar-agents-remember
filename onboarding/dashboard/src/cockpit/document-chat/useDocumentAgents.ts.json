@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/useDocumentAgents.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reader posts the exact selection, pages through offsets and retries while active.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f4ca205c96f1bebc91db8b80a52b46137d461a3",
+            "content": "sha256:28307f8f2ec72f429df921c74b8f489d376ef47864c9e68b82f0e5ad8a0f9f37",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unreadable source is distinct from an empty agent list and carries its reason for Retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f4ca205c96f1bebc91db8b80a52b46137d461a3",
+            "content": "sha256:48d70bfdcecf2560c81b463160abbc2190e9a42662fa80f376142df3b456e902",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadableSource"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

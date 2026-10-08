@@ -22,3 +22,7 @@ Caller binding decides may-start pairs and sprint/master containment. Starts cal
 - Checks foreign IDs and self-addresses are refused. [6]
 - Checks live taskless-role ambiguity reports IDs and sends no message. [7]
 - Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent. [8]
+
+## MIK-R95 Preparation Answer
+
+A `RolePreparationError` cause is projected into the `launch-refused` answer with its exact owner status, detail and next action, and `preparationStatus`; a successful answer carries the receipt's `preparation` block and appends `_projects_preparation_note`, which states that a masterless Projects workspace was opened and that the host reports no creation outcome. Nothing infers the outcome from timing or a pre-call list.

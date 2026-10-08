@@ -13,8 +13,9 @@ unchanged.
 ## Purpose
 
 The **drill-down leaf picker** (Operations Integration L5, leaf-keyed chat registry): the control that
-attaches a chat session to a task **leaf**. Its current consumers are the contextual right-rail chat
-(`RailChat`) and the full-page cockpit duty bar (`session-cockpit/ChatContextBar`). It replaces a native
+attaches a chat session to a task **leaf**. Its current consumer is the full-page cockpit duty bar
+(`session-cockpit/ChatContextBar`); the contextual right-rail chat (`RailChat`) that also used it was
+removed by MIK-R95 rule 8. It replaces a native
 `<select>` — whose OS-rendered list was an unthemed white "flashbang"
 and dumped every leaf of every series into one flat list. The task hierarchy nests arbitrarily (a master
 can itself be a sub-task of another master), so a single grouped list cannot express it; instead one
@@ -57,7 +58,7 @@ testid `{testId}`) and, when open, a popover.
 - **Portaled, fixed popover.** When `open && coords`, the menu is rendered via `createPortal` into
   `document.body` with `position: fixed` so it escapes the rail's `overflow: hidden` (which was clipping
   it) and any ancestor stacking/transform context. `measure()` reads the trigger's bounding rect and pins
-  the menu to the right edge (`align === "right"`, used by `RailChat`) or the left edge (default, used
+  the menu to the right edge (`align === "right"`, no caller after the rail panel's removal) or the left edge (default, used
   by `ChatContextBar`) so it never runs off-screen. A `useLayoutEffect` (active only while open)
   re-measures on `resize` / capturing `scroll`, and wires click-outside (the check spans **both** the
   trigger and the portaled menu, since the menu lives outside the component's DOM subtree) and `Escape`
@@ -73,8 +74,9 @@ testid `{testId}`) and, when open, a popover.
 
 Co-located Panda `css()` (no global panel CSS); a dark `bgPanel` popover with amber accents matching the
 cockpit. Plain React state + native `<button>`s rather than a React Aria overlay — keeps the drill flow
-unit-testable without an overlay harness. `data-testid`s are all `{testId}`-prefixed so the two consumers
-(`rail-attach-leaf-picker` for `RailChat`, `chats-attach-leaf-picker` for `ChatContextBar`) get disjoint
+unit-testable without an overlay harness. `data-testid`s are all `{testId}`-prefixed so the consumers
+(`rail-attach-leaf-picker`, the retired rail panel's former prefix, and `chats-attach-leaf-picker` for
+`ChatContextBar`) get disjoint
 implementation hooks; the `chats-*` prefix is not evidence of a retired component. Node titles fall back to the
 folder/leaf id inside the tree builder, so this component renders `node.title` directly.
 
@@ -82,8 +84,9 @@ folder/leaf id inside the tree builder, so this component renders `node.title` d
 
 - **Presentational + controlled.** It owns only ephemeral UI state (open / drill path / menu coords /
   selected role). It never reads a store, never fetches, and never performs the attach itself — selection
-  is surfaced through `onPick(leafKey, seatRole)`. `RailChat` and `ChatContextBar` then perform the
-  server-first attach/move and apply local assignment only after acceptance.
+  is surfaced through `onPick(leafKey, seatRole)`. `ChatContextBar` then performs the
+  server-first attach/move and applies local assignment only after acceptance; the removed `RailChat`
+  used the same contract.
 - **Tree is supplied, not built here.** The recursive hierarchy comes in as the `tree` prop; this
   component only navigates and renders it. Arbitrary nesting is handled generically — a nested master is
   just a master node sitting inside another master node.
@@ -102,9 +105,6 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - The `TaskTreeNode` shape it drills and `findMasterPath` it pre-drills with (and `buildTaskTree` that produces the `tree` prop). [1]
-- `RailChat` builds the nested task tree used by the attach picker from projected task documents. [2]
-- `RailChat` renders the picker with right alignment and passes the selected leaf/role pair to its attach callback. [3]
-- `RailChat` performs the server-first attach/move and applies the returned task-document-and-role assignment only after success; a taken seat leaves local state untouched. [4]
 - `ChatContextBar` builds the tree, restricts terminal role options when needed, and attaches/moves the focused session server-first. [5]
 - Render/drill tests cover role selection, disabled leaf rows, and the two-argument callback. [6]
 

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
         "content": "sha256:abc706fc66c912bf079523425599965ecc4855f669690a4a31d28a309280dd04",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
         "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-        "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+        "content": "sha256:46ebd9c016ca5f8c1aa57ef07918594923f009cf3494e0642b465c9ac9541e3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "RightRail"
+        }
+      },
+      "id": "RLZ-8C3WDX",
+      "invariant": "INV-X60KEC",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule8",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The rail switches between the retained Event River and the selected document native chat component. It passes the canonical viewed task and shared task/series context while removing the obsolete contextual session panel and its exclusive highlight target.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+        "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
         "locator": {
           "kind": "symbol",
           "name": "CockpitShell"
@@ -94,12 +112,12 @@
   ],
   "references": {
     "32": {
-      "note": "The product bar and its order are one list.\n\nAnchor: `VIEWS`",
+      "note": "The product bar and its order are one list.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }
@@ -109,12 +127,12 @@
       ]
     },
     "33": {
-      "note": "The shell opens on Chats and renders the retained layers.\n\nAnchor: `CockpitShell`",
+      "note": "The shell opens on Chats and renders the retained layers.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }
@@ -124,12 +142,12 @@
       ]
     },
     "34": {
-      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.\n\nAnchor: `MainLayers`",
+      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }
@@ -139,12 +157,12 @@
       ]
     },
     "35": {
-      "note": "Full-bleed is derived for the product and retained machine-map views.\n\nAnchor: `useCockpitShellState`",
+      "note": "Full-bleed is derived for the product and retained machine-map views.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }
@@ -154,12 +172,12 @@
       ]
     },
     "36": {
-      "note": "A page outside the bar mounts only through an injected view.\n\nAnchor: `ViewBody`",
+      "note": "A page outside the bar mounts only through an injected view.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }
@@ -169,12 +187,12 @@
       ]
     },
     "37": {
-      "note": "The layer wrapper that hides without unmounting.\n\nAnchor: `ViewLayer`",
+      "note": "The layer wrapper that hides without unmounting.",
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             }

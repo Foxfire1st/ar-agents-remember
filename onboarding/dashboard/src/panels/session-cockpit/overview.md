@@ -125,7 +125,7 @@ who asks, and a seat blocked solely on a sub-agent approval still reads awaiting
 - `SessionRail.tsx` replaces the legacy `SessionList`/`sessionGroups` forest. It renders the
   `railModel` role/spawn hierarchy, master/leaf groupings, completed folders, attention rollups,
   bounded fleet optimization, termination confirmation, and landed cleanup.
-- `RailChat.tsx` remains contextual task-side chat, not a competing destination.
+- The former `RailChat.tsx` was removed by MIK-R95 rule 8; the document rail's native chat is not a competing destination.
 
 ### Stage And PTY Continuity
 

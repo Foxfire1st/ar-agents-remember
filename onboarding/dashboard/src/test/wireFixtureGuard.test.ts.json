@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:16053c92f8380b4ed0cb75c194d15173264a16112e1284269646e1f9a3fd12ab",
             "locator": {
               "end": 18,
@@ -209,7 +209,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
             "locator": {
               "kind": "symbol",
@@ -341,7 +341,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:f361358cf34b5ea79891cef1a9371928a9d955207dce0d01815b4830b1cfbc81",
             "locator": {
               "kind": "symbol",
@@ -353,12 +353,12 @@
       ]
     },
     "4": {
-      "note": "The vacuity suite's fixture-surface checks.\n\nAnchor: \"classifies the fixture surface the rules are strict on\"",
+      "note": "The vacuity suite's fixture-surface checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
-            "content": "sha256:691be2a559191a27b4805bdc9d94dcd3ff033cab980fdbd1ce29a1685e05eb7a",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
+            "content": "sha256:6f249ed78200a3b7c4abd7a4d8f7dba213e241fc371ac683e5045a97496f832b",
             "locator": {
               "end": 263,
               "kind": "line_range",
@@ -374,7 +374,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:c4d24e9efefe12c6a030a86b9595c3bc0ab0a2d1766051b7d4dbe792c635a158",
             "locator": {
               "end": 288,
@@ -391,7 +391,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:c43a2663afb3512509c59bbc8031a89e37280f455590fe5480bb4a8f2081d44c",
             "locator": {
               "kind": "symbol",
@@ -407,7 +407,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:baffacbc984d819e9871d3c3631ade8945f0dbe3278a4f86461ed47dabfbd549",
             "locator": {
               "end": 584,
@@ -424,7 +424,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:7463c38cb94ebaf84425b625e7534c6e0ae29ba651e1fa6ebec21f994526e94b",
             "locator": {
               "end": 593,
@@ -441,7 +441,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3eb8447a2e1301a479875ec23d4f152a01d7fcf3",
+            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
             "content": "sha256:c84e3294eb70cf03cd2e5186d7c75cce8c41e64b6f4bebb25b7de8cb892e1c7f",
             "locator": {
               "end": 626,

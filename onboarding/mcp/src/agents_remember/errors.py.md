@@ -115,3 +115,7 @@ The error families preserve distinct authority, recovery and transport meanings.
 No separate cross-repository protocol is established by this file. The configured cross-repository allowance is empty; no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+## MIK-R95 RolePreparationError
+
+`RolePreparationError` carries the start owner's `status`, `detail` and `next_action` and renders them in one message, so a preparation refusal reaches the caller as the owner's own typed failure rather than a generic HTTP detail. It is raised by the workspace owner and projected by `role_start` into `launch-refused` with `preparationStatus`.

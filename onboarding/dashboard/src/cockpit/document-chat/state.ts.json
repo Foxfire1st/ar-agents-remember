@@ -1,0 +1,90 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/state.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+        "content": "sha256:e87b84257dc822830fffcbca309f59ae3831b82a0780c30675354a09a1baa481",
+        "locator": {
+          "kind": "symbol",
+          "name": "useDocumentChat"
+        }
+      },
+      "id": "RLZ-G8BE9E",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This hook binds the canonical document scope to the selected live launch-record result, retains the exact successful request target and rejects completions for a different document. Its output drives the existing shared frame and bound launcher.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "content": "sha256:e87b84257dc822830fffcbca309f59ae3831b82a0780c30675354a09a1baa481",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A dispatch receipt is adopted only for the live scope with an exact agent and request id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "content": "sha256:244c926bcd9bd4de80970d6ea9988adc30b45b230335c10b2848425b4829f420",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchedRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The displayed agent is the launched request's agent or the newest live record, never a stale document's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "content": "sha256:de3f4b69421ae544cefb0f88a02ec82e5d5fc8599a3977b0143b00514bbe7fb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "displayedAgent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The presentation flags hide an unresolved frame and keep one control for the bound launcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatPresentation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

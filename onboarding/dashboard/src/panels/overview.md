@@ -579,14 +579,14 @@ Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifac
 
 ## Current Structural Panel Contract
 
-Panels receive real task-document hierarchy and current occupant facts from the data route. RailChat
-and the session cockpit select structural document+role seats; task assignment posts that identity,
+Panels receive real task-document hierarchy and current occupant facts from the data route. The
+document chat and the session cockpit select structural document+role seats; task assignment posts that identity,
 and replacement changes only the occupant. No panel derives hierarchy from spawn ancestry or treats
 a lifecycle/session id as the task address.
 
 ## 260713-TES-L5F2 Change
 
-The shared `SessionComposer` and contextual `RailChat` regression suites now prove that composer
+The shared `SessionComposer` regression suite now proves that composer
 answer mode does not require a lifecycle or gate. Both follow the same session-owned protocol as
 the canonical cockpit: read the hosted session's bridge epoch, POST the answer to that exact
 session's `interaction-response` route, lock duplicate sends, and never route an adapter answer
@@ -640,7 +640,7 @@ This route contains reusable cockpit panels plus focused child routes. Its strat
 - [session-cockpit](session-cockpit/overview.md) — the sole full-page Chats destination.
 - [engine-room](engine-room/overview.md) — the Engine Room process visualization.
 - lifecycle-list/LifecycleList.tsx + detail-panel/DetailPanel.tsx — Operations task navigation and reader.
-- RailChat.tsx — contextual task-side chat, not a second full-page chat product.
+- cockpit/document-chat/DocumentChat.tsx — the Operations right rail's native chat for the selected document and the shared bound launcher; it lives under `cockpit/` and reads canonical launch records plus native host state, not the session registry (the older RailChat.tsx was removed by MIK-R95 rule 8).
 - Terminal.tsx, SessionComposer.tsx, and HighlightComposer.tsx — shared interactive surfaces
   consumed by the canonical cockpit.
 
@@ -658,9 +658,7 @@ cockpit, responsive layout keeps the sole chat-creation entrance available.
 ## FEUI-MX-FIX-2 Open Failure Composition
 
 Shared callers do not infer session creation from a completed request. `HighlightComposer.tsx`
-shows a failed create before readiness or submit and sends no selected context. `RailChat.tsx`
-shows the same typed failure and withholds contextual delivery. Both consume the accepted-row result
-from the data route; neither writes a private row, focuses a requested id, or retries through paste.
+shows a failed create before readiness or submit and sends no selected context. Its former direct leaf-chat target was removed with the old rail panel (MIK-R95 rule 8); the document chat's shared frame shows the same typed unavailable notice with Retry and never pretends a session is live. The composer consumes the legacy accepted-session-row result from the data route and writes no private row, focuses no requested id, and never retries through paste; the native document chat reads role launches, launch records and native host state instead and consumes no accepted-session row.
 
 ## Route Model
 
@@ -690,10 +688,11 @@ in the [session-cockpit overview](session-cockpit/overview.md).
 - SessionComposer.tsx is the shared CodeMirror reliable-submit surface. It consumes effective
   keymap/profile state and uses authoritative withdrawal for pop-back.
 - HighlightComposer.tsx sends a selected context package only after acceptance; selection and target
-  choice cannot move active route/focus on rejection or ambiguity. Its pre-projection task-document
-  fallback is a stable module-level snapshot, so the always-mounted composer cannot force React into
-  an external-store update loop while analytics is still absent.
-- RailChat.tsx renders contextual task-side chat under the same registry, not a competing destination.
+  choice cannot move active route/focus on rejection or ambiguity. The removed direct leaf-chat path's
+  pre-projection task-document fallback (`EMPTY_TASK_DOCUMENTS`) went with that branch in MIK-R95; the
+  surviving composer keeps its snapshot-driven state and does not force React into an external-store
+  update loop while analytics is still absent.
+- cockpit/document-chat/DocumentChat.tsx mounts the selected task's native Paseo frame from canonical launch records and native host state, with the shared bound role launcher; it is not a session-registry consumer and not a competing destination.
 
 ### Operations And Other Routes
 
@@ -768,7 +767,6 @@ No applicable cross-repository source was found.
 - The terminal panel owns the shared terminal surface. [48]
 - The shared composer surface is implemented by `SessionComposer`. [49]
 - Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. [50]
-- Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. [51]
 - `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. [52]
 - `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. [53]
 - The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. [54]
@@ -842,7 +840,7 @@ index — where it could never have sorted a master's rows — and onto `seriesA
 whose rows carry the field; `snapshots.py::_series_subtask_nodes` has normally already applied it, and
 both sides skip the sort unless every row carries a `createdAt`.
 
-**What the fixture conversion does and does not pin.** `EventRiver.test.tsx`, `RailChat.test.tsx` and
+**What the fixture conversion does and does not pin.** `EventRiver.test.tsx` and
 `SessionComposer.test.tsx` no longer author wire nodes: every projection node comes from
 `dashboard/src/test/fixtures/wire.ts`, whose bases are assembled from `dashboard/src/fixtures/snapshot.json`
 and annotated with the mirror type, so a fixture that compiles is a shape the MIRROR can produce. Be

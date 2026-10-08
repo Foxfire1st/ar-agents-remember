@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/cockpit/document-chat/sidebar.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tests exercise the actual bridge, write watcher and sidebar module rather than fakes.\n\nAnchor: `document-only sidebar isolation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1fe371b6c4ce685c3c413cf8018ba971a0b6ecd",
+            "content": "sha256:de34d739e703dd868010da9fcdb8aad75820d6fd5c89ee3e4217629bfc2db718",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The storage-preservation and repeated-collapse behavior is asserted end to end.\n\nAnchor: `collapses again on native changes, hides the control and never stores the rail's closed choice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1fe371b6c4ce685c3c413cf8018ba971a0b6ecd",
+            "content": "sha256:b9c25b1e17d0bd62e0e5b564e1ae18ed30cf7a4257d9c833ff69d6caacae1054",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Parent-only page mode and untouched Chats behavior are asserted through the real client.\n\nAnchor: `accepts page mode only from the listed parent and leaves Chats controls and storage alone`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1fe371b6c4ce685c3c413cf8018ba971a0b6ecd",
+            "content": "sha256:ffbc6ef17c77996d2928701547d35d85ec3cc224e640f1a95f3a9ca2898252e4",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

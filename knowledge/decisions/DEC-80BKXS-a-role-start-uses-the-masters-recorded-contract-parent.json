@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The alternative of letting the worktree start resolve the sprint hint was seriously considered and rejected because it is the refusing mismatch; the choice binds how every later start reads the recorded edge."
+  },
+  "alternatives": [
+    {
+      "option": "Read the master's recorded series-contract parent and pass it; use the commanding sprint only when no contract exists yet.",
+      "reason": "The worktree start admits the contract's recorded edge, and the first start bootstraps it as before.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep passing the sprint folder name and let the worktree start resolve it.",
+      "reason": "That is exactly the mismatch that refused the first starts.",
+      "reconsider_when": "Series contracts start recording a different parent name.",
+      "status": "rejected"
+    },
+    {
+      "option": "Rewrite or replace the master's series contract at launch.",
+      "reason": "A launch may not replace an owner-admitted contract edge; the worktree start's checks stay as they are.",
+      "reconsider_when": "The developer rules a different owner for the series-contract edge.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The start reads the recorded contract parent, the first start still creates a missing contract, and every later start reads what the first recorded; no second preparation route is built."
+  ],
+  "context": "A leaf role's first start passed the commanding sprint's folder name as the worktree parent hint, while this master's series contract records the master's own name; the first start was refused with an edge mismatch and the refusal named no remedy.",
+  "decider": "packet MIK-R95@v1 rule 5 and its open truth gap; developer direction D88 / MIK-R100 for the seat set",
+  "id": "DEC-80BKXS",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-5ATS9T"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R95",
+        "packet": "requirements/MIK-R95-v1-the-chat-panel-follows-the-selected-document.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule5",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

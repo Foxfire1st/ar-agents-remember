@@ -15,7 +15,7 @@ mounted-scrollback and one-reattach contracts are unchanged.
 ## Purpose
 
 The imperative xterm.js wrapper over a same-origin PTY socket. It is lazy-loaded by the canonical
-cockpit's PtySurface and contextual RailChat, reports resize/freshness/harvest hooks, and preserves
+cockpit's PtySurface (the removed contextual RailChat also lazy-loaded it before MIK-R95), reports resize/freshness/harvest hooks, and preserves
 normal/mouse/alternate-buffer wheel precedence. Controlled panes expose a runner line-log; legacy raw
 panes may host a vendor TUI. This component is not a structured conversation renderer.
 
@@ -77,7 +77,7 @@ tears down and reconnects the data subscription correctly.
 
 - **PtySurface relationship:** cockpit panes render Terminal THROUGH
   `session-cockpit/PtySurface.tsx` — PtySurface owns the two-archetype switch, keep-alive layers,
-  and pane chrome; this component stays the one xterm engine. Chats/RailChat call sites are
+  and pane chrome; this component stays the one xterm engine. Chats call sites are
   unchanged in behavior (they gained only `ariaLabel`).
 - **Accessible-name guarantee (F6)** cit:([`aria-label`, `tabIndex`], dashboard/src/panels/Terminal.tsx:183-183): the host div is now `role="group"` with
   `aria-label={ariaLabel ?? `terminal session ${sessionId}`}` — the landmark can NEVER be unnamed

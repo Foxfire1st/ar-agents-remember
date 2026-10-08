@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
             "locator": {
               "end": 142,
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "64db4864cdd7994979ca2dbf97ee511742640852",
+            "blob": "d2456969b88dc247da05531695f28de5108b0f54",
             "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
             "locator": {
               "end": 142,
@@ -113,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -131,12 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -149,12 +149,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -167,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "485d1f6f8523e9e114933431e02a38e85bd0ea7a",
+            "blob": "1266d8bfe7072412139ee2da32a93b323606c766",
             "content": "sha256:d550b8921ce3e45fdd8cf76683a1f838e6c7951e3187c8be3be5e96881626dad",
             "locator": {
-              "end": 1639,
+              "end": 1641,
               "kind": "line_range",
-              "start": 1639
+              "start": 1641
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

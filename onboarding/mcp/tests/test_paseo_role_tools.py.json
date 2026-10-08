@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+        "blob": "18e49ddd4e6a4d324d1a9771c39696121a30582e",
+        "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_terminal_enclosures_refuse_both_entry_points_before_roots_or_launch"
+        }
+      },
+      "facet": "Both entry points refuse a terminal enclosure before any root use, launch or receipt and name reopen-required with the task_reopen preview.",
+      "id": "PRF-602QXQ",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "18e49ddd4e6a4d324d1a9771c39696121a30582e",
         "content": "sha256:e9cfaa71370c55d4c8ac3dc833a0bfc57a2fd5f81dd0e79295d58902012818b2",
         "locator": {
           "kind": "symbol",
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
+        "blob": "18e49ddd4e6a4d324d1a9771c39696121a30582e",
         "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
         "locator": {
           "kind": "symbol",
@@ -43,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b78be3e7d5b79b40ebba63979b221cb56c342a3",
-            "content": "sha256:49db24470c9e13c1c433be8fbd0c0573a09d27841f232c3cb4a9f61aad777a06",
+            "blob": "18e49ddd4e6a4d324d1a9771c39696121a30582e",
+            "content": "sha256:bdbea78e06ed6d1260f6f6b6869076a4e430e47d3a671535516ae00380bedf7e",
             "locator": {
               "kind": "file"
             }

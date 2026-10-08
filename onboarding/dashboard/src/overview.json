@@ -6,32 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:f455d122c0fbfe570f8869b243f55c385e9fd43e3e0be41f3a8c0f2e13b14216",
-            "locator": {
-              "kind": "symbol",
-              "name": "CockpitView"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:c23dd6b971f43b7988e7fc3e7f775c1292d6394236c1f6e028713d6a03a65c40",
-            "locator": {
-              "kind": "symbol",
-              "name": "VIEWS"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             },
@@ -269,7 +245,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
             "locator": {
               "end": 389,
@@ -287,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:c1fda8ac10daf4bfeb28f1a9a5162bdf98c3e127b6f7114bdb43075d05e87938",
             "locator": {
               "end": 414,
@@ -300,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:e48fa5053b848932fff47d4fd3283fd08e1d57057af51e6fe91c5b577ae2192f",
             "locator": {
               "end": 581,
@@ -318,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:34571ca86d73641d676acb35c8c10396e970251b142939f19ddf94b090426d1b",
             "locator": {
               "end": 36,
@@ -459,7 +435,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:c8a70740d4932f44fcd17ddf4a9effdd40f8e1654cf88a9bfacb1b2ff0886d5f",
             "locator": {
               "kind": "symbol",
@@ -546,12 +522,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
             "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
             "locator": {
-              "end": 795,
+              "end": 787,
               "kind": "line_range",
-              "start": 794
+              "start": 786
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -669,8 +645,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:568dbf2a777d4ae1e47dcfc9f47e842c1e60ea1c2ce83353bd2a1aa13c18b465",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
             "locator": {
               "kind": "file"
             },
@@ -681,12 +657,12 @@
       ]
     },
     "35": {
-      "note": "The route's Role-chats pane owner.\n\nAnchor: `RoleChatsPane`",
+      "note": "The route's Role-chats pane owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
-            "content": "sha256:b84cd18d60e211a928de06d9e470ce0e89264133005810cbb637fc8d260e2229",
+            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+            "content": "sha256:33aca5ced57bc446d5c9e0680cc5478425056fe989f877449e16fb3945f0195f",
             "locator": {
               "kind": "file"
             },
@@ -697,12 +673,12 @@
       ]
     },
     "36": {
-      "note": "The route's embedded chat frame.\n\nAnchor: `PaseoChatFrame`",
+      "note": "The route's embedded chat frame.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
-            "content": "sha256:2e9a16349a3b29dad9b87266f44347f4dc07d7d1ec218600ad5d6d13b7e42638",
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:b0f807e0a514e2cc383dcd7f40d155171dbfdb10ddb0dcb9590c8e7c2d94a008",
             "locator": {
               "kind": "file"
             },
@@ -717,7 +693,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "398ee87a2b74d412748693e09452c31f5b97c4e1",
+            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
               "end": 574,
@@ -753,8 +729,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
-            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"

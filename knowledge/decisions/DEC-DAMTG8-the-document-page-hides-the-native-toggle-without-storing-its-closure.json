@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The hidden-toggle choice was weighed against leaving the control visible and against letting the collapse write the shared state, with the shared-state risk named."
+  },
+  "alternatives": [
+    {
+      "option": "Collapse the host's list and hide its toggle on document pages only, preserving the shared stored choice.",
+      "reason": "It gives the rail its space back without changing what any other frame or tab remembers.",
+      "status": "chosen"
+    },
+    {
+      "option": "Leave the host's toggle visible in the rail.",
+      "reason": "The developer asked to avoid offering a control the limited space cannot use.",
+      "reconsider_when": "The host publishes a sidebar interface or the rail stops embedding the host.",
+      "status": "rejected"
+    },
+    {
+      "option": "Hide the toggle and let the collapse write the shared panel state.",
+      "reason": "It would close the host's list on the Chats page and in standalone tabs, which the developer ruled against.",
+      "reconsider_when": "The host gives each embed an independent panel state.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The plugin carries a document page mode over the trusted parent channel and the frame address, one document-local style hides the toggle, and the storage wrapper restores the stored choice on native writes."
+  ],
+  "context": "Inside a 300-pixel rail the host's sidebar and its menu button are unusable, while the Chats page and standalone tabs share one stored panel state with every embedded frame.",
+  "decider": "developer directions D72/D73 (2026-10-06), packet MIK-R95@v1 rule 1; MIK-R75 rule 8 preservation",
+  "id": "DEC-DAMTG8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/package_data/paseo_plugin/client"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-4S93MX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-XQMXT2"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R95",
+        "packet": "requirements/MIK-R95-v1-the-chat-panel-follows-the-selected-document.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule1",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

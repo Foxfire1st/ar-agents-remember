@@ -7,7 +7,8 @@
 ## Purpose
 
 Unit tests for the `sessions` store (slice 6e-4): they pin the registry contract consumed by the
-canonical session cockpit, contextual `RailChat`, highlight delivery, and gate routing — `add`
+canonical session cockpit, highlight delivery, and gate routing — the removed contextual `RailChat`
+also consumed it before MIK-R95 — `add`
 labels by lowest available per-prefix ordinal and activates, `close` forgets and
 clears the active pointer only when the closed id was active, `setActive` repoints.
 The reopened-L6 pass pins `pasteDraftToSession`'s confirmed-delivery contract under fake timers:

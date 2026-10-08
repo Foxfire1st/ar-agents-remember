@@ -154,6 +154,7 @@ Chats directly mounts one persistent RoleChats pane/Paseo iframe. The dashboard 
 - Current imported source owns this scoped route boundary. [34]
 
 - The route's Role-chats pane owner. [35]
+
 - The route's embedded chat frame. [36]
 
 ## L23 Lifecycle Operation Projection
@@ -471,9 +472,10 @@ project them, but is not a replacement conversation-history database.
 ### Operations
 
 Chats is the shell's initial destination (260928-MIK-L79). Operations remains a product destination
-selected from the four-entry bar; its task list, detail reader, attention, diagnostics,
-and contextual RailChat retain their existing contracts. RailChat is useful task-local context, not
-a second full-page chat destination.
+selected from the four-entry bar; its task list, detail reader, attention, diagnostics and right rail
+retain their existing contracts. The rail's Chat side now shows the selected task's native Paseo
+workspace and agents through the document chat, while the Event River keeps the other side; the older
+contextual RailChat panel and its selection helper were removed (MIK-R95 rules 2 and 8).
 
 ### Chats
 

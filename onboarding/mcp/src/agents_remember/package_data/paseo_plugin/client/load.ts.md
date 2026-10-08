@@ -26,3 +26,7 @@ The current source and test assertions below establish the documented ownership;
 | Current source owner or exact assertion described above. | `bootstrapEmbed` | `mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts:112-142` |
 | Current source owner or exact assertion described above. | `takeOwnLookBack` | `mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts:126-136` |
 | The standalone preference is persisted before the application settings can be overwritten with the embedded appearance. | `never overwrites the user's look before it is kept` | `dashboard/src/cockpit/paseoPluginLook.test.ts:86-116` |
+
+## MIK-R95 Write Transform And Document Load
+
+The load-time write watcher accepts an optional transform: the document page passes `preserveSidebarChoice` so a native panel-state write keeps the actually stored `agentListOpen` choice while the rail's in-memory state closes. `bootstrapEmbed` skips its one-time native-sidebar open on a document page and clears a stale page mode, so a standalone tab and the Chats page keep the user's own look and sidebar.
