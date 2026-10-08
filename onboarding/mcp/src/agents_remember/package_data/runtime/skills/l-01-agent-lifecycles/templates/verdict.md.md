@@ -24,7 +24,7 @@ Every finding is **refute-or-confirm**: it must survive an attempt to refute it,
 
 ### Invariants And Boundaries
 
-A verdict is **evidence, not a decision**: it states an explicit pass / pass-with-notes / block **recommendation**, and the gate's **decider** (manager, orchestrator, or developer per L4 policy) decides — the verdict is never written as if it were the gate outcome. A **BLOCK must decompose into fix leaves** (concrete, leaf-shaped findings the owning manager/orchestrator can dispatch); a block that cannot be named as fix leaves is invalid and resolves to pass-with-notes or names the leaves. Prose-only complaints are not a valid block.
+A verdict is **evidence, not a decision**: it states an explicit pass / pass-with-notes / block **recommendation**, and the gate's **decider** (manager, orchestrator, or developer per L4 policy) decides — the verdict is never written as if it were the gate outcome. A **BLOCK decomposes into concrete, leaf-shaped findings**: a repair inside the leaf goes directly to the Worker, and only a finding that belongs to another leaf is named for the owning manager/orchestrator to dispatch; a block that cannot be named as findings is invalid and resolves to pass-with-notes or names the leaves. Prose-only complaints are not a valid block.
 
 ### Todos
 

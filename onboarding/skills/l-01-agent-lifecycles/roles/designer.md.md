@@ -31,6 +31,10 @@ dispatch/tools rows are structural documentation, not settings keys.
 - It is sprint-bound, worktree-free, and master-scoped; portfolio collision review remains downstream.
 - Canonical lifecycle doctrine owns this source; generated copies are synchronization outputs.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The designer keeps its planning duties and gains the same harness freedom and boundary paragraph as the other roles.
+
 ## Evidence
 
 ### Docs References

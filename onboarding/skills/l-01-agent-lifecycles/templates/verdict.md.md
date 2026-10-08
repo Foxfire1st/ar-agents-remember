@@ -60,6 +60,10 @@ None.
 
 This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The verdict template now addresses the Worker (and, on a pass, the Curator) directly, distinguishes the ordinary Reviewer-recorded code round from the sealed memory lane, and keeps the gate evidence role it had; the 'Manager Fix Leaves' section names the Worker for a repair inside the leaf.
+
 ## Evidence
 
 ### Docs References

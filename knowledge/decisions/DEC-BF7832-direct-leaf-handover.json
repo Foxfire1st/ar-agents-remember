@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The relay model and a hybrid routing were both real designs the packet weighed and rejected, and the measured idle time is the reason the choice changed."
+  },
+  "alternatives": [
+    {
+      "option": "The leaf's Worker, Reviewer and Curator hand exact objects directly between their seats by role and task reference, and the Manager keeps only its named occasions.",
+      "reason": "The leaf's three seats already hold exact object identities and the product's role_message reaches a sibling by role; the practice landed L39, L51 and L70 directly.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the Manager as the relay for every freeze, finding, verdict and memory change.",
+      "reason": "The measured idle time and the direct landings showed the relay was the bottleneck, not a safety property; the Manager's gate, transaction and landing authority does not need the content.",
+      "reconsider_when": "A leaf's seats cannot reach each other at all and the Manager must carry content again to keep the leaf moving.",
+      "status": "rejected"
+    },
+    {
+      "option": "Route only findings and memory changes through the Manager while freezes and verdicts go directly.",
+      "reason": "Splitting the loop leaves two hand-over paths with different identity and recovery rules for one work product.",
+      "reconsider_when": "A follow-on packet names a content class with a different authority or transport requirement.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Manager reads state from reports and task records and relays no leaf content.",
+    "The leaf's agents answer for their own hand-overs, pending notices and retries."
+  ],
+  "context": "The role texts made the Manager the way between a leaf's agents: it carried every freeze, finding, verdict and memory change. On 2026-10-06 the host showed 21 of 25 agents idle while they waited for the one Manager to carry something to them.",
+  "decider": "the developer; D81 and D88, recorded by the run-3 architect under D89",
+  "id": "DEC-BF7832",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R99",
+        "packet": "requirements/MIK-R99-v1-a-leafs-agents-hand-over-to-each-other.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): Whole inventory table; wording checks; Expected Evidence6 live exchange NOT RUN."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-1-direct-loop",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

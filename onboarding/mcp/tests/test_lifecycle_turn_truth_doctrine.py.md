@@ -15,7 +15,7 @@ per-file check can see it.
 
 ## Current source account
 
-The native worker owes one parent-addressed report-written message only when a parent agent started it, and states that a finished turn is not AR acceptance. Manifest-selected architect/manager/orchestrator operation capsules must inspect candidate/evidence before acceptance; a removed manager inspection sentence must fail the guard. The retained contradiction machinery checks authored instruction wording, not runtime acceptance transactions. The roster holds every canonical surface that speaks the completion vocabulary, including the composed curation operation and the curator and reviewer role documents, whose retained sentence states the mechanical reading.
+The native worker freezes its candidate and hands it directly to the leaf's Reviewer, and states that a finished turn is not AR acceptance; the Manager receives no routine report notice. Manifest-selected architect/manager/orchestrator operation capsules must inspect candidate/evidence before acceptance; a removed manager inspection sentence must fail the guard. The retained contradiction machinery checks authored instruction wording, not runtime acceptance transactions. The roster holds every canonical surface that speaks the completion vocabulary, including the composed curation operation and the curator and reviewer role documents, whose retained sentence states the mechanical reading.
 
 ## Code Commentary
 
@@ -76,6 +76,10 @@ remains swept by the contradiction case like every other canonical surface.
   tree, that is a finding to report, never a reason to edit the limit.
 - The shared table in `mcp/tests/test_sync_scripts.py` quotes this module's shipped wording rather than
   paraphrasing it, so the two guards cannot drift into two vocabularies.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The turn-truth doctrine suite now pins the worker's direct freeze hand-over to the Reviewer in place of the old parent-report notice test; the roster and mechanical-reading checks are unchanged.
 
 ## Evidence
 

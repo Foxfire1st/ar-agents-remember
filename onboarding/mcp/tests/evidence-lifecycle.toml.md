@@ -115,6 +115,10 @@ default unit run includes.
 The command keeps a comment that follows a table header on its line, and comment lines that stand
 directly above a table header, with that row. It refuses a comment inside a list.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handover_review_rounds.py`; the lane catalog registers `test_leaf_retirement_wording.py`. No module artifact rows were added for the three new test modules, and the changed wording and turn-truth test artifacts keep their existing rows.
+
 ## Evidence
 
 - The schema version and the large-fixture threshold at the top of the file. [1]

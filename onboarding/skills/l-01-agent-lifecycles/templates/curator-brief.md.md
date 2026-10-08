@@ -10,9 +10,9 @@ Defines the complete manager-compiled session start for a fresh per-leaf curator
 
 ## Code Commentary
 
-The brief feeds the read-only code worktree, writable memory worktree, enclosure contract, landed
-change set, task/notes/design inputs, existing intent anchors, and now the **producers' curator
-hand-off list**. It now also carries the
+The brief feeds the read-only code worktree, writable memory worktree, enclosure contract, the frozen
+pre-closeout candidate change set, task/notes/design inputs, existing intent anchors, and the
+**producers' curator hand-off list** the Worker and Reviewer hand over directly. It now also carries the
 manager's immediately preceding `worktree_status` source-lineage projection, which must be current
 across every applicable super→master→leaf code and external-memory edge.
 
@@ -46,6 +46,10 @@ the curator never documents stale source and never repairs code.
 ## CCR-R12@v5 Handoff Boundary
 
 This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The curator brief now feeds the Curator from the Worker's and Reviewer's direct handovers: the code-PASS verdict for the exact freeze, the producer lists and the memory-candidate return to the Reviewer. The Manager compiles the brief for the seat's start but relays no leaf content.
 
 ## Evidence
 

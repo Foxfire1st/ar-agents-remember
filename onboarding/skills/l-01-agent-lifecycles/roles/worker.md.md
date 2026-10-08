@@ -46,9 +46,9 @@ Those records live in one physical leaf journal shared as an ordered append-only
 independent reviewer. The separate worker turn report links newly appended attempt anchors and
 does not duplicate their authority.
 
-Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report. A parent-started Worker tells its actual handover parent once with bound role_message; a dashboard-started Worker has no parent and replies in its own chat. Questions for the developer stay there.
+Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives no routine report notice and relays no freeze, finding, verdict or memory change. Questions for the developer stay in the Worker's own chat.
 
-Architect or Orchestrator may directly start Workers through the native role tools within admitted scope; Manager is optional. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
+The Manager starts the Worker and Reviewer together and the Curator at the first freeze; no seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 
 ## Conventions
 
@@ -76,6 +76,10 @@ Architect or Orchestrator may directly start Workers through the native role too
 ## CCR-R12@v5 Transaction Boundary
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, certification, and independent review are explicit operations only; curation is the standing exception — the curator always runs it complete — and it is not this seat's to run. Requested reviews retain the sealed finding list and monotonic three-round limit.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Worker now freezes its candidate and sends it directly to the leaf's Reviewer with `role_message`, names the candidate head and change hash from its report, and asks for the Reviewer's whole next stretch; it sends its structured hand-off list directly to the Curator after code PASS, and runs the supported leaf sync itself, sending a memory-file conflict to the Curator and asking the Manager only for the staging step. It gains the harness-freedom paragraph and keeps its no-role-start and no-commit boundaries.
 
 ## Evidence
 

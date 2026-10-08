@@ -150,6 +150,10 @@ span several modules; the card of a module, where it has one, states what its ca
 | The public tool surface and its refusals | `test_tools.py`, `test_tool_refusal_conformance.py` |
 | The test suite's own rails: lanes, budgets, bootstrap, file size, layering | `test_evidence_lanes.py`, `test_suite_budget.py`, `test_pytest_bootstrap_boundaries.py`, `test_file_size_detector.py`, `test_layering.py` |
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_handover_review_rounds.py`), the retirement-wording guard test (`test_leaf_retirement_wording.py`) and the wording-guard rework in `test_role_instruction_wording.py`. The new modules have their own cards, so the list of uncarded test modules keeps its seven named files.
+
 ## Evidence
 
 - The default options select the unit population and four workers. [1]

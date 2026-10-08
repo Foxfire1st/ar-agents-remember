@@ -14,7 +14,7 @@ Resolve apparent missing task facts from the named canonical task/packet using e
 
 Inspect source before editing, make the smallest complete change and run relevant brief/repository checks. Keep failed and unrun results visible. When invariant/family context applies, inspect affected claims and relevant unchanged siblings; report out-of-scope manifestations rather than editing them.
 
-Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. A started role tells its actual parent once through bound messaging; a dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
+Keep one truthful canonical report with changed files, exact requirement/candidate evidence, checks and limitations. The Worker freezes its candidate and hands it directly to the leaf's Reviewer; after code PASS it sends its hand-off list to the Curator. The Manager receives no routine report notice; a dashboard-started Worker has no parent and uses its own final chat reply. Applicable producer Curator handoff data stays verbatim.
 
 ## Conventions
 

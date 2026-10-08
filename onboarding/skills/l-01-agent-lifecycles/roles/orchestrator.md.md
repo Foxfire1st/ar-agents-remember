@@ -119,6 +119,10 @@ the curator's **complete** memory-quality result as the edge's prerequisite evid
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full code quality, full tests, certification, and independent review are explicit operations only; memory quality is the curator's standing exception — the curator always runs it complete, and that result travels with the landing edge as prerequisite evidence, never relabelled as full green. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Orchestrator keeps its sprint coordination and Manager starts; the change adds the same harness freedom and boundary paragraph as the other roles.
+
 ## Evidence
 
 ### Docs References

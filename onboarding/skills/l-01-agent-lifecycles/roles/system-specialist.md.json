@@ -3,7 +3,24 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "8bc8007c1774c632255b7782140d4ff0d96c5591",
+        "blob": "52ea8e7b2b07f23c598699b8f7b9259ba5835106",
+        "content": "sha256:609519124abcaa36d8bd5b8edbf0d183f82546d81b6a1dc9c25fefedad7c18a9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DX43S4",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "system-specialist receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52ea8e7b2b07f23c598699b8f7b9259ba5835106",
         "content": "sha256:f6e433fca136bb569141f48c5271a82720bb911887da53134232437514adbac3",
         "locator": {
           "end": 8,

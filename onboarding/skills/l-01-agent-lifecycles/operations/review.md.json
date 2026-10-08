@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/review.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "696a3c651924545ec311b5f08e60f38466193251",
+        "content": "sha256:9e3f4a3188b51e2e4e6cef97caf8d7d3d8466ddc4267368cfbd8b410740901fc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZP7MHN",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Names supported begin/result calls, preserves refusals and separates gate acceptance from evidence.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/designer.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "64fe3028111dc7761ab059a2e3809bf564b7ab87",
+        "content": "sha256:c4ef3be3a5285ceb5a13dacc4e7104cf7948b5dcb6f3847c1bec04f8c610d985",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N3SCGB",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "designer receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

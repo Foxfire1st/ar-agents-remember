@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "blob": "90be918be620c898f0d1de6f7f13fec8f677e93b",
             "content": "sha256:3ca792ef74636bd22f240896b59f3667c5580d0cb2543da61264e0becc4c0cbd",
             "locator": {
-              "end": 21,
+              "end": 22,
               "kind": "line_range",
-              "start": 16
+              "start": 17
             },
             "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md"
           },
@@ -38,7 +38,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
+            "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
             "content": "sha256:c8d477c28ddba2f0c2bbcea66e65c1766bf20d7f2d6561a55e35889c1356b408",
             "locator": {
               "end": 1,
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
             "locator": {
               "end": 1,
@@ -100,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
+            "blob": "90be918be620c898f0d1de6f7f13fec8f677e93b",
             "content": "sha256:f2bf6365652ab4bd956193f0f6688638f4f988f94c796220bd405708300a45b0",
             "locator": {
               "end": 1,

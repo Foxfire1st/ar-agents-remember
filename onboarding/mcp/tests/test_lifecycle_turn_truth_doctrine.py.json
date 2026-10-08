@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "34933a774836231c708d69217e5532d386d0c240",
-        "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+        "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+        "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
         "locator": {
           "kind": "symbol",
           "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
         "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
         "locator": {
           "kind": "symbol",
@@ -37,24 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "34933a774836231c708d69217e5532d386d0c240",
-        "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
-        "locator": {
-          "kind": "symbol",
-          "name": "AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written"
-        }
-      },
-      "facet": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.",
-      "id": "PRF-Z4GYK7",
-      "invariant": "INV-4E130M",
-      "origin": {
-        "handoffEntry": "Preservation (flags and acceptance)",
-        "leaf": "260928-MIK-L90"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
         "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
         "locator": {
           "kind": "symbol",
@@ -73,7 +56,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "34933a774836231c708d69217e5532d386d0c240",
+        "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
         "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
         "locator": {
           "kind": "symbol",
@@ -96,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:d6fdc752cf3d36bc074666312242c03c496b4b985f9aaf3a6614a36dbf1eac26",
             "locator": {
               "end": 1,
@@ -114,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
             "locator": {
               "kind": "symbol",
@@ -125,7 +108,7 @@
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
             "locator": {
               "kind": "symbol",
@@ -141,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:df6409f55f169bb98d26d104ce854ad89419febcb01f1dd6253cbbd9e29aa59d",
             "locator": {
               "kind": "symbol",
@@ -152,7 +135,7 @@
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:9bbbb0e799c59d6f98178260cfd077b24c68e7f807b90e9aa65b8c79eebc35d5",
             "locator": {
               "kind": "symbol",
@@ -180,7 +163,7 @@
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:ae874c7ac9d61bf0e511e34073776e69d79a8f2449c74178fc3352ec49b83297",
             "locator": {
               "end": 558,
@@ -197,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:37e187cb99bf9dac347b9cb19bbe30e1cce2a79ba47c819207ee96217137bd71",
             "locator": {
               "kind": "symbol",
@@ -208,7 +191,7 @@
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
             "locator": {
               "kind": "symbol",
@@ -219,24 +202,24 @@
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:62f5071540042843f8ad8008ff2889f8b8a793cf08532e478f1a4e24ee2176c4",
             "locator": {
-              "end": 1047,
+              "end": 1040,
               "kind": "line_range",
-              "start": 980
+              "start": 973
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
             "content": "sha256:37447236196b3896fafbee931d5fed8c667b57c22694b01a0abba362d93a46ed",
             "locator": {
-              "end": 1083,
+              "end": 1076,
               "kind": "line_range",
-              "start": 1048
+              "start": 1041
             }
           },
           "kind": "test"

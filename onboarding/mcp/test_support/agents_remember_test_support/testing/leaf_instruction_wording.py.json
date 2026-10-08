@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The affirmative clause tables are the wording guards' data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67ebbb97465cf50353b90b484187cd8186d5d3b2",
+            "content": "sha256:ba411ec6775c52084f5766fb233ba276d24d0fa5343085ec7a574750c4810e4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "autonomy_clauses"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -23,6 +23,10 @@ A provider-start alert still forbids starts/restarts while allowing valid read-o
 - A finished turn is execution evidence, not semantic acceptance.
 - This source is canonical; generated copies carry its exact text.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The system-specialist keeps its investigation duties and gains the same harness freedom and boundary paragraph as the other roles.
+
 ## Evidence
 
 ### Docs References

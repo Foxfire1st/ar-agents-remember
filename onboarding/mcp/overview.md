@@ -1869,6 +1869,10 @@ Preparation does not grant a final certificate. The interactive catalog projecti
 
 Candidate capture uses an isolated add-all index and stable observed HEAD, leaving the user's real index unchanged. External-memory identity binds configured repositories, worktree roots, branches, bases, onboarding root and contract digest; the ledger path is informational and excluded from candidate authority. A changed pair or candidate must refuse stale publication. Metadata stamping and cache refresh cannot substitute for substantive memory repair.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The role-launch constructor now compiles one leaf-seat handover value: a leaf Worker, Reviewer or Curator receives `leafSeats` with the exact sibling `role_message` arguments for the other two seats and no sibling agent id. The package's role-launch, task-tool and capsule behavior is otherwise unchanged.
+
 ## Evidence
 
 ### Repo-Internal References

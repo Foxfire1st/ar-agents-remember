@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The six member obligations together promise the leaf's seats run their loop directly with exact objects, own bookkeeping and own recovery while the Manager keeps only its named occasions; no single member states that joint guarantee."
+  },
+  "guarantee": "A leaf's Worker, Reviewer and Curator run the leaf's work between their three seats: each hands the exact freeze, sealed verdict, producer list, memory candidate or code concern directly, each seat keeps its own ordinary bookkeeping lane and its own pending-and-retry discipline, and the Manager receives only its named occasions and relays none of a hand-over's contents.",
+  "id": "FAM-83BTBD",
+  "members": [
+    "INV-ZNJ14G",
+    "INV-V7M37D",
+    "INV-W58B84",
+    "INV-7E3JNX",
+    "INV-RKGNF8",
+    "INV-W24J6Q"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/files/l99-curation-20261007/repair.json"
+    },
+    "handoffEntry": "FAM-leaf-direct-loop",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles/roles",
+    "skills/l-01-agent-lifecycles/operations",
+    "skills/l-01-agent-lifecycles/templates",
+    "mcp/tests",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The leaf's seats run their loop directly"
+}

@@ -52,7 +52,7 @@ separate protocol events as delivery attempts.
 - One self-contained role file owns each role lifecycle; templates carry dispatch inputs and
   hand-off shapes, not alternate doctrine.
 - `templates/curator-handoff-list.md` is the one **producer output shape** among them: the
-  requirement-shaped items the builder, the reviewer, and the orchestrator hand to the curator, one
+  requirement-shaped items the builder and the reviewer hand directly to the curator, one
   entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
   data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
   brief-schema, which is why the router names it on its own.
@@ -79,6 +79,10 @@ separate protocol events as delivery attempts.
 ## CCR-R12@v5 Transaction Boundary
 
 Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The router now states the all-role harness freedom and its bounds: every role organises its assigned work with whatever its harness offers, at any size, while the seat answers for it, boundary acts stay the seat's own, a harness sub-agent is no AR seat, and nobody checks itself through one. The old fixed read/search/one-level fan-out restriction is gone; the router keeps the message and identity rules it already stated.
 
 ## Evidence
 

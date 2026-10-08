@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
-        "content": "sha256:b7b51e5b48d256e3db8485029ee1a8c1acb81139d98e0fb75aebff7a8a158468",
+        "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
+        "content": "sha256:2f70895e20a16974eda5a57ddb2551c74f4714c8dfbcb9396eb15fad080ed843",
         "locator": {
-          "end": 13,
+          "end": 17,
           "kind": "line_range",
-          "start": 13
+          "start": 17
         }
       },
       "id": "RLZ-H0W6SX",
@@ -17,17 +17,17 @@
         "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This messaging paragraph's follow-through sentence names the developer-direct-coordinating Architect beside the Manager and Orchestrator.",
+      "rationale": "The messaging paragraph's follow-through sentence names the Orchestrator, Manager or developer-direct-coordinating Architect following assignments to completion.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+        "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
         "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
         "locator": {
-          "end": 15,
+          "end": 19,
           "kind": "line_range",
-          "start": 15
+          "start": 19
         }
       },
       "id": "RLZ-P0ZH30",
@@ -36,31 +36,12 @@
         "handoffEntry": "Preservation (flags and acceptance)",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Coordination treats finished host turn as result evidence.",
+      "rationale": "The execution-metadata paragraph keeps an agent's turn or Paseo status from becoming a second requirement or acceptance evidence.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
-        "content": "sha256:6087c04a96d868c5027097c5869e2631487cd6dc602c10dc5ae9ab78ee2c1cb2",
-        "locator": {
-          "end": 11,
-          "kind": "line_range",
-          "start": 11
-        }
-      },
-      "id": "RLZ-RT4W1F",
-      "invariant": "INV-5KBX7C",
-      "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
-        "leaf": "260928-MIK-L72"
-      },
-      "rationale": "This paragraph assigns the leaf repair loop to the Manager under delegation and to the Architect only under developer-chosen direct coordination.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+        "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
         "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
         "locator": {
           "end": 5,
@@ -75,6 +56,23 @@
         "leaf": "260928-MIK-L72"
       },
       "rationale": "The coordination operation carries the same delegation rule and the no-fallback behavior for every coordinating role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
+        "content": "sha256:24ea7c856c611853f2108091b84bb87120349c5ad9d0c8de0b5c10d4311a8347",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XF8A3Q",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "States the complete peer loop and limits Manager to the retained owner acts.",
       "role": "primary-authority"
     }
   ],

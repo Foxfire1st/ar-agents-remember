@@ -4,13 +4,13 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The condition is realized in the coordination operation and the Architect role text, and the wording tests pin the exact sentences that assign the loop."
+    "justification": "The condition is realized in the coordination operation and the Manager and Architect role texts, and the wording tests pin the exact sentences that assign the loop."
   },
   "applicability": "A rejection or a landed-work check inside one master or sprint whose leaf loop is coordinated.",
   "conditions": [
-    "Under delegation the Manager owns the inner leaf loop; under developer-chosen direct coordination the Architect does.",
-    "The Orchestrator's ladder is aggregate: it verifies Manager deliveries and may inspect supplied diffs for acceptance without taking over the inner loop.",
-    "Family examination: no joint obligation is supported. Basis: The condition assigns the inner leaf loop between the same actors the delegation default already names; it is entailed by the default recorded in FAM-PNH1QS rather than an independent joint promise, so it binds alone at the repair seam."
+    "Under delegation the Manager owns the leaf-diff, evidence and gate loop while the leaf's seats run the repair loop; under developer-chosen direct coordination the Architect acts directly.",
+    "The Orchestrator's ladder is aggregate: it verifies Manager deliveries and may inspect supplied diffs for acceptance without taking over the loop.",
+    "Family examination: no joint obligation is supported. Basis: The condition assigns the leaf-diff/evidence/gate loop between the same actors the delegation default already names; it is entailed by the default recorded in FAM-PNH1QS rather than an independent joint promise, so it binds alone at the repair seam."
   ],
   "exclusions": [
     "Independent review and curation seats, which stay distinct agents.",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "Under delegation the Manager owns one master's inner leaf loop and gives aggregate evidence to its supervisor: it owns the leaf-diff, repair and evidence loop, while the Architect's direct Worker repair and full-diff duties apply only to the developer-chosen direct-coordination case, the Orchestrator verifies Manager deliveries and may inspect supplied actual diffs for its acceptance duty without taking over the loop, and every coordinating agent follows assignments until the work is complete, blocked or a true developer decision is needed instead of stopping after starting a role.",
+  "statement": "Under delegation the Manager owns one master's leaf-diff, evidence and gate loop and gives aggregate evidence to its supervisor: it inspects the complete changed-file diff and both verdicts, keeps closeout, integration, status, acceptance and landing order, and relays no freeze, finding, verdict or memory change, while the leaf's Worker, Reviewer and Curator run the repair loop directly between their seats, the Architect's direct Worker duties apply only to the developer-chosen direct-coordination case, the Orchestrator verifies Manager deliveries and may inspect supplied actual diffs for its acceptance duty without taking over the loop, and every coordinating agent follows assignments until the work is complete, blocked or a true developer decision is needed instead of stopping after starting a role.",
   "status": "proposed",
   "supersedes": []
 }

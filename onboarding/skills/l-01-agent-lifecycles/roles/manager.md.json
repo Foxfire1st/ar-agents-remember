@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
-        "content": "sha256:26c4980deac5a6d5d934a8c81110a21cbbc045bdbac1cecc948ae2e2367957d3",
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "content": "sha256:7191128f4e5a9e7fbd6f6273c42825b67e313fc4c54b91f0160e2c10e840d871",
         "locator": {
           "end": 22,
           "kind": "line_range",
@@ -22,7 +22,24 @@
     },
     {
       "anchor": {
-        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "content": "sha256:57e47e7b6afe3f80d5b8af40fe5d8f1fa623fba048103162d6c4189bdd265d80",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7ZK6TT",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Owns starts, recovery occasions, reports-based state, gate acceptance and transactions while prohibiting leaf content relay.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
         "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
         "locator": {
           "end": 8,
@@ -41,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
         "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
         "locator": {
-          "end": 24,
+          "end": 26,
           "kind": "line_range",
-          "start": 24
+          "start": 26
         }
       },
       "id": "RLZ-JY5TEM",
@@ -55,17 +72,17 @@
         "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This paragraph places the rulings record, requirement-change list and status file under the master's notes for the Architect to read.",
+      "rationale": "The paragraph places the rulings record, requirement-change list and status file under the master's notes for the Architect to read.",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
         "content": "sha256:afbb9de316de4881b4fa793eac59921ab18366cdaa011d6b56860ae41d51b825",
         "locator": {
-          "end": 26,
+          "end": 28,
           "kind": "line_range",
-          "start": 26
+          "start": 28
         }
       },
       "id": "RLZ-M2NFTB",
@@ -74,17 +91,34 @@
         "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This paragraph bounds the upward messages to the four developer-needed categories and the once-only final report.",
+      "rationale": "The paragraph bounds the upward messages to the four developer-needed categories and the once-only final report.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "content": "sha256:57e47e7b6afe3f80d5b8af40fe5d8f1fa623fba048103162d6c4189bdd265d80",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QJ4VJR",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "manager receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
         "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
         "locator": {
-          "end": 28,
+          "end": 30,
           "kind": "line_range",
-          "start": 28
+          "start": 30
         }
       },
       "id": "RLZ-S372ZT",
@@ -93,7 +127,7 @@
         "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+      "rationale": "The paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
       "role": "primary-authority"
     }
   ],

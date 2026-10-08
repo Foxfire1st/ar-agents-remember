@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 135,
+              "end": 136,
               "kind": "line_range",
-              "start": 132
+              "start": 133
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -104,12 +104,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
+            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
-              "end": 93,
+              "end": 104,
               "kind": "line_range",
-              "start": 90
+              "start": 101
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -205,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf0a2e76f7851a18f089e32ee0fb9c21b45d1d4b",
+            "blob": "09e5245f54c7057c342770d3061293cdcf757a83",
             "content": "sha256:079de00442547608494ea779313d31548d090d062f696bc106bca3c6c57d6bc4",
             "locator": {
               "end": 46,
@@ -258,12 +258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
-              "end": 125,
+              "end": 126,
               "kind": "line_range",
-              "start": 120
+              "start": 121
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -276,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
             "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
             "locator": {
               "end": 18,
@@ -294,12 +294,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
+            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 96,
+              "end": 107,
               "kind": "line_range",
-              "start": 94
+              "start": 105
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -312,7 +312,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
             "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
             "locator": {
               "end": 8,
@@ -330,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
             "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
             "locator": {
               "end": 8,
@@ -402,7 +402,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bc8007c1774c632255b7782140d4ff0d96c5591",
+            "blob": "52ea8e7b2b07f23c598699b8f7b9259ba5835106",
             "content": "sha256:99e2530adbf27013a9b9c2035279e8e8e52e41751223b707f5dd27139388e948",
             "locator": {
               "end": 20,
@@ -420,12 +420,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:209878d33f20182cded30d0a613eef1a9a227bad71f9d716c149d9147d3d84c1",
             "locator": {
-              "end": 253,
+              "end": 307,
               "kind": "line_range",
-              "start": 253
+              "start": 307
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -456,12 +456,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
             "locator": {
-              "end": 107,
+              "end": 108,
               "kind": "line_range",
-              "start": 101
+              "start": 102
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -474,12 +474,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:170d5be35803f966e84b811e99d7508ca0182c79593b49d0fbd645257b65ab24",
             "locator": {
-              "end": 101,
+              "end": 102,
               "kind": "line_range",
-              "start": 101
+              "start": 102
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -487,12 +487,12 @@
         },
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:39153476410d8509cec01ecf0dca6a70b4d85b731ad4d6d14a16cef757a8eb14",
             "locator": {
-              "end": 112,
+              "end": 113,
               "kind": "line_range",
-              "start": 112
+              "start": 113
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -505,12 +505,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:5bb3097cbd4b8e9fdd82855d71fb764f4e2c97cf8dc68b021d2e3ed053a44a4d",
             "locator": {
-              "end": 232,
+              "end": 277,
               "kind": "line_range",
-              "start": 232
+              "start": 277
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -523,12 +523,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:0f5137c2be2cbbd9602a109fc587a8bbe5db320bbb6bfd0be2bc8d0ae539cdf8",
             "locator": {
-              "end": 210,
+              "end": 211,
               "kind": "line_range",
-              "start": 209
+              "start": 210
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -541,12 +541,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
+            "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
             "content": "sha256:7fcbdce7a0563dff245a095badbfd52331a243cb0748666db01b4d8550a0743f",
             "locator": {
-              "end": 92,
+              "end": 97,
               "kind": "line_range",
-              "start": 81
+              "start": 86
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

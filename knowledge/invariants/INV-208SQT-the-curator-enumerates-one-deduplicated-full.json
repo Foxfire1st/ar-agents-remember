@@ -3,15 +3,15 @@
     "criteria": [
       "guarded_by_test"
     ],
-    "justification": "The wording test pins both sides of the 99/100 boundary so the instruction cannot silently change its threshold."
+    "justification": "The delivered curator text must state the full-intake worklist duty, and the wording test fails if the clause is removed."
   },
   "applicability": "Every normal Curator authoring pass on a converted memory tree.",
   "conditions": [
-    "The worklist counts distinct outstanding memory actions once, excluding already answered, report-only and duplicate counts."
+    "The worklist counts distinct outstanding memory actions once, excluding already answered work, report-only observations and duplicate summaries.",
+    "Placement, admission, meaning, the single writer, the full quality operation and coherence stay with the main session."
   ],
   "exclusions": [
-    "A harness without sub-agents, which works alone and reports the limit.",
-    "Every durable write and semantic decision, which never leaves the main session."
+    "The shape and size of the harness's sub-agent support, which the seat organises itself."
   ],
   "id": "INV-208SQT",
   "origin": {
@@ -25,9 +25,9 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The Curator enumerates one deduplicated full-intake worklist of distinct outstanding memory actions and, at 100 or more actionable entries, fans out read/search/reference checks one level deep to sub-agents where the harness supports them; each sub-agent returns path and evidence and writes nothing durable, while invariant and family placement, admission, changes of meaning, the single knowledge-ingest write, the full memory-quality operation and the handoff stay with the main session; below 100 items fan-out is optional and an unsupported harness works alone and reports that limit.",
+  "statement": "The Curator enumerates one full-intake worklist of distinct outstanding memory actions, preserving returned ids and evidence and counting each action once, while invariant and family placement, admission, changes of meaning, the one admitted writer and the full memory-quality operation stay with the seat; the harness's sub-agents are only its speed, and a harness without them can do the same work.",
   "status": "proposed",
   "supersedes": []
 }

@@ -1,0 +1,60 @@
+{
+  "path": "mcp/tests/test_leaf_handover_review_rounds.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
+        "content": "sha256:5358664a1b41c2e883ebfae2d7771e5bbd2c94d37f7f3df94dbccbb492f97f2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
+        }
+      },
+      "facet": "Opens and records ordinary Reviewer-bound code rounds, refuses changed finding ids and an unauthorized fourth round. The test exercises code begin_review/record_review only; the memory lane's separate count is stated by the role texts and not exercised here.",
+      "id": "PRF-CPF7JN",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
+        "content": "sha256:ae810cee90ec74fefcd6d60fe9bbae86fb0f70b202840fd37fa003777f6d8ed8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-68PVA6",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Exercises registered calls under verified Reviewer binding and proves unchanged sealed IDs and limit refusals.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A bound Reviewer opens and repairs ordinary sealed rounds under the unchanged limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c1d1e4a1a87f05d24b75e78909efb058e0a68a6",
+            "content": "sha256:5358664a1b41c2e883ebfae2d7771e5bbd2c94d37f7f3df94dbccbb492f97f2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

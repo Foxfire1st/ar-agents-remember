@@ -3,12 +3,31 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
-        "content": "sha256:1f3bc493e0414099459ded808ed16e3ff639805dafe7a51b4694d79afcdf25a3",
+        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 320,
+          "end": 349,
           "kind": "line_range",
-          "start": 318
+          "start": 349
+        }
+      },
+      "id": "RLZ-4YAPS7",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The curation operation repeats the same recovery for the Curator of this operation, so a composed capsule cannot lose it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "content": "sha256:15985ae2c19ced481a0e732a5996a9a09d5218c03bed6f851bd52b8b84cd8a08",
+        "locator": {
+          "end": 331,
+          "kind": "line_range",
+          "start": 330
         }
       },
       "id": "RLZ-EEEG4W",
@@ -17,17 +36,51 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
+      "rationale": "The curation operation's closing sentences state that terminal/finalizer evidence attests only that the turn ended and forbid a hand-written certification.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
+        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "content": "sha256:73b46aa04bae8eaf400b1e9bdb5153a64bd10b5b56468ec1c1b8e9575803d9ab",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K60P42",
+      "invariant": "INV-RKGNF8",
+      "origin": {
+        "handoffEntry": "R99-D95-curator-code-concerns",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Directs code concerns to both seats and keeps code repair and gate ownership external.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "content": "sha256:73b46aa04bae8eaf400b1e9bdb5153a64bd10b5b56468ec1c1b8e9575803d9ab",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R4SKXV",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Allows only native memory content repair and preserves transaction-state and staging restrictions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
-          "end": 69,
+          "end": 74,
           "kind": "line_range",
-          "start": 56
+          "start": 61
         }
       },
       "id": "RLZ-X79EQQ",

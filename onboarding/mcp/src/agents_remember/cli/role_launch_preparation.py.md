@@ -12,6 +12,10 @@ Resolves role defaults, workspace, admitted reader scope, compiled capsule and h
 
 prepare_role_handover validates selection before workspace/enclosure changes. _ar_mcp_context carries exact taskDocReadArgs and per-call taskContext; leaf enclosure roots come from canonical authority, while real sprint/master roles share their selected Projects task workspace. _compile_handover records launcher/native parent ownership, operation, source build and canonical artifact/report locations; Revive only compares saved/current leaf scope. MIK-R72@v2 narrows two host values to an agent-started Manager or Orchestrator: `developerQuestions` routes a developer decision to the parent agent id with `role_message`, and `_owner_relation(started_by, role=...)` names the parent, the four developer-needed categories and the once-only final report while every other role, parentless start and dashboard launch keeps the base sentence. All other ownership data, parent identity and tool grants stay byte-identical.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+`_compile_handover` appends exactly one value for a leaf Worker, Reviewer or Curator: `leafSeats` with the three seat roles and, for each other seat, the exact `role_message` arguments containing the canonical sprint, master and leaf references and no sibling agent id. Every other role's handover keeps its values byte for byte under identical compiled inputs; the declarative addition is the leaf's only production runtime change, while the derived capsule and skill-revision digests change with the source revision, so the preservation claim is same-input, not cross-revision.
+
 ## Evidence
 
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]

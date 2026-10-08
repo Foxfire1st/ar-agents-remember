@@ -9,10 +9,10 @@ This skill defines `c-05-create-or-update-onboarding-files` skill, the onboardin
 ### Seat Routing (260707-HFX-L11)
 
 A new "Seat routing" paragraph, inserted immediately after the context-resolver intro, states that
-in the manager -> builder -> reviewer -> curator chain (`l-01-agent-lifecycles` `roles/curator.md`)
+the leaf's builder and reviewer hand their inputs directly to the curator seat (`l-01-agent-lifecycles` `roles/curator.md`);
 onboarding create/update duty during leaf work belongs to the curator seat, not the builder — the
-builder produces code and a turn report only. The curator runs this skill's workflows from a change
-set (landed diff), the leaf task doc, and notes/ fed to it by the manager, and routes each item to
+builder produces code and a turn report only. The curator runs this skill's workflows from the
+frozen pre-closeout candidate change set, the leaf task doc, and the producers' hand-off lists, and routes each item to
 the right onboarding home (a concrete sidecar or the governing overview whose subject it is; the L3
 Operational-Notes target is last-resort only, never a default). This is an additive paragraph only
 — the strict 1-to-1 source mapping, governing-overview links, and metadata rules below are

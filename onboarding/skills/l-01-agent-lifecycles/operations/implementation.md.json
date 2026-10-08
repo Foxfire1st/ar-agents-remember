@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/implementation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a7322ad56ce8f6b9f034da982c786bb37d645fb3",
+        "content": "sha256:b2bd98ec2b261c19045ea8ae6deec8aa94c7acfbf12095aec245036be67ff72f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7KXE63",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Separates Curator content repair, Manager staging and Worker supported continuation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

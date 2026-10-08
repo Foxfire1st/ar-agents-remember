@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
+        "content": "sha256:d5785095eace2ddc6b32b835c04b192d356f21360b8fe7595dde992f5f75bd59",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1QG7S9",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "bootstrap receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

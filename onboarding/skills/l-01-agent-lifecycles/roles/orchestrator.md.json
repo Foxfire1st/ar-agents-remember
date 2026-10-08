@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
         "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
         "locator": {
           "end": 8,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
         "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
         "locator": {
           "end": 30,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
         "content": "sha256:28673177e9fabb723ba2142e77c0c624fe67f11570d7c1f4f6e7dd70646f4a67",
         "locator": {
           "end": 16,
@@ -60,7 +60,24 @@
     },
     {
       "anchor": {
-        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+        "content": "sha256:b4a20f2acfda779c6270bfa2f776dd4aaea3a469c44a005bff6a14de52353102",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HRBKB6",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "orchestrator receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
         "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
         "locator": {
           "end": 20,
@@ -79,7 +96,7 @@
     },
     {
       "anchor": {
-        "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+        "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
         "content": "sha256:82fa80737068ff74fce8b2627c4284b2a74a57cdcc0c9e157a52291d91e4316f",
         "locator": {
           "end": 24,

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The split is stated in the reviewer role and review operation and exercised by the registered Reviewer-binding round test."
+  },
+  "applicability": "Every independent leaf code review and its separate memory check.",
+  "conditions": [
+    "The ordinary round limit, the sealed finding ids and the memory lane's own report and pass count are kept.",
+    "A round or pass beyond the ordinary limit still needs the developer's recorded word."
+  ],
+  "exclusions": [
+    "The Manager's acceptance of the verdict for the gate, which stays the Manager's."
+  ],
+  "id": "INV-V7M37D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): test_leaf_handover_review_rounds.py passed on final bytes in affected-final-pass.log; verified Reviewer binding, ordinary begin/result, sealed-ID and fourth-round refusals.",
+        "L99-MR-002; mcp/tests/test_leaf_handover_review_rounds.py."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-2a-code-memory-lanes",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Reviewer opens and records its ordinary leaf code review rounds itself through existing operations, while memory checks retain separate sealed reports, IDs and a pass count without resetting code state or bypassing ordinary limits and sealed-ID refusals.",
+  "status": "proposed",
+  "supersedes": []
+}

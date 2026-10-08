@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_leaf_retirement_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each registered obsolete sentence is caught on its own base carrier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c129f21c7486cf378a2a50d8bc53c753eb1a2a6d",
+            "content": "sha256:e44669952022e4b3f6c3cc01d5e6fe9513fb210e7a9ef308cf2ececa37cead22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_obsolete_sentence_has_independent_source_confined_detection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

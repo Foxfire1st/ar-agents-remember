@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The fixed harness policy and the all-role freedom are the two designs the packet weighed; the freedom is chosen with a named reconsider condition."
+  },
+  "alternatives": [
+    {
+      "option": "Every role organises its assignment with whatever its harness offers; the seat still answers, boundary acts stay its own and a sub-agent holds no seat or extra permission.",
+      "reason": "The seat's responsibility and the product's boundaries are what need stating; the harness shape is the harness's.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the fixed restrictions: read/search-only helpers, one level deep, and the Curator's mandatory fan-out at 100 actionable entries.",
+      "reason": "They prescribed the harness instead of the obligation, and the delivered A2 text and guards remove the 100-entry/depth/read-only wording.",
+      "reconsider_when": "A harness's sub-agents need product-level controls again to keep seat or boundary guarantees.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The wording tests assert each role's affirmative freedom and boundaries and forbid the removed fixed policy.",
+    "Nobody checks itself through a sub-agent and the Curator keeps one writer."
+  ],
+  "context": "The codebase fixed how a seat could organise its own work: read-only helpers for the Curator, a one-level read/search/reference fan-out at a 100-item threshold, and orchestration seats barred from helpers. D92 says the product must not hold a harness to a way of working it has outgrown.",
+  "decider": "the developer; D92, recorded in the packet's rule 14",
+  "id": "DEC-SKAXJ5",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:c37c2f26ce77e32c10a35aafaaa56330e1cca1f0330227412dc6d8fda370fb74",
+        "locator": {
+          "end": 300,
+          "kind": "line_range",
+          "start": 286
+        },
+        "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R99",
+        "packet": "requirements/MIK-R99-v1-a-leafs-agents-hand-over-to-each-other.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): All-role wording test; ten retained before/after capsule pairs; knowledge_read base INV-208SQT/RLZ-DT71R6 needs Curator reconsideration under the approved rule14."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-14-harness-work",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

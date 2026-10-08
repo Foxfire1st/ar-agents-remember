@@ -509,6 +509,10 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The lifecycle route now states the leaf-seat direct loop and the all-role harness freedom: the Worker, Reviewer and Curator hand exact objects between their seats, the Manager keeps only its named occasions and the gate, and every role organises its assigned work with its own harness inside the seat's boundaries.
+
 ## Evidence
 
 ### Repo-Internal References

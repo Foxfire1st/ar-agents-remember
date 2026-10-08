@@ -44,7 +44,7 @@ This bundle copy is written by fan-out sub-agents and consumed by the reviewer's
 
 - Sync-propagated bundle copy of the canonical templates source. [1]
 - The adversarial reviewer's onboarding-vs-code lens cites this report as backing evidence, and the reviewer's Outputs section names it among the durable route reports. [2]
-- The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the no-native-sub-agents rule moved into the shared operation block in 260915-CAPS-L1. [3]
+- The orchestrator's checks consume this report, written by its own loop or a dispatched role seat while AR mutations stay in the orchestrator main loop; the former no-native-sub-agents rule was retired by MIK-R99/D92 and is kept here only as historical context; the current shared operation block states the seat's own organisation at any size. [3]
 - The reviewer's onboarding-vs-code lens pairs `read_ar_files` with `grepai_search`, and the curation exception makes the complete memory-quality operation the reviewer's one non-optional check. [4]
 
 ### Cross-Repo References

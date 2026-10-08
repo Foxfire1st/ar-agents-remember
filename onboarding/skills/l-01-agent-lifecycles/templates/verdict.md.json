@@ -1,18 +1,36 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/verdict.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ad2064ee1e32f0e199409100b7c33f8e55c204fa",
+        "content": "sha256:74897dbbb989b356c0fc4d9e3ae2f8cccc3e23960cda3d7e8cd23664ff9b880e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WG14EH",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Carries the ordinary Reviewer recording packet and separate memory evidence lane.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Independent exact-attempt/candidate adjudication is mandatory in every variant.\n\nAnchor: `## Mandatory Requirement Adjudication Block (repeat once per stable ID + version in every variant)`",
       "targets": [
         {
           "anchor": {
-            "blob": "999920693b5ae4d1b8f5066b7381a5fa43e444bb",
+            "blob": "ad2064ee1e32f0e199409100b7c33f8e55c204fa",
             "content": "sha256:b6f3ffca7e5494d2174d4113b29c4e44a8f91c38b8a564532229efefc1788aee",
             "locator": {
-              "end": 110,
+              "end": 111,
               "kind": "line_range",
-              "start": 65
+              "start": 66
             }
           },
           "kind": "code"

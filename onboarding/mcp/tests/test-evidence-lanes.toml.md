@@ -36,6 +36,10 @@ processes and Git repositories, and a default run with `not integration` skips t
 
 No additional work is asserted by this card.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The lane catalog carries the incoming shared evidence-lane content from the L79 sync plus the lanes of the new leaf-handover and retirement-wording test modules.
+
 ## Evidence
 
 ### Docs References

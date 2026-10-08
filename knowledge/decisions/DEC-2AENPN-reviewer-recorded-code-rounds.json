@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The owner-recorded round and a unified code/memory round were both real designs with named conditions that would reopen them."
+  },
+  "alternatives": [
+    {
+      "option": "The Reviewer records the begin and result of its own ordinary code round, inside the existing limit, refusals and sealed ids.",
+      "reason": "The record is bookkeeping, not a verdict; the owner keeps the gate acceptance and the extra-round approval, and the delivered refusals are unchanged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Every round still waits for the owner's begin_review record.",
+      "reason": "It made the Manager a scheduling hop for a record it does not judge and left finished candidates idle.",
+      "reconsider_when": "The review-state authority changes or the product again requires an owner-held record before a round may open.",
+      "status": "rejected"
+    },
+    {
+      "option": "The Curator's memory check opens an ordinary code review round too, sharing the code baseline and count.",
+      "reason": "Memory findings must not reopen or reset the passed code baseline; the sealed code ids and the separate memory pass count would be lost.",
+      "reconsider_when": "A packet unifies the code and memory review state and names how the counts and ids merge.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A leaf's block-and-repair loop inside the limit needs no Manager call.",
+    "The memory lane keeps its own reports, ids and pass count."
+  ],
+  "context": "Every ordinary review round waited for the owner's begin_review record although nothing in that record was the owner's judgment; four leaves stood with a finished candidate and an idle Reviewer.",
+  "decider": "the developer; the packet's rule 2a, amended before any read for the four idle leaves",
+  "id": "DEC-2AENPN",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/tests"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R99",
+        "packet": "requirements/MIK-R99-v1-a-leafs-agents-hand-over-to-each-other.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): test_leaf_handover_review_rounds.py passed on final bytes in affected-final-pass.log; verified Reviewer binding, ordinary begin/result, sealed-ID and fourth-round refusals."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-2a-code-memory-lanes",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

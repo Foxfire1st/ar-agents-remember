@@ -197,6 +197,10 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The hand-off list is now handed by the Worker and the Reviewer directly to the Curator, and the Manager relays no list. The list's thirteen fields, the element shape and the converted-memory writer sections are unchanged; the delivery sentence and the surrounding producer/curator ownership text are what changed.
+
 ## Evidence
 
 ### Docs References

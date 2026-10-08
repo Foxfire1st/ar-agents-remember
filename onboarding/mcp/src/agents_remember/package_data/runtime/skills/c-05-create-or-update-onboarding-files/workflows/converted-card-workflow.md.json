@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "de5f77af8d189ea6f2837f31e4bf19226647f241",
+            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
             "content": "sha256:65ea2ac4878fbebbe7bfa09cc8a8fdacd91ebccbbd36315f8c7fef8ded951306",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 40
+              "start": 42
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md"
           },

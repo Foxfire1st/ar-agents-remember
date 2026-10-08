@@ -62,6 +62,10 @@ None.
 
 This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The manager brief no longer describes the manager -> builder -> reviewer -> curator relay chain: the leaf's Worker, Reviewer and Curator hand freezes, findings, verdicts and memory changes directly to each other, and the Manager starts the set and reads state from reports.
+
 ## Evidence
 
 ### Docs References

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The constructor value is checked by the leaf-handover tests over the three eligible and four protected roles."
+  },
+  "applicability": "Every Worker, Reviewer or Curator handover the launch constructor compiles for a canonical leaf.",
+  "conditions": [
+    "The value names all three seat roles and both other-seat role_message arguments with canonical sprint, master and leaf references.",
+    "No sibling agent id is listed, because the occupant can change."
+  ],
+  "exclusions": [
+    "Every other role and every role started without a leaf, whose handover keeps its other values byte for byte."
+  ],
+  "id": "INV-W58B84",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): Retained constructor-preservation.json: seven same-input comparisons, all other values identical; static-final-bytes.log and affected-final-pass.log passed.",
+        "L99-MR-002; mcp/tests/test_leaf_handover.py."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-4-sibling-value",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only a leaf Worker, Reviewer or Curator handover gains leafSeats with all three seat roles and exact sibling role-message arguments containing canonical sprint, master and leaf references without sibling agent IDs.",
+  "status": "proposed",
+  "supersedes": []
+}

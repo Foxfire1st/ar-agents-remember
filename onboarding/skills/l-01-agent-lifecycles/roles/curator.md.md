@@ -20,7 +20,7 @@ The writer is the shipped knowledge-ingest route for leaves and the admitted kno
 
 The curator does not edit code, task/lifecycle state or Git transaction records, directly write SQLite, invent future commit stamps, or repair source movement. Repository-foundation work follows c-14 under real setup authority and does not manufacture an enclosure.
 
-Since MIK-R72@v2 the Curator’s large-worklist duty is stated in the role text: enumerate one deduplicated full-intake worklist of distinct outstanding memory actions, count each underlying action once, exclude already answered and report-only observations, and at 100 or more actionable entries fan out read/search/reference checks one level deep to sub-agents where the harness supports them. Sub-agents return path and evidence and write nothing durable; invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the main session. Below 100 fan-out is optional, and an unsupported harness works alone and reports that limit.
+Since MIK-R99 (D92) the Curator’s large-worklist duty is stated in the role text: enumerate one full-intake worklist of distinct outstanding memory actions in the report, count each underlying action once, and exclude already answered work, report-only observations and duplicate summaries. Invariant/family placement, admission, changes of meaning, the single `knowledge-ingest` write, the full memory-quality operation and the handoff stay with the seat. How the seat organises that work — including any harness sub-agents, at any size — is the seat’s own, and a harness without sub-agents does the same work.
 
 Since leaf `260921-ICR-L45`, Process step 3 requires the curator to make sure every hand-off target carries
 its own authored `rationale` (why that place carries the obligation, specific to the construct it names,
@@ -64,6 +64,10 @@ Canonical skills own instructions. Generated copies are synchronized artifacts; 
 ### Todos
 
 No additional work is asserted by this card. Actual project publication and semantic acceptance remain separately evidenced outcomes.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Curator now receives the Worker's and Reviewer's inputs directly and hands its memory candidate directly to the Reviewer; it raises an evidenced code concern to both the Reviewer and the Worker even after code PASS, keeps an undeliverable Manager notice pending with a supported retry, and never turns that transport failure into a developer question. Its fixed 100-entry/one-level/read-only fan-out policy is replaced by the all-role harness freedom while the full-intake worklist duty, the single writer and the quality/coherence obligations stay with the seat.
 
 ## Evidence
 

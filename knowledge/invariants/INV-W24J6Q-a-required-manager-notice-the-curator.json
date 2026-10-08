@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The recovery is stated in both the curator role and the curation operation, and the positive-clause guard fails when the delivered obligation is removed."
+  },
+  "applicability": "Every Curator pass that owes a Manager notice under its operation.",
+  "conditions": [
+    "The notice is a seat, authority, limit, disputed-finding or sync occasion the operation assigns to the Manager.",
+    "The retry uses the same supported role_message channel the notice always used."
+  ],
+  "exclusions": [
+    "Peer hand-overs, which carry their own busy and empty-seat rules.",
+    "Ordinary developer questions, which stay in the Curator's own chat."
+  ],
+  "id": "INV-W24J6Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer r2 verdict 330c11fc02ae44b617102b6f1af27d26950c2f8d8ba8a48f54551f2d4f76d277, finding L99-CR-002; packet MIK-R99@v1 rule 7/Failure And Recovery Behavior; mcp/tests/test_role_instruction_wording.py::InstructionFileWordingTests.test_leaf_roles_and_operations_deliver_their_own_positive_obligations."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-curator-notice-recovery",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A required Manager notice the Curator cannot deliver is recorded as pending in its report, does not stop work that does not depend on it, is retried through the supported role_message channel, and is never turned into a developer question in the Curator's own chat.",
+  "status": "proposed",
+  "supersedes": []
+}

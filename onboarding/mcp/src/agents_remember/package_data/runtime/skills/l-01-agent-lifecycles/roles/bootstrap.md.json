@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:10142a79d25fd343a320bd8f36a2d54aef2f38490150509c33882ef53e4c3ecc",
             "locator": {
               "end": 6,
@@ -222,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -235,7 +235,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 64,
@@ -253,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -266,7 +266,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:820197070c4caed4a9412fa672057089c3cf09ee132c5dee56fda6704667dcf2",
             "locator": {
               "end": 51,
@@ -279,7 +279,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 63,
@@ -292,7 +292,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 64,
@@ -310,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:91030e70a2042e1916836c4c64b3d89012a2ba1f82647992c08f4980e406a0bd",
             "locator": {
               "end": 27,
@@ -328,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:24de17b349e7820522fa438e30cf86d270e77294bfd88d5cc9620730435a9953",
             "locator": {
               "end": 10,
@@ -341,7 +341,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:2ff016b3a731db33aef4c70678c5306f6e196492cebf0e3d5ea349d423a57844",
             "locator": {
               "end": 64,
@@ -359,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:0f1bd05b9c2bd630881f872775eb5db5cfa02666b83d9c6ee1c8cb33c8305507",
             "locator": {
               "end": 57,
@@ -372,7 +372,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:b1276d29fa6221147599f9ed1c13f4db489fcbea26b78eec82cad2b909098091",
             "locator": {
               "end": 97,
@@ -385,12 +385,12 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:3c7ed1a44ded21ad10cf8b9b5b98170c8c201f9eb385b325f85be10730182f48",
             "locator": {
-              "end": 127,
+              "end": 128,
               "kind": "line_range",
-              "start": 127
+              "start": 128
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },
@@ -398,7 +398,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:91f2c2c0861c239ad04888e7c48e94a9a4b935f6694087b0cc8d26961b0b32ea",
             "locator": {
               "end": 69,
@@ -424,7 +424,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 112,
@@ -437,7 +437,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:b09236398b19751ace1b0623aa98a5631176b6aad54ecd1a815b6a9086a8dbe4",
             "locator": {
               "end": 70,
@@ -450,12 +450,12 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:e00098052d2e842ec1bb6b7fefc62c595578f2d04b56384ca064bec7e8a03953",
             "locator": {
-              "end": 147,
+              "end": 148,
               "kind": "line_range",
-              "start": 147
+              "start": 148
             },
             "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
           },
@@ -463,7 +463,7 @@
         },
         {
           "anchor": {
-            "blob": "74aee5958b5e6f53b3086ae3b7dbb4b99062d49c",
+            "blob": "86489c29b14d1cf3a8a03849668d3018a59324da",
             "content": "sha256:40efe14b0741c4e08a0e72d714fe8ca1cb6ba8158ac4ad414b15f5d375eee261",
             "locator": {
               "end": 113,

@@ -120,6 +120,10 @@ canonical but incomplete catalog is in `mcp/tests/test_evidence_catalog_gate_bou
 
 The generated route index lists the source files of this route and their cards.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The testing support area gained two guard data and helper modules: `retired_leaf_handover_wording.py` holds the verbatim retired leaf-handover sentences with their carriers and probes, and `leaf_instruction_wording.py` holds the affirmative clause tables and normalized readers the wording tests use. The area remains test-evidence infrastructure, holds no AR seat and authors no knowledge.
+
 ## Evidence
 
 - The ordinary bootstrap carries no certifying or external-service capability. [1]

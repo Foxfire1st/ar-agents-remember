@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registry rows name their exact base source and verbatim sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c414ec947cb6de52209c2c35f5570b04a118391",
+            "content": "sha256:e203ab9f0a5a4a7a8580175af3ba7aa1ff974ee56e8ec0d8117e7d93ae8f9f6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_LEAF_HANDOVER_WORDING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

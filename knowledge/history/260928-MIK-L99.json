@@ -1,0 +1,3345 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L99",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-06GZD1",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0A6YM7",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0CXQM8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0VG8B6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0YX8JQ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-14HHRT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-18YR32",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1GWDBS",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1HYHA7",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "because": [
+        "DEC-SKAXJ5"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": "absent",
+          "id": "PRF-D682YJ"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:06fcfb834e1ca8489f96834b7a28da568fe67ca139477bbad3301e3b8ed1abaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_curator_fanout_wording_distinguishes_99_and_100"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-TZR4TX"
+        },
+        {
+          "after": {
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+            "content": "sha256:d0a097baec95501c22cc1b3134d39ef23722cf4ac0ead5ed5ef9ee6f30be04e1",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:c01f8f19fdf4d932ff319971cf0147325b7576ef9b0cf20c812f23bd1b05ae2b",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 241
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-DT71R6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-1N9CFZ",
+      "items": [
+        "sha256:7ba94fe566895ef93c8ed5e2c6624ec99b3552b538e80d6389a489775f115acc"
+      ],
+      "reason": "D92 replaces the fixed 100-entry/one-level/read-only fan-out policy with the all-role harness freedom; the winning half of the record, the full-intake worklist duty and the seat-owned boundaries, is restated under this id from the delivered curator text. Evidence (R99-curator-worklist): Candidate skills/l-01-agent-lifecycles/roles/curator.md lines 286-300; mcp/tests/test_role_instruction_wording.py::InstructionFileWordingTests::test_current_coordination_and_curator_rules requires the worklist clause; the independent Reviewer r2 verdict 330c11fc and the Worker A2 producer dcd7b0ac both name the superseded 100-entry/depth policy.",
+      "revision": 2,
+      "subject": "INV-208SQT"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-T9EV7V"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-Z4GYK7"
+        },
+        {
+          "after": {
+            "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+            "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-P0ZH30"
+        },
+        {
+          "after": {
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+            "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-V1AKR1"
+        },
+        {
+          "after": {
+            "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
+            "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "2939fc2a34df39177d8ac0d6fd0fa3f706005c4a",
+            "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-X136N6"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-1PQH1G",
+      "items": [
+        "sha256:7f4a5a108eba7b98c97dfd82ca900feaab13896384ea61b0e5fdcbfab7f97512"
+      ],
+      "reason": "The old proof pinned the worker's parent report notice, which the R99 direct loop replaces with the freeze hand-over to the Reviewer; two realizations were re-anchored to the current execution-metadata and report/non-acceptance paragraphs after L99-MR-003, and the record's canStart/canRetry and finished-turn-no-AR-mutation duties still hold.",
+      "revision": 1,
+      "subject": "INV-4E130M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-4FX9HW"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-2T4Z9R"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-8W0HVX"
+        },
+        {
+          "after": {
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+            "content": "sha256:28673177e9fabb723ba2142e77c0c624fe67f11570d7c1f4f6e7dd70646f4a67",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:28673177e9fabb723ba2142e77c0c624fe67f11570d7c1f4f6e7dd70646f4a67",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-HB7AP1"
+        },
+        {
+          "after": {
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+            "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-S372ZT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-29G8KG",
+      "items": [
+        "sha256:2c2af99ee1ca8d02e8439c88f719e44212d669592897020f6b0cb6fa93aa976a"
+      ],
+      "reason": "The second-master Orchestrator start and reporting-recipient change are unchanged; its manager realization was re-anchored to the current instruction-recording paragraph after L99-MR-003.",
+      "revision": 1,
+      "subject": "INV-683GA3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2BJK48",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2GEN8X",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2GTSF9",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2RAB21",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2SQ3SM",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2SXM5B",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-333DJ5",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-35GHXW",
+      "items": [],
+      "reason": "The leaf report goes to its seats instead of the starter; the worker role card and the R99-1 invariant record it, and this operation has no eligible file-level card.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-36WV1R",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-37KJB0",
+      "items": [
+        "sha256:3fcbf750208aaf231bcea0774833722bf3a5c39dff59e53e285ee308e1867ae7"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3B7D07",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3DGWYT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3EBTWR",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3F9HJ1",
+      "items": [
+        "sha256:2cbf1830641dad96681dba0327f4c8fa02936301a956886f8754dfd7bebe8b26"
+      ],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/tests/test_leaf_retirement_wording.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3PTB25",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3W309J",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-42D3QF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-42Q6Q3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-461QAX",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-46VPC0",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-48KCGF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4DRVNX",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4F80N5",
+      "items": [
+        "sha256:02e014632555cd1a1dd7ff1c51a8bba7e0c6cd1b5059a76fc28d8a8440a2bf84"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_route_problem"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "before": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:b2bd098c5dafb7a1d998c1ba8881064cf9811703559d976539eee51927decb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_route_problem"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "id": "RLZ-6HBW7626"
+        },
+        {
+          "after": {
+            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
+            "content": "sha256:af8d39ff9cdc4f97592cc5e592b9df9f7b0e152be88189cd8c378e5568b26b2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-7VHY091X"
+        },
+        {
+          "after": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:dfab6891c14d8fbf67c94746a3159982a5224827901af30fe66960fc79af37d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_route"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "before": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:dfab6891c14d8fbf67c94746a3159982a5224827901af30fe66960fc79af37d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_absent_route"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "id": "RLZ-PM09BFJR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4KERZV",
+      "items": [
+        "sha256:3ed43e70492448dfbfd0e29feddfb72c7602c8bcd2faa5862639b05a50dd0407"
+      ],
+      "reason": "The governing_route and non-text value refusals are unchanged; the repaired curator-handoff-list template and sidecars move anchors only.",
+      "revision": 1,
+      "subject": "INV-E8655Z54"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4TTX0Q",
+      "items": [
+        "sha256:237e46694c2b0b74a9638bec72a3661f90b9b040d4702c2d763fbdce74de4efd"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4VJFEK",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4YNVZW",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-53WJVW",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-57WSC6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-59WNXR",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5AGQ7V",
+      "items": [
+        "sha256:6e50d6456319f0b30663f99ffb51e8855a20e2942db5773b43d71b07baf7ba89"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5BDJ6P",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5CXTXA",
+      "items": [],
+      "reason": "The recommendation goes to the Worker and, on a pass, to the Curator; the reviewer card and the R99-2a invariant record it, and this operation has no eligible file-level card.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5ECMV5",
+      "items": [
+        "sha256:f872d739915f5a64311c2c48a54be5564e7801e1c34e3d8b34e650ce46dacd12"
+      ],
+      "reason": "The lane catalog gains the incoming shared evidence-lane content from the L79 sync plus the new test modules' lanes; no R99 invariant is realized at the catalog rows.",
+      "subject": "hunk:sha256:f872d739915f5a64311c2c48a54be5564e7801e1c34e3d8b34e650ce46dacd12"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-208SQT",
+          "revision": 2
+        },
+        {
+          "id": "INV-CXEEF4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K5SFG7",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5KTYEB",
+      "items": [
+        "sha256:4303e0ce36b13817c2065abac2da729bef3f8b2092ec5a78010af1b3774b97fc"
+      ],
+      "reason": "The retired guarded-instruction-maintenance family keeps its recorded guarantee; this leaf re-anchors two members' realizations and corrects the register and guards to the discipline the guarantee already states, and INV-208SQT's record is replaced by the surviving worklist duty under D92. All three members were examined.",
+      "subject": "FAM-YGXZTQ"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-4N43MNN2",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 1
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 1
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 1
+        },
+        {
+          "id": "INV-VVMNM9B6",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5T5TKT",
+      "items": [
+        "sha256:a7143692eb4a04ac6b9d1d11c9254f85c7ec26ce7d109b2cf7045d720e223d86"
+      ],
+      "reason": "The authored-realization-explanation guarantee is unchanged: the writer still requires each target's own rationale, refuses absent, non-text and unknown-role values, and never rewrites stored history. Three members' realizations moved with the edited role and template texts; all seven members were examined at their current revisions.",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5X4E85",
+      "items": [
+        "sha256:ef0a3b0732a88e43dc37f336b8b3d94d4769f98f5cac871b792a9817990ba927"
+      ],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-64CNYR",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-69CD44",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6EEC8F",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6S547R",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6SVR4K",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6TZY9R",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6Y0EXS",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6ZEJCD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-704B45",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7277S8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-72T15A",
+      "items": [
+        "sha256:7b37442869fe36da6aefcdfd9e7f64ef9000786c7e457f59a297bfe1bd82964c"
+      ],
+      "reason": "The doctrine module keeps its single owner and matcher; the retired leaf-handover data moved into its own module and the register now holds only actually retired sentences. No R99 invariant is realized at these rows; the guard discipline is recorded by INV-K5SFG7's row and the new guard modules' cards.",
+      "subject": "hunk:sha256:7b37442869fe36da6aefcdfd9e7f64ef9000786c7e457f59a297bfe1bd82964c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7N1T8G",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7SVQ18",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7WC4TR",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-85Y6HR",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-87MPVP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8AG923",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/tests/test_leaf_handover.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8DS1CX",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-RFP8Q1"
+        },
+        {
+          "after": {
+            "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
+            "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-1FAAAK"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:4a9dc567094ef1b313f0aa20658894f0313277c6e1e16e7c914234496a883352",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-MJ0SZ8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8MTSA6",
+      "items": [
+        "sha256:5191f26d2923db0f262c14a1694a225258cdae04fd90b59ee5988c730ed7bd18"
+      ],
+      "reason": "The Architect's answer-first and role-agent-line reading is unchanged; the R99 edits in the manager text move the reference anchor only.",
+      "revision": 1,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8NYEN0",
+      "items": [
+        "sha256:61bb033d1e2d4742a752061fa0fd8199ceca52458b0a8a220dc44129727d138f"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8R3WXB",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8W7GQ0",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8YH0NX",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-90RH1A",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-95G20X",
+      "items": [
+        "sha256:ef8fdd8b3e08ac5adee092379fda081a0a9bea71c1f662779e7635986d412af7"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-976NCW",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-99W5T3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9BNP3W",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9BZB9Z",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9CEVR3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9FVWJP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9G1XZD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9MQZ0Q",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9X62Z0",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9XRABH",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9ZZYAV",
+      "items": [],
+      "reason": "The role gains the all-role harness freedom and boundaries; the roles overview and R99-14 record it; its card is updated separately.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A2030B",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/tests/test_leaf_handover_review_rounds.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A41R1A",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A526FZ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A5NKX1",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AG0AWV",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AG2PXS",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AQEYMW",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AVZ916",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AZ8587",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B7AGTK",
+      "items": [],
+      "reason": "The worker/reviewer/curator handoff rows keep their owners and lose only the Manager relay; the acceptance route's cards and the R99 invariants record the change, and this file has no eligible file-level card.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B8APDF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BBJGAX",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BEYX8G",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+            "content": "sha256:a032ccf405155b897cdc180e99e8fbd6fc321820ef68ada006604675bb2b110c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:afaf15faf5f3a820ec5c5139a854450bcd182c94c75c664dd7f3ec171b4deeb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        },
+        {
+          "after": {
+            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
+            "content": "sha256:af8d39ff9cdc4f97592cc5e592b9df9f7b0e152be88189cd8c378e5568b26b2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-RSTSK683"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-BRP32H",
+      "items": [
+        "sha256:6d0188b5f062d0110fa283a37198529e69e43f93020baf8cca18a39a6e6ca49a"
+      ],
+      "reason": "The hand-off element shape is unchanged; the R99 change moves who hands the list where, adds the entries/records/history writer sections beside it, and re-anchors the role and template realizations.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C1YF06",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C49YRG",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_the_declared_roster_equals_the_surfaces_that_speak_the_vocabulary"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-TX0CVG"
+        },
+        {
+          "after": {
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgreementAcrossTheRoleSetTests.test_every_roster_surface_carries_the_mechanical_reading"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "PRF-Z5EB64"
+        },
+        {
+          "after": {
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_ROSTER"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "before": {
+            "blob": "34933a774836231c708d69217e5532d386d0c240",
+            "content": "sha256:d96c96b0088567926259fd593539d571d25559437e2b511da9534b17ff84621d",
+            "locator": {
+              "kind": "symbol",
+              "name": "COMPLETION_TRUTH_ROSTER"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "id": "RLZ-4KH0W1"
+        },
+        {
+          "after": {
+            "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+            "content": "sha256:15985ae2c19ced481a0e732a5996a9a09d5218c03bed6f851bd52b8b84cd8a08",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 330
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
+            "content": "sha256:1f3bc493e0414099459ded808ed16e3ff639805dafe7a51b4694d79afcdf25a3",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-EEEG4W"
+        },
+        {
+          "after": {
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+            "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 223
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-PDP66S"
+        },
+        {
+          "after": {
+            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+            "content": "sha256:00a4840ecec2a5de5465bcbd86e1dde908c2e942381683021be893c799901143",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "fdf1b1be0264ac1bf51a1929dea5c3ad2ebea147",
+            "content": "sha256:913b092e7b70dbce1ba4810d78e8df865f31a9ba581878e23434b879d41dafe7",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-QBXQTV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C6CBV0",
+      "items": [
+        "sha256:1e6c5ed381dbe6ae62f904775b24b7a46afd6facd04989bb3194648ce3bd1c62"
+      ],
+      "reason": "The completion-truth roster still names the same three surfaces and each still states both halves of the reading; the curation and reviewer realizations were re-anchored to their current terminal/finalizer sentences after L99-MR-003.",
+      "revision": 1,
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C6Z72Q",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CGPWY4",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CSSDEK",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CSTW8Z",
+      "items": [
+        "sha256:ef4cbb2e3d8943cfd28d891d4d7fa4bcaefb005188a56a384dda8819fe5a45c3"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CTF5VJ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CTZSY8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CV8PDV",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CXHHVD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CYVMTA",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D54P95",
+      "items": [
+        "sha256:8642cede74fefa6a80ce866724f33bb2068c4c942da7c9b22ebddcc714f52566"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DHGFA0",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E100TE",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E3JB69",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E629K8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E9WM4H",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ECMJQK",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EDQNE2",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EE3XGP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EFT0W3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EJAP6X",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EK9ACA",
+      "items": [
+        "sha256:2528f8a15850ff2db2ef068d576d7f01853b20e94f33ff3880f6cd0b085f98e9"
+      ],
+      "reason": "Generated copy of c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ESCHAH",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EVGPEM",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EZCRXP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5KK4X",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5R62D",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5Z6X8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F71PW5",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FBPX8A",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FTGA42",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FTK7HT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FYQAF0",
+      "items": [
+        "sha256:16ae67eb12828c7e71842d969a96193d10925f3901aa11fc62062d1031f9d176"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G2HHM6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G7YF3T",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G8T74Y",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GM7Y3P",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GPRSVT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GWFC1X",
+      "items": [
+        "sha256:d26770469d5a0759ed54ab0d0d1c4f73318fb5b543eb5dafffc2ae1f35757d2d"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationGuardTeethTests.test_one_seeded_old_sentence_is_observed_to_fail_the_guard"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "before": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationGuardTeethTests.test_one_seeded_old_sentence_is_observed_to_fail_the_guard"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "id": "PRF-4AGWPG"
+        },
+        {
+          "after": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "before": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "id": "PRF-F5RVVJ"
+        },
+        {
+          "after": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationPolicyTests.test_no_shipped_surface_still_carries_a_retired_curation_statement"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "before": {
+            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CurationPolicyTests.test_no_shipped_surface_still_carries_a_retired_curation_statement"
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "id": "PRF-YT7KRB"
+        },
+        {
+          "after": {
+            "blob": "2a2dc607e41f773cd41ef96f86129f6341d54aab",
+            "content": "sha256:81402ee7cb0d45bb98726cda9a6cc6df930166c178355c66d60588dfd4c34174",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "before": {
+            "blob": "64b8aa368170e2ca4033a98f9c4114da45e371cc",
+            "content": "sha256:e4dba7e5259a16bf616b8cc298d4469311a143ead0817d75c52f26a2cb73daae",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "id": "RLZ-886S55"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H1S6H3",
+      "items": [
+        "sha256:35c0638f05e7238aca1f420eb031c3404799494be732c3a6d450d96372f4e513"
+      ],
+      "reason": "The register/discipline the invariant states still holds after CR-003/CR-004/CR-005: the register now carries only actually retired sentences with exact carriers and probes, the retired obligations keep source confinement, and the positive guards assert each affirmative role duty. The corrected registry, matcher rows, tests and corpus realizations are re-anchored.",
+      "revision": 1,
+      "subject": "INV-K5SFG7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HA24VV",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HC4CE0",
+      "items": [
+        "sha256:99fcca0f8db0e79b6e22f9fd44dc6c19597f3952a07f32622f3543a5e5dc4c1d"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HD2QWS",
+      "items": [
+        "sha256:77901ccb2efeca43fd090ec00ec72dc138ebea5c1b88b783524b726702683a54"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HGXWB8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HS28TB",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HTB585",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HWDRHA",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J6M7D7",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J7E614",
+      "items": [
+        "sha256:b4221b0765e9372ba597869373497e67f7a8f21f4a3a42eac4627ac7405aa1a4"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JJNYYV",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JR9DN2",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JTA9KT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JZC8R0",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JZRBSG",
+      "items": [],
+      "reason": "The chain sentence now states the leaf's direct seat loop; the c-05 route's cards and the roles route record the R99 change, and this canonical file has no eligible file-level card under the memory path rules.",
+      "subject": "onboarding:skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K39C00",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K4ZV66",
+      "items": [],
+      "reason": "The bootstrap helper paragraph now permits assigned harness work inside the seat bounds; the R99-14 invariant and the router card record it, and this role has no eligible file-level card.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KVQ1Q3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M5NSSZ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MF0T09",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MF83D3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MSSCV2",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MV1JDW",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MX6R4T",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N18JKC",
+      "items": [
+        "sha256:65834742d37fdb6335b51464969959b0b1f068992be91e80d46163248ece2483"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N1P3CE",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N9SA98",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NFXF35",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NJZ73H",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NKSC0D",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NPYJTW",
+      "items": [
+        "sha256:7063ae41f042fd52553bb69fc8eebd1de415dd177c5a2873cac6e0946ab3a744"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NQCWFH",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NRA2W3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PA7T0V",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PRF2ZV",
+      "items": [],
+      "reason": "The old fixed helper restrictions are replaced by the rule-14 boundary; the R99-14 invariant and the role cards record it, and this file has no eligible file-level card.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "because": [
+        "DEC-BF7832"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0E0V75"
+        },
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0YJ58R"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 226
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-031YY4"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 333
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-5G6AGC"
+        },
+        {
+          "after": {
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+            "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-85MKD0"
+        },
+        {
+          "after": {
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+            "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-ATVKJ4"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-HGSMDT"
+        },
+        {
+          "after": {
+            "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-R0YSNZ"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-SV2W4A"
+        },
+        {
+          "after": {
+            "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
+            "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+            "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-VHD2RF"
+        },
+        {
+          "after": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "before": {
+            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "id": "RLZ-WTKS9R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PTB2DS",
+      "items": [
+        "sha256:a730e8a03535b2e64c428905ebb141cfbb38f785928e834794672a3d1ff040bd"
+      ],
+      "reason": "The delegating Architect still hands coordination to exactly one agent, one Manager for one master or one Orchestrator above two or more; the R99 manager edits change what that Manager does for its leaf, not how the Architect delegates.",
+      "revision": 1,
+      "subject": "INV-A6GAKX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PWAM1T",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PZCZ50",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q56YKV",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "because": [
+        "DEC-BF7832"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0TFF0B"
+        },
+        {
+          "after": {
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+            "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-D5ZTR6"
+        },
+        {
+          "after": {
+            "blob": "9246477fa3cdb5ccafbabd92b7516acca5179cd8",
+            "content": "sha256:2f70895e20a16974eda5a57ddb2551c74f4714c8dfbcb9396eb15fad080ed843",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+            "content": "sha256:b7b51e5b48d256e3db8485029ee1a8c1acb81139d98e0fb75aebff7a8a158468",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-H0W6SX"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-QVQ9HA"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "a5eac45e7f495ea5269ffcec76251ec4b607427f",
+            "content": "sha256:6087c04a96d868c5027097c5869e2631487cd6dc602c10dc5ae9ab78ee2c1cb2",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-RT4W1F"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-XSMK0N"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-Q5M8G3",
+      "items": [
+        "sha256:39083882218bee6f592107532cca2ba9772ca2302b7f5a43a792c46278791e99"
+      ],
+      "reason": "R99 moves the leaf repair loop to the leaf's seats while the Manager keeps the leaf-diff, evidence and gate loop; the record's statement and conditions are revised to that current construct and the contradicted repair-loop realization is removed after L99-MR-003. Evidence (R99-corr-kbx7c): L99-MR-003; skills/l-01-agent-lifecycles/operations/coordination.md line 11 and roles/manager.md lines 24-26.",
+      "revision": 2,
+      "subject": "INV-5KBX7C"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q75EAV",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q991S3",
+      "items": [
+        "sha256:1d40a019f4049016a43a14cb76511ccda221571a47dcfbceee0532b1f8b4746e"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QGN2FQ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHQJ6H",
+      "items": [
+        "sha256:039661418e141835a30423319e47d45c3497be3feb7eecff5d34620aa558c424"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QKD00A",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QSEAB6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R1W8HT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R3X169",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f"
+      ],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R429JQ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
+            "content": "sha256:af8d39ff9cdc4f97592cc5e592b9df9f7b0e152be88189cd8c378e5568b26b2d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-A2D6Y9T1"
+        },
+        {
+          "after": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "before": {
+            "blob": "befd12b921e3b8573570475a960e0a1992be5913",
+            "content": "sha256:2359fb8b3985149c2d6b7b4a47e5686a3860c7daedf6204c6fcf4347c18ccbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "realization_refusal"
+            },
+            "path": "mcp/src/agents_remember/application/curator_realization_authoring.py"
+          },
+          "id": "RLZ-C4KJBVRZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R5JKSW",
+      "items": [
+        "sha256:c126aab1aa62877d2e9812adb841b3207b16064f4a8dc3920223a78125bf04fe"
+      ],
+      "reason": "The rationale/role value refusals are unchanged; the repaired template and its realizations move anchors only, and the R99 entries supply rationales the writer still requires.",
+      "revision": 1,
+      "subject": "INV-J7179RG5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RF4XQN",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RMDPC4",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RXQTX5",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S452Y3",
+      "items": [
+        "sha256:889dc75465d0751d7d1904ab4aea5c00fa631bcab744cfd3b04073a1cd5b9537"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SN0ZQA",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SPCG4B",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-SQ3ZCS",
+      "items": [
+        "sha256:99781becf3b26af2a1f075c7e0d9d0afe382530515535df7b1dcf08a41e83a20"
+      ],
+      "reason": "The touched manager lines are the leaf-loop and Manager-occasion text, not the delegation default DEC-JCDMW3 rejected; the rejected alternative, one Orchestrator under the Architect for every delegated master, is still not the product's default, which remains one Manager for one master with an Orchestrator only above two or more. The rejection holds and the link is re-anchored at the candidate.",
+      "subject": "reconsider:DEC-JCDMW3#1"
+    },
+    {
+      "because": [
+        "DEC-BF7832"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:86a8bdcd7834fb37523f821a9519720bd55f6027682eae8d6efe91d753974b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:86a8bdcd7834fb37523f821a9519720bd55f6027682eae8d6efe91d753974b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-1E5Z70"
+        },
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:ce5d181963adfec2b59a2e4ab45373dd9519022a021e0e4c8919f3fe6507441b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_changes_only_for_parented_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:ce5d181963adfec2b59a2e4ab45373dd9519022a021e0e4c8919f3fe6507441b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HandoverTextWordingTests.test_owner_relation_changes_only_for_parented_coordinators"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-1PSRH1"
+        },
+        {
+          "after": {
+            "blob": "b41ed809f17400ceeb1b597d3274410ca4cdc654",
+            "content": "sha256:ff44d1d326e68305e8609fba18028977c2f560c1b08aa88258b3bfb5fd13ea84",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:569207831ed29601ae715c9ef121457a9d77fceb96510cf1d1203ca305e1d325",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-S6FS3C"
+        },
+        {
+          "after": {
+            "blob": "b41ed809f17400ceeb1b597d3274410ca4cdc654",
+            "content": "sha256:7719e93fa3f65b9e6c5075b7269dd6de45bdaf34da4f3dfdbdec8870dc7ef89b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:7719e93fa3f65b9e6c5075b7269dd6de45bdaf34da4f3dfdbdec8870dc7ef89b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner_relation"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-SY5SK8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T38R29",
+      "items": [
+        "sha256:d6610f27817518c1cb3f34ca174b71ed5a5e5d01e505191581fc5c6fc1dec3e9"
+      ],
+      "reason": "The parent-reporting handover values and the four developer-needed categories are unchanged for an agent-started Manager or Orchestrator; the R99 direct loop adds the leaf-seat loop inside the leaf without moving the parent reporting the handover compiles.",
+      "revision": 1,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T5MDJF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T6V43D",
+      "items": [
+        "sha256:330790642145c48afa162368160edc40c55f39a0a8d4bfdb542130b744925811"
+      ],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T73G4P",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TE7Q1Y",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TKH66D",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TX3JX8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V9E4M6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VBREPN",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VD3Z83",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VEB90T",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VEXPA5",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VJZJPZ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VKGX8G",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VPD366",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VR5EXJ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VTZKJ0",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VW8K4T",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/system-specialist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/system-specialist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VZ8YAD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W0BJ60",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W6S64F",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/turn-report.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WAVYAE",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/orchestrator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WCK2XR",
+      "items": [
+        "sha256:a7625c5175c50c2b78c22150b53bc03c95b4aa2932890f24ef18284221ba70d9"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/bootstrap.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WDJEGY",
+      "items": [
+        "sha256:e578b162d1a998a97be3fecfccbe3cf6dbbe7dc1883ec73cdbceaa9c5e756f78"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WEGF9G",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/turn-report.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WES666",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WKNVMK",
+      "items": [],
+      "reason": "Generated copy of skills/c-05-create-or-update-onboarding-files/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/c-05-create-or-update-onboarding-files/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WMDNEH",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+            "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "ca52c6bad0400b2107fe7c65d7f8440535022c3b",
+            "content": "sha256:c4f4a4f546190f796db6957d5e72c765cf2fed267df145c9a44400792e96f81c",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+            "content": "sha256:7191128f4e5a9e7fbd6f6273c42825b67e313fc4c54b91f0160e2c10e840d871",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:26c4980deac5a6d5d934a8c81110a21cbbc045bdbac1cecc948ae2e2367957d3",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-09EQRE"
+        },
+        {
+          "after": {
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-JY5TEM"
+        },
+        {
+          "after": {
+            "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+            "content": "sha256:afbb9de316de4881b4fa793eac59921ab18366cdaa011d6b56860ae41d51b825",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "0857db3d95fbb2bb3f81c996dd7dda912c2b21de",
+            "content": "sha256:afbb9de316de4881b4fa793eac59921ab18366cdaa011d6b56860ae41d51b825",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-M2NFTB"
+        },
+        {
+          "after": {
+            "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
+            "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-T4ZSC9"
+        },
+        {
+          "after": {
+            "blob": "93a32583fd55965ed6b1f715b99c925bd196e85f",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "42e0257c993e01d712413564957c027560e34557",
+            "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-Y1FRYJ"
+        },
+        {
+          "after": {
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+            "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YF74AS"
+        },
+        {
+          "after": {
+            "blob": "364c8a11a96f1838244c5d7f6c6f817baa2fdae9",
+            "content": "sha256:82fa80737068ff74fce8b2627c4284b2a74a57cdcc0c9e157a52291d91e4316f",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "6de60a4d56da2a83fb72bf84e3dfe337888f6fd1",
+            "content": "sha256:82fa80737068ff74fce8b2627c4284b2a74a57cdcc0c9e157a52291d91e4316f",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-ZP7734"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WQ96TF",
+      "items": [
+        "sha256:301a4ea3993eb4287cdb988ed342a5de65122be8a5e5b036eeea8dd6368bf07f"
+      ],
+      "reason": "The coordinating agent's decisions and its answers to its own role agents are unchanged; two manager realizations were re-anchored to the current durable-records and upward-message paragraphs after L99-MR-003.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WZ3E37",
+      "items": [
+        "sha256:fa9e727334159da146d0da23647ac1ee75eefd856c164fb8463b3704113715fe"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/designer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X0NYR3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X5W3K6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/architect.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XCRWSY",
+      "items": [],
+      "reason": "The changed source's contract is carried by its own card and the R99 invariants and history rows; the R99 leaf-seat change adds no obligation this card needs to restate.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XDPDSF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 1
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XVBJSB",
+      "items": [
+        "sha256:c748b93eeae68a7ff64eb559d6049df1bb139088a4e74136146c20930d941662"
+      ],
+      "reason": "The one-coordinating-agent guarantee is unchanged: the Architect still hands coordination to exactly one agent with the two named choices and one owner per task. The R99 manager and coordination edits change what the Manager does inside a leaf, not how the Architect delegates; all five members were examined.",
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y5FXCQ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YFMV71",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YKYZMJ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/review.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YMZ40N",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YQJ4YD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/worker.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YQT45W",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/worker-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YXV092",
+      "items": [
+        "sha256:0884176d7b4d6adf49a114652417efedae145b54038c2d5470905fec21efe09a"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/roles/reviewer.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YYM4PE",
+      "items": [
+        "sha256:eb62563aad3784f1e61a1e433d148f0bdf40e5202d58013f695d7f9fff0fcfe9"
+      ],
+      "reason": "The catalog registers the two new governed test artifacts and their consumers; the catalog rows carry artifact governance, and no R99 invariant is realized at them.",
+      "subject": "hunk:sha256:eb62563aad3784f1e61a1e433d148f0bdf40e5202d58013f695d7f9fff0fcfe9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YZMMV8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/authority.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z1YSAW",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/manager.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z209XC",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z5DFMN",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/verdict.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/verdict.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z6T9TM",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/manager-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z7NR9X",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/core/acceptance.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z7VBNE",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/implementation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZB97YC",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZDFPBW",
+      "items": [
+        "sha256:5b9ede6212b769da38ef1758d9beb9349252b98dd7356b82d25df04a4429ce65"
+      ],
+      "reason": "The repository overview's meaning is unchanged: the R99 change moves how a leaf's seats hand over, which its own route cards and the lifecycle route carry; the root overview lists no leaf-seat detail.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZEC5TP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZGDB4X",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZM1MXF",
+      "items": [
+        "sha256:e904d6c99f52a71ad36ea64d951e12af8beb70a78c6bbfb8404a5d169008a90d"
+      ],
+      "reason": "Generated copy of l-01-agent-lifecycles/operations/coordination.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZNKTR3",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZP3KPT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/strategist.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/strategist.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZSW4YE",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/SKILL.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZT9MVH",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-brief.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the R99 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/curator-brief.md"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

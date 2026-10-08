@@ -16,7 +16,7 @@ A baseline inspects the complete diff, including unattributed files, against the
 
 Adjudicate each exact requirement revision/worker attempt separately, including declared knowledge effects against the packet; a rejected requirement blocks overall pass. Seal stable findings and observable repair criteria. Fix-verification covers only the preceding outstanding IDs without baseline reset, new findings or added scope; the three-round bound remains.
 
-Keep task-bound attempt/verdict evidence, requested seam distinctions and owner-recorded review. Normal curation authoring remains the full-MQC exception; an explicit report-only curator admission cannot claim that pass complete.
+Keep task-bound attempt/verdict evidence, requested seam distinctions and the Reviewer's own ordinary code-round begin/result; the memory check keeps its separate sealed reports, ids and pass count. Normal curation authoring remains the full-MQC exception; an explicit report-only curator admission cannot claim that pass complete.
 
 ## Conventions
 

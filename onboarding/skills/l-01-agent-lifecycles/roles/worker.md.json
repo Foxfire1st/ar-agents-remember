@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2939fc2a34df39177d8ac0d6fd0fa3f706005c4a",
+        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
         "content": "sha256:1b0069228d8c7e00350d1cff8b6d630f1a5a2b46831b6b2397b2ceb1ca4d6f01",
         "locator": {
           "end": 12,
@@ -22,12 +22,63 @@
     },
     {
       "anchor": {
-        "blob": "2939fc2a34df39177d8ac0d6fd0fa3f706005c4a",
+        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
+        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3QTBC5",
+      "invariant": "INV-7E3JNX",
+      "origin": {
+        "handoffEntry": "R99-8-own-sync",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Names Worker sync and supported continue arguments after Manager staging.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
+        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KCZHQB",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "worker receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
+        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MXJ3HX",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Owns the factual freeze and repaired-code handover to Reviewer, producer handoff to Curator and pending delivery obligations.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
         "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
         "locator": {
-          "end": 24,
+          "end": 28,
           "kind": "line_range",
-          "start": 24
+          "start": 28
         }
       },
       "id": "RLZ-X136N6",
@@ -36,7 +87,7 @@
         "handoffEntry": "Preservation (flags and acceptance)",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "Worker completion retains report and owner acceptance obligations.",
+      "rationale": "The worker's report-and-limits paragraph keeps the report duty and states that a finished turn is not AR acceptance.",
       "role": "support"
     }
   ],

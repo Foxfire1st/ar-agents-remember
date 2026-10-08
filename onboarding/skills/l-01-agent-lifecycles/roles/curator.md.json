@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
         "content": "sha256:8a4088c709bac5874ee149bc729069dcb0054b423e9ff911acbfee36827759ac",
         "locator": {
           "end": 28,
@@ -22,12 +22,48 @@
     },
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
-        "content": "sha256:c01f8f19fdf4d932ff319971cf0147325b7576ef9b0cf20c812f23bd1b05ae2b",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 243,
+          "end": 260,
           "kind": "line_range",
-          "start": 241
+          "start": 260
+        }
+      },
+      "id": "RLZ-7B663Y",
+      "invariant": "INV-W24J6Q",
+      "origin": {
+        "handoffEntry": "R99-curator-notice-recovery",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "The role text carries the Curator's own pending-and-retry sentence and the no-own-chat exception.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:a032ccf405155b897cdc180e99e8fbd6fc321820ef68ada006604675bb2b110c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-D0XTAP",
+      "invariant": "INV-RKGNF8",
+      "origin": {
+        "handoffEntry": "R99-D95-curator-code-concerns",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Requires the post-pass concern, truthful knowledge and recorded Reviewer answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:d0a097baec95501c22cc1b3134d39ef23722cf4ac0ead5ed5ef9ee6f30be04e1",
+        "locator": {
+          "end": 300,
+          "kind": "line_range",
+          "start": 294
         }
       },
       "id": "RLZ-DT71R6",
@@ -36,13 +72,30 @@
         "handoffEntry": "L72/MIK-R72@v2-curator-large-worklist-fanout",
         "leaf": "260928-MIK-L72"
       },
-      "rationale": "This clause keeps the one-level read/search/reference allowance and the new paragraph defines the deduplicated list, the numeric threshold, what is handed out and what stays with the main Curator.",
+      "rationale": "The worklist paragraph defines the deduplicated full-intake list and what stays with the seat, without prescribing the harness's sub-agent shape.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
-        "content": "sha256:afaf15faf5f3a820ec5c5139a854450bcd182c94c75c664dd7f3ec171b4deeb6",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:a032ccf405155b897cdc180e99e8fbd6fc321820ef68ada006604675bb2b110c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JFZ5WP",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "curator receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:a032ccf405155b897cdc180e99e8fbd6fc321820ef68ada006604675bb2b110c",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +110,8 @@
     },
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
-        "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
         "locator": {
           "end": 225,
           "kind": "line_range",
@@ -76,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
         "content": "sha256:c0c3299611edd64232856ead8fe17d6906699709eb295065e377740e36eb895c",
         "locator": {
           "end": 21,
@@ -95,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
-        "content": "sha256:4c64f5a7f6548edd625a84a5f909c182cbb8d2fd427559ff749e1cad451b4a96",
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:e0dc6932edd27af57f48c10414766f370b8a3b9598f2e8d1750dd0d371c1f9bc",
         "locator": {
           "end": 225,
           "kind": "line_range",
@@ -111,6 +164,23 @@
       },
       "rationale": "Curator reserves semantic memory judgment and publication despite runtime completion.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
+        "content": "sha256:a032ccf405155b897cdc180e99e8fbd6fc321820ef68ada006604675bb2b110c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VESCVY",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "R99-1-direct-loop",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Owns direct producer intake and memory delivery to Reviewer without routing its result through Manager.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -170,12 +240,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
             "locator": {
-              "end": 107,
+              "end": 108,
               "kind": "line_range",
-              "start": 101
+              "start": 102
             }
           },
           "kind": "code"
@@ -187,12 +257,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
             "locator": {
-              "end": 135,
+              "end": 136,
               "kind": "line_range",
-              "start": 132
+              "start": 133
             }
           },
           "kind": "code"
@@ -221,12 +291,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
+            "blob": "d706bf57d1a38262dd6ce246d9c6a2bf1d7a866a",
             "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
             "locator": {
-              "end": 125,
+              "end": 126,
               "kind": "line_range",
-              "start": 120
+              "start": 121
             }
           },
           "kind": "code"

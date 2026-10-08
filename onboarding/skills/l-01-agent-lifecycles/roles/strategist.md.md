@@ -31,6 +31,10 @@ fail-closed.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The strategist keeps its orchestration-planning duties and gains the same harness freedom and boundary paragraph as the other roles.
+
 ## Evidence
 
 ### Docs References

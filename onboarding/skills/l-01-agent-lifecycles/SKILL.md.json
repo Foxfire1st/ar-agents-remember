@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
         "locator": {
           "end": 29,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
         "locator": {
           "end": 20,
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:9dfc4cb5cdd5f0df991472df890fff9e430830b783ea89c0548eef33e905c3b5",
         "locator": {
           "end": 16,
@@ -60,7 +60,7 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:bc2a4613a3c8d2ec7a185f64f396cf0de36ce51056c4303264c097ddb30e3042",
         "locator": {
           "end": 12,
@@ -79,7 +79,7 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
         "locator": {
           "end": 31,
@@ -98,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:d8c8345deb07bac2d8635b94ccb7b817d5b7096db9129c47459e49e19fbbd484",
         "locator": {
           "end": 29,
@@ -117,7 +117,24 @@
     },
     {
       "anchor": {
-        "blob": "609aadf24387be095287e98658d6230ecadd6143",
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
+        "content": "sha256:4e3696532fbc592dd47441e54bdf35dd87fd8c0f17933bbd46d7d793460c6672",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TEGHWX",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "States the task-boundary principle once and participates in the skill revision seal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
         "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
         "locator": {
           "end": 35,
@@ -216,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "blob": "4905db4d0141c3c1bb81a05db338dd7e58bc6aa3",
             "content": "sha256:7a825e5fa7330c232393ba521185cc16a8ec9f8a2013b24834dfa55e3f74c0fe",
             "locator": {
-              "end": 188,
+              "end": 189,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
@@ -247,7 +264,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "blob": "4905db4d0141c3c1bb81a05db338dd7e58bc6aa3",
             "content": "sha256:800fbf439859b4fedba7eaefbb5d5328f83d9f0e99078ed42133f3a7326bb58a",
             "locator": {
               "end": 6,
@@ -278,12 +295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "89a63a41f4dd7ffcc16b880922509e658ede9e8c",
+            "blob": "4905db4d0141c3c1bb81a05db338dd7e58bc6aa3",
             "content": "sha256:f0f4a57ef77a56c7fc84782a6b34113369b777a4c9f5575125d73cd2ac3f7eee",
             "locator": {
-              "end": 73,
+              "end": 74,
               "kind": "line_range",
-              "start": 50
+              "start": 51
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
@@ -296,7 +313,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "609aadf24387be095287e98658d6230ecadd6143",
+            "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
             "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
             "locator": {
               "end": 31,
@@ -313,7 +330,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
               "end": 77,
@@ -326,7 +343,7 @@
         },
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:4e970b2fc818c268b67c85b9dc3ee85bab842a29bbf01d44f80c80bd56ac0fce",
             "locator": {
               "end": 142,
@@ -344,7 +361,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
             "locator": {
               "end": 116,
@@ -362,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63c992389fedf200e3b5c8ea015faf6fb74560f6",
+            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
             "content": "sha256:b19fa165fdb81f64d4c08822c5cc58916c018422c991bc6c630bf8d4603de123",
             "locator": {
               "end": 120,

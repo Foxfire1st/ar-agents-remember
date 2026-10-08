@@ -15,11 +15,12 @@ completed master to the orchestrator.
 
 For each dependency-ready real leaf, the manager calls structural `dispatch_agent` with the leaf
 task document, role, and complete brief. The control plane owns readiness and the exact-pinned initial
-brief; the manager never requests or stores an occupant id. The manager gathers builder code/report
-and reviewer verdict, then calls `worktree_status` for the canonical leaf and requires the complete
-task-derived `sourceLineage` projection to be current immediately before curator dispatch. It
-carries that projection in the curator brief; dispatch re-proves it before host creation. Only then
-does it gather the curator coherence report before closeout. It consumes the worker's targeted-check
+brief; the manager never requests or stores an occupant id. The manager starts the Worker and Reviewer together and the Curator at the first freeze; the
+leaf's Worker, Reviewer and Curator hand freezes, findings, verdicts and memory changes directly to
+each other. Before the gate the manager inspects the complete changed-file diff and both verdicts
+and calls `worktree_status` for the canonical leaf, requiring the complete task-derived
+`sourceLineage` projection to be current; the curator brief carries it and dispatch re-proves it
+before host creation. It consumes the worker's targeted-check
 report and curator's scoped onboarding handoff before the closeout transaction. Closeout and
 integration do not launch or require full quality, full tests, full memory quality, certification, or
 review; any explicitly requested operation remains owned by its existing lifecycle workflow.
@@ -87,6 +88,10 @@ are curator blockers, not authority to write current onboarding intent.
 
 This role card follows the transaction-only lifecycle boundary: the role reports its own targeted or scoped evidence with failed and not-run states visible and leaves closeout/integration to the authorized code, memory-content, and ledger Git transaction. Full quality, full tests, full memory quality, certification, and independent review are explicit operations only. Requested reviews retain the sealed finding list and monotonic three-round limit.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Manager no longer carries freezes, findings, verdicts or memory changes between a leaf's agents: it starts the Worker and Reviewer together and the Curator at the first freeze, reads the leaf's state from reports and task records, hears from the leaf only on its named occasions (closeout readiness, rule-5/6 notices, ownership or authority, an extra round or pass, a disputed Curator code finding, a Manager-owned sync step), decides the gate and keeps closeout, integration, status, acceptance and landing order. It gains the same harness-freedom paragraph.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -105,8 +110,8 @@ each worker/reviewer/curator dispatch re-proves the complete parent chain.
 Recovery is contract-addressed and replacement-safe; no agent supplies branch
 commit or session identity.
 
-Pre-curator admission is manager-owned and ordered after builder/reviewer evidence but before any
-onboarding work. If super or master moved, the manager synchronizes and reconciles the code first;
+Pre-curator admission is manager-owned: the Curator is started when the Worker's first freeze
+exists, and the leaf's seats hand their inputs directly before any onboarding work. If super or master moved, the manager synchronizes and reconciles the code first;
 the curator is never asked to document a stale leaf. Closeout and integration independently repeat
 lineage after long quality gates to close their later time-of-check/time-of-use windows.
 

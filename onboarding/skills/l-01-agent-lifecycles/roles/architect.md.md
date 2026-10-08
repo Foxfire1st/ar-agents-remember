@@ -35,6 +35,10 @@ Canonical lifecycle doctrine owns this source; generated copies are synchronizat
 
 Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Architect keeps its delegation, developer conversation and direct-coordination duties; the change adds the same harness freedom and boundary paragraph the other roles carry, and no leaf-level routing.
+
 ## Evidence
 
 ### Docs References

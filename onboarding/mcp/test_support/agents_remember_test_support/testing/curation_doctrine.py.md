@@ -65,6 +65,10 @@ harness reads the old sentence.
 - The module owns the reading half only. The falsifiability half — the seeded re-insertion proving the
   guard can fail — lives in the test module that calls it.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The curation-doctrine registry keeps its single owner and matcher for retired curation sentences and field facts. The retired leaf-handover wording moved into its own data module (`retired_leaf_handover_wording.py`), the register now holds only actually retired sentences with exact carriers and probes, and compound preserved-plus-obsolete text was split into independent source-addressed rows.
+
 ## Evidence
 
 ### Docs References

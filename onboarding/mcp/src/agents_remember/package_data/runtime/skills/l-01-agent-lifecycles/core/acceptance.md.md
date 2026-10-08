@@ -22,9 +22,8 @@ evaluates a report, verdict, coherence record, or acceptance envelope; the owner
 artifact defect is owner-detected after wake.
 
 `## Which artifact each seat hands over, and who validates` is the table that gives every role in the
-corpus its durable handoff artifact and its validator (worker → turn report + attempt journal, validated
-by the manager; curator → structured coherence record + projection, validated by the manager; reviewer →
-verdict, validated by the gate's decider; and so on).
+corpus its durable handoff artifact and its validator (worker → turn report + attempt journal, handed to the leaf's Reviewer, validated by the Reviewer for code and the Manager for the gate; curator → structured coherence record + projection, handed to the Reviewer, validated by the Reviewer for memory and the Manager for the gate; reviewer →
+verdict, handed to the Worker and, on a pass, the Curator, and validated by the decider of the gate the verdict attaches to; and so on).
 
 `## Acceptance is per stable ID and version, never aggregate` fixes the six-part envelope
 (`satisfied` / `blocked` / `approved-change`), forbids general prose as an envelope, and states that the

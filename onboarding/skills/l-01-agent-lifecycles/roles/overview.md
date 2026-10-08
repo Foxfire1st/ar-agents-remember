@@ -247,8 +247,7 @@ named role at its canonical altitude. Once hosted, architect, orchestrator, and 
 callers with only their documented direct-child scope. Strategist, designer, worker, reviewer,
 curator, and system-specialist are target-only roles. The role-table dispatch/tool rows document
 fixed structural authority and capability, not settings keys. Plane authorization
-failures never retry as ambient launches. Native sub-agents, when allowed by a hands-on role,
-remain read/search helpers and never become AR role seats.
+failures never retry as ambient launches. Native sub-agents work inside the seat's assignment with its permissions and working folder; the seat organises their work, verifies and credits it, and performs all boundary acts itself. They hold no AR seat, start no role and cannot supply independent review of their author; they never become AR role seats.
 
 ## Conventions
 
@@ -272,6 +271,10 @@ remain read/search helpers and never become AR role seats.
 ## CCR-R12@v5 Lifecycle Boundary
 
 Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
+
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The roles in this route now carry the all-role harness-freedom paragraph, and the leaf roles additionally state their direct hand-over and per-seat bookkeeping duties. The delegation and direct-coordination hierarchy is unchanged.
 
 ## Evidence
 

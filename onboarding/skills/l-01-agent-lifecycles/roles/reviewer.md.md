@@ -78,6 +78,10 @@ One reviewer role serves leaf, master, plan and super seams under an explicit as
 
 Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed monotonic finding set and three-round rule. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The Reviewer delivers its verdict directly to the Worker and, on a pass, the exact freeze's identity to the Curator; a block and its repair stay inside the leaf and inside the ordinary limit. It opens and records its own ordinary code rounds through the supported operations, while the memory check keeps separate sealed reports, ids and a pass count, opens no code round and resets nothing. It answers a Curator code concern by taking it into its findings or explaining why it does not hold, and gains the harness-freedom paragraph.
+
 ## Evidence
 
 ### Docs References

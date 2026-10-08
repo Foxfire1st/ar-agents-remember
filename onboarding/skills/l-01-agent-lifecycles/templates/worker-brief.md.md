@@ -80,6 +80,10 @@ None.
 
 This template records the exact targeted checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full code quality and full tests are explicit developer requests rather than automatic template gates, while **curation is the exception** — the curator always runs the full memory-quality operation as part of curation, and closeout and integration carry that result as a prerequisite.
 
+## 260928-MIK-L99 — a leaf's agents hand over to each other
+
+The worker brief now routes the frozen candidate to the Reviewer and the structured hand-off list to the Curator, and its repair section names the Worker for a repair inside the leaf instead of the Manager.
+
 ## Evidence
 
 ### Docs References
