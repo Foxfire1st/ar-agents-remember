@@ -269,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:8ba123894d75ce9a9e5150115cc5b64e6b77e66bf64ba9080fb94ac20415c41d",
             "locator": {
               "kind": "symbol",
@@ -286,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:e2687d3182031b0379e3c3084c17002600ef4a2e7f1b9e5ee8a0245b9698d530",
             "locator": {
               "end": 227,
@@ -359,7 +359,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
             "content": "sha256:4d93455816bc4e952e32f9396ccf5d5632ed00913a6f13a67647a57d557a0a13",
             "locator": {
               "kind": "symbol",
@@ -371,12 +371,12 @@
         },
         {
           "anchor": {
-            "blob": "ecf35e30ebce40fd9c1590d371eba6ce0a2ca468",
+            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
             "content": "sha256:ce9295767506a7e7d9d06e256ce905f8e52f287a94624d3db431b65d1e19700c",
             "locator": {
-              "end": 197,
+              "end": 199,
               "kind": "line_range",
-              "start": 146
+              "start": 148
             },
             "path": "mcp/tests/test_task_documents_graph_projection.py"
           },

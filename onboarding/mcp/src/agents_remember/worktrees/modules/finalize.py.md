@@ -8,7 +8,10 @@
 
 Owns the terminal `lifecycle_finalize_task` worktree operation: prove that a
 closed task's landed commit is present on the recorded parent source branch,
-run (or verify) reclamation, and reconcile task documents to `Completed`.
+run (or verify) reclamation, and reconcile task documents to `Completed`. For a series contract
+(a master) it completes the master's own document and, where a sprint commands the master, the master's row on
+that sprint, and it never archives the master's folder. The task-document targets and their atomic
+publication live in the sibling `finalize_task_documents.py`; this module orchestrates them.
 
 Since 260831-LOCR-L31 this module is the **only** landing-side route that reclaims. Integration
 publishes the landed refs and stops; the terminal reclamation of the enclosure belongs here, which
@@ -34,7 +37,7 @@ Cleanup is handled as part of the finalization operation, and it is the **only**
 an integrated enclosure: `worktree_integrate` lands the refs and stops, so a landed-but-unfinalized
 leaf still owns its worktrees, its merged local branches, its reports directory and its enclosure
 root. `_run_or_verify_cleanup` is the whole seam
-cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:328-362):
+cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/finalize.py:284-318):
 
 - If the contract is already cleaned, the response records `already-completed` without calling
   cleanup at all.
@@ -48,7 +51,7 @@ cit:([`_run_or_verify_cleanup`], mcp/src/agents_remember/worktrees/modules/final
 **The report is shaped here, and only for a real reclamation (260831-LOCR-L31).** A real,
 completed reclamation is passed through
 `cleanup_report(contract, result.payload)`
-cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:361-361)
+cit:(["cleanup_report(contract, result.payload)"], mcp/src/agents_remember/worktrees/modules/finalize.py:316-318)
 — the operator-facing sentence and inventory documented on its own card. The gate in front of that
 call is load-bearing in both directions: when `args.dry_run` or `result.returncode != 0`, the cleanup
 payload is returned **unchanged**, because a preview lists what cleanup *would* remove (so shaping it
@@ -59,21 +62,35 @@ once reclamation moved here.
 cit:([`cleanup_report`], mcp/src/agents_remember/worktrees/modules/cleanup_report.py:28-53)
 
 After cleanup and task-truth reconciliation converge, `_finalized_result` performs an idempotent
-exact terminal activation release before archiving a root series task. A release failure returns
+exact terminal activation release before reporting the root series archive skip. A release failure returns
 `activation-release-blocked` with the completed cleanup/task updates so the caller can retry the
 same canonical contract. A missing, vacant, unreadable, or different selection is preserved and
 reported; a paused old master cannot clear the currently selected one. Successful results carry the
-activation observation/release evidence and only then archive a root series task.
+activation observation/release evidence and only then reach the archive step for a series contract. That
+step never archives a master: `archive_completed_root_task` skips a root task that holds its
+`series-contract.md`, and says why (`sprint-commands-master` naming the sprint, `master-archived-only-by-retire`
+naming `task_doc.retire_master`, or today's `root-series-still-active` for a task that is not a master). The
+only route that archives a master is `task_doc.retire_master`.
 
 **The review-artifact archive hook (MIK-R25 rule 5, D17).** Right after `archive_completed_root_task`,
-`_finalized_result` passes the archive result through `_with_review_artifact_cleanup`. For a task that was
-`archived` (or `would-archive` on a dry run) it takes the composition-bound `review_artifact_cleanup` port from
+`_finalized_result` passes the archive result through `_with_review_artifact_cleanup`. The hook runs only for a
+task that was `archived` (or `would-archive` on a dry run); a skipped archive, which is what every master gets
+here, carries no `reviewArtifacts` key, and `task_doc.retire_master` runs the same hook for a retired master.
+For such a task it takes the composition-bound `review_artifact_cleanup` port from
 `worktree_services()` and calls it with a `ReviewArtifactCleanupRequest`: the task root as it is now (the archive
 path once archived), `task_name` = the contract's `task_root.name` (the review-ref namespace, ruling
 2026-09-30T02:32:42 (a)), the contract's code and memory repositories, and `dry_run`. Its report is carried as
 `taskArchive.reviewArtifacts`. An unbound port reports `state: "not-bound"` rather than "nothing to delete", and
 any exception becomes `{state: "failed", detail}`: the task is already archived, so the hook never fails finalize
 (review F2, ruling 2026-09-29T23:15:34). The hook itself is `application/review_artifact_cleanup.py`.
+
+Series task-document reconciliation updates the master's own document and any proven row on its single
+commanding sprint. `sprint_census` discovers commanding sprints; `master_rows` selects one typed row or one
+correlated legacy seat row. Without a single correlated row, the master is published alone and the sprint
+row is reported as skipped with its linkage fact, unless the caller asserted that parent. Several
+commanding sprints, invalid linkage and an unreadable own document refuse before cleanup. Missing or
+non-master own documents leave no series master target. Rows other than `Completed` or `abandoned`
+remain `task-steps-blocked`. The selected documents are previewed or published atomically.
 
 Task document reconciliation is edge-scoped. The contract identity resolves the one leaf document
 (`task_doc_path` only asserts it) and completes it. The leaf's immediate parent row is derived, never
@@ -100,11 +117,15 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
+
 - Final result releases exact terminal selection before root task archival, reports retryable release failure, and carries the review-artifact archive hook's report on an archived (or would-archive) root task (MIK-R25). [1]
+
 - The archive hook is carried for an archived task only; unbound is `not-bound`, and an exception is a `failed` report, never raised. [2]
 - Exact terminal release is independent of queue/task scheduling state. [3]
 - Cleanup behavior and branch/worktree removal are delegated here. [4]
-- The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. [5]
+
+- The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+
 - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. [6]
 - Carryover completion is proven against the official memory ledger here. [7]
 - Git ancestry proof uses the worktree module Git adapter. [8]
@@ -115,9 +136,17 @@ No external Domain Documentation source is configured for this memory repo.
 
 No meaningful cross-repository reference applies to this repository-owned terminal operation.
 
+- Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup. [17]
+
+- The archive step runs for a series contract and its result is passed to the review-artifact hook, which acts only on an archived or would-archive task. [18]
+
+- Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [19]
+
+- The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [20]
+
 ## Series-Contract Notes
 
-Finalization reports `enclosurePath` for the leaf being finalized and only archives completed root tasks when the finalized contract is a root `kind="series"` contract.
+Finalization reports `enclosurePath` for the finalized contract. Leaf contracts skip root archival; series contracts retain the master folder and carry the resolver's archive skip.
 
 ## 260815-DAG-L3 Finalization Publication, Replaced By Task CAS
 
@@ -137,6 +166,9 @@ accepted finalization write.
 
 ## 260928-MIK-L38 The Leaf's Master Is Resolved By The Master Sync's Rule
 
+The functions named in this section (`_resolve_task_targets`, `_resolve_parent_target`, `_named_parent`,
+`_folder_parent`, `_read_parent`, `_exact_parent_row`, `_check_parent_row_path`, `_expected_parent_path`,
+`_reconcile_task_documents`) are defined in `finalize_task_documents.py`, which this module imports.
 Developer direction D32: a completed leaf must show `Completed` on the master that lists it. Before MIK-R38 this
 module called a leaf that names no `master` standalone and skipped its parent (`parent: skipped, leaf has no
 immediate parent`), while the task-document master sync (`tasks/master_sync.py`) resolved the same leaf to its
@@ -180,8 +212,12 @@ with the existing finalize cases (ruling Q1). Review R1 passed with notes, R2 pa
 tree.
 
 - Parent resolution dispatches on the leaf's `master`; with no target the leaf finalizes standalone, and an asserted parent is refused. [11]
+
 - A named master: expected path, assertions, read, exactly one row. [12]
+
 - A leaf naming none: the master sync's helper, the named-master checks, standalone without a row, and the named cause when a parent was asserted. [13]
+
 - Every master read refuses a non-master and a document the store would write elsewhere; the leaf gets the same check before its parent is resolved. [14]
+
 - The completed row goes through the master demotion rule. [15]
 - The one rule for a leaf naming no master, shared with the master sync and reopen. [16]

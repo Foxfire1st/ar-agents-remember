@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+        "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
+        "locator": {
+          "kind": "symbol",
+          "name": "_canonical_evidence_entry"
+        }
+      },
+      "id": "RLZ-Y7GRRJ",
+      "invariant": "INV-844T5H",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-record-matches-canonical-path",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Parses an operation record and calls the canonical-path check before the archivability proof, so a record stored under another record's name is refused and named.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The canonical root is walked, unowned files refused, a terminal sync journal accounted for, and the bounds enforced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An operation record must match its canonical file name and be archivable before it becomes an entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_evidence_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A pre-move sync journal is archived only as removed working state, and only when terminal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:3ac2c0a81353931739c8162d50c5efee18a81d5ca2b540c47894c5e36c3049b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_sync_working_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The archivability proof combines the terminal, retry, worker, mutation and publication checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73af55703b4185ddf41e4d23225538a143fa26ec2918f3d77cf386200e4c1220",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_archivable_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained operation records are read without adoption and refused by name when they cannot establish terminal authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:8f280956a4c54e3e7bf29c4c4f73ae4b4095a8c3b4f15db4eec11cad838ee3d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_operation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A record stored under a name that does not match its content is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
+            "locator": {
+              "end": 529,
+              "kind": "line_range",
+              "start": 510
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

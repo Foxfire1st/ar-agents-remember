@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b0f203a8d25643bcfd3f253e163d556ee9a4904",
+            "blob": "c26ea095124ee7b3a9b8d5afc8b0399daa32c58b",
             "content": "sha256:5dcbbbb7a170e419d628cd7262acd611feaaab0fccfd6bfd41503244a22df1c5",
             "locator": {
-              "end": 278,
+              "end": 279,
               "kind": "line_range",
-              "start": 256
+              "start": 257
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b0f203a8d25643bcfd3f253e163d556ee9a4904",
+            "blob": "c26ea095124ee7b3a9b8d5afc8b0399daa32c58b",
             "content": "sha256:d9aab540e64f7ed65f742ef60c525f229dad5e2f29de181fbfca7813183791f6",
             "locator": {
-              "end": 510,
+              "end": 511,
               "kind": "line_range",
-              "start": 459
+              "start": 460
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8b0f203a8d25643bcfd3f253e163d556ee9a4904",
+            "blob": "c26ea095124ee7b3a9b8d5afc8b0399daa32c58b",
             "content": "sha256:9caa3157ead1163db2cbc9cdf39bb534d6f126f13379d1640521764f52183adc",
             "locator": {
               "end": 45,

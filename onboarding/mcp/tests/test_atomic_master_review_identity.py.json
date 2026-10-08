@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
-            "content": "sha256:c362f1e9336f07cccf8472710ca186614d1057c6bf255d39b700d7bf517f125e",
+            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
+            "content": "sha256:1645a2a76bcb3106fb9b53e5eabd8bf7ca382da58edf1228a78d8d991730e892",
             "locator": {
               "kind": "symbol",
               "name": "RouteReviewScope"
@@ -69,7 +69,7 @@
         },
         {
           "anchor": {
-            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
             "content": "sha256:7f9fc5da30d8d786e759086820d40acf7ca95b7ec2e193c95bf7a104763fec9a",
             "locator": {
               "kind": "symbol",

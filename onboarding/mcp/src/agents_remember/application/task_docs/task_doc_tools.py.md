@@ -19,7 +19,7 @@ operations, keeps thin `_apply_*` adapters, and owns validation/publication. The
 size decision, not a behaviour one: keeping the plane inline took this file to 1,243 lines against
 the armed 1,200-line hard limit, the same decomposition pattern as `task_doc_discard`,
 `task_doc_route_review`, and `task_sprint_linkage`. Since 260815-DAG-L14 the dispatcher also routes the
-sprint linkage operations (`attach_master`/`detach_master`/`linkage_report`) to
+sprint linkage operations (`attach_master`/`detach_master`/`retire_master`/`linkage_report`) to
 `application/task_sprint_linkage.py` through `SPRINT_LINKAGE_OPERATIONS`, wraps
 `SprintLinkageError` in `TaskDocError`, and a sprint `get` carries its `linkageFacts`; the
 Completed-row terminal check now delegates to `task_sprint_linkage.validate_completed_master_row`
@@ -155,6 +155,14 @@ validation failures, and invalid resolvable parent master docs.
   `.md`) — "remove means remove"; `subtask.keep_file` unlinks the index row but leaves the leaf doc on
   disk. It does not touch the leaf's worktree/enclosure. dry-run reports `wouldDeleteFiles` without
   writing or deleting; it has its own handler (a file side effect), so it bypasses `plan_master_sync`.
+- **Complete retired rows are protected from generic edits.** `_validate_task_doc_candidate` calls
+  `require_retirement_proofs_unchanged` before its other candidate checks. The guard compares complete retired
+  rows by number, including proof, name, scope, status and file, and refuses additions, changes or removals.
+  The diagnostic instructs the caller to leave the row unchanged. `retire_master` creates the retirement
+  record; repeating its identical request completes remaining work rather than editing the retained proof.
+- A `retire_master` answer carries the document identity of the document it was called on. When a master
+  retired on its own has moved under `0_archive/` by the time it answers, `_sprint_doc_identity` reads the
+  identity from the archive path the result names (`taskArchive.archivePath`) instead of the vanished task root.
 - Resolution is coordination-local: the task root comes from `config.coordination_root`
   plus active task-name resolution (or an explicit root/leaf `series-contract.md` path).
 - Master sync is an additive leaf-write side effect only when the parent master resolves inside the
@@ -176,7 +184,9 @@ validation failures, and invalid resolvable parent master docs.
 - `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
 - Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
 - Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. [8]
+
 - The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
+
 - The task-document schema model this application entry point validates and writes; its class body now ends at its integration-branch normaliser. [10]
 - The markdown renderer this application entry point drives. [11]
 - The JSON/markdown store this application entry point drives. [12]
@@ -189,6 +199,10 @@ validation failures, and invalid resolvable parent master docs.
 - The `elif` arm that reaches the guard from the shared create/replace builder. [19]
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
 - Task document edits are prepared before publication; removed scaffolding tests are not current proof of execution. [21]
+
+- Generic task-document edits preserve complete retired rows. [27]
+- A special operation's answer reads its identity from the archive path when the called master has moved. [28]
+- The operation list takes the sprint linkage operations, `retire_master` among them, from the linkage module. [29]
 
 ## 260928-MIK-L08 `knowledgeMaintenanceScope` Is Settable
 

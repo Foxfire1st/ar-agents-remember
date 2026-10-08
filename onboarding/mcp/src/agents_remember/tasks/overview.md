@@ -42,7 +42,7 @@ path to the task root before it reads a byte. A packet link that is retargeted c
 target holds identical bytes.
 
 - The task reader records the bytes it parses, an absent file and a failed read. [26]
-- The strict lookup replays the leaf's own document and every row that is not a plain byte identity. [27]
+- The strict lookup replays the leaf's own document and every row that is not a plain byte identity when it established the claimant; with no claimant it replays every row it opened, each sibling read in full and the exact direct JSON listing included. [27]
 - The packet owner: recorded resolutions, confinement before the read, bytes recorded under the caller's locator. [28]
 - A kept view ignores every task document it did not read. [29]
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
@@ -203,6 +203,24 @@ Route reviews now bind task intent, content digests and declared direct dependen
   the inner `replace`, since they have no vocabulary to be checked against. The contract this
   writes is byte-identical to before; what changed is that the writer is now checked against the
   vocabulary the reader publishes.
+
+## A Retired Master's Row, The Missing-Master Message And The Retirement Probe
+
+A sprint retains an `abandoned` retirement row without a live `masterRef`; it may keep a legacy seat row's
+`file` so historical seat documents remain reachable. The row carries `SubTaskRef.retirement`, rendered with
+the retirement time and reason. Root proof fields are classified as audit; exact mutation effects follow
+nested models. The serving-schema preflight refuses a build unable to parse a retirement row.
+
+Readers reaching exact commanded-master resolution share the missing-master diagnostic; typed-row and graph
+admission can return or refuse earlier. Reverse membership discovery belongs to `tasks.sprint_rows.sprint_census`.
+Finalization refuses its unreadable-naming population, while retirement refuses every unreadable document.
+
+- A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [31]
+
+- The missing-master message names the sprint, the master, the archive location and the retire operation. [32]
+
+- The retirement probe refuses a model that cannot parse a retired row. [33]
+- Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [34]
 
 ## Evidence
 

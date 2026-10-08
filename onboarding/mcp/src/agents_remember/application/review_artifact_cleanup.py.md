@@ -18,19 +18,31 @@ Git-tracked files are skipped; they leave with their branch. Every deletion and 
 task's archive report, `notes/reports/review-artifact-cleanup.json`, which the finalizer also returns as
 `taskArchive.reviewArtifacts` (ruling 22:22:37 Q3). It is bound into the worktree layer as the
 `ReviewArtifactCleanupPort` (`worktrees/services.py`) by `application/worktree_services.py`, and called by
-`worktrees/modules/finalize.py` after the archive move.
+`worktrees/modules/finalize.py` for a task that finalization archived. `task_doc.retire_master` calls
+`cleanup_review_artifacts` directly (through `archive_hook` in `application/task_docs/task_retirement_shared.py`)
+after it has moved a retired master under `0_archive/`; that is the route that archives a master. The first attempt
+records a receipt even without deletion. Later attempts record new work or outcome evidence; an unchanged repeat
+reuses the existing receipt and reports previously deleted artifacts as already absent.
 
 ## Code Commentary
 
 ### Logic
 
-- **`cleanup_review_artifacts(request)`** builds a `_Confinement` of the task root, takes the legacy identity from
-  `_confirmed_task_id`, releases the generations (`_release_generations`), deletes the review refs under
-  `refs/ar/review/{request.task_name}/` and the task's own retained-code refs in each of the request's two
-  repositories (a held ref is skipped), scans `notes/` for leftover copies (`_delete_dataset_copies`), and writes the
-  report unless it is a dry run. The report state is `would-delete`, `deleted` or `partial` (any failure).
+- **`cleanup_review_artifacts(request)`** builds a `_Confinement` and opens `ReceiptLedger`. A dry run previews
+  the sweep and receipt effects. A real run first plans the sweep; when deletion is planned, `ledger.begin`
+  records intended deletions in an `in-progress` receipt before they occur. A refused receipt write prevents
+  deletion. The real sweep retains the task's existing identity, confinement and held-generation rules;
+  `ledger.already_absent` supplies prior absence evidence and `ledger.finish` records the outcome.
 - **The hook never raises (review F2, 23:15:34).** A missing repository is a `failures` entry; the Git helpers
-  catch `OSError`; the finalizer turns any exception into `reviewArtifacts: {state: "failed", detail}`.
+  catch `OSError`; the finalizer, and the retirement's `archive_hook`, turn any exception, of any type, into
+  `{state: "failed", detail}`. A retirement then ends `ok=false` with the state `retired-with-hook-failures`.
+- **Receipts preserve new work and outcomes.** `ReceiptLedger._set_aside` preserves the canonical receipt
+  under its own attempt number; repeating that step after interruption reuses the same numbered path.
+  `_previous_attempt` only classifies the previous outcome. The first attempt writes a receipt even without
+  deletion. A later attempt writes none only when there is no deletion, release or failure, no unfinished
+  receipt, and every reported absence was already recorded; it returns `receipt: "unchanged"` with the
+  existing number. `already_absent` includes prior deletions, interrupted planned deletions now absent,
+  and previously failed artifacts now absent.
 - **Generations go through their own deletion owners.** `_release_one` calls
   `release_comparison_code_object` for the pin and `discard_comparison_snapshots` for the snapshots
   (`review_comparison_reclamation`), which write the unavailable-history record first, so a later reopen of the
@@ -52,8 +64,8 @@ task's archive report, `notes/reports/review-artifact-cleanup.json`, which the f
   the resolved root. It gates the manifest before it is read (a held generation's named pin is held too,
   `_named_pin`), the `deletions/` directory and each snapshot (`_outside_generation`), the `notes` scan root
   (`_scan_root`), every scan candidate (`_is_leftover_copy`), `task.json` (`_task_document_id`), the leaf contracts
-  `_confirmed_task_id` reads, and the report (`_write_report`: written only inside the task, else `reportPath: null`
-  with a failure entry).
+  `_confirmed_task_id` reads, and the receipt paths (`ReceiptLedger.begin`, `finish` and `_set_aside` reject paths outside the task;
+  an unwritten outcome reports `reportPath: null` with a failure entry).
 - **The trust line for the legacy targets (rulings 02:12:06 and 02:32:42 (b)).** `_confirmed_task_id` takes
   `task.json`'s `id` only when it equals the task directory name, or when a leaf enclosure contract physically
   inside the task, naming this task as parent, has a leaf id `<id>-L<n>`; otherwise the directory name is used and a
@@ -75,7 +87,7 @@ task's archive report, `notes/reports/review-artifact-cleanup.json`, which the f
 - **Candidate invariant (not ingested): archival deletes only targets derived from the archived task's own
   identity, confined to its physical folder.** Realized by the directory-name review namespace,
   `_own_leaf`/`_retained_code_refs`, `_foreign_generation`, `_Confinement` and the removed record sweep. Proved by
-  the 14 cases of `test_review_artifact_cleanup.py`, notably
+  the cases of `test_review_artifact_cleanup.py`, notably
   `test_archiving_one_task_never_selects_a_colliding_tasks_pins`,
   `test_a_comparison_record_naming_another_task_never_widens_the_archive`,
   `test_a_planted_foreign_manifest_releases_nothing`, `test_a_symlinked_notes_root_is_neither_scanned_nor_written`,
@@ -110,10 +122,11 @@ No configured live documentation source was available for this pass.
 
 - The module's statement of every target's identity source, the trust line, the confinement and the accepted window. [1]
 - The report file, the reason, and the two tables that make a file a knowledge dataset. [2]
+
 - The report, and holding a generation's pin and snapshots with the reason. [3]
 - The composition-bound port implementation. [4]
 - The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report. [5]
-- The report is written only inside the task. [6]
+- Receipt writes refuse paths outside the task. [6]
 - Physical confinement: no symlink on the way, and the resolved path inside the resolved root. [7]
 - The legacy identity by the trust line, and `task.json` read only when it is the task's own. [8]
 - Generations released through their owners, or held. [9]
@@ -129,3 +142,9 @@ The hook deletes refs only in the two repositories the archived task's series co
 repository is only compared against them.
 
 No cross-repo boundary is crossed by this file.
+
+- The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent. [15]
+
+- The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none. [16]
+
+- The previous receipt is preserved under its own attempt number, reusing that path after interruption. [17]

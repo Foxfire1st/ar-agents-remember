@@ -141,13 +141,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
             "content": "sha256:cea0851cc8ac09e4ba351956d9885f8fa98b9d176e662f7f79e5e2c3c029cf27",
             "locator": {
               "kind": "symbol",
               "name": "_is_canonical_artifact"
             },
-            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py"
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }

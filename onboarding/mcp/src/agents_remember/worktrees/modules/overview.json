@@ -415,12 +415,12 @@
       ]
     },
     "23": {
-      "note": "Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code.",
+      "note": "Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents.",
       "targets": [
         {
           "anchor": {
-            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
-            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
+            "content": "sha256:46e710059fa3fcc62979171c9b45c62888fc179687f8a1e92e0cfb670917a1b7",
             "locator": {
               "kind": "symbol",
               "name": "_run_or_verify_cleanup"
@@ -907,18 +907,17 @@
       ]
     },
     "4": {
-      "note": "Parent resolution dispatches on the leaf's `master`: named, folder, or standalone.\n\nAnchor: \"target = _named_parent(contract.task_root, args, leaf.master, leaf.id)\"; \"target = _folder_parent(contract.task_root, args, leaf)\"",
+      "note": "Parent resolution dispatches on the leaf's `master`: named, folder, or standalone.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
             "locator": {
-              "end": 448,
-              "kind": "line_range",
-              "start": 408
+              "kind": "symbol",
+              "name": "_resolve_parent_target"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         }
@@ -1146,18 +1145,17 @@
       ]
     },
     "5": {
-      "note": "The folder master through the master sync's helper, with the named-master checks.\n\nAnchor: \"folder_master = folder_master_json_path(task_root, leaf)\"",
+      "note": "The folder master through the master sync's helper, with the named-master checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
             "locator": {
-              "end": 492,
-              "kind": "line_range",
-              "start": 470
+              "kind": "symbol",
+              "name": "_folder_parent"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         }
@@ -1311,30 +1309,79 @@
         }
       ]
     },
-    "6": {
-      "note": "The placement guard on the leaf and on every master read.\n\nAnchor: \"require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)\"",
+    "58": {
+      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
-            "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
             "locator": {
-              "end": 404,
-              "kind": "line_range",
-              "start": 404
+              "kind": "symbol",
+              "name": "resolve_series_targets"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_series_documents"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The placement guard on the leaf and on every master read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_task_targets"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:7b08e7624c9f3038b0ce0b3f3a269f33d9744b1da922f2ba16c6ffac63b0ef98",
             "locator": {
-              "end": 530,
-              "kind": "line_range",
-              "start": 518
+              "kind": "symbol",
+              "name": "_read_parent"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The finalization result carries the archive step's skip for a series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
+            "content": "sha256:c7fa554ad00bd52e24cd21defb7531dc7805736f0f38e054b0fa9eb2f36e1da0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finalized_result"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -1364,7 +1411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",

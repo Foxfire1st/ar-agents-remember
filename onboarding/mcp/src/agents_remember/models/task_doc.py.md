@@ -47,9 +47,12 @@ fails validation, which is what keeps the envelope strict rather than merely per
 
 Since the master full-gate repair (260815-DAG, commit e5cb139f) `TaskDocResponse` also declares the
 **special-op wire fields** for the sprint-linkage and execution-graph authoring surfaces
-(`attach_master`, `detach_master`, `linkage_report`, `author_execution_graph`): `subtaskNumber`,
+(`attach_master`, `detach_master`, `retire_master`, `linkage_report`, `author_execution_graph`): `subtaskNumber`,
 `state`, `sprintTaskDocumentRef`, `masterRef`, `graphNode`, `executionNatureAsserted`, `documents`,
 `removedOrchestrates`, `removedGraphNodes`, `masterResolved`, `linkageFacts`, `bootstrapped`,
+`retirementRow`, `retirementProof`, `retirementResumed`, `removedEdges`, `taskArchive` (the `retire_master` answer:
+the plain row kept on a sprint, the proof of a master retired on its own, whether the call resumed a recorded
+retirement, the edges removed, and the archive state with the hook report),
 `appliedMutations`, `executionWaves`, `leafPlacementFacts`, `numberingHints`. These ops publish
 inside their own functions and return raw operation payloads; without the declaration the
 `extra="forbid"` envelope REJECTED the real payloads after their writes — exactly the
@@ -77,7 +80,10 @@ inside their own functions and return raw operation payloads; without the declar
 - The strict `ToolResponse` envelope base. [2]
 - The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. [3]
 - The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+
 - The special-op identity merge that pairs with the declared wire fields. [5]
+
+- The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
 
 ## 260815-DAG Master Full-Gate Repair
 

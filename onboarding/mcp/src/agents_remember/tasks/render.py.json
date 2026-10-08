@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:8139caea92c6724240cc28d18f596e5b348b96e0fe463fa0bda59ebabde6484b",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:438b013392b3b2ea016579e6904827709cff96f2de795bd04f4147913cdcc06e",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:4b2bcadfd37bab97438a7a3b4c5ac867eeb4a3548f42b7560eeb3e3f0d5ee053",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:9a7bd108253926ee04cbb9f6c22d5acf8ba72f934971c99cb639dad5152b5ad5",
             "locator": {
               "kind": "symbol",
@@ -104,7 +104,7 @@
         },
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:c99939524914cfb4097970fe2abc4c079ce8e3db309882971face50560c039cc",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -137,7 +137,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:dab15127874a6faca082c2c89a1ff50cd9fd14d9e0a7e4534fdcfff2a1faebcc",
             "locator": {
               "kind": "symbol",
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:70b3e7c579112c56ee08a0039ccd6461d122f0f147498a0d7e235e9ae5fe729a",
             "locator": {
               "kind": "symbol",
@@ -159,7 +159,7 @@
         },
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:da30910faffa5606c471509f982b4e62616740804f58ac7f25336857cdc0784b",
             "locator": {
               "kind": "symbol",
@@ -175,11 +175,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:5aff2bbe351758a6f7744f6fab401c3bed09292617d6207c6a9d9b9216e335da",
             "locator": {
               "kind": "symbol",
               "name": "_MARKER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A retired master's row shows the retirement time and reason after its scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
+            "content": "sha256:de68815e461e3996c4f9de72a716cb6332ce5b433e03a35b404daaa75da9a87c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subtask_lines"
             }
           },
           "kind": "code"

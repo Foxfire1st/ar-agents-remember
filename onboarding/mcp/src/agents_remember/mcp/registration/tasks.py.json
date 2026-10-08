@@ -1,6 +1,26 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/tasks.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ec4a934a512fecd98eda9fc603307133d6308a6b",
+        "content": "sha256:3d3d3ecf9ab0589cf800658c35b387e6d808feaf1f844e64698b74da3231faee",
+        "locator": {
+          "end": 217,
+          "kind": "line_range",
+          "start": 214
+        }
+      },
+      "id": "RLZ-XZX0GE",
+      "invariant": "INV-GYCF1R",
+      "origin": {
+        "handoffEntry": "L41 ruling 2 (own-master operations)",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "These lines of the task tool's description carry the ruled sentence about what readiness refuses.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The `task_doc` / `task_reopen` payload builders.\n\nAnchor: `task_doc_payload`, `task_reopen_payload`",
@@ -36,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8112a3a2d347b6add092425f471a2ccc00f7c4aa",
+            "blob": "ec4a934a512fecd98eda9fc603307133d6308a6b",
             "content": "sha256:6b54f04430c4427a4a342127cc9eb7b3a9af7b6db979086c45e0827f3f382235",
             "locator": {
               "end": 103,
@@ -78,6 +98,22 @@
               "start": 144
             },
             "path": "mcp/src/agents_remember/application/worktree_tool_requests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The `task_doc` description names `retire_master` as the only route that archives a master and states its two forms, its refusals and its retry rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec4a934a512fecd98eda9fc603307133d6308a6b",
+            "content": "sha256:2c029910c2414629c9553939e8fc6e8ade27f4163609e2ec4bff794e52a9535e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TASK_DOC_TOOL_DESCRIPTION"
+            }
           },
           "kind": "code"
         }

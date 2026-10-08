@@ -14,6 +14,10 @@ it, and which test modules or source files consume it. Every stable contract ide
 `mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py` loads and validates
 the file.
 
+## Current master-retirement registration
+
+The consumers of the `mcp/tests/curator_coherence_test_support.py` artifact include `test_abandoned_series_closeout.py`, `test_master_retirement.py` and `test_standalone_master_retirement.py`, and the consumer list of the `mcp/tests/fixtures/repository_profiles/node/package-lock.json` artifact includes `test_master_retirement.py` and `test_standalone_master_retirement.py`. No governed contract or artifact is added.
+
 ## Code Commentary
 
 ### Structure

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A dry run names the state of a retirement whose cleanup failed hook-failed, by the operation's own state table."
+  },
+  "applicability": "A dry run naming the state of a retirement whose cleanup failed the archive hook.",
+  "conditions": [
+    "The operation record's own state table reports hook-failed; the answer names that state rather than a bare failure."
+  ],
+  "exclusions": [
+    "Cleanups that finished or that failed before the hook."
+  ],
+  "id": "INV-GCEAJJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; one killed mutation under sealed id 9"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 note 9",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dry run names the state of a retirement whose cleanup failed hook-failed, by the operation's own state table.",
+  "status": "proposed",
+  "supersedes": []
+}

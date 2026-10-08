@@ -16,10 +16,12 @@ reference), `task_reopen` (leaf reopen), `task_doc_route_review` (candidate-boun
 authority), `task_doc_publication` (task-first exact publication plus projection refresh),
 `task_doc_graph_titles` (zero-or-one graph-bearing batch authority),
 `task_doc_section_scaffolding` (atomic raw-section shape boundary),
-`task_execution_topology` (graph authoring/edits), `task_doc_steps` (the step plane: one exact
+`task_execution_topology` (graph authoring/edits) with its `task_execution_graph_mutations` engine, `task_doc_steps` (the step plane: one exact
 addressing rule plus `set_step`/`add_step`/`remove_step`/`skip_step` and the `read_steps`
 projection), and `task_sprint_linkage`
-(sprint↔master attach/detach/linkage facts). The modules moved here from `application/` (flat) so
+(sprint↔master attach/detach/linkage facts and the dispatch of `retire_master`, with `task_sprint_context`,
+`task_sprint_candidates`, `task_master_retirement`, `task_retirement_shared` and
+`task_retirement_authority` beside it). The modules moved here from `application/` (flat) so
 the task-document authoring seam owns one package; `task_doc_steps` was added later
 (260831-LOCR-L33) when keeping the step plane inline took `task_doc_tools.py` to 1,243 lines against
 the armed 1,200-line hard limit.
@@ -162,6 +164,31 @@ otherwise unchanged:
   unknown task-document fields (ruling Q2).
 
 - The settable flat fields, now including the declaration. [5]
+
+## Master Retirement And The Sprint Linkage Split
+
+`task_doc.retire_master` is the only operation that archives a master, with or without a sprint. It is implemented by
+[task_master_retirement.py](task_master_retirement.py.md) for a master that a sprint
+commands (the sprint edit and the folder move are one validated step, and the sprint is restored if anything fails before
+the folder is archived) and by the lone-master route of [task_master_retirement.py](task_master_retirement.py.md)
+for a master that no sprint commands (the proof is written into the master's own folder, which is then moved). Both
+share [task_retirement_shared.py](task_retirement_shared.py.md): the request payload, the archive
+hook step that turns any exception into a reported failure (`retired-with-hook-failures`, `ok=false`, repeat the same request
+to retry the cleanup only), and the refusal of a master nested inside another task's folder. [task_retirement_authority.py](task_retirement_authority.py.md)
+makes the retained proof unwritable by generic task-document edits. Finalizing a master never archives it.
+
+Three modules were split out of larger ones and own shared building blocks:
+[task_sprint_context.py](task_sprint_context.py.md) (request, sprint reading, candidate validation,
+publication transaction, preview), [task_sprint_candidates.py](task_sprint_candidates.py.md) (the pure detach
+candidate and `SprintLinkageError`), and [task_execution_graph_mutations.py](task_execution_graph_mutations.py.md)
+(graph-authoring models and handlers, plus the edge-deletion owner shared with retirement). Retirement's sprint-edit
+owner separately calls `_detached_data` to remove membership and nodes before validating its final candidate.
+`task_sprint_linkage.py` dispatches the four linkage operations and `task_doc_tools.py` preserves complete retired rows.
+
+- The sprint route builds the candidate, publishes the sprint edit with the folder move, and restores both on a failure before archival. [8]
+- The lone-master route (a master no sprint commands) writes its proof into the master's folder and moves the folder. [9]
+- Any exception of the archive hook is a reported failure. [10]
+- Generic task-document edits preserve complete retired rows. [11]
 
 ## Evidence
 

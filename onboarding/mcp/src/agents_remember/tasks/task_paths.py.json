@@ -132,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
             "locator": {
-              "end": 27,
+              "end": 30,
               "kind": "line_range",
-              "start": 16
+              "start": 19
             },
             "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
           },

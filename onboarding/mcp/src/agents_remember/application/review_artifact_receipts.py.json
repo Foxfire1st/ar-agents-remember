@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/application/review_artifact_receipts.py",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "The ledger records intended deletion before it happens and records the outcome afterward.\n\nAnchor: `ReceiptLedger.begin`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:d744ea837585652c686c6ebfb6beec345f7c4f8f2a458bfa976948b64035c2ab",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The first no-op records a receipt; an already-recorded unchanged repeat writes none.\n\nAnchor: `ReceiptLedger._nothing_to_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:649d2ecf30de30521abd3c48972f1f4142a10575d4302fc9732faf1d5ef48f67",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 205
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Replacement preserves the prior receipt under that receipt's own number.\n\nAnchor: `ReceiptLedger._set_aside`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:0b73a688661b247baaa9259a1763f2eac158c70ab92c816d5350632ce0f304dc",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Recorded prior deletion or new absence is reported by the ledger.\n\nAnchor: `ReceiptLedger.already_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:ef149fe71386e1b2ec2cfe87ffefdb4e983c1c16cd221a489249cac61ad93332",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

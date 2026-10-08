@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: An atomic write raises OverflowError after it has replaced its destination when a file beside the destination is named like a leftover temporary file whose process number is 214748"
+  },
+  "applicability": "The atomic write's cleanup when a file beside the destination carries a process number the operating system cannot take.",
+  "conditions": [
+    "The destination was already replaced before the cleanup ran."
+  ],
+  "exclusions": [
+    "File names that carry a usable process number whose process is gone."
+  ],
+  "id": "INV-DJ27N9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/probes/out/x32_atomic_write_edges.out and x31_named_edit_and_member.out part C"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8-O1",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An atomic write raises OverflowError after it has replaced its destination when a file beside the destination is named like a leftover temporary file whose process number is 2147483648 or larger.",
+  "status": "retired",
+  "supersedes": []
+}

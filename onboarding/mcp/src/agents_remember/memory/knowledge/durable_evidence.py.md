@@ -84,7 +84,7 @@ No configured domain documentation could be checked.
 - The enclosure-local read-back the cleanup direction is measured with. [9]
 - The shipped curator-coherence route that owns "leaf evidence parked where it survives". [10]
 - The cleanup that removes an enclosure-local `reports/` directory, which is why that path is refused. [11]
-- The terminal archive's fixed content set, which is why it is not widened. [12]
+- The terminal-evidence owner bounds canonical artifact admission; archives retain that exact content set. [12]
 - **The boundary cases that measure both directions: a published artifact reads back matched, a missing destination is blocked, and changed bytes are mismatched.** [13]
 - The boundary case that proves the destination is outside the enclosure and the archive by construction. [14]
 

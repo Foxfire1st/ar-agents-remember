@@ -501,16 +501,15 @@
       ]
     },
     "31": {
-      "note": "The registered-but-deliberately-non-public name that must stay outside the worktree invariant, and the `task_doc` surface that legitimately emits it (its `nextTool` is a plain `str \\| None`, on a class that is not a `WorktreeCommandResponse`).\n\nAnchor: \"class TaskDocResponse(ToolResponse):\"",
+      "note": "The registry distinguishes internal names from public worktree tools, while TaskDocResponse.nextTool is a plain optional string. This model/registry boundary does not establish a current task_doc emission of any specific internal name.",
       "targets": [
         {
           "anchor": {
-            "blob": "8e0ece38028ab07b6ff7c84e014b4ad43d1b29c1",
-            "content": "sha256:1e5257ee5abf6aaa21d85b41b0382ffc80a2a4e4f393c5532c4b34b1c070e487",
+            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
+            "content": "sha256:a512717403eb5fdd792218f47b4b637c4b205900f47056421158897254473934",
             "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 138
+              "kind": "symbol",
+              "name": "TaskDocResponse"
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },
@@ -521,9 +520,8 @@
             "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
             "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
             "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 135
+              "kind": "symbol",
+              "name": "INTERNAL_COMPAT_TOOL_NAMES"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -1171,7 +1169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e0ece38028ab07b6ff7c84e014b4ad43d1b29c1",
+            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
             "content": "sha256:fa9f8d80d853be4b837ac6b11a15046758337e043e6c7183982fffb0e2ddf63f",
             "locator": {
               "end": 183,

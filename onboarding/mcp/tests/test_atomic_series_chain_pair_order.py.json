@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:4c5d2339a33ef7a8f76813c08e82d633a62d5f7103f1f1e678d9d3438bcbc112",
             "locator": {
               "kind": "symbol",
@@ -36,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:bf922d3bdb63750a9371042c04da9e816b37bc7f9e28b0cc4c1c9cb0734f734e",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:6559f518d621627089d1de559d4cdd93ef6eeccd6e74ded1c6118f72c0d79403",
             "locator": {
               "kind": "symbol",
               "name": "_ordered_atomic_landing_chain"
@@ -53,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:ab07871cef88c84c2c74e8097013fc97c19bde3692c09eae6878ee8d8b749c4f",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:d4d17cf494f9b1fa4c70e31228f709cb8140d6c44cb8c894e124f15888171119",
             "locator": {
               "kind": "symbol",
               "name": "_require_landing_spine_side"
@@ -65,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:dca3b8327d8d1f1bf5282e15e021051b98d566991892b6379b9879405d884e92",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:46b5f8f9f8c84a0ea7052810b0fa9e2617bd85ab9b24182cdb919c2250bdb3d5",
             "locator": {
               "kind": "symbol",
               "name": "_require_admitted_step"
@@ -77,7 +77,7 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:85d8991c93b892593b656fa2d790eecf9f2e1b265ec5a62b68acb8c835bdc48f",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:63f402c86a67c7aaf38e0d1833fb8c062fa2bf273926937c64c01d6369e99166",
             "locator": {
               "kind": "symbol",
@@ -101,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
             "locator": {
               "kind": "symbol",
@@ -118,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:010b120cd5ce1edfe1b338a84e7800b2ef905bcedae8b90b78d5eb7a33ba9976",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:ce826dd1bf87549580f4caaa73895f1b30e27310d0fc1825bb0b78f8248fd04a",
             "locator": {
               "kind": "symbol",
               "name": "_require_chain_origin"
@@ -220,12 +220,12 @@
       ]
     },
     "4": {
-      "note": "The production predicates under test and the import that names them.\n\nAnchor: \"from agents_remember.worktrees.series_closeout import (\"",
+      "note": "The production predicates under test and the import that names them.",
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:7272c77b8bccc7096536a1399595d46ee9511ffe66802c70620c24d5eae9a17e",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:dc2757dc9539f8b387b7ed22cf9e3d68ec5d75b44365545cb39871ba5bdc2612",
             "locator": {
               "kind": "symbol",
               "name": "_leaf_landing_precedes"

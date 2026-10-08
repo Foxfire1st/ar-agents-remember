@@ -446,6 +446,20 @@ Once the raw checklist is `ready-for-closeout`, the combined status `coherence-r
 
 A candidate tree is captured through a private index file: the tree is `HEAD` with every staged, unstaged and eligible untracked change applied, and the worktree's own index and files are never changed.
 
+## A Master Is Archived Only By The Retire Operation
+
+Finalizing a master completes it (its document and, where a sprint commands it, its sprint row) and never archives it, with or without a sprint. The only
+route that archives a master is the explicit `task_doc.retire_master` operation, which also removes the master from its sprint in the same step. An
+`abandoned` row does not block a master's closeout; an abandoned row whose enclosure records a completed integration refuses by name. A retirement stays
+valid after a partial cleanup failure, and repeating the same request finishes the cleanup. The `c-12-closeout` skill says so: the authored `skills/`
+copy, synchronized by `scripts/sync-skills.py` into the package copy and the eight harness starter copies this route governs. The package copy's card
+([c-12-closeout](mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md.md)) carries the detail.
+
+A server or dashboard process started before a build that has retirement cannot read a sprint that holds a retired row; the retirement write refuses in such a
+process, and every process that reads task documents must be restarted after the install, before the first retirement.
+
+- The skill text states that retire is the only archive route and that finalize never archives a master. [72]
+
 ## Key Invariants
 
 - **Nothing serializes a graph-less sprint.** A sprint without an `executionGraph` declares no

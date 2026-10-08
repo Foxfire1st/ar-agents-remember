@@ -135,7 +135,9 @@ No external domain claim is required.
 - The shared world fixture and Git helper this module composes instead of re-implementing. [8]
 - The leaf closeout recording it imports rather than duplicating. [9]
 - The integration lane row the fail-closed manifest requires. [10]
-- The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. [11]
+
+- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. [11]
+
 - The integration-case budget this module's membership is accounted against. [12]
 - The integration lane row the fail-closed manifest requires. [13]
 - The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. [14]

@@ -1,14 +1,51 @@
 {
   "path": "mcp/src/agents_remember/tasks/master_sync.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+        "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_master_sync"
+        }
+      },
+      "id": "RLZ-A9V66K",
+      "invariant": "INV-Y0S1BZ",
+      "origin": {
+        "handoffEntry": "L41-continuation-O3",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Seat-document publication reaches this common row synchronization and must not overwrite a retirement record.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+        "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "plan_master_sync"
+        }
+      },
+      "id": "RLZ-TXP6KY",
+      "invariant": "INV-ZJTNZY",
+      "origin": {
+        "handoffEntry": "L41-R8-O3 / ruled delta",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function plans the update a leaf document implies for its parent, and it is where a retired row of the parent refuses the leaf document's own write with the words that the master is retired.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Same-root parent resolution and master-plan construction: a named master through `_json_path_from_master_ref`, a leaf naming none through `folder_master_json_path`.\n\nAnchor: \"def _master_json_path(\"; \"return folder_master_json_path(task_root, leaf)\"",
+      "note": "Same-root parent resolution and master-plan construction: a named master through `_json_path_from_master_ref`, a leaf naming none through `folder_master_json_path`.",
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
-            "content": "sha256:9aea4bae9d1437a621af305990d96b9b02ffe8c5c38a5c1a3d77ff24e4de70ae",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"
@@ -18,7 +55,7 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:81aa35def0f277caaf10f055e19c77b096216dfeb2d7d2cfeb2b41e9ecb17968",
             "locator": {
               "kind": "symbol",
@@ -29,12 +66,11 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:f55b331e6a809043ba7ea4f76bf332d518456eadb9ed8b8bc730663c9c15e4eb",
             "locator": {
-              "end": 189,
-              "kind": "line_range",
-              "start": 186
+              "kind": "symbol",
+              "name": "_master_json_path"
             }
           },
           "kind": "code"
@@ -46,12 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
             "locator": {
-              "end": 183,
+              "end": 190,
               "kind": "line_range",
-              "start": 165
+              "start": 172
             }
           },
           "kind": "code"
@@ -59,29 +95,27 @@
       ]
     },
     "3": {
-      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.\n\nAnchor: \"folder_master = folder_master_json_path(task_root, leaf)\"; \"return master_sync.folder_master_json_path(task_root, doc)\"",
+      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
             "locator": {
-              "end": 492,
-              "kind": "line_range",
-              "start": 470
+              "kind": "symbol",
+              "name": "_folder_parent"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:1e4968e20cfdfae7fc5bb459f86e48a1523e5f31da82d57a6e5045d390e83738",
             "locator": {
-              "end": 657,
-              "kind": "line_range",
-              "start": 647
+              "kind": "symbol",
+              "name": "_reopen_master_path"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -94,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:31aa226304974471dbab51fb55647cd856efb4cfb7ce943e52cefec3cefdec54",
             "locator": {
               "kind": "symbol",
@@ -110,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:7b3f9a3a00f0613b5a8135a6f371a364a0eb73b8a1cb69d892d9b3d123ef0d28",
             "locator": {
               "kind": "symbol",
@@ -121,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:babd9be98c04c56449db00db98436348a11f87bd8acf030fbc3002ae39e47eae",
             "locator": {
               "kind": "symbol",
@@ -137,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:2d2a8bf87984a5f943773bf06dbf2113bcb44579d0182556b60d3e719b89611b",
             "locator": {
               "kind": "symbol",
@@ -153,12 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:64f254f73b6cbf7b50858e089819db474045da1527f718d1f25da2f664a42222",
             "locator": {
-              "end": 46,
+              "end": 47,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
@@ -170,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:39312b94f81381398b5bfdefe4aaec4a74c56e41e1266e9c093facc140a54c7f",
             "locator": {
               "kind": "symbol",
@@ -181,7 +215,7 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:6ac23453f64056e900bf446e3af3d3651ad87ed45d25963c49653eb25a82c85b",
             "locator": {
               "kind": "symbol",
@@ -192,8 +226,8 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
-            "content": "sha256:9aea4bae9d1437a621af305990d96b9b02ffe8c5c38a5c1a3d77ff24e4de70ae",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"

@@ -7,7 +7,9 @@
 ## Purpose
 
 Own the sprint↔master linkage contract (260815-DAG-L14): one atomic `attach_master` /
-symmetric `detach_master` operation pair and the read-only `linkage_report` drift surface.
+symmetric `detach_master` operation pair, the read-only `linkage_report` drift surface, and the
+dispatch of `retire_master`, the explicit operation that removes a master from its sprint and archives it
+(its implementation lives in `task_master_retirement.py`).
 `attach_master` supersedes the three-write manual flow (`set_subtask` + `set_field
 orchestrates` + `author_execution_graph add_node`) that produced the M16/rc7 drift, and
 `task_doc.get` on a sprint carries the same linkage facts as `linkage_report` (L14-R5).
@@ -19,12 +21,16 @@ task-document-writer authority in `code_quality/single_owner.py`.
 ### Logic
 
 The public surface is `SPRINT_LINKAGE_OPERATIONS = ("attach_master", "detach_master",
-"linkage_report")`; `sprint_linkage_operation` dispatches a `SprintLinkageCall` (tool-layer
-context) to one of the three operations, and `task_doc_tools._special_task_doc_operation`
-routes those operations here while wrapping `SprintLinkageError` in `TaskDocError`.
+"retire_master", "linkage_report")`; `sprint_linkage_operation` builds a `SprintLinkageRequest` from a
+`SprintLinkageCall` (tool-layer context) and dispatches it to one of the four operations (`retire_master`
+goes to `task_master_retirement.retire_master`), and `task_doc_tools._special_task_doc_operation`
+routes those operations here while wrapping `SprintLinkageError` in `TaskDocError`. The shared building
+blocks live beside this module: `SprintLinkageError` and the pure `_detach_candidate` in
+`task_sprint_candidates.py`; `SprintLinkageRequest`, `_sprint_context`, `_validate_candidate`,
+`_publication_transaction` and `_document_preview` in `task_sprint_context.py`.
 
 `attach_master` parses a strict `_AttachMasterPayload` (`extra="forbid"`), resolves the sprint
-document through `_sprint_context` (must be a `master` with non-empty `orchestrates`), then runs
+document through `_sprint_context` (must satisfy `TaskDocument.is_sprint`, including a retired-only sprint), then runs
 the whole refusal ladder before any write: cross-repo/self-attach target checks
 (`_resolve_attach_target`), already-attached detection across typed rows, `orchestrates` aliases,
 and graph placement (`_require_not_attached`), row-number collisions, execution-nature assertion
@@ -51,9 +57,11 @@ the controlplane lock file (playthrough F2).
 
 `detach_master` is symmetric: it refuses a cross-repo target, tolerates a deleted master document
 (`_resolve_tolerantly`), removes the typed row plus every `orchestrates` alias for the master, and
-drops its graph node — refusing while any edge still touches the node (`_require_no_touching_edges`)
-and refusing to empty the graph. It never deletes files; seat documents stay on disk as historical
-records (L14-R3).
+drops its graph node — refusing while any edge still touches the node (`_require_no_touching_edges`, in
+`task_sprint_candidates.py`) and refusing to empty the graph. It never deletes files; seat documents stay on
+disk as historical records (L14-R3). `retire_master` dispatches to the retirement state machine: its sprint-edit owner
+removes the required edges, calls `_detached_data`, installs the retirement row and validates before publication,
+archival and cleanup. Ordinary `detach_master` continues to use `_detach_candidate`.
 
 `linkage_report` / `linkage_facts_for_get` compute `collect_linkage_facts` — read-only and never
 raising. Facts are exception-guarded (`sprint-scan-failed` fallback) and classify legacy and
@@ -101,18 +109,24 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 ### Repo-Internal References
 
-- The typed row model (`masterRef`) and first-class `SprintSeat` schema this module writes; `SprintSeat` itself is structurally unchanged in the candidate. [1]
+
+- The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes. [1]
+
 - The typed-linkage cross-check and altitude role sets this module relies on. [2]
 - The public tool-layer operation routing. [3]
 - The shared judgment verifier and completion gate. [4]
 - The rollback-safe batch writer and exact task publication transaction. [5]
 - The single-owner authority gate admitting this module as a task-document writer. [6]
 - The linkage preflight wraps the served-build check in the linkage error family (L15-R4). [7]
+
 - The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. [8]
 
-| Attach and detach validate their full candidate before preview/apply; both routes call the shared graph-title cardinality owner before publication. | `attach_master`; `detach_master` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:209-274; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:277-347 |
-| Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. | `_publish` | mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:704-731; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:253-253; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:326-326; mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py:646-646 |
-| The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
+- The operation tuple lists the four linkage operations and the dispatcher sends `retire_master` to the retirement module. [10]
+- Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication. [11]
+- Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`. [12]
+- Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. [13]
+- The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. [14]
+- The detach candidate removes the typed row, the membership aliases and the graph node, and refuses to empty the graph or to leave an edge touching the node. [15]
 
 ## 260815-DAG-L14 Linkage Boundary
 
@@ -144,8 +158,8 @@ seat-row edge-shapes test).
 
 ## Current Contract After CLIVE
 
-The current source seams include `SprintLinkageError`, `SprintLinkageRequest`, and
-`SprintLinkageCall`. Accepted-source validation and task publication form one task-first
+The current source seams are `SprintLinkageCall` (defined here) and `SprintLinkageError` and
+`SprintLinkageRequest` (defined in `task_sprint_candidates.py` and `task_sprint_context.py`, and imported here). Accepted-source validation and task publication form one task-first
 transaction. A valid linkage mutation is not refused merely because a closeout queue exists:
 publication writes task truth, invalidates the affected waiting projection, and rebuilds it from
 current closeout-door facts. Queue state remains disposable scheduling output, not an authoring

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Counting an abandoned row in the chain forces an operator to relabel or discard a leaf that will never run, which rewrites the developer's record; letting the abandoned label hide a landed leaf would silently drop a landed leaf from the chain proof."
+  },
+  "applicability": "Atomic master closeout and its exact leaf document/enclosure population, including abandoned rows and any retained enclosures.",
+  "conditions": [
+    "The master declares canonical rows.",
+    "Every present enclosure is inspected for recorded completed integration."
+  ],
+  "exclusions": [
+    "Organizational task-tool completion, governed by its separate transition predicate.",
+    "Rows in another unresolved status remain ordinary completion blockers."
+  ],
+  "id": "INV-B9EZM6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-abandoned-outside-chain",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An abandoned row of an atomic master is outside the master's landing chain: closeout needs no enclosure or landing for it and ignores an enclosure of it whose integration is not completed, while an abandoned row whose enclosure records a completed integration refuses by name.",
+  "status": "proposed",
+  "supersedes": []
+}

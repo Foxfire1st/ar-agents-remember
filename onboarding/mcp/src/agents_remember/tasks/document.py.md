@@ -26,7 +26,8 @@ valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carry
 dashboard's granularity. `seriesContractPath` names the root task series contract when one exists, and
 `enclosures[]` names leaf enclosure contracts (`leafId` + `enclosurePath`) that can bind the doc to a
 lifecycle through observer projection. A `master` carries the series index — `subTasks` (`SubTaskRef`:
-number/name/file/status/scope) — and an ordered `sections` render plan (`Section`:
+number/name/file/status/scope, plus the optional `masterRef` of a sprint's typed row and the optional
+`retirement` proof of a retired master) — and an ordered `sections` render plan (`Section`:
 `freeform`|`subTasks`|`sharedDecisions` + heading + body); a `@model_validator(mode="after")`
 keeps the kinds disjoint (master forbids `steps`/`codeExamples`/`codeExamplesNote`/`lifecycleId`;
 `light`/`subTask` forbid `subTasks`, `orchestrates`, and non-freeform `sections` but may carry
@@ -43,8 +44,9 @@ role/label/identity/state — the manager-seat precedent on master docs, so seat
 the sprint task index while existing ones stay on disk as historical records) and a `subTasks` row
 may carry a typed `masterRef` (`TaskDocumentRef` — the exact commanded master document it tracks,
 rendered as a real markdown link). Both are sprint-only by validator
-(`_check_sprint_rows_and_seats`): a `masterRef` row or non-empty `seats` requires `kind == "master"`
-with non-empty `orchestrates`; seat roles are unique among planned/active seats (a retired → active
+(`_check_sprint_rows_and_seats`): a `masterRef` row requires a master with non-empty `orchestrates`.
+Seats and `integrationBranch` use `is_sprint`, which also accepts a master retaining a retirement row;
+seat roles are unique among planned/active seats (a retired → active
 succession of the same role is the only reading consistent with a `state` field). The role
 altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
 system-specialist), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
@@ -62,7 +64,8 @@ byte-identically. Python equality and hashing are structural node identity only:
 leaf list. A caller asking which master owns a node compares `node.ref`; a caller selecting a leaf
 uses endpoint resolution. Edges
 (`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
-`SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
+`SprintExecutionEndpoint` (`ref` + `leafId`); both models are defined in `models/task_execution_edges.py`
+(shared with the master-retirement proof) and imported into this module, addressing the segment that contains that leaf;
 resolution to exactly one node happens in graph validation, never at endpoint parse time. The graph rejects
 duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
 and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
@@ -87,11 +90,10 @@ refuse.
 substeps when it has any, else the step itself), and `current_step` returns the first
 in-progress/blocked step, else the first unfinished one, else `None`.
 
-`series_total`/`series_done` (R1) are the master analog: a master's checkboxes are its
-`subTasks` (each subtask is one box), so `series_total` = `len(subTasks)` and `series_done` counts
-subtasks whose **declared** status is `Completed`. The declared subtask status is the lever and is
-authoritative — a slice marked `Completed` in the master counts done even if its own leaf doc still has
-open boxes; series progress is never derived from a slice's internal steps.
+Series progress reads the master's declared rows. `series_total` counts non-abandoned rows,
+`series_done` counts rows declared `Completed`, and `series_abandoned` reports abandoned rows separately.
+Abandonment counts as neither completed nor outstanding work. A completed parent row remains authoritative
+even when the leaf has internal steps still open; these figures never roll up leaf steps.
 
 A `Step` also carries an optional `outcome` (R2): the checkbox-line deliverable, distinct from the heading
 `title`. It is `None`-defaulted so `exclude_none` keeps existing step JSON byte-identical; the renderer puts
@@ -148,8 +150,8 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
   (the `_MARKER`/observer lever — never loosened to a free string).
 - **`orchestrates` is master-only (L14):** the validator rejects it on `light`/`subTask` docs
   ("a {kind} document has no orchestrates (master-only)") — an orchestration task is a `master`
-  doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
-  dashboard) treat an empty list as "not an orchestration task".
+  doc carrying command membership or a retained retirement row, never a new kind. The shared
+  `is_sprint` predicate keeps a retired-only master at sprint altitude despite empty `orchestrates`.
 - **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
   never a bare "must be acyclic" — the delegated member search remains deterministic by declaration
   order and shares the admitted indexed edge population.
@@ -241,6 +243,19 @@ No relevant external documentation was available after checking the configured s
 - The R03 route-review dependency vocabulary. [14]
 - Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. [15]
 
+- A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [16]
+- The edge and endpoint models the graph uses are imported from the shared edge module. [17]
+
+## A Retired Master's Row
+
+`SubTaskRef.retirement` holds a `MasterRetirementProof` (`models/task_retirement.py`) on the plain row that a
+sprint keeps for a master it retired. `SubTaskRef._retired_row_is_plain` accepts a proof only on a row whose
+status is `abandoned` and which carries no live `masterRef`. It may retain a legacy seat row's `file`,
+keeping its historical JSON and Markdown reachable without restoring live master membership. The proof is an audit record: its fields are classified `AUDIT` in
+`document_field_effects.py`, and generic task-document edits cannot add, change or remove it (the application
+layer refuses them). The document model stays strict (`extra="forbid"`), so a build that predates the
+`retirement` key cannot parse a sprint that holds such a row.
+
 ## L23 Final Candidate Disposition
 
 Task-document readers derive canonical sprint, master, and leaf containment used by source-lineage
@@ -261,3 +276,6 @@ family.
 The route-review record now binds per-evidence-file SHA-256 digests, the `route-review/v1`
 dependency declaration, and a canonical self-digest; `build_route_review` stamps all three from the
 exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
+- Series progress excludes abandoned rows from the total and reports them separately. [18]
+- Sprint identity includes retired-only masters; seats and integrationBranch use that predicate. [19]

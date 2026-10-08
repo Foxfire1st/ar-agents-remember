@@ -301,6 +301,26 @@ unchanged.
 - A read is recorded with the identity of its exact bytes, or as absent or unreadable. [73]
 - A missing file is recorded at the probe. [74]
 
+## An Abandoned Row Is Outside A Master's Landing Chain
+
+An atomic master's closeout proves a landing chain over the enclosures of its rows that are not `abandoned`
+([series_leaf_contracts.py](series_leaf_contracts.py.md)). An abandoned row needs no enclosure or landing, and an enclosure it has whose
+integration is not completed is ignored; an abandoned row whose enclosure records a completed integration refuses by name; a master whose rows are
+all abandoned has an empty chain that still refuses a commit of its own on the master's line. Every refusal of
+[series_closeout.py](series_closeout.py.md) and of `series_leaf_contracts.py` names the master, row, leaf or contract cell and the action that
+clears it. [task_resolver.py](task_resolver.py.md) never archives a task that holds a series contract, so finalizing a master never archives
+it; the skip names the commanding sprint or `task_doc.retire_master`. [task_retirement.py](task_retirement.py.md) holds the read-only readiness check
+that `task_doc.retire_master` runs: actual open leaf work and unfinished or unreadable current enclosure operation authority refuse.
+The master's own resources, recorded identity differences, pending cleanup without open work and historical document/report observations remain facts.
+Lifecycle remedies require a live locator; otherwise the refusal gives the applicable manual action.
+
+- Only non-abandoned rows need an enclosure, and a landed abandoned row refuses. [75]
+- The chain proof is built from those enclosures. [76]
+
+- A task holding a series contract is skipped with the commanding sprint or the retire route named. [77]
+
+- Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts. [78]
+
 ## Evidence
 
 ### Repo-Internal References
@@ -1140,8 +1160,9 @@ other two triggers, and they are L09's.
 
 ## 260928-MIK-L25 Archiving A Task Deletes Its Review Artifacts
 
-**Route meaning extended (MIK-R25 rule 5, D17).** Finalization's archive of a completed root task now also deletes
-the task's review artifacts, through a port, so this layer still imports nothing from the application layer:
+**Archive-hook ownership (MIK-R25 rule 5, D17).** Review-artifact cleanup is bound through a service port.
+Current series finalization retains the master folder and reports the archive skip, so it invokes no
+review-artifact cleanup. Explicit `task_doc.retire_master` owns master archival and the applicable hook:
 
 - [`services.py`](services.py.md) declares `ReviewArtifactCleanupRequest` (the task root as it is now, its
   directory name, the series contract's two repositories, `dry_run`) and `ReviewArtifactCleanupPort.cleanup`, and
@@ -1160,7 +1181,7 @@ not gated on conversion (ruling 22:22:37 Q4): once this build is installed, arch
 tasks' legacy copies — including curator scratch copies — which L37's cutover notes state (F7).
 
 - The archive hook's request and port. [55]
-- The finalizer carries the hook's report after the archive move, and never raises. [56]
+- The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup. [56]
 
 ## 260928-MIK-L38 A Leaf's Master Is Resolved By One Rule At Finalize And Reopen
 

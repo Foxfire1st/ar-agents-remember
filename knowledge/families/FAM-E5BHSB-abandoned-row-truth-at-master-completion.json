@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Atomic closeout, organizational transition and finalization are distinct completion owners; the skill propagates their shared policy. The three exact obligations jointly prevent a label from concealing landed work across completion routes, while no member alone covers all owners."
+  },
+  "guarantee": "Atomic closeout, organizational task-tool completion and finalization of either master nature all decide completion from retained landing truth: abandoned rows need no document or landing, while a retained completed integration cannot be removed by an abandoned label. Retirement has its separate open-work and recovery contract.",
+  "id": "FAM-E5BHSB",
+  "members": [
+    "INV-B9EZM6",
+    "INV-E20AY2",
+    "INV-YZVCB8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "original33-repair-list.json"
+    },
+    "handoffEntry": "curator-MR1-W04-completion-family",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/application/task_docs",
+    "skills/c-12-closeout"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Abandoned-row truth at master completion"
+}

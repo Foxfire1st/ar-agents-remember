@@ -156,12 +156,12 @@
       ]
     },
     "5": {
-      "note": "**The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words.\n\nAnchor: \"cleanup_report(contract, result.payload)\"",
+      "note": "**The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents.",
       "targets": [
         {
           "anchor": {
-            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
-            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
+            "content": "sha256:46e710059fa3fcc62979171c9b45c62888fc179687f8a1e92e0cfb670917a1b7",
             "locator": {
               "kind": "symbol",
               "name": "_run_or_verify_cleanup"

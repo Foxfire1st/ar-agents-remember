@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:60da8267f2e86b37ad5fae623d918a1adc0702d569fa39de490a7b1ce51925ca",
             "locator": {
-              "end": 228,
+              "end": 229,
               "kind": "line_range",
-              "start": 227
+              "start": 228
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:ee1d15815ee505cdcc4ed5d367d1142a2a87644804ff59ac2fa6c9aa594e88de",
             "locator": {
-              "end": 597,
+              "end": 601,
               "kind": "line_range",
-              "start": 597
+              "start": 601
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -158,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:2857efcc8480b99dbe9bfa2305f35720ce430ccf00b9eaad85f3d76c04a64e5c",
             "locator": {
-              "end": 286,
+              "end": 287,
               "kind": "line_range",
-              "start": 286
+              "start": 287
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -176,12 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:65d54d841f89e1de343802b7713d2d2a39ec8f23c0bb30d450d26328ea5dc02a",
             "locator": {
-              "end": 331,
+              "end": 335,
               "kind": "line_range",
-              "start": 330
+              "start": 334
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -189,12 +189,12 @@
         },
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:31ed431dce73217b2c2248794070fdf6a399123a14c925cea944679ae5de5553",
             "locator": {
-              "end": 366,
+              "end": 370,
               "kind": "line_range",
-              "start": 366
+              "start": 370
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -207,12 +207,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:ebaaf7803c4f0e7254eea2662f914c1a33c42f36f432fd83252b254cf057f64a",
             "locator": {
-              "end": 603,
+              "end": 607,
               "kind": "line_range",
-              "start": 597
+              "start": 601
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -225,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
             "locator": {
               "kind": "symbol",
@@ -242,7 +242,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:a42c7f9aac2b89ef456781787a5901110b8ffc60ce77dd0190dd685019683d3d",
             "locator": {
               "kind": "symbol",
@@ -254,7 +254,7 @@
         },
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:7230072b4d29082ae057db7e9b648b20072e98f7f3675429001087b45cd554d1",
             "locator": {
               "kind": "symbol",
@@ -266,8 +266,8 @@
         },
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
-            "content": "sha256:dac11d70ee56c0d516c5051d3eef92ec1c3512d0adaf1e422297fe9f3fe25b03",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
+            "content": "sha256:4e35dd4c98f5c36286f873486398e850774f8eb7e5c3f120008e3199bfd87497",
             "locator": {
               "kind": "symbol",
               "name": "SeriesNode"

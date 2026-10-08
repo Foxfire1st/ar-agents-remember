@@ -42,10 +42,18 @@ belongs to `leaf_refs.resolve_leaf_enclosure_contract_for_ref()` so this module 
 contract path mechanics. Multiple leaves without an explicit `leaf_id` raise `TaskResolutionError`,
 forcing callers to disambiguate without asking users for filesystem paths.
 
-`archive_completed_root_task()` (`:147-184`) moves only completed root task folders into
-`tasks/<repo>/0_archive/`. It skips nested leaf/task roots, skips roots that still have their own active
-`series-contract.md`, blocks if the archive target already exists, and supports dry-run payloads for
-finalize previews.
+`archive_completed_root_task()` moves only completed root task folders into
+`tasks/<repo>/0_archive/`. It skips nested leaf/task roots, skips roots that hold a `series-contract.md`,
+blocks if the archive target already exists, and supports dry-run payloads for finalize previews. A root that
+holds a series contract is never archived by this function, so finalizing a master never archives it. The skip
+is worded by `_series_archive_skip`: when the task document is a master that a sprint commands, the result is
+`reason: sprint-commands-master` with `sprintTaskDocumentRef` and a `detail` naming the sprint; when the document
+is a master that no sprint commands, `reason: master-archived-only-by-retire` and a `detail` naming
+`task_doc.retire_master` as the only archive route; for anything else (an ordinary standalone task, or a
+document that is missing or unreadable) the result is the unchanged `root-series-still-active`. The sprint
+lookup uses the bounded `sprint_census` and its commanding paths. This skip helper does not validate
+sibling documents or refuse on census unreadability; an unreadable or non-master own document keeps
+`root-series-still-active`.
 
 ### Conventions
 
@@ -67,6 +75,8 @@ reviewable and a name cannot silently disappear from it.
 - Canonical leaf-ref validation, candidate reporting, and legacy alias policy live in `worktrees/leaf_refs.py`.
 - User-facing resolution should prefer `task_name` plus optional `parent_task` / `leaf_id`, not raw paths.
 - Archiving is root-task-only; leaf cleanup/finalization must not move a parent task folder.
+- A task folder that holds a `series-contract.md` is never moved by this module, so no finalization archives a
+  master; the explicit `task_doc.retire_master` operation is the only route that does.
 
 ## Evidence
 
@@ -88,7 +98,7 @@ Same-repository source and tests define the supported task-folder and series-con
 - Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist. [6]
 - `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. [7]
 - `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. [8]
-- `finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move. [9]
+- The finalizer calls the root archive helper for a series contract, which is skipped; leaf finalization skips the archive call. [9]
 - Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. [10]
 - The package order that makes `tasks` the correct home for the vocabulary this module re-exports. [11]
 
@@ -97,3 +107,6 @@ Same-repository source and tests define the supported task-folder and series-con
 No cross-repo boundary is required to explain this local resolver.
 
 No sibling repository boundary is needed to explain this file.
+
+- A root task holding a series contract is skipped, and the skip is worded by the series skip. [12]
+- The skip names the commanding sprint, or the retire route when no sprint commands the master, and keeps today's reason for any other task. [13]

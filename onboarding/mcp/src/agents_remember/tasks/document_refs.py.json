@@ -7,23 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:95cd9f982d04dd2ffce8b153cef1316f7145df0882a216cae73d07550706dba0",
-            "locator": {
-              "end": 575,
-              "kind": "line_range",
-              "start": 82
             }
           },
           "kind": "code"
@@ -52,23 +40,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
             "locator": {
               "kind": "symbol",
               "name": "refuse_segment_nodes_on_atomic_masters"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:c698d8ef82b4537c46bb74440e142c0ad04b6e931215139e7faba8f58a6a6765",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 42
             }
           },
           "kind": "code"
@@ -80,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:7a3cd98085341a7f1d0a301fcd2964ae52220a312e940f27207ebb4f77146ad7",
             "locator": {
               "kind": "symbol",
@@ -96,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
             "locator": {
               "kind": "symbol",
@@ -107,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:5bce6b9ce41fe7631cf2be0eee58b5d851724ce7375516e4cbd22c12af20bd5e",
             "locator": {
               "kind": "symbol",
@@ -118,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:e22c5d645704895490e6d5492552357382ce2922f8530d460dce1e5c5e6f4692",
             "locator": {
               "kind": "symbol",
@@ -129,37 +105,71 @@
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:83e7a8ecbdfd3af4083b3f78cd1384fd731c424f5af32974fdaa99dca82a433b",
             "locator": {
-              "end": 42,
+              "end": 43,
               "kind": "line_range",
-              "start": 37
+              "start": 38
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:79c19cfd0d98ace831ea3fe271d253380d1ce64c29f540eb5acd6e73c08a887a",
             "locator": {
-              "end": 62,
+              "end": 75,
               "kind": "line_range",
-              "start": 45
+              "start": 58
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:07e0ed222f80cd3ef8b7a5185269f4a4efbd1708623316ddd712bd5da232821b",
             "locator": {
-              "end": 69,
+              "end": 82,
               "kind": "line_range",
-              "start": 65
+              "start": 78
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message.\n\nAnchor: `TaskDocumentTopology._commanded_masters_exact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:b5e5be056ece9b84830d072460358ae5d5902ad179a968446d12a2991e37e364",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 601
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
           },
           "kind": "code"
         }

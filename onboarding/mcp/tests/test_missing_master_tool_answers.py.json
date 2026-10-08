@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_missing_master_tool_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A sprint that commands a master archived by hand is answered by curator_coherence and closeout_queue with the master, the archive location and the retire operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f15889e496077b92daf112d96a5348d7ab40cb5",
+            "content": "sha256:3efdaab2d597ace9e1b4ff413653a47015f72e8587c19780b5a1bcd618dd3496",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every other topology failure stays a bounded record, and a recorded worktree group of another layout does not refuse a retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f15889e496077b92daf112d96a5348d7ab40cb5",
+            "content": "sha256:3efdaab2d597ace9e1b4ff413653a47015f72e8587c19780b5a1bcd618dd3496",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

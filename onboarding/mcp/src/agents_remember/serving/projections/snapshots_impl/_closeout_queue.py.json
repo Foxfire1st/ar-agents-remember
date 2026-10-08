@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
-            "content": "sha256:0499c1d817917feaa0c5c0da174553c1076a92fbf4678f0da2b8b3ff03d3d570",
+            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
+            "content": "sha256:893e75e930d39071754719aa5fb1c211770c8caa0df23750cadab6861332f2a8",
             "locator": {
               "kind": "symbol",
               "name": "read_closeout_queues"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
             "content": "sha256:69701aa3591bfee4652476acb0ec6307f2c14caadabb583608d86b339946ca04",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ba045ba9f25d5337f6aa5d69d9fe191c82b6e1b",
+            "blob": "bc1071ddb9bfd581337d113caedf42b0ce659c3c",
             "content": "sha256:ebe15ddc02d57762a26463d2aee46f26ce9fa3298cfe5730273b3a70aa1634a8",
             "locator": {
               "kind": "symbol",

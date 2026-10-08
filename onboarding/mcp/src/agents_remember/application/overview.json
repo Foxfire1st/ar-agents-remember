@@ -7163,8 +7163,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:69537368a7f44575fa856398999e6fdae1834e748a91edf53d5e90ccda97edd6",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
             "locator": {
               "kind": "symbol",
               "name": "cleanup_review_artifacts"
@@ -7175,7 +7175,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
             "locator": {
               "kind": "symbol",
@@ -8710,16 +8710,18 @@
       ]
     },
     "385": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat writes none.\n\nAnchor: `ReceiptLedger._set_aside`",
       "targets": [
         {
           "anchor": {
-            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
-            "content": "sha256:a0fb7305a4efae52b2be04d3ec7841e1f7431e29c167220fc58119f2ad3723af",
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:7a4e39347dfd2808f1f6656c9ea8fd849206a4556910aff9412b5211122f082f",
             "locator": {
-              "kind": "file"
+              "end": 228,
+              "kind": "line_range",
+              "start": 205
             },
-            "path": "mcp/src/agents_remember/application/agent_binding.py"
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
           "kind": "code"
         }

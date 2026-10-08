@@ -17,7 +17,7 @@ accepted-series work can use its recorded delegated authority.
 The generated closeout guidance names the existing comparison producer and carries its written/reused generation or refusal. Comparison recording remains review evidence; closeout remains report-only for that result and gains no semantic gate.
 
 c-12-closeout owns worktree-only closeout sequencing. It previews and applies the exact
-authorized code, memory-content, and ledger Git transaction through the task contract, preserving
+authorized code and memory-content Git transaction through the task contract, preserving
 the existing authority, conflict, ref-movement, and unfinished-leg recovery safeguards. Closeout
 does not author onboarding or rerun worker/curator checks; it consumes their prepared content and
 reports any failed or not-run evidence without relabeling it.
@@ -55,7 +55,7 @@ mandatory invariant gate (MIK-R09) about the leaf's exact code and memory candid
 ### Conventions
 
 - Preview before mutation and keep the preview/apply input immutable across retries.
-- Keep code, memory-content, and ledger legs explicit and record each resulting commit.
+- Keep code and memory-content legs explicit and record each resulting commit; refresh the ignored ledger cache without staging or committing it.
 - Preserve failed and not-run targeted/scoped evidence in the handoff and task report.
 - Route onboarding authorship to c-05-create-or-update-onboarding-files; closeout verifies
   the prepared memory leg rather than patching onboarding inline.
@@ -70,9 +70,29 @@ mandatory invariant gate (MIK-R09) about the leaf's exact code and memory candid
 - Verification metadata and generated indexes remain coordinated follow-up work after the source and
   memory bodies are prepared; this card does not fabricate a stamp.
 
+## Master Closeout, Finalization And Retirement
+
+The skill states, in plain words, three rules about a master. They are the same text in the authored
+`skills/c-12-closeout/SKILL.md` and in all of its generated copies (this package copy and the eight harness starter
+copies written by `scripts/sync-skills.py`), which are byte-identical to the authored file.
+
+- **An abandoned row does not block a master's closeout.** An atomic master's closeout needs a landed enclosure for
+  each row other than `abandoned`; an abandoned row needs no document, enclosure or landing and keeps a document it already has; a row
+  labelled abandoned whose enclosure records a completed integration refuses until that contradiction is reconciled;
+  every row must be `Completed` or `abandoned`.
+- **Finalizing a master never archives it**, with or without a sprint. A sprint that commands the master gets its
+  proven typed or correlated legacy seat row completed; absent or ambiguous correlation is reported as skipped and is named in the result as the reason the archive was skipped; a master that no sprint
+  commands also stays, and the result names `task_doc(operation="retire_master")` as the only archive route.
+- **`retire_master` is the only route that archives a master.** The skill gives the sprint call and the call on the
+  master itself, says the dry run comes first, that an outgoing edge to an unfinished successor must be affirmed in
+  `fields.removeEdges`, that open leaf enclosures and unfinished operations must finish through their named cleanup
+  route, that a sprint's only graphed master cannot be retired and a nested master is refused, that a retry resumes
+  from the retained proof, and that a hook failure after archival is reported as `retired-with-hook-failures`
+  (`ok=false`) and cleared by repeating the same request, each attempt keeping its own receipt.
+
 ## CCR-R12@v5 Transaction Boundary
 
-Current contract: closeout previews and applies the authorized code, memory-content, and ledger Git
+Current contract: closeout previews and applies the authorized code and memory-content Git
 transaction, preserves existing authority/conflict/ref safeguards, and leaves quality, test,
 memory-quality, certification, and review operations explicit. Transaction-owned commit legs suppress
 automatic quality and test hooks; ordinary explicit Git hook policy outside closeout/integration
@@ -85,20 +105,20 @@ states visible.
 
 - Cleanup is an explicit agent follow-up after landing and before handoff, including manual Git landing. [1]
 
-- `c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence. [2]
+- The closeout skill defines public tool usage and the authorized code/memory-content transaction. [2]
 
-- `c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report. [3]
+- Apply consumes prepared curator readiness and coherence without demanding certification, quality checks, suites or review records. [3]
 - Approval authority requires preview-first notify-and-stop for developer-gated closeout; an explicitly raised `closeout-approval` is the sole human commit gate. [4]
-- `c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill. [5]
+- The curator completes full memory quality before handoff; closeout consumes that result without rerunning curation. [5]
 - `c-09-git-worktree-manager` skill routes worktree closeout to `c-12-closeout` skill and retains worktree lifecycle, integration, and cleanup ownership. [6]
 - Closeout delegates task completion to `lifecycle_finalize_task` after closeout, integration, PR merge/pull, and carryover. [7]
-- The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper. [8]
+- Apply stages and commits the enabled code and memory-content legs; missing certification or quality work does not automatically block it. [8]
 - The two staging refusals run before staging or ref movement: the code checkout must be the declared task worktree unless the declared route is a sanctioned branch-direct landing, and a worktree with unresolved merge conflicts (a merge, rebase, cherry-pick, or revert with unmerged entries) is refused so a blind stage cannot commit conflict markers. [9]
 - The one external-memory closeout order restates step 4 as commit the code changes, then the prepared memory-content changes with their code attribution, keeping the transaction owner, pair identity and recoverable publication journal for each leg. [10]
-- The caller-side implementation of that contract: `prepare_staged_code` runs both refusals before the mixed reset, then `git reset --mixed --quiet HEAD` and `git add -A`, and `gate_staged_code` then runs the strict targeted gate over the staged candidate. [11]
+- The public code-commit owner stages or proves the accepted code tree and journals its exact commit; quality execution remains outside closeout. [11]
 - The closeout order is now one external-memory six-step list: confirm the worker's targeted-check report and the curator's handoff, preview the enabled code and memory legs, call `worktree_closeout_apply`, commit code then the prepared memory content with its code attribution, refuse before mutation on a moved ref or an unresolved conflict, then update the task contract closeout state. [12]
 - The skill's own statement of the staging contract: a refused gate leaves the worktree fully staged and uncommitted, and because a retry must not inherit that index, each gate run begins with a reset and restages from the working tree, so resetting first recomputes the staged set under the ignore rules in force. [13]
-- `DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every "the configured threshold" sentence in this skill, which names no number itself. [14]
+- The computed ledger remains outside staging and commits; its availability cannot block closeout or recovery. [14]
 
 - On converted memory both closeout tools ask the mandatory gate; the preview never answers would-closeout for a refused leaf, and the commit records exactly the judged tree. [15]
 
@@ -108,25 +128,24 @@ No sibling repository evidence is needed for the skill itself.
 
 No meaningful cross-repo references found.
 
+- The skill states abandoned-row treatment, finalization without archival and explicit retirement. [16]
+
 ## Series-Contract Notes
 
 Closeout instructions now target the leaf enclosure `series-contract.md`; the root series contract is integration-branch state and is not the path used for leaf code/memory closeout.
 
 ## R39 Repository-Resolved Acceptance Doctrine
 
-The packaged closeout skill is generic again and, since CCR-R22@v1 (L22, commit `685f83c44055`),
-repository-owned: the exact configured repository certification profile
-(`repositories.<repo-id>.certificationProfile`) declares the concrete executor, environment,
-arguments, resource policy, retry semantics, evidence, and Gates 1-4 applicability; repository
-memory such as `system/git-workflow.md` explains intent but is not alternate execution authority.
-The cadence is one change-set acceptance at leaf closeout, no leaf-integration rerun, and one full
-check at master integration. Every code-committing repository requires one explicit profile;
-missing, ambiguous, invalid, or incomplete authority refuses as `certification-profile-invalid`
-before repository execution. No seat may discover a fixed wrapper, infer a runner, or add a
-default/compatibility/host fallback.
+The earlier profile-based automatic closeout doctrine is superseded. Current closeout does not demand
+or execute a certification profile, code-quality wrapper, test suite or review record. Explicitly
+requested quality and review operations retain their owners. The curator's full memory-quality result
+is prepared before handoff, current coherence authority is validated when required, and converted
+memory retains the mandatory invariant/validator gate over the exact candidate. Authority, conflicts,
+candidate identity, ref movement and journal recovery remain transaction safeguards.
+
 ## 260821-CLIVE Closeout Admission And Recovery Doctrine
 
-Every enabled code, memory, and ledger leg requires its own explicit nonblank immutable commit
+Every enabled code or memory-content leg requires its own explicit nonblank immutable commit
 message before claim, journal, worker, or Git authority. Blank required input is a typed no-effect
 refusal, never a half-created generation or synthesized default. Apply starts or observes the
 task-bound generation and returns; later status/control uses the exact journal generation and only

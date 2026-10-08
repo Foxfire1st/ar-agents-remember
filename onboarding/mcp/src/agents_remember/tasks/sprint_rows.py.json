@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/tasks/sprint_rows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+        "locator": {
+          "kind": "symbol",
+          "name": "sprint_census"
+        }
+      },
+      "id": "RLZ-9EJ7S0",
+      "invariant": "INV-CD2A7H",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 1",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The census sorts every task.json it cannot read into the two lists the retire route and the finalize route read differently, and counts the task.json of a task folder that cannot be looked into.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "content": "sha256:8413743c2030c9be7d8b9b1e742011ecc59bab81b4bf32f97bcd6e83c8cfa78c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_raw_membership"
+        }
+      },
+      "id": "RLZ-PQW2KF",
+      "invariant": "INV-C4PDDP",
+      "origin": {
+        "handoffEntry": "L41-continuation-O2",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This parser classifies malformed membership as unreadable; its implementation is preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+        "locator": {
+          "kind": "symbol",
+          "name": "sprint_census"
+        }
+      },
+      "id": "RLZ-YKEBZB",
+      "invariant": "INV-6S505X",
+      "origin": {
+        "handoffEntry": "L41 ruling 3 (the census)",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The census walks every task.json of the tree outside the archive and the enclosures and lists the ones it cannot read, which stop a retirement.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+        "content": "sha256:db84df575e13e738f19b254414263a83ad4663984aeb056baedf37f84e280e9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "membership_removal_action"
+        }
+      },
+      "id": "RLZ-ZRCP4Q",
+      "invariant": "INV-T7VC8G",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 3",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This owner chooses typed detach, an admitted untyped membership edit, or the explicit sole-untyped-master unavailable-action boundary.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A task.json whose orchestrates or subTasks is not a list is unreadable, so retirement fails closed and names the file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:dc731a2871cdb270fdcf3e654d6e79c5b1e33b858f788138b9a7ebf6d67c0469",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The linkage report states a typed row, a correlated legacy seat row, and a commanded master with no row as facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:dc731a2871cdb270fdcf3e654d6e79c5b1e33b858f788138b9a7ebf6d67c0469",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A refusal on the retire and finalize routes names task_doc.detach_master only where a typed row links the master to the sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:dc731a2871cdb270fdcf3e654d6e79c5b1e33b858f788138b9a7ebf6d67c0469",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

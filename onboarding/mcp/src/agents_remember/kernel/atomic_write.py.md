@@ -78,7 +78,7 @@ No configured domain documentation could be checked.
 
 - The private temp this module writes before it replaces `path`. [1]
 - The directory flush that makes a completed rename survive a host loss. [2]
-- The one atomic publish: readers see the old file or the new one, never both. [3]
+- Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file. [3]
 - The atomic move of an already-written file onto a destination. [4]
 - **The file-data flush this leaf exposed, for a producer that wrote the file through another owner.** [5]
 - The producer that needs it: a closed snapshot stage whose bytes must reach stable storage before the rename publishes the name. [6]

@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
             "locator": {
               "kind": "symbol",
@@ -77,13 +77,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
-            "content": "sha256:c6a424aed4190d0ce6ecfd752a1c11e1a7a2abe462479365ce478f6465929ec9",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
+            "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
               "name": "_sprint_doc_identity"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
+            "content": "sha256:a512717403eb5fdd792218f47b4b637c4b205900f47056421158897254473934",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocResponse"
+            }
           },
           "kind": "code"
         }

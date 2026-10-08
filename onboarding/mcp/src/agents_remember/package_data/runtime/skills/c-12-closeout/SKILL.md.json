@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:ee31ecbd38a7cb0d68509d7cbc9f6980e34e8938744fc95462c2b32c58305607",
             "locator": {
               "end": 236,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
             "locator": {
               "end": 243,
@@ -38,29 +38,17 @@
       ]
     },
     "11": {
-      "note": "The caller-side implementation of that contract: `prepare_staged_code` runs both refusals before the mixed reset, then `git reset --mixed --quiet HEAD` and `git add -A`, and `gate_staged_code` then runs the strict targeted gate over the staged candidate.\n\nAnchor: \"Both refusals precede the mixed reset\"",
+      "note": "The public code-commit owner stages or proves the accepted code tree and journals its exact commit; quality execution remains outside closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
-            "content": "sha256:9e444b5766680f6fd5f95f66dc6ba8553de7109a84a8a492a0497b7f6476e7f7",
+            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
+            "content": "sha256:a95110a112274d9ee175790ec88d0d8aa1831e86be1b02f8bfd1937d32c1e649",
             "locator": {
               "kind": "symbol",
-              "name": "prepare_staged_code"
+              "name": "accepted_code_commit"
             },
-            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
-            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
-            "locator": {
-              "kind": "symbol",
-              "name": "gate_staged_code"
-            },
-            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py"
           },
           "kind": "code"
         }
@@ -71,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:bbdf547231dff0604f87bd5004ad8ee55302b97f233d92e22fa7f407e78130c2",
             "locator": {
               "end": 243,
@@ -88,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:2df36e1b981a0272f8013f86cf7cec6bf4b68ee2a99e1f4b41998207b496a173",
             "locator": {
               "end": 123,
@@ -101,17 +89,18 @@
       ]
     },
     "14": {
-      "note": "`DEFAULT_CRAP_THRESHOLD = 20.0` — the actual value behind every \"the configured threshold\" sentence in this skill, which names no number itself.",
+      "note": "The computed ledger remains outside staging and commits; its availability cannot block closeout or recovery.\n\nAnchor: \"computed\"",
       "targets": [
         {
           "anchor": {
-            "blob": "8fbe2e519b5448fefb73065d075615300f042042",
-            "content": "sha256:5d940e5d74d22d3ccc0c2213254d6083849b4faf7058b41be03a2260080b2aa9",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:05e4b46c8a37b2777e4cb6ddfe700bb8a41382fb2563af1657b250ac86288f29",
             "locator": {
-              "kind": "symbol",
-              "name": "DEFAULT_CRAP_THRESHOLD"
+              "end": 185,
+              "kind": "line_range",
+              "start": 182
             },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py"
+            "path": "skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }
@@ -122,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:dd052653f02d83be41dbe24ee29cc5d4c4deee5c12843fedc88ece133ec32204",
             "locator": {
               "end": 63,
@@ -134,17 +123,30 @@
         }
       ]
     },
-    "2": {
-      "note": "`c-12-closeout` skill defines worktree closeout tool usage and centralizes the closeout sequence.",
+    "16": {
+      "note": "The skill states abandoned-row treatment, finalization without archival and explicit retirement.",
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
-            "content": "sha256:c0d00fa18d3b4a7fdfacfdc0e55907259f8fee40dad1f95f11b1c70796ccd15a",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:62e99c974c9e21bad19c32c171cfb292ea1a2314127caccc1bad42d54a1e106e",
             "locator": {
-              "end": 337,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The closeout skill defines public tool usage and the authorized code/memory-content transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:62e99c974c9e21bad19c32c171cfb292ea1a2314127caccc1bad42d54a1e106e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -152,17 +154,18 @@
       ]
     },
     "3": {
-      "note": "`c-12-closeout` keeps commit approval separate from implementation approval, states the quality altitude ladder, and binds completed strict runs to one atomically replaced enclosure test-results report.\n\nAnchor: `## Approval Authority`",
+      "note": "Apply consumes prepared curator readiness and coherence without demanding certification, quality checks, suites or review records.\n\nAnchor: \"does not demand\"",
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
-            "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
-              "end": 156,
+              "end": 106,
               "kind": "line_range",
-              "start": 65
-            }
+              "start": 97
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }
@@ -173,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
             "locator": {
               "end": 156,
@@ -185,7 +188,7 @@
         },
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:d29ff8f9f7e1931a5904b21b28cdb2920607cdcb6e60e7e845e3dc605d927870",
             "locator": {
               "end": 169,
@@ -198,17 +201,18 @@
       ]
     },
     "5": {
-      "note": "`c-12-closeout` skill uses the missing-onboarding gate before code commit and routes missing sidecars to `c-05-create-or-update-onboarding-files` skill.\n\nAnchor: `## Preconditions`",
+      "note": "The curator completes full memory quality before handoff; closeout consumes that result without rerunning curation.\n\nAnchor: \"full\"",
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
-            "content": "sha256:553df76532136a5d9351a11bb934354b4454a1a0d1a25bb250655ac2ac80c4c0",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:6d19567445ea2ee62c35dd21765b0f731f02ddd1ba099476ace08f87b8acd7b0",
             "locator": {
-              "end": 198,
+              "end": 197,
               "kind": "line_range",
-              "start": 170
-            }
+              "start": 187
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }
@@ -237,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:a0b62d45ca0d28fbfc7b234df4049920f840b16e33734de764c38146f7cb6a44",
             "locator": {
               "end": 229,
@@ -249,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:89fd1a502b17ac99ce596cba38da71a0b879995a2b59d0556b017d95ee7336b5",
             "locator": {
               "end": 234,
@@ -262,17 +266,18 @@
       ]
     },
     "8": {
-      "note": "The L4 staging contract in Approval Authority: when code would commit **and the checkout carries the wrapper**, closeout resets the index, stages the whole task worktree, and gates exactly that staged content before any commit; a refusal leaves it staged, and `wrapper-unavailable` is the reported state for a checkout with no wrapper.\n\nAnchor: `## Approval Authority`",
+      "note": "Apply stages and commits the enabled code and memory-content legs; missing certification or quality work does not automatically block it.\n\nAnchor: \"does not demand\"",
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
-            "content": "sha256:d241207d24b67b101ec723e8fd577f79e3d5cf1da72f59190e37a4c8f5eea050",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:f1788bc7b983fdd929f3bc832bf0cb58aa3e5c609b59d8c5ac87dedd1d2b6842",
             "locator": {
-              "end": 156,
+              "end": 106,
               "kind": "line_range",
-              "start": 65
-            }
+              "start": 97
+            },
+            "path": "skills/c-12-closeout/SKILL.md"
           },
           "kind": "code"
         }
@@ -283,7 +288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:fbbfdeba68dbde8f189c9c1068d354fe2cf194d9084ba25ca32549e18b9eebb4",
             "locator": {
               "end": 127,
@@ -295,12 +300,12 @@
         },
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
+            "blob": "22883742dc94023e998239675800e90df206293a",
             "content": "sha256:f1ed709efab6017546419cade58c8fb43486b179993c0b78343eb386e73fed70",
             "locator": {
-              "end": 291,
+              "end": 351,
               "kind": "line_range",
-              "start": 291
+              "start": 351
             }
           },
           "kind": "code"

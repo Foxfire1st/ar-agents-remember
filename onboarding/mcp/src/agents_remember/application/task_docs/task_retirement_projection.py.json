@@ -1,0 +1,37 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A late completion refreshes a sprint's stored closeout-queue projection only when it no longer reflects the task documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9b9fce091b08b1bc64a8bdca92f7b13db143def",
+            "content": "sha256:0c02807ac597c4a576ea301cac0ea4c95340f75093bfe7802f984824913d7463",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A current projection, or a sprint with no buildable projection, is left unchanged by a repeated request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9b9fce091b08b1bc64a8bdca92f7b13db143def",
+            "content": "sha256:0c02807ac597c4a576ea301cac0ea4c95340f75093bfe7802f984824913d7463",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

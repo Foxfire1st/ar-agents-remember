@@ -357,6 +357,16 @@ own first row). The preview/apply parity invariant this repair came from is inve
 [`memory_quality/overview.md`](../../memory_quality/overview.md); the removal and its cost are
 recorded on the worktrees route and on the `integration_ref_transaction.py` card.
 
+## The Terminal Evidence Reader
+
+[terminal_enclosure_evidence.py](terminal_enclosure_evidence.py.md) reads and proves the canonical lifecycle evidence of an enclosure: owned
+artifact names only, operation records that must be terminal and must match the canonical file name they are stored under, bounded to 1,024 files and
+64 MiB. [terminal_enclosure_archive.py](terminal_enclosure_archive.py.md) publishes what it reads, and the master-retirement readiness check reads the same
+evidence through `terminal_operation_evidence` without adopting it.
+
+- An operation record must match its canonical file name and be archivable. [13]
+- Retained records are read without adoption and refused by name when they cannot establish terminal authority. [14]
+
 ## Evidence
 
 ### Repo-Internal References

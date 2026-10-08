@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "end": 477,
+              "end": 478,
               "kind": "line_range",
-              "start": 435
+              "start": 436
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:43b15bfd7db981b739d72d3c6476c8f74733223abdafec3d5f8d3823e281f23a",
             "locator": {
-              "end": 124,
+              "end": 125,
               "kind": "line_range",
-              "start": 124
+              "start": 125
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -187,42 +187,55 @@
       ]
     },
     "3": {
-      "note": "Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen.\n\nAnchor: \"require_task_document_in_place(leaf_path, leaf, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(parent_path, parent, FinalizeTaskDocumentError)\"; \"require_task_document_in_place(master_path, master, ReopenTaskDocumentError)\"",
+      "note": "Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:ab5f2be78181f69e6956754f157288aed9564a3d5c755cd00ad80b5956753b7f",
             "locator": {
-              "end": 404,
+              "end": 109,
               "kind": "line_range",
-              "start": 404
+              "start": 109
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:c4375611d8a906ce2c5dca7fb66b6fcd3c3b502feee719e395cc93b7910620f1",
             "locator": {
-              "end": 529,
+              "end": 234,
               "kind": "line_range",
-              "start": 529
+              "start": 234
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:971ac8ba4f870866276d1dd33c74c891ee4a6d024f9ca800245d524b5e88d6e9",
             "locator": {
-              "end": 611,
+              "end": 612,
               "kind": "line_range",
-              "start": 611
+              "start": 612
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "content": "sha256:d7782ce6052e83ac288d7cabfb28de5d383ce8d9c38045f425ed8f3f94d0c83c",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 447
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },

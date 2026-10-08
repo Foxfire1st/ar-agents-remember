@@ -337,16 +337,16 @@
       ]
     },
     "26": {
-      "note": "Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers.\n\nAnchor: \"export interface SeriesSubTaskNode\"; \"export interface TaskSubTaskRefNode\"; \"export type SubTaskRow\"",
+      "note": "Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
-            "content": "sha256:4c1f95f4e1d533a9a7ccc9f28e2052505f66ca1be4ef5438235f23fcf3b66eae",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "content": "sha256:971cea5611164418877435778b240396bde6ab329b4f459e437fd029e72c0e5c",
             "locator": {
-              "end": 560,
+              "end": 568,
               "kind": "line_range",
-              "start": 560
+              "start": 561
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -354,12 +354,12 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
-            "content": "sha256:3fab73214ca880cb59c0e002ac1a72ef5e70806ba155c90548949c959093bc4e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "content": "sha256:4febe9305bdcf88985d693776ac3ca954a03c75b80f6c7702ee91ba410a1f6a1",
             "locator": {
-              "end": 792,
+              "end": 801,
               "kind": "line_range",
-              "start": 792
+              "start": 793
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -367,12 +367,12 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
-            "content": "sha256:816ddf56e1526d847ed77a06ea59917a374fc9ba3758f054f03ad880b12bf994",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
+            "content": "sha256:8559661a3931118b1672c7cc3d4b2f32aa157c9bdd61f407feceda1947d80a2e",
             "locator": {
-              "end": 814,
+              "end": 562,
               "kind": "line_range",
-              "start": 814
+              "start": 562
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -380,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:1de5db4b96d7237e56eaa8a3137a8d59d1f15bcffb40093cf54a0435b21a76f9",
             "locator": {
-              "end": 838,
+              "end": 839,
               "kind": "line_range",
-              "start": 838
+              "start": 839
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -398,7 +398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a89bddef7bc24b65b4721cbaab875366daaeb20",
+            "blob": "3f959e4c77c06d1a6a03c7faea84a40592232254",
             "content": "sha256:39b878c8890c499c29061dff9302b67d369376876e49d896d2b1f5b859bb5363",
             "locator": {
               "kind": "symbol",
@@ -441,7 +441,7 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:2edac0ee8097af47d9c9db4c61be9b599f4697cf3391c5c775b59226ff6dd8dd",
             "locator": {
               "end": 1,

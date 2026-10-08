@@ -120,7 +120,9 @@ No external domain claim is required.
 ### Repo-Internal References
 
 - The module docstring that records the ownership story and the historical name. [1]
-- The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. [2]
+
+- The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+
 - The report shaper whose exact sentence and inventory the first case asserts. [3]
 - The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. [4]
 - The projection that names the finalization move. [5]

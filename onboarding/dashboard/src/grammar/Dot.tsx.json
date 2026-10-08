@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:9d9b036ca7b758530fc951f101646842785d8c93b5d47ba9ae79b6d724630fc7",
             "locator": {
               "end": 15,
@@ -96,12 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 357,
+              "end": 358,
               "kind": "line_range",
-              "start": 357
+              "start": 358
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },

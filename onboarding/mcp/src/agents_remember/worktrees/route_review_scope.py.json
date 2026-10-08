@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/route_review_scope.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
+        "content": "sha256:38020bdb71fd55fccc5e8e70965e70494b4633895866d21aada4536267651ad7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_children"
+        }
+      },
+      "id": "RLZ-QWDTG7",
+      "invariant": "INV-AK4QYH",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 5",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function resolves the reviewed population of an atomic master and is where the empty population of an all-abandoned master is accepted while a master without rows is still refused.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Atomic master scope resolution and child deferral.",
       "targets": [
         {
           "anchor": {
-            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
             "content": "sha256:9bf0283b9f3a8f2542c5122459edae9bcb89792f37867fdeecc73708b9751b61",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
             "content": "sha256:56ab9c856b4443335ccfa11e39a518c970af288ddae5ee8f46d31ef0034495ac",
             "locator": {
               "kind": "symbol",
@@ -34,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
             "content": "sha256:b6330c60f9bf2d9fb431f320ea89b5c468c07369f1e4591615beba1379aeed0d",
             "locator": {
               "kind": "symbol",
@@ -50,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95d65c1d99f8fbb96f1072bff4dc9acfb5470747",
+            "blob": "d3bf44cfa204206d6ef0e8ca4a4a03525ed1917b",
             "content": "sha256:992e8a2e557fdcce83b4549f1bcf970e1888701b2aa80c1f6ac7e64ab6481219",
             "locator": {
               "kind": "symbol",
@@ -66,8 +85,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:a61dabe68d5855f9e24455132ad1f7cf0e05da32f9470410d22ceb6b733cf2ba",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:403eea6ede935e9b630c5b4777595a6bad5e06f2f0ed85121e3a93648278b49b",
             "locator": {
               "kind": "symbol",
               "name": "publish_series_integration_under_authority"

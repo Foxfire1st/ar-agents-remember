@@ -410,7 +410,7 @@ No configured external domain source applies.
 - The three next-move keys declared on the command envelope, which is what stops the projector's write from riding as an undeclared extra. [28]
 - The membership validator that refuses a next move outside the advertised roster — the enforcement half of the invariant, and the reason the roster had to move into `models`. [29]
 - The advertised public roster this model reads, in its zero-import `models` leaf (the tuple's single definition; `mcp/tools/base.py` re-exports it). [30]
-- The registered-but-deliberately-non-public name that must stay outside the worktree invariant, and the `task_doc` surface that legitimately emits it (its `nextTool` is a plain `str \| None`, on a class that is not a `WorktreeCommandResponse`). [31]
+- The registry distinguishes internal names from public worktree tools, while TaskDocResponse.nextTool is a plain optional string. This model/registry boundary does not establish a current task_doc emission of any specific internal name. [31]
 - The executor for the declared-and-enforced next move: it reaches the archive-ready state through real production calls for both cleanup verbs, binds the emitted args to the real tool signature, and drives the validator in both directions. [32]
 - The `nextAction` literal this file **does** declare, and which stays honest because its only producer hard-codes it — do not widen it. [33]
 - The reachable terminal state the projector serves once a failed contract amendment is rolled back while the locator stays `terminal-archived`. [34]

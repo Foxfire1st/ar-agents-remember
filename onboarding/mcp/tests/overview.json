@@ -508,6 +508,57 @@
         }
       ]
     },
+    "504": {
+      "note": "Finalizing a master no sprint commands keeps it and names the retire route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_master_no_sprint_commands_keeps_it_and_names_the_retire_route"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "505": {
+      "note": "A landed abandoned row refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "506": {
+      "note": "The partial-hook-failure retry keeps the retirement and cleans up only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "The collected cases are counted against the two budgets.",
       "targets": [

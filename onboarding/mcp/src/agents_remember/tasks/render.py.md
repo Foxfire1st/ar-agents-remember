@@ -61,7 +61,9 @@ row renders as a relative markdown link to the commanded master document (`_mast
 file code span; a sprint with `orchestrates` + rows but no `subTasks` section still gets its
 `## Master Index` section rendered (the durable markdown must show the sprint to master list); and
 the header block gains a `**Seats:**` banner (`_seat_lines`) — one line per first-class `SprintSeat`
-(role, state, optional label/identity) when `doc.seats` is non-empty.
+(role, state, optional label/identity) when `doc.seats` is non-empty. A row that carries a `retirement` proof
+renders its scope text as the row's scope (when it has one) followed by "Retired <master key> at <time>: <reason>"
+(`_subtask_lines`), so a sprint's markdown shows when and why a master was retired.
 
 Execution topology renders without scheduler interpretation: a commanded master's closed nature
 appears in its header, while a sprint's `Execution Graph` section lists canonical nodes, every
@@ -133,6 +135,7 @@ No relevant external documentation was available after checking the configured s
 - The typed requirement/question renderers and the review task-intent line. [7]
 - The status marker table is a direct lookup covering every `DocStatus`, including `abandoned`. [8]
 
+- A retired master's row shows the retirement time and reason after its scope. [9]
 
 ## 260815-DAG-L12 Mermaid Document Diagram
 

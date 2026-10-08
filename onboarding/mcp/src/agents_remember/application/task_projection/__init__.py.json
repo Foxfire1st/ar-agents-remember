@@ -270,7 +270,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:2bc27479413f727fd0388b898a10bf0e85de55b585fc6932d96e336e5e2effe2",
             "locator": {
               "kind": "symbol",

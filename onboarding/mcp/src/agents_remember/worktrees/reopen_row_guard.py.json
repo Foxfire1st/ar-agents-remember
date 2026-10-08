@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/reopen_row_guard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reopening a leaf refuses a master row that carries a retirement proof, through the shared retired-row refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18274268049fd8ef71f62d5b681b408b43eb9bdf",
+            "content": "sha256:24e7ba94424b29c37cddd960ef28d14424b3b43c00a56fd9fcfd732b4e0cf0ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

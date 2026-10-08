@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py and mcp/src/agents_remember/worktrees/task_retirement.py, so the rule holds only when both places do."
+  },
+  "applicability": "Retirement readiness over a master's open work.",
+  "conditions": [
+    "Open work is a leaf worktree directory that exists, a leaf branch with commits its landing line does not reach, or an unfinished or unreadable operation record."
+  ],
+  "exclusions": [
+    "The master's own branch and worktree, which are facts and never refuse."
+  ],
+  "id": "INV-YQY9PX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md section 'Sealed finding 2'; acceptance run notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/thirteen/out/02-thirteen-dry.txt and 03-thirteen-real.txt (thirteen of thirteen reach would-retire, eleven at once); probes x33_current_operation.out, x34_real_locators.out, x36_live_locator_tool.out; eleven killed mutations under sealed id 2"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 2",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The readiness of a retirement refuses only for open work of the master, which is a leaf worktree directory that exists, a leaf branch with commits its landing line does not reach, and an operation record that is unfinished or cannot be read, and it reports everything else as a fact in the answer and in the retirement record.",
+  "status": "proposed",
+  "supersedes": []
+}

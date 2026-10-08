@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "kind": "symbol",
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:db858789ca3aa914c98fd790427e71d30c620e9082de56a1b6a5e6bcaf43ec48",
             "locator": {
-              "end": 722,
+              "end": 683,
               "kind": "line_range",
-              "start": 720
+              "start": 681
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:1d6e7d0990e843d357c7d547d9a1a175a67b015180df4a504c907f1710f0bf9d",
             "locator": {
-              "end": 166,
+              "end": 167,
               "kind": "line_range",
-              "start": 166
+              "start": 167
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -180,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
             "locator": {
               "kind": "symbol",
@@ -197,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -209,7 +209,7 @@
         },
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
             "locator": {
               "kind": "symbol",
@@ -226,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
-              "end": 725,
+              "end": 686,
               "kind": "line_range",
-              "start": 723
+              "start": 684
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -261,12 +261,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:54cd3c8190fb0392574c7a66f56c6795e7355449c00a2bd44457c3596a827db9",
             "locator": {
-              "end": 167,
+              "end": 168,
               "kind": "line_range",
-              "start": 167
+              "start": 168
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -274,12 +274,12 @@
         },
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:36ea23db1c3db012fc05f73163d4fa4440dbd8c79775eecb66063ec36bb1662b",
             "locator": {
-              "end": 274,
+              "end": 275,
               "kind": "line_range",
-              "start": 270
+              "start": 271
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -321,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:d7c0a3892bb96ba4d9350d71640b0bf8894fc721723ff971bc93ff13f532865d",
             "locator": {
               "kind": "symbol",
@@ -367,12 +367,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
             "locator": {
-              "end": 183,
+              "end": 190,
               "kind": "line_range",
-              "start": 165
+              "start": 172
             },
             "path": "mcp/src/agents_remember/tasks/master_sync.py"
           },
@@ -380,12 +380,12 @@
         },
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:f55b331e6a809043ba7ea4f76bf332d518456eadb9ed8b8bc730663c9c15e4eb",
             "locator": {
-              "end": 189,
+              "end": 196,
               "kind": "line_range",
-              "start": 186
+              "start": 193
             },
             "path": "mcp/src/agents_remember/tasks/master_sync.py"
           },
@@ -433,8 +433,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
-            "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
+            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
+            "content": "sha256:2107be22699c9b2bb5d0e5aef9f744fb1aa50150636360ee5c4ee484ccb5d2de",
             "locator": {
               "kind": "symbol",
               "name": "strict_leaf_doc"
@@ -513,12 +513,81 @@
         }
       ]
     },
+    "31": {
+      "note": "A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain.\n\nAnchor: `SubTaskRef._retired_row_is_plain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 490
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The missing-master message names the sprint, the master, the archive location and the retire operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f9077dc8a0ad02a46a36a5729f89c8083771a9f",
+            "content": "sha256:0c43331b3dde69a95b7f53a17fc1fdbf20f4b3af44aa6e0e577a38e861fbcdb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_master_detail"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_membership_refusal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The retirement probe refuses a model that cannot parse a retired row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
+            "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_retirement_schema"
+            },
+            "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:a912b5defb76d24e3c0b8f937665687b780ce5c5594025084d07e5e564dbf2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_census"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "4": {
       "note": "Mutation classification consumes the accepted/candidate field delta.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -535,7 +604,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
             "locator": {
               "kind": "symbol",
@@ -552,8 +621,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
-            "content": "sha256:9aea4bae9d1437a621af305990d96b9b02ffe8c5c38a5c1a3d77ff24e4de70ae",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
+            "content": "sha256:d404e6241187651a3fb1ec7ce5d650a25ed9449ae3fca4b9f49ffc1992aa94ec",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"
@@ -569,7 +638,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b635b1020ed17d84aa889d20a1ebd74d0b5527b",
+            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
             "content": "sha256:51aef0a1e2ff4d9bb5f9682a42026aa1b606642e4e9554068960c1424c63cbec",
             "locator": {
               "kind": "symbol",
@@ -603,7 +672,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
             "locator": {
               "kind": "symbol",

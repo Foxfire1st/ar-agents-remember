@@ -313,8 +313,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
@@ -325,7 +325,7 @@
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:642419e94cd714e906607e971fc0160b7367c3de3fab5ef8baaa629ae9ebce88",
             "locator": {
               "kind": "symbol",
@@ -337,7 +337,7 @@
         },
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
             "content": "sha256:c183cac20e62cc80dbfacbff47df1c44dc14cf0da50cbaed25aedc93f553b288",
             "locator": {
               "kind": "symbol",

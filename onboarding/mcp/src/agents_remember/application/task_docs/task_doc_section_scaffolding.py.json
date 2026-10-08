@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
             "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
             "locator": {
               "kind": "symbol",
@@ -18,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
             "content": "sha256:00e2cb0892599c527c41262733eae192a273b03e30399a1e0b4fc21e5cc03dde",
             "locator": {
               "kind": "symbol",
@@ -29,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
-            "content": "sha256:906a90d3e2ed12490a949ba90c276b546519e2bdc8e4be364d2be43927ae18b4",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
+            "content": "sha256:36df522c5be895764f584db34afe331d60d8808e006440e17c44a1a26be304d1",
             "locator": {
               "kind": "symbol",
               "name": "_requires_register_scaffolding"
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
             "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
             "locator": {
               "kind": "symbol",

@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
             "locator": {
               "kind": "symbol",
@@ -254,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:84d0a844f8e853d0f2c8ff1126c1f956061fce1ec8817adef7dccdd4d191ce2c",
             "locator": {
               "kind": "symbol",
@@ -266,7 +266,7 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:fbf93c56c28fb15f41334af95366c9c85b3170002e1d7d10f36632f01544e9cf",
             "locator": {
               "kind": "symbol",
@@ -278,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:78122ec5784d1bed6c9255fcb9f83b0ec3c65736bcf13b6bd0b6320021b2a710",
             "locator": {
               "kind": "symbol",
@@ -290,7 +290,7 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:b39f965c5730ab506cd404bbacead51661fe35e98c49a8f4f6ac3dde0e8c667a",
             "locator": {
               "kind": "symbol",
@@ -302,12 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:29a8547ba8a633f35d7d4079de11ad2bf2981cc9ea080da75c2bf88ed475a26a",
             "locator": {
-              "end": 692,
+              "end": 707,
               "kind": "line_range",
-              "start": 691
+              "start": 706
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -315,12 +315,12 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:8c1e140923f6631c683799b5f4884b28f7ba4bcdd06ade29919ec13d76099ba4",
             "locator": {
-              "end": 696,
+              "end": 711,
               "kind": "line_range",
-              "start": 695
+              "start": 710
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -328,12 +328,12 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:170ad97289505d6ac2f1122c252463adad8f25dd0c9b71b22d612c795ba63f86",
             "locator": {
-              "end": 700,
+              "end": 715,
               "kind": "line_range",
-              "start": 699
+              "start": 714
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -341,12 +341,12 @@
         },
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:712842a49ae9f0e776fdea2e252852f5a819293e61c16271c9a68e9941b18ac8",
             "locator": {
-              "end": 709,
+              "end": 724,
               "kind": "line_range",
-              "start": 703
+              "start": 718
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

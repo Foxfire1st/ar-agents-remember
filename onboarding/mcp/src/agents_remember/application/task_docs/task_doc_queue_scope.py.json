@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union.\n\nAnchor: \"def classify_task_document_mutation(\"",
+      "note": "R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
-            "content": "sha256:57afec841d48a7ee53e4f47bea0f13d657ff995fa35b8ba545ba94627c07c9af",
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:0f7ea434e7a7756fe93ab96b48ddece4cff36790c6bb7b98b2d97397a3195e99",
             "locator": {
               "kind": "symbol",
               "name": "resolve_projection_scope_union"
@@ -18,12 +18,11 @@
         },
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
-              "end": 367,
-              "kind": "line_range",
-              "start": 354
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },
@@ -36,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
             "content": "sha256:e09a4f107944a6676da3ba337c35da10b70b85414c7e3ae947179b1d83a06238",
             "locator": {
               "kind": "symbol",
@@ -47,8 +46,8 @@
         },
         {
           "anchor": {
-            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
-            "content": "sha256:57afec841d48a7ee53e4f47bea0f13d657ff995fa35b8ba545ba94627c07c9af",
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:0f7ea434e7a7756fe93ab96b48ddece4cff36790c6bb7b98b2d97397a3195e99",
             "locator": {
               "kind": "symbol",
               "name": "resolve_projection_scope_union"
@@ -63,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce1fbcef1dbacb27ddfea658ee8161bf3af7679b",
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
             "content": "sha256:a35478de48337e253d1e2aa556a3492784f2a1f1945be68f15824d69ac24a202",
             "locator": {
               "kind": "symbol",
@@ -79,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
             "locator": {
               "kind": "symbol",
@@ -91,12 +90,12 @@
         },
         {
           "anchor": {
-            "blob": "3ac7ac3d901b7a0e81d6ad6e7348ca73a5a81027",
+            "blob": "b5a1c02e8c6aed508ae0071ec7888828f589e726",
             "content": "sha256:a9e52a834bf87343152e69f3d6f87a37555d0af87a0e38d78d08aa7fea410b00",
             "locator": {
-              "end": 96,
+              "end": 97,
               "kind": "line_range",
-              "start": 87
+              "start": 88
             },
             "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
           },

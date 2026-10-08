@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+        "content": "sha256:539f0a22c83de560fbbb2972acaee82541981a82967ec1e998d85062f6e7a707",
+        "locator": {
+          "kind": "symbol",
+          "name": "retirement_sprint_edit"
+        }
+      },
+      "id": "RLZ-9S7F5X",
+      "invariant": "INV-K79KP8",
+      "origin": {
+        "handoffEntry": "L41-R7 note 13",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function builds the retirement row and gives it the file cell of the legacy seat row it replaces.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+        "content": "sha256:8778cdf8230c17be3b0e58a73d677f8b00c6761ba1c8af400db26ca90e1b46a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "new_proof"
+        }
+      },
+      "id": "RLZ-X8N1YK",
+      "invariant": "INV-YQY9PX",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 2",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The retirement record is built here and takes the readiness facts, so that what was found and left in place is kept with the record.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+        "content": "sha256:539f0a22c83de560fbbb2972acaee82541981a82967ec1e998d85062f6e7a707",
+        "locator": {
+          "kind": "symbol",
+          "name": "retirement_sprint_edit"
+        }
+      },
+      "id": "RLZ-XH1XMK",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Builds the candidate sprint without the master's membership, node and edges and with the retained plain row, and validates that candidate before anything is written.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The sprint edit removes the master's membership, graph node and touching edges and leaves one plain retirement row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+            "content": "sha256:af4dee35a40ac860a93e61507bc5c6a485abadbc3481118b913bc0c9bf61f116",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A new retirement row never takes a number that is in use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+            "content": "sha256:af4dee35a40ac860a93e61507bc5c6a485abadbc3481118b913bc0c9bf61f116",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A sprint that holds no row for the master gains the retirement row at the end of its list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+            "content": "sha256:af4dee35a40ac860a93e61507bc5c6a485abadbc3481118b913bc0c9bf61f116",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

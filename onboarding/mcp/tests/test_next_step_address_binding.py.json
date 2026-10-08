@@ -51,8 +51,8 @@
         },
         {
           "anchor": {
-            "blob": "8e0ece38028ab07b6ff7c84e014b4ad43d1b29c1",
-            "content": "sha256:1e5257ee5abf6aaa21d85b41b0382ffc80a2a4e4f393c5532c4b34b1c070e487",
+            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
+            "content": "sha256:a512717403eb5fdd792218f47b4b637c4b205900f47056421158897254473934",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
@@ -68,12 +68,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
             "locator": {
-              "end": 204,
+              "end": 205,
               "kind": "line_range",
-              "start": 204
+              "start": 205
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

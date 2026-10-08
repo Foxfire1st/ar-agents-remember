@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:6b3522b1e1d7d47339d79f2635e766c4be81d53a534547cec343cab534dbc7cd",
             "locator": {
               "kind": "symbol",
@@ -174,7 +174,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "end": 363,
@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
             "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
             "locator": {
-              "end": 1224,
+              "end": 1225,
               "kind": "line_range",
-              "start": 1223
+              "start": 1224
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -747,12 +747,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 574,
+              "end": 575,
               "kind": "line_range",
-              "start": 574
+              "start": 575
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },

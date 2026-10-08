@@ -478,8 +478,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:f29121511bbb37dd1d9c4d8e086569cd3fdb7b208a89e057df811e2e4c0f3464",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
             "locator": {
               "kind": "symbol",
               "name": "capture_series_checkpoint_refs"
@@ -675,7 +675,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
             "locator": {
               "kind": "symbol",
@@ -692,7 +692,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:6f76d11d967ef1fb2c051e6f87386385c0d22c61b95dc28b23fab5df4dac9066",
             "locator": {
               "kind": "symbol",
@@ -738,7 +738,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:9ea03eced1a2215a49cecf290c94ccbc727d96250f4393b2a920350ca1cc0c0d",
             "locator": {
               "kind": "symbol",
@@ -755,7 +755,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:961daa9775534e26777820365d0bbbf928f84386885779d352fda24c91e0d340",
             "locator": {
               "kind": "symbol",
@@ -767,7 +767,7 @@
         },
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
             "locator": {
               "kind": "symbol",
@@ -784,7 +784,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:0fe4e5f2b94af6a5f6576a562adea5a9718eb2f9cb62a038a56c674be4509ee9",
             "locator": {
               "kind": "symbol",
@@ -835,8 +835,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:ab07871cef88c84c2c74e8097013fc97c19bde3692c09eae6878ee8d8b749c4f",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:d4d17cf494f9b1fa4c70e31228f709cb8140d6c44cb8c894e124f15888171119",
             "locator": {
               "kind": "symbol",
               "name": "_require_landing_spine_side"
@@ -847,8 +847,8 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:dca3b8327d8d1f1bf5282e15e021051b98d566991892b6379b9879405d884e92",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:46b5f8f9f8c84a0ea7052810b0fa9e2617bd85ab9b24182cdb919c2250bdb3d5",
             "locator": {
               "kind": "symbol",
               "name": "_require_admitted_step"
@@ -859,7 +859,7 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:a5a6650407b839b259604e10bbd57edd570da9e0fb46bf7c15cd58350deeb14d",
             "locator": {
               "kind": "symbol",
@@ -876,7 +876,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:85d8991c93b892593b656fa2d790eecf9f2e1b265ec5a62b68acb8c835bdc48f",
             "locator": {
               "kind": "symbol",
@@ -888,7 +888,7 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:63f402c86a67c7aaf38e0d1833fb8c062fa2bf273926937c64c01d6369e99166",
             "locator": {
               "kind": "symbol",
@@ -934,7 +934,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
             "content": "sha256:4c5d2339a33ef7a8f76813c08e82d633a62d5f7103f1f1e678d9d3438bcbc112",
             "locator": {
               "kind": "symbol",
@@ -946,8 +946,8 @@
         },
         {
           "anchor": {
-            "blob": "f140fec19f1e6a0b0e63c4357231d7f7893dc3e5",
-            "content": "sha256:bf922d3bdb63750a9371042c04da9e816b37bc7f9e28b0cc4c1c9cb0734f734e",
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:6559f518d621627089d1de559d4cdd93ef6eeccd6e74ded1c6118f72c0d79403",
             "locator": {
               "kind": "symbol",
               "name": "_ordered_atomic_landing_chain"
@@ -1464,11 +1464,11 @@
       ]
     },
     "56": {
-      "note": "The finalizer carries the hook's report after the archive move, and never raises.",
+      "note": "The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -1481,18 +1481,17 @@
       ]
     },
     "57": {
-      "note": "Finalize resolves a leaf naming none through the shared helper.\n\nAnchor: \"folder_master = folder_master_json_path(task_root, leaf)\"",
+      "note": "Finalize resolves a leaf naming none through the shared helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
             "locator": {
-              "end": 492,
-              "kind": "line_range",
-              "start": 470
+              "kind": "symbol",
+              "name": "_folder_parent"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         }
@@ -1503,12 +1502,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:1e4968e20cfdfae7fc5bb459f86e48a1523e5f31da82d57a6e5045d390e83738",
             "locator": {
-              "end": 657,
+              "end": 642,
               "kind": "line_range",
-              "start": 647
+              "start": 632
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1517,16 +1516,15 @@
       ]
     },
     "59": {
-      "note": "Reopen's placement guard on the leaf and the master.\n\nAnchor: \"require_task_document_in_place(json_path, doc, ReopenTaskDocumentError)\"; \"require_task_document_in_place(master_path, master, ReopenTaskDocumentError)\"",
+      "note": "Reopen's placement guard on the leaf and the master.",
       "targets": [
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
             "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
             "locator": {
-              "end": 477,
-              "kind": "line_range",
-              "start": 435
+              "kind": "symbol",
+              "name": "_plan_leaf_doc_reset"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1534,12 +1532,11 @@
         },
         {
           "anchor": {
-            "blob": "2b1c3aff6ec6323e250f7b87876f380f8689db8b",
-            "content": "sha256:75b6a14113e8636cd552d6e7d070b63c8fe108c738715a5c718e5974662fbb9f",
+            "blob": "127a1fee161b800c304b013911edacf91a1d2001",
+            "content": "sha256:4dc3ad6e9c80312e89e8c8bda5dee751006e66c8a131a2c8452a0c6267503587",
             "locator": {
-              "end": 628,
-              "kind": "line_range",
-              "start": 588
+              "kind": "symbol",
+              "name": "_plan_master_index_reset"
             },
             "path": "mcp/src/agents_remember/worktrees/reopen.py"
           },
@@ -1912,13 +1909,81 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
-            "content": "sha256:0a6a1c14f41ef429801797f7c4bfd3a059306128cdd08652afb8d61e6b13cef8",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:7f62b031768c3439106d46110e3a664a0a6fc84e1d085beb6626a63fdcb57395",
             "locator": {
               "kind": "symbol",
               "name": "observed_exists"
             },
             "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "Only non-abandoned rows need an enclosure, and a landed abandoned row refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:0c062bcc31684874c616a517341608c857c5546e4bcb330098b7b205114394d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_atomic_leaf_contracts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "The chain proof is built from those enclosures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "668b4e0d834b3d815d1879596b6d2118e13b94ba",
+            "content": "sha256:6d5715eb1e130695cd587653b7ce684c1e13e0ef342229b15e9286ed2d860094",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_atomic_landing_chain"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "A task holding a series contract is skipped with the commanding sprint or the retire route named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+            "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_archive_skip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_master_retirement_ready"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
           },
           "kind": "code"
         }

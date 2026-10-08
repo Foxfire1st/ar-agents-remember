@@ -343,6 +343,16 @@ module in the package has the one registrar signature `TOOL_REGISTRARS` is typed
   closed-schema enforcement does not duplicate registration or application behavior.
 - Do not add a raw shell or arbitrary-command tool to this surface.
 
+## The task_doc Description Names The Retire Operation
+
+The registered `task_doc` description in [tasks.py](tasks.py.md) lists `retire_master` and states the rule in
+plain words: retire is the only route that archives a master and finalizing a master never archives it; the sprint form and
+the form on a master that no sprint commands; the affirmed `removeEdges` for edges to unfinished successors; the refusal for open
+enclosures, a sprint's only graphed master and a nested master; the dry run; the same-request retry; and that an abandoned row never
+blocks a master's closeout.
+
+- The description states the retire operation's contract. [24]
+
 ## Evidence
 
 ### Repo-Internal References

@@ -1,0 +1,162 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+        "content": "sha256:feb831cade98c724ded5fa5ef7e62f6c0c1fb801d7f3de4f6e527c0058f053b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_clean_up"
+        }
+      },
+      "id": "RLZ-16EEHX",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "curator-MR1-A01-current-cleanup",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This transition attaches the actual hook report, preserves the recorded retirement on failure and emits the identical-request remaining-cleanup remedy.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+        "content": "sha256:273af7842e60162207bf4e08eaa7a2feaf8541855231d71133a98f2b165eb2d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_in_folder"
+        }
+      },
+      "id": "RLZ-F5PXA3",
+      "invariant": "INV-M0ZQNJ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 7",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function writes the record into the master's own folder and, when the request is refused, removes the record and the empty directories it created for it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+        "content": "sha256:6da45b3e93df2ddd7452fdd635f89268ca6dbdc10e9905ef8576848c2ac3653c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_recorded_on_sprint"
+        }
+      },
+      "id": "RLZ-HR1NA3",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This recorded-sprint admission compares the exact retained request and source state, selecting the remaining publication or cleanup transition without writing a second retirement record.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+        "content": "sha256:a3513e0ae48124cdc2f33560fed1d38b11351728d897298e96fe022fcf0d7f81",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_on_sprint"
+        }
+      },
+      "id": "RLZ-SWWAJB",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Writes the sprint's document pair and then moves the folder, and on any exception moves the folder back, restores the sprint's exact source pair and removes an archive root it created.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Sprint publication rechecks evidence and repairs the source pair before moving the folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:a3513e0ae48124cdc2f33560fed1d38b11351728d897298e96fe022fcf0d7f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_on_sprint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Legacy seat files are retained, while an unrepresented commanded master receives a free-number retirement row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+            "content": "sha256:539f0a22c83de560fbbb2972acaee82541981a82967ec1e998d85062f6e7a707",
+            "locator": {
+              "kind": "symbol",
+              "name": "retirement_sprint_edit"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The cleanup transition owns the real hook result and preserves a failed retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:feb831cade98c724ded5fa5ef7e62f6c0c1fb801d7f3de4f6e527c0058f053b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clean_up"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The shared edge owner requires affirmation of unfinished outgoing successors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f7172cc66a8c5a075379bedd05ade0a35869aea",
+            "content": "sha256:a3ab0fce529e11c6463ec77d41094f3ac331ffb662ab08436d79ac588a378294",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_edges"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The one route observes and admits the exact retained state and recording owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:2cf4d5d3a831fc9b9b19a5370f10e9bc6350b2864c3355ec41f498e2a7a802a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

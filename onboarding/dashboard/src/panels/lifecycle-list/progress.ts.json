@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/progress.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Abandoned sub-task rows are neither done nor part of the total and are named beside the progress figure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afcaae94236eb4bfe2eeaeb02acfde17adac7fa0",
+            "content": "sha256:9d08ae5ea1542c5b17293302b2e1d6ab1b4b831f8ef822267c43238ed06bc85f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard progress rule matches the server's series_done, series_total and series_abandoned rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afcaae94236eb4bfe2eeaeb02acfde17adac7fa0",
+            "content": "sha256:9d08ae5ea1542c5b17293302b2e1d6ab1b4b831f8ef822267c43238ed06bc85f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

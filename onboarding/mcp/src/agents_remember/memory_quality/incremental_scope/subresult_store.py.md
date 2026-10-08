@@ -60,7 +60,9 @@ newest-result search.
 
 - The store publishes and loads exact SHA-256-addressed unit results. [1]
 - Capacity and object-safety boundaries are enforced with typed refusals. [2]
+
 - Atomic writes come from the kernel-owned writer. [3]
+
 - The content-addressed store owns exact publish/load addressing and capacity checks; its source contract is the authority. [4]
 
 ### Cross-Repo References

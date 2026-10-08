@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Publication/rollback, complete proof protection and state-qualified retry are distinct obligations. Together they preserve a usable retirement identity and safe recovery; none alone guarantees both resolvability and completion of an interrupted irreversible cleanup."
+  },
+  "guarantee": "Master retirement preserves one protected proof and a resolvable sprint across publication; pre-archive failure restores sources and folder, an interrupted sprint edit is repaired by the identical request, and post-archive cleanup failure keeps retirement so the same request refreshes a stale projection and finishes only what remains without recreating deleted artifacts.",
+  "id": "FAM-HBNM5A",
+  "members": [
+    "INV-H88VNZ",
+    "INV-T4G7VY",
+    "INV-SS31ZW"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L41-retirement-recoverable",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/task_docs"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A master retirement is one recoverable operation"
+}

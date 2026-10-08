@@ -1,0 +1,139 @@
+{
+  "path": "mcp/tests/test_master_retirement_readiness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+        "content": "sha256:892fa278ed99c7b1c6dc823969da808b27293fe385b65ffa49fd83ef0f306e7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+        }
+      },
+      "facet": "The real paired-enclosure control invokes the exact named worktree_abandon remedy, checks removal of both worktrees and leaf branches, and repeats the same retirement preview successfully.",
+      "id": "PRF-6CH7FB",
+      "invariant": "INV-X1AH5G",
+      "origin": {
+        "handoffEntry": "L41-continuation-O4",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+        "content": "sha256:28a7d6e1bea131baf727f056e96a8d5c973504040bc7f4838a53ecc879b84825",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_operation_report_where_an_older_layout_kept_it_is_a_fact"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-BFJAA4",
+      "invariant": "INV-8MKBTB",
+      "origin": {
+        "handoffEntry": "L41-continuation-own-master-operations",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+        "content": "sha256:927b26e73d1403f7cf56b511412203c885c2cced526c7a73a23d32c93aacef01",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_operation_record_that_is_unfinished_or_unreadable_is_open_work"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-E3D3S9",
+      "invariant": "INV-8MKBTB",
+      "origin": {
+        "handoffEntry": "L41-continuation-own-master-operations",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+        "content": "sha256:4788cee4aef1abfe1273eedd1cea8566c458af9469290058e623940516274503",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_manual_move_keeps_an_earlier_given_up_record"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-RS1D5M",
+      "invariant": "INV-8AJVN0",
+      "origin": {
+        "handoffEntry": "L41-continuation-orphan-operation",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+            "content": "sha256:892fa278ed99c7b1c6dc823969da808b27293fe385b65ffa49fd83ef0f306e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A leaf worktree directory that exists and a leaf branch with unlanded commits are open work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+            "content": "sha256:e34c2c5714a2f100bb6608bf21d48a208e215748cc4febfe9c51f31ec5323f5b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+            "content": "sha256:e34c2c5714a2f100bb6608bf21d48a208e215748cc4febfe9c51f31ec5323f5b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed locator lookup checks the manual command text without executing it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+            "content": "sha256:94b3da847aaec6aafd579ed2158c6035438fd32be9a7e891526b9c0f5aa19595",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_locator_that_cannot_be_looked_for_is_open_work_and_no_tool_is_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

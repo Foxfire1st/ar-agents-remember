@@ -136,9 +136,13 @@ No configured domain documentation could be checked.
 - **The contract this module's artifact row is registered under.** [14]
 - **The contract this module's artifact row is registered under.** [15]
 - **The contract this module's artifact row is registered under.** [16]
+
 - **The artifact row that registers this module, and the replacement contract it declares.** [17]
+
 - **The artifact row that registers this module, and the replacement contract it declares.** [18]
+
 - **The artifact row that registers this module, and the replacement contract it declares.** [19]
+
 - **The artifact row that registers this module, and the replacement contract it declares.** [20]
 - The unit-lane row that keeps the scope module in the certifying collection path. [21]
 - The unit-lane row that keeps the scope module in the certifying collection path. [22]

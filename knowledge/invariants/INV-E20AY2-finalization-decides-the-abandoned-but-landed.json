@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py and skills/c-12-closeout/SKILL.md, so the rule holds only when both places do."
+  },
+  "applicability": "Finalization of a master of either nature whose row is abandoned while its enclosure records a completed integration.",
+  "conditions": [
+    "The finalizer is resolving series targets for the master.",
+    "The row's enclosure exists and records a completed integration."
+  ],
+  "exclusions": [
+    "Abandoned rows without a completed landing.",
+    "Rows in other unfinished states, refused by the ordinary blockers."
+  ],
+  "id": "INV-E20AY2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "focused.txt; generated-copies.txt; generated-check-final.txt; generated-copy-hashes.json"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-O5",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalization decides the abandoned-but-landed contradiction again for both atomic and organizational masters and refuses such a row by name.",
+  "status": "proposed",
+  "supersedes": []
+}

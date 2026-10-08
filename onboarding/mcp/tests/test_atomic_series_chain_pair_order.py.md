@@ -182,7 +182,9 @@ module under test.
 - The leaf-sync class and its two builders: the canonical series contract, and a landed leaf that may carry its own sync log. [8]
 - The single case that pins all three directions: the recorded leaf-level sync position is admitted and ordered, a position no contract's sync recorded is refused with the foreign commit named, and a step whose endpoint merges the previous landing with a recorded position is admitted as that position's own line. [9]
 - The production chain walk the order comes out of: the chain is proved landed, then ordered by asking the pair predicate against every other remaining leaf and refusing unless exactly one minimum exists. [10]
+
 - The spine proof behind the second refusal: each landing must be an ancestor of the ref, and each step may add only official positions the chain's own contracts synced with — or a line one of those positions, lying inside that step, reaches. [11]
+
 - The origin rule the chain still enforces: with no sync the oldest leaf starts at the recorded base, and with a sync its base must lie on one line with the position the first sync advanced from. [12]
 - The contract fields the fixtures set: the mid-task sync log, the integration status, and the leaf identity the chain is keyed by. [13]
 

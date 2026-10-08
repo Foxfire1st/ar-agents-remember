@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: After a retirement that kept a legacy seat row's file cell, every task_doc write to that seat document is refused by the protection of the retired row, while the seat document can "
+  },
+  "applicability": "A task document whose master sync would touch a retired row.",
+  "conditions": [
+    "The document's row carries a retirement proof; the write is refused as a whole and names the master is retired."
+  ],
+  "exclusions": [
+    "Writes that do not touch the retired row."
+  ],
+  "id": "INV-MVYAQ0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/probes/out/x35_retired_row_with_file.out"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8-O3",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After a retirement that kept a legacy seat row's file cell, every task_doc write to that seat document is refused by the protection of the retired row, while the seat document can still be read.",
+  "status": "proposed",
+  "supersedes": []
+}

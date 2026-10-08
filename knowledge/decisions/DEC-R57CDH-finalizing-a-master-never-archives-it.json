@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two other designs for what finalization does to a master were weighed and rejected, and every later change to finalization or to the retire operation has to keep a master's folder in place until it is retired explicitly."
+  },
+  "alternatives": [
+    {
+      "option": "Finalizing a master never archives it, with or without a sprint. The explicit retire operation is the only route that archives a master, and when a sprint commands the master it removes the master from the sprint in the same step.",
+      "reason": "The developer ruled that there is no point archiving individual masters that belong to a sprint, and that getting rid of or abandoning a master is a different intent that must also remove it from the sprint. Finalization states a master is done; it is not a request to get rid of it, and the archive hook it would run deletes artifacts irreversibly.",
+      "status": "chosen"
+    },
+    {
+      "option": "Archive a master when it is finalized.",
+      "reason": "It moves the folder a sprint still names and breaks the sprint's topology for every tool that reads it; it also runs the deleting archive hook for a master nobody asked to get rid of.",
+      "reconsider_when": "A sprint no longer requires each commanded master to resolve to a live folder, and the archive hook's deletions can be undone.",
+      "status": "rejected"
+    },
+    {
+      "option": "At finalization, archive only the masters that no sprint commands.",
+      "reason": "It was the premise of the earlier packet versions, but on the landed code finalization never archived such a master, and no ruling asked for it; it would also delete artifacts at finalization without a request to get rid of the master.",
+      "reconsider_when": "The developer asks for finalization of a standalone master to archive it.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A finalized master a sprint commands stays in place, its sprint row reads Completed, and the result names the sprint as the reason the archive was skipped.",
+    "A finalized master no sprint commands stays in place, and the result names task_doc.retire_master as the only archive route.",
+    "Retiring a master works with and without a sprint and is the only route that archives one."
+  ],
+  "context": "The architect tried to archive the completed masters ICR and KS after finalization. Archiving a sprint's master moved a folder that the sprint still named, which made the sprint invalid, and the operations that could repair a sprint refused while the master was gone. Version 2 of the requirement assumed that a master that no sprint commands was archived at finalization as before; on the landed code that never happened, because a task folder that holds a series-contract.md is skipped by the archive step.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D41, confirmed by D47) and the architect's ruling 2 of run 2 for the case of a master that no sprint commands",
+  "id": "DEC-R57CDH",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-D91D5G"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+        "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
+        "locator": {
+          "kind": "symbol",
+          "name": "_series_archive_skip"
+        },
+        "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R41",
+        "packet": "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v3"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION D41 (2026-10-02) and D47 (2026-10-04); notes/ARCHITECT-RUN-2.md ruling 2 of run 2; requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md rule 3"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D41",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

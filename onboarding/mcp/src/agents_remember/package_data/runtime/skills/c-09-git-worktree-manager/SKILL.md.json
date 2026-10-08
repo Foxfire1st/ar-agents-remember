@@ -106,16 +106,14 @@
       ]
     },
     "2": {
-      "note": "`c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout.",
+      "note": "The shared closeout skill owns approval and the code/memory-content transaction; the ledger is an ignored derived cache, not a commit leg.",
       "targets": [
         {
           "anchor": {
-            "blob": "51fa5fc9a6206620c730ffdb24fa20b795006538",
-            "content": "sha256:c0d00fa18d3b4a7fdfacfdc0e55907259f8fee40dad1f95f11b1c70796ccd15a",
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:62e99c974c9e21bad19c32c171cfb292ea1a2314127caccc1bad42d54a1e106e",
             "locator": {
-              "end": 337,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
           },

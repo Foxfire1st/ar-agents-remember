@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case {'path': 'mcp/tests/test_master_retirement_readiness.py', 'symbol': 'test_the_manual_move_keeps_an_earlier_given_up_record'} proves this obligation on the candidate."
+  },
+  "applicability": "Giving up an orphan operation record whose enclosure has no live operation locator.",
+  "conditions": [
+    "A same-named given-up record may already exist and is preserved.",
+    "The manual move is followed by a retry that verifies the original record moved."
+  ],
+  "exclusions": [
+    "Enclosures with a live locator, whose operations are settled through the lifecycle surface."
+  ],
+  "id": "INV-8AJVN0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "readiness-final.txt; negative-manual-move.txt; negative-manual-adoption-notice.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-orphan-operation",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Giving up an orphan operation without a live locator preserves any existing same-named given-up record, verifies the original record has moved before retry, and names a later build adoption route as the replacement for the manual step.",
+  "status": "proposed",
+  "supersedes": []
+}

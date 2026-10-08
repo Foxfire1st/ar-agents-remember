@@ -3,49 +3,62 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current `_require_resolved_mutations` boundary implements the preparation contract above.\n\nAnchor: \"def _require_resolved_mutations\"",
+      "note": "The terminal preparation boundary refuses retained private preparation and ambiguous Git mutation intent.",
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
-            "content": "sha256:12af4cc28edc6038f72f028e98bc87fedd2acda34ac0e32010c5dddcaadea2a3",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:9971739aa120d8ca8aae2f34e9d940284b27c1fade5e8827d60275d291c5c8a8",
             "locator": {
-              "end": 696,
-              "kind": "line_range",
-              "start": 696
-            }
+              "kind": "symbol",
+              "name": "_require_resolved_mutations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "note": "Repository-owned canonical lifecycle evidence defines terminal operation-record filename patterns.",
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
             "content": "sha256:6b24c3bfb05ad819362ccbb4bbd42e094aecef3389ecb771cab4444c5e746aab",
             "locator": {
               "kind": "symbol",
               "name": "_OPERATION_RECORD"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "note": "The public terminal archive entry publishes or re-observes the archive before deletion; the evidence owner admits and bounds canonical lifecycle files.",
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
-            "content": "sha256:6b24c3bfb05ad819362ccbb4bbd42e094aecef3389ecb771cab4444c5e746aab",
+            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
             "locator": {
               "kind": "symbol",
-              "name": "_OPERATION_RECORD"
+              "name": "terminal_archive_required_result"
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }
@@ -56,63 +69,92 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
             "content": "sha256:1389ce43559d66fca9d69e2ebea3f92a43277c22db963cb8aec4f249fea0bec3",
             "locator": {
               "kind": "symbol",
               "name": "_LEGACY_MISSING_INTENT_RECORD"
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
-            "content": "sha256:e79ce747c1ce41b7bf8b458247dbeeefe29430cd48e56b36f3a8bfa168c8de79",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
             "locator": {
               "kind": "symbol",
               "name": "_canonical_entries"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
-            "content": "sha256:64413c5100812c5e6ad1358d85a442ae57b6515ae22688fe5bfdfd491869bc6c",
-            "locator": {
-              "end": 55,
-              "kind": "line_range",
-              "start": 52
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
-            "content": "sha256:9faa13d469496ceb773b8a6b6616a6b8ea4f1a2ec5f9f5f2db2c9726c1a8e92d",
-            "locator": {
-              "end": 527,
-              "kind": "line_range",
-              "start": 481
-            }
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "No meaningful cross-repository reference applies.",
+      "note": "Repository-owned canonical lifecycle evidence defines terminal operation-record filename patterns.",
       "targets": [
         {
           "anchor": {
-            "blob": "f98a6e4b9ca8968bf423badddcb30a3e338f75cc",
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
             "content": "sha256:6b24c3bfb05ad819362ccbb4bbd42e094aecef3389ecb771cab4444c5e746aab",
             "locator": {
               "kind": "symbol",
               "name": "_OPERATION_RECORD"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The archive builder takes the canonical lifecycle evidence from the evidence module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "content": "sha256:7b167e9d5b7d98e5937478d9ba759c81ff92f854f5a3505184fa4445d32882d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_terminal_archive"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A canonical operation record is parsed, must match its canonical file name, and must be archivable before it becomes an archive entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_evidence_entry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Retained operation records are read without adoption for the master-retirement readiness check, refusing any that cannot establish terminal authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:8f280956a4c54e3e7bf29c4c4f73ae4b4095a8c3b4f15db4eec11cad838ee3d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_operation_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
           },
           "kind": "code"
         }

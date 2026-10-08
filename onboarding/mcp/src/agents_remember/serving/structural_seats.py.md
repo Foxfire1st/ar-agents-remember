@@ -63,7 +63,8 @@ No Domain Documentation source is configured.
 - The resolver and error family centralize structural qualification. [1]
 - Parent/child canonical addresses are derivable through vacancy. [2]
 - Reviewer parent resolution validates the plane stamp and permits unstamped migration only for historical leaf rows. [3]
-- Task containment resolves real sprint/master/leaf documents. [4]
+
+- The task resolver reads canonical documents and checks their repository identity and containment. [4]
 
 ### Cross-Repo References
 

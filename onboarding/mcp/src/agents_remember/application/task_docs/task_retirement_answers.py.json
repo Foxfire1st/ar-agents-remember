@@ -1,0 +1,89 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_answers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+        "content": "sha256:521852cdd15b005a5595bb58fd3f88a2872ea2ed36db070fd433a5856a501fd5",
+        "locator": {
+          "kind": "symbol",
+          "name": "preview_answer"
+        }
+      },
+      "id": "RLZ-2X6PM2",
+      "invariant": "INV-CC0VTQ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 6",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function builds the dry-run answer and adds wouldWrite, the list of every file the real run writes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+        "content": "sha256:c304c51112992e812625bb5aab27400835e75211dafa7de664274f669840165a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archived_state"
+        }
+      },
+      "id": "RLZ-32XX53",
+      "invariant": "INV-GCEAJJ",
+      "origin": {
+        "handoffEntry": "L41-R7 note 9",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This is the dry-run archived-state classifier; the real cleanup hook outcome is owned by task_master_retirement._clean_up.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A dry run of a retirement lists every file a real run writes, also after a death inside the sprint edit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+            "content": "sha256:764b0796d7b3adc81a851ed0f9d7a33aa805b8e2e764cf888baa7f038ae8932a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A dry run names a cleanup that failed hook-failed by the operation's own state table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+            "content": "sha256:764b0796d7b3adc81a851ed0f9d7a33aa805b8e2e764cf888baa7f038ae8932a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The answer names the remaining steps and files for a repeated request, so a resumed request does only what remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+            "content": "sha256:764b0796d7b3adc81a851ed0f9d7a33aa805b8e2e764cf888baa7f038ae8932a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

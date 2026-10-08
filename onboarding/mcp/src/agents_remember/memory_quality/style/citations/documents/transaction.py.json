@@ -115,12 +115,12 @@
       ]
     },
     "8": {
-      "note": "The existing writer uses a unique temporary file, fsync and atomic replacement; it does not lock.",
+      "note": "The writer publishes through a unique temporary file, fsync and atomic replacement; its in-process guard protects the temporary registry rather than serializing file publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
-            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"

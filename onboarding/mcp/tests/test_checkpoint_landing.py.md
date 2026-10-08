@@ -51,6 +51,7 @@ These current source spans identify the implementation owners and the specific a
 - The checkpoint result retains the pre-existing cleanup state. [2]
 - Completion and stale candidate publication refusals. [3]
 - The landed-master abandon guard remains enforced. [4]
+
 - Production checkpoint capture and publication authority. [5]
 
 ### Cross-Repo References

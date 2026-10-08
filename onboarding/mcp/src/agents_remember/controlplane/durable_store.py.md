@@ -295,7 +295,9 @@ The current owner map is verified against the prepared source. Kernel mechanics,
 - Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
 - Current raw read, single/batched durable append and atomic rewrite. [6]
 - Explicit migration validates every transformed record before replacement. [7]
+
 - Per-call temporary names and atomic publication have one kernel owner. [8]
+
 - The host registry has its own domain policy over the same exclusion primitive. [9]
 - Watcher exclusion derives the shared lock suffix and filters every directory. [10]
 - Undeclared host admission leaves live coordinator lock and append writes refused. [11]

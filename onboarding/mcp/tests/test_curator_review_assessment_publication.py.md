@@ -101,7 +101,9 @@ the production path to drive.
 
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. [1]
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. [2]
-- The shared support module this module is registered as a consumer of. [3]
+
+- The lifecycle catalog registers this suite as a consumer of curator-coherence shared support. [3]
+
 - The publication wiring the cases drive, including the exact-coverage obligation they leave untouched. [4]
 - The destination and read-back the survival and blocked cases measure. [5]
 - The typed collection the publish action accepts and the uniqueness rule it enforces. [6]

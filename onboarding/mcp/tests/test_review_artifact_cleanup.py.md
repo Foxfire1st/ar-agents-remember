@@ -6,13 +6,13 @@
 
 ## Purpose
 
-**The MIK-R25 rule 5 cases (14 collected, with the parametrized ones): the archive hook deletes only the archived
-task's own review artifacts.** Split out of `test_review_git_trees.py` by ruling 2026-09-30T02:32:42. The `task`
+**The MIK-R25 rule 5 cases: the archive hook deletes only the archived
+task's own review artifacts, and a repeated attempt keeps its receipts.** Split out of `test_review_git_trees.py` by ruling 2026-09-30T02:32:42. The `task`
 fixture is a coordination task root with its task document and one leaf enclosure contract, a plain code and a
 plain memory repository, and nothing converted: the hook reads refs, manifests and files, never knowledge. Every
 case asserts what is deleted and, as much, what another task still holds. The file is self-contained (no shared
 support module), so the catalog is unchanged; it runs in the `unit-regression` lane
-(`test-evidence-lanes.toml:123`).
+(`test-evidence-lanes.toml`).
 
 ## Code Commentary
 
@@ -36,6 +36,13 @@ support module), so the catalog is unchanged; it runs in the `unit-regression` l
 - **Physical confinement (ruling 01:37:42):** the content scan never follows a symlink out of the task; a
   symlinked `notes` root is neither scanned nor written (`reportPath` null); a symlinked generation directory
   releases nothing and writes no `deletions/` outside.
+
+- **Receipts per attempt:** `test_a_repeated_attempt_keeps_receipts_never_leaves_the_name_empty_and_reports_absence`
+  runs the hook twice. The first attempt writes receipt 1 with an empty `alreadyAbsent`. A second attempt with nothing
+  new returns `receipt: "unchanged"`, writes no numbered copy, leaves the canonical bytes alone, and lists the ref the
+  first attempt deleted as `alreadyAbsent`. A later attempt with real work keeps the first receipt as
+  `review-artifact-cleanup.attempt-1.json`, writes attempt 2 under the canonical name, and the canonical name existed
+  at the moment of the atomic replace.
 
 ### Conventions
 
@@ -73,3 +80,5 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]

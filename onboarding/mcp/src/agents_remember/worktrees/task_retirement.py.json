@@ -1,0 +1,233 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_retirement.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_leaf_side"
+        }
+      },
+      "id": "RLZ-0ZJ1J2",
+      "invariant": "INV-YQY9PX",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 2",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function decides for each side of a leaf whether its worktree directory or its branch is open work, and writes the action that works: the lifecycle tools under a live locator, the Git command without one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:f0645cbf5ebcd04807840b1e129ecdb6d3e5c1083a52f797a5760741e06591d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_by_hand"
+        }
+      },
+      "id": "RLZ-20DN9E",
+      "invariant": "INV-8AJVN0",
+      "origin": {
+        "handoffEntry": "L41-continuation-orphan-operation",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Only this helper publishes the manual operation-record move; the no-clobber command prevents loss of earlier evidence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_operations"
+        }
+      },
+      "id": "RLZ-2TSG5Z",
+      "invariant": "INV-8MKBTB",
+      "origin": {
+        "handoffEntry": "L41-continuation-own-master-operations",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The unchanged scanner checks current-layout records and locators for both own and leaf enclosures.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_master_retirement_ready"
+        }
+      },
+      "id": "RLZ-485GZQ",
+      "invariant": "INV-YQY9PX",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 2",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function is the whole readiness: it surveys the master's own contract and every leaf contract, raises one numbered refusal for open work, and otherwise returns the evidence and the facts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_operations"
+        }
+      },
+      "id": "RLZ-G30FNC",
+      "invariant": "INV-GYCF1R",
+      "origin": {
+        "handoffEntry": "L41 ruling 2 (own-master operations)",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function reads the locator, the retained operation records and the sync journal of the master's own enclosure and of each leaf's, and makes an unfinished or unreadable one open work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_operations"
+        }
+      },
+      "id": "RLZ-HMZNTG",
+      "invariant": "INV-YQY9PX",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 2",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function reads the enclosure's locator, its retained operation records and its sync journal, and makes an unfinished or unreadable one open work with its action.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:f0645cbf5ebcd04807840b1e129ecdb6d3e5c1083a52f797a5760741e06591d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_by_hand"
+        }
+      },
+      "id": "RLZ-RBQWCW",
+      "invariant": "INV-HKTN7W",
+      "origin": {
+        "handoffEntry": "L41 ruling 4 (the move by hand)",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function builds the action text for an operation record that no lifecycle tool can act on, with the non-overwriting command and the three sentences the ruling asks for.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+        "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_survey_leaf_side"
+        }
+      },
+      "id": "RLZ-STHN7P",
+      "invariant": "INV-X1AH5G",
+      "origin": {
+        "handoffEntry": "L41-continuation-O4",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This is the producer of the named remedy; the registered scratch MCP server executes it without patching locator reads.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "A pending cleanup cell without open work permits retirement preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:0f6900603f8115fd09ae6ae203218eef07c92397d61fe31eed88c6ff13556ad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pending_cleanup_with_nothing_open_is_a_fact_and_does_not_refuse"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Readiness accumulates actual open work and returns captured evidence and retained facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_master_retirement_ready"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Operation remedies depend on live locators and current authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:bd2bd231808093322d036319a79b2890f799ed316aa587cce9ddd77491fb8dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_operations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Recorded identity differences remain facts rather than today's layout requirements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8eae2d5b012e85d5bdfeb6c0696ac07fad4edc7810e23514f9d8f6b8a2a67ea6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_note_recorded_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Non-abandoned document observations are facts; abandoned rows ask for no document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:50bcfd9c2110013f981a0612b2505c26b77b79d56a70423f8ea1794c214f95ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_leaf_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/models/task_retirement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The proof records the master, the archive, the reason, the time, the removed linkage, the affirmed edges and the master's source digests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3bd1db0248c49aa8bd5b6f60ae4a5a415fe350b",
+            "content": "sha256:e76077d0f28f1221ba4632b6273ff91ff7c6b3b3df91616736862e507c868e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRetirementProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reason is trimmed and a blank one is refused; the time must carry a timezone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3bd1db0248c49aa8bd5b6f60ae4a5a415fe350b",
+            "content": "sha256:e76077d0f28f1221ba4632b6273ff91ff7c6b3b3df91616736862e507c868e6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRetirementProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An edge selection names one predecessor and one successor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3bd1db0248c49aa8bd5b6f60ae4a5a415fe350b",
+            "content": "sha256:96104c804dfb335fa7eddae67e99aa77e664d96c5b3c3dcb5b73d1805ceb6c2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetirementEdgeSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

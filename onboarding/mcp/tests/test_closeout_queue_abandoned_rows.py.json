@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_closeout_queue_abandoned_rows.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An abandoned row of a master needs no document and is outside the closeout queue's walks; other unfinished rows still need one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a996c56fdbe9d6a207e30f15fb0778c299c7d3d",
+            "content": "sha256:273eaad30ea899153ba421ea0e66a709b26a24960ced381b12e7097cbda049e9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1445,12 +1445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
             "locator": {
-              "end": 574,
+              "end": 575,
               "kind": "line_range",
-              "start": 574
+              "start": 575
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -1759,12 +1759,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
             "locator": {
-              "end": 259,
+              "end": 260,
               "kind": "line_range",
-              "start": 224
+              "start": 225
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -1860,12 +1860,12 @@
         },
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:362a526d7c69b979144059ab47c90f76c1088d5e0ad3599ff42d6dcb84b41e7d",
             "locator": {
-              "end": 357,
+              "end": 358,
               "kind": "line_range",
-              "start": 357
+              "start": 358
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -1973,12 +1973,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
             "content": "sha256:0c548c88e13ef86a2e807800eaa698e3a067c8e29f5f78121fc4a96bfa8c3e33",
             "locator": {
-              "end": 1928,
+              "end": 1929,
               "kind": "line_range",
-              "start": 1790
+              "start": 1791
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },

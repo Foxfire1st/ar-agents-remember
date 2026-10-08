@@ -172,6 +172,20 @@ The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_ha
 
 The new `test_developer_question_wording.py` joins the unit-regression lane: it requires the parent channel, recovery and answer provenance in every parentable role and the three operations, the starter roles' relay and permission-notice duties, the leaf ownerRelation peer routes, and the independent detection of each exact retired directive. `test_role_instruction_wording.py` now compiles the parent condition for all six parentable roles and the renamed ownerRelation test; the two evidence catalogs list the new module.
 
+## Master Retirement, Finalization And Abandoned-Row Cases
+
+[test_abandoned_series_closeout.py](test_abandoned_series_closeout.py.md) (unit lane) proves that an abandoned row needs no landing and a landed abandoned row refuses by name.
+[test_master_retirement.py](test_master_retirement.py.md) and [test_standalone_master_retirement.py](test_standalone_master_retirement.py.md) (integration lane) prove the retire operation on a sprint's master and on a
+master no sprint commands, the three finalization outcomes, the retry rules and the protected proof. `test_review_artifact_cleanup.py` also proves
+that a repeated archive-hook attempt keeps its receipts. The test catalog files `evidence-lifecycle.toml`, `test-evidence-lanes.toml` and
+`test_dependency_ownership_ast_helpers.py` register the three new modules; the catalog's rows and counts are computed from the source tree by the canonical writer command, so this card states none of them.
+
+- A landed abandoned row refuses by name. [505]
+
+- The partial-hook-failure retry keeps the retirement and cleans up only. [506]
+
+- Finalizing a master no sprint commands keeps it and names the retire route. [504]
+
 ## Evidence
 
 - The default options select the unit population and four workers. [1]

@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Cleanup deletes artifacts irreversibly. Existing partial-failure, interrupted-request and changed-request controls bind safe recovery to the same retained proof; this is the recovery half of the publication/protection/recovery family."
+  },
+  "applicability": "Repeated task_doc.retire_master requests admitted against one retained proof and its actual operation state.",
+  "conditions": [
+    "The repeated request matches the recording owner, reason, edge selection and namespace.",
+    "Recorded sources remain readable and agree with the retained proof.",
+    "Once cleanup deletes an artifact it is not recreated."
+  ],
+  "exclusions": [
+    "A fresh first-phase refusal creates no retirement or cleanup authority.",
+    "Generic edits cannot rewrite a retained retirement row."
+  ],
+  "id": "INV-SS31ZW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md",
+        "MIK-R41@v4; original33 MR1-A01/K02/W04 and exact current source, statically inspected; no fresh functional execution claim."
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An identical retained retirement request completes only remaining state transitions: an interrupted sprint edit rewrites its JSON/Markdown pair before archival; after archival cleanup failure keeps the retirement and reports ok=false/retired-with-hook-failures, with stale projection refresh and remaining cleanup on retry. A differing reason, edge selection or namespace refuses without recreating deleted artifacts.",
+  "status": "proposed",
+  "supersedes": []
+}

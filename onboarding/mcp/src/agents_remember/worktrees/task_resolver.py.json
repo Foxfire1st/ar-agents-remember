@@ -1,13 +1,50 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_resolver.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+        "content": "sha256:7517f2a6261f0327121a03a42772f6e7b882622d22681f379f9fd21bd5e489ff",
+        "locator": {
+          "kind": "symbol",
+          "name": "archive_completed_root_task"
+        }
+      },
+      "id": "RLZ-8P2MVV",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Returns the series skip for every root task folder that holds a series-contract.md, before it reaches the code that moves a folder, so no finalization route moves a master.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+        "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
+        "locator": {
+          "kind": "symbol",
+          "name": "_series_archive_skip"
+        }
+      },
+      "id": "RLZ-N300FZ",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Words the skip: sprint-commands-master with the sprint named, master-archived-only-by-retire naming task_doc.retire_master, or today's root-series-still-active for a task that is not a master.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "The re-export surface: this module publishes the task-layout vocabulary without defining it.\n\nAnchor: \"from agents_remember.tasks.task_paths import (\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
             "locator": {
               "kind": "symbol",
@@ -18,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:3505eff900ef40ec541972cf9ee4826a2b43cc18aeaa6191d00ce97b770e85e3",
             "locator": {
-              "end": 27,
+              "end": 30,
               "kind": "line_range",
-              "start": 16
+              "start": 19
             }
           },
           "kind": "code"
@@ -60,6 +97,38 @@
               "start": 25
             },
             "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A root task holding a series contract is skipped, and the skip is worded by the series skip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+            "content": "sha256:7517f2a6261f0327121a03a42772f6e7b882622d22681f379f9fd21bd5e489ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_completed_root_task"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The skip names the commanding sprint, or the retire route when no sprint commands the master, and keeps today's reason for any other task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+            "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_archive_skip"
+            }
           },
           "kind": "code"
         }
@@ -147,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:aee46e3391eadeb1943aecb891b97a45411f462deb76dbca9506549a953ac12c",
             "locator": {
               "kind": "symbol",
@@ -158,7 +227,7 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:db8d461ad46f6284c849273c50b4586eca3eeb1a216c78cdc006263e057ea4f1",
             "locator": {
               "kind": "symbol",
@@ -169,7 +238,7 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:1f10f57616d2e0a72e0373ff16c9a6f4511ff0a6a5ca04c6a6fb4efff038f1d7",
             "locator": {
               "kind": "symbol",
@@ -185,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:0be59d641f66d081c7052f35a52eaa9922f2249a3106a4acfc05266e627c7e65",
             "locator": {
               "kind": "symbol",
@@ -196,7 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:fadfe7f7318dcf479ea81af7f781333adf13623eece4e5d695f336b36ce5441e",
             "locator": {
               "kind": "symbol",
@@ -207,7 +276,7 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:82f760e1af045e20b575bc6a5425f6c9c3c86de42b7f3809739cba08a6040b42",
             "locator": {
               "kind": "symbol",
@@ -223,7 +292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:903dc79a8da1037a774bfb5cfba02c333c12fc3081873d11e0206db7ac756a33",
             "locator": {
               "kind": "symbol",
@@ -234,7 +303,7 @@
         },
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:37c9388a0213c452748f6c1e4f9ebb5bd146d3ac3b2c0723f2b597580ac8d728",
             "locator": {
               "kind": "symbol",
@@ -250,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
             "content": "sha256:b03a9a18782f3ff2eae13a68f501ab8044a2918e348e068f520ed639ed87d831",
             "locator": {
               "kind": "symbol",
@@ -298,12 +367,12 @@
       ]
     },
     "9": {
-      "note": "`finalize.py` calls `archive_completed_root_task` after cleanup so completed root tasks move to `0_archive` while leaf finalization skips that move.",
+      "note": "The finalizer calls the root archive helper for a series contract, which is skipped; leaf finalization skips the archive call.",
       "targets": [
         {
           "anchor": {
-            "blob": "a42da7dfc1b7ef267629b2c4751349049043428c",
-            "content": "sha256:88ac21fd8f8166344193e5590ff04e2d723bb0342bc64d9043783b89fb0af03c",
+            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
+            "content": "sha256:7517f2a6261f0327121a03a42772f6e7b882622d22681f379f9fd21bd5e489ff",
             "locator": {
               "kind": "symbol",
               "name": "archive_completed_root_task"

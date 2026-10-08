@@ -1,0 +1,256 @@
+{
+  "path": "mcp/tests/test_master_retirement.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:86e4d4bfffc7b81670ab3fbf40d1ebe5a8640507bbbbac9e15ab1f7b1df9f3b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_failed_move_restores_exact_sprint_source_pair"
+        }
+      },
+      "facet": "A failed folder move restores the sprint's source pair byte for byte, leaves no archive folder and the sprint still names three masters.",
+      "id": "PRF-2GKNG4",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+        }
+      },
+      "facet": "A retry after an interruption resumes, a retry with another reason is refused as differing from the retained proof.",
+      "id": "PRF-48V22G",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:a73d8e7ec69d0384bb788d5937ab34510de4302ff2bfa1e7b8d830d097d77966",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nested_master_is_refused_before_anything_changes"
+        }
+      },
+      "facet": "A sprint's nested master is refused in the dry run and the real run, naming the nested folder and 0_archive/<name>, and the whole scratch tree is unchanged.",
+      "id": "PRF-9VWWWD",
+      "invariant": "INV-BWB3R3",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-nested-master-refused",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:b63e975b1eb021fc033255677942257f4d175d80fbc2fcf4aaed31a9c8715c2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retirement_proof_cannot_be_forged_or_erased_by_generic_task_edit"
+        }
+      },
+      "facet": "A generic replace that erases the retirement proof of a retired row is refused with the proof named and every byte unchanged.",
+      "id": "PRF-EF9WX6",
+      "invariant": "INV-T4G7VY",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retirement-proof-protected",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+        }
+      },
+      "facet": "After an interrupted move the sprint already validates without the master while the master's folder is still in place.",
+      "id": "PRF-JSKHDF",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+        }
+      },
+      "facet": "One dataset copy is deleted and one fails: ok=false, retired-with-hook-failures, a valid sprint; the retries edit no document, move nothing a second time, delete only the remaining copy and succeed when the failure clears.",
+      "id": "PRF-N1EWSM",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+        "content": "sha256:2899a8cb2b1f4f8a0c966f6bc9faf9e33724c9cd679080de2775b4ec4f0701f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_source_pair_cas_refuses_sprint_or_successor_drift_before_publication"
+        }
+      },
+      "facet": "A change to a document between admission and publication refuses with a publication conflict and the hook deletes nothing.",
+      "id": "PRF-WQTYXF",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dry run lists the exact edits and the real run keeps the sprint valid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:0d93cfa82b62b6360d2118141aff1302a4eaaedde34df37cdb1ecbae0de67acd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_dry_run_lists_exact_edits_and_real_run_keeps_valid_sprint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A failed move restores the sprint's source pair and the folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:86e4d4bfffc7b81670ab3fbf40d1ebe5a8640507bbbbac9e15ab1f7b1df9f3b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_move_restores_exact_sprint_source_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An interrupted request resumes, and a changed reason is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A partial hook failure is reported truthfully and the same request retries only the cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A generic edit cannot erase a retained retirement proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:b63e975b1eb021fc033255677942257f4d175d80fbc2fcf4aaed31a9c8715c2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retirement_proof_cannot_be_forged_or_erased_by_generic_task_edit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The missing-master message is identical across the topology readers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:6efd017ca4d397345cceb0e74036309cb6595ae2fcf35e69174a2777ae749467",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_archived_master_refusal_is_shared_by_topology_consumers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A nested master is refused before anything changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:a73d8e7ec69d0384bb788d5937ab34510de4302ff2bfa1e7b8d830d097d77966",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_master_is_refused_before_anything_changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Pending cleanup without open work is a fact and permits preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:0f6900603f8115fd09ae6ae203218eef07c92397d61fe31eed88c6ff13556ad1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pending_cleanup_with_nothing_open_is_a_fact_and_does_not_refuse"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -48,7 +48,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The suite mounts the shell and switches views through the mode bar. [13]
+
 
 - The layout matrix sources the retained pages only through their injected views. [14]
 

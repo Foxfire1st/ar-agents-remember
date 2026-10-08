@@ -23,7 +23,7 @@ task-state transitions: `task_reopen`, `lifecycle_finalize_task`, `task_doc`.
 because the operation vocabulary is not in the types: `create` | `replace` | `set_status` |
 `set_step` | `add_step` | `remove_step` | `skip_step` | `read_steps` | `set_subtask` |
 `remove_subtask` | `set_section` | `append_decision` |
-`record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` |
+`record_route_review` | `author_execution_graph` | `attach_master` | `detach_master` | `retire_master` |
 `linkage_report` | `set_field` |
 `get` (`migrate_execution_topology` was removed in 260815-DAG-L13). The JSON document is the source of truth; `task.md` / `<slug>.md` is a generated render that
 is never parsed back. Everything mutates except `operation='get'`, and `dry_run=true` builds and
@@ -59,7 +59,20 @@ Register; graph-less sprints report `graphNode: deferred-no-graph-default`); `de
 removes the typed row, membership slug, and graph node, refusing while any edge touches the node
 and never deleting files; `linkage_report` surfaces seat-doc rows, slug-only membership,
 row/membership mismatches, and uncommanded masters as facts, and `get` on a sprint carries the
-same `linkageFacts`.
+same `linkageFacts`. The description also lists `retire_master` and states its contract in plain words:
+it is the only route that archives a master, with or without a sprint, and finalizing a master never archives
+it. `fields={masterRef, reason, removeEdges?}`. Called on a sprint it removes the master's membership, graph
+nodes and touching edges, keeps a plain abandoned row with a typed proof (reason, time, recovery data), then
+archives the folder and runs the review-artifact archive hook; outgoing edges to unfinished successors need
+their exact endpoints in `removeEdges`. Called on a master that no sprint commands (`masterRef` is that master and
+there is no `removeEdges`), it edits no sprint, writes its proof to `notes/reports/master-retirement.json` and moves
+the folder under `0_archive/`. Open enclosures and unfinished operations refuse with their cleanup route; a sprint's
+only graphed master cannot be retired because a graph cannot be empty; a master nested inside another task's folder
+is refused because only root task folders have a `0_archive/<name>` location. `dry_run` previews each change and the
+hook's effect, repeating the same request resumes after an interruption, and when the hook failed in part
+(`ok=false`, `state: retired-with-hook-failures`) the repeat retries the cleanup only. The description also says an
+`abandoned` row never blocks a master's closeout, and that a finalized master a sprint commands stays in place with
+its sprint row `Completed`.
 
 The body splits that into two objects: `TaskDocTarget(repo_id, task_name, contract_path, slug)` —
 which document to edit — and `TaskDocEdit(fields, step, decision, subtask, section)` — what the edit
@@ -107,6 +120,8 @@ recreates everything.
 - The finalize description: the folder-master row and the sub-task refusal (MIK-R38). [2]
 - The finalize builder. [3]
 - `FinalizeTaskDocs`. [4]
+
+- The `task_doc` description names `retire_master` as the only route that archives a master and states its two forms, its refusals and its retry rule. [5]
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
 

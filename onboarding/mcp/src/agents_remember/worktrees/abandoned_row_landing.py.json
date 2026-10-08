@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/abandoned_row_landing.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e191e1f8b987481a92e57a5b19aeb37f3d5da54c",
+        "content": "sha256:e43827c3bb0e145fc477bcc7e8efeb83a1635a70e67c4be0dca96645b40c0b88",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_abandoned_rows_unlanded"
+        }
+      },
+      "id": "RLZ-QQTHBE",
+      "invariant": "INV-1B87DB",
+      "origin": {
+        "handoffEntry": "L41-R7 note 10",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function is the one check behind every place that completes a master, used by finalization and by the completion of an organizational master through the task tool.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Finalizing a master decides again that an abandoned row whose enclosure records a completed integration refuses by name, for a master of either nature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e191e1f8b987481a92e57a5b19aeb37f3d5da54c",
+            "content": "sha256:660486a85041a177aca960b8252bab528b32c3938eec92d9adb5ea04d3640b48",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An abandoned row without a completed landing blocks nothing and is asked for no enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e191e1f8b987481a92e57a5b19aeb37f3d5da54c",
+            "content": "sha256:660486a85041a177aca960b8252bab528b32c3938eec92d9adb5ea04d3640b48",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

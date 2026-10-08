@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_candidates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detach candidate removes the rows, aliases and node, refuses to empty the graph and rebuilds a valid document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:0826e274eebc2a479127eb632e954f795115e62dcbef168541e48ae02741f1dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detach_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:287659b2d7482e5941614c4aea41bfa38d185e3995846373377e5cb8a0005dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detached_data"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A node with a touching edge cannot be detached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:3d533211dbb1d1a7c4334152de3761ce5435b494cf03f83189d3a5e9f278e884",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_no_touching_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The error family of the linkage operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:23301c947b085d47d44cc446e36f1535eb8ae8ad15c6f354c4e19c5c0af58189",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintLinkageError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

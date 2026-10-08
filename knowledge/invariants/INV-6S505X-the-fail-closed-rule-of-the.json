@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: The fail-closed rule of the retire route covers every task.json of the repository's task tree outside 0_archive and enclosures."
+  },
+  "applicability": "The fail-closed read rule of the retire route over the repository's task tree.",
+  "conditions": [
+    "Every task.json outside 0_archive and enclosures folders is read."
+  ],
+  "exclusions": [
+    "Archived and enclosure folders."
+  ],
+  "id": "INV-6S505X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 4; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/identity/delta-files.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41 ruling 3 (the census)",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The fail-closed rule of the retire route covers every task.json of the repository's task tree outside 0_archive and enclosures.",
+  "status": "proposed",
+  "supersedes": []
+}

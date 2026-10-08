@@ -1,5 +1,10 @@
 # mcp/tests/test-evidence-lanes.toml
 
+## Master Retirement And Abandoned-Row Cases
+
+`mcp/tests/test_abandoned_series_closeout.py` is a `unit-regression` row (the first row of that list), and
+`mcp/tests/test_master_retirement.py` and `mcp/tests/test_standalone_master_retirement.py` are
+`integration`-lane rows. Each module appears in exactly one lane.
 ## Governing Overview
 
 [tests route overview](overview.md)

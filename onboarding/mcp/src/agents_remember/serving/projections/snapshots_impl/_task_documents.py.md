@@ -103,7 +103,7 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - The reader projects every canonical task document, and the removed summary bound with the rationale for its removal. [10]
 - The dead-text element a withheld document produced, unchanged by this leaf. [11]
 - The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. [12]
-- The sixth same-class drop site, in the closeout-queue reader rather than this leaf's five and left unchanged. [13]
+- The closeout-queue reader skips a payload that fails model validation. Historical site counting and unchanged-source comparison belong to the retained task evidence, not this current-source reference. [13]
 - The on-demand body read: resolve, confine under `tasks/`, read one file, project with the graph-only join table. [14]
 - The body read's master join table: none without a graph, otherwise only the graph-named masters that carry the schema. [15]
 - The named-path probe that returns exactly the enumeration's subset for those tails, in the same order. [16]

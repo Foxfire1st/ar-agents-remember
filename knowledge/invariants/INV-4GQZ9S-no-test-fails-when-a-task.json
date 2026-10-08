@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: No test fails when a task.json that is a JSON object whose orchestrates or subTasks is not a list is read as a document that commands nothing, although the build refuses a retireme"
+  },
+  "applicability": "A task.json object whose orchestrates or subTasks is not a list, read through the document reader.",
+  "conditions": [
+    "The reader must fail rather than treat the document as commanding nothing."
+  ],
+  "exclusions": [
+    "Files that are not JSON objects."
+  ],
+  "id": "INV-4GQZ9S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/runs/mutate-results.json (own:membership-that-is-no-list-reads-as-empty survives, 42 tests pass); behaviour shown in x30_f1_edges.out part A"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8-O2",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No test fails when a task.json that is a JSON object whose orchestrates or subTasks is not a list is read as a document that commands nothing, although the build refuses a retirement for such a document.",
+  "status": "retired",
+  "supersedes": []
+}

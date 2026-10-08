@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_records.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+        "content": "sha256:1f8e2b2ea7c74f8eaffe89a15dd79108462fd636820c40feee6d195f9ddc4313",
+        "locator": {
+          "kind": "symbol",
+          "name": "sprints_naming"
+        }
+      },
+      "id": "RLZ-2S1XBM",
+      "invariant": "INV-CD2A7H",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 1",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Every request observes the master through this function, which refuses while the census lists any unreadable task document, so no master is taken for one that no sprint commands.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+        "content": "sha256:67fd82d5c8cdfaae1a92f261b4a5f470de82d29844df6db363f712c1d09f3099",
+        "locator": {
+          "kind": "symbol",
+          "name": "Observed.proof_file"
+        }
+      },
+      "id": "RLZ-9EVWZ5",
+      "invariant": "INV-WQ6Z6P",
+      "origin": {
+        "handoffEntry": "260928-MIK-L41-CW03",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The proof-discovery property now treats only a genuinely missing path entry as no record; existing or uninspectable entries must be read and validated by read_proof.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+        "content": "sha256:ff403d12362d286c0d5786b5f4240d050ae85b16e8386da09c4152acf5e7d695",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_addressed_readable"
+        }
+      },
+      "id": "RLZ-W0V3ZW",
+      "invariant": "INV-CD2A7H",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 1",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function is called first by the retire flow and refuses a request whose addressed document exists and cannot be read, before anything else about the request is decided.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Retirement sends every existing unreadable canonical proof entry to its required reader and refuses by that path before preview or publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+            "content": "sha256:89883392a3232753c4a4e31b7d49533991cfe5091dd6b4d6d2acf2d253422536",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A request addressed to an unreadable document is refused by the file's name before anything else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+            "content": "sha256:89883392a3232753c4a4e31b7d49533991cfe5091dd6b4d6d2acf2d253422536",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A master has one retirement record at one canonical place, and a second record at the other place is refused with both named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7734f4532bab90c5a7d0e7d46f3e177c2fa99da9",
+            "content": "sha256:89883392a3232753c4a4e31b7d49533991cfe5091dd6b4d6d2acf2d253422536",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

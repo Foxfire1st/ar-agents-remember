@@ -1,0 +1,173 @@
+{
+  "path": "mcp/tests/test_abandoned_series_closeout.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "content": "sha256:df2da732c8b4f09959007c5e091b88db49da9654ff67a2fe635cbfa844e01522",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_organizational_master_completes_over_abandoned_rows_that_did_not_land"
+        }
+      },
+      "facet": "The organizational completion transition permits abandoned rows without completed landing evidence.",
+      "id": "PRF-8M2BRA",
+      "invariant": "INV-YZVCB8",
+      "origin": {
+        "handoffEntry": "curator-MR1-W04-organizational-completion",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "content": "sha256:b3862a96d7ae18002a476331b8141ccae493a96bfb2f6859987c229b9daa48d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_organizational_master_refuses_to_complete_over_an_abandoned_row_that_landed"
+        }
+      },
+      "facet": "The organizational completion transition refuses an abandoned row whose retained enclosure records completed integration.",
+      "id": "PRF-AC23YE",
+      "invariant": "INV-YZVCB8",
+      "origin": {
+        "handoffEntry": "curator-MR1-W04-organizational-completion",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+        }
+      },
+      "facet": "The parameterized closeout witness admits abandoned rows with no enclosure, an empty file cell and unlanded enclosures; it excludes them from series_total, counts series_abandoned separately and leaves the master document unchanged.",
+      "id": "PRF-RJEMEH",
+      "invariant": "INV-B9EZM6",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-abandoned-outside-chain",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+        "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+        }
+      },
+      "facet": "An abandoned row whose enclosure records a completed integration refuses, naming the row and asking to reconcile its status with its landing.",
+      "id": "PRF-W9J82X",
+      "invariant": "INV-B9EZM6",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-abandoned-outside-chain",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Abandoned rows with no enclosure, an empty file cell and unlanded enclosures pass; the master document is unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An abandoned row that landed refuses with the row named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A planning row and a non-abandoned row with an unreadable or missing document refuse by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:ba4058f1cfdb4339c547c4e395f69994d4074b88c2f6c499c2c33b001991680d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_row_that_is_not_abandoned_still_needs_its_readable_document"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An all-abandoned master proves an empty chain and refuses a foreign commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:a1b0df5085bc8723dfdb0cfad1b5d4b82737cc9b824e89557117ac23f425ab34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_all_abandoned_master_proves_empty_chain_and_refuses_foreign_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Malformed rows are refused with the master, the row and the action named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:934a2398821bd7540dfcb292d58addccd31488de59efefe15e5548a69ec82da3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_refusals_name_the_row_or_leaf_they_are_about_and_the_action_that_clears_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checkpoint refusals name the master and the action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:9df55cf7c106be22520dfe40a27b4d3bd1699485a2ff057da37c84494f348632",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkpoint_refusals_name_the_master_and_the_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/tasks/sprint_membership_refusal.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The message names the sprint, the master, where it was found under the archive, and the retire operation with its fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f9077dc8a0ad02a46a36a5729f89c8083771a9f",
+            "content": "sha256:0c43331b3dde69a95b7f53a17fc1fdbf20f4b3af44aa6e0e577a38e861fbcdb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_master_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The three topology readers raise the identical message for an archived master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:749924b87b4f57ea7cd6778ff549fdb9d256cc7a876d7f1fed7c407249113868",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

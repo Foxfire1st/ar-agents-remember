@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44c8de28313eb3e84b6c31e3d3fc8023c9dd9e7a",
+            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
             "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
             "locator": {
               "kind": "symbol",
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
             "content": "sha256:68392e15d4774c60ba481fc00408e731f83b9168593e00969a4ca1ed5b3e3ad3",
             "locator": {
-              "end": 168,
+              "end": 220,
               "kind": "line_range",
-              "start": 150
+              "start": 202
             },
             "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
           },
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
             "content": "sha256:dcc80aa9a03a9687b86dbc7dbff48bc469e8ca5f3feb6f076877966256be6d74",
             "locator": {
-              "end": 210,
+              "end": 262,
               "kind": "line_range",
-              "start": 169
+              "start": 221
             },
             "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
           },
@@ -50,12 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
+            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
             "content": "sha256:bbdfb0639f6bfcf6687b0b3eac53ebb9f7fe32bb1be7c28fafa610bfabfdf3b6",
             "locator": {
-              "end": 233,
+              "end": 285,
               "kind": "line_range",
-              "start": 211
+              "start": 263
             },
             "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
           },

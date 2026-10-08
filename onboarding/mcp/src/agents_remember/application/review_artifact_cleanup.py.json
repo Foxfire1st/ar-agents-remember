@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
             "locator": {
-              "end": 38,
+              "end": 41,
               "kind": "line_range",
-              "start": 22
+              "start": 25
             }
           },
           "kind": "code"
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:fa4183f5b29506c78abef9259953e8e42280d289b330333019b073e2d911bbfa",
             "locator": {
               "kind": "symbol",
@@ -35,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:eb92b6c363d9fd8af3627e0f5ad119b59437f8fb7364fb445c56ef8788a8d525",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:c3360d3cd407e96f28fc561fb57139ee9431f89ab0d5b605e375340b45632183",
             "locator": {
               "kind": "symbol",
@@ -62,7 +62,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:5c98946d84b57374d9cc629a5b79acd6db9dadf255b2fa80dcec3006cd35f0d7",
             "locator": {
               "kind": "symbol",
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:a72c26b962e3bac1bdebb115c1752e70ab15e47a6d176963c87d7fdfb5fa1759",
             "locator": {
               "kind": "symbol",
@@ -89,7 +89,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:a425baa23d2c1a7fe55d6f2f6e8b191a2d33f621043920be413ae0476660ecfd",
             "locator": {
               "kind": "symbol",
@@ -100,7 +100,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:a772b18cf1e8599e6f5ebccc5a3243dbf7154a464f6abb6f2f3735e97f454960",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:6af8d2dc36de8e58b80f5cf993ed534c8568d1a74b26f14274f4205617000435",
             "locator": {
               "kind": "symbol",
@@ -127,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
             "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
             "locator": {
               "kind": "symbol",
@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "blob": "c9c8caf9e7786b4d136f0a39cda0524e65de698c",
             "content": "sha256:3d1354f049755323c27c0138905c788eb69753b831a5e70f1f4a4a727b24d460",
             "locator": {
               "kind": "symbol",
@@ -156,7 +156,7 @@
         },
         {
           "anchor": {
-            "blob": "7cd298ae205ba1641c99921f08a96aeba0ed3597",
+            "blob": "c9c8caf9e7786b4d136f0a39cda0524e65de698c",
             "content": "sha256:f3de9985dc8eefa2c59de0ddf3c5843fcf261f8db2458bc4a6d6e693e49332e4",
             "locator": {
               "kind": "symbol",
@@ -168,23 +168,78 @@
         }
       ]
     },
+    "15": {
+      "note": "The ledger reports earlier deletions, interrupted planned deletions now absent, and previously failed artifacts now absent.\n\nAnchor: `ReceiptLedger.already_absent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:ef149fe71386e1b2ec2cfe87ffefdb4e983c1c16cd221a489249cac61ad93332",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The first no-op records a receipt; an unchanged repeat with no new work or outcome writes none.\n\nAnchor: `ReceiptLedger._nothing_to_record`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:649d2ecf30de30521abd3c48972f1f4142a10575d4302fc9732faf1d5ef48f67",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 205
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The previous receipt is preserved under its own attempt number, reusing that path after interruption.\n\nAnchor: `ReceiptLedger._set_aside`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:0b73a688661b247baaa9259a1763f2eac158c70ab92c816d5350632ce0f304dc",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 214
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The report file, the reason, and the two tables that make a file a knowledge dataset.",
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
             "content": "sha256:42d35b5c46a15f15cd6a3e464959e7d4f149e1741f01687f96fdc458de9a5632",
             "locator": {
               "kind": "symbol",
               "name": "CLEANUP_REPORT_NAME"
-            }
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:2da45cc24f011454caf1f59d92909c00a4c311d206113c425b7b4bfc489448cf",
             "locator": {
               "kind": "symbol",
@@ -192,30 +247,30 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:2ded9578a116d3072711dbde511b58e882d6e3891f009d6f417a1c15bea2b21e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REASON"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The report, and holding a generation's pin and snapshots with the reason.",
+      "note": "The report, and holding a generation's pin and snapshots with the reason.\n\nAnchor: `_Report.hold`",
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:bc41aee9cc4c23102ae7a4d2c4e148a106aeb6ea2937623252d82b0a054f8b2f",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:bbd16dafd3f094e9c4d3ab1c3e5230ff70053fb15eafbb559f822ddb1efba870",
             "locator": {
               "kind": "symbol",
               "name": "_Report"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:53e84a8db448a768f6ead582fd43ecde608b71b86eb0b402a1a1409d217b9a42",
-            "locator": {
-              "kind": "symbol",
-              "name": "hold"
             }
           },
           "kind": "code"
@@ -227,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:5813a24b3fbc8e54016b61fcb910793faf5a1ddb44978272d44ae198a8f29c19",
             "locator": {
               "kind": "symbol",
@@ -243,11 +298,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:69537368a7f44575fa856398999e6fdae1834e748a91edf53d5e90ccda97edd6",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:fc032a24c376fe32a800a8666f2fb82a49601fee4941d09b1859155380a65074",
             "locator": {
               "kind": "symbol",
               "name": "cleanup_review_artifacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:a8c263fb7223cefc4c6e3ed7ab75a28f4577ca94f7df3393f2ac814390bf83d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sweep"
             }
           },
           "kind": "code"
@@ -255,16 +321,18 @@
       ]
     },
     "6": {
-      "note": "The report is written only inside the task.",
+      "note": "Receipt writes refuse paths outside the task.\n\nAnchor: `ReceiptLedger.begin`",
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:2a2f13bccf9ef308a45d1862e2bf5037f0fe79d9aaa982c93b6248f14b2fb2a6",
+            "blob": "30616fa01a98656a0fdbb084dc2f1f1ba7cf6b38",
+            "content": "sha256:d744ea837585652c686c6ebfb6beec345f7c4f8f2a458bfa976948b64035c2ab",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_report"
-            }
+              "end": 198,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/application/review_artifact_receipts.py"
           },
           "kind": "code"
         }
@@ -275,7 +343,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:ae51143fee96962cbcb3a892ba1150757478318b616aa7e4370aa9d5fee623e5",
             "locator": {
               "kind": "symbol",
@@ -286,7 +354,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:bdb70365235fb65adad56f55afdbeaedb428e01f1d91999347edde51013c57f2",
             "locator": {
               "kind": "symbol",
@@ -302,8 +370,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
-            "content": "sha256:9962ef73ecf8dbeb26edb84fb2609ae181eeeab5b6521b4d7c1c3b2f1a81778b",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
+            "content": "sha256:35caace53a1105b4f9ec653a26de6c40d3198ceac8ab0eba59af90ea18eab0fd",
             "locator": {
               "kind": "symbol",
               "name": "_confirmed_task_id"
@@ -313,7 +381,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:158df8e5a73aa3606ee1a32225a2a95c30d4299ce7b52fbc47a5b5b7e6394b52",
             "locator": {
               "kind": "symbol",
@@ -329,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:3e0adf52880e9527e5cd4a6626a096d4b3e8f8ada57549dfd2f4be225c96fbea",
             "locator": {
               "kind": "symbol",
@@ -340,7 +408,7 @@
         },
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:571d113a6ecdb17f1e480dbb8096427f0fb504f36d11a83944f714bde3590978",
             "locator": {
               "kind": "symbol",

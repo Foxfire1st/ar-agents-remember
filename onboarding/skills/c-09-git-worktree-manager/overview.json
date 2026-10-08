@@ -81,12 +81,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "faea340169c61be9e9824a48dce03d6bdafb3316",
+            "blob": "e7e289de6f8e2c65b3e67f4c2a4380e2b2a9d1be",
             "content": "sha256:48d1bb8afc8ab2a99aab97d4638cb62b510cbd1a0645175a0b67c58e1cbb6bb0",
             "locator": {
-              "end": 162,
+              "end": 163,
               "kind": "line_range",
-              "start": 162
+              "start": 163
             },
             "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
           },

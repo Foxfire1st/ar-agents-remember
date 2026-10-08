@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:162c26c0cad036357bad30e157f8f2604877fbdae3e2b73ed0f5d7f6e6658d23",
             "locator": {
               "kind": "symbol",
@@ -93,7 +93,7 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:6b3522b1e1d7d47339d79f2635e766c4be81d53a534547cec343cab534dbc7cd",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:57a7a8bc6d2a1ec60cf29ffe090ca55ab2f3ca6707ae423858f4aa93dd2c0b38",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "eb8a62b546f488ff51537e9c19f64d39bfb2108e",
+            "blob": "5e4cacc3f5f41b68b1399a4064fb89ccec6b2a7e",
             "content": "sha256:854d33cad103c4456fc4c84048f8d629c64bb56c814e7546253dae94289104bf",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
             "content": "sha256:46d4626b8bd41a074f75c46766223a0cd01f4f848734f1cea9c3b028566020b8",
             "locator": {
-              "end": 1928,
+              "end": 1929,
               "kind": "line_range",
-              "start": 1791
+              "start": 1792
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -174,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48a7c1447f34791d9b510d4a39a4fa1f5d303256",
+            "blob": "00e94e0e17b03efa5592ddf3a94e51b3c2664009",
             "content": "sha256:63b8e78ba186f2f42199de2860280d6caefdb63eb192f2fd41ec6b10f75beb78",
             "locator": {
-              "end": 1940,
+              "end": 1941,
               "kind": "line_range",
-              "start": 1929
+              "start": 1930
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -192,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:9c042907be28e211e81249997aac7c7f3e0835ecfaf4cf8219a2f663179de916",
             "locator": {
               "kind": "symbol",
@@ -204,7 +204,7 @@
         },
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:3ce2853b26b82778b30e9230c97b479776f3d256d011658ac43fa2bc74328a12",
             "locator": {
               "kind": "symbol",
@@ -316,7 +316,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0239cb83d0697b40c313ce908a1343467e365091",
+            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
             "content": "sha256:122b8af302e57af32e5f7d3ee8fb735bb940e322c05d47e887bdcde86cccef00",
             "locator": {
               "end": 18,

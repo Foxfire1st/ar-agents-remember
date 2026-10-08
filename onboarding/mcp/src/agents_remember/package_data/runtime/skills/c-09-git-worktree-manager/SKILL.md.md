@@ -240,7 +240,7 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 - `c-09-git-worktree-manager` skill owns worktree lifecycle and routes closeout to `c-12-closeout` skill. [1]
-- `c-12-closeout` skill owns the shared closeout approval and code-memory-ledger sequence for direct and worktree closeout. [2]
+- The shared closeout skill owns approval and the code/memory-content transaction; the ledger is an ignored derived cache, not a commit leg. [2]
 
 - The source-branch contract says protected, PR-gated, or otherwise not-directly-landable targets need a pushable integration branch before `worktree_start`, because integration lands into the recorded `source_branch`. [3]
 - The Worktree Intent Gate must be explicitly approved before start and must name branch policy, source/work branches, memory mode, landing path, and risks. [4]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A refused first phase of a master that no sprint commands leaves no directory it made for the record."
+  },
+  "applicability": "A refused first phase of a master that no sprint commands.",
+  "conditions": [
+    "The refusal happened after the registry decided no sprint commands the master."
+  ],
+  "exclusions": [
+    "Masters a sprint commands."
+  ],
+  "id": "INV-M0ZQNJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; one killed mutation under sealed id 7 (test_a_refused_first_phase_leaves_no_directory_it_made)"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 7",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A refused first phase of a master that no sprint commands leaves no directory it made for the record.",
+  "status": "proposed",
+  "supersedes": []
+}

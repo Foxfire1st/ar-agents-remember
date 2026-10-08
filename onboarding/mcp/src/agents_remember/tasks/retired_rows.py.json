@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/tasks/retired_rows.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "283bc9a2a257ce247baf3c53b51589fac721dd38",
+        "content": "sha256:018b42feaba467797b1857969219cdf09c75bd39d458f3270f2dd3185c576f32",
+        "locator": {
+          "kind": "symbol",
+          "name": "payload_is_sprint"
+        }
+      },
+      "id": "RLZ-AF4X3N",
+      "invariant": "INV-JQFXCQ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 4",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function gives the same answer for readers that decide on raw JSON before they validate a document.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Only task_doc.retire_master writes a sprint row that carries a retirement proof; every other row writer refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283bc9a2a257ce247baf3c53b51589fac721dd38",
+            "content": "sha256:0cc485e5169fad97d6ff7d086664fcc3d851a8f766a5b4bcd57ae4a343e324f3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A task document whose master sync would touch a retired row is refused as a whole with the words the master is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283bc9a2a257ce247baf3c53b51589fac721dd38",
+            "content": "sha256:0cc485e5169fad97d6ff7d086664fcc3d851a8f766a5b4bcd57ae4a343e324f3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The source and named controls prevent publishing or relying on a retirement/completion result that contradicts its retained proof."
+  },
+  "applicability": "A task-tool edit transitioning an organizational non-sprint master to Completed.",
+  "conditions": [
+    "The original document is not already Completed.",
+    "The candidate is an organizational master and has an abandoned row."
+  ],
+  "exclusions": [
+    "Atomic completion, which is decided by closeout.",
+    "Sprint documents and later edits of an already Completed master."
+  ],
+  "id": "INV-YZVCB8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R41@v4; original33 MR1-A01/K02/W04 and exact current source, statically inspected; no fresh functional execution claim."
+      ],
+      "path": "original33-repair-list.json"
+    },
+    "handoffEntry": "curator-MR1-W04-organizational-completion",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The task-document transition that completes an organizational non-sprint master asks nothing of an abandoned row without landed evidence, but refuses a retained abandoned-row enclosure that records completed integration; edits of an already Completed master do not rerun this transition predicate.",
+  "status": "proposed",
+  "supersedes": []
+}

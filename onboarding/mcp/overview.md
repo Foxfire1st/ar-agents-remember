@@ -313,7 +313,7 @@ master) stayed `inProgress` on the master; the developer saw 15 such rows, repai
   Review R2: unit suite 3,298 passed, integration lane 457 passed.
 
 - The one rule, named for its three writers. [8]
-- The finalizer's dispatch. [9]
+- The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
 - The placement guard. [10]
 
 ## 260928-MIK-L32 The Unexplained-Changes Lane In The Reviewer, Inert Until The Cutover
@@ -1872,6 +1872,15 @@ Candidate capture uses an isolated add-all index and stable observed HEAD, leavi
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The role-launch constructor now compiles one leaf-seat handover value: a leaf Worker, Reviewer or Curator receives `leafSeats` with the exact sibling `role_message` arguments for the other two seats and no sibling agent id. The package's role-launch, task-tool and capsule behavior is otherwise unchanged.
+
+## The c-12-closeout Skill States The Master Rules
+
+The skill `c-12-closeout` (the authored `skills/c-12-closeout/SKILL.md`, synchronized by `scripts/sync-skills.py` into the package copy and the eight harness
+starter copies this route governs) says that an abandoned row does not block a master's closeout, that finalizing a master never archives it, and that
+`task_doc(operation="retire_master")` is the only route that archives a master. The package copy's card carries the detail:
+[c-12-closeout/SKILL.md](src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md.md).
+
+- The skill states the three master rules. [253]
 
 ## Evidence
 
@@ -3590,9 +3599,13 @@ empty surface.
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
 - The registration that reads that port. [192]
 - The composition root's two adapter functions. [193]
-- **The three review ports passed into the shared collaborators.** [194]
+
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [194]
+
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
-- **The two ports passed into the shared collaborators.** [196]
+
+- The shared collaborators bind the knowledge-review and entry-list ports. [196]
+
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
 
 ## 260915-KS-L30 Route Impact — The Curator Ingest Becomes Continuous, And It Publishes

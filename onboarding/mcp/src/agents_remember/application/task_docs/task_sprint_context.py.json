@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Sprint admission uses the shared model predicate and captures accepted sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7865ba58d82f4e42292d2c4a605da455f063da3e",
+            "content": "sha256:1dc07ce49fd98c1207ef50bab225b81b1f8afc170a5bf23db7cc2afa56e5f7f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sprint_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A master with command membership or a retained retirement row is a sprint.\n\nAnchor: `TaskDocument.is_sprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 795
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -15,6 +15,10 @@ Every property is computed from the catalog and the source tree when the test ru
 writes down no byte digest, no row count and no file count of a catalog, so a change that adds a
 test file does not edit this module.
 
+## Current master-retirement registration
+
+The catalog is computed from the source tree by the canonical writer command, so this module states no digest, no line count and no contract or artifact count of it; the registration adds the consumer rows of `test_abandoned_series_closeout.py`, `test_master_retirement.py` and `test_standalone_master_retirement.py`. Dated L40/R47 rationale and earlier history remain; the source-derived consumer proof checks the actual union rather than replacing historical digests.
+
 ## Code Commentary
 
 ### The census

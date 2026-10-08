@@ -33,6 +33,14 @@ consult the installed distribution version at all, so an authoring run against a
 wheel is no longer refused here. What survives is the self-probe above plus the operator contract to
 run authoring through the deployed serving server.
 
+`require_serving_retirement_schema()` is a second, separate self-probe for master retirement: it checks that
+`SubTaskRef.model_fields` holds `retirement` and otherwise raises `TopologyServingBuildError` with the status
+`task-master-retirement-serving-build-unsupported` and the text "restart required: this build predates master
+retirement and cannot parse a sprint that holds a retired row". The document model is strict, so a process
+started before a build that has the `retirement` key cannot read a sprint that holds a retired row; a retirement
+write therefore refuses in a process whose model lacks the key, rather than leaving a sprint that the old build
+cannot parse. The topology probe above is unchanged.
+
 ### Conventions
 
 - The refusal is a typed `AgentsRememberError` subclass (`TopologyServingBuildError`) with the
@@ -63,7 +71,9 @@ run authoring through the deployed serving server.
 
 - The preflight gate is now the model self-probe alone: `require_serving_topology_schema` refuses when the running build's `TaskDocument.model_fields` lack the topology fields. The installed-distribution leg and its helpers `_installed_distribution`, `_is_editable_install`, `_below_floor`, and `TOPOLOGY_SERVING_VERSION_FLOOR` no longer exist in the tree — a task-plane edit never consults the installed distribution version. [2]
 - Wired before any write in graph authoring. [3]
+
 - Wired into ordinary topology-emitting edits. [4]
+
 - Wired into sprint attach/detach through the linkage wrapper. [5]
 
 ### Cross-Repo References
@@ -73,6 +83,8 @@ sibling-repository code dependency; the operator guidance points at the same-rep
 document.
 
 No meaningful cross-repo references found.
+
+- The retirement probe refuses when the running model has no `retirement` row field. [6]
 
 ## 260821-DAGQC-L2 Explicit Serving-Build Failure Boundary
 

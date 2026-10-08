@@ -1329,12 +1329,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:98911cc1ffca3ff61b7b6e40e64a8570df52bc4d317e837dd200f5c76025d1df",
             "locator": {
-              "end": 138,
+              "end": 139,
               "kind": "line_range",
-              "start": 138
+              "start": 139
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2559,12 +2559,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 242,
+              "end": 243,
               "kind": "line_range",
-              "start": 242
+              "start": 243
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2972,29 +2972,16 @@
       ]
     },
     "194": {
-      "note": "**The three review ports passed into the shared collaborators.**\n\nAnchor: `knowledge_review`; `knowledge_review_entries`; `review_source_content`",
+      "note": "The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port.",
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:6a4bae5d29ac964e3b900fec28b5e06f922beaed7fee761bb764709f1b2a137f",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
             "locator": {
-              "end": 83,
+              "end": 175,
               "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:ee441b997e1c2ffea1a19c02fb78fe99e7e073db11168a6705d77468981eb93e",
-            "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 154
+              "start": 173
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -3021,29 +3008,16 @@
       ]
     },
     "196": {
-      "note": "**The two ports passed into the shared collaborators.**\n\nAnchor: `knowledge_review`; `knowledge_review_entries`",
+      "note": "The shared collaborators bind the knowledge-review and entry-list ports.",
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:6a4bae5d29ac964e3b900fec28b5e06f922beaed7fee761bb764709f1b2a137f",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:6a7a8f21f4d23eef101b9f9a965782f8d7228a124e0cba7ec3ce775a3cec615c",
             "locator": {
-              "end": 83,
+              "end": 174,
               "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:ee441b997e1c2ffea1a19c02fb78fe99e7e073db11168a6705d77468981eb93e",
-            "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 154
+              "start": 173
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -4109,12 +4083,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 105,
+              "end": 106,
               "kind": "line_range",
-              "start": 105
+              "start": 106
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4122,12 +4096,12 @@
         },
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 129,
+              "end": 130,
               "kind": "line_range",
-              "start": 129
+              "start": 130
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4498,6 +4472,24 @@
         }
       ]
     },
+    "253": {
+      "note": "The skill states the three master rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "22883742dc94023e998239675800e90df206293a",
+            "content": "sha256:03c32a56841a158ff5804adb0698f0ccde87836a5dd321a5fc1d12326196034f",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "26": {
       "note": "The compact row with its family seed.",
       "targets": [
@@ -4537,12 +4529,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 168,
+              "end": 169,
               "kind": "line_range",
-              "start": 168
+              "start": 169
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4637,12 +4629,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 319,
+              "end": 321,
               "kind": "line_range",
-              "start": 319
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4673,12 +4665,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29054e03745950c81736b963ddb664615c9943ec",
+            "blob": "867542540d489a6bba14026b935212fc1374f0b3",
             "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
             "locator": {
-              "end": 38,
+              "end": 41,
               "kind": "line_range",
-              "start": 22
+              "start": 25
             },
             "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py"
           },
@@ -4725,12 +4717,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
             "locator": {
-              "end": 260,
+              "end": 261,
               "kind": "line_range",
-              "start": 260
+              "start": 261
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4738,12 +4730,12 @@
         },
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 249,
+              "end": 250,
               "kind": "line_range",
-              "start": 249
+              "start": 250
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -5076,7 +5068,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -5619,12 +5611,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "35b899bf3ed8759bde33efb8a10cb7ddcf7a4b45",
+            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
             "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
             "locator": {
-              "end": 183,
+              "end": 190,
               "kind": "line_range",
-              "start": 165
+              "start": 172
             },
             "path": "mcp/src/agents_remember/tasks/master_sync.py"
           },
@@ -5806,18 +5798,17 @@
       ]
     },
     "9": {
-      "note": "The finalizer's dispatch.\n\nAnchor: \"target = _folder_parent(contract.task_root, args, leaf)\"",
+      "note": "The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "12fc03f4517d6e685026a480ec5e57ffda791a76",
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
             "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
             "locator": {
-              "end": 448,
-              "kind": "line_range",
-              "start": 408
+              "kind": "symbol",
+              "name": "_resolve_parent_target"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
           "kind": "code"
         }

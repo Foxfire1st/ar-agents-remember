@@ -59,6 +59,7 @@ No external documentation source was configured for this source-owned resolver.
 - Atomic master scope resolution and child deferral. [1]
 - Master currentness enforcement is gone from integration; only aggregate record construction remains. [2]
 - Integration owns no master-review gate: `require_current_route_review` returns "deferred-atomic-master-until-integration" for an atomic series instead of requiring the accumulated master review. [3]
+
 - Integration publication calls the current master review inside authority. [4]
 
 ### Cross-Repo References

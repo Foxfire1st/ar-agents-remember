@@ -7,24 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:17bcd8f3428838464157c8c0498fc854914df5f446dbdb3a26a075a36c1e7d80",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:2916fa2af635f3a12d455b347784dcf6cbe7feea35457e909d941fc3fc143d0c",
             "locator": {
               "kind": "symbol",
               "name": "inventory_execution_topology"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:e90bbdbbaa160013e9a27f178bcd56db368b63f1735dc14db54f010f3fc7f3eb",
-            "locator": {
-              "end": 979,
-              "kind": "line_range",
-              "start": 917
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
           },
@@ -37,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:2f95bbaffd921ff5d9f5c9f41de1fdef57c39f78ec1fa2e554c61e3e339ac20a",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:c1cb47083688bd094e270a8e868c48206d6f1b4bf0b9bdf43a6d1c223aa4aaab",
             "locator": {
               "kind": "symbol",
               "name": "author_execution_graph"
@@ -49,12 +36,11 @@
         },
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:c7e62cb967e2bca942aa3cc5226de3ecf421748ff6db4e6ff1a3f7e0c9f8325c",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:eadae61edd383633e5cda4bc34c5294cb3d9b6c01250744d1670e144bb70955b",
             "locator": {
-              "end": 261,
-              "kind": "line_range",
-              "start": 193
+              "kind": "symbol",
+              "name": "_prepare_authoring"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
           },
@@ -63,28 +49,16 @@
       ]
     },
     "3": {
-      "note": "Fail-closed validation of a sprint's commanded membership and natures.",
+      "note": "Fail-closed validation of a sprint's commanded membership and natures.\n\nAnchor: `TaskDocumentTopology.validate_execution_topology`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:3dc698020ffa24205784b3bb57b63e0d9238f49524b681fe93644b305424ad0b",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:e75ed8f376ba159a82d72b5a8bbf5056b0313d2847ad2c1b6557ff50921629b7",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_execution_topology"
-            },
-            "path": "mcp/src/agents_remember/tasks/document_refs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:bedd8f1717078627e07b38ca92aa7808e81ae6cc6152f5596af0890862cdacf3",
-            "locator": {
-              "end": 350,
+              "end": 372,
               "kind": "line_range",
-              "start": 300
+              "start": 318
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },

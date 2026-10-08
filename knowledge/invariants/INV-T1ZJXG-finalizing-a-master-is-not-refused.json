@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: Finalizing a master is not refused because another master of the same sprint has a task.json that cannot be read; the result reports that member as a fact with its file, and the sp"
+  },
+  "applicability": "Series finalization validating another commanded sibling whose canonical document path has been admitted.",
+  "conditions": [
+    "An existing sibling document is unreadable at its proven canonical path.",
+    "Only a temporary validation view omits it; recorded membership, rows, nodes and bytes remain unchanged."
+  ],
+  "exclusions": [
+    "Unbound title/id identity, genuine missing canonical members, foreign references and duplicate typed rows, all of which refuse.",
+    "The addressed task own document, which must satisfy its own readability admission."
+  ],
+  "id": "INV-T1ZJXG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; probes x15_finalize_probes.out part 2 and x31_named_edit_and_member.out part B (membership, rows and graph nodes unchanged); one killed mutation under sealed id 11"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 note 11",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalization reports an existing unreadable sibling as a fact without dropping its stored membership only when its canonical identity is admitted; an unbound title or id refuses with named unresolved identity rather than a guessed path.",
+  "status": "proposed",
+  "supersedes": []
+}

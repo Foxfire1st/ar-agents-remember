@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case {'path': 'mcp/tests/test_master_retirement_readiness.py', 'symbol': 'test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated'} proves this obligation on the candidate."
+  },
+  "applicability": "A retirement refusal that names a worktree_abandon remedy for a real paired leaf enclosure with a live operation locator.",
+  "conditions": [
+    "The enclosure is real and paired with a live locator.",
+    "The named tool is carried out through the registered surface without patching locator reads."
+  ],
+  "exclusions": [
+    "Synthetic or malformed enclosures.",
+    "Enclosures whose locator is absent."
+  ],
+  "id": "INV-X1AH5G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "readiness-final.txt; real-enclosure-receipts/real-locator.json; real-enclosure-receipts/named-tool-carried-out.json; real-enclosure-receipts/same-retirement-repeated.json"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-O4",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "For a real paired leaf enclosure with a live locator, performing the worktree_abandon remedy named by the retirement refusal clears its open work and the identical retirement request answers would-retire.",
+  "status": "proposed",
+  "supersedes": []
+}

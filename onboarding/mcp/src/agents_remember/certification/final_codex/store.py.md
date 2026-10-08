@@ -47,7 +47,9 @@ The approved CCR-R14@v3 requirement packet and the leaf doc 14_final-real-codex-
 
 ### Repo-Internal References
 
+
 - Atomic manifest writes reuse the kernel atomic-write helper. [2]
+
 - The manifest and record contracts are defined in the final-codex models. [3]
 - The namespace isolation guard keeps final-codex manifests disjoint from certifying and diagnostic roots. [4]
 

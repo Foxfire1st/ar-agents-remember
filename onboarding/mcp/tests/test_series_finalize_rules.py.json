@@ -1,0 +1,72 @@
+{
+  "path": "mcp/tests/test_series_finalize_rules.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+        "content": "sha256:7f92fa4ae4c5921ff54eb0e10c719329bdfa8482df22c4d3b18845700ecd1234",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalize_refuses_an_abandoned_row_that_landed_and_names_the_row"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-6MM5X5",
+      "invariant": "INV-E20AY2",
+      "origin": {
+        "handoffEntry": "L41-continuation-O5",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalization refuses an abandoned row that landed and names the row, for masters of either nature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+            "content": "sha256:46c237e98e2ca5399f3c1b2c98fefde2b5303e05e43ab1c652fb72f45fc90a46",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A proven canonical unreadable sibling is reported as a fact; an unbound title and a missing member refuse by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+            "content": "sha256:5ed2137bfe86e6acfbc0ba82d04d2a29db57a325e519add0346f590e9739df94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_finalize_requires_canonical_identity_for_an_unreadable_member"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable proven canonical sibling is reported as a fact without changing its membership, row, node or bytes; an unbound title is a named unresolved identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "518f531cd68e35b4ba30234ba10edb870de51f34",
+            "content": "sha256:46c237e98e2ca5399f3c1b2c98fefde2b5303e05e43ab1c652fb72f45fc90a46",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

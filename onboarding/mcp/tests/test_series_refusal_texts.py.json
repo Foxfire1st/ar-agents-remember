@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_series_refusal_texts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dirty atomic-master refusal guides delivery through a closed leaf and owner publication or discard, and advertises no integration-workbench commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "464f7d1a3f5e7fd4b6cd249e5dc251717e70cf10",
+            "content": "sha256:b6560cca3dba988fb8c7aaffe2c1d51a0392de86d0ebd52601720073b8d53adf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A series refusal names the master, the contract cell or folder, and the repair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "464f7d1a3f5e7fd4b6cd249e5dc251717e70cf10",
+            "content": "sha256:b6560cca3dba988fb8c7aaffe2c1d51a0392de86d0ebd52601720073b8d53adf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

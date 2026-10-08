@@ -66,6 +66,40 @@
         }
       ]
     },
+    "10": {
+      "note": "Any exception of the archive hook is a reported failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2db7333575772368f1d89440b5564a8734508da2",
+            "content": "sha256:ef342c0972e113bf14e6ae3438aef79de3067e82771d702495a3db30961a3451",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_hook"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Generic task-document edits preserve complete retired rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "712e27b2a76f23bb6a4b07b91b2c5e6d0de8bc48",
+            "content": "sha256:01f22d03770fe85bc3442abfdbac845b661905c2adbeff52ed34ec62cb9f3b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_retirement_proofs_unchanged"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Zero-or-one graph-bearing publication batch and in-memory title context.",
       "targets": [
@@ -100,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
             "content": "sha256:201c8c239a60abe73c9c1b17ef3c8aceabc8a804d252fe9f04b04af3f9ba9b0a",
             "locator": {
               "kind": "symbol",
@@ -112,7 +146,7 @@
         },
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
             "content": "sha256:00e2cb0892599c527c41262733eae192a273b03e30399a1e0b4fc21e5cc03dde",
             "locator": {
               "kind": "symbol",
@@ -124,8 +158,8 @@
         },
         {
           "anchor": {
-            "blob": "57d59ae1c3d0554e23d0105008facc68d9f1d271",
-            "content": "sha256:906a90d3e2ed12490a949ba90c276b546519e2bdc8e4be364d2be43927ae18b4",
+            "blob": "cc9474f17cea3e11aea4acc45cbdc50a845748a8",
+            "content": "sha256:36df522c5be895764f584db34afe331d60d8808e006440e17c44a1a26be304d1",
             "locator": {
               "kind": "symbol",
               "name": "_requires_register_scaffolding"
@@ -206,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7dcc1b15360f9f9afe4639b1e3e887b13d478d83",
+            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
             "content": "sha256:5822cf2444f11a50162c8854f6cc34b971e6b643472618a4ddfeeb37aad17f23",
             "locator": {
               "kind": "symbol",
@@ -247,6 +281,75 @@
               "name": "prove_task_unstarted"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The sprint route builds the candidate, publishes the sprint edit with the folder move, and restores both on a failure before archival.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:33e443b8d07b875e7539ba454f19759e24e7f77b76b166dbf979c4977e7da818",
+            "locator": {
+              "kind": "symbol",
+              "name": "retire_master"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:2cf4d5d3a831fc9b9b19a5370f10e9bc6350b2864c3355ec41f498e2a7a802a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:a3513e0ae48124cdc2f33560fed1d38b11351728d897298e96fe022fcf0d7f81",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_on_sprint"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:6295d0fd62ec91e3852ab1d3a5260471e33e9e93919b8318ed047bda89a48359",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_source"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lone-master route (a master no sprint commands) writes its proof into the master's folder and moves the folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:99f39434dff0d4d2466ea1e1c9f186ab655643bcb2f9113016614a3de525dd58",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
           },
           "kind": "code"
         }

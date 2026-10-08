@@ -29,6 +29,18 @@ nodes only). Candidate overrides let task-doc authoring validate before publicat
 (L13-R5e — only an explicit `organizational` standalone master stays a dead-end), and the public
 `commanded_masters` derives a sprint's exact alias-commanded masters without re-resolving the
 sprint from disk, so unpublished candidate sprints work.
+Readers that reach `_commanded_masters_exact` share `missing_master_detail` for an alias with no live master.
+The message names the sprint, master and archive or missing-folder location, and asks for restoration followed
+by `task_doc.retire_master`. Admission differs: linkage validation returns without exact resolution when no
+typed rows exist; active execution-topology validation can refuse a missing graph first. A retired-only
+graphless sprint has no commanded membership to resolve.
+
+An ambiguous alias is repaired with `task_doc.set_field`: give the unintended master its own id and title,
+or replace the sprint entry with the intended master's canonical folder name. Reverse membership discovery
+belongs to `tasks.sprint_rows.sprint_census`, which returns commanding, recording and unreadable populations.
+Finalization refuses unreadable documents whose text names the master; retirement refuses every unreadable
+document. There is no `commanding_sprints` method on `TaskDocumentTopology`.
+
 Since 260815-DAG-L14 `validate_sprint_linkage` hard-fails NEW-shape sprint↔master linkage
 drift on top of membership validation: every `subTasks` row carrying a typed `masterRef` must
 resolve to exactly one master the sprint commands (same-repository), no two rows may type the same
@@ -102,6 +114,8 @@ None.
 The task documents live in the configured coordination root, but the resolver contract is implemented
 inside agents-remember and has no sibling-repository code dependency.
 
+- An alias that resolves to no master is refused with the shared missing-master message; one that resolves to several is refused with a duplicate-alias message. [6]
+- Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [7]
 
 ## 260815-DAG-L4 Authority Boundary
 

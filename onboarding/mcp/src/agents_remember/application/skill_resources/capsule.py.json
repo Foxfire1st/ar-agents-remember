@@ -192,27 +192,15 @@
       ]
     },
     "4": {
-      "note": "The role/altitude rule the operation checks against.",
+      "note": "The role/altitude rule the operation checks against.\n\nAnchor: `TaskDocumentTopology.validate_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:245ad882a42c3bee97cdf6ffa88bb042047c0248e25b400acd68cc5f7f1aaa83",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
-            },
-            "path": "mcp/src/agents_remember/tasks/document_refs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:e53e24b4ede20d3ccd8d1d6a0cb8bd5a408a07317e9aab553bc03cc44d65a718",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_role"
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },

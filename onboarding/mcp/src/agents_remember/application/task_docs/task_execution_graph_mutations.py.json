@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_execution_graph_mutations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The draft is the one working copy a batch edits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92bddc1623c4272a1b026d7731edc5fd0b7fbfd",
+            "content": "sha256:310ff06af2bb43b1f456fa9c536dbcdb003afb635d8bb9be1cb255191ad2f026",
+            "locator": {
+              "kind": "symbol",
+              "name": "_GraphDraft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Edge deletion has one owner for a named mutation and for a retirement batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92bddc1623c4272a1b026d7731edc5fd0b7fbfd",
+            "content": "sha256:0bb2520aa25647538c266f9ec8b6d844dc20f07000cf7500941d182e104de789",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_edge_indexes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retirement removes every edge touching the master's nodes in one batch and returns the removed edges.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92bddc1623c4272a1b026d7731edc5fd0b7fbfd",
+            "content": "sha256:7ca02f6455b6820dfb4e7ef7f5b0be6e30575b61da5aacb1460578925ba39871",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_retired_master_edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A move whose leaf samples an edge endpoint is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e92bddc1623c4272a1b026d7731edc5fd0b7fbfd",
+            "content": "sha256:8b8513201023fd734113e53fe5ef01ff624975daa05320b791e5874b096bbdb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_move_does_not_retarget_edge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

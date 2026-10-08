@@ -19,7 +19,10 @@ error — it runs the atomic-sequential default until a graph is authored.
 ### Logic
 
 `author_execution_graph` plays the typed
-`mutations` batch onto a `_GraphDraft` through the `_MUTATION_HANDLERS` dispatch: segments are
+`mutations` batch onto a `_GraphDraft` through the `_MUTATION_HANDLERS` dispatch. The mutation models, the
+draft, the handlers (`_apply_add_node` through `_apply_set_nature`), `_require_move_does_not_retarget_edge`
+and `ExecutionTopologyError` are defined in `task_execution_graph_mutations.py`, the one candidate
+mutation engine that graph authoring and master retirement share; this module imports them. Segments are
 addressed by a sampling `leafId`, never named; `remove_node` refuses while an edge still touches
 the node; `move_leaf` also places a leaf the master gained after authoring, and refuses to empty a
 segment; `set_nature` targets only commanded masters. On a graph-less sprint the draft starts empty
@@ -91,16 +94,18 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 - The incremental authoring operation applies one validated judgment-provenanced mutation batch and bootstraps graph-less sprints. [1]
 - Claimed judgment ids resolve against the sprint's canonical Judgment Register (since 260815-DAG-L14 `_verify_authoring_judgments` delegates to the extracted shared `verify_sprint_judgment_ids`, also used by the sprint linkage operations). [2]
 - Writes refuse unknown-leaf or incomplete segment partitions against the live leaf sets. [3]
-- The read-only inventory previews every sprint and commanded master's proposed nature and blockers. [4]
+- The read-only inventory previews every sprint and individual master's proposed nature and blockers. [4]
+
 - Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. [5]
 - The served-build preflight refuses a topology write whose serving runtime cannot parse the schema (model self-probe + non-editable wheel floor). [6]
 - A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). [7]
 - The draft node-kind scan runs before graph construction; unresolvable segment refs record an explicit `None` so membership validation names them (L15-R8 F6, L15-FIX-1). [8]
 - The edit preflight fires only for edits that emit topology schema bytes (L15-R4). [9]
 
-| The authoring suite proves mutation dispatch, judgment provenance, partition refusal, and previews. | `ExecutionGraphAuthoringTests` | mcp/tests/test_author_execution_graph.py:57-982; mcp/tests/test_author_execution_graph.py:53-53 |
-| Preview and apply both route graph cardinality/title preparation through the central application owner. | `author_execution_graph` | mcp/src/agents_remember/application/task_docs/task_execution_topology.py:201-284 |
-| The central owner provides the zero/one assertion and exact in-memory join. | `require_single_graph_document`; `build_publication_batch_graph_titles` | mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:16-33; mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py:36-48 |
+- Preview and apply both route graph cardinality and title preparation through the central application owner. [11]
+- The central owner provides the zero-or-one assertion and the exact in-memory title join. [12]
+- The draft that the authoring handlers edit lives in the shared mutation engine. [13]
+- The move handler refuses a move whose leaf samples an edge endpoint. [14]
 
 ## 260815-DAG-L9 Inventory Boundary
 
@@ -148,8 +153,8 @@ apply-path authority (apply re-locks).
 
 ## Current Contract After CLIVE
 
-The current source seams include `ExecutionTopologyError`, `ExecutionTopologyAuthoringRequest`,
-and `ExecutionTopologyEditRequest`. Accepted-source transactional publication no longer makes task
+The current source seams are `ExecutionTopologyAuthoringRequest` and `ExecutionTopologyEditRequest`
+(defined here) and `ExecutionTopologyError` (defined in `task_execution_graph_mutations.py` and imported here). Accepted-source transactional publication no longer makes task
 authoring subordinate to queue state: task truth publishes first, the affected queue projection is
 invalidated, and current waiting-door facts rebuild it. DAGQC L1 adds the central graph-cardinality
 and title-context precondition without changing that ownership.

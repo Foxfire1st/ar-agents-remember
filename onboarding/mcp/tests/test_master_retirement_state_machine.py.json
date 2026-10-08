@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/test_master_retirement_state_machine.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A death at any transition leaves a state the same request completes, with the sprint still resolving every master it names and at most one record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5e9ce9bd9dfcb566d5c2c6bf3fef733c65a135d",
+            "content": "sha256:c5e79fe64a01eb2bc539dadb6b2dd96558aa4e9a9cfdecd9a4f1b649c91e81b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every other request against the state a death left is refused without a change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5e9ce9bd9dfcb566d5c2c6bf3fef733c65a135d",
+            "content": "sha256:c5e79fe64a01eb2bc539dadb6b2dd96558aa4e9a9cfdecd9a4f1b649c91e81b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A dry run after a partial cleanup lists exactly what remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5e9ce9bd9dfcb566d5c2c6bf3fef733c65a135d",
+            "content": "sha256:c5e79fe64a01eb2bc539dadb6b2dd96558aa4e9a9cfdecd9a4f1b649c91e81b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

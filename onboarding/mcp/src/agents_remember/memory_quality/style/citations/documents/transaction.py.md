@@ -50,7 +50,8 @@ The concrete owners and forcing cases below support this file's contract.
 - Validation precedes atomic byte publication and final digest accounting. [5]
 - Preview validates the same preconditions without invoking the writer. [6]
 - Each accepted projection receives the complete document digest. [7]
-- The existing writer uses a unique temporary file, fsync and atomic replacement; it does not lock. [8]
+
+- The writer publishes through a unique temporary file, fsync and atomic replacement; its in-process guard protects the temporary registry rather than serializing file publication. [8]
 
 ### Cross-Repo References
 

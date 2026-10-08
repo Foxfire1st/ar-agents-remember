@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A task document whose master sync would touch a retired row is refused as a whole and the refusal says that the master is retired, so the seat document of a retired master can be r"
+  },
+  "applicability": "A task document whose master sync would touch a retired row.",
+  "conditions": [
+    "The document's row carries a retirement proof; the write is refused as a whole and names the master is retired."
+  ],
+  "exclusions": [
+    "Writes that do not touch the retired row."
+  ],
+  "id": "INV-ZJTNZY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 4; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d2-snap-py313.txt (the refusal as the product builds it); notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d5-real-seat-ids.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8-O3 / ruled delta",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task document whose master sync would touch a retired row is refused as a whole and the refusal says that the master is retired, so the seat document of a retired master can be read and can no longer be written through the task tool.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-MVYAQ0"
+  ]
+}

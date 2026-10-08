@@ -42,6 +42,12 @@ without task-driven queue refresh. `validate_task_document_mutation_classes` ref
 vocabulary change without a corresponding mutation class, and unclassified schema models refuse
 before write.
 
+The taxonomy declares `SubTaskRef.retirement`, the fields of `MasterRetirementProof`, and the endpoints
+of `RetirementEdgeSelection` as `AUDIT`. Exact mutation classification also includes nested model effects:
+`TaskDocumentRef.repository` and `.path` are normative and structural. Adding or changing a proof can
+therefore contribute those effects; an identical retry contributes no delta. Projection invalidation
+follows the complete classified delta, not the retirement operation's name.
+
 ### Conventions
 
 - Effect wire values use stable kebab-case names.
@@ -104,3 +110,7 @@ evidenced by the repository-owned references below.
 ### Cross-Repo References
 
 None; this is the task-schema authority inside agents-remember.
+
+- The retirement proof, its edge selection and the row's `retirement` field are classified as audit. [10]
+
+- Exact mutation effects recurse through nested models; identical inputs have no delta. [11]

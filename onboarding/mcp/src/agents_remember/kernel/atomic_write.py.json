@@ -1,13 +1,68 @@
 {
   "path": "mcp/src/agents_remember/kernel/atomic_write.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+        "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_writer_is_gone"
+        }
+      },
+      "id": "RLZ-RBHN6V",
+      "invariant": "INV-5ZMMN3",
+      "origin": {
+        "handoffEntry": "L41-R8-O1 / ruled delta",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function decides whether the writer of a leftover is gone, and its exception clause now treats a process number the operating system cannot take as a writer that is not known to be gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+        "content": "sha256:9d68d4275a86b2791d2531bbe42f08a9bf2b2322c318e109e5e3fc43f62dc7a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_writer_is_gone"
+        }
+      },
+      "id": "RLZ-S9Z4DX",
+      "invariant": "INV-6AM3V9",
+      "origin": {
+        "handoffEntry": "L41-continuation-O1",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The process probe decides whether an abandoned temporary file can be removed after publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+        "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remove_abandoned_temps"
+        }
+      },
+      "id": "RLZ-YW24RV",
+      "invariant": "INV-9YJV7Z",
+      "origin": {
+        "handoffEntry": "L41-R7 note 14",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "On non-Windows platforms this post-publication helper removes only same-target temporaries whose writer is proven gone; Windows, live/unknown writers and unremovable files are deliberately left alone.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The private temp this module writes before it replaces `path`.",
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:0c52da8b0e53e84a3bb0cc20695eaf4cb4ab919c3ba6fe29f4073a4e91604221",
             "locator": {
               "kind": "symbol",
@@ -18,12 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:364eb5c7043f729fd15796a1cb9356bf25c1410650504dd55c7660250d50f942",
             "locator": {
-              "end": 29,
+              "end": 35,
               "kind": "line_range",
-              "start": 21
+              "start": 27
             }
           },
           "kind": "code"
@@ -35,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:4cf5930ec964d7b4ef1fa82c802f354fed1c49f4af2b4eea25ac461abe1c8a9e",
             "locator": {
               "kind": "symbol",
@@ -46,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:f7a2363250eabbba70cc86d8b1183f7e53a709a17a5395881e2ace0617dc2279",
             "locator": {
-              "end": 48,
+              "end": 103,
               "kind": "line_range",
-              "start": 32
+              "start": 87
             }
           },
           "kind": "code"
@@ -59,50 +114,15 @@
       ]
     },
     "3": {
-      "note": "The one atomic publish: readers see the old file or the new one, never both.",
+      "note": "Atomic byte publication replaces the destination only after writing its temporary content; readers see the prior or replaced file.",
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
-            "content": "sha256:b470016a68582db5c76917cafe4e4f445bb7277aa60a1e328f7b52b61d6cde64",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
             "locator": {
               "kind": "symbol",
               "name": "atomic_write_bytes"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
-            "content": "sha256:d0c700917c9e903b462e26278ea741f52889300e8e516f44ce63136696510ddb",
-            "locator": {
-              "kind": "symbol",
-              "name": "atomic_write_text"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
-            "content": "sha256:5de496a7b0110b70739121369d8380cffb7490388819c624ee2bd59a0fd2b29f",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 51
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
-            "content": "sha256:6c73f0b675f1b5a8c81c9a6c9db4854b5dd70db0173b75e8b794e106bf0ca1a1",
-            "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 73
             }
           },
           "kind": "code"
@@ -114,7 +134,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -125,12 +145,12 @@
         },
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:f648dc97f2cfe59f333dec70596c2e3143d3352c5ddce45330f424d3eab5fc6d",
             "locator": {
-              "end": 92,
+              "end": 154,
               "kind": "line_range",
-              "start": 78
+              "start": 140
             }
           },
           "kind": "code"
@@ -142,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:b00a0390c779c7f1ca68625682145aab3906d25bb36151c362969278e7674ded",
             "locator": {
               "kind": "symbol",

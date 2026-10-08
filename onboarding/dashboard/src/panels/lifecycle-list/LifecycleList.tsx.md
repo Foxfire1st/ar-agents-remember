@@ -287,7 +287,7 @@ role of its own for the same reason.
 - `groupRows`/`hierarchyRows` give BY REPO its taskHierarchy-derived parent links and `data-depth` marking, and leave BY PHASE flat. [4]
 - Operations rows stay within the left panel: `sizing`/`listBox`/`section` widths, the `row` cva, then `rowId`'s ellipsis and the bounded `rowSec`/`rowGate`/`rowMeta`. [5]
 - `rowId` is the shrinkable title span; `taskTitle` assembles the native hover text from label, lifecycle, repo, gate, and current-step context. [6]
-- The two row builders and the variant they compute. **Re-read against the reverted module:** the ranges below are the CALL SITES (`docRow(`/`seriesRow(`), which is what this row can point at now; the builders themselves are `docRow` at `:738-786` and `seriesRow` at `:788-837`, they compute the `Dot` variant as `lifecycle?.state ?? statusVariant(...)`, and `statusVariant` maps `DocStatus` alone. [7]
+- The two row builders, their call sites and the variant they compute. docRow delegates its variant to taskVariant, which selects lifecycle.state or statusVariant(doc.status); seriesRow selects lifecycle.state or statusVariant(series.status). statusVariant maps completed document status to completed and other statuses to running. [7]
 - "from agents_remember.models.task_document import DocStatus" — `statusVariant`'s entire input vocabulary (imported from "from agents_remember.models.task_document import DocStatus, StepStatus"). [8]
 - `Dot` owns the lifecycle-state treatments (`awaiting-developer`, `paused`, `abandoned`) this list passes through, and is `aria-hidden`. [9]
 - The `task-state` span carries `aria-label` with no role, inside the React Aria `ListBoxItem` whose `role="option"` names it. [10]

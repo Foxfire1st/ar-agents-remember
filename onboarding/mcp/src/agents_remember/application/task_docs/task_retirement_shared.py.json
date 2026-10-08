@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2db7333575772368f1d89440b5564a8734508da2",
+        "content": "sha256:4e52d19a757aa2261eeaf366369101d62d81697d383eeb64843841c98d45e1ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_root_master_folder"
+        }
+      },
+      "id": "RLZ-59QBZQ",
+      "invariant": "INV-BWB3R3",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-nested-master-refused",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Compares the master's folder with tasks/<repository> and refuses a master that is not directly under it, because 0_archive/<name> is defined only for root task folders.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "7": {
+      "note": "Shared helpers parse payloads and classify hook failure and remaining work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2db7333575772368f1d89440b5564a8734508da2",
+            "content": "sha256:ef342c0972e113bf14e6ae3438aef79de3067e82771d702495a3db30961a3451",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_hook"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Real cleanup outcome and operation state are attached by the retirement owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:feb831cade98c724ded5fa5ef7e62f6c0c1fb801d7f3de4f6e527c0058f053b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clean_up"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

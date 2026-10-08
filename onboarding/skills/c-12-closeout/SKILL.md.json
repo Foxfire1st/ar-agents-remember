@@ -1,0 +1,45 @@
+{
+  "path": "skills/c-12-closeout/SKILL.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "22883742dc94023e998239675800e90df206293a",
+        "content": "sha256:db688c1dd25915329fea0ff9c80c78a77f5a13eea4e89f0b0f3f3153429ce092",
+        "locator": {
+          "end": 259,
+          "kind": "line_range",
+          "start": 253
+        }
+      },
+      "id": "RLZ-RM75GK",
+      "invariant": "INV-8NHCRK",
+      "origin": {
+        "handoffEntry": "L41-R8-O5 / ruled delta",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "These lines are the skill's statement of where an abandoned row that landed refuses, and they now name finalization beside the closeout and the task tool.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "22883742dc94023e998239675800e90df206293a",
+        "content": "sha256:3eddab67ff76eff578ff1c63ab336676f92140c7b0131e055ab68c0aaff94424",
+        "locator": {
+          "end": 244,
+          "kind": "line_range",
+          "start": 244
+        }
+      },
+      "id": "RLZ-S7NJK5",
+      "invariant": "INV-E20AY2",
+      "origin": {
+        "handoffEntry": "L41-continuation-O5",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The canonical skill and all nine generated copies must describe this finalization decision.",
+      "role": "presentation"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

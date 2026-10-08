@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/mcp/registration/tasks.py and mcp/src/agents_remember/worktrees/task_retirement.py, so the rule holds only when both places do."
+  },
+  "applicability": "Retirement readiness reading the master's own enclosure operations and an operation kept by an older layout.",
+  "conditions": [
+    "The record follows the current layout; an older-layout report is a fact with status and phase."
+  ],
+  "exclusions": [
+    "Leaf-enclosure operations, which are surveyed separately."
+  ],
+  "id": "INV-GYCF1R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 4; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d3-snap-py313.txt against notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d3-r8-py313.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41 ruling 2 (own-master operations)",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Retirement readiness refuses open work of the master's leaves, and an unfinished or unreadable operation of the master's own enclosure, and an operation report that an older layout kept elsewhere is a fact with its status and phase.",
+  "status": "proposed",
+  "supersedes": []
+}

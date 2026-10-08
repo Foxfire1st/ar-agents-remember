@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_retirement_authority.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "712e27b2a76f23bb6a4b07b91b2c5e6d0de8bc48",
+        "content": "sha256:01f22d03770fe85bc3442abfdbac845b661905c2adbeff52ed34ec62cb9f3b8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_retirement_proofs_unchanged"
+        }
+      },
+      "id": "RLZ-7VSGX6",
+      "invariant": "INV-T4G7VY",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retirement-proof-protected",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Compares the retirement proofs of the sprint rows before and after a candidate and refuses any difference, naming task_doc.retire_master.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "3": {
+      "note": "Generic candidate publication preserves complete retirement rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "712e27b2a76f23bb6a4b07b91b2c5e6d0de8bc48",
+            "content": "sha256:01f22d03770fe85bc3442abfdbac845b661905c2adbeff52ed34ec62cb9f3b8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_retirement_proofs_unchanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusal names the protected row and instructs the caller to leave it unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "283bc9a2a257ce247baf3c53b51589fac721dd38",
+            "content": "sha256:9890d58d12e260fd947283d24f04513ac1226ddfa99e0955da19ae841d068b57",
+            "locator": {
+              "kind": "symbol",
+              "name": "retired_row_message"
+            },
+            "path": "mcp/src/agents_remember/tasks/retired_rows.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -36,12 +36,12 @@
         },
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
             "locator": {
-              "end": 335,
+              "end": 337,
               "kind": "line_range",
-              "start": 335
+              "start": 337
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -92,12 +92,12 @@
         },
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
             "locator": {
-              "end": 335,
+              "end": 337,
               "kind": "line_range",
-              "start": 335
+              "start": 337
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -149,12 +149,12 @@
         },
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
             "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
             "locator": {
-              "end": 335,
+              "end": 337,
               "kind": "line_range",
-              "start": 335
+              "start": 337
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -163,12 +163,12 @@
       ]
     },
     "2": {
-      "note": "The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`.\n\nAnchor: \"cleanup_report(contract, result.payload)\"",
+      "note": "The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents.",
       "targets": [
         {
           "anchor": {
-            "blob": "68588a6cb83b5464f15909d7a52cbb6f819a7c7c",
-            "content": "sha256:b1082075b3a4eabb47883ac0350de3bba84a6a72f907649bad479667456e773f",
+            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
+            "content": "sha256:46e710059fa3fcc62979171c9b45c62888fc179687f8a1e92e0cfb670917a1b7",
             "locator": {
               "kind": "symbol",
               "name": "_run_or_verify_cleanup"

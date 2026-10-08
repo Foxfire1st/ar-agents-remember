@@ -946,6 +946,16 @@ never changes it). `lifecycles/finalize.py`'s `LifecycleFinalizeTaskResponse` ca
 
 L14: the task-doc node model exposes the optional `orchestrates` list and the sessions wire model carries the optional `spawnRole` — both additive, absent on old payloads.
 
+## Master Retirement Models
+
+[task_retirement.py](task_retirement.py.md) holds the strict proof of a master's retirement and the edge selection a request names.
+[task_execution_edges.py](task_execution_edges.py.md) holds the endpoint and edge schemas of a sprint's execution graph, shared by the task-document model and the
+proof. `models/task_doc.py` declares the optional `retirementRow`, `retirementProof`, `retirementResumed`, `removedEdges` and
+`taskArchive` response fields of `retire_master`.
+
+- The proof records the master, archive, reason, time, removed linkage, affirmed edges and source digests. [275]
+- The edge keeps distinct endpoints and a non-blank reason. [276]
+
 ## Evidence
 
 ### Repo-Internal References

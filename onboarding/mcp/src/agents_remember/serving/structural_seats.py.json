@@ -86,28 +86,16 @@
       ]
     },
     "4": {
-      "note": "Task containment resolves real sprint/master/leaf documents.",
+      "note": "The task resolver reads canonical documents and checks their repository identity and containment.\n\nAnchor: `TaskDocumentTopology.resolve`",
       "targets": [
         {
           "anchor": {
-            "blob": "4aa4341d296a8f2ec26e360c47bcc927938c26be",
-            "content": "sha256:b062c14ed46418fb7389750e4b2f2ef71e632429ce07062054ab20b5252ef66b",
+            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
+            "content": "sha256:b133abc628d94673821de5637b0c07bdd4c036691034d0d38c20d643da8e9631",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentTopology"
-            },
-            "path": "mcp/src/agents_remember/tasks/document_refs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e2e3ae1fed9642afa6bc98070f19cfdf13d9726e",
-            "content": "sha256:035610e1862eb56812cc6a45a76036120846851cf6c89d5efa601a7b9109eece",
-            "locator": {
-              "end": 253,
+              "end": 161,
               "kind": "line_range",
-              "start": 36
+              "start": 116
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },

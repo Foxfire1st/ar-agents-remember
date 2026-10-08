@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: The c-12-closeout skill and its nine copies say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and for organizational mast"
+  },
+  "applicability": "The c-12-closeout skill and its nine generated copies describing where an abandoned row that landed refuses.",
+  "conditions": [
+    "The skill text must say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and organizational masters."
+  ],
+  "exclusions": [
+    "Skill copies that are not generated from the canonical skills/c-12-closeout tree."
+  ],
+  "id": "INV-8NHCRK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.ruled-delta-addendum.md section 4; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d3-snap-py313.txt; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-ruled-delta-evidence/out/d6-sync-skills-check.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R8-O5 / ruled delta",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The c-12-closeout skill and its nine copies say that finalization decides the abandoned-but-landed rule again and refuses such a row by name, for atomic and for organizational masters.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-3YSSTZ"
+  ]
+}

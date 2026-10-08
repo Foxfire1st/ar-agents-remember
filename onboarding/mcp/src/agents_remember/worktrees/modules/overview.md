@@ -93,7 +93,9 @@ finding 1, rulings 2026-09-30T13:11:32 and 13:35:32). Reopen (`../reopen.py`) re
 snapshots and the projection effects are unchanged.
 
 - Parent resolution dispatches on the leaf's `master`: named, folder, or standalone. [4]
+
 - The folder master through the master sync's helper, with the named-master checks. [5]
+
 - The placement guard on the leaf and on every master read. [6]
 
 ## 260928-MIK-L10 The Onboarding Gate's Unnecessary-Row Findings Name Their Subject
@@ -242,6 +244,22 @@ winner, then misclassify the now-retired journal as an orphaned branch. Dry-run 
 and write-free. This is synchronization around the canonical journal/contract authorities, not a
 retry, fallback reader, compatibility path, or second lock namespace.
 
+## Finalizing A Master Completes It And Never Archives It
+
+`lifecycle_finalize_task` completes the series master's own document and any proven typed or correlated
+legacy seat row on its single commanding sprint. Without one correlated row it completes the master
+alone and reports the sprint row as skipped with its linkage fact, unless a parent was asserted.
+Several commanding sprints, invalid linkage and unreadable own documents refuse before cleanup.
+The selected documents publish atomically through [finalize_task_documents.py](finalize_task_documents.py.md).
+[finalize.py](finalize.py.md) retains the master folder and carries the archive skip; `task_doc.retire_master`
+is the only master archive route.
+
+- Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
+
+- The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [59]
+
+- The finalization result carries the archive step's skip for a series contract. [60]
+
 ## Evidence
 
 ### CCR-R25 Public Start And Status Evidence
@@ -271,7 +289,9 @@ No external Domain Documentation source is configured for this memory repo.
 - The package is imported through the public worktree manager facade. [20]
 - Focused worktree tests exercise the facade and operation payloads. [21]
 - Finalizer tests cover a named master's row, its rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row, the dry run, the standalone cases and the refusals before any write. [22]
-- Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. [23]
+
+- Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [23]
+
 - Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
 - Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. [25]
 - The lifecycle state carries the optional worktree phase the panels render. [26]

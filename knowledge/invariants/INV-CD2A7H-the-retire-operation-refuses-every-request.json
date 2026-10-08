@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/application/task_docs/task_retirement_records.py and mcp/src/agents_remember/tasks/sprint_rows.py, so the rule holds only when both places do."
+  },
+  "applicability": "A retire request, fresh, dry-run, resumed or repeated, while an addressed document or any task.json of the repository's task tree cannot be read.",
+  "conditions": [
+    "The document is addressed by the request or lies in the repository's task tree outside the archive and enclosures folders."
+  ],
+  "exclusions": [
+    "Files outside the repository's task tree."
+  ],
+  "id": "INV-CD2A7H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md section 'Sealed finding 1'; probes notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/probes/out/x22_truncated_sprint.out, x22b_unopenable_sprint.out, x22c_damaged_after_record.out, x30_f1_edges.out (41 of 41 checks); mutations of notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/runs/mutate-results.json under sealed id 1 (five killed; the one survivor is entry L41-R8-O2)"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 1",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The retire operation refuses every request, fresh, dry run, resumed or repeated, while the document it is addressed to or any task.json of the repository's task tree outside 0_archive and enclosures cannot be opened, decoded or parsed, and the refusal names that file.",
+  "status": "proposed",
+  "supersedes": []
+}

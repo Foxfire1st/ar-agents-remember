@@ -4,7 +4,7 @@
 
 agent_binding and task_scoped_mcp retain actor, role, canonical task, request and source/settings identity for the launched task server. role_launch_context chooses the work scope without deriving it from a native folder or display title. memory_tools/read_files compose these exact bindings with retained converted MIK card/citation/knowledge behavior; writes and lifecycle publication remain with their admitted owners.
 
-- Current imported source owns this scoped route boundary. [385]
+- A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat writes none. [385]
 - Current imported source owns this scoped route boundary. [386]
 - Current imported source owns this scoped route boundary. [387]
 - Current imported source owns this scoped route boundary. [388]
@@ -1492,6 +1492,17 @@ sync/start/poll object and Pydantic rejects mixed mode fields.
   the boot-snapshot config, while stop/status/cleanup stay ungated.
 
 L14: the task-doc application entry point accepts the additive `orchestrates` field (master-only) through create/set_field, feeding the dashboard's command hierarchy; docs without it are untouched.
+
+## The Archive Hook Records New Work And Outcomes
+
+[review_artifact_cleanup.py](review_artifact_cleanup.py.md) runs for an archived task; `task_doc.retire_master` is
+the route for a master. `ReceiptLedger.begin` records planned deletion before it occurs, and a refused receipt write
+prevents deletion. The first attempt records a receipt even without deletion. A replacement preserves the prior receipt
+under its own attempt number; a later unchanged repeat writes none only when its absences are already recorded and
+there is no deletion, release, failure or unfinished receipt.
+
+A replacement preserves the previous receipt under its own attempt number; an unchanged recorded repeat writes none.
+- Artifacts deleted by an earlier attempt are reported as already absent. [386]
 
 ## Evidence
 

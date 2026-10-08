@@ -83,7 +83,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:c9512bef140c79174a59e947c84b245427033dc3e9a15b70406cef8e7ab22ce4",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
         },
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:b00a0390c779c7f1ca68625682145aab3906d25bb36151c362969278e7674ded",
             "locator": {
               "kind": "symbol",
@@ -107,12 +107,12 @@
         },
         {
           "anchor": {
-            "blob": "befccd22646037aea526655bf5912d489988f452",
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
             "content": "sha256:f648dc97f2cfe59f333dec70596c2e3143d3352c5ddce45330f424d3eab5fc6d",
             "locator": {
-              "end": 92,
+              "end": 154,
               "kind": "line_range",
-              "start": 78
+              "start": 140
             },
             "path": "mcp/src/agents_remember/kernel/atomic_write.py"
           },

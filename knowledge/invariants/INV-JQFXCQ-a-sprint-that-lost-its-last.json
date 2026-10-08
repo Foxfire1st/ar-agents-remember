@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/tasks/document.py and mcp/src/agents_remember/tasks/retired_rows.py, so the rule holds only when both places do."
+  },
+  "applicability": "A sprint that lost its last master to a retirement.",
+  "conditions": [
+    "Every reader that asks whether the document is a sprint, including the altitude, role check, scheduling mode, topology validation, closeout queue, linkage report and dashboard queue listing."
+  ],
+  "exclusions": [
+    "A sprint that still commands at least one master."
+  ],
+  "id": "INV-JQFXCQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md section 'Sealed findings 3 to 8'; probe x21_emptied_sprint.out (altitude, architect role, scheduling mode, queue rebuild valid-built without a next action); five killed mutations under sealed id 4"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 4",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A sprint that lost its last master to a retirement is read as a sprint by every reader that asks, and the answer of that retirement names no next action.",
+  "status": "proposed",
+  "supersedes": []
+}

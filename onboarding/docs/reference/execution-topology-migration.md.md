@@ -83,7 +83,9 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - The read-only inventory the guide documents. [1]
+
 - The graph-authoring batch (and graph-less bootstrap) the guide documents. [2]
+
 - Fail-closed validation of a sprint's commanded membership and natures. [3]
 - Exact per-contract activation is the single runtime selection authority and archives malformed snapshots before replacement. [4]
 - Queue waiting reasons observe activation without owning its lifecycle; only reconciling waits. [5]

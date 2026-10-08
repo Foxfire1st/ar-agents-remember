@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ed29e76db451fc4d8dc28be4c1476b0cb615e4c",
+            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
             "content": "sha256:031f34472164fadd42917d1321e0d3fc494d066df14503c1293ab2a5691e49ce",
             "locator": {
               "kind": "symbol",
@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:2f95bbaffd921ff5d9f5c9f41de1fdef57c39f78ec1fa2e554c61e3e339ac20a",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:c1cb47083688bd094e270a8e868c48206d6f1b4bf0b9bdf43a6d1c223aa4aaab",
             "locator": {
               "kind": "symbol",
               "name": "author_execution_graph"
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:5b71b192fac3365d3cf704a9cfc18bbdb3dafe82b9e19a55f557a183820bb392",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
+            "content": "sha256:babfe5f9134bfabe5055aa70139caad0b58e78abe7e12972a0c1a18eef1afcdb",
             "locator": {
               "kind": "symbol",
               "name": "enforce_execution_topology_edit"
@@ -70,24 +70,11 @@
         },
         {
           "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
+            "blob": "62da1ede0d811ea4f2eace680ae8014f504076ab",
             "content": "sha256:eaa96c502a1d79807c3490f0a45edd68e3a14de904f31a6ba9e0b9d3079d1d33",
             "locator": {
               "kind": "symbol",
               "name": "_edit_emits_topology_schema"
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "902dde93892f6a974cc3a51618e24d377ddf0cdf",
-            "content": "sha256:3941a00f811027fb01656db439898607aee6767908af26729075dcf90e890cbc",
-            "locator": {
-              "end": 842,
-              "kind": "line_range",
-              "start": 828
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
           },
@@ -100,13 +87,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6821798ace8a41c0cc0851dc3d301de4aadd9842",
+            "blob": "7865ba58d82f4e42292d2c4a605da455f063da3e",
             "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
             "locator": {
               "kind": "symbol",
               "name": "_require_serving_topology_schema"
             },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd8b0bd845568aeb1b316ab58cfbc4cf557bf5eb",
+            "content": "sha256:057e2bb5efb8d09de97164f8521914f20500976c97dcd06dce41cc971261c2cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_master"
+            },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd8b0bd845568aeb1b316ab58cfbc4cf557bf5eb",
+            "content": "sha256:520a6289d5d2283283cac74da1f9212f7ea38b0d22d3931c4093ec7f25a03142",
+            "locator": {
+              "kind": "symbol",
+              "name": "detach_master"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retirement probe refuses when the running model has no `retirement` row field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
+            "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_serving_retirement_schema"
+            }
           },
           "kind": "code"
         }

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/test_emptied_sprint.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A sprint that lost its last master to a retirement is read as a sprint by every tool, with no next action that cannot work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc122ebe60d6e7b6cda9c4f40da654ac56aa013b",
+            "content": "sha256:6170e66ee1fd093dc476233a3dc8f508ef270a5e3fe90e56eb1546475f26d5d4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An emptied sprint can be edited and commands a master again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fc122ebe60d6e7b6cda9c4f40da654ac56aa013b",
+            "content": "sha256:6170e66ee1fd093dc476233a3dc8f508ef270a5e3fe90e56eb1546475f26d5d4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

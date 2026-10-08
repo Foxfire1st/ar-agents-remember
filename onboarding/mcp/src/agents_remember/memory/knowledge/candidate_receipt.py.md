@@ -82,7 +82,7 @@ No configured domain documentation could be checked.
 - The three-comparison binding check and its refusal. [5]
 - The differing-field rendering used in a refusal's facts. [6]
 - The sealed receipt model and its read-time seal validator. [7]
-- The canonical encoder and the atomic publisher this module writes through. [8]
+- The canonical encoder and atomic publisher carry the receipt bytes. [8]
 - The refusal this module returns for a receipt that is not this admission's. [9]
 - The lifecycle caller that reads both candidate inputs before anything else. [10]
 - The schema identity the fingerprint comparison is made against. [11]

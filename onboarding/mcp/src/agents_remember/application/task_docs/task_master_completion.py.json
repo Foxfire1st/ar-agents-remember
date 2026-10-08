@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_master_completion.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "783adadedde0317a5c7c64c7361064da126c6611",
+        "content": "sha256:573bd4db1bcf3ecd08420226ffcef82f66a85d328f26a5e5ece694eeb531247b",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_master_completion"
+        }
+      },
+      "id": "RLZ-B510HS",
+      "invariant": "INV-YZVCB8",
+      "origin": {
+        "handoffEntry": "curator-MR1-W04-organizational-completion",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This candidate validator is the organizational completion decision; it checks the transition and the retained landing truth before the task-tool edit is published.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An organizational master's completion refuses an abandoned row whose enclosure records a completed integration and names the row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "783adadedde0317a5c7c64c7361064da126c6611",
+            "content": "sha256:dc79321f33b5fa19a0bb3a0ace3ec1a32e2afb17433b2e9e6bd327f5dc4d64cc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Completion of an organizational master is decided at the status edit; an atomic master's is proved by its closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "783adadedde0317a5c7c64c7361064da126c6611",
+            "content": "sha256:dc79321f33b5fa19a0bb3a0ace3ec1a32e2afb17433b2e9e6bd327f5dc4d64cc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An abandoned row without a completed landing blocks nothing and needs no enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "783adadedde0317a5c7c64c7361064da126c6611",
+            "content": "sha256:dc79321f33b5fa19a0bb3a0ace3ec1a32e2afb17433b2e9e6bd327f5dc4d64cc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

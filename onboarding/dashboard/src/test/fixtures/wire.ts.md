@@ -158,7 +158,7 @@ does not.
 - `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. [18]
 - The fixture bases draw their lifecycle sample from the hand-maintained oracle. [19]
 - The fixture bases draw their enclosure sample from the same oracle. [20]
-- The oracle carries its independent analytics sample. [21]
+- The wire oracle carries the hand-maintained sampled analytics payload. [21]
 - The agent-pickup builder takes its sample from analytics. [22]
 - The task-document builder takes its sample from analytics. [23]
 - The attention-item builder takes its sample from analytics. [24]

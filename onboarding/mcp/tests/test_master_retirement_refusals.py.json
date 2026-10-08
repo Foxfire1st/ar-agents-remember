@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_master_retirement_refusals.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "58a66d6803085b929cdb508e736997ba99c0ab87",
+        "content": "sha256:97db272d776f9638eea4de0938833cff2926974fe067f97012be59977f56c461",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_document_with_a_malformed_list_field_refuses_and_is_named"
+        }
+      },
+      "facet": "The named case demonstrates this obligation on the current candidate.",
+      "id": "PRF-HP04B2",
+      "invariant": "INV-C4PDDP",
+      "origin": {
+        "handoffEntry": "L41-continuation-O2",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A refused first phase of a master that no sprint commands leaves no directory it made for the record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58a66d6803085b929cdb508e736997ba99c0ab87",
+            "content": "sha256:a6b2808d19ee1e74b90d386b322ffc7d3376cb1be324a5cf7304c332fc05e452",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A request addressed to an unreadable document is refused by the file's name before anything else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58a66d6803085b929cdb508e736997ba99c0ab87",
+            "content": "sha256:a6b2808d19ee1e74b90d386b322ffc7d3376cb1be324a5cf7304c332fc05e452",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A master with two retirement records is refused with both named, and a new retirement row never takes a number that is in use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58a66d6803085b929cdb508e736997ba99c0ab87",
+            "content": "sha256:a6b2808d19ee1e74b90d386b322ffc7d3376cb1be324a5cf7304c332fc05e452",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

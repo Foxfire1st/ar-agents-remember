@@ -1,0 +1,322 @@
+{
+  "path": "mcp/tests/test_standalone_master_retirement.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retry_with_a_mismatched_namespace_is_refused_without_changes"
+        }
+      },
+      "facet": "A retry that addresses another repository or a mismatched archive reference is refused with every byte unchanged.",
+      "id": "PRF-5CQGMS",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+        }
+      },
+      "facet": "The same partial failure and retry for a master that no sprint commands.",
+      "id": "PRF-CNHZ7D",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_record_that_does_not_match_its_canonical_file_name_is_refused"
+        }
+      },
+      "facet": "A closeout record stored as integrate-operation.json is refused by terminal_operation_evidence and by the retirement, naming the file.",
+      "id": "PRF-CPGHCG",
+      "invariant": "INV-844T5H",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-record-matches-canonical-path",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+        }
+      },
+      "facet": "An ordinary standalone task finalizes with today's skip result.",
+      "id": "PRF-GV8CQB",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalizing_a_master_no_sprint_commands_keeps_it_and_names_the_retire_route"
+        }
+      },
+      "facet": "Finalizing a master that no sprint commands keeps the folder, moves no ref, and names the retire operation.",
+      "id": "PRF-MN9YRV",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_archive_step_itself_never_archives_a_task_holding_a_series_contract"
+        }
+      },
+      "facet": "The archive step called on a task that holds a series contract skips and leaves the folder.",
+      "id": "PRF-RBBFCY",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_any_exception_before_archival_ends_restored_on_both_routes"
+        }
+      },
+      "facet": "An exception of any type before archival ends with the sprint and the folder restored.",
+      "id": "PRF-S37G97",
+      "invariant": "INV-H88VNZ",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-sprint-valid-during-retirement",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_finalizing_a_sprint_commanded_master_completes_its_row_and_names_the_sprint"
+        }
+      },
+      "facet": "Finalizing a master that a sprint commands completes its sprint row, keeps the folder and names the sprint as the reason the archive was skipped.",
+      "id": "PRF-W0PQKE",
+      "invariant": "INV-D91D5G",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-finalize-never-archives",
+        "leaf": "260928-MIK-L41"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+        "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retry_with_other_edge_arguments_is_refused_without_changes"
+        }
+      },
+      "facet": "A retry that names other edges than the recorded retirement is refused and every byte is unchanged.",
+      "id": "PRF-YWVZ7Q",
+      "invariant": "INV-SS31ZW",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-retry-finishes-cleanup",
+        "leaf": "260928-MIK-L41"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Finalizing a sprint-commanded master completes its row, keeps the folder and names the sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:ae5cf3c9b29a882e20db91e137515632be14dd4c02d09b3973af28cc54752528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_sprint_commanded_master_completes_its_row_and_names_the_sprint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A refusal before a retirement record exists carries no restart notice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:3a0a17e49ff1312eeb5e4c843f6ab815c04364a92f80e3033f774fa09a09afb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_before_anything_is_recorded_carries_no_restart_notice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Finalizing a master no sprint commands keeps it and names the retire route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:a67c838a8b8953cd2343af43fc15bee9ecb0a306092add74f0b00d1d81e5f427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_a_master_no_sprint_commands_keeps_it_and_names_the_retire_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An ordinary standalone task keeps today's skip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:856d190f9b34ec80abad94f25dc29100b552db7e83831123734b01fdcfa64c32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalizing_an_ordinary_standalone_task_keeps_todays_skip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The archive step never archives a task that holds a series contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:ead7050440c2e406fc4424a55a7af8217e1533eb8a2d374b653cec63d700b29c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_archive_step_itself_never_archives_a_task_holding_a_series_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A partial hook failure on a lone master keeps the retirement and retries the cleanup only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A retry with other edge arguments is refused with no change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_other_edge_arguments_is_refused_without_changes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Any exception before archival ends restored on both routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_any_exception_before_archival_ends_restored_on_both_routes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A record that does not match its canonical file name is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:984f76532126014277aa153d1352ea5f7ec4d3eb9efe1af5f24b02feb17a3dfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_that_does_not_match_its_canonical_file_name_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Pending cleanup alone permits preview while a real child worktree refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:add34c3f83dd3e3a913d70687f6986ff4d3825c142f10b00b93211a722988dee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

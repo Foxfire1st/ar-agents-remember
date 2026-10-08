@@ -1,18 +1,55 @@
 {
   "path": "mcp/src/agents_remember/tasks/document.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+        "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocument.is_sprint"
+        }
+      },
+      "id": "RLZ-ER1AK1",
+      "invariant": "INV-JQFXCQ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 4",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This property is the one test of whether a master document is a sprint: it commands masters, or it holds a retired row.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+        "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubTaskRef._retired_row_is_plain"
+        }
+      },
+      "id": "RLZ-PXN1S9",
+      "invariant": "INV-MVYAQ0",
+      "origin": {
+        "handoffEntry": "L41-R8-O3",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This validator now lets a retired row carry a file cell, which is what makes the master sync of the seat document find the protected row.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The optional field and its comment.\n\nAnchor: \"MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:fe527ac72f6dcfb35046946f2aaae515023edbe4faf06f161d5484ffa04b2c0e",
             "locator": {
-              "end": 720,
+              "end": 681,
               "kind": "line_range",
-              "start": 720
+              "start": 681
             }
           },
           "kind": "code"
@@ -24,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
             "locator": {
               "kind": "symbol",
@@ -40,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:cd1d33519541245a873eee5269a5fa220a1674e2396ff94e629c6ca601b5430d",
             "locator": {
               "kind": "symbol",
@@ -56,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:6ebfab34f5e4da086f68937803178e20cdbbfe4116b44c641f12cff8458160ec",
             "locator": {
               "kind": "symbol",
@@ -72,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37979d81f1d57a69398a04edf383ae4808f2f28e",
+            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
             "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
             "locator": {
               "kind": "symbol",
@@ -130,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:de083a3ccb2ff5c3c153fe764e71894d9576297fe6f68e11f48dc2457674021e",
             "locator": {
               "kind": "symbol",
@@ -141,11 +178,79 @@
         },
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:256c7233d8ec35bb9a24f2456fe797b31c9351c37e34d295cb4093e211129eac",
             "locator": {
               "kind": "symbol",
               "name": "_latest_unblocked_segment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain.\n\nAnchor: `SubTaskRef._retired_row_is_plain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 490
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The edge and endpoint models the graph uses are imported from the shared edge module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a34d2a801e7b63315e46af96838110416ffb7c",
+            "content": "sha256:5da0285befa83e2f29446475525fe819e343fb6df43a9b10f3bd6bb1e4d8d155",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/task_execution_edges.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Series progress excludes abandoned rows from the total and reports them separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "content": "sha256:2d4a1dd578a5da15c4a8be69e7c73caa1e165ff34215981b8024fc1821b6321a",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_abandoned"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Sprint identity includes retired-only masters; seats and integrationBranch use that predicate.\n\nAnchor: `TaskDocument.is_sprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "content": "sha256:fe30d1e25440bdce5038a4c89ea1add3492c24d48a262622dd50e1dbb6b3dd7a",
+            "locator": {
+              "end": 844,
+              "kind": "line_range",
+              "start": 795
             }
           },
           "kind": "code"
@@ -175,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -191,7 +296,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
             "locator": {
               "kind": "symbol",
@@ -207,12 +312,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
             "locator": {
-              "end": 725,
+              "end": 686,
               "kind": "line_range",
-              "start": 723
+              "start": 684
             }
           },
           "kind": "code"
@@ -224,12 +329,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:1c1a21ee6d3265d4f8bad42874a04696f0615c020d99b4b1edd501e127ca6543",
             "locator": {
-              "end": 768,
+              "end": 729,
               "kind": "line_range",
-              "start": 768
+              "start": 729
             }
           },
           "kind": "code"
@@ -287,7 +392,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e194e66c4d38d9a7f696fb9319f726dea221264",
+            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
             "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
             "locator": {
               "kind": "symbol",

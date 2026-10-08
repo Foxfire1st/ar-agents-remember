@@ -3,14 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The hierarchy/grouping suite.\n\nAnchor: `describe`",
+      "note": "The hierarchy/grouping suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f3c545be576c1e9df092e5b716faa276b7c305e",
-            "content": "sha256:83d3cdf10fd334491d6dd0302c02031bf1971a70bbfdb29a30a84c3ad1a79a3b",
+            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
+            "content": "sha256:14a4f8e8eaddb45f98af8c1d1c7ec75cb2d816c9f7d855be9cb6358708142a39",
             "locator": {
-              "end": 355,
+              "end": 407,
               "kind": "line_range",
               "start": 19
             }
