@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Selection exclusion of other leaves and the owner is proved by the focused suite."
+  },
+  "applicability": "Every leaf closing, including leaves whose agents were started by a Manager or higher role.",
+  "conditions": [
+    "Only the leaf's own recorded selections are archived.",
+    "The owner that started an agent is not selected through its parent ID."
+  ],
+  "exclusions": [
+    "Other leaves and the higher roles (Manager, Orchestrator, Architect) are untouched."
+  ],
+  "id": "INV-W41C85",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_current_history_retry_and_other_selections_preserve_every_artifact; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 6",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Leaf archive selection excludes higher owner roles and different canonical leaf selections, including the owner that started a leaf agent.",
+  "status": "proposed",
+  "supersedes": []
+}

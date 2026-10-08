@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "blob": "f463507a910e67dd9c7851377a1d7e52a3ccbf89",
             "content": "sha256:45b8e27a90409eb628b03bba721ee431689b45ed31ea06d80d99ebf88049944c",
             "locator": {
               "kind": "symbol",
@@ -103,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "blob": "f463507a910e67dd9c7851377a1d7e52a3ccbf89",
             "content": "sha256:7bd825774004529cc0694a66cf449d4e9c100646151c582a2c401b4171ab5126",
             "locator": {
               "kind": "symbol",
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -148,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
             "locator": {
               "kind": "symbol",
@@ -160,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:e17908e803a0963f77a43608b2d5adbd3cee3f03d892f343615f641b7a3d6fe3",
             "locator": {
               "kind": "symbol",
@@ -172,7 +172,7 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:668fe963c9e63a21e06c992b1bd8e1d7925cb58f97ed82e22a1e645824a62ef7",
             "locator": {
               "kind": "symbol",
@@ -184,12 +184,12 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:11fc2dbe6740217cc905c252782faf50cb7f3ec4c4579f50aa5a0672d455119a",
             "locator": {
-              "end": 467,
+              "end": 468,
               "kind": "line_range",
-              "start": 452
+              "start": 453
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },

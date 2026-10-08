@@ -6,8 +6,11 @@
     ],
     "justification": "Runtime table and role instructions prevent a successful turn being misreported as accepted task, semantic curation or Git publication."
   },
-  "applicability": "Execution lifecycle projection and role doctrine interpreting it.",
-  "conditions": [],
+  "applicability": "Execution lifecycle projection of a role launch receipt and role doctrine interpreting it.",
+  "conditions": [
+    "An unmarked receipt keeps the original completed/starting projection.",
+    "The prepared-start refusal projection requires both the leaf's closing mark and `leafArchive.startRefused` true; a closing mark whose settlement has not set that flag leaves the ordinary status."
+  ],
   "exclusions": [
     "Semantic acceptance, requirement satisfaction, memory publication and Git landing remain owner judgments."
   ],
@@ -23,9 +26,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "`canStart` and `canRetry` keep the meaning the launch leaf gave them and are computed from the receipt's status; no refresh touches an unresolved receipt; a finished turn is recorded as `completed` with the detail 'last turn finished; the agent is idle' and changes no AR task, review, requirement or Git state.",
+  "statement": "`canStart` and `canRetry` keep the meaning the launch leaf gave them and are computed from the receipt's status; no refresh touches an unresolved receipt; a finished turn is recorded as `completed` with the detail 'last turn finished; the agent is idle' and changes no AR task, review, requirement or Git state. A receipt that carries its leaf's closing mark and whose `leafArchive.startRefused` flag is true is the exception: `canStart`, `canRevive` and `canRetry` are false, the explicit `startRefused` flag is projected, and the status is `rejected` when the receipt's own target is already archived or gone; a marked receipt whose settlement has not set that flag keeps its ordinary status.",
   "status": "proposed",
   "supersedes": []
 }

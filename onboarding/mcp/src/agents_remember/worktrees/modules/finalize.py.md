@@ -84,6 +84,14 @@ except that a `Completed` master with an open row is demoted to `inProgress`, an
 completed recursively; callers repeat finalization for the next parent-child branch edge. Dry-run returns
 `would-update` task-document states without writing files.
 
+## Agent archive through finalize (MIK-R76)
+
+Finalize surfaces the `agentArchive` report the cleanup transaction returns, including on the
+already-completed path, where `archive_terminal_agents` runs directly. The completion-document
+reconciliation is split so an already-completed leaf or parent yields an `already-completed` update
+without republishing an identical document; `_completion_updates` prepares documents and
+`_reconcile_task_documents` publishes them atomically as before.
+
 ## Evidence
 
 ### Docs References

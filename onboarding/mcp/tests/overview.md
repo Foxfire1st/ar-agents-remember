@@ -186,3 +186,11 @@ The tests route gained seven host modules (install contract, install no-stop, No
 - The install-contract module. [27]
 - The no-stop module. [28]
 - The node module. [29]
+
+## Closed-leaf agent archive suite (MIK-R76)
+
+`test_leaf_agent_archive.py` is the focused proof suite for the closed-leaf archive: receipt
+selection and settlement, the prepared-start closing mark, debt recovery through the existing
+observer, truthful outcomes, bounded budgets and archive-before-removal ordering. It is registered
+as a consumer in both governed test-evidence catalogs.
+

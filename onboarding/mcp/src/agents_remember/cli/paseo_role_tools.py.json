@@ -4,6 +4,24 @@
     {
       "anchor": {
         "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "content": "sha256:b25736a346ca4c79ae8b8b3d459094cf4e82a02db460b1895cf2959f9ce17295",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_role_message"
+        }
+      },
+      "id": "RLZ-3DKDAC",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This unchanged role-message owner retains archived-recipient refusal and is not altered by leaf archival.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "819518dc41d0c54143594cfc191864f91277d202",
         "content": "sha256:877c034ea3911917071969bab87622de46f8c6e19b46d884a8fa0099feffe416",
         "locator": {
           "kind": "symbol",

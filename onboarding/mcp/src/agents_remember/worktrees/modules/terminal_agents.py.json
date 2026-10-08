@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_agents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
+        "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+        "locator": {
+          "kind": "symbol",
+          "name": "archive_terminal_agents"
+        }
+      },
+      "id": "RLZ-WY4VEC",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This boundary contains host/discovery exceptions so archive failure does not refuse admitted retirement.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The boundary contains host and discovery failures and never refuses retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
+            "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+            "locator": {
+              "kind": "symbol",
+              "name": "archive_terminal_agents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

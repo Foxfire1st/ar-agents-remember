@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Removing the agents alone still lets a closing lie about an owed target or let a prepared start publish a live execution past the boundary; the rules together promise an outcome none promises alone."
+  },
+  "guarantee": "A closed leaf archives exactly its own recorded role agents before the worktrees are removed, whether idle or in a turn, and reports the truth about every archived, already-archived, gone, owed and left-alone target. A prepared start whose agent is not yet created is refused once its leaf's closing mark is present and its settlement says so; a start whose creation is already entered is not waited for — its minted target stays receipt-owned debt until the returned agent is archived and the start refused, without erasing the retirement record. The family does not promise an instantaneous no-live state while an entered creation's archival is still owed.",
+  "id": "FAM-VNK792",
+  "members": [
+    "INV-F1TY2E",
+    "INV-8WCSQ7",
+    "INV-PRP52X",
+    "INV-K43DJZ",
+    "INV-9VQQ7W",
+    "INV-W41C85",
+    "INV-FEB6Y6",
+    "INV-GM5MS3",
+    "INV-VPXD65",
+    "INV-AJKQV2"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "L76-closed-leaf-leaves-no-live-agents",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp",
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/models/lifecycles",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/worktrees/modules"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A closed leaf archives its recorded role agents and publishes no prepared start as running past the closing mark; an entered creation is archived on return"
+}

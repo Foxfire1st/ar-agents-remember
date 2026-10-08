@@ -27,6 +27,12 @@ opt-out retains `autoLandedSeats` for the historical landed/archive path. All fo
 empty for dry runs or disabled edges and do not replace the finalizer state, blocker, cleanup, or
 task-document evidence.
 
+## Agent archive in the finalize response (MIK-R76)
+
+`LifecycleFinalizeTaskResponse` declares `agentArchive`, the report the finalizer carries from the
+cleanup or abandon transaction (`archived`, `alreadyArchived`, `gone`, `owed`, `leftAlone` and a
+summary). It is empty when no archive ran.
+
 ## Evidence
 
 ### Docs References

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The closing mark, the receipt replay/publication path and the launch call realize the exception across three files."
+  },
+  "applicability": "A prepared leaf start that is under way when its leaf is closed.",
+  "conditions": [
+    "The leaf closing mark is read before replay and under the receipt lock after creation.",
+    "An unentered creation is refused; an entered creation's returned agent is archived and the start refused without erasing the retirement record."
+  ],
+  "exclusions": [
+    "The product does not prevent creation inside an already-entered host RPC and does not wait for it.",
+    "No bridge or start-policy change is made (MIK-R71 excluded)."
+  ],
+  "id": "INV-VPXD65",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-positive.log (4 passed/5 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-removed-fix.log (6 expected failures/1 passed/11 deselected, exact original module paths and SHA printed); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/replay-message-preservation.log (5 passed/20 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/final-binding-and-archive-readback.json."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Under the approved terminal/prepared-start exception, a matching closing mark refuses an unentered leaf creation and makes an entered creation archive-only on completion and replay without erasing the retirement record.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -4251,3 +4251,10 @@ Touched modules:
 - Implementation (a) with only the carry exempt, and (b) through the lane's links. [371]
 - The one carry rule, shared with the worklist. [372]
 - The composition's one call. [373]
+
+## Closed-leaf agent archive binding (MIK-R76)
+
+`build_default_worktree_services` accepts the optional `leaf_agent_archive` port and binds it into
+the default bundle; the MCP server and dashboard entry points supply the service. Composition only:
+the archive behavior lives in the CLI service and the admitted terminal transactions.
+

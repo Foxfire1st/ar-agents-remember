@@ -12,6 +12,15 @@ Owns durable current-line launch receipts, immutable saved-call replay, report b
 
 Receipt creation is exclusive and complete before native launch; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved receipts drop replayRequest. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
+## Closing mark and archive settlement (MIK-R76)
+
+`_execute_prepared_launch` reads the leaf closing mark before replaying a saved call and re-checks it
+under the receipt lock after creation, so a retired start is refused instead of publishing a running
+receipt. `_write_receipt` serializes short metadata publication under the existing lock and merges
+the same request's closing marker, archive debt and refusal facts when a stale ordinary writer
+publishes, so a concurrent settlement is not erased. The existing request-ID reconciliation and
+saved-call replay semantics are otherwise unchanged.
+
 ## Evidence
 
 - Frozen implementation of _execute_prepared_launch supporting the stated file behavior. [1]

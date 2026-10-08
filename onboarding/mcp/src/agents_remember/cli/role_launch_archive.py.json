@@ -1,0 +1,392 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_archive.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchive.archive"
+        }
+      },
+      "id": "RLZ-1945F7",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "A-1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Marks every validated recorded leaf start before any host archive call using the existing receipt authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._archive"
+        }
+      },
+      "id": "RLZ-2KJYJ5",
+      "invariant": "INV-PRP52X",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 3",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This bounded call invokes agent-archive directly and does not inspect activity or wait for a turn.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:f6c2dc815eec086a1fc93ab0282488ea920fc5214d641af2da1d2ee70eb0b27a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._save"
+        }
+      },
+      "id": "RLZ-45JRVX",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This receipt merge preserves launch status/replay identities and records settlement separately from role-start meaning.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_retired_start"
+        }
+      },
+      "id": "RLZ-5VCJGH",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "A-1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Settles the exact returned or replayed minted target, retaining unknown creation as owed and publishing refusal without deleting retirement data.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchive.archive"
+        }
+      },
+      "id": "RLZ-6Z6SY5",
+      "invariant": "INV-W41C85",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 6",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This matcher compares canonical task references and never selects an owner through parent ID, title or cwd.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchive.archive"
+        }
+      },
+      "id": "RLZ-72NQ8V",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Marks every validated recorded leaf start before any host archive call using the existing receipt authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:e86ff729cb653eb7eea435675390db430f32f8a95cb76eecd239d0d1a240bf6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "empty_archive_report"
+        }
+      },
+      "id": "RLZ-7PMFRX",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This response shape separates the truthful outcomes that the service appends per target or unreadable record.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchive.archive"
+        }
+      },
+      "id": "RLZ-ADBGJQ",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This service returns the outcome lists and an explicit no-agent summary for an empty recorded selection.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:4ff4deb0b5cccfa21d2b08879abe8c3d880bff1ffd8e1ebe146113d24604791f",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_receipt_ref"
+        }
+      },
+      "id": "RLZ-AX9AYS",
+      "invariant": "INV-W41C85",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 6",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This selection validator admits only leaf-role records and rejects a role mismatch.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:4ff4deb0b5cccfa21d2b08879abe8c3d880bff1ffd8e1ebe146113d24604791f",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_receipt_ref"
+        }
+      },
+      "id": "RLZ-B5T689",
+      "invariant": "INV-8WCSQ7",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 2",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This validator admits leaf role/selection pairs and supplies the exact canonical document reference used for matching.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:f6c2dc815eec086a1fc93ab0282488ea920fc5214d641af2da1d2ee70eb0b27a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._save"
+        }
+      },
+      "id": "RLZ-BJKPN5",
+      "invariant": "INV-9VQQ7W",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 5",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This merge re-reads the same request receipt and changes only archive debt/settlement fields, preserving launch and artifact data.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:92facad0be82b7aab807336afdf1be61a44b2254fd0e6a342a871bbc7fd706f8",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafAgentArchive.archive"
+        }
+      },
+      "id": "RLZ-BN80J5",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This service resolves the canonical leaf and enumerates current and historical launch receipts for its recorded target agents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_retired_start"
+        }
+      },
+      "id": "RLZ-DBTE97",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Settles the exact returned or replayed minted target, retaining unknown creation as owed and publishing refusal without deleting retirement data.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:f242a5eba849975224ae6b149268fcc8e6164374b631d212555faa2763288573",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt.record"
+        }
+      },
+      "id": "RLZ-HP18MK",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This writer preserves the predecessor debt head while also attempting and recording the receipt own target.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:fd2a960f127ca6187509c31f87dc940b8e05c478ff894db2279b43a95b39da77",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._recorded_targets"
+        }
+      },
+      "id": "RLZ-Q0XKKK",
+      "invariant": "INV-8WCSQ7",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 2",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This receipt reader validates minted own/predecessor UUIDs and task reader bindings before any host attempt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+        "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
+        "locator": {
+          "kind": "symbol",
+          "name": "ArchiveAttempt._archive"
+        }
+      },
+      "id": "RLZ-ZDR15J",
+      "invariant": "INV-9VQQ7W",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 5",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This host request archives an exact agent and requests no deletion of reports, handovers or chat.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The archive service derives the exact leaf reference and enumerates current and historical receipts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:cdf210c2736ba447956044e53be881bfb3c20163de83beedbc86de8dbd8c830a",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafAgentArchive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Receipt marking happens under the existing lock before host I/O.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:d3d742cd30f823b8bd07aa2d14ad19fe30a2a7411930050f0f28204605c218f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A marked start is refused and a returned creation settled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:66bd4301fb6a797acbd6cef9743d922afded60af5ecd62deb7cd4300647a713e",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_retired_start"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Recorded targets are validated and unreadable or conflicting records are named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:fd2a960f127ca6187509c31f87dc940b8e05c478ff894db2279b43a95b39da77",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bounded host call settles debt and outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:8ff603dd73f0d580a9c93870be1058c6fb06511f7cf7fe711c6d8ce37791c390",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The host-attempt deadline and per-call cap bound host calls; receipt traversal, parsing, locking and writes are not preempted by them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceadcc22b6dfa25d676932c800e9a78078e36165",
+            "content": "sha256:162febe30c71e5904eb439931802f50377b3f767ea58fc0bc3f196d73f29e76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARCHIVE_BUDGET_SECONDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

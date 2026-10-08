@@ -88,6 +88,14 @@ is unchanged.
 - The docstring points at the `l-01-agent-lifecycles` skill's
   read-only/abandon exit as the lifecycle entry that drives this operation.
 
+## Admitted abandon with agent archive (MIK-R76)
+
+`_abandon_reserved` delegates to `terminal_abandon._abandon_with_guard`, which archives the leaf's
+recorded agents through `archive_terminal_agents` after terminal admission and before the
+destructive outputs. The already-abandoned terminal path also archives before returning, and a
+non-empty `agentArchive` report is merged into the result payload. The module keeps its own result,
+blocker and contract-stamp behavior.
+
 ## Evidence
 
 ### Docs References

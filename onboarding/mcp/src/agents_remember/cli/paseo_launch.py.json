@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+        "blob": "daf9a0e68065d34057a6c3325fd41a026f743b5f",
+        "content": "sha256:ced5ee07c5477f46e5cad77c83c348121f76505ece5de6a90ee3ea7d72ada2aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_launch_call"
+        }
+      },
+      "id": "RLZ-2MSXRD",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "A-1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Calls the admitted leaf before-create check between workspace opening and creation while preserving ordinary call behavior.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
         "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
         "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
         "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+        "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
         "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
         "locator": {
           "kind": "symbol",
@@ -72,6 +90,24 @@
       },
       "rationale": "Persists the one definition under the canonical task-server name.",
       "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "daf9a0e68065d34057a6c3325fd41a026f743b5f",
+        "content": "sha256:ced5ee07c5477f46e5cad77c83c348121f76505ece5de6a90ee3ea7d72ada2aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "run_launch_call"
+        }
+      },
+      "id": "RLZ-PMMCQ0",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "Calls the admitted leaf before-create check between workspace opening and creation while preserving ordinary call behavior.",
+      "role": "support"
     }
   ],
   "references": {
@@ -80,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
             "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
             "locator": {
               "kind": "symbol",
@@ -96,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
             "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
             "locator": {
               "kind": "symbol",

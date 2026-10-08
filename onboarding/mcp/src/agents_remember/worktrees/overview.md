@@ -1237,3 +1237,11 @@ payload and the direct-landing preview). **Inert until the cutover.**
 - The port, the landing request and the direct verdict. [63]
 
 - Direct landing's gate and closing. [64]
+
+## Closed-leaf agent archive (MIK-R76)
+
+`services.py` declares `LeafAgentArchivePort` and the optional `leaf_agent_archive` bundle field, so
+the admitted terminal transactions reach the leaf archive service through the worktree layer's
+existing port boundary. A bundle without the port reports `not-bound`; no fallback owner is
+constructed.
+

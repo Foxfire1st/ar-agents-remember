@@ -109,6 +109,13 @@ that skips this line loses no records — it just stops being distinguishable fr
 
 Readable launch binding supplies one canonical launched-server instruction line. Unbound or unreadable binding supplies no instructions; malformed binding still refuses at its actual server_info/bound-tool boundary rather than changing startup authority. create_server retains existing worktree services and application trust composition.
 
+## Leaf agent archive binding (MIK-R76)
+
+`create_server` builds the default worktree services with `leaf_agent_archive=LeafAgentArchive(config)`,
+so the MCP process's finalize and abandon transactions reach the archive service. The binding is
+composition only; the archive behavior lives in `cli/role_launch_archive.py` and the admitted
+terminal transactions.
+
 ## Evidence
 
 ### Repo-Internal References

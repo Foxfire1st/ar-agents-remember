@@ -6,12 +6,14 @@
     ],
     "justification": "Saved-input replay prevents current source edits or unknown outcomes becoming another first assignment or agent."
   },
-  "applicability": "Start/retry with the request ID already at the selection receipt address.",
+  "applicability": "Start or retry with the request id already at the selection receipt address.",
   "conditions": [
-    "Request digest and starter ownership still match."
+    "Request digest and starter ownership still match.",
+    "A receipt carrying its leaf's closing mark is answered archive-only, not replayed."
   ],
   "exclusions": [
-    "Resolved executions may refresh host status under R07 without recompiling."
+    "Resolved executions may refresh host status under R07 without recompiling.",
+    "The exception does not change ordinary first launches."
   ],
   "id": "INV-ZD9BK1",
   "origin": {
@@ -25,9 +27,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "A request whose receipt at its address carries its request id is answered from that receipt and is not compiled again: a `starting` or `unknown` receipt runs its stored call under the minted agent id and with the first message as saved, any other status returns the saved execution; a task document, the capsule or the first message that changed since the launch cannot turn the repeat into a conflict.",
+  "statement": "A request whose receipt at its address carries its request id is answered from that receipt and is not compiled again: a `starting` or `unknown` receipt runs its stored call under the minted agent id and with the first message as saved, any other status returns the saved execution; a task document, the capsule or the first message that changed since the launch cannot turn the repeat into a conflict. A receipt that carries its leaf's closing mark is the exception: an unentered creation is refused without replay, and an entered creation stays archive-pending until its returned agent is archived and the start refused, without erasing the retirement record.",
   "status": "proposed",
   "supersedes": []
 }

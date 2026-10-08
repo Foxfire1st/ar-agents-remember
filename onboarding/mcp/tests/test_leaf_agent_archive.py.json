@@ -1,0 +1,555 @@
+{
+  "path": "mcp/tests/test_leaf_agent_archive.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+        }
+      },
+      "facet": "A stale publication keeps the archive and only the exact leaf mark refuses.",
+      "id": "PRF-0BYMEG",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
+        }
+      },
+      "facet": "Debt whose write failed is recovered from terminal truth after restart.",
+      "id": "PRF-3HME1A",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:ac69d4d1986a4994607373a71b844487bdf4454beb310733145069edfa15ca81",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repeated_finalize_reports_archive_outcomes_without_changing_task_again"
+        }
+      },
+      "facet": "A repeated finalize reports archived and already-archived outcomes without changing the task again.",
+      "id": "PRF-4PS9Z3",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_marked_same_request_replay_refuses_without_creation_and_keeps_debt"
+        }
+      },
+      "facet": "Same-request replay of a marked receipt refuses without creation and keeps the debt.",
+      "id": "PRF-4VV5ZT",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
+        }
+      },
+      "facet": "Admitted cleanup and abandon archive the recorded agents before any destructive output.",
+      "id": "PRF-5EKRWR",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_unreadable_and_conflicting_records_are_named_without_host_calls"
+        }
+      },
+      "facet": "The answer names unreadable and empty selections plainly.",
+      "id": "PRF-5H6A3F",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+        }
+      },
+      "facet": "A closing mark refuses an unentered prepared start and settles a returned creation.",
+      "id": "PRF-6V4Q8G",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+        }
+      },
+      "facet": "The A-1 race no longer discards archival or publishes a running retired start.",
+      "id": "PRF-8FMB4A",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "A-1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_empty_unreadable_and_conflicting_records_are_named_without_host_calls"
+        }
+      },
+      "facet": "Unreadable, empty and conflicting records are named and left alone without a host call.",
+      "id": "PRF-A1A7A8",
+      "invariant": "INV-8WCSQ7",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 2",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_terminal_mark_covers_other_prepared_roles_before_host_calls"
+        }
+      },
+      "facet": "The mark covers other prepared roles before any host call.",
+      "id": "PRF-D9RW2K",
+      "invariant": "INV-VPXD65",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+        }
+      },
+      "facet": "Other leaf selections and the owner are excluded while the leaf's own records are archived.",
+      "id": "PRF-JBVHYN",
+      "invariant": "INV-W41C85",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 6",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+        }
+      },
+      "facet": "The retirement record survives a concurrent stale publication.",
+      "id": "PRF-M82ZGQ",
+      "invariant": "INV-AJKQV2",
+      "origin": {
+        "handoffEntry": "A-1",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
+        }
+      },
+      "facet": "The archive call is issued without an idle check or turn wait before removal.",
+      "id": "PRF-MB1XNZ",
+      "invariant": "INV-PRP52X",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 3",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:af951ce93367c88ec0584d1f3b5f3265cdbf863070744a96983e303dd4a7455f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_existing_observer_archives_terminal_debt_without_a_person_calling_recovery"
+        }
+      },
+      "facet": "The recurring observer settles terminal debt without a person.",
+      "id": "PRF-Q475Y9",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_host_budget_and_receipt_settlement_stay_bounded_at_two_scales"
+        }
+      },
+      "facet": "The host budget and settlement stay bounded at two input scales.",
+      "id": "PRF-QVZP3Y",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_marked_same_request_replay_refuses_without_creation_and_keeps_debt"
+        }
+      },
+      "facet": "A marked same-request replay keeps the saved identity and refuses without creating another agent.",
+      "id": "PRF-RCKSCG",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_predecessor_debt_survives_host_failure_and_automatic_recovery_advances_it"
+        }
+      },
+      "facet": "Host failure leaves debt that the existing observer advances automatically.",
+      "id": "PRF-RZ808W",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+        "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+        }
+      },
+      "facet": "Current, historical and replacement selection preserves every retained artifact.",
+      "id": "PRF-ZDRBH3",
+      "invariant": "INV-9VQQ7W",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 5",
+        "leaf": "260928-MIK-L76"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The closing mark refuses an unentered prepared start and settles a returned creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:18d2ce8a3fcb641a2a66fd339db8f4ab84ad824861caefdbd6341035b82ca697",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_refuses_prepared_start_and_settles_returned_creation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Host budget and receipt settlement stay bounded at two scales.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:be1f8cd8a5ed11c91fe99e39ba7a0326e9520a488daa4bb66e8e3a0d45d93e20",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_host_budget_and_receipt_settlement_stay_bounded_at_two_scales"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The automatic scan is bounded and does not starve the tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:79bbc786fb190c5a766e26a73f1a0d3f34583fa8ff0b96d36573f536c3c2c3e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_automatic_scan_is_bounded_and_does_not_starve_the_tail"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A preview or rejected admission archives nobody.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:d4283f274198660d3720edde7a76e684c2c80d0941a458948ba4781ceed20c78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_finalize_preview_and_rejected_admission_archive_nobody"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A repeated finalize reports outcomes without changing the task again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:ac69d4d1986a4994607373a71b844487bdf4454beb310733145069edfa15ca81",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_finalize_reports_archive_outcomes_without_changing_task_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Admitted cleanup and abandon archive before destructive outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:7c5646d2ecefbca4f02c8bad28c0666a5b791cc615334813c1bf867827a3ecc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_cleanup_and_abandon_archive_before_destructive_outputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A rejected terminal archive never calls the host or removes worktrees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:543fb4aa5de77e5a8f8d0cf62dc0d18b01eaf13aa3077cfb8fcf8467bd4d6492",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_rejected_terminal_archive_never_calls_the_host_or_removes_worktrees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Same-request replay of a marked receipt refuses without creation and keeps debt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:b0130c48fddbfe3e1e7ecb1282c5f4538457f6608479a33755a8e613746769cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_marked_same_request_replay_refuses_without_creation_and_keeps_debt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The mark covers other prepared roles before host calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:cee50f53233cb103ee53b83c0907fa26698eab2368d32191a50e0c89dc60331f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_mark_covers_other_prepared_roles_before_host_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stale publication keeps the archive and only the exact leaf mark refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:528ac6eac7b764f7ece5e9177d34a6a9e1c382dc018fd49e808bb7f027752f00",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_publication_keeps_archive_and_only_exact_leaf_mark_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current, history and retry selection preserve every artifact.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:d68a2077c263ec62a9a28e3eedeba77b6d154acaa4bea2409c9dab2cb3d83dc5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_history_retry_and_other_selections_preserve_every_artifact"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Predecessor debt survives host failure and automatic recovery advances it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:aefb84456fcb89d52f52aa0a2b6f1f255edee581fff37a129e9c4c5fe755d3c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_predecessor_debt_survives_host_failure_and_automatic_recovery_advances_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Debt-write failure recovers from terminal truth after restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:c5962a53a527cbcd050fdf17aeeea129b955854e807395b3323dcf91f00d312d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_debt_write_failure_recovers_from_terminal_truth_after_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The existing observer archives terminal debt without a person calling recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:af951ce93367c88ec0584d1f3b5f3265cdbf863070744a96983e303dd4a7455f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_observer_archives_terminal_debt_without_a_person_calling_recovery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Empty, unreadable and conflicting records are named without host calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56b2cea7b8a7d42295c98fc16f71e6ae01915499",
+            "content": "sha256:8e153538962107e06018680998f683661070ac76e15b5a6e1edd4cb76adc84d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_unreadable_and_conflicting_records_are_named_without_host_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

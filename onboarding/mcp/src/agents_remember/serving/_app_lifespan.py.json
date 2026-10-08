@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+        "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
+        "content": "sha256:4c9a6e5b80ceb857b39b5318359b25a7ec8df7cde187f806408f6812d4518198",
+        "locator": {
+          "kind": "symbol",
+          "name": "_terminal_observation_loop"
+        }
+      },
+      "id": "RLZ-7Q20JH",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This existing recurring owner invokes archive recovery without another scheduler or a person calling it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
         "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:b95e5843750b24be7993406c83a7eb89f34e5b629c83165b2ed13b0f3b9cc1d4",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
             "locator": {
               "kind": "symbol",
@@ -74,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:08ffe06cd34a335040c8b9023f595a73cb1e4ffa2244d5f421ea7c95b957232a",
             "locator": {
               "kind": "symbol",
@@ -90,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:7565dd6fd0582dc576d1375911dba9730357fc3b9dfae0272a24af6bd6a4b47f",
             "locator": {
               "kind": "symbol",
@@ -106,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:85e9dbca2c7d66b23685761ed1e3feb8b6e09f8a3ce65f843af8de569c925f77",
             "locator": {
               "kind": "symbol",
@@ -122,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
             "locator": {
               "kind": "symbol",
@@ -138,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "83c70b5dfe825d26cf186634f0ba658370bcf4a9",
+            "blob": "52d158e25727c11c48abe0caf67b414d816f9292",
             "content": "sha256:dbf9d65c5a31bd10e102173aacdb227712535c8809f80c7536bcd4296f8db3bf",
             "locator": {
               "kind": "symbol",

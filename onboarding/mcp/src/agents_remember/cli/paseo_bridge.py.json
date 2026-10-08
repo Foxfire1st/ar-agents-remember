@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+        "blob": "c317b932a6967f953c35276901a817463e135f02",
         "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+        "blob": "3aa3272a9a3f40526d122a20b9cc39d4ebe7f834",
+        "content": "sha256:523423b6acb1f6d4b507963d81229d2604ac91ed196f2a39422771da75dad868",
+        "locator": {
+          "kind": "symbol",
+          "name": "bridge_call"
+        }
+      },
+      "id": "RLZ-PMZND5",
+      "invariant": "INV-K43DJZ",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 4",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The bridge call takes the caller's remaining deadline, keeping the archive attempt inside the closing budget instead of the 60-second default.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c317b932a6967f953c35276901a817463e135f02",
         "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
         "locator": {
           "kind": "symbol",
@@ -60,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "blob": "c317b932a6967f953c35276901a817463e135f02",
             "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
             "locator": {
               "kind": "symbol",
@@ -76,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
+            "blob": "3aa3272a9a3f40526d122a20b9cc39d4ebe7f834",
             "content": "sha256:6985ce32be39beaf0db4ae7e1792c15d4d554b0e0f3fb7e0d045133e409ef89e",
             "locator": {
               "kind": "symbol",
@@ -162,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "blob": "c317b932a6967f953c35276901a817463e135f02",
             "content": "sha256:17e2f711275228a07167e23f3c17b579cc51b039c62d6393ab5f147fb0d7a873",
             "locator": {
               "kind": "symbol",

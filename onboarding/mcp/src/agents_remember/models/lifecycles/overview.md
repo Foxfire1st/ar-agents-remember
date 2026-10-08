@@ -280,3 +280,9 @@ Three facts a reader of this route should carry:
 ## Retained curator generation and judgment custody
 
 The existing recorded judgment may carry owner-stamped path/SHA/size custody under the existing curator artifact root. Original authored citation/hash remain unchanged, caller judgment inputs cannot provide replacement custody, and canonical omission preserves older sealed records. A typed ValidatedCuratorCoherenceGeneration represents durable integrity separately from live authority/currentness.
+
+## Agent archive in the finalize response (MIK-R76)
+
+`LifecycleFinalizeTaskResponse` declares `agentArchive`, carrying the archive report from the
+cleanup or abandon transaction. It is empty when no archive ran.
+

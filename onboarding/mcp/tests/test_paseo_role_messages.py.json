@@ -21,6 +21,23 @@
     {
       "anchor": {
         "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+        "content": "sha256:34044f64f03267a3953fd04b2a63d99f95879761b7ab9eff2e4c998eddd4e55a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_role_resolves_through_the_receipts_to_its_live_agent"
+        }
+      },
+      "facet": "A resolved live agent receives the message; an archived recipient is refused with recipient-archived.",
+      "id": "PRF-CH947F",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
         "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
         "locator": {
           "kind": "symbol",

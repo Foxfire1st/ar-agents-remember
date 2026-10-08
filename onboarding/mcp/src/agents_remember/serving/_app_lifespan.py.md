@@ -49,6 +49,14 @@ Shutdown, in order:
 - `_terminal_observer_health_payload` returns the observer's persisted health record at response time, or
   `None`, in which case the key is omitted. It reads only and never repairs the record.
 
+## Leaf archive recovery in the terminal observation loop (MIK-R76)
+
+`_terminal_observation_loop` constructs one `LeafArchiveRecovery` and calls `archives.tick()` through
+the existing `_to_thread_drained_on_cancel` helper after each terminal catalog observation, closing
+the recovery cursor in a `finally`. The loop remains the only recurring owner; no second timer,
+queue or scheduler is added, and an archive-recovery failure is logged and retried on the next
+interval.
+
 ## Evidence
 
 - Startup order, the background tasks, and the shutdown order with the tree route's shutdown first. [11]

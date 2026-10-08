@@ -1710,3 +1710,10 @@ This route gained the `serving/paseo/` package: the moved command/daemon/plugin/
 - The start-only supervision the dashboard composes. [105]
 - The install host part. [106]
 - The host acquisition. [107]
+
+## Leaf archive recovery in the observation loop (MIK-R76)
+
+The existing terminal observation loop now also ticks a `LeafArchiveRecovery` cursor, so archive
+debt left by a closing that could not write it is settled after restart without a person calling
+recovery. No second scheduler, queue or timer is added.
+

@@ -89,12 +89,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:2d5849f73154971574d26c12a7104ae79292669db7434e318fbf051acb2c1903",
             "locator": {
-              "end": 677,
+              "end": 683,
               "kind": "line_range",
-              "start": 677
+              "start": 683
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -107,12 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
+            "blob": "15f839e06a4c6f7cf8ce2d85857ab643aa591ddf",
             "content": "sha256:68adec8193458c7810573b7789e03cb52eca6899d6e8d52b459c4a32d6634c2d",
             "locator": {
-              "end": 1426,
+              "end": 1428,
               "kind": "line_range",
-              "start": 1426
+              "start": 1428
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

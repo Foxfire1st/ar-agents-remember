@@ -56,6 +56,12 @@ Protocols are the downward dependency boundary. Adapter implementations live abo
 
 Keep absent rail or continuation capabilities visible at their requiring consumers. Production continuation composition remains separate work from this protocol definition.
 
+## Leaf agent archive port (MIK-R76)
+
+`WorktreeServices` gains the optional `leaf_agent_archive: LeafAgentArchivePort` field, and the
+protocol declares `archive(contract) -> dict`. The port is the worktree layer's boundary to the
+archive service; an unbound port is reported, not replaced by an ambient owner.
+
 ## Evidence
 
 ### Docs References

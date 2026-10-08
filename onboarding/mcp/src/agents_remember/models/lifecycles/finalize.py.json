@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/finalize.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
+        "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleFinalizeTaskResponse"
+        }
+      },
+      "id": "RLZ-A9DDYM",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The finalize response carries the archive report, so the closing answer can name archived, owed and left-alone targets.",
+      "role": "presentation"
+    }
+  ],
   "references": {
     "1": {
       "note": "Strict tool response base class is defined here.\n\nAnchor: \"class StrictResponseModel\"",

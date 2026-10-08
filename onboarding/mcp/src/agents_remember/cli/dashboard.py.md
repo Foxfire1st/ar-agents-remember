@@ -63,6 +63,13 @@ dashboard. The application imports are made inside the function.
 
 serving_collaborators retains MIK reviewer/knowledge ports and adds extra_api_routes=partial(register_role_launch_routes, config=config). Ordinary and reload factories bind existing worktree services before composition. The serving app registers the injected launch routes before static mount; the reviewer resolution owner is unchanged. Local app variables only flatten the existing create_app return expressions.
 
+## Leaf agent archive binding (MIK-R76)
+
+Both dashboard composition entry points (`_dev_app` and `run`) build the default worktree services
+with `leaf_agent_archive=LeafAgentArchive(config)` after the configuration is resolved, so a
+dashboard-driven finalize or abandon reaches the archive service. The declaration order and the
+existing process-role stamps are unchanged.
+
 ## Evidence
 
 - The bounded graceful shutdown and the registrar collaborators. [32]

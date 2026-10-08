@@ -3967,3 +3967,11 @@ The `mcp` route now carries the host step of `runtime_install`, the start-only h
 
 - The host step of the install. [251]
 - The packaged host contract. [252]
+## Closed-leaf agent archive (MIK-R76)
+
+The CLI route gains `role_launch_archive.py` (the leaf archive service and prepared-start closing
+mark) and `role_launch_archive_recovery.py` (the bounded receipt reconciliation driven by the
+serving observation loop). The MCP server and dashboard composition bind the archive service into
+their worktree bundles, and `paseo_launch.py`/`role_launch_receipts.py` carry the prepared-start
+closing mark through launch and replay.
+

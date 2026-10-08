@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:2487e4428301ad07f82ce90b5ae632ee586bdaba13687cdfdd2526423c5cfc21",
             "locator": {
               "kind": "symbol",
@@ -186,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:6655686073ecd35f41f016b1c12f205ebc555fd6d064525522c7f429177bb9da",
             "locator": {
               "kind": "symbol",
@@ -197,7 +197,7 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
             "locator": {
               "kind": "symbol",
@@ -208,7 +208,7 @@
         },
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:0bcd100808995f11e0f99fec2fff12b3b05c64cd965cffc2df4ab3c21e231fba",
             "locator": {
               "kind": "symbol",
@@ -310,7 +310,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41581fa05708dee3cbcc1d673235c3e39226912e",
+            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
             "content": "sha256:e364d555946e1664facb9c6bc8d5655af03e34794f2208fe1633499b3c91a277",
             "locator": {
               "kind": "symbol",
@@ -343,12 +343,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38fe72fb66fa0fa72e9bb6b552087da8cec2bd0e",
+            "blob": "f463507a910e67dd9c7851377a1d7e52a3ccbf89",
             "content": "sha256:a71d45a066a075899416f985c4a919722c84bb2e1d13642a1896d5e20e9664dd",
             "locator": {
-              "end": 515,
+              "end": 456,
               "kind": "line_range",
-              "start": 481
+              "start": 422
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

@@ -22,6 +22,24 @@
     {
       "anchor": {
         "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
+        "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
+        "locator": {
+          "kind": "symbol",
+          "name": "archiveAgent"
+        }
+      },
+      "id": "RLZ-VXDQ6B",
+      "invariant": "INV-PRP52X",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 3",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This existing host operation archives the exact ID, retaining the host archive behavior that ends a running turn.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
         "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
         "locator": {
           "kind": "symbol",

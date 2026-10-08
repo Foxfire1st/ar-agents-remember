@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The archive path and the unchanged role-message owner realize the rule in two files."
+  },
+  "applicability": "A message to an archived agent and a reopening of a closed leaf.",
+  "conditions": [
+    "The existing archived-recipient refusal is retained.",
+    "Request-ID reconciliation and saved-call replay keep their meaning."
+  ],
+  "exclusions": [
+    "Reopening starts new agents; it does not unarchive an old one."
+  ],
+  "id": "INV-GM5MS3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_repeated_finalize_reports_archive_outcomes_without_changing_task_again; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 8",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Archive settlement preserves request-ID start reconciliation and the existing role-message refusal for an archived recipient; reopening does not unarchive an old agent through this implementation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_abandon.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a317d7e35d03f98d28edc93201671b5b93a91a8c",
+        "content": "sha256:ecb9aa5f8defae1b6b1ad0098ff1996fe38ae0ea94a0357fd038c028f779f601",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_with_guard"
+        }
+      },
+      "id": "RLZ-5DE9GE",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This admitted abandon transaction invokes the same leaf archive port before destructive retirement outputs.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Archival runs inside the admitted publish step before destructive outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a317d7e35d03f98d28edc93201671b5b93a91a8c",
+            "content": "sha256:ecb9aa5f8defae1b6b1ad0098ff1996fe38ae0ea94a0357fd038c028f779f601",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_with_guard"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1528,3 +1528,12 @@ actually occupy, with no change of meaning. **`worktrees/modules/startup/`** lik
 `memory/knowledge/merge.py` was **not** touched by this leaf -- it is byte-unchanged and its
 `_independent_insert_refusal` still refuses two independent insertions of one identity with equal
 payloads.
+
+## Closed-leaf agent archive (MIK-R76)
+
+The route gains three terminal-helper modules: `terminal_agents.archive_terminal_agents` is the
+best-effort host-archive boundary, and `terminal_cleanup._cleanup_with_guard` /
+`terminal_abandon._abandon_with_guard` are the extracted admitted transactions that archive a leaf's
+recorded agents after terminal admission and before any destructive output. `cleanup.py` and
+`abandon.py` keep their public results and delegate the guarded transaction to those modules.
+

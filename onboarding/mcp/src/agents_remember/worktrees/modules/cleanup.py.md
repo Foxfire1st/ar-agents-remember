@@ -175,6 +175,14 @@ that prospective removal to the same planned-path model used for worktrees/provi
 group containing only scheduled paths and the curator checklist correctly reports
 `would_remove`. No other task or coordination report directory is pruned.
 
+## Admitted cleanup with agent archive (MIK-R76)
+
+`_cleanup_reserved` delegates to `terminal_cleanup._cleanup_with_guard`, which archives the leaf's
+recorded agents through `archive_terminal_agents` after terminal admission and before the
+destructive outputs. The already-completed terminal path also archives before returning, and a
+non-empty `agentArchive` report is merged into the result payload. The module keeps its own result,
+blocker and contract-stamp behavior.
+
 ## Evidence
 
 ### Docs References

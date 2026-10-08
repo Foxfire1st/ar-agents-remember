@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "932c4f1a6b66ff20855f0cda3222663dcb01c8a6",
+        "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+        "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+        "locator": {
+          "end": 367,
+          "kind": "line_range",
+          "start": 367
+        }
+      },
+      "id": "RLZ-NJFH31",
+      "invariant": "INV-0H8WBQ",
+      "origin": {
+        "handoffEntry": "L76-link-catalog-registrations",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The integration lane registers the new archive test module so its evidence lane population names it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
           "end": 274,

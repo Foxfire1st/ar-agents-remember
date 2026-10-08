@@ -54,6 +54,14 @@ The default application bundle installs `PreparedCloseoutContinuation` and `Prep
 
 - The current `build_default_worktree_services` boundary implements the preparation contract above. [1]
 
+## Leaf agent archive binding (MIK-R76)
+
+`build_default_worktree_services` accepts an optional `leaf_agent_archive: LeafAgentArchivePort` and
+binds it into the returned bundle, so a process that supplies the leaf archive service reaches it
+from the admitted terminal transactions. The MCP server and both dashboard composition entry points
+supply `LeafAgentArchive(config)`; a bundle built without it reports `not-bound` from
+`archive_terminal_agents` rather than inventing a fallback.
+
 ## Evidence
 
 ### Docs References

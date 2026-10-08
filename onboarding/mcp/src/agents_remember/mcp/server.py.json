@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/mcp/server.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
+        "content": "sha256:c1a7374e28565704dfe0bbfe3842c8fa7624b44a53a427aac71075b0d2310718",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_server"
+        }
+      },
+      "id": "RLZ-THMGJK",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The MCP server binds the archive service into its worktree bundle, so the process's finalize and abandon calls reach it.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.",
@@ -132,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",

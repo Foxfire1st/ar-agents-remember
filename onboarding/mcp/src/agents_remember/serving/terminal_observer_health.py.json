@@ -237,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:1894d805addf06d9766de7d643aff795a788d3ad0c5bc2e89300abf9e6ec8f76",
             "locator": {
               "kind": "symbol",
@@ -254,7 +254,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:afacf3ef594ddf38aabbc8dc5e96bd42780901f12e524710e72120f8ba9e086e",
             "locator": {
               "kind": "symbol",
@@ -266,12 +266,12 @@
         },
         {
           "anchor": {
-            "blob": "07e688d019ffb60433ab7c7f9e5b8c3ccd206665",
+            "blob": "56ecfa994069711bf7b9cfa6e883aaebd0d1ce5e",
             "content": "sha256:f8bc4b8af54d8322dc7be225e12f844580b61d42fcae265ccea97a295fa13a62",
             "locator": {
-              "end": 352,
+              "end": 361,
               "kind": "line_range",
-              "start": 288
+              "start": 297
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

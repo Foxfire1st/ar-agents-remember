@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00eb2a0ce0eb984fb48fa5e95b1f5fd7d87f1717",
+            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
             "content": "sha256:dcadf0854981f0ba8b96f76c157032c2ee57385d96815d366b9b243845db8665",
             "locator": {
-              "end": 288,
+              "end": 297,
               "kind": "line_range",
-              "start": 288
+              "start": 297
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

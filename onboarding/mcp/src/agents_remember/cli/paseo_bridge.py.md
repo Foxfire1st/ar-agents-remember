@@ -12,6 +12,15 @@ Runs one bounded JavaScript bridge command and interprets its one JSON reply.
 
 bridge_call sends prompt/payload as stdin data and stops a process at 60 seconds. _bridge_environment removes inherited PASEO/AR_PASEO values, then supplies configured URL, home server ID, pin and deadline. Missing settings/identity refuse before process start; unreadable replies, replacement-decoded output and bounded fatal lines remain named failures.
 
+## Bounded bridge calls (MIK-R76)
+
+`bridge_call` takes an optional `timeout_seconds` that defaults to the existing
+`PASEO_BRIDGE_TIMEOUT_SECONDS` (60 s). The subprocess timeout and the reported failure text use it,
+and the bridge environment gains `AR_PASEO_DEADLINE_MS`, set to the smaller of the script deadline
+and the supplied timeout minus a 100 ms margin, so a caller with a shorter remaining budget bounds
+the JavaScript side too. The archive service uses this to keep its per-target call inside the
+closing archive budget.
+
 ## Evidence
 
 - Frozen implementation of bridge_call supporting the stated file behavior. [1]

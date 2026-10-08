@@ -1,0 +1,650 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L76",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0QZNSV",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed against the change: the catalog registration or the helper-call assertion is mechanical and the card's current account still holds.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1SVCXD",
+      "items": [
+        "sha256:fb3ed4880a1352a309f64091e5e14f6128f5aefb8c5a847570fa8c8ef3f76119"
+      ],
+      "reason": "The added line is only the serving module's import of the leaf archive recovery owner; the import itself carries no invariant. The behavior it enables is rule 4's invariant, realized at the observation loop.",
+      "subject": "hunk:sha256:fb3ed4880a1352a309f64091e5e14f6128f5aefb8c5a847570fa8c8ef3f76119"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-E1BBP0"
+        },
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_agent_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_agent_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MJ7G08"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8QGW4V",
+      "items": [],
+      "reason": "The Source95 sync re-anchored these receipt-creation and mint-identity entries at the new pair; the row is named again so it records their current after-anchors. The invariant, its memberships and its meaning are unchanged.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-97KMJK",
+      "items": [
+        "sha256:5064d570d299618bcbea4b8c778f4a095d5c4413dfca04e9751fa2eb9cfb1334"
+      ],
+      "reason": "Reviewed against the change: the catalog registration or the helper-call assertion is mechanical and the card's current account still holds.",
+      "subject": "onboarding:mcp/tests/test_serving_startup_prime.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-98CX0Y",
+      "items": [
+        "sha256:7e3695bbf6ab246bec87780dce8b647b34a3553c484d1286cb3f38bf5bf36ef0"
+      ],
+      "reason": "The added line is only the dashboard module's import of the archive service; the import itself carries no invariant. The behavior it enables is rule 1's invariant, realized at `_dev_app` and `run`.",
+      "subject": "hunk:sha256:7e3695bbf6ab246bec87780dce8b647b34a3553c484d1286cb3f38bf5bf36ef0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BE37TM",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Reviewed against the change: the catalog registration or the helper-call assertion is mechanical and the card's current account still holds.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FDT8GY",
+      "items": [
+        "sha256:fc3caa533b69dd9bcf7040460088c14f9b2bbc366d3c66f3573ea0cf41753eb2"
+      ],
+      "reason": "The changed import line adds the already-returned `LaunchOutcome` symbol to the receipt module's imports; the import line carries no invariant of its own.",
+      "subject": "hunk:sha256:fc3caa533b69dd9bcf7040460088c14f9b2bbc366d3c66f3573ea0cf41753eb2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GY30SW",
+      "items": [
+        "sha256:5538ec63f2458efacaddd272db5f8902170e31d70998e5d1d173327044e7d758"
+      ],
+      "reason": "The added import is the typing support for the new `before_create` parameter; the guard behavior is the exception/A-1 invariant realized at `run_launch_call`.",
+      "subject": "hunk:sha256:5538ec63f2458efacaddd272db5f8902170e31d70998e5d1d173327044e7d758"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "15f839e06a4c6f7cf8ce2d85857ab643aa591ddf",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 1215,
+              "kind": "line_range",
+              "start": 1215
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-1WK7P0"
+        },
+        {
+          "after": {
+            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-NJFH31"
+        },
+        {
+          "after": {
+            "blob": "15f839e06a4c6f7cf8ce2d85857ab643aa591ddf",
+            "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-TB9TST"
+        },
+        {
+          "after": {
+            "blob": "15f839e06a4c6f7cf8ce2d85857ab643aa591ddf",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1346,
+              "kind": "line_range",
+              "start": 1346
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "db27046ef46e8258fb930235ca048c2ddddcc9c1",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 1344,
+              "kind": "line_range",
+              "start": 1344
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-VQZWNZ"
+        },
+        {
+          "after": {
+            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "932c4f1a6b66ff20855f0cda3222663dcb01c8a6",
+            "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-ZTDYFT"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-HG82AT",
+      "items": [
+        "sha256:7f53339eba6b16b1b5d66fd47015c88f1d92eb014a282be38cf7b5096c9a1773"
+      ],
+      "reason": "Source96 mechanical rederivation preserves the D110-qualified report-test construct at current row1346 (d78be9a4) and the archive-test registrations at lifecycle417/1215 and lane367, with report lane274 retained. All five original covers, realization meanings and non-anchor fields remain unchanged. The earlier D1101118 verification and incoming59582 row1344 remain dated evidence; the invariant is not revised.",
+      "revision": 1,
+      "subject": "INV-0H8WBQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K9A96Y",
+      "items": [
+        "sha256:05e269c91048971784bb5444690c3186bb5c464fa4bd0a6ba0553b126e3c8709"
+      ],
+      "reason": "The removed plain `bind_worktree_services(build_default_worktree_services())` lines are replaced in place by the archive-aware binding in the same two functions; the deletion carries no invariant of its own.",
+      "subject": "hunk:sha256:05e269c91048971784bb5444690c3186bb5c464fa4bd0a6ba0553b126e3c8709"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M2N1D0",
+      "items": [
+        "sha256:67a8aca0afdf9d5ca07ccd7b319bbbbb2bd6df52c51b8ebb81a4c93d8c01a998"
+      ],
+      "reason": "The added import names the existing exclusive file-lock owner; the locking obligation belongs to the exception/A-1 invariants realized on `_execute_prepared_launch` and `_write_receipt`.",
+      "subject": "hunk:sha256:67a8aca0afdf9d5ca07ccd7b319bbbbb2bd6df52c51b8ebb81a4c93d8c01a998"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MDWS4T",
+      "items": [
+        "sha256:192978a8f399be1eb36b9864a197647a99bcb2597b42d86ed5277023eee676ac"
+      ],
+      "reason": "Reviewed against the change: the catalog registration or the helper-call assertion is mechanical and the card's current account still holds.",
+      "subject": "onboarding:mcp/tests/test_serving_observation_loop.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:05405f21ddc9cbd76eeb5d8fe11dd949ad56646c67d207fe039d6e5ffd58649d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:83c8e513bbf464c7ea5fff600040a189fedae14ab0181893060f7f3963351035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-DDBBDE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R7BVYV",
+      "items": [
+        "sha256:d354d6d00a708fd18ae1a1926e8da4527258bb34b718798da67d6aa02dfb0f57"
+      ],
+      "reason": "The Source95 sync re-anchored this covered entry at the new pair; the row is named again so it records its current after-anchor. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-72PQ2M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:715a3fe61cfbc727b54bcfea19c6a9eaea4ec237e27e412a4d0f335ca17d516f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-QCS3DH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RNNB94",
+      "items": [
+        "sha256:72d12a9554f6e2be34ca978d96b2e83ab141b94cc8320677fcf4f942ca8b9c50"
+      ],
+      "reason": "The changed row is restated so it records the entry's current after-anchor after the Source95 re-anchor; revision stays 2 (K_B+1) and the earlier cover is named again. The recorded clarification and its evidence are unchanged.",
+      "revision": 2,
+      "subject": "INV-ZD9BK1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_binding"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_binding"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-G3VR0J"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S47ZE1",
+      "items": [],
+      "reason": "The Source95 sync re-anchored this covered entry at the new pair; the row is named again so it records its current after-anchor. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-W71C4N"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-8WCSQ7",
+          "revision": 1
+        },
+        {
+          "id": "INV-9VQQ7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-AJKQV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-F1TY2E",
+          "revision": 1
+        },
+        {
+          "id": "INV-FEB6Y6",
+          "revision": 1
+        },
+        {
+          "id": "INV-GM5MS3",
+          "revision": 1
+        },
+        {
+          "id": "INV-K43DJZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRP52X",
+          "revision": 1
+        },
+        {
+          "id": "INV-VPXD65",
+          "revision": 1
+        },
+        {
+          "id": "INV-W41C85",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SNC8RY",
+      "items": [],
+      "reason": "The family title is qualified to the actual running-publication boundary and the entered-RPC exception: the product publishes no prepared start as running past the closing mark, and an entered creation is archived on return. No instantaneous no-live, no-create or no-work promise is made while archival is owed. Members, routes and the guarantee body are unchanged.",
+      "subject": "FAM-VNK792"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_receipt"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-W0BJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WEEZQ7",
+      "items": [],
+      "reason": "The Source95 sync re-anchored this covered entry at the new pair; the row is named again so it records its current after-anchor. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:05405f21ddc9cbd76eeb5d8fe11dd949ad56646c67d207fe039d6e5ffd58649d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:83c8e513bbf464c7ea5fff600040a189fedae14ab0181893060f7f3963351035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-N8SXH0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WZ6HVA",
+      "items": [
+        "sha256:cabd0264e5a0f39b1a524d9a940edccba4c630e964ec345ebf1f594ef481b391"
+      ],
+      "reason": "The changed row is restated so it records the entry's current after-anchor after the Source95 re-anchor; revision stays 2 (K_B+1) and the earlier cover is named again. The recorded projection clarification and its evidence are unchanged.",
+      "revision": 2,
+      "subject": "INV-4E130M"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "before": {
+            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "locator": {
+              "kind": "symbol",
+              "name": "serving_collaborators"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "id": "RLZ-HM528R"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X3FB2J",
+      "items": [],
+      "reason": "The Source42 sync re-anchored the serving_collaborators realization at the new pair; the row is named again so it records the current after-anchor. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-61Y147"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_saved_first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_saved_first_message"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-G892DG"
+        },
+        {
+          "after": {
+            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:715a3fe61cfbc727b54bcfea19c6a9eaea4ec237e27e412a4d0f335ca17d516f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-PDSMW4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-X97BK6",
+      "items": [
+        "sha256:f7bbaa7f0b17ba976ed1c362e1a53349530cebafcca8fe40d178ecdd05228cf2"
+      ],
+      "reason": "The Source95 sync re-anchored these covered entries at the new pair; the row is named again so it records their current after-anchors. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_server_definition"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "content": "sha256:bb5f95ed4aa40134659f1b481854cfdb2c08726f5de6f52d4bf1c4b03b5eb3dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_server_definition"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-K7Q360"
+        },
+        {
+          "after": {
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MKRHDV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XB0VC9",
+      "items": [],
+      "reason": "The Source95 sync re-anchored these covered entries at the new pair; the row is named again so it records their current after-anchors. The invariant's meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c317b932a6967f953c35276901a817463e135f02",
+            "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bridge_environment"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bridge_environment"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-0RVX96"
+        },
+        {
+          "after": {
+            "blob": "c317b932a6967f953c35276901a817463e135f02",
+            "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_server_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_server_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-Y4KB9F"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZD2FMQ",
+      "items": [],
+      "reason": "The leaf's change leaves this invariant's meaning unchanged; its entries re-anchor at the candidate and the reviewer's PASS covers the touched source.",
+      "revision": 1,
+      "subject": "INV-VV0B2G"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

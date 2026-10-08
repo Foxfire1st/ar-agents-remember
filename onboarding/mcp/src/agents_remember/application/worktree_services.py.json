@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/worktree_services.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+        "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_default_worktree_services"
+        }
+      },
+      "id": "RLZ-G1QWPG",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The default bundle binds the leaf archive port, so every process that composes the bundle reaches the archive service.",
+      "role": "support"
+    }
+  ],
   "references": {
     "1": {
       "note": "The current `build_default_worktree_services` boundary implements the preparation contract above.\n\nAnchor: \"def build_default_worktree_services\"",
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
             "locator": {
               "kind": "symbol",
@@ -40,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:15d5ed5baa81d8c3dd4289cb6706e4cf30394ad8d8d8c7063c4f4c024c41bcc3",
             "locator": {
               "kind": "symbol",
@@ -56,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
         },
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
             "locator": {
               "kind": "symbol",
@@ -83,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:23a49045179ee38de9c1fad154a88ff77548a609ed7fe41f0f95bfbaaae8ddf9",
             "locator": {
               "kind": "symbol",
@@ -151,12 +170,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:cffde9c4f56f6f69b5b9ce77b7806d7cc9ad2993c7eff13aca5ba3f8d30de17d",
             "locator": {
-              "end": 224,
+              "end": 227,
               "kind": "line_range",
-              "start": 224
+              "start": 227
             }
           },
           "kind": "code"
@@ -210,12 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
             "content": "sha256:b0cbb56eecc15a57361c27c296c3ae8d243031ca97ff22b3c92ecd694eec9b01",
             "locator": {
-              "end": 225,
+              "end": 228,
               "kind": "line_range",
-              "start": 225
+              "start": 228
             }
           },
           "kind": "code"
@@ -227,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b471e3448e819f041af640b69fc9dbf1f6b4ed3",
+            "blob": "67d54e66d7a576b212038f6a0c382b1735f1c7a4",
             "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
             "locator": {
               "kind": "symbol",

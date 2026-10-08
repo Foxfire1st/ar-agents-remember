@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+        "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
+        "content": "sha256:b9fd0737c24359b29ad4027d5354d830677560bc125ea74dda9b6b1bb09cdb17",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-4SKB8D",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The dashboard composition binds the archive service into its worktree bundle, so a dashboard finalize or abandon archives the leaf's agents.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
         "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
         "locator": {
           "kind": "symbol",
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+        "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
         "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+        "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
         "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
         "locator": {
           "kind": "symbol",
@@ -54,6 +72,24 @@
       },
       "rationale": "This dashboard control adapter distinguishes status, dashboard stop and ensure; its stop branch reaches only dashboard supervision and leaves host termination to its separate command.",
       "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+        "content": "sha256:95dbc1949c157a4444028c5488aebb0d40acbad37773f3bf3022ea859552c58d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_dev_app"
+        }
+      },
+      "id": "RLZ-V8EXDR",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "L76-link-dashboard-dev-app",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The dev-reload dashboard entry path binds the archive-aware worktree bundle, so a dashboard-driven finalize or abandon reaches the archive service.",
+      "role": "support"
     }
   ],
   "references": {
@@ -62,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b567cbe502c87362453d85ab32aaa2ba418596c",
+            "blob": "1b71c2ab9bd0ba2917a722a81fdadc606e8f3ad4",
             "content": "sha256:e92248e36d7cd71994e5b4f1583d0e05402ee5f5e682743becc9f013b155d82e",
             "locator": {
               "kind": "symbol",
@@ -110,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
             "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
             "locator": {
               "kind": "symbol",
@@ -142,7 +178,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
             "content": "sha256:bf5e9378e91c92e7e4d85f4d54b360dca3c9d3fb19b7f4cf655f5d8fb9b84424",
             "locator": {
               "kind": "symbol",
@@ -174,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ad008bcc0e9c86c269b55c1d27851ae1f9a4739",
+            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
             "content": "sha256:0516bdc5a7c1844d736a1d0980167649c0375b30d6b597ec5728fd9c2e8b0908",
             "locator": {
               "kind": "symbol",
@@ -224,12 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
             "content": "sha256:6a5aa29dab0ccf7d63303de3f12e68c6d6e7c7fd66f0290f296215744a9a3773",
             "locator": {
-              "end": 74,
+              "end": 75,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "code"
@@ -273,7 +309,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
             "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
             "locator": {
               "kind": "symbol",
@@ -289,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
             "content": "sha256:677c79661aac50d23a9337fcc0f2ebe8f1ab1dc5184f4236d5c524d916e374cb",
             "locator": {
               "kind": "symbol",

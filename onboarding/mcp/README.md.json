@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
             "content": "sha256:66ae0bf6c579630f2aa12e314647b9610a2f52bddc550fe9b6c7f3338e099a36",
             "locator": {
               "kind": "symbol",
@@ -118,12 +118,12 @@
         },
         {
           "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
+            "blob": "4348868065c8eed3582731fb3e96e3dbedf43d50",
             "content": "sha256:1e977d0c261a0d54e5a3cc8b5ff3940757ceda487f7bc238eae2d62075138adb",
             "locator": {
-              "end": 82,
+              "end": 83,
               "kind": "line_range",
-              "start": 82
+              "start": 83
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
