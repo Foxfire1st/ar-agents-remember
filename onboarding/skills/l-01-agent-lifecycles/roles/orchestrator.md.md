@@ -123,6 +123,10 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 The Orchestrator keeps its sprint coordination and Manager starts; the change adds the same harness freedom and boundary paragraph as the other roles.
 
+## 260928-MIK-R93 — questions received from children
+
+Beyond the four developer-needed categories, the Orchestrator now answers a child's developer question itself where its authority reaches and says the answer is its own, or passes it up to the Architect unchanged with the originating role, task and agent id and its own recommendation apart. A child that waits at a permission prompt is reported at once with the permission as supplied or "not supplied"; the Orchestrator tries a held message once in each turn it takes until MIK-R100 lands, and the Architect gives it that occasion. Developer answers are returned with the receiving agent's id and the quoted words, passed unchanged.
+
 ## Evidence
 
 ### Docs References

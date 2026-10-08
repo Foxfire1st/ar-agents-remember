@@ -27,6 +27,23 @@
           "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
         }
       },
+      "facet": "Reinserting any registered retired statement on its own source surface is detected by the corpus scanner.",
+      "id": "PRF-81CXEW",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+        "content": "sha256:479f569c655d861d02b2478a1fe9f20b69bad2d395319325e191aed5e0d79a56",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+        }
+      },
       "facet": "Every registered retired sentence reinserted on each surface that shipped it is reported by the guard.",
       "id": "PRF-F5RVVJ",
       "invariant": "INV-K5SFG7",

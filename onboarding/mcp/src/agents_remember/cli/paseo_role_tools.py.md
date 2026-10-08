@@ -12,6 +12,10 @@ Implements agent-bound role_start and role_message over the same public launch/r
 
 Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts; self, unfinished launch and ambiguous/cut taskless candidate sets refuse. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
 
+## 260928-MIK-R93 — parent-first refusal remedies
+
+Four `nextAction` remedies that still leave the message transportable (`_archived`, `_resume` scope-changed, `_resume` cannot-resume, `_undelivered`) now name the parent with `role_message` on `agents-remember-task` first and the own chat only for an agent without one. The no-runtime and host-unreachable remedies keep their own-chat advice, and no refusal reason, code or delivery algorithm changed.
+
 ## Evidence
 
 - Frozen implementation of start_rule_violation supporting the stated file behavior. [1]

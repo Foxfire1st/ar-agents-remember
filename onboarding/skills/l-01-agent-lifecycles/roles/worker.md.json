@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
-        "content": "sha256:1b0069228d8c7e00350d1cff8b6d630f1a5a2b46831b6b2397b2ceb1ca4d6f01",
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+        "content": "sha256:024e68495fc07da4a90a0a5fd0fdcd8a3d2e91b62e5cab21a85839013b57696b",
         "locator": {
           "end": 12,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
-        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,25 @@
     },
     {
       "anchor": {
-        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
-        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6QVTKY",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
         "locator": {
           "kind": "file"
         }
@@ -56,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
-        "content": "sha256:9b3193ba6340c3a130ae1388c5f65cf7533c229fe354f4290759f7d64708d0c1",
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+        "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
         "locator": {
           "kind": "file"
         }
@@ -73,7 +90,7 @@
     },
     {
       "anchor": {
-        "blob": "23cfeabc6c3740b25d74a0cbece6a909f8b3ad65",
+        "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
         "content": "sha256:cbcdf2806d289c38676ef1301ccb4f93324bdfb2dbf4ee8fd7047ed5815ce753",
         "locator": {
           "end": 28,

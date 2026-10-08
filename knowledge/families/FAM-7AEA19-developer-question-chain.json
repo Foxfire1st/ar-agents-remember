@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The handover values, the role duties, the parent relay and notice duties, the refusal remedies and the guarded instruction text together promise one end-to-end chain that no single member states; the top-chat presentation, the downward quoted answer and the permission notice each fail alone."
+  },
+  "guarantee": "A developer question raised anywhere in a parented role chain reaches one top chat and the developer's answer returns to its asker: every parented role sends the question to its parent with what it holds back and recommends and never addresses it to the developer in its own chat, each parent answers within its authority or passes it up unchanged with its own recommendation apart, the top names every waiting agent by role, task and id, and the answer returns down the chain with the receiving agent's id and the developer's quoted words passed unchanged, while a refusal that can still reach the parent names that parent remedy first and only a parentless or unreachable-parent agent asks in its own chat, and the retired wording that contradicted all of this cannot return unnoticed.",
+  "id": "FAM-7AEA19",
+  "members": [
+    "INV-8AMSGV",
+    "INV-9S49CW",
+    "INV-7FMDAS",
+    "INV-82ZTHK",
+    "INV-HGSFJ8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "FAM-developer-question-chain",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/cli",
+    "mcp/test_support/agents_remember_test_support/testing"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The developer question chain"
+}

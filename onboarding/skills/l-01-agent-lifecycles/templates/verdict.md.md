@@ -64,6 +64,10 @@ This template records the exact targeted or scoped checks and their failed or no
 
 The verdict template now addresses the Worker (and, on a pass, the Curator) directly, distinguishes the ordinary Reviewer-recorded code round from the sealed memory lane, and keeps the gate evidence role it had; the 'Manager Fix Leaves' section names the Worker for a repair inside the leaf.
 
+## 260928-MIK-R93 — a question for the developer goes up the chain
+
+A request for a round beyond the ordinary three goes to the parent with `role_message` on `agents-remember-task` where one exists, or to the own chat without one; the developer's quoted words and the recorded approval are still required before any extra review.
+
 ## Evidence
 
 ### Docs References

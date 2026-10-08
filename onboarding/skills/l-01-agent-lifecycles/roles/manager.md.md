@@ -13,44 +13,49 @@ completed master to the orchestrator.
 
 ## Logic
 
-For each dependency-ready real leaf, the manager calls structural `dispatch_agent` with the leaf
-task document, role, and complete brief. The control plane owns readiness and the exact-pinned initial
-brief; the manager never requests or stores an occupant id. The manager starts the Worker and Reviewer together and the Curator at the first freeze; the
+For each dependency-ready real leaf, the manager starts the Worker and Reviewer together and the
+Curator at the first freeze with native `role_start` on the `agents-remember-task` tool server,
+naming the role and the exact canonical leaf references with a request ID it chooses. The call
+resolves or creates the AR paired enclosure and writes the complete handover; it returns the agent
+ID, report path, handover path and status, which the manager keeps and reuses. The same request ID
+reconciles an uncertain start and never creates a second agent. The
 leaf's Worker, Reviewer and Curator hand freezes, findings, verdicts and memory changes directly to
 each other. Before the gate the manager inspects the complete changed-file diff and both verdicts
 and calls `worktree_status` for the canonical leaf, requiring the complete task-derived
-`sourceLineage` projection to be current; the curator brief carries it and dispatch re-proves it
-before host creation. It consumes the worker's targeted-check
+`sourceLineage` projection to be current; the curator brief carries it and the native start re-proves
+it before host creation. It consumes the worker's targeted-check
 report and curator's scoped onboarding handoff before the closeout transaction. Closeout and
 integration do not launch or require full quality, full tests, full memory quality, certification, or
 review; any explicitly requested operation remains owned by its existing lifecycle workflow.
 
-The role table advertises this seat as a plane-hosted caller and an explicit ambient-takeover
-target. The orchestrator ordinarily creates it; once hosted, it dispatches only its direct
-worker/reviewer/curator children. Its public request never selects caller kind, and a plane
-authorization refusal never retries as an ambient launch. The `dispatch` and `tools` rows describe
-structural authority/capability rather than settings keys.
+The role table advertises this seat as a hosted, parentless-capable caller and an explicit
+ambient-takeover target. The orchestrator ordinarily starts it; once hosted, it starts only its
+direct worker/reviewer/curator children with native `role_start` and addresses them with
+`role_message`. Its public request never selects caller kind, and a plane authorization refusal
+never retries as an ambient launch. The `tools` row describes bound capability rather than
+settings keys.
 
-Before dispatch, the manager independently verifies that every exact stable ID + version points to
+Before starting a role, the manager independently verifies that every exact stable ID + version points to
 the approved version-addressed packet and that the packet carries its durable corpus-ruling
 citation. Missing, duplicate, unapproved, or mismatched revisions make the brief invalid rather
 than a condition the worker is expected to repair.
 
 When all leaves land, an adversarial master-exit verdict becomes evidence on the handover seam; the
 manager writes the master-handover packet and remains reachable at `(master document, manager)`.
-Ordinary follow-ups and escalations use structural child/parent messaging so replacements are
-transparent.
+Ordinary follow-ups and escalations use native `role_message` between parent and child so
+replacements are transparent.
 
-Before worker dispatch, the manager compiles the exact stable IDs applicable to the leaf, including
+Before starting the Worker, the manager compiles the exact stable IDs applicable to the leaf, including
 inherited master requirements. It requires one complete worker envelope per ID and gives that same
 set to the reviewer for independent accepted/rejected adjudication. Missing/duplicate IDs, missing
 evidence fields, or an overall pass with any rejection fail closed. The separate durable-evidence
 promotion hold point remains in both briefs and cannot satisfy requirement acceptance.
 
 The same loop also carries exact attempt identity. The manager compiles the next review-handoff
-attempt ID without advancing it at dispatch or during internal implementation/test/evidence runs,
-checks the lightweight immutable worker record and its content-addressed expanded-evidence anchor,
-and sends that exact candidate to review. It records bounded invalidation only after independent
+attempt ID without advancing it at a start or during internal implementation/test/evidence runs,
+and requires the lightweight immutable worker record and its content-addressed expanded-evidence
+anchor in the hand-over. The Worker freezes the candidate and sends it directly to the Reviewer;
+the manager reads the verdict and relays no candidate. It records bounded invalidation only after independent
 direct-regression proof and maintains a rebuildable master summary linked to leaf journals; leaf
 records remain authority and summary freshness never gates task, lifecycle, closeout, integration,
 or queue work.
@@ -92,15 +97,19 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 The Manager no longer carries freezes, findings, verdicts or memory changes between a leaf's agents: it starts the Worker and Reviewer together and the Curator at the first freeze, reads the leaf's state from reports and task records, hears from the leaf only on its named occasions (closeout readiness, rule-5/6 notices, ownership or authority, an extra round or pass, a disputed Curator code finding, a Manager-owned sync step), decides the gate and keeps closeout, integration, status, acceptance and landing order. It gains the same harness-freedom paragraph.
 
+## 260928-MIK-R93 — questions received from children
+
+The Manager answers a child's developer question itself where its authority reaches and says the answer is its own, or passes it up unchanged with the originating role, task and agent id and its own recommendation apart; without a parent it puts it to the developer in its own chat. A child that waits at a permission prompt is reported at once with the permission as supplied or "not supplied", and the try-once-per-turn occasion applies until MIK-R100 lands. Developer answers travel down with the receiving agent's id and the quoted words, and every parent passes those three unchanged. Its own developer questions now go to its parent when it has one.
+
 ## Evidence
 
 ### Repo-Internal References
 
 - One manager owns one canonical master and the complete leaf closeout chain. [1]
-- Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+- A hosted role start uses the canonical task document, role and complete brief with native `role_start`, and keeps the returned agent ID, report path and handover path. [2]
 - The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
 - Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
-- Structural parent/child messages are the role's communication path. [5]
+- Native `role_message` between parent and child is the role's communication path. [5]
 - Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
 
 ## L23 Manager And Leaf Admission

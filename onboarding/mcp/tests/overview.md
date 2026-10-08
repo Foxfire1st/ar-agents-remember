@@ -154,6 +154,10 @@ span several modules; the card of a module, where it has one, states what its ca
 
 The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_handover_review_rounds.py`), the retirement-wording guard test (`test_leaf_retirement_wording.py`) and the wording-guard rework in `test_role_instruction_wording.py`. The new modules have their own cards, so the list of uncarded test modules keeps its seven named files.
 
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The new `test_developer_question_wording.py` joins the unit-regression lane: it requires the parent channel, recovery and answer provenance in every parentable role and the three operations, the starter roles' relay and permission-notice duties, the leaf ownerRelation peer routes, and the independent detection of each exact retired directive. `test_role_instruction_wording.py` now compiles the parent condition for all six parentable roles and the renamed ownerRelation test; the two evidence catalogs list the new module.
+
 ## Evidence
 
 - The default options select the unit population and four workers. [1]

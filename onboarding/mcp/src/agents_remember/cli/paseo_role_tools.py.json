@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:b25736a346ca4c79ae8b8b3d459094cf4e82a02db460b1895cf2959f9ce17295",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:877c034ea3911917071969bab87622de46f8c6e19b46d884a8fa0099feffe416",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,25 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
+        "content": "sha256:ad40121ea7b1878b4bc174b81d9228a1fea52e358e83954ce111c8eb26fae0db",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resume"
+        }
+      },
+      "id": "RLZ-BVTKAZ",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:bf38cc5de5f32c8d499a56253eed19f0ce758cc4f7f06dae8833bfcfefd23694",
         "locator": {
           "end": 93,
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:9ea52cfb37eeb2aae5eaf9ec68667906533418b48e968c924dc98b32df5c906f",
         "locator": {
           "end": 81,
@@ -95,7 +113,25 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
+        "content": "sha256:3cc385ba0ba9cf98eb9ea093f3b91438c14dff5db0a75ba56e04e2f0f2dad5fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_undelivered"
+        }
+      },
+      "id": "RLZ-KRHPKS",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
         "locator": {
           "kind": "symbol",
@@ -113,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
         "locator": {
           "kind": "symbol",
@@ -131,7 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:6918c0d0e18d89fe0ad75d145d0bb5ebfa42121345d87e493ac0ee44b147f53d",
         "locator": {
           "kind": "symbol",
@@ -149,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:7ac37b73c2cf59d9a7c13c9f54e702591a90f16204d2ae028984e5a5c56c350e",
         "locator": {
           "kind": "symbol",
@@ -167,7 +203,25 @@
     },
     {
       "anchor": {
-        "blob": "819518dc41d0c54143594cfc191864f91277d202",
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
+        "content": "sha256:15f784f3eee6c7848c2e723385b7d7f40f79b8f05caccf2489f686ff7b5381e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archived"
+        }
+      },
+      "id": "RLZ-XV9NR8",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
         "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
         "locator": {
           "kind": "symbol",
@@ -190,7 +244,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "819518dc41d0c54143594cfc191864f91277d202",
+            "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
             "content": "sha256:7ac37b73c2cf59d9a7c13c9f54e702591a90f16204d2ae028984e5a5c56c350e",
             "locator": {
               "kind": "symbol",
@@ -206,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "819518dc41d0c54143594cfc191864f91277d202",
+            "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
             "content": "sha256:5e9f2c48437327f286469b2ceb26703f7cf5f19f90f6e45c218aa1e026dfa91a",
             "locator": {
               "kind": "symbol",
@@ -222,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "819518dc41d0c54143594cfc191864f91277d202",
+            "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
             "content": "sha256:6918c0d0e18d89fe0ad75d145d0bb5ebfa42121345d87e493ac0ee44b147f53d",
             "locator": {
               "kind": "symbol",
@@ -274,7 +328,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "blob": "78a9a908bb561997e853bd64aba6459a4a64cc71",
             "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
             "locator": {
               "end": 363,
@@ -292,7 +346,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "blob": "78a9a908bb561997e853bd64aba6459a4a64cc71",
             "content": "sha256:73c6210b150df4fca36173f0acfba672fdfc608265398abef7a007a2ad8571e9",
             "locator": {
               "end": 155,
@@ -310,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
+            "blob": "78a9a908bb561997e853bd64aba6459a4a64cc71",
             "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
             "locator": {
               "end": 286,
@@ -328,7 +382,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "819518dc41d0c54143594cfc191864f91277d202",
+            "blob": "b99a7b0d8a47ce53b8396df8c075e98416765895",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",

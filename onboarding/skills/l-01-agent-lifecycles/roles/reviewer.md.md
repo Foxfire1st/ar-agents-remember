@@ -14,7 +14,7 @@ each stable requirement ID from the same applicable set dispatched to the worker
 
 Review only the owner’s explicit assignment. Use exact handover task arguments, the returned canonical `docPath`, `arMcpContext.readerArguments` and actual bound schemas; per-call context includes the canonical task and enclosure contract. Read only the documents required by the assigned seam and write only contained task-local report artifacts. Missing fields/capabilities are reported gaps, not permission to switch AR servers or retrieve unscoped material.
 
-The baseline inspects every changed file in the complete candidate, including unattributed files. Knowledge before/after, family interactions and unchanged sibling realizations add a review dimension rather than reducing that population. Preserve producer Curator hand-off fields for co-resolution. Native peer clarification uses the actual parent/task role through bound `role_message`; a dashboard Reviewer needs no parent and starts no role. Developer decisions stay in the own chat.
+The baseline inspects every changed file in the complete candidate, including unattributed files. Knowledge before/after, family interactions and unchanged sibling realizations add a review dimension rather than reducing that population. Preserve producer Curator hand-off fields for co-resolution. Native peer clarification uses the actual parent/task role through bound `role_message`; a dashboard Reviewer needs no parent and starts no role. Developer questions go to the parent when one exists; without one they stay in the own chat.
 
 ### Logic
 
@@ -71,7 +71,7 @@ Canonical lifecycle doctrine owns canonical skill content; generated copies are 
 outputs. Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed without one of the two
 authorized invalidation paths.
-One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer decisions stay in the own chat, and peer clarification uses the actual parent/task role when one exists.
+One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat.
 
 
 ## CCR-R12@v5 Transaction Boundary
@@ -81,6 +81,10 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The Reviewer delivers its verdict directly to the Worker and, on a pass, the exact freeze's identity to the Curator; a block and its repair stay inside the leaf and inside the ordinary limit. It opens and records its own ordinary code rounds through the supported operations, while the memory check keeps separate sealed reports, ids and a pass count, opens no code round and resets nothing. It answers a Curator code concern by taking it into its findings or explaining why it does not hold, and gains the harness-freedom paragraph.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+A Reviewer with a parent sends a developer question (including the request for a round beyond the ordinary limit) to that parent with `role_message` on `agents-remember-task`, with what it holds back and recommends, and keeps working. A refusal stays pending under **Pending developer questions** and is retried; only an unreachable parent opens the own chat. The developer's quoted answer and the receiving agent's id are passed on unchanged, and the extra round is recorded with the quoted words. The retired own-chat and direct-ask sentences are registered against return. The code and memory lanes and their ordinary limits are untouched.
 
 ## Evidence
 

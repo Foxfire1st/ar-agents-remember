@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "52ea8e7b2b07f23c598699b8f7b9259ba5835106",
-        "content": "sha256:609519124abcaa36d8bd5b8edbf0d183f82546d81b6a1dc9c25fefedad7c18a9",
+        "blob": "f77b57fdeaa453dee0128b6852288d12a2835f9f",
+        "content": "sha256:c731fb678fcaf4e20a5c4ef1c556f3e2de6995a89005060b051c20fbe282d2a2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4JERMG",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f77b57fdeaa453dee0128b6852288d12a2835f9f",
+        "content": "sha256:c731fb678fcaf4e20a5c4ef1c556f3e2de6995a89005060b051c20fbe282d2a2",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "52ea8e7b2b07f23c598699b8f7b9259ba5835106",
+        "blob": "f77b57fdeaa453dee0128b6852288d12a2835f9f",
         "content": "sha256:f6e433fca136bb569141f48c5271a82720bb911887da53134232437514adbac3",
         "locator": {
           "end": 8,

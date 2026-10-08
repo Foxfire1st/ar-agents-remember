@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The relay, quotation and permission-notice duties are stated in three role sources and the coordination operation, and the delivered-text guard fails when the notice or provenance clause is removed."
+  },
+  "applicability": "The three roles that can start agents (architect, orchestrator, manager) and the coordination operation, whenever a child's question or permission notice arrives.",
+  "conditions": [
+    "An answer within the receiver's authority is labelled as its own answer, not the developer's.",
+    "An upward relay keeps the question unchanged with the originating role, task and agent id, and adds the receiver's recommendation separately.",
+    "The top names every waiting agent with role, task number and purpose, and agent id, or the words 'not supplied' where a permission name is absent.",
+    "Until MIK-R100 lands, the held message is tried once in each turn the parent takes, and the top supplies that occasion at its next turn."
+  ],
+  "exclusions": [
+    "Answering a harness permission prompt, which only the developer does in the waiting chat.",
+    "The dashboard waiting mark, which this packet excludes.",
+    "The automatic held-message delivery that MIK-R100 rule 4a will land."
+  ],
+  "id": "INV-7FMDAS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties; expected5-summary.json; expected6-summary.json: actual CodexBash permission-pending and visible named waiting chat; initial approval-never restriction preserved separately"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each coordinating role answers within its own authority, relays other questions unchanged with original role/task/ID and a separate recommendation, returns developer words and receiving-agent ID unchanged, and names each permission-waiting chat with one held-message retry per naturally occurring turn until R100.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -71,42 +71,42 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:86a8bdcd7834fb37523f821a9519720bd55f6027682eae8d6efe91d753974b57",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:d7170992af7f302d66549d6b7c2070ceecf7a09c91054e67aff3beb5156aa9e8",
         "locator": {
           "kind": "symbol",
           "name": "HandoverTextWordingTests.test_developer_question_channel_matches_role_and_parent"
         }
       },
-      "facet": "The parented Manager/Orchestrator gets the parent-routed sentence while every other role, parentless coordinator and dashboard start gets the byte-identical base sentence.",
-      "id": "PRF-1E5Z70",
+      "facet": "Compiles every launcher role with and without a parent and requires the parent-routed developerQuestions sentence for all six parentable roles while the parentless value stays byte-identical.",
+      "id": "PRF-18H967",
       "invariant": "INV-8AMSGV",
       "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
-        "leaf": "260928-MIK-L72"
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
       }
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:ce5d181963adfec2b59a2e4ab45373dd9519022a021e0e4c8919f3fe6507441b",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:413440fdc4e871dc50752f0c616d58deaf7cae1d5119fb76394cba67eedbee52",
         "locator": {
           "kind": "symbol",
-          "name": "HandoverTextWordingTests.test_owner_relation_changes_only_for_parented_coordinators"
+          "name": "HandoverTextWordingTests.test_owner_relation_routes_developer_questions_and_preserves_coordinators"
         }
       },
-      "facet": "Only a parented Manager or Orchestrator gets the rule-4 ownerRelation; every other role and parent class gets the byte-identical base value.",
-      "id": "PRF-1PSRH1",
+      "facet": "Requires the leaf roles' direct peer routes and no parent-result ordering in the composed ownerRelation while the coordinating-role text is preserved.",
+      "id": "PRF-24G8R8",
       "invariant": "INV-8AMSGV",
       "origin": {
-        "handoffEntry": "L72/MIK-R72@v2-parented-handover-values",
-        "leaf": "260928-MIK-L72"
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
       }
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
         "content": "sha256:e252a12a157f0d6e266fa5565130b1360ca3f5c49fd9e3218a7d60bd95687224",
         "locator": {
           "kind": "symbol",
@@ -139,8 +139,8 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -156,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
         "content": "sha256:0aa27888040347c52cbc287b60220d7c8feea34797bf1d54d3fb94b16161b1db",
         "locator": {
           "kind": "symbol",
@@ -173,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
         "content": "sha256:afa8632a9d7e5fdcc3d4e7dba83aba4ddf56f213fc81b2576dba47c452bc811d",
         "locator": {
           "kind": "symbol",
@@ -190,8 +190,8 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
-        "content": "sha256:1562ab99585ce2023853c8c8f741e6cdc03dbcd64eed0e1b4c36bc9502602969",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
+        "content": "sha256:2507c93d4629c8fafab1cc142389fc0a15c6e439cd98af60aaf19ceb21984a70",
         "locator": {
           "kind": "symbol",
           "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
@@ -207,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "2d81ab9d334452c509a511906a7654f2cef118bd",
+        "blob": "83ff8d4ba7f4d13d4732c689bb678d403e3d0497",
         "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
         "locator": {
           "kind": "symbol",

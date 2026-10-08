@@ -12,7 +12,7 @@ This canonical thin router selects a native role capsule from an explicit suppor
 
 The native launcher supports Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Manual taskless Architect/System Specialist launches at Projects ask only for missing outcome/repository or concern/report scope and synthesize no sprint, master or task.
 
-Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. Developer decisions stay in the agent’s own chat, and dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
+Paseo runs agents and delivers messages. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. With a parent named in `host.parent` a developer question goes to that parent, and only a parentless or unreachable-parent agent asks in its own chat; dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
 After reconnect or compaction, restore the same role, operation, canonical task, agent IDs and report from the durable handover and recorded approvals. Reconcile an uncertain start with the same request ID. A finished turn, review, curation, semantic acceptance and paired-Git publication remain separate owning facts.
 
@@ -56,7 +56,7 @@ separate protocol events as delivery attempts.
   entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
   data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
   brief-schema, which is why the router names it on its own.
-- Native starts and peer messages use bound role tools and durable handovers; developer decisions stay in the own chat.
+- Native starts and peer messages use bound role tools and durable handovers; a developer question goes to the parent when one exists, and only a parentless or unreachable-parent agent asks in the own chat.
 - Preserve actual returned agent IDs and canonical task/workspace bindings. Never invent a parent, recipient or delivery outcome.
 
 ## Invariants And Boundaries
@@ -83,6 +83,10 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The router now states the all-role harness freedom and its bounds: every role organises its assigned work with whatever its harness offers, at any size, while the seat answers for it, boundary acts stay the seat's own, a harness sub-agent is no AR seat, and nobody checks itself through one. The old fixed read/search/one-level fan-out restriction is gone; the router keeps the message and identity rules it already stated.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The router now states the parent rule: with a parent named in `host.parent`, every question requiring the developer's decision goes to that parent with `role_message` on `agents-remember-task`, with what is held back and what is recommended; the agent keeps working, and when nothing independent remains it records its state and ends waiting for its parent's message. A refused delivery stays pending under **Pending developer questions** and is retried before the turn ends; only a parentless or unreachable-parent agent asks in its own chat. A relayed answer is the developer's only with the quoted words and the receiving agent's id. The retired universal own-chat sentence is registered so it cannot return unnoticed.
 
 ## Evidence
 

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The channel duty is stated across six role sources and three operations, and the delivered-text guard fails when one of its clauses is removed."
+  },
+  "applicability": "Every canonical role source or multi-role operation delivered in a capsule whose handover can name a parent.",
+  "conditions": [
+    "The delivered text states the parent-routed question channel and the final-await ending for a role with a parent.",
+    "A busy or permission-prompt refusal keeps the question under 'Pending developer questions' in the report and is retried before the turn ends.",
+    "Only an unreachable parent (archived, not found, not resumable, no runtime configured, host unreachable) opens the own chat.",
+    "A relayed answer is recognized only with the three rule-5 marks and is recorded with the quoted words where the role requires a record."
+  ],
+  "exclusions": [
+    "Dashboard-started and other parentless roles, which keep the own-chat sentence.",
+    "Answering a harness permission prompt, which only the developer does in the waiting chat.",
+    "The dashboard waiting mark, which this packet excludes."
+  ],
+  "id": "INV-9S49CW",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_each_parentable_role_has_question_recovery_and_answer_provenance; test_question_operations_keep_conditional_routing_and_pending_recovery; all29 compiled capsules in after.json"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each delivered parentable role instructs questions to the parent, independent work without a developer wait, pending-report recovery for busy delivery, own-chat recovery only for an unreachable parent, and recorded quoted developer answers with the receiving agent ID.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,24 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/loop.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "21c85a8e5e2ff9e00f0e2baf308dffb3f4ea2599",
+        "content": "sha256:61d0bb26b1f48e78a417722a872bd7fcff6f58701ebefde854ce7ed1442323f3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8JF3B8",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

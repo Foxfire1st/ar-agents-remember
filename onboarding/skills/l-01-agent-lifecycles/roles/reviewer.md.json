@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
-        "content": "sha256:f4241b3192a60580ea30e0387ee3a5462be9b568d7c8ca736d2d053848204d13",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+        "content": "sha256:ba0bb3edec6a7c4cfa2bd43f4127adbae8f807abb2cb30c67909c75537258ae6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AHY1E5",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+        "content": "sha256:ba0bb3edec6a7c4cfa2bd43f4127adbae8f807abb2cb30c67909c75537258ae6",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
-        "content": "sha256:f4241b3192a60580ea30e0387ee3a5462be9b568d7c8ca736d2d053848204d13",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+        "content": "sha256:ba0bb3edec6a7c4cfa2bd43f4127adbae8f807abb2cb30c67909c75537258ae6",
         "locator": {
           "kind": "file"
         }
@@ -37,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
         "content": "sha256:568bf8136e4a7f6bf66bfff6a90eaa3633a484df834ef3758427f26a0f0007d1",
         "locator": {
           "end": 21,
@@ -56,12 +73,12 @@
     },
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
         "content": "sha256:00a4840ecec2a5de5465bcbd86e1dde908c2e942381683021be893c799901143",
         "locator": {
-          "end": 165,
+          "end": 164,
           "kind": "line_range",
-          "start": 164
+          "start": 163
         }
       },
       "id": "RLZ-QBXQTV",
@@ -75,8 +92,8 @@
     },
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
-        "content": "sha256:f4241b3192a60580ea30e0387ee3a5462be9b568d7c8ca736d2d053848204d13",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+        "content": "sha256:ba0bb3edec6a7c4cfa2bd43f4127adbae8f807abb2cb30c67909c75537258ae6",
         "locator": {
           "kind": "file"
         }
@@ -92,8 +109,8 @@
     },
     {
       "anchor": {
-        "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
-        "content": "sha256:f4241b3192a60580ea30e0387ee3a5462be9b568d7c8ca736d2d053848204d13",
+        "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
+        "content": "sha256:ba0bb3edec6a7c4cfa2bd43f4127adbae8f807abb2cb30c67909c75537258ae6",
         "locator": {
           "kind": "file"
         }
@@ -114,12 +131,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
             "content": "sha256:de88a9e1ed720c73df9acdf2680d2b6b9b32bc76b1f295ef78493200f8281439",
             "locator": {
-              "end": 104,
+              "end": 103,
               "kind": "line_range",
-              "start": 101
+              "start": 100
             }
           },
           "kind": "code"
@@ -131,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad2064ee1e32f0e199409100b7c33f8e55c204fa",
+            "blob": "ed24680d7bb879b21cf1ec43537c154668e7a99c",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 73,
@@ -149,12 +166,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
             "content": "sha256:31f922fec6d47cab57b1346e20eea944703f5dc7303dd5ac02dfa874d6694562",
             "locator": {
-              "end": 140,
+              "end": 139,
               "kind": "line_range",
-              "start": 133
+              "start": 132
             }
           },
           "kind": "code"
@@ -166,12 +183,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c0bcf6e89f1e8a4ca2cb2db5e98c4b1bcac27ea",
+            "blob": "8216517a6b46f398e278ef4cb431f4ddc445a7f6",
             "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
             "locator": {
-              "end": 107,
+              "end": 106,
               "kind": "line_range",
-              "start": 105
+              "start": 104
             }
           },
           "kind": "code"

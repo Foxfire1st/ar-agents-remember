@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
         "content": "sha256:a2a288dd989f6131292cb6ea8148355c9b71f1a9c4ea5bdeef7b06e319c97f42",
         "locator": {
-          "end": 349,
+          "end": 348,
           "kind": "line_range",
-          "start": 349
+          "start": 348
         }
       },
       "id": "RLZ-4YAPS7",
@@ -22,12 +22,29 @@
     },
     {
       "anchor": {
-        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
+        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-E9F3YP",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
         "content": "sha256:15985ae2c19ced481a0e732a5996a9a09d5218c03bed6f851bd52b8b84cd8a08",
         "locator": {
-          "end": 331,
+          "end": 330,
           "kind": "line_range",
-          "start": 330
+          "start": 329
         }
       },
       "id": "RLZ-EEEG4W",
@@ -41,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
-        "content": "sha256:73b46aa04bae8eaf400b1e9bdb5153a64bd10b5b56468ec1c1b8e9575803d9ab",
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
+        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
         "locator": {
           "kind": "file"
         }
@@ -58,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
-        "content": "sha256:73b46aa04bae8eaf400b1e9bdb5153a64bd10b5b56468ec1c1b8e9575803d9ab",
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
+        "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
         "locator": {
           "kind": "file"
         }
@@ -75,7 +92,7 @@
     },
     {
       "anchor": {
-        "blob": "f284821aaff4ff65e6758936cdb9aa618524299b",
+        "blob": "e12afe988de03321328e7a381737aafa892f202a",
         "content": "sha256:6ce616857be9b2932b1b442a156eb06df996534a4dc191f60bede6f9a6de49a7",
         "locator": {
           "end": 74,

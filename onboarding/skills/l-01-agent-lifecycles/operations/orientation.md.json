@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
+        "blob": "00be1faad216dadd5aa8f4a59813de72917bde3b",
         "content": "sha256:1306bb4da04c7853394b4400b768e81237508d5a7d9bc165b99ca34fc4cc039a",
         "locator": {
           "end": 7,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
-        "content": "sha256:e8348442b43ab6312243b07923b91df671a8e15634f4b6fa6f1eae295dc7882b",
+        "blob": "00be1faad216dadd5aa8f4a59813de72917bde3b",
+        "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
         "locator": {
           "end": 11,
           "kind": "line_range",
@@ -41,7 +41,24 @@
     },
     {
       "anchor": {
-        "blob": "7b3af273839b6a22465631f3cca66f2f5971d0c8",
+        "blob": "00be1faad216dadd5aa8f4a59813de72917bde3b",
+        "content": "sha256:5bac9318e4d4bb82e63c65183adb3ba488d28de66f0f7a5f4448af0c3622dbfa",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CJF248",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00be1faad216dadd5aa8f4a59813de72917bde3b",
         "content": "sha256:dd4ec2005c23a3bf7969868574045585f713bf0328eaa57e6d5ed7495e9e2240",
         "locator": {
           "end": 3,

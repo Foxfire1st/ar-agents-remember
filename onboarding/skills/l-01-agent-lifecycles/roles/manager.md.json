@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
         "content": "sha256:7191128f4e5a9e7fbd6f6273c42825b67e313fc4c54b91f0160e2c10e840d871",
         "locator": {
           "end": 22,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
-        "content": "sha256:57e47e7b6afe3f80d5b8af40fe5d8f1fa623fba048103162d6c4189bdd265d80",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
         "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
         "locator": {
           "end": 8,
@@ -58,7 +58,24 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HSZ8FM",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This self-contained role source states the obligations in every capsule that uses this role.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
         "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
         "locator": {
           "end": 26,
@@ -77,8 +94,8 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
-        "content": "sha256:afbb9de316de4881b4fa793eac59921ab18366cdaa011d6b56860ae41d51b825",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "content": "sha256:1a36f47b8265108ad804eda93b9396919cb9f7078417e883371d4df1862a5216",
         "locator": {
           "end": 28,
           "kind": "line_range",
@@ -96,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
-        "content": "sha256:57e47e7b6afe3f80d5b8af40fe5d8f1fa623fba048103162d6c4189bdd265d80",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
         "locator": {
           "kind": "file"
         }
@@ -113,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "f7aa258fa239e308f8458c8f5659b7e99a3f1d9b",
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
         "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
         "locator": {
           "end": 30,
@@ -128,6 +145,23 @@
         "leaf": "260928-MIK-L72"
       },
       "rationale": "The paragraph makes the Manager record the instructed reporting recipient and route developer-needed matters there without a native reparenting.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V9GWTW",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role may parent agents and therefore owns both upward presentation and downward provenance, including the top-of-chain case.",
       "role": "primary-authority"
     }
   ],

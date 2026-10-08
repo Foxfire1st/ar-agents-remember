@@ -39,6 +39,10 @@ Current role duty remains targeted/scoped evidence with failed or unrun results 
 
 The Architect keeps its delegation, developer conversation and direct-coordination duties; the change adds the same harness freedom and boundary paragraph the other roles carry, and no leaf-level routing.
 
+## 260928-MIK-R93 — questions received from children
+
+The Architect answers a child's question within its authority and says the answer is its own; otherwise it puts it to the developer in its own chat, naming the originating role, task number and purpose, agent id, question and recommendations. It returns the developer's answer to the asker with the receiving agent's id and the quoted words, and every parent on the way down passes those three unchanged. When a child waits at a permission prompt, the Architect tells the developer which chat to open, names the permission as supplied or "not supplied", and lists every waiting agent with its role, task and agent id instead of a count. The Architect's own questions still go in its own chat.
+
 ## Evidence
 
 ### Docs References

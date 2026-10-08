@@ -48,7 +48,7 @@ For an AR-launched Paseo capsule, use the handover’s `taskDocReadArgs` exactly
 
 The existing MIK writer remains authoritative. Use only the source-bound command admitted for the selected runtime. If this compiled capsule exposes no writer and admits no such command, report the required records not written; that is a capsule capability limit, not a general absence of MIK’s writer. Another installation, unscoped call or internal writer cannot substitute.
 
-An explicitly report-only admission supplies only the requested report and bound upstream message and claims none of the normal authoring pass complete. The normal pass retains its complete contract-scoped MQC, exact blocked findings, reruns and required prepare → publish → validate coherence. Developer decisions stay in the own chat; native peer clarification uses the actual parent/task role, and dashboard launch needs no parent. Operator settings, including serviceTier, remain outside Curator authority.
+An explicitly report-only admission supplies only the requested report and bound upstream message and claims none of the normal authoring pass complete. The normal pass retains its complete contract-scoped MQC, exact blocked findings, reruns and required prepare → publish → validate coherence. Developer questions go to the parent when one exists and to the own chat only without one; native peer clarification uses the actual parent/task role, and dashboard launch needs no parent. Operator settings, including serviceTier, remain outside Curator authority.
 
 ### Conventions
 
@@ -68,6 +68,10 @@ No additional work is asserted by this card. Actual project publication and sema
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The Curator now receives the Worker's and Reviewer's inputs directly and hands its memory candidate directly to the Reviewer; it raises an evidenced code concern to both the Reviewer and the Worker even after code PASS, keeps an undeliverable Manager notice pending with a supported retry, and never turns that transport failure into a developer question. Its fixed 100-entry/one-level/read-only fan-out policy is replaced by the all-role harness freedom while the full-intake worklist duty, the single writer and the quality/coherence obligations stay with the seat.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+A Curator with a parent sends a developer question to that parent with `role_message` on `agents-remember-task`, with what it holds back and recommends, and keeps working; a refusal stays pending under **Pending developer questions** and is retried, and only an unreachable parent opens the own chat. This sits beside its L99 Manager-notice recovery: the notice is still never turned into a developer question in the own chat, and the `INV-W24J6Q` exclusion that said ordinary developer questions stay there is superseded — they go to the parent when one exists. The retired own-chat sentence is registered against return.
 
 ## Evidence
 

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a2dc607e41f773cd41ef96f86129f6341d54aab",
-        "content": "sha256:81402ee7cb0d45bb98726cda9a6cc6df930166c178355c66d60588dfd4c34174",
+        "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
+        "content": "sha256:9585f9939935d63fa91dec562cd90c15a6e31e4eabcf98fb1289958f61e4100a",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -18,6 +18,24 @@
       },
       "rationale": "This registry is the shipped-sentence census: each row carries the exact statement, the files that shipped it, its probe and its current reason, and the sweep is the canonical tree plus the generated copies.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
+        "content": "sha256:9585f9939935d63fa91dec562cd90c15a6e31e4eabcf98fb1289958f61e4100a",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-HE14MT",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The declared-source census adds fourteen replaced instruction statements and the corpus tests seed each obsolete statement on its exact surface.",
+      "role": "support"
     }
   ],
   "references": {
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a2dc607e41f773cd41ef96f86129f6341d54aab",
+            "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
             "content": "sha256:6a46b5df1a4b60e3b4c28ce3710aca8d060de9ca94d1c00872e5a1b8e6cf3839",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a2dc607e41f773cd41ef96f86129f6341d54aab",
+            "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
             "content": "sha256:34a0fc2576100ebe900f1dd81204517ee42baa8b703e9c1de07da1cc00793042",
             "locator": {
               "kind": "symbol",
@@ -74,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a2dc607e41f773cd41ef96f86129f6341d54aab",
+            "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
             "content": "sha256:67a7b91537aa4ee924ffc0f7791af8cf4ade43ee51ad27b8bae097057a50126f",
             "locator": {
               "kind": "symbol",

@@ -13,7 +13,7 @@ This canonical System Specialist investigates one explicit provider/system conce
 
 Use the developer request or supplied assignment and read current provider status/diagnostics through the bound task server. Inspect only scoped metrics, logs and evidence, distinguish observed facts from root-cause hypotheses and state confidence. Write the report before changing provider/system state. Remediate only on an explicit authorized order from the developer or actual parent named in the assignment.
 
-A provider-start alert still forbids starts/restarts while allowing valid read-only investigation. Return the report in the own chat and, when present, to the actual bound parent with `role_message`; dashboard launch needs no parent or fabricated task. System Specialist starts no role.
+A provider-start alert still forbids starts/restarts while allowing valid read-only investigation. Return the report in the own chat and, when present, to the actual bound parent with `role_message`; a developer question goes to that parent, or to the own chat without one; dashboard launch needs no parent or fabricated task. System Specialist starts no role.
 
 ### Invariants And Boundaries
 
@@ -26,6 +26,10 @@ A provider-start alert still forbids starts/restarts while allowing valid read-o
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The system-specialist keeps its investigation duties and gains the same harness freedom and boundary paragraph as the other roles.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+A System Specialist with a parent sends a developer question to that parent with `role_message` on `agents-remember-task`, with what it holds back and recommends, and keeps working; a refusal stays pending and is retried, and only an unreachable parent opens the own chat. The report still goes to the own chat and, when a parent exists, to that parent. The retired own-chat sentence is registered against return.
 
 ## Evidence
 

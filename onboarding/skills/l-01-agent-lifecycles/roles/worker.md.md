@@ -46,7 +46,7 @@ Those records live in one physical leaf journal shared as an ordered append-only
 independent reviewer. The separate worker turn report links newly appended attempt anchors and
 does not duplicate their authority.
 
-Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives no routine report notice and relays no freeze, finding, verdict or memory change. Questions for the developer stay in the Worker's own chat.
+Closeout, integration, task acceptance and admitted memory remain with their owning AR/Curator seats. Worker leaves the code candidate uncommitted and writes the exact canonical report, then freezes the candidate and sends it directly to the leaf's Reviewer; after code PASS it sends its structured hand-off list to the Curator. The Manager receives no routine report notice and relays no freeze, finding, verdict or memory change. A question for the developer goes to the parent named in the handover; a Worker without a parent asks in its own chat.
 
 The Manager starts the Worker and Reviewer together and the Curator at the first freeze; no seat starts the one that checks it. Worker starts no role. Unknown results and compaction recover the same task/agent/report rather than inventing a new owner.
 
@@ -80,6 +80,10 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The Worker now freezes its candidate and sends it directly to the leaf's Reviewer with `role_message`, names the candidate head and change hash from its report, and asks for the Reviewer's whole next stretch; it sends its structured hand-off list directly to the Curator after code PASS, and runs the supported leaf sync itself, sending a memory-file conflict to the Curator and asking the Manager only for the staging step. It gains the harness-freedom paragraph and keeps its no-role-start and no-commit boundaries.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+With a parent the Worker sends every developer question to it with `role_message` on `agents-remember-task`, saying what it holds back and recommends, and keeps working without ending its turn on the question. A busy or permission-prompt refusal stays pending under **Pending developer questions** in its report and is retried before the turn ends; only an unreachable parent opens the own chat, and having no work left does not. A relayed answer counts only with the developer's quoted words and the receiving agent's id, recorded where the role requires a record. The retired own-chat sentence is registered against return.
 
 ## Evidence
 

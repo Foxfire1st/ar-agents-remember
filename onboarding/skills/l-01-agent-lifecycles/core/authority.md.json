@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4905db4d0141c3c1bb81a05db338dd7e58bc6aa3",
-        "content": "sha256:dcab999194728ad22efeb7536555c4b30a9fdae049ec8967f1dea7bd4d44f00b",
+        "blob": "c887613340f2572a93258069c0cf4ae89a6ecc47",
+        "content": "sha256:f26802425db6a3577f833dcf088fc08891f29a981acb60e18d63c8743f3858f4",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,23 @@
         "leaf": "260928-MIK-L99"
       },
       "rationale": "Removes obsolete read-only/no-orchestration helper restrictions while retaining role-seat immutability.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c887613340f2572a93258069c0cf4ae89a6ecc47",
+        "content": "sha256:f26802425db6a3577f833dcf088fc08891f29a981acb60e18d63c8743f3858f4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VCT9ZR",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
       "role": "primary-authority"
     }
   ],

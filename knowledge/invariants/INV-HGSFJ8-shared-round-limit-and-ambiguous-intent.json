@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The shared routing and record duties and the census live in five canonical files plus the register, and the independent negative guard fails when a registered sentence is reinserted or an entry is re-merged."
+  },
+  "applicability": "The shared lifecycle instructions that state round limits, ambiguous-intent routing and the retired-wording census, and their nine generated copies.",
+  "conditions": [
+    "A request for an extra round or an ambiguous-intent decision goes through the parent where one exists and keeps the required record with the developer's quoted words.",
+    "The census declares each independently restorable obsolete sentence at its actual carrier; the current R93 census holds sixteen independent statements, including the Manager/Orchestrator forwarding prohibition and the separate SKILL own-chat directive and old coordinator-exception sentences.",
+    "A literal reinsertion of each registered sentence is detected while the current canonical and generated corpus stays clean."
+  ],
+  "exclusions": [
+    "Novel semantic contradictions in fresh vocabulary, which the exact-wording guard does not claim to catch.",
+    "The W01 fourteen-row predecessor state, which is historical provenance, not current truth.",
+    "Preserved dashboard or parentless wording, which is not retired."
+  ],
+  "id": "INV-HGSFJ8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_instruction_corpus.py retired-statement guards; sync-check.txt; nine generated skill copies regenerated"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rules6,11,13",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Shared round-limit and ambiguous-intent instructions send developer requests through the parent when one exists, preserve required authorization records, and retired wording cannot return to its declared source unnoticed.",
+  "status": "proposed",
+  "supersedes": []
+}

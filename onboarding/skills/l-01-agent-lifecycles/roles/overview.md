@@ -175,9 +175,9 @@ Manager, orchestrator and curator handoffs name actual code/memory output refs a
 
 ## Detailed Route Context
 
-Manager hosted dispatch consistently names the canonical leaf or master **task document**. That
-vocabulary matches the public structural request and its task-reference authority; generated and
-packaged role projections are synchronized from the canonical role file rather than edited apart.
+A manager's native `role_start` consistently names the canonical leaf or master **task document**.
+That vocabulary matches the returned task-reference authority; generated and packaged role
+projections are synchronized from the canonical role file rather than edited apart.
 
 ### IAS Frozen Role Boundary
 
@@ -207,7 +207,7 @@ or completion verdict evidence; and curator reconciles ruled intent with impleme
 
 Reviewer is one target-only role projected at the reviewed artifact's altitude: leaf, master, or
 sprint. Managers own leaf and master-exit generations, the architect owns the plan generation, and
-the orchestrator owns the super-exit generation. The control plane stamps that structural parent;
+the orchestrator owns the super-exit generation. The plane stamps that parent document and role;
 the shared role name and sprint address do not blur plan and super authority.
 
 Organizational masters have no integration branch: their leaves are direct super descendants and
@@ -215,11 +215,17 @@ the final leaf is reviewed and full-gated as part of the exact proposed super ca
 lands. Atomic masters retain the branch-backed, no-partial-exposure block. A failed review routes
 repair to an owning, reopened, or new scoped leaf—never to a master or super workbench.
 
-Manager, orchestrator, and worker doctrine shares one quality altitude rule: the pinned Dagger
-graph is the only Agents Remember acceptance environment. Leaf closeout selects targeted mode
-exactly once; leaf integration and series closeout do not rerun it. The master gate selects full
-mode once. Every run receives the explicit task-derived diff base. Host pytest/wrapper execution
-is refused; a constrained lifecycle environment may explicitly configure a hard cap.
+Manager, orchestrator, and worker doctrine shares one quality altitude rule: focused host
+diagnostics — direct host pytest (units by default, `-m integration` for the small integration
+population) and targeted Vitest, with Ruff, formatting, Pyright and Radon as the repository's
+static checks — are the normal implementation feedback path. The repository's old
+`scripts/test-python` wrapper remains deleted and is not recreated. The pinned Dagger graph is the
+explicit certification ladder: leaf closeout selects targeted
+mode exactly once, leaf integration and series closeout do not rerun it, and the master gate selects
+full mode once, each against the explicit task-derived diff base. A constrained lifecycle
+environment may explicitly configure a hard cap. Transactions launch no optional quality; the
+Curator's complete leaf-scoped memory-quality check and coherence remain standing curation
+duties.
 
 The manager also owns exact requirement-set compilation: each worker and reviewer receives the
 same stable IDs applicable to the leaf. Workers give delivery and verification evidence per ID;
@@ -241,12 +247,13 @@ real-commit verification fields remain separately closeout-owned; they do not ex
 onboarding or citation finding.
 
 Roles are immutable within dashboard-owned seats. For ordinary role-shaped work, free chat creates
-the sprint architect through one identity-free `dispatch_agent` call built from the canonical
-architect-brief template; an explicit developer-declared task-seat takeover instead targets the
-named role at its canonical altitude. Once hosted, architect, orchestrator, and manager are plane
-callers with only their documented direct-child scope. Strategist, designer, worker, reviewer,
-curator, and system-specialist are target-only roles. The role-table dispatch/tool rows document
-fixed structural authority and capability, not settings keys. Plane authorization
+the sprint architect through one identity-free ambient `dispatch_agent` call built from the
+canonical architect-brief template; an explicit developer-declared task-seat takeover instead
+targets the named role at its canonical altitude in the same ambient mode. Once hosted, architect,
+orchestrator, and manager start and reach eligible roles with native `role_start` and `role_message`
+and only their documented direct-child scope.
+Strategist, designer, worker, reviewer, curator, and system-specialist are target-only roles. The
+role-table tool rows document bound capability, not settings keys. Plane authorization
 failures never retry as ambient launches. Native sub-agents work inside the seat's assignment with its permissions and working folder; the seat organises their work, verifies and credits it, and performs all boundary acts itself. They hold no AR seat, start no role and cannot supply independent review of their author; they never become AR role seats.
 
 ## Conventions
@@ -270,11 +277,15 @@ failures never retry as ambient launches. Native sub-agents work inside the seat
 
 ## CCR-R12@v5 Lifecycle Boundary
 
-Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic three-round rule.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The roles in this route now carry the all-role harness-freedom paragraph, and the leaf roles additionally state their direct hand-over and per-seat bookkeeping duties. The delegation and direct-coordination hierarchy is unchanged.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+Each role card now carries the same conditional question channel: parent first with `role_message`, pending-and-retried on a refusal, own chat only without a parent or when the parent is unreachable, and the developer's answer recognized only with the quoted words and the receiving agent's id. The three starter roles also carry the answer-a-child/relay/notice duties, and the leaf roles keep the R99 direct peer routes beside the named parent occasions.
 
 ## Evidence
 
@@ -303,7 +314,7 @@ never pass branch/commit/session ids between roles.
 
 The manager's last action before onboarding is a canonical-leaf `worktree_status` call whose full
 code and external-memory `sourceLineage` projection must be `current`. That projection enters the
-curator brief as evidence, and structural dispatch independently re-proves it before creating the
+curator brief as evidence, and the native start independently re-proves it before creating the
 curator host. This boundary prevents stale onboarding; the later closeout/integration checks remain
 separate because they guard ancestry movement during their own long quality phases.
 

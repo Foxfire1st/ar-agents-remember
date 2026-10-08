@@ -223,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
             "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
             "locator": {
-              "end": 154,
+              "end": 155,
               "kind": "line_range",
-              "start": 154
+              "start": 155
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -236,7 +236,7 @@
         },
         {
           "anchor": {
-            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -356,7 +356,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -369,12 +369,12 @@
         },
         {
           "anchor": {
-            "blob": "cdf5e6ee2df22ea3379a36297a421c2a99baefb3",
+            "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
             "content": "sha256:8b2f74e3b128e63ee59f6931d5d72751705a6ffc61e56d7ff1719aa7f74df984",
             "locator": {
-              "end": 154,
+              "end": 155,
               "kind": "line_range",
-              "start": 154
+              "start": 155
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -387,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15f839e06a4c6f7cf8ce2d85857ab643aa591ddf",
+            "blob": "b628b76d98f046fcebd57f7099f37e7bdd40e3a0",
             "content": "sha256:cca7e7dd8ebba19c0279c23006a0fd80d2002e593da471d42aebd0e5a9ba5eab",
             "locator": {
               "end": 154,

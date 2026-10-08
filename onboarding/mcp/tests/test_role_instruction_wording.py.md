@@ -12,6 +12,10 @@ The instruction census names the native router, seven role sources and their eig
 
 The wording tests now assert each role's affirmative harness freedom and its boundaries, the leaf roles' and operations' own positive obligations (direct whole-stretch hand-offs, Reviewer begin/result, the sealed memory lane, the Curator post-PASS concern and upward recovery), and removal controls that fail when an affirmative clause is deleted. The old 99/100 fan-out guard is replaced.
 
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The parent-condition test now covers all six parentable roles (worker, reviewer, curator and system-specialist join orchestration and management), and the ownerRelation test requires the leaf roles' sibling routes and no result-to-parent order while the coordinating text is preserved. The retired own-chat and direct-ask sentences are registered and checked through the corpus guard.
+
 ## Evidence
 
 - The scoped current source carries the module/document behavior described above. [1]

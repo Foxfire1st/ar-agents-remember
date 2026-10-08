@@ -1,0 +1,169 @@
+{
+  "path": "mcp/tests/test_developer_question_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "content": "sha256:25fa7ed9037568ffaf97cca7bb4e7e3c8bfced02bc786a29cc48d5ef7e3cf5e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
+        }
+      },
+      "facet": "Requires every starter role to carry the authority triage, the unchanged upward relay, the quoted downward answer and the permission notice with its named or not-supplied permission.",
+      "id": "PRF-DNKGK6",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exact_retired_directives_are_detected_as_independent_sentences"
+        }
+      },
+      "facet": "Exercises each exact old directive alone against the actual clean carrier and reports it, without flagging the undeclared current text.",
+      "id": "PRF-PE1MYV",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "content": "sha256:046c5d7de87a71abe9325b439ab03e1a0dd53a08c949d98089dfd53d18c4ce81",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+        }
+      },
+      "facet": "Requires each of the six parentable roles to carry the parent channel, the busy-pending recovery, the unreachable-parent exception and the quoted-answer provenance.",
+      "id": "PRF-SZ8AQ5",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "content": "sha256:96942bd07513a479948d116176fdd6bfaf9361529f105ce9dd61e145bbdeb7f5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+        }
+      },
+      "facet": "Requires the orientation, review and curation operations to keep the same conditional routing and pending recovery.",
+      "id": "PRF-T2404E",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "content": "sha256:718c44929c67a7198c45bd7587557647866333de6e21107c4810fc8d547954d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+        }
+      },
+      "facet": "Checks the leaf ownerRelation names the actual parent, keeps the sibling roleMessageArguments and omits the old result-to-parent order.",
+      "id": "PRF-WW6328",
+      "invariant": "INV-8AMSGV",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,7,10",
+        "leaf": "260928-MIK-L93"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parentable roles carry the question, recovery, provenance and notice clauses.\n\nAnchor: `test_each_parentable_role_has_question_recovery_and_answer_provenance`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every starter role carries the upward notice and unchanged downward answer duties.\n\nAnchor: `test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The three operations keep conditional routing and pending recovery.\n\nAnchor: `test_question_operations_keep_conditional_routing_and_pending_recovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The leaf ownerRelation keeps peer results and named parent occasions.\n\nAnchor: `test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Each exact retired directive is detected as an independent sentence.\n\nAnchor: `test_exact_retired_directives_are_detected_as_independent_sentences`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

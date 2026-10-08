@@ -417,11 +417,13 @@ masters proceed concurrently and no master is held because another is selected. 
 `executionGraph` gates masters on real predecessors (`predecessor-incomplete:`).
 
 Free chat launches ordinary role-shaped work by compiling `templates/architect-brief.md` from
-current sprint truth and calling `dispatch_agent` exactly once on the sprint document. An explicit
-developer-declared task-seat takeover instead targets the named role on its canonical task document. Missing plane identity
-selects ambient target-document and architect-altitude validation. After handoff, the architect and
-other spawning seats use the same public verb under plane identity and direct-child scope; a plane
-refusal never becomes an ambient retry. Source-lineage conflicts remain resumable through the
+current sprint truth and calling ambient `dispatch_agent` exactly once on the sprint document; no
+plane-injected hosted identity selects ambient-launcher mode and the request carries no caller
+identity. An explicit developer-declared task-seat takeover instead targets the named role on its
+canonical task document in the same ambient mode. After the first Architect exists, hosted role
+seats start and reach eligible roles with native `role_start` and `role_message` on
+`agents-remember-task`, keeping the returned agent IDs and their direct-child scope; a refusal
+names its rule or reason and never becomes an ambient retry. Source-lineage conflicts remain resumable through the
 contract-addressed sync continuation until a genuine semantic ambiguity requires escalation. The
 internal session primitive and readiness/brief correlations remain control-plane details. The architect owns sprint composition and the initial ruled topology.
 When the graph is missing or materially stale, an approved strategist authors the evidence-cited
@@ -441,8 +443,8 @@ workbenches.
 
 Role continuity is task-document and artifact based. Workers build and report, reviewers provide
 independent verdict evidence, curators reconcile system intent and memory, managers decide
-delegated leaf gates and integrate a master, and orchestrators govern master handovers. Mechanical
-fact relay replaces role-local polling and inference.
+delegated leaf gates and integrate a master, and orchestrators govern master handovers. Direct
+`role_message` hand-overs between the leaf seats replace role-local polling and inference.
 
 Reviewer is polymorphic without becoming ambiguous: it binds the exact leaf, master, or sprint
 being reviewed, while the plane stamps the generation's parent document+role. Managers therefore
@@ -469,11 +471,17 @@ requirement revision can reopen them. Leaf journals remain authority while the m
 excludes protocol events, is rebuildable, and never gates tasks, lifecycle, closeout, integration,
 or queues.
 
-The quality altitude ladder uses the pinned Dagger graph for Agents Remember acceptance. Leaf
-closeout selects targeted mode exactly once; leaf integration and series closeout do not rerun it.
-Master integration selects full mode exactly once. Both require the task-derived explicit diff
-base. Host pytest/wrapper runs are refused; a hard cap remains an explicit constrained-lifecycle
-setting rather than role-local judgment.
+Implementation and leaf work run focused host diagnostics freely — direct host pytest (units by
+default, `-m integration` for the small integration population) and targeted Vitest, with Ruff,
+formatting, Pyright and Radon as the repository's static checks. The repository's old
+`scripts/test-python` wrapper remains deleted and is not recreated. The pinned Dagger graph is the
+explicit certification ladder
+for Agents Remember when it is requested: leaf closeout selects targeted mode exactly once, leaf
+integration and series closeout do not rerun it, and master integration selects full mode exactly
+once, each against the task-derived explicit diff base. A hard cap remains an explicit
+constrained-lifecycle setting rather than role-local judgment. Transactions launch no optional
+quality; the Curator's complete leaf-scoped memory-quality check and coherence remain standing
+curation obligations.
 
 A curator completes only after the current-additions missing-onboarding check and full leaf-scoped
 memory-quality worklist have been repaired and rerun. Dirty-source drift and future commit-derived
@@ -483,15 +491,15 @@ candidate-bound coherence authority through the lifecycle API; generated Markdow
 human-readable projection.
 
 Before that curator is created, the manager requires the leaf's task-derived source-lineage
-projection to be current and includes it in the complete brief. The structural dispatch transaction
-re-proves lineage before host creation, so a parent move between status and dispatch fails closed.
+projection to be current and includes it in the complete brief. The native start re-proves lineage
+before host creation, so a parent move between status and start fails closed.
 
 ## Conventions
 
 - Edit doctrine in canonical `skills/`; `scripts/sync-skills.py` generates the package and eight harness trees.
 - Select role/operation from explicit handover bindings; do not infer tasks, repositories or owners from chat/workspace names.
 - Use exact task-read arguments, returned canonical document paths and the bound tool schemas; preserve durable prior approvals.
-- Use native `role_start`/`role_message` with actual returned IDs and same-request reconciliation, and keep developer decisions in the agent’s own chat.
+- Use native `role_start`/`role_message` with actual returned IDs and same-request reconciliation; a developer question goes to the parent when one exists, and only a parentless or unreachable-parent agent asks in its own chat.
 - Keep current role/operation contracts separate from retained reference/registry history. A retained core map does not inject shared instructions.
 
 ## Invariants And Boundaries
@@ -507,11 +515,15 @@ re-proves lineage before host creation, so a parent move between status and disp
 
 ## CCR-R12@v5 Lifecycle Boundary
 
-Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, full memory quality, certification, and review require an explicit developer request. Requested reviews retain the sealed monotonic three-round rule.
+Workers provide targeted checks and curators provide scoped onboarding checks with honest failed or not-run states. The prepared code and memory-content outputs move through the authorized Git transaction, whose commit legs suppress automatic quality and test hooks. The consumer ledger is refreshed without a commit while ordinary explicit Git hook policy outside the transaction remains unchanged; full quality, full tests, certification and independent review require an explicit developer request, while the Curator's complete leaf-scoped memory-quality check and coherence remain standing curation duties. Requested reviews retain the sealed monotonic three-round rule.
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
 The lifecycle route now states the leaf-seat direct loop and the all-role harness freedom: the Worker, Reviewer and Curator hand exact objects between their seats, the Manager keeps only its named occasions and the gate, and every role organises its assigned work with its own harness inside the seat's boundaries.
+
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+Every delivered role and operation now routes a developer question to the parent named in the handover, with the busy/pending report recovery, the unreachable-parent own-chat exception and the quoted developer answer; the parentless and dashboard behavior is unchanged. The handover constructor's `developerQuestions`/`ownerRelation` values follow parent presence for every role, with the leaf seats' direct peer routes preserved, and the four transportable `role_message` refusal remedies name the parent first. The retired own-chat sentences and the old Manager/Orchestrator forwarding prohibition are registered in the sixteen-statement R93 census and guarded by an independent negative test.
 
 ## Evidence
 

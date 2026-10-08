@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "696a3c651924545ec311b5f08e60f38466193251",
-        "content": "sha256:9e3f4a3188b51e2e4e6cef97caf8d7d3d8466ddc4267368cfbd8b410740901fc",
+        "blob": "3939a7464ac042ed416981590443f91efc0c3ca4",
+        "content": "sha256:9bf5ac42199934f97a908cd994115ae8831b7a61b6512758b93590915d49af8e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QBD8GV",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This operation is delivered with more than one role and states the same conditional routing and recovery without relying on another role source.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3939a7464ac042ed416981590443f91efc0c3ca4",
+        "content": "sha256:9bf5ac42199934f97a908cd994115ae8831b7a61b6512758b93590915d49af8e",
         "locator": {
           "kind": "file"
         }

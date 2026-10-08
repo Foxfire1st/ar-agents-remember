@@ -13,7 +13,7 @@
   ],
   "exclusions": [
     "Peer hand-overs, which carry their own busy and empty-seat rules.",
-    "Ordinary developer questions, which stay in the Curator's own chat."
+    "Ordinary developer questions, which go to the Curator's parent when that parent is reachable; with no parent, or when the named parent cannot be reached at all (archived, not found, not resumable, no runtime configured, or host unreachable), they are asked in the Curator's own chat. A temporary busy or permission-prompt refusal stays pending under **Pending developer questions** and is retried, and never opens the own chat."
   ],
   "id": "INV-W24J6Q",
   "origin": {
@@ -27,7 +27,7 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A required Manager notice the Curator cannot deliver is recorded as pending in its report, does not stop work that does not depend on it, is retried through the supported role_message channel, and is never turned into a developer question in the Curator's own chat.",
   "status": "proposed",

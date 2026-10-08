@@ -3,8 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad2064ee1e32f0e199409100b7c33f8e55c204fa",
-        "content": "sha256:74897dbbb989b356c0fc4d9e3ae2f8cccc3e23960cda3d7e8cd23664ff9b880e",
+        "blob": "ed24680d7bb879b21cf1ec43537c154668e7a99c",
+        "content": "sha256:3c240ac48a2044ee8e23964ce3539ccc4490d1a77e3f612d65e3111761f0e03e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5VSSX0",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ed24680d7bb879b21cf1ec43537c154668e7a99c",
+        "content": "sha256:3c240ac48a2044ee8e23964ce3539ccc4490d1a77e3f612d65e3111761f0e03e",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad2064ee1e32f0e199409100b7c33f8e55c204fa",
+            "blob": "ed24680d7bb879b21cf1ec43537c154668e7a99c",
             "content": "sha256:b6f3ffca7e5494d2174d4113b29c4e44a8f91c38b8a564532229efefc1788aee",
             "locator": {
               "end": 111,

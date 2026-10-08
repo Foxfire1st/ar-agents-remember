@@ -66,6 +66,10 @@ This template records the exact targeted or scoped checks and their failed or no
 
 The manager brief no longer describes the manager -> builder -> reviewer -> curator relay chain: the leaf's Worker, Reviewer and Curator hand freezes, findings, verdicts and memory changes directly to each other, and the Manager starts the set and reads state from reports.
 
+## 260928-MIK-R93 — a question for the developer goes up the chain
+
+The master-exit round-limit sentence now requests authorization through the parent with `role_message` on `agents-remember-task` where one exists, or in the own chat without one, and still records the developer's quoted answer before acting.
+
 ## Evidence
 
 ### Docs References

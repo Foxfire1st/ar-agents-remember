@@ -1,13 +1,31 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/manager-brief.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cda37e2158eac98c18db4aefb0b086c8257600a1",
+        "content": "sha256:c89ae7a23c60bbd3fbe7cdbc18d1354393fa4d4b8e510ae6142ba97b5dbd50ee",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WR7C61",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The source edge and every requirement revision are compiled before worker dispatch.\n\nAnchor: \"## The source edge (plane-owned, load-bearing)\"; \"## Dispatch defaults\"",
       "targets": [
         {
           "anchor": {
-            "blob": "daf51173f7c9e287b1fc72d2e6479711399d2dab",
+            "blob": "cda37e2158eac98c18db4aefb0b086c8257600a1",
             "content": "sha256:634d7daf15c48cefbe8cd762e36608a2a28386332bcaccf55d860c03e93b1a72",
             "locator": {
               "end": 42,
@@ -36,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "daf51173f7c9e287b1fc72d2e6479711399d2dab",
+            "blob": "cda37e2158eac98c18db4aefb0b086c8257600a1",
             "content": "sha256:1305e15ab630ef8c13130106ad2612492fce7446bd856eef28fea19da46a7214",
             "locator": {
               "end": 194,

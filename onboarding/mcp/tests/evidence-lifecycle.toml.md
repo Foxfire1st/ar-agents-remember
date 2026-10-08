@@ -119,6 +119,10 @@ directly above a table header, with that row. It refuses a comment inside a list
 
 The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handover_review_rounds.py`; the lane catalog registers `test_leaf_retirement_wording.py`. No module artifact rows were added for the three new test modules, and the changed wording and turn-truth test artifacts keep their existing rows.
 
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to the consumer lists the source tree supports; no artifact or contract row changes, and the canonical form is unchanged.
+
 ## Evidence
 
 - The schema version and the large-fixture threshold at the top of the file. [1]

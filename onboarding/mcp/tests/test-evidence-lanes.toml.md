@@ -40,6 +40,10 @@ No additional work is asserted by this card.
 
 The lane catalog carries the incoming shared evidence-lane content from the L79 sync plus the lanes of the new leaf-handover and retirement-wording test modules.
 
+## 260928-MIK-L93 — a question for the developer goes up the chain
+
+`mcp/tests/test_developer_question_wording.py` is added to the `unit-regression` lane; no other lane changes.
+
 ## Evidence
 
 ### Docs References

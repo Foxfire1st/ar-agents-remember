@@ -69,6 +69,10 @@ harness reads the old sentence.
 
 The curation-doctrine registry keeps its single owner and matcher for retired curation sentences and field facts. The retired leaf-handover wording moved into its own data module (`retired_leaf_handover_wording.py`), the register now holds only actually retired sentences with exact carriers and probes, and compound preserved-plus-obsolete text was split into independent source-addressed rows.
 
+## 260928-MIK-L93 — the sixteen-statement R93 census
+
+`RETIRED_CURATION_STATEMENTS` gains sixteen independently source-addressed R93 rows: the fourteen replaced role and operation sentences, the exact Manager/Orchestrator forwarding prohibition on both carriers, and the SKILL own-chat directive separated from the old coordinator exception. Each row carries its exact carrier, a distinctive probe and its specific reason. `test_developer_question_wording.py::test_exact_retired_directives_are_detected_as_independent_sentences` is the focused four-case control: each of the four named carrier/sentence pairs alone is reported while the undeclared current carrier stays clean. The every-row/per-carrier proof is the existing `mcp/tests/test_role_instruction_corpus.py::CurationGuardTeethTests::test_reinserting_each_retired_statement_is_detected_on_its_own_surface` loop over the registered statements. The earlier W01 fourteen-row state is predecessor provenance, not current truth.
+
 ## Evidence
 
 ### Docs References

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the parent-first remedy a sender refused only because a recipient was archived or busy would be told to ask the developer in its own chat, which silently breaks the single top-chat chain the change exists to create; the remedy text is the only guidance a refused sender gets."
+  },
+  "applicability": "The nextAction remedy text of a role_message refusal that still leaves the message transportable.",
+  "conditions": [
+    "The recipient-archived, scope-changed and resume/undelivered refusals name the parent with role_message first and the own chat only for an agent without one.",
+    "The refusal reason, its code and the delivery algorithm are unchanged."
+  ],
+  "exclusions": [
+    "No-runtime and host-unreachable refusals, whose own-chat advice stays.",
+    "Transport behavior, refusal codes and any change to which tool calls a harness asks about."
+  ],
+  "id": "INV-82ZTHK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Focused test_paseo_role_tools.py and test_paseo_role_messages.py; exact production diff; no runtime algorithm or refusal changes"
+      ],
+      "path": "notes/files/l93-curation-20261008/handoff.json"
+    },
+    "handoffEntry": "MIK-R93@v1 rule12",
+    "leaf": "260928-MIK-L93",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Role-message remedies that retain transport name the parent before the parentless own chat, while no-runtime and host-unreachable remedies retain their own-chat advice.",
+  "status": "proposed",
+  "supersedes": []
+}
