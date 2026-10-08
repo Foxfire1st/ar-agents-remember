@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
-        "content": "sha256:7191128f4e5a9e7fbd6f6273c42825b67e313fc4c54b91f0160e2c10e840d871",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c29ce4203774ee1c85ba7d04e9d5239cecefe088a47e00534af809adc2c0b341",
         "locator": {
           "end": 22,
           "kind": "line_range",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
-        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
         "content": "sha256:37a7e5c5bba6813aac0662f50d8212345bd1687ae66f9f805fc2b346385557bb",
         "locator": {
           "end": 8,
@@ -58,8 +58,27 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
-        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-8G32JJ",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §9",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "M19/M20 and its own master scope are authored here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
         "locator": {
           "kind": "file"
         }
@@ -75,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
         "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
         "locator": {
           "end": 26,
@@ -94,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
         "content": "sha256:1a36f47b8265108ad804eda93b9396919cb9f7078417e883371d4df1862a5216",
         "locator": {
           "end": 28,
@@ -113,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
-        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
         "locator": {
           "kind": "file"
         }
@@ -130,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
         "content": "sha256:3eec49854bceee2300f88f1912e594871cefc5b524d2ba720b2742190bbf5111",
         "locator": {
           "end": 30,
@@ -149,8 +168,8 @@
     },
     {
       "anchor": {
-        "blob": "a2fb986c052bc8822647ad71a5d6aac380df1e09",
-        "content": "sha256:ce233d21cb5ca80c69d4df9736d7a018827ba8d273ac234a112d7470eea3fd11",
+        "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+        "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
         "locator": {
           "kind": "file"
         }
@@ -167,16 +186,14 @@
   ],
   "references": {
     "1": {
-      "note": "One manager owns one canonical master and the complete leaf closeout chain.\n\nAnchor: `# Manager`; \"**You drive exactly one master's leaf sequence from dispatch to handover.**\"",
+      "note": "One manager owns one canonical master and the complete leaf closeout chain.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:dd786f8cb783e9185b89055b2f8866df9445b4c629d7f63777dd171bcf518ac9",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -184,16 +201,14 @@
       ]
     },
     "2": {
-      "note": "Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids.\n\nAnchor: \"Dispatch is one structural transaction.\"; \"never request or retain an occupant id\"",
+      "note": "Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:34b9db31faa302e11846ab7f5cfa7c04eea590355b267524ecc217f5d0c955b7",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 53,
-              "kind": "line_range",
-              "start": 41
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -201,16 +216,14 @@
       ]
     },
     "3": {
-      "note": "The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties.\n\nAnchor: \"The per-leaf loop\"",
+      "note": "The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:66f88c76234965f5417c1c2a28cfaafcb324cd2640a91b64c66cc1bf32f39268",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 142,
-              "kind": "line_range",
-              "start": 55
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -218,16 +231,14 @@
       ]
     },
     "4": {
-      "note": "Master exit and handover use durable verdict/packet evidence and structural ownership.\n\nAnchor: \"Dispatch the optional master-exit review when the developer or the approved brief requests it\"; \"Routine closeout and integration require no master-exit reviewer and no verdict.\"; \"The master-handover packet\"",
+      "note": "Master exit and handover use durable verdict/packet evidence and structural ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:4e2aa3f4a92afbb8664001f89da35ef7a5c0140fae15f56b361b01a307e60120",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 137
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -235,16 +246,14 @@
       ]
     },
     "5": {
-      "note": "Structural parent/child messages are the role's communication path.\n\nAnchor: \"**Messages:**\"; \"durable and dashboard-visible\"",
+      "note": "Structural parent/child messages are the role's communication path.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:04cf53c1a62a09bb9bd2c9c6331e20692d57c68395f26bc54c52a170e811ed36",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 169
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -252,28 +261,29 @@
       ]
     },
     "6": {
-      "note": "Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs.\n\nAnchor: \"Per leaf before dispatch:\"; \"Hand the curator its brief\"",
+      "note": "Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:b36c4420013c87734ab5d56471258721692ed3961b80a5e02a3cab5193a8eade",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 24
+              "kind": "file"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "7": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:abd175993933c2c1992572afd58e731b629877b267cdb590efd3a280bc936338",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 109
+              "kind": "file"
             }
           },
           "kind": "code"

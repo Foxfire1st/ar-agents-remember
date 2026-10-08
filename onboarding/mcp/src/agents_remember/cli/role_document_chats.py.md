@@ -14,7 +14,20 @@ The document chat's one read: from the selection, it projects the matching launc
 
 ## Evidence
 
-- The route resolves the admitted context and serves the read endpoint. [1]
-- Record selection follows the admitted roles and refuses a foreign document or request receipt. [2]
+
+
 - The launched request's agent is projected with its document labels. [3]
 - Host reads are bounded and paged, existence is verified, and an unreachable host is distinct from an empty answer. [4]
+
+## Investigator scope and request identity
+
+An exact task-bound Investigator request is read only when explicitly selected with its UUID. Ordinary master/sprint enumeration continues to return the primary Manager/Orchestrator, so an Investigator result or frame steering never replaces the document’s coordinator. The earlier role name is normalized by the shared response decorator with its required notice.
+
+
+- The current source implements this file’s stated Investigator boundary. [5]
+
+
+## Refreshed current evidence
+
+- The route resolves the admitted context and serves the read endpoint. [1]
+- Record selection follows the admitted roles and refuses a foreign document or request receipt. [2]

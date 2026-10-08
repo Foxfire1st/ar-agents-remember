@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/controlplane/operator_inbox_records.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "65f3f7de5d39c0373fb7fcd8b4bcbf3860c6d1cb",
+        "content": "sha256:cd0d79fafebe750a322d7565090a67605a27fe3b3afee421eb1397c1e662b813",
+        "locator": {
+          "kind": "symbol",
+          "name": "create_operator_inbox_entry"
+        }
+      },
+      "id": "RLZ-V02Q46",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "New inbox producer identities canonicalize without rewriting existing rows.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Address, owner, subject, and message are explicit value objects.",

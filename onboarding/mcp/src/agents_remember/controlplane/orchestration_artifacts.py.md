@@ -52,5 +52,16 @@ their own workflow.
 
 ### Repo-Internal References
 
+
+
+## Current Investigator contract impact
+
+Current typed artifact vocabulary and the static escalation map use Investigator; earlier dated enum/ladder descriptions remain historical. Pure artifact construction still grants no role-start authority. An actual parented native handover routes questions to the actual supplied parent, independently of the static diagnostic role ladder.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [3]
+
+
+## Refreshed current evidence
+
 - The bundled turn-report template is the worker artifact shape. [1]
 - The bundled master-handover template is rendered by the helper. [2]

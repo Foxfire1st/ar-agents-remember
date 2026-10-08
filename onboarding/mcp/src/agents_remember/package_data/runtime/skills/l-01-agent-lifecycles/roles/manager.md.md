@@ -31,3 +31,10 @@ Use existing AR task/data and paired Git owners under actual authority. No Curat
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:8-24 |
+
+
+## Current Investigator contract impact
+
+This packaged copy derives from the canonical roles/manager.md. The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership. Mirror synchronization remains the owner; this file adds no independent instruction.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]

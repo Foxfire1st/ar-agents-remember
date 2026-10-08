@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
           "end": 226,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
           "end": 333,
@@ -41,7 +41,26 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+        "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
+        "locator": {
+          "end": 613,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-6W76SN",
+      "invariant": "INV-YNHABM",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §6",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The canonical manifest is the owner of requested tool identities.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 27,
@@ -60,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-        "content": "sha256:dd3b85811eb26c0f87eed4157bfcbfa55993d7952ced12ee25058616ad833e9a",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+        "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 36,
           "kind": "line_range",
@@ -79,7 +98,7 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
           "end": 180,
@@ -98,12 +117,12 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
         "locator": {
-          "end": 601,
+          "end": 610,
           "kind": "line_range",
-          "start": 593
+          "start": 602
         }
       },
       "id": "RLZ-NNHVHW",
@@ -117,7 +136,7 @@
     },
     {
       "anchor": {
-        "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+        "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 57,
@@ -137,40 +156,14 @@
   ],
   "references": {
     "1": {
-      "note": "The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from.\n\nAnchor: \"ar-role-capsule-composition/v1\"; \"skills/l-01-agent-lifecycles/SKILL.md (thin router)\"; \"authoritative_tree\"",
+      "note": "The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 2,
-              "kind": "line_range",
-              "start": 2
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:26f90278779087cd7ae1572616b17992520363c1ac4ac4906be0e0e26b4abfe0",
-            "locator": {
-              "end": 3,
-              "kind": "line_range",
-              "start": 3
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:aa8132d16a690301e7e75340b9ab25e3382d7fdd80348a8a9bf32011cafdc07a",
-            "locator": {
-              "end": 5,
-              "kind": "line_range",
-              "start": 5
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -211,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:c9b9ba7c6ff90c281f934fdd76294de38ce4bb83cf6a3dca1969a13bee22b86a",
             "locator": {
               "kind": "symbol",
@@ -269,7 +262,7 @@
         },
         {
           "anchor": {
-            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
+            "blob": "489f6cc3b9ce4b1a1e36dc637b4b291d9bc292d1",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -281,53 +274,30 @@
         }
       ]
     },
-    "2": {
-      "note": "The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role.\n\nAnchor: \"role_order\"; \"spawn-role-env\"; \"fresh-session-role-brief\"; \"ambient-launcher\"",
+    "14": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:824b4766a93ca350a63941b1b22b0e61281eabf8cec46fed5825bcb2b1ba52de",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 6
+              "kind": "file"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "2": {
+      "note": "The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role.",
+      "targets": [
         {
           "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:162f409416fb179bfda40fb3849205b0f87f10dc7a0666be9932ef55e1d3e1d0",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 26,
-              "kind": "line_range",
-              "start": 18
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:75ed614aa258f3a252992e69058c6cfa9265ff9a9749a0aad2f1f76e12c49f2e",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 27
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:4954ba1514a39dc86e37fc0fa35fb56159d5ffc937e12d4f5c678fac2fec7559",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 35
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -335,40 +305,14 @@
       ]
     },
     "3": {
-      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.\n\nAnchor: \"operations\"; \"orientation\"; \"curation\"",
+      "note": "The nine operation blocks, each with its source, purpose and the roles that may run it.",
       "targets": [
         {
           "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:87cd5a75d33939e46b79b221336f339e307ac6242788f6ade181a8651c488422",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 45
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:5f65a4b0d06e12a5c88f968219e3b746ac2fbb9f61d123003fec960356d83c0e",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 46
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:3af0a042a2a2480e7a8a0e149343da2630e74a2ee16e36fe68564378e879d90e",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 89
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -380,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:500fea54367b7895f3da35e99d8a7a0f9b31bfe9fcd72a997f6c1413dc712745",
             "locator": {
               "end": 155,
@@ -392,7 +336,7 @@
         },
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:3d650911791e5ad97f0a163aad515505996e30f380c9fa5885bbbbbbb14eabb8",
             "locator": {
               "end": 134,
@@ -404,7 +348,7 @@
         },
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:d5dbf6217eb897a1e7b5f1c521d7672ba5cd52addda580e4bd9c9e1026d52e26",
             "locator": {
               "end": 154,
@@ -417,40 +361,14 @@
       ]
     },
     "5": {
-      "note": "The role registry itself and the two role entries that show the per-seat shape.\n\nAnchor: \"roles\"; \"roles/architect.md\"; \"roles/orchestrator.md\"",
+      "note": "The role registry itself and the two role entries that show the per-seat shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:5e368d6a0650528ef5737e472495fcc5442da8e685ef5f5a46b50e379a9fbcb0",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 156,
-              "kind": "line_range",
-              "start": 156
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:160d61c135d8f12994bd8114d22e969ff4d57e1017332f5cc6b6facd1f3cec24",
-            "locator": {
-              "end": 198,
-              "kind": "line_range",
-              "start": 162
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:7b9ff507983373b10019855b87180f8d11a81435b64ca01ddf41dd3559984232",
-            "locator": {
-              "end": 242,
-              "kind": "line_range",
-              "start": 200
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -458,40 +376,14 @@
       ]
     },
     "6": {
-      "note": "The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.\n\nAnchor: \"altitude\"; \"tools\"; \"seat\"",
+      "note": "The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:da504006e949934428af920a32086d0aa9d8fe362c856e8456f88a09e7c8ee81",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 382,
-              "kind": "line_range",
-              "start": 382
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:6be34389d066b2b2b1e6e46e5621491a1a4a66ca17535818a2afcd96e2145158",
-            "locator": {
-              "end": 387,
-              "kind": "line_range",
-              "start": 383
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:cc1e5eb81bf40e8dd467bd2b2e3bde14dda2fcb18e5c54d6a7d831e7a1b6edb5",
-            "locator": {
-              "end": 391,
-              "kind": "line_range",
-              "start": 391
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -503,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
             "locator": {
               "end": 249,
@@ -515,7 +407,7 @@
         },
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:4e4f3530c7b7ca1f69da355c08aa89c131d23dd288ff0be6cd146746260a1992",
             "locator": {
               "end": 399,
@@ -527,7 +419,7 @@
         },
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:73ddba3c61588b6ae8054b74a1bf52c5bac932b1cd552ad7f74fd5626a1630e5",
             "locator": {
               "end": 438,
@@ -539,7 +431,7 @@
         },
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
               "end": 480,
@@ -552,28 +444,14 @@
       ]
     },
     "8": {
-      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.\n\nAnchor: \"launcher\"; \"is_role\"",
+      "note": "The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:795d480a4648c3d4f318d5cc448e237de7f0469f3066deac78f542096901fb89",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 565,
-              "kind": "line_range",
-              "start": 550
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:8980488115b9b65b20f4b9f6c9a6ab7c372bec3d14cf7cc6ae8bb15e494ef76f",
-            "locator": {
-              "end": 551,
-              "kind": "line_range",
-              "start": 551
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -581,40 +459,14 @@
       ]
     },
     "9": {
-      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.\n\nAnchor: \"injected\"; \"composition_order\"; \"Routing metadata only: this file carries no instruction prose and no copies of any source section.\"",
+      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:a9cfe6c32e450692f6f05a0d1fcb8d0cbbe3e785a394234f54446059f37221d2",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 591,
-              "kind": "line_range",
-              "start": 566
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:cfa31a54cb2790e8f4f408d91c3f636763581225be3707ebf0b14591058875dd",
-            "locator": {
-              "end": 552,
-              "kind": "line_range",
-              "start": 548
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:5bfe8d79eaa67a7e16887c3d69c32633bd881366e1af8efb2d645e6c09c267fe",
-            "locator": {
-              "end": 558,
-              "kind": "line_range",
-              "start": 553
+              "kind": "file"
             }
           },
           "kind": "code"

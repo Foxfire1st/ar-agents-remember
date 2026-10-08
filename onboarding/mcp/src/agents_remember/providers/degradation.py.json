@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34ef87c090f8ba42fbc521c058a529d78751ac60",
+            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
             "content": "sha256:0ec18f520236a5e8dc6b0e59356797713c81bad0face91e6d4f83c0986a37375",
             "locator": {
               "end": 280,
@@ -38,78 +38,14 @@
       ]
     },
     "11": {
-      "note": "Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability.",
+      "note": "Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability.\n\nAnchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_inbox_and_failsafe_once`, `test_critical_stop_failure_still_records_event_inbox_and_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:f1a8b9f8e3992aebaf0922c15321aeaf48404ce3b0aba243a196c345e21cc329",
+            "blob": "1f26629202066b5e321f999ea7f0c0c71e0363a0",
+            "content": "sha256:af492a95b39193969164e9f4e846152657a31c17366aad6d9d2c792d640710ce",
             "locator": {
-              "kind": "symbol",
-              "name": "test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples"
-            },
-            "path": "mcp/tests/test_provider_degradation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:5570fff2e6c735539a2325ca180d11257cf5178af2e4933cd8fcf2e7ef7ef7f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_critical_transition_records_event_inbox_and_failsafe_once"
-            },
-            "path": "mcp/tests/test_provider_degradation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:dd53c92caf5554516af2a4a8ed4d39000d4e45860acb9641673a8b8b9c79602d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_critical_stop_failure_still_records_event_inbox_and_state"
-            },
-            "path": "mcp/tests/test_provider_degradation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:fa1b2b419e2df85cd6f6aba6db1e93ffad00ba534a7d57f5503bf7f754cfdc49",
-            "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 99
-            },
-            "path": "mcp/tests/test_provider_degradation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:b6139f8f870652ca64bb89f6b8637304d18391144e52255c5b4aea76e279aee8",
-            "locator": {
-              "end": 330,
-              "kind": "line_range",
-              "start": 239
-            },
-            "path": "mcp/tests/test_provider_degradation.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f51809108372484f8270622622e918bd2ae86837",
-            "content": "sha256:d38c5c285ea23c4aacebbc126a4ace06e0622b12d0d599e31e68b05bb303ab3c",
-            "locator": {
-              "end": 363,
-              "kind": "line_range",
-              "start": 332
+              "kind": "file"
             },
             "path": "mcp/tests/test_provider_degradation.py"
           },
@@ -296,6 +232,21 @@
         }
       ]
     },
+    "18": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
+            "content": "sha256:6b4e1c8c8514bb93045ad329729f03d966ad1b2f139426402832477e4ac1a485",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes).\n\nAnchor: \"PROVIDER_METRICS_SCHEMA =\"; \"PROVIDER_INDEX_STATE_SCHEMA =\"; \"class ProviderMetricsStore\"",
       "targets": [
@@ -376,16 +327,14 @@
       ]
     },
     "5": {
-      "note": "The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9.\n\nAnchor: \"degradation-alert\"",
+      "note": "The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9.",
       "targets": [
         {
           "anchor": {
-            "blob": "d51fb39c7118e4dfa589dd4c72808a49ace4d4a1",
-            "content": "sha256:f1149f548c4f0c54f89280c0285d491daf0f1ca9b0a543b38ad11a6ef6ae8fec",
+            "blob": "123c7eaf256393182681706fb3f5b80a98a47a12",
+            "content": "sha256:a604846687c812b3da9883e37a01fd5b473cfbd1d56b66c405e785d38ced1ff3",
             "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 44
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/operator_inbox.py"
           },

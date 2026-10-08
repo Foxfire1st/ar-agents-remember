@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-        "content": "sha256:80cebe1cc125556322378b0a8f82ed548f28d40b11d92d6da31ebf7d0ed89dcd",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "content": "sha256:f88c7a36b735c4ba831c31cc3755333df87fa1e41e10a3a734eea140ade2e3af",
         "locator": {
           "kind": "symbol",
           "name": "DocumentChatReadTests.test_exact_started_projects_request_is_read_without_substituting_an_architect"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-        "content": "sha256:12b1ed7249253ccece3728ce02e93d835eb462ad9223f0ce9b5623ab00bb0ce0",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "content": "sha256:5f44f84cb1f9bb19ce8b7d4dc694565cf13294485a5bb01fed53f2570bcc0709",
         "locator": {
           "kind": "symbol",
           "name": "FirstStartPreparationTests.test_progress_has_one_request_and_is_reclaimed_when_dispatch_ends"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
         "content": "sha256:d3c43a10097c6f024f1c1938935160472f94783ef4b1d998774dbbc0d2e1ef4e",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
         "content": "sha256:cce458d00b346c2dab427927476cd783b4409b054be0a51e3f8fb4194fbe603d",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-        "content": "sha256:12c796553dfb723f3201fd2fae8148a13077b0ebf4244b7fc93794436ee91b47",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "content": "sha256:791210b1ce55c9ded50990a81fcaf958d1bd2f8dd51ea4d8b9fbc1e43075b4cb",
         "locator": {
           "kind": "symbol",
           "name": "FirstStartPreparationTests.test_preparation_refusals_keep_exact_status_reason_and_repair_on_role_start"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-        "content": "sha256:6c237aa80e38ce8ccec58d703a0fa8d2f910976e643c4ad1746c6b9ce9a9aff4",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+        "content": "sha256:f1fc9efa53d92ebbf5fa43f1df134b79d5941541b0983ac47fdc0c5e2dc0d7f6",
         "locator": {
           "kind": "symbol",
           "name": "FirstStartPreparationTests.test_masterless_starts_report_opened_without_a_creation_guess"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
+        "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
         "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
         "locator": {
           "kind": "symbol",

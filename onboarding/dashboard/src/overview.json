@@ -583,27 +583,14 @@
       ]
     },
     "32": {
-      "note": "**The review route's own decode: the body is the answer whatever the status.**",
+      "note": "**The review route's own decode: the body is the answer whatever the status.**\n\nAnchor: `getReviewJson`, `reviewFailureToken`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a1df4b4d488d6865ad47a9f6b12ef1f1bd36f07",
-            "content": "sha256:a7bc0043eb876ab57a01745946b74e720cf5875e15f479a41be9803d4677c9f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "getReviewJson"
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:271d6b7623337a09551756c4d7ab7ae9e32ec8f92f20d40bf9ff29ed2769205b",
+            "content": "sha256:aa4a4272fb0a9304c6d8356b90127e46d5ecf04e88fd32c12c24b34a5559ec20",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewFailureToken"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
           },
@@ -661,8 +648,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-            "content": "sha256:33aca5ced57bc446d5c9e0680cc5478425056fe989f877449e16fb3945f0195f",
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
             "locator": {
               "kind": "file"
             },
@@ -755,6 +742,24 @@
               "start": 575
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
           },
           "kind": "code"
         }

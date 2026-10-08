@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Confusing requested reading tools with runtime grants could give an investigating role write or lifecycle authority it never received."
+  },
+  "applicability": "Requested tools in the canonical Investigator capsule.",
+  "conditions": [
+    "The original five requests and nine approved reading requests are composed.",
+    "Granted runtime authority remains independently admitted."
+  ],
+  "exclusions": [
+    "Requests do not authorize writes or enlarge another role’s requested tool set."
+  ],
+  "id": "INV-YNHABM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_instruction_wording.py exact fourteen requests; .capsule-matrix.json unchanged other-role tools"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §6",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Only the Investigator capsule adds the nine approved reading requests to its original five; requests grant no new runtime authority.",
+  "status": "proposed",
+  "supersedes": []
+}

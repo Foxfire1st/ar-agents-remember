@@ -1,0 +1,66 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The packet weighs retaining the old narrow scope and separate-assignment wording against broad investigation with explicit owner boundaries; the choice constrains later tool grants and role edits."
+  },
+  "alternatives": [
+    {
+      "option": "Investigator accepts one concern of any kind and reports through its actual starter while code, memory and task mutations remain with their owning seats.",
+      "reason": "Non-leaf investigation needs broader evidence access without creating another leaf writer or bypassing independent review.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the earlier provider/system-only concern and permit a separate assignment to grant code or memory changes.",
+      "reason": "That preserves the narrow scope and lets starter wording blur the named mutation owners.",
+      "reconsider_when": "The developer approves a distinct mutation role and its independent ownership/review contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Reading requests are widened only for Investigator and do not grant runtime authority.",
+    "Provider/system remediation remains report-first and requires an explicit authorized order."
+  ],
+  "context": "The earlier provider/system-only role and its separate-assignment mutation wording prevented scoped non-leaf checks while implying a starter could grant Worker or Curator duties.",
+  "decider": "Approved MIK-R98@v1 and its durable task corpus rulings.",
+  "id": "DEC-73JAZE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-H0WCGX"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R98",
+        "packet": "requirements/MIK-R98-v1-the-investigator.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles/roles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_instruction_wording.py clause and retirement probes; E9 unchanged inventories"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §3",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

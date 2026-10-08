@@ -63,13 +63,11 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The new module joins this lane. [19]
+
 - The module the lane names. [20]
 
-- The integration list includes the two reviewer worklist test modules. [240]
 
-- Dependency-facts store controls belong to architecture fitness. [241]
-- The bounded Python load-independence scanner belongs to architecture fitness. [242]
+
 
 ### Cross-Repo References
 
@@ -79,4 +77,12 @@ No cross-repo boundary is crossed by this file.
 
 The lane catalog maps the new host test modules to their lane so the evidence lanes stay complete for the added cases.
 
+
+
+## Refreshed current evidence
+
+- The new module joins this lane. [19]
 - The lane catalog with the host module rows. [21]
+- The integration list includes the two reviewer worklist test modules. [240]
+- Dependency-facts store controls belong to architecture fitness. [241]
+- The bounded Python load-independence scanner belongs to architecture fitness. [242]

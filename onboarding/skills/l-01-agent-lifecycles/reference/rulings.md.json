@@ -1,0 +1,26 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/rulings.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "492f5893483ffea6db9e546b428b5d5c3dcea6df",
+        "content": "sha256:a5fe218ea3df9b58d13cce9b0da86fc1ec215713ab5d5753020e61a6bd70714d",
+        "locator": {
+          "end": 52,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-M5TWR2",
+      "invariant": "INV-G3VPMZ",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §11",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The two historical source references retain their original spelling plus exact successor annotation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

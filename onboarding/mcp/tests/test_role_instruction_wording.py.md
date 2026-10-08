@@ -18,4 +18,14 @@ The parent-condition test now covers all six parentable roles (worker, reviewer,
 
 ## Evidence
 
+
+## Current Investigator contract impact
+
+The current wording guards pin canonical Investigator scope and the exact approved concern/delegation clauses. The retired registry includes each obsolete narrow-concern or separate-assignment mutation sentence at its own carrier. A canonical role-name edit in unchanged parent/helper duties is not a new permission or proof of task acceptance.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [2]
+
+
+## Refreshed current evidence
+
 - The scoped current source carries the module/document behavior described above. [1]

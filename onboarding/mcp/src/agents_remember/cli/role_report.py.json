@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
+        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
         "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
+        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
         "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
+        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
         "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
+        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
         "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-        "content": "sha256:494e4531d7f96da6c78772d41307b1ae83668795820f35b18e5e5051be4330d9",
+        "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+        "content": "sha256:9ef080f478475095ba1e277f57d5ba97034a0b129a3b2d625b9974a859bf8c98",
         "locator": {
           "kind": "symbol",
           "name": "read_role_report"
@@ -94,27 +94,14 @@
   ],
   "references": {
     "1": {
-      "note": "The route's one function: resolves the execution from the launcher's own selection, requires the recorded canonical report and answers every refusal by name.",
+      "note": "The route's one function: resolves the execution from the launcher's own selection, requires the recorded canonical report and answers every refusal by name.\n\nAnchor: `read_role_report`",
       "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:494e4531d7f96da6c78772d41307b1ae83668795820f35b18e5e5051be4330d9",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
             "locator": {
-              "kind": "symbol",
-              "name": "read_role_report"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:2291a13962244b1baa87671e438202a852da5e62c3765e31da3b7e9ff1fc9f6f",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 37
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -122,27 +109,14 @@
       ]
     },
     "2": {
-      "note": "Requires the recorded file to be the launch-derived name directly under the exact report root, and refuses a sibling, handover or nested replacement.",
+      "note": "Requires the recorded file to be the launch-derived name directly under the exact report root, and refuses a sibling, handover or nested replacement.\n\nAnchor: `_recorded_report_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:4536f1dad01450a083aed799544333d7d5a051dc4c979c5033240f716dd72d74",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
             "locator": {
-              "kind": "symbol",
-              "name": "_recorded_report_path"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:cada83b4b74eba67929860851c14198a2d0570095ef46f93b8d4775e638ea58d",
-            "locator": {
-              "end": 101,
-              "kind": "line_range",
-              "start": 73
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -154,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
             "content": "sha256:39a67c309aec67de63eed5e1df9006c8e9dc3c23ddeeee08677bdcda5145db9d",
             "locator": {
               "kind": "symbol",
@@ -166,27 +140,14 @@
       ]
     },
     "4": {
-      "note": "The read-only regular-file read with the bounded size and truncation contract.",
+      "note": "The read-only regular-file read with the bounded size and truncation contract.\n\nAnchor: `_read_report_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:f8e6fe843176ce434cc761eed7059022194bbb0a5c4a4a8af3bea4060bc772e8",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_report_file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:e77250a1a3e7bdcb92dfda3235295be4f16618b085c33ba05182a54af4c5d1cc",
-            "locator": {
-              "end": 148,
-              "kind": "line_range",
-              "start": 124
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -194,27 +155,31 @@
       ]
     },
     "5": {
-      "note": "Serves the canonical file when the task's report-access alias is absent and refuses an actually retargeted alias distinctly.",
+      "note": "Serves the canonical file when the task's report-access alias is absent and refuses an actually retargeted alias distinctly.\n\nAnchor: `_report_access_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:eca098b79e309ce0c237f71f4a4ccb60f6bfe8698f2c32717d78e4ddef07f7d0",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
             "locator": {
-              "kind": "symbol",
-              "name": "_report_access_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "6": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
         {
           "anchor": {
-            "blob": "be784bd60576c97dceae03f41243df4458a4bceb",
-            "content": "sha256:bb4531984a26fbc8ac2d1f57905d1e7075afe1d2099bbfd04976a15044bb79f0",
+            "blob": "a90c6c292d8e3f9c2e31f0e20dbe6b34d4c752ab",
+            "content": "sha256:560bfa5c48dbbf7cb2dfb87ac6f95a5a5db541a1d650f85b3a1813e42f8211b3",
             "locator": {
-              "end": 121,
+              "end": 179,
               "kind": "line_range",
-              "start": 104
+              "start": 1
             }
           },
           "kind": "code"

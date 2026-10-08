@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "Concern intake for a launched Investigator.",
+  "conditions": [
+    "A parent-started concern comes from that parent’s first role_message.",
+    "Missing scope is asked of the actual parent, or of the developer for a parentless launch."
+  ],
+  "exclusions": [
+    "No inferred degradation event, task identity, repository selection or parent."
+  ],
+  "id": "INV-A8E0YE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_investigator.py::test_selections_parent_assignments_and_refusals_leave_no_launch; E9 first concern"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §5",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A parent-started Investigator takes its concern from that parent’s first message and asks that parent for missing scope; without a parent it asks the developer.",
+  "status": "proposed",
+  "supersedes": []
+}

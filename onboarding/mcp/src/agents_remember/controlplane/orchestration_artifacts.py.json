@@ -3,16 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The bundled turn-report template is the worker artifact shape.\n\nAnchor: `# Turn-Report Template`",
+      "note": "The bundled turn-report template is the worker artifact shape.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bc6710a61f5936c7e298f7217786c024d906e74",
-            "content": "sha256:2581f2bdfe702cca4075b04e78334a51c0c6d81823beb48292700d1b2ff03efb",
+            "blob": "c70336516ecd6551b3e292c8c11a46e6af9c62cf",
+            "content": "sha256:835f471dcc9336c5b48d2318708e0532902004f3febc79366361609013bfc7d7",
             "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/turn-report.md"
           },
@@ -21,18 +19,31 @@
       ]
     },
     "2": {
-      "note": "The bundled master-handover template is rendered by the helper.\n\nAnchor: `# Master-Handover-Packet Template`",
+      "note": "The bundled master-handover template is rendered by the helper.",
       "targets": [
         {
           "anchor": {
-            "blob": "0ac347b936d131f41d244bf3d73a1ce852be10cd",
-            "content": "sha256:7f3e3f2c1961a00b02f887649d72a5cd8a49a171fb978909fb646b93e5439df1",
+            "blob": "09ce5c06dc90fd7d4589bd9f050696dee86bbd45",
+            "content": "sha256:4d9b457564f4e4f8bf71bacaaa087752c5fc7297c1309e3c6dec6f620cd89f4f",
             "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/master-handover-packet.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f29eea0ee469031778e394282e38d266224a7a",
+            "content": "sha256:765bb015ab564bc00cc3a031a6d6cf88aa5edfbf554236d658ef076532b5c013",
+            "locator": {
+              "kind": "file"
+            }
           },
           "kind": "code"
         }

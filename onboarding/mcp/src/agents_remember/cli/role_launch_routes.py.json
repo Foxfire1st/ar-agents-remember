@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:d467bdf575325d5addc3f6502fa3aa2d3506129e5b2f8e4f4fb833869672785f",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:8f45fa15e8afda704f68961f25e28e57f5dcab29adaf517cbd865bcfa37498a2",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:5bf0d2e702aad9bcd78ee1f627e0399d00b00bae4f959caebfa4dca4bf5a2d86",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+        "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
         "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
         "locator": {
           "kind": "symbol",
@@ -116,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
-            "content": "sha256:05e51f607d27853b21156f889cd1281c7a03abd66b3375ae1d8299a6ff232f37",
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
+            "content": "sha256:e34646cff1e1539c34b12fb277878206e3ecea19e767da7b5eecee4fa227ce18",
             "locator": {
               "kind": "file"
             }
@@ -131,7 +131,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
             "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
             "locator": {
               "end": 742,
@@ -162,12 +162,29 @@
         }
       ]
     },
+    "12": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
+            "content": "sha256:e34646cff1e1539c34b12fb277878206e3ecea19e767da7b5eecee4fa227ce18",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Frozen implementation of _start_execution supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
             "content": "sha256:d467bdf575325d5addc3f6502fa3aa2d3506129e5b2f8e4f4fb833869672785f",
             "locator": {
               "kind": "symbol",
@@ -183,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
             "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
             "locator": {
               "kind": "symbol",
@@ -199,7 +216,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
             "content": "sha256:5bf0d2e702aad9bcd78ee1f627e0399d00b00bae4f959caebfa4dca4bf5a2d86",
             "locator": {
               "kind": "symbol",
@@ -211,16 +228,14 @@
       ]
     },
     "5": {
-      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.\n\nAnchor: `RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels`",
+      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.",
       "targets": [
         {
           "anchor": {
-            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
-            "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "content": "sha256:288331b337ac2c31833aa29ee958f68180cfb7c92acc816dade2baffcb5f2487",
             "locator": {
-              "end": 660,
-              "kind": "line_range",
-              "start": 502
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -233,7 +248,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "end": 1062,
@@ -247,16 +262,14 @@
       ]
     },
     "7": {
-      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.\n\nAnchor: `RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch`",
+      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
-            "content": "sha256:fc765b7069a6954570cdd53099dfdca7a3be8111c253303d155228577db405d4",
+            "blob": "be47e1ce7c587b1a39eb82aa110f21b78dda17af",
+            "content": "sha256:788b112577fc17a01314f0a5aea04cd680d5c3847c79dff34c0603a219fb580b",
             "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 89
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -269,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
             "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
             "locator": {
               "end": 1245,
@@ -287,7 +300,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
             "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
             "locator": {
               "end": 661,

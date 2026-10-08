@@ -617,7 +617,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
             "content": "sha256:7038a04cb7fa89277eebc526c48cbc6d61b4704bc2b131d80acf38a5cab34dc7",
             "locator": {
               "end": 89,
@@ -671,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "blob": "f27fd521dbd70b6b70144ac9f9d6e6d6562d94fb",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -876,30 +876,34 @@
       ]
     },
     "145": {
-      "note": "The start-only supervision.",
+      "note": "The start-only supervision.\n\nAnchor: `ensure_host`",
       "targets": [
         {
           "anchor": {
             "blob": "5515191836e65faa8ef6b536868ba15ce9782fb1",
-            "content": "sha256:bada0558f18963fa912b88536362bd1eb9ae669a6bd20671bbae9f4c74cfb0ad",
+            "content": "sha256:60d45bf6a1190bae58ae9b6acb6c98000aa9fc3098a133ae7dd2360dcbbb50dd",
             "locator": {
-              "kind": "symbol",
-              "name": "ensure_host"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "146": {
+      "note": "The canonical role owns this concern and mutation boundary.",
+      "targets": [
         {
           "anchor": {
-            "blob": "d9ace58e2412f7ca4324514269b24fd960c7d03a",
-            "content": "sha256:bf250c2a175afdcbe02da80729192b22a5c22f90c4b77b0e2fdb8620c56a8623",
+            "blob": "242afbb0bf183993273a7ff11617556a5a3ec1ee",
+            "content": "sha256:2927236b0a000ed42cac91240a9ac85c82da0cc8147a3cb2621b53e9bf4cbdcd",
             "locator": {
-              "end": 180,
+              "end": 36,
               "kind": "line_range",
-              "start": 148
+              "start": 1
             },
-            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
           "kind": "code"
         }
@@ -1819,16 +1823,14 @@
       ]
     },
     "85": {
-      "note": "The role-capsule router's selection rule and its unsupported-field refusal.\n\nAnchor: `Select the supplied role and operation`",
+      "note": "The role-capsule router's selection rule and its unsupported-field refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "a210ad747e67b9e40b9c3e90102d58616f69b902",
-            "content": "sha256:8f7b0e1f8c2e1d4aec53eca5cde40fc9334b4211ef82b192b5723a851bc627c9",
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
             "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 8
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -1841,7 +1843,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c887613340f2572a93258069c0cf4ae89a6ecc47",
+            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
             "content": "sha256:0b78b88c587e579b0bd5cf3dad8acabfaa6f93c5d66dbb9748bdf2d0a1da2982",
             "locator": {
               "end": 77,
@@ -2077,12 +2079,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
-            "content": "sha256:932e8de241768a1c6e826143d4c98e34f5d47cb148a8a9b50a52fd1c7cd65aee",
+            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
+            "content": "sha256:63c1428cc44f763570fa800edb29f9018decbd86ce8442e123a6067cfaca37ba",
             "locator": {
-              "end": 81,
+              "end": 80,
               "kind": "line_range",
-              "start": 73
+              "start": 74
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

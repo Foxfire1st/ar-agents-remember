@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Running a diagnostic inside the live checkout can alter the reviewed candidate; scratch-only checking and the supplied report address prevent that error."
+  },
+  "applicability": "Investigator evidence gathering and report delivery.",
+  "conditions": [
+    "Checks run only in scratch or the repository tooling sandbox.",
+    "The report path and actual starter come from the handover."
+  ],
+  "exclusions": [
+    "Changes to a code checkout, leaf enclosure, memory or task state."
+  ],
+  "id": "INV-YT1AD8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "E9 native Investigator report and Manager read-back in .e9.tar.gz"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §2",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Investigator reads source and context, runs checks only in scratch or a repository-tooling sandbox, writes the named report and tells its actual starter.",
+  "status": "proposed",
+  "supersedes": []
+}

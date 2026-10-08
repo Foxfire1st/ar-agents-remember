@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "Reading the one earlier system-specialist spelling and producing new role identities.",
+  "conditions": [
+    "Earlier stored identities, labels, settings, receipts, reports and browser storage addresses remain intact.",
+    "Reads canonicalize to Investigator with the required one notice."
+  ],
+  "exclusions": [
+    "No second implementation, bulk migration or second alias vocabulary."
+  ],
+  "id": "INV-S2SR50",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Final settings/inbox/sprint-seat/capsule tests; test_investigator.py old bound lookup under both names, exact old report, refresh/revive/replay; document-chats API one-notice test; dashboard old stored retry"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §10",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The one earlier system-specialist spelling reads as Investigator with the required notice; original stored identities, labels, settings, receipts and report paths remain where they are while new outputs use the canonical name.",
+  "status": "proposed",
+  "supersedes": []
+}

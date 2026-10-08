@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+        "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 372,
+          "end": 373,
           "kind": "line_range",
-          "start": 372
+          "start": 373
         }
       },
       "id": "RLZ-NJFH31",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+        "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 276,
+          "end": 277,
           "kind": "line_range",
-          "start": 276
+          "start": 277
         }
       },
       "id": "RLZ-ZTDYFT",
@@ -42,12 +42,12 @@
   ],
   "references": {
     "19": {
-      "note": "The new module joins this lane.\n\nAnchor: `unit-regression`",
+      "note": "The new module joins this lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "1b49c940bdf62820d63cc18acb5757398b1e5e9b",
-            "content": "sha256:40e1095164a0b24a975c8edfafcd1998f1fe689a31d0c76f43cb834ffc511646",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
             "locator": {
               "kind": "file"
             }
@@ -77,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36de1d8e8c8504936dc71538d4443a600476a640",
-            "content": "sha256:59f110085bc09c4ecb76d58941eaa4ea617d5a7537460a16cb447cfd4889aa7c",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
             "locator": {
               "kind": "file"
             }
@@ -92,12 +92,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f454f52b3d40d1f24688f54a2221fc9526d5db77",
-            "content": "sha256:8bfed1329d2a374c715747e406ea8bc36a05518b426235da050172fe77a3d986",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
             "locator": {
-              "end": 292,
-              "kind": "line_range",
-              "start": 290
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -105,16 +103,14 @@
       ]
     },
     "241": {
-      "note": "Dependency-facts store controls belong to architecture fitness.\n\nAnchor: \"mcp/tests/test_dependency_facts_store.py\"",
+      "note": "Dependency-facts store controls belong to architecture fitness.",
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
-            "content": "sha256:38bb8eaf37c90e55fdc88a1b8991ecf8c84ceaffa29d0dbbb9bb3efeee91157a",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
             "locator": {
-              "end": 419,
-              "kind": "line_range",
-              "start": 419
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -122,16 +118,14 @@
       ]
     },
     "242": {
-      "note": "The bounded Python load-independence scanner belongs to architecture fitness.\n\nAnchor: \"mcp/tests/test_suite_load_independence.py\"",
+      "note": "The bounded Python load-independence scanner belongs to architecture fitness.",
       "targets": [
         {
           "anchor": {
-            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
-            "content": "sha256:46db249ec1151e616e17ab6b76bad588716389eeaad9d6e25ec27afc8bd70086",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
+            "content": "sha256:ce666527e229cf13456733160c5089e1861e0ca7c34f8399e05eb3355b45370b",
             "locator": {
-              "end": 435,
-              "kind": "line_range",
-              "start": 435
+              "kind": "file"
             }
           },
           "kind": "test"

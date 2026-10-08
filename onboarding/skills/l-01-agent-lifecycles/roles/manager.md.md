@@ -105,12 +105,11 @@ The Manager answers a child's developer question itself where its authority reac
 
 ### Repo-Internal References
 
-- One manager owns one canonical master and the complete leaf closeout chain. [1]
-- A hosted role start uses the canonical task document, role and complete brief with native `role_start`, and keeps the returned agent ID, report path and handover path. [2]
-- The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
-- Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
-- Native `role_message` between parent and child is the role's communication path. [5]
-- Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
+
+
+
+
+
 
 ## L23 Manager And Leaf Admission
 
@@ -148,3 +147,20 @@ Attempt publication is phase-sensitive: validate before append, and treat append
 review handoff as one formal boundary. A malformed row that never reached review is preserved by a
 non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
 independent reviewer rejection permits a successor.
+
+
+## Current Investigator contract impact
+
+The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [7]
+
+
+## Refreshed current evidence
+
+- One manager owns one canonical master and the complete leaf closeout chain. [1]
+- Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+- The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+- Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
+- Structural parent/child messages are the role's communication path. [5]
+- Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]

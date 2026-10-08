@@ -20,8 +20,22 @@ Every refusal is named: report-selection-invalid, report-receipt-invalid, report
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
+
+- The request body carries the selection and request ID only; there is no path input. [3]
+
+
+## Investigator scope and request identity
+
+Task-bound Investigator report lookup requires its exact request UUID and follows the task-owned recorded report. Earlier role spellings and report paths remain read addresses; no role-wide latest result is substituted. Existing product-root confinement, size bound and read-only serving remain unchanged.
+
+
+- The current source implements this file’s stated Investigator boundary. [6]
+
+
+## Refreshed current evidence
+
 - The route's one function: resolves the execution from the launcher's own selection, requires the recorded canonical report and answers every refusal by name. [1]
 - Requires the recorded file to be the launch-derived name directly under the exact report root, and refuses a sibling, handover or nested replacement. [2]
-- The request body carries the selection and request ID only; there is no path input. [3]
 - The read-only regular-file read with the bounded size and truncation contract. [4]
 - Serves the canonical file when the task's report-access alias is absent and refuses an actually retargeted alias distinctly. [5]

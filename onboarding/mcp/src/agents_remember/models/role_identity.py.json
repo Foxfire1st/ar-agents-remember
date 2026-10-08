@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/models/role_identity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+        "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "canonical_role"
+        }
+      },
+      "id": "RLZ-TKKAYG",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "One exact alias comparison avoids duplicated role implementations.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source owns the documented investigation, identity or request boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c29cf6138338d8aee4571b2b24b171c556be2ff9",
+            "content": "sha256:218fce10682c6e6734b8d07b57c90b3e40c64b4d9a2472450843e7d310ec8512",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

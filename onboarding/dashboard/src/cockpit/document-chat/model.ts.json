@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
-        "content": "sha256:5230d3a4ffa90de94985145c87c5412c15daaa851934b87b5d6eea996c286caa",
+        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+        "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
         "locator": {
           "kind": "symbol",
           "name": "documentChatAgent"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
-        "content": "sha256:60e3b14f1452174cee2d299e58ccf15b75ff8848b6b345cf53bf49dd08641963",
+        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+        "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
         "locator": {
           "kind": "symbol",
           "name": "documentChatBinding"
@@ -36,19 +36,36 @@
       },
       "rationale": "This pure binding decides which roles and which canonical selection one document admits, so the panel never asks for references it already knows.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+        "content": "sha256:c39ad34e6212c0bfdb42e97144091422b72150e85f1c4041adf2a177188b4d63",
+        "locator": {
+          "kind": "symbol",
+          "name": "documentChatAgent"
+        }
+      },
+      "id": "RLZ-XM7PZS",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The default displayed agent is constrained to the document primary role.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The binding returns exactly the roles the selection admits, or none with the missing-relationship reason.",
+      "note": "The binding returns exactly the roles the selection admits, or none with the missing-relationship reason.\n\nAnchor: `documentChatBinding`",
       "targets": [
         {
           "anchor": {
-            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
-            "content": "sha256:60e3b14f1452174cee2d299e58ccf15b75ff8848b6b345cf53bf49dd08641963",
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:cb27d148711382925dbee9d0587a34eb3710a6e7e8fc46fdcdc467283216a030",
             "locator": {
-              "kind": "symbol",
-              "name": "documentChatBinding"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -56,15 +73,14 @@
       ]
     },
     "2": {
-      "note": "The agent pick matches the document key, skips archived records and picks the newest stable record.",
+      "note": "The agent pick matches the document key, skips archived records and picks the newest stable record.\n\nAnchor: `documentChatAgent`",
       "targets": [
         {
           "anchor": {
-            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
-            "content": "sha256:5230d3a4ffa90de94985145c87c5412c15daaa851934b87b5d6eea996c286caa",
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:cb27d148711382925dbee9d0587a34eb3710a6e7e8fc46fdcdc467283216a030",
             "locator": {
-              "kind": "symbol",
-              "name": "documentChatAgent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -76,11 +92,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f14dedd88e6416306cb49c09d6c3f30a3186bc5f",
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
             "content": "sha256:736b6b5e31b96af17f379e99bd08b70658f855cdaf412d2262caca9d18d5e0d0",
             "locator": {
               "kind": "symbol",
               "name": "documentAgents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:cb27d148711382925dbee9d0587a34eb3710a6e7e8fc46fdcdc467283216a030",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

@@ -22,3 +22,10 @@ RoleStartCall extends canonical selection with required UUID and optional overri
 ## MIK-R95 Preparation Answer Model
 
 `RoleEnvironmentPreparation` declares the shared start's observed outcome: `enclosure` is `created`, `found` or `not-applicable`, and `workspace` is optional `created`, `found` or `opened` — `opened` deliberately names no host-reported creation outcome. `RoleStartResponse` carries the `preparation` block and an optional `preparationStatus`.
+
+## Investigator scope and request identity
+
+The public message refusal vocabulary includes investigator-capacity. This names a completed selected-task recipient’s unavailable slot before native delivery or resume; it adds no message-owned queue or start authority.
+
+
+- The current source implements this file’s stated Investigator boundary. [5]

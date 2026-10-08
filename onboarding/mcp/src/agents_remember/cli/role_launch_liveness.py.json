@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+        "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
         "content": "sha256:9db4ae17a77175c7d7718705504838ee8fa3e2bf97646c7a5329be37467342b3",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+        "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
         "content": "sha256:a828f997c45225ca01051d960f082a2dce0aa65dfb705c21818c62f510590a9f",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+        "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
         "content": "sha256:9db4ae17a77175c7d7718705504838ee8fa3e2bf97646c7a5329be37467342b3",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+        "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
         "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
-        "content": "sha256:c26d26fabd5aac03aa7f60c59f3df9dbb71816949b11f457615b6b2a13b950b6",
+        "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
+        "content": "sha256:363ffb250b82610b01d61580eaab90a265436e81273811be6749f31f689b858a",
         "locator": {
           "kind": "symbol",
           "name": "_reconcile_prior_execution"
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+            "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
             "content": "sha256:d50fdc1880e9960c3005b929057f234787a220d435edcf1b55b56d25735dce49",
             "locator": {
               "kind": "symbol",
@@ -128,16 +128,14 @@
       ]
     },
     "11": {
-      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
+      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:60389c55a3b367a3d34a0e4827fbaea9608a55363e5f73959d712a0db657201a",
             "locator": {
-              "end": 689,
-              "kind": "line_range",
-              "start": 677
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -146,20 +144,35 @@
       ]
     },
     "12": {
-      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance`",
+      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:60389c55a3b367a3d34a0e4827fbaea9608a55363e5f73959d712a0db657201a",
             "locator": {
-              "end": 758,
-              "kind": "line_range",
-              "start": 691
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
+            "content": "sha256:7ab6c6103a7e369601ce35c8f76734152b4df0a13debfa528c6415fda3c70983",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -168,7 +181,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+            "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
             "content": "sha256:9db4ae17a77175c7d7718705504838ee8fa3e2bf97646c7a5329be37467342b3",
             "locator": {
               "kind": "symbol",
@@ -184,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12014fe765d2bc53a9fff1f709e34cb44e4eb600",
+            "blob": "dc3d3c0b29201772b15fb2a71e30a2872d2cf485",
             "content": "sha256:a828f997c45225ca01051d960f082a2dce0aa65dfb705c21818c62f510590a9f",
             "locator": {
               "kind": "symbol",
@@ -196,16 +209,14 @@
       ]
     },
     "4": {
-      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.\n\nAnchor: `RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch`",
+      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
-            "content": "sha256:fc765b7069a6954570cdd53099dfdca7a3be8111c253303d155228577db405d4",
+            "blob": "be47e1ce7c587b1a39eb82aa110f21b78dda17af",
+            "content": "sha256:788b112577fc17a01314f0a5aea04cd680d5c3847c79dff34c0603a219fb580b",
             "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 89
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -218,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "end": 1062,

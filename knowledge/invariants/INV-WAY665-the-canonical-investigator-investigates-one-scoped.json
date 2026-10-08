@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A broad investigation must remain one supplied concern; treating the general role as an unbounded repair mandate could change unrelated repositories."
+  },
+  "applicability": "The canonical Investigator assignment, whether Projects, selected sprint or selected master.",
+  "conditions": [
+    "Exactly one concern and the handover report scope are supplied."
+  ],
+  "exclusions": [
+    "Worker or Curator mutation authority."
+  ],
+  "id": "INV-WAY665",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_instruction_wording.py: new Investigator clauses"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §1",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The canonical Investigator investigates one scoped concern of any kind.",
+  "status": "proposed",
+  "supersedes": []
+}

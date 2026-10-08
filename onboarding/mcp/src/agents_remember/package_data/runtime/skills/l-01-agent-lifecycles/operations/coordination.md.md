@@ -12,7 +12,7 @@ Start and reach native role agents for exact canonical AR assignments while keep
 
 The Architect delegates coordination first to one Manager for one master or one Orchestrator for concurrent masters; direct coordination is only the developer’s choice. A bound start supplies the role, required canonical references and request ID, resolves the AR paired enclosure, writes the handover and returns the actual agent/report/artifact identities.
 
-Architect may start every role except Architect; Orchestrator may start Manager, Worker, Reviewer and Curator under its sprint; Manager may start Worker, Reviewer and Curator under its master. Other roles start none. An unknown start is reconciled by the same request ID. A rejected candidate returns finding-specific repair to the same Worker.
+Architect may start every role except Architect; Orchestrator may start Manager, Worker, Reviewer, Curator and Investigator under its sprint; Manager may start Worker, Reviewer, Curator and Investigator under its master. Other roles start none. An unknown start is reconciled by the same request ID. A rejected candidate returns finding-specific repair to the same Worker.
 
 `role_message` names one recipient by actual agent ID or unambiguous role/task selection, attributes the sender and never cancels a running turn. Busy, permission, unfinished-start, missing, archived and ambiguous outcomes remain explicit. A wait reports the consumed turn or a pending/timeout/uncertain outcome; it is not semantic completion. Dashboard-started agents need no parent.
 
@@ -31,3 +31,10 @@ Use only `role_start`/`role_message` on `agents-remember-task`. Preserve canonic
 | Finding | Anchor | References |
 | --- | --- | --- |
 | One coordinating agent under the Architect, bound start/messaging, same-request recovery and execution metadata boundary. | lines 3-15 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/coordination.md:3-15 |
+
+
+## Current Investigator contract impact
+
+The exact role-start permission table includes Investigator for Orchestrator under its sprint and Manager under its master; Architect retains its permitted coordinating scope. Other roles start none. Existing request-ID reconciliation, direct leaf repair and Manager transaction ownership remain unchanged.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]

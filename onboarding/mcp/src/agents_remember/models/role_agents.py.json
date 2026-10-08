@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fcca69eb376b27ca5ca553bcef6d90a2a4f7b19",
+        "blob": "537498b69813f94f8e55014208147ee868bfc73a",
+        "content": "sha256:efa8b017b9fe55cc9079b18ccb846d217a27656c0c7e9a33d4c93535d77d201e",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageRefusal"
+        }
+      },
+      "id": "RLZ-27ER0H",
+      "invariant": "INV-0EASG7",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F01 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The public typed refusal includes the capacity refusal returned by delivery.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "537498b69813f94f8e55014208147ee868bfc73a",
         "content": "sha256:7fb555bc9408240767b57fe97ee031289336323a495483d6cd8c6c2a90e92862",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fcca69eb376b27ca5ca553bcef6d90a2a4f7b19",
+            "blob": "537498b69813f94f8e55014208147ee868bfc73a",
             "content": "sha256:96651b526d7c4ff0e5a772db11fe0c13cde71c3007731332408d3fa916cbc6a0",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fcca69eb376b27ca5ca553bcef6d90a2a4f7b19",
+            "blob": "537498b69813f94f8e55014208147ee868bfc73a",
             "content": "sha256:ed6afc080fca36133e5efaf0e9145faed0c6ef07bae11ed60f146295bfc32a3c",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fcca69eb376b27ca5ca553bcef6d90a2a4f7b19",
+            "blob": "537498b69813f94f8e55014208147ee868bfc73a",
             "content": "sha256:e3e1dc31f4cef7a81e0fc2026ea54bb410f0352ef343b84c22b6628e03a8f68a",
             "locator": {
               "kind": "symbol",
@@ -74,11 +92,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fcca69eb376b27ca5ca553bcef6d90a2a4f7b19",
+            "blob": "537498b69813f94f8e55014208147ee868bfc73a",
             "content": "sha256:8cdd11100598bacf99aa859602d4962751830ec73d13fb7f7cc50f49e0a09464",
             "locator": {
               "kind": "symbol",
               "name": "RoleMessageResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "537498b69813f94f8e55014208147ee868bfc73a",
+            "content": "sha256:8456a17cef59ce3349c821dab90b2ef90893c3cfe0d38b31fe923e30ec4dfaae",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

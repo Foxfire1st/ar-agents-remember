@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
+        "content": "sha256:791fa0f64293e04dbc674e09586e0ec065bef86bf01a76208573e56977bd7d8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_role_keys"
+        }
+      },
+      "id": "RLZ-E21PAG",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Per-file settings equivalence/refusal is owned before layering.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Frozen implementation of _parse_service_tier supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
+            "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
             "content": "sha256:1f3717367e05643747bb649a0f1b85ab934558c626be9ffc1e1bf0d4674677d0",
             "locator": {
               "kind": "symbol",
@@ -19,15 +38,31 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.",
+      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.\n\nAnchor: `_parse_roles`",
       "targets": [
         {
           "anchor": {
-            "blob": "de5602ff3d0b7ecd593ea16948fd298d83723bdd",
-            "content": "sha256:9ab9869ec686c0617f4596206a008c79cb48cdeb929982e3e656c4d2b83bb75a",
+            "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
+            "content": "sha256:3b92fb928c75572100af0bfd84a9b22d0134097b03d72f968d25a0b0b71fe9ed",
             "locator": {
-              "kind": "symbol",
-              "name": "_parse_roles"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
+            "content": "sha256:3b92fb928c75572100af0bfd84a9b22d0134097b03d72f968d25a0b0b71fe9ed",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

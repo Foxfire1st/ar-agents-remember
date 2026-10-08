@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
-        "content": "sha256:9e5276e4681f5b85aaf1119e0a8a66ca2d6910ad838efb4ea4308c5cac08102b",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
         "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
         "locator": {
           "end": 8,
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
         "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
         "locator": {
           "end": 30,
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
-        "content": "sha256:28673177e9fabb723ba2142e77c0c624fe67f11570d7c1f4f6e7dd70646f4a67",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "content": "sha256:5b5abd5ab67d55a2d84a38c4e7f1782ebdea4a76d7f6fcf7bcc76c262ee643f3",
         "locator": {
           "end": 16,
           "kind": "line_range",
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
-        "content": "sha256:9e5276e4681f5b85aaf1119e0a8a66ca2d6910ad838efb4ea4308c5cac08102b",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
         "locator": {
           "kind": "file"
         }
@@ -94,8 +94,27 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
-        "content": "sha256:9e5276e4681f5b85aaf1119e0a8a66ca2d6910ad838efb4ea4308c5cac08102b",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+        "locator": {
+          "end": 50,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-NHDAV2",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §9",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "O10/O11 and its own sprint scope are authored here.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+        "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
         "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
         "locator": {
           "end": 20,
@@ -130,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "028600268470487ccd308798be5fd012189041ea",
+        "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
         "content": "sha256:f7171cd8804c30ab57ed9b1ca09faebcc802155f3c9bf9a70b7c9b8cd5443fdb",
         "locator": {
           "end": 24,
@@ -150,16 +169,14 @@
   ],
   "references": {
     "1": {
-      "note": "The seat's self-definition is an event loop over durable task state that never converses with the developer.\n\nAnchor: \"You run one sprint's backend as an event loop over durable task state, not a conversation.\"",
+      "note": "The seat's self-definition is an event loop over durable task state that never converses with the developer.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:cbff62ccb165b0920cd2b537eba76b7c84589aecc7cfd0ae9ad7e5aa2ab12d5b",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 8
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -167,16 +184,14 @@
       ]
     },
     "10": {
-      "note": "Role-seat immutability refuses a pasted brief for another role.\n\nAnchor: \"**Role-seat immutability.**\"",
+      "note": "Role-seat immutability refuses a pasted brief for another role.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:c2462103ffdedb891d944ad73b77336ac83c9c1d337624c606b812dc38dcd6df",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 117,
-              "kind": "line_range",
-              "start": 114
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -184,16 +199,14 @@
       ]
     },
     "11": {
-      "note": "The producers' curator hand-off list is passed through to the curator unparaphrased.\n\nAnchor: \"**The producers' hand-off list, handed to the curator unparaphrased.**\"",
+      "note": "The producers' curator hand-off list is passed through to the curator unparaphrased.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:b2859f624700f8ea56c79fbcca2b9de1afa7b3c7ed1f819b33ed4fe1ad562fa2",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 127
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -201,16 +214,14 @@
       ]
     },
     "12": {
-      "note": "The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated.\n\nAnchor: \"**The portfolio-wide retire authority, exceptional cases only.**\"",
+      "note": "The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:e998e4b39ef1cb58d934c0e98b77305efe63934627c5e02bbe3bfb3dc0534bf3",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 152
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -218,16 +229,14 @@
       ]
     },
     "13": {
-      "note": "The seat's prohibitions and the architect ceiling with its four-field decision item are explicit.\n\nAnchor: \"**The developer-worthy wait is a decision item**\"",
+      "note": "The seat's prohibitions and the architect ceiling with its four-field decision item are explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:50af1f8052cbe6323048473ad83337b9a9a8cb202b8bdb70362b9f2cd898271b",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 174
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -235,16 +244,29 @@
       ]
     },
     "14": {
-      "note": "Provider degradation has a fixed four-step response that ends in the always-legal teardown.\n\nAnchor: \"**Provider degradation — your own four-step response.**\"",
+      "note": "Provider degradation has a fixed four-step response that ends in the always-legal teardown.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:512b998c7b3281ed4d3fe11a80170ac17bb7eff04c1b8c5c20928954993fc223",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 214
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -252,16 +274,14 @@
       ]
     },
     "2": {
-      "note": "The generic event loop is owned by the coordination operation, which wins on disagreement.\n\nAnchor: \"The event loop itself is\"",
+      "note": "The generic event loop is owned by the coordination operation, which wins on disagreement.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:b74e52005b47cb1c1cf35f656dd1f95ae999218c119fdcb644c39de01c249a76",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 38,
-              "kind": "line_range",
-              "start": 35
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -269,16 +289,14 @@
       ]
     },
     "3": {
-      "note": "The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push.\n\nAnchor: \"**The topology, single home.**\"",
+      "note": "The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:ca97c01134b35afc7db335510b2a9ee4aa0e1ea23054f2a8d16ba61f9781442c",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 55
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -286,16 +304,14 @@
       ]
     },
     "4": {
-      "note": "Priority judgment is recorded before it changes selection.\n\nAnchor: \"**Priority judgment is recorded before it changes selection**\"",
+      "note": "Priority judgment is recorded before it changes selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:293a48fe9d585cf0c203f4fcd91029fc5e2302ff19407c87189e4a308dac225d",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 63
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -303,16 +319,14 @@
       ]
     },
     "5": {
-      "note": "Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence.\n\nAnchor: \"**Release and land per execution nature**\"",
+      "note": "Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:526b15328981d1aef4a333ec962f0f50bf96996e8dfa960597f02e5824d48959",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 73,
-              "kind": "line_range",
-              "start": 67
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -320,16 +334,14 @@
       ]
     },
     "6": {
-      "note": "The spirit test is this seat's alone and cannot widen a fix-verification scope.\n\nAnchor: \"**The spirit test — this seat only.**\"",
+      "note": "The spirit test is this seat's alone and cannot widen a fix-verification scope.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:795ddaed7bcf0d81709c6cb985ac1d3a7cb585cac95b16137a3408a853d1de1f",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 80,
-              "kind": "line_range",
-              "start": 74
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -337,16 +349,14 @@
       ]
     },
     "7": {
-      "note": "Master exit decides one open manager handover gate and never treats a verdict as the decision.\n\nAnchor: \"**Master exit.**\"",
+      "note": "Master exit decides one open manager handover gate and never treats a verdict as the decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:1111f9da3f46093825ec90548a65eb1711bbee61752f12cd547942da342db413",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 87,
-              "kind": "line_range",
-              "start": 81
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -354,16 +364,14 @@
       ]
     },
     "8": {
-      "note": "The seat owns the portfolio bird's-eye through eight numbered duties.\n\nAnchor: \"**Four failure rules.**\"; \"**No native sub-agents on this seat.**\"",
+      "note": "The seat owns the portfolio bird's-eye through eight numbered duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:60a792019574fa57c1af0ab2f75713c0a8a90fa429b409e0cea10abf371a6705",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 104,
-              "kind": "line_range",
-              "start": 88
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -371,16 +379,14 @@
       ]
     },
     "9": {
-      "note": "The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split.\n\nAnchor: \"**Your children and their dispatch.**\"",
+      "note": "The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split.",
       "targets": [
         {
           "anchor": {
-            "blob": "08dc245b0848a6723e751ff96c3b2bd55407084a",
-            "content": "sha256:91a61db93ada4e8fab626514e0cdee26b4b1fd09bd72faebbf85ac38eb2be112",
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
             "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 106
+              "kind": "file"
             }
           },
           "kind": "code"

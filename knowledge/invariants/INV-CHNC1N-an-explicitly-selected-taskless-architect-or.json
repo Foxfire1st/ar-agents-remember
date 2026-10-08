@@ -6,10 +6,10 @@
     ],
     "justification": "The router, manifest, both taskless role openings and Orientation carry the same boundary. Mistaking the shared Projects execution workspace for a registered repository or inventing a provider incident would create or investigate work without a selected scope; these exact mistaken inferences are explicitly prohibited by the inspected current sources."
   },
-  "applicability": "Manual native Projects launches explicitly selecting Architect or System Specialist without canonical task references.",
+  "applicability": "Manual native Projects launches explicitly selecting Architect or Investigator without canonical task references, including an earlier system-specialist spelling read as Investigator.",
   "conditions": [
     "The developer request is the scope source.",
-    "Only actually missing outcome/repository or provider/system concern/report scope is asked for."
+    "Only actually missing outcome/repository or concern/report scope is asked for; an Investigator concern may be of any kind."
   ],
   "exclusions": [
     "Task-bound selections, which retain their supplied canonical task and paired enclosure.",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "An explicitly selected taskless Architect or System Specialist at Projects uses the developer request, asks only for the missing outcome and registered repository or missing system concern and report scope, and creates no inferred repository, sprint, master or task identity.",
+  "statement": "An explicitly selected taskless Architect or Investigator at Projects uses the supplied developer request and asks only for missing outcome and registered repository, or missing concern and report scope; it creates no inferred repository, sprint, master or task identity. Investigator concern scope is any kind, and the earlier system-specialist read spelling has that canonical meaning.",
   "status": "proposed",
   "supersedes": []
 }

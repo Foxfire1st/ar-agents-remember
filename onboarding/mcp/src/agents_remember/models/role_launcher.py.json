@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Frozen implementation of RoleSelection supporting the stated file behavior.",
+      "note": "Frozen implementation of RoleSelection supporting the stated file behavior.\n\nAnchor: `RoleSelection`",
       "targets": [
         {
           "anchor": {
-            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
-            "content": "sha256:abf01f76d235c4bb808dacabf391a59154b05a97a81183ed3c8896b0f63ee358",
+            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
+            "content": "sha256:5fffc7fbd546a2cb4bb61b07dac78003db7a45611d59a9ad9d404d6c990bff69",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleSelection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -23,7 +22,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
             "content": "sha256:b15eb32ce96c9c432a9cb55bb55b4982be594a2b37080e598c5e0bd77a595a8b",
             "locator": {
               "kind": "symbol",
@@ -39,11 +38,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9f35c30f5944c50db167b5896666f2fa4fafcea",
+            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
             "content": "sha256:218e7e5028a98077fff6bf832bfd69e59c9845bdd67806bf9d20782104b59213",
             "locator": {
               "kind": "symbol",
               "name": "RoleDispatchRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fd0d38f5909861e21009fb10da7660fa106e9a8",
+            "content": "sha256:5fffc7fbd546a2cb4bb61b07dac78003db7a45611d59a9ad9d404d6c990bff69",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

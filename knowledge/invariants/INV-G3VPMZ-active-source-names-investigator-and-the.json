@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Rewriting a historical ruling during a role rename would make earlier permission words appear to authorize the wider current role."
+  },
+  "applicability": "Active role naming and retained historical ruling references.",
+  "conditions": [
+    "New source and output use Investigator.",
+    "Historical ruling words retain their earlier spelling with the canonical successor location."
+  ],
+  "exclusions": [
+    "Historical evidence is not rewritten as a new authority statement."
+  ],
+  "id": "INV-G3VPMZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        ".search-decisions.json accounts for all 337 pre-edit hits and final tracked/new census"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §11",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Active source names Investigator and the exact earlier-ID reads remain, while historical rulings keep their words with the canonical successor path beside them.",
+  "status": "proposed",
+  "supersedes": []
+}

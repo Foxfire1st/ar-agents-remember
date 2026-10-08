@@ -1,17 +1,35 @@
 {
   "path": "mcp/src/agents_remember/application/role_launch_context.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+        "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_role_launch_context"
+        }
+      },
+      "id": "RLZ-RA6D0D",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The launch resolver admits only the three valid Investigator selections.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
-      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.",
+      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.\n\nAnchor: `resolve_role_launch_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
-            "content": "sha256:8492047a232d893a845376ceb80e68eade3fb13e75e2f89484b46808ff29a2a9",
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_role_launch_context"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -23,11 +41,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
             "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
             "locator": {
               "kind": "symbol",
               "name": "selection_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

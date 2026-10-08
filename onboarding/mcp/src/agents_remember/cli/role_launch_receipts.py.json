@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
-        "content": "sha256:05405f21ddc9cbd76eeb5d8fe11dd949ad56646c67d207fe039d6e5ffd58649d",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "content": "sha256:7d2d2f9dfc17d3d5261240e5d8f1d3781bafcb23e2dbace9eb8dc582f839e5c4",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:e08154c185afc4568a9c151f6ec848a40847b339eae2ce3694ade6d1156edaa9",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
-        "content": "sha256:05405f21ddc9cbd76eeb5d8fe11dd949ad56646c67d207fe039d6e5ffd58649d",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+        "content": "sha256:7d2d2f9dfc17d3d5261240e5d8f1d3781bafcb23e2dbace9eb8dc582f839e5c4",
         "locator": {
           "kind": "symbol",
           "name": "_public_execution"
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
         "locator": {
           "kind": "symbol",
@@ -111,7 +111,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
         "locator": {
           "kind": "symbol",
@@ -129,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -147,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:7074260c5abeecf94e3db69e79ef974b3cff0f80807c7a583086aa612f46bc8c",
         "locator": {
           "kind": "symbol",
@@ -165,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:f333e29b58d96ebe5539e8dccc71a6ef1b52fdaba299bbbd887d9daf16b4308e",
         "locator": {
           "kind": "symbol",
@@ -183,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+        "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
         "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
         "locator": {
           "kind": "symbol",
@@ -202,15 +202,14 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of _execute_prepared_launch supporting the stated file behavior.",
+      "note": "Frozen implementation of _execute_prepared_launch supporting the stated file behavior.\n\nAnchor: `_execute_prepared_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
-            "content": "sha256:715a3fe61cfbc727b54bcfea19c6a9eaea4ec237e27e412a4d0f335ca17d516f",
+            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+            "content": "sha256:236c7c8c2cd84c5ca6e707afa0a6df07e30882c4898f8bb0c8698364806c2001",
             "locator": {
-              "kind": "symbol",
-              "name": "_execute_prepared_launch"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -254,16 +253,14 @@
       ]
     },
     "12": {
-      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
+      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:ba93a3589b65f615cd904e42aa1697ba80d924deabce3edb6b633d42ec683266",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:60389c55a3b367a3d34a0e4827fbaea9608a55363e5f73959d712a0db657201a",
             "locator": {
-              "end": 689,
-              "kind": "line_range",
-              "start": 677
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -272,20 +269,35 @@
       ]
     },
     "13": {
-      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance`",
+      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+            "blob": "f0ba1d95dffb19d18b7c2f4acca1497263fe8e8a",
+            "content": "sha256:60389c55a3b367a3d34a0e4827fbaea9608a55363e5f73959d712a0db657201a",
             "locator": {
-              "end": 758,
-              "kind": "line_range",
-              "start": 691
+              "kind": "file"
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+            "content": "sha256:236c7c8c2cd84c5ca6e707afa0a6df07e30882c4898f8bb0c8698364806c2001",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -294,7 +306,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
             "content": "sha256:e9e967ca283364db610815410bd4c44c92806dd3617fc94747f2a5d2247bf81a",
             "locator": {
               "kind": "symbol",
@@ -310,7 +322,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20526cfdf353898e7e921be06822a11d576a78a6",
+            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
             "content": "sha256:6e1a541aecf8833f9f4888a7b771bd24930153cdf5d8b08346ba64a0eea5562b",
             "locator": {
               "kind": "symbol",
@@ -322,15 +334,14 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of _public_execution supporting the stated file behavior.",
+      "note": "Frozen implementation of _public_execution supporting the stated file behavior.\n\nAnchor: `_public_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
-            "content": "sha256:83c8e513bbf464c7ea5fff600040a189fedae14ab0181893060f7f3963351035",
+            "blob": "944ce713c6a7fe5d29ce030660cb26579e0a4ce4",
+            "content": "sha256:236c7c8c2cd84c5ca6e707afa0a6df07e30882c4898f8bb0c8698364806c2001",
             "locator": {
-              "kind": "symbol",
-              "name": "_public_execution"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -338,16 +349,14 @@
       ]
     },
     "5": {
-      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.\n\nAnchor: `RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels`",
+      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.",
       "targets": [
         {
           "anchor": {
-            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
-            "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
+            "content": "sha256:288331b337ac2c31833aa29ee958f68180cfb7c92acc816dade2baffcb5f2487",
             "locator": {
-              "end": 660,
-              "kind": "line_range",
-              "start": 502
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch.py"
           },
@@ -360,7 +369,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "end": 1062,
@@ -374,16 +383,14 @@
       ]
     },
     "7": {
-      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.\n\nAnchor: `RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch`",
+      "note": "Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation.",
       "targets": [
         {
           "anchor": {
-            "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
-            "content": "sha256:fc765b7069a6954570cdd53099dfdca7a3be8111c253303d155228577db405d4",
+            "blob": "be47e1ce7c587b1a39eb82aa110f21b78dda17af",
+            "content": "sha256:788b112577fc17a01314f0a5aea04cd680d5c3847c79dff34c0603a219fb580b",
             "locator": {
-              "end": 174,
-              "kind": "line_range",
-              "start": 89
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_launch_repeat.py"
           },
@@ -396,7 +403,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "blob": "9c27f7546b5f3e96f9406dfadb020e944329a175",
             "content": "sha256:f817446786d0d1171f345de2b1bda721ed1b85cfa59d661141ad5603710f34f2",
             "locator": {
               "end": 1245,
@@ -410,16 +417,14 @@
       ]
     },
     "9": {
-      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.\n\nAnchor: `HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through`",
+      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.",
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
-            "content": "sha256:65ad1467aef8ea195a3ffcccddcd7da5bd76f7a14f4c6258b3614869b2a9a4f9",
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
+            "content": "sha256:d1bdfc32c46869850249f5b1d4ea2fb6f5bfe0293048799f7a6d40db01f399f6",
             "locator": {
-              "end": 874,
-              "kind": "line_range",
-              "start": 836
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },

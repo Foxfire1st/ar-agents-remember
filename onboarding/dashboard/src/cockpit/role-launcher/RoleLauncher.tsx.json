@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
-        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -21,7 +21,25 @@
     },
     {
       "anchor": {
-        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleLauncher"
+        }
+      },
+      "id": "RLZ-6DAG9Q",
+      "invariant": "INV-A0240E",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The existing launcher permits concurrent task-bound Investigator starts without changing the Projects single-occupant binding or adding controls.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -39,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
-        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -57,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
-        "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+        "content": "sha256:afa38e48297376934d1219f799ae8601a99ec5bbe4362d7adf470a635af7ab30",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+        "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
         "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
         "locator": {
           "kind": "symbol",
@@ -98,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
             "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
             "locator": {
               "kind": "symbol",
@@ -114,7 +132,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -130,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
             "content": "sha256:1e6d5148e9e49d5b53b9d510ed2314664cf4a977a6bebe6975df543d2fd13c3b",
             "locator": {
               "kind": "symbol",
@@ -142,15 +160,31 @@
       ]
     },
     "4": {
-      "note": "The exported launcher renders controls, progress and the single failure line for both hosts.",
+      "note": "The exported launcher renders controls, progress and the single failure line for both hosts.\n\nAnchor: `RoleLauncher`",
       "targets": [
         {
           "anchor": {
-            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
-            "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+            "content": "sha256:6578d545246a821c520404288412ea57b53c1aec686c0ed990a9830e49aa5c3e",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleLauncher"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f46443e1b156e1c7d44349871b37aedccf14e1d",
+            "content": "sha256:6578d545246a821c520404288412ea57b53c1aec686c0ed990a9830e49aa5c3e",
+            "locator": {
+              "end": 485,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

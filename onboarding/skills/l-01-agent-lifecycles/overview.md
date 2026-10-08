@@ -1,8 +1,5 @@
 # skills/l-01-agent-lifecycles
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `skills/l-01-agent-lifecycles` |
 
 ## The governing row and the rationale cover in the curator hand-off template (260928-MIK-L37)
 
@@ -284,13 +281,13 @@ substitutes for the foundation, and the foundation substitutes for neither.
 `mcp/src/agents_remember/package_data/runtime/skills/` and the eight self-hosted harness starter copies.
 
 - The foundation entry as a second, bounded shape of the curator's work, with its own carrier and the seat's admission stated **either way** rather than a refusal assumed. [21]
-- The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. [22]
-- The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. [23]
-- Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. [24]
+
+
+
 - The operation's ownership paragraph: the manager's half is a leaf-entry fact, and the foundation is reached as the procedure states. [25]
 - The comparison table that separates the two entries by carrier, scope, required inputs, writer, onboarding and missing inputs. [26]
-- The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. [27]
-- The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. [28]
+
+
 - The bootstrap role's step 5: reach the foundation, report the state it read, hand the authoring on, and never report a repository whose knowledge is not recorded as ready. [29]
 - The bootstrap role's prohibition: the seat reads and reports the foundation's state and never authors records. [30]
 - The bootstrap operation's step 6, with the seat gate quoted and the knowledge step made independent of the operation's other steps. [31]
@@ -369,7 +366,7 @@ to be written as prose.
   harness skill root was installed**, which is the orchestrator's own acceptance step.
 
 - **The authoring step the curator role file now carries: the real invocation, what to read from the report, and the identity the handoff owes.** [35]
-- **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** [36]
+
 - The authority gate that keeps the batch and its publication with their existing owners, and the rule that a partial hand-off stays partial. [37]
 
 - The permitted-action line naming the subcommand. [38]
@@ -381,9 +378,9 @@ to be written as prose.
 
 ## Purpose
 
-This route owns the canonical instruction sources and routing metadata for native role capsules. `SKILL.md` is the thin selector; `roles/` owns role duties, `operations/` owns the selected procedure, and the handover carries canonical task/workspace facts separately. The native launcher exposes Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. The ten-role registry remains a compiler vocabulary; it is not evidence that every registry role is launched through this path.
+This route owns the canonical instruction sources and routing metadata for native role capsules. `SKILL.md` is the thin selector; `roles/` owns role duties, `operations/` owns the selected procedure, and the handover carries canonical task/workspace facts separately. The native launcher exposes Architect, Investigator, Orchestrator, Manager, Worker, Reviewer and Curator. The ten-role registry remains a compiler vocabulary; it is not evidence that every registry role is launched through this path.
 
-A native capsule selects one explicit supported role source followed by one applicable operation and injects no shared `core/` block. Projects is an execution workspace, not a registered repository. Manual taskless Architect/System Specialist launches ask only for missing outcome/repository or provider/system concern/report scope and do not synthesize tasks.
+A native capsule selects one explicit supported role source followed by one applicable operation and injects no shared `core/` block. Projects is an execution workspace, not a registered repository. Manual taskless Architect/Investigator launches ask only for missing outcome/repository or concern/report scope and do not synthesize tasks.
 
 Paseo runs agents and delivers their messages. AR’s bound `agents-remember-task` tools retain canonical task, knowledge and paired-Git ownership. A delegating Architect hands coordination first to one Manager for one master, or to one Orchestrator on the sprint for two or more concurrently worked masters (one Manager per master); direct coordination and a single-master Orchestrator are the developer’s choices. Existing dated corpus measurements remain facts of their frozen candidates and do not measure the current capsule or establish context savings.
 
@@ -529,12 +526,12 @@ Every delivered role and operation now routes a developer question to the parent
 
 ### Repo-Internal References
 
-- Shared routing, authority, loop, and dispatch doctrine is canonical here. [42]
+
 - The graph-less atomic-sequential default describes sprint shape; nothing serializes a graph-less sprint. [43]
 - The architect launcher packet is one canonical compiler contract, not fixture prose or a second brief. [44]
-- Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. [45]
-- Manager owns one real master and its leaf closeout chain. [46]
-- Worker owns one real leaf's implementation and durable report. [47]
+
+
+
 - The shared frame defines the mandatory per-ID worker envelope and independent reviewer disposition. [48]
 - Core acceptance doctrine defines the mandatory per-ID worker envelope and the independent reviewer's adjudication. [49]
 
@@ -649,11 +646,9 @@ verification stamp was advanced.
 
 ## Current native instruction evidence
 
-- Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
 
-- Role then operation, inert core and retained vocabulary distinction. [53]
-- Bound intake and preserved converted writer/family duties. [54]
-- Normal full curation and coherent handoff. [55]
+
+
 
 ## Retained pre-import corpus account and measurements
 
@@ -716,3 +711,28 @@ role-addressed corpus, and that intent is what this route may claim.
 - Commit-derived memory verification follows the real code commit during governed closeout.
 - Aggregate completion prose cannot replace the worker envelope or reviewer adjudication for any
   stable requirement ID.
+
+## Scoped investigation and exact execution identity
+
+Investigator replaces the earlier narrow provider/system role with one scoped concern of any kind. Architect, Orchestrator and Manager may start it within their admitted non-leaf selections. Its broader reading requests preserve report-first remediation and the strict code/memory/task owner boundary; earlier identity spellings remain read aliases rather than separate roles. Generated mirrors derive from this canonical instruction tree.
+
+
+- This source owns the route’s Investigator selection or execution boundary. [57]
+
+
+## Refreshed current evidence
+
+- The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal. [22]
+- The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section. [23]
+- Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure. [24]
+- The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners. [27]
+- The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached. [28]
+- **The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.** [36]
+- Shared routing, authority, loop, and dispatch doctrine is canonical here. [42]
+- Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication. [45]
+- Manager owns one real master and its leaf closeout chain. [46]
+- Worker owns one real leaf's implementation and durable report. [47]
+- Current supplied role/operation, Projects scope, bound tools and execution/semantic separation. [52]
+- Role then operation, inert core and retained vocabulary distinction. [53]
+- Bound intake and preserved converted writer/family duties. [54]
+- Normal full curation and coherent handoff. [55]

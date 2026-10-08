@@ -153,7 +153,6 @@ Chats directly mounts one persistent RoleChats pane/Paseo iframe. The dashboard 
 
 - Current imported source owns this scoped route boundary. [34]
 
-- The route's Role-chats pane owner. [35]
 
 - The route's embedded chat frame. [36]
 
@@ -361,8 +360,8 @@ enum and already-validated `Metrics` bucket fields, rejects unmatched mappings, 
 emits the TypeScript partition and enumerable tuples from those schema enums.
 `stale_generated_files` compares both committed generated targets with fresh output, so the documented
 `scripts/sync-projection-types.py --check` command fails after either a producer-only change or a hand
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:74-74; mcp/src/agents_remember/observer/projection.py:267-267; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:439-451; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:475-475; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:602-602; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:487-487; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-614).
-edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition("; "def state_count_fields("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:74-99; mcp/src/agents_remember/observer/projection.py:267-289; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:451-465; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:487-523; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:614-620).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition(", "def state_count_fields(", "def _state_partition(", "def _vocabulary_block(", "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:1-179; mcp/src/agents_remember/observer/projection.py:1-1164; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627).
+edit on the TypeScript side, until the artifacts are regenerated cit:(["def check_state_partition("; "def state_count_fields("; "def _state_partition("; "def _vocabulary_block("; "def stale_generated_files("], mcp/src/agents_remember/observer/lifecycle_state.py:1-179; mcp/src/agents_remember/observer/projection.py:1-1164; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627; mcp/test_support/agents_remember_test_support/code_quality/projection_types.py:1-627).
 The separate `contract.test.ts` vocabulary suite still measures whether the manual `snapshot.json`
 sample covers every generated member/path and catches a duplicate within one TypeScript tuple; it is
 not the cross-language authority.
@@ -789,7 +788,7 @@ change can still settle an earlier read under a newer header (pre-existing; **R1
 browser-class A01/A13 journeys are not verified here (**R25** with R24/R17).
 
 - **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** [31]
-- **The review route's own decode: the body is the answer whatever the status.** [32]
+
 - **The one renderer every non-review state goes through.** [33]
 
 ## 260921-ICR-L12 The Cockpit Hands The Review's Record To The Surface
@@ -833,3 +832,16 @@ answered for the identity it describes, and the identity belongs to exactly one 
 - Async conditions share one hang guard. [37]
 - Test and hook completion share hang guards. [38]
 - Bounded source guard scans dashboard test and support files. [39]
+
+## Scoped investigation and exact execution identity
+
+Selected sprint/master Investigator execution is per request: the existing launcher/Role chats consumer retains the exact UUID through restore, Result/report, Retry, Revive and remount. Capacity is enforced by the backend’s complete open set. The existing primary document Manager/Orchestrator, persistent native frame, controls-only row and shared report reader remain the presentation owners.
+
+
+- This source owns the route’s Investigator selection or execution boundary. [40]
+
+
+## Refreshed current evidence
+
+- **The review route's own decode: the body is the answer whatever the status.** [32]
+- The route's Role-chats pane owner. [35]

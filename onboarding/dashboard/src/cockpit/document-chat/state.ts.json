@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
-        "content": "sha256:e87b84257dc822830fffcbca309f59ae3831b82a0780c30675354a09a1baa481",
+        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+        "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+        "locator": {
+          "kind": "symbol",
+          "name": "useDocumentChat"
+        }
+      },
+      "id": "RLZ-5WD4V8",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The explicit Investigator callback refreshes the primary rather than replacing it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+        "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
         "locator": {
           "kind": "symbol",
           "name": "useDocumentChat"
@@ -22,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.",
+      "note": "The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision.\n\nAnchor: `useDocumentChat`",
       "targets": [
         {
           "anchor": {
-            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
-            "content": "sha256:e87b84257dc822830fffcbca309f59ae3831b82a0780c30675354a09a1baa481",
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:a059071e7f754f1213ec554aba026c3384129a118e7db4432c7553716078f047",
             "locator": {
-              "kind": "symbol",
-              "name": "useDocumentChat"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -42,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
             "content": "sha256:244c926bcd9bd4de80970d6ea9988adc30b45b230335c10b2848425b4829f420",
             "locator": {
               "kind": "symbol",
@@ -58,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
             "content": "sha256:de3f4b69421ae544cefb0f88a02ec82e5d5fc8599a3977b0143b00514bbe7fb0",
             "locator": {
               "kind": "symbol",
@@ -74,11 +91,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a78bb7b8cfb84b5f1a56330a939095019b4a98",
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
             "content": "sha256:e0954c03fd62547d8e493e828b125719dbea042b63266e3e8463003c4ce86b18",
             "locator": {
               "kind": "symbol",
               "name": "chatPresentation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:a059071e7f754f1213ec554aba026c3384129a118e7db4432c7553716078f047",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

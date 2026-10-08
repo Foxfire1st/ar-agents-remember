@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
-        "content": "sha256:9585f9939935d63fa91dec562cd90c15a6e31e4eabcf98fb1289958f61e4100a",
+        "blob": "5762c07b2450eecbcf5e2a0fe151093f0a27655e",
+        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"
@@ -21,8 +21,26 @@
     },
     {
       "anchor": {
-        "blob": "3c33c781ba998f9dd141bd8b8b53517ae2677835",
-        "content": "sha256:9585f9939935d63fa91dec562cd90c15a6e31e4eabcf98fb1289958f61e4100a",
+        "blob": "5762c07b2450eecbcf5e2a0fe151093f0a27655e",
+        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "RETIRED_CURATION_STATEMENTS"
+        }
+      },
+      "id": "RLZ-CBJ82Y",
+      "invariant": "INV-MGQKGC",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §12",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The existing retirement registry owns named rejected fragments.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "5762c07b2450eecbcf5e2a0fe151093f0a27655e",
+        "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
         "locator": {
           "kind": "symbol",
           "name": "RETIRED_CURATION_STATEMENTS"

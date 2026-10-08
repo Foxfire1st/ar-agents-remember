@@ -188,7 +188,7 @@ written. The field is optional, so every existing document still loads unchanged
   shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
 - The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`, which since MIK-R09 (260928-MIK-L09, the L11 carry) uses the strict lookup (`strict_leaf_doc`): a document that exists but cannot be read makes the run `incomplete`, never the default scope.
 
-- The optional field and its comment. [1]
+
 - The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope). [2]
 
 ## 260928-MIK-L11 The `expectedKnowledgeEffects` Declaration (MIK-R11 Rule 1)
@@ -220,8 +220,8 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
 
 - One declaration: subject form, effect label and requirement reference. [3]
 - The refusals: master, empty, repeated subject and effect. [4]
-- The optional field and its comment. [5]
-- The check runs in the document validator. [6]
+
+
 - The shared patterns. [7]
 - The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
 
@@ -279,3 +279,17 @@ exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-deliv
 
 - Series progress excludes abandoned rows from the total and reports them separately. [18]
 - Sprint identity includes retired-only masters; seats and integrationBranch use that predicate. [19]
+
+
+## Current Investigator contract impact
+
+The structural role vocabulary uses canonical Investigator. Renaming that value preserves task-document ownership, index and seat classification; it does not make a task document or display label into runtime start authority. The launch-selection resolver separately admits Investigator’s non-leaf reference patterns.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [20]
+
+
+## Refreshed current evidence
+
+- The optional field and its comment. [1]
+- The optional field and its comment. [5]
+- The check runs in the document validator. [6]

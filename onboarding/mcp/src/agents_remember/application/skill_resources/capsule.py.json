@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/capsule.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+        "content": "sha256:52a746fc00ed66cb97e7e3436f817ed49c9e0a99dfc8ff19563f50e15c7c8fc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "compile_task_capsule"
+        }
+      },
+      "id": "RLZ-GMD8MJ",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Public old-ID compile emits the canonical capsule and one notice.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The four refusal-capable steps and the outcome that carries the binding in both shapes.",

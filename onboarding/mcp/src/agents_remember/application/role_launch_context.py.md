@@ -14,5 +14,17 @@ Role classes define required sprint/master/leaf references; taskless classes rej
 
 ## Evidence
 
-- Frozen implementation of resolve_role_launch_context supporting the stated file behavior. [1]
+
 - Frozen implementation of selection_binding supporting the stated file behavior. [2]
+
+## Investigator scope and request identity
+
+Investigator has Projects, selected-sprint and selected-sprint/master launch classes. Resolving these classes uses actual canonical topology and refuses a leaf selection before launch preparation creates anything. This extends the old taskless investigation scope; it does not infer task identity from a report path or weaken caller containment.
+
+
+- The current source implements this file’s stated Investigator boundary. [3]
+
+
+## Refreshed current evidence
+
+- Frozen implementation of resolve_role_launch_context supporting the stated file behavior. [1]

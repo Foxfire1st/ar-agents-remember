@@ -5,7 +5,7 @@
     ],
     "justification": "Removing the prose alone would hide failures and print no path to the report; keeping a failure line alone still leaves the report unreachable; opening the report alone does not keep the strip free of reply text or its height constant; and a bound row that started a second agent or guessed a preparation outcome would break the same one-row truth. Only together do they keep the developer-visible defect gone while the report, the failures and the start's own outcome remain reachable."
   },
-  "guarantee": "The role launcher is its row of controls: it keeps one height whatever an agent answers, a bound row starts exactly its admitted selection and shows what the shared start prepared, and any failure still appears as one line that ends when the condition does and names the owner's next action; the report of the selected execution stays one action away through Result in the dashboard's existing reader.",
+  "guarantee": "The role launcher remains a constant-height row of controls with no execution prose: it starts exactly its admitted canonical selection, shows the shared preparation truth and keeps failures in one actionable line; Result preserves the selected execution’s exact request identity and opens its report in the existing reader. Ordinary singleton and Projects rows retain their open-request second-start prohibition; selected sprint/master Investigator rows admit separate requests under the shared capacity owner and retain each selected UUID through recovery and remount.",
   "id": "FAM-RT2XDA",
   "members": [
     "INV-6SGHBB",
@@ -26,7 +26,7 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "dashboard/src/cockpit",
     "dashboard/src/data",

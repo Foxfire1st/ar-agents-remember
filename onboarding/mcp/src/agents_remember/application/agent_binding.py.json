@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
-        "content": "sha256:492312806b4fbd97f65fc45bedb46b47b1f63809dd40f73a7ce4748f8d3c24bc",
+        "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+        "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_agent_binding"
+        }
+      },
+      "id": "RLZ-0Y5QDC",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Raw old role bindings are admitted as the canonical seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+        "content": "sha256:57e34134e1be8ad2eb46c4f4ebdb934b09aae2470ce58a89b1f6fc87313e7c6e",
         "locator": {
           "kind": "symbol",
           "name": "_references_of"
@@ -21,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
         "content": "sha256:45d918b8c4e4e6c11e09f3958839d73706654d5a1294807896295b6bcb9908ea",
         "locator": {
           "kind": "symbol",
@@ -39,12 +57,12 @@
     },
     {
       "anchor": {
-        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+        "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
         "content": "sha256:2f68620654f40988d2f2ac08a2e593c6412eb58b0cc8e41ed387dfef9a0b7427",
         "locator": {
-          "end": 22,
+          "end": 23,
           "kind": "line_range",
-          "start": 22
+          "start": 23
         }
       },
       "id": "RLZ-FP6B7T",
@@ -58,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
-        "content": "sha256:aba37cbf70bae5f9c25178065272f10b4028601d941823c3ea0fd62e211c1dd3",
+        "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+        "content": "sha256:0ffe147ee4cc8f99fe799092689c7e8560a8ca8071e5cdfda9295a171a835467",
         "locator": {
           "kind": "symbol",
           "name": "read_agent_binding"
@@ -81,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
+            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
             "content": "sha256:ae2629fcdf194228a1d43674dad6fdaf86f01e50173dab00bc7707235ab30347",
             "locator": {
               "kind": "symbol",
@@ -93,15 +111,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of read_agent_binding supporting the stated file behavior.",
+      "note": "Frozen implementation of read_agent_binding supporting the stated file behavior.\n\nAnchor: `read_agent_binding`",
       "targets": [
         {
           "anchor": {
-            "blob": "320771c62912236e6356432b7ac77e68a3f1931d",
-            "content": "sha256:aba37cbf70bae5f9c25178065272f10b4028601d941823c3ea0fd62e211c1dd3",
+            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+            "content": "sha256:f1ca31a4d002efaa16615dd983d5bc8cda89fe6b59ba3b56359948f548f09c33",
             "locator": {
-              "kind": "symbol",
-              "name": "read_agent_binding"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -113,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 193,
@@ -149,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
+            "blob": "1b56203707c56a715059f113fa5c4121ffa2605b",
             "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
             "locator": {
               "end": 321,
@@ -159,6 +176,23 @@
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+            "content": "sha256:f1ca31a4d002efaa16615dd983d5bc8cda89fe6b59ba3b56359948f548f09c33",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

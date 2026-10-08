@@ -57,7 +57,7 @@ selection (`:63-66`), release and landing per execution nature (`:67-73`), the s
 (`:74-80`), master exit through the one open `master-handover-approval` gate (`:81-87`), four
 failure rules (`:88-95`), processing and acking the signals the seat is woken with (`:96-100`), and
 no native sub-agents on this seat (`:101-104`). It also fixes **the children and the dispatch** —
-managers, system-specialists and the same-sprint super-exit reviewer are this seat's; the
+managers, Investigators and the same-sprint super-exit reviewer are this seat's; the
 strategist, a separate designer chair and the plan reviewer are architect children, and leaf/route
 and master-exit reviewers are manager children (`:106-112`) — and **role-seat immutability**: a
 dashboard-owned orchestrator session stays an orchestrator for its lifetime, a pasted brief for
@@ -135,20 +135,19 @@ No relevant documentation was configured in the resolved source registry; task a
 
 ### Repo-Internal References
 
-- The seat's self-definition is an event loop over durable task state that never converses with the developer. [1]
-- The generic event loop is owned by the coordination operation, which wins on disagreement. [2]
-- The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push. [3]
-- Priority judgment is recorded before it changes selection. [4]
-- Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence. [5]
-- The spirit test is this seat's alone and cannot widen a fix-verification scope. [6]
-- Master exit decides one open manager handover gate and never treats a verdict as the decision. [7]
-- The seat owns the portfolio bird's-eye through eight numbered duties. [8]
-- The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split. [9]
-- Role-seat immutability refuses a pasted brief for another role. [10]
-- The producers' curator hand-off list is passed through to the curator unparaphrased. [11]
-- The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated. [12]
-- The seat's prohibitions and the architect ceiling with its four-field decision item are explicit. [13]
-- Provider degradation has a fixed four-step response that ends in the always-legal teardown. [14]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Cross-Repo References
 
@@ -207,3 +206,28 @@ in `../operations/coordination.md` — "selecting from current truth rather than
 gates as control-plane inputs (`:22-25`), and the file forbids leaving an intrinsically valid task
 write undone because a closeout generation exists and forbids mutating an old queue row
 (`:184-185`). The paragraphs above are kept as the historical record of the pre-rewrite file.
+
+
+## Current Investigator contract impact
+
+The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern/check belonging to no leaf. Leaf checks stay with their Worker/Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it. Investigator is a child concern/report carrier, not a leaf transaction owner.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [15]
+
+
+## Refreshed current evidence
+
+- The seat's self-definition is an event loop over durable task state that never converses with the developer. [1]
+- The generic event loop is owned by the coordination operation, which wins on disagreement. [2]
+- The topology duty fixes super off `main`, organizational vs atomic masters, and the waiting final push. [3]
+- Priority judgment is recorded before it changes selection. [4]
+- Release and landing follow execution nature, with worker checks and the curator's complete result as prerequisite evidence. [5]
+- The spirit test is this seat's alone and cannot widen a fix-verification scope. [6]
+- Master exit decides one open manager handover gate and never treats a verdict as the decision. [7]
+- The seat owns the portfolio bird's-eye through eight numbered duties. [8]
+- The seat's children are enumerated with the manager/system-specialist/super-exit reviewer split. [9]
+- Role-seat immutability refuses a pasted brief for another role. [10]
+- The producers' curator hand-off list is passed through to the curator unparaphrased. [11]
+- The by-hand portfolio-wide retire authority is exceptional and the write surface is enumerated. [12]
+- The seat's prohibitions and the architect ceiling with its four-field decision item are explicit. [13]
+- Provider degradation has a fixed four-step response that ends in the always-legal teardown. [14]

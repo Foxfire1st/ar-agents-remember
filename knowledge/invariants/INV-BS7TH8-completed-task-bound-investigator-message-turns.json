@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "End-to-end selected sprint/master Investigator execution after completion and UI restoration.",
+  "conditions": [
+    "A completed recipient acquires a slot before a new native turn.",
+    "The dashboard preserves its exact UUID through result, recovery and remount."
+  ],
+  "exclusions": [
+    "This independent accepted behavior statement is not a task, Git or memory acceptance gate."
+  ],
+  "id": "INV-BS7TH8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l98-code-review-R2/operation-evidence.json and pytest-fixed-list.txt: four sprint/master × idle/closed cases refuse at eight before agent-send/agent-resume, admit after slot release, persist eight, and preserve existing-open steering/replay/earlier IDs/Projects; notes/reports/l98-code-review-R2/mounted-evidence.json and mounted-fixed-list.txt: faithful executions[] mounted sprint/master flows restore and use exact scoped UUIDs for Result/report, same-ID Retry/Revive and remount while primary chats and earlier Projects storage remain preserved."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Completed task-bound Investigator message turns acquire an available selection slot before delivery or resume, and selected-sprint/master consumers preserve the exact Investigator request ID through Result/report, Retry, Revive and remount.",
+  "status": "proposed",
+  "supersedes": []
+}

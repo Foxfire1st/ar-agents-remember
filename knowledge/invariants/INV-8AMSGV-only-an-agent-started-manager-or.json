@@ -11,9 +11,9 @@
     "The role is Worker, Reviewer or Curator: ownerRelation also names the direct sibling seat routes in leafSeats.roleMessageArguments and sends no routine result to the parent."
   ],
   "exclusions": [
-    "Every parentless or dashboard launch, whose developerQuestions and ownerRelation stay byte-identical.",
-    "Native parent identity, other ownership data, tool grants and capsule digest seals.",
-    "The L72 Orchestrator/Manager coordinator text, which is preserved."
+    "Unrelated Worker, Reviewer and Curator handover text and tool requests remain unchanged.",
+    "The six unrelated role/operation orientations change only the shared canonical role-name sentence.",
+    "Native parent identity and peer-seat ownership are not derived from display names."
   ],
   "id": "INV-8AMSGV",
   "origin": {
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Every parented role handover routes developer questions to its actual parent ID, parented leaf roles route results and work questions directly to the named peer seats and only above-leaf occasions to the parent, and every dashboard-start handover preserves the original developerQuestions and ownerRelation values byte for byte.",
+  "statement": "Every parented role handover routes developer questions to its actual parent ID; parented leaf roles route work directly to the named peer seats and only above-leaf occasions to the parent. Parentless/dashboard handover behavior remains preserved, except the expressly approved Investigator concern wording and Architect/Orchestrator/Manager Investigator delegation edits; derived source and capsule seals follow those admitted source changes.",
   "status": "proposed",
   "supersedes": []
 }

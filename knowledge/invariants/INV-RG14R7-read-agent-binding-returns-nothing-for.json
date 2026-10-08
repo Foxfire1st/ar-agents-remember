@@ -24,9 +24,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "`read_agent_binding` returns nothing for a process without an agent id and otherwise either a complete binding that a launch of this build could have made or a refusal: it refuses a missing text, an id that is not in the minted form, a role outside the seven AR roles, a relative report path, an unreadable reference, and a set of references that is not exactly the one of the role's class.",
+  "statement": "read_agent_binding returns nothing for a process without an agent id and otherwise requires a complete launch binding: minted UUID identities, one of the seven native roles, an absolute report path, readable canonical references and exactly the reference pattern admitted for that role. The one earlier system-specialist spelling reads as Investigator; its taskless, sprint or sprint/master references must still agree with the recorded selection.",
   "status": "proposed",
   "supersedes": []
 }

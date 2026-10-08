@@ -18,7 +18,7 @@ declared vocabulary is authoritative over the manifest, not the other way round"
 
 **Identity and composition.** The schema is `ar-role-capsule-composition/v1`, the router is `SKILL.md` and the authoritative tree is `skills/`. Native `composition_order` is `role` then `operation`. Canonical task/workspace facts travel as separate handover data.
 
-**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/System Specialist without a synthetic task. `role_order` still retains ten registry roles; native launch support remains the seven current UI roles.
+**Explicit routing and retained vocabulary.** `routing_conditions` has supplied-native-role-binding and manual-taskless-projects-role. The role/operation are explicitly supplied; missing, unsupported, inapplicable or conflicting bindings fail closed rather than selecting a default. Manual taskless Projects selection admits Architect/Investigator without a synthetic task. `role_order` still retains ten registry roles; native launch support remains the seven current UI roles.
 
 **`operations` declares each operation's source and the roles that may run it.** Nine entries —
 orientation, planning, implementation, review, curation, coordination, authorized-closeout, recovery
@@ -108,15 +108,15 @@ that turns these bytes into typed values, the packaging provider that yields the
 manifest together, the source admission that gives the manifest its reserved metadata identity, the
 install-time corpus anchor, and the corpus test that pins the registry wiring.
 
-- The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
-- The retained role registry and the two explicit native routing conditions. [2]
-- The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
+
+
+
 - The retained six-block core map is metadata and is not injected into native role capsules. [4]
-- The role registry itself and the two role entries that show the per-seat shape. [5]
-- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+
+
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [7]
-- The retained launcher metadata is separate from the current explicit native routing conditions. [8]
-- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]
+
+
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [10]
 - The packaging consumer: the manifest is admitted beside its corpus root, and the provider yields root and manifest as one value "because they are one admission". [11]
 - The admission identity rule: the manifest is metadata rather than an instruction block, so it takes the reserved metadata identity and can never collide with a real block identity. [12]
@@ -129,3 +129,21 @@ admitted corpus root, the one skill entry names this repository's own tree as it
 sibling repository or external system is addressed by any key.
 
 No meaningful cross-repo references found.
+
+
+## Current Investigator contract impact
+
+The manifest exposes canonical Investigator among the seven native roles, requests the approved fourteen Investigator reading tools and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [14]
+
+
+## Refreshed current evidence
+
+- The document's identity and authority: the schema name, the authority statement naming the thin router, and the authoritative tree the packaged copies are generated from. [1]
+- The role registry in canonical order and the three routing conditions, including the launcher condition that is not a role. [2]
+- The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
+- The role registry itself and the two role entries that show the per-seat shape. [5]
+- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+- The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [8]
+- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]

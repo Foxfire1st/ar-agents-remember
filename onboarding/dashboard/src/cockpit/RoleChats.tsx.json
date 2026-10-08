@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
         "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,26 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-6WEANN",
+      "invariant": "INV-BS7TH8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "This existing consumer restores and persists scoped request identity and passes it through Result/report, same-ID Retry/Revive and remount.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -57,8 +75,26 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:1f966b049e973dd3aef9da65a221739f8cdebae4b0624f10f24ff59615bd34d5",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsPane"
+        }
+      },
+      "id": "RLZ-A0WKTC",
+      "invariant": "INV-A0240E",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Options executions[] restores the selected request and every Result/Retry/Revive uses that request with the exact document refs.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
         "locator": {
           "kind": "symbol",
           "name": "refreshResult"
@@ -75,8 +111,8 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:0b78196fac2630c0e10609170d931f3efccedabc0dae740f0474a1d34b22841d",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:125cf9e3004c8df5bfb6e6af352ee6cb01b2fd50ffb8c08211d481184cfe83bf",
         "locator": {
           "kind": "symbol",
           "name": "dispatch"
@@ -93,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
         "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
         "content": "sha256:9efe1a22068647d8cc9c4db6fa9076ff5720c3efadb37ad3fecccbec069f5a72",
         "locator": {
           "kind": "symbol",
@@ -129,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -147,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:3f4d0444427aa3c7115cf85b5b81ab66eb1bf32a6916d07eb3182e39fe1c19cd",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:d7de425802b0d7d1d3d543882ce93da62fba1641d55bf19c966c38646dd2e642",
         "locator": {
           "kind": "symbol",
           "name": "fetchExecutionResult"
@@ -165,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
         "locator": {
           "kind": "symbol",
           "name": "RoleChatsPane"
@@ -183,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
-        "content": "sha256:1f966b049e973dd3aef9da65a221739f8cdebae4b0624f10f24ff59615bd34d5",
+        "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+        "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
         "locator": {
           "kind": "symbol",
           "name": "refreshResult"
@@ -200,6 +236,90 @@
       "role": "presentation"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:d7de425802b0d7d1d3d543882ce93da62fba1641d55bf19c966c38646dd2e642",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchExecutionResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:125cf9e3004c8df5bfb6e6af352ee6cb01b2fd50ffb8c08211d481184cfe83bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.\n\nAnchor: `directly shows one persistent Role chats pane without an old-chat selector`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "687739f2806360ba86237450d193083b5d7265bf",
+            "content": "sha256:354df045ac61caedcbb43161ca9ef110b281fec0e848a8682abb0331a7a78e01",
+            "locator": {
+              "end": 959,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

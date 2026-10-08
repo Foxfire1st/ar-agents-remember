@@ -12,7 +12,7 @@
     "Canonical task facts and workspace bindings arrive through the handover as data."
   ],
   "exclusions": [
-    "The manifest vocabulary still retains ten registry roles; the launcher exposes only architect, system-specialist, orchestrator, manager, worker, reviewer and curator.",
+    "The manifest vocabulary still retains ten registry roles; the launcher exposes only architect, investigator, orchestrator, manager, worker, reviewer and curator.",
     "The separately selected legacy ambient launcher and explicitly admitted repository specializations are outside this native launcher contract.",
     "Generated skill mirrors are synchronization outputs, not independently authored obligations."
   ],
@@ -28,7 +28,7 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "The native role launcher composes one explicitly selected supported role source followed by one applicable operation source, keeps canonical task and workspace facts in the separate handover, and injects no shared core block; missing, unsupported, inapplicable or conflicting selection is reported instead of inferred.",
   "status": "proposed",

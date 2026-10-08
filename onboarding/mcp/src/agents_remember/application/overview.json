@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:8b510f1c59eadd633e890f61a89296a725ed091b00c234a65eaec0b9fd4c861e",
             "locator": {
               "kind": "symbol",
@@ -164,39 +164,14 @@
       ]
     },
     "104": {
-      "note": "The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances.",
+      "note": "The launch compiler: the entry point the serving port is bound to, its named refusals, and the two admittances.\n\nAnchor: `compile_launch_capsule`, `_compile_admitted_task`, `_compile_free_agent`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:94ef94afb0a6a6128e715b739879a01c9354cd0b387000a138a7c7aed49f9fbb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_compile_admitted_task"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:2a6f60890b1a5db817dc40a890f53793501c4e63583ef73f38113ec37691a260",
-            "locator": {
-              "kind": "symbol",
-              "name": "_compile_free_agent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -205,15 +180,14 @@
       ]
     },
     "105": {
-      "note": "The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it.",
+      "note": "The eve carrier path, which materializes L7's carrier and reads the admitted workspace back out of it.\n\nAnchor: `_compile_eve_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:f16a829e3f81bb42b19c7fc4fd329ea0c03841548d5f4476abf13e34d676a3cc",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
             "locator": {
-              "kind": "symbol",
-              "name": "_compile_eve_task"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -226,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
             "content": "sha256:3b059a3855ffd0825fab4d4ff4223ac06d5c959ef18a8891443beb5b2622a33e",
             "locator": {
               "kind": "symbol",
@@ -238,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
             "content": "sha256:6515eaffe3e40642432dbe2c48035818502c2d877a3871353364ce7ee3856e18",
             "locator": {
               "kind": "symbol",
@@ -250,7 +224,7 @@
         },
         {
           "anchor": {
-            "blob": "54ee3859836acd02b1f620167a1a3a40a194176d",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
             "content": "sha256:8be3cd340cd462f44b5ad7be88d5d48f83a79fcc78e8800da01e41e774a56708",
             "locator": {
               "kind": "symbol",
@@ -267,7 +241,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:d894e33e9c1370fad5e1185ba814b7e379c6b8c4663f2eb16319d755f40aaaf6",
             "locator": {
               "kind": "symbol",
@@ -279,7 +253,7 @@
         },
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:2bb1b1020f6a676b875c0ed002574c7c443705a92f4b99021d8b6abe85221341",
             "locator": {
               "kind": "symbol",
@@ -291,7 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
             "content": "sha256:5bed559e8479c86803e25281d571dde89ee4cbc1e039ab0945dc899eeb27768b",
             "locator": {
               "kind": "symbol",
@@ -304,39 +278,14 @@
       ]
     },
     "108": {
-      "note": "The seat-addressed routing rule and its address type, for a caller with no task document.",
+      "note": "The seat-addressed routing rule and its address type, for a caller with no task document.\n\nAnchor: `CapsuleSeatAddress`, `routed_admission_for`, `routed_admission_request`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:a72993a1f642f47a8445a8cb32389440f5fb220c1d4d771763a2da49f1e209ef",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "content": "sha256:56ca123ffd3d27fe5b12e16460c77abfc7f91b55b1ef573d4c01e2cff1cba15f",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleSeatAddress"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:4b7ba4689b56507f70c5d55a82df8bbe6965ad4e6f484bd7a0a551cf1d5a8fd6",
-            "locator": {
-              "kind": "symbol",
-              "name": "routed_admission_for"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:70a059c5db100360ca2b2701934c524500b3002805425f09381d703bc1a9be8a",
-            "locator": {
-              "kind": "symbol",
-              "name": "routed_admission_request"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },
@@ -462,7 +411,7 @@
         },
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -523,15 +472,14 @@
       ]
     },
     "114": {
-      "note": "`TOOL_RESPONSE_MODELS` is the registry of public response models.",
+      "note": "`TOOL_RESPONSE_MODELS` is the registry of public response models.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
+            "content": "sha256:f25ed1473e8eeae427e8808c43c6226a85ce04d65d531b4b2c5fbcd49d76ffae",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -1157,15 +1105,14 @@
       ]
     },
     "137": {
-      "note": "The capsule surface this package consumes and does not re-implement.",
+      "note": "The capsule surface this package consumes and does not re-implement.\n\nAnchor: `compile_task_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "content": "sha256:56ca123ffd3d27fe5b12e16460c77abfc7f91b55b1ef573d4c01e2cff1cba15f",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_task_capsule"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },
@@ -1203,27 +1150,14 @@
       ]
     },
     "139": {
-      "note": "The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits.",
+      "note": "The production caller the produce side gained: an eve launch through the wired launch points materializes this carrier, and the launch runs in the workspace the carrier admits.\n\nAnchor: `_compile_eve_task`, `compile_launch_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:f16a829e3f81bb42b19c7fc4fd329ea0c03841548d5f4476abf13e34d676a3cc",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
             "locator": {
-              "kind": "symbol",
-              "name": "_compile_eve_task"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
-            "locator": {
-              "kind": "symbol",
-              "name": "compile_launch_capsule"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -1277,7 +1211,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "323bcc000c7de5fdb4d490b25e8660776d60f44f",
+            "blob": "fd4bfaa2951ad9ceca924016f78a0355bc0928c1",
             "content": "sha256:a1ef47a23cedb547006773ea368f895e24fcb22dacc3fb680b78d97ac8036808",
             "locator": {
               "kind": "symbol",
@@ -4283,39 +4217,14 @@
       ]
     },
     "23": {
-      "note": "**The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.**",
+      "note": "**The labelled Git inference: the exact command, the three states, and the sentence that says it is not proof that the invariant moved.**\n\nAnchor: `git_rename_inference`, `with_rename_inferences`, `_inference_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "6016565e284e282315633f7db6d912607704e320",
-            "content": "sha256:4cebc86542ba1278f27277b2677002aeff910aae6e8b46ee23d69a514b7b0002",
-            "locator": {
-              "kind": "symbol",
-              "name": "git_rename_inference"
-            },
-            "path": "mcp/src/agents_remember/application/review_rename_inference.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "17ac6686b5f511b091e954e2929a90334ec49309",
-            "content": "sha256:43358735529d08cb31e6bd9b559c4b0a3915ea0078c045a2a93ced1c580cee6f",
+            "content": "sha256:5bf5666b56e87578904e764079549d1a1cbee5b12f9a59dc0f4bf4764a345150",
             "locator": {
-              "kind": "symbol",
-              "name": "with_rename_inferences"
-            },
-            "path": "mcp/src/agents_remember/application/review_rename_inference.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "17ac6686b5f511b091e954e2929a90334ec49309",
-            "content": "sha256:b8ff625360852394cfb2683045a386d054f709a63bb01bfa0c1841f134d0bb75",
-            "locator": {
-              "kind": "symbol",
-              "name": "_inference_for"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_rename_inference.py"
           },
@@ -4475,28 +4384,14 @@
       ]
     },
     "236": {
-      "note": "The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving.\n\nAnchor: `resolve_review_candidate`",
+      "note": "The adapter's re-export of the sibling surface, which is what keeps the ingest CLI's import resolving.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:fbde7c98eafb8b902e303a3eccce22a4ab2d4933e5ee2a5a33b10a5e5f9a1d8a",
+            "blob": "75a68c3874ea545bd49e863046a120e320587404",
+            "content": "sha256:97396121b7df4c65af415335a56da737391e69a58d5584972734a1cdb9a5c94b",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b21bd35a77a3f557ff52f1d642c342f1e23e05b1",
-            "content": "sha256:6f9d38fc6961dc6ae06dda385487ba194a5b9b9b926158d42b02c9afa7f00f51",
-            "locator": {
-              "end": 129,
-              "kind": "line_range",
-              "start": 49
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -4645,78 +4540,14 @@
       ]
     },
     "240": {
-      "note": "**The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**",
+      "note": "**The named states the route answers with, and the guard that makes \"never silently select another repository\" a verified fact.**\n\nAnchor: `resolve_published_intent`, `_absence_state`, `_authority_mismatch`",
       "targets": [
         {
           "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:e07a36d9636237d7159935ddee807a32cc372ff323ebddd11e37ad0857e4d981",
+            "content": "sha256:502e8cd412225797a8431716e66ab1d10633f544767e7e17d5a9193475b9a619",
             "locator": {
-              "kind": "symbol",
-              "name": "_absence_state"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:13484540acfd4419039caed76414ebef3c9f81840187d82c9df7e9b63744ac7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_authority_mismatch"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:36692d6da88577c46bd0b45b9886806d0c1dcb704b5d475e1127aac242e3bddc",
-            "locator": {
-              "end": 273,
-              "kind": "line_range",
-              "start": 249
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:9f5ea27af7db0b6e8edc4a8f00497457347a7c3b34be8a02d044688f4c223db3",
-            "locator": {
-              "end": 623,
-              "kind": "line_range",
-              "start": 606
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:49826eefc7819c5b77fa594db36c4107480c8adced6cb51f4f61ffc37657dbfa",
-            "locator": {
-              "end": 408,
-              "kind": "line_range",
-              "start": 391
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -4842,39 +4673,14 @@
       ]
     },
     "245": {
-      "note": "**The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.**",
+      "note": "**The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks.**\n\nAnchor: `tree_difference_observation`, `_RAW_ARGS`, `_NUMSTAT_ARGS`",
       "targets": [
         {
           "anchor": {
             "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "content": "sha256:093d02b89751940d23f2e5609d7af4b2542e1911c06f4f4c973b41a34031a905",
             "locator": {
-              "kind": "symbol",
-              "name": "tree_difference_observation"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9201180e0f53a31ff51a06a555be68bd61f0269",
-            "content": "sha256:260ee5979d92d38e007b522ad8e74e29f5d58819ef36cc736ec4fd09debe8365",
-            "locator": {
-              "kind": "symbol",
-              "name": "_RAW_ARGS"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:3d6d2f3013796a862b5e3f02b934d64788226609825837f74a75f1fe94b96ada",
-            "locator": {
-              "kind": "symbol",
-              "name": "_NUMSTAT_ARGS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_inventory.py"
           },
@@ -5246,15 +5052,14 @@
       ]
     },
     "252": {
-      "note": "**The comparison's expansion seam is a delegation, so this route has one implementation of \"what did these two trees change\".**",
+      "note": "**The comparison's expansion seam is a delegation, so this route has one implementation of \"what did these two trees change\".**\n\nAnchor: `git_tree_difference_probe`, `tree_difference_observation`, `_RAW_ARGS`",
       "targets": [
         {
           "anchor": {
             "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "content": "sha256:af6da8fe946d7ee3a0c004c9ea2ff096df2b4890c41617511260e12bf1a27327",
             "locator": {
-              "kind": "symbol",
-              "name": "git_tree_difference_probe"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_diff.py"
           },
@@ -5263,22 +5068,9 @@
         {
           "anchor": {
             "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
+            "content": "sha256:093d02b89751940d23f2e5609d7af4b2542e1911c06f4f4c973b41a34031a905",
             "locator": {
-              "kind": "symbol",
-              "name": "tree_difference_observation"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9201180e0f53a31ff51a06a555be68bd61f0269",
-            "content": "sha256:260ee5979d92d38e007b522ad8e74e29f5d58819ef36cc736ec4fd09debe8365",
-            "locator": {
-              "kind": "symbol",
-              "name": "_RAW_ARGS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_inventory.py"
           },
@@ -5471,15 +5263,14 @@
       ]
     },
     "260": {
-      "note": "The default bundle binds the knowledge validator.",
+      "note": "The default bundle binds the knowledge validator.\n\nAnchor: `build_default_worktree_services`, `GitKnowledgeValidation`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "content": "sha256:7a35b550d87e76387d2812970bac5f6126c50c72b5215b8a1aecb8ae849159f5",
             "locator": {
-              "kind": "symbol",
-              "name": "build_default_worktree_services"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -5488,10 +5279,9 @@
         {
           "anchor": {
             "blob": "a52aa99aebea9ba312a6db34a62c6c34e5090d67",
-            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
+            "content": "sha256:37fc71f8eed68334e1fb9cfdd54f6291364f45a0c8cb3363246e47cd152cdc59",
             "locator": {
-              "kind": "symbol",
-              "name": "GitKnowledgeValidation"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
           },
@@ -5814,15 +5604,14 @@
       ]
     },
     "272": {
-      "note": "The composition binds the base converter and the crossing.",
+      "note": "The composition binds the base converter and the crossing.\n\nAnchor: `build_default_worktree_services`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "0307d968914d6162c8095e83b37440ff563477ed",
+            "content": "sha256:7a35b550d87e76387d2812970bac5f6126c50c72b5215b8a1aecb8ae849159f5",
             "locator": {
-              "kind": "symbol",
-              "name": "build_default_worktree_services"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_services.py"
           },
@@ -6207,15 +5996,14 @@
       ]
     },
     "289": {
-      "note": "The closeout validator's dispatch.\n\nAnchor: `leaf_onboarding_trace_sides`",
+      "note": "The closeout validator's dispatch.\n\nAnchor: `_realize_prepared_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc2cb5add5d61bc7de2f6131b10fe4251dbfb324",
-            "content": "sha256:05f47f5d88d4415b2d8d45beeddbc6ca77fc2db3062065c8b619637c82ca0fd9",
+            "blob": "f7b59934d4c1a98bbc511a7df67311083ace2c01",
+            "content": "sha256:7494f3c8cf972e800e6d9961701941d4095eb322b4ccabb88de8209daa99e4c2",
             "locator": {
-              "kind": "symbol",
-              "name": "_realize_prepared_memory"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/prepared_certification.py"
           },
@@ -8748,8 +8536,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84d163b322d5ed15c4a1268c54b445ff6b83dab8",
-            "content": "sha256:0f72fc45a6516577d475df8f0627f5ea1c622b17847875d49496a87cda266863",
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
             "locator": {
               "kind": "file"
             },
@@ -8809,15 +8597,14 @@
       ]
     },
     "390": {
-      "note": "Joining a computation in flight; the bound applies only to a new one.",
+      "note": "Joining a computation in flight; the bound applies only to a new one.\n\nAnchor: `_join`",
       "targets": [
         {
           "anchor": {
-            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-            "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+            "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+            "content": "sha256:3d1dc8f57c09cc210b22393e5d58ddee1426c2df98bb4f07804e236b23a78914",
             "locator": {
-              "kind": "symbol",
-              "name": "_join"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
           },
@@ -8894,15 +8681,14 @@
       ]
     },
     "395": {
-      "note": "Recorded rows are rechecked with path selections first.",
+      "note": "Recorded rows are rechecked with path selections first.\n\nAnchor: `changed_observations`",
       "targets": [
         {
           "anchor": {
-            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
-            "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:b90c0bd2ed41e0964ad329cc48e9fec1be531b7698d388df2ea8b0330acc2d93",
             "locator": {
-              "kind": "symbol",
-              "name": "changed_observations"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
@@ -8928,15 +8714,14 @@
       ]
     },
     "397": {
-      "note": "One pin: the same tree is success, another tree is refused, a held lock is retried.",
+      "note": "One pin: the same tree is success, another tree is refused, a held lock is retried.\n\nAnchor: `_create_pin`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6be25fd8ae64b86004f4bdf43cb0b23b50d6e4c",
-            "content": "sha256:edebee0b02d373e6fb29160dd1f042c38f31ad35f027af6a106eade5c15801b9",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:e37c2fcd2cae532495fdab6e7aa3f400140937e7c9cebac50543ba20c055efe5",
             "locator": {
-              "kind": "symbol",
-              "name": "_create_pin"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
@@ -9064,11 +8849,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
             "locator": {
-              "kind": "symbol",
-              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -9081,11 +8865,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -9094,15 +8877,14 @@
       ]
     },
     "404": {
-      "note": "A killed dashboard takes the child and its Git process with it.",
+      "note": "A killed dashboard takes the child and its Git process with it.\n\nAnchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -9111,15 +8893,14 @@
       ]
     },
     "405": {
-      "note": "Four concurrent first reads answer alike from one child.",
+      "note": "Four concurrent first reads answer alike from one child.\n\nAnchor: `test_four_concurrent_first_reads_answer_alike_from_one_child`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
             "locator": {
-              "kind": "symbol",
-              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -9179,15 +8960,14 @@
       ]
     },
     "409": {
-      "note": "The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept.",
+      "note": "The leaf-wide parts: memo, one recorded computation, one more when an input moved, then the inputs_changing refusal; a process failure is refused and not kept.\n\nAnchor: `_leaf_wide_parts`",
       "targets": [
         {
           "anchor": {
-            "blob": "943c2a1708748f416dcd9a5393b6fd1f7c0601b0",
-            "content": "sha256:362ddd25ba17ddcd8e76cbd474b701df3bbc02a7765b32c76a034765687615c4",
+            "blob": "4da7ae4b0b7fef8d26bf4f0e5f6fb149b0315dc2",
+            "content": "sha256:d70330b299a97d51f9081ad9eb2b094e89dd910e64cf7db99cdeb778a1ed5e62",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_wide_parts"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
@@ -9300,6 +9080,40 @@
               "start": 53
             },
             "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "414": {
+      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
+            "content": "sha256:69e49257e946e8a21a958b997c56d5b18891f38402a544642d7efcb4514a0dcd",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/role_launch_context.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "415": {
+      "note": "Current imported source owns this scoped route boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
+            "content": "sha256:f1ca31a4d002efaa16615dd983d5bc8cda89fe6b59ba3b56359948f548f09c33",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/agent_binding.py"
           },
           "kind": "code"
         }
@@ -9499,39 +9313,14 @@
       ]
     },
     "47": {
-      "note": "**The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.**",
+      "note": "**The new production owner: the five collections plus the non-measurement, each read through its owner with its availability fact.**\n\nAnchor: `review_records_for`, `review_records_for_resolution`, `_COLLECTION_OWNERS`",
       "targets": [
         {
           "anchor": {
-            "blob": "455af2665c9619069121029e08150f5c23d205b4",
-            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
-            "content": "sha256:b88625a4dc6b405dbc35cef0068cf749e39f876385d589528db1da47715f92a8",
+            "content": "sha256:d281d3dc87921a2bea7932c1340a88ac34a26b5ac86f7f99d281918387e7b552",
             "locator": {
-              "kind": "symbol",
-              "name": "review_records_for_resolution"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
-            "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_COLLECTION_OWNERS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
@@ -9668,15 +9457,14 @@
       ]
     },
     "51": {
-      "note": "**The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.**\n\nAnchor: `review_records_for`",
+      "note": "**The adapter that lost the private resolver and re-exports the owner's, and the port the production app reads it through.**\n\nAnchor: `review_port`",
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:b6b5dba20c73bf1657b4b0be86d099ad1a7df00c95c6a3ebe62bced45e3e72aa",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:603f4e9333320466b46ba8d2bfd5d942f5c11117cea406d08bc7618ceb2c1b47",
             "locator": {
-              "kind": "symbol",
-              "name": "review_port"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -9685,11 +9473,9 @@
         {
           "anchor": {
             "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:f78438af62f0beadad9c301b70492e5e7270dc509e52b497435fcd32da7430cc",
+            "content": "sha256:97396121b7df4c65af415335a56da737391e69a58d5584972734a1cdb9a5c94b",
             "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 100
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -9879,39 +9665,14 @@
       ]
     },
     "57": {
-      "note": "**The pane that reads the partition instead of recomputing it, with every count scoped or reasoned.**",
+      "note": "**The pane that reads the partition instead of recomputing it, with every count scoped or reasoned.**\n\nAnchor: `source_pane`, `attribution_limitations`, `_remaining`",
       "targets": [
         {
           "anchor": {
             "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:3a35142890c33e753154817847fd5d5c62b932f490645573c8777ac756b4e99f",
+            "content": "sha256:093d02b89751940d23f2e5609d7af4b2542e1911c06f4f4c973b41a34031a905",
             "locator": {
-              "kind": "symbol",
-              "name": "source_pane"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:817d62c4cf3f97716fb6aca882db0bdcef144a1c1bfd6f04717985327cac8a3c",
-            "locator": {
-              "kind": "symbol",
-              "name": "attribution_limitations"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9201180e0f53a31ff51a06a555be68bd61f0269",
-            "content": "sha256:f157ee987bbbe7836efa6fde0dd2fa125986a01937f06c955afb544605f6c971",
-            "locator": {
-              "kind": "symbol",
-              "name": "_remaining"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_inventory.py"
           },
@@ -10043,52 +9804,14 @@
       ]
     },
     "60": {
-      "note": "**The one-rename publication, the convergence on an already-published record, and the reclaim paths that leave no stage and no unpublished pin.**",
+      "note": "**The one-rename publication, the convergence on an already-published record, and the reclaim paths that leave no stage and no unpublished pin.**\n\nAnchor: `_publish`, `_reuse_or_refuse`, `_reclaim`",
       "targets": [
         {
           "anchor": {
             "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:1d1b574cb499a30c7dd0e1b7b91a2bd628901005331e7d80cf65c53e31fa3276",
+            "content": "sha256:040f50f77fb79fedbda148960f6638f68f8fec0ec8ddd00d2f75258d6544c93c",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:5aa1958a680fc2449304442807c291e05123730f890e7e6676ccd17ec801160f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reuse_or_refuse"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7f8632ed58fd13140ba8fb78dc33dfac2f12df94",
-            "content": "sha256:c59b89dad9af1a79e69c7eef21269f0832904e44dc27e14b816f862a8cf733dd",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reclaim"
-            },
-            "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9baa903836c03eec271bb657e854b9c5a724318a",
-            "content": "sha256:35f06aaed0ca82c1f2ea6f5a5b70f925d99d0bae595906aed7a7ad9e570b66c1",
-            "locator": {
-              "end": 429,
-              "kind": "line_range",
-              "start": 367
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_comparison_freeze.py"
           },
@@ -10741,65 +10464,14 @@
       ]
     },
     "78": {
-      "note": "The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged.",
+      "note": "The declaration this module resolves against, and the reader's owner the read-back goes through — both reused unchanged.\n\nAnchor: `published_dataset_path`, `resolve_published_intent`, `PUBLISHED_DATASET_NAME`",
       "targets": [
         {
           "anchor": {
             "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "content": "sha256:502e8cd412225797a8431716e66ab1d10633f544767e7e17d5a9193475b9a619",
             "locator": {
-              "kind": "symbol",
-              "name": "published_dataset_path"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cd2dea47f4656356861ff6ee5742f8762eac9429df94c7868a7102ebc0de1930",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLISHED_DATASET_NAME"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:d94b8560cb2dcb79546d66a21bad36db65df188277459791482aa3ad1c165015",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 160
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 147,
-              "kind": "line_range",
-              "start": 147
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -11188,15 +10860,14 @@
       ]
     },
     "89": {
-      "note": "The new argument, and the invocation refusal that fires before the contract is read.\n\nAnchor: `--rebase-baseline`",
+      "note": "The new argument, and the invocation refusal that fires before the contract is read.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "115f1305ebcde5ed26ed1c12a1ee846998fdebc4",
-            "content": "sha256:37085a4abd8da3bfb3a83ea4742794ace9fe577d7273a5e9e9259123a38fe62e",
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:29976faa9a7fa519b6e6313a1052fed8cb5da6187f42435dcfa00e70393f56ed",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -11640,27 +11311,14 @@
       ]
     },
     "99": {
-      "note": "The capsule operation's four refusal-capable steps, each returning a value rather than raising.",
+      "note": "The capsule operation's four refusal-capable steps, each returning a value rather than raising.\n\nAnchor: `compile_task_capsule`, `CapsuleCompileOutcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "content": "sha256:56ca123ffd3d27fe5b12e16460c77abfc7f91b55b1ef573d4c01e2cff1cba15f",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_task_capsule"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:148ccdc25c930326ea0a87fda84c78b9a655d10fd52a4a76c60b3e65c6b81857",
-            "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompileOutcome"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },

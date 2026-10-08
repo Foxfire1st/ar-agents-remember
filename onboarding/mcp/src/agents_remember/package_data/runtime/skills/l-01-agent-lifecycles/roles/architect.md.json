@@ -1,6 +1,22 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md",
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f9b2f60cc7bd50bde5d9b6c0800938f56943322",
+            "content": "sha256:6931c760b8fd2e788ffd552539d4905466c01f2fdffab9e66e97ada5085b1ee2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

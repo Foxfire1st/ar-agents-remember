@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
         "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
-        "content": "sha256:375df697b31c64eeca346c9dabe5a6ece252fdb57ce50d1c9244109d630855f4",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "content": "sha256:586dcdf53c397c10296da81a6d4c524a9492bf0a01a7c2e35f3f0034c0b0cdf5",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
-        "content": "sha256:375df697b31c64eeca346c9dabe5a6ece252fdb57ce50d1c9244109d630855f4",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "content": "sha256:586dcdf53c397c10296da81a6d4c524a9492bf0a01a7c2e35f3f0034c0b0cdf5",
         "locator": {
           "kind": "symbol",
           "name": "_compile_handover"
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
         "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
         "locator": {
           "kind": "symbol",
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
         "content": "sha256:a3d7a97f320d80d5444f516b79094467bf76db8e2b049ee68ae0dddb4ca54bb7",
         "locator": {
           "kind": "symbol",
@@ -93,7 +93,43 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "content": "sha256:928d9454d113bea6db778ef9f9f9520800a68db93168be0fc33d5e65099a5f81",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_assignment"
+        }
+      },
+      "id": "RLZ-HASECY",
+      "invariant": "INV-A8E0YE",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §5",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The actual started_by value selects the handover concern channel.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+        "content": "sha256:a34b86de18759d4d0b8be0def80ca7c638f2f37cff046e23af4a8f36e971b765",
+        "locator": {
+          "kind": "symbol",
+          "name": "_role_report_path"
+        }
+      },
+      "id": "RLZ-HT65KW",
+      "invariant": "INV-VZJRTM",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §8",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The report owner binds a selected task’s notes and request UUID.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
         "content": "sha256:a22825664b51defd28eec8a582fb0e965eb88368f049472166db4e2d8324a82b",
         "locator": {
           "kind": "symbol",
@@ -111,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+        "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
         "content": "sha256:bd8af18ca2eff8d6a7662ba658b40e59544148e37db473109d111c57587f7e4f",
         "locator": {
           "kind": "symbol",
@@ -134,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+            "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
             "content": "sha256:7d46fe74bd30e9d8dea0f35c71b38ff1489d500369e03615c1b7545f9503d3d0",
             "locator": {
               "kind": "symbol",
@@ -150,7 +186,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf52d03ef826faf5c5c0e5a24a8662b7a7fc6507",
+            "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
             "content": "sha256:ccc44177e1d12dd63e0f1295ddff48791c1fa44598ac39a5577e663d467bc6d9",
             "locator": {
               "kind": "symbol",
@@ -179,16 +215,14 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of the narrow parented-coordinator handover values.\n\nAnchor: `developerQuestions`",
+      "note": "Frozen implementation of the narrow parented-coordinator handover values.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1456d0586798eef368246bf8253a88f669b8eb3",
-            "content": "sha256:c874fdeea61d9c979f199e237bf4a072c7b0238f813f72e3b250270e2195a7d4",
+            "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+            "content": "sha256:f69c563974618717132802f716045d1058a8a9a22652d2565f5a3d4468d2d2ed",
             "locator": {
-              "end": 465,
-              "kind": "line_range",
-              "start": 455
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -196,16 +230,14 @@
       ]
     },
     "5": {
-      "note": "Checks reuse, explicit refresh and changed daemon home in the key.\n\nAnchor: `LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers`",
+      "note": "Checks reuse, explicit refresh and changed daemon home in the key.",
       "targets": [
         {
           "anchor": {
-            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
-            "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+            "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
+            "content": "sha256:dcf05c8fa3dbc4abd0e55ac522920d0748c1eed801dc12be4777c303c3e901df",
             "locator": {
-              "end": 224,
-              "kind": "line_range",
-              "start": 177
+              "kind": "file"
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -246,6 +278,23 @@
             "path": "mcp/tests/test_paseo_status.py"
           },
           "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd77ddbc02a7e4cd350b49dd61d06268c62be4f7",
+            "content": "sha256:f69c563974618717132802f716045d1058a8a9a22652d2565f5a3d4468d2d2ed",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
         }
       ]
     }

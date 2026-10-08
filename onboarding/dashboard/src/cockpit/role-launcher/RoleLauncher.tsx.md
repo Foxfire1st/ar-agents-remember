@@ -17,4 +17,15 @@ The extracted role launcher: one row of controls that fills or accepts a selecti
 - A bound row decides startability from the bound role, the live occupant and the canStart answer. [1]
 - Bound mode omits the reference fields the selection already determines. [2]
 - The row is one control strip that can carry the preparation line. [3]
+
+## Investigator scope and request identity
+
+Ordinary singleton and Projects bound rows still adopt an open request and disable a second start. Selected sprint/master Investigator rows may start another per-request execution under backend capacity admission; existing uncertainty still preserves the exact request for Retry. The exception changes receipt cardinality without adding controls, execution prose, report navigation or primary-chat replacement.
+
+
+- The current source implements this file’s stated Investigator boundary. [5]
+
+
+## Refreshed current evidence
+
 - The exported launcher renders controls, progress and the single failure line for both hosts. [4]

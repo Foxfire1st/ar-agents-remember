@@ -3,15 +3,31 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Frozen implementation of register_role_agent_tools supporting the stated file behavior.",
+      "note": "Frozen implementation of register_role_agent_tools supporting the stated file behavior.\n\nAnchor: `register_role_agent_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "21118170675b12fc1f4fcbc418a63db68c0c0ec1",
-            "content": "sha256:a9225eecafc15837fe82b52d27d1a0e48487a9183e0a767a528112a1b9bd963a",
+            "blob": "376d0f3b5c0248d94e11bdb05977acd6d52b61c3",
+            "content": "sha256:930c9fc6a71ff2a85c4f024b7721851938a53a37214c85646c0920727e4be234",
             "locator": {
-              "kind": "symbol",
-              "name": "register_role_agent_tools"
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "376d0f3b5c0248d94e11bdb05977acd6d52b61c3",
+            "content": "sha256:930c9fc6a71ff2a85c4f024b7721851938a53a37214c85646c0920727e4be234",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

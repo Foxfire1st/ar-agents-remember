@@ -1,8 +1,5 @@
 # skills/l-01-agent-lifecycles/roles
 
-| Field | Value |
-| --- | --- |
-| sourceRoute | `skills/l-01-agent-lifecycles/roles` |
 
 ## The curator's converted-memory steps (260928-MIK-L37)
 
@@ -12,7 +9,7 @@ curator follows the c-05 skill's converted-card workflow, in which a card's evid
 change is answered by an `onboarding_trace` row. Process step 3: `agents-remember knowledge-ingest` is then the
 file writer, writes files in the leaf's memory worktree and publishes no dataset. No other role file changed.
 
-- The curator's converted-card step. [17]
+
 - The curator's file-writer step. [18]
 
 
@@ -44,7 +41,6 @@ copy and the eight harness starter copies are synced by `sync-skills.py`.
 
 The curator role requires explicit stored membership IDs and authored bases when retaining unchanged siblings in a justified family successor. It preserves each existing invariant revision and checks the ordinary published roster. The role’s code, task-state and Git prohibitions remain unchanged.
 
-- The curator process carries exact retained-sibling authoring and readback. [3]
 
 ## Curator authors a rationale for every realization target (260921-ICR-L45)
 
@@ -163,9 +159,9 @@ deleted, and now pinned by a case that reads the refusal's own detail.
 
 ## Purpose
 
-This route owns one canonical file per role. The current native launcher exposes seven roles: Architect, System Specialist, Orchestrator, Manager, Worker, Reviewer and Curator. Other registry files remain in the corpus without becoming launchable through this path. Each delivered native capsule contains its selected role followed by one applicable operation, while canonical task/workspace facts arrive separately in the handover; the retained shared core is not injected.
+This route owns one canonical file per role. The current native launcher exposes seven roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer and Curator. Other registry files remain in the corpus without becoming launchable through this path. Each delivered native capsule contains its selected role followed by one applicable operation, while canonical task/workspace facts arrive separately in the handover; the retained shared core is not injected.
 
-Architect owns the developer’s semantic conversation and, for work inside one master, first hands coordination to one Manager on that master; when two or more masters are worked on at the same time one Orchestrator on the sprint starts one Manager per master. Direct coordination by the Architect and an Orchestrator above a single master are the developer’s explicit choices. Worker, Reviewer and Curator use the selected paired leaf scope. Architect and System Specialist may start manually without task references and ask only for missing scope; separate repository-foundation admissions keep their own contract.
+Architect owns the developer’s semantic conversation and, for work inside one master, first hands coordination to one Manager on that master; when two or more masters are worked on at the same time one Orchestrator on the sprint starts one Manager per master. Direct coordination by the Architect and an Orchestrator above a single master are the developer’s explicit choices. Worker, Reviewer and Curator use the selected paired leaf scope. Architect and Investigator may start manually without task references and ask only for missing scope; separate repository-foundation admissions keep their own contract.
 
 Worker implements the approved leaf and leaves code uncommitted. Reviewer examines the complete requested candidate, exact requirement evidence and sealed findings independently. Curator preserves MIK’s converted writer, authored scope/rationale, exact families/siblings, full normal MQC/coherence and comparison evidence. Native host language changes no owner’s review, curation or paired-Git duty. Dated L1/L22 structure and L10 token measurements remain historical candidate facts, not descriptions or measurements of this current route.
 
@@ -252,7 +248,7 @@ canonical architect-brief template; an explicit developer-declared task-seat tak
 targets the named role at its canonical altitude in the same ambient mode. Once hosted, architect,
 orchestrator, and manager start and reach eligible roles with native `role_start` and `role_message`
 and only their documented direct-child scope.
-Strategist, designer, worker, reviewer, curator, and system-specialist are target-only roles. The
+Strategist, designer, worker, reviewer, curator, and investigator are target-only roles. The
 role-table tool rows document bound capability, not settings keys. Plane authorization
 failures never retry as ambient launches. Native sub-agents work inside the seat's assignment with its permissions and working folder; the seat organises their work, verifies and credits it, and performs all boundary acts itself. They hold no AR seat, start no role and cannot supply independent review of their author; they never become AR role seats.
 
@@ -291,12 +287,12 @@ Each role card now carries the same conditional question channel: parent first w
 
 ### Repo-Internal References
 
-- The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. [9]
-- Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
-- Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
-- The shared registry enumerates every remaining role file. [12]
-- Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
-- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. [14]
+
+
+
+
+
+
 - The strategist lifecycle makes topology an explicit choice and refuses an unreasoned default. [15]
 
 Current working-candidate evidence for this route:
@@ -425,10 +421,9 @@ frozen tip.
 
 - Sprint coordination above one Manager per master and separate evidence. [21]
 
-- Bound uncommitted Worker duty. [22]
-- Independent exact assigned review and sealed findings. [23]
-- Bound and preserved normal Curator duties. [24]
-- Taskless real concern and report-first remediation. [25]
+
+
+
 
 ## Retained pre-import corpus account and measurements
 
@@ -503,3 +498,25 @@ sources named in `## Inputs`, and every other tree generated from it by `scripts
 - No role absorbs lifecycle machinery, memory duty, or gate authority assigned to another role.
 - Terminal/finalizer truth and durable artifacts, not model completion posts, signal completion.
 - No role may collapse per-requirement evidence into an aggregate completion claim.
+
+## Investigator concern and selection boundary
+
+Investigator handles one concern of any kind in Projects, a selected sprint or a selected sprint/master scope. Architect, Orchestrator and Manager start it only within their admitted containment. A leaf can be named in the concern but is never its selected start scope. Checks use scratch or the tooling sandbox; code, memory and task changes remain with Worker or Curator. Selected-task requests keep separate UUIDs under the complete eight-open budget and preserve the primary coordinator. The one earlier role spelling remains a read alias, and historical rulings retain their original words.
+
+- The canonical role owns this concern and mutation boundary. [27]
+
+
+## Refreshed current evidence
+
+- The curator process carries exact retained-sibling authoring and readback. [3]
+- The curator owns affected onboarding and admitted knowledge authoring, with full diagnostics and a structured handoff; source code, task and lifecycle writes stay outside the seat. [9]
+- Manager is one master-scoped owner of the builder/reviewer/curator closeout chain. [10]
+- Worker is one leaf-scoped builder whose terminal artifact is the turn report. [11]
+- The shared registry enumerates every remaining role file. [12]
+- Worker and reviewer roles define the two independent halves of per-ID acceptance. [13]
+- The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. [14]
+- The curator's converted-card step. [17]
+- Bound uncommitted Worker duty. [22]
+- Independent exact assigned review and sealed findings. [23]
+- Bound and preserved normal Curator duties. [24]
+- Taskless real concern and report-first remediation. [25]

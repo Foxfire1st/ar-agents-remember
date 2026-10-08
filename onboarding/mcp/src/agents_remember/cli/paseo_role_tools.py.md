@@ -18,11 +18,11 @@ Four `nextAction` remedies that still leave the message transportable (`_archive
 
 ## Evidence
 
-- Frozen implementation of start_rule_violation supporting the stated file behavior. [1]
+
 - Frozen implementation of _start_role supporting the stated file behavior. [2]
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
-- Checks all 49 caller/target pairs against exact table. [4]
-- Checks own orchestrator sprint and manager sprint/master binding containment. [5]
+
+
 - Checks foreign IDs and self-addresses are refused. [6]
 - Checks live taskless-role ambiguity reports IDs and sends no message. [7]
 - Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent. [8]
@@ -35,3 +35,22 @@ A `RolePreparationError` cause is projected into the `launch-refused` answer wit
 The role-start host remedies now name the install step where the host is not installed and the one start where it is down, so an agent started by a dashboard without a reachable host is told the same thing the dashboard line says.
 
 - The host-unreachable remedy that names the install step and the one start. [9]
+
+## Investigator scope and request identity
+
+Architect, Orchestrator and Manager may start Investigator only within their admitted Projects/sprint/master containment; Investigator, Worker, Reviewer and Curator start no role. A role-addressed selected Investigator is resolved against the complete open request set, with exact IDs in an ambiguity refusal. A message that would start a new turn on a completed selected-task Investigator enters the shared selection capacity owner before send/resume; steering an already open execution keeps its slot. Host wait remains outside that short admission operation.
+
+
+- The current source implements this file’s stated Investigator boundary. [10]
+
+
+## Refreshed current evidence
+
+- Frozen implementation of start_rule_violation supporting the stated file behavior. [1]
+
+
+
+## Refreshed current evidence
+
+- Checks all 49 caller/target pairs against exact table. [4]
+- Checks own orchestrator sprint and manager sprint/master binding containment. [5]

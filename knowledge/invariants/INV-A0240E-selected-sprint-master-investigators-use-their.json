@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "The dashboard’s selected sprint/master Investigator request.",
+  "conditions": [
+    "The persisted request UUID is restored and supplied with full document references for Result/report, Retry and Revive.",
+    "Remount retains that selection even if a newer sibling exists."
+  ],
+  "exclusions": [
+    "The primary Manager or Orchestrator remains the selected document chat.",
+    "Earlier Projects storage addresses and uncertain retries retain their meaning."
+  ],
+  "id": "INV-A0240E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A02.browser.txt; DocumentChat.test.tsx mounted sprint/master backend-shaped executions[] cases, all request bodies and primary-chat assertions"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Selected sprint/master Investigators use their exact persisted request identity for restore, automatic and manual Result, report access, Retry and Revive while the panel primary remains its Manager or Orchestrator.",
+  "status": "proposed",
+  "supersedes": []
+}

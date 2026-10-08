@@ -14,7 +14,19 @@ The scope is the serialized task document reference, so every piece of state is 
 
 ## Evidence
 
-- The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision. [1]
+
 - A dispatch receipt is adopted only for the live scope with an exact agent and request id. [2]
 - The displayed agent is the launched request's agent or the newest live record, never a stale document's. [3]
 - The presentation flags hide an unresolved frame and keep one control for the bound launcher. [4]
+
+## Investigator scope and request identity
+
+An explicit Investigator launch/result targets the returned exact request while refreshing the primary coordinator’s canonical record. This callback never replaces default document agent discovery, and native frame steering retains its existing ready-channel behavior.
+
+
+- The current source implements this file’s stated Investigator boundary. [5]
+
+
+## Refreshed current evidence
+
+- The hook keeps the canonical document scope, the bound selection and the launched request together and re-reads on revision. [1]

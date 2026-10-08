@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "Agent-bound Investigator starts and selected document chat discovery.",
+  "conditions": [
+    "Architect permits Projects, its selected sprint or master.",
+    "Orchestrator and Manager retain their own sprint/master containment.",
+    "Leaf selections refuse before workspace or native agent creation."
+  ],
+  "exclusions": [
+    "Worker, Reviewer, Curator and Investigator may start no role.",
+    "A selected Investigator does not replace the primary document Manager or Orchestrator."
+  ],
+  "id": "INV-68QN0P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_investigator.py public six-scope and refusal tests; DocumentChat.test.tsx both master/sprint callback+refresh; server primary tests"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §7",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Architect, Orchestrator and Manager start an Investigator only in their admitted Projects/sprint/master scopes; a leaf selection refuses before launch and the selected panel keeps its primary Manager or Orchestrator.",
+  "status": "proposed",
+  "supersedes": []
+}

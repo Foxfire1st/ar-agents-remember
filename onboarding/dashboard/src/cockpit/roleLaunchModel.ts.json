@@ -3,8 +3,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3e06d1083f1baefa7db0ac222302b8fc1bd56b8",
-        "content": "sha256:25507d41b7cde2cfbae354b014197c7e56afdb3b5ba26ee485af7fabe44fe022",
+        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "content": "sha256:2e9d7f93c94fa35d5ec0e3a3d64ebb29e3136bf6c898e8802e9f5deb7f4abcaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "tasklessRequestStorageKey"
+        }
+      },
+      "id": "RLZ-22DBNE",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The earlier browser storage address remains the same for original retries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+        "locator": {
+          "kind": "symbol",
+          "name": "usesRequestReceipts"
+        }
+      },
+      "id": "RLZ-44423S",
+      "invariant": "INV-A0240E",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Per-request cardinality is distinguished from Projects altitude so task-bound Investigators keep exact request identities.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+        "locator": {
+          "kind": "symbol",
+          "name": "usesRequestReceipts"
+        }
+      },
+      "id": "RLZ-9CP18T",
+      "invariant": "INV-BS7TH8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "This predicate defines per-request Investigator cardinality at both Projects and selected-task scopes separately from taskless altitude.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+        "content": "sha256:7f62c23932dcef110a895a78ecede6df036c913dfef4a6472172da5be7553f6c",
         "locator": {
           "kind": "symbol",
           "name": "boundTasklessRequest"
@@ -20,6 +74,72 @@
       "role": "support"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "content": "sha256:8f4b494d82dc0f0a86b2a8a5ee7051a8563655671a4cd288cccf932ce389058d",
+            "locator": {
+              "kind": "symbol",
+              "name": "readTasklessActiveRequests"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "content": "sha256:ec60e1bb6b0522a68895e5a2eee71c9050d80463c5caff3c62d6586305489121",
+            "locator": {
+              "kind": "symbol",
+              "name": "launchChoiceProblem"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "content": "sha256:e3750a955a104b2a60791dcee22eddb7e14b4c063a4abaf2e9da93165f848944",
+            "locator": {
+              "kind": "symbol",
+              "name": "unofferedServiceTier"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e455fa2a668f7b3fb374b34e1150579f56bcbb65",
+            "content": "sha256:d3d26ea6c0704c7b0864abf6649d19c9fdf0cae271f3e99678a7e037058d2578",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

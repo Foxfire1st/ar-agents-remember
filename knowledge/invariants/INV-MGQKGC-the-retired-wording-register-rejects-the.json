@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reintroducing the old narrow concern or separate-assignment mutation clause would restore a forbidden role contract in shipped capsules."
+  },
+  "applicability": "The retired instruction probes and generated lifecycle skill mirrors.",
+  "conditions": [
+    "Canonical lifecycle sources own meaning; all nine mirrors are synchronization outputs.",
+    "Each registered old sentence is tested on its declared carrier."
+  ],
+  "exclusions": [
+    "The wording guard does not prove arbitrary semantic equivalence or runtime acceptance."
+  ],
+  "id": "INV-MGQKGC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_retired_investigator_wording_is_detected_when_reinserted; test_role_instruction_corpus.py; sync-skills.py --check nine mirrors"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §12",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The retired wording register rejects the old display name and replaced clauses, and every generated skill mirror matches the canonical Investigator source with no old role file.",
+  "status": "proposed",
+  "supersedes": []
+}

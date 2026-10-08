@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
-        "content": "sha256:fc765b7069a6954570cdd53099dfdca7a3be8111c253303d155228577db405d4",
+        "blob": "be47e1ce7c587b1a39eb82aa110f21b78dda17af",
+        "content": "sha256:8d43e6ffd3d252c921a5a6e49a9a6de3669c107ba49d1b3a55ac809d76b068b6",
         "locator": {
           "kind": "symbol",
           "name": "RepeatAfterChangeTests.test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch"

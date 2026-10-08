@@ -13,7 +13,7 @@ Parses role/default and other agentic settings sections.
 
 ## Code Commentary
 
-`_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:260-285.
+`_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:1-435.
 
 L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
@@ -63,7 +63,6 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 ### Runtime Source References
 
 - Frozen implementation of _parse_service_tier supporting the stated file behavior. [1]
-- Frozen implementation of _parse_roles supporting the stated file behavior. [2]
 
 ## L23 Final Candidate Disposition
 
@@ -79,3 +78,15 @@ policy.
 ## CCR-L42 current candidate
 
 Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
+
+## Investigator scope and request identity
+
+The one earlier role key and canonical Investigator key are compared within each settings file before layering. Equal effective values normalize once; conflicting values refuse with the shared role-alias notice rather than choosing a winner. Stored settings files are not rewritten and no additional aliases are admitted.
+
+
+- The current source implements this file’s stated Investigator boundary. [3]
+
+
+## Refreshed current evidence
+
+- Frozen implementation of _parse_roles supporting the stated file behavior. [2]

@@ -242,13 +242,13 @@ No external/product documentation governs this protocol; it is a repository-inte
 - The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). [2]
 - The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). [3]
 - The critical-failsafe wiring supplies the stop action directly from the dashboard loop. [4]
-- The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9. [5]
+
 - The store this module appends/compacts durable inbox rows through. [6]
 - The hosted-session delivery helper the R2 fix now calls per alert row for parity with `operator_inbox_post_payload`. [7]
 - The terminal catalog this module reads to resolve running orchestrator/manager sessions by current binding role. [8]
 - `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). [9]
 - `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. [10]
-- Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. [11]
+
 - `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. [12]
 - The sibling provider store put on the same contract in the same change. [13]
 - The provider-store durability suite: `lost == 0`, `torn_lines == 0` and `stragglers == []` over the forced single-record window for both provider stores, asserted rather than restated as a base-commit rate. [14]
@@ -270,3 +270,16 @@ failures into the existing durable error family. This source verification does n
 provider thresholds, hysteresis or failsafe behavior.
 
 - Store exclusion keeps checkout coordination ahead of the shared kernel primitive. [17]
+
+
+## Current Investigator contract impact
+
+Current alert/inbox vocabulary addresses Investigator. The degradation protocol’s samples, thresholds, alert state and remediation/order boundaries are preserved by the canonical naming change; historical task and quoted ruling words retain the earlier spelling. A broader concern role does not authorize a provider restart forbidden by alert state.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [18]
+
+
+## Refreshed current evidence
+
+- The inbox record schema (`system-specialist` in `AgentRole`, `degradation-alert` in `InboxMessageKind`) this module posts against — vocabulary in models/operator_inbox.py since L9. [5]
+- Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. [11]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
         "content": "sha256:25fa7ed9037568ffaf97cca7bb4e7e3c8bfced02bc786a29cc48d5ef7e3cf5e8",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-        "content": "sha256:046c5d7de87a71abe9325b439ab03e1a0dd53a08c949d98089dfd53d18c4ce81",
+        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
+        "content": "sha256:712588c6f50cea32734da26b8612c10c7b254d1d13ef49c62cefe02616e5c640",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
         "content": "sha256:96942bd07513a479948d116176fdd6bfaf9361529f105ce9dd61e145bbdeb7f5",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
+        "blob": "20ffc07d30937ed3e612b3c6c22e259d60282af6",
         "content": "sha256:718c44929c67a7198c45bd7587557647866333de6e21107c4810fc8d547954d2",
         "locator": {
           "kind": "symbol",

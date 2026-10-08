@@ -92,3 +92,10 @@ Task-document authoring remains wholly upstream of activation and queue state. T
 approve otherwise-valid task changes; the affected disposable projection is then invalidated and
 rebuilt. A selector or queue cannot veto planning, and no valid task/master is discarded merely to
 free a runtime selection.
+
+
+## Current Investigator contract impact
+
+The Architect keeps the developer conversation and runs no suite, build or failure investigation in its own chat. Delegated checks go through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]

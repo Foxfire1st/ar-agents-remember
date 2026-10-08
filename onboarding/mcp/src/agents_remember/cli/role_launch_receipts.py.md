@@ -23,20 +23,37 @@ saved-call replay semantics are otherwise unchanged.
 
 ## Evidence
 
-- Frozen implementation of _execute_prepared_launch supporting the stated file behavior. [1]
+
 - Frozen implementation of _create_receipt supporting the stated file behavior. [2]
 - Frozen implementation of _read_receipt supporting the stated file behavior. [3]
-- Frozen implementation of _public_execution supporting the stated file behavior. [4]
-- The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
+
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
-- Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 - Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
-- Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
+
 - Checks unresolved/rejected receipts returned unchanged without host read. [10]
 - Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation. [11]
-- Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [12]
-- Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]
+
 
 ## MIK-R95 Preparation Receipt
 
 A successful launch receipt records the public open outcome it observed: `receipt.preparation.workspace` is `created`, `found` or `opened` when the outcome names one, and the enclosure's own `created`/`found`/`not-applicable` value is carried beside it. `_public_execution` exposes the `preparation` block to the role-start answer.
+
+## Investigator scope and request identity
+
+Selected-task Investigator receipts are per request rather than singleton selections. Read normalization exposes the canonical role with the one notice while keeping original stored role, labels, request/agent IDs and report paths. Same-request replay still answers from the recorded call; a new source tree is never a reason to rewrite the first assignment. Task ownership and complete-set capacity are delegated to investigator_receipts, with no second receipt writer.
+
+
+- The current source implements this file’s stated Investigator boundary. [14]
+
+
+## Refreshed current evidence
+
+- Frozen implementation of _execute_prepared_launch supporting the stated file behavior. [1]
+- Frozen implementation of _public_execution supporting the stated file behavior. [4]
+- The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+- Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+- Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
+- Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [12]
+- Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]

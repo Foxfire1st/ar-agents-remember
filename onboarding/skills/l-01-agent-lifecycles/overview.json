@@ -280,16 +280,14 @@
       ]
     },
     "22": {
-      "note": "The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal.\n\nAnchor: `## Process`",
+      "note": "The curator process distinguishes leaf ingest from taskless bootstrap and preserves enclosure-scope refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a756f65b233df245d1ae081625d17ba1283e89a",
-            "content": "sha256:629aa6b61c855ffdb823b6cfa3f29152dc6283ba7596cbe2219a82383e8e5720",
+            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+            "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
             "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 59
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -298,16 +296,14 @@
       ]
     },
     "23": {
-      "note": "The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section.\n\nAnchor: `## Outputs`; \"the same report carries the foundation's own facts instead of a leaf's:\"",
+      "note": "The report facts the foundation entry owes instead of a leaf's, inside the seat's own output section.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:3fadb41b127712bd0981510c85b9cc93a4c601d204161c03391876afca0f94e0",
+            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+            "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
             "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 177
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -316,16 +312,14 @@
       ]
     },
     "24": {
-      "note": "Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure.\n\nAnchor: `## What you may do`",
+      "note": "Permitted actions name both admitted writer entry points and refuse taskless bootstrap within an enclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:06d898f85edb34532f29be567a9c959ab69ba467331feb27fb0fbe2e1d8c1930",
+            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+            "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
             "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 203
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -383,16 +377,14 @@
       ]
     },
     "27": {
-      "note": "The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners.\n\nAnchor: `## Authority gates`",
+      "note": "The authority gate that names both writers and keeps the knowledge batch and its publication with their existing owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:d5816a00dba42bbdf935a280456c1932990d208accffa08436155612ce054600",
+            "blob": "e12afe988de03321328e7a381737aafa892f202a",
+            "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
             "locator": {
-              "end": 255,
-              "kind": "line_range",
-              "start": 220
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -401,16 +393,14 @@
       ]
     },
     "28": {
-      "note": "The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached.\n\nAnchor: `## Handoff / exit`",
+      "note": "The handoff paragraph: on the foundation entry the same facts come from the bootstrap report, with the areas a partial run did not reach named as not reached.",
       "targets": [
         {
           "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:d8b40d43afa6155129cca5bd5edf0d92285332b3c031facb1432714d92f06e13",
+            "blob": "e12afe988de03321328e7a381737aafa892f202a",
+            "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
             "locator": {
-              "end": 286,
-              "kind": "line_range",
-              "start": 273
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -576,68 +566,14 @@
       ]
     },
     "36": {
-      "note": "**The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.**\n\nAnchor: \"Route the durable knowledge through the real writer, and publish it.\"; \"Consume the report, not the exit status\"; `publicationRoute`; `publishedIdentity`",
+      "note": "**The same obligation in the curation operation, with the invocation spelled out and the report's consumed fields named.**",
       "targets": [
         {
           "anchor": {
             "blob": "e12afe988de03321328e7a381737aafa892f202a",
-            "content": "sha256:7fcbdce7a0563dff245a095badbfd52331a243cb0748666db01b4d8550a0743f",
+            "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
             "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e12afe988de03321328e7a381737aafa892f202a",
-            "content": "sha256:4a150ed83be5f020ea2b078ad011eb3c61eef65868f55a1a128652083cb61527",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 105
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "12326c25116a5354c1b5f3afeb4552bfeff55758",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 175,
-              "kind": "line_range",
-              "start": 175
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e12afe988de03321328e7a381737aafa892f202a",
-            "content": "sha256:704e47c1d0b89405131f7a474e7d428b3761a67f3b1d2ccfe2b860ba7e8e4534",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 108
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e12afe988de03321328e7a381737aafa892f202a",
-            "content": "sha256:d3ba1ec8a48c8559a4c32b782be8e364bcc89ee88cbcde04f404498b1aeceb0b",
-            "locator": {
-              "end": 107,
-              "kind": "line_range",
-              "start": 106
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -829,16 +765,14 @@
       ]
     },
     "42": {
-      "note": "Shared routing, authority, loop, and dispatch doctrine is canonical here.\n\nAnchor: \"## Which Lifecycle Am I? (the router — exactly three conditions, in order)\"; \"## Delegated series authority\"; \"comes only from process context\"; \"Every launcher or role that dispatches a hosted role calls\"; `## Which Lifecycle Am I? (the router — exactly three conditions, in order)`; `## Delegated series authority`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`",
+      "note": "Shared routing, authority, loop, and dispatch doctrine is canonical here.",
       "targets": [
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:5645cbc81e4000afd5588fb97e2da7f24c8c5a04bb7b9fb6bf2d7c96c14c10f2",
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
             "locator": {
-              "end": 13,
-              "kind": "line_range",
-              "start": 13
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -846,25 +780,10 @@
         },
         {
           "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:c20441bf8ed2bfc169b5d9e443eee76eaf66923041b438b83ff343e5b215b9ae",
+            "blob": "e3d31273a3274cc4e9f7d744cb4a33adf2d72b36",
+            "content": "sha256:3cf79783a1111247353f9555f77e8f419dbfbd90ff1a72a9a865572cd478070c",
             "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 24
-            },
-            "path": "skills/l-01-agent-lifecycles/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c887613340f2572a93258069c0cf4ae89a6ecc47",
-            "content": "sha256:e6cce67600aa1b1acbc84afc5d7b7a4a1b70b6e6394c49fef1d0a07c8e3736c7",
-            "locator": {
-              "end": 69,
-              "kind": "line_range",
-              "start": 51
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
@@ -872,25 +791,10 @@
         },
         {
           "anchor": {
-            "blob": "c887613340f2572a93258069c0cf4ae89a6ecc47",
-            "content": "sha256:a1ab9b2bdef64c76ca58900618966a34abb675a2d74252bf9885cee108f83e91",
+            "blob": "21c85a8e5e2ff9e00f0e2baf308dffb3f4ea2599",
+            "content": "sha256:61d0bb26b1f48e78a417722a872bd7fcff6f58701ebefde854ce7ed1442323f3",
             "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 150
-            },
-            "path": "skills/l-01-agent-lifecycles/core/authority.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "322cc875aa139a4897183647270bc4da211a148a",
-            "content": "sha256:a56a14bcf77023e1396ade536d359e367e07d9e0c3e517005d479307f63e04f4",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/core/loop.md"
           },
@@ -961,94 +865,14 @@
       ]
     },
     "45": {
-      "note": "Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication.\n\nAnchor: \"You run one leaf's coherence pass and you write onboarding.\"; `## Process`; \"Reconcile three ways before writing anything\"; `curator_coherence`",
+      "note": "Curator owns conservative three-way memory reconciliation, the complete pre-closeout onboarding worklist, and structured authority publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:d7ae034d14f114a81f706f00e65f41c433921fa5c7c65f8992948f59e397a651",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 7
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-            "content": "sha256:b2ecbdffb52891c0cb3910b9139e275ddbaaa013a31aefd96c1ab2f3aa83e187",
+            "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
             "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 56
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a756f65b233df245d1ae081625d17ba1283e89a",
-            "content": "sha256:2c7a340a57a7a1b1c3561d0cca842381dcd31d7dfde286ad327fb46c6f9b58ce",
-            "locator": {
-              "end": 140,
-              "kind": "line_range",
-              "start": 77
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 60
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 58
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-            "content": "sha256:0a74bc7d89f463ab717c433df2a84df0fc7060e3a2ec639fd4eb253ec101f246",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 86
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a756f65b233df245d1ae081625d17ba1283e89a",
-            "content": "sha256:629aa6b61c855ffdb823b6cfa3f29152dc6283ba7596cbe2219a82383e8e5720",
-            "locator": {
-              "end": 163,
-              "kind": "line_range",
-              "start": 59
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1057,29 +881,14 @@
       ]
     },
     "46": {
-      "note": "Manager owns one real master and its leaf closeout chain.\n\nAnchor: `# Manager`; \"You drive exactly one master's leaf sequence from dispatch to handover.\"",
+      "note": "Manager owns one real master and its leaf closeout chain.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:f0bdb536f9f03fc01a5e1e29f531822ed7652ca776d1d15113f6984ea21b2dd0",
+            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
+            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
             "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 6
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:a6decbbf7acc1f92aa1ad41ad8f786eafe86bc40459139d50f5273c4634f6631",
-            "locator": {
-              "end": 30,
-              "kind": "line_range",
-              "start": 10
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -1088,42 +897,14 @@
       ]
     },
     "47": {
-      "note": "Worker owns one real leaf's implementation and durable report.\n\nAnchor: `# Worker`; \"You build one leaf.\"; \"The turn report\"",
+      "note": "Worker owns one real leaf's implementation and durable report.",
       "targets": [
         {
           "anchor": {
-            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
-            "content": "sha256:cd67d162cd951f2479fcf4b46e005d1f8799b14eb1aadd5f1236b72b0050d29d",
+            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
+            "content": "sha256:87ed38f8275d5430062a4cf46f621c165e84a0b55c80d7bd0dfe268b22bde8c0",
             "locator": {
-              "end": 146,
-              "kind": "line_range",
-              "start": 6
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
-            "content": "sha256:b83fe027e77c192690bdfd8018b2abc2d94cb76a62669f22f709523286b3afb6",
-            "locator": {
-              "end": 17,
-              "kind": "line_range",
-              "start": 7
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "148a5ec291b1c4e22d00146296ddf7542dd658e7",
-            "content": "sha256:5e4924924fde30e67dc68249e6c747233c7bff433d7968a0a5b9921c60676c95",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 72
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -1136,7 +917,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
             "content": "sha256:6625ef5ea79410327709489d54ede0d2e9e8a2eee6eac0f5e9969494dd4dd9e9",
             "locator": {
               "end": 78,
@@ -1154,7 +935,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42600dbd8dcac83f3266503d806a8292ff4a5811",
+            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
             "content": "sha256:6625ef5ea79410327709489d54ede0d2e9e8a2eee6eac0f5e9969494dd4dd9e9",
             "locator": {
               "end": 78,
@@ -1221,16 +1002,14 @@
       ]
     },
     "52": {
-      "note": "Current supplied role/operation, Projects scope, bound tools and execution/semantic separation.\n\nAnchor: `An Architect first delegates coordination to one Manager`",
+      "note": "Current supplied role/operation, Projects scope, bound tools and execution/semantic separation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b38f17cf841f4e65f28072658dee4c3ba5e294c6",
-            "content": "sha256:02b029f10ae1ea503f2e1973de2b32d9e64aeab5e90108c93157cbb0eb5ee6d8",
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
             "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 20
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/SKILL.md"
           },
@@ -1243,12 +1022,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3d328c32addf48d8925e1ab191d2521a55aa20ae",
-            "content": "sha256:d57e6c86c345ef738158691821006e2dff2df7a1971c337f7602738c9a812159",
+            "blob": "ed60734529704a72903ba14bd79114e58b1d4e24",
+            "content": "sha256:62157a12c152a276e731843233a14517e39e0ec172ce8375303824b1c16c8ba9",
             "locator": {
-              "end": 602,
-              "kind": "line_range",
-              "start": 593
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -1261,12 +1038,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5ca2f5384835f4220d0d29fb5845f21f90d99faf",
-            "content": "sha256:3aeb41d751573ee5eb05704ebb72758684a6106fc768ef97c9d9b34f76ca6f38",
+            "blob": "e12afe988de03321328e7a381737aafa892f202a",
+            "content": "sha256:7e090edc7c3f7820dc3ff0100c09ae6c76effaad4be7e3eb121390fd6db2bf36",
             "locator": {
-              "end": 138,
-              "kind": "line_range",
-              "start": 54
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -1279,12 +1054,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c94136e5086e75af19b1aeba50c80dbbf06f751f",
-            "content": "sha256:156f6ed8db3b309c7760552c4e2c684035b495af90fa6bc52fc40a1ee7163538",
+            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
+            "content": "sha256:1c09ebf360d3c3ac7e325132893378e341c49c2020a674f2f7f5d4fb372098af",
             "locator": {
-              "end": 188,
-              "kind": "line_range",
-              "start": 89
+              "kind": "file"
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1305,6 +1078,24 @@
               "start": 307
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "242afbb0bf183993273a7ff11617556a5a3ec1ee",
+            "content": "sha256:2927236b0a000ed42cac91240a9ac85c82da0cc8147a3cb2621b53e9bf4cbdcd",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
           "kind": "code"
         }

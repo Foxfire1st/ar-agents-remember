@@ -14,4 +14,15 @@ role_start constructs RoleStartCall and role_message constructs RoleMessageCall,
 
 ## Evidence
 
+
+## Investigator scope and request identity
+
+The mounted description names the shared Investigator slot refusal for new turns. The adapter delegates admission to the same role-message owner and preserves named refusal/detail/remedy values; tool description is not a runtime permission grant.
+
+
+- The current source implements this file’s stated Investigator boundary. [2]
+
+
+## Refreshed current evidence
+
 - Frozen implementation of register_role_agent_tools supporting the stated file behavior. [1]

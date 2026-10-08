@@ -31,3 +31,10 @@ Paseo turn status is execution metadata, not AR acceptance/landing. Developer de
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Selected-sprint truth, one Manager per master, same-agent follow-through and producer/evidence preservation. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md:8-24 |
+
+
+## Current Investigator contract impact
+
+This packaged copy derives from the canonical roles/orchestrator.md. The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern/check belonging to no leaf. Leaf checks stay with their Worker/Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it. Investigator is a child concern/report carrier, not a leaf transaction owner. Mirror synchronization remains the owner; this file adds no independent instruction.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]

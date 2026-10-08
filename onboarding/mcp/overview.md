@@ -4,8 +4,8 @@
 
 The package now contains strict Paseo configuration, bounded provision/status/stop, native bridge/catalog/frame integration, immutable role-launch intent and identity-bound task tools. Explicit-model and native-default creation use the same declared feature channel while retaining native permission/tool behavior. Converted MIK readers/writers, worklists and review/lifecycle owners remain intact. Transport, source qualification, authored knowledge and paired publication each require their own evidence.
 
-- Current imported source owns this scoped route boundary. [228]
-- Current imported source owns this scoped route boundary. [229]
+
+
 - Current imported source owns this scoped route boundary. [230]
 - Current imported source owns this scoped route boundary. [231]
 
@@ -54,7 +54,7 @@ that keep results computed from Git trees and plain files.
   calls when serving ends.
 
 - A recording block collects the rows of one computation. [246]
-- A kept set is checked with its path selections first. [247]
+
 - A conflict or an unreadable row is a failed observation. [248]
 - The contract loader reads through the recorder. [249]
 - The ledger loader reads through the recorder. [232]
@@ -67,7 +67,7 @@ that keep results computed from Git trees and plain files.
 - The shared-read block of the batched blob reader. [239]
 - The composition root creates the process owner. [240]
 - It supplies the owner's shutdown to the app. [241]
-- The waiting bound counts computations, not the requests sharing them. [242]
+
 - A build mismatch asks for a dashboard restart. [243]
 - Every parsed diff names its own prefix, colour and driver options. [244]
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
@@ -267,8 +267,6 @@ flag or report-only mode exists.
 
 - The history-row rule over every file's subjects and the leaf's own file. [6]
 
-- The two lane rows. [233]
-
 
 ## 260928-MIK-L38 Finalize Completes The Master Row: One Rule For A Leaf's Master
 
@@ -443,7 +441,6 @@ curator never reverses a decision. An unanswered candidate blocks closeout throu
 - The writer's rows, the refresh and its link states. [15]
 - The manifest lookup. [16]
 - The reorder guard, registered on import. [17]
-- The lane row. [18]
 
 ## 260928-MIK-L29 The Path-Based Knowledge Reader, Inert Until The Cutover
 
@@ -619,7 +616,6 @@ lifecycle to a `served_earlier` row; `knowledge_read` never does.
 - The chain module statement. [25]
 - The compact row with its family seed. [26]
 - The family seed on the mounted read. [27]
-- The lane row. [28]
 
 ## 260928-MIK-L10 Unexplained Change Disposition, Inert Until The Cutover
 
@@ -667,7 +663,6 @@ reason; an **uncovered** file takes its onboarding trace (MIK-R30).
 - The two kinds and the coverage lookup. [29]
 - The subjects and the gate predicate. [30]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [31]
-- The lane row. [32]
 
 ## 260928-MIK-L25 The Reviewer On Git Trees, Inert Until The Cutover; The Archive Hook Once Installed
 
@@ -713,11 +708,10 @@ and the archive hook that deletes a task's review artifacts.
   the dashboard adapter and UI cases on real captured bodies. Review R6: pass-with-notes; full unit suite 3,231
   passed, integration lane 447 passed.
 
-- The four-tree comparison, pinned and recorded. [33]
+
 - The archive hook's identity sources and confinement. [34]
 - The tree view route. [35]
 - The index format bump for the seal fix. [36]
-- The two lane rows. [37]
 
 ## 260928-MIK-L13 Decision Records With Rejected Alternatives, Inert Until The Cutover
 
@@ -767,7 +761,6 @@ at closeout. A decision keeps the chosen alternative and the rejected or deferre
 - The content rules and derived reads. [38]
 - The five registered decision rules. [39]
 
-- The owner resolves each requirement endpoint; unresolved is reported. [40]
 
 - The writer reports each endpoint of the records the run touched. [41]
 - A decision is never an export. [42]
@@ -932,8 +925,6 @@ no history row delivers as declared, and the curator answers each with a planned
 - The reconciliation module statement. [52]
 - The declaration on the task document. [53]
 - The planned row. [54]
-
-- The task owner's strict lookup and decision answer. [55]
 
 
 ## 260928-MIK-L02 Bounded Continuation Accepted By The Mounted Read, Inert Until The Cutover
@@ -1160,8 +1151,8 @@ route, because `cli/` has no overview of its own:
 (the `mcp/registration` and `mcp/tools` route overviews). Before MIK-R37 no production memory tree holds
 `knowledge/layout.json`, so no production route changes behaviour.
 
-- The ingest dispatch on the loaded contract's memory worktree. [76]
-- The bootstrap run mode's dispatch on the admitted memory root. [77]
+
+
 - The layout-marker test both commands use. [78]
 - The writer refuses an unconverted memory tree. [79]
 
@@ -1277,7 +1268,6 @@ holds `knowledge/layout.json`, so no production route changes behaviour.
 - The subcommand registration. [90]
 - The command's inputs, scope answer and exit statuses. [91]
 - The shared exclusion predicate. [92]
-- The batch blob reader. [93]
 
 ## 260928-MIK-L21 The Package Declares The Text Knowledge Format, And The CLI Gains `knowledge-format`
 
@@ -1507,10 +1497,10 @@ The ten cases live in `mcp/tests/test_knowledge_review_evidence_channels.py` and
 `cli.dashboard.serving_collaborators`, so the packet's failure — a production port supplying only
 assessments while claiming a complete bundle — is caught at the composition rather than at the resolver.
 
-- **The production record owner: five collections and one measured currentness channel, each read through its owner.** [108]
+
 - **The per-record guard and the two identity listings it composes.** [109]
 - **The availability vocabulary and the field that carries it on the served payload.** [110]
-- **The production port the cases drive, and the two states F09 collapsed.** [111]
+
 - The two per-record damage cases, and the task-context collection that reports `not_selected`. [112]
 
 ## 260921-ICR-L11 The Package Gains The Durable-Comparison Chain, And Two Typed Failures Beside The Candidate's
@@ -1624,13 +1614,12 @@ whole of this package's public-surface delta. The per-file detail lives in the n
 
 - **The declared location, resolved through the read route's own owner, and the context that keeps the read-back in the scope the write was made in.** [128]
 - **The admission as four ordered facts, the fourth of which is the ordinary update.** [129]
-- **The read-back through the reader's owner, and the three states the report carries.** [130]
+
 - **The destination selection the CLI owns, its refusals, and the route line it completes from the run's own report.** [131]
 - **The renderer that left the CLI, and the two fields this leaf added to the caller's answer.** [132]
 - The mounted refusal that now names the ordinary publication beside the writer, and the operation whose docstring carries it. [133]
 - The declaration this route resolves against, whose own docstring and constant comment this leaf restated as current truth. [134]
 - **The cases that drive the whole route through the shipped CLI over a production-shaped enclosure.** [135]
-- The lane row the new module occupies and the two governed consumer rows it joined. [136]
 
 ## 260921-ICR-L18 The Review's Before Half Gets A Generation Owner, And The Ingest Fills It Once
 
@@ -1835,7 +1824,7 @@ and re-resolve the incumbent or staged heir at delivery; public outcomes omit ru
 
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:278-279`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares `unit_case_budget = 4000` and `integration_case_budget = 1000` parametrized collected cases (`pyproject.toml:1-357`), raised from 3000 / 600 by the 260918-TSIP-L13 budget-and-landable-closeout leaf on 2026-09-20 under a second direct developer decision — the pair before that having been raised from 2300 / 400 by the 260918-TSIP-L7 agreement leaf under a direct developer decision. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -2010,7 +1999,7 @@ These dated additions retain their original public names and intermediate author
 `mcp/` is the package-managed Agents Remember MCP server. It turns coordinator
 startup and provider lifecycle behavior into typed, host-side operations backed
 by importable Python services instead of model-edited coordinator scripts or
-coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:64-76):
+coordinator `system/settings.json`. The tool surface gained `task_reopen` cit:([`task_reopen`], mcp/src/agents_remember/mcp/registration/tasks.py:1-256):
 reopen a fully landed leaf task under its exact leaf id — a task-domain state reset
 whose worktree recreation stays with `worktree_start`. The agent-orchestration L2
 adds `spawn_agent_session` — the agent-facing **dispatch** tool that CREATES a
@@ -2384,9 +2373,9 @@ resolution depends on. The evidence for both halves is
 `mcp/tests/test_capsule_launch_wiring.py`.
 
 - The one decision point every launch point calls, with its three answers and named refusals. [159]
-- The one workspace rule and the selection that follows it. [160]
-- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
-- D13's repair, on the registered operation's own resolution path. [162]
+
+
+
 - The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
 - The production chain read at the consumer's own gate and at the live runtime's system block. [164]
 
@@ -3554,7 +3543,7 @@ served dashboard either has both adapters or refuses the corresponding route by 
 - **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [179]
 - The two port fields on the collaborators dataclass, and the rank reason they exist — with the third review port beside them since `260921-ICR-L3`. [180]
 - The registration that passes both ports. [181]
-- The composition root's two adapter functions. [182]
+
 - **The two published half-names the ingest CLI derives its candidate directory from — defined in `review_candidate_resolution` and re-exported by the adapter, which is the import path the ingest CLI uses. The three constant ranges were re-derived against this leaf's candidate, whose import block moved them.** [183]
 - **The ingest run's review handoff: two filling paths behind one placement gate — the fork-point dataset copied into the before half, or an identified empty first generation established there.** [184]
 - **The namespace read from the record beside the bytes rather than from the request — the sibling module's operation, which the adapter delegates to. Corrected in place by `260921-ICR-L34`: the receipt-only rule made the before half of every `knowledge-ingest --baseline` run unopenable, and therefore every such leaf's comparison unfreezable.** [185]
@@ -3988,3 +3977,50 @@ serving observation loop). The MCP server and dashboard composition bind the arc
 their worktree bundles, and `paseo_launch.py`/`role_launch_receipts.py` carry the prepared-start
 closing mark through launch and replay.
 
+## Scoped investigation and exact execution identity
+
+The native role-launch CLI composes one Investigator request owner for task-owned receipt discovery, complete-set capacity and exact UUID report lookup. The application resolver owns allowed selection topology and models own the one earlier spelling; no second lifecycle, retention store, writer or navigation surface is introduced.
+
+
+- This source owns the route’s Investigator selection or execution boundary. [254]
+
+
+## Refreshed current evidence
+
+
+
+
+- The four-tree comparison, pinned and recorded. [33]
+
+- The owner resolves each requirement endpoint; unresolved is reported. [40]
+- The task owner's strict lookup and decision answer. [55]
+- The ingest dispatch on the loaded contract's memory worktree. [76]
+- The bootstrap run mode's dispatch on the admitted memory root. [77]
+- The batch blob reader. [93]
+- **The production record owner: five collections and one measured currentness channel, each read through its owner.** [108]
+- **The production port the cases drive, and the two states F09 collapsed.** [111]
+- **The read-back through the reader's owner, and the three states the report carries.** [130]
+
+- The one workspace rule and the selection that follows it. [160]
+- The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161]
+- D13's repair, on the registered operation's own resolution path. [162]
+- The composition root's two adapter functions. [182]
+- The composition root's two adapter functions. [193]
+- **The three review ports passed into the shared collaborators.** [194]
+- **The two ports passed into the shared collaborators.** [196]
+- Current imported source owns this scoped route boundary. [228]
+- Current imported source owns this scoped route boundary. [229]
+
+
+- A kept set is checked with its path selections first. [247]
+
+
+## Refreshed current evidence
+
+- The lane row. [18]
+- The lane row. [28]
+- The lane row. [32]
+- The two lane rows. [37]
+- The lane row the new module occupies and the two governed consumer rows it joined. [136]
+- The two lane rows. [233]
+- The waiting bound counts computations, not the requests sharing them. [242]

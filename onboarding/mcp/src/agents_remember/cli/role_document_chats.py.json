@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+        "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+        "content": "sha256:0a79d488641be6af4310773e466e2f64560d17118a0d1f0a8590d02eb9f2d983",
+        "locator": {
+          "kind": "symbol",
+          "name": "_records"
+        }
+      },
+      "id": "RLZ-2EZ0DF",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Default server enumeration remains the document’s existing primary roles.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
         "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
         "locator": {
           "kind": "symbol",
@@ -22,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "The route resolves the admitted context and serves the read endpoint.",
+      "note": "The route resolves the admitted context and serves the read endpoint.\n\nAnchor: `register_document_chat_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
-            "content": "sha256:9baff1b7818fb03326857a2cff558f5216e7393f8e915436d48f2933c8c2fc54",
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
             "locator": {
-              "kind": "symbol",
-              "name": "register_document_chat_route"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.",
+      "note": "Record selection follows the admitted roles and refuses a foreign document or request receipt.\n\nAnchor: `_records`",
       "targets": [
         {
           "anchor": {
-            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
-            "content": "sha256:743cbf27875eaadebe377311b43d9061a5b47413544295eb5ee1011c16d1d8f2",
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
             "locator": {
-              "kind": "symbol",
-              "name": "_records"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -58,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
             "content": "sha256:dc3d146082f43bf738a68d3d705944a244dbd8adc4b86bf01b3d931025e54cc7",
             "locator": {
               "kind": "symbol",
@@ -74,11 +90,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7875f97138109f54d8c008479f45088fdd53d25b",
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
             "content": "sha256:7368e765bd71f457dd0a7932db8405ecb1750b7b6de51fdbfdc98a89c397272e",
             "locator": {
               "kind": "symbol",
               "name": "document_chats"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c98d6724f9d9173a6ddeb6bfc8d1a4bb947c8a5f",
+            "content": "sha256:144b342a7176811cf8fab2d33db94461de421decdf3bfd15a4a61608e1b9e343",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

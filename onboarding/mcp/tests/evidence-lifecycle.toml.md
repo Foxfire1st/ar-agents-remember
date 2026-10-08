@@ -150,16 +150,19 @@ and the state suite's real conftest import. These declarations do not prove a te
 
 - The loader that validates the file and refuses a catalog that is not canonical. [13]
 - The Node lockfile fixture's row: an exact consumer scope and the start of its consumer list. [94]
-- The two reviewer worklist test modules on that row's consumer list. [95]
 
 ## 260928-MIK-L96 The host test modules
 
 `evidence-lifecycle.toml` gained revised durable-artifact consumer sets/paths for the new host test modules (`test_paseo_install_contract`, `test_paseo_install_no_stop`, `test_paseo_node`, `test_paseo_start`, `test_dashboard_host`, `test_host_release_contract`, `test_paseo_host_environment`) and for the moved host modules. This file holds artifact consumers plus the executable `replacement_contract`/`consumers` records; it declares no lane tables and no knowledge-invariant identities. Lane membership for the host modules lives in `test-evidence-lanes.toml`, and knowledge proof identities live in the sidecar proof plane; a catalog declaration still never shows evidence ran.
 
 
-- The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
-
 
 - Conversation-open support declares its permanent owner and real replacement contract. [96]
 - Eve event support declares its permanent owner and exact consumers. [97]
+
+
+## Refreshed current evidence
+
+- The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
+- The two reviewer worklist test modules on that row's consumer list. [95]
 - Worklist process support declares its permanent local-composition contract. [98]

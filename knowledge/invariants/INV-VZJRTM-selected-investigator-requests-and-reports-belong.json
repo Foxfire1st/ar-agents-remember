@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The attributed source owners must agree on the same selection, receipt and identity contract; a single location cannot preserve the obligation across its public producer and consumers."
+  },
+  "applicability": "Per-request Investigator execution on a selected sprint or master.",
+  "conditions": [
+    "The complete not-closed set owns the eight-slot budget and role-address ambiguity.",
+    "The newest-fifty display reports omitted rows independently of that complete set.",
+    "An exact request UUID remains readable and retryable."
+  ],
+  "exclusions": [
+    "Projects request storage and its existing single-occupant bound-row policy.",
+    "A completed host turn does not imply AR acceptance."
+  ],
+  "id": "INV-VZJRTM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_investigator.py two requests, ninth refusal/archive remedy, older eight open omitted from display, exact Result/replay and ambiguity"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §8",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Selected Investigator requests and reports belong to the task; eight not-closed slots and full open-set ambiguity are independent of the newest-fifty display, while exact request reads and retry remain resolvable.",
+  "status": "proposed",
+  "supersedes": []
+}

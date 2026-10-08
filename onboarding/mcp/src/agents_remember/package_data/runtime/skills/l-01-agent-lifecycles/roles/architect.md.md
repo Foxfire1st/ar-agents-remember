@@ -31,3 +31,10 @@ No inferred task/repository/parent, self-approval, hidden proxy or duplicate own
 | Finding | Anchor | References |
 | --- | --- | --- |
 | Explicit taskless subject, canonical requirements, one coordinating agent under the Architect, bound identities and authority boundaries. | lines 8-32 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md:8-32 |
+
+
+## Current Investigator contract impact
+
+This packaged copy derives from the canonical roles/architect.md. The Architect keeps the developer conversation and runs no suite, build or failure investigation in its own chat. Delegated checks go through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master. Mirror synchronization remains the owner; this file adds no independent instruction.
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]

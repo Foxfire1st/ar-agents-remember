@@ -236,27 +236,14 @@
       ]
     },
     "108": {
-      "note": "**The production record owner: five collections and one measured currentness channel, each read through its owner.**",
+      "note": "**The production record owner: five collections and one measured currentness channel, each read through its owner.**\n\nAnchor: `review_records_for`, `_COLLECTION_OWNERS`, `CURRENTNESS_OWNER`",
       "targets": [
         {
           "anchor": {
-            "blob": "455af2665c9619069121029e08150f5c23d205b4",
-            "content": "sha256:6ad5e0b49b2b9ff61de5f79fb25d573124f0d0080b32fb013d48330c2ce9d637",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_records_for"
-            },
-            "path": "mcp/src/agents_remember/application/review_evidence_records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "1791cff61676d47e0cd91e2991c9d1865db9c525",
-            "content": "sha256:739ccdcfda9e3d327794e7ec3076c85a7286115ba109a774a94a57c1303b00fa",
+            "content": "sha256:d281d3dc87921a2bea7932c1340a88ac34a26b5ac86f7f99d281918387e7b552",
             "locator": {
-              "kind": "symbol",
-              "name": "_COLLECTION_OWNERS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_evidence_records.py"
           },
@@ -265,10 +252,9 @@
         {
           "anchor": {
             "blob": "b44abba9ea785a48c75e04b3da7bd2c477894ee2",
-            "content": "sha256:c62e49c322454ffa53d333c37d8ae1766fc8b553a54824fb3405ac04a5bb40d7",
+            "content": "sha256:3d032d60c97abdcfda7a63d1d5436e8f0c10a6c9ec9223960af43af23a655e79",
             "locator": {
-              "kind": "symbol",
-              "name": "CURRENTNESS_OWNER"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_assessment_currentness.py"
           },
@@ -402,15 +388,14 @@
       ]
     },
     "111": {
-      "note": "**The production port the cases drive, and the two states F09 collapsed.**",
+      "note": "**The production port the cases drive, and the two states F09 collapsed.**\n\nAnchor: `review_port`, `test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable`",
       "targets": [
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:b6b5dba20c73bf1657b4b0be86d099ad1a7df00c95c6a3ebe62bced45e3e72aa",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:603f4e9333320466b46ba8d2bfd5d942f5c11117cea406d08bc7618ceb2c1b47",
             "locator": {
-              "kind": "symbol",
-              "name": "review_port"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -419,10 +404,9 @@
         {
           "anchor": {
             "blob": "1055a8b8b120683bbd25e3bb93379f68ce893ecb",
-            "content": "sha256:cc5279a0f0c6f49373dd26621e00b4342f8ea1a80505d72b3bbacba22e6bba5e",
+            "content": "sha256:176914a33a78f15319a06e512475c6416693223e7096b3433a179ec0992d3956",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
           },
@@ -1052,52 +1036,25 @@
       ]
     },
     "130": {
-      "note": "**The read-back through the reader's owner, and the three states the report carries.**",
+      "note": "**The read-back through the reader's owner, and the three states the report carries.**\n\nAnchor: `published_identity_read_back`, `PublishedIdentityReadBack`, `resolve_published_intent`",
       "targets": [
         {
           "anchor": {
             "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:c31f33b68a4b6f664642c7b4faeabd06521cbcf5c7dd474315183345555ba8e0",
+            "content": "sha256:cf5500da14346a0464d86e4aaf590953142df45f39163f425c145ae8fac7016a",
             "locator": {
-              "kind": "symbol",
-              "name": "published_identity_read_back"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "501e0bd1224bd9910b2f445e7245277f8ed88105",
-            "content": "sha256:b42a642705b5669a1bd9c11e5d9165b1cf6ec6bfdf6baf35dbbe33979c7adaee",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedIdentityReadBack"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_publication_route.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e6908cf378263458d5c33e339b9a7a0c60445c27",
-            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolve_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
             "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:851033fb9e6862ee4cd51041d4cc188b82fd8fa5dbfcd307259bf38d76d4a791",
+            "content": "sha256:502e8cd412225797a8431716e66ab1d10633f544767e7e17d5a9193475b9a619",
             "locator": {
-              "end": 243,
-              "kind": "line_range",
-              "start": 219
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -1329,12 +1286,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:98911cc1ffca3ff61b7b6e40e64a8570df52bc4d317e837dd200f5c76025d1df",
             "locator": {
-              "end": 139,
+              "end": 140,
               "kind": "line_range",
-              "start": 139
+              "start": 140
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2059,7 +2016,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
             "locator": {
               "kind": "symbol",
@@ -2071,7 +2028,7 @@
         },
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
             "content": "sha256:b190e4936151386a15119132d254bbafcec9da1060dce8e578404695177166e0",
             "locator": {
               "kind": "symbol",
@@ -2101,28 +2058,14 @@
       ]
     },
     "160": {
-      "note": "The one workspace rule and the selection that follows it.\n\nAnchor: `session_workspace`",
+      "note": "The one workspace rule and the selection that follows it.\n\nAnchor: `selection_for_workspace`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
-            "content": "sha256:ade4924a285ec8e455a4b7c52effb75428d732a60f71eaad8379b0fb70b7ad71",
+            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
+            "content": "sha256:afb17ffcc0ff5249714b7eeab87c1305b9a62aa91a6a213afac5ac8a3efae210",
             "locator": {
-              "kind": "symbol",
-              "name": "selection_for_workspace"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a7a323a5a3fc87252dc59389a9a107bd0e0ab6c7",
-            "content": "sha256:72a11c884fb7a7643a155c8dad9d7f81975bfe5fd7dc39ed4897de8db8557a77",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 173
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -2131,27 +2074,14 @@
       ]
     },
     "161": {
-      "note": "The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier.",
+      "note": "The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier.\n\nAnchor: `compile_launch_capsule`, `_compile_eve_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
+            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:f16a829e3f81bb42b19c7fc4fd329ea0c03841548d5f4476abf13e34d676a3cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_compile_eve_task"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -2160,28 +2090,14 @@
       ]
     },
     "162": {
-      "note": "D13's repair, on the registered operation's own resolution path.\n\nAnchor: `AdmittedEnclosure.code_repository_root`",
+      "note": "D13's repair, on the registered operation's own resolution path.\n\nAnchor: `_declared_repository_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:d894e33e9c1370fad5e1185ba814b7e379c6b8c4663f2eb16319d755f40aaaf6",
+            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
+            "content": "sha256:56ca123ffd3d27fe5b12e16460c77abfc7f91b55b1ef573d4c01e2cff1cba15f",
             "locator": {
-              "kind": "symbol",
-              "name": "_declared_repository_root"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:f3216586d98fa1bc36cb0829601d6140603c2f527602b04d4505578c044809e3",
-            "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 186
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
           },
@@ -2559,12 +2475,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 243
+              "start": 244
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2622,29 +2538,14 @@
       ]
     },
     "182": {
-      "note": "The composition root's two adapter functions.\n\nAnchor: \"def review_port(request):\"; \"def review_entries_port(repository_id, master, leaf_id):\"",
+      "note": "The composition root's two adapter functions.",
       "targets": [
         {
           "anchor": {
-            "blob": "92bc47be33c44682a6e0f26ac4b8ea3469f47a67",
-            "content": "sha256:6e127e2fbaa3db89da34049dc7b4a7f79c71706216d9ddbb026e473606de8f0a",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:603f4e9333320466b46ba8d2bfd5d942f5c11117cea406d08bc7618ceb2c1b47",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 102
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:1c42121b94556a21458a5448018144a080f9c1f8ddd8722c1c9e722c47ac0650",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 105
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2941,29 +2842,14 @@
       ]
     },
     "193": {
-      "note": "The composition root's two adapter functions.\n\nAnchor: \"def review_port(request):\"; \"def review_entries_port(repository_id, master, leaf_id):\"",
+      "note": "The composition root's two adapter functions.",
       "targets": [
         {
           "anchor": {
-            "blob": "92bc47be33c44682a6e0f26ac4b8ea3469f47a67",
-            "content": "sha256:6e127e2fbaa3db89da34049dc7b4a7f79c71706216d9ddbb026e473606de8f0a",
+            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
+            "content": "sha256:603f4e9333320466b46ba8d2bfd5d942f5c11117cea406d08bc7618ceb2c1b47",
             "locator": {
-              "end": 111,
-              "kind": "line_range",
-              "start": 102
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:1c42121b94556a21458a5448018144a080f9c1f8ddd8722c1c9e722c47ac0650",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 105
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -3973,8 +3859,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
-            "content": "sha256:2766fae54ada07cd690e8e2dac35cbe994dbf9dac96a6aea08445e7c9169ce53",
+            "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
+            "content": "sha256:3d2c22e1ea64a6c056a13201b7c675bb7917cc9171ee5865e0255eb8b1994012",
             "locator": {
               "kind": "file"
             },
@@ -3989,8 +3875,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a960b330c5d982cb0b9daeb14d6a4dd142dcd71",
-            "content": "sha256:5634be55d55ace338c33640443c76188e06c3b7b9a03ae7e38281b63019bd894",
+            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
+            "content": "sha256:a4912eae284efe96d08a973094c328b40762b32a24be21103cd63fe0075a89c9",
             "locator": {
               "kind": "file"
             },
@@ -4083,12 +3969,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 106,
+              "end": 107,
               "kind": "line_range",
-              "start": 106
+              "start": 107
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4096,12 +3982,12 @@
         },
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 130,
+              "end": 131,
               "kind": "line_range",
-              "start": 130
+              "start": 131
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4272,11 +4158,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:b77b1f2befb3f71b0a632bcca91ec067e017772c39c27278fdb876996b69a77c",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:c72db19367b3efda97a3b09d1f57baf1615e2ae89b49292ae3cca741712fa158",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_waiting_bound_counts_computations_not_the_requests_sharing_them"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -4353,15 +4238,14 @@
       ]
     },
     "247": {
-      "note": "A kept set is checked with its path selections first.",
+      "note": "A kept set is checked with its path selections first.\n\nAnchor: `changed_observations`",
       "targets": [
         {
           "anchor": {
-            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
-            "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
+            "content": "sha256:b90c0bd2ed41e0964ad329cc48e9fec1be531b7698d388df2ea8b0330acc2d93",
             "locator": {
-              "kind": "symbol",
-              "name": "changed_observations"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
@@ -4490,6 +4374,24 @@
         }
       ]
     },
+    "254": {
+      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a0e7177407b47714061babfdec51e0f514c21fc",
+            "content": "sha256:6273dcb37f939a7547b3e35bbc27e326b1015c0ec0f4365fb9c9343e350c591e",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "26": {
       "note": "The compact row with its family seed.",
       "targets": [
@@ -4529,12 +4431,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
             "locator": {
-              "end": 169,
+              "end": 170,
               "kind": "line_range",
-              "start": 169
+              "start": 170
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4629,12 +4531,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
             "locator": {
-              "end": 321,
+              "end": 322,
               "kind": "line_range",
-              "start": 321
+              "start": 322
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4643,16 +4545,14 @@
       ]
     },
     "33": {
-      "note": "The four-tree comparison, pinned and recorded.\n\nAnchor: \"A review comparison as four Git trees, pinned by Git refs and reopened from its tree ids\"",
+      "note": "The four-tree comparison, pinned and recorded.",
       "targets": [
         {
           "anchor": {
-            "blob": "8afd1e5b7a434f08af24b89d5c8657e633af31a2",
-            "content": "sha256:f7272b6690afb60b12bfac9ceb40faf7156cf9afe0b27611c6e0a8bcebb7c87a",
+            "blob": "69bb0e27f14a03f81252287c56705f6504f255cc",
+            "content": "sha256:e37c2fcd2cae532495fdab6e7aa3f400140937e7c9cebac50543ba20c055efe5",
             "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
           },
@@ -4717,12 +4617,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
             "locator": {
-              "end": 261,
+              "end": 262,
               "kind": "line_range",
-              "start": 261
+              "start": 262
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4730,12 +4630,12 @@
         },
         {
           "anchor": {
-            "blob": "ad32196677d5800992fe4294b439f3e28af150ec",
+            "blob": "d2e70c4ea442123fb39e942aa6d15259450ec98e",
             "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
             "locator": {
-              "end": 250,
+              "end": 251,
               "kind": "line_range",
-              "start": 250
+              "start": 251
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4797,15 +4697,14 @@
       ]
     },
     "40": {
-      "note": "The owner resolves each requirement endpoint; unresolved is reported.",
+      "note": "The owner resolves each requirement endpoint; unresolved is reported.\n\nAnchor: `resolve_requirement_endpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "85f02a5cdb343b56226976fd0a2380969d9f2d3a",
-            "content": "sha256:437d44f2f034901cb81e2b68216f57e37ba30a4eac45f2652fbc11c0646438d3",
+            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
+            "content": "sha256:013fa7df64a081a8bc1a451a553e8b7aa99f550141dcda76f71546102a47e900",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_requirement_endpoint"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
           },
@@ -5068,7 +4967,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6cf9bcff5cd2d9ab2c2b889ae9e481a35093a55",
+            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
             "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
             "locator": {
               "kind": "symbol",
@@ -5098,27 +4997,14 @@
       ]
     },
     "55": {
-      "note": "The task owner's strict lookup and decision answer.",
+      "note": "The task owner's strict lookup and decision answer.\n\nAnchor: `strict_leaf_doc`, `leaf_decision_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:ba00d32e44dd1fa790aa0be86d08a64c069ab896a62f3feff3010ea2290f3aec",
-            "locator": {
-              "kind": "symbol",
-              "name": "strict_leaf_doc"
-            },
-            "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
-            "content": "sha256:a49644bb3d75c59716525a78db9d08a7d8bdb96d7bf38cefd861ff9e4196d407",
+            "content": "sha256:953e253535971803dc10c1e6910bb53cbb9cbaf8ea2c1cba146d74a5762ee5f3",
             "locator": {
-              "kind": "symbol",
-              "name": "leaf_decision_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
           },
@@ -5539,15 +5425,14 @@
       ]
     },
     "76": {
-      "note": "The ingest dispatch on the loaded contract's memory worktree.\n\nAnchor: `run_leaf_write`",
+      "note": "The ingest dispatch on the loaded contract's memory worktree.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "115f1305ebcde5ed26ed1c12a1ee846998fdebc4",
-            "content": "sha256:37085a4abd8da3bfb3a83ea4742794ace9fe577d7273a5e9e9259123a38fe62e",
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:29976faa9a7fa519b6e6313a1052fed8cb5da6187f42435dcfa00e70393f56ed",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -5556,15 +5441,14 @@
       ]
     },
     "77": {
-      "note": "The bootstrap run mode's dispatch on the admitted memory root.\n\nAnchor: `run_wave_write`",
+      "note": "The bootstrap run mode's dispatch on the admitted memory root.\n\nAnchor: `_run`",
       "targets": [
         {
           "anchor": {
-            "blob": "613668711c067bdd7857201b3696e1b807c7cb7c",
-            "content": "sha256:84294b3138722b23ce7a67a7d7f61055f094cca25ef6c526ad9242530e3a194b",
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0247cce5884204dd838ad40eee092bf7d36ce17ffc4f7f020ee37a1e65f14a2c",
             "locator": {
-              "kind": "symbol",
-              "name": "_run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py"
           },
@@ -5867,15 +5751,14 @@
       ]
     },
     "93": {
-      "note": "The batch blob reader.",
+      "note": "The batch blob reader.\n\nAnchor: `read_git_blobs_bytes`",
       "targets": [
         {
           "anchor": {
-            "blob": "ab3559038b58df6ae276c7bb4c8718ee3f222358",
-            "content": "sha256:9ab25475a4dcf2eeef8c4eb58429348e811cfef1d786c0da924d98f7fe2ec0ef",
+            "blob": "a19c74bb0d905669c2dc4d699a05e230d970effb",
+            "content": "sha256:77549357afecdd99d236a027c227a0690f0b3534d710d0b2097f5d0da36d1b2a",
             "locator": {
-              "kind": "symbol",
-              "name": "read_git_blobs_bytes"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

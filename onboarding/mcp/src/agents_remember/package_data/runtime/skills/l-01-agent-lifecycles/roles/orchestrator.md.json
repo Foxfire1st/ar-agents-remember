@@ -1,6 +1,22 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md",
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
+            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

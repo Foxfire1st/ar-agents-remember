@@ -12,6 +12,10 @@ Concurrent role starts observe the second caller's failed nonblocking acquisitio
 
 ## Evidence
 
-- The scoped current source carries the module/document behavior described above. [1]
 
 - The second start reaches the actual held dispatch lock before pending is asserted. [2]
+
+
+## Refreshed current evidence
+
+- The scoped current source carries the module/document behavior described above. [1]

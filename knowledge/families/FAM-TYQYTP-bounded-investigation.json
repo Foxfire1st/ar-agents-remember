@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The member boundaries together protect the end-to-end promise: a concern alone cannot constrain writes or remediation, and a slot guard alone cannot preserve request/report identity and primary-chat ownership."
+  },
+  "guarantee": "A supplied concern may be investigated across source, task, memory and provider evidence, with checks confined to scratch or repository tooling sandbox; its report reaches the actual starter before any explicitly ordered provider/system remediation, while no order grants code, memory, task or role-start authority.",
+  "id": "FAM-TYQYTP",
+  "members": [
+    "INV-WAY665",
+    "INV-YT1AD8",
+    "INV-H0WCGX",
+    "INV-MM63KX",
+    "INV-A8E0YE",
+    "INV-YNHABM"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "bounded-investigation",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "skills/l-01-agent-lifecycles/roles",
+    "skills/l-01-agent-lifecycles",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One scoped investigation produces a report without acquiring leaf mutation authority"
+}
