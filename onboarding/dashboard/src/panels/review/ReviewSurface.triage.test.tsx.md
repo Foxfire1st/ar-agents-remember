@@ -18,7 +18,7 @@
 
 ### How the case stays stable on a loaded machine
 
-- Every wait is bounded at 30 seconds and the test at 60 seconds; nothing waits for time.
+- Async conditions use the shared Testing Library guard; the Vitest configuration owns the test and hook hang guards. The case still waits for the displayed order and selection conditions rather than elapsed time.
 - After each click on the order control the case waits until the control's `data-order` shows that click's order (`authored`, then `triage`), because the control computes the next order from the one it shows.
 - The first `j` is pressed again until the selection moves, because the keymap's binding is a passive effect and a press made before it has run is ignored, as in a browser.
 

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A real product timer may not receive its turn before a negative assertion on a loaded core."
+  },
+  "applicability": "The named debounce, subject-hold, reread and composer product-timer cases in the dashboard suite.",
+  "conditions": [
+    "The actual product timers advance on fake time.",
+    "Assertions observe the boundary effect and restore real timers through teardown."
+  ],
+  "exclusions": [
+    "No new product timer behavior.",
+    "Unrelated event-loop teardown delays retain their reviewed reason markers."
+  ],
+  "id": "INV-WZC60Z",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "focused cases and exact catalogue request counts at hold-1/hold"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 9",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The named product-timer cases advance the fake clock and assert boundary effects instead of racing real timers.",
+  "status": "proposed",
+  "supersedes": []
+}

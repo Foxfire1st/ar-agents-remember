@@ -1,0 +1,74 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+        "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "RepositoryDependencyFacts.build"
+        }
+      },
+      "id": "RLZ-KVM1SK",
+      "invariant": "INV-BQD1G8",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 1",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "RepositoryDependencyFacts.build derives each file from its read bytes and rebuilds the repository-level graph after selecting reusable per-file facts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The current source population and content identities govern reuse and bounded compaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Wrong-shaped or unreadable cached data is discarded without suppressing source errors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:bf4b6e39ec34f73f8385f3b4aa28935103f98dd151b538eeedf77371182f3148",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_facts_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Private atomic writes reclaim their temporary files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:f2c6a4b54c1ef717512e95c376d801621d182c59480d5c00516e83a506dc2496",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_facts_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

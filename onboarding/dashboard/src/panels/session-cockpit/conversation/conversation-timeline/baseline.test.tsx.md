@@ -21,7 +21,7 @@ the deep feed.
 
 ### Invariants And Boundaries
 
-The `mount < 3000 ms` ceiling is a jsdom tripwire, not a hardware ranking.
+The baseline asserts mounted DOM size, ordinal/ARIA honesty and accessibility at depth. It has no elapsed mount-time ceiling: the bounded DOM is the portable correctness assertion, and this jsdom suite makes no browser latency claim.
 
 ### Todos
 

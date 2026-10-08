@@ -27,8 +27,12 @@ join the default suite.
 
 `LiveFixture` owns the child runtime, the fixture model provider process and the adapter under test;
 `TracingEveRuntime` subclasses the production client to record every native event and every request it
-sends. `ScenarioResult` carries one scenario's outcome and why. `_free_port` reserves a loopback port
-per server, and `_await_turn` bounds the wait for a turn boundary.
+sends. `ScenarioResult` carries one scenario's outcome and why. Local model listeners bind port zero
+and read the server's actual bound address. Native runtime startup uses the test-owned
+`IsolatedEveRuntimeProcess`: only an observed address-in-use collision retries, while failed or
+cancelled startup cleans its owned resources and propagates. `_await_turn` bounds the wait for a
+turn boundary. Reconnect and restart polling use the shared hang guard; completed operations and
+refusals supply the opportunity for absence assertions rather than fixed sleeps.
 
 Six scenarios, each a `_scenario_*` coroutine:
 
@@ -137,7 +141,7 @@ No configured `Domain Documentation` source; the scenario list is the task-local
 - The request bodies the scenarios assert against are the production builders, so a policy change breaks the live proof too. [2]
 - The deterministic provider this fixture starts as the model backend. [3]
 - The deterministic counterpart that proves the same contract without a process, and why both exist. [4]
-- None [5]
+- The runtime's admitted workspace write tool is a production TypeScript owner. [5]
 - Node resolution and the runtime root the fixture relies on are the adapter's own launch module, and the interpreter override it seeds is read as given there. [6]
 - The blocked-artifact contract covers every start-failure shape and records the failure class. [7]
 - The capsule scenario and the observation that makes the forging claim falsifiable: nine labels read from the first effective prompt's binding block. [8]
@@ -146,6 +150,10 @@ No configured `Domain Documentation` source; the scenario list is the task-local
 - The trace gained the provider's own `messages` view, which is what lets the assertion be made against the effective prompt rather than the plan the fixture wrote. [11]
 - The shipped TypeScript the capsule scenarios actually observe, since no Python case can see it. [12]
 - The unit-level counterpart of the same binding, which asserts the format and the launch-time verification without a process. [13]
+
+- The provider binds port zero and its actual listener address becomes the launch endpoint. [15]
+- The live adapter keeps production tracing and collision-only test startup. [16]
+- Concurrent deliveries await actual operation completion instead of a scheduler sleep. [17]
 
 ### Cross-Repo References
 

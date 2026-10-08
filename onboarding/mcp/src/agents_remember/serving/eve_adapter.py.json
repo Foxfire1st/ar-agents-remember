@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:5170528a5238ba25382f32eac0ba1719cc19d108be9ef5c90b9521eb80b9601b",
             "locator": {
               "kind": "symbol",
@@ -275,7 +275,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:1fd4a6420bf2c84dbf4737fad60bbddd024f258b9a08f591db19fe1ff24ddc6c",
             "locator": {
               "kind": "symbol",
@@ -287,7 +287,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:6aec0245827ec2876f3ff1df9d9afb01758dcde38a8199790865508976dd030e",
             "locator": {
               "kind": "symbol",
@@ -616,7 +616,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:a6170002d96d5232bea7b1406883c1165b498368a549b295a4bf4e96667959aa",
             "locator": {
               "kind": "symbol",
@@ -628,7 +628,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
             "locator": {
               "kind": "symbol",
@@ -652,7 +652,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:6dad410fa54e270c0df91e505bbcdc46b1e414bf523d3eeac5cb1a6284f3909e",
             "locator": {
               "kind": "symbol",
@@ -664,7 +664,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:46f2baf33a07625deeace8369e392625cd2589b8f544dc0ca379303e3c762bbd",
             "locator": {
               "kind": "symbol",
@@ -688,12 +688,12 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:40c10384b54f774863c9935da921a6dce2b713d26d388ec696bae8f744eeb596",
             "locator": {
-              "end": 328,
+              "end": 158,
               "kind": "line_range",
-              "start": 271
+              "start": 101
             },
             "path": "mcp/tests/test_eve_adapter.py"
           },
@@ -701,12 +701,12 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:6eab25444da4fff35759d9aec352ebb0ecf041d200d80477bc8dbd30b10615a4",
             "locator": {
-              "end": 603,
+              "end": 433,
               "kind": "line_range",
-              "start": 373
+              "start": 203
             },
             "path": "mcp/tests/test_eve_adapter.py"
           },
@@ -714,12 +714,12 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:505817fa2c6621df48e34ac5f555096abd26d117b7efdbb149885fbf115ffcaf",
             "locator": {
-              "end": 723,
+              "end": 553,
               "kind": "line_range",
-              "start": 663
+              "start": 493
             },
             "path": "mcp/tests/test_eve_adapter.py"
           },
@@ -740,12 +740,12 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:14e8ee335e576678e39b128c016385b1d89c53b37cdde567d1db6b9e9a7f9403",
             "locator": {
-              "end": 907,
+              "end": 737,
               "kind": "line_range",
-              "start": 814
+              "start": 644
             },
             "path": "mcp/tests/test_eve_adapter.py"
           },
@@ -753,12 +753,12 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:050415d9ab843c7aaa87437669dc660cd033649b0f2a1081a443d594d9f31095",
             "locator": {
-              "end": 958,
+              "end": 788,
               "kind": "line_range",
-              "start": 910
+              "start": 740
             },
             "path": "mcp/tests/test_eve_adapter.py"
           },
@@ -771,7 +771,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:c853a53bea7b10900ebc7c642e9734a94e33f9141114ffe19f5274c49692ffb3",
             "locator": {
               "kind": "symbol",
@@ -795,7 +795,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:290dee857c5fdc98a445ba88846fc6b63680c9f4d53f298a6abdceacb8316939",
             "locator": {
               "kind": "symbol",
@@ -807,7 +807,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:5e85b32124be144931a8dfae2222c9a3925b09866ddb9ae6c87d3c4d8c15eb01",
             "locator": {
               "kind": "symbol",
@@ -831,7 +831,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:467a7b2e0c7dfc578c605f1efd58dd8d11d1ae1d7804529d13062d80654011e6",
             "locator": {
               "kind": "symbol",
@@ -843,12 +843,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:836c53975686c7d426cbcbc3d32cb659e0556ded89cd4cc23c7e68cf4d61154b",
             "locator": {
-              "end": 622,
+              "end": 621,
               "kind": "line_range",
-              "start": 572
+              "start": 571
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },
@@ -856,12 +856,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:6936f1a84528c3ef37f72afb9f50485c0d627731bb9c031a9ef27608a8173d6d",
             "locator": {
-              "end": 833,
+              "end": 832,
               "kind": "line_range",
-              "start": 774
+              "start": 773
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },
@@ -869,12 +869,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:4dc31d80a378330db28fd91e80f4f67077086411ca52daa34ba977392c9d61ff",
             "locator": {
-              "end": 888,
+              "end": 887,
               "kind": "line_range",
-              "start": 849
+              "start": 848
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },

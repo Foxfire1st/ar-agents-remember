@@ -14,10 +14,10 @@ The Python test suite of the `agents_remember` package. The route holds the test
 (`test_*.py`), the shared support modules and fixture files that several test modules use, the
 pytest composition in [`conftest.py`](conftest.py.md), and the two test catalogs. Every support
 module and most test modules have their own card, and the generated route index lists the carded
-files. Seven test modules have no card: `test_completion_relay_single_owner.py`,
+files. Six test modules have no card: `test_completion_relay_single_owner.py`,
 `test_legacy_expectation_kinds_parse_only.py`, `test_lifecycle_owned_completion_relay.py`,
 `test_memory_quality_is_independent_of_the_closeout_plane.py`,
-`test_memory_scope_task_derivation.py`, `test_serving_shutdown_drain.py` and
+`test_memory_scope_task_derivation.py` and
 `test_terminal_enclosure_archive_sync_journal.py`. This overview describes what holds for the route
 as a whole.
 
@@ -54,8 +54,12 @@ assertion catalogs and the converted readers and writers keep their own tests in
 
 - A new case protects a distinct user operation, a consequential failure or an actual regression.
   Overlapping tests are extended, consolidated or replaced before a case is added.
-- A test does not run this repository's suite inside itself and does not scan the repository to
-  test the suite. Four cases of `test_evidence_catalog_canonical_form.py` start a real pytest
+- General policy forbids running this repository's suite inside a test or repeatedly scanning the
+  repository to test the suite. The approved `MIK-R87@v1` rule13 is the specific bounded scanner
+  exception: `test_suite_load_independence.py` checks timing syntax in `mcp/tests` and
+  `mcp/test_support` (excluding the shared `waits.py`), and registered process-state syntax in
+  `mcp/src/agents_remember`. It does not execute the repository suite.
+  Four cases of `test_evidence_catalog_canonical_form.py` start a real pytest
   process on a small synthetic repository under the test's temporary directory, each call with a
   hard time limit.
 - Coverage is diagnostic. No percentage and no changed-line floor obliges a test.
@@ -120,6 +124,16 @@ catalogs.
 - The gate's warm pass becomes the refusal when a packet locator is retargeted. [497]
 - [test_worktree_candidate_capture.py](test_worktree_candidate_capture.py.md) protects the shared capture's exact state matrix, copied index time, trust flags, derived exclusions, conversion-rule boundary and real-index isolation.
 
+## Operation witnesses and fixture ownership
+
+The shared [wait helpers](../test_support/agents_remember_test_support/testing/waits.py.md) give ordinary operation waits a hang guard and diagnostic failure; they do not establish a performance requirement. Negative assertions follow the actual excluded operation's opportunity: held mutex/dispatch-lock contention, blocked control-authority dispatch, exact projector publication, resolve entry or completed durable-record reads. Deadline behavior uses injected owner-local time where available. A deliberate real expiry remains a behavior test with semantic outcomes, never an elapsed-speed ceiling.
+
+- [conversation_open_test_support.py](conversation_open_test_support.py.md) owns the conversation launch and resolve-entry doubles.
+- [eve_adapter_event_test_support.py](eve_adapter_event_test_support.py.md) owns the standing subscriber and exact completed-record-pass witness.
+- [reviewer_worklist_process_test_support.py](reviewer_worklist_process_test_support.py.md) owns held real children, request-clock injection, occupied executor and process-tree observations.
+- [knowledge_index_test_support.py](knowledge_index_test_support.py.md) owns the one same-size/same-second Git rewrite helper; its real clock alignment is the tested scenario and has a larger explicit guard.
+- [test_serving_shutdown_drain.py](test_serving_shutdown_drain.py.md) witnesses cancellation drain before worker release and host close, then checks complete producers rather than a quiet time window.
+
 ## Where To Start
 
 Module names begin with the area they test. The table names a starting module for concerns that
@@ -152,7 +166,7 @@ span several modules; the card of a module, where it has one, states what its ca
 
 ## 260928-MIK-L99 — a leaf's agents hand over to each other
 
-The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_handover_review_rounds.py`), the retirement-wording guard test (`test_leaf_retirement_wording.py`) and the wording-guard rework in `test_role_instruction_wording.py`. The new modules have their own cards, so the list of uncarded test modules keeps its seven named files.
+The suite gained the leaf-handover tests (`test_leaf_handover.py`, `test_leaf_handover_review_rounds.py`), the retirement-wording guard test (`test_leaf_retirement_wording.py`) and the wording-guard rework in `test_role_instruction_wording.py`. The new modules have their own cards, and have their own cards.
 
 ## 260928-MIK-L93 — a question for the developer goes up the chain
 
@@ -167,7 +181,10 @@ The new `test_developer_question_wording.py` joins the unit-regression lane: it 
 - The collected cases are counted against the two budgets. [6]
 - The collection hook loads the lane manifest and marks each item with its lane. [7]
 
-- The test policy: when a case is justified, no running this repository's suite inside itself, no repository scan to test the suite, diagnostic coverage, and the four real-pytest cases of the canonical-form module. [25]
+- General test policy forbids recursive suite execution and repeated repository scans to test the suite; coverage stays diagnostic and the canonical-form module uses four real-pytest cases in temporary synthetic repositories. The approved MIK-R87@v1 rule13 bounded timing/process-state scanner is the specific exception described in Test Policy and the scanner evidence below. [25]
+
+- Approved MIK-R87@v1 rule13 bounds the Python timing scan to mcp/tests and mcp/test_support, excluding the shared waits.py; it reports syntactic timing violations without running the repository suite. [502]
+- The same approved bounded scanner compares syntactic process state under mcp/src/agents_remember with the exact closed register. [503]
 - The real catalogs load through both loaders. [11]
 - The production-chain proof owns nothing in the catalog. [12]
 - The union merge attribute for both catalogs. [13]

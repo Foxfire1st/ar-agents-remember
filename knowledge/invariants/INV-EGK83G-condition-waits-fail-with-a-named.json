@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unnamed or duplicated wait owner can hang a suite or let a racy rewrite case claim a source change it never made."
+  },
+  "applicability": "Shared condition-wait helpers and tests needing a same-second Git-index rewrite.",
+  "conditions": [
+    "The unmet predicate or operation is named on the common hang guard failure.",
+    "The index rewrite has one canonical helper; its alignment guard is separately bounded at120seconds."
+  ],
+  "exclusions": [
+    "No scheduler-speed assertion.",
+    "Deliberately expiring product guards and injected clocks remain distinct from hang guards."
+  ],
+  "id": "INV-EGK83G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Python timing scan; tests in reopen/read-latency/candidate-capture import the canonical helper"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 5",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Condition waits fail with a named unmet condition under one hang guard, and the same-second index rewrite has one time-bounded owner.",
+  "status": "proposed",
+  "supersedes": []
+}

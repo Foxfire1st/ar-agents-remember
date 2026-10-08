@@ -99,12 +99,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
             "content": "sha256:fdb83473d75d8fc70dd87e307f7de7895edf7ea0bdeaef4967c00ef2fe3fa4ea",
             "locator": {
-              "end": 51,
+              "end": 53,
               "kind": "line_range",
-              "start": 51
+              "start": 53
             },
             "path": "dashboard/vitest.config.ts"
           },

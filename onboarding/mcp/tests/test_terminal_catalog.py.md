@@ -47,6 +47,8 @@ result.
 
 No additional implementation scope is opened by this memory reconciliation.
 
+The cross-instance termination proof observes the writer's actual failed nonblocking flock acquisition while the catalog batch owns the lock. It asserts the writer has not completed after that opportunity, then exits the batch, joins the writer under the shared hang guard and checks it was reclaimed.
+
 ## Evidence
 
 ### Docs References
@@ -76,3 +78,5 @@ to removed methods are superseded by this current inventory.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+- The operation opportunity precedes the retained assertion. [10]

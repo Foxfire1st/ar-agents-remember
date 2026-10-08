@@ -38,7 +38,7 @@ pass cannot leave a phantom entry that a later `has_pending` would report as a l
 `_Gate` parks one chosen pass until the case releases it. `arm()` sets the armed flag and clears both
 events, so arming is also the reset: a case arms the gate immediately before the step whose pass it
 wants to park, and the hook that fires next is that pass. The first call after arming clears the flag,
-signals `entered` and blocks on `release`. The bounded wait (10 s) turns a gate that is never reached
+signals `entered` and blocks on `release`. The shared `HANG_GUARD_SECONDS` wait turns a gate that is never reached
 into a failure rather than a hang — a case that loses its race fails loudly instead of wedging the run.
 
 `_Sequence` gives the events of different threads one real-time total order. Virtual time stands still

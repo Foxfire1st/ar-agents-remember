@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b568217f721587fec57b4b2f12fa6bd861793c3b",
+            "blob": "917a3d1a7e971d992fe262076a740353f4cded80",
             "content": "sha256:8f53faa431fe9d9af4688df8a72b421d724621ffaf8dddf9fe9b4f8d92a0e64e",
             "locator": {
-              "end": 56,
+              "end": 58,
               "kind": "line_range",
-              "start": 56
+              "start": 58
             },
             "path": "dashboard/src/panels/SessionComposer.test.tsx"
           },

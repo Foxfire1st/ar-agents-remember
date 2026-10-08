@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/data/conversation/store.test.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "801a35bf384d07142f14290233de7a04233345ec",
+        "content": "sha256:a0c9340e5003f962132a9a4c0a456c4d96c8ac0ecb543c6906d2ae51e5280879",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RYPW8P",
+      "invariant": "INV-WZC60Z",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 9",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This suite advances reconnect/retry timers before checking store behavior.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The store orchestration under test (`connectConversation`, `disconnectConversation`, `enforceLru`, and `failStream`) records typed stream errors in `errorBySession`.\n\nAnchor: \"failStream: (sessionId\"; \"return { bySession\"",
@@ -74,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
             "content": "sha256:dff2aaff7f2dd1ebe210044500d6cf4cb64e5a74d768b5f9cb6222cda228cf97",
             "locator": {
               "kind": "symbol",
@@ -85,12 +103,12 @@
         },
         {
           "anchor": {
-            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
             "content": "sha256:f7fc8182ce374da51984e6031a877ecb8cea934b229482b402138892b286d91d",
             "locator": {
-              "end": 385,
+              "end": 386,
               "kind": "line_range",
-              "start": 385
+              "start": 386
             }
           },
           "kind": "test"
@@ -102,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
             "content": "sha256:578e226cc841863318170e0fb85abaa9ab78cb2a5065b70376a1ebaa2dc9f4d4",
             "locator": {
-              "end": 394,
+              "end": 395,
               "kind": "line_range",
-              "start": 382
+              "start": 383
             }
           },
           "kind": "test"
@@ -150,6 +168,23 @@
               "name": "conversationIdentity"
             },
             "path": "dashboard/src/test/fixtures/conversationWire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The transient boot-race case controls the product retry with fake time: a zero-time advance settles the first 503, then a 500 ms advance proves another fetch occurred while the phase stays quiet `connecting`. Disconnect/reset and timer restoration keep that opportunity local to the case.\n\nAnchor: `advanceTimersByTimeAsync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
+            "content": "sha256:3c062c2cf8b982fa633fc4ac00967b8c891680b36e3b5009d6eca048f297af34",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 397
+            }
           },
           "kind": "test"
         }

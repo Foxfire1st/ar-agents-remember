@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/reviewer_worklist_process_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A child stays held until the test releases its private gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de35dd54848797e4f7d1657802a1271b863da89f",
+            "content": "sha256:b786f8b5b4f6c645ae93125d94666bd0d9d435aeddfa3c6c2fa4e2259a8e6efa",
+            "locator": {
+              "kind": "symbol",
+              "name": "held_child_script"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only the process owner's request clock advances under test control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de35dd54848797e4f7d1657802a1271b863da89f",
+            "content": "sha256:e61cb13b5dfcaddc55cfd1c61cee896a2f0320c3994545a57cd2c9b1e927d5d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "controlled_worklist_clock"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Both executor workers and a queued job remain held until the route answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de35dd54848797e4f7d1657802a1271b863da89f",
+            "content": "sha256:a42763ba197077548a4e81a798ac5e95e8a2b86268b47653b8717c578d257ddf",
+            "locator": {
+              "kind": "symbol",
+              "name": "busy_default_executor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifetime script arms its alarm after the Git-descendant handshake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de35dd54848797e4f7d1657802a1271b863da89f",
+            "content": "sha256:31bd9d633b4e9447f3807854f8d6809247e9218981841ff57d9416738a2b20c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "LIFETIME_CHILD"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

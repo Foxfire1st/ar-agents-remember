@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "blob": "c3f5f0e374d21ab51d26b19eca468f5861718ad3",
             "content": "sha256:9c43add6a6d188d5cdb7deedb3e934ad1280a10b706c1666c38bea86adfe4f3b",
             "locator": {
               "kind": "symbol",
@@ -55,11 +55,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8220fcf57ac89cd915cbfc35f8a7a0b59e10fc7b",
+            "blob": "c3f5f0e374d21ab51d26b19eca468f5861718ad3",
             "content": "sha256:d15c312f400c6c514facd866de7750b2d8227b29a47e6d7e0f1fe8171373fa04",
             "locator": {
               "kind": "symbol",
               "name": "test_decide_for_lifecycle_rejects_stale_expected_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Injected time proves expiry; an already-present response needs no readiness delay.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3f5f0e374d21ab51d26b19eca468f5861718ad3",
+            "content": "sha256:1f2ff4a8ab9d76d8744f1c0107b72fad4f9c81b646235cfadb18bea96d99b3cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_response_wait_returns_matching_inbox_entry_without_consuming"
             }
           },
           "kind": "test"

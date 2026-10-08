@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+        "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 1216,
+          "end": 1254,
           "kind": "line_range",
-          "start": 1216
+          "start": 1254
         }
       },
       "id": "RLZ-1WK7P0",
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+        "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
-          "end": 417,
+          "end": 435,
           "kind": "line_range",
-          "start": 417
+          "start": 435
         }
       },
       "id": "RLZ-TB9TST",
@@ -41,12 +41,12 @@
     },
     {
       "anchor": {
-        "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+        "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
-          "end": 1347,
+          "end": 1385,
           "kind": "line_range",
-          "start": 1347
+          "start": 1385
         }
       },
       "id": "RLZ-VQZWNZ",
@@ -65,7 +65,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:1b040cdd5c5848b8cd6ef5959a60be2ceff3aa6dbdb5840b8d55f20f5386868b",
             "locator": {
               "end": 2,
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:a58fa86fe18bf3c11bc16759d0f13a04f16adbccc294bbb69c5a5d13c79a30e4",
             "locator": {
               "end": 7,
@@ -251,12 +251,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f95ec3517f79fb1bf9d91232c1515e352657e0a",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:6bd63858346265c088e61fecb3321203a0ad462c2f425608430e58bb7bf26142",
             "locator": {
-              "end": 985,
+              "end": 1022,
               "kind": "line_range",
-              "start": 972
+              "start": 1009
             }
           },
           "kind": "test"
@@ -274,6 +274,57 @@
               "end": 1339,
               "kind": "line_range",
               "start": 1338
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "96": {
+      "note": "Conversation-open support declares its permanent owner and real replacement contract.\n\nAnchor: \"path = \"mcp/tests/conversation_open_test_support.py\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
+            "content": "sha256:1a5a8bb4120f76db5f772f1072c403be555de878f479653a58f7c0cbab1ee196",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "97": {
+      "note": "Eve event support declares its permanent owner and exact consumers.\n\nAnchor: \"path = \"mcp/tests/eve_adapter_event_test_support.py\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
+            "content": "sha256:7ac8b10d1ef6b31fc7cbcbbbbd056f06a718bb3347800e4902bfe46e5c6ff144",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 522
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "98": {
+      "note": "Worklist process support declares its permanent local-composition contract.\n\nAnchor: \"path = \"mcp/tests/reviewer_worklist_process_test_support.py\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
+            "content": "sha256:ed54a755fbed1c6105c41a3a53be5406fd9fb2e09b07091b1075370d6f47125b",
+            "locator": {
+              "end": 2058,
+              "kind": "line_range",
+              "start": 2058
             }
           },
           "kind": "test"

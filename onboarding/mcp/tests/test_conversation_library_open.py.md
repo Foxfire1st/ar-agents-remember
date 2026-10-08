@@ -66,6 +66,8 @@ same arms live.
 
 None.
 
+The launch/resume doubles now live in [conversation_open_test_support.py](conversation_open_test_support.py.md). The pre-launch race waits for `_BlockingPort`'s resolve-entry signal before asserting the service stays pending and has not launched; it releases the same gate to test the mismatch and actual retirement.
+
 ## Evidence
 
 ### Docs References
@@ -87,3 +89,5 @@ No configured domain documentation was available.
 No neighboring repository participates in this open suite.
 
 No meaningful cross-repo references found.
+
+- The pre-launch pending assertion follows actual resolve entry. [6]

@@ -13,8 +13,10 @@ name the population they ran.
 
 ### Logic
 
-MIK-R79 adds `mcp/tests/test_knowledge_reader_tree_coverage.py` to the `unit-regression` lane, since
-the coverage module's tests are a unit-regression obligation. No other lane or module changes.
+The catalog assigns each current test module exactly one evidence lane. The dependency-facts
+store controls and the Python load-independence scanner belong to `architecture-fitness`; the
+existing knowledge reader coverage remains in `unit-regression`. Membership declares the selected
+population, never that an invocation ran or passed.
 
 ### Conventions
 
@@ -60,6 +62,9 @@ No configured live documentation source was available for this pass.
 - The module the lane names. [20]
 
 - The integration list includes the two reviewer worklist test modules. [240]
+
+- Dependency-facts store controls belong to architecture fitness. [241]
+- The bounded Python load-independence scanner belongs to architecture fitness. [242]
 
 ### Cross-Repo References
 

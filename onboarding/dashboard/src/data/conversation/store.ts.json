@@ -123,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "853a2868bfef664987bea99cac65f0720563aa12",
+            "blob": "801a35bf384d07142f14290233de7a04233345ec",
             "content": "sha256:a1a8addd7fd50ebe885fb6432863a9050de83ddbac2391e5c4dddbfe6c89f543",
             "locator": {
-              "end": 303,
+              "end": 304,
               "kind": "line_range",
-              "start": 245
+              "start": 246
             },
             "path": "dashboard/src/data/conversation/store.test.ts"
           },

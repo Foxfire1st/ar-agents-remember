@@ -12,9 +12,13 @@ The Node acquisition cases: a digest mismatch removes the archive and names both
 
 The module substitutes the fetch and the command runner, and exercises the file lock and the archive staging paths directly.
 
+The lock-expiration test observes the actual thread/flock holder before calling acquisition. It asserts `node_operation_busy`, no fetch and no target creation while the lock is held, then releases and joins the holder under the shared guard. The expected product expiry is the subject; there is no elapsed-speed ceiling.
+
 ## Evidence
 
 - The digest refusal case. [1]
 - The whole placement case. [2]
 - The partial-read reclamation case. [3]
 - The empty-XDG case. [4]
+
+- The observed holder retains the lock until the expected semantic refusal. [5]

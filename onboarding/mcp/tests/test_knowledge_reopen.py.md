@@ -96,6 +96,8 @@ the judged tree, the governing row across attempts, and the writer's `items`. 19
 
 - None recorded.
 
+The same-size, same-second Git rewrite scenario imports the single `rewrite_in_the_second_of_the_index_write` owner from [knowledge_index_test_support.py](knowledge_index_test_support.py.md). Its real clock alignment is the scenario's subject; the 120-second alignment guard does not assert scheduler speed. The original captured-tree/currentness assertions remain at this file's test owner.
+
 ## Evidence
 
 ### Docs References
@@ -140,3 +142,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the suite builds scratch repositories under its temporary directory.
 
 No cross-repo boundary is crossed by this file.
+
+- The shared owner establishes a same-size rewrite in the index-write second. [25]

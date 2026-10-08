@@ -1,13 +1,32 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+        "content": "sha256:86da6bbe0013022c34b2ebcb04c9f92bf3148dd69c895c7e6277a5054e352b01",
+        "locator": {
+          "kind": "symbol",
+          "name": "reset_process_state_at_module_boundaries"
+        }
+      },
+      "id": "RLZ-N4E7JJ",
+      "invariant": "INV-5YPFVJ",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 3",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The autouse module fixture brackets every module with reset and cleanup without importing new product owners.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "Shared hooks own ordering and process cleanup.",
       "targets": [
         {
           "anchor": {
-            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
             "content": "sha256:d6a03e501e3158ecad679d3399a15e478f6445ccb3bb7c7b7d51285cc4ad7516",
             "locator": {
               "kind": "symbol",
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",
@@ -29,11 +48,43 @@
         },
         {
           "anchor": {
-            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
             "content": "sha256:1433d3e95c559105b6a2550e9ed61e1b43df56b37160ac36a78db80cab716333",
             "locator": {
               "kind": "symbol",
               "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Already-loaded process state is reset before and after each module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+            "content": "sha256:86da6bbe0013022c34b2ebcb04c9f92bf3148dd69c895c7e6277a5054e352b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_process_state_at_module_boundaries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-test restoration runs before leak failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
+            "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
+            "locator": {
+              "kind": "symbol",
+              "name": "reject_owned_global_state_leaks"
             }
           },
           "kind": "code"

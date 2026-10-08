@@ -66,3 +66,8 @@ leaf base; closeout owns commit stamping.
 The composer suite now pins Enter-send versus Shift+Enter newline precedence, server-confirmed queue
 honesty, deferred-send copy, decluttered exception cues, and the evidence-gated stop control beside
 Send.
+
+
+### Clock And Settlement Evidence
+
+- The bare queued receipt case advances the imported `VISIBLE_STATUS_POLL_MS` on fake time, explicitly releases dispatching/delivered replies in async `act`, and checks the queue and withdrawability claims only after those poll opportunities. It preserves the distinction between a receipt, dispatching and terminal delivered state. [3]

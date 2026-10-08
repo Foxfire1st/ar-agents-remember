@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/conversation_open_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e6ef0e66a5d43b4493a01a7055d378e67dd8800a",
+        "content": "sha256:f71e34ed53ae95f163ca3ea17f6119acf36b07333055555730fba870efb9acff",
+        "locator": {
+          "kind": "symbol",
+          "name": "_BlockingPort"
+        }
+      },
+      "id": "RLZ-AJ77QR",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The blocking resolver exposes actual resolve entry before checking the old context remains pending.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Resolve entry is observed before the launch gate is released.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ef0e66a5d43b4493a01a7055d378e67dd8800a",
+            "content": "sha256:f71e34ed53ae95f163ca3ea17f6119acf36b07333055555730fba870efb9acff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_BlockingPort"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capability and resume-target doubles retain their identities and refusal arms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ef0e66a5d43b4493a01a7055d378e67dd8800a",
+            "content": "sha256:59c605f375699b1486660d62128ff61fe820c60078c3bea97895f9f4c86c84c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Gates"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The opener creates the catalog row; replay absorbs an existing live row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6ef0e66a5d43b4493a01a7055d378e67dd8800a",
+            "content": "sha256:822b5d6f4c30c6517bf4c7ebe00936a018acc7a640a6ac770cd6d472afbc86b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Opener"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

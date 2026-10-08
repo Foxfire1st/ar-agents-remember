@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfcc50d9448af151a0ac4551b7c0127b150419d1",
+            "blob": "a1790ec50b712f4d565a8ce4d387fc40c5583e11",
             "content": "sha256:3d7b7ea49aa47077db1cca86dfbb25ffb046d4560fab1f260276c53cccd2955d",
             "locator": {
-              "end": 192,
+              "end": 193,
               "kind": "line_range",
-              "start": 160
+              "start": 161
             },
             "path": "dashboard/src/panels/session-cockpit/sessions-view/stageSurface.test.tsx"
           },

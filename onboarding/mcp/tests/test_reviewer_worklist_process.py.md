@@ -21,10 +21,10 @@ comparison pin is idempotent. The module is in the `integration` lane.
   `_body` and `_unconverted_base` of `test_review_read_latency`, and `_child_script`, `_fresh_memo` and
   `_observations` of `test_reviewer_worklist_reads`.
 - `_child_script(script)` replaces only the launch of the child module with `python -P -c <script>`, so a
-  test can run a faulty or slow child through the real process owner. `_REPLY` is a script prefix that
-  builds a reply with the right identity and no document; `_SLEEPING_REPLY` sends it after 0.8 seconds.
+  test can run a faulty or held child through the real process owner. `_REPLY` is the imported `WORKLIST_REPLY` script prefix that
+  builds a reply with the right identity and no document. `held_child_script` keeps that child in flight until admission is observed and the test releases it.
 - `_ask(owner, payload, answers, errors)` calls `owner.compute` and collects the answer or the error.
-  `_children`, `_all_children`, `_gone` and `_wait_gone` read `/proc` to follow process trees.
+  `_children`, `_all_children`, `_gone` and `_wait_gone` read `/proc` to follow process trees. Those observation helpers, the lifetime scripts and the controlled-clock/executor fixtures live in [reviewer_worklist_process_test_support.py](reviewer_worklist_process_test_support.py.md).
 
 ### Parity and failures
 
@@ -65,9 +65,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
   build on the caller thread and proves the cold resolution happens exactly once, on that thread; it is
   a deterministic barrier proof, not the historical load qualification, which remains unrun.
 - `test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so`: with the bound set
-  to 4 and the deadline to 1.5 seconds, a fifth computation is refused in under half a second with the
-  code and action of the overload; of the four, the two that held children fail on the deadline and the
-  two that never got a child are overloaded.
+  to 4, four admitted computations visibly occupy two children and two queue positions. The fifth refuses without joining the queue. Advancing only the injected owner clock past its deadline then expires both child holders and both queued computations with their distinct refusal kinds and no retained child.
 - `test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it`: one of two
   requesters cancels and the other still gets the answer from the one child; a sole requester that cancels
   returns only after its child has ended.
@@ -76,11 +74,9 @@ comparison pin is idempotent. The module is in the `integration` lane.
 - `test_four_concurrent_first_reads_answer_alike_from_one_child`: four threads read a new comparison at the
   same moment; all four answer `trees` with one identical body, and one child replied.
 - `test_three_changed_leaves_opened_in_quick_succession_all_answer`: three different comparisons are read
-  one after the other while each child is delayed by two seconds; all three answer, three children ran and
-  at most two at once.
+  one after the other while children are held. The third is observed queued behind two live children before release; all three answer, three children ran and at most two at once.
 - `test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left`: with a deadline of 2
-  seconds and 1.2 seconds of work before the child, the read is refused on the deadline in under 2.9
-  seconds.
+  seconds, injected pre-child work advances the owner clock by 1.2 seconds. The child receives exactly the remaining 0.8-second budget; further injected advancement produces the deadline refusal and reaps the child.
 
 ### Lifetime
 
@@ -93,7 +89,7 @@ comparison pin is idempotent. The module is in the `integration` lane.
   deadline of 0.8 seconds and blocked in Git is killed with its Git process.
 - `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it` (Linux only): a
   parent process runs the real owner and a child blocked in Git; after the parent is killed with
-  `SIGKILL`, the child and its Git process are gone within five seconds.
+  `SIGKILL`, the child and its Git process are observed gone under the shared hang guard.
 
 ### Git configuration, executor, pin
 
@@ -105,11 +101,11 @@ comparison pin is idempotent. The module is in the `integration` lane.
 - `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`: the two argument tuples of the source
   inventory hold `PARSED_DIFF_OPTIONS`, and the worklist's blob diff holds the prefix options, `--no-color`
   and `--no-ext-diff`.
-- `test_a_busy_default_executor_cannot_delay_a_tree_read`: while the event loop's default executor is
-  filled with sleeping work, a request to the route answers in under one second.
+- `test_a_busy_default_executor_cannot_delay_a_tree_read`: while the event loop's default executor
+  has both real workers held and a third job queued, a request to the route answers while every executor job is still unfinished. Release and draining happen afterwards.
 - `test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal`: when the creation of a pin
   fails because another reader created the same pin, `_pin` succeeds and the ref is kept; a ref that names
-  another tree is refused and not moved; a ref lock held for 0.05 seconds is waited out.
+  another tree is refused and not moved; a held ref lock is released only after the actual `update-ref` lock refusal is observed, and the retry succeeds.
 
 ## Evidence
 
@@ -135,3 +131,5 @@ comparison pin is idempotent. The module is in the `integration` lane.
 - The deadline runs from the request's arrival. [20]
 - The bound counts computations, not requests. [21]
 - The process owner under test. [22]
+
+- Owner-local time proves the remaining child deadline without an elapsed-speed assertion. [23]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The two test suites declare shared hang guards, advance the named product-timer boundaries on fake time, and observe the named producer opportunities before negative assertions; bounded source scans reject the stated syntactic timing/state classes unless a real comment gives a reviewed reason. No member alone prevents both premature observations and new unmarked machine-speed dependencies."
+  },
+  "guarantee": "The two test suites declare shared hang guards, advance the named product-timer boundaries on fake time, and observe the named producer opportunities before negative assertions; bounded source scans reject the stated syntactic timing/state classes unless a real comment gives a reviewed reason. No member alone prevents both premature observations and new unmarked machine-speed dependencies.",
+  "id": "FAM-98S8TF",
+  "members": [
+    "INV-48C3DS",
+    "INV-WZC60Z",
+    "INV-WZAMFR",
+    "INV-5VQQ6S"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "r87-observed-test-opportunities",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Test observations use guards, controlled time and real producer opportunities"
+}

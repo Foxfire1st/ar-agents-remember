@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
         "content": "sha256:530c393b0baf5ca33cb572a1e67b2703ad5369d457e732affc1a576cc0f7e76e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
         "content": "sha256:cddd28daf5a333f50e9866dc74a12734bfe5d24f75f70413333f9f5301cd4788",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
         "content": "sha256:8d09c03cf164f06467c2474ad62476cde820c4b9c44ca92ac571f8efbee79fd2",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
         "content": "sha256:4ece35e8e2817118efa21d94b5c6b12840ca24690bc43b71252762f29635cb8a",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
-        "content": "sha256:0dcdbf810def91fb01aad3b7c2e929c8748b9a6a806999c5d2b59278f74fad0f",
+        "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
+        "content": "sha256:34daaa5536a59eea7f80f5d75e2488529f20507770dc4870aeb57dde4e3ab634",
         "locator": {
           "kind": "symbol",
           "name": "test_a_same_size_rewrite_in_the_second_of_the_index_write_changes_the_tree"
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
             "content": "sha256:cddd28daf5a333f50e9866dc74a12734bfe5d24f75f70413333f9f5301cd4788",
             "locator": {
               "kind": "symbol",
@@ -126,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
             "content": "sha256:4934cc938470f023d8b8d6a48ae29506e7adaa6ba7a63e5fc5a65b849fecd963",
             "locator": {
               "kind": "symbol",
@@ -142,12 +142,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1470aa6a4ec9354f45a8ff4cb898e30fbb80adee",
+            "blob": "0bfc29cc3d801e4d2f0814a2962831d3ad7192a1",
             "content": "sha256:530c393b0baf5ca33cb572a1e67b2703ad5369d457e732affc1a576cc0f7e76e",
             "locator": {
               "kind": "symbol",
               "name": "test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree"
             }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The shared owner establishes a same-size rewrite in the index-write second.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
+            "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_in_the_second_of_the_index_write"
+            },
+            "path": "mcp/tests/knowledge_index_test_support.py"
           },
           "kind": "test"
         }

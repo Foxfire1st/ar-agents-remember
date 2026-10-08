@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f57d9a67c3d574837cf46787b8ebcf8cbcb7e2c2",
+            "blob": "4b012ca6f8816f5cb9c64785606d46ccc7b9f842",
             "content": "sha256:11eb862ac33868b34cda9e1cad6182477bd2132e90286b30e17b1d15cd7d8e69",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f57d9a67c3d574837cf46787b8ebcf8cbcb7e2c2",
+            "blob": "4b012ca6f8816f5cb9c64785606d46ccc7b9f842",
             "content": "sha256:e79768f4c62ee36c9c5e354833c61bb2b3d128a6b76222aff23dc58b5e4cbcf8",
             "locator": {
               "kind": "symbol",
               "name": "test_gate_projection_fold_degrades_instead_of_crashing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The operation opportunity precedes the retained assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b012ca6f8816f5cb9c64785606d46ccc7b9f842",
+            "content": "sha256:047ced491ead171a4d3468c25cf0e820b0e48233178087d04ace343816627f51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_record_is_lost_when_an_append_races_a_compaction"
             }
           },
           "kind": "test"

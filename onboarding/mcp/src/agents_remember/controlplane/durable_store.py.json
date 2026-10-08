@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f7bd5c47ccb962d5e0c3011b0d66a3c990e7e0f",
+            "blob": "97dbd9063f43194a8744408df88da6452cec103f",
             "content": "sha256:243aa186ad21e463c83464777d66478f1701201a4aacb1fe7748cba83c63e27e",
             "locator": {
               "kind": "symbol",
@@ -74,12 +74,12 @@
         },
         {
           "anchor": {
-            "blob": "1f7bd5c47ccb962d5e0c3011b0d66a3c990e7e0f",
+            "blob": "97dbd9063f43194a8744408df88da6452cec103f",
             "content": "sha256:d95adf3d4942c07eaa1f4bfbecf8648d1bd7b5796d2d66e0439279a1125b9672",
             "locator": {
-              "end": 113,
+              "end": 114,
               "kind": "line_range",
-              "start": 88
+              "start": 89
             },
             "path": "mcp/tests/test_dagger_registry_lock.py"
           },

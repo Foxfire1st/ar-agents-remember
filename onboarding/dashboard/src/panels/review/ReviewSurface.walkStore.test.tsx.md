@@ -14,7 +14,7 @@ Family FAM-F00001 has nine members and FAM-F00002 three. The shared member's rev
 
 ### Serving
 
-The file serves its own world through `serve` of `walk.test-utils.tsx`. A review request with a `continuation` parameter gets the continued page of FAM-F00001; a request for the member INV-GGGGGG (its identity read from the family body) answers with a deliberate network failure (`TypeError`), so the last step of the first case is an expected failed read; any other request gets the body whose subject it names among the two family reviews, INV-PPPPPP's review and the shared member's review. `useFirstPage` makes the shared member's review the one captured with a page size of two. The file sets a test timeout of 60 seconds and the triage order before each case.
+The file serves its own world through `serve` of `walk.test-utils.tsx`. A review request with a `continuation` parameter gets the continued page of FAM-F00001; a request for the member INV-GGGGGG (its identity read from the family body) answers with a deliberate network failure (`TypeError`), so the last step of the first case is an expected failed read; any other request gets the body whose subject it names among the two family reviews, INV-PPPPPP's review and the shared member's review. `useFirstPage` makes the shared member's review the one captured with a page size of two. The file sets the triage order before each case. Async conditions and test completion use the shared Testing Library and Vitest hang guards.
 
 ### The cases
 

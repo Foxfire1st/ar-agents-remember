@@ -1,13 +1,31 @@
 {
   "path": "dashboard/src/panels/review/IntentMarkers.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
+        "content": "sha256:4fe71a402c116ee8ebc0459412a327881b67dac552f014ed7da45fcda064801a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VA0R5H",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The marker suite gives the selected answer, effects and focus hold their controlled opportunity before a no-steal assertion.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The real bodies, the transport and the scope stand-in.\n\nAnchor: \"hunkMarkers.classifier.captured.json\"",
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
             "content": "sha256:0ff2a69e7b052935bec19c9adfa334b19d6a7710e88cc5367fc42eb629ecc728",
             "locator": {
               "kind": "symbol",
@@ -18,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
             "content": "sha256:f3d8ad67c29a580defbe6f822279966a7e42f1ae49f97a0635cb12e2bf4f1579",
             "locator": {
               "kind": "symbol",
@@ -34,12 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
             "content": "sha256:03845bfa4144458cae40649ba65734073f61cbe1716dffca790bf705708bd0a2",
             "locator": {
-              "end": 293,
+              "end": 294,
               "kind": "line_range",
-              "start": 180
+              "start": 181
             }
           },
           "kind": "test"
@@ -51,12 +69,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
             "content": "sha256:3f9e690f083331a88ea713d7552415e794596f01d0db2fafeaa60ab3db02507d",
             "locator": {
-              "end": 391,
+              "end": 392,
               "kind": "line_range",
-              "start": 295
+              "start": 296
             }
           },
           "kind": "test"
@@ -85,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00ba5e7cab6c75688fc3836ef430e1fe74988888",
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
             "content": "sha256:3936375db05cf3935f645cc98fd2b5d8d805c1a4c9fce224e9c70e4fd9bd6be0",
             "locator": {
-              "end": 564,
+              "end": 568,
               "kind": "line_range",
-              "start": 440
+              "start": 444
             }
           },
           "kind": "test"
@@ -108,6 +126,23 @@
               "end": 770,
               "kind": "line_range",
               "start": 566
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The return-focus hold controls `requestAnimationFrame` with fake time: after blur another frame restores the returned mark, while Escape ends the hold and a subsequent 250 ms fake advance leaves focus on the body. The unchanged excerpt case flushes mounted effects before asserting that classification was not read.\n\nAnchor: `advanceTimersToNextFrame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "317e4539a4945706ae96b01891449a4dd8b125ff",
+            "content": "sha256:e8dc61d6f59e6411b747c9d1a2625a9e19490402733d3ec044b94a963b0b1fbd",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 414
             }
           },
           "kind": "test"

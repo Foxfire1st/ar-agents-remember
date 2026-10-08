@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A negative assertion before the actual producer opportunity can pass while the intended behavior is broken."
+  },
+  "applicability": "The named negative assertions for lock contention, publication, stream passes, resolver entry, delivered answers and dashboard focus/hold effects.",
+  "conditions": [
+    "The tested producer reaches an observed opportunity before the negative outcome is asserted.",
+    "A forced rewrite stays parked until a real same-inode lock refusal or completed append is witnessed."
+  ],
+  "exclusions": [
+    "Elapsed scheduler delay is not evidence of opportunity.",
+    "No blanket assertion that every possible negative test was proved by a syntactic scanner."
+  ],
+  "id": "INV-WZAMFR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "no rule12 assertion removed; focused behavior proofs; Eve31 cases remain install-dependent skips"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 12",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Negative outcomes are checked after explicit lock, publication, stream-pass, resolve-entry, delivered-answer or fake-clock opportunities.",
+  "status": "proposed",
+  "supersedes": []
+}

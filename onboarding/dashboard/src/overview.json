@@ -688,6 +688,60 @@
         }
       ]
     },
+    "37": {
+      "note": "Async conditions share one hang guard.\n\nAnchor: `configure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+            "content": "sha256:6d221491507b0821f58e3b9e1ff387180e96ce7f8c885055442d8bac06c4e4f8",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Test and hook completion share hang guards.\n\nAnchor: `testTimeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
+            "content": "sha256:94bd62113a653331247f545cdff0961f18765b354052ac8292df3c2cabfb0ffd",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Bounded source guard scans dashboard test and support files.\n\nAnchor: `the dashboard suite does not depend on machine load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:14f4ae9e65512fd17bbff76f78e318de569fcd63e3cd9781776bbc1394268d28",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "4": {
       "note": "The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts (\"task entries this list carries\"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as \"task entries\" on the strength of this card.\n\nAnchor: \"Tasks · {count}\"",
       "targets": [

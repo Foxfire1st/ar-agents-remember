@@ -13,7 +13,9 @@
 Repository-owned pytest isolation and evidence infrastructure. Ordinary pytest bootstrap and
 certifying startup are distinct. `pytest_bootstrap.py` is the reusable bootstrap: a seeded
 collection order, an isolated cache directory for the pytest process, and the check that a test
-restores owned module-level state. It carries no certifying or external-service capability.
+restores owned module-level state. Per-test restored rows, module-boundary reset rows and
+constant-for-tests rows have distinct treatments in a closed register; resetting touches only
+already-loaded product owners. It carries no certifying or external-service capability.
 `certifying_bootstrap.py` admits a Dagger quality process first and only then resolves the
 candidate test process.
 
@@ -31,7 +33,8 @@ publication each keep their own authority.
   shuffles collected items with a seed. `dagger_admission.py` mints the testing-layer capability
   for a nonce-attested Dagger quality process.
 - **Source facts.** `dependency_facts.py` derives import, pytest-plugin and test-consumer facts
-  from source; it holds no declarations. `consumer_inventory.py` is the bounded inventory of the
+  from source; it holds no declarations. Its disposable per-file store keys actual source and parser
+  identities, while each build reconstructs current population and relations. `consumer_inventory.py` is the bounded inventory of the
   Python-test evidence consumers.
 - **The two test catalogs.** `lane_manifest.py` loads the lane of every test file and
   `evidence_lanes.py` is the pytest plugin that checks it at collection and routes categories and
@@ -47,6 +50,9 @@ publication each keep their own authority.
   exact-node dependencies and suppress or report dependent failures. `cadence_runner.py` is the
   non-accepting Dagger route for scheduled, provider-bump and migration evidence.
   `pytest_phase_reporter.py` records node outcomes and phase timings.
+- **Condition waits.** `waits.py` supplies synchronous and asynchronous named-condition waits
+  under one shared hang guard. A condition supplies readiness; neither the guard nor poll interval
+  proves a producer had an opportunity.
 - **Instruction corpus.** `curation_doctrine.py` holds the registry of retired curation sentences
   and the statements every canonical instruction source must make; a test reads them to check the
   shipped corpus.
@@ -62,10 +68,12 @@ validators describe the current source and the configured evidence.
 
 - Ordinary pytest setup has no certifying or external-service authority. Dagger admission is
   mandatory at the certifying composition boundary.
-- Owned mutable module state is restored after each test, and a leak fails the test that caused
-  it. Seeded ordering uses its own random generator and does not touch the process-global one.
+- Restored mutable rows are repaired after each test before a leak fails its owner. Reset rows
+  are cleared before and after modules, after owned workers or resources finish; constant rows
+  preserve import-time and deferred registrations. Seeded ordering uses its own random generator
+  and does not touch the process-global one.
 - The dependency facts are derived from source only. Lifecycle metadata can describe ownership but
-  cannot make itself complete.
+  cannot make itself complete. Store corruption cannot replace source truth or hide a source error.
 - Lane membership and catalog coverage are exact: a missing, stale or conflicting declaration is a
   finding.
 - Both test catalogs must be in canonical form. A list that is out of order, a duplicate line, a
@@ -145,3 +153,8 @@ The testing support area gained two guard data and helper modules: `retired_leaf
 - The registry of retired curation sentences and required statements. [17]
 
 - The refusal that both loaders and the start of a test run give for a file that does not parse. [18]
+
+
+- The register assigns distinct reset, restored and constant treatments. [19]
+- Condition readiness is separate from the shared hang guard. [20]
+- Content identities reuse per-file facts without freezing current graph membership. [21]

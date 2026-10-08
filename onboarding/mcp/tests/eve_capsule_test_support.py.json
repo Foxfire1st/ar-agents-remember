@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b628b76d98f046fcebd57f7099f37e7bdd40e3a0",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:2c3f3257119b54ecf03917790420b2f1fbd4324fd709cb039d88acaa6db5b1b6",
             "locator": {
-              "end": 524,
+              "end": 561,
               "kind": "line_range",
-              "start": 524
+              "start": 561
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:c280061a20bf80da66fa3c302c5f607306c4ca7d787be2963da38c18974366b3",
             "locator": {
-              "end": 95,
+              "end": 97,
               "kind": "line_range",
-              "start": 87
+              "start": 89
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },
@@ -204,12 +204,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:8e59b44af06374e3709800483998446a3d005d52bac7f9725e9e03a6b177bc63",
             "locator": {
-              "end": 1175,
+              "end": 1177,
               "kind": "line_range",
-              "start": 1175
+              "start": 1177
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },

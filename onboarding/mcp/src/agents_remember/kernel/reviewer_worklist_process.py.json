@@ -183,8 +183,8 @@
     },
     {
       "anchor": {
-        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-        "content": "sha256:d7c0c61d9c3b8425baf45d30bb9e72f3896ab173f576516b827871f8b954fded",
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:7611f584012032129c9506190742fe1ef8b53ca43a02171de6485ee29e17029f",
         "locator": {
           "kind": "symbol",
           "name": "_deadline"
@@ -219,8 +219,8 @@
     },
     {
       "anchor": {
-        "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-        "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+        "blob": "148943da796523667a3e85e53c1c3b5d92200aa3",
+        "content": "sha256:d0864d204be614f73384c435d228f33335c9f44b8dc05495e9c795332ae9b72b",
         "locator": {
           "kind": "symbol",
           "name": "_join"
@@ -232,7 +232,7 @@
         "handoffEntry": "MIK-R42@v2-shared-bounded-computations",
         "leaf": "260928-MIK-L42"
       },
-      "rationale": "Joins a request to the flight of its digest unless that flight is cancelled, and refuses with WorklistOverloaded only a request that would create a flight while MAX_WAITING_COMPUTATIONS flights exist.",
+      "rationale": "Joins requests to their digest flight and refuses only a new computation at the waiting-computation capacity; thread-start failure removes the unpublished flight before any waiter can join it.",
       "role": "primary-authority"
     },
     {
@@ -636,7 +636,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
             "locator": {
               "kind": "symbol",

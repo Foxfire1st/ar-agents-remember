@@ -305,7 +305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:d7a14d6ef2ea9e00d35d53b3eef3801566ce381f2ba9f187241bbcf738e34f00",
             "locator": {
               "kind": "symbol",
@@ -317,7 +317,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:7c57a769ccc5fa1307d38b8647c2cd5d662e1aee0ec6a8e075996426e4d0b86e",
             "locator": {
               "kind": "symbol",
@@ -329,12 +329,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:852725c31816233ae87d30fa6bd7c229241839e3ffb96d4f2242b8ed2b8b74e8",
             "locator": {
-              "end": 629,
+              "end": 630,
               "kind": "line_range",
-              "start": 575
+              "start": 576
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },
@@ -342,12 +342,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:ff86748cc9a3457d7b74a3f6098f3b633f02358c394736e83054b8ef08c309a0",
             "locator": {
-              "end": 707,
+              "end": 708,
               "kind": "line_range",
-              "start": 632
+              "start": 633
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },

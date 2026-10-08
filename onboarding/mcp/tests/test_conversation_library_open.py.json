@@ -125,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "blob": "297c09e8c2962dcc868a4d80881543ce803130f6",
             "content": "sha256:b6e0e8385eda03986be2749741ccf2e5b4c94c6fc3f2cbdcadbb38e0f2ac14a0",
             "locator": {
               "kind": "symbol",
@@ -136,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "blob": "297c09e8c2962dcc868a4d80881543ce803130f6",
             "content": "sha256:777e3f373876fc9b984b5614bcfddaa3ef9df13bd3cb6543089674a1b1879527",
             "locator": {
               "kind": "symbol",
@@ -147,11 +147,27 @@
         },
         {
           "anchor": {
-            "blob": "064a59f61cc420372240368a8da9505fe94064ea",
+            "blob": "297c09e8c2962dcc868a4d80881543ce803130f6",
             "content": "sha256:75580799d0599c4fe52fd5c0a082175e9d337e4484c9149dcb058d70722b398d",
             "locator": {
               "kind": "symbol",
               "name": "_NeverCalledHelperHost"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The pre-launch pending assertion follows actual resolve entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "297c09e8c2962dcc868a4d80881543ce803130f6",
+            "content": "sha256:8dd776716765f61396b8b814f6080b7914c1c090204724f04d2b8ab53b52d018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prelaunch_poll_stays_pending_then_real_mismatch_retires_for_real"
             }
           },
           "kind": "test"

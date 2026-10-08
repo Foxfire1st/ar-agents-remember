@@ -32,6 +32,8 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+Receipt-bind recovery and failed-generation replacement use a zero dispatch-brief readiness wait and assert that the injected sleeper is never called. Their unknown-versus-rollback and retire/replace assertions remain unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -57,3 +59,5 @@ to removed methods are superseded by this current inventory.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+- Receipt-bind recovery keeps its unknown outcome with no fixture readiness sleep. [6]

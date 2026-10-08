@@ -78,3 +78,8 @@ calls without relying on browser playback that jsdom does not implement.
 - `matchMedia` stub consumed by the honest-motion gate. [1]
 - Wired as the vitest setup file. [2]
 - The render test that depends on these stubs. [3]
+
+
+### Clock And Settlement Evidence
+
+- `configure({ asyncUtilTimeout: 20_000 })` supplies the shared async utility hang guard. Tests wait for observable conditions or control product timers with fake time; this guard expresses no operation-speed requirement. The unhandled-error trap and browser stubs remain independent of that guard. [4]

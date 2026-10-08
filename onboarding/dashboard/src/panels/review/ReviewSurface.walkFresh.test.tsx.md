@@ -78,3 +78,8 @@ Three cases pin the OR-R033 reveal, next to the scroll cases below. `recordingSc
 
 - The refresh and retry handlers these cases pin. [37]
 - The selection that decides keeping or starting afresh. [38]
+
+
+### Clock And Settlement Evidence
+
+- The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait. [41]

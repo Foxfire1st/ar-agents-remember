@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:1a203303ad32e30c6354249d3bd6b29ea0acebd5cdac69545ad0679462fc8b1f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:ae868677aa01b2f814c90c493fe4f3b32678515788a65974e794cde883e6c36f",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:aea809871ea10d0252b4d985e8b91cb1df3d5efdca848ccb5f7dd05606e4d00e",
         "locator": {
           "kind": "symbol",
           "name": "test_actual_disconnect_deadline_shutdown_and_queue_reap_children"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-        "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:2e80ca17a62ea2cd04e66fe7e1a061de010131c68575711ce6615780c775d4da",
         "locator": {
           "kind": "symbol",
           "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:5b03fe63549e3eedcc584efa6c275d69a040e66dbd62d1c07562b55a8317b65c",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-        "content": "sha256:0a429e445cde8b4e67c4f3c25a50fd8feb01665b6f2715e95df6e040705b0f24",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:c480b51e7330af8955178237e13e26612245ef0b0df995ffb799bd32ef3ebb6d",
         "locator": {
           "kind": "symbol",
           "name": "test_twelve_identical_concurrent_reads_share_one_child_without_a_refusal"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:280c70155e4161ef2d657b9f29896b7167a326d1eef01e46768f2cb6bc945b6b",
         "locator": {
           "kind": "symbol",
           "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-        "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:17bb2254f821a00b3feef292f750d20cce1e19d4938e9bc1493b55fbb9db8cb9",
         "locator": {
           "kind": "symbol",
           "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
         "locator": {
           "kind": "symbol",
@@ -156,8 +156,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:284ca56a5db3b744fd63c41b57ba2a4ae8824b9192dd5c202d57bf113108c494",
         "locator": {
           "kind": "symbol",
           "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-        "content": "sha256:e3860010325e9ec39be013a421cb292f80bcaeaa14d068e6784140b992fe5349",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:91efded513d9dbb2d190cd297190d20920ca9be02d640d544f25e2714f7e1d9f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
@@ -190,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
         "locator": {
           "kind": "symbol",
@@ -207,8 +207,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:fac6ac8b50c11e5a9762389b20a0545e837549e755a87521be0d2947e9feaa76",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:f18605f796f9104d1a3faa081b329c51a9c5a0fee58216be30142fc9386252a8",
         "locator": {
           "kind": "symbol",
           "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
@@ -224,8 +224,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:5184096382682aa910695ea621a8dbb7486bff5fafe150e8bb8fc98f92b872cd",
         "locator": {
           "kind": "symbol",
           "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
@@ -241,8 +241,8 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-        "content": "sha256:bda75d42d8a82b6ada53d81ad530f56c75cec124e7b1d5f320f0c25d5275fd65",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+        "content": "sha256:f0fe54bb03d5bb0fc2a157fd7589817e23668f8b61679d679bf8241e24b3b5dd",
         "locator": {
           "kind": "symbol",
           "name": "test_three_changed_leaves_opened_in_quick_succession_all_answer"
@@ -258,7 +258,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
         "locator": {
           "kind": "symbol",
@@ -275,7 +275,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:3fb8e2a96cf5bd585f0d87fa236ff1d553e7f84c2ca578796e7bea069bd1f48b",
         "locator": {
           "kind": "symbol",
@@ -292,7 +292,7 @@
     },
     {
       "anchor": {
-        "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+        "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
         "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
         "locator": {
           "kind": "symbol",
@@ -315,7 +315,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
             "locator": {
               "kind": "symbol",
@@ -395,7 +395,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:5b03fe63549e3eedcc584efa6c275d69a040e66dbd62d1c07562b55a8317b65c",
             "locator": {
               "kind": "symbol",
@@ -411,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
             "locator": {
               "kind": "symbol",
@@ -491,7 +491,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:02431587b667b51c68fb0775145957ebce0bc0f469719fbfa18351347f736a95",
             "locator": {
               "kind": "symbol",
@@ -548,6 +548,22 @@
             "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Owner-local time proves the remaining child deadline without an elapsed-speed assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
+            "content": "sha256:a5aab8f4c5939893ef27c5038fc3130555b9b5b1da0c233a8e511d38dd673210",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -636,7 +652,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:28c02f4bfca06bec6ac2fb4607c43637e02eebe4d8f30f2b2483d5f69cb66b05",
             "locator": {
               "kind": "symbol",
@@ -652,7 +668,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:65adab1bfc387fb900f92881d215dc04c32c9fc87838afb427d14dfc3e5a29af",
             "locator": {
               "kind": "symbol",

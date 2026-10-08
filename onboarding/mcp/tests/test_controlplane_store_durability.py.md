@@ -26,6 +26,8 @@ The measurement helper owns the mechanism and this suite asserts its outcome. Th
 
 No file-local implementation change is requested by this reconciliation.
 
+The forced-loss case also injects missing release and missing append opportunity. Each must fail before performing an unforced rewrite or producing a race result; correct serialization of the eight real stores remains permitted and their receipt/loss assertions are preserved.
+
 ## Evidence
 
 ### Docs References
@@ -47,3 +49,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- The operation opportunity precedes the retained assertion. [4]

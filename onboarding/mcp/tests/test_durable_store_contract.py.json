@@ -1,13 +1,51 @@
 {
   "path": "mcp/tests/test_durable_store_contract.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
+        "content": "sha256:ebc8e54fd064ba9c1b4253e5d9b8023d4483a08c35754b2489a6eceb8680fb2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
+        }
+      },
+      "facet": "Actual mutex contention gives the competing operation its opportunity before the absence assertion.",
+      "id": "PRF-CCFNGD",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
+        "content": "sha256:a4f1ced4393900704a6f186c6760cf643db0ac9d0bce55e18d8be13609189531",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observe_contended_mutex"
+        }
+      },
+      "id": "RLZ-NAG261",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The helper signals actual mutex contention before an absence assertion can claim dismissal did not run.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "A second thread is kept out of a log that is already held.",
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:8d0f4e6cfeff893bba1cc3d375ca2eb7c888352a38da616818539c193aeb6b30",
             "locator": {
               "kind": "symbol",
@@ -23,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:1730e2ee0b0b9fba3e7440f0141acb336c818dd9a505c6539b55f1785803c77f",
             "locator": {
               "kind": "symbol",
@@ -55,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:627c39a29299c3691df2b7125e1c04dd6fe23b7a39c68da046153372a85e8f28",
             "locator": {
               "kind": "symbol",
@@ -71,7 +109,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:d20b13775112110d3dffa03766cec0b6fc7a17caa94c04b628f329fd67eb471d",
             "locator": {
               "kind": "symbol",
@@ -87,7 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:9c831c8d16d80d52867033af50fdbd422ca05a95e1eeced035458e6d696f1095",
             "locator": {
               "kind": "symbol",
@@ -103,7 +141,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:721f983a7e71e658cdf83b0fdabce6adf7cd470a087b77e4111f9c985e181113",
             "locator": {
               "kind": "symbol",
@@ -119,11 +157,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
             "content": "sha256:fc4199446e0b666880a4389dfef591227d03e19ddeab06e8033d81ca1668f31e",
             "locator": {
               "kind": "symbol",
               "name": "test_an_interrupted_rewrite_cleans_up_too"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Actual mutex contention precedes the negative dismissal assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee4531a584965fc1575c59466193b4aaf30c56ab",
+            "content": "sha256:ebc8e54fd064ba9c1b4253e5d9b8023d4483a08c35754b2489a6eceb8680fb2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
             }
           },
           "kind": "test"

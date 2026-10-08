@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/SessionComposer.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "917a3d1a7e971d992fe262076a740353f4cded80",
+        "content": "sha256:d5f8990b0b818900350f46efe0e71d0ddd745badc972e0130da5328d81c2e848",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z2N5K7",
+      "invariant": "INV-WZC60Z",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 9",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This suite advances VISIBLE_STATUS_POLL_MS on fake time and releases submission-status replies before asserting queued, dispatching and delivered status, the cleared draft, absent queue preview and no withdrawable claim.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The component under test.\n\nAnchor: \"export const SessionComposer\"",
@@ -25,12 +43,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b568217f721587fec57b4b2f12fa6bd861793c3b",
+            "blob": "917a3d1a7e971d992fe262076a740353f4cded80",
             "content": "sha256:78bd38b90937b1fbce1fb8f61cc95395ead471d620da1302a3912acd12a21408",
             "locator": {
-              "end": 740,
+              "end": 728,
               "kind": "line_range",
-              "start": 697
+              "start": 685
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bare queued receipt case advances the imported `VISIBLE_STATUS_POLL_MS` on fake time, explicitly releases dispatching/delivered replies in async `act`, and checks the queue and withdrawability claims only after those poll opportunities. It preserves the distinction between a receipt, dispatching and terminal delivered state.\n\nAnchor: `VISIBLE_STATUS_POLL_MS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "917a3d1a7e971d992fe262076a740353f4cded80",
+            "content": "sha256:da57d1a67c06dd7f1b2aa02151d25cb469c51e2c025b30672253d2cec16185c2",
+            "locator": {
+              "end": 616,
+              "kind": "line_range",
+              "start": 541
             }
           },
           "kind": "test"

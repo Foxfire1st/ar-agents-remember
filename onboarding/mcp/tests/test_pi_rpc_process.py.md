@@ -26,6 +26,8 @@ The process boundary is real but the child is a fixture, not an installed Pi mod
 
 No file-local implementation change is requested by this reconciliation.
 
+The cancellation-correlation test waits for the exact first request ID to enter the transport's pending set before cancellation. This establishes request admission directly while preserving late-response and successor-correlation assertions.
+
 ## Evidence
 
 ### Docs References
@@ -47,3 +49,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- The operation opportunity precedes the retained assertion. [4]

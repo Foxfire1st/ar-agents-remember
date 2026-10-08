@@ -42,6 +42,8 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+The volatile-only ETag negative assertion follows publication of the exact new projection object by the real projector. The held ETag and 304 are checked after that positive publication boundary instead of after several assumed ticks.
+
 ## Evidence
 
 ### Docs References
@@ -64,3 +66,5 @@ to removed methods are superseded by this current inventory.
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
 No external evidence is needed for these assertions.
+
+- The unchanged ETag is checked after the volatile-only projection was actually published. [7]

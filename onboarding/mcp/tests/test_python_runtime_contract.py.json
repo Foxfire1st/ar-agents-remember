@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
-        "content": "sha256:35e74be497130959d66b2e54c19662d18ac9122ea975a3e48be6afb515bec439",
+        "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+        "content": "sha256:8dc43e1a3027e3e54e6c4d335297d3addf82f4b14d3e24198a16d6bb5e4ff7cc",
         "locator": {
           "kind": "symbol",
           "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
             "content": "sha256:6113fc67bbd8947f6a8188eafbc25c401083dc984e717cc0452c7da81fb8a68b",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
             "content": "sha256:0cf273e554c9aa942ef912af9876e49b520b03bce8f6974a2bbcbb6a1b6ae3cb",
             "locator": {
               "kind": "symbol",

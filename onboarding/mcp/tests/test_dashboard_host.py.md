@@ -12,8 +12,12 @@ The dashboard/host composition cases: the three status exit codes print both lin
 
 The module drives the dashboard's dispatch, the serving daemon's supervision and the real background starter through fakes.
 
+The two service-factory doubles accept the current keyword-only `leaf_agent_archive` argument. Background-host ordering is proved while the daemon start is observably held; release and completion use shared hang guards.
+
 ## Evidence
 
 - The status exit codes and no-start case. [1]
 - The stop-does-not-stop case. [2]
 - The real background wiring case. [3]
+
+- Service doubles accept the exact keyword-only archive owner argument. [4]

@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "3aa3272a9a3f40526d122a20b9cc39d4ebe7f834",
-        "content": "sha256:523423b6acb1f6d4b507963d81229d2604ac91ed196f2a39422771da75dad868",
+        "blob": "c317b932a6967f953c35276901a817463e135f02",
+        "content": "sha256:d5220185ab90d8d914ef5886270ca75dfad669f4cd11fb752658d62eefa21eae",
         "locator": {
           "kind": "symbol",
           "name": "bridge_call"

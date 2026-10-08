@@ -15,7 +15,10 @@ Forces one append into the read-to-replace compaction window of eight real JSONL
 `run_forced_lost_update` seeds a non-prunable anchor, forks a reclaimer and appender, and parks the
 actual rewrite at a controlled rendezvous. The decoy is written before arming so a write that is
 itself read-modify-write cannot trigger the hook prematurely. Bounded handoff and joins allow
-correct locking to serialize the append without leaving child processes hung.
+correct locking to serialize the append without leaving child processes hung. The parent releases the rewrite
+only after an actual exclusive-lock refusal on the same lock inode or a completed append is observed while
+the rewrite remains parked. Missing opportunity or missing release fails explicitly. Correct serialization
+may keep append completion blocked until the rewrite is released; completion inside the window is not required.
 
 Successful append receipts are stored separately from store bytes. `surviving_ids` parses durable
 records and counts torn lines; `_forced_result` reports attempted/surviving/lost records, errors
@@ -51,3 +54,5 @@ The exact source declarations below establish the current behavior; this invento
 ### Cross-Repo References
 
 No separate cross-repository authority is established by this file.
+
+- An append opportunity is a real held-lock refusal on the correct inode or a completed write. [7]

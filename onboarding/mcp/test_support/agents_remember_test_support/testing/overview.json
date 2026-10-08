@@ -6,7 +6,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
             "content": "sha256:8871d41faeb01e4371a59eeaaa76181e2fbaf1d9f69eea9aaabeea8b1bda5a5a",
             "locator": {
               "end": 1,
@@ -138,6 +138,23 @@
         }
       ]
     },
+    "19": {
+      "note": "The register assigns distinct reset, restored and constant treatments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "010f854fb6bc835d89a1c480867a26fff0ec9943",
+            "content": "sha256:3cf48d489814b0c8e73e1ae721b7548e13f1f24c6f114ff679b11fe07453faab",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROCESS_MUTABLE_STATES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Certifying setup admits Dagger before it resolves the candidate.",
       "targets": [
@@ -150,6 +167,40 @@
               "name": "prepare_certifying_pytest_bootstrap"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Condition readiness is separate from the shared hang guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+            "content": "sha256:62add609bec3e5ad9ab06cb419a0e6f22f1d372d31f4923f07ae25794403a26f",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_until"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/waits.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Content identities reuse per-file facts without freezing current graph membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
           },
           "kind": "code"
         }
@@ -229,7 +280,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "650445b70ef44d27dff266334b3a7025b630bc41",
+            "blob": "5df318e710939f0e89d6ca2d08598cd1084cca3d",
             "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
             "locator": {
               "kind": "symbol",

@@ -1,0 +1,58 @@
+{
+  "path": "scripts/test-under-load.sh",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only one or three runs are admitted.\n\nAnchor: \"AR_LOAD_RUNS must be 1 (scheduled full run) or 3 (named checks)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c97c7c7ff9454f53518e78e4f7df2b4d0dc5cf0",
+            "content": "sha256:4c7deb5d40a469f16af62f82edee9b2f909e67b49895c891f924ebdf674fbd32",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "EXIT cleanup kills and reaps the owned burner processes.\n\nAnchor: \"trap cleanup EXIT\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c97c7c7ff9454f53518e78e4f7df2b4d0dc5cf0",
+            "content": "sha256:901ec050e964776d05d147e7173908367d131d2516a8dc51c6a16e560f3549e8",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The command shares the burners' allowed core and failures determine the final status.\n\nAnchor: \"if taskset -c \"$load_core\" \"$@\"; then\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c97c7c7ff9454f53518e78e4f7df2b4d0dc5cf0",
+            "content": "sha256:1f61f5d2078255bcb748650c2af9a6c8e571e4350f7edd773f0127da27863d8d",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

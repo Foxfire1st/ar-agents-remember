@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reusing facts under incomplete identity can silently change fail-closed catalog findings or relative-import ownership."
+  },
+  "applicability": "Dependency-facts derivation for the Git-observed Python source population.",
+  "conditions": [
+    "Only per-file imports, literals and reader flags are reused; tracked paths, module ambiguity and all cross-file consumer graphs are rebuilt.",
+    "Identity includes implementation bytes, Python version, dotted module, package-initializer status and the parsed source bytes.",
+    "Unusable or wrong-shaped stored facts are ignored and never change the derived result."
+  ],
+  "exclusions": [
+    "No start-up speed budget or elapsed-time evidence.",
+    "No cache of cross-file closure or source population."
+  ],
+  "id": "INV-BQD1G8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_dependency_facts_store.py; shared-clone field equality and filled-store catalog validation"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 1",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Per-file import, literal and reader facts are keyed by complete source and derivation identity while every cross-file graph is rebuilt.",
+  "status": "proposed",
+  "supersedes": []
+}

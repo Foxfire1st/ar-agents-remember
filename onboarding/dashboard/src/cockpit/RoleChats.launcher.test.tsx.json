@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.\n\nAnchor: `rereads a launch in progress without an ordinary status line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
+            "content": "sha256:ca33f44bbe08e113c00a54a9be92f5690050d95355a3af301fca4f73861c5619",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"displays the configured tier\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
+            "content": "sha256:55ffba10251f4e8ee1f3e39ffba847866f036791c8408fe9388d7a0ef1f80d88",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"mirrors the backend\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74d1c9daf756aa23df630f88e5e1b1f423f9836e",
+            "content": "sha256:42790e822f1ead18a7f00796fc2a24f117677da62ee7dfe4407b4836b74b7400",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

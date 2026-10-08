@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:07865559f165c23c1652d86d3921ea35bda2e7de341dcb3a3107366b46d5a0a3",
             "locator": {
               "kind": "symbol",
@@ -114,6 +114,23 @@
         }
       ]
     },
+    "12": {
+      "note": "The event fixture owns the completed durable-record-pass witness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+            "content": "sha256:49429fe74e4cae9451d7e65a78ca5b014ac36e34c0494f1bf76a2e1820f856d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_completed_pass"
+            },
+            "path": "mcp/tests/eve_adapter_event_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "2": {
       "note": "The deterministic transport double and its scripted turn builder.",
       "targets": [
@@ -131,7 +148,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:b4e099ebbe9d53722af8c6908d3f476df8f3a43b82c33c500256555c1b029e15",
             "locator": {
               "kind": "symbol",
@@ -143,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:98414104b6e688b79885b2827dc22d6b3e310ecc9ec76b7c3d1fb3295f4cf6d9",
             "locator": {
               "kind": "symbol",
@@ -155,7 +172,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:55121d8adc9357cbb108404357cfc683b2496da8da636a20792b2c94c157098f",
             "locator": {
               "kind": "symbol",
@@ -198,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:79329c6546b246562fe0f135e9baf20bac27ad5ef0399886034a571a77344887",
             "locator": {
               "kind": "symbol",
@@ -210,12 +227,12 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:3e39aedbd4ed10e717b3d6dcb64e1a303a56a0e16aea42b25cbcebbc19b03c67",
             "locator": {
-              "end": 60,
+              "end": 65,
               "kind": "line_range",
-              "start": 41
+              "start": 46
             },
             "path": "mcp/tests/eve_adapter_test_support.py"
           },
@@ -223,12 +240,12 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:75d7415d3410a4287cd3bed8ad7a90303970ca3d5b19097021d0acac2670c9c5",
             "locator": {
-              "end": 308,
+              "end": 315,
               "kind": "line_range",
-              "start": 301
+              "start": 308
             },
             "path": "mcp/tests/eve_adapter_test_support.py"
           },
@@ -396,7 +413,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:c853a53bea7b10900ebc7c642e9734a94e33f9141114ffe19f5274c49692ffb3",
             "locator": {
               "kind": "symbol",
@@ -408,7 +425,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:467a7b2e0c7dfc578c605f1efd58dd8d11d1ae1d7804529d13062d80654011e6",
             "locator": {
               "kind": "symbol",
@@ -420,12 +437,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:836c53975686c7d426cbcbc3d32cb659e0556ded89cd4cc23c7e68cf4d61154b",
             "locator": {
-              "end": 622,
+              "end": 621,
               "kind": "line_range",
-              "start": 572
+              "start": 571
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },
@@ -451,7 +468,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:d9d7641008352df520bc803d7fe9947f148e827c9ab7b2d86ed8700637a4341a",
             "locator": {
               "kind": "symbol",
@@ -462,7 +479,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:d5ae16c60fca3d47dccb19d311ed5bec57d9848413927850d60efcae9ab61664",
             "locator": {
               "kind": "symbol",
@@ -473,7 +490,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:fab1a826f20046dba53c21ceb5c8a445c40bde10de9b2f5e61181d56ecc8490d",
             "locator": {
               "kind": "symbol",
@@ -501,7 +518,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
             "content": "sha256:0bde5850bc8d01b143ce838ab83aced10d4cef73372e88d8157d6c60de45d9d7",
             "locator": {
               "kind": "symbol",

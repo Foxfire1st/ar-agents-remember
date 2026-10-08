@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "blob": "ba8e8835478f5d0c2e2beca480de3761b8c046c3",
             "content": "sha256:45df03019155819c51de9b53bac720608f486da0c81d11d2133f7d80fe2f9800",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "blob": "ba8e8835478f5d0c2e2beca480de3761b8c046c3",
             "content": "sha256:5c296846122daab53c4614f898de7afe959000c9d8c792a8ddf1499c0c39d264",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "85e5d46ca54c20a0bcacdc488f4cc322e05b4fb6",
+            "blob": "ba8e8835478f5d0c2e2beca480de3761b8c046c3",
             "content": "sha256:be57863fc83b2680dac36d46a7ccdb4ecaeee14d71ee42a9413a3819a655d2c7",
             "locator": {
               "kind": "symbol",
@@ -76,6 +76,22 @@
             "locator": {
               "kind": "symbol",
               "name": "test_terminal_failed_brief_retires_and_replaces_that_generation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Receipt-bind recovery keeps its unknown outcome with no fixture readiness sleep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8e8835478f5d0c2e2beca480de3761b8c046c3",
+            "content": "sha256:9886fb23a44c70e8165e97b07be05017fd852314c94198c87b43b2ad0c8d4b07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipt_bind_failure_is_unknown_not_rollback_and_retry_repairs_it"
             }
           },
           "kind": "test"

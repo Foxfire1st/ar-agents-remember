@@ -155,6 +155,17 @@ lockfile/tsconfig files are copied. Nothing is installed and nothing is copied i
 
 None known.
 
+## Resource And Opportunity Ownership
+
+`FakeEveRuntime.stream_passes` records a stream pass only after the durable tail has been consumed;
+subscriber assertions can wait for a completed producer opportunity rather than elapsed silence.
+
+`IsolatedEveRuntimeProcess` is a test-only owner for the observed bind/close race. It retries only an
+actual EADDRINUSE/address-in-use failure, first stops the failed child, then selects another private
+port within one shared hang-guard window. Other startup errors propagate after cleanup; cancellation
+and unexpected failures force-stop the owned child/client/stderr reader before propagation and never
+trigger a port retry. This does not change the product transport or relax its errors.
+
 ## Evidence
 
 ### Docs References
@@ -180,6 +191,9 @@ No configured `Domain Documentation` source; the modeled ordering is the pinned 
 - The recording provider boundary this module gained: the raw request body kept verbatim, and the instrument's own drop that models a boundary losing the value. [12]
 - The application root the bytes under test come from, and the machine-local install it links to. [13]
 - The cases that consume the recording boundary and the staged root, one application root and one process per level. [14]
+
+- A completed stream pass records its exact session and consumed tail. [15]
+- Collision-only retries and failed/cancelled-start cleanup share one test-owned resource owner. [16]
 
 ### Cross-Repo References
 

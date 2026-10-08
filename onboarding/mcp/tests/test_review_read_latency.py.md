@@ -44,6 +44,8 @@ and Git children do not depend on the machine. The module also exports the helpe
 - **Freshness.** A read after an edit shows the new content, also for a same-size rewrite in the second of
   the index write, and nothing composed is kept on the server.
 
+The same-size, same-second Git rewrite scenario imports the single `rewrite_in_the_second_of_the_index_write` owner from [knowledge_index_test_support.py](knowledge_index_test_support.py.md). Its real clock alignment is the scenario's subject; the 120-second alignment guard does not assert scheduler speed. The original captured-tree/currentness assertions remain at this file's test owner.
+
 ## Evidence
 
 - The module docstring: the port every case enters through and the machine-independent counts. [6]
@@ -59,3 +61,5 @@ and Git children do not depend on the machine. The module also exports the helpe
 - Three Git questions and the per-file reference answers. [16]
 - Literal file names keep exact patches. [17]
 - A read after an edit shows the new content. [18]
+
+- The shared owner establishes a same-size rewrite in the index-write second. [19]

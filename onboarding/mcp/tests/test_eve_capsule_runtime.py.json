@@ -191,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:4b6cbf058ed163d0577984e0a36fa3f85a10d4519b4f8fcf11f88432ec4ce07d",
             "locator": {
-              "end": 1137,
+              "end": 1139,
               "kind": "line_range",
-              "start": 1137
+              "start": 1139
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },

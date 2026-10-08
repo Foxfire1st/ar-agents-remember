@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Shared tmux or unreaped provider resources let concurrent tests terminate each other or leak children after cancellation."
+  },
+  "applicability": "Test-created tmux servers and provider processes/sockets in the repository pytest population.",
+  "conditions": [
+    "Each pytest process uses a private tmux socket directory.",
+    "Provider children and sockets are test-owned.",
+    "Only an observed bind collision is retried, after the failed child is reaped; cancellation and other failures clean up and propagate."
+  ],
+  "exclusions": [
+    "The user default tmux server is never owned by these tests.",
+    "No retry of unrelated startup failures.",
+    "Native SDK absence stays a reported skip."
+  ],
+  "id": "INV-KJN5GP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "two overlapping terminal runs3passed each; default server unchanged throughout; fake bind-collision proof; native Eve dependency cases skipped"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 7",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every pytest process owns its tmux server and test-started provider socket, while an Eve bind collision reaps the failed child before a bounded retry.",
+  "status": "proposed",
+  "supersedes": []
+}

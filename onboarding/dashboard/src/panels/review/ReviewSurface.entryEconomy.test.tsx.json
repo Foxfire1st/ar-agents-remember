@@ -1,13 +1,31 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.entryEconomy.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
+        "content": "sha256:ffa863bc0811d502b8b27155ac158522845fea743cd2b0ef2ffc54523aa80529",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MSNGXE",
+      "invariant": "INV-WZC60Z",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 9",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This suite advances controlled catalogue reply delays and SUBJECT_HOLD_MS on fake time before asserting one chosen-subject read, or a task-context read when the catalogue remains unanswered.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The economy the cases hold the reviewer to, including the bounded wait.\n\nAnchor: \"the wait for the catalogue is bounded\"",
       "targets": [
         {
           "anchor": {
-            "blob": "b660dfda70349d7eca09d1c8b1861d41241bb270",
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
             "content": "sha256:3faaacb36885de3a84a70c734041a976875b7041e338fb586d753b137f9d74a2",
             "locator": {
               "end": 12,
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b660dfda70349d7eca09d1c8b1861d41241bb270",
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
             "content": "sha256:fad140451470da52b86b3b1ad9b55b5a4016239092b83f8dff056655f46b5ba2",
             "locator": {
               "kind": "symbol",
@@ -35,7 +53,7 @@
         },
         {
           "anchor": {
-            "blob": "b660dfda70349d7eca09d1c8b1861d41241bb270",
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
             "content": "sha256:c3ade64bdc103abe38625e0ada3ffd439739a7d338a201e9f94ee4735eb9444f",
             "locator": {
               "kind": "symbol",
@@ -51,12 +69,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b660dfda70349d7eca09d1c8b1861d41241bb270",
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
             "content": "sha256:f05ec73a14c05110667beaafbbbfe52a5f29700ef174c64403324e66fdd7b981",
             "locator": {
-              "end": 140,
+              "end": 141,
               "kind": "line_range",
-              "start": 70
+              "start": 71
             }
           },
           "kind": "test"
@@ -106,6 +124,23 @@
             "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Catalogue delays and the product hold run on the same fake clock. A stalled catalogue yields zero review reads at `SUBJECT_HOLD_MS - 1` and one task-context read at the next millisecond; answered catalogues remain at one chosen-subject read even after advancing past the hold. No wall-clock elapsed inequality establishes this economy.\n\nAnchor: `SUBJECT_HOLD_MS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "812f2b24ae68e5e0cd0b2d62537cdac763915647",
+            "content": "sha256:aa9816d84fc52cee4531b9843ad6774cf88bd14975ed1789f9393f669694a11b",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "test"
         }
       ]
     }

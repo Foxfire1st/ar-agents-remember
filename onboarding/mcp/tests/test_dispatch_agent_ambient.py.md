@@ -26,6 +26,8 @@ Only a proven unbriefed child is eligible for rollback. Host doubles create no r
 
 No file-local implementation change is requested by this reconciliation.
 
+The successful ambient spawn case gives dispatch-brief readiness a zero wait and injects a sleeper whose call is an assertion failure. It retains real spawn and durable-brief assertions without a fixture-side readiness delay.
+
 ## Evidence
 
 ### Docs References
@@ -51,3 +53,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- Ambient spawn and brief persistence use zero readiness wait and never sleep. [8]

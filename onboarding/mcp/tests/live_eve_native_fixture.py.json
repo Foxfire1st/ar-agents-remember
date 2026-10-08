@@ -1,6 +1,24 @@
 {
   "path": "mcp/tests/live_eve_native_fixture.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+        "content": "sha256:020cc3116ec38a77913861f8caceef323205e77ddcbaf0f2bca564514555f8b7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GP9FCX",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The native fixture supplies the private test server and process resources instead of selecting an unreserved port.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The adapter under live test, driven through its real production transport.",
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:e6258151e0dcb679c4b5b4f5f446c42f2b501d0ec11fa2d3e7b29a6d95e2ef8e",
             "locator": {
               "kind": "symbol",
@@ -228,6 +246,54 @@
             "path": "eve_runtime/README.md"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The provider binds port zero and its actual listener address becomes the launch endpoint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:3fc5af06323b6219088f6df7e789021a6eb749a134d677ea9fb0dd53d5359cb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_model"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The live adapter keeps production tracing and collision-only test startup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:80d2b109d10c0e385c4632a2b30ef4af9b04de4f8273d6a0fec1a1b0cb47ba05",
+            "locator": {
+              "kind": "symbol",
+              "name": "TracingEveRuntime"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Concurrent deliveries await actual operation completion instead of a scheduler sleep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
+            "content": "sha256:c9406454c3d3c760b34472d97b29b9fdfc49a1b9414baba5149f4bee46c84a36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_concurrently"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -460,7 +526,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:8fbcc6f6d6d44f9b318eefff84dfd296e423674e2ea505faf26a83a6a3677869",
             "locator": {
               "kind": "symbol",
@@ -471,7 +537,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:fc5f9d9515059627c4e929fbc6540053b2516ba2ef7aaceac5ee8ead9883a8df",
             "locator": {
               "end": 1870,
@@ -499,7 +565,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:b755b2f1460926e5553ececabf2898dee9c8ace022b0eae5f6f5209d078dde60",
             "locator": {
               "kind": "symbol",
@@ -515,7 +581,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:3260541bf9cd37badc52a93c64120df5bc7f34a14854754ac520dd6cf80f21d1",
             "locator": {
               "kind": "symbol",
@@ -526,7 +592,7 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:e819cc30ff24cc2a22c09db10c29ab7c98253d59537050db095852e5ddef2170",
             "locator": {
               "kind": "symbol",

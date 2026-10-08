@@ -1,6 +1,25 @@
 {
   "path": "mcp/tests/eve_adapter_test_support.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
+        "content": "sha256:848f5304e05cf69830b4b7c013df4756f1d0a7117be86723531deb3add6895af",
+        "locator": {
+          "kind": "symbol",
+          "name": "IsolatedEveRuntimeProcess"
+        }
+      },
+      "id": "RLZ-9PGY1V",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This runtime helper owns the provider child/client/stderr tasks and reaps them before collision retry or failure propagation.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The seam this double implements is the production transport protocol, which is why the adapter stays under test.\n\nAnchor: `EveRuntimeProcess.send_message`; `EveRuntimeProcess.stream`",
@@ -50,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:d45e0873b38610087f0c6125ee26f97a99b93f935b789d1974b257dba35109e0",
             "locator": {
               "kind": "symbol",
@@ -67,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:72b4da76b16439eb8fae8c252fb0c7834a8aab8be284e346a5b35f29c2626725",
             "locator": {
               "kind": "symbol",
@@ -78,7 +97,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:befddbd093a7fb4b8cd33a7786425cc896f47c5dd442f0ae8a7d2dc5b2bbd499",
             "locator": {
               "kind": "symbol",
@@ -90,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:3d28fd288fca2585bf5dcde4ccfc9073a28df6e8a7a805186bc4e8767cdfc4cf",
             "locator": {
               "kind": "symbol",
@@ -132,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:791cf0fc3f2016f727575031dab2f91577a31aed827f920c299082d7878ac3a0",
             "locator": {
               "kind": "symbol",
@@ -143,7 +162,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:b3299d699f0926db246c8f980eb90a8279db3bedee9393162a512280ecf29485",
             "locator": {
               "kind": "symbol",
@@ -154,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:738f26c1b9905f9dbd9975e4cf5446ff0e71bc46fcdd50bacb4e8538de847e9c",
             "locator": {
               "kind": "symbol",
@@ -165,12 +184,12 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:1a88338821132e904bbb36ec90611d8d5538a09b2cf5a8cc755f2b124c2b31bb",
             "locator": {
-              "end": 465,
+              "end": 472,
               "kind": "line_range",
-              "start": 440
+              "start": 447
             }
           },
           "kind": "test"
@@ -182,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:1de4241db7ff61f0822572d3a3632c2e585304cf71607bb7d01d7427772e4520",
             "locator": {
               "kind": "symbol",
@@ -193,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:c61aa84b3f5ed8cd3eae0dec3ba360f0802697978b148362adf2c53a50357c86",
             "locator": {
               "kind": "symbol",
@@ -209,13 +228,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
             "content": "sha256:0bde5850bc8d01b143ce838ab83aced10d4cef73372e88d8157d6c60de45d9d7",
             "locator": {
               "kind": "symbol",
               "name": "EveEffortConsumerTests"
             },
             "path": "mcp/tests/test_eve_effort_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A completed stream pass records its exact session and consumed tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
+            "content": "sha256:1e7d666cc2c3a363b0707ffb5ee400443d9da74dd4f0d5508aab97361dd3b8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "stream"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Collision-only retries and failed/cancelled-start cleanup share one test-owned resource owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
+            "content": "sha256:848f5304e05cf69830b4b7c013df4756f1d0a7117be86723531deb3add6895af",
+            "locator": {
+              "kind": "symbol",
+              "name": "IsolatedEveRuntimeProcess"
+            }
           },
           "kind": "test"
         }
@@ -238,12 +289,12 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:3e39aedbd4ed10e717b3d6dcb64e1a303a56a0e16aea42b25cbcebbc19b03c67",
             "locator": {
-              "end": 60,
+              "end": 65,
               "kind": "line_range",
-              "start": 41
+              "start": 46
             }
           },
           "kind": "test"
@@ -272,7 +323,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:8f5e6f1c3a4379259f7f88c1196403e482e50fde929dbc538ca9b288e7b37e1a",
             "locator": {
               "kind": "symbol",
@@ -296,7 +347,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:6dad410fa54e270c0df91e505bbcdc46b1e414bf523d3eeac5cb1a6284f3909e",
             "locator": {
               "kind": "symbol",
@@ -308,7 +359,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:46f2baf33a07625deeace8369e392625cd2589b8f544dc0ca379303e3c762bbd",
             "locator": {
               "kind": "symbol",
@@ -320,7 +371,7 @@
         },
         {
           "anchor": {
-            "blob": "54c460c9d6f5da8a5986c3675dba99894f8b19d6",
+            "blob": "9e2da3f39b329991024c565488a3b047f3808c36",
             "content": "sha256:2a0b97a90f69d7b266f4e84ecc62da5f995677d4a1193c0b3c8297b8befc0723",
             "locator": {
               "kind": "symbol",
@@ -354,7 +405,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:07865559f165c23c1652d86d3921ea35bda2e7de341dcb3a3107366b46d5a0a3",
             "locator": {
               "kind": "symbol",
@@ -401,12 +452,12 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:9936de05a51315fded0e34767d37060ea0fdb6ca1b6a326efeb4d770705704b4",
             "locator": {
-              "end": 364,
+              "end": 371,
               "kind": "line_range",
-              "start": 336
+              "start": 343
             }
           },
           "kind": "test"

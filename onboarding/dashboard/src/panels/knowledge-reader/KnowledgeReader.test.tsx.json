@@ -1,18 +1,36 @@
 {
   "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+        "content": "sha256:b8be2376c3ca106749ef32120be3e6d54dcce9b0cdc6803765285a46c94e475b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C4J6EP",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The reader suite settles the actual failed answer and effects before asserting no new read occurred.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "10": {
       "note": "The stale-answer and late-selection cases.\n\nAnchor: `clears old record answers on commit and repository changes and ignores late selections`",
       "targets": [
         {
           "anchor": {
-            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
             "content": "sha256:1f2e83d84f3ae6736a7761b66d5bcadc83bcc95b6ded24f49f84257179de38b2",
             "locator": {
-              "end": 915,
+              "end": 914,
               "kind": "line_range",
-              "start": 895
+              "start": 894
             }
           },
           "kind": "test"
@@ -20,14 +38,43 @@
       ]
     },
     "11": {
-      "note": "The captured bodies the cases serve.\n\nAnchor: `captured`",
+      "note": "The captured bodies the cases serve.",
       "targets": [
         {
           "anchor": {
-            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
-            "content": "sha256:5d88729a9216ba53c4d9d53134ba84fa03bf7d74577718a125689ce34d85fe83",
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+            "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "captured"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Negative stale-answer and duplicate-acquisition assertions follow delivered held replies and flushed React effects in async `act`. This gives the actual stale response or retained-pane effect a chance to run before asserting that it changed nothing; no fixed real sleep supplies that proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+            "content": "sha256:8ffe3670092b33e6022d8ba5febc72c1bfc8cdaed35075aad22803c57c2edda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "heldTree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+            "content": "sha256:95f6bfaf46979370ecbc91a54c1a40f5e5cd48c9167a39dccfb07ef86fed1b77",
+            "locator": {
+              "end": 588,
+              "kind": "line_range",
+              "start": 555
             }
           },
           "kind": "test"
@@ -39,12 +86,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
             "content": "sha256:5ca2177478aba04c992023db59393b37861f4ed8c4249e1603396f3987966a7d",
             "locator": {
-              "end": 674,
+              "end": 673,
               "kind": "line_range",
-              "start": 661
+              "start": 660
             }
           },
           "kind": "test"
@@ -52,16 +99,16 @@
       ]
     },
     "9": {
-      "note": "The O1 shared-acquisition cases.\n\nAnchor: `shares one record-list acquisition through delay, known branches, rerenders and Back`",
+      "note": "The O1 shared-acquisition cases: held record replies and flushed React effects expose duplicate reads before checking the single acquisition.\n\nAnchor: \"shares one record-list acquisition through delay, known branches, rerenders and Back\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a144cabbc27a2171d14385e305e15a0ede9eaf1d",
-            "content": "sha256:a77ab29d2da48cd3889c8183a67bd84b176c5769638e54b460b3a8e48ae9dc2a",
+            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
+            "content": "sha256:e4b6a6fb7e17cf957854f843c4ce044edc312c05475ae890d4121eae9e9e588b",
             "locator": {
-              "end": 894,
+              "end": 892,
               "kind": "line_range",
-              "start": 830
+              "start": 829
             }
           },
           "kind": "test"

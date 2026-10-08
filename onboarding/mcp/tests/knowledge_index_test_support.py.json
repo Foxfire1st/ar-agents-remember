@@ -1,13 +1,32 @@
 {
   "path": "mcp/tests/knowledge_index_test_support.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
+        "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
+        "locator": {
+          "kind": "symbol",
+          "name": "rewrite_in_the_second_of_the_index_write"
+        }
+      },
+      "id": "RLZ-KKDZ71",
+      "invariant": "INV-EGK83G",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 5",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The canonical helper alone owns rewriting at the Git index second and its separately bounded alignment wait.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The two fixture kinds and the converter's limits.\n\nAnchor: \"It is not the MIK-R24 conversion\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:6be004876566af4fb359eb573dfe228b38b5dcddc428b3d473dc3cde3724f4a8",
             "locator": {
               "end": 15,
@@ -24,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:2f859d67e363d8825234bae19243c1c04126b54199f024989db9ba1d661ffb6d",
             "locator": {
               "kind": "symbol",
@@ -35,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:d27c728453b05311cdabba3e09a4707d0338480561b76601cd867bd1d70bf274",
             "locator": {
               "kind": "symbol",
@@ -46,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:26b0faeab708d7820dd37a46e72fdd4391e1f1fdd4e015a02000041d38ef220a",
             "locator": {
               "kind": "symbol",
@@ -62,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:bce115e814f888e929ad982ba066fed481f1779fb35c29a5d87c8dd7d393a99d",
             "locator": {
               "kind": "symbol",
@@ -73,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:6d36cc6ce6c1c73f9a3f36dcf6a9a2431bd6c312bcac26feede347bf548a562a",
             "locator": {
               "kind": "symbol",
@@ -84,7 +103,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:b0665e526b395e8a62634e006314b58e198f0f70e5b86b5e064017036ab5d96b",
             "locator": {
               "kind": "symbol",
@@ -95,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:1aebeb9406c4c9fad8b19a0e50b46d4f0f4e6b5f7fe79bb984a45a4b0d87b6ac",
             "locator": {
               "kind": "symbol",
@@ -111,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:81ab449a136983de86cc1283ef9e1db6ff39bfb0976a7b667ef392fd7f06bee3",
             "locator": {
               "kind": "symbol",
@@ -122,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "ea910ffcc224758779031a43040df52305dd354c",
+            "blob": "0c7c3f3c1ce76348caaec316256a873872841348",
             "content": "sha256:a6d8913508785deb8636c7fbdc411f3949ae57e4df57cc8ec7fd9ccef0273a1c",
             "locator": {
               "kind": "symbol",

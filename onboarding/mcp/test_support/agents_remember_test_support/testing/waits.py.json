@@ -1,0 +1,57 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/waits.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+        "content": "sha256:87e913dc193128f20e764020e0ed9be17e4a98bf073a3d6a754e7e0dc899bb47",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FMTWMJ",
+      "invariant": "INV-EGK83G",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 5",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "These shared helpers give every pending condition an explicit failure name under one common hang guard.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Synchronous polling waits for the named condition under the shared hang guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+            "content": "sha256:62add609bec3e5ad9ab06cb419a0e6f22f1d372d31f4923f07ae25794403a26f",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_until"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Asynchronous polling yields until the condition or hang guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+            "content": "sha256:c59c76a44e9030d691b3143f9f7c0098f96459aa34bdc7f35e15c712e9f95913",
+            "locator": {
+              "kind": "symbol",
+              "name": "async_wait_until"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

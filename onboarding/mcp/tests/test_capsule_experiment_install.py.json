@@ -35,7 +35,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
             "content": "sha256:9600de45164afd92f54d4fc9c9220eedb71cc4729220ba6591bda91b13d270f6",
             "locator": {
               "kind": "symbol",
@@ -51,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
             "content": "sha256:2c1e85a208b5c8e4fe930b5baa8d31cb3ae6415992e50216a6fcca4f08d54ff9",
             "locator": {
               "kind": "symbol",
@@ -62,12 +62,12 @@
         },
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
             "content": "sha256:bd71551bdee2cbffde0c61702fb7191d466c1048f4e2536683022f6cf1216f7d",
             "locator": {
-              "end": 584,
+              "end": 591,
               "kind": "line_range",
-              "start": 543
+              "start": 550
             }
           },
           "kind": "test"
@@ -79,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
             "content": "sha256:149cfea082184ca050887a3419ba8c11ffc884395f566636884fe193cdc0f826",
             "locator": {
               "kind": "symbol",
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d576b713443a97359beb480c31e0970bdda5cf73",
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
             "content": "sha256:cd71b33ca7dd52761c04ced05d8112c51d1d3333565ce553a15fc3f4f33188cc",
             "locator": {
               "kind": "symbol",
@@ -111,12 +111,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b628b76d98f046fcebd57f7099f37e7bdd40e3a0",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 1006,
+              "end": 1043,
               "kind": "line_range",
-              "start": 1006
+              "start": 1043
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -129,14 +129,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b628b76d98f046fcebd57f7099f37e7bdd40e3a0",
+            "blob": "40661eeebb0d879fe6f1c204f9115d236274bf6a",
             "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
             "locator": {
-              "end": 1006,
+              "end": 1043,
               "kind": "line_range",
-              "start": 1006
+              "start": 1043
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Private machine settings pre-exist both installations and retain their bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3b9593d0e0c8dda3aed43636eef29219e330c5f",
+            "content": "sha256:478cf7c1cf26e37a7c972fcf8ea160bdc40dcc33a8d86874f643f1609c147b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_selection_is_recorded_per_run_and_never_persisted"
+            }
           },
           "kind": "test"
         }

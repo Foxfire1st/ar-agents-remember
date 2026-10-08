@@ -1,6 +1,44 @@
 {
   "path": "mcp/tests/test_eve_effort_runtime.py",
-  "realizes": [],
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+        "content": "sha256:1dcb5d872feb2f49fce1ad5c42ad71b112263c426c8645868a326a094e1faab0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_failed_start_reaps_its_actual_child_client_and_stderr_task"
+        }
+      },
+      "facet": "Cancellation and unexpected failure reap an actual child and close the client and stderr task before propagation.",
+      "id": "PRF-TZSZ6X",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+        "content": "sha256:86ec1868a12ba8d2a7d3eacb53f4de0b8a4dc39f37d49c3bd720cfe63fe2a715",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_observed_bind_collision_retries_and_other_start_failures_do_not"
+        }
+      },
+      "id": "RLZ-C9462R",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This proof drives a first bind collision and a different startup failure to distinguish the admitted retry from propagation.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The vocabulary the cases iterate and the sentinel they single out — the adapter's one declaration, which the launch gate validates against and the catalogue publishes.",
@@ -28,6 +66,38 @@
             "path": "mcp/src/agents_remember/serving/eve_adapter.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Only observed bind collisions cause a retry; other startup failures propagate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+            "content": "sha256:86ec1868a12ba8d2a7d3eacb53f4de0b8a4dc39f37d49c3bd720cfe63fe2a715",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_observed_bind_collision_retries_and_other_start_failures_do_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Actual child, client and stderr cleanup precede cancellation or runtime-error propagation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
+            "content": "sha256:1dcb5d872feb2f49fce1ad5c42ad71b112263c426c8645868a326a094e1faab0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_start_reaps_its_actual_child_client_and_stderr_task"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -89,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:791cf0fc3f2016f727575031dab2f91577a31aed827f920c299082d7878ac3a0",
             "locator": {
               "kind": "symbol",
@@ -101,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:b3299d699f0926db246c8f980eb90a8279db3bedee9393162a512280ecf29485",
             "locator": {
               "kind": "symbol",
@@ -113,7 +183,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:1de4241db7ff61f0822572d3a3632c2e585304cf71607bb7d01d7427772e4520",
             "locator": {
               "kind": "symbol",
@@ -125,7 +195,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:c61aa84b3f5ed8cd3eae0dec3ba360f0802697978b148362adf2c53a50357c86",
             "locator": {
               "kind": "symbol",
@@ -137,7 +207,7 @@
         },
         {
           "anchor": {
-            "blob": "cd686f2017abff70917c5eda65b0a092b918455b",
+            "blob": "5df10e7a13c0ae403d119e8416558b7fe7b608d6",
             "content": "sha256:72b4da76b16439eb8fae8c252fb0c7834a8aab8be284e346a5b35f29c2626725",
             "locator": {
               "kind": "symbol",
@@ -248,7 +318,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:5170528a5238ba25382f32eac0ba1719cc19d108be9ef5c90b9521eb80b9601b",
             "locator": {
               "kind": "symbol",
@@ -265,7 +335,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:d6f70d8f428b434bf7cb13747e0b604c0cc6ac4b1766b5838625db5d2a8a0b5b",
             "locator": {
               "kind": "symbol",
@@ -282,7 +352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
+            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
               "end": 328,
@@ -300,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17653713e7d68f8fdca2a8608e6f40557afb42d4",
+            "blob": "ceb49d3efdf0700888bacf2839c56e28492729f4",
             "content": "sha256:0bde5850bc8d01b143ce838ab83aced10d4cef73372e88d8157d6c60de45d9d7",
             "locator": {
               "kind": "symbol",

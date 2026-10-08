@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5638f7739274ab3f28261bf4bafae420dba59d93",
+        "blob": "898c50b1550d427ca11654aba250cd718cb8e9e3",
         "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5638f7739274ab3f28261bf4bafae420dba59d93",
+        "blob": "898c50b1550d427ca11654aba250cd718cb8e9e3",
         "content": "sha256:e9cfaa71370c55d4c8ac3dc833a0bfc57a2fd5f81dd0e79295d58902012818b2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "5638f7739274ab3f28261bf4bafae420dba59d93",
+        "blob": "898c50b1550d427ca11654aba250cd718cb8e9e3",
         "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
         "locator": {
           "kind": "symbol",
@@ -64,6 +64,22 @@
             "content": "sha256:562cf3c3496762ea2d38387acf64a2b558e488131d360e0b0944782efee48c25",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The second start reaches the actual held dispatch lock before pending is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "898c50b1550d427ca11654aba250cd718cb8e9e3",
+            "content": "sha256:515d79f812a63b5a96aee250d737b66136d8d676024112cc373b84bad46eb3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it"
             }
           },
           "kind": "test"

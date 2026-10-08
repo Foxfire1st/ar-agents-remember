@@ -26,6 +26,8 @@ Thread mutex behavior is explicit rather than inferred from a shared file descri
 
 No file-local implementation change is requested by this reconciliation.
 
+The dismissal/prune negative assertion follows an observed failed nonblocking acquisition of the actual held thread mutex by the dismisser. The rewrite remains parked until this contention is witnessed, then release allows the existing receipt and durable-dismissal assertions to run.
+
 ## Evidence
 
 ### Docs References
@@ -52,3 +54,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- Actual mutex contention precedes the negative dismissal assertion. [9]

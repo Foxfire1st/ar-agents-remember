@@ -68,3 +68,8 @@ The exact source declarations below establish the current behavior; this invento
 No cross-repository implementation source governs this file.
 
 No applicable cross-repository source was found.
+
+
+### Clock And Settlement Evidence
+
+- The configuration owns the shared `testTimeout` and `hookTimeout`, both 120,000 ms. They bound hung tests and hooks rather than asserting machine speed; the separate Testing Library condition guard is set by the shared setup. [5]

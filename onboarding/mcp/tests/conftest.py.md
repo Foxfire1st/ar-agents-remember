@@ -19,12 +19,14 @@ certifying services.
 - The hermetic bootstrap activates the environment of this pytest process
   (`activate_current_pytest_environment`).
 - A temporary directory under `/tmp` becomes `HOME`, the XDG config, data and cache homes and
-  `CODEX_HOME`; Git's global and system configuration are switched off. Subprocesses of a fixture
+  `CODEX_HOME`; a private `TMUX_TMPDIR` scopes tmux to this pytest process. Git's global and
+  system configuration are switched off. Subprocesses of a fixture
   therefore do not inherit the developer's setup.
 - Inherited opt-ins and credentials are removed from the environment: every name that starts with
   `AR_RUN_`, `AR_SPAWN_` or `AR_HOSTED_`, every name that ends with `_API_KEY`, `_ACCESS_TOKEN` or
   `_AUTH_TOKEN`, and a short list of named variables. A test that needs such an input builds its
-  own environment.
+  own environment. Inherited `TMUX` and `TMUX_PANE` are removed so a fixture cannot attach through
+  the developer's launcher state.
 - `pytest_plugins` registers two plugins: `pytest_bootstrap` and `evidence_lanes`. The second
   carries the collection hook that loads the lane manifest through `load_lane_manifest` and refuses
   the run when the loader refuses. Because that loader lists the repository's files through Git, a
@@ -51,8 +53,10 @@ certifying services.
 - `pytest_collection_finish` counts the collected items with and without that marker and compares
   each count with its budget. A budget below 1, which is what an undeclared budget reads as, or a
   count above the budget ends the run with a `pytest.UsageError`.
-- `pytest_unconfigure` restores the environment, closes the bootstrap's lease and removes the
-  temporary directory.
+- `pytest_unconfigure` attempts bounded `tmux kill-server` while the private environment still
+  targets the test-owned server. Its `finally` restores the environment, closes the bootstrap's
+  lease and removes the temporary directory even when tmux cleanup times out or fails to start.
+  The original cleanup exception remains visible; no developer default server is targeted.
 
 ### Fixtures
 
@@ -79,3 +83,8 @@ scope `all-tests`.
 - The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission. [13]
 - The refusal text for a manifest that cannot be read or parsed. [14]
 - The start-up hook explains a lane manifest that does not parse, and refuses by name a manifest without a `[files]` table or without the two lanes it reads. [15]
+
+
+- The pytest environment owns a private tmux directory. [16]
+- Environment, lease and temporary cleanup follow an attempted private-server kill even on failure. [17]
+- Inherited tmux launcher variables are scrubbed from the test environment. [18]

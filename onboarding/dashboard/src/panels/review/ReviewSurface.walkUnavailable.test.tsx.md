@@ -31,7 +31,7 @@ Two cases, one per outcome, hold the target read on a promise, move focus to the
 
 ### Helpers
 
-`targetRow` and `viewport`; everything else comes from `walk.test-utils.tsx` (`open`, `clickedSecondFamily`, `families`, `familyBlock`, `selectedNode`, `step`, `reviewCount`, `subjectOf`, `revisionOf`, `J`, `WAIT`, `world`).
+`targetRow` and `viewport`; everything else comes from `walk.test-utils.tsx` (`open`, `clickedSecondFamily`, `families`, `familyBlock`, `selectedNode`, `step`, `reviewCount`, `subjectOf`, `revisionOf`, `J`, `world`).
 
 ### Boundaries
 

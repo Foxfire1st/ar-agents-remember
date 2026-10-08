@@ -436,12 +436,12 @@
         },
         {
           "anchor": {
-            "blob": "d3174a10c9a8b2e34716800d2dedafba005c9a68",
+            "blob": "56a80c4527a5104948174e11c122f5f102f9b4f9",
             "content": "sha256:1a1cc5d2bb35acd188d79d9c04892828528d43511a4314dd07df14c9a39baf34",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 243
+              "start": 244
             },
             "path": "mcp/tests/test_conversation_control_queue.py"
           },

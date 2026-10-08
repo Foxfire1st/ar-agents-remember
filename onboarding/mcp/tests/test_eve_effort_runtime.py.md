@@ -25,7 +25,7 @@ module's path at `:173`).
 
 ### Logic
 
-Three cases, all in `EveEffortConsumerTests` (175), each starting its own application root and process:
+Three native consumer cases in `EveEffortConsumerTests`, each starting its own application root and process:
 
 | Case | What it proves |
 | --- | --- |
@@ -55,6 +55,12 @@ the transport's peer is a recording server.
 `require_installed_eve_application` (called first in `_one_level`) skips by name when the machine-local
 `eve_runtime/node_modules` install is absent. Both are named skips, never retries.
 
+The module also tests the isolated startup owner without the Eve dependency. A controlled base
+startup proves retry only after an observed bind collision and propagation of other failures.
+Cancellation and RuntimeError are injected after an actual local child, HTTP client and stderr reader
+exist, then assert reaping, client closure, reader completion and original failure propagation with
+no port retry. These local resource checks do not claim the native effort consumer executed.
+
 ### Conventions
 
 - The provider is the support module's **recording HTTP server**, deliberately **not** the product's
@@ -78,7 +84,7 @@ the transport's peer is a recording server.
   the distinction between "not sent" and "sent as `null`" is the rule being pinned.
 - **This module proves the launch *preparation* and the runtime's own request, not the whole dispatch
   chain.** It resolves a spec through `resolve_runtime_spec` with a real binding and starts
-  `EveRuntimeProcess` directly; the runner **process** hop (tmux → runner → adapter) is exercised by the
+  the test-owned `IsolatedEveRuntimeProcess` directly; the runner **process** hop (tmux → runner → adapter) is exercised by the
   settings-chain evidence, not here. Read the two together before claiming an end-to-end seat launch.
 - The cases need a machine-local install and a Node at or above the floor; without them they **skip by
   name**, so a green run on a bare checkout is not coverage of this consumer.
@@ -106,6 +112,9 @@ No configured `Domain Documentation` source; the external authority the consumer
 - The catalogue whose advertisement rests on this measurement, and the case that reads the axis off the serialized envelope. [6]
 - The sentinel rule in its other form, which the provider boundary cannot observe and so is pinned as an authored source shape. [7]
 - The module's own lane row, which the fail-closed loader requires. [8]
+
+- Only observed bind collisions cause a retry; other startup failures propagate. [10]
+- Actual child, client and stderr cleanup precede cancellation or runtime-error propagation. [11]
 
 ### Cross-Repo References
 

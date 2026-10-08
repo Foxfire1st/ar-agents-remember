@@ -1,13 +1,31 @@
 {
   "path": "dashboard/vitest.config.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
+        "content": "sha256:324e8e50136c1b4e38a8f43f5937548f0dc0ae0924d7b30a2ade528851e9aed0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-CNW3W7",
+      "invariant": "INV-48C3DS",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 8",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "Vitest centrally declares test and hook hang guards for every dashboard case.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "Separate diagnostic Vitest configuration\n\nAnchor: `defineConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
             "content": "sha256:67ac86f657d2df26400715a2aa9a9b75e020b985958dbba8fead99a47417552d",
             "locator": {
               "end": 12,
@@ -24,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
             "content": "sha256:f151b01154fee94b1f5dcded3f611954ccbeaa5a9c7af6c6ff3c87de440061e2",
             "locator": {
               "end": 25,
@@ -58,12 +76,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
             "content": "sha256:1589566b403687c6a77d09981a6116dbbddbedc6c9a496dab156fbb63dd2fe4c",
             "locator": {
-              "end": 52,
+              "end": 54,
               "kind": "line_range",
-              "start": 49
+              "start": 51
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The configuration owns the shared `testTimeout` and `hookTimeout`, both 120,000 ms. They bound hung tests and hooks rather than asserting machine speed; the separate Testing Library condition guard is set by the shared setup.\n\nAnchor: `testTimeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
+            "content": "sha256:94bd62113a653331247f545cdff0961f18765b354052ac8292df3c2cabfb0ffd",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 27
             }
           },
           "kind": "code"

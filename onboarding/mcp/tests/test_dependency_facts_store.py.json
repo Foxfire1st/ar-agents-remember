@@ -1,0 +1,123 @@
+{
+  "path": "mcp/tests/test_dependency_facts_store.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "30046dec1ac690793265af23685477138cbb21b4",
+        "content": "sha256:3eda883ee87f63f87c614fa6b663b6a8cf6aa2a407f91e172895e4935fbd256a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nested_wrong_shaped_entries_cannot_break_facts"
+        }
+      },
+      "facet": "Wrong-shaped nesting at depths1200 and12000 cannot break derivation or leave temporary files.",
+      "id": "PRF-1TGBVP",
+      "invariant": "INV-BQD1G8",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 1",
+        "leaf": "260928-MIK-L87"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "30046dec1ac690793265af23685477138cbb21b4",
+        "content": "sha256:78b4b05e43ddfc8f40bb8e1b5cfdd81568d9df93af311624b89704eb753c1a38",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reuse_invalidation_and_bounded_compaction"
+        }
+      },
+      "facet": "Stored facts equal a full derivation and unchanged builds parse no file; changed files and bounded compaction retain the graph.",
+      "id": "PRF-Q99BJZ",
+      "invariant": "INV-BQD1G8",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 1",
+        "leaf": "260928-MIK-L87"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Equal facts and parse counts prove reuse, invalidation and compaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:78b4b05e43ddfc8f40bb8e1b5cfdd81568d9df93af311624b89704eb753c1a38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reuse_invalidation_and_bounded_compaction"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bad source and dynamic plugins are reparsed and refused on every build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:cc91225fb1d3347d9a2874636b8ae7e7f7b7c3e55e0abdbaa76cf5786a7c3a3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_parse_and_dynamic_plugin_errors_are_never_cached"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unsafe stores recompute correctly without changing the foreign target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:e7c115af3dbe8eaf83b59a77bb708c14eeee2d252c68e79e64d3303b1449cdae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unusable_store_and_bad_entries_recompute_correctly"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Module, package, Python and implementation identities govern reuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:48fae99f4c359b036e9a41ad77d113c38233c5708aac6680195c03ffa3cc98df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_module_package_python_and_implementation_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Deep wrong-shaped entries preserve no-store facts and reclaim temporary files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30046dec1ac690793265af23685477138cbb21b4",
+            "content": "sha256:3eda883ee87f63f87c614fa6b663b6a8cf6aa2a407f91e172895e4935fbd256a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nested_wrong_shaped_entries_cannot_break_facts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

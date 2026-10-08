@@ -21,7 +21,7 @@ used to recreate removed tests or claim they still run.
 The current evidence boundary is the source-listed behavior below. `_FakeHost` parks inside
 `probe_session` on events so the first sweep holds the sweeper lock and the catalog batch while a
 contender runs; `_RaisingHost` raises on its first probe to force the lock-release path. The
-contended-full case asserts the contender returns before its 0.25 s join, that the host was probed
+contended-full case asserts the contender returns while the first sweep is held, with its join bounded only by the shared hang guard, that the host was probed
 only once across both callers, and that a later `refresh()` probes again. The contended-starting
 case drives the one-second starting fast path with the full-sweep rate limit in force and asserts
 the first sweep was the only probe across both callers. The clean-hosted case wraps

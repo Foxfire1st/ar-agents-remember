@@ -192,12 +192,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3348411cc96f08fcc0f16831336d6f7f0c5020c6",
+            "blob": "429058e4ad5933de7f8f233d32958ba5d2978294",
             "content": "sha256:7202d334a6d303e9b0c23ddef1111c69e09901f96f48aea42b885e36f68fcc35",
             "locator": {
-              "end": 86,
+              "end": 87,
               "kind": "line_range",
-              "start": 59
+              "start": 60
             },
             "path": "dashboard/src/panels/session-cockpit/BusPane.test.tsx"
           },

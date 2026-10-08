@@ -17,11 +17,12 @@
 - `build_parity_dataset` authors a store database through the shipped writers (`P→I`, `F{I,J}`, `G{J,K}`, `H{I,L}`, six claims over five paths); `add_parity_claim` adds one claim for the candidate-changed parity case.
 - `rewrite_in_the_second_of_the_index_write(repository, target, text)` (L37) records `target` in the repository's
   index and then rewrites it in place with `text`, same size, in the same clock second, retrying until both fall
-  in one second. It returns in a later second, as a capture is normally taken.
+  in one second. The one canonical helper is shared by index, capture, reopen and reviewer-currentness tests.
+  Alignment is the actual test subject and has a 120-second monotonic deadline, including the inner clock-window wait; failure to align is explicit. It returns in a later second, as a capture is normally taken.
 
 ### Conventions
 
-- Test support only; it is imported by the three index test modules.
+- Test support only; consumers import the canonical helper instead of maintaining their own clock-window rewrite bodies.
 
 ### Invariants And Boundaries
 

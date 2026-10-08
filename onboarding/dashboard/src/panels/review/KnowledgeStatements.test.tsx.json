@@ -92,12 +92,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "15a7cad93247304f4472e3a7cd603fdc710517ab",
+            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
             "content": "sha256:8b21824ea687967ae98e02b8c74960f8a920aa381ab1bdf64812bff96ab30b04",
             "locator": {
-              "end": 83,
+              "end": 86,
               "kind": "line_range",
-              "start": 65
+              "start": 68
             },
             "path": "dashboard/src/test/setup.ts"
           },
@@ -105,12 +105,12 @@
         },
         {
           "anchor": {
-            "blob": "15a7cad93247304f4472e3a7cd603fdc710517ab",
+            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
             "content": "sha256:0155386420a1bc1a3a80ba3a92ba3e3d0d723502cf626e7d996b1770be09775a",
             "locator": {
-              "end": 112,
+              "end": 115,
               "kind": "line_range",
-              "start": 108
+              "start": 111
             },
             "path": "dashboard/src/test/setup.ts"
           },

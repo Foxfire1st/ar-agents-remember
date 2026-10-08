@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
         "content": "sha256:7b302ecc781bec3d819429e77e2394416c5ff65683cd6d2adee4a1abec64b46e",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
         "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+        "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
         "content": "sha256:83cc93dd7b69be18e41bbd37d606c5b3e621675d1d49b519de979a24761954f2",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:db642df9c4186fcc0bbd30aca46f271693afd21a73a6ee0d1746d8444d265102",
             "locator": {
               "kind": "symbol",
@@ -76,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
             "locator": {
               "kind": "symbol",
@@ -87,7 +87,7 @@
         },
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:97666e938365a819bfc62e9b25892c40e50c46207b06c0f86ebc14a56e9c03ba",
             "locator": {
               "end": 88,
@@ -104,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:45d2b6f8a9df7f7dac3233e0fa6ec952eb85f7c51a168824756225310eabe431",
             "locator": {
               "kind": "symbol",
@@ -120,11 +120,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:cfe6ca090152250c6b32f6aeb21fa07ded484ab62342e07f23dab5ae92219bee",
             "locator": {
               "kind": "symbol",
               "name": "test_empty_xdg_values_use_home_defaults_in_every_working_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The observed holder retains the lock until the expected semantic refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
+            "content": "sha256:fefa356d94b5b714a0882aef5dc40a9fed2e6445b1156e6130550593c7730c0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_competing_node_acquisition_has_a_finite_retryable_refusal"
             }
           },
           "kind": "test"

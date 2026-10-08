@@ -201,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:2fd46e05a3f6a62bc58cbc6d3872342e24a65a00ea377883ad758f87fe012e02",
             "locator": {
-              "end": 103,
+              "end": 105,
               "kind": "line_range",
-              "start": 89
+              "start": 91
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },
@@ -214,12 +214,12 @@
         },
         {
           "anchor": {
-            "blob": "b0499350564411a4b3000eb52d9d1b11d996cbce",
+            "blob": "6050969a458d78903090248ba3c5c4cb49edf265",
             "content": "sha256:fc38419bdab2ef83419f20203594de2e69c2e73404c0cb61b7576617a3925185",
             "locator": {
-              "end": 670,
+              "end": 669,
               "kind": "line_range",
-              "start": 584
+              "start": 583
             },
             "path": "mcp/tests/live_eve_native_fixture.py"
           },

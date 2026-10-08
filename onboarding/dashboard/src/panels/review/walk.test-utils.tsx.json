@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
             "content": "sha256:227b979c553e18491b648c175cf77cea37ccf29d8d5f6c3242ff3206a3432565",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
             "content": "sha256:61bfe7c10f11eb066fed43641f63da6d0f21a3a4183e85bd3e201f16cd020d88",
             "locator": {
               "kind": "symbol",
@@ -55,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
             "content": "sha256:84477af6f975e96704150559056871c6c5bbac06e7b47f4cce54d4fd95500bbd",
             "locator": {
               "kind": "symbol",
@@ -71,7 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
             "content": "sha256:487b8bef45e18975dcef63d04e3a65e26ec7f3e975f50ad067073f1aa09a916d",
             "locator": {
               "kind": "symbol",
@@ -83,12 +83,12 @@
       ]
     },
     "5": {
-      "note": "Serving the world to every test of a file, with the 60 second bound.",
+      "note": "Serving the world to every test of a file and cleaning up the mounted view and transport stub.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
-            "content": "sha256:225d24753c5040eee724be1da1c4d2ce5013053c8ee610b0c1d49f6009847b08",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "content": "sha256:fd76d28bd54ed848a69ffc14ec34d4be85e6714a0f48bfe2d398553d64e85319",
             "locator": {
               "kind": "symbol",
               "name": "installWorld"
@@ -103,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
             "content": "sha256:1c8780ae59c81648a13ade5d35f18f358420b4340a02893c6ef1119baa7736e4",
             "locator": {
               "kind": "symbol",
@@ -119,8 +119,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
-            "content": "sha256:9951e05dcf9c0c2f2f393f4c8be2363b35bf07a11e39c0dfda9042d9421cb63a",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "content": "sha256:680efdf1f6fc96a824e9dc64ff7f9362e1d607e18d71dfc2744f4425a0fc5dac",
             "locator": {
               "kind": "symbol",
               "name": "settled"
@@ -135,8 +135,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
-            "content": "sha256:6be806fd968a7192cffac40bd14fe358a8d1c697c0c4137e5cf6e12d0d613b23",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "content": "sha256:d531fa9db9564f6c91c5efb8549f059367051d96118fc2f4991ad6f7b9d9f015",
             "locator": {
               "kind": "symbol",
               "name": "step"
@@ -151,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b148fd053b77d2d1259c5348ee223152ff53c0c",
-            "content": "sha256:545320fc879b6cddf0a0ea8f206a3980bae44aee537c29d4990c8c3cceb9d6a0",
+            "blob": "4ffc8aa0d49f9dac940aa42ae2d990d199f0c7ff",
+            "content": "sha256:41f2ddd1ac2116979450e34bd8de2c162efc1d2e577552486cd9608c400c7d22",
             "locator": {
               "kind": "symbol",
               "name": "clickedSecondFamily"

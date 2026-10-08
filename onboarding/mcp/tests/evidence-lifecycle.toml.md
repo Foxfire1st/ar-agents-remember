@@ -123,6 +123,15 @@ The catalog's consumer list names `test_leaf_handover.py` and `test_leaf_handove
 
 The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to the consumer lists the source tree supports; no artifact or contract row changes, and the canonical form is unchanged.
 
+## Shared Causal Test Helpers
+
+The conversation-open, Eve event-pump and reviewer-worklist-process supports are permanent,
+internal hand-authored artifacts. Each has an existing behavior-test owner, an exact executable
+replacement contract, fidelity/cadence and source-derived consumers. They own explicit resolution,
+stream completion or subprocess opportunities; cases and product assertions remain with their test
+modules. Consumer-list changes follow actual source relations, including new cache/scanner tests
+and the state suite's real conftest import. These declarations do not prove a test executed.
+
 ## Evidence
 
 - The schema version and the large-fixture threshold at the top of the file. [1]
@@ -145,3 +154,8 @@ The R93 wording test `mcp/tests/test_developer_question_wording.py` is added to 
 
 
 - The durable-artifact consumer entries this catalog now declares; lane rows belong to test-evidence-lanes.toml. [14]
+
+
+- Conversation-open support declares its permanent owner and real replacement contract. [96]
+- Eve event support declares its permanent owner and exact consumers. [97]
+- Worklist process support declares its permanent local-composition contract. [98]

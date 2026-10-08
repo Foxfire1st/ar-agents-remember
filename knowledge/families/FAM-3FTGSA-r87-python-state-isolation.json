@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The Python suite brackets modules with reset of already-imported owners, enforces a closed state-treatment register, and gives each process private tmux and provider resources with complete cleanup. Together these prevent the recorded ambient and resource collisions from depending on module order or other pytest processes."
+  },
+  "guarantee": "The Python suite brackets modules with reset of already-imported owners, enforces a closed state-treatment register, and gives each process private tmux and provider resources with complete cleanup. Together these prevent the recorded ambient and resource collisions from depending on module order or other pytest processes.",
+  "id": "FAM-3FTGSA",
+  "members": [
+    "INV-5YPFVJ",
+    "INV-KE2ZHT",
+    "INV-KJN5GP"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "r87-python-state-isolation",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/test_support/agents_remember_test_support/testing",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Test processes isolate mutable owners and machine resources"
+}

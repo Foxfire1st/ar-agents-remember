@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
+        "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
         "content": "sha256:b34cd52a387bf092bd2484b6a8602413c0028077ff493f0aff91311cbb09d3f1",
         "locator": {
           "end": 368,
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "76c1e96d0f1f00985d03b6882143cff93511b45d",
+        "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
         "content": "sha256:d78be9a4046b8ffdab5120a0a748737d28d92bec8743be7d5acec6847feb659b",
         "locator": {
           "end": 275,
@@ -98,6 +98,40 @@
               "end": 292,
               "kind": "line_range",
               "start": 290
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "241": {
+      "note": "Dependency-facts store controls belong to architecture fitness.\n\nAnchor: \"mcp/tests/test_dependency_facts_store.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "content": "sha256:38bb8eaf37c90e55fdc88a1b8991ecf8c84ceaffa29d0dbbb9bb3efeee91157a",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 419
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "242": {
+      "note": "The bounded Python load-independence scanner belongs to architecture fitness.\n\nAnchor: \"mcp/tests/test_suite_load_independence.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75bfe56efaba54a1459cbed746a2fbe83c9569d1",
+            "content": "sha256:46db249ec1151e616e17ab6b76bad588716389eeaad9d6e25ec27afc8bd70086",
+            "locator": {
+              "end": 435,
+              "kind": "line_range",
+              "start": 435
             }
           },
           "kind": "test"

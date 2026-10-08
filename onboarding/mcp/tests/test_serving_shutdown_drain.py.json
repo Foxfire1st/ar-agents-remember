@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_serving_shutdown_drain.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cancelled product owner's direct await witnesses the exact worker drain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
+            "content": "sha256:1b7d1fd6c6a8e0519567e82b84ac9976dd3ccd814067c7e9c64714267779984c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_observe_worker_drain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The running worker drains before host close and post-close state stays unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
+            "content": "sha256:70f3cd2386064f073d13dc46d735ba1bddd7b0f8c785a58a468a8b76257f8b2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_teardown_drains_an_in_flight_refresh_before_the_host_closes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Startup cancellation waits for its worker and finalizer bounds use the shared guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
+            "content": "sha256:d0141ca0c5e40d4f117fb553f8dd1aae41a4dec44acce24a88f4be4663dcfced",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancellation_during_the_startup_prime_waits_for_its_worker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The last in-flight durable commit remains available to the next startup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1914a1e79afa35722c7d67380cf7c15135a5338d",
+            "content": "sha256:255a0d3d5f4a2964662dc7f1e778fe656b490af1514a252740c69d640fce3bcf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_final_in_flight_commit_stays_relayable_after_the_next_startup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

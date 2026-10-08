@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/test/setup.ts",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+        "content": "sha256:bf9e4e670a97ea9579564a7419d428569770feb605cd2772c254c08caf4882c1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SVAZ21",
+      "invariant": "INV-48C3DS",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 8",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The setup owns the common Testing Library asynchronous query hang guard rather than per-file overrides.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "`matchMedia` stub consumed by the honest-motion gate.\n\nAnchor: \"export function useShouldAnimate\"",
@@ -25,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
+            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
             "content": "sha256:df0eb71568932412be1fcd8f8ccf6c6ff433cce5a2fbffabf8eb7e04dad20b32",
             "locator": {
-              "end": 33,
+              "end": 35,
               "kind": "line_range",
-              "start": 33
+              "start": 35
             },
             "path": "dashboard/vitest.config.ts"
           },
@@ -51,6 +69,23 @@
               "start": 335
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`configure({ asyncUtilTimeout: 20_000 })` supplies the shared async utility hang guard. Tests wait for observable conditions or control product timers with fake time; this guard expresses no operation-speed requirement. The unhandled-error trap and browser stubs remain independent of that guard.\n\nAnchor: `configure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0485cc6ccebe5cacc8e1e1effeccbc320b57c881",
+            "content": "sha256:6d221491507b0821f58e3b9e1ff387180e96ce7f8c885055442d8bac06c4e4f8",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 4
+            }
           },
           "kind": "test"
         }

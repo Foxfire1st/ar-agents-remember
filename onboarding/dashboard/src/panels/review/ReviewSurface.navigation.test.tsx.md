@@ -37,7 +37,7 @@ The last two cases force an order a loaded machine produces on its own: the read
 
 - Semantic content comes from `familyReview.complete.captured.json`, which the file reads itself; the last case uses the world and the readers of `walk.test-utils.tsx` (`serveWorld`, `open`, `press`, `selectedNode`, `selectedName`).
 - Request counts (`reviewReads`, `contentReads`, `catalogueReads`) are the module's measure of reuse.
-- The file sets a test timeout of 60 seconds, because a cold render of a real answer on a loaded machine can exceed the default.
+- Async conditions use the shared Testing Library guard from `src/test/setup.ts`; test and hook hang guards come from `vitest.config.ts`. Product hold cases advance the imported `SUBJECT_HOLD_MS` on fake time and flush held replies in async `act`. These guards bound a hang; they assert no host speed.
 
 ### Boundaries
 

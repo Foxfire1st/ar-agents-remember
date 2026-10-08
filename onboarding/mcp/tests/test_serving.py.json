@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
         "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
         "content": "sha256:e0bbed6e0845709b252777cc98512c9652d12b720aead19045db6bedcfe8d75c",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
-        "content": "sha256:2c2a2f6d44133667f26c461d0737af95a05805d51080e5216053c1a787fe751b",
+        "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
+        "content": "sha256:e0eaca3f75f83828c1d417d1febc1e25897a2b5b6cfd001e64eadad4abf054ea",
         "locator": {
           "kind": "symbol",
           "name": "BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
         "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+        "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
         "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
         "locator": {
           "kind": "symbol",
@@ -143,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
             "content": "sha256:9822d5c49cb53e7d1b2fc04bc47b0706837a925f3b6c722ee419c42ae6de8826",
             "locator": {
-              "end": 288,
+              "end": 304,
               "kind": "line_range",
-              "start": 256
+              "start": 272
             }
           },
           "kind": "test"
@@ -160,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
             "content": "sha256:d556f620cf084e8a1bc659072eec4388690b8a201c33f606cae90c4c03059847",
             "locator": {
-              "end": 392,
+              "end": 408,
               "kind": "line_range",
-              "start": 315
+              "start": 331
             }
           },
           "kind": "test"
@@ -177,12 +177,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
+            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
             "content": "sha256:a1e94b6b7f329d91877fce050b08a470e10c39254c4d87d3c011c9832ba15b23",
             "locator": {
-              "end": 433,
+              "end": 449,
               "kind": "line_range",
-              "start": 394
+              "start": 410
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The unchanged ETag is checked after the volatile-only projection was actually published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
+            "content": "sha256:61d4b4cbea2a1d5bf70449f9f62010dbc716af77eb88d3e8a6c5f712602f5edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_etag_304_cycle_then_new_etag_on_content_change"
             }
           },
           "kind": "test"

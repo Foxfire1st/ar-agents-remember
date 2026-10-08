@@ -68,6 +68,8 @@ catalog delta this leaf contributes.
 - Failures are never smoothed: the `L9-1` vacuity is recorded as the reason the guard is
   root-scoped rather than as a silent edit.
 
+The machine-settings preservation fixture writes its own default seed into its private temporary coordination tree before either install. Both installs compare against those pre-existing bytes; the test establishes preservation, and does not depend on installation creating missing private settings.
+
 ## Evidence
 
 ### Repo-Internal References
@@ -79,3 +81,5 @@ catalog delta this leaf contributes.
 - The rollback plan renders the installed artifacts and the restore command. [5]
 - The two consumer rows this leaf adds to the catalog's consumer proof. [6]
 - The two consumer rows this leaf adds to the catalog's consumer proof. [7]
+
+- Private machine settings pre-exist both installations and retain their bytes. [8]

@@ -453,6 +453,8 @@ The real gate is `npm run typecheck` (`tsc -b`), which is what every "stops comp
 means. Most of this leaf's guarantees are type-level and free at runtime, so a green `vitest run`
 alone does not exercise them.
 
+Dashboard async tests share the 20,000 ms Testing Library condition guard from `test/setup.ts` and the 120,000 ms test/hook hang guards in `dashboard/vitest.config.ts`. Product delays use fake time; a negative assertion follows the relevant delivered response, flushed effect or advanced timer opportunity. `test/loadIndependence.test.ts` checks the bounded source patterns that would reintroduce local ceilings, unmarked sleeps or elapsed-clock assertions; its explicit marker and detection limits belong to its file card. These test mechanisms change no product route or browser-performance contract.
+
 ## Layered Architecture
 
 1. Projection types are generated and stale-checked from the server's Pydantic schema; the separate
@@ -824,3 +826,10 @@ route, takeover dispatch or target shape:
 
 The rule a reader of this route should carry: a generation claim is only ever rendered when a read
 answered for the identity it describes, and the identity belongs to exactly one question.
+
+
+### Dashboard Test Clock Evidence
+
+- Async conditions share one hang guard. [37]
+- Test and hook completion share hang guards. [38]
+- Bounded source guard scans dashboard test and support files. [39]

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
+            "blob": "67a30e1d0c0e0a5f3a8f1c103bd0f9f3bf1895e6",
             "content": "sha256:45f125e1c5f7508bb1b18149b4cc0d16b3f03fca4db97653366bd266e85bc679",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
+            "blob": "67a30e1d0c0e0a5f3a8f1c103bd0f9f3bf1895e6",
             "content": "sha256:3a37645e419db5d6a34d2569b71b6bc086783aeee664094a52458c3318325e41",
             "locator": {
               "kind": "symbol",
@@ -41,6 +41,22 @@
           "anchor": {
             "blob": "66cdacba36d5f0fa04798826e7fb5ec8d148ba59",
             "content": "sha256:4f17f4e95411be946b4162ffc53d57f40e6a26192c82eaed9d549986ecc60b61",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cancelled_request_ignores_late_response_and_next_reader_survives"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The operation opportunity precedes the retained assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a30e1d0c0e0a5f3a8f1c103bd0f9f3bf1895e6",
+            "content": "sha256:dba5c4c506b4d8f375a66373d5e2ca400bc1547ec2792c8ea435c9abddf67234",
             "locator": {
               "kind": "symbol",
               "name": "test_cancelled_request_ignores_late_response_and_next_reader_survives"

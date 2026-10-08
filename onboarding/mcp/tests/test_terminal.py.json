@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "blob": "a3f2edcc7668f5bf7107c06c27280fcae97d0c3e",
             "content": "sha256:9b6029e5f7c38c2004933060245277ec8158a9cb867bcbc3787aa5f30d2ca682",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "blob": "a3f2edcc7668f5bf7107c06c27280fcae97d0c3e",
             "content": "sha256:2daa1cbec8e6bd63830f53480aa7f99bac8fbf5963e51333b7621e79b6f0ebef",
             "locator": {
               "kind": "symbol",
@@ -39,11 +39,44 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7881927c48e36605e13d698e40d5fbd25606c76c",
+            "blob": "a3f2edcc7668f5bf7107c06c27280fcae97d0c3e",
             "content": "sha256:d43a5d19caa8a1b0785ae0247baf5220aeff60cda4863f272708545521e59194",
             "locator": {
               "kind": "symbol",
               "name": "test_real_tmux_ensure_and_attach_ignore_launcher_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Actual PTY marker arrival governs readiness under the shared guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3f2edcc7668f5bf7107c06c27280fcae97d0c3e",
+            "content": "sha256:a792dd8804c6c08d4ef771fc010abf0bd9a6323f383c70696490d5d0ff4d934f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_until"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real tmux test reclaims its named test session through the sanitized client environment.\n\nAnchor: `TerminalHostTmuxIntegrationTests.tearDown`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3f2edcc7668f5bf7107c06c27280fcae97d0c3e",
+            "content": "sha256:a177695d1808d33d57b7c3197e496bb8fc4e65e4c22e9da55afb52bfc79b9180",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "test"

@@ -15,7 +15,7 @@ is replaced.
 
 ### Logic
 
-Two private helpers carry the suite: `_Pump` drives a subscription iterator and `_Harness` assembles
+Two imported helpers from `eve_adapter_event_test_support.py` carry the suite: `_Pump` drives a subscription iterator and `_Harness` assembles
 an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
 
 - `EveAdapterHandshakeTests` — start/handshake, protocol version, capabilities, and the finally-path
@@ -77,17 +77,14 @@ an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
 - The module inserts `mcp/src` on `sys.path`, matching the sibling-test convention.
 - Cases run under `unittest.IsolatedAsyncioTestCase`; `_Pump` starts the subscription as a task so a
   case observes events rather than blocking on the iterator.
-- Determinism is deliberate: the clock and the transport are injected, so a case never waits on real
-  time or a real socket.
+- The transport is injected and the event boundaries are observable. Shared real-time guards bound a hung fixture; no elapsed-speed assertion or short quiet window proves an event's absence. These cases use no real transport socket.
 
 ### Invariants And Boundaries
 
 - **The double is a transport, not an adapter.** `FakeEveRuntime` implements `EveRuntimeTransport`, so
   the adapter, mapper, cursor arithmetic, replay guard and operation bookkeeping under test are all
   production code. A test that replaced the adapter instead would prove nothing about this contract.
-- **No case may assert an advertised effort option.** The catalog offers none, and the capability case
-  asserts the *absence* in three fields plus the `config_options` shape; a case that reinstates an
-  effort-menu expectation is asserting a withdrawn claim.
+- **The advertised effort menu is launch-only.** Capability cases assert the backed launch menu and its selected value; every live `set_effort` request remains unsupported and cannot change that selection.
 - **An assertion must be able to fail.** A guard whose premise is never established (the deltas really
   reconstruct the block) or whose observation is the double's own bookkeeping (a cancel the fake
   records but never sends) is not evidence; both shapes were sealed findings against an earlier
@@ -111,6 +108,8 @@ an adapter over a `FakeRuntimeFactory`. Ten case classes then hold the contract:
 ### Todos
 
 None known.
+
+The event fixtures live in [eve_adapter_event_test_support.py](eve_adapter_event_test_support.py.md). Quiet-stream assertions call `_Harness.read_completed_pass` to witness exhaustion of the exact durable session/cursor pass before asserting no duplicate transcript or completion event.
 
 ## Evidence
 
@@ -139,3 +138,5 @@ No external repository boundary is implemented by this test.
 - The protocol being conformed to is the pinned published `eve` package's contract. [9]
 - The complete, verifiable launch binding the suite's launches now carry, built from a real worktree, commit and carrier rather than hand-written environment values. [10]
 - The launch-time verification that makes a partial binding unlaunchable, which is why the suite could not keep its fabricated cwd and two-variable environment. [11]
+
+- The event fixture owns the completed durable-record-pass witness. [12]

@@ -57,10 +57,19 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The document order, top/Back and citation-pane cases. [8]
-- The O1 shared-acquisition cases. [9]
+
+- The O1 shared-acquisition cases: held record replies and flushed React effects expose duplicate reads before checking the single acquisition. [9]
+
 - The stale-answer and late-selection cases. [10]
+
 - The captured bodies the cases serve. [11]
+
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+
+### Clock And Settlement Evidence
+
+- Negative stale-answer and duplicate-acquisition assertions follow delivered held replies and flushed React effects in async `act`. This gives the actual stale response or retained-pane effect a chance to run before asserting that it changed nothing; no fixed real sleep supplies that proof. [12]

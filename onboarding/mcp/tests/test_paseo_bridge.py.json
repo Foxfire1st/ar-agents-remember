@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
-        "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+        "blob": "75f418654963492ccaebd1b5241cf80a54821218",
+        "content": "sha256:758c3058ac56076e2d6a6a002a25b460c283aa28c7e7d0d7de2fff972b8f7757",
         "locator": {
           "kind": "symbol",
           "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+        "blob": "75f418654963492ccaebd1b5241cf80a54821218",
         "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+        "blob": "75f418654963492ccaebd1b5241cf80a54821218",
         "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
         "locator": {
           "kind": "symbol",

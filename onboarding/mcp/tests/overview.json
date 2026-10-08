@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
@@ -230,7 +230,7 @@
       ]
     },
     "25": {
-      "note": "The test policy: when a case is justified, no running this repository's suite inside itself, no repository scan to test the suite, diagnostic coverage, and the four real-pytest cases of the canonical-form module.",
+      "note": "General test policy forbids recursive suite execution and repeated repository scans to test the suite; coverage stays diagnostic and the canonical-form module uses four real-pytest cases in temporary synthetic repositories. The approved MIK-R87@v1 rule13 bounded timing/process-state scanner is the specific exception described in Test Policy and the scanner evidence below.",
       "targets": [
         {
           "anchor": {
@@ -299,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
             "locator": {
               "kind": "symbol",
@@ -311,12 +311,12 @@
         },
         {
           "anchor": {
-            "blob": "ef1541e4cc56af4b3650e0b0526747c113ebd068",
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
             "content": "sha256:803991024c097d5a87b9e2945e8d292d3008bf81f4f43710186fec42ca70523d",
             "locator": {
-              "end": 103,
+              "end": 104,
               "kind": "line_range",
-              "start": 83
+              "start": 84
             },
             "path": "mcp/tests/test_paseo_install_no_stop.py"
           },
@@ -329,7 +329,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:a73abc958ab83d62874373f56ea63bf54899649b2b51470776ef2e7e14422ec0",
             "locator": {
               "kind": "symbol",
@@ -341,7 +341,7 @@
         },
         {
           "anchor": {
-            "blob": "bd15bb644932a6c9b64f37e306e3ff676db50edb",
+            "blob": "cb9ffce8560b0111ffce23279ecf676ca9c82c92",
             "content": "sha256:97666e938365a819bfc62e9b25892c40e50c46207b06c0f86ebc14a56e9c03ba",
             "locator": {
               "end": 88,
@@ -394,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8114ca263309505a08c33917e8f5c4e83e73d673",
+            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
             "content": "sha256:237dcb6e790963763ceb0cea5bd3ccfb39ed9c659e3901d5533b51cf1b0158ba",
             "locator": {
               "kind": "symbol",
@@ -411,7 +411,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
+            "blob": "0c44b80be6a1bb8d176afa67b62e37be8d5615c7",
             "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
             "locator": {
               "kind": "symbol",
@@ -428,7 +428,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "kind": "symbol",
@@ -474,12 +474,46 @@
         }
       ]
     },
+    "502": {
+      "note": "Approved MIK-R87@v1 rule13 bounds the Python timing scan to mcp/tests and mcp/test_support, excluding the shared waits.py; it reports syntactic timing violations without running the repository suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_waits_are_load_independent"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "503": {
+      "note": "The same approved bounded scanner compares syntactic process state under mcp/src/agents_remember with the exact closed register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            },
+            "path": "mcp/tests/test_suite_load_independence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "6": {
       "note": "The collected cases are counted against the two budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",

@@ -67,3 +67,8 @@ No relevant domain documentation was found.
 No cross-repository behavior.
 
 No meaningful cross-repo references found.
+
+
+### Clock And Settlement Evidence
+
+- Catalogue delays and the product hold run on the same fake clock. A stalled catalogue yields zero review reads at `SUBJECT_HOLD_MS - 1` and one task-context read at the next millisecond; answered catalogues remain at one chosen-subject read even after advancing past the hold. No wall-clock elapsed inequality establishes this economy. [6]

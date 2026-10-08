@@ -90,3 +90,8 @@ exported `AGENT_HISTORY_CHILD_LIMIT`, not as a repeated literal — with visible
 (cit:(["bounds concurrent and retained selected-child bookkeeping per session"], dashboard/src/data/conversation/store.test.ts:127-174)). Its three-row `it.each` (cit:(["keeps a $label failure child-scoped and retryable while the parent stream stays live"], dashboard/src/data/conversation/store.test.ts:176-243)) preserves non-2xx, network, and timeout reasons as
 child-local state while the parent stream stays `live` and `errorBySession` stays clear, and each row
 then proves a retry recovers without changing the parent stream.
+
+
+### Clock And Settlement Evidence
+
+- The transient boot-race case controls the product retry with fake time: a zero-time advance settles the first 503, then a 500 ms advance proves another fetch occurred while the phase stays quiet `connecting`. Disconnect/reset and timer restoration keep that opportunity local to the case. [5]

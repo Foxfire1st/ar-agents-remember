@@ -16,8 +16,12 @@ Part of the 260731-EFA-L7 in-place split family for `test_pi_rpc_adapter_ops_1.p
 
 - The card mirrors the source file one-to-one at `mcp/tests/test_pi_rpc_adapter_ops_1.py`.
 
+An unknown mutation is shown to block the following operation only after the real authority's dispatch-head decision returns no dispatchable operation while that later operation is queued. The test then keeps the pending assertion and explicitly resolves the original mutation before checking the later model operation succeeds.
+
 ## Evidence
 
 ### Repo-Internal References
 
 The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
+
+- The queued mutation reaches the real blocked dispatch-head decision before pending is asserted. [1]

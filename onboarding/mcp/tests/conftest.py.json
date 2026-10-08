@@ -3,7 +3,25 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+        "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+        "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_unconfigure"
+        }
+      },
+      "id": "RLZ-69RY4R",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The pytest shutdown hook owns bounded cleanup of the private tmux server, environment lease and directory even after tmux failure.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
         "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:2729620b8d53ef465294050c5f2e38382ba11614eaa743e3243a0a4c5a399262",
             "locator": {
               "kind": "symbol",
@@ -42,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:458811e944557d6b7ed40fe51845079d60b9412fc995e19d4c9c9978492c7307",
             "locator": {
-              "end": 84,
+              "end": 90,
               "kind": "line_range",
-              "start": 68
+              "start": 74
             }
           },
           "kind": "test"
@@ -59,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
@@ -92,11 +110,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
             "locator": {
               "kind": "symbol",
               "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The pytest environment owns a private tmux directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "content": "sha256:71e26938618871c6519190bc6be8a6d21d87a16e1f8ed0567a6eab8f840e4db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ISOLATED_ENVIRONMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Environment, lease and temporary cleanup follow an attempted private-server kill even on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Inherited tmux launcher variables are scrubbed from the test environment.\n\nAnchor: \"TMUX_PANE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
+            "content": "sha256:adfc75bb3ddba3335d3a211dfe786dcbc27eaf6ca20cbf3a299b73a8b39a6269",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 53
             }
           },
           "kind": "test"
@@ -108,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:b156dc6e6a844b2bef08609b65004b03cd8df71ad64f0f57aa27b4fbd77ba266",
             "locator": {
               "kind": "symbol",
@@ -124,7 +191,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
             "locator": {
               "kind": "symbol",
@@ -140,7 +207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
             "locator": {
               "kind": "symbol",
@@ -156,7 +223,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
+            "blob": "e8bdf251226d481d7582f6d4b4a34634d0fa25be",
             "content": "sha256:481fdab23f82ab9d11b96075a52668351ba4183e9b0124f8b6983da051ee5460",
             "locator": {
               "kind": "symbol",

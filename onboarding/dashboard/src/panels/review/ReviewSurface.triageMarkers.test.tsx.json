@@ -1,6 +1,24 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.triageMarkers.test.tsx",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "388e9fadead831b814783a7bd7841862b17286a6",
+        "content": "sha256:a9a1dab64ce12b8a0b32699555065fc19b7e6e2ff44a4c071f5fce18836de620",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-90D2YS",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This suite observes held returned-marker focus before J, then delivers the selected reply and advances another frame before asserting that the next triage row keeps focus after J releases the return hold.",
+      "role": "enforcement"
+    }
+  ],
   "references": {
     "1": {
       "note": "The suite's statement: the merge round on real data, comparison 3 and its cards.\n\nAnchor: \"MIK-L33 x MIK-L34 (the merge round)\"; \"triageMarker.cards.captured.json\"",
@@ -47,6 +65,23 @@
               "end": 252,
               "kind": "line_range",
               "start": 207
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Before J, fake animation frames leave the returned marker focused while the return hold is active. J releases that hold and focuses the next triage row; after the selected reply/effects are flushed and another frame advances, the next row remains focused. The released return hold does not steal focus back.\n\nAnchor: `advanceTimersToNextFrame`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "388e9fadead831b814783a7bd7841862b17286a6",
+            "content": "sha256:62266b90df57f3ad387c7f8fd2b1bb71bd04d453f7073fdd1cc46fbc6bc1a089",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 205
             }
           },
           "kind": "test"

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:b1b19551e80087c12870584fdf904149991f4a9635040745830291ccbbe5277d",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
-        "content": "sha256:6c54104d56b8c46d98ae10197f512876b268b707a9fa0ecc8b71fa603499a0a8",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+        "content": "sha256:65b31236193cb40763aecbc742393f0d2fb9a7e0b70c99cb92ba9b2e7de0fca9",
         "locator": {
           "kind": "symbol",
           "name": "retry"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
-        "content": "sha256:5892fb80a23eb29d9d356982d6793f35b69281b7a3542444f19f1c9a9e3b378a",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+        "content": "sha256:536a62a5a3d836fc36d852da801119f7b7a10323545636c560f5768f966c8309",
         "locator": {
           "kind": "symbol",
           "name": "offer"
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:261b2d4fda9f21295213f1caadd4b31c5b7e155912fa35bf9e2197b7d552618d",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:19711165baf68f525bf6de693f7ad2c025d344d72bc1a2e4ad2a7d966ff419d0",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:ecf0ddf2b4f662e41c6e25694d0e91074aac979713a53f51d25d5d4e4e449921",
         "locator": {
           "kind": "symbol",
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
-        "content": "sha256:4d472fdad43aa409bf3fea7d10d63d5e5c32d9451a497db23a91a8a33719e229",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+        "content": "sha256:a51ce9d9c89c789f522997a9e4e06249e568e69d091f4365063e217e5646a9e8",
         "locator": {
           "kind": "symbol",
           "name": "mark"
@@ -122,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:ba9bff7f15ac08d1879ae9700e5079031561ba3cb9bc8f0010aae1f6b16707e2",
         "locator": {
           "kind": "symbol",
@@ -139,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
         "content": "sha256:8704e60bf72cc159b310bdf55dbc6d27173df6e79824ab2e35eb4ce9323766ba",
         "locator": {
           "kind": "symbol",
@@ -158,12 +158,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
-        "content": "sha256:88c96c49cbe43851c2fd267eb581dc5ec9b87f784316c877c81e293ec05a1656",
+        "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+        "content": "sha256:cef2059f5666e0b526ac6c5dfa0193b8c3c076c7b74b4f6b90fa2d0d34ef4f49",
         "locator": {
-          "end": 421,
+          "end": 423,
           "kind": "line_range",
-          "start": 350
+          "start": 353
         }
       },
       "id": "RLZ-TRH263",
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd9ae5a634e0c213bcd0d9bc214efad07734984",
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
             "content": "sha256:c49012eb39a946361f4da49be14645c6e7d00804927010d501a9c64e2b049969",
             "locator": {
               "kind": "symbol",
@@ -561,6 +561,23 @@
               "end": 421,
               "kind": "line_range",
               "start": 389
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "The late-catalogue opening case advances the imported `SUBJECT_HOLD_MS` on fake time before checking task context, then releases the held catalogue in async `act` before checking the fresh first-family tree. Those assertions follow actual product-hold and response opportunities rather than a local real-time wait.\n\nAnchor: `SUBJECT_HOLD_MS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319eca1f8e7d80d5a6106c889b218c496d204ab8",
+            "content": "sha256:649eb2e27874928830a95caa6686057f89b4deaac19c2337abfc5dfe8e62b2e9",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 238
             }
           },
           "kind": "test"

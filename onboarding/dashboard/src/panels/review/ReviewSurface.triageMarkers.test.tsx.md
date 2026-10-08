@@ -53,3 +53,8 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+
+### Clock And Settlement Evidence
+
+- Before J, fake animation frames leave the returned marker focused while the return hold is active. J releases that hold and focuses the next triage row; after the selected reply/effects are flushed and another frame advances, the next row remains focused. The released return hold does not steal focus back. [4]

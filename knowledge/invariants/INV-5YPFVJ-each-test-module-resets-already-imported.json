@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A surviving ambient lifecycle makes a later module fail according to file scheduling rather than code."
+  },
+  "applicability": "Module boundaries in pytest processes loading the repository bootstrap plugin.",
+  "conditions": [
+    "Only already-imported product modules are reset.",
+    "The ambient owner is stopped and its heartbeat joined before the module body and after its completion."
+  ],
+  "exclusions": [
+    "No reset between ordered cases of one test file.",
+    "No eager import merely to reset an owner."
+  ],
+  "id": "INV-5YPFVJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_global_state_isolation.py; forced preview/dispatch file order"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 3",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each test module resets already-imported product owners before and after execution and joins the ambient heartbeat.",
+  "status": "proposed",
+  "supersedes": []
+}

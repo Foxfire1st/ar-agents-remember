@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/eve_adapter_event_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+        "content": "sha256:49429fe74e4cae9451d7e65a78ca5b014ac36e34c0494f1bf76a2e1820f856d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Harness.read_completed_pass"
+        }
+      },
+      "id": "RLZ-V5XGVT",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The event harness waits for exhaustion of the exact durable session/cursor record pass before consumers assert no newly translated or replayed adapter/transcript events.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One standing adapter subscriber collects translated events.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+            "content": "sha256:e8494aca1e344151da807c87861949f34b89640d2faf6b39612cdda0081e4c87",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Pump"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The harness uses a completed exact session/cursor record pass for absence evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+            "content": "sha256:49429fe74e4cae9451d7e65a78ca5b014ac36e34c0494f1bf76a2e1820f856d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_completed_pass"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Adapter operations retain actual preflight references and close in subscriber-first order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d52789e17c7c0d2924220087aa761b024a31282",
+            "content": "sha256:c470ec30c6d2f7fa055f69000cb4297ac47af1d818162782af072ab05964f089",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Harness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

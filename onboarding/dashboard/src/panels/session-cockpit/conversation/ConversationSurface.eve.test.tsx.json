@@ -108,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:ef7f426c7ba8233cef93a959643020ead8b9d71cb03b6e3529e8f9027830527e",
             "locator": {
               "kind": "symbol",
@@ -120,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:7596c18a53df84bd8fc674f24513a082eac0d46a7354198d823f372d929561ed",
             "locator": {
               "kind": "symbol",
@@ -132,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:15b6cd602b660a0c6f5972e1353da72147a87dbd638979a7f280df6b3d4ab0c2",
             "locator": {
               "kind": "symbol",
@@ -144,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:9a1484dd4c3faf2edb0150a6f8361dd49f024c39a177176aa8bdefde7d9489d1",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:6b04151e6ab00c43cde2077ea5c72d03dab4854b3811d47287456769c0879063",
             "locator": {
-              "end": 1452,
+              "end": 1453,
               "kind": "line_range",
-              "start": 1445
+              "start": 1446
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },
@@ -169,12 +169,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:722b3c9a2f70692a28ad8c006a5ce79f58caba89c1c2d6c8f61907048c0c4611",
             "locator": {
-              "end": 1485,
+              "end": 1486,
               "kind": "line_range",
-              "start": 1454
+              "start": 1455
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },
@@ -182,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:2bb564a5259e0e5509365d15bbd4bb0043168f037b8382299d7907edc98c2c7a",
             "locator": {
-              "end": 1514,
+              "end": 1515,
               "kind": "line_range",
-              "start": 1496
+              "start": 1497
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "e3cbf168d0c234ca8fd16ab00c7136443420c144",
+            "blob": "a2f9090d7a6b37ac200efe865d6a8b761a28cf2c",
             "content": "sha256:04cc3ec05fca43574240c5df592522db36d0fabdf93612617d485dd2503794c3",
             "locator": {
-              "end": 1532,
+              "end": 1533,
               "kind": "line_range",
-              "start": 1516
+              "start": 1517
             },
             "path": "mcp/tests/test_eve_product_integration.py"
           },
@@ -247,12 +247,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30f6b1d480fe4978bac026bd45b096cafcbe4fc7",
+            "blob": "cda3dca2944f8e0b3093adfbf0039b72da277cb8",
             "content": "sha256:9f4d27ab036ec5ca2a91020d96621acb9b0398909063d42a718e32312a94a155",
             "locator": {
-              "end": 98,
+              "end": 99,
               "kind": "line_range",
-              "start": 98
+              "start": 99
             },
             "path": "dashboard/src/panels/session-cockpit/conversation/ConversationSurface.test.tsx"
           },

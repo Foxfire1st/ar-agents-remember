@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_pi_rpc_adapter_ops_1.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The queued mutation reaches the real blocked dispatch-head decision before pending is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f8df92cd8cc5fd9ec49a63e9aae683ac9b37857",
+            "content": "sha256:556d68e557242e2b54f9ce532af76b087d7e21d804cbf981448386c5d0346fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mutation_timeouts_hold_unknown_blocker_until_explicit_resolution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

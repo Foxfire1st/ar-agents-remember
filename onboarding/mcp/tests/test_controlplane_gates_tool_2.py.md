@@ -26,6 +26,8 @@ Receiving a response and consuming it are separate operations. Stale identity ca
 
 No file-local implementation change is requested by this reconciliation.
 
+The timeout case advances an injected monotonic clock. A matching already-pending response uses a zero readiness wait; its result and non-consumption assertions remain unchanged.
+
 ## Evidence
 
 ### Docs References
@@ -48,3 +50,5 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
+- Injected time proves expiry; an already-present response needs no readiness delay. [5]

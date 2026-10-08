@@ -32,6 +32,14 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
+## Readiness And Resource Isolation
+
+`_read_until` accumulates actual PTY output until the named marker arrives, with the shared hang
+guard only preventing an endless read. Test assertions do not measure scheduler speed. The ordinary
+pytest environment provides a private tmux server directory and scrubs inherited launcher identity.
+The integration teardown closes the host and kills only its named session with a bounded command
+using the sanitized tmux client environment. Availability skips remain explicit.
+
 ## Evidence
 
 ### Docs References
@@ -49,6 +57,9 @@ to removed methods are superseded by this current inventory.
 - Write then read roundtrip [1]
 - A spawn that never started leaves no pty fd behind [2]
 - Real tmux ensure and attach ignore launcher identity [3]
+
+- Actual PTY marker arrival governs readiness under the shared guard. [4]
+- The real tmux test reclaims its named test session through the sanitized client environment. [5]
 
 ### Cross-Repo References
 

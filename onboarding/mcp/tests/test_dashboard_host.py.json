@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+        "blob": "65fe89f22d20af1657871b955cc443595bca2da6",
         "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+        "blob": "65fe89f22d20af1657871b955cc443595bca2da6",
         "content": "sha256:d5f30d2bcf924b1e729c53c7b5c5a4ef9a3e810f3f909da6cd5ca88a443a160c",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+            "blob": "65fe89f22d20af1657871b955cc443595bca2da6",
             "content": "sha256:d5f30d2bcf924b1e729c53c7b5c5a4ef9a3e810f3f909da6cd5ca88a443a160c",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf1b501b52f2719fcef660cb731d40024c52e696",
+            "blob": "65fe89f22d20af1657871b955cc443595bca2da6",
             "content": "sha256:23a9af3a896fdf1b909b96722a7984b9d94d71d165c74c9608a49a623f17190b",
             "locator": {
               "kind": "symbol",
@@ -80,6 +80,22 @@
             "locator": {
               "kind": "symbol",
               "name": "test_real_background_function_serves_before_host_outcome_and_logs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Service doubles accept the exact keyword-only archive owner argument.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65fe89f22d20af1657871b955cc443595bca2da6",
+            "content": "sha256:bcad91a924dd94824bf1af1d0d51e8fea231571411da357f413821b0999f6089",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreground_serves_without_waiting_for_host_and_sim_skips_it"
             }
           },
           "kind": "test"
